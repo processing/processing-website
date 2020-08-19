@@ -1,17 +1,21 @@
 import React from "react";
 import {graphql } from "gatsby";
 import Img from "gatsby-image";
+import { useLocalization } from "gatsby-theme-i18n"
 
 import Layout from "../components/layout";
 
 const RefTemplate = ({ data, pageContext }) => {
+	const { locale } = useLocalization()
+	
 	return (
 		<Layout>
-			<h1>{data.json.name}</h1>
-			<p>Description: {data.json.description}</p>
-			<p>Syntax: {data.json.syntax}</p>
+			<div>Current locale: {locale}</div>
+			<h1>{data.json.childJson.name}</h1>
+			<p>Description: {data.json.childJson.description}</p>
+			<p>Syntax: {data.json.childJson.syntax}</p>
 			Parameters:
-			{data.json.parameters.map((param, key) => {
+			{data.json.childJson.parameters.map((param, key) => {
 				return (
 					<p key={"param" + key}>
 						{param.name +
@@ -22,7 +26,7 @@ const RefTemplate = ({ data, pageContext }) => {
 					</p>
 				);
 			})}
-			<p>Return: {data.json.returns}</p>
+			<p>Return: {data.json.childJson.returns}</p>
 			Examples:
 			<ul>
 				{data.allFile.edges.map((edge, key) => {
@@ -50,19 +54,21 @@ const RefTemplate = ({ data, pageContext }) => {
 export default RefTemplate;
 
 export const query = graphql`
-	query($name: String!) {
-		json(name: { eq: $name }) {
-			name
-			description
-			syntax
-			parameters {
-				name
-				description
-				type
-			}
-			returns
-		}
-		allFile(filter: { relativeDirectory: { eq: $name } }) {
+	query($name: String!, $assetsName: String!) {
+		json: file(fields: {name: {eq: $name}}) {
+        		childJson {
+          			name
+          			description
+          			syntax
+          			parameters {
+            			name
+            			description
+            			type
+          			}
+          			returns
+        		}
+      	}
+		allFile(filter: { relativeDirectory: { eq: $assetsName } }) {
 			edges {
 				node {
 					name

@@ -18,6 +18,7 @@ exports.createPages = async ({ graphql, actions }) => {
 					edges {
 						node {
 							name
+							relativeDirectory
 						}
 					}
 				}
@@ -36,12 +37,14 @@ exports.createPages = async ({ graphql, actions }) => {
 		const previous =
 			index === refPages.length - 1 ? null : refPages[index + 1].node;
 		const next = index === 0 ? null : refPages[index - 1].node;
+		let assetsName = refPage.node.name.split(".")[0];
 
 		createPage({
-			path: "references/" + refPage.node.name,
+			path: "/references/" + refPage.node.name,
 			component: refTemplate,
 			context: {
 				name: refPage.node.name,
+				assetsName: assetsName,
 				previous,
 				next,
 			},
@@ -54,10 +57,18 @@ exports.onCreateNode = ({ node, actions, getNode, loadNodeContent }) => {
 
 	if (node.internal.mediaType === `application/json`) {
 		const value = createFilePath({ node, getNode });
+		let dir = node.relativeDirectory.split("/");
+		let lang = dir[0];
+		let name = dir[dir.length];
 		createNodeField({
 			name: `name`,
 			node,
 			value: node.name,
+		});
+		createNodeField({
+			name: `lang`,
+			node,
+			value: lang,
 		});
 	} else if (node.internal.mediaType === `text/x-processing`) {
 		createNodeField({

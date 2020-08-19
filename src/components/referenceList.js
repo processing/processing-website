@@ -1,26 +1,19 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import { LocalizedLink as Link } from "gatsby-theme-i18n"
+import { useLocalization } from "gatsby-theme-i18n"
 
-const ReferenceList = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allFile(filter: { sourceInstanceName: { eq: "json" } }) {
-        edges {
-          node {
-            name
-          }
-        }
-      }
-    }
-  `);
+const ReferenceList = (props) => {
+  const { locale } = useLocalization()
+  const { data } = props;
 
   return (
     <div>
+      <h1>Lang {locale}</h1>
       <ul>
         {data.allFile.edges.map((edge, key) => {
           return (
             <li key={key}>
-              <a href={edge.node.name}>{edge.node.name}</a>
+              <Link to={"/references/" + edge.node.name} language={locale}>{edge.node.name}</Link>
             </li>
           );
         })}

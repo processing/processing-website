@@ -3,9 +3,24 @@ module.exports = {
     title: `Processing`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
+    siteUrl: `https://processing.org/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-theme-i18n`,
+      options: {
+        defaultLang: `en`,
+        locales: process.env.LOCALES,
+        configPath: require.resolve(`./i18n/config.json`),
+      },
+    },
+    {
+      resolve: `gatsby-theme-i18n-react-intl`,
+      options: {
+        defaultLocale: `./i18n/react-intl/en.json`,
+      },
+    },
     {
       resolve: `gatsby-transformer-json`,
       options: {
@@ -23,7 +38,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "json",
-        path: `${__dirname}/documentation/references/json`,
+        path: `${__dirname}/documentation/references/translation`,
       },
     },
     {
@@ -46,8 +61,5 @@ module.exports = {
         display: `minimal-ui`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 };
