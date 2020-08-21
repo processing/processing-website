@@ -1,17 +1,17 @@
 import React from "react";
-import {graphql } from "gatsby";
+import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import { useLocalization } from "gatsby-theme-i18n"
 
 import Layout from "../components/layout";
 
-const RefTemplate = ({ data, pageContext }) => {
+const ClassRefTemplate = ({ data, pageContext }) => {
 	const { locale } = useLocalization()
 	
 	return (
 		<Layout>
 			<div>Current locale: {locale}</div>
-			<h1>{data.json.childJson.name}</h1>
+			<h1>Classname: {data.json.childJson.classname}</h1>
 			<p>Description: {data.json.childJson.description}</p>
 			Parameters:
 			{data.json.childJson.parameters.map((param, key) => {
@@ -25,7 +25,6 @@ const RefTemplate = ({ data, pageContext }) => {
 					</p>
 				);
 			})}
-			<p>Return: {data.json.childJson.returns}</p>
 			Examples:
 			<ul>
 				{data.allFile.edges.map((edge, key) => {
@@ -50,20 +49,19 @@ const RefTemplate = ({ data, pageContext }) => {
 	);
 };
 
-export default RefTemplate;
+export default ClassRefTemplate;
 
 export const query = graphql`
 	query($name: String!, $assetsName: String!) {
 		json: file(fields: {name: {eq: $name}}) {
         		childJson {
-          			name
+          			classname
           			description
           			parameters {
             			name
             			description
             			type
           			}
-          			returns
         		}
       	}
 		allFile(filter: { relativeDirectory: { eq: $assetsName } }) {

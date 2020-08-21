@@ -10,7 +10,8 @@ const IndexPage = () => {
   <Layout>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
     </div>
-    <Link to="/references/">{intl.formatMessage({ id: "references" })}</Link> <br />
+    <Link to="/references/">{intl.formatMessage({ id: "references" })}</Link><br/>
+    <Link to="/libraries/">{intl.formatMessage({ id: "libraries" })}</Link>
   </Layout>
   );
 };

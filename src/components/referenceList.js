@@ -4,16 +4,22 @@ import { useLocalization } from "gatsby-theme-i18n"
 
 const ReferenceList = (props) => {
   const { locale } = useLocalization()
-  const { data } = props;
+  const { data, library } = props;
+
+  let link;
+
+  if (library === "processing")
+    link = "/references/";
+  else 
+    link = "/libraries/" + library + "/";
 
   return (
     <div>
-      <h1>Lang {locale}</h1>
       <ul>
         {data.allFile.edges.map((edge, key) => {
           return (
             <li key={key}>
-              <Link to={"/references/" + edge.node.name} language={locale}>{edge.node.name}</Link>
+              <Link to={link + edge.node.name} language={locale}>{edge.node.name}</Link>
             </li>
           );
         })}
