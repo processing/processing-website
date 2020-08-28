@@ -9,7 +9,7 @@ import { useLocalization } from "gatsby-theme-i18n"
 
 const IndexPage = () => {
 	const intl = useIntl();
-  const { locale, defaultLang } = useLocalization()
+  const { locale } = useLocalization()
 	return (
   <Layout>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>

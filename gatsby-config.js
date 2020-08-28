@@ -38,35 +38,35 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "json",
-        path: `${__dirname}/documentation/references/translation`,
+        path: `${__dirname}/content/references/translation`,
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "in-examples",
-        path: `${__dirname}/documentation/references/examples`,
+        path: `${__dirname}/content/references/examples`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/src/markdown-pages`,
+        name: `pages`,
+        path: `${__dirname}/content/pages`,
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "examples",
-        path: `${__dirname}/documentation/examples`,
+        path: `${__dirname}/content/examples`,
       },
     },
     {
     resolve: `gatsby-source-filesystem`,
       options: {
         name: `tutorials`,
-        path: `${__dirname}/documentation/tutorials`,
+        path: `${__dirname}/content/tutorials`,
       },
     },
     `gatsby-transformer-sharp`,

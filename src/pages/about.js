@@ -16,8 +16,9 @@ const About = ({data}) => {
 };
 
 export const query = graphql`
-  query {
-    mdx(frontmatter: { slug: { eq: "/about" } }) {
+  query ($locale: String!) {
+    mdx(fields: { locale: { eq: $locale } }
+    frontmatter: { slug: { eq: "/about" } }) {
       body
       frontmatter {
         slug
