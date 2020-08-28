@@ -1,7 +1,3 @@
-require(`dotenv`).config({
-  path: `.env`,
-})
-
 module.exports = {
   siteMetadata: {
     title: `Processing`,
@@ -15,8 +11,7 @@ module.exports = {
     {
       resolve: `gatsby-theme-i18n`,
       options: {
-        defaultLang: "en",
-        locales: process.env.LOCALES,
+        defaultLang: `en`,
         configPath: require.resolve(`./i18n/config.json`),
       },
     },

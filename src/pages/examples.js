@@ -16,7 +16,7 @@ const Examples = ({data}) => {
         {data.allFile.nodes.map((node, key) => {
           return (
             <li key={key}>
-              <Link to={node.childMdx.frontmatter.slug} language={locale}>{node.name}</Link>
+              <Link to={node.childMdx.frontmatter.slug} language={locale}>{node.childMdx.frontmatter.title}</Link>
             </li>
           );
         })}
@@ -37,6 +37,7 @@ export const query = graphql`
             childMdx {
               frontmatter {
                   slug
+                  title
               }
             }
         }

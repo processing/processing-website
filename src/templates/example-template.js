@@ -5,7 +5,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import Layout from "../components/layout"
 
-const ExampleTemplate = ({data}) => {
+const ExampleTemplate = ({data, pageContext}) => {
   const { mdx } = data
   const { frontmatter, body } = mdx
 
@@ -21,8 +21,9 @@ const ExampleTemplate = ({data}) => {
 export default ExampleTemplate;
 
 export const query = graphql`
-    query ($slug: String) {
-      mdx(frontmatter: { slug: { eq: $slug } }) {
+    query ($locale: String!, $slug: String!) {
+      mdx(fields: { locale: { eq: $locale } }
+      frontmatter: { slug: { eq: $slug } }) {
         body
         frontmatter {
           slug

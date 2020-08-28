@@ -8,14 +8,55 @@ const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
-	const { createPage } = actions;
 
-	// Templates
+	await Promise.all([
+		createReference(actions, graphql),
+ 		createExamples(actions, graphql),
+  		createTutorials(actions, graphql),
+  	]);
+
+};
+
+exports.onCreateNode = ({ node, actions, getNode, loadNodeContent }) => {
+	const { createNodeField } = actions;
+
+	if (node.internal.mediaType === `application/json`) {
+		const value = createFilePath({ node, getNode });
+		let dir = node.relativeDirectory.split("/");
+		let lang = dir[0];
+		let library = dir[1];
+		let name = dir[dir.length];
+		createNodeField({
+			name: `name`,
+			node,
+			value: node.name,
+		});
+		createNodeField({
+			name: `lang`,
+			node,
+			value: lang,
+		});
+		createNodeField({
+			name: `lib`,
+			node,
+			value: library,
+		});
+	} else if (node.internal.mediaType === `text/x-processing`) {
+		createNodeField({
+			name: `name`,
+			node,
+			content: loadNodeContent(node)
+		});
+	}
+
+};
+
+async function createReference (actions, graphql) {
 	const refTemplate = path.resolve(`./src/templates/ref-template.js`);
 	const classRefTemplate = path.resolve(`./src/templates/class-ref-template.js`);
 	const indexRefTemplate = path.resolve(`./src/templates/index-ref-template.js`);
-	const tutorialTemplate = path.resolve(`./src/templates/tutorial-template.js`);
-	const exampleTemplate = path.resolve(`./src/templates/example-template.js`);
+
+	const { createPage } = actions;
 
 	const result = await graphql(
 		`
@@ -44,44 +85,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   		`
 	);
 
-	const tutorialResult = await graphql(
-		`
-		{
-		  	allFile(filter: {sourceInstanceName: {eq: "tutorials"}}) {
-    			nodes {
-      				childMdx {
-        				frontmatter {
-          					slug
-        				}
-      				}
-    			}
-  			}
-  		}
-  		`
-	);
-
-	const exampleResult = await graphql(
-		`
-		{
-		  	allFile(filter: {sourceInstanceName: {eq: "examples"}}) {
-    			nodes {
-      				childMdx {
-        				frontmatter {
-          					slug
-        				}
-      				}
-    			}
-  			}
-  		}
-  		`
-	);
-
 	if (result.errors) {
 		throw result.errors;
 	}
 
-	if (exampleResult.errors) {
-		throw result.errors;
+	if (dirResult.errors) {
+		throw dirResult.errors;
 	}
 
 	// Create reference pages.
@@ -89,10 +98,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
 	// Create library index pages
 	const dirPages = dirResult.data.allDirectory.nodes;
-
-    const tutorialPages = tutorialResult.data.allFile.nodes;
-
-    const examplePages = exampleResult.data.allFile.nodes;
 
 	refPages.forEach((refPage, index) => {
 		const previous =
@@ -141,6 +146,34 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 				},
 			});
 	});
+}
+
+async function createTutorials (actions, graphql) {
+	const tutorialTemplate = path.resolve(`./src/templates/tutorial-template.js`);
+
+	const { createPage } = actions;
+
+	const tutorialResult = await graphql(
+		`
+		{
+		  	allFile(filter: {sourceInstanceName: {eq: "tutorials"}}) {
+    			nodes {
+      				childMdx {
+        				frontmatter {
+          					slug
+        				}
+      				}
+    			}
+  			}
+  		}
+  		`
+	);
+
+	if (tutorialResult.errors) {
+		throw tutorialResult.errors;
+	}
+
+	const tutorialPages = tutorialResult.data.allFile.nodes;
 
 	tutorialPages.forEach((tutorialPage, index) => {
 		createPage({
@@ -151,6 +184,34 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 				}
 			});
 	});
+}
+
+async function createExamples (actions, graphql) {
+	const exampleTemplate = path.resolve(`./src/templates/example-template.js`);
+
+	const { createPage } = actions;
+
+	const exampleResult = await graphql(
+		`
+		{
+		  	allFile(filter: {sourceInstanceName: {eq: "examples"}}) {
+    			nodes {
+      				childMdx {
+        				frontmatter {
+          					slug
+        				}
+      				}
+    			}
+  			}
+  		}
+  		`
+	);
+
+	if (exampleResult.errors) {
+		throw exampleResult.errors;
+	}
+
+	const examplePages = exampleResult.data.allFile.nodes;
 
 	examplePages.forEach((examplePage, index) => {
 		createPage({
@@ -161,38 +222,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 				}
 			});
 	});
-};
 
-exports.onCreateNode = ({ node, actions, getNode, loadNodeContent }) => {
-	const { createNodeField } = actions;
+}
 
-	if (node.internal.mediaType === `application/json`) {
-		const value = createFilePath({ node, getNode });
-		let dir = node.relativeDirectory.split("/");
-		let lang = dir[0];
-		let library = dir[1];
-		let name = dir[dir.length];
-		createNodeField({
-			name: `name`,
-			node,
-			value: node.name,
-		});
-		createNodeField({
-			name: `lang`,
-			node,
-			value: lang,
-		});
-		createNodeField({
-			name: `lib`,
-			node,
-			value: library,
-		});
-	} else if (node.internal.mediaType === `text/x-processing`) {
-		createNodeField({
-			name: `name`,
-			node,
-			content: loadNodeContent(node)
-		});
-	}
-
-};
