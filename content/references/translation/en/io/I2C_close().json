@@ -1,0 +1,1 @@
+{"examples":"","related":[],"usage":"","name":"close()","description":"Closes the I2C device","syntax":[".close()"],"returns":"void","type":"function","parameters":[]}

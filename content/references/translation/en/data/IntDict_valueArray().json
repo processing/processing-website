@@ -1,0 +1,1 @@
+{"examples":"","related":[],"usage":"","name":"valueArray()","description":"Create a new array and copy each of the values into it.","syntax":[".valueArray()",".valueArray(array)"],"returns":"int[]","type":"function","parameters":[{"name":"array","description":"values to copy into the array","type":["int[]"]}]}

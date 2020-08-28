@@ -1,0 +1,1 @@
+{"examples":"","related":[],"usage":"","name":"sampleRate()","description":"Get or set the internal sample rate of the synthesis engine.","syntax":[".sampleRate()",".sampleRate(sampleRate)"],"returns":"int","type":"function","parameters":[{"name":"sampleRate","description":"the sample rate to be used by the synthesis engine (default 44100)","type":["int"]}]}

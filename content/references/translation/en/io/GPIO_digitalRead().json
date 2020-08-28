@@ -1,0 +1,1 @@
+{"examples":"","related":[],"usage":"","name":"digitalRead()","description":"Returns the value of an input pin","syntax":[".digitalRead(pin)"],"returns":"int","type":"function","parameters":[{"name":"pin","description":"GPIO pin","type":["int"]}]}

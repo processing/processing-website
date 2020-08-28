@@ -1,0 +1,1 @@
+{"examples":"","related":[],"usage":"","name":"pinMode()","description":"Configures a pin to act either as input or output","syntax":[".pinMode(pin, mode)"],"returns":"void","type":"function","parameters":[{"name":"pin","description":"GPIO pin","type":["int"]},{"name":"mode","description":"GPIO.INPUT, GPIO.INPUT_PULLUP, GPIO.INPUT_PULLDOWN, or GPIO.OUTPUT","type":["int"]}]}

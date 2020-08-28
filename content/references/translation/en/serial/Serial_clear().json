@@ -1,0 +1,1 @@
+{"examples":"","related":[],"usage":"web_application","name":"clear()","description":"","syntax":["serial.clear()"],"returns":"void","type":"function","parameters":[{"name":"serial","description":" any variable of type Serial","type":["Serial"]}]}

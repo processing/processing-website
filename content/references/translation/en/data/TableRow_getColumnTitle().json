@@ -1,0 +1,1 @@
+{"examples":"","related":[],"usage":"","name":"getColumnTitle()","description":"","syntax":[".getColumnTitle(column)"],"returns":"String","type":"function","parameters":[{"name":"column","description":"ID number of the target column","type":["int"]}]}

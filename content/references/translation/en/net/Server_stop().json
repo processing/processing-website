@@ -1,0 +1,1 @@
+{"examples":"","related":[],"usage":"application","name":"stop()","description":"( begin auto-generated from Server_stop.xml )\n \n Disconnects all clients and stops the server.\n \n ( end auto-generated )\n ","syntax":["server.stop()"],"returns":"void","type":"function","parameters":[{"name":"server","description":"  \tany variable of type Server","type":["Server"]}]}

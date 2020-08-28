@@ -1,0 +1,1 @@
+{"examples":"","related":[],"usage":"","name":"time()","description":"Changes the delay time of the effect.","syntax":[".time(delayTime)"],"returns":"void","type":"function","parameters":[{"name":"delayTime","description":"Delay time in seconds.","type":["float"]}]}
