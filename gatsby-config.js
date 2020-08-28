@@ -22,9 +22,26 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-postcss`,
+      options: {
+        cssLoaderOptions: {
+          localIdentName: '[name]-[local]-[hash:base64:3]',
+        },
+        postCssPlugins: [
+          require(`postcss-import`),
+          require('postcss-normalize'),
+          require(`postcss-preset-env`)({
+            stage: 0,
+            importFrom: [`${__dirname}/src/styles/variables.css`],
+          }),
+          require(`postcss-calc`),
+        ],
+      },
+    },
+    {
       resolve: `gatsby-transformer-json`,
       options: {
-        typeName: `json`, 
+        typeName: `json`,
       },
     },
     {
@@ -35,16 +52,16 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "json",
+        name: 'json',
         path: `${__dirname}/content/references/translation`,
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "in-examples",
+        name: 'in-examples',
         path: `${__dirname}/content/references/examples`,
       },
     },
@@ -56,14 +73,14 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "examples",
+        name: 'examples',
         path: `${__dirname}/content/examples`,
       },
     },
     {
-    resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-source-filesystem`,
       options: {
         name: `tutorials`,
         path: `${__dirname}/content/tutorials`,

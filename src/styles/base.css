@@ -1,0 +1,10 @@
+@import-sanitize;
+
+html {
+  font-family: Space Grotesque, Helvetica, Arial, sans-serif;
+}
+
+code,
+pre {
+  font-family: Space Mono;
+}

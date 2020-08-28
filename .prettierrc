@@ -1,0 +1,16 @@
+{
+  "singleQuote": true,
+  "tabWidth": 2,
+  "useTabs": false,
+  "jsxBracketSameLine": true,
+  "arrowParens": "always",
+  "trailingComma": "es5",
+  "overrides": [
+    {
+      "files": ["*.css", "*.scss"],
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
+}

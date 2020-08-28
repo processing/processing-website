@@ -1,0 +1,9 @@
+@import "";
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col1 {
+  flex-basis: calc((100vw - (var(--margin) * 2)) / 8)
+}
