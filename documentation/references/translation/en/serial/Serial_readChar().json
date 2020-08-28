@@ -1,0 +1,1 @@
+{"examples":"","related":[],"usage":"web_application","name":"readChar()","description":"","syntax":["serial.readChar()"],"returns":"char","type":"function","parameters":[{"name":"serial","description":" any variable of type Serial","type":["Serial"]}]}

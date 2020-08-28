@@ -1,0 +1,1 @@
+{"examples":"","related":[],"usage":"","name":"listChildren()","description":"Put the names of all children into an array. Same as looping through\n each child and calling getName() on each XMLElement.","syntax":[".listChildren()"],"returns":"String[]","type":"function","parameters":[]}

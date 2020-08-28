@@ -1,0 +1,1 @@
+{"examples":"","related":[],"usage":"","name":"write()","description":"Moves a servo motor to a given orientation","syntax":[".write(angle)"],"returns":"void","type":"function","parameters":[{"name":"angle","description":"angle in degrees (controls speed and direction on continuous-rotation servos)","type":["float"]}]}

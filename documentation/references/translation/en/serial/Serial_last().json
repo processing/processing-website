@@ -1,0 +1,1 @@
+{"examples":"","related":[],"usage":"web_application","name":"last()","description":"","syntax":["serial.last()"],"returns":"int","type":"function","parameters":[{"name":"serial","description":" any variable of type Serial","type":["Serial"]}]}

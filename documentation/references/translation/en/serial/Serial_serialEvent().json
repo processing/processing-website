@@ -1,0 +1,1 @@
+{"examples":"","related":[],"usage":"web_application","name":"serialEvent()","description":"","syntax":["serial.serialEvent(event)"],"returns":"void","type":"function","parameters":[{"name":"serial","description":" any variable of type Serial","type":["Serial"]},{"name":"event","description":"the port where new data is available","type":["SerialPortEvent"]}]}

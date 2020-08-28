@@ -1,0 +1,1 @@
+{"examples":"","related":[],"usage":"","name":"set()","description":"Create a new key/value pair or change the value of one.","syntax":[".set(key, amount)"],"returns":"void","type":"function","parameters":[]}

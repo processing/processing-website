@@ -1,0 +1,1 @@
+{"examples":"","related":[],"usage":"","name":"list()","description":"Lists all available I2C interfaces","syntax":[".list()"],"returns":"String[]","type":"function","parameters":[]}

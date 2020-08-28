@@ -1,0 +1,1 @@
+{"examples":"","related":["libraries/data/JSONArray_size_.html","libraries/data/JSONArray_append_.html"],"usage":"","name":"remove()","description":"Remove an index and close the hole.","syntax":[".remove(index)"],"returns":"Object","type":"function","parameters":[{"name":"index","description":"the index value of the element to be removed","type":["int"]}]}

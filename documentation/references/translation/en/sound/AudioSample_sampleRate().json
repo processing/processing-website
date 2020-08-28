@@ -1,0 +1,1 @@
+{"examples":"","related":[],"usage":"","name":"sampleRate()","description":"Returns the underlying sample rate of the audiosample.","syntax":[".sampleRate()"],"returns":"int","type":"function","parameters":[]}

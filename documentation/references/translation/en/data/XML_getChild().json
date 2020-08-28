@@ -1,0 +1,1 @@
+{"examples":"","related":[],"usage":"","name":"getChild()","description":"Get a child by its name or path.","syntax":[".getChild(name)"],"returns":"XML","type":"function","parameters":[{"name":"name","description":"element name or path/to/element","type":["String"]}]}

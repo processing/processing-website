@@ -7,14 +7,15 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ actions, graphql, reporter }) => {
 	const { createPage } = actions;
 
 	// Templates
 	const refTemplate = path.resolve(`./src/templates/ref-template.js`);
 	const classRefTemplate = path.resolve(`./src/templates/class-ref-template.js`);
 	const indexRefTemplate = path.resolve(`./src/templates/index-ref-template.js`);
-
+	const tutorialTemplate = path.resolve(`./src/templates/tutorial-template.js`);
+	const exampleTemplate = path.resolve(`./src/templates/example-template.js`);
 
 	const result = await graphql(
 		`
@@ -43,7 +44,43 @@ exports.createPages = async ({ graphql, actions }) => {
   		`
 	);
 
+	const tutorialResult = await graphql(
+		`
+		{
+		  	allFile(filter: {sourceInstanceName: {eq: "tutorials"}}) {
+    			nodes {
+      				childMdx {
+        				frontmatter {
+          					slug
+        				}
+      				}
+    			}
+  			}
+  		}
+  		`
+	);
+
+	const exampleResult = await graphql(
+		`
+		{
+		  	allFile(filter: {sourceInstanceName: {eq: "examples"}}) {
+    			nodes {
+      				childMdx {
+        				frontmatter {
+          					slug
+        				}
+      				}
+    			}
+  			}
+  		}
+  		`
+	);
+
 	if (result.errors) {
+		throw result.errors;
+	}
+
+	if (exampleResult.errors) {
 		throw result.errors;
 	}
 
@@ -52,6 +89,10 @@ exports.createPages = async ({ graphql, actions }) => {
 
 	// Create library index pages
 	const dirPages = dirResult.data.allDirectory.nodes;
+
+    const tutorialPages = tutorialResult.data.allFile.nodes;
+
+    const examplePages = exampleResult.data.allFile.nodes;
 
 	refPages.forEach((refPage, index) => {
 		const previous =
@@ -69,7 +110,7 @@ exports.createPages = async ({ graphql, actions }) => {
 				component: refTemplate,
 				context: {
 					name: refPage.node.name,
-					assetsName: assetsName,
+					assetsName: libraryName + "/" + assetsName,
 					libraryName: libraryName,
 					previous,
 					next,
@@ -81,7 +122,7 @@ exports.createPages = async ({ graphql, actions }) => {
 				component: classRefTemplate,
 				context: {
 					name: refPage.node.name,
-					assetsName: assetsName,
+					assetsName: libraryName + "/" + assetsName,
 					libraryName: libraryName,
 					previous,
 					next,
@@ -101,6 +142,25 @@ exports.createPages = async ({ graphql, actions }) => {
 			});
 	});
 
+	tutorialPages.forEach((tutorialPage, index) => {
+		createPage({
+				path: tutorialPage.childMdx.frontmatter.slug,
+				component: tutorialTemplate,
+				context: {
+					slug: tutorialPage.childMdx.frontmatter.slug,
+				}
+			});
+	});
+
+	examplePages.forEach((examplePage, index) => {
+		createPage({
+				path: examplePage.childMdx.frontmatter.slug,
+				component: exampleTemplate,
+				context: {
+					slug: examplePage.childMdx.frontmatter.slug,
+				}
+			});
+	});
 };
 
 exports.onCreateNode = ({ node, actions, getNode, loadNodeContent }) => {
@@ -134,4 +194,5 @@ exports.onCreateNode = ({ node, actions, getNode, loadNodeContent }) => {
 			content: loadNodeContent(node)
 		});
 	}
+
 };

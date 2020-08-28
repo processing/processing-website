@@ -1,10 +1,9 @@
 import React from "react"
-//import { Link } from "gatsby"
+import { graphql } from "gatsby"
 
 import { LocalizedLink as Link } from "gatsby-theme-i18n"
 
 import Layout from "../components/layout"
-import ReferenceList from "../components/referenceList"
 import { useLocalization } from "gatsby-theme-i18n"
 
 const Libraries = ({data}) => {
