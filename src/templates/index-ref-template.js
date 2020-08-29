@@ -3,8 +3,8 @@ import { graphql } from 'gatsby';
 
 import { Link } from 'gatsby';
 
-import Layout from '../components/layout';
-import ReferenceList from '../components/referenceList';
+import Layout from '../components/Layout';
+import ReferenceList from '../components/ReferenceList';
 
 const IndexRefTemplate = ({ data, pageContext: { libraryName } }) => {
   return (

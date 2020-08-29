@@ -6,13 +6,12 @@ import { useIntl } from 'react-intl';
 import Layout from '../components/Layout';
 
 import { useLocalization } from 'gatsby-theme-i18n';
-
+console.log('this is the index');
 const IndexPage = () => {
   const intl = useIntl();
   const { locale } = useLocalization();
   return (
     <Layout>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}></div>
       <Link to="/references/">{intl.formatMessage({ id: 'references' })}</Link>
       <br />
       <Link to="/libraries/">{intl.formatMessage({ id: 'libraries' })}</Link>

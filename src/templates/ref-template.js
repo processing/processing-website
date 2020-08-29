@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { useLocalization } from 'gatsby-theme-i18n';
 
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 
 const RefTemplate = ({ data, pageContext }) => {
   const { locale } = useLocalization();

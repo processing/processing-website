@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 
 const TutorialTemplate = ({ data, pageContext }) => {
   const { mdx } = data;
