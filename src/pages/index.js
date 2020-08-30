@@ -6,7 +6,7 @@ import { useIntl } from 'react-intl';
 import Layout from '../components/Layout';
 
 import { useLocalization } from 'gatsby-theme-i18n';
-console.log('this is the index');
+
 const IndexPage = () => {
   const intl = useIntl();
   const { locale } = useLocalization();
