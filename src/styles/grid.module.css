@@ -2,8 +2,45 @@
 .grid {
   display: flex;
   flex-wrap: wrap;
+  margin: 60px;
 }
 
 .col1 {
-  flex-basis: calc((100vw - (var(--margin) * 2)) / 8)
+  flex-basis: calc(100% / 8);
+  padding: 0 20px;
+}
+
+.col2 {
+  flex-basis: calc(100% / 8 * 2);
+  padding: 0 20px;
+}
+
+.col3 {
+  flex-basis: calc(100% / 8 * 3);
+  padding: 0 20px;
+}
+
+.col4 {
+  flex-basis: calc(100% / 8 * 4);
+  padding: 0 20px;
+}
+
+.col5 {
+  flex-basis: calc(100% / 8 * 5);
+  padding: 0 20px;
+}
+
+.col6 {
+  flex-basis: calc(100% / 8 * 6);
+  padding: 0 20px;
+}
+
+.col7 {
+  flex-basis: calc(100% / 8 * 7);
+  padding: 0 20px;
+}
+
+.col8 {
+  flex-basis: calc(100% / 8 * 8);
+  padding: 0 20px;
 }
