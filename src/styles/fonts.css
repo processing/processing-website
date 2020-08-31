@@ -1,0 +1,147 @@
+/* Space Grotesk
+ * By Florian Karsten
+ * https://fonts.floriankarsten.com/space-grotesk
+ */
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-weight: 300;
+  font-style: normal;
+  src: url("./fonts/Space Grotesk/SpaceGrotesk-Light.woff2") format("woff2"),
+    url("/fonts/Space Grotesk/SpaceGrotesk-Light.woff") format("woff"),
+    url("/fonts/Space Grotesk/SpaceGrotesk-Light.otf") format("otf"),
+    url("/fonts/Space Grotesk/SpaceGrotesk-Light.tff") format("ttf");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-weight: 400;
+  font-weight: normal;
+  font-style: normal;
+  src: url("./fonts/Space Grotesk/SpaceGrotesk-Regular.woff2") format("woff2"),
+    url("/fonts/Space Grotesk/SpaceGrotesk-Regular.woff") format("woff"),
+    url("/fonts/Space Grotesk/SpaceGrotesk-Regular.otf") format("otf"),
+    url("/fonts/Space Grotesk/SpaceGrotesk-Regular.tff") format("ttf");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  font-style: normal;
+  src: url("./fonts/Space Grotesk/SpaceGrotesk-Medium.woff2") format("woff2"),
+    url("/fonts/Space Grotesk/SpaceGrotesk-Medium.woff") format("woff"),
+    url("/fonts/Space Grotesk/SpaceGrotesk-Medium.otf") format("otf"),
+    url("/fonts/Space Grotesk/SpaceGrotesk-Medium.tff") format("ttf");
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  font-style: normal;
+  src: url("./fonts/Space Grotesk/SpaceGrotesk-SemiBold.woff2") format("woff2"),
+    url("/fonts/Space Grotesk/SpaceGrotesk-SemiBold.woff") format("woff"),
+    url("/fonts/Space Grotesk/SpaceGrotesk-SemiBold.otf") format("otf"),
+    url("/fonts/Space Grotesk/SpaceGrotesk-SemiBold.tff") format("ttf");
+}
+
+/*
+@font-face {
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  font-weight: bold;
+  font-style: normal;
+  src: url("./fonts/Space Grotesk/SpaceGrotesk-Bold.woff2") format("woff2"),
+    url("/fonts/Space Grotesk/SpaceGrotesk-Bold.woff") format("woff"),
+    url("/fonts/Space Grotesk/SpaceGrotesk-Bold.otf") format("otf"),
+    url("/fonts/Space Grotesk/SpaceGrotesk-Bold.tff") format("ttf");
+} */
+
+/* Space Mono
+ * By Colophon Foundry
+ * https://www.colophon-foundry.org/custom/spacemono/
+ */
+
+@font-face {
+  font-family: "Space Mono";
+  font-weight: 400;
+  font-weight: normal;
+  font-style: normal;
+  src: url("./fonts/Space Mono/SpaceMono-Regular.woff2") format("woff2"),
+    url("./fonts/Space Mono/SpaceMono-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Space Mono";
+  font-weight: 400;
+  font-weight: normal;
+  font-style: italic;
+  src: url("./fonts/Space Mono/SpaceMono-Italic.woff2") format("woff2"),
+    url("./fonts/Space Mono/SpaceMono-Italic.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Space Mono";
+  font-weight: 700;
+  font-weight: bold;
+  font-style: normal;
+  src: url("./fonts/Space Mono/SpaceMono-Bold.woff2") format("woff2"),
+    url("./fonts/Space Mono/SpaceMono-Bold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Space Mono";
+  font-weight: 700;
+  font-weight: bold;
+  font-style: italic;
+  src: url("./fonts/Space Mono/SpaceMono-BoldItalic.woff2") format("woff2"),
+    url("./fonts/Space Mono/SpaceMono-BoldItalic.ttf") format("ttf");
+}
+
+/* Volkorn
+ * By Friedrich Althausen
+ * https://github.com/FAlthausen/Vollkorn-Typeface
+ */
+
+@font-face {
+  font-family: "Vollkorn";
+  font-weight: 400;
+  font-weight: normal;
+  font-style: normal;
+  src: url("./fonts/Vollkorn/Vollkorn-Regular.woff2") format("woff2"),
+    url("./fonts/Vollkorn/Vollkorn-Regular.woff") format("woff"),
+    url("./fonts/Vollkorn/Vollkorn-Regular.otf") format("otf"),
+    url("./fonts/Vollkorn/Vollkorn-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Vollkorn";
+  font-weight: 400;
+  font-weight: normal;
+  font-style: italic;
+  src: url("./fonts/Vollkorn/Vollkorn-Italic.woff2") format("woff2"),
+    url("./fonts/Vollkorn/Vollkorn-Italic.woff") format("woff"),
+    url("./fonts/Vollkorn/Vollkorn-Italic.otf") format("otf"),
+    url("./fonts/Vollkorn/Vollkorn-Italic.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Vollkorn";
+  font-weight: 700;
+  font-weight: bold;
+  font-style: normal;
+  src: url("./fonts/Vollkorn/Vollkorn-Bold.woff2") format("woff2"),
+    url("./fonts/Vollkorn/Vollkorn-Bold.woff") format("woff"),
+    url("./fonts/Vollkorn/Vollkorn-Bold.otf") format("otf"),
+    url("./fonts/Vollkorn/Vollkorn-Bold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Vollkorn";
+  font-weight: 700;
+  font-weight: bold;
+  font-style: italic;
+  src: url("./fonts/Vollkorn/Vollkorn-BoldItalic.woff2") format("woff2"),
+    url("./fonts/Vollkorn/Vollkorn-BoldItalic.woff") format("woff"),
+    url("./fonts/Vollkorn/Vollkorn-BoldItalic.otf") format("otf"),
+    url("./fonts/Vollkorn/Vollkorn-BoldItalic.ttf") format("ttf");
+}

@@ -1,0 +1,33 @@
+@import-sanitize;
+
+html {
+  font-family: "Space Grotesk", Helvetica, Arial, sans-serif;
+  font-feature-settings: "ss02", "ss04", "ss05";
+}
+
+code,
+pre {
+  font-family: Space Mono;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: inherit;
+  &:hover {
+    color: var(--processing-blue-light);
+  }
+  &:active {
+    color: var(--processing-blue-dark);
+  }
+  &:focus {
+    color: var(--processing-blue-mid);
+  }
+}

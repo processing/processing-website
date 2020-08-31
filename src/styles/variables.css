@@ -1,0 +1,8 @@
+:root {
+  --font: "Space Grotesque", Helvetica, Arial, sans-serif;
+  --font-serif: Vollkorn, Garamond, Georgia, serif;
+  --font-mono: "Space Mono", Menlo, monospace;
+  --processing-blue-light: #508bff;
+  --processing-blue-mid: #0251c8;
+  --processing-blue-dark: #1e2a67;
+}
