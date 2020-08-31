@@ -1,0 +1,23 @@
+{
+  "examples": "",
+  "related": [
+    "libraries/data/JSONObject_getInt_.html",
+    "libraries/data/JSONObject_getFloat_.html",
+    "libraries/data/JSONObject_getString_.html"
+  ],
+  "usage": "",
+  "name": "getBoolean()",
+  "description": "Get the boolean value associated with a key.",
+  "syntax": [".getBoolean(key)", ".getBoolean(key, defaultValue)"],
+  "returns": "boolean",
+  "type": "function",
+  "parameters": [
+    { "name": "key", "description": "a key string", "type": ["String"] },
+    { "name": "key", "description": "A key string.", "type": ["String"] },
+    {
+      "name": "defaultValue",
+      "description": "The default.",
+      "type": ["boolean"]
+    }
+  ]
+}

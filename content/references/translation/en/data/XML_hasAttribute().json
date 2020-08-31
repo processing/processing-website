@@ -1,1 +1,0 @@
-{"examples":"","related":[],"usage":"","name":"hasAttribute()","description":"Returns whether an attribute exists.","syntax":[".hasAttribute(name)"],"returns":"boolean","type":"function","parameters":[]}

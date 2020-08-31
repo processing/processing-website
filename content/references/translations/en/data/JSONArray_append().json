@@ -1,0 +1,45 @@
+{
+  "examples": "",
+  "related": [
+    "libraries/data/JSONArray_size_.html",
+    "libraries/data/JSONArray_remove_.html"
+  ],
+  "usage": "",
+  "name": "append()",
+  "description": "Append an String value. This increases the array's length by one.",
+  "syntax": [".append(value)"],
+  "returns": "JSONArray",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "value",
+      "description": "a String value",
+      "type": ["String", "int", "float", "boolean", "JSONArray", "JSONObject"]
+    },
+    {
+      "name": "value",
+      "description": "an int value",
+      "type": ["int", "JSONObject", "float", "boolean", "JSONArray"]
+    },
+    {
+      "name": "value",
+      "description": "a float value",
+      "type": ["float", "JSONObject", "JSONArray", "boolean"]
+    },
+    {
+      "name": "value",
+      "description": "a boolean value",
+      "type": ["boolean", "JSONObject", "JSONArray"]
+    },
+    {
+      "name": "value",
+      "description": "a JSONArray value",
+      "type": ["JSONArray", "JSONObject", "boolean"]
+    },
+    {
+      "name": "value",
+      "description": "a JSONObject value",
+      "type": ["JSONObject", "JSONArray", "boolean"]
+    }
+  ]
+}

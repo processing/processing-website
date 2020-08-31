@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "list()",
+  "description": "Print and return information on available audio devices and their number of\n input/output channels.",
+  "syntax": [".list()"],
+  "returns": "String[]",
+  "type": "function",
+  "parameters": []
+}

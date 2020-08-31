@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "hasValue()",
+  "description": "",
+  "syntax": [".hasValue(value)"],
+  "returns": "boolean",
+  "type": "function",
+  "parameters": []
+}

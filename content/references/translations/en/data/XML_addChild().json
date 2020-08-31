@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "addChild()",
+  "description": "",
+  "syntax": [".addChild(tag)", ".addChild(child)"],
+  "returns": "XML",
+  "type": "function",
+  "parameters": []
+}

@@ -1,0 +1,22 @@
+{
+  "examples": "",
+  "related": [
+    "libraries/data/JSONArray_setInt_.html",
+    "libraries/data/JSONArray_setFloat_.html",
+    "libraries/data/JSONArray_setBoolean_.html"
+  ],
+  "usage": "",
+  "name": "setString()",
+  "description": "Put or replace a String value. If the index is greater than the length of\n  the JSONArray, then null elements will be added as necessary to pad\n  it out.",
+  "syntax": [".setString(index, value)"],
+  "returns": "JSONArray",
+  "type": "function",
+  "parameters": [
+    { "name": "index", "description": "an index value", "type": ["int"] },
+    {
+      "name": "value",
+      "description": "the value to assign",
+      "type": ["String"]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "examples": "",
+  "related": [
+    "libraries/data/Table_addRow_.html",
+    "libraries/data/Table_clearRows_.html"
+  ],
+  "usage": "",
+  "name": "removeRow()",
+  "description": "",
+  "syntax": [".removeRow(row)"],
+  "returns": "void",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "row",
+      "description": "ID number of the row to remove",
+      "type": ["int"]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "remove()",
+  "description": "Remove an element from the specified index.",
+  "syntax": [".remove(index)"],
+  "returns": "float",
+  "type": "function",
+  "parameters": []
+}

@@ -1,0 +1,42 @@
+{
+  "constructors": ["Movie(parent, filename)"],
+  "classname": "Movie",
+  "examples": "",
+  "related": [],
+  "methods": [
+    { "name": "frameRate()", "desc": "Sets the target frame rate" },
+    { "name": "speed()", "desc": "Sets the relative playback speed" },
+    { "name": "duration()", "desc": "Returns length of movie in seconds" },
+    {
+      "name": "time()",
+      "desc": "Returns location of playback head in units of seconds"
+    },
+    { "name": "jump()", "desc": "Jumps to a specific location" },
+    {
+      "name": "available()",
+      "desc": "Returns \"true\" when a new movie frame is available to read."
+    },
+    {
+      "name": "play()",
+      "desc": "Plays movie one time and stops at the last frame"
+    },
+    {
+      "name": "loop()",
+      "desc": "Plays a movie continuously, restarting it when it's over."
+    },
+    { "name": "noLoop()", "desc": "Stops the movie from looping" },
+    { "name": "pause()", "desc": "Pauses the movie" },
+    { "name": "stop()", "desc": "Stops the movie" },
+    { "name": "read()", "desc": "Reads the current frame" }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "Datatype for storing and playing movies. Movies must be located in the sketch's data folder \n or an accessible place on the network to load without an error.",
+  "type": "class",
+  "classanchor": "libraries/video/Movie.html",
+  "parameters": [
+    { "name": "parent", "description": "PApplet", "type": ["PApplet"] },
+    { "name": "filename", "description": "String", "type": ["String"] }
+  ]
+}

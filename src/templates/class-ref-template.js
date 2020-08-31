@@ -1,20 +1,18 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import { useLocalization } from 'gatsby-theme-i18n';
 
 import Layout from '../components/Layout';
 
 const ClassRefTemplate = ({ data, pageContext }) => {
-  const { locale } = useLocalization();
+  let ref = data.json.childJson;
 
   return (
     <Layout>
-      <div>Current locale: {locale}</div>
-      <h1>Classname: {data.json.childJson.classname}</h1>
-      <p>Description: {data.json.childJson.description}</p>
+      <h1>Classname: {ref.classname}</h1>
+      <p>Description: {ref.description}</p>
       Parameters:
-      {data.json.childJson.parameters.map((param, key) => {
+      {ref.parameters.map((param, key) => {
         return (
           <p key={'param' + key}>
             {param.name + ': ' + param.type + ' - ' + param.description}

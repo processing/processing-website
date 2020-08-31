@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "close()",
+  "description": "Closes the SPI interface",
+  "syntax": [".close()"],
+  "returns": "void",
+  "type": "function",
+  "parameters": []
+}

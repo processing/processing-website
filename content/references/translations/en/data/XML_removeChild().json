@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "removeChild()",
+  "description": "",
+  "syntax": [".removeChild(kid)"],
+  "returns": "void",
+  "type": "function",
+  "parameters": []
+}

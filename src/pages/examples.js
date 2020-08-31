@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 
 import Layout from '../components/Layout';
+
 import { useLocalization } from 'gatsby-theme-i18n';
 
 const Examples = ({ data }) => {

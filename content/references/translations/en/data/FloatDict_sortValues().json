@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "sortValues()",
+  "description": "Sort by values in descending order (largest value will be at [0]).",
+  "syntax": [".sortValues()", ".sortValues(stable)"],
+  "returns": "void",
+  "type": "function",
+  "parameters": []
+}

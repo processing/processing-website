@@ -1,1 +1,0 @@
-{"examples":"","related":["libraries/data/XML_toString_.html"],"usage":"","name":"format()","description":"Format this XML data as a String.","syntax":[".format(indent)"],"returns":"String","type":"function","parameters":[{"name":"indent","description":"-1 for a single line (and no declaration), >= 0 for indents and newlines","type":["int"]}]}

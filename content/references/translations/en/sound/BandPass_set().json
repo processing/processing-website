@@ -1,0 +1,14 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "set()",
+  "description": "Sets frequency and bandwidth of the filter with one method.",
+  "syntax": [".set(freq, bw)"],
+  "returns": "void",
+  "type": "function",
+  "parameters": [
+    { "name": "freq", "description": "Set the frequency", "type": ["float"] },
+    { "name": "bw", "description": "Set the bandwidth", "type": ["float"] }
+  ]
+}

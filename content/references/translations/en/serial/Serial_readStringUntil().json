@@ -1,0 +1,22 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "web_application",
+  "name": "readStringUntil()",
+  "description": "",
+  "syntax": ["serial.readStringUntil(inByte)"],
+  "returns": "String",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "serial",
+      "description": " any variable of type Serial",
+      "type": ["Serial"]
+    },
+    {
+      "name": "inByte",
+      "description": "character designated to mark the end of the data",
+      "type": ["int"]
+    }
+  ]
+}

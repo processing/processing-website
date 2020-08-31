@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "array()",
+  "description": "Create a new array with a copy of all the values.",
+  "syntax": [".array()", ".array(array)"],
+  "returns": "float[]",
+  "type": "function",
+  "parameters": []
+}

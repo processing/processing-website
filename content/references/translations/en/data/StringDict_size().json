@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "size()",
+  "description": "",
+  "syntax": [".size()"],
+  "returns": "int",
+  "type": "function",
+  "parameters": []
+}

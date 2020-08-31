@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "web_application",
+  "name": "start()",
+  "description": "Starts capturing frames from the selected device.",
+  "syntax": [".start()"],
+  "returns": "void",
+  "type": "function",
+  "parameters": []
+}

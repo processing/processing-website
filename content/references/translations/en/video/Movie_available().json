@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "web_application",
+  "name": "available()",
+  "description": "Returns \"true\" when a new movie frame is available to read.",
+  "syntax": [".available()"],
+  "returns": "boolean",
+  "type": "function",
+  "parameters": []
+}

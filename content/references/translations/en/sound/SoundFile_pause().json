@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "pause()",
+  "description": "Stop the playback of the file, but cue it to the current position so that the\n next call to play() will continue playing where it left off.",
+  "syntax": [".pause()"],
+  "returns": "void",
+  "type": "function",
+  "parameters": []
+}

@@ -1,0 +1,17 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "getChildren()",
+  "description": "Returns an array containing all the child elements.",
+  "syntax": [".getChildren()", ".getChildren(name)"],
+  "returns": "XML[]",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "name",
+      "description": "element name or path/to/element",
+      "type": ["String"]
+    }
+  ]
+}

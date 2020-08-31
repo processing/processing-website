@@ -1,0 +1,22 @@
+{
+  "examples": "",
+  "related": [
+    "libraries/data/JSONObject_setInt_.html",
+    "libraries/data/JSONObject_setFloat_.html",
+    "libraries/data/JSONObject_setBoolean_.html"
+  ],
+  "usage": "",
+  "name": "setString()",
+  "description": "",
+  "syntax": [".setString(key, value)"],
+  "returns": "JSONObject",
+  "type": "function",
+  "parameters": [
+    { "name": "key", "description": "a key string", "type": ["String"] },
+    {
+      "name": "value",
+      "description": "the value to assign",
+      "type": ["String"]
+    }
+  ]
+}

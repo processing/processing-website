@@ -1,1 +1,0 @@
-{"examples":"","related":[],"usage":"","name":"wet()","description":"Change the dry/wet ratio of the delay effect","syntax":[".wet(wet)"],"returns":"void","type":"function","parameters":[{"name":"wet","description":"A float value controlling the wet/dry ratio of the reverb. TODO\n            document","type":["float"]}]}

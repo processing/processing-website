@@ -1,0 +1,17 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "jump()",
+  "description": "Jump to a specific position in the audiosample without interrupting playback.",
+  "syntax": [".jump(time)"],
+  "returns": "void",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "time",
+      "description": "position to jump to, in seconds.",
+      "type": ["float"]
+    }
+  ]
+}

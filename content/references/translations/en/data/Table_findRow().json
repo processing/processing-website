@@ -1,0 +1,33 @@
+{
+  "examples": "",
+  "related": [
+    "libraries/data/Table_getRow_.html",
+    "libraries/data/Table_rows_.html",
+    "libraries/data/Table_findRows_.html",
+    "libraries/data/Table_matchRow_.html",
+    "libraries/data/Table_matchRows_.html"
+  ],
+  "usage": "",
+  "name": "findRow()",
+  "description": "",
+  "syntax": [".findRow(value, column)", ".findRow(value, columnName)"],
+  "returns": "TableRow",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "value",
+      "description": "the value to match",
+      "type": ["String"]
+    },
+    {
+      "name": "column",
+      "description": "ID number of the column to search",
+      "type": ["int"]
+    },
+    {
+      "name": "columnName",
+      "description": "title of the column to search",
+      "type": ["String"]
+    }
+  ]
+}

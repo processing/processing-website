@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "set()",
+  "description": "Set the entry at a particular index. If the index is past the length of\n the list, it'll expand the list to accommodate, and fill the intermediate\n entries with 0s.",
+  "syntax": [".set(index, what)"],
+  "returns": "void",
+  "type": "function",
+  "parameters": []
+}

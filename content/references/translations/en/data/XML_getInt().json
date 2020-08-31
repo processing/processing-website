@@ -1,0 +1,22 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "getInt()",
+  "description": "",
+  "syntax": [".getInt(name)", ".getInt(name, defaultValue)"],
+  "returns": "int",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "name",
+      "description": "the non-null full name of the attribute",
+      "type": ["String"]
+    },
+    {
+      "name": "defaultValue",
+      "description": "the default value of the attribute",
+      "type": ["int"]
+    }
+  ]
+}

@@ -1,1 +1,0 @@
-{"examples":"","related":[],"usage":"","name":"duration()","description":"Returns the duration of the soundfile in seconds.","syntax":[".duration()"],"returns":"float","type":"function","parameters":[]}

@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "web_application",
+  "name": "loop()",
+  "description": "Plays a movie continuously, restarting it when it's over.",
+  "syntax": [".loop()"],
+  "returns": "void",
+  "type": "function",
+  "parameters": []
+}

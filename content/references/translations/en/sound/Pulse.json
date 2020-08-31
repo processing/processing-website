@@ -1,0 +1,32 @@
+{
+  "constructors": ["Pulse(parent)"],
+  "classname": "Pulse",
+  "examples": "",
+  "related": [],
+  "methods": [
+    { "name": "width()", "desc": "Set the pulse width of the oscillator." },
+    { "name": "set()", "desc": "Set multiple parameters at once" },
+    { "name": "play()", "desc": "Starts the oscillator" },
+    { "name": "freq()", "desc": "Set the frequency of the oscillator in Hz." },
+    { "name": "amp()", "desc": "Change the amplitude/volume of this sound." },
+    {
+      "name": "add()",
+      "desc": "Offset the output of this generator by given value"
+    },
+    { "name": "pan()", "desc": "Move the sound in a stereo panorama." },
+    { "name": "stop()", "desc": "Stop the oscillator." }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "This is a simple Pulse oscillator.",
+  "type": "class",
+  "classanchor": "libraries/sound/Pulse.html",
+  "parameters": [
+    {
+      "name": "parent",
+      "description": "typically use \"this\"",
+      "type": ["PApplet"]
+    }
+  ]
+}

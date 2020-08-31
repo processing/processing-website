@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "setContent()",
+  "description": "",
+  "syntax": [".setContent(text)"],
+  "returns": "void",
+  "type": "function",
+  "parameters": []
+}

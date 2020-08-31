@@ -1,0 +1,27 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "set()",
+  "description": "Set multiple parameters at once",
+  "syntax": [".set(room, damp, wet)"],
+  "returns": "void",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "room",
+      "description": "A value controlling the room size of the effect",
+      "type": ["float"]
+    },
+    {
+      "name": "damp",
+      "description": "A value controlling the damping factor of the reverb",
+      "type": ["float"]
+    },
+    {
+      "name": "wet",
+      "description": "A value controlling the wet/dry ratio of the reverb.",
+      "type": ["float"]
+    }
+  ]
+}

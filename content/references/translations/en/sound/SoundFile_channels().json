@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "channels()",
+  "description": "Returns the number of channels of the soundfile.",
+  "syntax": [".channels()"],
+  "returns": "int",
+  "type": "function",
+  "parameters": []
+}

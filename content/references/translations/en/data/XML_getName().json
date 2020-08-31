@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "getName()",
+  "description": "Returns the full name (i.e. the name including an eventual namespace\n prefix) of the element.",
+  "syntax": [".getName()"],
+  "returns": "String",
+  "type": "function",
+  "parameters": []
+}

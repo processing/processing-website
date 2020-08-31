@@ -1,1 +1,0 @@
-{"examples":"","related":[],"usage":"web_application","name":"noLoop()","description":"If a movie is looping, calling noLoop() will cause it to play until the\n end and then stop on the last frame.","syntax":[".noLoop()"],"returns":"void","type":"function","parameters":[]}

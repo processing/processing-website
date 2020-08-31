@@ -1,1 +1,0 @@
-{"examples":"","related":[],"usage":"","name":"damp()","description":"Change the damping of the reverb effect","syntax":[".damp(damp)"],"returns":"void","type":"function","parameters":[{"name":"damp","description":"A float value controlling the damping factor of the reverb","type":["float"]}]}

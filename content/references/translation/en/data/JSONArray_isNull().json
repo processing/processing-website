@@ -1,1 +1,0 @@
-{"examples":"","related":[],"usage":"","name":"isNull()","description":"Determine if the value is null.","syntax":[".isNull(index)"],"returns":"boolean","type":"function","parameters":[{"name":"index","description":"must be between 0 and length() - 1","type":["int"]}]}

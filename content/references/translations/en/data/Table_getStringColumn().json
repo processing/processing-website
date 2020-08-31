@@ -1,0 +1,29 @@
+{
+  "examples": "",
+  "related": [
+    "libraries/data/Table_getInt_.html",
+    "libraries/data/Table_getFloat_.html",
+    "libraries/data/Table_getString_.html",
+    "libraries/data/Table_setInt_.html",
+    "libraries/data/Table_setFloat_.html",
+    "libraries/data/Table_setString_.html"
+  ],
+  "usage": "",
+  "name": "getStringColumn()",
+  "description": "",
+  "syntax": [".getStringColumn(columnName)", ".getStringColumn(column)"],
+  "returns": "String[]",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "columnName",
+      "description": "title of the column to search",
+      "type": ["String"]
+    },
+    {
+      "name": "column",
+      "description": "ID number of the column to search",
+      "type": ["int"]
+    }
+  ]
+}

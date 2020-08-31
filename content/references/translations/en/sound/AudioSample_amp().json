@@ -1,0 +1,17 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "amp()",
+  "description": "Change the amplitude/volume of this audiosample.",
+  "syntax": [".amp(amp)"],
+  "returns": "void",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "amp",
+      "description": "A float value between 0.0 (complete silence) and 1.0 (full volume)\n            controlling the amplitude/volume of this sound.",
+      "type": ["float"]
+    }
+  ]
+}

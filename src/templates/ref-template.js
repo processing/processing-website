@@ -2,27 +2,27 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Img from 'gatsby-image';
-import { useLocalization } from 'gatsby-theme-i18n';
 
 import Layout from '../components/Layout';
 
 const RefTemplate = ({ data, pageContext }) => {
-  const { locale } = useLocalization();
+  let ref = data.json.childJson;
+
+  console.log('ex ' + data.allFile.edges);
 
   return (
     <Layout>
-      <div>Current locale: {locale}</div>
-      <h1>{data.json.childJson.name}</h1>
-      <p>Description: {data.json.childJson.description}</p>
+      <h1>{ref.name}</h1>
+      <p>Description: {ref.description}</p>
       Parameters:
-      {data.json.childJson.parameters.map((param, key) => {
+      {ref.parameters.map((param, key) => {
         return (
           <p key={'param' + key}>
             {param.name + ': ' + param.type + ' - ' + param.description}
           </p>
         );
       })}
-      <p>Return: {data.json.childJson.returns}</p>
+      <p>Return: {ref.returns}</p>
       Examples:
       <ul>
         {data.allFile.edges.map((edge, key) => {

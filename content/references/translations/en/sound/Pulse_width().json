@@ -1,0 +1,17 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "width()",
+  "description": "Set the pulse width of the oscillator.",
+  "syntax": [".width(width)"],
+  "returns": "void",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "width",
+      "description": "The relative pulse width of the oscillator as a float value\n            between 0.0 and 1.0 (exclusive)",
+      "type": ["float"]
+    }
+  ]
+}

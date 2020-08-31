@@ -1,0 +1,64 @@
+{
+  "constructors": [
+    "Serial(parent)",
+    "Serial(parent, baudRate)",
+    "Serial(parent, portName)",
+    "Serial(parent, portName, baudRate)",
+    "Serial(parent, portName, baudRate, parity, dataBits, stopBits)"
+  ],
+  "classname": "Serial",
+  "examples": "",
+  "related": [],
+  "methods": [
+    { "name": "available()", "desc": "" },
+    { "name": "buffer()", "desc": "" },
+    { "name": "bufferUntil()", "desc": "" },
+    { "name": "clear()", "desc": "" },
+    { "name": "last()", "desc": "" },
+    { "name": "lastChar()", "desc": "" },
+    { "name": "list()", "desc": "" },
+    { "name": "read()", "desc": "" },
+    { "name": "readBytes()", "desc": "" },
+    { "name": "readBytesUntil()", "desc": "" },
+    { "name": "readChar()", "desc": "" },
+    { "name": "readString()", "desc": "" },
+    { "name": "readStringUntil()", "desc": "" },
+    { "name": "serialEvent()", "desc": "" },
+    { "name": "stop()", "desc": "" },
+    { "name": "write()", "desc": "" }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "( begin auto-generated from Serial.xml )\n \n Class for sending and receiving data using the serial communication protocol.\n \n ( end auto-generated )",
+  "type": "class",
+  "classanchor": "libraries/serial/Serial.html",
+  "parameters": [
+    {
+      "name": "parent",
+      "description": "typically use \"this\"",
+      "type": ["PApplet"]
+    },
+    {
+      "name": "baudRate",
+      "description": "9600 is the default",
+      "type": ["int"]
+    },
+    {
+      "name": "portName",
+      "description": "name of the port (COM1 is the default)",
+      "type": ["String"]
+    },
+    {
+      "name": "parity",
+      "description": "'N' for none, 'E' for even, 'O' for odd, 'M' for mark, 'S' for space ('N' is the default)",
+      "type": ["char"]
+    },
+    { "name": "dataBits", "description": "8 is the default", "type": ["int"] },
+    {
+      "name": "stopBits",
+      "description": "1.0, 1.5, or 2.0 (1.0 is the default)",
+      "type": ["float"]
+    }
+  ]
+}

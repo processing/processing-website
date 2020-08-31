@@ -1,0 +1,17 @@
+{
+  "examples": "test",
+  "related": [],
+  "usage": "",
+  "name": "abs()",
+  "description": "( begin auto-generated from abs.xml )\n\n Calculates the absolute value (magnitude) of a number. The absolute\n value of a number is always positive.\n\n ( end auto-generated )",
+  "syntax": ["abs(n)"],
+  "returns": "float or int",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "n",
+      "description": "number to compute",
+      "type": ["float", "int"]
+    }
+  ]
+}

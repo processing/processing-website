@@ -1,0 +1,18 @@
+{
+  "examples": "",
+  "related": [
+    "libraries/data/JSONObject_setFloat_.html",
+    "libraries/data/JSONObject_setString_.html",
+    "libraries/data/JSONObject_setBoolean_.html"
+  ],
+  "usage": "",
+  "name": "setInt()",
+  "description": "Put a key/int pair in the JSONObject.",
+  "syntax": [".setInt(key, value)"],
+  "returns": "JSONObject",
+  "type": "function",
+  "parameters": [
+    { "name": "key", "description": "a key string", "type": ["String"] },
+    { "name": "value", "description": "the value to assign", "type": ["int"] }
+  ]
+}

@@ -1,1 +1,0 @@
-{"examples":"","related":[],"usage":"","name":"list()","description":"Lists all available LED devices","syntax":[".list()"],"returns":"String[]","type":"function","parameters":[]}

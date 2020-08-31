@@ -1,0 +1,42 @@
+{
+  "constructors": ["FloatList(", "FloatList(items)"],
+  "classname": "FloatList",
+  "examples": "",
+  "related": ["libraries/data/IntList.html", "libraries/data/StringList.html"],
+  "methods": [
+    { "name": "size()", "desc": "Get the length of the list" },
+    { "name": "clear()", "desc": "Remove all entries from the list" },
+    { "name": "get()", "desc": "Get an entry at a particular index" },
+    { "name": "set()", "desc": "Set the entry at a particular index" },
+    {
+      "name": "remove()",
+      "desc": "Remove an element from the specified index"
+    },
+    { "name": "append()", "desc": "Add a new entry to the list" },
+    { "name": "hasValue()", "desc": "Check if a number is a part of the list" },
+    { "name": "add()", "desc": "Add to a value" },
+    { "name": "sub()", "desc": "Subtract from a value" },
+    { "name": "mult()", "desc": "Multiply a value" },
+    { "name": "div()", "desc": "Divide a value" },
+    { "name": "min()", "desc": "Return the smallest value" },
+    { "name": "max()", "desc": "Return the largest value" },
+    { "name": "sort()", "desc": "Sorts an array, lowest to highest" },
+    {
+      "name": "sortReverse()",
+      "desc": "Reverse sort, orders values from highest to lowest"
+    },
+    { "name": "reverse()", "desc": "Reverse the order of the list elements" },
+    { "name": "shuffle()", "desc": "Randomize the order of the list elements" },
+    {
+      "name": "array()",
+      "desc": "Create a new array with a copy of all the values"
+    }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "Helper class for a list of floats. Lists are designed to have some of the\n features of ArrayLists, but to maintain the simplicity and efficiency of\n working with arrays.\n\n Functions like sort() and shuffle() always act on the list itself. To get\n a sorted copy, use list.copy().sort().",
+  "type": "class",
+  "classanchor": "libraries/data/FloatList.html",
+  "parameters": []
+}

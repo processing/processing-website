@@ -1,0 +1,17 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "room()",
+  "description": "Change the room size of the reverb effect.",
+  "syntax": [".room(room)"],
+  "returns": "void",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "room",
+      "description": "A float value controlling the room size of the effect.",
+      "type": ["float"]
+    }
+  ]
+}

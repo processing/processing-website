@@ -1,0 +1,17 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "volume()",
+  "description": "Set the overall output volume of the Processing sound library.",
+  "syntax": [".volume(volume)"],
+  "returns": "void",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "volume",
+      "description": "the desired output volume, normally between 0.0 and 1.0 (default\n            is 1.0)",
+      "type": ["float"]
+    }
+  ]
+}

@@ -1,1 +1,0 @@
-{"examples":"","related":[],"usage":"","name":"releaseInterrupt()","description":"Stops listening for interrupts on an input pin","syntax":[".releaseInterrupt(pin)"],"returns":"void","type":"function","parameters":[{"name":"pin","description":"GPIO pin","type":["int"]}]}

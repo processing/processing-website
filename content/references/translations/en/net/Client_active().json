@@ -1,0 +1,17 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "application",
+  "name": "active()",
+  "description": "( begin auto-generated from Client_active.xml )\n \n Returns true if this client is still active and hasn't run\n into any trouble.\n \n ( end auto-generated )",
+  "syntax": ["client.active()"],
+  "returns": "boolean",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "client",
+      "description": " any variable of type Client",
+      "type": ["Client"]
+    }
+  ]
+}

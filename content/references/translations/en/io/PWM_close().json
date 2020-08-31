@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "close()",
+  "description": "Gives ownership of a channel back to the operating system",
+  "syntax": [".close()"],
+  "returns": "void",
+  "type": "function",
+  "parameters": []
+}

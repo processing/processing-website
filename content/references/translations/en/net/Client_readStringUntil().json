@@ -1,0 +1,22 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "application",
+  "name": "readStringUntil()",
+  "description": "( begin auto-generated from Client_readStringUntil.xml )\n \n Combination of <b>readBytesUntil()</b> and <b>readString()</b>. Returns \n <b>null</b> if it doesn't find what you're looking for.\n \n ( end auto-generated )\n ",
+  "syntax": ["client.readStringUntil(interesting)"],
+  "returns": "String",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "client",
+      "description": " any variable of type Client",
+      "type": ["Client"]
+    },
+    {
+      "name": "interesting",
+      "description": "character designated to mark the end of the data",
+      "type": ["int"]
+    }
+  ]
+}

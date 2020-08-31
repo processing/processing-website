@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "max()",
+  "description": "",
+  "syntax": [".max()"],
+  "returns": "float",
+  "type": "function",
+  "parameters": []
+}

@@ -1,1 +1,0 @@
-{"examples":"","related":[],"usage":"web_application","name":"play()","description":"Plays a movie one time and stops at the last frame.","syntax":[".play()"],"returns":"void","type":"function","parameters":[]}

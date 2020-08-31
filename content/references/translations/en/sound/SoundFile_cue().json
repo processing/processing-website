@@ -1,0 +1,17 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "cue()",
+  "description": "Cues the playhead to a fixed position in the soundfile.",
+  "syntax": [".cue(time)"],
+  "returns": "void",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "time",
+      "description": "position in the soundfile that the next playback should start\n            from, in seconds.",
+      "type": ["float"]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "lower()",
+  "description": "Make the entire list lower case.",
+  "syntax": [".lower()"],
+  "returns": "void",
+  "type": "function",
+  "parameters": []
+}

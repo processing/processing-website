@@ -1,1 +1,0 @@
-{"examples":"","related":[],"usage":"","name":"read()","description":"Reads bytes from the attached device","syntax":[".read(len)"],"returns":"byte[]","type":"function","parameters":[{"name":"len","description":"number of bytes to read","type":["int"]}]}

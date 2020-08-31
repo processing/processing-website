@@ -1,0 +1,22 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "web_application",
+  "name": "buffer()",
+  "description": "",
+  "syntax": ["serial.buffer(size)"],
+  "returns": "void",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "serial",
+      "description": " any variable of type Serial",
+      "type": ["Serial"]
+    },
+    {
+      "name": "size",
+      "description": "number of bytes to buffer",
+      "type": ["int"]
+    }
+  ]
+}

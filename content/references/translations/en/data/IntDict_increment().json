@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "increment()",
+  "description": "Increase the value associated with a specific key by 1.",
+  "syntax": [".increment(key)", ".increment(dict)"],
+  "returns": "void",
+  "type": "function",
+  "parameters": []
+}

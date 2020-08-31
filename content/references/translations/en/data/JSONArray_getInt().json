@@ -1,0 +1,31 @@
+{
+  "examples": "",
+  "related": [
+    "libraries/data/JSONArray_getFloat_.html",
+    "libraries/data/JSONArray_getString_.html",
+    "libraries/data/JSONArray_getBoolean_.html"
+  ],
+  "usage": "",
+  "name": "getInt()",
+  "description": "Get the int value associated with an index.",
+  "syntax": [".getInt(index)", ".getInt(index, defaultValue)"],
+  "returns": "int",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "index",
+      "description": "must be between 0 and length() - 1",
+      "type": ["int"]
+    },
+    {
+      "name": "index",
+      "description": "The index must be between 0 and length() - 1.",
+      "type": ["int"]
+    },
+    {
+      "name": "defaultValue",
+      "description": "The default value.",
+      "type": ["int"]
+    }
+  ]
+}

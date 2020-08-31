@@ -1,0 +1,19 @@
+{
+  "constructors": ["Reverb(parent)"],
+  "classname": "Reverb",
+  "examples": "",
+  "related": [],
+  "methods": [
+    { "name": "damp()", "desc": "Change the damping of the reverb effect" },
+    { "name": "room()", "desc": "Change the room size of the reverb effect." },
+    { "name": "set()", "desc": "Set multiple parameters at once" },
+    { "name": "wet()", "desc": "Change the dry/wet ratio of the delay effect" }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "This is a simple reverb effect.",
+  "type": "class",
+  "classanchor": "libraries/sound/Reverb.html",
+  "parameters": []
+}

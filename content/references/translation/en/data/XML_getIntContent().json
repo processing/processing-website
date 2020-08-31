@@ -1,1 +1,0 @@
-{"examples":"","related":["libraries/data/XML_getContent_.html","libraries/data/XML_getFloatContent_.html"],"usage":"","name":"getIntContent()","description":"","syntax":[".getIntContent()",".getIntContent(defaultValue)"],"returns":"int","type":"function","parameters":[{"name":"defaultValue","description":"the default value of the attribute","type":["int"]}]}

@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "add()",
+  "description": "",
+  "syntax": [".add(key, amount)"],
+  "returns": "void",
+  "type": "function",
+  "parameters": []
+}

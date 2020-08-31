@@ -1,0 +1,17 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "inputDevice()",
+  "description": "Choose the device (sound card) which should be used for grabbing audio input\n using AudioIn.",
+  "syntax": [".inputDevice(deviceId)"],
+  "returns": "void",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "deviceId",
+      "description": "the device id obtained from Sound.list()",
+      "type": ["int"]
+    }
+  ]
+}

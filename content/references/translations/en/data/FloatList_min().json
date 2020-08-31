@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "min()",
+  "description": "",
+  "syntax": [".min()"],
+  "returns": "float",
+  "type": "function",
+  "parameters": []
+}

@@ -1,0 +1,28 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "web_application",
+  "name": "write()",
+  "description": "",
+  "syntax": ["serial.write(src)"],
+  "returns": "void",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "serial",
+      "description": " any variable of type Serial",
+      "type": ["Serial"]
+    },
+    {
+      "name": "src",
+      "description": "data to write",
+      "type": ["byte[]", "int", "String"]
+    },
+    {
+      "name": "src",
+      "description": "data to write",
+      "type": ["int", "String"]
+    },
+    { "name": "src", "description": "data to write", "type": ["String", "int"] }
+  ]
+}

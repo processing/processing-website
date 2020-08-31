@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "values()",
+  "description": "",
+  "syntax": [".values()"],
+  "returns": "Iterable&lt;Float&gt;",
+  "type": "function",
+  "parameters": []
+}

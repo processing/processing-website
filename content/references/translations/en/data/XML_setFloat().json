@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "setFloat()",
+  "description": "",
+  "syntax": [".setFloat(name, value)"],
+  "returns": "void",
+  "type": "function",
+  "parameters": []
+}

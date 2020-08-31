@@ -1,0 +1,17 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "web_application",
+  "name": "frameRate()",
+  "description": "Sets how often frames are read from the movie. Setting the <b>fps</b>\n parameter to 4, for example, will cause 4 frames to be read per second.",
+  "syntax": [".frameRate(ifps)"],
+  "returns": "void",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "ifps",
+      "description": "speed of the movie in frames per second",
+      "type": ["float"]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "frames()",
+  "description": "Returns the number of frames of the audiosample.",
+  "syntax": [".frames()"],
+  "returns": "int",
+  "type": "function",
+  "parameters": []
+}

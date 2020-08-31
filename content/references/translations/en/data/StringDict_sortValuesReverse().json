@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "sortValuesReverse()",
+  "description": "",
+  "syntax": [".sortValuesReverse()"],
+  "returns": "void",
+  "type": "function",
+  "parameters": []
+}

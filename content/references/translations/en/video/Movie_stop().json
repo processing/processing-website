@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "web_application",
+  "name": "stop()",
+  "description": "Stops a movie from continuing. The playback returns to the beginning so\n when a movie is played, it will begin from the beginning.",
+  "syntax": [".stop()"],
+  "returns": "void",
+  "type": "function",
+  "parameters": []
+}

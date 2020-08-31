@@ -1,0 +1,22 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "getFloat()",
+  "description": "Returns the value of an attribute, or zero if not present.",
+  "syntax": [".getFloat(name)", ".getFloat(name, defaultValue)"],
+  "returns": "float",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "name",
+      "description": "the non-null full name of the attribute.",
+      "type": ["String"]
+    },
+    {
+      "name": "defaultValue",
+      "description": "the default value of the attribute.",
+      "type": ["float"]
+    }
+  ]
+}

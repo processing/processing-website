@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "sortKeysReverse()",
+  "description": "Sort the keys alphabetically in reverse (ignoring case). Uses the value as a\n tie-breaker (only really possible with a key that has a case change).",
+  "syntax": [".sortKeysReverse()"],
+  "returns": "void",
+  "type": "function",
+  "parameters": []
+}

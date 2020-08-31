@@ -1,1 +1,0 @@
-{"examples":"","related":[],"usage":"","name":"freq()","description":"Set the cutoff frequency for the filter","syntax":[".freq(freq)"],"returns":"void","type":"function","parameters":[{"name":"freq","description":"Cutoff frequency between 0 and 20000","type":["float"]}]}

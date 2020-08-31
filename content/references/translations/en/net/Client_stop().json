@@ -1,0 +1,17 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "application",
+  "name": "stop()",
+  "description": "( begin auto-generated from Client_stop.xml )\n \n Disconnects from the server. Use to shut the connection when you're \n finished with the Client.\n \n ( end auto-generated )",
+  "syntax": ["client.stop()"],
+  "returns": "void",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "client",
+      "description": " any variable of type Client",
+      "type": ["Client"]
+    }
+  ]
+}

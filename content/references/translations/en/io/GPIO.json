@@ -1,0 +1,45 @@
+{
+  "constructors": ["GPIO("],
+  "classname": "GPIO",
+  "examples": "",
+  "related": [],
+  "methods": [
+    {
+      "name": "attachInterrupt()",
+      "desc": "Calls a function when the value of an input pin changes"
+    },
+    { "name": "digitalRead()", "desc": "Returns the value of an input pin" },
+    {
+      "name": "digitalWrite()",
+      "desc": "Sets an output pin to be either high or low"
+    },
+    { "name": "interrupts()", "desc": "Allows interrupts to happen" },
+    { "name": "noInterrupts()", "desc": "Prevents interrupts from happpening" },
+    {
+      "name": "pinMode()",
+      "desc": "Configures a pin to act either as input or output"
+    },
+    {
+      "name": "releaseInterrupt()",
+      "desc": "Stops listening for interrupts on an input pin"
+    },
+    {
+      "name": "releasePin()",
+      "desc": "Gives ownership of a pin back to the operating system"
+    },
+    {
+      "name": "waitFor()",
+      "desc": "Waits for the value of an input pin to change"
+    },
+    {
+      "name": "waitFor()",
+      "desc": "Waits for the value of an input pin to change\n\n  This function will throw a RuntimeException in case of a timeout."
+    }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "type": "class",
+  "classanchor": "libraries/io/GPIO.html",
+  "parameters": []
+}

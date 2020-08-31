@@ -1,1 +1,0 @@
-{"examples":"","related":[],"usage":"web_application","name":"pause()","description":"Pauses a movie during playback. If a movie is started again with play(),\n it will continue from where it was paused.","syntax":[".pause()"],"returns":"void","type":"function","parameters":[]}

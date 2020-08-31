@@ -1,1 +1,0 @@
-{"examples":"","related":[],"usage":"","name":"get()","description":"Return a value for the specified key.","syntax":[".get(key)",".get(key, alternate)"],"returns":"float","type":"function","parameters":[]}

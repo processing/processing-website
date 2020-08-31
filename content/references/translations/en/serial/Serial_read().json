@@ -1,0 +1,17 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "web_application",
+  "name": "read()",
+  "description": "",
+  "syntax": ["serial.read()"],
+  "returns": "int",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "serial",
+      "description": " any variable of type Serial",
+      "type": ["Serial"]
+    }
+  ]
+}

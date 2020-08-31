@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "noInterrupts()",
+  "description": "Prevents interrupts from happpening",
+  "syntax": [".noInterrupts()"],
+  "returns": "void",
+  "type": "function",
+  "parameters": []
+}

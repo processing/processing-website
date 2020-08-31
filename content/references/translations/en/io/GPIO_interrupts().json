@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "interrupts()",
+  "description": "Allows interrupts to happen",
+  "syntax": [".interrupts()"],
+  "returns": "void",
+  "type": "function",
+  "parameters": []
+}

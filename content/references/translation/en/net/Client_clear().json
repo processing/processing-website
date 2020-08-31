@@ -1,1 +1,0 @@
-{"examples":"","related":[],"usage":"application","name":"clear()","description":"( begin auto-generated from Client_clear.xml )\n \n Empty the buffer, removes all the data stored there.\n \n ( end auto-generated )","syntax":["client.clear()"],"returns":"void","type":"function","parameters":[{"name":"client","description":" any variable of type Client","type":["Client"]}]}

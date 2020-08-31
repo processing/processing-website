@@ -1,1 +1,0 @@
-{"examples":"","related":[],"usage":"","name":"isNull()","description":"Determine if the value associated with the key is null or if there is\n no value.","syntax":[".isNull(key)"],"returns":"boolean","type":"function","parameters":[{"name":"key","description":"A key string.","type":["String"]}]}

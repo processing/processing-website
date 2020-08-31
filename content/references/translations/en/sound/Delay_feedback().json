@@ -1,0 +1,17 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "feedback()",
+  "description": "Change the feedback of the delay effect.",
+  "syntax": [".feedback(feedback)"],
+  "returns": "void",
+  "type": "function",
+  "parameters": [
+    {
+      "name": "feedback",
+      "description": "Feedback amount as a float.",
+      "type": ["float"]
+    }
+  ]
+}

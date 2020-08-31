@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": ["libraries/data/Table_getRowCount_.html"],
+  "usage": "",
+  "name": "getColumnCount()",
+  "description": "",
+  "syntax": [".getColumnCount()"],
+  "returns": "int",
+  "type": "function",
+  "parameters": []
+}

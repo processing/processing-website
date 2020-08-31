@@ -1,0 +1,14 @@
+{
+  "examples": "",
+  "related": [
+    "libraries/data/JSONArray_append_.html",
+    "libraries/data/JSONArray_remove_.html"
+  ],
+  "usage": "",
+  "name": "size()",
+  "description": "Get the number of elements in the JSONArray, included nulls.",
+  "syntax": [".size()"],
+  "returns": "int",
+  "type": "function",
+  "parameters": []
+}

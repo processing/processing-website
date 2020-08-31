@@ -1,1 +1,0 @@
-{"examples":"","related":[],"usage":"","name":"brightness()","description":"Sets the brightness","syntax":[".brightness(bright)"],"returns":"void","type":"function","parameters":[{"name":"bright","description":"0.0 (off) to 1.0 (maximum)","type":["float"]}]}

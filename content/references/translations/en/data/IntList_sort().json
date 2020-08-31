@@ -1,0 +1,11 @@
+{
+  "examples": "",
+  "related": [],
+  "usage": "",
+  "name": "sort()",
+  "description": "Sorts the array in place.",
+  "syntax": [".sort()"],
+  "returns": "void",
+  "type": "function",
+  "parameters": []
+}
