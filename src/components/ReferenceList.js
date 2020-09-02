@@ -1,35 +1,44 @@
 import React from 'react';
+import unique from 'array-unique';
 
 import CategoryList from './CategoryList';
-
-import { categories } from '../utils/categories';
 
 const ReferenceList = (props) => {
   const { data, library } = props;
 
   let refs = data.allFile.nodes;
-  let link, libCategories;
+  let link;
+
+  let categories = unique(refs.map(ref => {
+    return ref.childJson.category;
+  }));
+
+  let subcategories = {};
+  categories.map(c => {
+    subcategories[c] = unique(refs.map((r) => {
+          if (r.childJson.category ===c) return r.childJson.subcategory;
+        }));
+  });
 
   if (library === 'processing') {
     link = '/references/';
-    libCategories = Object.keys(categories[library]);
   } else {
     link = '/libraries/' + library + '/';
-    libCategories = categories[library];
   }
 
   return (
     <div>
-      {libCategories.map((p, key) => {
+      {categories.map((c, key) => {
         let categoryRefs = refs.filter((ref) => {
-          return ref.childJson.category === p;
+          return ref.childJson.category === c;
         });
         return (
           <CategoryList
-            key={key + 'p'}
+            key={key + 'c'}
             library={library}
-            category={p}
+            category={c}
             categoryRefs={categoryRefs}
+            subcategory={subcategories[c]}
             link={link}
           />
         );
