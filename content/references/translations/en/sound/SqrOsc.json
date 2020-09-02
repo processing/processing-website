@@ -1,8 +1,4 @@
 {
-  "constructors": ["SqrOsc(parent)"],
-  "classname": "SqrOsc",
-  "examples": "",
-  "related": [],
   "methods": [
     { "name": "play()", "desc": "Starts the oscillator" },
     { "name": "set()", "desc": "Set multiple parameters at once" },
@@ -20,7 +16,13 @@
   "classFields": [],
   "description": "This is a simple Square Wave Oscillator",
   "type": "class",
+  "constructors": ["SqrOsc(parent)"],
+  "examples": "",
+  "related": [],
+  "name": "SqrOsc",
   "classanchor": "libraries/sound/SqrOsc.html",
+  "category": "sound",
+  "subcategory": "",
   "parameters": [
     {
       "name": "parent",

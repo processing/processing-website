@@ -7,6 +7,8 @@
   "syntax": [".set(freq, bw)"],
   "returns": "void",
   "type": "function",
+  "category": "sound",
+  "subcategory": "",
   "parameters": [
     { "name": "freq", "description": "Set the frequency", "type": ["float"] },
     { "name": "bw", "description": "Set the bandwidth", "type": ["float"] }

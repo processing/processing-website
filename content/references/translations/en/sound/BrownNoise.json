@@ -1,8 +1,4 @@
 {
-  "constructors": ["BrownNoise(parent)"],
-  "classname": "BrownNoise",
-  "examples": "",
-  "related": [],
   "methods": [
     { "name": "play()", "desc": "Start the generator" },
     { "name": "set()", "desc": "Set multiple parameters at once." },
@@ -19,7 +15,13 @@
   "classFields": [],
   "description": "This is a brown noise generator. Brown noise has a decrease of 6db per octave.",
   "type": "class",
+  "constructors": ["BrownNoise(parent)"],
+  "examples": "",
+  "related": [],
+  "name": "BrownNoise",
   "classanchor": "libraries/sound/BrownNoise.html",
+  "category": "sound",
+  "subcategory": "",
   "parameters": [
     {
       "name": "parent",

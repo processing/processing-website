@@ -7,6 +7,8 @@
   "syntax": [".transfer(out)"],
   "returns": "byte[]",
   "type": "function",
+  "category": "",
+  "subcategory": "",
   "parameters": [
     {
       "name": "out",

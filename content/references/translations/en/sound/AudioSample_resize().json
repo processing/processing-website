@@ -7,6 +7,8 @@
   "syntax": [".resize(frames)", ".resize(frames, stereo)"],
   "returns": "void",
   "type": "function",
+  "category": "sound",
+  "subcategory": "",
   "parameters": [
     {
       "name": "frames",

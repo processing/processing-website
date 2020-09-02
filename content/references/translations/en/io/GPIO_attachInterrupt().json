@@ -7,6 +7,8 @@
   "syntax": [".attachInterrupt(pin, parent, method, mode)"],
   "returns": "void",
   "type": "function",
+  "category": "",
+  "subcategory": "",
   "parameters": [
     { "name": "pin", "description": "GPIO pin", "type": ["int"] },
     {

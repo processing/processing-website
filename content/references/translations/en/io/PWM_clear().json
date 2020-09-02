@@ -7,5 +7,7 @@
   "syntax": [".clear()"],
   "returns": "void",
   "type": "function",
+  "category": "",
+  "subcategory": "",
   "parameters": []
 }

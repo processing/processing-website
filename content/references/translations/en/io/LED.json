@@ -1,8 +1,4 @@
 {
-  "constructors": ["LED(dev)"],
-  "classname": "LED",
-  "examples": "",
-  "related": [],
   "methods": [
     { "name": "brightness()", "desc": "Sets the brightness" },
     { "name": "close()", "desc": "Restores the previous state" },
@@ -12,7 +8,13 @@
   "isLibrary": "true",
   "classFields": [],
   "type": "class",
+  "constructors": ["LED(dev)"],
+  "examples": "",
+  "related": [],
+  "name": "LED",
   "classanchor": "libraries/io/LED.html",
+  "category": "",
+  "subcategory": "",
   "parameters": [
     { "name": "dev", "description": "device name", "type": ["String"] }
   ]

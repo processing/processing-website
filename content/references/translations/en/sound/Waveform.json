@@ -1,8 +1,4 @@
 {
-  "constructors": ["Waveform(parent, nsamples)"],
-  "classname": "Waveform",
-  "examples": "",
-  "related": [],
   "methods": [
     {
       "name": "analyze()",
@@ -15,7 +11,13 @@
   "classFields": [],
   "description": "This is a Waveform analyzer. It returns the waveform of the \n of an audio stream the moment it is queried with the analyze()\n method.",
   "type": "class",
+  "constructors": ["Waveform(parent, nsamples)"],
+  "examples": "",
+  "related": [],
+  "name": "Waveform",
   "classanchor": "libraries/sound/Waveform.html",
+  "category": "sound",
+  "subcategory": "",
   "parameters": [
     {
       "name": "parent",

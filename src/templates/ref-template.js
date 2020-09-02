@@ -8,8 +8,6 @@ import Layout from '../components/Layout';
 const RefTemplate = ({ data, pageContext }) => {
   let ref = data.json.childJson;
 
-  console.log('ex ' + data.allFile.edges);
-
   return (
     <Layout>
       <h1>{ref.name}</h1>

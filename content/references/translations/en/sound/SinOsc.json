@@ -1,8 +1,4 @@
 {
-  "constructors": ["SinOsc(parent)"],
-  "classname": "SinOsc",
-  "examples": "",
-  "related": [],
   "methods": [
     { "name": "play()", "desc": "Starts the oscillator" },
     { "name": "set()", "desc": "Set multiple parameters at once" },
@@ -20,7 +16,13 @@
   "classFields": [],
   "description": "This is a simple Sine Wave Oscillator",
   "type": "class",
+  "constructors": ["SinOsc(parent)"],
+  "examples": "",
+  "related": [],
+  "name": "SinOsc",
   "classanchor": "libraries/sound/SinOsc.html",
+  "category": "sound",
+  "subcategory": "",
   "parameters": [
     {
       "name": "parent",

@@ -7,6 +7,8 @@
   "syntax": [".write(out)"],
   "returns": "void",
   "type": "function",
+  "category": "",
+  "subcategory": "",
   "parameters": [
     {
       "name": "out",

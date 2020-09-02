@@ -7,6 +7,8 @@
   "syntax": [".room(room)"],
   "returns": "void",
   "type": "function",
+  "category": "sound",
+  "subcategory": "",
   "parameters": [
     {
       "name": "room",

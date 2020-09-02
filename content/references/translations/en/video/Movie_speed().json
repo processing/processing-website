@@ -7,6 +7,8 @@
   "syntax": [".speed(irate)"],
   "returns": "void",
   "type": "function",
+  "category": "movie",
+  "subcategory": "",
   "parameters": [
     {
       "name": "irate",

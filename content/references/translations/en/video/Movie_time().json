@@ -7,5 +7,7 @@
   "syntax": [".time()"],
   "returns": "float",
   "type": "function",
+  "category": "movie",
+  "subcategory": "",
   "parameters": []
 }

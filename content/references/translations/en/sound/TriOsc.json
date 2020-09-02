@@ -1,8 +1,4 @@
 {
-  "constructors": ["TriOsc(parent)"],
-  "classname": "TriOsc",
-  "examples": "",
-  "related": [],
   "methods": [
     { "name": "play()", "desc": "Starts the oscillator" },
     { "name": "set()", "desc": "Set multiple parameters at once" },
@@ -20,7 +16,13 @@
   "classFields": [],
   "description": "This is a simple triangle (or \"saw\") wave oscillator",
   "type": "class",
+  "constructors": ["TriOsc(parent)"],
+  "examples": "",
+  "related": [],
+  "name": "TriOsc",
   "classanchor": "libraries/sound/TriOsc.html",
+  "category": "sound",
+  "subcategory": "",
   "parameters": [
     {
       "name": "parent",

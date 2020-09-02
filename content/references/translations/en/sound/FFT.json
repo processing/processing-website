@@ -1,8 +1,4 @@
 {
-  "constructors": ["FFT(parent)", "FFT(parent, bands)"],
-  "classname": "FFT",
-  "examples": "",
-  "related": [],
   "methods": [
     {
       "name": "analyze()",
@@ -15,7 +11,13 @@
   "classFields": [],
   "description": "This is a Fast Fourier Transform (FFT) analyzer. It calculates the normalized\n power spectrum of an audio stream the moment it is queried with the analyze()\n method.",
   "type": "class",
+  "constructors": ["FFT(parent)", "FFT(parent, bands)"],
+  "examples": "",
+  "related": [],
+  "name": "FFT",
   "classanchor": "libraries/sound/FFT.html",
+  "category": "sound",
+  "subcategory": "",
   "parameters": [
     {
       "name": "parent",

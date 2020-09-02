@@ -1,8 +1,4 @@
 {
-  "constructors": ["Movie(parent, filename)"],
-  "classname": "Movie",
-  "examples": "",
-  "related": [],
   "methods": [
     { "name": "frameRate()", "desc": "Sets the target frame rate" },
     { "name": "speed()", "desc": "Sets the relative playback speed" },
@@ -34,7 +30,13 @@
   "classFields": [],
   "description": "Datatype for storing and playing movies. Movies must be located in the sketch's data folder \n or an accessible place on the network to load without an error.",
   "type": "class",
+  "constructors": ["Movie(parent, filename)"],
+  "examples": "",
+  "related": [],
+  "name": "Movie",
   "classanchor": "libraries/video/Movie.html",
+  "category": "video",
+  "subcategory": "",
   "parameters": [
     { "name": "parent", "description": "PApplet", "type": ["PApplet"] },
     { "name": "filename", "description": "String", "type": ["String"] }

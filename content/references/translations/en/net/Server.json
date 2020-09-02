@@ -1,8 +1,4 @@
 {
-  "constructors": ["Server(parent, port)", "Server(parent, port, host)"],
-  "classname": "Server",
-  "examples": "",
-  "related": [],
   "methods": [
     { "name": "disconnect()", "desc": "Disconnect a particular client." },
     {
@@ -24,7 +20,13 @@
   "classFields": [],
   "description": "( begin auto-generated from Server.xml )\n \n A server sends and receives data to and from its associated clients \n (other programs connected to it). When a server is started, it begins \n listening for connections on the port specified by the <b>port</b> \n parameter. Computers have many ports for transferring data and some are \n commonly used so be sure to not select one of these. For example, web \n servers usually use port 80 and POP mail uses port 110.\n \n ( end auto-generated )",
   "type": "class",
+  "constructors": ["Server(parent, port)", "Server(parent, port, host)"],
+  "examples": "",
+  "related": [],
+  "name": "Server",
   "classanchor": "libraries/net/Server.html",
+  "category": "net",
+  "subcategory": "",
   "parameters": [
     {
       "name": "parent",

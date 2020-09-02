@@ -1,8 +1,4 @@
 {
-  "constructors": ["BandPass(parent)"],
-  "classname": "BandPass",
-  "examples": "",
-  "related": [],
   "methods": [
     { "name": "bw()", "desc": "Set the bandwidth for the filter." },
     { "name": "freq()", "desc": "Set the cutoff frequency for the filter" },
@@ -16,6 +12,12 @@
   "classFields": [],
   "description": "This is a band pass filter.",
   "type": "class",
+  "constructors": ["BandPass(parent)"],
+  "examples": "",
+  "related": [],
+  "name": "BandPass",
   "classanchor": "libraries/sound/BandPass.html",
+  "category": "sound",
+  "subcategory": "",
   "parameters": []
 }

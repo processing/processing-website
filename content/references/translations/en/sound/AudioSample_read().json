@@ -11,6 +11,8 @@
   ],
   "returns": "void or float",
   "type": "function",
+  "category": "sound",
+  "subcategory": "",
   "parameters": [
     {
       "name": "data",

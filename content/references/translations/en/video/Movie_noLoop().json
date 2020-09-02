@@ -7,5 +7,7 @@
   "syntax": [".noLoop()"],
   "returns": "void",
   "type": "function",
+  "category": "movie",
+  "subcategory": "",
   "parameters": []
 }

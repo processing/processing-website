@@ -7,6 +7,8 @@
   "syntax": ["client.read()"],
   "returns": "int",
   "type": "function",
+  "category": "client",
+  "subcategory": "client",
   "parameters": [
     {
       "name": "client",

@@ -1,0 +1,27 @@
+import React from 'react';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
+import { useLocalization } from 'gatsby-theme-i18n';
+
+const SubcategoryList = (props) => {
+  const { subcategory, subcategoryRefs, link } = props;
+  const { locale } = useLocalization();
+
+  return (
+    <div>
+      <h3>{subcategory}</h3>
+      <ul>
+        {subcategoryRefs.map((node, key) => {
+          return (
+            <li key={key}>
+              <Link to={link + node.name} language={locale}>
+                {node.childJson.name}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+
+export default SubcategoryList;

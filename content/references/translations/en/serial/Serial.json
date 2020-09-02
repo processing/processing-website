@@ -1,14 +1,4 @@
 {
-  "constructors": [
-    "Serial(parent)",
-    "Serial(parent, baudRate)",
-    "Serial(parent, portName)",
-    "Serial(parent, portName, baudRate)",
-    "Serial(parent, portName, baudRate, parity, dataBits, stopBits)"
-  ],
-  "classname": "Serial",
-  "examples": "",
-  "related": [],
   "methods": [
     { "name": "available()", "desc": "" },
     { "name": "buffer()", "desc": "" },
@@ -32,7 +22,19 @@
   "classFields": [],
   "description": "( begin auto-generated from Serial.xml )\n \n Class for sending and receiving data using the serial communication protocol.\n \n ( end auto-generated )",
   "type": "class",
+  "constructors": [
+    "Serial(parent)",
+    "Serial(parent, baudRate)",
+    "Serial(parent, portName)",
+    "Serial(parent, portName, baudRate)",
+    "Serial(parent, portName, baudRate, parity, dataBits, stopBits)"
+  ],
+  "examples": "",
+  "related": [],
+  "name": "Serial",
   "classanchor": "libraries/serial/Serial.html",
+  "category": "serial",
+  "subcategory": "",
   "parameters": [
     {
       "name": "parent",

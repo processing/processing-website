@@ -7,6 +7,8 @@
   "syntax": ["abs(n)"],
   "returns": "float or int",
   "type": "function",
+  "category": "math",
+  "subcategory": "calculation",
   "parameters": [
     {
       "name": "n",

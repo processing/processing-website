@@ -1,8 +1,4 @@
 {
-  "constructors": ["Reverb(parent)"],
-  "classname": "Reverb",
-  "examples": "",
-  "related": [],
   "methods": [
     { "name": "damp()", "desc": "Change the damping of the reverb effect" },
     { "name": "room()", "desc": "Change the room size of the reverb effect." },
@@ -14,6 +10,12 @@
   "classFields": [],
   "description": "This is a simple reverb effect.",
   "type": "class",
+  "constructors": ["Reverb(parent)"],
+  "examples": "",
+  "related": [],
+  "name": "Reverb",
   "classanchor": "libraries/sound/Reverb.html",
+  "category": "sound",
+  "subcategory": "",
   "parameters": []
 }

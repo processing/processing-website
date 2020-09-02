@@ -7,6 +7,8 @@
   "syntax": ["server.available()"],
   "returns": "Client",
   "type": "function",
+  "category": "server",
+  "subcategory": "",
   "parameters": [
     {
       "name": "server",

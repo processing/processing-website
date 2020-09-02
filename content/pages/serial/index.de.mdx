@@ -1,0 +1,12 @@
+---
+slug: '/libraries/serial'
+title: 'serial'
+---
+
+## Serial ge
+
+The Serial library reads and writes data to and from external devices one byte at a time. It allows two computers to send and receive data. This library has the flexibility to communicate with custom microcontroller devices and to use them as the input or output to Processing programs. The serial port is a nine pin I/O port that exists on many PCs and can be emulated through USB.
+
+Issues related to the Serial library on different platforms are documented on the Processing Wiki. The source code is available on the processing GitHub repository.
+
+When sending data to the console, such as via print() or println(), note that the console is relatively slow. It does not support high-speed, real-time output (such as at 60 frames per second). For real-time monitoring of serial values, render those values to the Processing window during draw().

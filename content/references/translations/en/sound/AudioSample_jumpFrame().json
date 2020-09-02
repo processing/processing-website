@@ -7,5 +7,7 @@
   "syntax": [".jumpFrame(frameNumber)"],
   "returns": "void",
   "type": "function",
+  "category": "sound",
+  "subcategory": "",
   "parameters": []
 }

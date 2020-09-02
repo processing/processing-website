@@ -9,7 +9,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <h1>Classname: {ref.classname}</h1>
+      <h1>Classname: {ref.name}</h1>
       <p>Description: {ref.description}</p>
       Parameters:
       {ref.parameters.map((param, key) => {
@@ -47,7 +47,7 @@ export const query = graphql`
   query($name: String!, $assetsName: String!) {
     json: file(fields: { name: { eq: $name } }) {
       childJson {
-        classname
+        name
         description
         parameters {
           name

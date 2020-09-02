@@ -7,5 +7,7 @@
   "syntax": [".duration()"],
   "returns": "float",
   "type": "function",
+  "category": "movie",
+  "subcategory": "",
   "parameters": []
 }

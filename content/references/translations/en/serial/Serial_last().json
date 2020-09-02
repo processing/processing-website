@@ -7,6 +7,8 @@
   "syntax": ["serial.last()"],
   "returns": "int",
   "type": "function",
+  "category": "serial",
+  "subcategory": "serial",
   "parameters": [
     {
       "name": "serial",

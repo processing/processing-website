@@ -7,6 +7,8 @@
   "syntax": [".cue(time)"],
   "returns": "void",
   "type": "function",
+  "category": "sound",
+  "subcategory": "",
   "parameters": [
     {
       "name": "time",

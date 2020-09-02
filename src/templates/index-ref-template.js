@@ -3,13 +3,15 @@ import { graphql } from 'gatsby';
 
 import { Link } from 'gatsby';
 
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+
 import Layout from '../components/Layout';
 import ReferenceList from '../components/ReferenceList';
 
 const IndexRefTemplate = ({ data, pageContext: { libraryName } }) => {
   return (
     <Layout>
-      <h1>References</h1>
+      <MDXRenderer>{data.mdx.body}</MDXRenderer>
       <ReferenceList data={data} library={libraryName} />
       <Link to="/">Go back to the homepage</Link>
     </Layout>
@@ -23,12 +25,18 @@ export const query = graphql`
     allFile(
       filter: { fields: { lib: { eq: $libraryName }, lang: { eq: $locale } } }
     ) {
-      edges {
-        node {
+      nodes {
+        name
+        relativeDirectory
+        childJson {
           name
-          relativeDirectory
+          category
+          subcategory
         }
       }
+    }
+    mdx(frontmatter: { title: { eq: $libraryName } }) {
+      body
     }
   }
 `;

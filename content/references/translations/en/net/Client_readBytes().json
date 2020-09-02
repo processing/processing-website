@@ -11,6 +11,8 @@
   ],
   "returns": "byte[] or int",
   "type": "function",
+  "category": "client",
+  "subcategory": "client",
   "parameters": [
     {
       "name": "client",

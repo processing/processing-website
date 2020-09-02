@@ -1,8 +1,4 @@
 {
-  "constructors": ["GPIO("],
-  "classname": "GPIO",
-  "examples": "",
-  "related": [],
   "methods": [
     {
       "name": "attachInterrupt()",
@@ -40,6 +36,12 @@
   "isLibrary": "true",
   "classFields": [],
   "type": "class",
+  "constructors": ["GPIO("],
+  "examples": "",
+  "related": [],
+  "name": "GPIO",
   "classanchor": "libraries/io/GPIO.html",
+  "category": "",
+  "subcategory": "",
   "parameters": []
 }

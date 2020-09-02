@@ -1,8 +1,4 @@
 {
-  "constructors": ["Pulse(parent)"],
-  "classname": "Pulse",
-  "examples": "",
-  "related": [],
   "methods": [
     { "name": "width()", "desc": "Set the pulse width of the oscillator." },
     { "name": "set()", "desc": "Set multiple parameters at once" },
@@ -21,7 +17,13 @@
   "classFields": [],
   "description": "This is a simple Pulse oscillator.",
   "type": "class",
+  "constructors": ["Pulse(parent)"],
+  "examples": "",
+  "related": [],
+  "name": "Pulse",
   "classanchor": "libraries/sound/Pulse.html",
+  "category": "sound",
+  "subcategory": "",
   "parameters": [
     {
       "name": "parent",

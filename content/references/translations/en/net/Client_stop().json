@@ -7,6 +7,8 @@
   "syntax": ["client.stop()"],
   "returns": "void",
   "type": "function",
+  "category": "client",
+  "subcategory": "client",
   "parameters": [
     {
       "name": "client",

@@ -1,17 +1,4 @@
 {
-  "constructors": [
-    "AudioSample(parent, frames)",
-    "AudioSample(parent, frames, stereo)",
-    "AudioSample(parent, frames, stereo, frameRate)",
-    "AudioSample(parent, frames, frameRate)",
-    "AudioSample(parent, data)",
-    "AudioSample(parent, data, stereo)",
-    "AudioSample(parent, data, frameRate)",
-    "AudioSample(parent, data, stereo, frameRate)"
-  ],
-  "classname": "AudioSample",
-  "examples": "",
-  "related": [],
   "methods": [
     {
       "name": "amp()",
@@ -102,7 +89,22 @@
   "classFields": [],
   "description": "This class allows you low-level access to an audio buffer to create, access,\n manipulate and play back sound samples.\n \n If you want to pre-load your audio sample with an audio file from disk you\n can do so using the SoundFile subclass.",
   "type": "class",
+  "constructors": [
+    "AudioSample(parent, frames)",
+    "AudioSample(parent, frames, stereo)",
+    "AudioSample(parent, frames, stereo, frameRate)",
+    "AudioSample(parent, frames, frameRate)",
+    "AudioSample(parent, data)",
+    "AudioSample(parent, data, stereo)",
+    "AudioSample(parent, data, frameRate)",
+    "AudioSample(parent, data, stereo, frameRate)"
+  ],
+  "examples": "",
+  "related": [],
+  "name": "AudioSample",
   "classanchor": "libraries/sound/AudioSample.html",
+  "category": "sound",
+  "subcategory": "",
   "parameters": [
     {
       "name": "parent",

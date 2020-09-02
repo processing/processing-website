@@ -7,6 +7,8 @@
   "syntax": [".read(len)"],
   "returns": "byte[]",
   "type": "function",
+  "category": "",
+  "subcategory": "",
   "parameters": [
     { "name": "len", "description": "number of bytes to read", "type": ["int"] }
   ]

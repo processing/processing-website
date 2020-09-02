@@ -1,15 +1,4 @@
 {
-  "constructors": [
-    "Capture(parent)",
-    "Capture(parent, device)",
-    "Capture(parent, width, height)",
-    "Capture(parent, width, height, fps)",
-    "Capture(parent, width, height, device)",
-    "Capture(parent, width, height, device, fps)"
-  ],
-  "classname": "Capture",
-  "examples": "",
-  "related": [],
   "methods": [
     { "name": "frameRate()", "desc": "Sets the target frame rate" },
     {
@@ -25,7 +14,20 @@
   "classFields": [],
   "description": "Datatype for storing and manipulating video frames from an attached capture device such as a camera.",
   "type": "class",
+  "constructors": [
+    "Capture(parent)",
+    "Capture(parent, device)",
+    "Capture(parent, width, height)",
+    "Capture(parent, width, height, fps)",
+    "Capture(parent, width, height, device)",
+    "Capture(parent, width, height, device, fps)"
+  ],
+  "examples": "",
+  "related": [],
+  "name": "Capture",
   "classanchor": "libraries/video/Capture.html",
+  "category": "video",
+  "subcategory": "",
   "parameters": [
     {
       "name": "parent",

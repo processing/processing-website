@@ -7,5 +7,7 @@
   "syntax": [".detach()"],
   "returns": "void",
   "type": "function",
+  "category": "",
+  "subcategory": "",
   "parameters": []
 }

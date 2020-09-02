@@ -1,11 +1,4 @@
 {
-  "constructors": [
-    "Sound(parent)",
-    "Sound(parent, sampleRate, outputDevice, inputDevice, volume)"
-  ],
-  "classname": "Sound",
-  "examples": "",
-  "related": [],
   "methods": [
     {
       "name": "list()",
@@ -33,7 +26,16 @@
   "classFields": [],
   "description": "This class can be used for configuring the Processing Sound library.\n\n The Sound class allows for configuring global properties of the sound\n library's audio synthesis and playback, such as the output device, sample\n rate or global output volume.\n\n Information on available input and output devices can be obtained by calling\n Sound.list()",
   "type": "class",
+  "constructors": [
+    "Sound(parent)",
+    "Sound(parent, sampleRate, outputDevice, inputDevice, volume)"
+  ],
+  "examples": "",
+  "related": [],
+  "name": "Sound",
   "classanchor": "libraries/sound/Sound.html",
+  "category": "sound",
+  "subcategory": "",
   "parameters": [
     {
       "name": "parent",

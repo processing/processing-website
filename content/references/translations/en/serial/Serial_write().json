@@ -7,6 +7,8 @@
   "syntax": ["serial.write(src)"],
   "returns": "void",
   "type": "function",
+  "category": "serial",
+  "subcategory": "serial",
   "parameters": [
     {
       "name": "serial",

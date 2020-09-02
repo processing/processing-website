@@ -7,6 +7,8 @@
   "syntax": [".settings(maxSpeed, dataOrder, mode)"],
   "returns": "void",
   "type": "function",
+  "category": "",
+  "subcategory": "",
   "parameters": [
     {
       "name": "maxSpeed",

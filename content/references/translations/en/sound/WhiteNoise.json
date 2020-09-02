@@ -1,8 +1,4 @@
 {
-  "constructors": ["WhiteNoise(parent)"],
-  "classname": "WhiteNoise",
-  "examples": "",
-  "related": [],
   "methods": [
     { "name": "play()", "desc": "Start the generator" },
     { "name": "set()", "desc": "Set multiple parameters at once." },
@@ -19,7 +15,13 @@
   "classFields": [],
   "description": "This is a White Noise Generator. White Noise has a flat spectrum.",
   "type": "class",
+  "constructors": ["WhiteNoise(parent)"],
+  "examples": "",
+  "related": [],
+  "name": "WhiteNoise",
   "classanchor": "libraries/sound/WhiteNoise.html",
+  "category": "sound",
+  "subcategory": "",
   "parameters": [
     {
       "name": "parent",

@@ -1,8 +1,4 @@
 {
-  "constructors": ["Delay(parent)"],
-  "classname": "Delay",
-  "examples": "",
-  "related": [],
   "methods": [
     { "name": "process()", "desc": "Start the delay effect" },
     { "name": "set()", "desc": "Set delay time and feedback values at once" },
@@ -14,6 +10,12 @@
   "classFields": [],
   "description": "This is a simple delay effect.",
   "type": "class",
+  "constructors": ["Delay(parent)"],
+  "examples": "",
+  "related": [],
+  "name": "Delay",
   "classanchor": "libraries/sound/Delay.html",
+  "category": "sound",
+  "subcategory": "",
   "parameters": []
 }

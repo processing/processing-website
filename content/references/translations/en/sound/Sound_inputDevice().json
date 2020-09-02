@@ -7,6 +7,8 @@
   "syntax": [".inputDevice(deviceId)"],
   "returns": "void",
   "type": "function",
+  "category": "sound",
+  "subcategory": "",
   "parameters": [
     {
       "name": "deviceId",

@@ -7,6 +7,8 @@
   "syntax": ["server.stop()"],
   "returns": "void",
   "type": "function",
+  "category": "server",
+  "subcategory": "",
   "parameters": [
     {
       "name": "server",

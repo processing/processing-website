@@ -22,8 +22,12 @@ export const query = graphql`
     allFile(
       filter: { fields: { lang: { eq: $locale }, lib: { eq: "processing" } } }
     ) {
-      edges {
-        node {
+      nodes {
+        name
+        relativeDirectory
+        childJson {
+          category
+          subcategory
           name
         }
       }

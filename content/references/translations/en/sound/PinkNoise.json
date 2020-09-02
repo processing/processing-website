@@ -1,8 +1,4 @@
 {
-  "constructors": ["PinkNoise(parent)"],
-  "classname": "PinkNoise",
-  "examples": "",
-  "related": [],
   "methods": [
     { "name": "play()", "desc": "Start the generator" },
     { "name": "set()", "desc": "Set multiple parameters at once." },
@@ -19,7 +15,13 @@
   "classFields": [],
   "description": "This is a pink noise generator. Pink Noise has a decrease of 3dB per octave.",
   "type": "class",
+  "constructors": ["PinkNoise(parent)"],
+  "examples": "",
+  "related": [],
+  "name": "PinkNoise",
   "classanchor": "libraries/sound/PinkNoise.html",
+  "category": "sound",
+  "subcategory": "",
   "parameters": [
     {
       "name": "parent",

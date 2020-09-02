@@ -11,6 +11,8 @@
   ],
   "returns": "byte[] or int",
   "type": "function",
+  "category": "serial",
+  "subcategory": "serial",
   "parameters": [
     {
       "name": "serial",

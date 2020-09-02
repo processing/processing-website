@@ -7,6 +7,8 @@
   "syntax": [".digitalWrite(pin, value)"],
   "returns": "void",
   "type": "function",
+  "category": "",
+  "subcategory": "",
   "parameters": [
     { "name": "pin", "description": "GPIO pin", "type": ["int"] },
     {

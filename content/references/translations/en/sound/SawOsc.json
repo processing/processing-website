@@ -1,8 +1,4 @@
 {
-  "constructors": ["SawOsc(parent)"],
-  "classname": "SawOsc",
-  "examples": "",
-  "related": [],
   "methods": [
     { "name": "play()", "desc": "Starts the oscillator" },
     { "name": "set()", "desc": "Set multiple parameters at once" },
@@ -20,7 +16,13 @@
   "classFields": [],
   "description": "This is a simple Saw Wave Oscillator",
   "type": "class",
+  "constructors": ["SawOsc(parent)"],
+  "examples": "",
+  "related": [],
+  "name": "SawOsc",
   "classanchor": "libraries/sound/SawOsc.html",
+  "category": "sound",
+  "subcategory": "",
   "parameters": [
     {
       "name": "parent",

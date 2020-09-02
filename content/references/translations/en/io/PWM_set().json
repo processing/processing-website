@@ -7,6 +7,8 @@
   "syntax": [".set(period, duty)", ".set(duty)"],
   "returns": "void",
   "type": "function",
+  "category": "",
+  "subcategory": "",
   "parameters": [
     { "name": "period", "description": "cycle period in Hz", "type": ["int"] },
     {

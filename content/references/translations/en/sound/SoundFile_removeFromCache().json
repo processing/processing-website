@@ -7,5 +7,7 @@
   "syntax": [".removeFromCache()"],
   "returns": "boolean",
   "type": "function",
+  "category": "sound",
+  "subcategory": "",
   "parameters": []
 }

@@ -1,8 +1,4 @@
 {
-  "constructors": ["I2C(dev)"],
-  "classname": "I2C",
-  "examples": "",
-  "related": [],
   "methods": [
     {
       "name": "beginTransmission()",
@@ -18,7 +14,13 @@
   "isLibrary": "true",
   "classFields": [],
   "type": "class",
+  "constructors": ["I2C(dev)"],
+  "examples": "",
+  "related": [],
+  "name": "I2C",
   "classanchor": "libraries/io/I2C.html",
+  "category": "",
+  "subcategory": "",
   "parameters": [
     { "name": "dev", "description": "interface name", "type": ["String"] }
   ]
