@@ -35,7 +35,10 @@ export const query = graphql`
         }
       }
     }
-    mdx(frontmatter: { title: { eq: $libraryName } }) {
+    mdx(
+      fields: { locale: { eq: $locale } }
+      frontmatter: { title: { eq: $libraryName } }
+    ) {
       body
     }
   }
