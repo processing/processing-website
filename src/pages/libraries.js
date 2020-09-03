@@ -10,11 +10,21 @@ import { useLocalization } from 'gatsby-theme-i18n';
 
 const Libraries = ({ data }) => {
   const { locale } = useLocalization();
-  const { libraries, contributions } = data;
+  const { libraries, currentLang, english } = data;
 
-  let categories = unique(
-    contributions.nodes.flatMap((con) => con.childJson.categories)
-  );
+  let contributions = [];
+
+  english.nodes.map((en) => {
+    currentLang.nodes.map((con) => {
+      if (en.name === con.name.split('.')[0]) {
+        contributions.push({ ...en.childJson, ...con.childJson });
+      } else if (locale !== 'en') {
+        contributions.push(en.childJson);
+      }
+    });
+  });
+
+  let categories = unique(contributions.flatMap((con) => con.categories));
 
   return (
     <Layout>
@@ -33,8 +43,8 @@ const Libraries = ({ data }) => {
       <h1>Contributions</h1>
       <ul>
         {categories.map((cat) => {
-          let contribs = contributions.nodes.filter((c) =>
-            c.childJson.categories.includes(cat)
+          let contribs = contributions.filter((c) =>
+            c.categories.includes(cat)
           );
           return (
             <div key={cat}>
@@ -42,9 +52,9 @@ const Libraries = ({ data }) => {
               {contribs.map((node, key) => {
                 return (
                   <li key={key + 'c'}>
-                    {node.childJson.name}
-                    {node.childJson.authors}
-                    {node.childJson.sentence}
+                    {node.name}
+                    {node.authors}
+                    {node.sentence}
                   </li>
                 );
               })}
@@ -67,7 +77,7 @@ export const query = graphql`
         name
       }
     }
-    contributions: allFile(
+    currentLang: allFile(
       filter: {
         sourceInstanceName: { eq: "contributions" }
         fields: { lang: { eq: $locale } }
@@ -75,7 +85,19 @@ export const query = graphql`
     ) {
       nodes {
         name
-        relativeDirectory
+        childJson {
+          sentence
+        }
+      }
+    }
+    english: allFile(
+      filter: {
+        sourceInstanceName: { eq: "contributions" }
+        fields: { lang: { eq: "en" } }
+      }
+    ) {
+      nodes {
+        name
         childJson {
           name
           authors
