@@ -1,0 +1,12 @@
+{
+  "name": "Tracer de",
+  "authors": "[James Morrow](http://www.objectstothinkwith.com/)",
+  "url": "http://www.objectstothinkwith.com/tracer/",
+  "categories": ["Animation", "Geometry"],
+  "sentence": "A toolset for making computational art and animation by tracing paths.",
+  "paragraph": "",
+  "version": "0",
+  "prettyVersion": "0.0.0",
+  "minRevision": "246",
+  "maxRevision": "0"
+}

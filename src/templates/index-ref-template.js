@@ -9,7 +9,6 @@ import Layout from '../components/Layout';
 import ReferenceList from '../components/ReferenceList';
 
 const IndexRefTemplate = ({ data, pageContext: { libraryName } }) => {
-
   return (
     <Layout>
       <MDXRenderer>{data.mdx.body}</MDXRenderer>

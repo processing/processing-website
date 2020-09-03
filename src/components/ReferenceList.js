@@ -9,15 +9,20 @@ const ReferenceList = (props) => {
   let refs = data.allFile.nodes;
   let link;
 
-  let categories = unique(refs.map(ref => {
-    return ref.childJson.category;
-  }));
+  let categories = unique(
+    refs.map((ref) => {
+      return ref.childJson.category;
+    })
+  );
 
   let subcategories = {};
-  categories.map(c => {
-    subcategories[c] = unique(refs.map((r) => {
-          if (r.childJson.category ===c) return r.childJson.subcategory;
-        }));
+  categories.map((c) => {
+    subcategories[c] = unique(
+      refs.map((r) => {
+        if (r.childJson.category === c) return r.childJson.subcategory;
+        else return null;
+      })
+    );
   });
 
   if (library === 'processing') {
@@ -35,7 +40,6 @@ const ReferenceList = (props) => {
         return (
           <CategoryList
             key={key + 'c'}
-            library={library}
             category={c}
             categoryRefs={categoryRefs}
             subcategory={subcategories[c]}

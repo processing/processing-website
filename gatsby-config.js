@@ -86,6 +86,13 @@ module.exports = {
         path: `${__dirname}/content/tutorials`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `contributions`,
+        path: `${__dirname}/content/contributions`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

@@ -1,0 +1,13 @@
+{
+  "name": "Extruder ge",
+  "categories": ["3D"],
+  "authors": "[Max Farrell](https://arcane.info/)",
+  "url": "http://maxlfarrell.gitlab.io/extruder",
+  "sentence": "A 3d library to create extrusions",
+  "paragraph": "A 3d library to create 3d shapes from 2d shapes in the simplest, library free way possible",
+  "version": "3",
+  "prettyVersion": "1.02",
+  "lastUpdated": "0",
+  "minRevision": "0",
+  "maxRevision": "0"
+}

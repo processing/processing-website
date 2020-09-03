@@ -21,9 +21,12 @@ exports.onCreateNode = ({ node, actions, getNode, loadNodeContent }) => {
   if (node.internal.mediaType === `application/json`) {
     const value = createFilePath({ node, getNode });
     let dir = node.relativeDirectory.split('/');
-    let lang = dir[0];
     let library = dir[1];
     let name = dir[dir.length];
+
+    let nodename = node.name.split('.');
+    let lang = nodename[1] ? nodename[1] : 'en';
+
     createNodeField({
       name: `name`,
       node,
