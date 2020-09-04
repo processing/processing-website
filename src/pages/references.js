@@ -18,9 +18,9 @@ const References = ({ data }) => {
 export default References;
 
 export const query = graphql`
-  query($locale: String!) {
+  query {
     allFile(
-      filter: { fields: { lang: { eq: $locale }, lib: { eq: "processing" } } }
+      filter: { fields: { lang: { eq: "en" }, lib: { eq: "processing" } } }
     ) {
       nodes {
         name
