@@ -16,7 +16,7 @@ const Examples = ({ data }) => {
         {data.allFile.nodes.map((node, key) => {
           return (
             <li key={key}>
-              <Link to={node.childMdx.frontmatter.slug} locale={locale}>
+              <Link to={node.childMdx.frontmatter.slug} language={locale}>
                 {node.childMdx.frontmatter.title}
               </Link>
             </li>
