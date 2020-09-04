@@ -11,7 +11,9 @@ import ReferenceList from '../components/ReferenceList';
 const IndexRefTemplate = ({ data, pageContext: { libraryName } }) => {
   return (
     <Layout>
-      <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      <MDXRenderer>
+        {data.mdx === null ? data.english.body : data.mdx.body}
+      </MDXRenderer>
       <ReferenceList data={data} library={libraryName} />
       <Link to="/">Go back to the homepage</Link>
     </Layout>
@@ -22,9 +24,7 @@ export default IndexRefTemplate;
 
 export const query = graphql`
   query($libraryName: String!, $locale: String!) {
-    allFile(
-      filter: { fields: { lib: { eq: $libraryName }, lang: { eq: $locale } } }
-    ) {
+    allFile(filter: { fields: { lib: { eq: $libraryName } } }) {
       nodes {
         name
         relativeDirectory
@@ -37,6 +37,12 @@ export const query = graphql`
     }
     mdx(
       fields: { locale: { eq: $locale } }
+      frontmatter: { title: { eq: $libraryName } }
+    ) {
+      body
+    }
+    english: mdx(
+      fields: { locale: { eq: "en" } }
       frontmatter: { title: { eq: $libraryName } }
     ) {
       body

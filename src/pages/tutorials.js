@@ -16,7 +16,7 @@ const Tutorials = ({ data }) => {
         {data.allFile.nodes.map((node, key) => {
           return (
             <li key={key}>
-              <Link to={node.childMdx.frontmatter.slug} language={locale}>
+              <Link to={node.childMdx.frontmatter.slug} locale={locale}>
                 {node.childMdx.frontmatter.title}
               </Link>
             </li>
@@ -30,11 +30,11 @@ const Tutorials = ({ data }) => {
 export default Tutorials;
 
 export const query = graphql`
-  query($locale: String!) {
+  query {
     allFile(
       filter: {
         sourceInstanceName: { eq: "tutorials" }
-        childMdx: { fields: { locale: { eq: $locale } } }
+        childMdx: { fields: { locale: { eq: "en" } } }
       }
     ) {
       nodes {

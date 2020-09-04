@@ -71,7 +71,7 @@ export default Libraries;
 export const query = graphql`
   query($locale: String!) {
     libraries: allDirectory(
-      filter: { relativeDirectory: { eq: $locale }, name: { ne: "processing" } }
+      filter: { relativeDirectory: { eq: "en" }, name: { ne: "processing" } }
     ) {
       nodes {
         name
