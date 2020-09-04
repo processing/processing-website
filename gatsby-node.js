@@ -109,13 +109,22 @@ async function createReference(actions, graphql) {
     const next = index === 0 ? null : refPages[index - 1].node;
     let assetsName = refPage.node.name.split('.')[0];
     let libraryName = refPage.node.relativeDirectory.split('/')[1];
-    let path;
-    if (libraryName === 'processing') path = 'references/' + refPage.node.name;
-    else path = '/libraries/' + libraryName + '/' + refPage.node.name;
+    let lang = refPage.node.relativeDirectory.split('/')[0];
+    lang = lang === 'en' ? '' : lang;
+    let refPath;
+    if (libraryName === 'processing')
+      refPath = lang + '/references/' + refPage.node.name.split('.')[0];
+    else
+      refPath =
+        lang +
+        '/libraries/' +
+        libraryName +
+        '/' +
+        refPage.node.name.split('.')[0];
 
     if (refPage.node.name.endsWith(')')) {
       createPage({
-        path: path,
+        path: refPath,
         component: refTemplate,
         context: {
           name: refPage.node.name,
@@ -127,7 +136,7 @@ async function createReference(actions, graphql) {
       });
     } else {
       createPage({
-        path: path,
+        path: refPath,
         component: classRefTemplate,
         context: {
           name: refPage.node.name,

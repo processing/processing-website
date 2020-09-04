@@ -13,7 +13,7 @@ const SubcategoryList = (props) => {
         {subcategoryRefs.map((node, key) => {
           return (
             <li key={key}>
-              <Link to={link + node.name} language={locale}>
+              <Link to={link + node.name.split('.')[0]} language={locale}>
                 {node.childJson.name}
               </Link>
             </li>

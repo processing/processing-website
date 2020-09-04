@@ -6,12 +6,14 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../components/Layout';
 
 const TutorialTemplate = ({ data, pageContext }) => {
-  const { mdx } = data;
-  const { frontmatter, body } = mdx;
+  const { mdx, english } = data;
+
+  let title = mdx === null ? english.frontmatter.title : mdx.frontmatter.title;
+  let body = mdx === null ? english.body : mdx.body;
 
   return (
     <Layout>
-      <h1>{frontmatter.title}</h1>
+      <h1>{title}</h1>
       <MDXRenderer>{body}</MDXRenderer>
     </Layout>
   );
@@ -27,7 +29,15 @@ export const query = graphql`
     ) {
       body
       frontmatter {
-        slug
+        title
+      }
+    }
+    english: mdx(
+      fields: { locale: { eq: "en" } }
+      frontmatter: { slug: { eq: $slug } }
+    ) {
+      body
+      frontmatter {
         title
       }
     }

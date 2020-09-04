@@ -30,11 +30,11 @@ const Tutorials = ({ data }) => {
 export default Tutorials;
 
 export const query = graphql`
-  query($locale: String!) {
+  query {
     allFile(
       filter: {
         sourceInstanceName: { eq: "tutorials" }
-        childMdx: { fields: { locale: { eq: $locale } } }
+        childMdx: { fields: { locale: { eq: "en" } } }
       }
     ) {
       nodes {
