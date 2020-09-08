@@ -1,18 +1,17 @@
 {
+  "constructors": ["LED(dev)"],
+  "related": [],
   "methods": [
     { "name": "brightness()", "desc": "Sets the brightness" },
     { "name": "close()", "desc": "Restores the previous state" },
     { "name": "list()", "desc": "Lists all available LED devices" }
   ],
   "csspath": "../../",
+  "name": "LED",
   "isLibrary": "true",
   "classFields": [],
   "type": "class",
-  "constructors": ["LED(dev)"],
-  "examples": "",
-  "related": [],
-  "name": "LED",
-  "classanchor": "libraries/io/LED.html",
+  "classanchor": "libraries/io/LED",
   "category": "",
   "subcategory": "",
   "parameters": [

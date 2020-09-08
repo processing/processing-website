@@ -17,10 +17,9 @@
   "description": "This is a simple triangle (or \"saw\") wave oscillator",
   "type": "class",
   "constructors": ["TriOsc(parent)"],
-  "examples": "",
   "related": [],
   "name": "TriOsc",
-  "classanchor": "libraries/sound/TriOsc.html",
+  "classanchor": "libraries/sound/TriOsc",
   "category": "sound",
   "subcategory": "",
   "parameters": [

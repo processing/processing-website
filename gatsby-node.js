@@ -113,16 +113,18 @@ async function createReference(actions, graphql) {
     lang = lang === 'en' ? '' : lang;
     let refPath;
     if (libraryName === 'processing')
-      refPath = lang + '/references/' + refPage.node.name.split('.')[0];
+      refPath =
+        lang + '/reference/' + refPage.node.name.split('.')[0] + '.html';
     else
       refPath =
         lang +
-        '/libraries/' +
+        '/reference/libraries/' +
         libraryName +
         '/' +
-        refPage.node.name.split('.')[0];
+        refPage.node.name.split('.')[0] +
+        '.html';
 
-    if (refPage.node.name.endsWith(')')) {
+    if (refPage.node.name.endsWith('_')) {
       createPage({
         path: refPath,
         component: refTemplate,
@@ -151,12 +153,17 @@ async function createReference(actions, graphql) {
 
   dirPages.forEach((dirPage, index) => {
     createPage({
-      path: '/libraries/' + dirPage.name,
+      path: '/reference/libraries/' + dirPage.name + '/index.html',
       component: indexRefTemplate,
       context: {
         libraryName: dirPage.name,
       },
     });
+  });
+
+  createPage({
+    path: '/reference/libraries/',
+    component: path.resolve(`./src/pages/libraries.js`),
   });
 }
 

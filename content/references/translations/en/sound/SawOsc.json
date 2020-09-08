@@ -17,10 +17,9 @@
   "description": "This is a simple Saw Wave Oscillator",
   "type": "class",
   "constructors": ["SawOsc(parent)"],
-  "examples": "",
   "related": [],
   "name": "SawOsc",
-  "classanchor": "libraries/sound/SawOsc.html",
+  "classanchor": "libraries/sound/SawOsc",
   "category": "sound",
   "subcategory": "",
   "parameters": [

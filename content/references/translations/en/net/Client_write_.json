@@ -1,0 +1,23 @@
+{
+  "related": [],
+  "name": "write()",
+  "description": "( begin auto-generated from Client_write.xml )\n \n Writes data to a server specified when constructing the client.\n \n ( end auto-generated )",
+  "syntax": ["client.write(data)"],
+  "returns": "void",
+  "type": "function",
+  "category": "client",
+  "subcategory": "client",
+  "classanchor": "Client",
+  "parameters": [
+    {
+      "name": "client",
+      "description": " any variable of type Client",
+      "type": ["Client"]
+    },
+    {
+      "name": "data",
+      "description": "data to write",
+      "type": ["int", "byte[]", "String"]
+    }
+  ]
+}

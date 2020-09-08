@@ -1,0 +1,23 @@
+{
+  "related": [],
+  "name": "disconnect()",
+  "description": "( begin auto-generated from Server_disconnect.xml )\n \n Disconnect a particular client.\n \n ( end auto-generated )",
+  "syntax": ["server.disconnect(client)"],
+  "returns": "void",
+  "type": "function",
+  "category": "server",
+  "subcategory": "server",
+  "classanchor": "Server",
+  "parameters": [
+    {
+      "name": "server",
+      "description": "  \tany variable of type Server",
+      "type": ["Server"]
+    },
+    {
+      "name": "client",
+      "description": "the client to disconnect",
+      "type": ["Client"]
+    }
+  ]
+}

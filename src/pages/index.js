@@ -12,9 +12,11 @@ const IndexPage = () => {
   const { locale } = useLocalization();
   return (
     <Layout>
-      <Link to="/references/">{intl.formatMessage({ id: 'references' })}</Link>
+      <Link to="/reference/">{intl.formatMessage({ id: 'references' })}</Link>
       <br />
-      <Link to="/libraries/">{intl.formatMessage({ id: 'libraries' })}</Link>
+      <Link to="/reference/libraries/">
+        {intl.formatMessage({ id: 'libraries' })}
+      </Link>
       <br />
       <Link to="/examples/" language={locale}>
         {intl.formatMessage({ id: 'examples' })}

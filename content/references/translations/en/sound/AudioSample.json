@@ -99,10 +99,9 @@
     "AudioSample(parent, data, frameRate)",
     "AudioSample(parent, data, stereo, frameRate)"
   ],
-  "examples": "",
   "related": [],
   "name": "AudioSample",
-  "classanchor": "libraries/sound/AudioSample.html",
+  "classanchor": "libraries/sound/AudioSample",
   "category": "sound",
   "subcategory": "",
   "parameters": [

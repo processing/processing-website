@@ -1,0 +1,12 @@
+{
+  "related": [],
+  "name": "loop()",
+  "description": "Plays a movie continuously, restarting it when it's over.",
+  "syntax": [".loop()"],
+  "returns": "void",
+  "type": "function",
+  "category": "movie",
+  "subcategory": "",
+  "classanchor": "Movie",
+  "parameters": []
+}

@@ -1,0 +1,12 @@
+{
+  "related": [],
+  "name": "attached()",
+  "description": "Returns whether a servo motor is attached to a pin",
+  "syntax": [".attached()"],
+  "returns": "boolean",
+  "type": "function",
+  "category": "",
+  "subcategory": "",
+  "classanchor": "SoftwareServo",
+  "parameters": []
+}

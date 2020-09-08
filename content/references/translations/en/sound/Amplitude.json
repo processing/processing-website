@@ -12,10 +12,9 @@
   "description": "This is a volume analyzer. It calculates the root mean square of the\n amplitude of each audio block and returns that value.",
   "type": "class",
   "constructors": ["Amplitude(parent)"],
-  "examples": "",
   "related": [],
   "name": "Amplitude",
-  "classanchor": "libraries/sound/Amplitude.html",
+  "classanchor": "libraries/sound/Amplitude",
   "category": "sound",
   "subcategory": "",
   "parameters": [

@@ -37,10 +37,9 @@
   "description": "( begin auto-generated from Client.xml )\n \n A client connects to a server and sends data back and forth. If anything \n goes wrong with the connection, for example the host is not there or is \n listening on a different port, an exception is thrown.\n \n ( end auto-generated )",
   "type": "class",
   "constructors": ["Client(parent, host, port)", "Client(parent, socket)"],
-  "examples": "",
   "related": [],
   "name": "Client",
-  "classanchor": "libraries/net/Client.html",
+  "classanchor": "libraries/net/Client",
   "category": "net",
   "subcategory": "",
   "parameters": [

@@ -1,0 +1,18 @@
+{
+  "related": [],
+  "name": "sampleRate()",
+  "description": "Get or set the internal sample rate of the synthesis engine.",
+  "syntax": [".sampleRate()", ".sampleRate(sampleRate)"],
+  "returns": "int",
+  "type": "function",
+  "category": "sound",
+  "subcategory": "",
+  "classanchor": "Sound",
+  "parameters": [
+    {
+      "name": "sampleRate",
+      "description": "the sample rate to be used by the synthesis engine (default 44100)",
+      "type": ["int"]
+    }
+  ]
+}

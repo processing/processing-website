@@ -1,4 +1,6 @@
 {
+  "constructors": ["I2C(dev)"],
+  "related": [],
   "methods": [
     {
       "name": "beginTransmission()",
@@ -11,14 +13,11 @@
     { "name": "write()", "desc": "Adds bytes to be written to the device" }
   ],
   "csspath": "../../",
+  "name": "I2C",
   "isLibrary": "true",
   "classFields": [],
   "type": "class",
-  "constructors": ["I2C(dev)"],
-  "examples": "",
-  "related": [],
-  "name": "I2C",
-  "classanchor": "libraries/io/I2C.html",
+  "classanchor": "libraries/io/I2C",
   "category": "",
   "subcategory": "",
   "parameters": [

@@ -1,0 +1,12 @@
+{
+  "related": [],
+  "name": "releasePin()",
+  "description": "Gives ownership of a pin back to the operating system",
+  "syntax": [".releasePin(pin)"],
+  "returns": "void",
+  "type": "function",
+  "category": "",
+  "subcategory": "",
+  "classanchor": "GPIO",
+  "parameters": [{ "name": "pin", "description": "GPIO pin", "type": ["int"] }]
+}

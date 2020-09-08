@@ -19,10 +19,9 @@
   "description": "AudioIn lets you grab the audio input from your sound card.",
   "type": "class",
   "constructors": ["AudioIn(parent)", "AudioIn(parent, in)"],
-  "examples": "",
   "related": [],
   "name": "AudioIn",
-  "classanchor": "libraries/sound/AudioIn.html",
+  "classanchor": "libraries/sound/AudioIn",
   "category": "sound",
   "subcategory": "",
   "parameters": [

@@ -1,0 +1,18 @@
+{
+  "related": [],
+  "name": "add()",
+  "description": "Offset the output of this generator by given value",
+  "syntax": [".add(add)"],
+  "returns": "void",
+  "type": "function",
+  "category": "sound",
+  "subcategory": "",
+  "classanchor": "TriOsc",
+  "parameters": [
+    {
+      "name": "add",
+      "description": "Offset the output of the oscillator by given value",
+      "type": ["float"]
+    }
+  ]
+}

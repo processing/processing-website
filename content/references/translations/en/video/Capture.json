@@ -22,10 +22,9 @@
     "Capture(parent, width, height, device)",
     "Capture(parent, width, height, device, fps)"
   ],
-  "examples": "",
   "related": [],
   "name": "Capture",
-  "classanchor": "libraries/video/Capture.html",
+  "classanchor": "libraries/video/Capture",
   "category": "video",
   "subcategory": "",
   "parameters": [

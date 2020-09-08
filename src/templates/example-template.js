@@ -1,20 +1,27 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { Link } from 'gatsby';
 
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Layout from '../components/Layout';
 
 const ExampleTemplate = ({ data, pageContext }) => {
-  const { mdx, english } = data;
-
-  let title = mdx === null ? english.frontmatter.title : mdx.frontmatter.title;
-  let body = mdx === null ? english.body : mdx.body;
+  const { mdx } = data;
 
   return (
     <Layout>
-      <h1>{title}</h1>
-      <MDXRenderer>{body}</MDXRenderer>
+      {mdx !== null ? (
+        <div>
+          <h1>{mdx.frontmatter.title}</h1>
+          <MDXRenderer>{mdx.body}</MDXRenderer>
+        </div>
+      ) : (
+        <div>
+          This page is not translated, please refer to the
+          <Link to={pageContext.slug}> english page</Link>
+        </div>
+      )}
     </Layout>
   );
 };
@@ -29,15 +36,7 @@ export const query = graphql`
     ) {
       body
       frontmatter {
-        title
-      }
-    }
-    english: mdx(
-      fields: { locale: { eq: "en" } }
-      frontmatter: { slug: { eq: $slug } }
-    ) {
-      body
-      frontmatter {
+        slug
         title
       }
     }

@@ -1,0 +1,12 @@
+{
+  "related": [],
+  "name": "stop()",
+  "description": "Stops the playback.",
+  "syntax": [".stop()"],
+  "returns": "void",
+  "type": "function",
+  "category": "sound",
+  "subcategory": "",
+  "classanchor": "SoundFile",
+  "parameters": []
+}

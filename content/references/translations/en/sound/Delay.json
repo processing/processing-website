@@ -11,10 +11,9 @@
   "description": "This is a simple delay effect.",
   "type": "class",
   "constructors": ["Delay(parent)"],
-  "examples": "",
   "related": [],
   "name": "Delay",
-  "classanchor": "libraries/sound/Delay.html",
+  "classanchor": "libraries/sound/Delay",
   "category": "sound",
   "subcategory": "",
   "parameters": []

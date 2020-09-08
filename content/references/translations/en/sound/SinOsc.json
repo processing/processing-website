@@ -17,10 +17,9 @@
   "description": "This is a simple Sine Wave Oscillator",
   "type": "class",
   "constructors": ["SinOsc(parent)"],
-  "examples": "",
   "related": [],
   "name": "SinOsc",
-  "classanchor": "libraries/sound/SinOsc.html",
+  "classanchor": "libraries/sound/SinOsc",
   "category": "sound",
   "subcategory": "",
   "parameters": [

@@ -1,0 +1,12 @@
+{
+  "related": [],
+  "name": "read()",
+  "description": "Reads the current frame of the movie.",
+  "syntax": [".read()"],
+  "returns": "void",
+  "type": "function",
+  "category": "movie",
+  "subcategory": "",
+  "classanchor": "Movie",
+  "parameters": []
+}

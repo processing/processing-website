@@ -1,20 +1,34 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-
 import { Link } from 'gatsby';
-
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Layout from '../components/Layout';
 import ReferenceList from '../components/ReferenceList';
 
 const IndexRefTemplate = ({ data, pageContext: { libraryName } }) => {
+  let link;
+
+  if (libraryName === 'processing') {
+    link = '/reference/';
+  } else {
+    link = '/reference/libraries/' + libraryName + '/index.html';
+  }
+
   return (
     <Layout>
-      <MDXRenderer>
-        {data.mdx === null ? data.english.body : data.mdx.body}
-      </MDXRenderer>
-      <ReferenceList data={data} library={libraryName} />
+      {data.mdx !== null ? (
+        <div>
+          <MDXRenderer>{data.mdx.body}</MDXRenderer>
+          <ReferenceList data={data} library={libraryName} />
+        </div>
+      ) : (
+        <div>
+          This page is not translated, please refer to the
+          <Link to={link}> english page</Link>
+        </div>
+      )}
+
       <Link to="/">Go back to the homepage</Link>
     </Layout>
   );
@@ -37,12 +51,6 @@ export const query = graphql`
     }
     mdx(
       fields: { locale: { eq: $locale } }
-      frontmatter: { title: { eq: $libraryName } }
-    ) {
-      body
-    }
-    english: mdx(
-      fields: { locale: { eq: "en" } }
       frontmatter: { title: { eq: $libraryName } }
     ) {
       body

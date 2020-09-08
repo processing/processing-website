@@ -1,0 +1,12 @@
+{
+  "related": [],
+  "name": "channels()",
+  "description": "Returns the number of channels in the audiosample.",
+  "syntax": [".channels()"],
+  "returns": "int",
+  "type": "function",
+  "category": "sound",
+  "subcategory": "",
+  "classanchor": "AudioSample",
+  "parameters": []
+}

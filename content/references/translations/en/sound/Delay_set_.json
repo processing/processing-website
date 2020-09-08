@@ -1,0 +1,23 @@
+{
+  "related": [],
+  "name": "set()",
+  "description": "Set delay time and feedback values at once",
+  "syntax": [".set(delayTime, feedback)"],
+  "returns": "void",
+  "type": "function",
+  "category": "sound",
+  "subcategory": "",
+  "classanchor": "Delay",
+  "parameters": [
+    {
+      "name": "delayTime",
+      "description": "Maximum delay time in seconds.",
+      "type": ["float"]
+    },
+    {
+      "name": "feedback",
+      "description": "Feedback amount as a float",
+      "type": ["float"]
+    }
+  ]
+}

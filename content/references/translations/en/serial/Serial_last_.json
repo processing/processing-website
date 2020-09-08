@@ -1,0 +1,18 @@
+{
+  "related": [],
+  "name": "last()",
+  "description": "",
+  "syntax": ["serial.last()"],
+  "returns": "int",
+  "type": "function",
+  "category": "serial",
+  "subcategory": "serial",
+  "classanchor": "Serial",
+  "parameters": [
+    {
+      "name": "serial",
+      "description": " any variable of type Serial",
+      "type": ["Serial"]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "related": [],
+  "name": "read()",
+  "description": "Reads bytes from the attached device",
+  "syntax": [".read(len)"],
+  "returns": "byte[]",
+  "type": "function",
+  "category": "",
+  "subcategory": "",
+  "classanchor": "I2C",
+  "parameters": [
+    { "name": "len", "description": "number of bytes to read", "type": ["int"] }
+  ]
+}

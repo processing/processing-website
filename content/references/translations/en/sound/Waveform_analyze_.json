@@ -1,0 +1,18 @@
+{
+  "related": [],
+  "name": "analyze()",
+  "description": "Gets the content of the current audiobuffer from the input source.",
+  "syntax": [".analyze()", ".analyze(value)"],
+  "returns": "float[]",
+  "type": "function",
+  "category": "sound",
+  "subcategory": "",
+  "classanchor": "Waveform",
+  "parameters": [
+    {
+      "name": "value",
+      "description": "an array with as many elements as this Waveform analyzer's number of\n            samples",
+      "type": ["float[]"]
+    }
+  ]
+}

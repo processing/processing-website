@@ -13,10 +13,9 @@
   "description": "This is a band pass filter.",
   "type": "class",
   "constructors": ["BandPass(parent)"],
-  "examples": "",
   "related": [],
   "name": "BandPass",
-  "classanchor": "libraries/sound/BandPass.html",
+  "classanchor": "libraries/sound/BandPass",
   "category": "sound",
   "subcategory": "",
   "parameters": []

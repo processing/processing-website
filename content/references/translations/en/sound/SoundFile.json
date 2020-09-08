@@ -57,10 +57,9 @@
   "description": "This is a Soundfile player which allows to play back and manipulate sound\n files. Supported formats are: WAV, AIF/AIFF, and MP3.",
   "type": "class",
   "constructors": ["SoundFile(parent, path)", "SoundFile(parent, path, cache)"],
-  "examples": "",
   "related": [],
   "name": "SoundFile",
-  "classanchor": "libraries/sound/SoundFile.html",
+  "classanchor": "libraries/sound/SoundFile",
   "category": "sound",
   "subcategory": "",
   "parameters": [

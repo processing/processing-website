@@ -1,0 +1,12 @@
+{
+  "related": [],
+  "name": "clear()",
+  "description": "Disables the PWM output",
+  "syntax": [".clear()"],
+  "returns": "void",
+  "type": "function",
+  "category": "",
+  "subcategory": "",
+  "classanchor": "PWM",
+  "parameters": []
+}

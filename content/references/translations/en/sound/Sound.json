@@ -30,10 +30,9 @@
     "Sound(parent)",
     "Sound(parent, sampleRate, outputDevice, inputDevice, volume)"
   ],
-  "examples": "",
   "related": [],
   "name": "Sound",
-  "classanchor": "libraries/sound/Sound.html",
+  "classanchor": "libraries/sound/Sound",
   "category": "sound",
   "subcategory": "",
   "parameters": [

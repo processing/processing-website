@@ -1,4 +1,6 @@
 {
+  "constructors": ["GPIO("],
+  "related": [],
   "methods": [
     {
       "name": "attachInterrupt()",
@@ -33,14 +35,11 @@
     }
   ],
   "csspath": "../../",
+  "name": "GPIO",
   "isLibrary": "true",
   "classFields": [],
   "type": "class",
-  "constructors": ["GPIO("],
-  "examples": "",
-  "related": [],
-  "name": "GPIO",
-  "classanchor": "libraries/io/GPIO.html",
+  "classanchor": "libraries/io/GPIO",
   "category": "",
   "subcategory": "",
   "parameters": []

@@ -16,10 +16,9 @@
   "description": "This is a pink noise generator. Pink Noise has a decrease of 3dB per octave.",
   "type": "class",
   "constructors": ["PinkNoise(parent)"],
-  "examples": "",
   "related": [],
   "name": "PinkNoise",
-  "classanchor": "libraries/sound/PinkNoise.html",
+  "classanchor": "libraries/sound/PinkNoise",
   "category": "sound",
   "subcategory": "",
   "parameters": [

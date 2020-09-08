@@ -1,0 +1,23 @@
+{
+  "related": [],
+  "name": "bufferUntil()",
+  "description": "",
+  "syntax": ["serial.bufferUntil(inByte)"],
+  "returns": "void",
+  "type": "function",
+  "category": "serial",
+  "subcategory": "serial",
+  "classanchor": "Serial",
+  "parameters": [
+    {
+      "name": "serial",
+      "description": " any variable of type Serial",
+      "type": ["Serial"]
+    },
+    {
+      "name": "inByte",
+      "description": "the value to buffer until",
+      "type": ["int"]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "related": [],
+  "name": "list()",
+  "description": "Lists all available SPI interfaces",
+  "syntax": [".list()"],
+  "returns": "String[]",
+  "type": "function",
+  "category": "",
+  "subcategory": "",
+  "classanchor": "SPI",
+  "parameters": []
+}

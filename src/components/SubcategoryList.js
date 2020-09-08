@@ -9,11 +9,12 @@ const SubcategoryList = (props) => {
   return (
     <div>
       <h3>{subcategory}</h3>
+      {locale}
       <ul>
         {subcategoryRefs.map((node, key) => {
           return (
             <li key={key}>
-              <Link to={link + node.name.split('.')[0]} language={locale}>
+              <Link to={link + node.name.split('.')[0] + '.html'}>
                 {node.childJson.name}
               </Link>
             </li>

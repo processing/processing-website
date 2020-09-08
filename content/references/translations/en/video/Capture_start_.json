@@ -1,0 +1,12 @@
+{
+  "related": [],
+  "name": "start()",
+  "description": "Starts capturing frames from the selected device.",
+  "syntax": [".start()"],
+  "returns": "void",
+  "type": "function",
+  "category": "capture.",
+  "subcategory": "",
+  "classanchor": "Capture",
+  "parameters": []
+}

@@ -11,10 +11,9 @@
   "description": "This is a simple reverb effect.",
   "type": "class",
   "constructors": ["Reverb(parent)"],
-  "examples": "",
   "related": [],
   "name": "Reverb",
-  "classanchor": "libraries/sound/Reverb.html",
+  "classanchor": "libraries/sound/Reverb",
   "category": "sound",
   "subcategory": "",
   "parameters": []

@@ -1,0 +1,12 @@
+{
+  "related": [],
+  "name": "pause()",
+  "description": "Pauses a movie during playback. If a movie is started again with play(),\n it will continue from where it was paused.",
+  "syntax": [".pause()"],
+  "returns": "void",
+  "type": "function",
+  "category": "movie",
+  "subcategory": "",
+  "classanchor": "Movie",
+  "parameters": []
+}

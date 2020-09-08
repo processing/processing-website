@@ -5,6 +5,7 @@ import unique from 'array-unique';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 
 import Layout from '../components/Layout';
+import ExCategoryList from '../components/ExCategoryList';
 
 import { useLocalization } from 'gatsby-theme-i18n';
 
@@ -39,18 +40,12 @@ const Examples = ({ data }) => {
             return ref.relativeDirectory.split('/')[0] === c;
           });
           return (
-            <div key={key}>
-              <h2>{c}</h2>
-              {categoryRefs.map((node, k) => {
-                return (
-                  <li key={k}>
-                    <Link to={node.childMdx.frontmatter.slug} language={locale}>
-                      {node.childMdx.frontmatter.title}
-                    </Link>
-                  </li>
-                );
-              })}
-            </div>
+            <ExCategoryList
+              key={key + 'c'}
+              category={c}
+              categoryRefs={categoryRefs}
+              subcategories={subcategories[c]}
+            />
           );
         })}
       </ul>

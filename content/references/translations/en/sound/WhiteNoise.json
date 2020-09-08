@@ -16,10 +16,9 @@
   "description": "This is a White Noise Generator. White Noise has a flat spectrum.",
   "type": "class",
   "constructors": ["WhiteNoise(parent)"],
-  "examples": "",
   "related": [],
   "name": "WhiteNoise",
-  "classanchor": "libraries/sound/WhiteNoise.html",
+  "classanchor": "libraries/sound/WhiteNoise",
   "category": "sound",
   "subcategory": "",
   "parameters": [
