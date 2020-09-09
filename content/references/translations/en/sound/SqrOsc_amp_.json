@@ -1,0 +1,18 @@
+{
+  "related": [],
+  "name": "amp()",
+  "description": "Change the amplitude/volume of this sound.",
+  "syntax": [".amp(amp)"],
+  "returns": "void",
+  "type": "function",
+  "category": "sound",
+  "subcategory": "",
+  "classanchor": "SqrOsc",
+  "parameters": [
+    {
+      "name": "amp",
+      "description": "A float value between 0.0 (complete silence) and 1.0 (full volume)\n            controlling the amplitude/volume of this sound.",
+      "type": ["float"]
+    }
+  ]
+}

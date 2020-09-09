@@ -1,4 +1,6 @@
 {
+  "constructors": ["SPI(dev)"],
+  "related": [],
   "methods": [
     { "name": "close()", "desc": "Closes the SPI interface" },
     { "name": "list()", "desc": "Lists all available SPI interfaces" },
@@ -6,14 +8,11 @@
     { "name": "transfer()", "desc": "Transfers data over the SPI bus" }
   ],
   "csspath": "../../",
+  "name": "SPI",
   "isLibrary": "true",
   "classFields": [],
   "type": "class",
-  "constructors": ["SPI(dev)"],
-  "examples": "",
-  "related": [],
-  "name": "SPI",
-  "classanchor": "libraries/io/SPI.html",
+  "classanchor": "libraries/io/SPI",
   "category": "",
   "subcategory": "",
   "parameters": [

@@ -1,0 +1,18 @@
+{
+  "related": [],
+  "name": "jump()",
+  "description": "Jump to a specific position in the soundfile while continuing to play.",
+  "syntax": [".jump(time)"],
+  "returns": "void",
+  "type": "function",
+  "category": "sound",
+  "subcategory": "",
+  "classanchor": "SoundFile",
+  "parameters": [
+    {
+      "name": "time",
+      "description": "position to jump to, in seconds.",
+      "type": ["float"]
+    }
+  ]
+}

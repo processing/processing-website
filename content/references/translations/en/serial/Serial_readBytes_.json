@@ -1,0 +1,27 @@
+{
+  "related": [],
+  "name": "readBytes()",
+  "description": "",
+  "syntax": [
+    "serial.readBytes()",
+    "serial.readBytes(max)",
+    "serial.readBytes(dest)"
+  ],
+  "returns": "byte[] or int",
+  "type": "function",
+  "category": "serial",
+  "subcategory": "serial",
+  "classanchor": "Serial",
+  "parameters": [
+    {
+      "name": "serial",
+      "description": " any variable of type Serial",
+      "type": ["Serial"]
+    },
+    {
+      "name": "max",
+      "description": "the maximum number of bytes to read",
+      "type": ["int"]
+    }
+  ]
+}

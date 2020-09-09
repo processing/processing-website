@@ -33,7 +33,9 @@ const Libraries = ({ data }) => {
         {libraries.nodes.map((node, key) => {
           return (
             <li key={key}>
-              <Link to={'/libraries/' + node.name} language={locale}>
+              <Link
+                to={'/reference/libraries/' + node.name + '/index.html'}
+                language={locale}>
                 {node.name}
               </Link>
             </li>

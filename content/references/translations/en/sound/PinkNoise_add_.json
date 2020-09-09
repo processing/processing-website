@@ -1,0 +1,18 @@
+{
+  "related": [],
+  "name": "add()",
+  "description": "Offset the output of this generator by a fixed value",
+  "syntax": [".add(add)"],
+  "returns": "void",
+  "type": "function",
+  "category": "sound",
+  "subcategory": "",
+  "classanchor": "PinkNoise",
+  "parameters": [
+    {
+      "name": "add",
+      "description": "offset the output of the generator by the given value",
+      "type": ["float"]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "related": [],
+  "name": "readString()",
+  "description": "",
+  "syntax": ["serial.readString()"],
+  "returns": "String",
+  "type": "function",
+  "category": "serial",
+  "subcategory": "serial",
+  "classanchor": "Serial",
+  "parameters": [
+    {
+      "name": "serial",
+      "description": " any variable of type Serial",
+      "type": ["Serial"]
+    }
+  ]
+}

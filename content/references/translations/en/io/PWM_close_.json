@@ -1,0 +1,12 @@
+{
+  "related": [],
+  "name": "close()",
+  "description": "Gives ownership of a channel back to the operating system",
+  "syntax": [".close()"],
+  "returns": "void",
+  "type": "function",
+  "category": "",
+  "subcategory": "",
+  "classanchor": "PWM",
+  "parameters": []
+}

@@ -18,10 +18,9 @@
   "description": "This is a simple Pulse oscillator.",
   "type": "class",
   "constructors": ["Pulse(parent)"],
-  "examples": "",
   "related": [],
   "name": "Pulse",
-  "classanchor": "libraries/sound/Pulse.html",
+  "classanchor": "libraries/sound/Pulse",
   "category": "sound",
   "subcategory": "",
   "parameters": [

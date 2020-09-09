@@ -1,4 +1,6 @@
 {
+  "constructors": ["PWM(channel)"],
+  "related": [],
   "methods": [
     { "name": "clear()", "desc": "Disables the PWM output" },
     {
@@ -13,14 +15,11 @@
     }
   ],
   "csspath": "../../",
+  "name": "PWM",
   "isLibrary": "true",
   "classFields": [],
   "type": "class",
-  "constructors": ["PWM(channel)"],
-  "examples": "",
-  "related": [],
-  "name": "PWM",
-  "classanchor": "libraries/io/PWM.html",
+  "classanchor": "libraries/io/PWM",
   "category": "",
   "subcategory": "",
   "parameters": [

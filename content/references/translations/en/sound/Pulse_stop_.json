@@ -1,0 +1,12 @@
+{
+  "related": [],
+  "name": "stop()",
+  "description": "Stop the oscillator.",
+  "syntax": [".stop()"],
+  "returns": "void",
+  "type": "function",
+  "category": "sound",
+  "subcategory": "",
+  "classanchor": "Pulse",
+  "parameters": []
+}

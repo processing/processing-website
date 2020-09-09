@@ -1,0 +1,31 @@
+{
+  "related": [],
+  "name": "readBytesUntil()",
+  "description": "( begin auto-generated from Client_readBytesUntil.xml )\n \n Reads from the port into a buffer of bytes up to and including a \n particular character. If the character isn't in the buffer, 'null' is \n returned. The version with no <b>byteBuffer</b> parameter returns a byte \n array of all data up to and including the <b>interesting</b> byte. This \n is not efficient, but is easy to use. The version with the \n <b>byteBuffer</b> parameter is more memory and time efficient. It grabs \n the data in the buffer and puts it into the byte array passed in and \n returns an int value for the number of bytes read. If the byte buffer is \n not large enough, -1 is returned and an error is printed to the message \n area. If nothing is in the buffer, 0 is returned.\n \n ( end auto-generated )",
+  "syntax": [
+    "client.readBytesUntil(interesting)",
+    "client.readBytesUntil(interesting, byteBuffer)"
+  ],
+  "returns": "byte[] or int",
+  "type": "function",
+  "category": "client",
+  "subcategory": "client",
+  "classanchor": "Client",
+  "parameters": [
+    {
+      "name": "client",
+      "description": " any variable of type Client",
+      "type": ["Client"]
+    },
+    {
+      "name": "interesting",
+      "description": "character designated to mark the end of the data",
+      "type": ["int"]
+    },
+    {
+      "name": "byteBuffer",
+      "description": "passed in byte array to be altered",
+      "type": ["byte[]"]
+    }
+  ]
+}

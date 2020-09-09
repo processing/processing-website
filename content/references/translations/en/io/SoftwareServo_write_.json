@@ -1,0 +1,18 @@
+{
+  "related": [],
+  "name": "write()",
+  "description": "Moves a servo motor to a given orientation",
+  "syntax": [".write(angle)"],
+  "returns": "void",
+  "type": "function",
+  "category": "",
+  "subcategory": "",
+  "classanchor": "SoftwareServo",
+  "parameters": [
+    {
+      "name": "angle",
+      "description": "angle in degrees (controls speed and direction on continuous-rotation servos)",
+      "type": ["float"]
+    }
+  ]
+}

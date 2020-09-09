@@ -1,0 +1,24 @@
+{
+  "related": [],
+  "name": "digitalWrite()",
+  "description": "Sets an output pin to be either high or low",
+  "syntax": [".digitalWrite(pin, value)"],
+  "returns": "void",
+  "type": "function",
+  "category": "",
+  "subcategory": "",
+  "classanchor": "GPIO",
+  "parameters": [
+    { "name": "pin", "description": "GPIO pin", "type": ["int"] },
+    {
+      "name": "value",
+      "description": "GPIO.HIGH (1) or GPIO.LOW (0)",
+      "type": ["int", "boolean"]
+    },
+    {
+      "name": "value",
+      "description": "true or false",
+      "type": ["boolean", "int"]
+    }
+  ]
+}

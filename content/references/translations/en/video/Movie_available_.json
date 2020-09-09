@@ -1,0 +1,12 @@
+{
+  "related": [],
+  "name": "available()",
+  "description": "Returns \"true\" when a new movie frame is available to read.",
+  "syntax": [".available()"],
+  "returns": "boolean",
+  "type": "function",
+  "category": "movie",
+  "subcategory": "",
+  "classanchor": "Movie",
+  "parameters": []
+}

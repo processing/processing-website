@@ -1,0 +1,23 @@
+{
+  "related": [],
+  "name": "serialEvent()",
+  "description": "",
+  "syntax": ["serial.serialEvent(event)"],
+  "returns": "void",
+  "type": "function",
+  "category": "serial",
+  "subcategory": "events",
+  "classanchor": "Serial",
+  "parameters": [
+    {
+      "name": "serial",
+      "description": " any variable of type Serial",
+      "type": ["Serial"]
+    },
+    {
+      "name": "event",
+      "description": "the port where new data is available",
+      "type": ["SerialPortEvent"]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "related": [],
+  "name": "attach()",
+  "description": "Attaches a servo motor to a GPIO pin using custom pulse widths",
+  "syntax": [".attach(pin)", ".attach(pin, minPulse, maxPulse)"],
+  "returns": "void",
+  "type": "function",
+  "category": "",
+  "subcategory": "",
+  "classanchor": "SoftwareServo",
+  "parameters": [
+    { "name": "pin", "description": "GPIO pin", "type": ["int"] },
+    {
+      "name": "minPulse",
+      "description": "minimum pulse width in microseconds (default: 544, same as on Arduino)",
+      "type": ["int"]
+    },
+    {
+      "name": "maxPulse",
+      "description": "maximum pulse width in microseconds (default: 2400, same as on Arduino)",
+      "type": ["int"]
+    }
+  ]
+}

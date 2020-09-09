@@ -1,0 +1,12 @@
+{
+  "related": [],
+  "name": "close()",
+  "description": "Closes a servo motor",
+  "syntax": [".close()"],
+  "returns": "void",
+  "type": "function",
+  "category": "",
+  "subcategory": "",
+  "classanchor": "SoftwareServo",
+  "parameters": []
+}

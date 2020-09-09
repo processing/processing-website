@@ -1,0 +1,12 @@
+{
+  "related": [],
+  "name": "list()",
+  "description": "Lists all available PWM channels",
+  "syntax": [".list()"],
+  "returns": "String[]",
+  "type": "function",
+  "category": "",
+  "subcategory": "",
+  "classanchor": "PWM",
+  "parameters": []
+}

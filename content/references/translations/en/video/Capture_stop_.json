@@ -1,0 +1,12 @@
+{
+  "related": [],
+  "name": "stop()",
+  "description": "Stops capturing frames from an attached device.",
+  "syntax": [".stop()"],
+  "returns": "void",
+  "type": "function",
+  "category": "capture",
+  "subcategory": "",
+  "classanchor": "Capture",
+  "parameters": []
+}

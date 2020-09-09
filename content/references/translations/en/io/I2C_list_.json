@@ -1,0 +1,12 @@
+{
+  "related": [],
+  "name": "list()",
+  "description": "Lists all available I2C interfaces",
+  "syntax": [".list()"],
+  "returns": "String[]",
+  "type": "function",
+  "category": "",
+  "subcategory": "",
+  "classanchor": "I2C",
+  "parameters": []
+}

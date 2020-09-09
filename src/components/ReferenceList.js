@@ -26,9 +26,9 @@ const ReferenceList = (props) => {
   });
 
   if (library === 'processing') {
-    link = '/references/';
+    link = '/reference/';
   } else {
-    link = '/libraries/' + library + '/';
+    link = '/reference/libraries/' + library + '/';
   }
 
   return (

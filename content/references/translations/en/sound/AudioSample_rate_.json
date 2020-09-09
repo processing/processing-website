@@ -1,0 +1,18 @@
+{
+  "related": [],
+  "name": "rate()",
+  "description": "Set the playback rate of the audiosample.",
+  "syntax": [".rate(rate)"],
+  "returns": "void",
+  "type": "function",
+  "category": "sound",
+  "subcategory": "",
+  "classanchor": "AudioSample",
+  "parameters": [
+    {
+      "name": "rate",
+      "description": "Relative playback rate to use. 1 is the original speed. 0.5 is\n            half speed and one octave down. 2 is double the speed and one\n            octave up.",
+      "type": ["float"]
+    }
+  ]
+}

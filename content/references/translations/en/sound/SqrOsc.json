@@ -17,10 +17,9 @@
   "description": "This is a simple Square Wave Oscillator",
   "type": "class",
   "constructors": ["SqrOsc(parent)"],
-  "examples": "",
   "related": [],
   "name": "SqrOsc",
-  "classanchor": "libraries/sound/SqrOsc.html",
+  "classanchor": "libraries/sound/SqrOsc",
   "category": "sound",
   "subcategory": "",
   "parameters": [

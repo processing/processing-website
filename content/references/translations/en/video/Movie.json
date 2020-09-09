@@ -31,10 +31,9 @@
   "description": "Datatype for storing and playing movies. Movies must be located in the sketch's data folder \n or an accessible place on the network to load without an error.",
   "type": "class",
   "constructors": ["Movie(parent, filename)"],
-  "examples": "",
   "related": [],
   "name": "Movie",
-  "classanchor": "libraries/video/Movie.html",
+  "classanchor": "libraries/video/Movie",
   "category": "video",
   "subcategory": "",
   "parameters": [

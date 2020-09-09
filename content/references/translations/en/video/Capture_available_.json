@@ -1,0 +1,12 @@
+{
+  "related": [],
+  "name": "available()",
+  "description": "Returns \"true\" when a new frame from the device is available to read.",
+  "syntax": [".available()"],
+  "returns": "boolean",
+  "type": "function",
+  "category": "capture",
+  "subcategory": "",
+  "classanchor": "Capture",
+  "parameters": []
+}

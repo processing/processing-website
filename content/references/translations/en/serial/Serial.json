@@ -29,10 +29,9 @@
     "Serial(parent, portName, baudRate)",
     "Serial(parent, portName, baudRate, parity, dataBits, stopBits)"
   ],
-  "examples": "",
   "related": [],
   "name": "Serial",
-  "classanchor": "libraries/serial/Serial.html",
+  "classanchor": "libraries/serial/Serial",
   "category": "serial",
   "subcategory": "",
   "parameters": [

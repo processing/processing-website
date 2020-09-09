@@ -16,10 +16,9 @@
   "description": "This is a brown noise generator. Brown noise has a decrease of 6db per octave.",
   "type": "class",
   "constructors": ["BrownNoise(parent)"],
-  "examples": "",
   "related": [],
   "name": "BrownNoise",
-  "classanchor": "libraries/sound/BrownNoise.html",
+  "classanchor": "libraries/sound/BrownNoise",
   "category": "sound",
   "subcategory": "",
   "parameters": [

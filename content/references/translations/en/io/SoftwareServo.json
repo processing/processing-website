@@ -1,4 +1,6 @@
 {
+  "constructors": ["SoftwareServo(parent)"],
+  "related": [],
   "methods": [
     { "name": "close()", "desc": "Closes a servo motor" },
     { "name": "attach()", "desc": "Attaches a servo motor to a GPIO pin" },
@@ -14,14 +16,11 @@
     { "name": "detach()", "desc": "Detatches a servo motor from a GPIO pin" }
   ],
   "csspath": "../../",
+  "name": "SoftwareServo",
   "isLibrary": "true",
   "classFields": [],
   "type": "class",
-  "constructors": ["SoftwareServo(parent)"],
-  "examples": "",
-  "related": [],
-  "name": "SoftwareServo",
-  "classanchor": "libraries/io/SoftwareServo.html",
+  "classanchor": "libraries/io/SoftwareServo",
   "category": "",
   "subcategory": "",
   "parameters": [
