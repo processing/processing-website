@@ -1,10 +1,11 @@
 {
+  "brief": "Cues the playhead to a fixed position in the audiosample.",
   "related": [],
   "name": "cueFrame()",
   "description": "Cues the playhead to a fixed position in the audiosample.",
   "syntax": [".cueFrame(frameNumber)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "AudioSample",

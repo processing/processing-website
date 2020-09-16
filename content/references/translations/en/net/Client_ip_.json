@@ -1,12 +1,13 @@
 {
+  "brief": "Returns the IP address of the machine as a String",
   "related": [],
   "name": "ip()",
-  "description": "( begin auto-generated from Client_ip.xml )\n \n Returns the IP address of the computer to which the Client is attached.\n \n ( end auto-generated )",
+  "description": "Returns the IP address of the computer to which the Client is attached.",
   "syntax": ["client.ip()"],
   "returns": "String",
-  "type": "function",
+  "type": "method",
   "category": "client",
-  "subcategory": "client",
+  "subcategory": "",
   "classanchor": "Client",
   "parameters": [
     {

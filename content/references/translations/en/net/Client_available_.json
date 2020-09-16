@@ -1,12 +1,13 @@
 {
+  "brief": "Returns the number of bytes in the buffer waiting to be read",
   "related": [],
   "name": "available()",
-  "description": "( begin auto-generated from Client_available.xml )\n \n Returns the number of bytes available. When any client has bytes \n available from the server, it returns the number of bytes.\n \n ( end auto-generated )",
+  "description": "Returns the number of bytes available. When any client has bytes \n available from the server, it returns the number of bytes.",
   "syntax": ["client.available()"],
   "returns": "int",
-  "type": "function",
+  "type": "method",
   "category": "client",
-  "subcategory": "client",
+  "subcategory": "",
   "classanchor": "Client",
   "parameters": [
     {

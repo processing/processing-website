@@ -1,0 +1,14 @@
+{
+  "brief": "Calculates the closest int value that is greater than or equal to the\n value of the parameter.",
+  "related": ["floor_", "round_"],
+  "name": "ceil()",
+  "description": "Calculates the closest int value that is greater than or equal to the\n value of the parameter. For example, <b>ceil(9.03)</b> returns the value 10.",
+  "syntax": ["ceil(n)"],
+  "returns": "int",
+  "type": "function",
+  "category": "math",
+  "subcategory": "calculation",
+  "parameters": [
+    { "name": "n", "description": "number to round up", "type": ["float"] }
+  ]
+}

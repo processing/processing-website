@@ -1,10 +1,11 @@
 {
+  "brief": "Set the frequency of the oscillator in Hz.",
   "related": [],
   "name": "freq()",
   "description": "Set the frequency of the oscillator in Hz.",
   "syntax": [".freq(freq)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "SinOsc",

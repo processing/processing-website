@@ -1,11 +1,12 @@
 {
+  "brief": "Add bytes to be written to the device.",
   "related": [],
   "name": "write()",
-  "description": "Adds bytes to be written to the device",
+  "description": "Add bytes to be written to the device<br/>\n <br/>\n You must call beginTransmission() before calling this function. The actual\n writing takes part when read() or endTransmission() is being called.",
   "syntax": [".write(out)"],
   "returns": "void",
-  "type": "function",
-  "category": "",
+  "type": "method",
+  "category": "I2C",
   "subcategory": "",
   "classanchor": "I2C",
   "parameters": [

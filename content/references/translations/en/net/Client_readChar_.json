@@ -1,12 +1,13 @@
 {
+  "brief": "Returns the next byte in the buffer as a char",
   "related": [],
   "name": "readChar()",
-  "description": "( begin auto-generated from Client_readChar.xml )\n \n Returns the next byte in the buffer as a char. Returns -1 or 0xffff if \n nothing is there.\n \n ( end auto-generated )",
+  "description": "Returns the next byte in the buffer as a char. Returns <b>-1</b> or \n <b>0xffff</b> if nothing is there.",
   "syntax": ["client.readChar()"],
   "returns": "char",
-  "type": "function",
+  "type": "method",
   "category": "client",
-  "subcategory": "client",
+  "subcategory": "",
   "classanchor": "Client",
   "parameters": [
     {

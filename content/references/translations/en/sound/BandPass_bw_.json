@@ -1,10 +1,11 @@
 {
+  "brief": "Set the bandwidth for the filter.",
   "related": [],
   "name": "bw()",
   "description": "Set the bandwidth for the filter.",
   "syntax": [".bw(bw)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "BandPass",

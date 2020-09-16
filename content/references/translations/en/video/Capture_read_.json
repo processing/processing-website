@@ -1,10 +1,11 @@
 {
+  "brief": "Reads the current frame of the device.",
   "related": [],
   "name": "read()",
   "description": "Reads the current frame of the device.",
   "syntax": [".read()"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "capture",
   "subcategory": "",
   "classanchor": "Capture",

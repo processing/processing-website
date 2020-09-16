@@ -1,10 +1,11 @@
 {
+  "brief": "Gets the content of the current audiobuffer from the input source.",
   "related": [],
   "name": "analyze()",
   "description": "Gets the content of the current audiobuffer from the input source.",
   "syntax": [".analyze()", ".analyze(value)"],
   "returns": "float[]",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "Waveform",

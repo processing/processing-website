@@ -1,0 +1,13 @@
+{
+  "brief": "Checks whether or not an element has any children",
+  "related": [],
+  "name": "hasChildren()",
+  "description": "Checks whether or not the element has any children, and returns the result as a boolean.",
+  "syntax": [".hasChildren()"],
+  "returns": "boolean",
+  "type": "method",
+  "category": "xml",
+  "subcategory": "method",
+  "classanchor": "XML",
+  "parameters": []
+}

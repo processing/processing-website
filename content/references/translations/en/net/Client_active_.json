@@ -1,12 +1,13 @@
 {
+  "brief": "Returns <b>true</b> if this client is still active",
   "related": [],
   "name": "active()",
-  "description": "( begin auto-generated from Client_active.xml )\n \n Returns true if this client is still active and hasn't run\n into any trouble.\n \n ( end auto-generated )",
+  "description": "Returns <b>true</b> if this client is still active and hasn't run\n into any trouble.",
   "syntax": ["client.active()"],
   "returns": "boolean",
-  "type": "function",
+  "type": "method",
   "category": "client",
-  "subcategory": "client",
+  "subcategory": "",
   "classanchor": "Client",
   "parameters": [
     {

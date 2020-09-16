@@ -1,0 +1,34 @@
+{
+  "brief": "Calculates the tangent of a point on a Bezier curve.",
+  "related": ["bezier_", "bezierVertex_", "curvePoint_"],
+  "name": "bezierTangent()",
+  "description": "Calculates the tangent of a point on a Bezier curve. There is a good\n definition of <a href=\"http://en.wikipedia.org/wiki/Tangent\"\n target=\"new\"><em>tangent</em> on Wikipedia</a>.\n\n\n ",
+  "syntax": ["bezierTangent(a, b, c, d, t)"],
+  "returns": "float",
+  "type": "function",
+  "category": "shape",
+  "subcategory": "curves",
+  "parameters": [
+    {
+      "name": "a",
+      "description": "coordinate of first point on the curve",
+      "type": ["float"]
+    },
+    {
+      "name": "b",
+      "description": "coordinate of first control point",
+      "type": ["float"]
+    },
+    {
+      "name": "c",
+      "description": "coordinate of second control point",
+      "type": ["float"]
+    },
+    {
+      "name": "d",
+      "description": "coordinate of second point on the curve",
+      "type": ["float"]
+    },
+    { "name": "t", "description": "value between 0 and 1", "type": ["float"] }
+  ]
+}

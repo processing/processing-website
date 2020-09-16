@@ -1,0 +1,28 @@
+{
+  "brief": "Normalizes a number from another range into a value between 0 and\n           1.",
+  "related": ["map_", "lerp_"],
+  "name": "norm()",
+  "description": "Normalizes a number from another range into a value between 0 and 1.\n Identical to <b>map(value, low, high, 0, 1)</b>.<br />\n <br />\n Numbers outside of the range are not clamped to 0 and 1, because\n out-of-range values are often intentional and useful. (See the second\n example above.)",
+  "syntax": ["norm(value, start, stop)"],
+  "returns": "float",
+  "type": "function",
+  "category": "math",
+  "subcategory": "calculation",
+  "parameters": [
+    {
+      "name": "value",
+      "description": "the incoming value to be converted",
+      "type": ["float"]
+    },
+    {
+      "name": "start",
+      "description": "lower bound of the value's current range",
+      "type": ["float"]
+    },
+    {
+      "name": "stop",
+      "description": "upper bound of the value's current range",
+      "type": ["float"]
+    }
+  ]
+}

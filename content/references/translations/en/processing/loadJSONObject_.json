@@ -1,0 +1,24 @@
+{
+  "brief": "Loads a JSON from the data folder or a URL, and returns a\n           <b>JSONObject</b>.",
+  "related": [
+    "JSONObject",
+    "JSONArray",
+    "loadJSONArray_",
+    "saveJSONObject_",
+    "saveJSONArray_"
+  ],
+  "name": "loadJSONObject()",
+  "description": "Loads a JSON from the data folder or a URL, and returns a\n <b>JSONObject</b>.<br />\n <br />\n All files loaded and saved by the Processing API use UTF-8 encoding.",
+  "syntax": ["loadJSONObject(filename)"],
+  "returns": "JSONObject",
+  "type": "function",
+  "category": "input",
+  "subcategory": "files",
+  "parameters": [
+    {
+      "name": "filename",
+      "description": "name of a file in the data folder or a URL",
+      "type": ["String"]
+    }
+  ]
+}

@@ -1,10 +1,11 @@
 {
+  "brief": "Define the audio input for the analyzer.",
   "related": [],
   "name": "input()",
   "description": "Define the audio input for the analyzer.",
   "syntax": [".input(input)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "Amplitude",

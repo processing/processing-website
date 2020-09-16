@@ -28,11 +28,14 @@ const RefTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      {locale}
       {data.json !== null ? (
         <div>
           <h1>{ref.name}</h1>
           <p>Description: {ref.description}</p>
+          Syntax:
+          {ref.syntax.map((syn, key) => {
+            return <p key={'s' + key}>{syn}</p>;
+          })}
           Parameters:
           {ref.parameters.map((param, key) => {
             return (
@@ -60,6 +63,7 @@ const RefTemplate = ({ data, pageContext }) => {
               );
             })}
           </ul>
+          <p>Related: {ref.related.join(', ')} </p>
         </div>
       ) : (
         <div>
@@ -79,11 +83,13 @@ export const query = graphql`
       childJson {
         name
         description
+        syntax
         parameters {
           name
           description
           type
         }
+        related
         returns
       }
     }

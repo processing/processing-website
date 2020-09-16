@@ -1,10 +1,11 @@
 {
+  "brief": "Returns the next client in line with a new message.",
   "related": [],
   "name": "available()",
-  "description": "( begin auto-generated from Server_available.xml )\n \n Returns the next client in line with a new message.\n \n ( end auto-generated )",
+  "description": "Returns the next client in line with a new message.",
   "syntax": ["server.available()"],
   "returns": "Client",
-  "type": "function",
+  "type": "method",
   "category": "server",
   "subcategory": "",
   "classanchor": "Server",

@@ -1,0 +1,29 @@
+{
+  "brief": "Divide a vector by a scalar",
+  "related": [],
+  "name": "div()",
+  "description": "Divides a vector by a scalar. The version of the method that uses a float\n acts directly on the vector upon which it is called (as in the first example\n above). The version that receives both a PVector and a float as arguments is\n a static methods, and returns a new PVector that is the result of the\n division operation. Both examples above produce the same visual output.",
+  "syntax": [".div(n)", ".div(v, n)", ".div(v, n, target)"],
+  "returns": "PVector",
+  "type": "method",
+  "category": "pvector",
+  "subcategory": "method",
+  "classanchor": "PVector",
+  "parameters": [
+    {
+      "name": "n",
+      "description": "the number by which to divide the vector",
+      "type": ["float"]
+    },
+    {
+      "name": "v",
+      "description": "the vector to divide by the scalar",
+      "type": ["PVector"]
+    },
+    {
+      "name": "target",
+      "description": "PVector in which to store the result",
+      "type": ["PVector"]
+    }
+  ]
+}

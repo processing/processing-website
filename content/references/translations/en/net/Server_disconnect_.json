@@ -1,12 +1,13 @@
 {
+  "brief": "Disconnect a particular client.",
   "related": [],
   "name": "disconnect()",
-  "description": "( begin auto-generated from Server_disconnect.xml )\n \n Disconnect a particular client.\n \n ( end auto-generated )",
+  "description": "Disconnect a particular client.",
   "syntax": ["server.disconnect(client)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "server",
-  "subcategory": "server",
+  "subcategory": "",
   "classanchor": "Server",
   "parameters": [
     {

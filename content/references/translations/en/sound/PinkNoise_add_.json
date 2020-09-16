@@ -1,10 +1,11 @@
 {
+  "brief": "Offset the output of this generator by a fixed value",
   "related": [],
   "name": "add()",
   "description": "Offset the output of this generator by a fixed value",
   "syntax": [".add(add)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "PinkNoise",

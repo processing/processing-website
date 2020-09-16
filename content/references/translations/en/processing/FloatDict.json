@@ -1,0 +1,104 @@
+{
+  "brief": "A simple table class to use a String as a lookup for an float\n           value.",
+  "methods": [
+    {
+      "anchor": "FloatDict_size_",
+      "name": "size()",
+      "desc": "Returns the number of key/value pairs"
+    },
+    {
+      "anchor": "FloatDict_clear_",
+      "name": "clear()",
+      "desc": "Remove all entries"
+    },
+    {
+      "anchor": "FloatDict_keyArray_",
+      "name": "keyArray()",
+      "desc": "Return a copy of the internal keys array"
+    },
+    {
+      "anchor": "FloatDict_values_",
+      "name": "values()",
+      "desc": "Return the internal array being used to store the values"
+    },
+    {
+      "anchor": "FloatDict_valueArray_",
+      "name": "valueArray()",
+      "desc": "Create a new array and copy each of the values into it"
+    },
+    {
+      "anchor": "FloatDict_get_",
+      "name": "get()",
+      "desc": "Return a value for the specified key"
+    },
+    {
+      "anchor": "FloatDict_set_",
+      "name": "set()",
+      "desc": "Create a new key/value pair or change the value of one"
+    },
+    {
+      "anchor": "FloatDict_hasKey_",
+      "name": "hasKey()",
+      "desc": "Check if a key is a part of the data structure"
+    },
+    { "anchor": "FloatDict_add_", "name": "add()", "desc": "Add to a value" },
+    {
+      "anchor": "FloatDict_sub_",
+      "name": "sub()",
+      "desc": "Subtract from a value"
+    },
+    {
+      "anchor": "FloatDict_mult_",
+      "name": "mult()",
+      "desc": "Multiply a value"
+    },
+    { "anchor": "FloatDict_div_", "name": "div()", "desc": "Divide a value" },
+    {
+      "anchor": "FloatDict_minIndex_",
+      "name": "minIndex()",
+      "desc": "Return the smallest value"
+    },
+    {
+      "anchor": "FloatDict_maxIndex_",
+      "name": "maxIndex()",
+      "desc": "Return the largest value"
+    },
+    {
+      "anchor": "FloatDict_remove_",
+      "name": "remove()",
+      "desc": "Remove a key/value pair"
+    },
+    {
+      "anchor": "FloatDict_sortKeys_",
+      "name": "sortKeys()",
+      "desc": "Sort the keys alphabetically"
+    },
+    {
+      "anchor": "FloatDict_sortKeysReverse_",
+      "name": "sortKeysReverse()",
+      "desc": "Sort the keys alphabetically in reverse"
+    },
+    {
+      "anchor": "FloatDict_sortValues_",
+      "name": "sortValues()",
+      "desc": "Sort by values in ascending order"
+    },
+    {
+      "anchor": "FloatDict_sortValuesReverse_",
+      "name": "sortValuesReverse()",
+      "desc": "Sort by values in descending order"
+    }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "A simple class to use a String as a lookup for an float value. String \"keys\"\n are associated with floating-point values.",
+  "type": "class",
+  "constructors": ["FloatDict(", "FloatDict(pairs)"],
+  "related": ["IntDict", "StringDict"],
+  "name": "FloatDict",
+  "classanchor": "FloatDict",
+  "category": "data",
+  "subcategory": "composite",
+  "parameters": []
+}

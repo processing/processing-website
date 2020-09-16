@@ -29,11 +29,25 @@ const ClassRefTemplate = ({ data, pageContext }) => {
         <div>
           <h1>Classname: {ref.name}</h1>
           <p>Description: {ref.description}</p>
-          Parameters:
-          {ref.parameters.map((param, key) => {
+          Constructors:
+          {ref.constructors.map((cons, key) => {
+            return <p key={'f' + key}>{cons}</p>;
+          })}
+          Fields:
+          {ref.classFields.map((field, key) => {
             return (
-              <p key={'param' + key}>
-                {param.name + ': ' + param.type + ' - ' + param.description}
+              <p key={'f' + key}>
+                <a href={field.anchor + '.html'}>{field.name} </a>
+                {field.desc}
+              </p>
+            );
+          })}
+          Methods:
+          {ref.methods.map((method, key) => {
+            return (
+              <p key={'m' + key}>
+                <a href={method.anchor + '.html'}>{method.name} </a>
+                {method.desc}
               </p>
             );
           })}
@@ -55,6 +69,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               );
             })}
           </ul>
+          <p>Related: {ref.related.join(', ')} </p>
         </div>
       ) : (
         <div>
@@ -74,11 +89,18 @@ export const query = graphql`
       childJson {
         name
         description
-        parameters {
+        constructors
+        classFields {
+          anchor
           name
-          description
-          type
+          desc
         }
+        methods {
+          anchor
+          name
+          desc
+        }
+        related
       }
     }
     allFile(filter: { relativeDirectory: { eq: $assetsName } }) {

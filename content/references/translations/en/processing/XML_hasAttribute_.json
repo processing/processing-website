@@ -1,0 +1,13 @@
+{
+  "brief": "Checks whether or not an element has the specified attribute",
+  "related": [],
+  "name": "hasAttribute()",
+  "description": "Checks whether or not an element has the specified attribute.  The attribute \n must be specified as a String, and a boolean is returned.",
+  "syntax": [".hasAttribute(name)"],
+  "returns": "boolean",
+  "type": "method",
+  "category": "xml",
+  "subcategory": "method",
+  "classanchor": "XML",
+  "parameters": []
+}

@@ -1,10 +1,11 @@
 {
+  "brief": "Offset the output of this generator by given value",
   "related": [],
   "name": "add()",
   "description": "Offset the output of this generator by given value",
   "syntax": [".add(add)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "SqrOsc",

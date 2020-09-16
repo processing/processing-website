@@ -1,10 +1,11 @@
 {
+  "brief": "Check whether this soundfile is currently playing.",
   "related": [],
   "name": "isPlaying()",
   "description": "Check whether this soundfile is currently playing.",
   "syntax": [".isPlaying()"],
   "returns": "boolean",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "SoundFile",

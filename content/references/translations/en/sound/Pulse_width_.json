@@ -1,10 +1,11 @@
 {
+  "brief": "Set the pulse width of the oscillator.",
   "related": [],
   "name": "width()",
   "description": "Set the pulse width of the oscillator.",
   "syntax": [".width(width)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "Pulse",

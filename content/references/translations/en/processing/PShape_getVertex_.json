@@ -1,0 +1,29 @@
+{
+  "brief": "Returns the vertex at the index position",
+  "related": ["PShape_setVertex_", "PShape_getVertexCount_"],
+  "name": "getVertex()",
+  "description": "The <b>getVertex()</b> method returns a PVector with the coordinates of \n the vertex point located at the position defined by the <b>index</b> \n parameter. This method works when shapes are created as shown in the \n example above, but won't work properly when a shape is defined explicitly \n (e.g. <b>createShape(RECT, 20, 20, 80, 80)</b>.",
+  "syntax": ["sh.getVertex(index)", "sh.getVertex(index, vec)"],
+  "returns": "PVector",
+  "type": "method",
+  "category": "pshape",
+  "subcategory": "method",
+  "classanchor": "PShape",
+  "parameters": [
+    {
+      "name": "sh",
+      "description": " any variable of type PShape",
+      "type": ["PShape"]
+    },
+    {
+      "name": "index",
+      "description": "the location of the vertex",
+      "type": ["int"]
+    },
+    {
+      "name": "vec",
+      "description": "PVector to assign the data to",
+      "type": ["PVector"]
+    }
+  ]
+}

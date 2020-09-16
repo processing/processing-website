@@ -1,9 +1,8 @@
 {
-  "examples": "",
-  "related": ["cos_.html", "asin_.html", "atan_.html"],
-  "usage": "",
+  "brief": "The inverse of <b>cos()</b>, returns the arc cosine of a value.",
+  "related": ["cos_", "asin_", "atan_"],
   "name": "acos()",
-  "description": "( begin auto-generated from acos.xml )\n\n The inverse of <b>cos()</b>, returns the arc cosine of a value. This\n function expects the values in the range of -1 to 1 and values are\n returned in the range <b>0</b> to <b>PI (3.1415927)</b>.\n\n ( end auto-generated )",
+  "description": "The inverse of <b>cos()</b>, returns the arc cosine of a value. This\n function expects the values in the range of -1 to 1 and values are\n returned in the range <b>0</b> to <b>PI (3.1415927)</b>.",
   "syntax": ["acos(value)"],
   "returns": "float",
   "type": "function",

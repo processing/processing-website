@@ -1,0 +1,31 @@
+{
+  "brief": "Extracts the alpha value from a color.",
+  "related": [
+    "PGraphics_red_",
+    "PGraphics_green_",
+    "PGraphics_blue_",
+    "PGraphics_hue_",
+    "PGraphics_saturation_",
+    "PGraphics_brightness_"
+  ],
+  "name": "alpha()",
+  "description": "Extracts the alpha value from a color.",
+  "syntax": ["graphics.alpha(rgb)"],
+  "returns": "float",
+  "type": "method",
+  "category": "color",
+  "subcategory": "creating_reading",
+  "classanchor": "PGraphics",
+  "parameters": [
+    {
+      "name": "graphics",
+      "description": " any object of the type PGraphics",
+      "type": ["PGraphics"]
+    },
+    {
+      "name": "rgb",
+      "description": "any value of the color datatype",
+      "type": ["int"]
+    }
+  ]
+}

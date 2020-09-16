@@ -1,0 +1,24 @@
+{
+  "brief": "Adds a new column to a table",
+  "related": ["Table_removeColumn_"],
+  "name": "addColumn()",
+  "description": "Use <b>addColumn()</b> to add a new column to a <b>Table</b> object.\n Typically, you will want to specify a title, so the column may be easily\n referenced later by name. (If no title is specified, the new column's title\n will be null.) A column type may also be specified, in which case all values\n stored in this column must be of the same type (e.g., Table.INT or\n Table.FLOAT). If no type is specified, the default type of STRING is used.",
+  "syntax": [".addColumn()", ".addColumn(title)", ".addColumn(title, type)"],
+  "returns": "void",
+  "type": "method",
+  "category": "table",
+  "subcategory": "method",
+  "classanchor": "Table",
+  "parameters": [
+    {
+      "name": "title",
+      "description": "the title to be used for the new column",
+      "type": ["String"]
+    },
+    {
+      "name": "type",
+      "description": "the type to be used for the new column: INT, LONG, FLOAT, DOUBLE, or STRING",
+      "type": ["int"]
+    }
+  ]
+}

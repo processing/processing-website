@@ -1,0 +1,18 @@
+{
+  "brief": "Converts a degree measurement to its corresponding value in radians.",
+  "related": ["degrees_"],
+  "name": "radians()",
+  "description": "Converts a degree measurement to its corresponding value in radians.\n Radians and degrees are two ways of measuring the same thing. There are\n 360 degrees in a circle and 2*PI radians in a circle. For example,\n 90&deg; = PI/2 = 1.5707964. All trigonometric functions in Processing\n require their parameters to be specified in radians.",
+  "syntax": ["radians(degrees)"],
+  "returns": "float",
+  "type": "function",
+  "category": "math",
+  "subcategory": "trigonometry",
+  "parameters": [
+    {
+      "name": "degrees",
+      "description": "degree value to convert to radians",
+      "type": ["float"]
+    }
+  ]
+}

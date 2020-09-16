@@ -1,12 +1,13 @@
 {
+  "brief": "Sets the number of bytes to buffer before calling serialEvent()",
   "related": [],
   "name": "buffer()",
-  "description": "",
+  "description": "Sets the number of bytes to buffer before calling serialEvent()",
   "syntax": ["serial.buffer(size)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "serial",
-  "subcategory": "serial",
+  "subcategory": "",
   "classanchor": "Serial",
   "parameters": [
     {

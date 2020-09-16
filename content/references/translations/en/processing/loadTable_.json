@@ -1,0 +1,23 @@
+{
+  "brief": "Reads the contents of a file or URL and creates an Table object\n           with its values.",
+  "related": ["Table", "saveTable_", "loadBytes_", "loadStrings_", "loadXML_"],
+  "name": "loadTable()",
+  "description": "Reads the contents of a file or URL and creates an Table object with its\n values. If a file is specified, it must be located in the sketch's \"data\"\n folder. The filename parameter can also be a URL to a file found online.\n The filename must either end in an extension or an extension must be\n specified in the <b>options</b> parameter. For example, to use\n tab-separated data, include \"tsv\" in the options parameter if the filename\n or URL does not end in <b>.tsv</b>. Note: If an extension is in both\n places, the extension in the <b>options</b> is used.<br />\n <br />\n If the file contains a header row, include \"header\" in the <b>options</b>\n parameter. If the file does not have a header row, then simply omit the\n \"header\" option.<br />\n <br />\n Some CSV files contain newline (CR or LF) characters inside cells. This is\n rare, but adding the \"newlines\" option will handle them properly. (This is\n not enabled by default because the parsing code is much slower.)<br />\n <br />\n When specifying multiple options, separate them with commas, as in:\n <b>loadTable(\"data.csv\", \"header, tsv\")</b><br />\n <br />\n All files loaded and saved by the Processing API use UTF-8 encoding.",
+  "syntax": ["loadTable(filename)", "loadTable(filename, options)"],
+  "returns": "Table",
+  "type": "function",
+  "category": "input",
+  "subcategory": "files",
+  "parameters": [
+    {
+      "name": "filename",
+      "description": "name of a file in the data folder or a URL.",
+      "type": ["String"]
+    },
+    {
+      "name": "options",
+      "description": "may contain \"header\", \"tsv\", \"csv\", or \"bin\" separated by commas",
+      "type": ["String"]
+    }
+  ]
+}

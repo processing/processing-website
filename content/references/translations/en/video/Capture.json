@@ -1,13 +1,31 @@
 {
+  "brief": "Datatype for storing and manipulating video frames from an attached capture device such as a camera.",
   "methods": [
-    { "name": "frameRate()", "desc": "Sets the target frame rate" },
     {
-      "name": "available()",
-      "desc": "Returns \"true\" when a new frame is available to read."
+      "anchor": "Capture_frameRate_",
+      "name": "frameRate()",
+      "desc": "Sets how often frames are read from the capture device. Setting the <b>fps</b>\n parameter to 4, for example, will cause 4 frames to be read per second."
     },
-    { "name": "start()", "desc": "Starts video capture" },
-    { "name": "stop()", "desc": "Stops video capture" },
-    { "name": "read()", "desc": "Reads the current frame" }
+    {
+      "anchor": "Capture_available_",
+      "name": "available()",
+      "desc": "Returns \"true\" when a new frame from the device is available to read."
+    },
+    {
+      "anchor": "Capture_start_",
+      "name": "start()",
+      "desc": "Starts capturing frames from the selected device."
+    },
+    {
+      "anchor": "Capture_stop_",
+      "name": "stop()",
+      "desc": "Stops capturing frames from an attached device."
+    },
+    {
+      "anchor": "Capture_read_",
+      "name": "read()",
+      "desc": "Reads the current frame of the device."
+    }
   ],
   "csspath": "../../",
   "isLibrary": "true",
@@ -24,7 +42,7 @@
   ],
   "related": [],
   "name": "Capture",
-  "classanchor": "libraries/video/Capture",
+  "classanchor": "video/Capture",
   "category": "video",
   "subcategory": "",
   "parameters": [

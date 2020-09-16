@@ -1,12 +1,13 @@
 {
+  "brief": "Returns a number between 0 and 255 for the next byte that's waiting in the buffer.",
   "related": [],
   "name": "read()",
-  "description": "",
+  "description": "Returns a number between 0 and 255 for the next byte that's waiting in the buffer. \n Returns -1 if there is no byte, although this should be avoided by first cheacking \n <b>available()</b> to see if data is available.",
   "syntax": ["serial.read()"],
   "returns": "int",
-  "type": "function",
+  "type": "method",
   "category": "serial",
-  "subcategory": "serial",
+  "subcategory": "",
   "classanchor": "Serial",
   "parameters": [
     {

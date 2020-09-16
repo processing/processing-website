@@ -1,4 +1,5 @@
 {
+  "brief": "Starts playback which loops from the beginning to the end of the sample.",
   "related": [],
   "name": "loop()",
   "description": "Starts playback which loops from the beginning to the end of the sample.",
@@ -10,7 +11,7 @@
     ".loop(rate, pos, amp, add)"
   ],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "AudioSample",

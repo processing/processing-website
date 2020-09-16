@@ -1,0 +1,24 @@
+{
+  "brief": "Saves the image to a TIFF, TARGA, PNG, or JPEG file.",
+  "related": [],
+  "name": "save()",
+  "description": "Saves the image into a file. Append a file extension to the name of\n the file, to indicate the file format to be used: either TIFF (.tif),\n TARGA (.tga), JPEG (.jpg), or PNG (.png). If no extension is included\n in the filename, the image will save in TIFF format and .tif will be\n added to the name.  These files are saved to the sketch's folder, which\n may be opened by selecting \"Show sketch folder\" from the \"Sketch\" menu.\n <br /><br />To save an image created within the code, rather\n than through loading, it's necessary to make the image with the\n <b>createImage()</b> function so it is aware of the location of the\n program and can therefore save the file to the right place. See the\n <b>createImage()</b> reference for more information.\n\n ",
+  "syntax": ["pimg.save(filename)"],
+  "returns": "boolean",
+  "type": "method",
+  "category": "pimage",
+  "subcategory": "method",
+  "classanchor": "PImage",
+  "parameters": [
+    {
+      "name": "pimg",
+      "description": " any object of type PImage",
+      "type": ["PImage"]
+    },
+    {
+      "name": "filename",
+      "description": "a sequence of letters and numbers",
+      "type": ["String"]
+    }
+  ]
+}

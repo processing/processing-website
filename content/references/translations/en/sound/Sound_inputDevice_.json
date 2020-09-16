@@ -1,10 +1,11 @@
 {
+  "brief": "Choose the device (sound card) which should be used for grabbing audio input\n using AudioIn.",
   "related": [],
   "name": "inputDevice()",
   "description": "Choose the device (sound card) which should be used for grabbing audio input\n using AudioIn.",
   "syntax": [".inputDevice(deviceId)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "Sound",

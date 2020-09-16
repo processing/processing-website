@@ -1,0 +1,24 @@
+{
+  "brief": "Called once after every time a mouse button is pressed.",
+  "related": [
+    "mouseX",
+    "mouseY",
+    "pmouseX",
+    "pmouseY",
+    "mousePressed",
+    "mouseReleased_",
+    "mouseClicked_",
+    "mouseMoved_",
+    "mouseDragged_",
+    "mouseButton",
+    "mouseWheel_"
+  ],
+  "name": "mousePressed()",
+  "description": "The <b>mousePressed()</b> function is called once after every time a mouse\n button is pressed. The <b>mouseButton</b> variable (see the related\n reference entry) can be used to determine which button has been pressed.\n <br />\n <br />\n Mouse and keyboard events only work when a program has <b>draw()</b>.\n Without <b>draw()</b>, the code is only run once and then stops listening\n for events.\n\n ",
+  "syntax": ["mousePressed()", "mousePressed(event)"],
+  "returns": "void",
+  "type": "function",
+  "category": "input",
+  "subcategory": "mouse",
+  "parameters": []
+}

@@ -1,0 +1,90 @@
+{
+  "brief": "Datatype for storing images.",
+  "constructors": [
+    "PImage(width, height, format, factor)",
+    "PImage(width, height, pixels, requiresCheckAlpha, parent)",
+    "PImage(width, height, pixels, requiresCheckAlpha, parent, format, factor)"
+  ],
+  "related": ["loadImage_", "imageMode_", "createImage_"],
+  "methods": [
+    {
+      "anchor": "PImage_loadPixels_",
+      "name": "loadPixels()",
+      "desc": "Loads the pixel data for the image into its <b>pixels[]</b> array."
+    },
+    {
+      "anchor": "PImage_updatePixels_",
+      "name": "updatePixels()",
+      "desc": "Updates the image with the data in its <b>pixels[]</b> array."
+    },
+    {
+      "anchor": "PImage_resize_",
+      "name": "resize()",
+      "desc": "Resize the image to a new width and height."
+    },
+    {
+      "anchor": "PImage_get_",
+      "name": "get()",
+      "desc": "Reads the color of any pixel or grabs a rectangle of pixels."
+    },
+    {
+      "anchor": "PImage_set_",
+      "name": "set()",
+      "desc": "Writes a color to any pixel or writes an image into another"
+    },
+    {
+      "anchor": "PImage_mask_",
+      "name": "mask()",
+      "desc": "Masks part of an image with another image as an alpha channel"
+    },
+    {
+      "anchor": "PImage_filter_",
+      "name": "filter()",
+      "desc": "Converts the image to grayscale or black and white"
+    },
+    {
+      "anchor": "PImage_copy_",
+      "name": "copy()",
+      "desc": "Copies the entire image"
+    },
+    {
+      "anchor": "PImage_blendColor_",
+      "name": "blendColor()",
+      "desc": "Blends two color values together based on the blending mode given as the\n <b>MODE</b> parameter."
+    },
+    {
+      "anchor": "PImage_blend_",
+      "name": "blend()",
+      "desc": "Copies a pixel or rectangle of pixels using different blending modes."
+    },
+    {
+      "anchor": "PImage_save_",
+      "name": "save()",
+      "desc": "Saves the image to a TIFF, TARGA, PNG, or JPEG file."
+    }
+  ],
+  "name": "PImage",
+  "classFields": [
+    {
+      "anchor": "PImage_pixels",
+      "name": "pixels[]",
+      "desc": "Array containing the color of every pixel in the image."
+    },
+    {
+      "anchor": "PImage_width",
+      "name": "width",
+      "desc": "The width of the image in units of pixels."
+    },
+    {
+      "anchor": "PImage_height",
+      "name": "height",
+      "desc": "The height of the image in units of pixels."
+    }
+  ],
+  "description": "Datatype for storing images. Processing can display <b>.gif</b>, <b>.jpg</b>,\n <b>.tga</b>, and <b>.png</b> images. Images may be displayed in 2D and 3D\n space. Before an image is used, it must be loaded with the <b>loadImage()</b>\n function. The <b>PImage</b> class contains fields for the <b>width</b> and\n <b>height</b> of the image, as well as an array called <b>pixels[]</b> that\n contains the values for every pixel in the image. The methods described below\n allow easy access to the image's pixels and alpha channel and simplify the\n process of compositing.<br />\n <br />\n Before using the <b>pixels[]</b> array, be sure to use the\n <b>loadPixels()</b> method on the image to make sure that the pixel data is\n properly loaded.<br />\n <br />\n To create a new image, use the <b>createImage()</b> function. Do not use the\n syntax <b>new PImage()</b>.",
+  "type": "class",
+  "classanchor": "PImage",
+  "category": "image",
+  "subcategory": "",
+  "parameters": []
+}

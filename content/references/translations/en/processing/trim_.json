@@ -1,0 +1,15 @@
+{
+  "brief": "Removes whitespace characters from the beginning and end of a String.",
+  "related": ["split_", "join_"],
+  "name": "trim()",
+  "description": "Removes whitespace characters from the beginning and end of a String. In\n addition to standard whitespace characters such as space, carriage\n return, and tab, this function also removes the Unicode \"nbsp\" character.",
+  "syntax": ["trim(str)", "trim(array)"],
+  "returns": "String or String[]",
+  "type": "function",
+  "category": "data",
+  "subcategory": "string_functions",
+  "parameters": [
+    { "name": "str", "description": "any string", "type": ["String"] },
+    { "name": "array", "description": "a String array", "type": ["String[]"] }
+  ]
+}

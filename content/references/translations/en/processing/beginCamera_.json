@@ -1,0 +1,19 @@
+{
+  "brief": "The <b>beginCamera()</b> and <b>endCamera()</b> functions enable\n advanced customization of the camera space.",
+  "related": [
+    "camera_",
+    "endCamera_",
+    "applyMatrix_",
+    "resetMatrix_",
+    "translate_",
+    "scale_"
+  ],
+  "name": "beginCamera()",
+  "description": "The <b>beginCamera()</b> and <b>endCamera()</b> functions enable\n advanced customization of the camera space. The functions are useful if\n you want to more control over camera movement, however for most users,\n the <b>camera()</b> function will be sufficient.<br /><br />The camera\n functions will replace any transformations (such as <b>rotate()</b> or\n <b>translate()</b>) that occur before them in <b>draw()</b>, but they\n will not automatically replace the camera transform itself. For this\n reason, camera functions should be placed at the beginning of\n <b>draw()</b> (so that transformations happen afterwards), and the\n <b>camera()</b> function can be used after <b>beginCamera()</b> if you\n want to reset the camera before applying transformations.<br /><br\n />This function sets the matrix mode to the camera matrix so calls such\n as <b>translate()</b>, <b>rotate()</b>, applyMatrix() and resetMatrix()\n affect the camera. <b>beginCamera()</b> should always be used with a\n following <b>endCamera()</b> and pairs of <b>beginCamera()</b> and\n <b>endCamera()</b> cannot be nested.",
+  "syntax": ["beginCamera()"],
+  "returns": "void",
+  "type": "function",
+  "category": "lights_camera",
+  "subcategory": "camera",
+  "parameters": []
+}

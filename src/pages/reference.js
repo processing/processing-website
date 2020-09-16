@@ -20,7 +20,10 @@ export default Reference;
 export const query = graphql`
   query {
     allFile(
-      filter: { fields: { lang: { eq: "en" }, lib: { eq: "processing" } } }
+      filter: {
+        fields: { lang: { eq: "en" }, lib: { eq: "processing" } }
+        childJson: { type: { ne: "method" } }
+      }
     ) {
       nodes {
         name

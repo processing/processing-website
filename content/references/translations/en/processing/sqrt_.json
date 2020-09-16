@@ -1,0 +1,14 @@
+{
+  "brief": "Calculates the square root of a number.",
+  "related": ["pow_", "sq_"],
+  "name": "sqrt()",
+  "description": "Calculates the square root of a number. The square root of a number is\n always positive, even though there may be a valid negative root. The\n square root <b>s</b> of number <b>a</b> is such that <b>s*s = a</b>. It\n is the opposite of squaring.",
+  "syntax": ["sqrt(n)"],
+  "returns": "float",
+  "type": "function",
+  "category": "math",
+  "subcategory": "calculation",
+  "parameters": [
+    { "name": "n", "description": "non-negative number", "type": ["float"] }
+  ]
+}

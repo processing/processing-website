@@ -1,0 +1,13 @@
+{
+  "brief": "Check if a value is a part of the list",
+  "related": [],
+  "name": "hasValue()",
+  "description": "Check if a value is a part of the list",
+  "syntax": [".hasValue(value)"],
+  "returns": "boolean",
+  "type": "method",
+  "category": "stringlist",
+  "subcategory": "method",
+  "classanchor": "StringList",
+  "parameters": []
+}

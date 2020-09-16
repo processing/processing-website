@@ -1,10 +1,11 @@
 {
+  "brief": "Returns the duration of the soundfile in seconds.",
   "related": [],
   "name": "duration()",
   "description": "Returns the duration of the soundfile in seconds.",
   "syntax": [".duration()"],
   "returns": "float",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "SoundFile",

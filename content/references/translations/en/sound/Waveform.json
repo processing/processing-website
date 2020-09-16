@@ -1,10 +1,16 @@
 {
+  "brief": "This is a Waveform analyzer. It returns the waveform of the \n of an audio stream the moment it is queried with the analyze()\n method.",
   "methods": [
     {
+      "anchor": "Waveform_analyze_",
       "name": "analyze()",
       "desc": "Gets the content of the current audiobuffer from the input source."
     },
-    { "name": "input()", "desc": "Define the audio input for the analyzer." }
+    {
+      "anchor": "Waveform_input_",
+      "name": "input()",
+      "desc": "Define the audio input for the analyzer."
+    }
   ],
   "csspath": "../../",
   "isLibrary": "true",
@@ -14,7 +20,7 @@
   "constructors": ["Waveform(parent, nsamples)"],
   "related": [],
   "name": "Waveform",
-  "classanchor": "libraries/sound/Waveform",
+  "classanchor": "sound/Waveform",
   "category": "sound",
   "subcategory": "",
   "parameters": [

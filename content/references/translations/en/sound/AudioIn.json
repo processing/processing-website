@@ -1,14 +1,18 @@
 {
+  "brief": "AudioIn lets you grab the audio input from your sound card.",
   "methods": [
     {
+      "anchor": "AudioIn_play_",
       "name": "play()",
       "desc": "Start capturing the input stream and route it to the audio output"
     },
     {
+      "anchor": "AudioIn_start_",
       "name": "start()",
       "desc": "Start the input stream without routing it to the audio output. This is useful\n if you only want to perform audio analysis based on the microphone input."
     },
     {
+      "anchor": "AudioIn_set_",
       "name": "set()",
       "desc": "Sets amplitude, add and pan position with one method."
     }
@@ -21,7 +25,7 @@
   "constructors": ["AudioIn(parent)", "AudioIn(parent, in)"],
   "related": [],
   "name": "AudioIn",
-  "classanchor": "libraries/sound/AudioIn",
+  "classanchor": "sound/AudioIn",
   "category": "sound",
   "subcategory": "",
   "parameters": [

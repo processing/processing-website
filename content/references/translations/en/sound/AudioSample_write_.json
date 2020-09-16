@@ -1,4 +1,5 @@
 {
+  "brief": "Write some frames of this audio sample. Stereo samples require two data\n.points per frame.",
   "related": [],
   "name": "write()",
   "description": "Write some frames of this audio sample. Stereo samples require two data\n.points per frame.",
@@ -8,7 +9,7 @@
     ".write(index, value)"
   ],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "AudioSample",

@@ -1,12 +1,13 @@
 {
+  "brief": "Empty the buffer, removes all the data stored there.",
   "related": [],
   "name": "clear()",
-  "description": "",
+  "description": "Empty the buffer, removes all the data stored there.",
   "syntax": ["serial.clear()"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "serial",
-  "subcategory": "serial",
+  "subcategory": "",
   "classanchor": "Serial",
   "parameters": [
     {

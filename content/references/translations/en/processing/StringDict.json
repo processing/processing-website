@@ -1,0 +1,82 @@
+{
+  "brief": "A simple class to use a String as a lookup for an String value",
+  "methods": [
+    {
+      "anchor": "StringDict_size_",
+      "name": "size()",
+      "desc": "Returns the number of key/value pairs"
+    },
+    {
+      "anchor": "StringDict_clear_",
+      "name": "clear()",
+      "desc": "Remove all entries"
+    },
+    {
+      "anchor": "StringDict_keyArray_",
+      "name": "keyArray()",
+      "desc": "Return a copy of the internal keys array"
+    },
+    {
+      "anchor": "StringDict_values_",
+      "name": "values()",
+      "desc": "Return the internal array being used to store the values"
+    },
+    {
+      "anchor": "StringDict_valueArray_",
+      "name": "valueArray()",
+      "desc": "Create a new array and copy each of the values into it"
+    },
+    {
+      "anchor": "StringDict_get_",
+      "name": "get()",
+      "desc": "Return a value for the specified key"
+    },
+    {
+      "anchor": "StringDict_set_",
+      "name": "set()",
+      "desc": "Create a new key/value pair or change the value of one"
+    },
+    {
+      "anchor": "StringDict_hasKey_",
+      "name": "hasKey()",
+      "desc": "Check if a key is a part of the data structure"
+    },
+    {
+      "anchor": "StringDict_remove_",
+      "name": "remove()",
+      "desc": "Remove a key/value pair"
+    },
+    {
+      "anchor": "StringDict_sortKeys_",
+      "name": "sortKeys()",
+      "desc": "Sort the keys alphabetically"
+    },
+    {
+      "anchor": "StringDict_sortKeysReverse_",
+      "name": "sortKeysReverse()",
+      "desc": "Sort the keys alphabetically in reverse"
+    },
+    {
+      "anchor": "StringDict_sortValues_",
+      "name": "sortValues()",
+      "desc": "Sort by values in descending order"
+    },
+    {
+      "anchor": "StringDict_sortValuesReverse_",
+      "name": "sortValuesReverse()",
+      "desc": "Sort by values in descending order"
+    }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "A simple class to use a String as a lookup for an String value. String \"keys\" \n are associated with String values.",
+  "type": "class",
+  "constructors": ["StringDict(", "StringDict(pairs)", "StringDict(row)"],
+  "related": ["IntDict", "FloatDict"],
+  "name": "StringDict",
+  "classanchor": "StringDict",
+  "category": "data",
+  "subcategory": "composite",
+  "parameters": []
+}

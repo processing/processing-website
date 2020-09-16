@@ -1,0 +1,12 @@
+{
+  "brief": "Removes the current fill value for displaying images and reverts to\n displaying images with their original hues.",
+  "related": ["tint_", "image_"],
+  "name": "noTint()",
+  "description": "Removes the current fill value for displaying images and reverts to\n displaying images with their original hues.",
+  "syntax": ["noTint()"],
+  "returns": "void",
+  "type": "function",
+  "category": "image",
+  "subcategory": "loading_displaying",
+  "parameters": []
+}

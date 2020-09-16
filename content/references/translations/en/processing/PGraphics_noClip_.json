@@ -1,0 +1,19 @@
+{
+  "brief": "Disables the clipping previously started by the <b>clip()</b> function.",
+  "related": [],
+  "name": "noClip()",
+  "description": "Disables the clipping previously started by the <b>clip()</b> function.",
+  "syntax": ["graphics.noClip()"],
+  "returns": "void",
+  "type": "method",
+  "category": "rendering",
+  "subcategory": "",
+  "classanchor": "PGraphics",
+  "parameters": [
+    {
+      "name": "graphics",
+      "description": " any object of the type PGraphics",
+      "type": ["PGraphics"]
+    }
+  ]
+}

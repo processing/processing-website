@@ -1,16 +1,17 @@
 {
+  "brief": "Reads a group of bytes from the buffer.",
   "related": [],
   "name": "readBytes()",
-  "description": "( begin auto-generated from Client_readBytes.xml )\n \n Reads a group of bytes from the buffer. The version with no parameters \n returns a byte array of all data in the buffer. This is not efficient, \n but is easy to use. The version with the <b>byteBuffer</b> parameter is \n more memory and time efficient. It grabs the data in the buffer and puts \n it into the byte array passed in and returns an int value for the number \n of bytes read. If more bytes are available than can fit into the \n <b>byteBuffer</b>, only those that fit are read.\n \n ( end auto-generated )\n ",
+  "description": "Reads a group of bytes from the buffer. The version with no parameters \n returns a byte array of all data in the buffer. This is not efficient, \n but is easy to use. The version with the <b>byteBuffer</b> parameter is \n more memory and time efficient. It grabs the data in the buffer and puts \n it into the byte array passed in and returns an int value for the number \n of bytes read. If more bytes are available than can fit into the \n <b>byteBuffer</b>, only those that fit are read.\n \n ",
   "syntax": [
     "client.readBytes()",
     "client.readBytes(max)",
     "client.readBytes(bytebuffer)"
   ],
   "returns": "byte[] or int",
-  "type": "function",
+  "type": "method",
   "category": "client",
-  "subcategory": "client",
+  "subcategory": "",
   "classanchor": "Client",
   "parameters": [
     {

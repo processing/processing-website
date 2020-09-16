@@ -1,0 +1,13 @@
+{
+  "brief": "Check if a number is a part of the list",
+  "related": [],
+  "name": "hasValue()",
+  "description": "Check if a number is a part of the list.",
+  "syntax": [".hasValue(value)"],
+  "returns": "boolean",
+  "type": "method",
+  "category": "floatlist",
+  "subcategory": "method",
+  "classanchor": "FloatList",
+  "parameters": []
+}

@@ -1,4 +1,5 @@
 {
+  "brief": "Triggers the envelope",
   "related": [],
   "name": "play()",
   "description": "Triggers the envelope",
@@ -6,7 +7,7 @@
     ".play(input, attackTime, sustainTime, sustainLevel, releaseTime)"
   ],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "Env",

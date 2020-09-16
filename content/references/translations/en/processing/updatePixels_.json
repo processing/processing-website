@@ -1,0 +1,12 @@
+{
+  "brief": "Updates the display window with the data in the <b>pixels[]</b>\n           array.",
+  "related": ["loadPixels_", "pixels"],
+  "name": "updatePixels()",
+  "description": "Updates the display window with the data in the <b>pixels[]</b> array. Use\n in conjunction with <b>loadPixels()</b>. If you're only reading pixels from\n the array, there's no need to call <b>updatePixels()</b> &mdash; updating is\n only necessary to apply changes.",
+  "syntax": ["updatePixels()"],
+  "returns": "void",
+  "type": "function",
+  "category": "image",
+  "subcategory": "pixels",
+  "parameters": []
+}

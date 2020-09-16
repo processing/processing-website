@@ -1,4 +1,5 @@
 {
+  "brief": "Starts playback which will loop at the end of the soundfile.",
   "related": [],
   "name": "loop()",
   "description": "Starts playback which will loop at the end of the soundfile.",
@@ -10,7 +11,7 @@
     ".loop(rate, pos, amp, add)"
   ],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "SoundFile",

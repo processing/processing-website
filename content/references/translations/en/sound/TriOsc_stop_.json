@@ -1,10 +1,11 @@
 {
+  "brief": "Stop the oscillator.",
   "related": [],
   "name": "stop()",
   "description": "Stop the oscillator.",
   "syntax": [".stop()"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "TriOsc",

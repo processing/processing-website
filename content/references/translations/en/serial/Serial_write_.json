@@ -1,12 +1,13 @@
 {
+  "brief": "Writes bytes, chars, ints, bytes[], Strings to the serial port",
   "related": [],
   "name": "write()",
-  "description": "",
+  "description": "Writes bytes, chars, ints, bytes[], Strings to the serial port\n \n ",
   "syntax": ["serial.write(src)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "serial",
-  "subcategory": "serial",
+  "subcategory": "",
   "classanchor": "Serial",
   "parameters": [
     {

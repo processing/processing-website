@@ -1,12 +1,13 @@
 {
+  "brief": "Writes bytes, chars, ints, bytes[], Strings",
   "related": [],
   "name": "write()",
-  "description": "( begin auto-generated from Client_write.xml )\n \n Writes data to a server specified when constructing the client.\n \n ( end auto-generated )",
+  "description": "Writes data to a server specified when constructing the client, or writes \n data to the specific client obtained from the Server <b>available()</b> \n method.",
   "syntax": ["client.write(data)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "client",
-  "subcategory": "client",
+  "subcategory": "",
   "classanchor": "Client",
   "parameters": [
     {

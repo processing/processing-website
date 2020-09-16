@@ -1,10 +1,11 @@
 {
+  "brief": "Change the feedback of the delay effect.",
   "related": [],
   "name": "feedback()",
   "description": "Change the feedback of the delay effect.",
   "syntax": [".feedback(feedback)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "Delay",

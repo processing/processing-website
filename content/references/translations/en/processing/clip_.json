@@ -1,0 +1,33 @@
+{
+  "brief": "Limits the rendering to the boundaries of a rectangle defined\n by the parameters.",
+  "related": [],
+  "name": "clip()",
+  "description": "Limits the rendering to the boundaries of a rectangle defined\n by the parameters. The boundaries are drawn based on the state\n of the <b>imageMode()</b> fuction, either CORNER, CORNERS, or CENTER.",
+  "syntax": ["clip(a, b, c, d)"],
+  "returns": "void",
+  "type": "function",
+  "category": "rendering",
+  "subcategory": "",
+  "parameters": [
+    {
+      "name": "a",
+      "description": "x-coordinate of the rectangle, by default",
+      "type": ["float"]
+    },
+    {
+      "name": "b",
+      "description": "y-coordinate of the rectangle, by default",
+      "type": ["float"]
+    },
+    {
+      "name": "c",
+      "description": "width of the rectangle, by default",
+      "type": ["float"]
+    },
+    {
+      "name": "d",
+      "description": "height of the rectangle, by default",
+      "type": ["float"]
+    }
+  ]
+}

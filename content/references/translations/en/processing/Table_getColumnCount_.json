@@ -1,0 +1,13 @@
+{
+  "brief": "Returns the total number of columns in a table",
+  "related": ["Table_getRowCount_"],
+  "name": "getColumnCount()",
+  "description": "Returns the total number of columns in a table.",
+  "syntax": [".getColumnCount()"],
+  "returns": "int",
+  "type": "method",
+  "category": "table",
+  "subcategory": "method",
+  "classanchor": "Table",
+  "parameters": []
+}

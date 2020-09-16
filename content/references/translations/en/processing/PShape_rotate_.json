@@ -1,0 +1,31 @@
+{
+  "brief": "Rotates the shape",
+  "related": [
+    "PShape_rotateX_",
+    "PShape_rotateY_",
+    "PShape_rotateZ_",
+    "PShape_scale_",
+    "PShape_translate_",
+    "PShape_resetMatrix_"
+  ],
+  "name": "rotate()",
+  "description": "Rotates a shape the amount specified by the <b>angle</b> parameter.\n Angles should be specified in radians (values from 0 to TWO_PI) or\n converted to radians with the <b>radians()</b> method.\n <br /><br />\n Shapes are always rotated around the upper-left corner of their bounding\n box. Positive numbers rotate objects in a clockwise direction.\n Transformations apply to everything that happens after and subsequent\n calls to the method accumulates the effect. For example, calling\n <b>rotate(HALF_PI)</b> and then <b>rotate(HALF_PI)</b> is the same as\n <b>rotate(PI)</b>. This transformation is applied directly to the shape,\n it's not refreshed each time <b>draw()</b> is run.",
+  "syntax": ["sh.rotate(angle)"],
+  "returns": "void",
+  "type": "method",
+  "category": "pshape",
+  "subcategory": "method",
+  "classanchor": "PShape",
+  "parameters": [
+    {
+      "name": "sh",
+      "description": " any variable of type PShape",
+      "type": ["PShape"]
+    },
+    {
+      "name": "angle",
+      "description": "angle of rotation specified in radians",
+      "type": ["float"]
+    }
+  ]
+}

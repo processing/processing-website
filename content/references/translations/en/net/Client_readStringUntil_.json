@@ -1,12 +1,13 @@
 {
+  "brief": "Returns the buffer as a String up to and including a particular character",
   "related": [],
   "name": "readStringUntil()",
-  "description": "( begin auto-generated from Client_readStringUntil.xml )\n \n Combination of <b>readBytesUntil()</b> and <b>readString()</b>. Returns \n <b>null</b> if it doesn't find what you're looking for.\n \n ( end auto-generated )\n ",
+  "description": "Combination of <b>readBytesUntil()</b> and <b>readString()</b>. Returns \n <b>null</b> if it doesn't find what you're looking for.\n \n ",
   "syntax": ["client.readStringUntil(interesting)"],
   "returns": "String",
-  "type": "function",
+  "type": "method",
   "category": "client",
-  "subcategory": "client",
+  "subcategory": "",
   "classanchor": "Client",
   "parameters": [
     {

@@ -1,10 +1,11 @@
 {
+  "brief": "Change the room size of the reverb effect.",
   "related": [],
   "name": "room()",
   "description": "Change the room size of the reverb effect.",
   "syntax": [".room(room)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "Reverb",

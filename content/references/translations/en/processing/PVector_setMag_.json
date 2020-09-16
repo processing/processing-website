@@ -1,0 +1,29 @@
+{
+  "brief": "Set the magnitude of the vector",
+  "related": [],
+  "name": "setMag()",
+  "description": "Set the magnitude of this vector to the value used for the <b>len</b> parameter.",
+  "syntax": [".setMag(len)", ".setMag(target, len)"],
+  "returns": "PVector",
+  "type": "method",
+  "category": "pvector",
+  "subcategory": "method",
+  "classanchor": "PVector",
+  "parameters": [
+    {
+      "name": "len",
+      "description": "the new length for this vector",
+      "type": ["float"]
+    },
+    {
+      "name": "target",
+      "description": "Set to null to create a new vector",
+      "type": ["PVector"]
+    },
+    {
+      "name": "len",
+      "description": "the new length for the new vector",
+      "type": ["float"]
+    }
+  ]
+}

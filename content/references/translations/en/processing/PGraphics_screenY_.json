@@ -1,0 +1,34 @@
+{
+  "brief": "Takes a three-dimensional X, Y, Z position and returns the Y value for\n where it will appear on a (two-dimensional) screen.",
+  "related": ["PGraphics_screenX_", "PGraphics_screenZ_"],
+  "name": "screenY()",
+  "description": "Takes a three-dimensional X, Y, Z position and returns the Y value for\n where it will appear on a (two-dimensional) screen.",
+  "syntax": ["graphics.screenY(x, y)", "graphics.screenY(x, y, z)"],
+  "returns": "float",
+  "type": "method",
+  "category": "lights_camera",
+  "subcategory": "coordinates",
+  "classanchor": "PGraphics",
+  "parameters": [
+    {
+      "name": "graphics",
+      "description": " any object of the type PGraphics",
+      "type": ["PGraphics"]
+    },
+    {
+      "name": "x",
+      "description": "3D x-coordinate to be mapped",
+      "type": ["float"]
+    },
+    {
+      "name": "y",
+      "description": "3D y-coordinate to be mapped",
+      "type": ["float"]
+    },
+    {
+      "name": "z",
+      "description": "3D z-coordinate to be mapped",
+      "type": ["float"]
+    }
+  ]
+}

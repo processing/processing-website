@@ -1,11 +1,12 @@
 {
+  "brief": "Read bytes from the attached device.",
   "related": [],
   "name": "read()",
-  "description": "Reads bytes from the attached device",
+  "description": "Read bytes from the attached device<br/>\n <br/>\n You must call beginTransmission() before calling this function. This function\n also ends the current transmission and sends any data that was queued using\n write() before. It is not necessary to call\n <a href=\"I2C_endTransmission_.html\">endTransmission()</a> after read().",
   "syntax": [".read(len)"],
   "returns": "byte[]",
-  "type": "function",
-  "category": "",
+  "type": "method",
+  "category": "I2C",
   "subcategory": "",
   "classanchor": "I2C",
   "parameters": [

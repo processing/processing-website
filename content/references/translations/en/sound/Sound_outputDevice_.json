@@ -1,10 +1,11 @@
 {
+  "brief": "Choose the device (sound card) which the Sound library's audio output should\n be sent to.",
   "related": [],
   "name": "outputDevice()",
   "description": "Choose the device (sound card) which the Sound library's audio output should\n be sent to.",
   "syntax": [".outputDevice(deviceId)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "Sound",
