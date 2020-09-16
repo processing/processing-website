@@ -1,11 +1,12 @@
 {
+  "brief": "Sets an output pin to be either high or low",
   "related": [],
   "name": "digitalWrite()",
-  "description": "Sets an output pin to be either high or low",
+  "description": "Sets an output pin to be either high or low<br/>\n  <br/>\n  You need to set the pin to output by calling <a href=\"GPIO_pinMode_.html\">pinMode()</a> \n  before calling this function. Unlike on Arduino, it is not possible to set a input pin's \n  internal pull-up resistor using this function.",
   "syntax": [".digitalWrite(pin, value)"],
   "returns": "void",
-  "type": "function",
-  "category": "",
+  "type": "method",
+  "category": "GPIO",
   "subcategory": "",
   "classanchor": "GPIO",
   "parameters": [

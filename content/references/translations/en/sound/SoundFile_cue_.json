@@ -1,10 +1,11 @@
 {
+  "brief": "Cues the playhead to a fixed position in the soundfile.",
   "related": [],
   "name": "cue()",
   "description": "Cues the playhead to a fixed position in the soundfile.",
   "syntax": [".cue(time)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "SoundFile",

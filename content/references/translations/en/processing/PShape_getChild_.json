@@ -1,0 +1,29 @@
+{
+  "brief": "Returns a child element of a shape as a PShape object",
+  "related": ["PShape_addChild_"],
+  "name": "getChild()",
+  "description": "Extracts a child shape from a parent shape. Specify the name of the\n shape with the <b>target</b> parameter. The shape is returned as a\n <b>PShape</b> object, or <b>null</b> is returned if there is an error.",
+  "syntax": ["sh.getChild(index)", "sh.getChild(target)"],
+  "returns": "PShape",
+  "type": "method",
+  "category": "pshape",
+  "subcategory": "method",
+  "classanchor": "PShape",
+  "parameters": [
+    {
+      "name": "sh",
+      "description": " any variable of type PShape",
+      "type": ["PShape"]
+    },
+    {
+      "name": "index",
+      "description": "the layer position of the shape to get",
+      "type": ["int"]
+    },
+    {
+      "name": "target",
+      "description": "the name of the shape to get",
+      "type": ["String"]
+    }
+  ]
+}

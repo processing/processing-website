@@ -1,0 +1,50 @@
+{
+  "brief": "Inserts a value or array of values into an existing array.",
+  "related": ["concat_", "subset_"],
+  "name": "splice()",
+  "description": "Inserts a value or an array of values into an existing array. The first two\n parameters must be arrays of the same datatype. The first parameter\n specifies the initial array to be modified, and the second parameter\n defines the data to be inserted. The third parameter is an index value\n which specifies the array position from which to insert data. (Remember\n that array index numbering starts at zero, so the first position is 0, the\n second position is 1, and so on.)<br />\n <br />\n When splicing an array of objects, the data returned from the function must\n be cast to the object array's data type. For example: <em>SomeClass[] items\n = (SomeClass[]) splice(array1, array2, index)</em>",
+  "syntax": ["splice(list, value, index)"],
+  "returns": "boolean[], byte[], char[], int[], float[], String[], or Object",
+  "type": "function",
+  "category": "data",
+  "subcategory": "array_functions",
+  "parameters": [
+    {
+      "name": "list",
+      "description": "array to splice into",
+      "type": [
+        "boolean[]",
+        "byte[]",
+        "char[]",
+        "int[]",
+        "float[]",
+        "String[]",
+        "Object"
+      ]
+    },
+    {
+      "name": "value",
+      "description": "value to be spliced in",
+      "type": [
+        "boolean",
+        "boolean[]",
+        "byte",
+        "byte[]",
+        "char",
+        "char[]",
+        "int",
+        "int[]",
+        "float",
+        "float[]",
+        "String",
+        "String[]",
+        "Object"
+      ]
+    },
+    {
+      "name": "index",
+      "description": "position in the array from which to insert data",
+      "type": ["int"]
+    }
+  ]
+}

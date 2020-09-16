@@ -9,7 +9,6 @@ const SubcategoryList = (props) => {
   return (
     <div>
       <h3>{subcategory}</h3>
-      {locale}
       <ul>
         {subcategoryRefs.map((node, key) => {
           return (

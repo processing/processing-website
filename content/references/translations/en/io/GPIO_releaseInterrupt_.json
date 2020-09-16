@@ -1,11 +1,12 @@
 {
+  "brief": "Stops listening for interrupts on an input pin",
   "related": [],
   "name": "releaseInterrupt()",
   "description": "Stops listening for interrupts on an input pin",
   "syntax": [".releaseInterrupt(pin)"],
   "returns": "void",
-  "type": "function",
-  "category": "",
+  "type": "method",
+  "category": "GPIO",
   "subcategory": "",
   "classanchor": "GPIO",
   "parameters": [{ "name": "pin", "description": "GPIO pin", "type": ["int"] }]

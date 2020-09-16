@@ -1,0 +1,13 @@
+{
+  "brief": "Sort by values in ascending order",
+  "related": [],
+  "name": "sortValues()",
+  "description": "Sort by values in ascending order (largest value will be at [0]).",
+  "syntax": [".sortValues()", ".sortValues(stable)"],
+  "returns": "void",
+  "type": "method",
+  "category": "floatdict",
+  "subcategory": "method",
+  "classanchor": "FloatDict",
+  "parameters": []
+}

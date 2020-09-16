@@ -1,0 +1,12 @@
+{
+  "brief": "Shape document height",
+  "related": ["PShape_width"],
+  "name": "height",
+  "description": "The height of the PShape document.",
+  "syntax": ["sh.height\n"],
+  "type": "field",
+  "category": "pshape",
+  "subcategory": "field",
+  "classanchor": "PShape",
+  "parameters": [{ "name": "sh", "desc": " any variable of type PShape" }]
+}

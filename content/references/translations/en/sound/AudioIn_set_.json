@@ -1,10 +1,11 @@
 {
+  "brief": "Sets amplitude, add and pan position with one method.",
   "related": [],
   "name": "set()",
   "description": "Sets amplitude, add and pan position with one method.",
   "syntax": [".set(amp, add, pos)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "AudioIn",

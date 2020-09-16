@@ -1,10 +1,11 @@
 {
+  "brief": "Set multiple parameters at once",
   "related": [],
   "name": "set()",
   "description": "Set multiple parameters at once",
   "syntax": [".set(rate, pos, amp, add)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "AudioSample",

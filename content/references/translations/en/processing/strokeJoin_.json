@@ -1,0 +1,18 @@
+{
+  "brief": "Sets the style of the joints which connect line segments.",
+  "related": ["stroke_", "strokeWeight_", "strokeCap_"],
+  "name": "strokeJoin()",
+  "description": "Sets the style of the joints which connect line segments. These joints are\n either mitered, beveled, or rounded and specified with the corresponding\n parameters MITER, BEVEL, and ROUND. The default joint is MITER.",
+  "syntax": ["strokeJoin(join)"],
+  "returns": "void",
+  "type": "function",
+  "category": "shape",
+  "subcategory": "attributes",
+  "parameters": [
+    {
+      "name": "join",
+      "description": "either MITER, BEVEL, ROUND",
+      "type": ["int"]
+    }
+  ]
+}

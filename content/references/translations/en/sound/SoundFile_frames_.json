@@ -1,10 +1,11 @@
 {
+  "brief": "Returns the number of frames of this soundfile.",
   "related": [],
   "name": "frames()",
   "description": "Returns the number of frames of this soundfile.",
   "syntax": [".frames()"],
   "returns": "int",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "SoundFile",

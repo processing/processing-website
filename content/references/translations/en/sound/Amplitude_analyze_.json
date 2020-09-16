@@ -1,10 +1,11 @@
 {
+  "brief": "Queries a value from the analyzer and returns a float between 0. and 1.",
   "related": [],
   "name": "analyze()",
   "description": "Queries a value from the analyzer and returns a float between 0. and 1.",
   "syntax": [".analyze()"],
   "returns": "float",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "Amplitude",

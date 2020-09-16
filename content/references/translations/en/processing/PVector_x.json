@@ -1,0 +1,12 @@
+{
+  "brief": "The x component of the vector",
+  "related": [],
+  "name": "x",
+  "description": "The x component of the vector. This field (variable) can be used to both\n get and set the value (see above example.)",
+  "syntax": [".x\n"],
+  "type": "field",
+  "category": "pvector",
+  "subcategory": "field",
+  "classanchor": "PVector",
+  "parameters": [{ "name": "", "desc": "" }]
+}

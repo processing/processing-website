@@ -1,4 +1,5 @@
 {
+  "brief": "Start the delay effect",
   "related": [],
   "name": "process()",
   "description": "Start the delay effect",
@@ -7,7 +8,7 @@
     ".process(input, maxDelayTime)"
   ],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "Delay",

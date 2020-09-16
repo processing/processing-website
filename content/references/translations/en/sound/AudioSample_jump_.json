@@ -1,10 +1,11 @@
 {
+  "brief": "Jump to a specific position in the audiosample without interrupting playback.",
   "related": [],
   "name": "jump()",
   "description": "Jump to a specific position in the audiosample without interrupting playback.",
   "syntax": [".jump(time)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "AudioSample",

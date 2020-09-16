@@ -1,17 +1,18 @@
 {
+  "brief": "Moves a servo motor to a given orientation",
   "related": [],
   "name": "write()",
-  "description": "Moves a servo motor to a given orientation",
+  "description": "Moves a servo motor to a given orientation<br/>\n <br/>\n If you are using this class in combination with a continuous rotation servo,\n different angles will result in the servo rotating forward or backward at\n different speeds. For regular servo motors, this will instruct the servo to\n rotate to and hold a specific angle.",
   "syntax": [".write(angle)"],
   "returns": "void",
-  "type": "function",
-  "category": "",
+  "type": "method",
+  "category": "software_servo",
   "subcategory": "",
   "classanchor": "SoftwareServo",
   "parameters": [
     {
       "name": "angle",
-      "description": "angle in degrees (controls speed and direction on continuous-rotation servos)",
+      "description": "angle in degrees (controls speed and direction on\n              continuous-rotation servos)",
       "type": ["float"]
     }
   ]

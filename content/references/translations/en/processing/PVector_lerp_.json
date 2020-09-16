@@ -1,0 +1,49 @@
+{
+  "brief": "Linear interpolate the vector to another vector",
+  "related": ["PVector_lerp_"],
+  "name": "lerp()",
+  "description": "Calculates linear interpolation from one vector to another vector. (Just like\n regular <b>lerp()</b>, but for vectors.)<br />\n <br />\n Note that there is one <em>static</em> version of this method, and two\n <em>non-static</em> versions. The static version, <b>lerp(v1, v2, amt)</b> is\n given the two vectors to interpolate and returns a new PVector object. The\n static version is used by referencing the PVector class directly. (See the\n middle example above.) The non-static versions, <b>lerp(v, amt)</b> and\n <b>lerp(x, y, z, amt)</b>, do not create a new PVector, but transform the\n values of the PVector on which they are called. These non-static versions\n perform the same operation, but the former takes another vector as input,\n while the latter takes three float values. (See the top and bottom examples\n above, respectively.)",
+  "syntax": [".lerp(v, amt)", ".lerp(v1, v2, amt)", ".lerp(x, y, z, amt)"],
+  "returns": "PVector",
+  "type": "method",
+  "category": "pvector",
+  "subcategory": "method",
+  "classanchor": "PVector",
+  "parameters": [
+    {
+      "name": "v",
+      "description": "the vector to lerp to",
+      "type": ["PVector"]
+    },
+    {
+      "name": "amt",
+      "description": "The amount of interpolation; some value between 0.0 (old vector)\n            and 1.0 (new vector). 0.1 is very near the old vector; 0.5 is\n            halfway in between.",
+      "type": ["float"]
+    },
+    {
+      "name": "v1",
+      "description": "the vector to start from",
+      "type": ["PVector"]
+    },
+    {
+      "name": "v2",
+      "description": "the vector to lerp to",
+      "type": ["PVector"]
+    },
+    {
+      "name": "x",
+      "description": "the x component to lerp to",
+      "type": ["float"]
+    },
+    {
+      "name": "y",
+      "description": "the y component to lerp to",
+      "type": ["float"]
+    },
+    {
+      "name": "z",
+      "description": "the z component to lerp to",
+      "type": ["float"]
+    }
+  ]
+}

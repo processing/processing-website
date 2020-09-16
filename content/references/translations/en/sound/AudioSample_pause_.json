@@ -1,10 +1,11 @@
 {
+  "brief": "Stop the playback of the sample, but cue it to the current position.",
   "related": [],
   "name": "pause()",
   "description": "Stop the playback of the sample, but cue it to the current position.",
   "syntax": [".pause()"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "AudioSample",

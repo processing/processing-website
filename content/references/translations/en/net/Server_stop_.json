@@ -1,10 +1,11 @@
 {
+  "brief": "Disconnects all clients and stops the server.",
   "related": [],
   "name": "stop()",
-  "description": "( begin auto-generated from Server_stop.xml )\n \n Disconnects all clients and stops the server.\n \n ( end auto-generated )\n ",
+  "description": "Disconnects all clients and stops the server.\n \n ",
   "syntax": ["server.stop()"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "server",
   "subcategory": "",
   "classanchor": "Server",

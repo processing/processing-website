@@ -1,0 +1,23 @@
+{
+  "brief": "Save the contents of a stream to a file in the sketch folder.",
+  "related": ["createOutput_"],
+  "name": "saveStream()",
+  "description": "Save the contents of a stream to a file in the sketch folder. This is\n basically <b>saveBytes(blah, loadBytes())</b>, but done more efficiently\n (and with less confusing syntax).<br />\n <br />\n The <b>target</b> parameter can be either a String specifying a file name,\n or, for greater control over the file location, a <b>File</b> object. (Note\n that, unlike some other functions, this will not automatically compress or\n uncompress gzip files.)",
+  "syntax": ["saveStream(target, source)"],
+  "returns": "boolean or void",
+  "type": "function",
+  "category": "output",
+  "subcategory": "files",
+  "parameters": [
+    {
+      "name": "target",
+      "description": "name of the file to write to",
+      "type": ["String", "File"]
+    },
+    {
+      "name": "source",
+      "description": "location to read from (a filename, path, or URL)",
+      "type": ["String"]
+    }
+  ]
+}

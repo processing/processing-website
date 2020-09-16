@@ -1,16 +1,8 @@
 {
-  "examples": "",
-  "related": [
-    "red_.html",
-    "green_.html",
-    "blue_.html",
-    "hue_.html",
-    "saturation_.html",
-    "brightness_.html"
-  ],
-  "usage": "web_application",
+  "brief": "Extracts the alpha value from a color.",
+  "related": ["red_", "green_", "blue_", "hue_", "saturation_", "brightness_"],
   "name": "alpha()",
-  "description": "( begin auto-generated from alpha.xml )\n\n Extracts the alpha value from a color.\n\n ( end auto-generated )",
+  "description": "Extracts the alpha value from a color.",
   "syntax": ["alpha(rgb)"],
   "returns": "float",
   "type": "function",

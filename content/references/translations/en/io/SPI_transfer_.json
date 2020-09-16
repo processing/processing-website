@@ -1,11 +1,12 @@
 {
+  "brief": "Transfers data over the SPI bus",
   "related": [],
   "name": "transfer()",
-  "description": "Transfers data over the SPI bus",
+  "description": "Transfers data over the SPI bus<br/>\n <br/>\n With SPI, data is simultaneously being exchanged between the master device\n and the slave device. For every byte that is being sent out, there's also one\n byte being read in.",
   "syntax": [".transfer(out)"],
   "returns": "byte[]",
-  "type": "function",
-  "category": "",
+  "type": "method",
+  "category": "SPI",
   "subcategory": "",
   "classanchor": "SPI",
   "parameters": [

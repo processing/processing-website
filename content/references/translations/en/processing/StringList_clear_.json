@@ -1,0 +1,13 @@
+{
+  "brief": "Remove all entries from the list",
+  "related": [],
+  "name": "clear()",
+  "description": "Remove all entries from the list.",
+  "syntax": [".clear()"],
+  "returns": "void",
+  "type": "method",
+  "category": "stringlist",
+  "subcategory": "method",
+  "classanchor": "StringList",
+  "parameters": []
+}

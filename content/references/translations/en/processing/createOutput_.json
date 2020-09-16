@@ -1,0 +1,18 @@
+{
+  "brief": "Similar to <b>createInput()</b>, this creates a Java\n           <b>OutputStream</b> for a given filename or path.",
+  "related": ["createInput_", "selectOutput_"],
+  "name": "createOutput()",
+  "description": "Similar to <b>createInput()</b>, this creates a Java <b>OutputStream</b>\n for a given filename or path. The file will be created in the sketch\n folder, or in the same folder as an exported application. <br />\n <br />\n If the path does not exist, intermediate folders will be created. If an\n exception occurs, it will be printed to the console, and <b>null</b> will\n be returned. <br />\n <br />\n This function is a convenience over the Java approach that requires you to\n 1) create a FileOutputStream object, 2) determine the exact file location,\n and 3) handle exceptions. Exceptions are handled internally by the\n function, which is more appropriate for \"sketch\" projects. <br />\n <br />\n If the output filename ends with <b>.gz</b>, the output will be\n automatically GZIP compressed as it is written.",
+  "syntax": ["createOutput(filename)"],
+  "returns": "OutputStream",
+  "type": "function",
+  "category": "output",
+  "subcategory": "files",
+  "parameters": [
+    {
+      "name": "filename",
+      "description": "name of the file to open",
+      "type": ["String"]
+    }
+  ]
+}

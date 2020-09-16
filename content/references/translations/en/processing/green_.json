@@ -1,0 +1,26 @@
+{
+  "brief": "Extracts the green value from a color, scaled to match current\n           <b>colorMode()</b>.",
+  "related": [
+    "red_",
+    "blue_",
+    "alpha_",
+    "hue_",
+    "saturation_",
+    "brightness_",
+    "rightshift_"
+  ],
+  "name": "green()",
+  "description": "Extracts the green value from a color, scaled to match current\n <b>colorMode()</b>. The value is always returned as a float, so be careful\n not to assign it to an int value.<br />\n <br />\n The <b>green()</b> function is easy to use and understand, but it is slower\n than a technique called bit shifting. When working in <b>colorMode(RGB,\n 255)</b>, you can acheive the same results as <b>green()</b> but with greater\n speed by using the right shift operator (<b>>></b>) with a bit mask. For\n example, the following two lines of code are equivalent means of getting the\n green value of the color value <b>c</b>:<br />\n <br />\n \n <pre>\n float g1 = green(c); // Simpler, but slower to calculate\n float g2 = c >> 8 & 0xFF; // Very fast to calculate\n </pre>",
+  "syntax": ["green(rgb)"],
+  "returns": "float",
+  "type": "function",
+  "category": "color",
+  "subcategory": "creating_reading",
+  "parameters": [
+    {
+      "name": "rgb",
+      "description": "any value of the color datatype",
+      "type": ["int"]
+    }
+  ]
+}

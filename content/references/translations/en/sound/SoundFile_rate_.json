@@ -1,10 +1,11 @@
 {
+  "brief": "Set the playback rate of the soundfile.",
   "related": [],
   "name": "rate()",
   "description": "Set the playback rate of the soundfile.",
   "syntax": [".rate(rate)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "SoundFile",

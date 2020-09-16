@@ -1,10 +1,11 @@
 {
+  "brief": "Sets how often frames are read from the movie. Setting the <b>fps</b>\n parameter to 4, for example, will cause 4 frames to be read per second.",
   "related": [],
   "name": "frameRate()",
   "description": "Sets how often frames are read from the movie. Setting the <b>fps</b>\n parameter to 4, for example, will cause 4 frames to be read per second.",
   "syntax": [".frameRate(ifps)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "movie",
   "subcategory": "",
   "classanchor": "Movie",

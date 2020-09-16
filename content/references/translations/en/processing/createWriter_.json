@@ -1,0 +1,18 @@
+{
+  "brief": "reates a new file in the sketch folder, and a <b>PrintWriter</b> object\n to write to it.",
+  "related": ["createReader_"],
+  "name": "createWriter()",
+  "description": "Creates a new file in the sketch folder, and a <b>PrintWriter</b> object\n to write to it. For the file to be made correctly, it should be flushed\n and must be closed with its <b>flush()</b> and <b>close()</b> methods\n (see above example).\n <br/> <br/>\n Starting with Processing release 0134, all files loaded and saved by the\n Processing API use UTF-8 encoding. In previous releases, the default\n encoding for your platform was used, which causes problems when files\n are moved to other platforms.",
+  "syntax": ["createWriter(filename)"],
+  "returns": "PrintWriter",
+  "type": "function",
+  "category": "output",
+  "subcategory": "files",
+  "parameters": [
+    {
+      "name": "filename",
+      "description": "name of the file to be created",
+      "type": ["String"]
+    }
+  ]
+}

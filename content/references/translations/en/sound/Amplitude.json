@@ -1,10 +1,16 @@
 {
+  "brief": "This is a volume analyzer. It calculates the root mean square of the\n amplitude of each audio block and returns that value.",
   "methods": [
     {
+      "anchor": "Amplitude_analyze_",
       "name": "analyze()",
       "desc": "Queries a value from the analyzer and returns a float between 0. and 1."
     },
-    { "name": "input()", "desc": "Define the audio input for the analyzer." }
+    {
+      "anchor": "Amplitude_input_",
+      "name": "input()",
+      "desc": "Define the audio input for the analyzer."
+    }
   ],
   "csspath": "../../",
   "isLibrary": "true",
@@ -14,7 +20,7 @@
   "constructors": ["Amplitude(parent)"],
   "related": [],
   "name": "Amplitude",
-  "classanchor": "libraries/sound/Amplitude",
+  "classanchor": "sound/Amplitude",
   "category": "sound",
   "subcategory": "",
   "parameters": [

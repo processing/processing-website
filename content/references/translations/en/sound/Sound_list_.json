@@ -1,10 +1,11 @@
 {
+  "brief": "Print and return information on available audio devices and their number of\n input/output channels.",
   "related": [],
   "name": "list()",
   "description": "Print and return information on available audio devices and their number of\n input/output channels.",
   "syntax": [".list()"],
   "returns": "String[]",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "Sound",

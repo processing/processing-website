@@ -56,6 +56,9 @@ async function createReference(actions, graphql) {
   const classRefTemplate = path.resolve(
     `./src/templates/class-ref-template.js`
   );
+  const fieldRefTemplate = path.resolve(
+    `./src/templates/field-ref-template.js`
+  );
   const indexRefTemplate = path.resolve(
     `./src/templates/index-ref-template.js`
   );
@@ -70,6 +73,9 @@ async function createReference(actions, graphql) {
             node {
               name
               relativeDirectory
+              childJson {
+                type
+              }
             }
           }
         }
@@ -124,7 +130,10 @@ async function createReference(actions, graphql) {
         refPage.node.name.split('.')[0] +
         '.html';
 
-    if (refPage.node.name.endsWith('_')) {
+    if (
+      refPage.node.childJson.type === 'function' ||
+      refPage.node.childJson.type === 'method'
+    ) {
       createPage({
         path: refPath,
         component: refTemplate,
@@ -136,10 +145,22 @@ async function createReference(actions, graphql) {
           next,
         },
       });
-    } else {
+    } else if (refPage.node.childJson.type === 'class') {
       createPage({
         path: refPath,
         component: classRefTemplate,
+        context: {
+          name: refPage.node.name,
+          assetsName: libraryName + '/' + assetsName,
+          libraryName: libraryName,
+          previous,
+          next,
+        },
+      });
+    } else if (refPage.node.childJson.type === 'field') {
+      createPage({
+        path: refPath,
+        component: fieldRefTemplate,
         context: {
           name: refPage.node.name,
           assetsName: libraryName + '/' + assetsName,

@@ -1,10 +1,11 @@
 {
+  "brief": "Returns the length of the movie in seconds. If the movie is 1 minute and\n 20 seconds long the value returned will be 80.0.",
   "related": [],
   "name": "duration()",
   "description": "Returns the length of the movie in seconds. If the movie is 1 minute and\n 20 seconds long the value returned will be 80.0.",
   "syntax": [".duration()"],
   "returns": "float",
-  "type": "function",
+  "type": "method",
   "category": "movie",
   "subcategory": "",
   "classanchor": "Movie",

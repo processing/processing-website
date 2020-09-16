@@ -1,10 +1,11 @@
 {
+  "brief": "Set the cutoff frequency for the filter",
   "related": [],
   "name": "freq()",
   "description": "Set the cutoff frequency for the filter",
   "syntax": [".freq(freq)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "BandPass",

@@ -1,0 +1,625 @@
+{
+  "brief": "Main graphics and rendering context, as well as the base API\n           implementation for processing \"core\".",
+  "constructors": ["PGraphics("],
+  "related": ["createGraphics_"],
+  "methods": [
+    {
+      "anchor": "PGraphics_beginDraw_",
+      "name": "beginDraw()",
+      "desc": "Sets the default properties for a PGraphics object."
+    },
+    {
+      "anchor": "PGraphics_endDraw_",
+      "name": "endDraw()",
+      "desc": "Finalizes the rendering of a PGraphics object so that it can be shown on screen."
+    },
+    {
+      "anchor": "PGraphics_hint_",
+      "name": "hint()",
+      "desc": "Set various hints and hacks for the renderer."
+    },
+    {
+      "anchor": "PGraphics_beginShape_",
+      "name": "beginShape()",
+      "desc": "Using the <b>beginShape()</b> and <b>endShape()</b> functions allow\n           creating more complex forms."
+    },
+    {
+      "anchor": "PGraphics_normal_",
+      "name": "normal()",
+      "desc": "Sets the current normal vector."
+    },
+    {
+      "anchor": "PGraphics_textureMode_",
+      "name": "textureMode()",
+      "desc": "Sets the coordinate space for texture mapping."
+    },
+    {
+      "anchor": "PGraphics_textureWrap_",
+      "name": "textureWrap()",
+      "desc": "Defines if textures repeat or draw once within a texture map."
+    },
+    {
+      "anchor": "PGraphics_texture_",
+      "name": "texture()",
+      "desc": "Sets a texture to be applied to vertex points."
+    },
+    {
+      "anchor": "PGraphics_vertex_",
+      "name": "vertex()",
+      "desc": "All shapes are constructed by connecting a series of vertices."
+    },
+    {
+      "anchor": "PGraphics_beginContour_",
+      "name": "beginContour()",
+      "desc": "Begins recording vertices for the shape."
+    },
+    {
+      "anchor": "PGraphics_endContour_",
+      "name": "endContour()",
+      "desc": "Stops recording vertices for the shape."
+    },
+    {
+      "anchor": "PGraphics_endShape_",
+      "name": "endShape()",
+      "desc": "the companion to <b>beginShape()</b> and may only be called after <b>beginShape()</b>."
+    },
+    {
+      "anchor": "PGraphics_loadShape_",
+      "name": "loadShape()",
+      "desc": "Loads geometry into a variable of type <b>PShape</b>."
+    },
+    {
+      "anchor": "PGraphics_createShape_",
+      "name": "createShape()",
+      "desc": "The <b>createShape()</b> function is used to define a new shape."
+    },
+    {
+      "anchor": "PGraphics_loadShader_",
+      "name": "loadShader()",
+      "desc": "Loads a shader into the PShader object."
+    },
+    {
+      "anchor": "PGraphics_shader_",
+      "name": "shader()",
+      "desc": "Applies the shader specified by the parameters."
+    },
+    {
+      "anchor": "PGraphics_resetShader_",
+      "name": "resetShader()",
+      "desc": "Restores the default shaders."
+    },
+    {
+      "anchor": "PGraphics_clip_",
+      "name": "clip()",
+      "desc": "Limits the rendering to the boundaries of a rectangle defined\n by the parameters."
+    },
+    {
+      "anchor": "PGraphics_noClip_",
+      "name": "noClip()",
+      "desc": "Disables the clipping previously started by the <b>clip()</b> function."
+    },
+    {
+      "anchor": "PGraphics_blendMode_",
+      "name": "blendMode()",
+      "desc": "Blends the pixels in the display window according to a defined mode."
+    },
+    {
+      "anchor": "PGraphics_bezierVertex_",
+      "name": "bezierVertex()",
+      "desc": "Specifies vertex coordinates for Bezier curves."
+    },
+    {
+      "anchor": "PGraphics_quadraticVertex_",
+      "name": "quadraticVertex()",
+      "desc": "Specifies vertex coordinates for quadratic Bezier curves."
+    },
+    {
+      "anchor": "PGraphics_curveVertex_",
+      "name": "curveVertex()",
+      "desc": "Specifies vertex coordinates for curves."
+    },
+    {
+      "anchor": "PGraphics_point_",
+      "name": "point()",
+      "desc": "Draws a point, a coordinate in space at the dimension of one pixel."
+    },
+    {
+      "anchor": "PGraphics_line_",
+      "name": "line()",
+      "desc": "Draws a line (a direct path between two points) to the screen."
+    },
+    {
+      "anchor": "PGraphics_triangle_",
+      "name": "triangle()",
+      "desc": "A triangle is a plane created by connecting three points."
+    },
+    {
+      "anchor": "PGraphics_quad_",
+      "name": "quad()",
+      "desc": "A quad is a quadrilateral, a four sided polygon."
+    },
+    {
+      "anchor": "PGraphics_rectMode_",
+      "name": "rectMode()",
+      "desc": "Modifies the location from which rectangles draw."
+    },
+    {
+      "anchor": "PGraphics_rect_",
+      "name": "rect()",
+      "desc": "Draws a rectangle to the screen."
+    },
+    {
+      "anchor": "PGraphics_square_",
+      "name": "square()",
+      "desc": "Draws a square to the screen."
+    },
+    {
+      "anchor": "PGraphics_ellipseMode_",
+      "name": "ellipseMode()",
+      "desc": "The origin of the ellipse is modified by the <b>ellipseMode()</b>\n           function."
+    },
+    {
+      "anchor": "PGraphics_ellipse_",
+      "name": "ellipse()",
+      "desc": "Draws an ellipse (oval) in the display window."
+    },
+    {
+      "anchor": "PGraphics_arc_",
+      "name": "arc()",
+      "desc": "Draws an arc in the display window."
+    },
+    {
+      "anchor": "PGraphics_circle_",
+      "name": "circle()",
+      "desc": "Draws a circle to the screen."
+    },
+    {
+      "anchor": "PGraphics_box_",
+      "name": "box()",
+      "desc": "A box is an extruded rectangle."
+    },
+    {
+      "anchor": "PGraphics_sphereDetail_",
+      "name": "sphereDetail()",
+      "desc": "Controls the detail used to render a sphere by adjusting the number of\n vertices of the sphere mesh."
+    },
+    {
+      "anchor": "PGraphics_sphere_",
+      "name": "sphere()",
+      "desc": "A sphere is a hollow ball made from tessellated triangles."
+    },
+    {
+      "anchor": "PGraphics_bezierPoint_",
+      "name": "bezierPoint()",
+      "desc": "Evaluates the Bezier at point t for points a, b, c, d."
+    },
+    {
+      "anchor": "PGraphics_bezierTangent_",
+      "name": "bezierTangent()",
+      "desc": "Calculates the tangent of a point on a Bezier curve."
+    },
+    {
+      "anchor": "PGraphics_bezierDetail_",
+      "name": "bezierDetail()",
+      "desc": "Sets the resolution at which Beziers display."
+    },
+    {
+      "anchor": "PGraphics_bezier_",
+      "name": "bezier()",
+      "desc": "Draws a Bezier curve on the screen."
+    },
+    {
+      "anchor": "PGraphics_curvePoint_",
+      "name": "curvePoint()",
+      "desc": "Evalutes the curve at point t for points a, b, c, d."
+    },
+    {
+      "anchor": "PGraphics_curveTangent_",
+      "name": "curveTangent()",
+      "desc": "Calculates the tangent of a point on a curve."
+    },
+    {
+      "anchor": "PGraphics_curveDetail_",
+      "name": "curveDetail()",
+      "desc": "Sets the resolution at which curves display."
+    },
+    {
+      "anchor": "PGraphics_curveTightness_",
+      "name": "curveTightness()",
+      "desc": "Modifies the quality of forms created with <b>curve()</b> and\n           <b>curveVertex()</b>."
+    },
+    {
+      "anchor": "PGraphics_curve_",
+      "name": "curve()",
+      "desc": "Draws a curved line on the screen."
+    },
+    {
+      "anchor": "PGraphics_imageMode_",
+      "name": "imageMode()",
+      "desc": "Modifies the location from which images draw."
+    },
+    {
+      "anchor": "PGraphics_image_",
+      "name": "image()",
+      "desc": "Displays images to the screen."
+    },
+    {
+      "anchor": "PGraphics_shapeMode_",
+      "name": "shapeMode()",
+      "desc": "Modifies the location from which shapes draw."
+    },
+    {
+      "anchor": "PGraphics_shape_",
+      "name": "shape()",
+      "desc": "Displays shapes to the screen."
+    },
+    {
+      "anchor": "PGraphics_textAlign_",
+      "name": "textAlign()",
+      "desc": "Sets the current alignment for drawing text."
+    },
+    {
+      "anchor": "PGraphics_textAscent_",
+      "name": "textAscent()",
+      "desc": "Returns ascent of the current font at its current size."
+    },
+    {
+      "anchor": "PGraphics_textDescent_",
+      "name": "textDescent()",
+      "desc": "Returns descent of the current font at its current size."
+    },
+    {
+      "anchor": "PGraphics_textFont_",
+      "name": "textFont()",
+      "desc": "Sets the current font that will be drawn with the <b>text()</b>\n           function."
+    },
+    {
+      "anchor": "PGraphics_textLeading_",
+      "name": "textLeading()",
+      "desc": "Sets the spacing between lines of text in units of pixels."
+    },
+    {
+      "anchor": "PGraphics_textMode_",
+      "name": "textMode()",
+      "desc": "Sets the way text draws to the screen."
+    },
+    {
+      "anchor": "PGraphics_textSize_",
+      "name": "textSize()",
+      "desc": "Sets the current font size."
+    },
+    {
+      "anchor": "PGraphics_textWidth_",
+      "name": "textWidth()",
+      "desc": "Calculates and returns the width of any character or text string."
+    },
+    {
+      "anchor": "PGraphics_text_",
+      "name": "text()",
+      "desc": "Draws text to the screen."
+    },
+    {
+      "anchor": "PGraphics_push_",
+      "name": "push()",
+      "desc": "The <b>push()</b> function saves the current drawing style\n settings and transformations, while <b>pop()</b> restores these\n settings."
+    },
+    {
+      "anchor": "PGraphics_pop_",
+      "name": "pop()",
+      "desc": "The <b>pop()</b> function restores the previous drawing style\n settings and transformations after <b>push()</b> has changed them."
+    },
+    {
+      "anchor": "PGraphics_pushMatrix_",
+      "name": "pushMatrix()",
+      "desc": "Pushes the current transformation matrix onto the matrix stack."
+    },
+    {
+      "anchor": "PGraphics_popMatrix_",
+      "name": "popMatrix()",
+      "desc": "Pops the current transformation matrix off the matrix stack."
+    },
+    {
+      "anchor": "PGraphics_translate_",
+      "name": "translate()",
+      "desc": "Specifies an amount to displace objects within the display window."
+    },
+    {
+      "anchor": "PGraphics_rotate_",
+      "name": "rotate()",
+      "desc": "Rotates a shape the amount specified by the <b>angle</b> parameter."
+    },
+    {
+      "anchor": "PGraphics_rotateX_",
+      "name": "rotateX()",
+      "desc": "Rotates a shape around the x-axis the amount specified by the\n <b>angle</b> parameter."
+    },
+    {
+      "anchor": "PGraphics_rotateY_",
+      "name": "rotateY()",
+      "desc": "Rotates a shape around the y-axis the amount specified by the\n <b>angle</b> parameter."
+    },
+    {
+      "anchor": "PGraphics_rotateZ_",
+      "name": "rotateZ()",
+      "desc": "Rotates a shape around the z-axis the amount specified by the\n <b>angle</b> parameter."
+    },
+    {
+      "anchor": "PGraphics_scale_",
+      "name": "scale()",
+      "desc": "Increases or decreases the size of a shape by expanding and\n           contracting vertices."
+    },
+    {
+      "anchor": "PGraphics_shearX_",
+      "name": "shearX()",
+      "desc": "Shears a shape around the x-axis the amount specified by the\n <b>angle</b> parameter."
+    },
+    {
+      "anchor": "PGraphics_shearY_",
+      "name": "shearY()",
+      "desc": "Shears a shape around the y-axis the amount specified by the\n <b>angle</b> parameter."
+    },
+    {
+      "anchor": "PGraphics_resetMatrix_",
+      "name": "resetMatrix()",
+      "desc": "Replaces the current matrix with the identity matrix."
+    },
+    {
+      "anchor": "PGraphics_applyMatrix_",
+      "name": "applyMatrix()",
+      "desc": "Multiplies the current matrix by the one specified through the\n parameters."
+    },
+    {
+      "anchor": "PGraphics_printMatrix_",
+      "name": "printMatrix()",
+      "desc": "Prints the current matrix to the Console (the text window at the bottom\n of Processing)."
+    },
+    {
+      "anchor": "PGraphics_beginCamera_",
+      "name": "beginCamera()",
+      "desc": "The <b>beginCamera()</b> and <b>endCamera()</b> functions enable\n advanced customization of the camera space."
+    },
+    {
+      "anchor": "PGraphics_endCamera_",
+      "name": "endCamera()",
+      "desc": "The <b>beginCamera()</b> and <b>endCamera()</b> functions enable\n advanced customization of the camera space."
+    },
+    {
+      "anchor": "PGraphics_camera_",
+      "name": "camera()",
+      "desc": "Sets the position of the camera."
+    },
+    {
+      "anchor": "PGraphics_printCamera_",
+      "name": "printCamera()",
+      "desc": "Prints the current camera matrix to the Console (the text window at the\n bottom of Processing)."
+    },
+    {
+      "anchor": "PGraphics_ortho_",
+      "name": "ortho()",
+      "desc": "Sets an orthographic projection and defines a parallel clipping\n           volume."
+    },
+    {
+      "anchor": "PGraphics_perspective_",
+      "name": "perspective()",
+      "desc": "Sets a perspective projection applying foreshortening, making distant\n objects appear smaller than closer ones."
+    },
+    {
+      "anchor": "PGraphics_frustum_",
+      "name": "frustum()",
+      "desc": "Sets a perspective matrix defined through the parameters."
+    },
+    {
+      "anchor": "PGraphics_printProjection_",
+      "name": "printProjection()",
+      "desc": "Prints the current projection matrix to the Console."
+    },
+    {
+      "anchor": "PGraphics_screenX_",
+      "name": "screenX()",
+      "desc": "Takes a three-dimensional X, Y, Z position and returns the X value for\n where it will appear on a (two-dimensional) screen."
+    },
+    {
+      "anchor": "PGraphics_screenY_",
+      "name": "screenY()",
+      "desc": "Takes a three-dimensional X, Y, Z position and returns the Y value for\n where it will appear on a (two-dimensional) screen."
+    },
+    {
+      "anchor": "PGraphics_screenZ_",
+      "name": "screenZ()",
+      "desc": "Takes a three-dimensional X, Y, Z position and returns the Z value for\n where it will appear on a (two-dimensional) screen."
+    },
+    {
+      "anchor": "PGraphics_modelX_",
+      "name": "modelX()",
+      "desc": "Returns the three-dimensional X, Y, Z position in model space."
+    },
+    {
+      "anchor": "PGraphics_modelY_",
+      "name": "modelY()",
+      "desc": "Returns the three-dimensional X, Y, Z position in model space."
+    },
+    {
+      "anchor": "PGraphics_modelZ_",
+      "name": "modelZ()",
+      "desc": "Returns the three-dimensional X, Y, Z position in model space."
+    },
+    {
+      "anchor": "PGraphics_pushStyle_",
+      "name": "pushStyle()",
+      "desc": "Saves the current style settings and <b>popStyle()</b> restores the prior settings."
+    },
+    {
+      "anchor": "PGraphics_popStyle_",
+      "name": "popStyle()",
+      "desc": "Saves the current style settings and <b>popStyle()</b> restores the prior settings"
+    },
+    {
+      "anchor": "PGraphics_strokeWeight_",
+      "name": "strokeWeight()",
+      "desc": "Sets the width of the stroke used for lines, points, and the border\n           around shapes."
+    },
+    {
+      "anchor": "PGraphics_strokeJoin_",
+      "name": "strokeJoin()",
+      "desc": "Sets the style of the joints which connect line segments."
+    },
+    {
+      "anchor": "PGraphics_strokeCap_",
+      "name": "strokeCap()",
+      "desc": "Sets the style for rendering line endings."
+    },
+    {
+      "anchor": "PGraphics_noStroke_",
+      "name": "noStroke()",
+      "desc": "Disables drawing the stroke (outline)."
+    },
+    {
+      "anchor": "PGraphics_stroke_",
+      "name": "stroke()",
+      "desc": "Sets the color used to draw lines and borders around shapes."
+    },
+    {
+      "anchor": "PGraphics_noTint_",
+      "name": "noTint()",
+      "desc": "Removes the current fill value for displaying images and reverts to\n displaying images with their original hues."
+    },
+    {
+      "anchor": "PGraphics_tint_",
+      "name": "tint()",
+      "desc": "Sets the fill value for displaying images."
+    },
+    {
+      "anchor": "PGraphics_noFill_",
+      "name": "noFill()",
+      "desc": "Disables filling geometry."
+    },
+    {
+      "anchor": "PGraphics_fill_",
+      "name": "fill()",
+      "desc": "Sets the color used to fill shapes."
+    },
+    {
+      "anchor": "PGraphics_ambient_",
+      "name": "ambient()",
+      "desc": "Sets the ambient reflectance for shapes drawn to the screen."
+    },
+    {
+      "anchor": "PGraphics_specular_",
+      "name": "specular()",
+      "desc": "Sets the specular color of the materials used for shapes drawn to the\n screen, which sets the color of hightlights."
+    },
+    {
+      "anchor": "PGraphics_shininess_",
+      "name": "shininess()",
+      "desc": "Sets the amount of gloss in the surface of shapes."
+    },
+    {
+      "anchor": "PGraphics_emissive_",
+      "name": "emissive()",
+      "desc": "Sets the emissive color of the material used for drawing shapes drawn to\n the screen."
+    },
+    {
+      "anchor": "PGraphics_lights_",
+      "name": "lights()",
+      "desc": "Sets the default ambient light, directional light, falloff, and specular\n values."
+    },
+    {
+      "anchor": "PGraphics_noLights_",
+      "name": "noLights()",
+      "desc": "Disable all lighting."
+    },
+    {
+      "anchor": "PGraphics_ambientLight_",
+      "name": "ambientLight()",
+      "desc": "Adds an ambient light."
+    },
+    {
+      "anchor": "PGraphics_directionalLight_",
+      "name": "directionalLight()",
+      "desc": "Adds a directional light."
+    },
+    {
+      "anchor": "PGraphics_pointLight_",
+      "name": "pointLight()",
+      "desc": "Adds a point light."
+    },
+    {
+      "anchor": "PGraphics_spotLight_",
+      "name": "spotLight()",
+      "desc": "Adds a spot light."
+    },
+    {
+      "anchor": "PGraphics_lightFalloff_",
+      "name": "lightFalloff()",
+      "desc": "Sets the falloff rates for point lights, spot lights, and ambient\n           lights."
+    },
+    {
+      "anchor": "PGraphics_lightSpecular_",
+      "name": "lightSpecular()",
+      "desc": "Sets the specular color for lights."
+    },
+    {
+      "anchor": "PGraphics_background_",
+      "name": "background()",
+      "desc": "Sets the color used for the background of the Processing window."
+    },
+    {
+      "anchor": "PGraphics_clear_",
+      "name": "clear()",
+      "desc": "Clears the pixels within a buffer."
+    },
+    {
+      "anchor": "PGraphics_colorMode_",
+      "name": "colorMode()",
+      "desc": "Changes the way Processing interprets color data."
+    },
+    {
+      "anchor": "PGraphics_alpha_",
+      "name": "alpha()",
+      "desc": "Extracts the alpha value from a color."
+    },
+    {
+      "anchor": "PGraphics_red_",
+      "name": "red()",
+      "desc": "Extracts the red value from a color, scaled to match current\n           <b>colorMode()</b>."
+    },
+    {
+      "anchor": "PGraphics_green_",
+      "name": "green()",
+      "desc": "Extracts the green value from a color, scaled to match current\n           <b>colorMode()</b>."
+    },
+    {
+      "anchor": "PGraphics_blue_",
+      "name": "blue()",
+      "desc": "Extracts the blue value from a color, scaled to match current\n           <b>colorMode()</b>."
+    },
+    {
+      "anchor": "PGraphics_hue_",
+      "name": "hue()",
+      "desc": "Extracts the hue value from a color."
+    },
+    {
+      "anchor": "PGraphics_saturation_",
+      "name": "saturation()",
+      "desc": "Extracts the saturation value from a color."
+    },
+    {
+      "anchor": "PGraphics_brightness_",
+      "name": "brightness()",
+      "desc": "Extracts the brightness value from a color."
+    },
+    {
+      "anchor": "PGraphics_lerpColor_",
+      "name": "lerpColor()",
+      "desc": "Calculates a color or colors between two color at a specific\n           increment."
+    }
+  ],
+  "name": "PGraphics",
+  "classFields": [],
+  "description": "Main graphics and rendering context, as well as the base API implementation\n for processing \"core\". Use this class if you need to draw into an off-screen\n graphics buffer. A PGraphics object can be constructed with the\n <b>createGraphics()</b> function. The <b>beginDraw()</b> and <b>endDraw()</b>\n methods (see above example) are necessary to set up the buffer and to\n finalize it. The fields and methods for this class are extensive. For a\n complete list, visit the\n <a href=\"http://processing.github.io/processing-javadocs/core/\">developer's\n reference.</a><br />\n <br />\n To create a new graphics context, use the <b>createGraphics()</b> function.\n Do not use the syntax <b>new PGraphics()</b>.\n \n ",
+  "type": "class",
+  "classanchor": "PGraphics",
+  "category": "rendering",
+  "subcategory": "",
+  "parameters": []
+}

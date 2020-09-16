@@ -1,0 +1,18 @@
+{
+  "brief": "Draws all geometry with smooth (anti-aliased) edges.",
+  "related": [],
+  "name": "smooth()",
+  "description": "Draws all geometry with smooth (anti-aliased) edges.\n This behavior is the default, so smooth() only needs\n to be used when a program needs to set the smoothing\n in a different way. The level parameter increases\n the amount of smoothness. This is the level of over\n sampling applied to the graphics buffer.\n\n With the P2D and P3D renderers, smooth(2) is the\n default, this is called \"2x anti-aliasing.\" The code\n smooth(4) is used for 4x anti-aliasing and smooth(8)\n is specified for \"8x anti-aliasing.\" The maximum\n anti-aliasing level is determined by the hardware of\n the machine that is running the software, so smooth(4)\n and smooth(8) will not work with every computer.\n\n The default renderer uses smooth(3) by default. This\n is bicubic smoothing. The other option for the default\n renderer is smooth(2), which is bilinear smoothing.\n\n With Processing 3.0, smooth() is different than before.\n It was common to use smooth() and noSmooth() to turn on\n and off antialiasing within a sketch. Now, because of\n how the software has changed, smooth() can only be set\n once within a sketch. It can be used either at the top\n of a sketch without a setup(), or after the size()\n function when used in a sketch with setup(). The\n noSmooth() function also follows the same rules.\n\n When smooth() is used with a PGraphics object, it should\n be run right after the object is created with\n createGraphics(), as shown in the Reference in the third\n example.",
+  "syntax": ["smooth(level)"],
+  "returns": "void",
+  "type": "function",
+  "category": "environment",
+  "subcategory": "",
+  "parameters": [
+    {
+      "name": "level",
+      "description": "either 2, 3, 4, or 8 depending on the renderer",
+      "type": ["int"]
+    }
+  ]
+}

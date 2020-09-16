@@ -1,0 +1,24 @@
+{
+  "brief": "Sets the amount of gloss in the surface of shapes.",
+  "related": [
+    "PGraphics_emissive_",
+    "PGraphics_ambient_",
+    "PGraphics_specular_"
+  ],
+  "name": "shininess()",
+  "description": "Sets the amount of gloss in the surface of shapes. Used in combination\n with <b>ambient()</b>, <b>specular()</b>, and <b>emissive()</b> in\n setting the material properties of shapes.",
+  "syntax": ["graphics.shininess(shine)"],
+  "returns": "void",
+  "type": "method",
+  "category": "lights_camera",
+  "subcategory": "material_properties",
+  "classanchor": "PGraphics",
+  "parameters": [
+    {
+      "name": "graphics",
+      "description": " any object of the type PGraphics",
+      "type": ["PGraphics"]
+    },
+    { "name": "shine", "description": "degree of shininess", "type": ["float"] }
+  ]
+}

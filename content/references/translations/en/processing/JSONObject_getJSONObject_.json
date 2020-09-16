@@ -1,0 +1,19 @@
+{
+  "brief": "Given a key value, retrieves the associated <b>JSONObject</b>",
+  "related": [
+    "JSONObject_getJSONArray_",
+    "JSONObject_setJSONObject_",
+    "JSONObject_setJSONArray_"
+  ],
+  "name": "getJSONObject()",
+  "description": "Given a key value, retrieves the associated <b>JSONObject</b>.",
+  "syntax": [".getJSONObject(key)"],
+  "returns": "JSONObject",
+  "type": "method",
+  "category": "jsonobject",
+  "subcategory": "method",
+  "classanchor": "JSONObject",
+  "parameters": [
+    { "name": "key", "description": "a key string", "type": ["String"] }
+  ]
+}

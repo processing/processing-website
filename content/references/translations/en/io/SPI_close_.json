@@ -1,11 +1,12 @@
 {
+  "brief": "Closes the SPI interface",
   "related": [],
   "name": "close()",
-  "description": "Closes the SPI interface",
+  "description": "Closes the SPI interface</br>\n </br>\n It is normally not necessary to explicitly close SPI interfaces, as they are\n closed automatically by the operating system when the sketch exits.</br>\n </br>\n Note: It is possible to have two or more objects using the same interface at\n a time.",
   "syntax": [".close()"],
   "returns": "void",
-  "type": "function",
-  "category": "",
+  "type": "method",
+  "category": "SPI",
   "subcategory": "",
   "classanchor": "SPI",
   "parameters": []

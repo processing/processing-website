@@ -1,12 +1,13 @@
 {
+  "brief": "Disconnects from the server",
   "related": [],
   "name": "stop()",
-  "description": "( begin auto-generated from Client_stop.xml )\n \n Disconnects from the server. Use to shut the connection when you're \n finished with the Client.\n \n ( end auto-generated )",
+  "description": "Disconnects from the server. Use to shut the connection when you're \n finished with the Client.",
   "syntax": ["client.stop()"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "client",
-  "subcategory": "client",
+  "subcategory": "",
   "classanchor": "Client",
   "parameters": [
     {

@@ -1,0 +1,43 @@
+{
+  "brief": "A triangle is a plane created by connecting three points.",
+  "related": ["beginShape_"],
+  "name": "triangle()",
+  "description": "A triangle is a plane created by connecting three points. The first two\n arguments specify the first point, the middle two arguments specify the\n second point, and the last two arguments specify the third point.",
+  "syntax": ["triangle(x1, y1, x2, y2, x3, y3)"],
+  "returns": "void",
+  "type": "function",
+  "category": "shape",
+  "subcategory": "2d_primitives",
+  "parameters": [
+    {
+      "name": "x1",
+      "description": "x-coordinate of the first point",
+      "type": ["float"]
+    },
+    {
+      "name": "y1",
+      "description": "y-coordinate of the first point",
+      "type": ["float"]
+    },
+    {
+      "name": "x2",
+      "description": "x-coordinate of the second point",
+      "type": ["float"]
+    },
+    {
+      "name": "y2",
+      "description": "y-coordinate of the second point",
+      "type": ["float"]
+    },
+    {
+      "name": "x3",
+      "description": "x-coordinate of the third point",
+      "type": ["float"]
+    },
+    {
+      "name": "y3",
+      "description": "y-coordinate of the third point",
+      "type": ["float"]
+    }
+  ]
+}

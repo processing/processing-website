@@ -1,10 +1,11 @@
 {
+  "brief": "Returns the location of the playback head in seconds. For example, if\n the movie has been playing for 4 seconds, the number 4.0 will be returned.",
   "related": [],
   "name": "time()",
   "description": "Returns the location of the playback head in seconds. For example, if\n the movie has been playing for 4 seconds, the number 4.0 will be returned.",
   "syntax": [".time()"],
   "returns": "float",
-  "type": "function",
+  "type": "method",
   "category": "movie",
   "subcategory": "",
   "classanchor": "Movie",

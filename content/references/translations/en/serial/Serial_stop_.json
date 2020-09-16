@@ -1,12 +1,13 @@
 {
+  "brief": "Stops data communication on this port.",
   "related": [],
   "name": "stop()",
-  "description": "",
+  "description": "Stops data communication on this port. Use to shut the connection when you're finished with the Serial.",
   "syntax": ["serial.stop()"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "serial",
-  "subcategory": "serial",
+  "subcategory": "",
   "classanchor": "Serial",
   "parameters": [
     {

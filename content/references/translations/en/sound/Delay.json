@@ -1,9 +1,26 @@
 {
+  "brief": "This is a simple delay effect.",
   "methods": [
-    { "name": "process()", "desc": "Start the delay effect" },
-    { "name": "set()", "desc": "Set delay time and feedback values at once" },
-    { "name": "time()", "desc": "Changes the delay time of the effect." },
-    { "name": "feedback()", "desc": "Change the feedback of the delay effect." }
+    {
+      "anchor": "Delay_process_",
+      "name": "process()",
+      "desc": "Start the delay effect"
+    },
+    {
+      "anchor": "Delay_set_",
+      "name": "set()",
+      "desc": "Set delay time and feedback values at once"
+    },
+    {
+      "anchor": "Delay_time_",
+      "name": "time()",
+      "desc": "Changes the delay time of the effect."
+    },
+    {
+      "anchor": "Delay_feedback_",
+      "name": "feedback()",
+      "desc": "Change the feedback of the delay effect."
+    }
   ],
   "csspath": "../../",
   "isLibrary": "true",
@@ -13,7 +30,7 @@
   "constructors": ["Delay(parent)"],
   "related": [],
   "name": "Delay",
-  "classanchor": "libraries/sound/Delay",
+  "classanchor": "sound/Delay",
   "category": "sound",
   "subcategory": "",
   "parameters": []

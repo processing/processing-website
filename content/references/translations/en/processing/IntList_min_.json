@@ -1,0 +1,13 @@
+{
+  "brief": "Return the smallest value",
+  "related": [],
+  "name": "min()",
+  "description": "Return the smallest value.",
+  "syntax": [".min()"],
+  "returns": "int",
+  "type": "method",
+  "category": "intlist",
+  "subcategory": "method",
+  "classanchor": "IntList",
+  "parameters": []
+}

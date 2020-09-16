@@ -1,12 +1,13 @@
 {
+  "brief": "Returns last byte received or -1 if there is none available.",
   "related": [],
   "name": "last()",
-  "description": "",
+  "description": "Returns last byte received or -1 if there is none available.",
   "syntax": ["serial.last()"],
   "returns": "int",
-  "type": "function",
+  "type": "method",
   "category": "serial",
-  "subcategory": "serial",
+  "subcategory": "",
   "classanchor": "Serial",
   "parameters": [
     {

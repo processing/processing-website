@@ -1,0 +1,29 @@
+{
+  "brief": "Make a new 2D unit vector with a random direction.",
+  "related": ["PVector_random3D_"],
+  "name": "random2D()",
+  "description": "Returns a new 2D unit vector with a random direction. If you pass in\n <b>this</b> as an argument, it will use the PApplet's random number\n generator.",
+  "syntax": [
+    ".random2D()",
+    ".random2D(parent)",
+    ".random2D(target)",
+    ".random2D(target, parent)"
+  ],
+  "returns": "PVector",
+  "type": "method",
+  "category": "pvector",
+  "subcategory": "method",
+  "classanchor": "PVector",
+  "parameters": [
+    {
+      "name": "parent",
+      "description": "current PApplet instance",
+      "type": ["PApplet"]
+    },
+    {
+      "name": "target",
+      "description": "the target vector (if null, a new vector will be created)",
+      "type": ["PVector"]
+    }
+  ]
+}

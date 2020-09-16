@@ -1,0 +1,19 @@
+{
+  "brief": "Loads the pixel data for the image into its <b>pixels[]</b> array.",
+  "related": [],
+  "name": "loadPixels()",
+  "description": "Loads the pixel data of the current display window into the <b>pixels[]</b>\n array. This function must always be called before reading from or writing to\n <b>pixels[]</b>. Subsequent changes to the display window will not be\n reflected in <b>pixels</b> until <b>loadPixels()</b> is called again.\n\n\n ",
+  "syntax": ["pimg.loadPixels()"],
+  "returns": "void",
+  "type": "method",
+  "category": "pimage",
+  "subcategory": "pixels",
+  "classanchor": "PImage",
+  "parameters": [
+    {
+      "name": "pimg",
+      "description": " any object of type PImage",
+      "type": ["PImage"]
+    }
+  ]
+}

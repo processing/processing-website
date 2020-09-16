@@ -1,10 +1,11 @@
 {
+  "brief": "Returns the number of channels of the soundfile.",
   "related": [],
   "name": "channels()",
   "description": "Returns the number of channels of the soundfile.",
   "syntax": [".channels()"],
   "returns": "int",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "SoundFile",

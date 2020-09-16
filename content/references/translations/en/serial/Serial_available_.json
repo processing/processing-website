@@ -1,12 +1,13 @@
 {
+  "brief": "Returns the number of bytes available.",
   "related": [],
   "name": "available()",
-  "description": "",
+  "description": "Returns the number of bytes available.",
   "syntax": ["serial.available()"],
   "returns": "int",
-  "type": "function",
+  "type": "method",
   "category": "serial",
-  "subcategory": "serial",
+  "subcategory": "",
   "classanchor": "Serial",
   "parameters": [
     {

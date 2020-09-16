@@ -1,0 +1,35 @@
+{
+  "brief": "Finds a row that contains the given value",
+  "related": [
+    "Table_getRow_",
+    "Table_rows_",
+    "Table_findRows_",
+    "Table_matchRow_",
+    "Table_matchRows_"
+  ],
+  "name": "findRow()",
+  "description": "Finds the first row in the <b>Table</b> that contains the value provided, \n and returns a reference to that row.  Even if multiple rows are possible \n matches, only the first matching row is returned. The column to search may \n be specified by either its ID or title.",
+  "syntax": [".findRow(value, column)", ".findRow(value, columnName)"],
+  "returns": "TableRow",
+  "type": "method",
+  "category": "table",
+  "subcategory": "method",
+  "classanchor": "Table",
+  "parameters": [
+    {
+      "name": "value",
+      "description": "the value to match",
+      "type": ["String"]
+    },
+    {
+      "name": "column",
+      "description": "ID number of the column to search",
+      "type": ["int"]
+    },
+    {
+      "name": "columnName",
+      "description": "title of the column to search",
+      "type": ["String"]
+    }
+  ]
+}

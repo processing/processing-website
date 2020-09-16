@@ -38,7 +38,9 @@ export default IndexRefTemplate;
 
 export const query = graphql`
   query($libraryName: String!, $locale: String!) {
-    allFile(filter: { fields: { lib: { eq: $libraryName } } }) {
+    allFile(
+      filter: { fields: { lib: { eq: $libraryName }, lang: { eq: $locale } } }
+    ) {
       nodes {
         name
         relativeDirectory

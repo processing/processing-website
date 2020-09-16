@@ -1,12 +1,13 @@
 {
+  "brief": "Returns the buffer as a String",
   "related": [],
   "name": "readString()",
-  "description": "( begin auto-generated from Client_readString.xml )\n \n Returns the all the data from the buffer as a String. This method \n assumes the incoming characters are ASCII. If you want to transfer \n Unicode data, first convert the String to a byte stream in the \n representation of your choice (i.e. UTF8 or two-byte Unicode data), and \n send it as a byte array.\n \n ( end auto-generated )",
+  "description": "Returns the all the data from the buffer as a String. This method \n assumes the incoming characters are ASCII. If you want to transfer \n Unicode data, first convert the String to a byte stream in the \n representation of your choice (i.e. UTF8 or two-byte Unicode data), and \n send it as a byte array.",
   "syntax": ["client.readString()"],
   "returns": "String",
-  "type": "function",
+  "type": "method",
   "category": "client",
-  "subcategory": "client",
+  "subcategory": "",
   "classanchor": "Client",
   "parameters": [
     {

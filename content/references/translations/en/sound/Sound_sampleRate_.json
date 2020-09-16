@@ -1,10 +1,11 @@
 {
+  "brief": "Get or set the internal sample rate of the synthesis engine.",
   "related": [],
   "name": "sampleRate()",
   "description": "Get or set the internal sample rate of the synthesis engine.",
   "syntax": [".sampleRate()", ".sampleRate(sampleRate)"],
   "returns": "int",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "Sound",

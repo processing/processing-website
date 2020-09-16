@@ -1,0 +1,13 @@
+{
+  "brief": "Check if a number is a part of the list",
+  "related": [],
+  "name": "hasValue()",
+  "description": "Check if a number is a part of the data structure.",
+  "syntax": [".hasValue(value)"],
+  "returns": "boolean",
+  "type": "method",
+  "category": "intlist",
+  "subcategory": "method",
+  "classanchor": "IntList",
+  "parameters": []
+}

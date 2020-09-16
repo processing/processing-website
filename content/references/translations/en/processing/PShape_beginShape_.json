@@ -1,0 +1,19 @@
+{
+  "brief": "Starts the creation of a new PShape",
+  "related": ["PShape_endShape_"],
+  "name": "beginShape()",
+  "description": "This method is used to start a custom shape created with the <b>createShape()</b> \n function. It's always and only used with <b>createShape()</b>.",
+  "syntax": ["sh.beginShape()", "sh.beginShape(kind)"],
+  "returns": "void",
+  "type": "method",
+  "category": "pshape",
+  "subcategory": "method",
+  "classanchor": "PShape",
+  "parameters": [
+    {
+      "name": "sh",
+      "description": " any variable of type PShape",
+      "type": ["PShape"]
+    }
+  ]
+}

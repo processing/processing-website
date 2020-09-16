@@ -1,10 +1,11 @@
 {
+  "brief": "Set delay time and feedback values at once",
   "related": [],
   "name": "set()",
   "description": "Set delay time and feedback values at once",
   "syntax": [".set(delayTime, feedback)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "Delay",

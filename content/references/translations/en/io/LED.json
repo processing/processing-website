@@ -1,18 +1,32 @@
 {
-  "constructors": ["LED(dev)"],
-  "related": [],
+  "brief": "Opens a LED device",
   "methods": [
-    { "name": "brightness()", "desc": "Sets the brightness" },
-    { "name": "close()", "desc": "Restores the previous state" },
-    { "name": "list()", "desc": "Lists all available LED devices" }
+    {
+      "anchor": "LED_brightness_",
+      "name": "brightness()",
+      "desc": "Sets the brightness"
+    },
+    {
+      "anchor": "LED_close_",
+      "name": "close()",
+      "desc": "Restores the previous state"
+    },
+    {
+      "anchor": "LED_list_",
+      "name": "list()",
+      "desc": "Lists all available LED devices"
+    }
   ],
   "csspath": "../../",
-  "name": "LED",
   "isLibrary": "true",
   "classFields": [],
+  "description": "Opens a LED device.<br/>\n <br/>\n This class can control your computer's build-in LEDs, such as the ones\n commonly used to indicate the power status and disk activity.</br>\n <br/>\n Your operating system might not be set up to allow regular users to do this\n kind of modification. If this is the case you should install a so-called\n <i>udev rule</i> that relaxes the permissions for the files in\n /sys/class/leds. You can also try running Processing as root user using\n \"sudo\", but this is generally not recommended.",
   "type": "class",
-  "classanchor": "libraries/io/LED",
-  "category": "",
+  "constructors": ["LED(dev)"],
+  "related": [],
+  "name": "LED",
+  "classanchor": "io/LED",
+  "category": "LED",
   "subcategory": "",
   "parameters": [
     { "name": "dev", "description": "device name", "type": ["String"] }

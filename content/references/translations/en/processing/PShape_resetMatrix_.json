@@ -1,0 +1,19 @@
+{
+  "brief": "Replaces the current matrix of a shape with the identity matrix",
+  "related": ["PShape_rotate_", "PShape_scale_", "PShape_translate_"],
+  "name": "resetMatrix()",
+  "description": "Replaces the current matrix of a shape with the identity matrix. The\n equivalent function in OpenGL is glLoadIdentity().",
+  "syntax": ["sh.resetMatrix()"],
+  "returns": "void",
+  "type": "method",
+  "category": "pshape",
+  "subcategory": "method",
+  "classanchor": "PShape",
+  "parameters": [
+    {
+      "name": "sh",
+      "description": " any variable of type PShape",
+      "type": ["PShape"]
+    }
+  ]
+}

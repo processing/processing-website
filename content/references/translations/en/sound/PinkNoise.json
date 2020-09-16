@@ -1,14 +1,36 @@
 {
+  "brief": "This is a pink noise generator. Pink Noise has a decrease of 3dB per octave.",
   "methods": [
-    { "name": "play()", "desc": "Start the generator" },
-    { "name": "set()", "desc": "Set multiple parameters at once." },
-    { "name": "amp()", "desc": "Change the amplitude/volume of this sound." },
     {
+      "anchor": "PinkNoise_play_",
+      "name": "play()",
+      "desc": "Start the generator"
+    },
+    {
+      "anchor": "PinkNoise_set_",
+      "name": "set()",
+      "desc": "Set multiple parameters at once."
+    },
+    {
+      "anchor": "PinkNoise_amp_",
+      "name": "amp()",
+      "desc": "Change the amplitude/volume of this sound."
+    },
+    {
+      "anchor": "PinkNoise_add_",
       "name": "add()",
       "desc": "Offset the output of this generator by a fixed value"
     },
-    { "name": "pan()", "desc": "Move the sound in a stereo panorama." },
-    { "name": "stop()", "desc": "Stop the generator" }
+    {
+      "anchor": "PinkNoise_pan_",
+      "name": "pan()",
+      "desc": "Move the sound in a stereo panorama."
+    },
+    {
+      "anchor": "PinkNoise_stop_",
+      "name": "stop()",
+      "desc": "Stop the generator"
+    }
   ],
   "csspath": "../../",
   "isLibrary": "true",
@@ -18,7 +40,7 @@
   "constructors": ["PinkNoise(parent)"],
   "related": [],
   "name": "PinkNoise",
-  "classanchor": "libraries/sound/PinkNoise",
+  "classanchor": "sound/PinkNoise",
   "category": "sound",
   "subcategory": "",
   "parameters": [

@@ -1,55 +1,76 @@
 {
+  "brief": "This is a Soundfile player which allows to play back and manipulate sound\n files. Supported formats are: WAV, AIF/AIFF, and MP3.",
   "methods": [
     {
+      "anchor": "SoundFile_removeFromCache_",
       "name": "removeFromCache()",
       "desc": "Remove this SoundFile's decoded audio sample from the cache, allowing\n it to be garbage collected once there are no more references to this\n SoundFile."
     },
     {
+      "anchor": "SoundFile_channels_",
       "name": "channels()",
       "desc": "Returns the number of channels of the soundfile."
     },
     {
+      "anchor": "SoundFile_cue_",
       "name": "cue()",
       "desc": "Cues the playhead to a fixed position in the soundfile."
     },
     {
+      "anchor": "SoundFile_duration_",
       "name": "duration()",
       "desc": "Returns the duration of the soundfile in seconds."
     },
     {
+      "anchor": "SoundFile_frames_",
       "name": "frames()",
       "desc": "Returns the number of frames of this soundfile."
     },
     {
+      "anchor": "SoundFile_play_",
       "name": "play()",
       "desc": "Starts the playback of the soundfile. Only plays to the end of the\n audiosample once."
     },
     {
+      "anchor": "SoundFile_jump_",
       "name": "jump()",
       "desc": "Jump to a specific position in the soundfile while continuing to play."
     },
     {
+      "anchor": "SoundFile_pause_",
       "name": "pause()",
       "desc": "Stop the playback of the file, but cue it to the current position so that the\n next call to play() will continue playing where it left off."
     },
     {
+      "anchor": "SoundFile_isPlaying_",
       "name": "isPlaying()",
       "desc": "Check whether this soundfile is currently playing."
     },
     {
+      "anchor": "SoundFile_loop_",
       "name": "loop()",
       "desc": "Starts playback which will loop at the end of the soundfile."
     },
     {
+      "anchor": "SoundFile_amp_",
       "name": "amp()",
       "desc": "Change the amplitude/volume of this audiosample."
     },
     {
+      "anchor": "SoundFile_pan_",
       "name": "pan()",
       "desc": "Move the sound in a stereo panorama. Only works for mono soundfiles!"
     },
-    { "name": "rate()", "desc": "Set the playback rate of the soundfile." },
-    { "name": "stop()", "desc": "Stops the playback." }
+    {
+      "anchor": "SoundFile_rate_",
+      "name": "rate()",
+      "desc": "Set the playback rate of the soundfile."
+    },
+    {
+      "anchor": "SoundFile_stop_",
+      "name": "stop()",
+      "desc": "Stops the playback."
+    }
   ],
   "csspath": "../../",
   "isLibrary": "true",
@@ -59,7 +80,7 @@
   "constructors": ["SoundFile(parent, path)", "SoundFile(parent, path, cache)"],
   "related": [],
   "name": "SoundFile",
-  "classanchor": "libraries/sound/SoundFile",
+  "classanchor": "sound/SoundFile",
   "category": "sound",
   "subcategory": "",
   "parameters": [

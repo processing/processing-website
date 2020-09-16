@@ -1,0 +1,13 @@
+{
+  "brief": "Return the smallest value",
+  "related": [],
+  "name": "min()",
+  "description": "Return the smallest value",
+  "syntax": [".min()"],
+  "returns": "float",
+  "type": "method",
+  "category": "floatlist",
+  "subcategory": "method",
+  "classanchor": "FloatList",
+  "parameters": []
+}

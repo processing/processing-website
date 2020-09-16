@@ -1,11 +1,12 @@
 {
+  "brief": "Begins a transmission to an attached device",
   "related": [],
   "name": "beginTransmission()",
-  "description": "Begins a transmission to an attached device",
+  "description": "Begins a transmission to an attached device.<br/>\n <br/>\n This function expects the address in the lower 7 bits, the same way as in\n Arduino's Wire library, and as shown in the output of the i2cdetect tool. If\n the address provided in a datasheet is greater than 127 (hex 0x7f) or there\n are separate addresses for read and write operations listed, which vary\n exactly by one, then you want to shift the this number by one bit to the\n right before passing it as an argument to this function.",
   "syntax": [".beginTransmission(slave)"],
   "returns": "void",
-  "type": "function",
-  "category": "",
+  "type": "method",
+  "category": "I2C",
   "subcategory": "",
   "classanchor": "I2C",
   "parameters": []

@@ -1,0 +1,28 @@
+{
+  "brief": "Returns the Perlin noise value at specified coordinates.",
+  "related": ["noiseSeed_", "noiseDetail_", "random_"],
+  "name": "noise()",
+  "description": "Returns the Perlin noise value at specified coordinates. Perlin noise is a\n random sequence generator producing a more natural, harmonic succession of\n numbers than that of the standard <b>random()</b> function. It was\n developed by Ken Perlin in the 1980s and has been used in graphical\n applications to generate procedural textures, shapes, terrains, and other\n seemingly organic forms.<br />\n <br />\n In contrast to the <b>random()</b> function, Perlin noise is defined in an\n infinite n-dimensional space, in which each pair of coordinates corresponds\n to a fixed semi-random value (fixed only for the lifespan of the program).\n The resulting value will always be between 0.0 and 1.0. Processing can\n compute 1D, 2D and 3D noise, depending on the number of coordinates given.\n The noise value can be animated by moving through the noise space, as\n demonstrated in the first example above. The 2nd and 3rd dimensions can\n also be interpreted as time.<br />\n <br />\n The actual noise structure is similar to that of an audio signal, in\n respect to the function's use of frequencies. Similar to the concept of\n harmonics in physics, Perlin noise is computed over several octaves which\n are added together for the final result.<br />\n <br />\n Another way to adjust the character of the resulting sequence is the scale\n of the input coordinates. As the function works within an infinite space,\n the value of the coordinates doesn't matter as such; only the\n <em>distance</em> between successive coordinates is important (such as when\n using <b>noise()</b> within a loop). As a general rule, the smaller the\n difference between coordinates, the smoother the resulting noise sequence.\n Steps of 0.005-0.03 work best for most applications, but this will differ\n depending on use.<br />\n <br />\n There have been debates over the accuracy of the implementation of noise in\n Processing. For clarification, it's an implementation of \"classic Perlin\n noise\" from 1983, and not the newer \"simplex noise\" method from 2001.",
+  "syntax": ["noise(x)", "noise(x, y)", "noise(x, y, z)"],
+  "returns": "float",
+  "type": "function",
+  "category": "math",
+  "subcategory": "random",
+  "parameters": [
+    {
+      "name": "x",
+      "description": "x-coordinate in noise space",
+      "type": ["float"]
+    },
+    {
+      "name": "y",
+      "description": "y-coordinate in noise space",
+      "type": ["float"]
+    },
+    {
+      "name": "z",
+      "description": "z-coordinate in noise space",
+      "type": ["float"]
+    }
+  ]
+}

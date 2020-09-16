@@ -1,10 +1,11 @@
 {
+  "brief": "Plays a movie one time and stops at the last frame.",
   "related": [],
   "name": "play()",
   "description": "Plays a movie one time and stops at the last frame.",
   "syntax": [".play()"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "movie",
   "subcategory": "",
   "classanchor": "Movie",

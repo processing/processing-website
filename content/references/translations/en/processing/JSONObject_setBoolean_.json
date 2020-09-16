@@ -1,0 +1,24 @@
+{
+  "brief": "Put a key/boolean pair in the JSONObject",
+  "related": [
+    "JSONObject_setInt_",
+    "JSONObject_setFloat_",
+    "JSONObject_setString_"
+  ],
+  "name": "setBoolean()",
+  "description": "Inserts a new key/boolean pair into the <b>JSONObject</b> or, if a value \n with the specified key already exists, assigns a new value.",
+  "syntax": [".setBoolean(key, value)"],
+  "returns": "JSONObject",
+  "type": "method",
+  "category": "jsonobject",
+  "subcategory": "method",
+  "classanchor": "JSONObject",
+  "parameters": [
+    { "name": "key", "description": "a key string", "type": ["String"] },
+    {
+      "name": "value",
+      "description": "the value to assign",
+      "type": ["boolean"]
+    }
+  ]
+}

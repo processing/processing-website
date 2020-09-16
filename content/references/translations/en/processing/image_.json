@@ -1,0 +1,45 @@
+{
+  "brief": "Displays images to the screen.",
+  "related": [
+    "loadImage_",
+    "PImage",
+    "imageMode_",
+    "tint_",
+    "background_",
+    "alpha_"
+  ],
+  "name": "image()",
+  "description": "The <b>image()</b> function draws an image to the display window. Images must\n be in the sketch's \"data\" directory to load correctly. Select \"Add file...\"\n from the \"Sketch\" menu to add the image to the data directory, or just drag\n the image file onto the sketch window. Processing currently works with GIF,\n JPEG, and PNG images. <br />\n <br />\n The <b>img</b> parameter specifies the image to display and by default the\n <b>a</b> and <b>b</b> parameters define the location of its upper-left\n corner. The image is displayed at its original size unless the <b>c</b> and\n <b>d</b> parameters specify a different size. The <b>imageMode()</b> function\n can be used to change the way these parameters draw the image.<br />\n <br />\n The color of an image may be modified with the <b>tint()</b> function. This\n function will maintain transparency for GIF and PNG images.\n\n ",
+  "syntax": ["image(img, a, b)", "image(img, a, b, c, d)"],
+  "returns": "void",
+  "type": "function",
+  "category": "image",
+  "subcategory": "loading_displaying",
+  "parameters": [
+    {
+      "name": "img",
+      "description": "the image to display",
+      "type": ["PImage"]
+    },
+    {
+      "name": "a",
+      "description": "x-coordinate of the image by default",
+      "type": ["float"]
+    },
+    {
+      "name": "b",
+      "description": "y-coordinate of the image by default",
+      "type": ["float"]
+    },
+    {
+      "name": "c",
+      "description": "width to display the image by default",
+      "type": ["float"]
+    },
+    {
+      "name": "d",
+      "description": "height to display the image by default",
+      "type": ["float"]
+    }
+  ]
+}

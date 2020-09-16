@@ -1,10 +1,11 @@
 {
+  "brief": "Starts capturing frames from the selected device.",
   "related": [],
   "name": "start()",
   "description": "Starts capturing frames from the selected device.",
   "syntax": [".start()"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "capture.",
   "subcategory": "",
   "classanchor": "Capture",

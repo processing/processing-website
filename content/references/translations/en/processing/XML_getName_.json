@@ -1,0 +1,13 @@
+{
+  "brief": "Gets the element's full name",
+  "related": [],
+  "name": "getName()",
+  "description": "Gets the element's full name, which is returned as a String.",
+  "syntax": [".getName()"],
+  "returns": "String",
+  "type": "method",
+  "category": "xml",
+  "subcategory": "method",
+  "classanchor": "XML",
+  "parameters": []
+}

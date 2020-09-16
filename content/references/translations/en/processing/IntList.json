@@ -1,0 +1,100 @@
+{
+  "brief": "Helper class for a list of ints.",
+  "methods": [
+    {
+      "anchor": "IntList_size_",
+      "name": "size()",
+      "desc": "Get the length of the list"
+    },
+    {
+      "anchor": "IntList_clear_",
+      "name": "clear()",
+      "desc": "Remove all entries from the list"
+    },
+    {
+      "anchor": "IntList_get_",
+      "name": "get()",
+      "desc": "Get an entry at a particular index"
+    },
+    {
+      "anchor": "IntList_set_",
+      "name": "set()",
+      "desc": "Set the entry at a particular index"
+    },
+    {
+      "anchor": "IntList_remove_",
+      "name": "remove()",
+      "desc": "Remove an element from the specified index"
+    },
+    {
+      "anchor": "IntList_append_",
+      "name": "append()",
+      "desc": "Add a new entry to the list"
+    },
+    {
+      "anchor": "IntList_hasValue_",
+      "name": "hasValue()",
+      "desc": "Check if a number is a part of the list"
+    },
+    {
+      "anchor": "IntList_increment_",
+      "name": "increment()",
+      "desc": "Add one to a value"
+    },
+    { "anchor": "IntList_add_", "name": "add()", "desc": "Add to a value" },
+    {
+      "anchor": "IntList_sub_",
+      "name": "sub()",
+      "desc": "Subtract from a value"
+    },
+    { "anchor": "IntList_mult_", "name": "mult()", "desc": "Multiply a value" },
+    { "anchor": "IntList_div_", "name": "div()", "desc": "Divide a value" },
+    {
+      "anchor": "IntList_min_",
+      "name": "min()",
+      "desc": "Return the smallest value"
+    },
+    {
+      "anchor": "IntList_max_",
+      "name": "max()",
+      "desc": "Return the largest value"
+    },
+    {
+      "anchor": "IntList_sort_",
+      "name": "sort()",
+      "desc": "Sorts the array, lowest to highest"
+    },
+    {
+      "anchor": "IntList_sortReverse_",
+      "name": "sortReverse()",
+      "desc": "Reverse sort, orders values from highest to lowest"
+    },
+    {
+      "anchor": "IntList_reverse_",
+      "name": "reverse()",
+      "desc": "Reverse the order of the list elements"
+    },
+    {
+      "anchor": "IntList_shuffle_",
+      "name": "shuffle()",
+      "desc": "Randomize the order of the list elements"
+    },
+    {
+      "anchor": "IntList_array_",
+      "name": "array()",
+      "desc": "Create a new array with a copy of all the values"
+    }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "Helper class for a list of ints. Lists are designed to have some of the\n features of ArrayLists, but to maintain the simplicity and efficiency of\n working with arrays.\n\n Functions like sort() and shuffle() always act on the list itself. To get\n a sorted copy, use list.copy().sort().",
+  "type": "class",
+  "constructors": ["IntList(", "IntList(items)"],
+  "related": ["FloatList", "StringList"],
+  "name": "IntList",
+  "classanchor": "IntList",
+  "category": "data",
+  "subcategory": "composite",
+  "parameters": []
+}

@@ -1,0 +1,13 @@
+{
+  "brief": "Return the largest value",
+  "related": [],
+  "name": "maxIndex()",
+  "description": "Return the largest value",
+  "syntax": [".maxIndex()"],
+  "returns": "int",
+  "type": "method",
+  "category": "floatlist",
+  "subcategory": "method",
+  "classanchor": "FloatDict",
+  "parameters": []
+}

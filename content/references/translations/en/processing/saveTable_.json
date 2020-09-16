@@ -1,0 +1,31 @@
+{
+  "brief": "Writes the contents of a Table object to a file.",
+  "related": ["Table", "loadTable_"],
+  "name": "saveTable()",
+  "description": "Writes the contents of a Table object to a file. By default, this file is\n saved to the sketch's folder. This folder is opened by selecting \"Show\n Sketch Folder\" from the \"Sketch\" menu.<br />\n <br />\n Alternatively, the file can be saved to any location on the computer by\n using an absolute path (something that starts with / on Unix and Linux, or\n a drive letter on Windows).<br />\n <br />\n All files loaded and saved by the Processing API use UTF-8 encoding.",
+  "syntax": [
+    "saveTable(table, filename)",
+    "saveTable(table, filename, options)"
+  ],
+  "returns": "boolean",
+  "type": "function",
+  "category": "output",
+  "subcategory": "files",
+  "parameters": [
+    {
+      "name": "table",
+      "description": "the Table object to save to a file",
+      "type": ["Table"]
+    },
+    {
+      "name": "filename",
+      "description": "the filename to which the Table should be saved",
+      "type": ["String"]
+    },
+    {
+      "name": "options",
+      "description": "can be one of \"tsv\", \"csv\", \"bin\", or \"html\"",
+      "type": ["String"]
+    }
+  ]
+}

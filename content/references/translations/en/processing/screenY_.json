@@ -1,0 +1,28 @@
+{
+  "brief": "Takes a three-dimensional X, Y, Z position and returns the Y value for\n where it will appear on a (two-dimensional) screen.",
+  "related": ["screenX_", "screenZ_"],
+  "name": "screenY()",
+  "description": "Takes a three-dimensional X, Y, Z position and returns the Y value for\n where it will appear on a (two-dimensional) screen.",
+  "syntax": ["screenY(x, y)", "screenY(x, y, z)"],
+  "returns": "float",
+  "type": "function",
+  "category": "lights_camera",
+  "subcategory": "coordinates",
+  "parameters": [
+    {
+      "name": "x",
+      "description": "3D x-coordinate to be mapped",
+      "type": ["float"]
+    },
+    {
+      "name": "y",
+      "description": "3D y-coordinate to be mapped",
+      "type": ["float"]
+    },
+    {
+      "name": "z",
+      "description": "3D z-coordinate to be mapped",
+      "type": ["float"]
+    }
+  ]
+}

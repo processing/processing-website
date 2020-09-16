@@ -1,0 +1,18 @@
+{
+  "brief": "The delay() function causes the program to halt for a specified time.",
+  "related": ["frameRate", "draw_"],
+  "name": "delay()",
+  "description": "The delay() function causes the program to halt for a specified time.\n Delay times are specified in thousandths of a second. For example,\n running delay(3000) will stop the program for three seconds and\n delay(500) will stop the program for a half-second.\n\n The screen only updates when the end of draw() is reached, so delay()\n cannot be used to slow down drawing. For instance, you cannot use delay()\n to control the timing of an animation.\n\n The delay() function should only be used for pausing scripts (i.e.\n a script that needs to pause a few seconds before attempting a download,\n or a sketch that needs to wait a few milliseconds before reading from\n the serial port).",
+  "syntax": ["delay(napTime)"],
+  "returns": "void",
+  "type": "function",
+  "category": "environment",
+  "subcategory": "",
+  "parameters": [
+    {
+      "name": "napTime",
+      "description": "milliseconds to pause before running draw() again",
+      "type": ["int"]
+    }
+  ]
+}

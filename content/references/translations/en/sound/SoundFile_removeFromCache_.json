@@ -1,10 +1,11 @@
 {
+  "brief": "Remove this SoundFile's decoded audio sample from the cache, allowing\n it to be garbage collected once there are no more references to this\n SoundFile.",
   "related": [],
   "name": "removeFromCache()",
   "description": "Remove this SoundFile's decoded audio sample from the cache, allowing\n it to be garbage collected once there are no more references to this\n SoundFile.",
   "syntax": [".removeFromCache()"],
   "returns": "boolean",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "SoundFile",

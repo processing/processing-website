@@ -1,10 +1,11 @@
 {
+  "brief": "Starts the playback of the audiosample for the specified duration or to the\n end of the audiosample, whichever comes first.",
   "related": [],
   "name": "playFor()",
   "description": "Starts the playback of the audiosample for the specified duration or to the\n end of the audiosample, whichever comes first.",
   "syntax": [".playFor(duration)", ".playFor(duration, cue)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "AudioSample",

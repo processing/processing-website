@@ -1,11 +1,12 @@
 {
+  "brief": "Enables the PWM output",
   "related": [],
   "name": "set()",
-  "description": "Enables the PWM output with a preset period of 1 kHz",
-  "syntax": [".set(period, duty)", ".set(duty)"],
+  "description": "Enables the PWM output<br/>\n <br/>\n When no period is specified, a default 1 kHz (1000 Hz) is used.",
+  "syntax": [".set(period, duty)"],
   "returns": "void",
-  "type": "function",
-  "category": "",
+  "type": "method",
+  "category": "PWM",
   "subcategory": "",
   "classanchor": "PWM",
   "parameters": [

@@ -1,10 +1,11 @@
 {
+  "brief": "Change the dry/wet ratio of the delay effect",
   "related": [],
   "name": "wet()",
   "description": "Change the dry/wet ratio of the delay effect",
   "syntax": [".wet(wet)"],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "Reverb",

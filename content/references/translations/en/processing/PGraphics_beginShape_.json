@@ -1,0 +1,30 @@
+{
+  "brief": "Using the <b>beginShape()</b> and <b>endShape()</b> functions allow\n           creating more complex forms.",
+  "related": [
+    "PShape",
+    "PGraphics_endShape_",
+    "PGraphics_vertex_",
+    "PGraphics_curveVertex_",
+    "PGraphics_bezierVertex_"
+  ],
+  "name": "beginShape()",
+  "description": "Using the <b>beginShape()</b> and <b>endShape()</b> functions allow creating\n more complex forms. <b>beginShape()</b> begins recording vertices for a shape\n and <b>endShape()</b> stops recording. The value of the <b>kind</b> parameter\n tells it which types of shapes to create from the provided vertices. With no\n mode specified, the shape can be any irregular polygon. The parameters\n available for beginShape() are POINTS, LINES, TRIANGLES, TRIANGLE_FAN,\n TRIANGLE_STRIP, QUADS, and QUAD_STRIP. After calling the <b>beginShape()</b>\n function, a series of <b>vertex()</b> commands must follow. To stop drawing\n the shape, call <b>endShape()</b>. The <b>vertex()</b> function with two\n parameters specifies a position in 2D and the <b>vertex()</b> function with\n three parameters specifies a position in 3D. Each shape will be outlined with\n the current stroke color and filled with the fill color. <br />\n <br />\n Transformations such as <b>translate()</b>, <b>rotate()</b>, and\n <b>scale()</b> do not work within <b>beginShape()</b>. It is also not\n possible to use other shapes, such as <b>ellipse()</b> or <b>rect()</b>\n within <b>beginShape()</b>. <br />\n <br />\n The P2D and P3D renderers allow <b>stroke()</b> and <b>fill()</b> to be\n altered on a per-vertex basis, but the default renderer does not. Settings\n such as <b>strokeWeight()</b>, <b>strokeCap()</b>, and <b>strokeJoin()</b>\n cannot be changed while inside a <b>beginShape()</b>/<b>endShape()</b> block\n with any renderer.",
+  "syntax": ["graphics.beginShape()", "graphics.beginShape(kind)"],
+  "returns": "void",
+  "type": "method",
+  "category": "shape",
+  "subcategory": "vertex",
+  "classanchor": "PGraphics",
+  "parameters": [
+    {
+      "name": "graphics",
+      "description": " any object of the type PGraphics",
+      "type": ["PGraphics"]
+    },
+    {
+      "name": "kind",
+      "description": "Either POINTS, LINES, TRIANGLES, TRIANGLE_FAN, TRIANGLE_STRIP,\n             QUADS, or QUAD_STRIP",
+      "type": ["int"]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "brief": "Returns the element's number of children",
+  "related": [],
+  "name": "getChildCount()",
+  "description": "Returns the number of children.",
+  "syntax": [".getChildCount()"],
+  "returns": "int",
+  "type": "method",
+  "category": "xml",
+  "subcategory": "method",
+  "classanchor": "XML",
+  "parameters": []
+}

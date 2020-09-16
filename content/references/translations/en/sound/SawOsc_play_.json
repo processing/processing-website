@@ -1,4 +1,5 @@
 {
+  "brief": "Starts the oscillator",
   "related": [],
   "name": "play()",
   "description": "Starts the oscillator",
@@ -9,7 +10,7 @@
     ".play(freq, amp, add, pos)"
   ],
   "returns": "void",
-  "type": "function",
+  "type": "method",
   "category": "sound",
   "subcategory": "",
   "classanchor": "SawOsc",

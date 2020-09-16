@@ -1,0 +1,25 @@
+{
+  "brief": "Gets the boolean value associated with the specified key",
+  "related": [
+    "JSONObject_getInt_",
+    "JSONObject_getFloat_",
+    "JSONObject_getString_"
+  ],
+  "name": "getBoolean()",
+  "description": "Gets the boolean value associated with the specified key.",
+  "syntax": [".getBoolean(key)", ".getBoolean(key, defaultValue)"],
+  "returns": "boolean",
+  "type": "method",
+  "category": "jsonobject",
+  "subcategory": "method",
+  "classanchor": "JSONObject",
+  "parameters": [
+    { "name": "key", "description": "a key string", "type": ["String"] },
+    { "name": "key", "description": "A key string.", "type": ["String"] },
+    {
+      "name": "defaultValue",
+      "description": "The default.",
+      "type": ["boolean"]
+    }
+  ]
+}
