@@ -1,12 +1,17 @@
 import React from 'react';
+import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import unique from 'array-unique';
 import flatMap from 'array-flat-polyfill';
 
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Layout from '../components/Layout';
 import { useLocalization } from 'gatsby-theme-i18n';
+
+import css from '../styles/pages/libraries.module.css';
+import grid from '../styles/grid.module.css';
 
 const Libraries = ({ data }) => {
   const { locale } = useLocalization();
@@ -28,39 +33,67 @@ const Libraries = ({ data }) => {
 
   return (
     <Layout>
-      <h1>Libraries</h1>
-      <ul>
-        {libraries.nodes.map((node, key) => {
-          return (
-            <li key={key}>
-              <Link
-                to={'/reference/libraries/' + node.name + '/index.html'}
-                language={locale}>
-                {node.name}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-      <h1>Contributions</h1>
-      <ul>
+      <div className={grid.grid}>
+        <h1 className={grid.col8}>Libraries</h1>
+        <h3 className={grid.col3}>
+          Extend Processing beyond graphics and images into audio, video, and
+          communication with other devices.
+        </h3>
+      </div>
+      <div className={grid.grid}>
+        <div className={grid.col1andhalf} />
+        <ul className={classnames(css.list, grid.col5andhalf, grid.internal)}>
+          {libraries.nodes.map((node, key) => {
+            return (
+              <li key={key} className={css.subgrid}>
+                <Link
+                  className={grid.col1andhalf}
+                  to={'/reference/libraries/' + node.name + '/index.html'}
+                  language={locale}>
+                  <h3>{node.name}</h3>
+                </Link>
+                <p className={grid.col4}>Description</p>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <h1 className={grid.col8}>Contributions</h1>
+      <div className={grid.col1andhalf} />
+      <ul className={css.contributionsList}>
         {categories.map((cat) => {
           let contribs = contributions.filter((c) =>
             c.categories.includes(cat)
           );
           return (
-            <div key={cat}>
-              <h3>{cat}</h3>
-              {contribs.map((node, key) => {
-                return (
-                  <li key={key + 'c'}>
-                    {node.name}
-                    {node.authors}
-                    {node.sentence}
-                  </li>
-                );
-              })}
-            </div>
+            <li key={cat} className={grid.grid}>
+              <h2 className={grid.col1andhalf}>{cat}</h2>
+              <ul className={grid.col5andhalf}>
+                {contribs.map((node, key) => {
+                  return (
+                    <li
+                      key={key + 'c'}
+                      className={classnames(
+                        css.subgrid,
+                        grid.col5andhalf,
+                        grid.internal
+                      )}>
+                      <div
+                        className={classnames(
+                          grid.col2andhalf,
+                          css.contributionData
+                        )}>
+                        <h3>{node.name}</h3>
+                        <span>{node.authors}</span>
+                      </div>
+                      <div className={grid.col4}>
+                        <p>{node.sentence}</p>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </li>
           );
         })}
       </ul>

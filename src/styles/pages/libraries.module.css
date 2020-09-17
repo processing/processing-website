@@ -1,0 +1,89 @@
+.list {
+  list-style: none;
+  border-left: solid 7px var(--lightgray);
+  margin-bottom: 30px;
+
+  & li {
+    margin-bottom: 20px;
+  }
+
+  & ul li:last-child {
+    margin-bottom: 0;
+  }
+
+  & p {
+    margin: 0;
+  }
+
+  & a {
+    text-decoration: none;
+  }
+
+  & h3 {
+    font-size: var(--text-medium);
+    border-right: solid 3px var(--lightgray);
+    margin: 0;
+  }
+
+  & h3:hover {
+    color: inherit;
+  }
+
+  & h3:focus {
+    color: inherit;
+  }
+}
+
+.contributionsList {
+  list-style: none;
+  margin-bottom: 30px;
+
+  & h2 {
+    font-size: var(--text-xlarge);
+    text-transform: capitalize;
+    border-right: solid 7px var(--lightgray);
+    margin-bottom: 0;
+  }
+
+  & ul div:last-child {
+    margin-bottom: 0;
+  }
+
+  & li {
+    margin-bottom: 20px;
+  }
+
+  & ul li:last-child {
+    margin-bottom: 0;
+  }
+
+  & p {
+    margin: 0;
+  }
+
+  & a {
+    text-decoration: none;
+  }
+
+  & h3 {
+    font-size: var(--text-medium);
+    margin: 0;
+  }
+
+  & h3:hover {
+    color: inherit;
+  }
+
+  & h3:focus {
+    color: inherit;
+  }
+}
+
+.contributionData {
+  border-right: solid 3px var(--lightgray);
+}
+
+.subgrid {
+  display: flex;
+  align-items: baseline;
+}
