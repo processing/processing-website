@@ -1,5 +1,5 @@
 .root {
-  margin-bottom: var(--margin);
+  margin-bottom: calc(var(--margin) * 2);
   justify-content: center;
   & ul {
     columns: 6;

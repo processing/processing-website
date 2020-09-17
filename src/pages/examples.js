@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import unique from 'array-unique';
 
@@ -6,8 +7,10 @@ import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 
 import Layout from '../components/Layout';
 import ExCategoryList from '../components/ExCategoryList';
+import Searchbar from '../components/Searchbar';
 
 import { useLocalization } from 'gatsby-theme-i18n';
+import grid from '../styles/grid.module.css';
 
 const Examples = ({ data }) => {
   const { locale } = useLocalization();
@@ -33,7 +36,14 @@ const Examples = ({ data }) => {
 
   return (
     <Layout>
-      <h1>Examples</h1>
+      <div className={grid.grid}>
+        <h1 className={grid.col8}>Examples</h1>
+        <h3 className={grid.col3}>
+          Short, prototypical programs exploring the basics of programming with
+          Processing.
+        </h3>
+      </div>
+      <Searchbar placeholder={'Search in the Examples...'} large />
       <ul>
         {categories.map((c, key) => {
           let categoryRefs = examples.filter((ref) => {

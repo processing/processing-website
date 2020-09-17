@@ -33,6 +33,7 @@ h3 {
 
 h1 {
   font-size: var(--text-xxlarge);
+  padding-left: var(--gutter);
 }
 
 h2 {

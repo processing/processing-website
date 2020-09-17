@@ -1,12 +1,16 @@
 import React from 'react';
+import classnames from 'classnames';
 
 import ExSubcategoryList from './ExSubcategoryList';
+
+import css from './ExCategoryList.module.css';
+import grid from '../styles/grid.module.css';
 
 const ExCategoryList = (props) => {
   const { category, categoryRefs, subcategories } = props;
 
   return (
-    <div>
+    <div className={classnames(css.root)}>
       <h2>{category}</h2>
       <p>Lorem ipsum</p>
       <ul>

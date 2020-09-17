@@ -18,7 +18,17 @@ const Searchbar = ({ large, placeholder }) =>
       </form>
     </div>
   ) : (
-    <div className={classnames(css.root, grid.col6)}>{placeholder}</div>
+    <div className={classnames(css.root, grid.grid)}>
+      <form action="" className={grid.col2}>
+        <input
+          className={grid.col2}
+          type="text"
+          id="search"
+          name="search"
+          placeholder={placeholder}
+        />
+      </form>
+    </div>
   );
 
 export default Searchbar;
