@@ -1,2 +1,6 @@
 .root {
+  & h2 {
+    font-size: var(--text-xlarge);
+    text-transform: capitalize;
+  }
 }

@@ -10,8 +10,10 @@ const CategoryList = (props) => {
   const { category, categoryRefs, subcategory, link } = props;
 
   return (
-    <div className={grid.grid}>
-      <h2 className={grid.col1andhalf}>{category}</h2>
+    <div className={classnames(grid.grid, css.root)}>
+      <h2 className={grid.col1andhalf}>
+        {category && category.replace(/-/g, ' ')}
+      </h2>
       <ul className={classnames(grid.col6andhalf, grid.internal)}>
         {subcategory.map((p, key) => {
           let subcategoryRefs = categoryRefs.filter((ref) => {

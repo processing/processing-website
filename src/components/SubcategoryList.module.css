@@ -2,6 +2,11 @@
   display: flex;
   flex-direction: row;
 
+  & h3 {
+    font-size: var(--text-medium);
+    text-transform: capitalize;
+  }
+
   & li {
     list-style: none;
   }

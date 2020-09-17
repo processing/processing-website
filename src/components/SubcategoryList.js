@@ -12,7 +12,9 @@ const SubcategoryList = (props) => {
 
   return (
     <div className={css.root}>
-      <h3 className={grid.col1}>{subcategory}</h3>
+      <h3 className={grid.col1}>
+        {subcategory && subcategory.replace(/_/g, ' ')}
+      </h3>
       <ul className={classnames(grid.col5andhalf, grid.internal)}>
         {subcategoryRefs.map((node, key) => {
           return (
