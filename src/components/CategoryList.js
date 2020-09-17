@@ -8,7 +8,7 @@ import grid from '../styles/grid.module.css';
 
 const CategoryList = (props) => {
   const { category, categoryRefs, subcategory, link } = props;
-
+  console.log(subcategory);
   return (
     <div className={classnames(grid.grid, css.root)}>
       <h2 className={grid.col1andhalf}>
@@ -19,13 +19,16 @@ const CategoryList = (props) => {
           let subcategoryRefs = categoryRefs.filter((ref) => {
             return ref.childJson.subcategory === p;
           });
+
           return (
-            <SubcategoryList
-              key={key + 's'}
-              subcategory={p}
-              subcategoryRefs={subcategoryRefs}
-              link={link}
-            />
+            p !== null && (
+              <SubcategoryList
+                key={key + 's'}
+                subcategory={p}
+                subcategoryRefs={subcategoryRefs}
+                link={link}
+              />
+            )
           );
         })}
       </ul>

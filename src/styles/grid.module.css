@@ -8,57 +8,57 @@
 
 .col1 {
   flex-basis: calc((100vw - var(--margin) * 2) / 8);
-  padding: 0 20px;
+  padding: 0 16px;
 }
 
 .col1andhalf {
   flex-basis: calc((100vw - var(--margin) * 2) / 8 * 1.5);
-  padding: 0 20px;
+  padding: 0 16px;
 }
 
 .col2 {
   flex-basis: calc((100vw - var(--margin) * 2) / 8 * 2);
-  padding: 0 20px;
+  padding: 0 16px;
 }
 
 .col3 {
   flex-basis: calc((100vw - var(--margin) * 2) / 8 * 3);
-  padding: 0 20px;
+  padding: 0 16px;
 }
 
 .col4 {
   flex-basis: calc((100vw - var(--margin) * 2) / 8 * 4);
-  padding: 0 20px;
+  padding: 0 16px;
 }
 
 .col5 {
   flex-basis: calc((100vw - var(--margin) * 2) / 8 * 5);
-  padding: 0 20px;
+  padding: 0 16px;
 }
 
 .col5andhalf {
   flex-basis: calc((100vw - var(--margin) * 2) / 8 * 5.5);
-  padding: 0 20px;
+  padding: 0 16px;
 }
 
 .col6 {
   flex-basis: calc((100vw - var(--margin) * 2) / 8 * 6);
-  padding: 0 20px;
+  padding: 0 16px;
 }
 
 .col6andhalf {
   flex-basis: calc((100vw - var(--margin) * 2) / 8 * 6.5);
-  padding: 0 20px;
+  padding: 0 16px;
 }
 
 .col7 {
   flex-basis: calc((100vw - var(--margin) * 2) / 8 * 7);
-  padding: 0 20px;
+  padding: 0 16px;
 }
 
 .col8 {
   flex-basis: calc((100vw - var(--margin) * 2) / 8 * 8);
-  padding: 0 20px;
+  padding: 0 16px;
 }
 
 .internal {
