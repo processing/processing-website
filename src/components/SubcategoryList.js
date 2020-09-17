@@ -19,7 +19,12 @@ const SubcategoryList = (props) => {
               <Link to={link + node.name.split('.')[0] + '.html'}>
                 <span className={grid.col1andhalf}>{node.childJson.name}</span>
               </Link>
-              <p className={grid.col5}>Description</p>
+              <div
+                className={grid.col5}
+                dangerouslySetInnerHTML={{
+                  __html: node.childJson.brief,
+                }}
+              />
             </li>
           );
         })}

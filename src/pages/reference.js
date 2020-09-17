@@ -34,6 +34,7 @@ export const query = graphql`
           category
           subcategory
           name
+          brief
         }
       }
     }
