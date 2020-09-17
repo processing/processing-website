@@ -12,7 +12,7 @@ const CategoryList = (props) => {
   return (
     <div className={classnames(grid.grid, css.root)}>
       <h2 className={grid.col1andhalf}>
-        {category && category.replace(/-/g, ' ')}
+        {category && category.replace(/_/g, ' ')}
       </h2>
       <ul className={classnames(grid.col6andhalf, grid.internal)}>
         {subcategory.map((p, key) => {

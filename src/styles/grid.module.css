@@ -2,7 +2,8 @@
 .grid {
   display: flex;
   flex-wrap: wrap;
-  margin: var(--margin);
+  margin-left: var(--margin);
+  margin-right: var(--margin);
 }
 
 .col1 {

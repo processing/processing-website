@@ -1,12 +1,13 @@
 import React from 'react';
+import classnames from 'classnames';
 import { Link } from 'gatsby';
 import unique from 'array-unique';
 
 import css from './CategoryNav.module.css';
+import grid from '../styles/grid.module.css';
 
 const CategoryNav = (props) => {
   const { data } = props;
-  console.log(data);
 
   let refs = data.allFile.nodes;
 
@@ -17,12 +18,12 @@ const CategoryNav = (props) => {
   );
 
   return (
-    <div className={css.root}>
-      <ul>
+    <div className={classnames(css.root, grid.grid)}>
+      <ul className={grid.col6}>
         {categories.map((category, key) => (
-          <li>
+          <li key={`category-navitem-${key}`}>
             <Link to={`#${category}`}>
-              <h3>{category}</h3>
+              <h3>{category.replace(/_/g, ' ')}</h3>
             </Link>
           </li>
         ))}

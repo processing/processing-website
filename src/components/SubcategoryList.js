@@ -28,7 +28,8 @@ const SubcategoryList = (props) => {
                 <p
                   dangerouslySetInnerHTML={{
                     __html: node.childJson.brief,
-                  }}></p>
+                  }}
+                />
               </div>
             </li>
           );

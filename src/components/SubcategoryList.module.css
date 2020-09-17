@@ -1,18 +1,30 @@
 .root {
   display: flex;
   flex-direction: row;
+  margin-bottom: 30px;
 
   & h3 {
     font-size: var(--text-medium);
     text-transform: capitalize;
+    border-right: solid 3px var(--gray);
+    margin: 0;
   }
 
   & li {
     list-style: none;
+    margin-bottom: 8px;
+  }
+
+  & ul li:last-child {
+    margin-bottom: 0;
   }
 
   & li > * {
     display: inline-block;
+  }
+
+  & p {
+    margin: 0;
   }
 }
 

@@ -1,6 +1,14 @@
 .root {
+  margin-bottom: var(--margin);
+
   & h2 {
     font-size: var(--text-xlarge);
     text-transform: capitalize;
+    border-right: solid 7px var(--gray);
+    margin-bottom: 0;
+  }
+
+  & ul div:last-child {
+    margin-bottom: 0;
   }
 }
