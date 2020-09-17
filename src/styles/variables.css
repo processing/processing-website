@@ -5,4 +5,9 @@
   --processing-blue-light: #508bff;
   --processing-blue-mid: #0251c8;
   --processing-blue-dark: #1e2a67;
+  --text-regular: 1rem;
+  --text-medium: 1.125rem;
+  --text-large: 1.3rem;
+  --text-xlarge: 2.25rem;
+  --text-xxlarge: 3.375rem;
 }

@@ -3,6 +3,7 @@
 html {
   font-family: "Space Grotesk", Helvetica, Arial, sans-serif;
   font-feature-settings: "ss02", "ss04", "ss05";
+  font-size: 16px;
 }
 
 code,
@@ -17,6 +18,25 @@ h4,
 h5,
 h6 {
   margin: 0 0 1rem;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--processing-blue-dark);
+}
+
+h1 {
+  font-size: var(--text-xxlarge);
+}
+
+h2 {
+  font-size: var(--text-xlarge);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--text-large);
 }
 
 a {

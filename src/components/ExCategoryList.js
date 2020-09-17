@@ -8,6 +8,7 @@ const ExCategoryList = (props) => {
   return (
     <div>
       <h2>{category}</h2>
+      <p>Lorem ipsum</p>
       <ul>
         {subcategories.map((p, key) => {
           let subcategoryRefs = categoryRefs.filter((ref) => {

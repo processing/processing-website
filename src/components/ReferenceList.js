@@ -3,6 +3,8 @@ import unique from 'array-unique';
 
 import CategoryList from './CategoryList';
 
+import css from './ReferenceList.module.css';
+
 const ReferenceList = (props) => {
   const { data, library } = props;
 
@@ -32,7 +34,7 @@ const ReferenceList = (props) => {
   }
 
   return (
-    <div>
+    <div className={css.root}>
       {categories.map((c, key) => {
         let categoryRefs = refs.filter((ref) => {
           return ref.childJson.category === c;

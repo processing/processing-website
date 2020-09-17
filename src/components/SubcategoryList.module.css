@@ -1,0 +1,11 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  & ul li {
+    display: block;
+  }
+
+  & li > * {
+    display: inline-block;
+  }
+}

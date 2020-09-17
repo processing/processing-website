@@ -10,6 +10,11 @@
   padding: 0 20px;
 }
 
+.col1andhalf {
+  flex-basis: calc(100% / 8 * 1.5);
+  padding: 0 20px;
+}
+
 .col2 {
   flex-basis: calc(100% / 8 * 2);
   padding: 0 20px;

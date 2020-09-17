@@ -1,0 +1,14 @@
+.root {
+  columns: 6;
+  & ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  & a {
+    text-decoration: none;
+  }
+  & h3 {
+    text-transform: capitalize;
+  }
+}

@@ -2,12 +2,15 @@ import React from 'react';
 
 import SubcategoryList from './SubcategoryList';
 
+import css from './CategoryList.module.css';
+import grid from '../styles/grid.module.css';
+
 const CategoryList = (props) => {
   const { category, categoryRefs, subcategory, link } = props;
 
   return (
-    <div>
-      <h2>{category}</h2>
+    <div className={grid.grid}>
+      <h2 className={grid.col1andhalf}>{category}</h2>
       <ul>
         {subcategory.map((p, key) => {
           let subcategoryRefs = categoryRefs.filter((ref) => {
