@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 
 import SubcategoryList from './SubcategoryList';
 
@@ -11,7 +12,7 @@ const CategoryList = (props) => {
   return (
     <div className={grid.grid}>
       <h2 className={grid.col1andhalf}>{category}</h2>
-      <ul>
+      <ul className={classnames(grid.col6andhalf, grid.internal)}>
         {subcategory.map((p, key) => {
           let subcategoryRefs = categoryRefs.filter((ref) => {
             return ref.childJson.subcategory === p;

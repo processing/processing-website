@@ -9,6 +9,7 @@
     "@mdx-js/react": "1.6.16",
     "array-flat-polyfill": "^1.0.1",
     "array-unique": "^0.3.2",
+    "classnames": "^2.2.6",
     "gatsby": "^2.24.52",
     "gatsby-image": "^2.4.16",
     "gatsby-plugin-manifest": "^2.4.22",

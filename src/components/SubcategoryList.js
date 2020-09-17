@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useLocalization } from 'gatsby-theme-i18n';
 
@@ -12,19 +13,21 @@ const SubcategoryList = (props) => {
   return (
     <div className={css.root}>
       <h3 className={grid.col1}>{subcategory}</h3>
-      <ul>
+      <ul className={classnames(grid.col5andhalf, grid.internal)}>
         {subcategoryRefs.map((node, key) => {
           return (
-            <li key={key}>
-              <Link to={link + node.name.split('.')[0] + '.html'}>
-                <span className={grid.col1andhalf}>{node.childJson.name}</span>
+            <li key={key} className={css.subgrid}>
+              <Link
+                className={classnames(grid.col1andhalf, css.functionName)}
+                to={link + node.name.split('.')[0] + '.html'}>
+                <span>{node.childJson.name}</span>
               </Link>
-              <div
-                className={grid.col5}
-                dangerouslySetInnerHTML={{
-                  __html: node.childJson.brief,
-                }}
-              />
+              <div className={grid.col4}>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: node.childJson.brief,
+                  }}></p>
+              </div>
             </li>
           );
         })}

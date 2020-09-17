@@ -1,11 +1,23 @@
 .root {
   display: flex;
   flex-direction: row;
-  & ul li {
-    display: block;
+
+  & li {
+    list-style: none;
   }
 
   & li > * {
     display: inline-block;
   }
+}
+
+.subgrid {
+  display: flex;
+  align-items: baseline;
+}
+
+.functionName {
+  color: var(--processing-blue-dark);
+  font-size: var(--text-medium);
+  text-decoration: none;
 }
