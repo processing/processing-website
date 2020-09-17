@@ -13,4 +13,12 @@
   & h3 {
     text-transform: capitalize;
   }
+
+  & h3:hover {
+    color: inherit;
+  }
+
+  & h3:focus {
+    color: inherit;
+  }
 }
