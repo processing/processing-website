@@ -1,0 +1,47 @@
+.root {
+  margin-bottom: calc(var(--margin) * 2);
+  justify-content: center;
+
+  & form {
+    padding: 0;
+  }
+
+  & input {
+    font-size: var(--text-xlarge);
+    color: var(--gray);
+    border: none;
+    width: 100%;
+    padding: 0 60px 12px;
+    border-bottom: 3px solid var(--gray);
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  & input:focus {
+    outline: none;
+    border-bottom: 3px solid var(--black);
+    color: var(--black);
+  }
+
+  & input::placeholder {
+    color: var(--gray);
+    opacity: 1;
+    transition: color 0.2s, opacity 0.2s;
+  }
+
+  & input:focus::placeholder {
+    color: var(--black);
+    opacity: 1;
+  }
+}
+
+.root:hover {
+  & input {
+    color: var(--darkgray);
+    border-color: 3px solid var(--darkgray);
+    opacity: 0.8;
+  }
+  & input::placeholder {
+    color: var(--darkgray);
+    opacity: 0.8;
+  }
+}

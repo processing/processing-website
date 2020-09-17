@@ -6,7 +6,7 @@
   & h3 {
     font-size: var(--text-medium);
     text-transform: capitalize;
-    border-right: solid 3px var(--gray);
+    border-right: solid 3px var(--lightgray);
     margin: 0;
   }
 

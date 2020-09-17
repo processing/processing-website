@@ -5,7 +5,10 @@
   --processing-blue-light: #508bff;
   --processing-blue-mid: #0251c8;
   --processing-blue-dark: #1e2a67;
-  --gray: #f5f5f5;
+  --lightgray: #f5f5f5;
+  --gray: #dbdbdb;
+  --darkgray: #898989;
+  --black: #0d0d0d;
   --text-regular: 1rem;
   --text-medium: 1.125rem;
   --text-large: 1.3rem;

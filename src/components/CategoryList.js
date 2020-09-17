@@ -8,7 +8,6 @@ import grid from '../styles/grid.module.css';
 
 const CategoryList = (props) => {
   const { category, categoryRefs, subcategory, link } = props;
-  console.log(subcategory);
   return (
     <div className={classnames(grid.grid, css.root)}>
       <h2 className={grid.col1andhalf}>

@@ -5,11 +5,13 @@ import { Link } from 'gatsby';
 import Layout from '../components/Layout';
 import CategoryNav from '../components/CategoryNav';
 import ReferenceList from '../components/ReferenceList';
+import Searchbar from '../components/Searchbar';
 
 const Reference = ({ data }) => {
   return (
     <Layout>
       <h1>References</h1>
+      <Searchbar placeholder={'Search in the Reference...'} large />
       <CategoryNav data={data} />
       <ReferenceList data={data} library={'processing'} />
       <Link to="/">Go back to the homepage</Link>
