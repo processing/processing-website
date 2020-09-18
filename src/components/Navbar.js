@@ -2,7 +2,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 import classnames from 'classnames';
 
-import SearchBar from './SearchBar';
+import SearchBar from './SearchBarSmall';
 
 import grid from '../styles/grid.module.css';
 import css from './Navbar.module.css';
@@ -65,7 +65,7 @@ const Navbar = ({ siteTitle }) => {
           </li>
         ))}
       </ul>
-      <SearchBar />
+      <SearchBarSmall />
     </div>
   );
 };
