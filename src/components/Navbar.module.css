@@ -2,6 +2,8 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  margin: var(--margin);
+  align-items: baseline;
 }
 
 .menu {

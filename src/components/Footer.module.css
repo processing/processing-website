@@ -2,3 +2,8 @@
   background-color: var(--processing-blue-dark);
   color: white;
 }
+
+.span {
+	white-space: pre-wrap;
+	margin: 0 var(--margin);
+}

@@ -2,7 +2,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 import classnames from 'classnames';
 
-import SearchBar from './SearchBarSmall';
+import SearchBarSmall from './SearchBarSmall';
 
 import grid from '../styles/grid.module.css';
 import css from './Navbar.module.css';

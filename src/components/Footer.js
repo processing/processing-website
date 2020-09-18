@@ -8,10 +8,10 @@ import css from './Footer.module.css';
 
 const Footer = ({ siteTitle }) => (
   <footer className={css.root}>
-    <span className={grid.grid}>
-      Processing is an open project intiated by {' '}
-      <Link to="https://benfry.com/"> Ben Fry </Link> and {' '}
-      <Link to="http://reas.com/"> Casey Reas </Link>. It is developed by a team
+    <span className={classnames(grid.grid, css.span)}>
+      Processing is an open project intiated by {''}
+      <Link to="https://benfry.com/">Ben Fry</Link> and {''}
+      <Link to="http://reas.com/">Casey Reas</Link>. It is developed by a team
       of volunteers.
     </span>
   </footer>
