@@ -1,7 +1,6 @@
 .root {
-  color: white;
-  background-color: var(--processing-blue-mid);
 }
+
 .root h1 {
   margin: 0;
 }

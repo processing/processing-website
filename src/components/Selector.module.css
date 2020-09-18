@@ -1,0 +1,30 @@
+.root {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  background-color: var(--processing-blue-dark);
+}
+
+.select {
+  display: flex;
+  right: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  color: white;
+  border-style: none;
+  font-size: 16px;
+  background-color: var(--processing-blue-dark);
+}
+
+.option {
+  position: relative;
+  margin-left: 1rem;
+  color: white;
+  font-size: 16px;
+  background-color: var(--processing-blue-dark);
+}

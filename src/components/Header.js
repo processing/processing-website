@@ -2,14 +2,16 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Topbar from './Topbar';
+import Navbar from './Navbar';
+
 import css from './Header.module.css';
 
 const Header = ({ siteTitle }) => (
   <header className={css.root}>
     <div>
-      <h1>
-        <Link to="/">{siteTitle}</Link>
-      </h1>
+      <Topbar />
+      <Navbar siteTitle={siteTitle} />
     </div>
   </header>
 );
