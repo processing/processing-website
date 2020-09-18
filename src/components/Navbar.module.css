@@ -1,0 +1,36 @@
+.root {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+}
+
+.item {
+  display: inline-block;
+  margin-left: 1rem;
+  color: var(--processing-blue-dark);
+  cursor: pointer;
+}
+
+.submenu {
+	position: absolute;
+	margin: 0;
+	z-index: 30;
+	list-style: none;
+	max-height: 0;
+	overflow: hidden;
+	opacity: 0;
+}
+
+.hasSubmenu:hover {
+	z-index: 40;
+}
+
+.item:hover .submenu {
+	opacity: 1;
+	max-height: 400px;
+}

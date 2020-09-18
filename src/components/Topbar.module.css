@@ -1,0 +1,23 @@
+.root {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  background-color: var(--processing-blue-dark);
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.item {
+  position: relative;
+  display: inline-block;
+  margin-left: 1rem;
+}
