@@ -38,31 +38,51 @@ const RefTemplate = ({ data, pageContext }) => {
     (edge) => edge.node.extension === 'png'
   );
 
-  console.log(images);
-
   return (
     <Layout>
       {data.json !== null ? (
-        <div className={classnames(grid.grid, css.root)}>
-          <h4 className={grid.col1}>Name</h4>
-          <h3 className={grid.col6}>{ref.name}</h3>
-          <h4 className={grid.col1}>Description</h4>
-          <p className={grid.col6}>{ref.description}</p>
+        <div className={css.root}>
+          <div className={classnames(css.section, grid.grid)}>
+            <h4 className={classnames(grid.col1, grid.push1)}>Name</h4>
+            <h3 className={classnames(grid.col4, grid.pull1)}>{ref.name}</h3>
+          </div>
+          <div className={classnames(css.section, grid.grid)}>
+            <h4 className={classnames(grid.col1, grid.push1)}>Description</h4>
+            <p className={classnames(grid.col4, grid.pull1)}>
+              {ref.description}
+            </p>
+          </div>
           {data.allFile.edges == '' ? (
             ''
           ) : (
-            <>
-              <h4 className={grid.col1}>Examples</h4>
-              <ul className={classnames(grid.col6, css.list)}>
+            <div className={classnames(css.section, grid.grid)}>
+              <h4 className={classnames(grid.col1, grid.push1)}>Examples</h4>
+              <ul
+                className={classnames(
+                  grid.col1,
+                  grid.col6,
+                  grid.internal,
+                  css.list
+                )}>
                 {examples.map((ex, key) => {
                   let img = images.filter(
                     (img) => img.node.name === ex.node.name
                   );
                   return (
-                    <li key={'ex' + key} className={grid.col6}>
-                      <pre className={grid.col4}>{ex.node.internal.content}</pre>
+                    <li key={'ex' + key}>
+                      <div className={grid.col4}>
+                        <pre className={css.codeBlock}>
+                          {ex.node.internal.content
+                            .split(/\r?\n/)
+                            .map((line, i) => (
+                              <code key={`line-${i}`}>{line}</code>
+                            ))}
+                        </pre>
+                      </div>
                       {img ? (
-                        <Img fixed={img[0].node.childImageSharp.fixed} />
+                        <div className={grid.col2}>
+                          <Img fixed={img[0].node.childImageSharp.fixed} />
+                        </div>
                       ) : (
                         ''
                       )}
@@ -70,55 +90,120 @@ const RefTemplate = ({ data, pageContext }) => {
                   );
                 })}
               </ul>
-            </>
+            </div>
           )}
-          <h4 className={grid.col1}>Syntax</h4>
-          <ul className={classnames(grid.col6, css.list)}>
-            {ref.syntax.map((syn, key) => {
-              return (
-                <li key={'s' + key} className={grid.col6}>
-                  {syn}
-                </li>
-              );
-            })}
-          </ul>
+          <div className={classnames(css.section, grid.grid)}>
+            <h4 className={classnames(grid.col1, grid.push1)}>Syntax</h4>
+            <ul className={classnames(grid.col4, grid.pull1, css.list)}>
+              {ref.syntax.map((syn, key) => {
+                return (
+                  <li key={'s' + key}>
+                    <code>{syn}</code>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
           {ref.parameters == '' ? (
             ''
           ) : (
-            <>
-              <h4 className={grid.col1}>Parameters</h4>
-              <ul className={classnames(grid.col6, css.list)}>
+            <div className={classnames(css.section, grid.grid)}>
+              <h4 className={classnames(grid.col1, grid.push1)}>Parameters</h4>
+              <ul
+                className={classnames(
+                  grid.col4,
+                  grid.internal,
+                  grid.pull1,
+                  css.list
+                )}>
                 {ref.parameters.map((param, key) => {
                   return (
-                    <li key={'param' + key} className={grid.col6}>
-                      <span className={grid.col1}>{param.name}</span>
-                      <span className={grid.col6}>
+                    <li key={'param' + key} className={css.param}>
+                      <span className={classnames(grid.col1, css.paramName)}>
+                        {param.name}
+                      </span>
+                      <span className={grid.col4}>
                         {param.type + ': ' + param.description}
                       </span>
                     </li>
                   );
                 })}
               </ul>
-            </>
+            </div>
           )}
-          <h4 className={grid.col1}>Return</h4>
-          <p className={grid.col6}>{ref.returns}</p>
+          <div className={classnames(css.section, grid.grid)}>
+            <h4 className={classnames(grid.col1, grid.push1)}>Return</h4>
+            <p className={classnames(grid.col4, grid.pull1)}>
+              <code>{ref.returns}</code>
+            </p>
+          </div>
+          {ref.inUse ? (
+            <div className={classnames(css.section, grid.grid)}>
+              <h4 className={classnames(grid.col1, grid.push1)}>In use</h4>
+              <ul
+                className={classnames(
+                  grid.col4,
+                  grid.internal,
+                  css.list,
+                  grid.pull1
+                )}>
+                {ref.inUse.map((inUse, key) => (
+                  <li key={key + 'rel'}>
+                    <a href={inUse + '.html'} className={grid.col4}>
+                      {inUse.replace(/_/g, '()')}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : (
+            ''
+          )}
           {ref.related == '' ? (
             ''
           ) : (
-            <>
-              <h4 className={grid.col1}>Related</h4>
-              <ul className={classnames(grid.col6, css.list)}>
+            <div className={classnames(css.section, grid.grid)}>
+              <h4 className={classnames(grid.col1, grid.push1)}>Related</h4>
+              <ul
+                className={classnames(
+                  grid.col4,
+                  grid.internal,
+                  css.list,
+                  grid.pull1
+                )}>
                 {ref.related.map((rel, key) => (
-                  <li key={key + 'rel'} className={grid.col6}>
-                    <a href={rel + '.html'} className={grid.col1}>
+                  <li key={key + 'rel'}>
+                    <a href={rel + '.html'} className={grid.col4}>
                       {rel.replace(/_/g, '()')}
                     </a>
                   </li>
                 ))}
               </ul>
-            </>
+            </div>
           )}
+          <div className={classnames(css.section, grid.grid)}>
+            <div className={classnames(grid.col6, grid.push1, css.license)}>
+              <a
+                rel="license"
+                href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                <img
+                  alt="Creative Commons License"
+                  style={{ borderWidth: 0 }}
+                  src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
+                />
+              </a>
+              <p>
+                {`This work is licensed under a `}
+                <a
+                  rel="license"
+                  href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+                  International License
+                </a>
+                .
+              </p>
+            </div>
+          </div>
         </div>
       ) : (
         <div>

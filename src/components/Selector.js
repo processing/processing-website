@@ -1,14 +1,15 @@
 import { Link } from 'gatsby';
 import React from 'react';
+import classnames from 'classnames';
 
 import { LocalesList, useLocalization } from 'gatsby-theme-i18n';
 
 import css from './Selector.module.css';
 
-const Selector = () => {
+const Selector = ({ className }) => {
   const { config } = useLocalization();
   return (
-    <div className={css.root}>
+    <div className={classnames({ [className]: className }, css.root)}>
       <select className={css.select}>
         {config.map((conf, key) => (
           <option key={key} className={css.option} value={conf.localName}>

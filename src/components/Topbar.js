@@ -34,7 +34,7 @@ const Topbar = () => {
           </li>
         ))}
       </ul>
-      <Selector />
+      <Selector className={css.selector} />
     </div>
   );
 };

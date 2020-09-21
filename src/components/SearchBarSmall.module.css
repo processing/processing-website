@@ -4,4 +4,6 @@
 }
 
 .input {
+  border: solid 4px var(--gray);
+  border-radius: 20px;
 }

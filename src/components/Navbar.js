@@ -4,8 +4,8 @@ import classnames from 'classnames';
 
 import SearchBarSmall from './SearchBarSmall';
 
-import grid from '../styles/grid.module.css';
 import css from './Navbar.module.css';
+import grid from '../styles/grid.module.css';
 
 export const items = [
   {
@@ -49,7 +49,7 @@ const Navbar = ({ siteTitle }) => {
       <h1 className={grid.col2}>
         <Link to="/">{siteTitle}</Link>
       </h1>
-      <ul className={(css.menu, grid.col4)}>
+      <ul className={classnames(css.menu, grid.col4)}>
         {items.map((item, key) => (
           <li
             key={key}
@@ -73,7 +73,7 @@ const Navbar = ({ siteTitle }) => {
           </li>
         ))}
       </ul>
-      <SearchBarSmall />
+      <SearchBarSmall className={grid.pushHalf} />
     </div>
   );
 };

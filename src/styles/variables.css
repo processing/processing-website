@@ -9,6 +9,7 @@
   --gray: #dbdbdb;
   --darkgray: #898989;
   --black: #0d0d0d;
+  --text-small: 0.875rem;
   --text-regular: 1rem;
   --text-medium: 1.125rem;
   --text-large: 1.3rem;
@@ -16,4 +17,7 @@
   --text-xxlarge: 3.375rem;
   --margin: 48px;
   --gutter: 16px;
+  --gutter-half: calc(var(--gutter) / 2);
+  --gutter-double: calc(var(--gutter) * 2);
+  --vertical-gutter: 40px;
 }

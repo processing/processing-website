@@ -1,2 +1,8 @@
 .root {
+  display: flex;
+  flex-direction: row;
+  & h4 {
+    color: white;
+    margin-bottom: 0;
+  }
 }

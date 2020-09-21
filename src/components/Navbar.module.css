@@ -6,13 +6,15 @@
 .menu {
   display: flex;
   list-style: none;
+  justify-content: space-between;
 }
 
 .item {
   display: inline-block;
-  margin-left: 1rem;
   color: var(--processing-blue-dark);
   cursor: pointer;
+  font-size: var(--text-medium);
+  font-weight: 700;
 }
 
 .submenu {

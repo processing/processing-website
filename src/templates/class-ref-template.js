@@ -100,7 +100,6 @@ const ClassRefTemplate = ({ data, pageContext }) => {
           ) : (
             <>
               <h4 className={grid.col1}>Related</h4>
-              {console.log(ref.related == '')}
               <ul className={classnames(grid.col6, css.list)}>
                 {ref.related.map((rel, key) => (
                   <li key={key + 'rel'} className={grid.col6}>

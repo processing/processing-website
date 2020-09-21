@@ -1,27 +1,46 @@
 .root {
-  align-items: baseline;
-  flex-wrap: wrap;
+  & a {
+    color: var(--processing-blue-mid);
+  }
+  & a:hover {
+    color: var(--processing-blue-light);
+  }
+}
+
+.section {
+  margin-bottom: var(--vertical-gutter);
+  width: 100%;
 }
 
 .list {
-  list-style: none;
-
   & li {
     display: flex;
   }
-
-  & li,
-  & li span,
-  & li a {
-    padding: 0;
-  }
-
-  & li pre {
-    margin: 0 16px 16px 0;
-    padding: 16px;
+  & li:last-child .codeBlock {
+    margin-bottom: 0;
   }
 }
 
-p {
+.codeBlock {
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.param {
+  margin-bottom: var(--gutter);
+}
+
+.paramName {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+}
+
+.license {
+  font-size: var(--text-small);
+  display: flex;
+  flex-direction: row;
+  & p {
+    margin-left: var(--gutter);
+  }
 }

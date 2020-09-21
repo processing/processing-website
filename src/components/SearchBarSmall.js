@@ -6,10 +6,18 @@ import classnames from 'classnames';
 import grid from '../styles/grid.module.css';
 import css from './SearchBarSmall.module.css';
 
-const SearchBarSmall = () => (
-  <div className={classnames(grid.col2, css.root)}>
-    <input className={css.input} type="text" />
-  </div>
-);
+const SearchBarSmall = ({ className }) => {
+  console.log(className);
+  return (
+    <div
+      className={classnames(
+        { [className]: className },
+        grid.col1andhalf,
+        css.root
+      )}>
+      <input className={css.input} type="text" />
+    </div>
+  );
+};
 
 export default SearchBarSmall;

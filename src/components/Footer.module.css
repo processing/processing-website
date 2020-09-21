@@ -1,11 +1,12 @@
 .root {
+  position: absolute;
+  width: 100%;
+  padding: 22px;
   background-color: var(--processing-blue-dark);
   color: white;
-  width: 100%;
-  position: absolute;
 }
 
 .span {
-  white-space: pre-wrap;
   margin: 0 var(--margin);
+  white-space: pre-wrap;
 }
