@@ -8,7 +8,7 @@ import Selector from './Selector';
 
 export const items = [
   {
-    name: 'Processing foundation',
+    name: 'Processing Foundation',
     link: 'https://processingfoundation.org',
     logo: '',
   },

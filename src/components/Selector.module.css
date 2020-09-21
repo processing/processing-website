@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   color: white;
   background-color: var(--processing-blue-dark);
+  cursor: pointer;
 }
 
 .select {

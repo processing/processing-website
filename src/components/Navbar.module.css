@@ -3,6 +3,10 @@
   align-items: baseline;
 }
 
+.logo {
+  font-size: var(--text-xlarge);
+}
+
 .menu {
   display: flex;
   list-style: none;

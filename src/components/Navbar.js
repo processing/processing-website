@@ -46,7 +46,7 @@ export const items = [
 const Navbar = ({ siteTitle }) => {
   return (
     <div className={classnames(css.root, grid.grid)}>
-      <h1 className={grid.col2}>
+      <h1 className={classnames(grid.col2, css.logo)}>
         <Link to="/">{siteTitle}</Link>
       </h1>
       <ul className={classnames(css.menu, grid.col4)}>
