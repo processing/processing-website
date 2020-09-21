@@ -1,8 +1,5 @@
 .root {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  margin: var(--margin);
+  margin: var(--gutter) var(--margin);
   align-items: baseline;
 }
 

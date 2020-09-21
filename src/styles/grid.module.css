@@ -1,7 +1,6 @@
 @import "";
 .grid {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .col1 {
