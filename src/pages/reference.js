@@ -26,7 +26,7 @@ export const query = graphql`
     allFile(
       filter: {
         fields: { lang: { eq: "en" }, lib: { eq: "processing" } }
-        childJson: { type: { ne: "method" } }
+        childJson: { type: { nin: ["method", "field"] } }
       }
     ) {
       nodes {

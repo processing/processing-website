@@ -30,6 +30,16 @@ const RefTemplate = ({ data, pageContext }) => {
       '.html';
   }
 
+  let examples = data.allFile.edges.filter(
+    (edge) => edge.node.extension === 'pde'
+  );
+
+  let images = data.allFile.edges.filter(
+    (edge) => edge.node.extension === 'png'
+  );
+
+  console.log(images);
+
   return (
     <Layout>
       {data.json !== null ? (
@@ -44,14 +54,17 @@ const RefTemplate = ({ data, pageContext }) => {
             <>
               <h4 className={grid.col1}>Examples</h4>
               <ul className={classnames(grid.col6, css.list)}>
-                {data.allFile.edges.map((edge, key) => {
+                {examples.map((ex, key) => {
+                  let img = images.filter(
+                    (img) => img.node.name === ex.node.name
+                  );
                   return (
-                    <li key={'ex' + key} className={grid.col4}>
-                      {edge.node.extension === 'pde' && (
-                        <p>{edge.node.internal.content}</p>
-                      )}
-                      {edge.node.extension === 'png' && (
-                        <Img fixed={edge.node.childImageSharp.fixed} />
+                    <li key={'ex' + key} className={grid.col6}>
+                      <pre className={grid.col4}>{ex.node.internal.content}</pre>
+                      {img ? (
+                        <Img fixed={img[0].node.childImageSharp.fixed} />
+                      ) : (
+                        ''
                       )}
                     </li>
                   );
@@ -79,7 +92,9 @@ const RefTemplate = ({ data, pageContext }) => {
                   return (
                     <li key={'param' + key} className={grid.col6}>
                       <span className={grid.col1}>{param.name}</span>
-                      <span className={grid.col6}>{param.type + ': ' + param.description}</span>
+                      <span className={grid.col6}>
+                        {param.type + ': ' + param.description}
+                      </span>
                     </li>
                   );
                 })}

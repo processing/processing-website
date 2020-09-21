@@ -13,6 +13,7 @@ body {
 code,
 pre {
   font-family: Space Mono;
+  background: var(--lightgray);
 }
 
 h1,
