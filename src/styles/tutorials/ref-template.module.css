@@ -1,5 +1,19 @@
+.root {
+  align-items: baseline;
+}
+
 .list {
   list-style: none;
+
+  & li {
+    display: flex;
+  }
+
+  & li,
+  & li span,
+  & li a {
+    padding: 0;
+  }
 }
 
 p {

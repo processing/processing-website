@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
+import classnames from 'classnames';
 
 import Img from 'gatsby-image';
 
@@ -32,58 +33,77 @@ const RefTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
       {data.json !== null ? (
-        <div className={grid.grid}>
+        <div className={classnames(grid.grid, css.root)}>
           <h4 className={grid.col1}>Name</h4>
           <h3 className={grid.col6}>{ref.name}</h3>
           <h4 className={grid.col1}>Description</h4>
           <p className={grid.col6}>{ref.description}</p>
-          <h4 className={grid.col1}>Examples</h4>
-          <div className={grid.col6}>
-            <ul className={css.list}>
-              {data.allFile.edges.map((edge, key) => {
-                return (
-                  <li key={'ex' + key} className={grid.col4}>
-                    {edge.node.extension === 'pde' && (
-                      <p>{edge.node.internal.content}</p>
-                    )}
-                    {edge.node.extension === 'png' && (
-                      <Img fixed={edge.node.childImageSharp.fixed} />
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+          {data.allFile.edges == '' ? (
+            ''
+          ) : (
+            <>
+              <h4 className={grid.col1}>Examples</h4>
+              <ul className={classnames(grid.col6, css.list)}>
+                {data.allFile.edges.map((edge, key) => {
+                  return (
+                    <li key={'ex' + key} className={grid.col4}>
+                      {edge.node.extension === 'pde' && (
+                        <p>{edge.node.internal.content}</p>
+                      )}
+                      {edge.node.extension === 'png' && (
+                        <Img fixed={edge.node.childImageSharp.fixed} />
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+            </>
+          )}
           <h4 className={grid.col1}>Syntax</h4>
-          <p className={grid.col6}>
+          <ul className={classnames(grid.col6, css.list)}>
             {ref.syntax.map((syn, key) => {
               return (
-                <span key={'s' + key} className={grid.col6}>
+                <li key={'s' + key} className={grid.col6}>
                   {syn}
-                </span>
+                </li>
               );
             })}
-          </p>
-          <h4 className={grid.col1}>Parameters</h4>
-          <div className={grid.col6}>
-            {ref.parameters.map((param, key) => {
-              return (
-                <p key={'param' + key}>
-                  <span className={grid.col1}>{param.name}</span>
-                  <span className={grid.col1}>{param.type}</span>
-                  <span className={grid.col4}>{param.description}</span>
-                </p>
-              );
-            })}
-          </div>
+          </ul>
+          {ref.parameters == '' ? (
+            ''
+          ) : (
+            <>
+              <h4 className={grid.col1}>Parameters</h4>
+              <ul className={classnames(grid.col6, css.list)}>
+                {ref.parameters.map((param, key) => {
+                  return (
+                    <li key={'param' + key} className={grid.col6}>
+                      <span className={grid.col1}>{param.name}</span>
+                      <span className={grid.col6}>{param.type + ': ' + param.description}</span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </>
+          )}
           <h4 className={grid.col1}>Return</h4>
           <p className={grid.col6}>{ref.returns}</p>
-          <h4 className={grid.col1}>Related</h4>
-          <p className={grid.col6}>
-            {ref.related.map((rel) => (
-              <span className={grid.col6}>{rel.replace(/_/g, '()')}</span>
-            ))}
-          </p>
+          {ref.related == '' ? (
+            ''
+          ) : (
+            <>
+              <h4 className={grid.col1}>Related</h4>
+              <ul className={classnames(grid.col6, css.list)}>
+                {ref.related.map((rel, key) => (
+                  <li key={key + 'rel'} className={grid.col6}>
+                    <a href={rel + '.html'} className={grid.col1}>
+                      {rel.replace(/_/g, '()')}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
         </div>
       ) : (
         <div>

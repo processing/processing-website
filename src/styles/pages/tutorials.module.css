@@ -3,6 +3,7 @@
   display: flex;
 
   & li {
-    display: inline-grid;
+    display: flex;
+    flex-direction: column;
   }
 }
