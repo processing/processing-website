@@ -60,7 +60,9 @@ const RefTemplate = ({ data, pageContext }) => {
                   );
                   return (
                     <li key={'ex' + key} className={grid.col6}>
-                      <pre className={grid.col4}>{ex.node.internal.content}</pre>
+                      <pre className={grid.col4}>
+                        {ex.node.internal.content}
+                      </pre>
                       {img ? (
                         <Img fixed={img[0].node.childImageSharp.fixed} />
                       ) : (
