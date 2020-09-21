@@ -22,6 +22,15 @@
 
 .item {
   margin-right: 2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.item:hover {
+  padding-top: 6px;
+  border-bottom: solid 6px var(--processing-blue-mid);
 }
 
 .selector {
