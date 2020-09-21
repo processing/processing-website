@@ -17,6 +17,41 @@
   font-weight: 700;
 }
 
+.item:hover {
+  color: var(--processing-blue-mid);
+}
+
+.item:active {
+  color: var(--processing-blue-dark);
+}
+
+.subitem {
+  display: inline-block;
+  color: var(--processing-blue-dark);
+  cursor: pointer;
+  font-size: var(--text-regular);
+  font-weight: 700;
+  margin-right: 2rem;
+  padding-left: 0.6rem;
+  border-left: solid 4px var(--lightgray);
+}
+
+.subitem:hover {
+  color: var(--processing-blue-mid);
+  border-left: solid 4px var(--processing-blue-mid);
+  & a:hover {
+    color: var(--processing-blue-mid);
+  }
+}
+
+.subitem:active {
+  color: var(--processing-blue-dark);
+  border-left: solid 4px var(--processing-blue-dark);
+  & a:hover {
+    color: var(--processing-blue-dark);
+  }
+}
+
 .submenu {
   position: absolute;
   margin: 0;

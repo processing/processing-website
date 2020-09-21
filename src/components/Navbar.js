@@ -60,7 +60,7 @@ const Navbar = ({ siteTitle }) => {
             {item.children && (
               <ul className={css.submenu}>
                 {item.children.map((subitem, j) => (
-                  <li className={css.item} key={key + j}>
+                  <li className={css.subitem} key={key + j}>
                     {subitem.link ? (
                       <Link to={subitem.link}>{subitem.name}</Link>
                     ) : (
