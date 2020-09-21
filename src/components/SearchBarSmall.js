@@ -7,7 +7,6 @@ import grid from '../styles/grid.module.css';
 import css from './SearchBarSmall.module.css';
 
 const SearchBarSmall = ({ className }) => {
-  console.log(className);
   return (
     <div
       className={classnames(

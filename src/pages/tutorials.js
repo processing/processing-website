@@ -16,7 +16,7 @@ const Tutorials = ({ data }) => {
   return (
     <Layout>
       <h1>Tutorials</h1>
-      <div className={grid.grid}>
+      <div className={classnames(grid.grid, css.part)}>
         <h2 className={grid.col8}>Video Tutorials</h2>
         <h3 className={grid.col3}>
           Links to videos that cover the Processing basics.
@@ -33,7 +33,7 @@ const Tutorials = ({ data }) => {
           })}
         </ul>
       </div>
-      <div className={grid.grid}>
+      <div className={classnames(grid.grid, css.part)}>
         <h2 className={grid.col8}>Text Tutorials</h2>
         <h3 className={grid.col3}>
           A collection of step-by-step lessons covering beginner, intermediate,
