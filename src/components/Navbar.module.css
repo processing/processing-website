@@ -19,20 +19,20 @@
 }
 
 .submenu {
-	position: absolute;
-	margin: 0;
-	z-index: 30;
-	list-style: none;
-	max-height: 0;
-	overflow: hidden;
-	opacity: 0;
+  position: absolute;
+  margin: 0;
+  z-index: 30;
+  list-style: none;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
 }
 
 .hasSubmenu:hover {
-	z-index: 40;
+  z-index: 40;
 }
 
 .item:hover .submenu {
-	opacity: 1;
-	max-height: 400px;
+  opacity: 1;
+  max-height: 400px;
 }

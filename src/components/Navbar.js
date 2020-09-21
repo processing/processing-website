@@ -10,7 +10,7 @@ import css from './Navbar.module.css';
 export const items = [
   {
     name: 'Download',
-    link: '',
+    link: '/download',
   },
   {
     name: 'Documentation',
@@ -31,15 +31,15 @@ export const items = [
   },
   {
     name: 'Teach',
-    link: '',
+    link: '/teach',
   },
   {
     name: 'About',
-    link: '',
+    link: '/about',
   },
   {
     name: 'Donate',
-    link: '',
+    link: '/donate',
   },
 ];
 
@@ -51,13 +51,21 @@ const Navbar = ({ siteTitle }) => {
       </h1>
       <ul className={(css.menu, grid.col4)}>
         {items.map((item, key) => (
-          <li key={key} className={classnames(css.item, {[css.hasSubmenu]: item.children,})}>
+          <li
+            key={key}
+            className={classnames(css.item, {
+              [css.hasSubmenu]: item.children,
+            })}>
             {item.link ? <Link to={item.link}>{item.name}</Link> : item.name}
             {item.children && (
               <ul className={css.submenu}>
                 {item.children.map((subitem, j) => (
                   <li className={css.item} key={key + j}>
-                    {subitem.link ? <Link to={subitem.link}>{subitem.name}</Link> : subitem.name}
+                    {subitem.link ? (
+                      <Link to={subitem.link}>{subitem.name}</Link>
+                    ) : (
+                      subitem.name
+                    )}
                   </li>
                 ))}
               </ul>

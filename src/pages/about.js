@@ -4,6 +4,8 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Layout from '../components/Layout';
 
+import grid from '../styles/grid.module.css';
+
 const About = ({ data }) => {
   const { mdx } = data;
   const { frontmatter, body } = mdx;

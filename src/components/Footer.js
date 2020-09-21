@@ -1,4 +1,3 @@
-import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
@@ -10,9 +9,9 @@ const Footer = ({ siteTitle }) => (
   <footer className={css.root}>
     <span className={classnames(grid.grid, css.span)}>
       Processing is an open project intiated by {''}
-      <Link to="https://benfry.com/">Ben Fry</Link> and {''}
-      <Link to="http://reas.com/">Casey Reas</Link>. It is developed by a team
-      of volunteers.
+      <a href="https://benfry.com/">Ben Fry</a> and {''}
+      <a href="http://reas.com/">Casey Reas</a>. It is developed by a team of
+      volunteers.
     </span>
   </footer>
 );

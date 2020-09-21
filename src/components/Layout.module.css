@@ -2,4 +2,6 @@ main {
   margin: 0 var(--margin);
   margin-left: var(--margin);
   margin-right: var(--margin);
+  position: relative;
+  min-height: 100vh;
 }

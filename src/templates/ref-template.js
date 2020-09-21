@@ -7,6 +7,9 @@ import Img from 'gatsby-image';
 import Layout from '../components/Layout';
 import { useLocalization } from 'gatsby-theme-i18n';
 
+import css from '../styles/tutorials/ref-template.module.css';
+import grid from '../styles/grid.module.css';
+
 const RefTemplate = ({ data, pageContext }) => {
   let ref, link;
   const { locale } = useLocalization();
@@ -29,41 +32,58 @@ const RefTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
       {data.json !== null ? (
-        <div>
-          <h1>{ref.name}</h1>
-          <p>Description: {ref.description}</p>
-          Syntax:
-          {ref.syntax.map((syn, key) => {
-            return <p key={'s' + key}>{syn}</p>;
-          })}
-          Parameters:
-          {ref.parameters.map((param, key) => {
-            return (
-              <p key={'param' + key}>
-                {param.name + ': ' + param.type + ' - ' + param.description}
-              </p>
-            );
-          })}
-          <p>Return: {ref.returns}</p>
-          Examples:
-          <ul>
-            {data.allFile.edges.map((edge, key) => {
+        <div className={grid.grid}>
+          <h4 className={grid.col1}>Name</h4>
+          <h3 className={grid.col6}>{ref.name}</h3>
+          <h4 className={grid.col1}>Description</h4>
+          <p className={grid.col6}>{ref.description}</p>
+          <h4 className={grid.col1}>Examples</h4>
+          <div className={grid.col6}>
+            <ul className={css.list}>
+              {data.allFile.edges.map((edge, key) => {
+                return (
+                  <li key={'ex' + key} className={grid.col4}>
+                    {edge.node.extension === 'pde' && (
+                      <p>{edge.node.internal.content}</p>
+                    )}
+                    {edge.node.extension === 'png' && (
+                      <Img fixed={edge.node.childImageSharp.fixed} />
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          <h4 className={grid.col1}>Syntax</h4>
+          <p className={grid.col6}>
+            {ref.syntax.map((syn, key) => {
               return (
-                <li key={'ex' + key}>
-                  {edge.node.extension === 'pde' && (
-                    <p>
-                      {edge.node.name}
-                      {edge.node.internal.content}
-                    </p>
-                  )}
-                  {edge.node.extension === 'png' && (
-                    <Img fixed={edge.node.childImageSharp.fixed} />
-                  )}
-                </li>
+                <span key={'s' + key} className={grid.col6}>
+                  {syn}
+                </span>
               );
             })}
-          </ul>
-          <p>Related: {ref.related.join(', ')} </p>
+          </p>
+          <h4 className={grid.col1}>Parameters</h4>
+          <div className={grid.col6}>
+            {ref.parameters.map((param, key) => {
+              return (
+                <p key={'param' + key}>
+                  <span className={grid.col1}>{param.name}</span>
+                  <span className={grid.col1}>{param.type}</span>
+                  <span className={grid.col4}>{param.description}</span>
+                </p>
+              );
+            })}
+          </div>
+          <h4 className={grid.col1}>Return</h4>
+          <p className={grid.col6}>{ref.returns}</p>
+          <h4 className={grid.col1}>Related</h4>
+          <p className={grid.col6}>
+            {ref.related.map((rel) => (
+              <span className={grid.col6}>{rel.replace(/_/g, '()')}</span>
+            ))}
+          </p>
         </div>
       ) : (
         <div>
