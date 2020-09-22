@@ -30,17 +30,24 @@ const ClassRefTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
       {data.json !== null ? (
-        <div className={classnames(grid.grid, css.root)}>
-          <h4 className={grid.col1}>Class name</h4>
-          <h3 className={grid.col6}>{ref.name}</h3>
-          <h4 className={grid.col1}>Description</h4>
-          <p className={grid.col6}>{ref.description}</p>
+        <div className={css.root}>
+          <div className={classnames(grid.grid, css.section)}>
+            <h4 className={classnames(grid.col1, grid.push1)}>Class name</h4>
+            <h3 className={classnames(grid.col4, grid.pull1)}>{ref.name}</h3>
+          </div>
+          <div className={classnames(grid.grid, css.section)}>
+            <h4 className={classnames(grid.col1, grid.push1)}>Description</h4>
+            <p
+              className={classnames(grid.col4, grid.pull1, css.description)}
+              dangerouslySetInnerHTML={{ __html: ref.description }}
+            />
+          </div>
           {data.allFile.edges == '' ? (
             ''
           ) : (
-            <>
-              <h4 className={grid.col1}>Examples</h4>
-              <ul className={classnames(grid.col6, css.list)}>
+            <div className={classnames(grid.grid, css.section)}>
+              <h4 className={classnames(grid.col1, grid.push1)}>Examples</h4>
+              <ul className={classnames(grid.col4, grid.pull1, css.list)}>
                 {data.allFile.edges.map((edge, key) => {
                   return (
                     <li key={'ex' + key} className={grid.col4}>
@@ -57,20 +64,26 @@ const ClassRefTemplate = ({ data, pageContext }) => {
                   );
                 })}
               </ul>
-            </>
+            </div>
           )}
-          <h4 className={grid.col1}>Constructors</h4>
-          <ul className={classnames(grid.col6, css.list)}>
-            {ref.constructors.map((cons, key) => {
-              return <li key={'f' + key}>{cons}</li>;
-            })}
-          </ul>
+          <div className={classnames(grid.grid, css.section)}>
+            <h4 className={classnames(grid.col1, grid.push1)}>Constructors</h4>
+            <ul className={classnames(grid.col4, grid.pull1, css.list)}>
+              {ref.constructors.map((cons, key) => {
+                return (
+                  <li key={'f' + key}>
+                    <code>{cons}</code>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
           {ref.classFields == '' ? (
             ''
           ) : (
-            <>
-              <h4 className={grid.col1}>Fields</h4>
-              <ul className={classnames(grid.col6, css.list)}>
+            <div className={classnames(grid.grid, css.section)}>
+              <h4 className={classnames(grid.col1, grid.push1)}>Fields</h4>
+              <ul className={classnames(grid.col4, grid.pull1, css.list)}>
                 {ref.classFields.map((field, key) => {
                   return (
                     <li key={'f' + key}>
@@ -80,36 +93,47 @@ const ClassRefTemplate = ({ data, pageContext }) => {
                   );
                 })}
               </ul>
-            </>
+            </div>
           )}
-          <h4 className={grid.col1}>Methods</h4>
-          <ul className={classnames(grid.col6, css.list)}>
-            {ref.methods.map((method, key) => {
-              return (
-                <li key={'m' + key} className={grid.col6}>
-                  <a href={method.anchor + '.html'} className={grid.col1}>
-                    {method.name}{' '}
-                  </a>
-                  <span className={grid.col4}>{method.desc}</span>
-                </li>
-              );
-            })}
-          </ul>
+          <div className={classnames(grid.grid, css.section)}>
+            <h4 className={classnames(grid.col1, grid.push1)}>Methods</h4>
+            <ul className={classnames(grid.col5, grid.internal, css.list)}>
+              {ref.methods.map((method, key) => {
+                return (
+                  <li key={'m' + key}>
+                    <a href={method.anchor + '.html'} className={grid.col2}>
+                      <code>{method.name}</code>
+                    </a>
+                    <span
+                      className={grid.col3}
+                      dangerouslySetInnerHTML={{ __html: method.desc }}
+                    />
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
           {ref.related == '' ? (
             ''
           ) : (
-            <>
-              <h4 className={grid.col1}>Related</h4>
-              <ul className={classnames(grid.col6, css.list)}>
+            <div className={classnames(grid.grid, css.section)}>
+              <h4 className={classnames(grid.col1, grid.push1)}>Related</h4>
+              <ul
+                className={classnames(
+                  grid.col4,
+                  grid.pull1,
+                  grid.internal,
+                  css.list
+                )}>
                 {ref.related.map((rel, key) => (
-                  <li key={key + 'rel'} className={grid.col6}>
+                  <li key={key + 'rel'}>
                     <a href={rel + '.html'} className={grid.col1}>
                       {rel.replace(/_/g, '()')}
                     </a>
                   </li>
                 ))}
               </ul>
-            </>
+            </div>
           )}
         </div>
       ) : (

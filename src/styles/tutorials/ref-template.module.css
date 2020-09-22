@@ -12,6 +12,19 @@
   width: 100%;
 }
 
+.description {
+  font-family: "Vollkorn", serif;
+  font-size: var(--text-medium);
+  & > * {
+    font-family: "Space Mono", monospace;
+    font-size: var(--text-regular);
+    font-style: normal;
+  }
+  & code {
+    margin-bottom: 0;
+  }
+}
+
 .list {
   & li {
     display: flex;

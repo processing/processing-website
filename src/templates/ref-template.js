@@ -48,9 +48,10 @@ const RefTemplate = ({ data, pageContext }) => {
           </div>
           <div className={classnames(css.section, grid.grid)}>
             <h4 className={classnames(grid.col1, grid.push1)}>Description</h4>
-            <p className={classnames(grid.col4, grid.pull1)}>
-              {ref.description}
-            </p>
+            <p
+              className={classnames(grid.col4, grid.pull1, css.description)}
+              dangerouslySetInnerHTML={{ __html: ref.description }}
+            />
           </div>
           {data.allFile.edges == '' ? (
             ''
@@ -109,20 +110,14 @@ const RefTemplate = ({ data, pageContext }) => {
           ) : (
             <div className={classnames(css.section, grid.grid)}>
               <h4 className={classnames(grid.col1, grid.push1)}>Parameters</h4>
-              <ul
-                className={classnames(
-                  grid.col4,
-                  grid.internal,
-                  grid.pull1,
-                  css.list
-                )}>
+              <ul className={classnames(grid.col5, grid.internal, css.list)}>
                 {ref.parameters.map((param, key) => {
                   return (
                     <li key={'param' + key} className={css.param}>
                       <span className={classnames(grid.col1, css.paramName)}>
                         {param.name}
                       </span>
-                      <span className={grid.col4}>
+                      <span className={grid.col5}>
                         {param.type + ': ' + param.description}
                       </span>
                     </li>

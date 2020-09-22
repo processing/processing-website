@@ -3,5 +3,12 @@ main {
   margin-left: var(--margin);
   margin-right: var(--margin);
   position: relative;
-  min-height: 100vh;
+  flex: 1;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%;
 }
