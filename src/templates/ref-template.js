@@ -50,7 +50,7 @@ const RefTemplate = ({ data, pageContext }) => {
           className={css.root}
           style={{ marginLeft: show ? '150px' : '50px' }}>
           <div className={classnames(css.section, grid.grid)}>
-            <h4 className={classnames(grid.col1, grid.push1)}>Name</h4>
+            <h4 className={classnames(grid.col4, grid.push1)}>Name</h4>
             <h3 className={classnames(grid.col4, grid.pull1)}>{ref.name}</h3>
           </div>
           <div className={classnames(css.section, grid.grid)}>

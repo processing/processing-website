@@ -10,10 +10,10 @@ const CategoryList = (props) => {
   const { category, categoryRefs, subcategory, link } = props;
   return (
     <div className={classnames(grid.grid, css.root)}>
-      <h2 className={grid.col1andhalf}>
+      <h2 className={classnames(grid.col8)}>
         {category && category.replace(/_/g, ' ')}
       </h2>
-      <ul className={classnames(grid.col6andhalf, grid.internal)}>
+      <ul className={classnames(grid.col8, grid.internal)}>
         {subcategory.map((p, key) => {
           let subcategoryRefs = categoryRefs.filter((ref) => {
             return ref.childJson.subcategory === p;

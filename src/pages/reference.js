@@ -22,7 +22,6 @@ const Reference = ({ data }) => {
       <Searchbar placeholder={'Search in the Reference...'} large />
       <CategoryNav categories={categories} />
       <ReferenceList data={data.allFile} library={'processing'} />
-      <Link to="/">Go back to the homepage</Link>
     </Layout>
   );
 };

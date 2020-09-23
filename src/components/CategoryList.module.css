@@ -5,7 +5,6 @@
     font-size: var(--text-xlarge);
     text-transform: capitalize;
     border-right: solid 7px var(--lightgray);
-    margin-bottom: 0;
   }
 
   & ul div:last-child {
