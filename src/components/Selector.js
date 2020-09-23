@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import {useLocalization } from 'gatsby-theme-i18n';
+import { useLocalization } from 'gatsby-theme-i18n';
 
 import css from './Selector.module.css';
 
