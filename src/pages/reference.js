@@ -13,7 +13,7 @@ const Reference = ({ data }) => {
       <h1>References</h1>
       <Searchbar placeholder={'Search in the Reference...'} large />
       <CategoryNav data={data} />
-      <ReferenceList data={data} library={'processing'} />
+      <ReferenceList data={data.allFile} library={'processing'} />
       <Link to="/">Go back to the homepage</Link>
     </Layout>
   );
