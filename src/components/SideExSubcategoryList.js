@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
+import { useLocalization } from 'gatsby-theme-i18n';
 
-import css from './SideSubcategoryList.module.css';
+import css from './SideExSubcategoryList.module.css';
 import grid from '../styles/grid.module.css';
 
-const SideSubcategoryList = (props) => {
-  const { subcategory, subcategoryRefs, link } = props;
+const SideExSubcategoryList = (props) => {
+  const { subcategory, subcategoryRefs } = props;
+  const { locale } = useLocalization();
   const [expand, setExpand] = useState(false);
 
   const toggleExpand = () => {
@@ -22,16 +24,14 @@ const SideSubcategoryList = (props) => {
       ) : (
         ''
       )}
-      <h3>{subcategory && subcategory.replace(/_/g, ' ')}</h3>
+      <h3>{subcategory}</h3>
       {expand || subcategory === '' ? (
         <ul>
           {subcategoryRefs.map((node, key) => {
             return (
               <li key={key}>
-                <Link
-                  className={classnames(grid.col1andhalf, css.functionName)}
-                  to={link + node.name.split('.')[0] + '.html'}>
-                  <span>{node.childJson.name}</span>
+                <Link to={node.childMdx.frontmatter.slug} language={locale}>
+                  <h4>{node.childMdx.frontmatter.title}</h4>
                 </Link>
               </li>
             );
@@ -44,4 +44,4 @@ const SideSubcategoryList = (props) => {
   );
 };
 
-export default SideSubcategoryList;
+export default SideExSubcategoryList;
