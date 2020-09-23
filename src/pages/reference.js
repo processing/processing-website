@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
+import unique from 'array-unique';
 
 import Layout from '../components/Layout';
 import CategoryNav from '../components/CategoryNav';
@@ -8,12 +9,19 @@ import ReferenceList from '../components/ReferenceList';
 import Searchbar from '../components/Searchbar';
 
 const Reference = ({ data }) => {
+  let refs = data.allFile.nodes;
+
+  let categories = unique(
+    refs.map((ref) => {
+      return ref.childJson.category;
+    })
+  );
   return (
     <Layout>
       <h1>References</h1>
       <Searchbar placeholder={'Search in the Reference...'} large />
-      <CategoryNav data={data} />
-      <ReferenceList data={data} library={'processing'} />
+      <CategoryNav categories={categories} />
+      <ReferenceList data={data.allFile} library={'processing'} />
       <Link to="/">Go back to the homepage</Link>
     </Layout>
   );

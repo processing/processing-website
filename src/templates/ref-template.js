@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
@@ -6,14 +6,14 @@ import classnames from 'classnames';
 import Img from 'gatsby-image';
 
 import Layout from '../components/Layout';
-import { useLocalization } from 'gatsby-theme-i18n';
+import Sidebar from '../components/Sidebar';
 
 import css from '../styles/tutorials/ref-template.module.css';
 import grid from '../styles/grid.module.css';
 
 const RefTemplate = ({ data, pageContext }) => {
   let ref, link;
-  const { locale } = useLocalization();
+  const [show, setShow] = useState(false);
 
   if (data.json !== null) {
     ref = data.json.childJson;
@@ -38,10 +38,17 @@ const RefTemplate = ({ data, pageContext }) => {
     (edge) => edge.node.extension === 'png'
   );
 
+  const toggleSidebar = (show) => {
+    setShow(show);
+  };
+
   return (
     <Layout>
+      <Sidebar refs={data.refs} onChange={toggleSidebar} show={show} />
       {data.json !== null ? (
-        <div className={css.root}>
+        <div
+          className={css.root}
+          style={{ marginLeft: show ? '150px' : '50px' }}>
           <div className={classnames(css.section, grid.grid)}>
             <h4 className={classnames(grid.col1, grid.push1)}>Name</h4>
             <h3 className={classnames(grid.col4, grid.pull1)}>{ref.name}</h3>
@@ -53,7 +60,7 @@ const RefTemplate = ({ data, pageContext }) => {
               dangerouslySetInnerHTML={{ __html: ref.description }}
             />
           </div>
-          {data.allFile.edges == '' ? (
+          {!data.allFile.edges.length ? (
             ''
           ) : (
             <div className={classnames(css.section, grid.grid)}>
@@ -82,7 +89,7 @@ const RefTemplate = ({ data, pageContext }) => {
                       </div>
                       {img ? (
                         <div className={grid.col2}>
-                          <Img fixed={img[0].node.childImageSharp.fixed} />
+                          <Img fluid={img[0].node.childImageSharp.fluid} />
                         </div>
                       ) : (
                         ''
@@ -105,7 +112,7 @@ const RefTemplate = ({ data, pageContext }) => {
               })}
             </ul>
           </div>
-          {ref.parameters == '' ? (
+          {!ref.parameters.length ? (
             ''
           ) : (
             <div className={classnames(css.section, grid.grid)}>
@@ -154,7 +161,7 @@ const RefTemplate = ({ data, pageContext }) => {
           ) : (
             ''
           )}
-          {ref.related == '' ? (
+          {!ref.related.length ? (
             ''
           ) : (
             <div className={classnames(css.section, grid.grid)}>
@@ -240,7 +247,26 @@ export const query = graphql`
             fixed {
               ...GatsbyImageSharpFixed
             }
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
           }
+        }
+      }
+    }
+    refs: allFile(
+      filter: {
+        fields: { lang: { eq: "en" }, lib: { eq: "processing" } }
+        childJson: { type: { nin: ["method", "field"] } }
+      }
+    ) {
+      nodes {
+        name
+        relativeDirectory
+        childJson {
+          category
+          subcategory
+          name
         }
       }
     }

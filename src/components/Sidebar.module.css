@@ -1,0 +1,14 @@
+.root {
+  height: 100vh;
+  position: absolute;
+  z-index: 1;
+  margin-left: calc(-1 * var(--margin));
+  background: var(--lightgray);
+}
+
+.show {
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  padding-right: var(--gutter);
+}

@@ -1,0 +1,22 @@
+.root {
+  height: 100vh;
+  width: 350px;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  float: left;
+  background: var(--lightgray);
+
+  & a {
+    padding-left: var(--gutter);
+    text-decoration: none;
+    font-size: var(--text-regular);
+    font-family: var(--font-mono);
+    color: var(--black);
+    display: block;
+  }
+}

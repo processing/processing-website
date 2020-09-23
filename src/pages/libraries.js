@@ -2,10 +2,8 @@ import React from 'react';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import unique from 'array-unique';
-import flatMap from 'array-flat-polyfill';
 
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Layout from '../components/Layout';
 import CategoryNav from '../components/CategoryNav';
@@ -20,8 +18,8 @@ const Libraries = ({ data }) => {
 
   let contributions = [];
 
-  english.nodes.map((en) => {
-    currentLang.nodes.map((con) => {
+  english.nodes.forEach((en) => {
+    currentLang.nodes.forEach((con) => {
       if (en.name === con.name.split('.')[0]) {
         contributions.push({ ...en.childJson, ...con.childJson });
       } else if (locale !== 'en') {
@@ -60,7 +58,7 @@ const Libraries = ({ data }) => {
         </ul>
       </div>
       <h1 className={grid.col8}>Contributions</h1>
-      <div className={grid.col1andhalf} />
+      <CategoryNav categories={categories} />
       <ul className={css.contributionsList}>
         {categories.map((cat) => {
           let contribs = contributions.filter((c) =>
