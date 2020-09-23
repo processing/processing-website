@@ -1,6 +1,4 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import { Link } from 'gatsby';
 
 import ReferenceList from '../components/ReferenceList';
 import Searchbar from '../components/Searchbar';

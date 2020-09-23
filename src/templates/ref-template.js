@@ -7,14 +7,12 @@ import Img from 'gatsby-image';
 
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
-import { useLocalization } from 'gatsby-theme-i18n';
 
 import css from '../styles/tutorials/ref-template.module.css';
 import grid from '../styles/grid.module.css';
 
 const RefTemplate = ({ data, pageContext }) => {
   let ref, link;
-  const { locale } = useLocalization();
   const [show, setShow] = useState(false);
 
   if (data.json !== null) {
@@ -61,7 +59,7 @@ const RefTemplate = ({ data, pageContext }) => {
               {ref.description}
             </p>
           </div>
-          {data.allFile.edges == '' ? (
+          {!data.allFile.edges.length ? (
             ''
           ) : (
             <div className={classnames(css.section, grid.grid)}>
@@ -113,7 +111,7 @@ const RefTemplate = ({ data, pageContext }) => {
               })}
             </ul>
           </div>
-          {ref.parameters == '' ? (
+          {!ref.parameters.length ? (
             ''
           ) : (
             <div className={classnames(css.section, grid.grid)}>
@@ -168,7 +166,7 @@ const RefTemplate = ({ data, pageContext }) => {
           ) : (
             ''
           )}
-          {ref.related == '' ? (
+          {!ref.related.length ? (
             ''
           ) : (
             <div className={classnames(css.section, grid.grid)}>

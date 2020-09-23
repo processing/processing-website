@@ -5,7 +5,6 @@ import unique from 'array-unique';
 import flatMap from 'array-flat-polyfill';
 
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Layout from '../components/Layout';
 import { useLocalization } from 'gatsby-theme-i18n';

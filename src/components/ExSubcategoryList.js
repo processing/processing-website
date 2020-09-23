@@ -9,7 +9,7 @@ import css from './ExSubcategoryList.module.css';
 import grid from '../styles/grid.module.css';
 
 const ExSubcategoryList = (props) => {
-  const { subcategory, subcategoryRefs, link } = props;
+  const { subcategory, subcategoryRefs } = props;
   const { locale } = useLocalization();
 
   return (

@@ -1,4 +1,3 @@
-import { Link } from 'gatsby';
 import React from 'react';
 
 import css from './Topbar.module.css';

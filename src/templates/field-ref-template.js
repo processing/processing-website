@@ -6,14 +6,12 @@ import classnames from 'classnames';
 import Img from 'gatsby-image';
 
 import Layout from '../components/Layout';
-import { useLocalization } from 'gatsby-theme-i18n';
 
 import css from '../styles/tutorials/ref-template.module.css';
 import grid from '../styles/grid.module.css';
 
 const RefTemplate = ({ data, pageContext }) => {
   let ref, link;
-  const { locale } = useLocalization();
 
   if (data.json !== null) {
     ref = data.json.childJson;
@@ -38,7 +36,7 @@ const RefTemplate = ({ data, pageContext }) => {
           <h3 className={grid.col6}>{ref.name}</h3>
           <h4 className={grid.col1}>Description</h4>
           <p className={grid.col6}>{ref.description}</p>
-          {data.allFile.edges == '' ? (
+          {!data.allFile.edges.length ? (
             ''
           ) : (
             <>
@@ -62,7 +60,7 @@ const RefTemplate = ({ data, pageContext }) => {
               </ul>
             </>
           )}
-          {ref.related == '' ? (
+          {!ref.related.length ? (
             ''
           ) : (
             <>

@@ -1,14 +1,12 @@
 import React from 'react';
 import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
-import { useLocalization } from 'gatsby-theme-i18n';
 
 import css from './SubcategoryList.module.css';
 import grid from '../styles/grid.module.css';
 
 const SubcategoryList = (props) => {
   const { subcategory, subcategoryRefs, link } = props;
-  const { locale } = useLocalization();
 
   return (
     <div className={css.root}>

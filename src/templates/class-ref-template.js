@@ -35,7 +35,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
           <h3 className={grid.col6}>{ref.name}</h3>
           <h4 className={grid.col1}>Description</h4>
           <p className={grid.col6}>{ref.description}</p>
-          {data.allFile.edges == '' ? (
+          {!data.allFile.edges.length ? (
             ''
           ) : (
             <>
@@ -65,7 +65,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               return <li key={'f' + key}>{cons}</li>;
             })}
           </ul>
-          {ref.classFields == '' ? (
+          {!ref.classFields.length ? (
             ''
           ) : (
             <>
@@ -95,7 +95,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               );
             })}
           </ul>
-          {ref.related == '' ? (
+          {!ref.related.length ? (
             ''
           ) : (
             <>

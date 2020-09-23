@@ -1,20 +1,14 @@
 import React from 'react';
-import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import unique from 'array-unique';
-
-import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 
 import Layout from '../components/Layout';
 import ExCategoryList from '../components/ExCategoryList';
 import Searchbar from '../components/Searchbar';
 
-import { useLocalization } from 'gatsby-theme-i18n';
 import grid from '../styles/grid.module.css';
 
 const Examples = ({ data }) => {
-  const { locale } = useLocalization();
-
   let examples = data.allFile.nodes;
 
   let categories = unique(

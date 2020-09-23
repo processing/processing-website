@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
-import { useLocalization } from 'gatsby-theme-i18n';
 
 import css from './SideSubcategoryList.module.css';
 import grid from '../styles/grid.module.css';
 
 const SideSubcategoryList = (props) => {
   const { subcategory, subcategoryRefs, link } = props;
-  const { locale } = useLocalization();
   const [expand, setExpand] = useState(false);
 
   const toggleExpand = () => {

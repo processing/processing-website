@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-import { graphql } from 'gatsby';
-import { Link } from 'gatsby';
+import React from 'react';
 
 import SidebarList from '../components/SidebarList';
 
