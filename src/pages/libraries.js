@@ -8,6 +8,7 @@ import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Layout from '../components/Layout';
+import CategoryNav from '../components/CategoryNav';
 import { useLocalization } from 'gatsby-theme-i18n';
 
 import css from '../styles/pages/libraries.module.css';

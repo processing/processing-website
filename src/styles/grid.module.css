@@ -1,6 +1,7 @@
 @import "";
 .grid {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .fill {
@@ -78,6 +79,10 @@
 
 .grid .push-1 {
   margin-left: calc((100vw - var(--margin) * 2) / 8);
+}
+
+.grid .pull-3 {
+  margin-right: calc((100vw - var(--margin) * 2) / 8 * 3);
 }
 
 .grid .pullHalf {

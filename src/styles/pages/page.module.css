@@ -1,0 +1,19 @@
+.content {
+  margin-bottom: var(--vertical-gutter);
+  & h2 {
+    margin-top: var(--vertical-gutter);
+  }
+  & p {
+    font-family: "Vollkorn", serif;
+    font-size: var(--text-medium);
+    line-height: 1.6em;
+    & > pre {
+      font-family: "Space Mono", monospace;
+      font-size: var(--text-regular);
+      font-style: normal;
+    }
+    & code {
+      margin-bottom: 0;
+    }
+  }
+}

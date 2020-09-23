@@ -15,6 +15,8 @@
 .description {
   font-family: "Vollkorn", serif;
   font-size: var(--text-medium);
+  line-height: 1.6em;
+
   & > * {
     font-family: "Space Mono", monospace;
     font-size: var(--text-regular);
