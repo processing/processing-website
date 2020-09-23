@@ -2,12 +2,13 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 30px;
-
   & h3 {
     font-size: var(--text-medium);
     text-transform: capitalize;
     border-right: solid 3px var(--lightgray);
     margin: 0;
+    padding: 0 calc(var(--gutter) * 2);
+    height: 100%;
   }
 
   & li {

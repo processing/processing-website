@@ -1,2 +1,23 @@
 .root {
+  border-bottom: solid 1px var(--gray);
+  margin-right: var(--gutter-double);
+  padding: 10px 0;
+  & h3 {
+    margin-bottom: 0;
+    cursor: pointer;
+    text-transform: capitalize;
+    &:hover {
+      color: var(--processing-blue-mid);
+    }
+  }
+  & ul {
+    margin: 3px 0;
+    & > div:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.expanded {
+  color: var(--processing-blue-mid);
 }

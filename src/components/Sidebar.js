@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import classnames from 'classnames';
 
-import SidebarList from '../components/SidebarList';
+import Searchbar from '../components/Searchbar';
+import ExampleList from '../components/ExampleList';
+import ReferenceList from '../components/ReferenceList';
 
 import css from './Sidebar.module.css';
 
@@ -8,11 +11,21 @@ const Sidebar = (props) => {
   const { refs, show, examples } = props;
 
   return (
-    <div className={css.root} style={{ width: show ? '350px' : '50px' }}>
-      {show && <SidebarList refs={refs} examples={examples} />}
-      <span className={css.show} onClick={(e) => props.onChange(!show)}>
-        {show ? 'close' : 'open'}
-      </span>
+    <div className={classnames(css.root, { [css.show]: show })}>
+      <div className={css.toggleButton} onClick={(e) => props.onChange(!show)}>
+        {show ? '×' : '+'}
+      </div>
+      {show && (
+        <Fragment>
+          <h2>{examples ? 'Examples' : 'Reference'}</h2>
+          <Searchbar placeholder={'Search'} />
+          {examples ? (
+            <ExampleList data={refs} />
+          ) : (
+            <ReferenceList data={refs} library={'processing'} sidebar />
+          )}
+        </Fragment>
+      )}
     </div>
   );
 };

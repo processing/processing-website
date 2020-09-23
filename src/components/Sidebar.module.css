@@ -1,14 +1,43 @@
 .root {
-  height: 100vh;
-  position: absolute;
-  z-index: 1;
+  position: sticky;
+  top: 0px;
+  left: 0;
+  z-index: 200;
+  transition: width 0.4s ease;
   margin-left: calc(-1 * var(--margin));
+  width: var(--margin);
+  overflow: hidden;
   background: var(--lightgray);
+
+  & h2 {
+    margin-top: 14px;
+  }
+
+  & a {
+    padding-left: var(--gutter);
+    text-decoration: none;
+    font-size: var(--text-small);
+    line-height: 1.6rem;
+    font-family: var(--font-mono);
+    color: var(--black);
+    display: block;
+    &:hover {
+      color: var(--processing-blue-mid);
+    }
+  }
 }
 
 .show {
+  padding-left: var(--gutter-double);
+  width: calc(var(--column-width) * 1.5);
+}
+
+.toggleButton {
   position: absolute;
-  right: 0;
-  z-index: 1;
-  padding-right: var(--gutter);
+  color: var(--darkgray);
+  top: var(--gutter);
+  right: var(--gutter);
+  font-weight: 700;
+  font-size: var(--text-large);
+  cursor: pointer;
 }

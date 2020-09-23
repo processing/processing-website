@@ -17,6 +17,7 @@
   --text-xxlarge: 3.375rem;
   --margin: 48px;
   --gutter: 16px;
+  --column-width: calc((100vw - 2 * var(--margin)) / 8);
   --gutter-half: calc(var(--gutter) / 2);
   --gutter-double: calc(var(--gutter) * 2);
   --vertical-gutter: 40px;

@@ -4,10 +4,21 @@
   & h2 {
     font-size: var(--text-xlarge);
     text-transform: capitalize;
-    border-right: solid 7px var(--lightgray);
+  }
+
+  & ul {
+    position: relative;
   }
 
   & ul div:last-child {
     margin-bottom: 0;
   }
+}
+
+.verticalSeparator {
+  position: absolute;
+  left: var(--gutter);
+  height: 100%;
+  width: 0;
+  border-left: solid 7px var(--lightgray);
 }

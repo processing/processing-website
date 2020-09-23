@@ -46,11 +46,9 @@ const RefTemplate = ({ data, pageContext }) => {
     <Layout>
       <Sidebar refs={data.refs} onChange={toggleSidebar} show={show} />
       {data.json !== null ? (
-        <div
-          className={css.root}
-          style={{ marginLeft: show ? '150px' : '50px' }}>
+        <div className={classnames(css.root, { [css.collapsed]: !show })}>
           <div className={classnames(css.section, grid.grid)}>
-            <h4 className={classnames(grid.col4, grid.push1)}>Name</h4>
+            <h4 className={classnames(grid.col1, grid.push1)}>Name</h4>
             <h3 className={classnames(grid.col4, grid.pull1)}>{ref.name}</h3>
           </div>
           <div className={classnames(css.section, grid.grid)}>
@@ -77,7 +75,7 @@ const RefTemplate = ({ data, pageContext }) => {
                     (img) => img.node.name === ex.node.name
                   );
                   return (
-                    <li key={'ex' + key}>
+                    <li className={css.example} key={'ex' + key}>
                       <div className={grid.col4}>
                         <pre className={css.codeBlock}>
                           {ex.node.internal.content

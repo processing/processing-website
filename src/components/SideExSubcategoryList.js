@@ -24,14 +24,14 @@ const SideExSubcategoryList = (props) => {
       ) : (
         ''
       )}
-      <h3>{subcategory}</h3>
+      <h4>{subcategory}</h4>
       {expand || subcategory === '' ? (
         <ul>
           {subcategoryRefs.map((node, key) => {
             return (
               <li key={key}>
                 <Link to={node.childMdx.frontmatter.slug} language={locale}>
-                  <h4>{node.childMdx.frontmatter.title}</h4>
+                  <span>{node.childMdx.frontmatter.title}</span>
                 </Link>
               </li>
             );

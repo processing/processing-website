@@ -6,8 +6,8 @@ import grid from '../styles/grid.module.css';
 
 const Searchbar = ({ large, placeholder }) =>
   large ? (
-    <div className={classnames(css.root, grid.grid)}>
-      <form action="" className={grid.col6}>
+    <div className={classnames(css.root, grid.grid, css.large)}>
+      <form action="" className={classnames(grid.col6, grid.internal)}>
         <input
           className={grid.col6}
           type="text"
@@ -19,9 +19,8 @@ const Searchbar = ({ large, placeholder }) =>
     </div>
   ) : (
     <div className={classnames(css.root, grid.grid)}>
-      <form action="" className={grid.col2}>
+      <form action="" className={classnames(grid.col2, grid.internal)}>
         <input
-          className={grid.col2}
           type="text"
           id="search"
           name="search"

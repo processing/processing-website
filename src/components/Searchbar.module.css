@@ -1,12 +1,55 @@
 .root {
-  margin-top: var(--margin);
-  margin-bottom: var(--margin);
-  justify-content: center;
+  margin-top: var(--gutter);
+  margin-bottom: var(--gutter-double);
+  margin-right: var(--gutter-double);
+  & input {
+    font-size: var(--text-medium);
+    color: var(--darkgray);
+    border: none;
+    width: 100%;
+    padding-left: 30px;
+    border-bottom: 1.5px solid var(--darkgray);
+    transition: color 0.2s, border-color 0.2s;
+    background-color: var(--lightgray);
+  }
 
+  & input:focus {
+    outline: none;
+    border-bottom: 1.5px solid var(--black);
+    color: var(--black);
+  }
+
+  & input::placeholder {
+    color: var(--darkgray);
+    opacity: 1;
+    transition: color 0.2s, opacity 0.2s;
+  }
+
+  & input:focus::placeholder {
+    color: var(--black);
+    opacity: 1;
+  }
+  justify-content: center;
   & form {
     padding: 0;
   }
+}
 
+.root:hover {
+  & input {
+    color: var(--darkgray);
+    border-color: 3px solid var(--darkgray);
+    opacity: 0.8;
+  }
+  & input::placeholder {
+    color: var(--darkgray);
+    opacity: 0.8;
+  }
+}
+
+.large {
+  margin-top: var(--margin);
+  margin-bottom: var(--margin);
   & input {
     font-size: var(--text-xlarge);
     color: var(--gray);
@@ -32,17 +75,5 @@
   & input:focus::placeholder {
     color: var(--black);
     opacity: 1;
-  }
-}
-
-.root:hover {
-  & input {
-    color: var(--darkgray);
-    border-color: 3px solid var(--darkgray);
-    opacity: 0.8;
-  }
-  & input::placeholder {
-    color: var(--darkgray);
-    opacity: 0.8;
   }
 }

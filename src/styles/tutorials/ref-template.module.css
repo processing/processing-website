@@ -7,6 +7,10 @@
   }
 }
 
+.collapsed {
+  margin-left: 0;
+}
+
 .section {
   margin-bottom: var(--vertical-gutter);
   width: 100%;
@@ -40,6 +44,10 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+
+.example {
+  margin-bottom: var(--vertical-gutter);
 }
 
 .param {

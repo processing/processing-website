@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import React from 'react';
+import React, { useRef } from 'react';
 import classnames from 'classnames';
 
 import SearchBarSmall from './SearchBarSmall';
@@ -43,9 +43,10 @@ export const items = [
   },
 ];
 
-const Navbar = ({ siteTitle }) => {
+const Navbar = ({ siteTitle, ref }) => {
+  const navRef = useRef(null);
   return (
-    <div className={classnames(css.root, grid.grid)}>
+    <div className={classnames(css.root, grid.grid)} ref={ref}>
       <h1 className={classnames(grid.col2, css.logo)}>
         <Link to="/">{siteTitle}</Link>
       </h1>

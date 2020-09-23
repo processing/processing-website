@@ -15,7 +15,7 @@ const SideExCategoryList = (props) => {
 
   return (
     <div className={css.root}>
-      <h2 onClick={toggleExpand}>{category}</h2>
+      <h3 onClick={toggleExpand}>{category}</h3>
       {expand ? (
         <ul>
           {subcategories.map((p, key) => {

@@ -14,15 +14,16 @@ const SideSubcategoryList = (props) => {
   };
 
   return (
-    <div className={css.root}>
-      {subcategory ? (
-        <span onClick={toggleExpand} className={css.expand}>
-          {expand ? '-' : '+'}
-        </span>
-      ) : (
-        ''
+    <div
+      className={classnames(css.root, { [css.notSubcategory]: !subcategory })}>
+      {subcategory && (
+        <div className={css.subcategoryLabel} onClick={toggleExpand}>
+          <div className={css.expand}>
+            <span>{expand ? '−' : '+'}</span>
+          </div>
+          <h4>{subcategory.replace(/_/g, ' ')}</h4>
+        </div>
       )}
-      <h3>{subcategory && subcategory.replace(/_/g, ' ')}</h3>
       {expand || subcategory === '' ? (
         <ul>
           {subcategoryRefs.map((node, key) => {

@@ -14,6 +14,7 @@ const CategoryList = (props) => {
         {category && category.replace(/_/g, ' ')}
       </h2>
       <ul className={classnames(grid.col8, grid.internal)}>
+        <div className={css.verticalSeparator} />
         {subcategory.map((p, key) => {
           let subcategoryRefs = categoryRefs.filter((ref) => {
             return ref.childJson.subcategory === p;

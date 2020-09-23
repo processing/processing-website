@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import classnames from 'classnames';
 
 import SideSubcategoryList from './SideSubcategoryList';
 
@@ -14,7 +15,11 @@ const SideCategoryList = (props) => {
 
   return (
     <div className={css.root}>
-      <h2 onClick={toggleExpand}>{category && category.replace(/_/g, ' ')}</h2>
+      <h3
+        onClick={toggleExpand}
+        className={classnames({ [css.expanded]: expand })}>
+        {category && category.replace(/_/g, ' ')}
+      </h3>
       {expand ? (
         <ul>
           {subcategory.map((p, key) => {

@@ -10,15 +10,15 @@ const SubcategoryList = (props) => {
 
   return (
     <div className={css.root}>
-      <h3 className={grid.col1}>
-        {subcategory && subcategory.replace(/_/g, ' ')}
-      </h3>
-      <ul className={classnames(grid.col7, grid.internal)}>
+      <div className={grid.col1andhalf}>
+        <h3>{subcategory && subcategory.replace(/_/g, ' ')}</h3>
+      </div>
+      <ul className={classnames(grid.col6andhalf, grid.internal)}>
         {subcategoryRefs.map((node, key) => {
           return (
             <li key={key} className={css.subgrid}>
               <Link
-                className={classnames(grid.col1andhalf, css.functionName)}
+                className={classnames(grid.col1, css.functionName)}
                 to={link + node.name.split('.')[0] + '.html'}>
                 <span>{node.childJson.name}</span>
               </Link>
