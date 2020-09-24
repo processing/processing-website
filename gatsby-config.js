@@ -7,7 +7,12 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-mdx`,
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        remarkPlugins: [require('remark-slug')]
+      }
+    },
     {
       resolve: `gatsby-theme-i18n`,
       options: {
