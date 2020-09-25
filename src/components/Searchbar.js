@@ -4,8 +4,10 @@ import classnames from 'classnames';
 import css from './Searchbar.module.css';
 import grid from '../styles/grid.module.css';
 
-const Searchbar = ({ large, placeholder }) =>
-  large ? (
+const Searchbar = (props) => {
+  const [large, placeholder, searchTerm] = props;
+
+  return large ? (
     <div className={classnames(css.root, grid.grid, css.large)}>
       <form action="" className={classnames(grid.col6, grid.internal)}>
         <input
@@ -14,6 +16,8 @@ const Searchbar = ({ large, placeholder }) =>
           id="search"
           name="search"
           placeholder={placeholder}
+          value={searchTerm}
+          onChange={props.onChange}
         />
       </form>
     </div>
@@ -25,9 +29,12 @@ const Searchbar = ({ large, placeholder }) =>
           id="search"
           name="search"
           placeholder={placeholder}
+          value={searchTerm}
+          onChange={props.onChange}
         />
       </form>
     </div>
   );
+};
 
 export default Searchbar;
