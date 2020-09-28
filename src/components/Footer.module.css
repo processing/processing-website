@@ -3,6 +3,7 @@
   padding: 22px;
   background-color: var(--processing-blue-dark);
   color: white;
+  z-index: 1000;
 }
 
 .span {

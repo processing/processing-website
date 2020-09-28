@@ -1,6 +1,8 @@
 .grid {
   display: flex;
   flex-wrap: wrap;
+  margin-left: var(--margin);
+  margin-right: var(--margin);
 }
 
 .fill {
@@ -68,8 +70,13 @@
   padding: 0 16px;
 }
 
-.grid .internal {
-  padding: 0;
+.grid .nest {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .grid .pull-1 {
@@ -78,6 +85,18 @@
 
 .grid .push-1 {
   margin-left: calc((100vw - var(--margin) * 2) / 8);
+}
+
+.grid .push-1andhalf {
+  margin-left: calc((100vw - var(--margin) * 2) / 8 * 1.5);
+}
+
+.grid .push-5 {
+  margin-left: calc((100vw - var(--margin) * 2) / 8 * 5);
+}
+
+.grid .pull-5 {
+  margin-right: calc((100vw - var(--margin) * 2) / 8 * 5);
 }
 
 .grid .pull-3 {

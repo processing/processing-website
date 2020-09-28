@@ -67,7 +67,7 @@ const RefTemplate = ({ data, pageContext }) => {
                 className={classnames(
                   grid.col1,
                   grid.col6,
-                  grid.internal,
+                  grid.nest,
                   css.list
                 )}>
                 {examples.map((ex, key) => {
@@ -87,7 +87,7 @@ const RefTemplate = ({ data, pageContext }) => {
                       </div>
                       {img ? (
                         <div className={grid.col2}>
-                          <Img fluid={img[0].node.childImageSharp.fluid} />
+                          <Img fixed={img[0].node.childImageSharp.fixed} />
                         </div>
                       ) : (
                         ''
@@ -115,7 +115,7 @@ const RefTemplate = ({ data, pageContext }) => {
           ) : (
             <div className={classnames(css.section, grid.grid)}>
               <h4 className={classnames(grid.col1, grid.push1)}>Parameters</h4>
-              <ul className={classnames(grid.col5, grid.internal, css.list)}>
+              <ul className={classnames(grid.col5, grid.nest, css.list)}>
                 {ref.parameters.map((param, key) => {
                   return (
                     <li key={'param' + key} className={css.param}>
@@ -143,7 +143,7 @@ const RefTemplate = ({ data, pageContext }) => {
               <ul
                 className={classnames(
                   grid.col4,
-                  grid.internal,
+                  grid.nest,
                   css.list,
                   grid.pull1
                 )}>
@@ -167,7 +167,7 @@ const RefTemplate = ({ data, pageContext }) => {
               <ul
                 className={classnames(
                   grid.col4,
-                  grid.internal,
+                  grid.nest,
                   css.list,
                   grid.pull1
                 )}>

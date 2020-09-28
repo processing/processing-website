@@ -15,44 +15,46 @@ const Tutorials = ({ data }) => {
 
   return (
     <Layout>
-      <h1>Tutorials</h1>
-      <div className={classnames(grid.grid, css.part)}>
-        <h2 className={grid.col8}>Video Tutorials</h2>
-        <h3 className={grid.col3}>
-          Links to videos that cover the Processing basics.
-        </h3>
-        <ul className={css.list}>
-          {data.video.nodes.map((node, k) => {
-            return (
-              <li key={k}>
-                <Link to={node.childMdx.frontmatter.slug} language={locale}>
-                  {node.childMdx.frontmatter.title}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-      <div className={classnames(grid.grid, css.part)}>
-        <h2 className={grid.col8}>Text Tutorials</h2>
-        <h3 className={grid.col3}>
-          A collection of step-by-step lessons covering beginner, intermediate,
-          and advanced topics.
-        </h3>
-        <ul className={css.list}>
-          {data.text.nodes.map((node, k) => {
-            return (
-              <li key={k} className={grid.col2}>
-                <Link to={node.childMdx.frontmatter.slug} language={locale}>
-                  {node.childMdx.frontmatter.title}
-                </Link>
-                <span>{node.childMdx.frontmatter.intro}</span>
-                <span>by {node.childMdx.frontmatter.author}</span>
-                <span>level: {node.childMdx.frontmatter.level}</span>
-              </li>
-            );
-          })}
-        </ul>
+      <div className={grid.grid}>
+        <h1 className={grid.col8}>Tutorials</h1>
+        <div className={classnames(grid.nest, css.part)}>
+          <h2 className={grid.col8}>Video Tutorials</h2>
+          <h3 className={grid.col3}>
+            Links to videos that cover the Processing basics.
+          </h3>
+          <ul className={css.list}>
+            {data.video.nodes.map((node, k) => {
+              return (
+                <li key={k}>
+                  <Link to={node.childMdx.frontmatter.slug} language={locale}>
+                    {node.childMdx.frontmatter.title}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <div className={classnames(grid.nest, css.part)}>
+          <h2 className={grid.col8}>Text Tutorials</h2>
+          <h3 className={grid.col3}>
+            A collection of step-by-step lessons covering beginner,
+            intermediate, and advanced topics.
+          </h3>
+          <ul className={css.list}>
+            {data.text.nodes.map((node, k) => {
+              return (
+                <li key={k} className={grid.col2}>
+                  <Link to={node.childMdx.frontmatter.slug} language={locale}>
+                    {node.childMdx.frontmatter.title}
+                  </Link>
+                  <span>{node.childMdx.frontmatter.intro}</span>
+                  <span>by {node.childMdx.frontmatter.author}</span>
+                  <span>level: {node.childMdx.frontmatter.level}</span>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </Layout>
   );

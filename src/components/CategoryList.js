@@ -9,11 +9,11 @@ import grid from '../styles/grid.module.css';
 const CategoryList = (props) => {
   const { category, categoryRefs, subcategory, link } = props;
   return (
-    <div className={classnames(grid.grid, css.root)}>
+    <div className={classnames(grid.nest, css.root)}>
       <h2 className={classnames(grid.col8)}>
         {category && category.replace(/_/g, ' ')}
       </h2>
-      <ul className={classnames(grid.col8, grid.internal)}>
+      <ul className={classnames(grid.col8, grid.nest)}>
         <div className={css.verticalSeparator} />
         {subcategory.map((p, key) => {
           let subcategoryRefs = categoryRefs.filter((ref) => {
