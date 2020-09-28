@@ -7,6 +7,7 @@
   height: 84vh;
   overflow: hidden;
   background: var(--lightgray);
+  white-space: nowrap;
 
   & h2 {
     margin-top: 14px;
@@ -18,6 +19,7 @@
     font-size: var(--text-small);
     line-height: 1.6rem;
     font-family: var(--font-mono);
+    text-overflow: ellipsis;
     color: var(--black);
     display: block;
     &:hover {
@@ -39,4 +41,10 @@
   font-weight: 700;
   font-size: var(--text-large);
   cursor: pointer;
+}
+
+.listWrapper {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
 }

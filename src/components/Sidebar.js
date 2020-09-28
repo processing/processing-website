@@ -36,11 +36,17 @@ const Sidebar = (props) => {
             onChange={refreshList}
             searchTerm={searchTerm}
           />
-          {examples ? (
-            <ExampleList data={refs} />
-          ) : (
-            <ReferenceList data={filteredRefs} library={'processing'} sidebar />
-          )}
+          <div className={css.listWrapper}>
+            {examples ? (
+              <ExampleList data={refs} />
+            ) : (
+              <ReferenceList
+                data={filteredRefs}
+                library={'processing'}
+                sidebar
+              />
+            )}
+          </div>
         </Fragment>
       )}
     </div>
