@@ -33,7 +33,7 @@ const Libraries = ({ data }) => {
   return (
     <Layout>
       <div className={grid.grid}>
-        <h1 className={grid.col4LeftBleed}>Libraries</h1>
+        <h1 className={grid.col8}>Libraries</h1>
         <h3 className={classnames(grid.col3, grid.pull5)}>
           Extend Processing beyond graphics and images into audio, video, and
           communication with other devices.
