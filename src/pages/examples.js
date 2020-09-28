@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import unique from 'array-unique';
 
@@ -20,7 +21,7 @@ const Examples = ({ data }) => {
   let subcategories = {};
   categories.forEach((c) => {
     subcategories[c] = unique(
-      examples.forEach((r) => {
+      examples.map((r) => {
         if (r.relativeDirectory.split('/')[0] === c)
           return r.relativeDirectory.split('/')[1];
         else return null;
@@ -36,23 +37,27 @@ const Examples = ({ data }) => {
           Short, prototypical programs exploring the basics of programming with
           Processing.
         </h3>
+        <Searchbar
+          placeholder={'Search in the Examples...'}
+          large
+          className={grid.push1}
+        />
+        <ul className={classnames(grid.col8, grid.nest)}>
+          {categories.map((c, key) => {
+            let categoryRefs = examples.filter((ref) => {
+              return ref.relativeDirectory.split('/')[0] === c;
+            });
+            return (
+              <ExCategoryList
+                key={key + 'c'}
+                category={c}
+                categoryRefs={categoryRefs}
+                subcategories={subcategories[c]}
+              />
+            );
+          })}
+        </ul>
       </div>
-      <Searchbar placeholder={'Search in the Examples...'} large />
-      <ul>
-        {categories.map((c, key) => {
-          let categoryRefs = examples.filter((ref) => {
-            return ref.relativeDirectory.split('/')[0] === c;
-          });
-          return (
-            <ExCategoryList
-              key={key + 'c'}
-              category={c}
-              categoryRefs={categoryRefs}
-              subcategories={subcategories[c]}
-            />
-          );
-        })}
-      </ul>
     </Layout>
   );
 };

@@ -34,14 +34,17 @@ const Libraries = ({ data }) => {
     <Layout>
       <div className={grid.grid}>
         <h1 className={grid.col8}>Libraries</h1>
-        <h3 className={grid.col3}>
+        <h3 className={classnames(grid.col3, grid.pull5)}>
           Extend Processing beyond graphics and images into audio, video, and
           communication with other devices.
         </h3>
-      </div>
-      <div className={grid.grid}>
-        <div className={grid.col1andhalf} />
-        <ul className={classnames(css.list, grid.col5andhalf, grid.internal)}>
+        <ul
+          className={classnames(
+            css.list,
+            grid.col5andhalf,
+            grid.push1andhalf,
+            grid.nest
+          )}>
           {libraries.nodes.map((node, key) => {
             return (
               <li key={key} className={css.subgrid}>
@@ -56,46 +59,42 @@ const Libraries = ({ data }) => {
             );
           })}
         </ul>
+        <h1 className={grid.col8}>Contributions</h1>
+        <CategoryNav categories={categories} />
+        <ul className={css.contributionsList}>
+          {categories.map((cat) => {
+            let contribs = contributions.filter((c) =>
+              c.categories.includes(cat)
+            );
+            return (
+              <li key={cat} className={grid.nest}>
+                <h2 className={grid.col1andhalf}>{cat}</h2>
+                <ul className={classnames(grid.col5andhalf, grid.nest)}>
+                  {contribs.map((node, key) => {
+                    return (
+                      <li
+                        key={key + 'c'}
+                        className={classnames(css.subgrid, grid.col5andhalf)}>
+                        <div
+                          className={classnames(
+                            grid.col2andhalf,
+                            css.contributionData
+                          )}>
+                          <h3>{node.name}</h3>
+                          <span>{node.authors}</span>
+                        </div>
+                        <div className={grid.col4}>
+                          <p>{node.sentence}</p>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </li>
+            );
+          })}
+        </ul>
       </div>
-      <h1 className={grid.col8}>Contributions</h1>
-      <CategoryNav categories={categories} />
-      <ul className={css.contributionsList}>
-        {categories.map((cat) => {
-          let contribs = contributions.filter((c) =>
-            c.categories.includes(cat)
-          );
-          return (
-            <li key={cat} className={grid.grid}>
-              <h2 className={grid.col1andhalf}>{cat}</h2>
-              <ul className={grid.col5andhalf}>
-                {contribs.map((node, key) => {
-                  return (
-                    <li
-                      key={key + 'c'}
-                      className={classnames(
-                        css.subgrid,
-                        grid.col5andhalf,
-                        grid.internal
-                      )}>
-                      <div
-                        className={classnames(
-                          grid.col2andhalf,
-                          css.contributionData
-                        )}>
-                        <h3>{node.name}</h3>
-                        <span>{node.authors}</span>
-                      </div>
-                      <div className={grid.col4}>
-                        <p>{node.sentence}</p>
-                      </div>
-                    </li>
-                  );
-                })}
-              </ul>
-            </li>
-          );
-        })}
-      </ul>
     </Layout>
   );
 };
