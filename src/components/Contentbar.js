@@ -12,9 +12,7 @@ const Contentbar = (props) => {
       <ul>
         {content.map((item, key) => (
           <li id={item.url} key={key + 'tb'}>
-            <Link to={item.url}>
-              {item.title}
-            </Link>
+            <Link to={item.url}>{item.title}</Link>
           </li>
         ))}
       </ul>

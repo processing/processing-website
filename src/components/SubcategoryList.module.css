@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 30px;
+  width: 100%;
   & h3 {
     font-size: var(--text-medium);
     text-transform: capitalize;
@@ -19,6 +20,7 @@
   & li {
     list-style: none;
     margin-bottom: 8px;
+    width: 100%;
   }
 
   & ul li:last-child {

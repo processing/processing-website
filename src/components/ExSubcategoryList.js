@@ -15,7 +15,7 @@ const ExSubcategoryList = (props) => {
   return (
     <div className={css.root}>
       <h3 className={grid.col1}>{subcategory}</h3>
-      <ul className={classnames(grid.col6, grid.internal)}>
+      <ul className={classnames(grid.col6, grid.nest)}>
         {subcategoryRefs.map((node, key) => {
           return (
             <li key={key} className={grid.col1}>

@@ -34,6 +34,7 @@
 .list {
   & li {
     display: flex;
+    width: 100%;
   }
   & li:last-child .codeBlock {
     margin-bottom: 0;

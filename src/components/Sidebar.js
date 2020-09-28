@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import classnames from 'classnames';
 
 import Searchbar from '../components/Searchbar';
@@ -9,6 +9,19 @@ import css from './Sidebar.module.css';
 
 const Sidebar = (props) => {
   const { refs, show, examples } = props;
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredRefs, setFilteredRefs] = useState(refs);
+
+  const refreshList = (event) => {
+    setSearchTerm(event.target.value);
+    if (searchTerm) {
+      let newList = { nodes: '' };
+      newList.nodes = refs.nodes.filter((ref) =>
+        JSON.stringify(ref).includes(searchTerm)
+      );
+      setFilteredRefs(newList);
+    }
+  };
 
   return (
     <div className={classnames(css.root, { [css.show]: show })}>
@@ -18,11 +31,15 @@ const Sidebar = (props) => {
       {show && (
         <Fragment>
           <h2>{examples ? 'Examples' : 'Reference'}</h2>
-          <Searchbar placeholder={'Search'} />
+          <Searchbar
+            placeholder={'Search'}
+            onChange={refreshList}
+            searchTerm={searchTerm}
+          />
           {examples ? (
             <ExampleList data={refs} />
           ) : (
-            <ReferenceList data={refs} library={'processing'} sidebar />
+            <ReferenceList data={filteredRefs} library={'processing'} sidebar />
           )}
         </Fragment>
       )}
