@@ -262,9 +262,15 @@ export const query = graphql`
         name
         relativeDirectory
         childJson {
+          name
           category
           subcategory
-          name
+          syntax
+          parameters {
+            name
+          }
+          related
+          returns
         }
       }
     }
