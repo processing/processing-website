@@ -9,21 +9,28 @@ const SidebarLabel = ({ label, children, secondary }) => {
   useEffect(() => {
     !label && setExpanded(true);
   }, [label]);
+
   return (
-    <div className={css.root}>
+    <div
+      className={classnames(
+        css.root,
+        { [css.secondaryLabel]: secondary },
+        { [css.expanded]: expanded },
+        { [css.noLabel]: !label }
+      )}>
       <button
-        onClick={() => setExpanded((expanded) => !expanded)}
-        className={classnames({ [css.expanded]: expanded })}>
+        className={css.button}
+        onClick={() => setExpanded((expanded) => !expanded)}>
         {!secondary ? (
-          <h3>{label}</h3>
+          <h3 className={css.label}>{label}</h3>
         ) : (
           <Fragment>
             {label && (
-              <div className={css.secondaryLabel}>
+              <div className={css.secondaryWrapper}>
                 <div className={css.expandButton}>
                   <span>{expanded ? '−' : '+'}</span>
                 </div>
-                <h4>{label}</h4>
+                <h4 className={css.label}>{label}</h4>
               </div>
             )}
           </Fragment>

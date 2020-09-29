@@ -1,10 +1,19 @@
 .root {
   border-bottom: solid 1px var(--gray);
   padding: 10px 0;
-  & h3 {
-    margin-bottom: 0;
+  width: 100%;
+  color: var(--processing-blue-dark);
+  cursor: pointer;
+  & .button {
+    width: 100%;
+    text-align: left;
+    color: inherit;
+  }
+  & .label {
     cursor: pointer;
+    margin-bottom: 0;
     text-transform: capitalize;
+    color: inherit;
     &:hover {
       color: var(--processing-blue-mid);
     }
@@ -22,21 +31,35 @@
 }
 
 .secondaryLabel {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  cursor: pointer;
   padding: 4px 0;
-  & h4 {
+  border-bottom: solid 1px white;
+  color: var(--processing-blue-dark);
+  & .label {
     margin-bottom: 0;
   }
   &:hover {
-    & h4 {
+    & .label {
       color: var(--processing-blue-mid);
     }
-    & .expand {
+    & .expandButton {
       background-color: var(--processing-blue-mid);
     }
+  }
+  & h4 {
+    padding: 3px 0;
+  }
+  & ul {
+    margin: 0px 0px 6px 11px;
+    border-left: solid 2px white;
+  }
+}
+
+.secondaryWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  & .button {
+    color: var(--processing-blue-dark);
   }
 }
 
@@ -54,5 +77,14 @@
     height: 100%;
     font-weight: bold;
     line-height: 1;
+  }
+}
+
+.noLabel {
+  & .button {
+    display: none;
+  }
+  & ul {
+    margin: 0px 0px 6px 6px;
   }
 }
