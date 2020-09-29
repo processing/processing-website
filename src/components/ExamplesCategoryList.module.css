@@ -1,4 +1,24 @@
 .root {
+  margin-bottom: 60px;
+
+  & h2 {
+    padding-left: var(--gutter);
+    font-size: var(--text-xlarge);
+    text-transform: capitalize;
+    border-right: solid 7px var(--lightgray);
+    margin-bottom: 0;
+  }
+
+  & p {
+    padding-left: var(--gutter);
+  }
+
+  & ul div:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.sub {
   display: flex;
   flex-direction: row;
   margin-bottom: 30px;

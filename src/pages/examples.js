@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import unique from 'array-unique';
 
 import Layout from '../components/Layout';
-import ExCategoryList from '../components/ExCategoryList';
+import ExamplesCategoryList from '../components/ExamplesCategoryList';
 import Searchbar from '../components/Searchbar';
 
 import grid from '../styles/grid.module.css';
@@ -19,11 +19,11 @@ const Examples = ({ data }) => {
   );
 
   let subcategories = {};
-  categories.forEach((c) => {
-    subcategories[c] = unique(
-      examples.map((r) => {
-        if (r.relativeDirectory.split('/')[0] === c)
-          return r.relativeDirectory.split('/')[1];
+  categories.forEach((category) => {
+    subcategories[category] = unique(
+      examples.map((example) => {
+        if (example.relativeDirectory.split('/')[0] === category)
+          return example.relativeDirectory.split('/')[1];
         else return null;
       })
     );
@@ -43,16 +43,16 @@ const Examples = ({ data }) => {
           className={grid.push1}
         />
         <ul className={classnames(grid.col8, grid.nest)}>
-          {categories.map((c, key) => {
-            let categoryRefs = examples.filter((ref) => {
-              return ref.relativeDirectory.split('/')[0] === c;
-            });
+          {categories.map((category, key) => {
+            let categoryItems = examples.filter(
+              (example) => example.relativeDirectory.split('/')[0] === category
+            );
             return (
-              <ExCategoryList
+              <ExamplesCategoryList
                 key={key + 'c'}
-                category={c}
-                categoryRefs={categoryRefs}
-                subcategories={subcategories[c]}
+                category={category}
+                categoryItems={categoryItems}
+                subcategories={subcategories[category]}
               />
             );
           })}

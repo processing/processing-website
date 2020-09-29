@@ -17,11 +17,11 @@ const ExampleList = (props) => {
   );
 
   let subcategories = {};
-  categories.map((c) => {
-    subcategories[c] = unique(
-      examples.map((r) => {
-        if (r.relativeDirectory.split('/')[0] === c)
-          return r.relativeDirectory.split('/')[1];
+  categories.map((category) => {
+    subcategories[category] = unique(
+      examples.map((example) => {
+        if (example.relativeDirectory.split('/')[0] === category)
+          return example.relativeDirectory.split('/')[1];
         else return null;
       })
     );
@@ -30,16 +30,16 @@ const ExampleList = (props) => {
   return (
     <div className={css.root}>
       <ul>
-        {categories.map((c, key) => {
-          let categoryRefs = examples.filter((ref) => {
-            return ref.relativeDirectory.split('/')[0] === c;
+        {categories.map((category, key) => {
+          let categoryItems = examples.filter((example) => {
+            return example.relativeDirectory.split('/')[0] === category;
           });
           return (
             <SideExCategoryList
               key={key + 'c'}
-              category={c}
-              categoryRefs={categoryRefs}
-              subcategories={subcategories[c]}
+              category={category}
+              categoryItems={categoryItems}
+              subcategories={subcategories[category]}
             />
           );
         })}

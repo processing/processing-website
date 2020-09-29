@@ -9,19 +9,19 @@ import css from './ReferenceList.module.css';
 const ReferenceList = (props) => {
   const { data, library, sidebar } = props;
 
-  let refs = data.nodes;
+  let items = data.nodes;
   let link;
 
   let categories = unique(
-    refs.map((ref) => {
-      return ref.childJson.category;
+    items.map((item) => {
+      return item.childJson.category;
     })
   );
 
   let subcategories = {};
   categories.forEach((c) => {
     subcategories[c] = unique(
-      refs.map((r) => {
+      items.map((r) => {
         if (r.childJson.category === c) return r.childJson.subcategory;
         else return null;
       })
@@ -37,23 +37,23 @@ const ReferenceList = (props) => {
   return (
     <div className={css.root}>
       {categories.map((c, key) => {
-        let categoryRefs = refs.filter((ref) => {
-          return ref.childJson.category === c;
+        let categoryItems = items.filter((item) => {
+          return item.childJson.category === c;
         });
         return sidebar ? (
           <SideCategoryList
             key={key + 'c'}
             category={c}
-            categoryRefs={categoryRefs}
-            subcategory={subcategories[c]}
+            categoryItems={categoryItems}
+            subcategories={subcategories[c]}
             link={link}
           />
         ) : (
           <CategoryList
             key={key + 'c'}
             category={c}
-            categoryRefs={categoryRefs}
-            subcategory={subcategories[c]}
+            categoryItems={categoryItems}
+            subcategories={subcategories[c]}
             link={link}
           />
         );
