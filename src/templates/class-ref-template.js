@@ -106,7 +106,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
           )}
           <div className={classnames(grid.grid, css.section)}>
             <h4 className={classnames(grid.col1, grid.push1)}>Methods</h4>
-            <ul className={classnames(grid.col5, grid.internal, css.list)}>
+            <ul className={classnames(grid.col5, grid.nest, css.list)}>
               {ref.methods.map((method, key) => {
                 return (
                   <li key={'m' + key}>
@@ -131,7 +131,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
                 className={classnames(
                   grid.col4,
                   grid.pull1,
-                  grid.internal,
+                  grid.nest,
                   css.list
                 )}>
                 {ref.related.map((rel, key) => (

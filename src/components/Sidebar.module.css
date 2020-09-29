@@ -1,10 +1,8 @@
 .root {
-  position: absolute;
-  top: 0px;
+  position: fixed;
   left: 0;
   z-index: 200;
   transition: width 0.4s ease;
-  margin-left: calc(-1 * var(--margin));
   width: var(--margin);
   height: 84vh;
   overflow: hidden;
