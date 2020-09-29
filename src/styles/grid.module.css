@@ -1,6 +1,8 @@
 .grid {
   display: flex;
   flex-wrap: wrap;
+  margin-left: var(--margin);
+  margin-right: var(--margin);
 }
 
 .fill {
@@ -68,8 +70,21 @@
   padding: 0 16px;
 }
 
-.grid .internal {
-  padding: 0;
+.grid .nest {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.grid .pullHalf {
+  margin-right: calc((100vw - var(--margin) * 2) / 8 * 0.5);
+}
+
+.grid .pushHalf {
+  margin-left: calc((100vw - var(--margin) * 2) / 8 * 0.5);
 }
 
 .grid .pull-1 {
@@ -80,14 +95,101 @@
   margin-left: calc((100vw - var(--margin) * 2) / 8);
 }
 
+.grid .push-1andhalf {
+  margin-left: calc((100vw - var(--margin) * 2) / 8 * 1.5);
+}
+
+.grid .pull-1andhalf {
+  margin-right: calc((100vw - var(--margin) * 2) / 8 * 1.5);
+}
+
+.grid .push-2 {
+  margin-left: calc((100vw - var(--margin) * 2) / 8 * 2);
+}
+
+.grid .pull-2 {
+  margin-right: calc((100vw - var(--margin) * 2) / 8 * 2);
+}
+
+.grid .push-3 {
+  margin-left: calc((100vw - var(--margin) * 2) / 8 * 3);
+}
+
 .grid .pull-3 {
   margin-right: calc((100vw - var(--margin) * 2) / 8 * 3);
 }
 
-.grid .pullHalf {
-  margin-right: calc((100vw - var(--margin) * 2) / 8 * 0.5);
+.grid .push-4 {
+  margin-left: calc((100vw - var(--margin) * 2) / 8 * 4);
 }
 
-.grid .pushHalf {
-  margin-left: calc((100vw - var(--margin) * 2) / 8 * 0.5);
+.grid .pull-4 {
+  margin-right: calc((100vw - var(--margin) * 2) / 8 * 4);
+}
+
+.grid .push-5 {
+  margin-left: calc((100vw - var(--margin) * 2) / 8 * 5);
+}
+
+.grid .pull-5 {
+  margin-right: calc((100vw - var(--margin) * 2) / 8 * 5);
+}
+
+.grid .push-6 {
+  margin-left: calc((100vw - var(--margin) * 2) / 8 * 6);
+}
+
+.grid .pull-6 {
+  margin-right: calc((100vw - var(--margin) * 2) / 8 * 6);
+}
+
+.grid .push-7 {
+  margin-left: calc((100vw - var(--margin) * 2) / 8 * 7);
+}
+
+.grid .pull-7 {
+  margin-right: calc((100vw - var(--margin) * 2) / 8 * 7);
+}
+
+.grid .full-bleed {
+  flex-basis: 100vw;
+  margin-left: calc(var(--margin) * -1);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.grid .right-bleed {
+  flex-basis: calc(100vw - var(--margin));
+  margin-right: calc(var(--margin) * -1);
+  padding-right: 0;
+}
+
+.grid .left-bleed {
+  flex-basis: calc(100vw - var(--margin));
+  margin-left: calc(var(--margin) * -1);
+  padding-left: 0;
+}
+
+.grid .col-2-right-bleed {
+  flex-basis: calc((100vw - var(--margin)) / 8 * 2);
+  margin-right: calc(var(--margin) * -1);
+  padding-right: 0;
+}
+
+.grid .col-2-left-bleed {
+  flex-basis: calc((100vw - var(--margin)) / 8 * 2);
+  margin-left: calc(var(--margin) * -1);
+  padding-left: 0;
+}
+
+.grid .col-4-right-bleed {
+  flex-basis: calc((100vw - var(--margin)) / 8 * 4);
+  margin-right: calc(var(--margin) * -1);
+  padding-right: 0;
+}
+
+.grid .col-4-left-bleed {
+  flex-basis: calc((100vw - var(--margin)) / 8 * 4);
+  margin-left: calc(var(--margin) * -1);
+  padding-left: 0;
 }

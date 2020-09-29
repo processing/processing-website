@@ -7,6 +7,8 @@ import CategoryNav from '../components/CategoryNav';
 import ReferenceList from '../components/ReferenceList';
 import Searchbar from '../components/Searchbar';
 
+import grid from '../styles/grid.module.css';
+
 const Reference = ({ data }) => {
   let refs = data.allFile;
   const [searchTerm, setSearchTerm] = useState('');
@@ -31,15 +33,18 @@ const Reference = ({ data }) => {
 
   return (
     <Layout>
-      <h1>References</h1>
-      <Searchbar
-        placeholder={'Search in the Reference...'}
-        onChange={refreshList}
-        searchTerm={searchTerm}
-        large
-      />
-      <CategoryNav categories={categories} />
-      <ReferenceList data={filteredRefs} library={'processing'} />
+      <div className={grid.grid}>
+        <h1 className={grid.col8}>References</h1>
+        <Searchbar
+          placeholder={'Search in the Reference...'}
+          onChange={refreshList}
+          searchTerm={searchTerm}
+          className={grid.push1}
+          large
+        />
+        <CategoryNav categories={categories} />
+        <ReferenceList data={filteredRefs} library={'processing'} />
+      </div>
     </Layout>
   );
 };
