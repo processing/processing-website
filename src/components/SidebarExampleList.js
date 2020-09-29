@@ -11,10 +11,15 @@ const SidebarExampleList = ({ data }) => {
   return (
     <div className={css.root}>
       {data.map((category, key) => (
-        <SidebarLabel label={category.name}>
+        <SidebarLabel
+          label={category.name}
+          key={`example-label-category-${key}`}>
           <ul>
             {category.children.map((subcategory, key) => (
-              <SidebarLabel label={subcategory.name} secondary>
+              <SidebarLabel
+                label={subcategory.name}
+                secondary
+                key={`example-label-subcategory-${key}`}>
                 <ul>
                   {subcategory.children.map((node, key) => {
                     return (

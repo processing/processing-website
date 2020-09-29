@@ -2,19 +2,16 @@
   margin-right: var(--gutter-double);
   padding: 10px 0;
   & a {
+    padding-left: var(--gutter);
+    text-decoration: none;
+    font-size: var(--text-small);
+    line-height: 1.6rem;
     font-family: var(--font);
+    font-weight: 400;
+    color: var(--black);
+    display: block;
+    &:hover {
+      color: var(--processing-blue-mid);
+    }
   }
-}
-
-.sub {
-  & ul {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-.expand {
-  float: left;
-  font-size: 24px;
 }

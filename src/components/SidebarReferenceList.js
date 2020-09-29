@@ -17,12 +17,14 @@ const SidebarReferenceList = ({ data }) => {
   return (
     <div className={css.root}>
       {data.map((category, key) => (
-        <SidebarLabel label={category.name} key={`label-cat-${key}`}>
+        <SidebarLabel
+          label={category.name}
+          key={`reference-label-category-${key}`}>
           <ul>
             {category.children.map((subcategory, key) => (
               <SidebarLabel
                 label={subcategory.name}
-                key={`label-subcat-${key}`}
+                key={`reference-label-subcategory-${key}`}
                 secondary>
                 <ul>
                   {subcategory.children.map((item, key) => {
