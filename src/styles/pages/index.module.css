@@ -1,0 +1,29 @@
+.hero {
+	margin: var(--margin) 0;
+	background-image: linear-gradient(to right, white 20%, var(--processing-blue-light));
+}
+
+.button {
+	margin-right: var(--gutter-double);
+	font-family: var(--font-mono);
+	padding: var(--gutter) var(--gutter-double);
+	background-color: var(--processing-blue-dark);
+	color: var(--lightgray);
+    border-radius: 30px;
+   }
+
+.buttons {
+	margin: var(--margin) 0;
+}
+
+.list, .contact {
+	border-left: solid 7px var(--lightgray);
+}
+
+.list {
+	margin-bottom: var(--gutter-double)
+}
+
+.contact a {
+	font-size: var(--text-small)
+}

@@ -20,7 +20,7 @@ const Examples = ({ data }) => {
   let subcategories = {};
   categories.forEach((c) => {
     subcategories[c] = unique(
-      examples.forEach((r) => {
+      examples.map((r) => {
         if (r.relativeDirectory.split('/')[0] === c)
           return r.relativeDirectory.split('/')[1];
         else return null;
