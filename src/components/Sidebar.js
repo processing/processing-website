@@ -5,7 +5,7 @@ import Searchbar from '../components/Searchbar';
 import ExampleList from '../components/ExampleList';
 import ReferenceList from '../components/ReferenceList';
 
-import { filterItems } from '../utils/data';
+import { filterItems, organizeReferenceItems } from '../utils/data';
 
 import css from './Sidebar.module.css';
 
@@ -13,12 +13,13 @@ const Sidebar = (props) => {
   const { items, show, examples } = props;
   const [searchTerm, setSearchTerm] = useState('');
 
-  let filteredItems = items;
-
-  filteredItems = useMemo(() => filterItems(filteredItems, searchTerm), [
+  const filteredItems = useMemo(() => filterItems(items.nodes, searchTerm), [
     searchTerm,
   ]);
 
+  const tree = useMemo(() => organizeReferenceItems(filteredItems), [
+    filteredItems,
+  ]);
   return (
     <div className={classnames(css.root, { [css.show]: show })}>
       <div className={css.toggleButton} onClick={(e) => props.onChange(!show)}>
@@ -35,11 +36,7 @@ const Sidebar = (props) => {
           {examples ? (
             <ExampleList data={items} />
           ) : (
-            <ReferenceList
-              data={filteredItems}
-              library={'processing'}
-              sidebar
-            />
+            <ReferenceList data={tree} library={'processing'} sidebar />
           )}
         </Fragment>
       )}

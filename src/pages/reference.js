@@ -7,24 +7,26 @@ import CategoryNav from '../components/CategoryNav';
 import ReferenceList from '../components/ReferenceList';
 import Searchbar from '../components/Searchbar';
 
-import { filterItems } from '../utils/data';
+import { filterItems, organizeReferenceItems } from '../utils/data';
 
 import grid from '../styles/grid.module.css';
 
 const Reference = ({ data }) => {
-  let items = data.allFile;
+  let items = data.allFile.nodes;
   const [searchTerm, setSearchTerm] = useState('');
 
   let categories = unique(
-    items.nodes.map((item) => {
+    items.map((item) => {
       return item.childJson.category;
     })
   );
 
-  let filteredItems = items;
-
-  filteredItems = useMemo(() => filterItems(filteredItems, searchTerm), [
+  const filteredItems = useMemo(() => filterItems(items, searchTerm), [
     searchTerm,
+  ]);
+
+  const tree = useMemo(() => organizeReferenceItems(filteredItems), [
+    filteredItems,
   ]);
 
   return (
@@ -39,7 +41,7 @@ const Reference = ({ data }) => {
           large
         />
         <CategoryNav categories={categories} />
-        <ReferenceList data={filteredItems} library={'processing'} />
+        <ReferenceList data={tree} library={'processing'} />
       </div>
     </Layout>
   );
