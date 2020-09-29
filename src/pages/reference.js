@@ -12,22 +12,16 @@ import { filterItems, organizeReferenceItems } from '../utils/data';
 import grid from '../styles/grid.module.css';
 
 const Reference = ({ data }) => {
-  let items = data.allFile.nodes;
   const [searchTerm, setSearchTerm] = useState('');
 
-  let categories = unique(
-    items.map((item) => {
-      return item.childJson.category;
-    })
+  const items = data.allFile.nodes;
+
+  const categories = unique(items.map((item) => item.childJson.category));
+
+  const tree = useMemo(
+    () => organizeReferenceItems(filterItems(items, searchTerm)),
+    [items, searchTerm]
   );
-
-  const filteredItems = useMemo(() => filterItems(items, searchTerm), [
-    searchTerm,
-  ]);
-
-  const tree = useMemo(() => organizeReferenceItems(filteredItems), [
-    filteredItems,
-  ]);
 
   return (
     <Layout>

@@ -8,7 +8,7 @@ export const filterItems = (items, searchTerm) => {
   if (searchTerm && searchTerm !== '') {
     return items.filter((item) => {
       try {
-        return JSON.stringify(item)
+        return JSON.stringify(Object.values(item.childJson))
           .toLowerCase()
           .includes(searchTerm.toLowerCase());
       } catch (e) {
@@ -49,7 +49,6 @@ export const organizeReferenceItems = (items) => {
       });
       subcategoryIndex = tree[categoryIndex].children.length - 1;
     }
-    console.log(item);
     tree[categoryIndex].children[subcategoryIndex].children.push({
       slug: item.name.replace('_', ''),
       dir: item.relativeDirectory,
