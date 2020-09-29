@@ -57,3 +57,46 @@ export const organizeReferenceItems = (items) => {
   });
   return tree;
 };
+
+export const organizeExampleItems = (items) => {
+  const tree = [];
+
+  items.forEach((item) => {
+    const category = item.relativeDirectory.split('/')[0];
+    const subcategory = item.relativeDirectory.split('/')[1];
+
+    let categoryIndex = tree.findIndex((cat) => cat.slug == category);
+
+    if (categoryIndex === -1) {
+      tree.push({
+        slug: category,
+        name: titleCase(category),
+        children: [],
+      });
+      categoryIndex = tree.length - 1;
+    }
+
+    let subcategoryIndex = tree[categoryIndex].children.findIndex(
+      (subcat) => subcat.slug === subcategory
+    );
+
+    if (subcategoryIndex === -1) {
+      tree[categoryIndex].children.push({
+        slug: subcategory ? subcategory : '',
+        name: subcategory ? titleCase(subcategory) : '',
+        children: [],
+      });
+      subcategoryIndex = tree[categoryIndex].children.length - 1;
+    }
+
+    tree[categoryIndex].children[subcategoryIndex].children.push({
+      slug: item.relativeDirectory.split('/')[2],
+      name: item.relativeDirectory
+        ? titleCase(item.relativeDirectory.split('/')[2].replace(/-/g, ' '))
+        : '',
+      dir: item.relativeDirectory,
+      ...item.childMDX,
+    });
+  });
+  return tree;
+};

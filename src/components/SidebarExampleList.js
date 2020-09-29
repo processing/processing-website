@@ -1,49 +1,38 @@
 import React from 'react';
-import unique from 'array-unique';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
+import { useLocalization } from 'gatsby-theme-i18n';
 
-import SideExCategoryList from '../components/SideExCategoryList';
+import SidebarLabel from './SidebarLabel';
 
 import css from './SidebarExampleList.module.css';
 
-const SidebarExampleList = (props) => {
-  const { data } = props;
-
-  let examples = data.nodes;
-
-  let categories = unique(
-    examples.map((file) => {
-      return file.relativeDirectory.split('/')[0];
-    })
-  );
-
-  let subcategories = {};
-  categories.map((category) => {
-    subcategories[category] = unique(
-      examples.map((example) => {
-        if (example.relativeDirectory.split('/')[0] === category)
-          return example.relativeDirectory.split('/')[1];
-        else return null;
-      })
-    );
-  });
-
+const SidebarExampleList = ({ data }) => {
+  const { locale } = useLocalization();
   return (
     <div className={css.root}>
-      <ul>
-        {categories.map((category, key) => {
-          let categoryItems = examples.filter((example) => {
-            return example.relativeDirectory.split('/')[0] === category;
-          });
-          return (
-            <SideExCategoryList
-              key={key + 'c'}
-              category={category}
-              categoryItems={categoryItems}
-              subcategories={subcategories[category]}
-            />
-          );
-        })}
-      </ul>
+      {data.map((category, key) => (
+        <SidebarLabel label={category.name}>
+          <ul>
+            {category.children.map((subcategory, key) => (
+              <SidebarLabel label={subcategory.name} secondary>
+                <ul>
+                  {subcategory.children.map((node, key) => {
+                    return (
+                      <li key={key}>
+                        <Link
+                          to={`/examples/${node.slug}.html`}
+                          language={locale}>
+                          <span>{node.name}</span>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </SidebarLabel>
+            ))}
+          </ul>
+        </SidebarLabel>
+      ))}
     </div>
   );
 };

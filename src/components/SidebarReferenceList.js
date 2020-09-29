@@ -7,8 +7,7 @@ import SidebarLabel from './SidebarLabel';
 import grid from '../styles/grid.module.css';
 import css from './SidebarReferenceList.module.css';
 
-const SidebarReferenceList = (props) => {
-  const { data, library, sidebar } = props;
+const SidebarReferenceList = ({ data }) => {
   const [expand, setExpand] = useState(false);
 
   const toggleExpand = () => {

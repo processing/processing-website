@@ -5,7 +5,11 @@ import Searchbar from '../components/Searchbar';
 import SidebarExampleList from '../components/SidebarExampleList';
 import SidebarReferenceList from '../components/SidebarReferenceList';
 
-import { filterItems, organizeReferenceItems } from '../utils/data';
+import {
+  filterItems,
+  organizeExampleItems,
+  organizeReferenceItems,
+} from '../utils/data';
 
 import css from './Sidebar.module.css';
 
@@ -17,9 +21,13 @@ const Sidebar = (props) => {
     searchTerm,
   ]);
 
-  const tree = useMemo(() => organizeReferenceItems(filteredItems), [
-    filteredItems,
-  ]);
+  const tree = useMemo(
+    () =>
+      type === 'reference'
+        ? organizeReferenceItems(filteredItems)
+        : organizeExampleItems(filteredItems),
+    [filteredItems]
+  );
   return (
     <div className={classnames(css.root, { [css.show]: show })}>
       <div className={css.toggleButton} onClick={(e) => onChange(!show)}>
@@ -36,7 +44,7 @@ const Sidebar = (props) => {
           {type === 'reference' ? (
             <SidebarReferenceList data={tree} />
           ) : (
-            <SidebarExampleList data={items} />
+            <SidebarExampleList data={tree} />
           )}
         </Fragment>
       )}
