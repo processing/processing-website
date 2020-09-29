@@ -35,7 +35,12 @@ const ClassRefTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <Sidebar items={data.items} onChange={toggleSidebar} show={show} />
+      <Sidebar
+        items={data.items}
+        onChange={toggleSidebar}
+        show={show}
+        type={'reference'}
+      />
       {data.json !== null ? (
         <div className={css.root}>
           <div

@@ -35,7 +35,7 @@ const Reference = ({ data }) => {
           large
         />
         <CategoryNav categories={categories} />
-        <ReferenceList data={tree} library={'processing'} />
+        <ReferenceList data={tree} />
       </div>
     </Layout>
   );

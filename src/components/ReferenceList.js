@@ -2,25 +2,18 @@ import React from 'react';
 import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 
-import CategoryList from './CategoryList';
-import SideCategoryList from './SideCategoryList';
-
 import grid from '../styles/grid.module.css';
 import css from './ReferenceList.module.css';
 
 const ReferenceList = (props) => {
-  const { data, library, sidebar } = props;
-  let link;
-  if (library === 'processing') {
-    link = '/reference/';
-  } else {
-    link = '/reference/libraries/' + library + '/';
-  }
+  const { data, library } = props;
 
   return (
     <div className={css.root}>
       {data.map((category, key) => (
-        <div className={classnames(grid.nest, css.category)}>
+        <div
+          className={classnames(grid.nest, css.category)}
+          key={`category-${key}`}>
           <h2 className={classnames(grid.col8)}>{category.name}</h2>
           <ul className={classnames(grid.col8, grid.nest)}>
             <div className={css.verticalSeparator} />
@@ -40,7 +33,7 @@ const ReferenceList = (props) => {
                                 grid.col1,
                                 css.functionName
                               )}
-                              to={link + item.slug + '.html'}>
+                              to={`/reference/${item.slug}.html`}>
                               <span>{item.name}</span>
                             </Link>
                             <div className={grid.col5andhalf}>

@@ -3,9 +3,9 @@ import unique from 'array-unique';
 
 import SideExCategoryList from '../components/SideExCategoryList';
 
-import css from './ExampleList.module.css';
+import css from './SidebarExampleList.module.css';
 
-const ExampleList = (props) => {
+const SidebarExampleList = (props) => {
   const { data } = props;
 
   let examples = data.nodes;
@@ -48,4 +48,4 @@ const ExampleList = (props) => {
   );
 };
 
-export default ExampleList;
+export default SidebarExampleList;
