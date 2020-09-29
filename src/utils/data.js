@@ -50,7 +50,7 @@ export const organizeReferenceItems = (items) => {
       subcategoryIndex = tree[categoryIndex].children.length - 1;
     }
     tree[categoryIndex].children[subcategoryIndex].children.push({
-      slug: item.name.replace('_', ''),
+      slug: item.name,
       dir: item.relativeDirectory,
       ...item.childJson,
     });
