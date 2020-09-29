@@ -40,15 +40,7 @@ const ReferenceList = (props) => {
         let categoryItems = items.filter((item) => {
           return item.childJson.category === c;
         });
-        return sidebar ? (
-          <SideCategoryList
-            key={key + 'c'}
-            category={c}
-            categoryItems={categoryItems}
-            subcategories={subcategories[c]}
-            link={link}
-          />
-        ) : (
+        return (
           <CategoryList
             key={key + 'c'}
             category={c}

@@ -1,27 +1,23 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useMemo } from 'react';
 import classnames from 'classnames';
 
 import Searchbar from '../components/Searchbar';
 import ExampleList from '../components/ExampleList';
 import ReferenceList from '../components/ReferenceList';
 
+import { filterItems } from '../utils/data';
+
 import css from './Sidebar.module.css';
 
 const Sidebar = (props) => {
-  const { refs, show, examples } = props;
+  const { items, show, examples } = props;
   const [searchTerm, setSearchTerm] = useState('');
-  const [filteredRefs, setFilteredRefs] = useState(refs);
 
-  const refreshList = (event) => {
-    setSearchTerm(event.target.value);
-    if (searchTerm) {
-      let newList = { nodes: '' };
-      newList.nodes = refs.nodes.filter((ref) =>
-        JSON.stringify(ref).includes(searchTerm)
-      );
-      setFilteredRefs(newList);
-    }
-  };
+  let filteredItems = items;
+
+  filteredItems = useMemo(() => filterItems(filteredItems, searchTerm), [
+    searchTerm,
+  ]);
 
   return (
     <div className={classnames(css.root, { [css.show]: show })}>
@@ -33,13 +29,17 @@ const Sidebar = (props) => {
           <h2>{examples ? 'Examples' : 'Reference'}</h2>
           <Searchbar
             placeholder={'Search'}
-            onChange={refreshList}
+            onChange={(e) => setSearchTerm(e.target.value)}
             searchTerm={searchTerm}
           />
           {examples ? (
-            <ExampleList data={refs} />
+            <ExampleList data={items} />
           ) : (
-            <ReferenceList data={filteredRefs} library={'processing'} sidebar />
+            <ReferenceList
+              data={filteredItems}
+              library={'processing'}
+              sidebar
+            />
           )}
         </Fragment>
       )}

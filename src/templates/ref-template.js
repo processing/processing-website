@@ -12,11 +12,11 @@ import css from '../styles/tutorials/ref-template.module.css';
 import grid from '../styles/grid.module.css';
 
 const RefTemplate = ({ data, pageContext }) => {
-  let ref, link;
+  let item, link;
   const [show, setShow] = useState(false);
 
   if (data.json !== null) {
-    ref = data.json.childJson;
+    item = data.json.childJson;
   }
 
   if (pageContext.libraryName === 'processing') {
@@ -44,18 +44,18 @@ const RefTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <Sidebar refs={data.refs} onChange={toggleSidebar} show={show} />
+      <Sidebar items={data.items} onChange={toggleSidebar} show={show} />
       {data.json !== null ? (
         <div className={classnames(css.root, { [css.collapsed]: !show })}>
           <div className={classnames(css.section, grid.grid)}>
             <h4 className={classnames(grid.col1, grid.push1)}>Name</h4>
-            <h3 className={classnames(grid.col4, grid.pull1)}>{ref.name}</h3>
+            <h3 className={classnames(grid.col4, grid.pull1)}>{item.name}</h3>
           </div>
           <div className={classnames(css.section, grid.grid)}>
             <h4 className={classnames(grid.col1, grid.push1)}>Description</h4>
             <p
               className={classnames(grid.col4, grid.pull1, css.description)}
-              dangerouslySetInnerHTML={{ __html: ref.description }}
+              dangerouslySetInnerHTML={{ __html: item.description }}
             />
           </div>
           {!data.allFile.edges.length ? (
@@ -101,7 +101,7 @@ const RefTemplate = ({ data, pageContext }) => {
           <div className={classnames(css.section, grid.grid)}>
             <h4 className={classnames(grid.col1, grid.push1)}>Syntax</h4>
             <ul className={classnames(grid.col4, grid.pull1, css.list)}>
-              {ref.syntax.map((syn, key) => {
+              {item.syntax.map((syn, key) => {
                 return (
                   <li key={'s' + key}>
                     <code>{syn}</code>
@@ -110,13 +110,13 @@ const RefTemplate = ({ data, pageContext }) => {
               })}
             </ul>
           </div>
-          {!ref.parameters.length ? (
+          {!item.parameters.length ? (
             ''
           ) : (
             <div className={classnames(css.section, grid.grid)}>
               <h4 className={classnames(grid.col1, grid.push1)}>Parameters</h4>
               <ul className={classnames(grid.col5, grid.nest, css.list)}>
-                {ref.parameters.map((param, key) => {
+                {item.parameters.map((param, key) => {
                   return (
                     <li key={'param' + key} className={css.param}>
                       <span className={classnames(grid.col1, css.paramName)}>
@@ -134,10 +134,10 @@ const RefTemplate = ({ data, pageContext }) => {
           <div className={classnames(css.section, grid.grid)}>
             <h4 className={classnames(grid.col1, grid.push1)}>Return</h4>
             <p className={classnames(grid.col4, grid.pull1)}>
-              <code>{ref.returns}</code>
+              <code>{item.returns}</code>
             </p>
           </div>
-          {ref.inUse ? (
+          {item.inUse ? (
             <div className={classnames(css.section, grid.grid)}>
               <h4 className={classnames(grid.col1, grid.push1)}>In use</h4>
               <ul
@@ -147,7 +147,7 @@ const RefTemplate = ({ data, pageContext }) => {
                   css.list,
                   grid.pull1
                 )}>
-                {ref.inUse.map((inUse, key) => (
+                {item.inUse.map((inUse, key) => (
                   <li key={key + 'rel'}>
                     <a href={inUse + '.html'} className={grid.col4}>
                       {inUse.replace(/_/g, '()')}
@@ -159,7 +159,7 @@ const RefTemplate = ({ data, pageContext }) => {
           ) : (
             ''
           )}
-          {!ref.related.length ? (
+          {!item.related.length ? (
             ''
           ) : (
             <div className={classnames(css.section, grid.grid)}>
@@ -171,7 +171,7 @@ const RefTemplate = ({ data, pageContext }) => {
                   css.list,
                   grid.pull1
                 )}>
-                {ref.related.map((rel, key) => (
+                {item.related.map((rel, key) => (
                   <li key={key + 'rel'}>
                     <a href={rel + '.html'} className={grid.col4}>
                       {rel.replace(/_/g, '()')}
@@ -252,7 +252,7 @@ export const query = graphql`
         }
       }
     }
-    refs: allFile(
+    items: allFile(
       filter: {
         fields: { lang: { eq: "en" }, lib: { eq: "processing" } }
         childJson: { type: { nin: ["method", "field"] } }

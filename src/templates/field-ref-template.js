@@ -12,11 +12,11 @@ import css from '../styles/tutorials/ref-template.module.css';
 import grid from '../styles/grid.module.css';
 
 const RefTemplate = ({ data, pageContext }) => {
-  let ref, link;
+  let item, link;
   const [show, setShow] = useState(false);
 
   if (data.json !== null) {
-    ref = data.json.childJson;
+    item = data.json.childJson;
   }
 
   if (pageContext.libraryName === 'processing') {
@@ -36,15 +36,15 @@ const RefTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <Sidebar refs={data.refs} onChange={toggleSidebar} show={show} />
+      <Sidebar items={data.items} onChange={toggleSidebar} show={show} />
       {data.json !== null ? (
         <div
           className={classnames(grid.grid, css.root)}
           style={{ marginLeft: show ? '150px' : '50px' }}>
           <h4 className={grid.col1}>Name</h4>
-          <h3 className={grid.col6}>{ref.name}</h3>
+          <h3 className={grid.col6}>{item.name}</h3>
           <h4 className={grid.col1}>Description</h4>
-          <p className={grid.col6}>{ref.description}</p>
+          <p className={grid.col6}>{item.description}</p>
           {!data.allFile.edges.length ? (
             ''
           ) : (
@@ -69,13 +69,13 @@ const RefTemplate = ({ data, pageContext }) => {
               </ul>
             </>
           )}
-          {!ref.related.length ? (
+          {!item.related.length ? (
             ''
           ) : (
             <>
               <h4 className={grid.col1}>Related</h4>
               <ul className={classnames(grid.col6, css.list)}>
-                {ref.related.map((rel, key) => (
+                {item.related.map((rel, key) => (
                   <li key={key + 'rel'} className={grid.col2}>
                     <a href={rel + '.html'} className={grid.col2}>
                       {rel.replace(/_/g, '()')}
@@ -129,7 +129,7 @@ export const query = graphql`
         }
       }
     }
-    refs: allFile(
+    items: allFile(
       filter: {
         fields: { lang: { eq: "en" }, lib: { eq: "processing" } }
         childJson: { type: { nin: ["method", "field"] } }

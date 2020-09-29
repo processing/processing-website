@@ -17,7 +17,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <Sidebar refs={examples} onChange={toggleSidebar} show={show} examples />
+      <Sidebar items={examples} onChange={toggleSidebar} show={show} examples />
       {mdx !== null ? (
         <div style={{ marginLeft: show ? '350px' : '50px' }}>
           <h1>{mdx.frontmatter.title}</h1>

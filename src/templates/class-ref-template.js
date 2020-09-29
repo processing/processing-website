@@ -11,11 +11,11 @@ import css from '../styles/tutorials/ref-template.module.css';
 import grid from '../styles/grid.module.css';
 
 const ClassRefTemplate = ({ data, pageContext }) => {
-  let ref, link;
+  let item, link;
   const [show, setShow] = useState(false);
 
   if (data.json !== null) {
-    ref = data.json.childJson;
+    item = data.json.childJson;
   }
 
   if (pageContext.libraryName === 'processing') {
@@ -35,20 +35,20 @@ const ClassRefTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <Sidebar refs={data.refs} onChange={toggleSidebar} show={show} />
+      <Sidebar items={data.items} onChange={toggleSidebar} show={show} />
       {data.json !== null ? (
         <div className={css.root}>
           <div
             className={classnames(grid.grid, css.section)}
             style={{ marginLeft: show ? '150px' : '50px' }}>
             <h4 className={classnames(grid.col1, grid.push1)}>Class name</h4>
-            <h3 className={classnames(grid.col4, grid.pull1)}>{ref.name}</h3>
+            <h3 className={classnames(grid.col4, grid.pull1)}>{item.name}</h3>
           </div>
           <div className={classnames(grid.grid, css.section)}>
             <h4 className={classnames(grid.col1, grid.push1)}>Description</h4>
             <p
               className={classnames(grid.col4, grid.pull1, css.description)}
-              dangerouslySetInnerHTML={{ __html: ref.description }}
+              dangerouslySetInnerHTML={{ __html: item.description }}
             />
           </div>
           {data.allFile.edges === '' ? (
@@ -78,7 +78,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
           <div className={classnames(grid.grid, css.section)}>
             <h4 className={classnames(grid.col1, grid.push1)}>Constructors</h4>
             <ul className={classnames(grid.col4, grid.pull1, css.list)}>
-              {ref.constructors.map((cons, key) => {
+              {item.constructors.map((cons, key) => {
                 return (
                   <li key={'f' + key}>
                     <code>{cons}</code>
@@ -87,13 +87,13 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               })}
             </ul>
           </div>
-          {ref.classFields === '' ? (
+          {item.classFields === '' ? (
             ''
           ) : (
             <div className={classnames(grid.grid, css.section)}>
               <h4 className={classnames(grid.col1, grid.push1)}>Fields</h4>
               <ul className={classnames(grid.col4, grid.pull1, css.list)}>
-                {ref.classFields.map((field, key) => {
+                {item.classFields.map((field, key) => {
                   return (
                     <li key={'f' + key}>
                       <a href={field.anchor + '.html'}>{field.name} </a>
@@ -107,7 +107,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
           <div className={classnames(grid.grid, css.section)}>
             <h4 className={classnames(grid.col1, grid.push1)}>Methods</h4>
             <ul className={classnames(grid.col5, grid.nest, css.list)}>
-              {ref.methods.map((method, key) => {
+              {item.methods.map((method, key) => {
                 return (
                   <li key={'m' + key}>
                     <a href={method.anchor + '.html'} className={grid.col2}>
@@ -122,7 +122,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               })}
             </ul>
           </div>
-          {ref.related === '' ? (
+          {item.related === '' ? (
             ''
           ) : (
             <div className={classnames(grid.grid, css.section)}>
@@ -134,7 +134,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
                   grid.nest,
                   css.list
                 )}>
-                {ref.related.map((rel, key) => (
+                {item.related.map((rel, key) => (
                   <li key={key + 'rel'}>
                     <a href={rel + '.html'} className={grid.col1}>
                       {rel.replace(/_/g, '()')}
@@ -193,7 +193,7 @@ export const query = graphql`
         }
       }
     }
-    refs: allFile(
+    items: allFile(
       filter: {
         fields: { lang: { eq: "en" }, lib: { eq: "processing" } }
         childJson: { type: { nin: ["method", "field"] } }
