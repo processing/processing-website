@@ -5,9 +5,7 @@ import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import grid from '../styles/grid.module.css';
 import css from './ReferenceList.module.css';
 
-const ReferenceList = (props) => {
-  const { data, library } = props;
-
+const ReferenceList = ({ data }) => {
   return (
     <div className={css.root}>
       {data.map((category, key) => (

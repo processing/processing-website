@@ -1,33 +1,23 @@
-import React from 'react';
-import classnames from 'classnames';
+import React, { useMemo, useState } from 'react';
 import { graphql } from 'gatsby';
-import unique from 'array-unique';
 
 import Layout from '../components/Layout';
-import ExamplesCategoryList from '../components/ExamplesCategoryList';
+import ExamplesList from '../components/ExamplesList';
 import Searchbar from '../components/Searchbar';
+
+import { filterItems, organizeExampleItems } from '../utils/data';
 
 import grid from '../styles/grid.module.css';
 
 const Examples = ({ data }) => {
-  let examples = data.allFile.nodes;
+  const [searchTerm, setSearchTerm] = useState('');
 
-  let categories = unique(
-    examples.map((file) => {
-      return file.relativeDirectory.split('/')[0];
-    })
+  const items = data.allFile.nodes;
+
+  const tree = useMemo(
+    () => organizeExampleItems(filterItems(items, searchTerm)),
+    [items, searchTerm]
   );
-
-  let subcategories = {};
-  categories.forEach((category) => {
-    subcategories[category] = unique(
-      examples.map((example) => {
-        if (example.relativeDirectory.split('/')[0] === category)
-          return example.relativeDirectory.split('/')[1];
-        else return null;
-      })
-    );
-  });
 
   return (
     <Layout>
@@ -39,24 +29,12 @@ const Examples = ({ data }) => {
         </h3>
         <Searchbar
           placeholder={'Search in the Examples...'}
-          large
+          onChange={(e) => setSearchTerm(e.target.value)}
+          searchTerm={searchTerm}
           className={grid.push1}
+          large
         />
-        <ul className={classnames(grid.col8, grid.nest)}>
-          {categories.map((category, key) => {
-            let categoryItems = examples.filter(
-              (example) => example.relativeDirectory.split('/')[0] === category
-            );
-            return (
-              <ExamplesCategoryList
-                key={key + 'c'}
-                category={category}
-                categoryItems={categoryItems}
-                subcategories={subcategories[category]}
-              />
-            );
-          })}
-        </ul>
+        <ExamplesList data={tree} />
       </div>
     </Layout>
   );

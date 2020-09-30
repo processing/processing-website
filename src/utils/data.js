@@ -26,7 +26,7 @@ export const organizeReferenceItems = (items) => {
   items.forEach((item) => {
     const { category, subcategory } = item.childJson;
 
-    let categoryIndex = tree.findIndex((cat) => cat.slug == category);
+    let categoryIndex = tree.findIndex((cat) => cat.slug === category);
 
     if (categoryIndex === -1) {
       tree.push({
@@ -65,7 +65,7 @@ export const organizeExampleItems = (items) => {
     const category = item.relativeDirectory.split('/')[0];
     const subcategory = item.relativeDirectory.split('/')[1];
 
-    let categoryIndex = tree.findIndex((cat) => cat.slug == category);
+    let categoryIndex = tree.findIndex((cat) => cat.slug === category);
 
     if (categoryIndex === -1) {
       tree.push({
