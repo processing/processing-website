@@ -245,9 +245,6 @@ export const query = graphql`
             fixed {
               ...GatsbyImageSharpFixed
             }
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
           }
         }
       }
