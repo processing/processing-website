@@ -1,10 +1,6 @@
 ---
 slug: '/environment'
 title: 'Environment (IDE)'
-image1: ./ide.gif
-image2: ./play.gif
-image3: ./stop.gif
-image4: ./coordinates2D3D.png
 ---
 
 The Processing Environment includes a text editor, a compiler, and a display window. It enables the creation of software within a carefully designed set of constraints.
@@ -23,7 +19,7 @@ Processing has different _programming modes_ to make it possible to deploy sketc
 
 The Processing Development Environment (PDE) consists of a simple text editor for writing code, a message area, a text console, tabs for managing files, a toolbar with buttons for common actions, and a series of menus. The menus options change from mode to mode. The default Java mode is documented here.
 
-![test image](./ide.gif)
+![image 1](./ide.gif)
 
 Programs written using Processing are called sketches. These sketches are written in the text editor. It has features for cutting/pasting and for searching/replacing text. The message area gives feedback while saving and exporting and also displays errors. The console displays text output by Processing sketches including complete error messages and text output from sketches with the `print()` and `println()` functions. (Note that the console works well for occasional messages, but is not intended for high-speed, real-time output.)
 
@@ -32,7 +28,7 @@ The buttons on the toolbar can run and stop programs,
 <table border="0" cellpadding="0" cellspacing="0" width="550">
   <tr>
     <td valign="top" width="30">
-      image2
+      ![image 2](./play.gif)
     </td>
     <td width="15">&nbsp;</td>
     <td valign="top" width="480">
@@ -43,7 +39,7 @@ The buttons on the toolbar can run and stop programs,
     </td>
   </tr>
   <tr>
-    <td valign="top">image3</td>
+    <td valign="top">![image 3](./stop.gif)</td>
     <td>&nbsp;</td>
     <td valign="top">
       _Stop_
@@ -272,7 +268,7 @@ For more information, see the size() reference entry.
 
 Processing uses a Cartesian coordinate system with the origin in the upper-left corner. If your sketch is 320 pixels wide and 240 pixels high, coordinate (0, 0) is the upper-left pixel and coordinate (320, 240) is in the lower-right. The last visible pixel in the lower-right corner of the screen is at position(319, 239) because pixels are drawn to the right and below the coordinate.
 
-image4
+![image 4](./coordinates2D3D.png)
 
 Using the three-dimension coordinate system of P3D, the z-coordinate is zero at the surface of the image, with negative z-values moving back in space. When drawing in 3D, the _camera_ is positioned in the center of the screen.
 
