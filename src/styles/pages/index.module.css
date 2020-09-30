@@ -1,29 +1,37 @@
 .hero {
-	margin: var(--margin) 0;
-	background-image: linear-gradient(to right, white 20%, var(--processing-blue-light));
+  background-image: linear-gradient(
+    to right,
+    white 20%,
+    var(--processing-blue-light)
+  );
+}
+
+.intro {
+  margin: var(--margin) 0;
 }
 
 .button {
-	margin-right: var(--gutter-double);
-	font-family: var(--font-mono);
-	padding: var(--gutter) var(--gutter-double);
-	background-color: var(--processing-blue-dark);
-	color: var(--lightgray);
-    border-radius: 30px;
-   }
-
-.buttons {
-	margin: var(--margin) 0;
+  margin-right: var(--gutter-double);
+  font-family: var(--font-mono);
+  padding: var(--gutter) var(--gutter-double);
+  background-color: var(--processing-blue-dark);
+  color: var(--lightgray);
+  border-radius: 30px;
 }
 
-.list, .contact {
-	border-left: solid 7px var(--lightgray);
+.buttons {
+  margin: var(--margin) 0;
+}
+
+.list,
+.contact {
+  border-left: solid 7px var(--lightgray);
 }
 
 .list {
-	margin-bottom: var(--gutter-double)
+  margin-bottom: var(--gutter-double);
 }
 
 .contact a {
-	font-size: var(--text-small)
+  font-size: var(--text-small);
 }

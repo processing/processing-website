@@ -10,7 +10,7 @@ const SubcategoryList = (props) => {
 
   return (
     <div className={css.root}>
-      <div className={grid.col1andhalf}>
+      <div className={(grid.col1andhalf, grid.nest)}>
         <h3>{subcategory && subcategory.replace(/_/g, ' ')}</h3>
       </div>
       <ul className={classnames(grid.col6andhalf, grid.nest)}>
