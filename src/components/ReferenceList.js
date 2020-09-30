@@ -9,7 +9,7 @@ const ReferenceList = ({ data }) => {
   return (
     <div className={css.root}>
       {data.map((category, key) => (
-        <div
+        <ul
           className={classnames(grid.nest, css.category)}
           key={`category-${key}`}>
           <h2 className={classnames(grid.col8)}>{category.name}</h2>
@@ -25,16 +25,16 @@ const ReferenceList = ({ data }) => {
                     <ul className={classnames(grid.col6andhalf, grid.nest)}>
                       {subcategory.children.map((item, key) => {
                         return (
-                          <li key={key} className={css.subgrid}>
+                          <li key={key} className={css.itemLine}>
                             <Link
                               className={classnames(
-                                grid.col1,
-                                css.functionName
+                                grid.col1andhalf,
+                                css.itemName
                               )}
                               to={`/reference/${item.slug}.html`}>
                               <span>{item.name}</span>
                             </Link>
-                            <div className={grid.col5andhalf}>
+                            <div className={grid.col5}>
                               <p
                                 dangerouslySetInnerHTML={{
                                   __html: item.brief,
@@ -50,7 +50,7 @@ const ReferenceList = ({ data }) => {
               );
             })}
           </ul>
-        </div>
+        </ul>
       ))}
     </div>
   );

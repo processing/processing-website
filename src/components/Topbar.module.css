@@ -5,32 +5,32 @@
   justify-content: space-between;
   width: 100%;
   height: 50px;
+  padding: 0 16px;
   background-color: var(--processing-blue-dark);
   color: white;
-  padding: 0 16px;
 }
 
 .menu {
+  position: relative;
   display: flex;
   align-items: center;
   margin: 0;
-  padding: 0;
-  position: relative;
   height: 100%;
+  padding: 0;
   list-style: none;
 }
 
 .item {
-  margin-right: 2rem;
-  height: 100%;
   display: flex;
   align-items: center;
+  margin-right: 2rem;
   box-sizing: border-box;
+  height: 100%;
 }
 
 .item:hover {
-  padding-top: 6px;
   border-bottom: solid 6px var(--processing-blue-mid);
+  padding-top: 6px;
 }
 
 .selector {

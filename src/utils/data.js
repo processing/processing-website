@@ -91,9 +91,7 @@ export const organizeExampleItems = (items) => {
 
     tree[categoryIndex].children[subcategoryIndex].children.push({
       slug: item.relativeDirectory.split('/')[2],
-      name: item.relativeDirectory
-        ? titleCase(item.relativeDirectory.split('/')[2].replace(/-/g, ' '))
-        : '',
+      name: item.childMdx.frontmatter.title,
       dir: item.relativeDirectory,
       ...item.childMDX,
     });
