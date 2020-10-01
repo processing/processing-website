@@ -64,7 +64,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `env-images`,
-        path: `${__dirname}/content/pages/environment`,
+        path: `${__dirname}/content/pages`,
       },
     },
     {
@@ -111,6 +111,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-remark-images`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
