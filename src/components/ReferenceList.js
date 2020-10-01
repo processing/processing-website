@@ -5,7 +5,11 @@ import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import grid from '../styles/grid.module.css';
 import css from './ReferenceList.module.css';
 
-const ReferenceList = ({ data }) => {
+const ReferenceList = ({ data, library }) => {
+  const link = library
+    ? '/reference/libraries/' + library + '/'
+    : '/reference/';
+
   return (
     <div className={css.root}>
       {data.map((category, key) => (
@@ -31,7 +35,7 @@ const ReferenceList = ({ data }) => {
                                 grid.col1andhalf,
                                 css.itemName
                               )}
-                              to={`/reference/${item.slug}.html`}>
+                              to={`${link + item.slug}.html`}>
                               <span>{item.name}</span>
                             </Link>
                             <div className={grid.col5}>

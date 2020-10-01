@@ -16,12 +16,12 @@ const Reference = ({ data }) => {
 
   const items = data.allFile.nodes;
 
-  const categories = unique(items.map((item) => item.childJson.category));
-
   const tree = useMemo(
     () => organizeReferenceItems(filterItems(items, searchTerm)),
     [items, searchTerm]
   );
+
+  const categories = tree.map((item) => item.name);
 
   return (
     <Layout>
