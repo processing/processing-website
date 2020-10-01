@@ -10,7 +10,11 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
-        remarkPlugins: [require('remark-slug')],
+        remarkPlugins: [require('remark-slug'), {
+          resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+        },},],
       },
     },
     {
@@ -54,6 +58,13 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `env-images`,
+        path: `${__dirname}/content/pages/environment`,
       },
     },
     {
