@@ -10,11 +10,15 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
-        remarkPlugins: [require('remark-slug'), {
-          resolve: `gatsby-remark-images`,
+        remarkPlugins: [require('remark-slug')],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1200,
-        },},],
+            },
+          },
+        ],
       },
     },
     {
