@@ -25,6 +25,10 @@
   & ul {
     margin: 3px 0;
 
+    & li {
+      white-space: break-spaces;
+    }
+
     & > div:last-child {
       border-bottom: none;
     }
