@@ -6,14 +6,14 @@
     width: 100%;
   }
   & input {
-    font-size: var(--text-medium);
-    color: var(--darkgray);
     border: none;
+    transition: color 0.2s, border-color 0.2s;
+    border-bottom: 1.5px solid var(--darkgray);
     width: 100%;
     padding-left: 30px;
-    border-bottom: 1.5px solid var(--darkgray);
-    transition: color 0.2s, border-color 0.2s;
     background-color: var(--lightgray);
+    font-size: var(--text-medium);
+    color: var(--darkgray);
   }
 
   & input:focus {
@@ -23,14 +23,14 @@
   }
 
   & input::placeholder {
-    color: var(--darkgray);
     opacity: 1;
     transition: color 0.2s, opacity 0.2s;
+    color: var(--darkgray);
   }
 
   & input:focus::placeholder {
-    color: var(--black);
     opacity: 1;
+    color: var(--black);
   }
   justify-content: center;
   & form {
@@ -40,28 +40,29 @@
 
 .root:hover {
   & input {
-    color: var(--darkgray);
-    border-color: 3px solid var(--darkgray);
     opacity: 0.8;
+    border-color: 3px solid var(--darkgray);
+    color: var(--darkgray);
   }
   & input::placeholder {
-    color: var(--darkgray);
     opacity: 0.8;
+    color: var(--darkgray);
   }
 }
 
 .large {
   margin-top: var(--margin);
   margin-bottom: var(--margin);
+
   & input {
-    font-size: var(--text-xlarge);
-    color: var(--gray);
-    background-color: white;
+    transition: color 0.2s, border-color 0.2s;
     border: none;
+    border-bottom: 3px solid var(--gray);
     width: 100%;
     padding: 0 60px 12px;
-    border-bottom: 3px solid var(--gray);
-    transition: color 0.2s, border-color 0.2s;
+    background-color: white;
+    font-size: var(--text-xlarge);
+    color: var(--gray);
   }
 
   & input:focus {
@@ -71,13 +72,13 @@
   }
 
   & input::placeholder {
-    color: var(--gray);
     opacity: 1;
     transition: color 0.2s, opacity 0.2s;
+    color: var(--gray);
   }
 
   & input:focus::placeholder {
-    color: var(--black);
     opacity: 1;
+    color: var(--black);
   }
 }

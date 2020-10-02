@@ -1,27 +1,27 @@
 .root {
   display: flex;
   flex-wrap: wrap;
-  color: white;
   background-color: var(--processing-blue-dark);
   cursor: pointer;
+  color: white;
 }
 
 .select {
   display: flex;
-  list-style: none;
+  background-color: var(--processing-blue-dark);
   margin: 0;
+  border-style: none;
   padding: 0;
   color: white;
-  border-style: none;
   font-size: var(--text-regular);
   font-weight: 700;
   text-align: right;
-  background-color: var(--processing-blue-dark);
+  list-style: none;
 }
 
 .option {
   position: relative;
   margin-left: 1rem;
-  color: white;
   background-color: var(--processing-blue-dark);
+  color: white;
 }

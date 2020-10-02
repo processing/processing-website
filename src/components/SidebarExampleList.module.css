@@ -1,0 +1,19 @@
+.root {
+  margin-right: var(--gutter-double);
+  padding: 10px 0;
+
+  & a {
+    display: block;
+    padding-left: var(--gutter);
+    font-size: var(--text-small);
+    line-height: 1.6rem;
+    font-family: var(--font);
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--black);
+
+    &:hover {
+      color: var(--processing-blue-mid);
+    }
+  }
+}

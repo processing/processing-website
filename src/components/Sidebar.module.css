@@ -2,11 +2,12 @@
   position: fixed;
   left: 0;
   z-index: 200;
+  overflow: hidden;
   transition: width 0.4s ease;
   width: var(--margin);
   height: 84vh;
-  overflow: hidden;
   background: var(--lightgray);
+  white-space: nowrap;
 
   & h2 {
     margin-top: 14px;
@@ -18,6 +19,7 @@
     font-size: var(--text-small);
     line-height: 1.6rem;
     font-family: var(--font-mono);
+    text-overflow: ellipsis;
     color: var(--black);
     display: block;
     &:hover {
@@ -27,16 +29,22 @@
 }
 
 .show {
-  padding-left: var(--gutter-double);
   width: calc(var(--column-width) * 1.5);
+  padding-left: var(--gutter-double);
 }
 
 .toggleButton {
   position: absolute;
-  color: var(--darkgray);
   top: var(--gutter);
   right: var(--gutter);
+  cursor: pointer;
   font-weight: 700;
   font-size: var(--text-large);
-  cursor: pointer;
+  color: var(--darkgray);
+}
+
+.listWrapper {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
 }

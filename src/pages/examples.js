@@ -1,33 +1,23 @@
-import React from 'react';
-import classnames from 'classnames';
+import React, { useMemo, useState } from 'react';
 import { graphql } from 'gatsby';
-import unique from 'array-unique';
 
 import Layout from '../components/Layout';
-import ExCategoryList from '../components/ExCategoryList';
+import ExamplesList from '../components/ExamplesList';
 import Searchbar from '../components/Searchbar';
+
+import { filterItems, organizeExampleItems } from '../utils/data';
 
 import grid from '../styles/grid.module.css';
 
 const Examples = ({ data }) => {
-  let examples = data.allFile.nodes;
+  const [searchTerm, setSearchTerm] = useState('');
 
-  let categories = unique(
-    examples.map((file) => {
-      return file.relativeDirectory.split('/')[0];
-    })
+  const items = data.allFile.nodes;
+
+  const tree = useMemo(
+    () => organizeExampleItems(filterItems(items, searchTerm)),
+    [items, searchTerm]
   );
-
-  let subcategories = {};
-  categories.forEach((c) => {
-    subcategories[c] = unique(
-      examples.map((r) => {
-        if (r.relativeDirectory.split('/')[0] === c)
-          return r.relativeDirectory.split('/')[1];
-        else return null;
-      })
-    );
-  });
 
   return (
     <Layout>
@@ -39,24 +29,12 @@ const Examples = ({ data }) => {
         </h3>
         <Searchbar
           placeholder={'Search in the Examples...'}
-          large
+          onChange={(e) => setSearchTerm(e.target.value)}
+          searchTerm={searchTerm}
           className={grid.push1}
+          large
         />
-        <ul className={classnames(grid.col8, grid.nest)}>
-          {categories.map((c, key) => {
-            let categoryRefs = examples.filter((ref) => {
-              return ref.relativeDirectory.split('/')[0] === c;
-            });
-            return (
-              <ExCategoryList
-                key={key + 'c'}
-                category={c}
-                categoryRefs={categoryRefs}
-                subcategories={subcategories[c]}
-              />
-            );
-          })}
-        </ul>
+        <ExamplesList data={tree} />
       </div>
     </Layout>
   );
