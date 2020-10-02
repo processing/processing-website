@@ -111,4 +111,6 @@ button {
   font-family: inherit;
   font-size: inherit;
   -webkit-appearance: none;
+  border: none;
+  background-color: inherit;
 }

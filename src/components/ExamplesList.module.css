@@ -1,0 +1,31 @@
+.root {
+  margin-bottom: 60px;
+
+  & h2 {
+    margin-bottom: 0;
+    text-transform: capitalize;
+  }
+
+  & ul div:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.subcategory {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+  width: 100%;
+
+  & h3 {
+    margin: 0;
+    border-right: solid 6px var(--lightgray);
+    font-size: var(--text-medium);
+    text-transform: capitalize;
+  }
+
+  & h4 {
+    font-size: var(--text-regular);
+    font-weight: 400;
+  }
+}

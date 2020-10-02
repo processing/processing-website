@@ -2,44 +2,49 @@ import React, { Fragment, useState, useMemo } from 'react';
 import classnames from 'classnames';
 
 import Searchbar from '../components/Searchbar';
-import ExampleList from '../components/ExampleList';
-import ReferenceList from '../components/ReferenceList';
+import SidebarExampleList from '../components/SidebarExampleList';
+import SidebarReferenceList from '../components/SidebarReferenceList';
 
-import { filterItems } from '../utils/data';
+import {
+  filterItems,
+  organizeExampleItems,
+  organizeReferenceItems,
+} from '../utils/data';
 
 import css from './Sidebar.module.css';
 
 const Sidebar = (props) => {
-  const { items, show, examples } = props;
+  const { items, show, type, onChange } = props;
   const [searchTerm, setSearchTerm] = useState('');
 
-  let filteredItems = items;
-
-  filteredItems = useMemo(() => filterItems(filteredItems, searchTerm), [
+  const filteredItems = useMemo(() => filterItems(items.nodes, searchTerm), [
     searchTerm,
   ]);
 
+  const tree = useMemo(
+    () =>
+      type === 'reference'
+        ? organizeReferenceItems(filteredItems)
+        : organizeExampleItems(filteredItems),
+    [filteredItems]
+  );
   return (
     <div className={classnames(css.root, { [css.show]: show })}>
-      <div className={css.toggleButton} onClick={(e) => props.onChange(!show)}>
+      <div className={css.toggleButton} onClick={(e) => onChange(!show)}>
         {show ? '×' : '+'}
       </div>
       {show && (
         <Fragment>
-          <h2>{examples ? 'Examples' : 'Reference'}</h2>
+          <h2>{type === 'reference' ? 'Reference' : 'Examples'}</h2>
           <Searchbar
             placeholder={'Search'}
             onChange={(e) => setSearchTerm(e.target.value)}
             searchTerm={searchTerm}
           />
-          {examples ? (
-            <ExampleList data={items} />
+          {type === 'reference' ? (
+            <SidebarReferenceList data={tree} />
           ) : (
-            <ReferenceList
-              data={filteredItems}
-              library={'processing'}
-              sidebar
-            />
+            <SidebarExampleList data={tree} />
           )}
         </Fragment>
       )}
