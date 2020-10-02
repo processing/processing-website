@@ -9,7 +9,10 @@ import ReferenceList from '../components/ReferenceList';
 import { organizeReferenceItems } from '../utils/data';
 
 const IndexRefTemplate = ({ data, pageContext: { libraryName } }) => {
-  const link = '/reference/libraries/' + libraryName + '/index.html';
+  const link =
+    libraryName === 'processing'
+      ? `/reference/`
+      : `/reference/libraries/${libraryName}/index.html`;
 
   const items = data.allFile.nodes;
 

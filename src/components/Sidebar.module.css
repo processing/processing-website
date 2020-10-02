@@ -7,9 +7,24 @@
   width: var(--margin);
   height: 84vh;
   background: var(--lightgray);
+  white-space: nowrap;
 
   & h2 {
     margin-top: 14px;
+  }
+
+  & a {
+    padding-left: var(--gutter);
+    text-decoration: none;
+    font-size: var(--text-small);
+    line-height: 1.6rem;
+    font-family: var(--font-mono);
+    text-overflow: ellipsis;
+    color: var(--black);
+    display: block;
+    &:hover {
+      color: var(--processing-blue-mid);
+    }
   }
 }
 
@@ -26,4 +41,10 @@
   font-weight: 700;
   font-size: var(--text-large);
   color: var(--darkgray);
+}
+
+.listWrapper {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
 }

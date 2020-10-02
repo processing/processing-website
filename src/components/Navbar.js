@@ -31,7 +31,7 @@ export const items = [
   },
   {
     name: 'Teach',
-    link: '/teach',
+    link: 'https://processingfoundation.org/education',
   },
   {
     name: 'About',

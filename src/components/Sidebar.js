@@ -19,6 +19,7 @@ const Sidebar = (props) => {
 
   const filteredItems = useMemo(() => filterItems(items.nodes, searchTerm), [
     searchTerm,
+    items.nodes,
   ]);
 
   const tree = useMemo(
@@ -26,11 +27,14 @@ const Sidebar = (props) => {
       type === 'reference'
         ? organizeReferenceItems(filteredItems)
         : organizeExampleItems(filteredItems),
-    [filteredItems]
+    [filteredItems, type]
   );
   return (
     <div className={classnames(css.root, { [css.show]: show })}>
-      <div className={css.toggleButton} onClick={(e) => onChange(!show)}>
+      <div
+        className={css.toggleButton}
+        onClick={(e) => onChange(!show)}
+        role={'button'}>
         {show ? '×' : '+'}
       </div>
       {show && (
@@ -41,11 +45,13 @@ const Sidebar = (props) => {
             onChange={(e) => setSearchTerm(e.target.value)}
             searchTerm={searchTerm}
           />
-          {type === 'reference' ? (
-            <SidebarReferenceList data={tree} />
-          ) : (
-            <SidebarExampleList data={tree} />
-          )}
+          <div className={css.listWrapper}>
+            {type === 'reference' ? (
+              <SidebarReferenceList data={tree} />
+            ) : (
+              <SidebarExampleList data={tree} />
+            )}
+          </div>
         </Fragment>
       )}
     </div>

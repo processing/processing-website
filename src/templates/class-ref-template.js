@@ -11,23 +11,20 @@ import css from '../styles/tutorials/ref-template.module.css';
 import grid from '../styles/grid.module.css';
 
 const ClassRefTemplate = ({ data, pageContext }) => {
-  let item, link;
+  let entry;
   const [show, setShow] = useState(false);
+  const images = data.images.edges;
+  const examples = data.pdes.edges;
 
   if (data.json !== null) {
-    item = data.json.childJson;
+    entry = data.json.childJson;
   }
 
-  if (pageContext.libraryName === 'processing') {
-    link = '/reference/' + pageContext.name + '.html';
-  } else {
-    link =
-      '/reference/libraries/' +
-      pageContext.libraryName +
-      '/' +
-      pageContext.name +
-      '.html';
-  }
+  const { constructors, classFields, methods, related } = entry;
+  const link =
+    pageContext.libraryName === 'processing'
+      ? `/reference/${pageContext.name}.html`
+      : `/reference/libraries/${pageContext.libraryName}/${pageContext.name}.html`;
 
   const toggleSidebar = (show) => {
     setShow(show);
@@ -35,70 +32,64 @@ const ClassRefTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <Sidebar
-        items={data.items}
-        onChange={toggleSidebar}
-        show={show}
-        type={'reference'}
-      />
-      {data.json !== null ? (
+      <Sidebar refs={data.items} onChange={toggleSidebar} show={show} />
+      {entry ? (
         <div className={css.root}>
           <div
             className={classnames(grid.grid, css.section)}
             style={{ marginLeft: show ? '150px' : '50px' }}>
             <h4 className={classnames(grid.col1, grid.push1)}>Class name</h4>
-            <h3 className={classnames(grid.col4, grid.pull1)}>{item.name}</h3>
+            <h3 className={classnames(grid.col4, grid.pull1)}>{entry.name}</h3>
           </div>
           <div className={classnames(grid.grid, css.section)}>
             <h4 className={classnames(grid.col1, grid.push1)}>Description</h4>
             <p
               className={classnames(grid.col4, grid.pull1, css.description)}
-              dangerouslySetInnerHTML={{ __html: item.description }}
+              dangerouslySetInnerHTML={{ __html: entry.description }}
             />
           </div>
-          {data.allFile.edges === '' ? (
-            ''
-          ) : (
+          {examples.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
               <h4 className={classnames(grid.col1, grid.push1)}>Examples</h4>
               <ul className={classnames(grid.col4, grid.pull1, css.list)}>
-                {data.allFile.edges.map((edge, key) => {
+                {examples.map((ex, key) => {
+                  const img = images.filter(
+                    (img) => img.node.name === ex.node.name
+                  );
                   return (
                     <li key={'ex' + key} className={grid.col4}>
-                      {edge.node.extension === 'pde' && (
-                        <p>
-                          {edge.node.name}
-                          {edge.node.internal.content}
-                        </p>
-                      )}
-                      {edge.node.extension === 'png' && (
-                        <Img fixed={edge.node.childImageSharp.fixed} />
-                      )}
+                      <p>
+                        {ex.node.name}
+                        {ex.node.internal.content}
+                      </p>
+                      <Img fixed={img.node.childImageSharp.fixed} />
                     </li>
                   );
                 })}
               </ul>
             </div>
           )}
-          <div className={classnames(grid.grid, css.section)}>
-            <h4 className={classnames(grid.col1, grid.push1)}>Constructors</h4>
-            <ul className={classnames(grid.col4, grid.pull1, css.list)}>
-              {item.constructors.map((cons, key) => {
-                return (
-                  <li key={'f' + key}>
-                    <code>{cons}</code>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          {item.classFields === '' ? (
-            ''
-          ) : (
+          {constructors.length > 0 && (
+            <div className={classnames(grid.grid, css.section)}>
+              <h4 className={classnames(grid.col1, grid.push1)}>
+                Constructors
+              </h4>
+              <ul className={classnames(grid.col4, grid.pull1, css.list)}>
+                {constructors.map((cons, key) => {
+                  return (
+                    <li key={'f' + key}>
+                      <code>{cons}</code>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )}
+          {classFields.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
               <h4 className={classnames(grid.col1, grid.push1)}>Fields</h4>
               <ul className={classnames(grid.col4, grid.pull1, css.list)}>
-                {item.classFields.map((field, key) => {
+                {classFields.map((field, key) => {
                   return (
                     <li key={'f' + key}>
                       <a href={field.anchor + '.html'}>{field.name} </a>
@@ -109,27 +100,27 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               </ul>
             </div>
           )}
-          <div className={classnames(grid.grid, css.section)}>
-            <h4 className={classnames(grid.col1, grid.push1)}>Methods</h4>
-            <ul className={classnames(grid.col5, grid.nest, css.list)}>
-              {item.methods.map((method, key) => {
-                return (
-                  <li key={'m' + key}>
-                    <a href={method.anchor + '.html'} className={grid.col2}>
-                      <code>{method.name}</code>
-                    </a>
-                    <span
-                      className={grid.col3}
-                      dangerouslySetInnerHTML={{ __html: method.desc }}
-                    />
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          {item.related === '' ? (
-            ''
-          ) : (
+          {methods.length > 0 && (
+            <div className={classnames(grid.grid, css.section)}>
+              <h4 className={classnames(grid.col1, grid.push1)}>Methods</h4>
+              <ul className={classnames(grid.col5, grid.nest, css.list)}>
+                {methods.map((method, key) => {
+                  return (
+                    <li key={'m' + key}>
+                      <a href={method.anchor + '.html'} className={grid.col2}>
+                        <code>{method.name}</code>
+                      </a>
+                      <span
+                        className={grid.col3}
+                        dangerouslySetInnerHTML={{ __html: method.desc }}
+                      />
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )}
+          {related && (
             <div className={classnames(grid.grid, css.section)}>
               <h4 className={classnames(grid.col1, grid.push1)}>Related</h4>
               <ul
@@ -139,7 +130,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
                   grid.nest,
                   css.list
                 )}>
-                {item.related.map((rel, key) => (
+                {related.map((rel, key) => (
                   <li key={key + 'rel'}>
                     <a href={rel + '.html'} className={grid.col1}>
                       {rel.replace(/_/g, '()')}
@@ -182,7 +173,12 @@ export const query = graphql`
         related
       }
     }
-    allFile(filter: { relativeDirectory: { eq: $assetsName } }) {
+    images: allFile(
+      filter: {
+        relativeDirectory: { eq: $assetsName }
+        extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
+      }
+    ) {
       edges {
         node {
           name
@@ -195,6 +191,22 @@ export const query = graphql`
               ...GatsbyImageSharpFixed
             }
           }
+        }
+      }
+    }
+    pdes: allFile(
+      filter: {
+        relativeDirectory: { eq: $assetsName }
+        extension: { regex: "/(pde)/" }
+      }
+    ) {
+      edges {
+        node {
+          name
+          internal {
+            content
+          }
+          extension
         }
       }
     }

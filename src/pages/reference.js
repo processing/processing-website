@@ -1,6 +1,5 @@
 import React, { useState, useMemo } from 'react';
 import { graphql } from 'gatsby';
-import unique from 'array-unique';
 
 import Layout from '../components/Layout';
 import CategoryNav from '../components/CategoryNav';

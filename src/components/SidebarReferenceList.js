@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 
@@ -8,12 +8,6 @@ import grid from '../styles/grid.module.css';
 import css from './SidebarReferenceList.module.css';
 
 const SidebarReferenceList = ({ data }) => {
-  const [expand, setExpand] = useState(false);
-
-  const toggleExpand = () => {
-    setExpand(!expand);
-  };
-
   return (
     <div className={css.root}>
       {data.map((category, key) => (
