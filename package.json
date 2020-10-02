@@ -18,7 +18,7 @@
     "gatsby-plugin-postcss": "^2.3.11",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sharp": "^2.6.25",
-    "gatsby-remark-images": "^3.3.31",
+    "gatsby-remark-images": "^3.3.32",
     "gatsby-source-filesystem": "^2.3.24",
     "gatsby-theme-i18n": "^1.0.2",
     "gatsby-theme-i18n-react-intl": "^1.0.2",
