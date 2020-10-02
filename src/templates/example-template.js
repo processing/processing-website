@@ -21,7 +21,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
         items={examples}
         onChange={toggleSidebar}
         show={show}
-        kind={'examples'}
+        type={'examples'}
       />
       {mdx !== null ? (
         <div style={{ marginLeft: show ? '350px' : '50px' }}>
