@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -6,18 +6,24 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../components/Layout';
 import ReferenceList from '../components/ReferenceList';
 
+import { organizeReferenceItems } from '../utils/data';
+
 const IndexRefTemplate = ({ data, pageContext: { libraryName } }) => {
   const link =
     libraryName === 'processing'
       ? `/reference/`
       : `/reference/libraries/${libraryName}/index.html`;
 
+  const items = data.allFile.nodes;
+
+  const tree = useMemo(() => organizeReferenceItems(items), [items]);
+
   return (
     <Layout>
       {data.mdx !== null ? (
         <div>
           <MDXRenderer>{data.mdx.body}</MDXRenderer>
-          <ReferenceList data={data} library={libraryName} />
+          <ReferenceList data={tree} library={libraryName} />
         </div>
       ) : (
         <div>

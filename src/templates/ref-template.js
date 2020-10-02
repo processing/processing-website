@@ -33,7 +33,12 @@ const RefTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <Sidebar refs={data.refs} onChange={toggleSidebar} show={show} />
+      <Sidebar
+        items={data.items}
+        onChange={toggleSidebar}
+        show={show}
+        type={'reference'}
+      />
       {data.json !== null ? (
         <div className={classnames(css.root, { [css.collapsed]: !show })}>
           <div className={classnames(css.section, grid.grid)}>
@@ -251,7 +256,7 @@ export const query = graphql`
         }
       }
     }
-    refs: allFile(
+    items: allFile(
       filter: {
         fields: { lang: { eq: "en" }, lib: { eq: "processing" } }
         childJson: { type: { nin: ["method", "field"] } }

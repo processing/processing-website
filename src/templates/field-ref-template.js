@@ -32,7 +32,7 @@ const RefTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <Sidebar refs={data.refs} onChange={toggleSidebar} show={show} />
+      <Sidebar items={data.items} onChange={toggleSidebar} show={show} />
       {data.json !== null ? (
         <div
           className={classnames(grid.grid, css.root)}
@@ -62,7 +62,7 @@ const RefTemplate = ({ data, pageContext }) => {
               </ul>
             </div>
           )}
-          {!entry.related.length > 0 && (
+          {entry.related.length > 0 && (
             <>
               <h4 className={grid.col1}>Related</h4>
               <ul className={classnames(grid.col6, css.list)}>
@@ -141,7 +141,7 @@ export const query = graphql`
         }
       }
     }
-    refs: allFile(
+    items: allFile(
       filter: {
         fields: { lang: { eq: "en" }, lib: { eq: "processing" } }
         childJson: { type: { nin: ["method", "field"] } }

@@ -4,12 +4,15 @@
 .root h1 {
   margin: 0;
 }
+
 .root a {
   color: inherit;
   text-decoration: none;
+
   &:focus {
     color: var(--processing-blue-dark);
   }
+
   &:hover {
     color: var(--processing-blue-dark);
   }

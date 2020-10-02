@@ -2,10 +2,10 @@
   position: fixed;
   left: 0;
   z-index: 200;
+  overflow: hidden;
   transition: width 0.4s ease;
   width: var(--margin);
   height: 84vh;
-  overflow: hidden;
   background: var(--lightgray);
   white-space: nowrap;
 
@@ -29,18 +29,18 @@
 }
 
 .show {
-  padding-left: var(--gutter-double);
   width: calc(var(--column-width) * 1.5);
+  padding-left: var(--gutter-double);
 }
 
 .toggleButton {
   position: absolute;
-  color: var(--darkgray);
   top: var(--gutter);
   right: var(--gutter);
+  cursor: pointer;
   font-weight: 700;
   font-size: var(--text-large);
-  cursor: pointer;
+  color: var(--darkgray);
 }
 
 .listWrapper {

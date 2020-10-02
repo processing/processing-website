@@ -15,8 +15,8 @@
 
 .item {
   display: inline-block;
-  color: var(--processing-blue-dark);
   cursor: pointer;
+  color: var(--processing-blue-dark);
   font-size: var(--text-medium);
   font-weight: 700;
 }
@@ -31,26 +31,27 @@
 
 .subitem {
   display: inline-block;
-  color: var(--processing-blue-dark);
-  cursor: pointer;
-  font-size: var(--text-regular);
-  font-weight: 700;
   margin-right: 2rem;
   padding-left: 0.6rem;
+  cursor: pointer;
   border-left: solid 4px var(--lightgray);
+  color: var(--processing-blue-dark);
+  font-size: var(--text-regular);
+  font-weight: 700;
 }
 
 .subitem:hover {
-  color: var(--processing-blue-mid);
   border-left: solid 4px var(--processing-blue-mid);
+  color: var(--processing-blue-mid);
+
   & a:hover {
     color: var(--processing-blue-mid);
   }
 }
 
 .subitem:active {
-  color: var(--processing-blue-dark);
   border-left: solid 4px var(--processing-blue-dark);
+  color: var(--processing-blue-dark);
   & a:hover {
     color: var(--processing-blue-dark);
   }
@@ -58,12 +59,12 @@
 
 .submenu {
   position: absolute;
-  margin: 0;
   z-index: 30;
-  list-style: none;
-  max-height: 0;
-  overflow: hidden;
   opacity: 0;
+  overflow: hidden;
+  margin: 0;
+  max-height: 0;
+  list-style: none;
 }
 
 .hasSubmenu:hover {

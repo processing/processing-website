@@ -1,15 +1,18 @@
 .root {
   margin-bottom: calc(var(--margin) * 2);
   justify-content: center;
+
   & ul {
-    columns: 6;
-    list-style: none;
     padding: 0;
     margin: 0;
+    columns: 6;
+    list-style: none;
   }
+
   & a {
     text-decoration: none;
   }
+
   & h3 {
     text-transform: capitalize;
   }
