@@ -1,0 +1,11 @@
+main {
+  position: relative;
+  flex: 1;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%;
+}

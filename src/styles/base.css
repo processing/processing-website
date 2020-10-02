@@ -3,11 +3,22 @@
 html {
   font-family: "Space Grotesk", Helvetica, Arial, sans-serif;
   font-feature-settings: "ss02", "ss04", "ss05";
+  font-size: 16px;
 }
 
-code,
-pre {
-  font-family: Space Mono;
+body {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
 }
 
 h1,
@@ -19,8 +30,42 @@ h6 {
   margin: 0 0 1rem;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  color: var(--processing-blue-dark);
+}
+
+h1 {
+  padding-left: var(--gutter);
+  font-size: var(--text-xxlarge);
+}
+
+h2 {
+  font-size: var(--text-xlarge);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--text-large);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li,
+li a,
+li span {
+  padding: 0;
+}
+
 a {
   color: inherit;
+  text-decoration: none;
   &:hover {
     color: var(--processing-blue-light);
   }
@@ -30,4 +75,42 @@ a {
   &:focus {
     color: var(--processing-blue-mid);
   }
+}
+
+p {
+  margin-top: 0;
+}
+
+span {
+  font-size: var(--text-small);
+}
+
+code,
+pre {
+  font-family: "Space Mono", monospace;
+  font-size: var(--text-small);
+}
+
+pre {
+  padding: var(--gutter) var(--gutter-double);
+  margin: 0 0 var(--gutter-double) 0;
+  background: var(--lightgray);
+}
+
+code {
+  margin-bottom: 2px;
+}
+
+p code {
+  margin: 0;
+}
+
+input,
+select,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-appearance: none;
+  border: none;
+  background-color: inherit;
 }

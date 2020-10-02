@@ -1,2 +1,12 @@
 .root {
+  z-index: 1000;
+  width: 100%;
+  padding: 22px;
+  background-color: var(--processing-blue-dark);
+  color: white;
+}
+
+.span {
+  margin: 0 var(--margin);
+  white-space: pre-wrap;
 }

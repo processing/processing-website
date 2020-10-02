@@ -1,0 +1,9 @@
+.root {
+  margin-top: 1em;
+  padding: 0 20px;
+}
+
+.input {
+  border: solid 4px var(--gray);
+  border-radius: 20px;
+}

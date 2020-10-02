@@ -5,14 +5,16 @@ import { Link } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Layout from '../components/Layout';
+import Contentbar from '../components/Contentbar';
 
 const TutorialTemplate = ({ data, pageContext }) => {
   const { mdx } = data;
 
   return (
     <Layout>
+      <Contentbar content={mdx.tableOfContents.items} />
       {mdx !== null ? (
-        <div>
+        <div style={{ marginLeft: '350px' }}>
           <h1>{mdx.frontmatter.title}</h1>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </div>
@@ -38,6 +40,7 @@ export const query = graphql`
       frontmatter {
         title
       }
+      tableOfContents(maxDepth: 10)
     }
   }
 `;

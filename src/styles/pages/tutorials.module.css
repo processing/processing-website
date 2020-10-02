@@ -1,0 +1,13 @@
+.list {
+  list-style: none;
+  display: flex;
+
+  & li {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.part {
+  flex-wrap: wrap;
+}

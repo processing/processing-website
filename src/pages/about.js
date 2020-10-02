@@ -1,16 +1,30 @@
 import React from 'react';
+import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Layout from '../components/Layout';
+
+import css from '../styles/pages/page.module.css';
+import grid from '../styles/grid.module.css';
 
 const About = ({ data }) => {
   const { mdx } = data;
   const { frontmatter, body } = mdx;
   return (
     <Layout>
-      <h2> {frontmatter.title}</h2>
-      <MDXRenderer>{body}</MDXRenderer>
+      <div className={grid.grid}>
+        <h1 className={classnames(grid.col5, grid.pull3)}>
+          {frontmatter.title}
+        </h1>
+        <h3 className={grid.col3}>
+          A short introduction to the Processing software and projects from the
+          community.
+        </h3>
+        <div className={classnames(grid.col5, grid.push1, css.content)}>
+          <MDXRenderer>{body}</MDXRenderer>
+        </div>
+      </div>
     </Layout>
   );
 };
