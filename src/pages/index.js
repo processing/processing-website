@@ -45,7 +45,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <div className={css.hero}>
-        <div className={grid.grid}>
+        <div className={classnames(grid.grid, grid.nest)}>
           <div className={classnames(grid.col4, css.intro)}>
             <h1 className={classnames(grid.col2, grid.pull1)}>
               {' '}
@@ -71,7 +71,8 @@ const IndexPage = () => {
               </Button>
             </div>
           </div>
-          <div className={grid.col4}></div>
+          <div className={grid.col4}>
+          </div>
         </div>
       </div>
       <div className={grid.grid}>
@@ -103,18 +104,22 @@ const IndexPage = () => {
               Download and open the ‘Processing' application. Select something
               from the Examples. Hit the Run button. Lather, rinse, repeat as
               necessary. More information on using Processing itself is can be
-              found in the environment section of the reference.
+              found in the <Link to="/environment">environment</Link> section of
+              the reference.
             </p>
             <p>
               To learn the Processing language, we recommend you try a few of
-              the built-in examples, and check out the reference. A group of
-              diverse books have been written to help people with different
-              goals and skill levels. If you're stuck or want to talk about your
-              work, head over to the forum section of the site to find open
-              minds and helpful peers.
+              the built-in examples, and check out the{' '}
+              <Link to="/environment">reference</Link>. A group of diverse{' '}
+              <Link to="/books">books</Link> have been written to help people
+              with different goals and skill levels. If you're stuck or want to
+              talk about your work, head over to the forum section of the site
+              to find open minds and helpful peers.
             </p>
             <p>
-              For a more detailed overview, check the Getting Started tutorial.
+              For a more detailed overview, check the{' '}
+              <Link to="/tutorials/gettingstarted">Getting Started</Link>{' '}
+              tutorial.
             </p>
           </div>
           <h3 className={grid.col4}>Contribute</h3>
@@ -124,16 +129,36 @@ const IndexPage = () => {
               contributed through the community. These inventive extensions are
               a bright future for the project. We have a list of Contributed
               Libraries and Contributed Tools posted online. These contributions
-              can't be underestimated.</p>
-            <p>To contribute to Processing development,
-              please visit Processing on GitHub to read instructions for
-              downloading the code, building from the source, reporting and
-              tracking bugs, and creating libraries and tools.
+              can't be underestimated.
+            </p>
+            <p>
+              To contribute to Processing development, please visit Processing
+              on GitHub to read instructions for downloading the code,{' '}
+              <a href="https://github.com/processing/processing/wiki/Build-Instructions">
+                building from the source
+              </a>
+              ,{' '}
+              <a href="https://github.com/processing/processing/wiki/Report-Bugs">
+                reporting and tracking bugs
+              </a>
+              , and{' '}
+              <a href="https://github.com/processing/processing/wiki">
+                creating libraries and tools
+              </a>
+              .
             </p>
           </div>
         </div>
         <div className={classnames(grid.col4, grid.nest)}>
           <h3 className={grid.col4}>News</h3>
+          <p>
+            The Processing Community Day (PCD) initiative is evolving. For 2020,
+            we will offer a mentorship program for PCD Worldwide Organizers who
+            are interested in learning from past community organizers and
+            mentors. The goal is to help a diverse group of organizers launch a
+            PCD in their local communities. Check out the PCD @ Worldwide site
+            to learn more about starting or attending an event in 2020!
+          </p>
           <h3 className={grid.col4}>Partners</h3>
         </div>
       </div>
