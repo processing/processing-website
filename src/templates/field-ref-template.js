@@ -12,23 +12,19 @@ import css from '../styles/tutorials/ref-template.module.css';
 import grid from '../styles/grid.module.css';
 
 const RefTemplate = ({ data, pageContext }) => {
-  let ref, link;
+  let entry;
   const [show, setShow] = useState(false);
+  const examples = data.pdes.edges;
+  const images = data.images.edges;
 
   if (data.json !== null) {
-    ref = data.json.childJson;
+    entry = data.json.childJson;
   }
 
-  if (pageContext.libraryName === 'processing') {
-    link = '/reference/' + pageContext.name + '.html';
-  } else {
-    link =
-      '/reference/libraries/' +
-      pageContext.libraryName +
-      '/' +
-      pageContext.name +
-      '.html';
-  }
+  const link =
+    pageContext.libraryName === 'processing'
+      ? `/reference/${pageContext.name}.html`
+      : `/reference/libraries/${pageContext.libraryName}/${pageContext.name}.html`;
 
   const toggleSidebar = (show) => {
     setShow(show);
@@ -42,40 +38,35 @@ const RefTemplate = ({ data, pageContext }) => {
           className={classnames(grid.grid, css.root)}
           style={{ marginLeft: show ? '150px' : '50px' }}>
           <h4 className={grid.col1}>Name</h4>
-          <h3 className={grid.col6}>{ref.name}</h3>
+          <h3 className={grid.col6}>{entry.name}</h3>
           <h4 className={grid.col1}>Description</h4>
-          <p className={grid.col6}>{ref.description}</p>
-          {!data.allFile.edges.length ? (
-            ''
-          ) : (
-            <>
+          <p className={grid.col6}>{entry.description}</p>
+          {examples.length > 0 && (
+            <div className={classnames(grid.grid, css.section)}>
               <h4 className={grid.col1}>Examples</h4>
               <ul className={classnames(grid.col6, css.list)}>
-                {data.allFile.edges.map((edge, key) => {
+                {examples.map((edge, key) => {
+                  const img = images.filter(
+                    (img) => img.node.name === edge.node.name
+                  );
                   return (
                     <li key={'ex' + key} className={grid.col4}>
-                      {edge.node.extension === 'pde' && (
-                        <p>
-                          {edge.node.name}
-                          {edge.node.internal.content}
-                        </p>
-                      )}
-                      {edge.node.extension === 'png' && (
-                        <Img fixed={edge.node.childImageSharp.fixed} />
-                      )}
+                      <p>
+                        {edge.node.name}
+                        {edge.node.internal.content}
+                      </p>
+                      <Img fixed={img.node.childImageSharp.fixed} />
                     </li>
                   );
                 })}
               </ul>
-            </>
+            </div>
           )}
-          {!ref.related.length ? (
-            ''
-          ) : (
+          {!entry.related.length > 0 && (
             <>
               <h4 className={grid.col1}>Related</h4>
               <ul className={classnames(grid.col6, css.list)}>
-                {ref.related.map((rel, key) => (
+                {entry.related.map((rel, key) => (
                   <li key={key + 'rel'} className={grid.col2}>
                     <a href={rel + '.html'} className={grid.col2}>
                       {rel.replace(/_/g, '()')}
@@ -113,7 +104,12 @@ export const query = graphql`
         returns
       }
     }
-    allFile(filter: { relativeDirectory: { eq: $assetsName } }) {
+    images: allFile(
+      filter: {
+        relativeDirectory: { eq: $assetsName }
+        extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
+      }
+    ) {
       edges {
         node {
           name
@@ -126,6 +122,22 @@ export const query = graphql`
               ...GatsbyImageSharpFixed
             }
           }
+        }
+      }
+    }
+    pdes: allFile(
+      filter: {
+        relativeDirectory: { eq: $assetsName }
+        extension: { regex: "/(pde)/" }
+      }
+    ) {
+      edges {
+        node {
+          name
+          internal {
+            content
+          }
+          extension
         }
       }
     }
