@@ -14,7 +14,7 @@ import {
 import css from './Sidebar.module.css';
 
 const Sidebar = (props) => {
-  const { items, show, type, onChange } = props;
+  const { items, show, type = 'reference', onChange } = props;
   const [searchTerm, setSearchTerm] = useState('');
 
   const filteredItems = useMemo(() => filterItems(items.nodes, searchTerm), [
