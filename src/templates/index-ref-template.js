@@ -7,13 +7,10 @@ import Layout from '../components/Layout';
 import ReferenceList from '../components/ReferenceList';
 
 const IndexRefTemplate = ({ data, pageContext: { libraryName } }) => {
-  let link;
-
-  if (libraryName === 'processing') {
-    link = '/reference/';
-  } else {
-    link = '/reference/libraries/' + libraryName + '/index.html';
-  }
+  const link =
+    libraryName === 'processing'
+      ? `/reference/`
+      : `/reference/libraries/${libraryName}/index.html`;
 
   return (
     <Layout>

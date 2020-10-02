@@ -12,6 +12,11 @@
     height: 100%;
   }
 
+  & span {
+    font-family: "Space Mono", monospace;
+    font-size: var(--text-regular);
+  }
+
   & li {
     list-style: none;
     margin-bottom: 8px;

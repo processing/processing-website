@@ -12,31 +12,20 @@ import css from '../styles/tutorials/ref-template.module.css';
 import grid from '../styles/grid.module.css';
 
 const RefTemplate = ({ data, pageContext }) => {
-  let ref, link;
+  let entry;
   const [show, setShow] = useState(false);
 
   if (data.json !== null) {
-    ref = data.json.childJson;
+    entry = data.json.childJson;
   }
 
-  if (pageContext.libraryName === 'processing') {
-    link = '/reference/' + pageContext.name + '.html';
-  } else {
-    link =
-      '/reference/libraries/' +
-      pageContext.libraryName +
-      '/' +
-      pageContext.name +
-      '.html';
-  }
+  const link =
+    pageContext.libraryName === 'processing'
+      ? `/reference/${pageContext.name}.html`
+      : `/reference/libraries/${pageContext.libraryName}/${pageContext.name}.html`;
 
-  let examples = data.allFile.edges.filter(
-    (edge) => edge.node.extension === 'pde'
-  );
-
-  let images = data.allFile.edges.filter(
-    (edge) => edge.node.extension === 'png'
-  );
+  const examples = data.pdes.edges;
+  const images = data.images.edges;
 
   const toggleSidebar = (show) => {
     setShow(show);
@@ -49,18 +38,16 @@ const RefTemplate = ({ data, pageContext }) => {
         <div className={classnames(css.root, { [css.collapsed]: !show })}>
           <div className={classnames(css.section, grid.grid)}>
             <h4 className={classnames(grid.col1, grid.push1)}>Name</h4>
-            <h3 className={classnames(grid.col4, grid.pull1)}>{ref.name}</h3>
+            <h3 className={classnames(grid.col4, grid.pull1)}>{entry.name}</h3>
           </div>
           <div className={classnames(css.section, grid.grid)}>
             <h4 className={classnames(grid.col1, grid.push1)}>Description</h4>
             <p
               className={classnames(grid.col4, grid.pull1, css.description)}
-              dangerouslySetInnerHTML={{ __html: ref.description }}
+              dangerouslySetInnerHTML={{ __html: entry.description }}
             />
           </div>
-          {!data.allFile.edges.length ? (
-            ''
-          ) : (
+          {examples.length > 0 && (
             <div className={classnames(css.section, grid.grid)}>
               <h4 className={classnames(grid.col1, grid.push1)}>Examples</h4>
               <ul
@@ -71,7 +58,7 @@ const RefTemplate = ({ data, pageContext }) => {
                   css.list
                 )}>
                 {examples.map((ex, key) => {
-                  let img = images.filter(
+                  const img = images.filter(
                     (img) => img.node.name === ex.node.name
                   );
                   return (
@@ -85,12 +72,10 @@ const RefTemplate = ({ data, pageContext }) => {
                             ))}
                         </pre>
                       </div>
-                      {img ? (
+                      {img && (
                         <div className={grid.col2}>
                           <Img fixed={img[0].node.childImageSharp.fixed} />
                         </div>
-                      ) : (
-                        ''
                       )}
                     </li>
                   );
@@ -101,7 +86,7 @@ const RefTemplate = ({ data, pageContext }) => {
           <div className={classnames(css.section, grid.grid)}>
             <h4 className={classnames(grid.col1, grid.push1)}>Syntax</h4>
             <ul className={classnames(grid.col4, grid.pull1, css.list)}>
-              {ref.syntax.map((syn, key) => {
+              {entry.syntax.map((syn, key) => {
                 return (
                   <li key={'s' + key}>
                     <code>{syn}</code>
@@ -110,13 +95,11 @@ const RefTemplate = ({ data, pageContext }) => {
               })}
             </ul>
           </div>
-          {!ref.parameters.length ? (
-            ''
-          ) : (
+          {entry.parameters.length > 0 && (
             <div className={classnames(css.section, grid.grid)}>
               <h4 className={classnames(grid.col1, grid.push1)}>Parameters</h4>
               <ul className={classnames(grid.col5, grid.nest, css.list)}>
-                {ref.parameters.map((param, key) => {
+                {entry.parameters.map((param, key) => {
                   return (
                     <li key={'param' + key} className={css.param}>
                       <span className={classnames(grid.col1, css.paramName)}>
@@ -131,13 +114,15 @@ const RefTemplate = ({ data, pageContext }) => {
               </ul>
             </div>
           )}
-          <div className={classnames(css.section, grid.grid)}>
-            <h4 className={classnames(grid.col1, grid.push1)}>Return</h4>
-            <p className={classnames(grid.col4, grid.pull1)}>
-              <code>{ref.returns}</code>
-            </p>
-          </div>
-          {ref.inUse ? (
+          {entry.returns && (
+            <div className={classnames(css.section, grid.grid)}>
+              <h4 className={classnames(grid.col1, grid.push1)}>Return</h4>
+              <p className={classnames(grid.col4, grid.pull1)}>
+                <code>{entry.returns}</code>
+              </p>
+            </div>
+          )}
+          {entry.inUse && (
             <div className={classnames(css.section, grid.grid)}>
               <h4 className={classnames(grid.col1, grid.push1)}>In use</h4>
               <ul
@@ -147,7 +132,7 @@ const RefTemplate = ({ data, pageContext }) => {
                   css.list,
                   grid.pull1
                 )}>
-                {ref.inUse.map((inUse, key) => (
+                {entry.inUse.map((inUse, key) => (
                   <li key={key + 'rel'}>
                     <a href={inUse + '.html'} className={grid.col4}>
                       {inUse.replace(/_/g, '()')}
@@ -156,12 +141,8 @@ const RefTemplate = ({ data, pageContext }) => {
                 ))}
               </ul>
             </div>
-          ) : (
-            ''
           )}
-          {!ref.related.length ? (
-            ''
-          ) : (
+          {entry.related.length > 0 && (
             <div className={classnames(css.section, grid.grid)}>
               <h4 className={classnames(grid.col1, grid.push1)}>Related</h4>
               <ul
@@ -171,7 +152,7 @@ const RefTemplate = ({ data, pageContext }) => {
                   css.list,
                   grid.pull1
                 )}>
-                {ref.related.map((rel, key) => (
+                {entry.related.map((rel, key) => (
                   <li key={key + 'rel'}>
                     <a href={rel + '.html'} className={grid.col4}>
                       {rel.replace(/_/g, '()')}
@@ -233,7 +214,12 @@ export const query = graphql`
         returns
       }
     }
-    allFile(filter: { relativeDirectory: { eq: $assetsName } }) {
+    images: allFile(
+      filter: {
+        relativeDirectory: { eq: $assetsName }
+        extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
+      }
+    ) {
       edges {
         node {
           name
@@ -245,10 +231,23 @@ export const query = graphql`
             fixed {
               ...GatsbyImageSharpFixed
             }
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
           }
+        }
+      }
+    }
+    pdes: allFile(
+      filter: {
+        relativeDirectory: { eq: $assetsName }
+        extension: { regex: "/(pde)/" }
+      }
+    ) {
+      edges {
+        node {
+          name
+          internal {
+            content
+          }
+          extension
         }
       }
     }

@@ -10,8 +10,16 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
-        remarkPlugins: [require('remark-slug')]
-      }
+        remarkPlugins: [require('remark-slug')],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+            },
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-theme-i18n`,
@@ -54,6 +62,13 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `env-images`,
+        path: `${__dirname}/content/pages`,
       },
     },
     {
@@ -100,6 +115,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-remark-images`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

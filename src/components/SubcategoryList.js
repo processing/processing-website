@@ -18,11 +18,11 @@ const SubcategoryList = (props) => {
           return (
             <li key={key} className={css.subgrid}>
               <Link
-                className={classnames(grid.col1, css.functionName)}
+                className={classnames(grid.col1andhalf, css.functionName)}
                 to={link + node.name.split('.')[0] + '.html'}>
                 <span>{node.childJson.name}</span>
               </Link>
-              <div className={grid.col5andhalf}>
+              <div className={grid.col5}>
                 <p
                   dangerouslySetInnerHTML={{
                     __html: node.childJson.brief,
