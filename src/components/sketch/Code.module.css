@@ -1,0 +1,127 @@
+@import "../../styles/variables.css";
+
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  width: 650px;
+  max-width: 650px;
+  padding: 0px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+h1 {
+  font-family: var(--font);
+}
+
+pre,
+code {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+summary {
+  cursor: pointer;
+}
+
+summary:hover {
+  color: black;
+}
+
+summary::-webkit-details-marker {
+  color: var(--gray);
+}
+
+summary::-webkit-details-marker:hover {
+  color: black;
+}
+
+.showGrid {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  display: inline-block;
+  border-style: none;
+  font-size: inherit;
+  padding: 0;
+  padding: 0;
+  text-decoration: underline;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+  background: none;
+  color: var(--black);
+}
+
+.showGrid:hover {
+  background: var(--lightgray);
+  color: var(--gray);
+}
+
+.code {
+  position: absolute;
+  padding-top: 20px;
+  max-height: 600px;
+  width: 0px;
+  max-width: 650px;
+  overflow-y: overlay;
+  transition: width 0.4s ease;
+  background-color: var(--lightgray);
+  float: right;
+  right: 0;
+  overflow: hidden;
+}
+
+.visible {
+  width: 650px;
+  max-width: 650px;
+}
+
+.summary {
+  outline: none;
+  box-shadow: none;
+}
+
+.button {
+  margin-left: -30px;
+  margin-right: 10px;
+  width: 20px;
+  background-color: var(--gray);
+  color: var(--black);
+}
+
+.link {
+  margin-left: auto;
+  font-size: 14px;
+  font-family: "Space Grotesk";
+  padding: 5px 12px;
+  color: white;
+  border: none;
+  background-color: var(--gray);
+  min-width: 160px;
+  float: right;
+  margin: calc(var(--margin) / 2);
+}
+
+.link:hover {
+  color: white;
+  background-color: var(--processing-blue-dark);
+}
+
+.inCode {
+  width: 100%;
+  padding-left: 15px;
+}
+
+.inCode pre,
+.inCode code {
+  display: inline;
+}
+
+.codeStrokes {
+  display: block;
+  padding-left: 34px;
+  margin-bottom: 0px;
+}

@@ -6,6 +6,7 @@ import { useIntl } from 'react-intl';
 
 import Layout from '../components/Layout';
 import Button from '../components/Button';
+import Logo from '../components/sketch/Logo';
 
 import { useLocalization } from 'gatsby-theme-i18n';
 
@@ -46,7 +47,7 @@ const IndexPage = () => {
     <Layout>
       <div className={css.hero}>
         <div className={classnames(grid.grid, grid.nest)}>
-          <div className={classnames(grid.col4, css.intro)}>
+          <div className={classnames(grid.col4, css.intro, grid.nest)}>
             <h1 className={classnames(grid.col2, grid.pull1)}>
               {' '}
               Welcome to Processing!{' '}
@@ -71,11 +72,10 @@ const IndexPage = () => {
               </Button>
             </div>
           </div>
-          <div className={grid.col4}>
-          </div>
         </div>
       </div>
-      <div className={grid.grid}>
+      <Logo />
+      <div className={classnames(grid.grid, css.bottom)}>
         <div className={classnames(grid.col2, grid.nest)}>
           <ul className={classnames(grid.col2, css.list)}>
             {items.map((item, key) => (
@@ -96,7 +96,7 @@ const IndexPage = () => {
           <h3 className={classnames(grid.col6, grid.nest)}> Examples</h3>
         </div>
       </div>
-      <div className={grid.grid}>
+      <div className={classnames(grid.grid, css.bottom)}>
         <div className={classnames(grid.col4, grid.nest)}>
           <h3 className={grid.col4}>Getting started</h3>
           <div className={grid.col4}>

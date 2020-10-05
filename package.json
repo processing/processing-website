@@ -25,6 +25,8 @@
     "gatsby-transformer-json": "^2.4.11",
     "gatsby-transformer-remark": "^2.8.36",
     "gatsby-transformer-sharp": "^2.5.12",
+    "highlight.js": "^10.2.1",
+    "immutable": "^4.0.0-rc.12",
     "lodash": "4.17.20",
     "postcss-calc": "^7.0.3",
     "postcss-import": "^12.0.1",
@@ -35,6 +37,7 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
     "react-intl": "^5.6.5",
+    "react-router-dom": "^5.2.0",
     "remark-slug": "^6.0.0",
     "title-case": "^3.0.2"
   },

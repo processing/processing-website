@@ -1,0 +1,12 @@
+.root {
+  width: fit-content;
+  background: var(--gray-light);
+  color: var(--gray);
+  outline: none;
+  border: none;
+}
+
+.root:hover {
+  color: white;
+  background: var(--darkblue);
+}

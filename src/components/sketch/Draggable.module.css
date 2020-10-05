@@ -1,0 +1,75 @@
+@import "../../styles/variables.css";
+
+.root,
+.dragging {
+  display: inline-block;
+  cursor: ew-resize;
+  font-family: "Space Mono";
+  text-decoration: underline;
+}
+
+.parent {
+  position: relative;
+}
+
+.parent:hover,
+.dragging {
+  color: var(--processing-blue-mid);
+}
+
+.parent:hover .arrowRight {
+  visibility: visible;
+}
+
+.parent:hover .arrowLeft {
+  visibility: visible;
+}
+
+.arrowRight,
+.arrowLeft {
+  position: absolute;
+  visibility: hidden;
+  opacity: 100%;
+}
+
+.arrowLeft {
+  margin-left: -10px;
+}
+
+.arrowRight:after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+}
+
+.arrowRight:before {
+  width: 12px;
+  height: 4px;
+  content: "->";
+  font-size: 17px;
+  color: var(--processing-blue-mid);
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 5px;
+}
+
+.arrowLeft:before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+}
+
+.arrowLeft:after {
+  width: 12px;
+  height: 4px;
+  content: "<-";
+  font-size: 17px;
+  color: var(--processing-blue-mid);
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 5px;
+}
