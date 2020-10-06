@@ -6,7 +6,7 @@ import { useIntl } from 'react-intl';
 
 import Layout from '../components/Layout';
 import Button from '../components/Button';
-import Logo from '../components/sketch/Logo';
+import Sketch from '../components/sketch/Sketch';
 
 import { useLocalization } from 'gatsby-theme-i18n';
 
@@ -61,20 +61,20 @@ const IndexPage = () => {
               hobbyists who use Processing for learning and prototyping.
             </div>
             <div className={classnames(grid.col4, css.buttons)}>
-              <Button to={'/download'} className={classnames(css.button)}>
+              <Button to={'/download'} className={css.button}>
                 Download
               </Button>
-              <Button to={'/reference'} className={classnames(css.button)}>
+              <Button to={'/reference'} className={css.button}>
                 Reference
               </Button>
-              <Button to={'/donate'} className={classnames(css.button)}>
+              <Button to={'/donate'} className={css.button}>
                 Donate
               </Button>
             </div>
           </div>
         </div>
       </div>
-      <Logo />
+      <Sketch />
       <div className={classnames(grid.grid, css.bottom)}>
         <div className={classnames(grid.col2, grid.nest)}>
           <ul className={classnames(grid.col2, css.list)}>

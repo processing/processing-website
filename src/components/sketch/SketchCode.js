@@ -2,13 +2,13 @@ import React, { Fragment, useState, useMemo, useEffect } from 'react';
 import classnames from 'classnames';
 import hljs from 'highlight.js/lib/core';
 import processing from 'highlight.js/lib/languages/processing';
-import Button from './Button';
+import Button from '../Button';
 import Draggable from './Draggable';
 import Color from './Color';
 import Shape from './Shape';
 
 import grid from '../../styles/grid.module.css';
-import css from './Code.module.css';
+import css from './SketchCode.module.css';
 import highlight from './processingIDE.css';
 
 console.log(highlight);
@@ -16,7 +16,7 @@ console.log(highlight);
 hljs.registerLanguage('processing', processing);
 hljs.configure({ classPrefix: 'processingIDE__hljs-' });
 
-const Code = (props) => {
+const SketchCode = (props) => {
   const {
     width,
     height,
@@ -171,8 +171,6 @@ void draw() {
                 <br />
                 <Button
                   className={css.button}
-                  name="type"
-                  value={shape.type}
                   onClick={(e) =>
                     props.onChange(e, ['shapes', index, 'type'], !shape.type)
                   }>
@@ -230,4 +228,4 @@ void draw() {
   );
 };
 
-export default Code;
+export default SketchCode;

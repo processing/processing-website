@@ -15,6 +15,7 @@
 
 .intro {
   margin: var(--margin) 0;
+  z-index: 1;
 }
 
 .button {

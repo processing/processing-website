@@ -7,6 +7,6 @@
 }
 
 .root:hover {
-  color: white;
-  background: var(--darkblue);
+  background: var(--processing-blue-mid);
+  cursor: pointer;
 }
