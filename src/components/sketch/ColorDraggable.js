@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { fromJS } from 'immutable';
 import css from './Draggable.module.css';
 import cssColor from './ColorDraggable.module.css';
-import { rgbToHex, hexToRgb } from './utils';
 
 const changeColor = (rgb, t) => {
   if (rgb + t < 0) return 0;
@@ -29,10 +27,15 @@ const ColorDraggable = (props) => {
           switch (colorInx) {
             case 'r':
               newColor = changeColor(shape.color.r, t);
+              break;
             case 'g':
               newColor = changeColor(shape.color.g, t);
+              break;
             case 'b':
               newColor = changeColor(shape.color.b, t);
+              break;
+            default:
+              break;
           }
           props.onChange(e, ['shapes', shapesInx, 'color', colorInx], newColor);
         }
@@ -62,6 +65,8 @@ const ColorDraggable = (props) => {
     <span className={css.parent}>
       <span className={css.arrowLeft}></span>
       <span
+        role={'button'}
+        tabIndex={'0'}
         className={dragging ? css.dragging : css.root}
         onMouseDown={registerMove}
         onMouseUp={deregisterMove}

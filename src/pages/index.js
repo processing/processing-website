@@ -41,6 +41,7 @@ export const items = [
 ];
 
 const IndexPage = () => {
+  //localization - will be needed
   const intl = useIntl();
   const { locale } = useLocalization();
   return (

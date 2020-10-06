@@ -1,21 +1,11 @@
 import React, { useState } from 'react';
-import { fromJS } from 'immutable';
 import ColorDraggable from './ColorDraggable';
 import css from './Color.module.css';
-import { rgbToHex, hexToRgb } from './utils';
+import { rgbToHex, hexToRgb } from '../../utils/editor';
 
 const Color = (props) => {
   const { shapes, shapesInx } = props;
-  const [dragging, setDragging] = useState(null);
   const [colorClass, setColorClass] = useState(true);
-
-  const registerMove = (e) => {
-    setDragging(e.screenX);
-  };
-
-  const deregisterMove = (e) => {
-    setDragging(null);
-  };
 
   const blurRest = (e, value) => {
     setColorClass(!value);

@@ -23,12 +23,42 @@ code {
   margin: 0;
 }
 
+summary:after {
+  content: "}";
+  font-family: var(--font-mono);
+  border-radius: 5px;
+}
+
+details {
+  padding-left: var(--gutter);
+
+  & pre {
+    display: inline-flex;
+  }
+}
+
+details[open] {
+  & summary::after {
+    content: "";
+  }
+
+  & .dots {
+    visibility: hidden;
+  }
+}
+
+.dots {
+  background-color: var(--gray);
+  color: white;
+  border-radius: 5px;
+}
+
 summary {
   cursor: pointer;
 }
 
 summary:hover {
-  color: black;
+  color: var(--processing-blue-dark);
 }
 
 summary::-webkit-details-marker {
@@ -36,7 +66,7 @@ summary::-webkit-details-marker {
 }
 
 summary::-webkit-details-marker:hover {
-  color: black;
+  color: var(--processing-blue-dark);
 }
 
 .showGrid {
@@ -71,7 +101,6 @@ summary::-webkit-details-marker:hover {
   background-color: var(--lightgray);
   float: right;
   right: 0;
-  overflow: hidden;
   z-index: 1;
 }
 
@@ -86,11 +115,12 @@ summary::-webkit-details-marker:hover {
 }
 
 .button {
-  margin-left: -30px;
-  margin-right: 10px;
+  margin-left: -54px;
+  margin-right: 34px;
   width: 20px;
   background-color: var(--gray);
   color: var(--black);
+  border-radius: 5px;
 }
 
 .link {
@@ -113,7 +143,7 @@ summary::-webkit-details-marker:hover {
 
 .inCode {
   width: 100%;
-  padding-left: 15px;
+  padding-left: calc(var(--gutter) * 2);
 }
 
 .inCode pre,

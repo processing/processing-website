@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useMemo, useEffect } from 'react';
+import React, { Fragment, useMemo, useEffect } from 'react';
 import classnames from 'classnames';
 import hljs from 'highlight.js/lib/core';
 import processing from 'highlight.js/lib/languages/processing';
@@ -7,11 +7,8 @@ import Draggable from './Draggable';
 import Color from './Color';
 import Shape from './Shape';
 
-import grid from '../../styles/grid.module.css';
 import css from './SketchCode.module.css';
 import highlight from './processingIDE.css';
-
-console.log(highlight);
 
 hljs.registerLanguage('processing', processing);
 hljs.configure({ classPrefix: 'processingIDE__hljs-' });
@@ -30,7 +27,6 @@ const SketchCode = (props) => {
     onDraggingShapeStart,
     onDraggingShapeEnd,
   } = props;
-  const [showing, setShowing] = useState(false);
 
   const cols = useMemo(() => Math.floor(width / unit), [width, unit]);
   const rows = useMemo(() => Math.floor(height / unit), [height, unit]);
@@ -44,7 +40,7 @@ const SketchCode = (props) => {
   useEffect(() => {
     shapes.forEach((shape, index) => {
       shape.pos.forEach((p, subindex) => {
-        if (p > rows && subindex % 2 == 1) {
+        if (p > rows && subindex % 2 === 1) {
           props.onChange(
             'Adjusting strokes to rows',
             ['shapes', index, 'pos', subindex],
@@ -58,7 +54,7 @@ const SketchCode = (props) => {
   useEffect(() => {
     shapes.forEach((shape, index) => {
       shape.pos.forEach((p, subindex) => {
-        if (p > cols && subindex % 2 == 0) {
+        if (p > cols && subindex % 2 === 0) {
           props.onChange(
             'Adjusting strokes to cols',
             ['shapes', index, 'pos', subindex],
@@ -122,10 +118,13 @@ const SketchCode = (props) => {
           ;
         </div>
         <br />
-        <details className={classnames(css.details, css.inCode)}>
+        <details className={css.details}>
           <summary className={css.summary}>
             <pre>
-              <code>{`void setup() {`}</code>
+              <code>
+                {`void setup() {`}
+                <span className={css.dots}>{`...`}</span>
+              </code>
             </pre>
           </summary>
           <pre>
@@ -195,10 +194,13 @@ void draw() {
             <code>{`}`}</code>
           </pre>
         </div>
-        <details className={classnames(css.details, css.inCode)}>
+        <details className={css.details}>
           <summary className={css.summary}>
             <pre>
-              <code>{`void drawGrid() {`}</code>
+              <code>
+                {`void drawGrid() {`}
+                <span className={css.dots}>{`...`}</span>
+              </code>
             </pre>
           </summary>
           <pre>

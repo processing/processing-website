@@ -1,6 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import { fromJS } from 'immutable';
-import { scale, round } from './utils';
+import { scale, round } from '../../utils/editor';
 import css from './Draggable.module.css';
 
 const Draggable = (props) => {
@@ -65,6 +64,8 @@ const Draggable = (props) => {
     <Fragment>
       {label && <span>{label.prev}</span>}
       <span
+        role={'button'}
+        tabIndex={'0'}
         className={css.parent}
         onMouseDown={registerMove}
         onMouseUp={deregisterMove}>

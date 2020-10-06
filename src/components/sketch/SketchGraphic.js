@@ -1,9 +1,6 @@
 import React, { Fragment, useMemo, useState } from 'react';
 import classnames from 'classnames';
 
-import Button from '../Button';
-
-import grid from '../../styles/grid.module.css';
 import css from './SketchGraphic.module.css';
 
 const gutterSize = 0;
@@ -129,6 +126,8 @@ const SketchGraphic = (props) => {
 
   return (
     <div
+      role={'button'}
+      tabIndex={'0'}
       className={css.root}
       onClick={onClick}
       onMouseEnter={handleMouseEnter}
