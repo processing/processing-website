@@ -13,10 +13,11 @@
 
   & h3 {
     margin-top: 30px;
+    margin-bottom: 30px;
   }
 
   & h4 {
-    margin-bottom: 6px;
+    margin-bottom: 12px;
     color: inherit;
     &:hover {
       color: inherit;

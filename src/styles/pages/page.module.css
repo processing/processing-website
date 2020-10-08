@@ -21,14 +21,34 @@
     font-family: "Vollkorn", serif;
     font-size: var(--text-medium);
     line-height: 1.6em;
+
     & > pre {
       font-family: "Space Mono", monospace;
       font-size: var(--text-regular);
       font-style: normal;
     }
+
     & code {
       margin-bottom: 0;
+      font-size: var(--text-regular);
     }
+
+    & a {
+      color: var(--processing-blue-dark);
+      text-decoration: underline;
+
+      &:hover {
+        color: var(--processing-blue-mid);
+      }
+
+      &:active {
+        color: var(--processing-blue-light);
+      }
+    }
+  }
+
+  & span a span {
+    margin-bottom: var(--gutter);
   }
 
   & h4 {
