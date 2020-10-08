@@ -10,7 +10,11 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
-        remarkPlugins: [require('remark-slug')],
+        plugins: [],
+        remarkPlugins: [
+          require('remark-slug'),
+          require('remark-unwrap-images'),
+        ],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,

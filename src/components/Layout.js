@@ -1,9 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
+import { MDXProvider } from '@mdx-js/react';
 
 import Header from './Header';
 import Footer from './Footer';
+
+import FixedImage from './mdx/FixedImage';
+import Intro from './mdx/Intro';
+import HighlightBlock from './mdx/HighlightBlock';
 
 import '../styles/base.css';
 import '../styles/variables.css';
@@ -22,10 +27,15 @@ const Layout = ({ children }) => {
     }
   `);
 
+  const shortcodes = { FixedImage, Intro, HighlightBlock };
+
   return (
     <div className={css.root}>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <main>{children}</main>
+      <main>
+        {' '}
+        <MDXProvider components={shortcodes}>{children}</MDXProvider>
+      </main>
       <Footer siteTitle={data.site.siteMetadata.title} />
     </div>
   );

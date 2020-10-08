@@ -1,0 +1,39 @@
+.root {
+  position: fixed;
+  left: 0;
+  z-index: 100;
+  overflow: hidden;
+  transition: width 0.4s ease;
+  width: calc(var(--column-width) * 2 - var(--gutter));
+  padding-left: var(--gutter-double);
+  padding-right: var(--gutter-double);
+  height: 84vh;
+  background: var(--lightgray);
+  white-space: nowrap;
+
+  & h3 {
+    margin-top: 30px;
+  }
+
+  & h4 {
+    margin-bottom: 6px;
+    color: inherit;
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  & ul {
+    white-space: break-spaces;
+  }
+
+  & a {
+    text-decoration: none;
+    line-height: 1.6rem;
+    text-overflow: ellipsis;
+    color: var(--processing-blue-dark);
+    &:hover {
+      color: var(--processing-blue-mid);
+    }
+  }
+}
