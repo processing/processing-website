@@ -27,7 +27,12 @@ const Layout = ({ children }) => {
     }
   `);
 
-  const shortcodes = { FixedImage, Intro, HighlightBlock };
+  const shortcodes = {
+    FixedImage,
+    Intro,
+    HighlightBlock,
+    img: (props) => <img {...props}></img>,
+  };
 
   return (
     <div className={css.root}>

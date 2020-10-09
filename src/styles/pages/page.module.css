@@ -2,7 +2,8 @@
   margin-bottom: var(--vertical-gutter);
 
   & h2 {
-    margin-bottom: var(--vertical-gutter);
+    margin-top: var(--vertical-gutter);
+    margin-bottom: 1rem;
   }
 
   & h3 {
@@ -47,8 +48,14 @@
     }
   }
 
-  & span a span {
-    margin-bottom: var(--gutter);
+  & picture {
+    margin: var(--vertical-gutter) 0;
+  }
+
+  & figcaption {
+    color: var(--darkgray);
+    font-size: var(--text-xsmall);
+    font-weight: 400;
   }
 
   & h4 {

@@ -17,8 +17,20 @@ module.exports = {
         ],
         gatsbyRemarkPlugins: [
           {
-            resolve: `gatsby-remark-images`,
+            resolve: `gatsby-remark-images-anywhere`,
             options: {
+              createMarkup: ({
+                src,
+                srcSet,
+                sizes,
+                aspectRatio,
+                alt,
+                base64,
+                presentationWidth,
+              }) =>
+                `<picture style="position: relative; overflow: hidden; display: inline-block; padding-bottom: ${
+                  (1 / aspectRatio) * 100
+                }%; width: 100%; height: 0;"><source src="${src}" srcSet="${srcSet}" /><img src="${src}" srcSet="${srcSet}" alt="${alt}" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center center;"/></picture>`,
               maxWidth: 1200,
               showCaptions: true,
             },
