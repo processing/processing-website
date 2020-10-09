@@ -1,0 +1,29 @@
+{
+  "brief": "Creates and returns a new <b>PGraphics</b> object of the types\n           P2D or P3D.",
+  "related": [],
+  "name": "createGraphics()",
+  "description": "Creates and returns a new <b>PGraphics</b> object. Use this class if you\n need to draw into an off-screen graphics buffer. The first two parameters\n define the width and height in pixels. The third, optional parameter\n specifies the renderer. It can be defined as P2D, P3D, PDF, or SVG. If the\n third parameter isn't used, the default renderer is set. The PDF and SVG\n renderers require the filename parameter.<br />\n <br />\n It's important to consider the renderer used with <b>createGraphics()</b>\n in relation to the main renderer specified in <b>size()</b>. For example,\n it's only possible to use P2D or P3D with <b>createGraphics()</b> when one\n of them is defined in <b>size()</b>. Unlike Processing 1.0, P2D and P3D use\n OpenGL for drawing, and when using an OpenGL renderer it's necessary for\n the main drawing surface to be OpenGL-based. If P2D or P3D are used as the\n renderer in <b>size()</b>, then any of the options can be used with\n <b>createGraphics()</b>. If the default renderer is used in <b>size()</b>,\n then only the default, PDF, or SVG can be used with\n <b>createGraphics()</b>.<br />\n <br />\n It's important to run all drawing functions between the <b>beginDraw()</b>\n and <b>endDraw()</b>. As the exception to this rule, <b>smooth()</b> should\n be run on the PGraphics object before <b>beginDraw()</b>. See the reference\n for <b>smooth()</b> for more detail.<br />\n <br />\n The <b>createGraphics()</b> function should almost never be used inside\n <b>draw()</b> because of the memory and time needed to set up the graphics.\n One-time or occasional use during <b>draw()</b> might be acceptable, but\n code that calls <b>createGraphics()</b> at 60 frames per second might run\n out of memory or freeze your sketch.<br />\n <br />\n Unlike the main drawing surface which is completely opaque, surfaces\n created with <b>createGraphics()</b> can have transparency. This makes it\n possible to draw into a graphics and maintain the alpha channel. By using\n <b>save()</b> to write a PNG or TGA file, the transparency of the graphics\n object will be honored.\n\n ",
+  "syntax": [
+    "createGraphics(w, h)",
+    "createGraphics(w, h, renderer)",
+    "createGraphics(w, h, renderer, path)"
+  ],
+  "returns": "PGraphics",
+  "type": "function",
+  "category": "rendering",
+  "subcategory": "",
+  "parameters": [
+    { "name": "w", "description": "width in pixels", "type": ["int"] },
+    { "name": "h", "description": "height in pixels", "type": ["int"] },
+    {
+      "name": "renderer",
+      "description": "Either P2D, P3D, or PDF",
+      "type": ["String"]
+    },
+    {
+      "name": "path",
+      "description": "the name of the file (can be an absolute or relative path)",
+      "type": ["String"]
+    }
+  ]
+}

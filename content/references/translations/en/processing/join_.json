@@ -1,0 +1,19 @@
+{
+  "brief": "Combines an array of Strings into one String, each separated by the\n character(s) used for the <b>separator</b> parameter.",
+  "related": ["split_", "trim_", "nf_", "nfs_"],
+  "name": "join()",
+  "description": "Combines an array of Strings into one String, each separated by the\n character(s) used for the <b>separator</b> parameter. To join arrays of\n ints or floats, it's necessary to first convert them to Strings using\n <b>nf()</b> or <b>nfs()</b>.",
+  "syntax": ["join(list, separator)"],
+  "returns": "String",
+  "type": "function",
+  "category": "data",
+  "subcategory": "string_functions",
+  "parameters": [
+    { "name": "list", "description": "array of Strings", "type": ["String[]"] },
+    {
+      "name": "separator",
+      "description": "char or String to be placed between each item",
+      "type": ["char", "String"]
+    }
+  ]
+}

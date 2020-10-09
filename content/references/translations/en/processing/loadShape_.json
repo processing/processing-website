@@ -1,0 +1,18 @@
+{
+  "brief": "Loads geometry into a variable of type <b>PShape</b>.",
+  "related": ["PShape", "createShape_"],
+  "name": "loadShape()",
+  "description": "Loads geometry into a variable of type <b>PShape</b>. SVG and OBJ \n files may be loaded. To load correctly, the file must be located \n in the data directory of the current sketch. In most cases, \n <b>loadShape()</b> should be used inside <b>setup()</b> because \n loading shapes inside <b>draw()</b> will reduce the speed of a sketch.<br />\n <br />\n Alternatively, the file maybe be loaded from anywhere on the local \n computer using an absolute path (something that starts with / on \n Unix and Linux, or a drive letter on Windows), or the filename \n parameter can be a URL for a file found on a network.<br />\n <br />\n If the file is not available or an error occurs, <b>null</b> will \n be returned and an error message will be printed to the console. \n The error message does not halt the program, however the null value \n may cause a NullPointerException if your code does not check whether \n the value returned is null.<br />",
+  "syntax": ["loadShape(filename)"],
+  "returns": "PShape",
+  "type": "function",
+  "category": "shape",
+  "subcategory": "",
+  "parameters": [
+    {
+      "name": "filename",
+      "description": "name of file to load, can be .svg or .obj",
+      "type": ["String"]
+    }
+  ]
+}

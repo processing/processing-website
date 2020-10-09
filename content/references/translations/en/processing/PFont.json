@@ -1,0 +1,20 @@
+{
+  "brief": "Grayscale bitmap font class used by Processing.",
+  "constructors": [],
+  "related": ["loadFont_", "createFont_", "PGraphics_textFont_"],
+  "methods": [
+    {
+      "anchor": "PFont_list_",
+      "name": "list()",
+      "desc": "Gets a list of the fonts installed on the system."
+    }
+  ],
+  "name": "PFont",
+  "classFields": [],
+  "description": "PFont is the font class for Processing. To create a font to use with\n Processing, select \"Create Font...\" from the Tools menu. This will create a\n font in the format Processing requires and also adds it to the current\n sketch's data directory. Processing displays fonts using the .vlw font\n format, which uses images for each letter, rather than defining them through\n vector data. The <b>loadFont()</b> function constructs a new font and\n <b>textFont()</b> makes a font active. The <b>list()</b> method creates a\n list of the fonts installed on the computer, which is useful information to\n use with the <b>createFont()</b> function for dynamically converting fonts\n into a format to use with Processing.<br />\n <br />\n To create a new font dynamically, use the <b>createFont()</b> function. Do\n not use the syntax <b>new PFont()</b>.\n \n <P>\n Awful (and by that, I mean awesome) ASCII (non-)art for how this works:\n \n <PRE>\n   |\n   |                   height is the full used height of the image\n   |\n   |   ..XX..       }\n   |   ..XX..       }\n   |   ......       }\n   |   XXXX..       }  topExtent (top y is baseline - topExtent)\n   |   ..XX..       }\n   |   ..XX..       }  dotted areas are where the image data\n   |   ..XX..       }  is actually located for the character\n   +---XXXXXX----   }  (it extends to the right and down\n   |                   for power of two texture sizes)\n   ^^^^ leftExtent (amount to move over before drawing the image\n\n   ^^^^^^^^^^^^^^ setWidth (width displaced by char)\n </PRE>",
+  "type": "class",
+  "classanchor": "PFont",
+  "category": "typography",
+  "subcategory": "",
+  "parameters": []
+}

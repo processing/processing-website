@@ -1,0 +1,13 @@
+{
+  "brief": "Sort the keys alphabetically",
+  "related": [],
+  "name": "sortKeys()",
+  "description": "Sort the keys alphabetically.",
+  "syntax": [".sortKeys()"],
+  "returns": "void",
+  "type": "method",
+  "category": "stringdict",
+  "subcategory": "method",
+  "classanchor": "StringDict",
+  "parameters": []
+}

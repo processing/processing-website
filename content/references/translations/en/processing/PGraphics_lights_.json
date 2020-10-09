@@ -1,0 +1,25 @@
+{
+  "brief": "Sets the default ambient light, directional light, falloff, and specular\n values.",
+  "related": [
+    "PGraphics_ambientLight_",
+    "PGraphics_directionalLight_",
+    "PGraphics_pointLight_",
+    "PGraphics_spotLight_",
+    "PGraphics_noLights_"
+  ],
+  "name": "lights()",
+  "description": "Sets the default ambient light, directional light, falloff, and specular\n values. The defaults are ambientLight(128, 128, 128) and\n directionalLight(128, 128, 128, 0, 0, -1), lightFalloff(1, 0, 0), and\n lightSpecular(0, 0, 0). Lights need to be included in the draw() to\n remain persistent in a looping program. Placing them in the setup() of a\n looping program will cause them to only have an effect the first time\n through the loop.",
+  "syntax": ["graphics.lights()"],
+  "returns": "void",
+  "type": "method",
+  "category": "lights_camera",
+  "subcategory": "lights",
+  "classanchor": "PGraphics",
+  "parameters": [
+    {
+      "name": "graphics",
+      "description": " any object of the type PGraphics",
+      "type": ["PGraphics"]
+    }
+  ]
+}

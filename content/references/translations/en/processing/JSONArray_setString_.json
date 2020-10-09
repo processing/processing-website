@@ -1,0 +1,24 @@
+{
+  "brief": "Inserts a new value into the <b>JSONArray</b> at the specified index position.",
+  "related": [
+    "JSONArray_setInt_",
+    "JSONArray_setFloat_",
+    "JSONArray_setBoolean_"
+  ],
+  "name": "setString()",
+  "description": "Inserts a new value into the <b>JSONArray</b> at the specified index \n position. If a value already exists in the specified position, the new \n value overwrites the old value. If the given index is greater than the \n length of the <b>JSONArray</b>, then null elements will be added as \n necessary to pad it out.",
+  "syntax": [".setString(index, value)"],
+  "returns": "JSONArray",
+  "type": "method",
+  "category": "jsonarray",
+  "subcategory": "method",
+  "classanchor": "JSONArray",
+  "parameters": [
+    { "name": "index", "description": "an index value", "type": ["int"] },
+    {
+      "name": "value",
+      "description": "the value to assign",
+      "type": ["String"]
+    }
+  ]
+}

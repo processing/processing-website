@@ -1,0 +1,13 @@
+{
+  "brief": "Return the largest value",
+  "related": [],
+  "name": "max()",
+  "description": "Return the largest value",
+  "syntax": [".max()"],
+  "returns": "float",
+  "type": "method",
+  "category": "floatlist",
+  "subcategory": "method",
+  "classanchor": "FloatList",
+  "parameters": []
+}

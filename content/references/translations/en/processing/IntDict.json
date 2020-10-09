@@ -1,0 +1,95 @@
+{
+  "brief": "A simple class to use a String as a lookup for an int value.",
+  "methods": [
+    {
+      "anchor": "IntDict_size_",
+      "name": "size()",
+      "desc": "Returns the number of key/value pairs"
+    },
+    {
+      "anchor": "IntDict_clear_",
+      "name": "clear()",
+      "desc": "Remove all entries from the data structure"
+    },
+    {
+      "anchor": "IntDict_keyArray_",
+      "name": "keyArray()",
+      "desc": "Return a copy of the internal keys array"
+    },
+    {
+      "anchor": "IntDict_values_",
+      "name": "values()",
+      "desc": "Return the internal array being used to store the values"
+    },
+    {
+      "anchor": "IntDict_valueArray_",
+      "name": "valueArray()",
+      "desc": "Create a new array and copy each of the values into it"
+    },
+    {
+      "anchor": "IntDict_get_",
+      "name": "get()",
+      "desc": "Return a value for the specified key"
+    },
+    {
+      "anchor": "IntDict_set_",
+      "name": "set()",
+      "desc": "Create a new key/value pair or change the value of one"
+    },
+    {
+      "anchor": "IntDict_hasKey_",
+      "name": "hasKey()",
+      "desc": "Check if a key is a part of the data structure"
+    },
+    {
+      "anchor": "IntDict_increment_",
+      "name": "increment()",
+      "desc": "Increase the value of a specific key value by 1"
+    },
+    { "anchor": "IntDict_add_", "name": "add()", "desc": "Add to a value" },
+    {
+      "anchor": "IntDict_sub_",
+      "name": "sub()",
+      "desc": "Subtract from a value"
+    },
+    { "anchor": "IntDict_mult_", "name": "mult()", "desc": "Multiply a value" },
+    { "anchor": "IntDict_div_", "name": "div()", "desc": "Divide a value" },
+    {
+      "anchor": "IntDict_remove_",
+      "name": "remove()",
+      "desc": "Remove a key/value pair"
+    },
+    {
+      "anchor": "IntDict_sortKeys_",
+      "name": "sortKeys()",
+      "desc": "Sort the keys alphabetically"
+    },
+    {
+      "anchor": "IntDict_sortKeysReverse_",
+      "name": "sortKeysReverse()",
+      "desc": "Sort the keys alphabetically in reverse"
+    },
+    {
+      "anchor": "IntDict_sortValues_",
+      "name": "sortValues()",
+      "desc": "Sort by values in ascending order"
+    },
+    {
+      "anchor": "IntDict_sortValuesReverse_",
+      "name": "sortValuesReverse()",
+      "desc": "Sort by values in descending order"
+    }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "A simple class to use a String as a lookup for an int value. String \"keys\" are \n associated with integer values.",
+  "type": "class",
+  "constructors": ["IntDict(", "IntDict(pairs)"],
+  "related": ["FloatDict", "StringDict"],
+  "name": "IntDict",
+  "classanchor": "IntDict",
+  "category": "data",
+  "subcategory": "composite",
+  "parameters": []
+}

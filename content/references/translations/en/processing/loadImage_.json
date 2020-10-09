@@ -1,0 +1,23 @@
+{
+  "brief": "Loads an image into a variable of type <b>PImage</b>.",
+  "related": ["PImage", "image_", "imageMode_", "background_"],
+  "name": "loadImage()",
+  "description": "Loads an image into a variable of type <b>PImage</b>. Four types of images\n ( <b>.gif</b>, <b>.jpg</b>, <b>.tga</b>, <b>.png</b>) images may be loaded.\n To load correctly, images must be located in the data directory of the\n current sketch.<br />\n <br />\n In most cases, load all images in <b>setup()</b> to preload them at the\n start of the program. Loading images inside <b>draw()</b> will reduce the\n speed of a program. Images cannot be loaded outside <b>setup()</b> unless\n they're inside a function that's called after <b>setup()</b> has already\n run.<br />\n <br />\n Alternatively, the file maybe be loaded from anywhere on the local computer\n using an absolute path (something that starts with / on Unix and Linux, or\n a drive letter on Windows), or the filename parameter can be a URL for a\n file found on a network.<br />\n <br />\n If the file is not available or an error occurs, <b>null</b> will be\n returned and an error message will be printed to the console. The error\n message does not halt the program, however the null value may cause a\n NullPointerException if your code does not check whether the value returned\n is null.<br />\n <br />\n The <b>extension</b> parameter is used to determine the image type in cases\n where the image filename does not end with a proper extension. Specify the\n extension as the second parameter to <b>loadImage()</b>, as shown in the\n third example on this page. Note that CMYK images are not supported.<br />\n <br />\n Depending on the type of error, a <b>PImage</b> object may still be\n returned, but the width and height of the image will be set to -1. This\n happens if bad image data is returned or cannot be decoded properly.\n Sometimes this happens with image URLs that produce a 403 error or that\n redirect to a password prompt, because <b>loadImage()</b> will attempt to\n interpret the HTML as image data.",
+  "syntax": ["loadImage(filename)", "loadImage(filename, extension)"],
+  "returns": "PImage",
+  "type": "function",
+  "category": "image",
+  "subcategory": "loading_displaying",
+  "parameters": [
+    {
+      "name": "filename",
+      "description": "name of file to load, can be .gif, .jpg, .tga, or a handful of\n          other image types depending on your platform",
+      "type": ["String"]
+    },
+    {
+      "name": "extension",
+      "description": "type of image to load, for example \"png\", \"gif\", \"jpg\"",
+      "type": ["String"]
+    }
+  ]
+}

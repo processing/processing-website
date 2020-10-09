@@ -1,0 +1,33 @@
+{
+  "brief": "A box is an extruded rectangle.",
+  "related": ["sphere_"],
+  "name": "box()",
+  "description": "A box is an extruded rectangle. A box with equal dimension on all sides\n is a cube.",
+  "syntax": ["box(size)", "box(w, h, d)"],
+  "returns": "void",
+  "type": "function",
+  "category": "shape",
+  "subcategory": "3d_primitives",
+  "parameters": [
+    {
+      "name": "size",
+      "description": "dimension of the box in all dimensions (creates a cube)",
+      "type": ["float"]
+    },
+    {
+      "name": "w",
+      "description": "dimension of the box in the x-dimension",
+      "type": ["float"]
+    },
+    {
+      "name": "h",
+      "description": "dimension of the box in the y-dimension",
+      "type": ["float"]
+    },
+    {
+      "name": "d",
+      "description": "dimension of the box in the z-dimension",
+      "type": ["float"]
+    }
+  ]
+}

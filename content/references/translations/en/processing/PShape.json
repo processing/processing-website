@@ -1,0 +1,141 @@
+{
+  "brief": "Datatype for storing shapes.",
+  "constructors": ["PShape(g, kind, params)"],
+  "related": ["loadShape_", "createShape_", "shapeMode_"],
+  "methods": [
+    {
+      "anchor": "PShape_isVisible_",
+      "name": "isVisible()",
+      "desc": "Returns a boolean value \"true\" if the image is set to be visible,\n           \"false\" if not"
+    },
+    {
+      "anchor": "PShape_setVisible_",
+      "name": "setVisible()",
+      "desc": "Sets the shape to be visible or invisible"
+    },
+    {
+      "anchor": "PShape_disableStyle_",
+      "name": "disableStyle()",
+      "desc": "Disables the shape's style data and uses Processing styles"
+    },
+    {
+      "anchor": "PShape_enableStyle_",
+      "name": "enableStyle()",
+      "desc": "Enables the shape's style data and ignores the Processing styles"
+    },
+    {
+      "anchor": "PShape_beginContour_",
+      "name": "beginContour()",
+      "desc": "Starts a new contour"
+    },
+    {
+      "anchor": "PShape_endContour_",
+      "name": "endContour()",
+      "desc": "Ends a contour"
+    },
+    {
+      "anchor": "PShape_beginShape_",
+      "name": "beginShape()",
+      "desc": "Starts the creation of a new PShape"
+    },
+    {
+      "anchor": "PShape_endShape_",
+      "name": "endShape()",
+      "desc": "Finishes the creation of a new PShape"
+    },
+    {
+      "anchor": "PShape_getChildCount_",
+      "name": "getChildCount()",
+      "desc": "Returns the number of children"
+    },
+    {
+      "anchor": "PShape_getChild_",
+      "name": "getChild()",
+      "desc": "Returns a child element of a shape as a PShape object"
+    },
+    {
+      "anchor": "PShape_addChild_",
+      "name": "addChild()",
+      "desc": "Adds a new child"
+    },
+    {
+      "anchor": "PShape_getVertexCount_",
+      "name": "getVertexCount()",
+      "desc": "Returns the total number of vertices as an int"
+    },
+    {
+      "anchor": "PShape_getVertex_",
+      "name": "getVertex()",
+      "desc": "Returns the vertex at the index position"
+    },
+    {
+      "anchor": "PShape_setVertex_",
+      "name": "setVertex()",
+      "desc": "Sets the vertex at the index position"
+    },
+    {
+      "anchor": "PShape_setFill_",
+      "name": "setFill()",
+      "desc": "Set the fill value"
+    },
+    {
+      "anchor": "PShape_setStroke_",
+      "name": "setStroke()",
+      "desc": "Set the stroke value"
+    },
+    {
+      "anchor": "PShape_translate_",
+      "name": "translate()",
+      "desc": "Displaces the shape"
+    },
+    {
+      "anchor": "PShape_rotateX_",
+      "name": "rotateX()",
+      "desc": "Rotates the shape around the x-axis"
+    },
+    {
+      "anchor": "PShape_rotateY_",
+      "name": "rotateY()",
+      "desc": "Rotates the shape around the y-axis"
+    },
+    {
+      "anchor": "PShape_rotateZ_",
+      "name": "rotateZ()",
+      "desc": "Rotates the shape around the z-axis"
+    },
+    {
+      "anchor": "PShape_rotate_",
+      "name": "rotate()",
+      "desc": "Rotates the shape"
+    },
+    {
+      "anchor": "PShape_scale_",
+      "name": "scale()",
+      "desc": "Increases and decreases the size of a shape"
+    },
+    {
+      "anchor": "PShape_resetMatrix_",
+      "name": "resetMatrix()",
+      "desc": "Replaces the current matrix of a shape with the identity matrix"
+    }
+  ],
+  "name": "PShape",
+  "classFields": [
+    {
+      "anchor": "PShape_width",
+      "name": "width",
+      "desc": "Shape document width"
+    },
+    {
+      "anchor": "PShape_height",
+      "name": "height",
+      "desc": "Shape document height"
+    }
+  ],
+  "description": "Datatype for storing shapes. Before a shape is used, it must be loaded with\n the <b>loadShape()</b> or created with the <b>createShape()</b>. The\n <b>shape()</b> function is used to draw the shape to the display window.\n Processing can currently load and display SVG (Scalable Vector Graphics) and\n OBJ shapes. OBJ files can only be opened using the <b>P3D</b> renderer. The\n <b>loadShape()</b> function supports SVG files created with Inkscape and\n Adobe Illustrator. It is not a full SVG implementation, but offers some\n straightforward support for handling vector data. <br />\n <br />\n The <b>PShape</b> object contains a group of methods that can operate on the\n shape data. Some of the methods are listed below, but the full list used for\n creating and modifying shapes is\n <a href=\"http://processing.github.io/processing-javadocs/core/\">available\n here in the Processing Javadoc</a>.<br />\n <br />\n To create a new shape, use the <b>createShape()</b> function. Do not use the\n syntax <b>new PShape()</b>.\n\n ",
+  "type": "class",
+  "classanchor": "PShape",
+  "category": "shape",
+  "subcategory": "",
+  "parameters": []
+}

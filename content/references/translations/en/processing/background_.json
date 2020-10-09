@@ -1,0 +1,56 @@
+{
+  "brief": "Sets the color used for the background of the Processing window.",
+  "related": ["stroke_", "fill_", "tint_", "colorMode_"],
+  "name": "background()",
+  "description": "The <b>background()</b> function sets the color used for the background of\n the Processing window. The default background is light gray. This function is\n typically used within <b>draw()</b> to clear the display window at the\n beginning of each frame, but it can be used inside <b>setup()</b> to set the\n background on the first frame of animation or if the backgound need only be\n set once. <br />\n <br />\n An image can also be used as the background for a sketch, although the\n image's width and height must match that of the sketch window. Images used\n with <b>background()</b> will ignore the current <b>tint()</b> setting. To\n resize an image to the size of the sketch window, use image.resize(width,\n height). <br />\n <br />\n It is not possible to use the transparency <b>alpha</b> parameter with\n background colors on the main drawing surface. It can only be used along with\n a <b>PGraphics</b> object and <b>createGraphics()</b>.\n\n\n ",
+  "syntax": [
+    "background(rgb)",
+    "background(rgb, alpha)",
+    "background(gray)",
+    "background(gray, alpha)",
+    "background(v1, v2, v3)",
+    "background(v1, v2, v3, alpha)",
+    "background(image)"
+  ],
+  "returns": "void",
+  "type": "function",
+  "category": "color",
+  "subcategory": "setting",
+  "parameters": [
+    {
+      "name": "rgb",
+      "description": "any value of the color datatype",
+      "type": ["int"]
+    },
+    {
+      "name": "alpha",
+      "description": "opacity of the background",
+      "type": ["float"]
+    },
+    {
+      "name": "gray",
+      "description": "specifies a value between white and black",
+      "type": ["float"]
+    },
+    {
+      "name": "v1",
+      "description": "red or hue value (depending on the current color mode)",
+      "type": ["float"]
+    },
+    {
+      "name": "v2",
+      "description": "green or saturation value (depending on the current color mode)",
+      "type": ["float"]
+    },
+    {
+      "name": "v3",
+      "description": "blue or brightness value (depending on the current color mode)",
+      "type": ["float"]
+    },
+    {
+      "name": "image",
+      "description": "PImage to set as background (must be same size as the sketch window)",
+      "type": ["PImage"]
+    }
+  ]
+}

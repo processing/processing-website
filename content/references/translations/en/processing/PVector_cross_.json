@@ -1,0 +1,44 @@
+{
+  "brief": "Calculate and return the cross product",
+  "related": [],
+  "name": "cross()",
+  "description": "Calculates and returns a vector composed of the cross product between\n two vectors.",
+  "syntax": [".cross(v)", ".cross(v, target)", ".cross(v1, v2, target)"],
+  "returns": "PVector",
+  "type": "method",
+  "category": "pvector",
+  "subcategory": "method",
+  "classanchor": "PVector",
+  "parameters": [
+    {
+      "name": "v",
+      "description": "the vector to calculate the cross product",
+      "type": ["PVector"]
+    },
+    {
+      "name": "v",
+      "description": "any variable of type PVector",
+      "type": ["PVector"]
+    },
+    {
+      "name": "target",
+      "description": "PVector to store the result",
+      "type": ["PVector"]
+    },
+    {
+      "name": "v1",
+      "description": "any variable of type PVector",
+      "type": ["PVector"]
+    },
+    {
+      "name": "v2",
+      "description": "any variable of type PVector",
+      "type": ["PVector"]
+    },
+    {
+      "name": "target",
+      "description": "PVector to store the result",
+      "type": ["PVector"]
+    }
+  ]
+}

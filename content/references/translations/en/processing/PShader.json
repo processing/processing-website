@@ -1,0 +1,54 @@
+{
+  "brief": "This class encapsulates a GLSL shader program, including a vertex\n           and a fragment shader.",
+  "methods": [
+    {
+      "anchor": "PShader_set_",
+      "name": "set()",
+      "desc": "Sets a variable within the shader"
+    }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "This class encapsulates a GLSL shader program, including a vertex and a\n fragment shader. It's compatible with the P2D and P3D renderers, but not with\n the default renderer. Use the <b>loadShader()</b> function to load your\n shader code. [Note: It's strongly encouraged to use <b>loadShader()</b> to\n create a PShader object, rather than calling the PShader constructor\n manually.]",
+  "type": "class",
+  "constructors": [
+    "PShader(",
+    "PShader(parent)",
+    "PShader(parent, vertFilename, fragFilename)",
+    "PShader(parent, vertURL, fragURL)",
+    "PShader(parent, vertSource, fragSource)"
+  ],
+  "related": [],
+  "name": "PShader",
+  "classanchor": "PShader",
+  "category": "rendering",
+  "subcategory": "shaders",
+  "parameters": [
+    {
+      "name": "parent",
+      "description": "the parent program",
+      "type": ["PApplet"]
+    },
+    {
+      "name": "vertFilename",
+      "description": "name of the vertex shader",
+      "type": ["String"]
+    },
+    {
+      "name": "fragFilename",
+      "description": "name of the fragment shader",
+      "type": ["String"]
+    },
+    {
+      "name": "vertURL",
+      "description": "network location of the vertex shader",
+      "type": ["URL"]
+    },
+    {
+      "name": "fragURL",
+      "description": "network location of the fragment shader",
+      "type": ["URL"]
+    }
+  ]
+}

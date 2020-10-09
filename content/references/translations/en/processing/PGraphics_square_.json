@@ -1,0 +1,34 @@
+{
+  "brief": "Draws a square to the screen.",
+  "related": ["PGraphics_rect_", "PGraphics_rectMode_"],
+  "name": "square()",
+  "description": "Draws a square to the screen. A square is a four-sided shape with\n every angle at ninety degrees and each side is the same length.\n By default, the first two parameters set the location of the\n upper-left corner, the third sets the width and height. The way\n these parameters are interpreted, however, may be changed with the\n <b>rectMode()</b> function.",
+  "syntax": ["graphics.square(x, y, extent)"],
+  "returns": "void",
+  "type": "method",
+  "category": "shape",
+  "subcategory": "2d_primitives",
+  "classanchor": "PGraphics",
+  "parameters": [
+    {
+      "name": "graphics",
+      "description": " any object of the type PGraphics",
+      "type": ["PGraphics"]
+    },
+    {
+      "name": "x",
+      "description": "x-coordinate of the rectangle by default",
+      "type": ["float"]
+    },
+    {
+      "name": "y",
+      "description": "y-coordinate of the rectangle by default",
+      "type": ["float"]
+    },
+    {
+      "name": "extent",
+      "description": "width and height of the rectangle by default",
+      "type": ["float"]
+    }
+  ]
+}

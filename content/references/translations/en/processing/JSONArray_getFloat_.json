@@ -1,0 +1,23 @@
+{
+  "brief": "Gets the float value associated with the specified index.",
+  "related": [
+    "JSONArray_getInt_",
+    "JSONArray_getString_",
+    "JSONArray_getBoolean_"
+  ],
+  "name": "getFloat()",
+  "description": "Gets the float value associated with the specified index.",
+  "syntax": [".getFloat(index)", ".getFloat(index, defaultValue)"],
+  "returns": "float",
+  "type": "method",
+  "category": "jsonarray",
+  "subcategory": "method",
+  "classanchor": "JSONArray",
+  "parameters": [
+    {
+      "name": "index",
+      "description": "must be between 0 and length() - 1",
+      "type": ["int"]
+    }
+  ]
+}

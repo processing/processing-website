@@ -1,0 +1,20 @@
+{
+  "brief": "Constrains a value to not exceed a maximum and minimum value.",
+  "related": ["max_", "min_"],
+  "name": "constrain()",
+  "description": "Constrains a value to not exceed a maximum and minimum value.",
+  "syntax": ["constrain(amt, low, high)"],
+  "returns": "float or int",
+  "type": "function",
+  "category": "math",
+  "subcategory": "calculation",
+  "parameters": [
+    {
+      "name": "amt",
+      "description": "the value to constrain",
+      "type": ["float", "int"]
+    },
+    { "name": "low", "description": "minimum limit", "type": ["float", "int"] },
+    { "name": "high", "description": "maximum limit", "type": ["float", "int"] }
+  ]
+}

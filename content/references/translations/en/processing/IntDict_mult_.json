@@ -1,0 +1,13 @@
+{
+  "brief": "Multiply a value",
+  "related": [],
+  "name": "mult()",
+  "description": "Multiply a value.",
+  "syntax": [".mult(key, amount)"],
+  "returns": "void",
+  "type": "method",
+  "category": "intdict",
+  "subcategory": "method",
+  "classanchor": "IntDict",
+  "parameters": []
+}

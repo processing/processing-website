@@ -1,0 +1,18 @@
+{
+  "brief": "Converts a String representation of a binary number to its\n           equivalent integer value.",
+  "related": ["binary_", "hex_", "unhex_"],
+  "name": "unbinary()",
+  "description": "Converts a <b>String</b> representation of a binary number to its equivalent\n integer value. For example, <b>unbinary(\"00001000\")</b> will return\n <b>8</b>.",
+  "syntax": ["unbinary(value)"],
+  "returns": "int",
+  "type": "function",
+  "category": "data",
+  "subcategory": "conversion",
+  "parameters": [
+    {
+      "name": "value",
+      "description": "String to convert to an integer",
+      "type": ["String"]
+    }
+  ]
+}

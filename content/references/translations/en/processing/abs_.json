@@ -1,0 +1,18 @@
+{
+  "brief": "Calculates the absolute value (magnitude) of a number.",
+  "related": [],
+  "name": "abs()",
+  "description": "Calculates the absolute value (magnitude) of a number. The absolute\n value of a number is always positive.",
+  "syntax": ["abs(n)"],
+  "returns": "float or int",
+  "type": "function",
+  "category": "math",
+  "subcategory": "calculation",
+  "parameters": [
+    {
+      "name": "n",
+      "description": "number to compute",
+      "type": ["float", "int"]
+    }
+  ]
+}

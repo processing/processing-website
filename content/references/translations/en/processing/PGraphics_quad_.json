@@ -1,0 +1,59 @@
+{
+  "brief": "A quad is a quadrilateral, a four sided polygon.",
+  "related": [],
+  "name": "quad()",
+  "description": "A quad is a quadrilateral, a four sided polygon. It is similar to a\n rectangle, but the angles between its edges are not constrained to\n ninety degrees. The first pair of parameters (x1,y1) sets the first\n vertex and the subsequent pairs should proceed clockwise or\n counter-clockwise around the defined shape.",
+  "syntax": ["graphics.quad(x1, y1, x2, y2, x3, y3, x4, y4)"],
+  "returns": "void",
+  "type": "method",
+  "category": "shape",
+  "subcategory": "2d_primitives",
+  "classanchor": "PGraphics",
+  "parameters": [
+    {
+      "name": "graphics",
+      "description": " any object of the type PGraphics",
+      "type": ["PGraphics"]
+    },
+    {
+      "name": "x1",
+      "description": "x-coordinate of the first corner",
+      "type": ["float"]
+    },
+    {
+      "name": "y1",
+      "description": "y-coordinate of the first corner",
+      "type": ["float"]
+    },
+    {
+      "name": "x2",
+      "description": "x-coordinate of the second corner",
+      "type": ["float"]
+    },
+    {
+      "name": "y2",
+      "description": "y-coordinate of the second corner",
+      "type": ["float"]
+    },
+    {
+      "name": "x3",
+      "description": "x-coordinate of the third corner",
+      "type": ["float"]
+    },
+    {
+      "name": "y3",
+      "description": "y-coordinate of the third corner",
+      "type": ["float"]
+    },
+    {
+      "name": "x4",
+      "description": "x-coordinate of the fourth corner",
+      "type": ["float"]
+    },
+    {
+      "name": "y4",
+      "description": "y-coordinate of the fourth corner",
+      "type": ["float"]
+    }
+  ]
+}

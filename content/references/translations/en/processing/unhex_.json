@@ -1,0 +1,18 @@
+{
+  "brief": "Converts a String representation of a hexadecimal number to its\n           equivalent integer value.",
+  "related": ["hex_", "binary_", "unbinary_"],
+  "name": "unhex()",
+  "description": "Converts a <b>String</b> representation of a hexadecimal number to its\n equivalent integer value.",
+  "syntax": ["unhex(value)"],
+  "returns": "int",
+  "type": "function",
+  "category": "data",
+  "subcategory": "conversion",
+  "parameters": [
+    {
+      "name": "value",
+      "description": "String to convert to an integer",
+      "type": ["String"]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "brief": "Rotates a shape around the z-axis the amount specified by the\n <b>angle</b> parameter.",
+  "related": [
+    "popMatrix_",
+    "pushMatrix_",
+    "rotate_",
+    "rotateX_",
+    "rotateY_",
+    "scale_",
+    "translate_"
+  ],
+  "name": "rotateZ()",
+  "description": "Rotates a shape around the z-axis the amount specified by the\n <b>angle</b> parameter. Angles should be specified in radians (values\n from 0 to PI*2) or converted to radians with the <b>radians()</b>\n function. Objects are always rotated around their relative position to\n the origin and positive numbers rotate objects in a counterclockwise\n direction. Transformations apply to everything that happens after and\n subsequent calls to the function accumulates the effect. For example,\n calling <b>rotateZ(PI/2)</b> and then <b>rotateZ(PI/2)</b> is the same\n as <b>rotateZ(PI)</b>. If <b>rotateZ()</b> is called within the\n <b>draw()</b>, the transformation is reset when the loop begins again.\n This function requires using P3D as a third parameter to <b>size()</b>\n as shown in the examples above.",
+  "syntax": ["rotateZ(angle)"],
+  "returns": "void",
+  "type": "function",
+  "category": "transform",
+  "subcategory": "",
+  "parameters": [
+    {
+      "name": "angle",
+      "description": "angle of rotation specified in radians",
+      "type": ["float"]
+    }
+  ]
+}

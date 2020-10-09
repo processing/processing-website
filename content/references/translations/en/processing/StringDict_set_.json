@@ -1,0 +1,13 @@
+{
+  "brief": "Create a new key/value pair or change the value of one",
+  "related": [],
+  "name": "set()",
+  "description": "Create a new key/value pair or change the value of one",
+  "syntax": [".set(key, value)"],
+  "returns": "void",
+  "type": "method",
+  "category": "stringdict",
+  "subcategory": "method",
+  "classanchor": "StringDict",
+  "parameters": []
+}

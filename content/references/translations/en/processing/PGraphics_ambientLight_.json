@@ -1,0 +1,57 @@
+{
+  "brief": "Adds an ambient light.",
+  "related": [
+    "PGraphics_lights_",
+    "PGraphics_directionalLight_",
+    "PGraphics_pointLight_",
+    "PGraphics_spotLight_"
+  ],
+  "name": "ambientLight()",
+  "description": "Adds an ambient light. Ambient light doesn't come from a specific direction,\n the rays of light have bounced around so much that objects are evenly lit\n from all sides. Ambient lights are almost always used in combination with\n other types of lights. Lights need to be included in the <b>draw()</b> to\n remain persistent in a looping program. Placing them in the <b>setup()</b> of\n a looping program will cause them to only have an effect the first time\n through the loop. The <b>v1</b>, <b>v2</b>, and <b>v3</b> parameters are\n interpreted as either RGB or HSB values, depending on the current color mode.",
+  "syntax": [
+    "graphics.ambientLight(v1, v2, v3)",
+    "graphics.ambientLight(v1, v2, v3, x, y, z)"
+  ],
+  "returns": "void",
+  "type": "method",
+  "category": "lights_camera",
+  "subcategory": "lights",
+  "classanchor": "PGraphics",
+  "parameters": [
+    {
+      "name": "graphics",
+      "description": " any object of the type PGraphics",
+      "type": ["PGraphics"]
+    },
+    {
+      "name": "v1",
+      "description": "red or hue value (depending on current color mode)",
+      "type": ["float"]
+    },
+    {
+      "name": "v2",
+      "description": "green or saturation value (depending on current color mode)",
+      "type": ["float"]
+    },
+    {
+      "name": "v3",
+      "description": "blue or brightness value (depending on current color mode)",
+      "type": ["float"]
+    },
+    {
+      "name": "x",
+      "description": "x-coordinate of the light",
+      "type": ["float"]
+    },
+    {
+      "name": "y",
+      "description": "y-coordinate of the light",
+      "type": ["float"]
+    },
+    {
+      "name": "z",
+      "description": "z-coordinate of the light",
+      "type": ["float"]
+    }
+  ]
+}

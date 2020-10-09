@@ -1,0 +1,24 @@
+{
+  "brief": "Make a new 2D unit vector from an angle",
+  "related": [],
+  "name": "fromAngle()",
+  "description": "Calculates and returns a new 2D unit vector from the specified angle value\n (in radians).",
+  "syntax": [".fromAngle(angle)", ".fromAngle(angle, target)"],
+  "returns": "PVector",
+  "type": "method",
+  "category": "pvector",
+  "subcategory": "method",
+  "classanchor": "PVector",
+  "parameters": [
+    {
+      "name": "angle",
+      "description": "the angle in radians",
+      "type": ["float"]
+    },
+    {
+      "name": "target",
+      "description": "the target vector (if null, a new vector will be created)",
+      "type": ["PVector"]
+    }
+  ]
+}

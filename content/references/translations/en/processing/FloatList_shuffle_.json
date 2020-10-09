@@ -1,0 +1,13 @@
+{
+  "brief": "Randomize the order of the list elements",
+  "related": [],
+  "name": "shuffle()",
+  "description": "Randomize the order of the list elements.",
+  "syntax": [".shuffle()", ".shuffle(sketch)"],
+  "returns": "void",
+  "type": "method",
+  "category": "floatlist",
+  "subcategory": "method",
+  "classanchor": "FloatList",
+  "parameters": []
+}

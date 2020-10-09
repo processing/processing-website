@@ -1,0 +1,97 @@
+{
+  "brief": "Multiplies the current matrix by the one specified through the\n parameters.",
+  "related": ["pushMatrix_", "popMatrix_", "resetMatrix_", "printMatrix_"],
+  "name": "applyMatrix()",
+  "description": "Multiplies the current matrix by the one specified through the\n parameters. This is very slow because it will try to calculate the\n inverse of the transform, so avoid it whenever possible. The equivalent\n function in OpenGL is glMultMatrix().",
+  "syntax": [
+    "applyMatrix(source)",
+    "applyMatrix(n00, n01, n02, n10, n11, n12)",
+    "applyMatrix(n00, n01, n02, n03, n10, n11, n12, n13, n20, n21, n22, n23, n30, n31, n32, n33)"
+  ],
+  "returns": "void",
+  "type": "function",
+  "category": "transform",
+  "subcategory": "",
+  "parameters": [
+    {
+      "name": "n00",
+      "description": "numbers which define the 4x4 matrix to be multiplied",
+      "type": ["float"]
+    },
+    {
+      "name": "n01",
+      "description": "numbers which define the 4x4 matrix to be multiplied",
+      "type": ["float"]
+    },
+    {
+      "name": "n02",
+      "description": "numbers which define the 4x4 matrix to be multiplied",
+      "type": ["float"]
+    },
+    {
+      "name": "n10",
+      "description": "numbers which define the 4x4 matrix to be multiplied",
+      "type": ["float"]
+    },
+    {
+      "name": "n11",
+      "description": "numbers which define the 4x4 matrix to be multiplied",
+      "type": ["float"]
+    },
+    {
+      "name": "n12",
+      "description": "numbers which define the 4x4 matrix to be multiplied",
+      "type": ["float"]
+    },
+    {
+      "name": "n03",
+      "description": "numbers which define the 4x4 matrix to be multiplied",
+      "type": ["float"]
+    },
+    {
+      "name": "n13",
+      "description": "numbers which define the 4x4 matrix to be multiplied",
+      "type": ["float"]
+    },
+    {
+      "name": "n20",
+      "description": "numbers which define the 4x4 matrix to be multiplied",
+      "type": ["float"]
+    },
+    {
+      "name": "n21",
+      "description": "numbers which define the 4x4 matrix to be multiplied",
+      "type": ["float"]
+    },
+    {
+      "name": "n22",
+      "description": "numbers which define the 4x4 matrix to be multiplied",
+      "type": ["float"]
+    },
+    {
+      "name": "n23",
+      "description": "numbers which define the 4x4 matrix to be multiplied",
+      "type": ["float"]
+    },
+    {
+      "name": "n30",
+      "description": "numbers which define the 4x4 matrix to be multiplied",
+      "type": ["float"]
+    },
+    {
+      "name": "n31",
+      "description": "numbers which define the 4x4 matrix to be multiplied",
+      "type": ["float"]
+    },
+    {
+      "name": "n32",
+      "description": "numbers which define the 4x4 matrix to be multiplied",
+      "type": ["float"]
+    },
+    {
+      "name": "n33",
+      "description": "numbers which define the 4x4 matrix to be multiplied",
+      "type": ["float"]
+    }
+  ]
+}

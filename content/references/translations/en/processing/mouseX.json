@@ -1,0 +1,22 @@
+{
+  "brief": "The system variable that always contains the current horizontal coordinate of the mouse.",
+  "related": [
+    "mouseY",
+    "pmouseX",
+    "pmouseY",
+    "mousePressed",
+    "mousePressed_",
+    "mouseReleased_",
+    "mouseClicked_",
+    "mouseMoved_",
+    "mouseDragged_",
+    "mouseButton",
+    "mouseWheel_"
+  ],
+  "classname": "",
+  "name": "mouseX",
+  "description": "The system variable <b>mouseX</b> always contains the current horizontal\n coordinate of the mouse.\n <br /><br />\n Note that Processing can only track the mouse position when the pointer\n is over the current window. The default value of <b>mouseX</b> is <b>0</b>,\n so <b>0</b> will be returned until the mouse moves in front of the sketch\n window. (This typically happens when a sketch is first run.)  Once the\n mouse moves away from the window, <b>mouseX</b> will continue to report\n its most recent position.",
+  "type": "field",
+  "category": "input",
+  "subcategory": "mouse"
+}

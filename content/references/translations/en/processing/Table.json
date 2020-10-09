@@ -1,0 +1,137 @@
+{
+  "brief": "Generic class for handling tabular data, typically from a CSV, TSV,\n           or other sort of spreadsheet file.",
+  "methods": [
+    {
+      "anchor": "Table_addColumn_",
+      "name": "addColumn()",
+      "desc": "Adds a new column to a table"
+    },
+    {
+      "anchor": "Table_removeColumn_",
+      "name": "removeColumn()",
+      "desc": "Removes a column from a table"
+    },
+    {
+      "anchor": "Table_getColumnCount_",
+      "name": "getColumnCount()",
+      "desc": "Returns the total number of columns in a table"
+    },
+    {
+      "anchor": "Table_getRowCount_",
+      "name": "getRowCount()",
+      "desc": "Returns the total number of rows in a table"
+    },
+    {
+      "anchor": "Table_clearRows_",
+      "name": "clearRows()",
+      "desc": "Removes all rows from a <b>Table</b>"
+    },
+    {
+      "anchor": "Table_addRow_",
+      "name": "addRow()",
+      "desc": "Adds a new row of data to a <b>Table</b> object"
+    },
+    {
+      "anchor": "Table_removeRow_",
+      "name": "removeRow()",
+      "desc": "Removes a row from a <b>Table</b> object"
+    },
+    {
+      "anchor": "Table_getRow_",
+      "name": "getRow()",
+      "desc": "Returns a reference to the specified <b>TableRow</b>"
+    },
+    {
+      "anchor": "Table_rows_",
+      "name": "rows()",
+      "desc": "Gets all rows from the table"
+    },
+    {
+      "anchor": "Table_getInt_",
+      "name": "getInt()",
+      "desc": "Retrieves an integer value from the <b>Table</b>'s specified row and column"
+    },
+    {
+      "anchor": "Table_setInt_",
+      "name": "setInt()",
+      "desc": "Stores an integer value in the <b>Table</b>'s specified row and column"
+    },
+    {
+      "anchor": "Table_getFloat_",
+      "name": "getFloat()",
+      "desc": "Retrieves a float value from the <b>Table</b>'s specified row and column"
+    },
+    {
+      "anchor": "Table_setFloat_",
+      "name": "setFloat()",
+      "desc": "Stores a float value in the <b>Table</b>'s specified row and column"
+    },
+    {
+      "anchor": "Table_getString_",
+      "name": "getString()",
+      "desc": "Retrieves a String value from the <b>Table</b>'s specified row and column"
+    },
+    {
+      "anchor": "Table_setString_",
+      "name": "setString()",
+      "desc": "Stores a String value in the <b>Table</b>'s specified row and column"
+    },
+    {
+      "anchor": "Table_getStringColumn_",
+      "name": "getStringColumn()",
+      "desc": "Retrieves all values in the specified column"
+    },
+    {
+      "anchor": "Table_findRow_",
+      "name": "findRow()",
+      "desc": "Finds a row that contains the given value"
+    },
+    {
+      "anchor": "Table_findRows_",
+      "name": "findRows()",
+      "desc": "Finds multiple rows that contain the given value"
+    },
+    {
+      "anchor": "Table_matchRow_",
+      "name": "matchRow()",
+      "desc": "Finds a row that matches the given expression"
+    },
+    {
+      "anchor": "Table_matchRows_",
+      "name": "matchRows()",
+      "desc": "Finds multiple rows that match the given expression"
+    },
+    {
+      "anchor": "Table_matchRowIterator_",
+      "name": "matchRowIterator()",
+      "desc": "Finds multiple rows that match the given expression"
+    },
+    {
+      "anchor": "Table_removeTokens_",
+      "name": "removeTokens()",
+      "desc": "Removes characters from the table"
+    },
+    {
+      "anchor": "Table_trim_",
+      "name": "trim()",
+      "desc": "Trims whitespace from values"
+    },
+    {
+      "anchor": "Table_sort_",
+      "name": "sort()",
+      "desc": "Orders a table based on the values in a column"
+    }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "<b>Table</b> objects store data with multiple rows and columns, much like in\n a traditional spreadsheet. Tables can be generated from scratch, dynamically,\n or using data from an existing file. Tables can also be output and saved to\n disk, as in the example above.<br />\n <br />\n Additional <b>Table</b> methods are documented in the <a href=\n \"http://processing.github.io/processing-javadocs/core/processing/data/Table.html\">Processing\n Table Javadoc</a>.\n \n <p>\n Generic class for handling tabular data, typically from a CSV, TSV, or other\n sort of spreadsheet file.\n </p>\n <p>\n CSV files are\n <a href=\"http://en.wikipedia.org/wiki/Comma-separated_values\">comma separated\n values</a>, often with the data in quotes. TSV files use tabs as separators,\n and usually don't bother with the quotes.\n </p>\n <p>\n File names should end with .csv if they're comma separated.\n </p>\n <p>\n A rough \"spec\" for CSV can be found\n <a href=\"http://tools.ietf.org/html/rfc4180\">here</a>.\n </p>",
+  "type": "class",
+  "constructors": ["Table(", "Table(rows)"],
+  "related": ["loadTable_", "saveTable_", "TableRow"],
+  "name": "Table",
+  "classanchor": "Table",
+  "category": "data",
+  "subcategory": "composite",
+  "parameters": []
+}
