@@ -1,0 +1,5 @@
+.root {
+  margin-bottom: var(--vertical-gutter);
+  padding: var(--gutter-double);
+  background-color: var(--lightgray);
+}

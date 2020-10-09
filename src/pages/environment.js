@@ -4,24 +4,23 @@ import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Layout from '../components/Layout';
+import TableOfContents from '../components/TableOfContents';
 
 import css from '../styles/pages/page.module.css';
 import grid from '../styles/grid.module.css';
 
 const Environment = ({ data }) => {
   const { mdx } = data;
-  const { frontmatter, body } = mdx;
+  console.log(data);
+  const { frontmatter, body, tableOfContents } = mdx;
   return (
     <Layout>
       <div className={grid.grid}>
-        <h1 className={classnames(grid.col5, grid.pull3)}>
+        <TableOfContents items={tableOfContents.items} />
+        <h1 className={classnames(grid.push2, grid.col5, grid.pull1)}>
           {frontmatter.title}
         </h1>
-        <h3 className={grid.col3}>
-          A short introduction to the Processing software and projects from the
-          community.
-        </h3>
-        <div className={classnames(grid.col5, grid.push1, css.content)}>
+        <div className={classnames(grid.col5, grid.push2, css.content)}>
           <MDXRenderer>{body}</MDXRenderer>
         </div>
       </div>
@@ -40,6 +39,7 @@ export const query = graphql`
         slug
         title
       }
+      tableOfContents
     }
   }
 `;

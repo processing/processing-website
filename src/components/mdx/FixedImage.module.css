@@ -1,0 +1,14 @@
+.root {
+  & picture {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  & figure {
+    margin: 0;
+  }
+
+  & figcaption {
+    font-size: var(--text-xsmall);
+  }
+}
