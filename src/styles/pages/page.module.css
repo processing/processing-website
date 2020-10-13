@@ -1,7 +1,19 @@
+.title {
+  margin-bottom: 0;
+}
+
+.author {
+  margin-bottom: 1rem;
+  font-size: var(--text-large);
+  font-weight: 700;
+  color: var(--processing-blue-dark);
+}
+
 .content {
   margin-bottom: var(--vertical-gutter);
 
   & h2 {
+    font-size: var(--text-large);
     margin-top: var(--vertical-gutter);
     margin-bottom: 1rem;
   }
@@ -12,7 +24,11 @@
 
   & ul {
     padding-bottom: 20px;
+    font-family: "Vollkorn", serif;
+    font-size: var(--text-medium);
+    line-height: 1.6em;
     & li {
+      font-family: inherit;
       margin-bottom: 10px;
       padding-left: 10px;
     }
@@ -82,8 +98,4 @@
       width: calc(var(--column-width) * 3.5 - var(--gutter) * 2);
     }
   }
-}
-
-.gatsby-resp-image-wrapper {
-  margin-left: 0px;
 }

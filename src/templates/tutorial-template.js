@@ -1,29 +1,54 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
+import classnames from 'classnames';
 
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Layout from '../components/Layout';
-import Contentbar from '../components/Contentbar';
+import TableOfContents from '../components/TableOfContents';
+
+import css from '../styles/pages/page.module.css';
+import grid from '../styles/grid.module.css';
 
 const TutorialTemplate = ({ data, pageContext }) => {
   const { mdx } = data;
+  const { frontmatter, body, tableOfContents } = mdx;
+  console.log(mdx);
 
   return (
     <Layout>
-      <Contentbar content={mdx.tableOfContents.items} />
-      {mdx !== null ? (
-        <div style={{ marginLeft: '350px' }}>
-          <h1>{mdx.frontmatter.title}</h1>
-          <MDXRenderer>{mdx.body}</MDXRenderer>
-        </div>
-      ) : (
-        <div>
-          This page is not translated, please refer to the
-          <Link to={pageContext.slug}> english page</Link>
-        </div>
-      )}
+      <div className={grid.grid}>
+        {mdx !== null ? (
+          <Fragment>
+            <TableOfContents items={tableOfContents.items} />
+            <h1
+              className={classnames(
+                grid.push2,
+                grid.col5,
+                grid.pull1,
+                css.title
+              )}>
+              {frontmatter.title}
+            </h1>
+            <span
+              className={classnames(
+                grid.push2,
+                grid.col5,
+                grid.pull1,
+                css.author
+              )}>{`By ${frontmatter.author}`}</span>
+            <div className={classnames(grid.col5, grid.push2, css.content)}>
+              <MDXRenderer>{body}</MDXRenderer>
+            </div>
+          </Fragment>
+        ) : (
+          <div>
+            This page is not translated, please refer to the
+            <Link to={pageContext.slug}> english page</Link>
+          </div>
+        )}
+      </div>
     </Layout>
   );
 };
@@ -39,8 +64,11 @@ export const query = graphql`
       body
       frontmatter {
         title
+        slug
+        author
+        level
       }
-      tableOfContents(maxDepth: 10)
+      tableOfContents
     }
   }
 `;
