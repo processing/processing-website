@@ -74,7 +74,7 @@ const Navbar = ({ siteTitle, ref }) => {
           </li>
         ))}
       </ul>
-      <SearchBarSmall className={grid.pushHalf} />
+      <SearchBarSmall />
     </div>
   );
 };
