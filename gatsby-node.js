@@ -216,13 +216,14 @@ async function createTutorials(actions, graphql) {
   const tutorialPages = tutorialResult.data.allFile.nodes;
 
   tutorialPages.forEach((tutorialPage, index) => {
-    createPage({
-      path: tutorialPage.childMdx.frontmatter.slug,
-      component: tutorialTemplate,
-      context: {
-        slug: tutorialPage.childMdx.frontmatter.slug,
-      },
-    });
+    tutorialPage.childMdx &&
+      createPage({
+        path: tutorialPage.childMdx.frontmatter.slug,
+        component: tutorialTemplate,
+        context: {
+          slug: tutorialPage.childMdx.frontmatter.slug,
+        },
+      });
   });
 }
 

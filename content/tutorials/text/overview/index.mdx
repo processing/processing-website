@@ -8,7 +8,7 @@ level: 'Beginner'
 
 <Note>
 
-This tutorial is adapted from the book, [Visualizing Data](http://www.processing.org/learning/books/#fry) by Ben Fry, O'Reilly 2007. &copy; 2007 Ben Fry. If you see any errors or have comments, please [let us know](https://github.com/processing/processing-docs/issues?state=open)
+This tutorial is adapted from the book, [Visualizing Data](http://www.processing.org/learning/books/#fry) by Ben Fry, O'Reilly 2007. &copy; 2007 Ben Fry. If you see any errors or have comments, please [let us know](https://github.com/processing/processing-docs/issues?state=open).
 
 </Note>
 
@@ -51,7 +51,7 @@ Processing consists of:
 
 For this reason, references to &ldquo;Processing&rdquo; can be somewhat
 ambiguous. Are we talking about the API, the development environment, or the
-web site? We'll be careful in this text when referring to each
+web site? We'll be careful in this text when referring to each.
 
 ## Sketching with Processing
 
@@ -80,24 +80,28 @@ window. Building on this program to change the size of the display window and
 set the background color, type in the code below:
 
 ```
-size(400, 400); background(192, 64, 0); stroke(255); line(150, 25, 270, 350);
+size(400, 400);
+background(192, 64, 0);
+stroke(255);
+line(150, 25, 270, 350);
 ```
 
 This version sets the window size to 400 x 400 pixels, sets the background to
-an orange-red, and draws the line in white, by setting the stroke color to 255. By default, colors are specified in the range 0 to 255. Other variations of the parameters to the `stroke()` function provide alternate results
+an orange-red, and draws the line in white, by setting the stroke color to 255. By default, colors are specified in the range 0 to 255. Other variations of the parameters to the `stroke()` function provide alternate results.
 
 ```
-stroke(255); // sets the stroke color to white stroke(255, 255, 255); //
-identical to the line above stroke(255, 128, 0); // bright orange (red 255,
-green 128, blue 0) stroke(#FF8000); // bright orange as a web color
-stroke(255, 128, 0, 128); // bright orange with 50% transparency
+stroke(255);                // sets the stroke color to white
+stroke(255, 255, 255);      // identical to the line above
+stroke(255, 128, 0);        // bright orange (red 255,green 128, blue 0)
+stroke(#FF8000);            // bright orange as a web color
+stroke(255, 128, 0, 128);   // bright orange with 50% transparency
 ```
 
 The same alternatives work for the `fill()` function, which sets the
 fill color, and the `background()` function, which clears the display
 window. Like all Processing functions that affect drawing properties, the fill
 and stroke colors affect all geometry drawn to the screen until the next fill
-and stroke functions
+and stroke functions.
 
 ## Hello mouse
 
@@ -105,13 +109,13 @@ A program written as a list of statements (like the previous examples) is called
 
 ```
 void setup() {
-size(400, 400);
-stroke(255);
-background(192, 64, 0);
+  size(400, 400);
+  stroke(255);
+  background(192, 64, 0);
 }
 
 void draw() {
-line(150, 25, mouseX, mouseY);
+  line(150, 25, mouseX, mouseY);
 }
 ```
 
@@ -121,13 +125,13 @@ Because the `background()` function is used only once, the screen will fill with
 
 ```
 void setup() {
-size(400, 400);
-stroke(255);
+  size(400, 400);
+  stroke(255);
 }
 
 void draw() {
-background(192, 64, 0);
-line(150, 25, mouseX, mouseY);
+  background(192, 64, 0);
+  line(150, 25, mouseX, mouseY);
 }
 ```
 
@@ -137,16 +141,16 @@ Most programs will use the `setup()` and `draw()` blocks. More advanced mouse ha
 
 ```
 void setup() {
-size(400, 400);
-stroke(255);
+  size(400, 400);
+  stroke(255);
 }
 
 void draw() {
-line(150, 25, mouseX, mouseY);
+  line(150, 25, mouseX, mouseY);
 }
 
 void mousePressed() {
-background(192, 64, 0);
+  background(192, 64, 0);
 }
 ```
 
@@ -160,11 +164,11 @@ More about the export features can be found in the reference at [http://processi
 
 If you don't want to distribute the actual project, you might want to create images of its output instead. Images are saved with the `saveFrame()` function. Adding `saveFrame()` at the end of `draw()` will produce a numbered sequence of TIFF-format images of the program's output, named _screen-0001.tif_, _screen-0002.tif_, and so on. A new file will be saved each time `draw()` runs &mdash; watch out, this can quickly fill your sketch folder with hundreds of files. You can also specify your own name and file type for the file to be saved with a function like:
 
-`saveFrame(&quot;output.png&quot;)`
+`saveFrame("output.png")`
 
 To do the same for a numbered sequence, use # (hash marks) where the numbers should be placed:
 
-`saveFrame(&quot;output-####.png&quot;);`
+`saveFrame("output-####.png");`
 
 For high quality output, you can write geometry to PDF files instead of the screen, as described in the later section about the `size()` function.
 
@@ -183,9 +187,13 @@ In addition to a description of the function's syntax, each reference page inclu
 The `size()` function sets the global variables width and height. For objects whose size is dependent on the screen, always use the width and height variables instead of a number. This prevents problems when the size() line is altered.
 
 ```
-size(400, 400); // The wrong way to specify the middle of the screen
-ellipse(200, 200, 50, 50); // Always the middle, no matter how the size() line
-changes ellipse(width/2, height/2, 50, 50);
+size(400, 400);
+
+// The wrong way to specify the middle of the screen
+ellipse(200, 200, 50, 50);
+
+// Always the middle, no matter how the size() line changes
+ellipse(width/2, height/2, 50, 50);
 ```
 
 In the earlier examples, the `size()` function specified only a width and height for the window to be created. An optional parameter to the `size()` function specifies how graphics are rendered. A renderer handles how the Processing API is implemented for a particular output function (whether the screen, or a screen driven by a high-end graphics card, or a PDF file). The default renderer does an excellent job with high-quality 2D vector graphics, but at the expense of speed. In particular, working with pixels directly is slow. Several other renderers are included with Processing, each having a unique function. At the risk of getting too far into the specifics, here's a description of the other possible drawing modes to use with Processing.
@@ -198,7 +206,7 @@ The P2D renderer uses OpenGL for faster rendering of two-dimensional graphics, w
 
 The P3D renderer also uses OpenGL for faster rendering. It can draw three-dimensional objects and two-dimensional object in space as well as lighting, texture, and materials.
 
-`size(400, 400, PDF, &quot;output.pdf&quot;);`
+`size(400, 400, PDF, "output.pdf");`
 
 The PDF renderer draws all geometry to a file instead of the screen. To use PDF, in addition to altering your size() function, you must select Import Library, then PDF from the Sketch menu. This is a cousin of the default renderer, but instead writes directly to PDF files.
 
@@ -237,9 +245,10 @@ offline use.
 File handling functions include `loadStrings()`, which reads a text file into an array of String objects, and `loadImage()` which reads an image into a PImage object, the container for image data in Processing.
 
 ```
-// Examples of loading a text file and a JPEG image // from the data folder of
-a sketch. String[] lines = loadStrings(&quot;something.txt&quot;); PImage
-image = loadImage(&quot;picture.jpg&quot;);
+// Examples of loading a text file and a JPEG image
+// from the data folder of a sketch.
+String[] lines = loadStrings("something.txt");
+PImage image = loadImage("picture.jpg");
 ```
 
 These examples may be a bit easier to read if you know the programming concepts of data types and classes. Each variable has to have a data type, such as `String` or `PImage`.

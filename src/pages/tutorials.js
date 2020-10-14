@@ -1,11 +1,11 @@
 import React from 'react';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
-
+import Img from 'gatsby-image';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
+import { useLocalization } from 'gatsby-theme-i18n';
 
 import Layout from '../components/Layout';
-import { useLocalization } from 'gatsby-theme-i18n';
 
 import css from '../styles/pages/tutorials.module.css';
 import grid from '../styles/grid.module.css';
@@ -17,39 +17,82 @@ const Tutorials = ({ data }) => {
     <Layout>
       <div className={grid.grid}>
         <h1 className={grid.col8}>Tutorials</h1>
-        <div className={classnames(grid.nest, css.part)}>
+        <div className={classnames(grid.nest, css.section)}>
           <h2 className={grid.col8}>Video Tutorials</h2>
-          <h3 className={grid.col3}>
+          <h3 className={classnames(grid.col3, grid.pull5)}>
             Links to videos that cover the Processing basics.
           </h3>
-          <ul className={css.list}>
+          <span className={classnames(grid.col4, grid.pull4, css.sectionIntro)}>
+            {`Large collections of instructional Processing videos are online from `}
+            <a href="https://www.youtube.com/user/shiffman/playlists">
+              Daniel Shiffman
+            </a>
+            {`, `}
+            <a href="https://imaginary-institute.com/scheduleenroll.php">
+              Andrew Glassner
+            </a>
+            {`, `}
+            <a href="https://www.plethora-project.com/education/2011/09/12/processing-tutorials/">
+              Jose Sanchez
+            </a>
+            {`, and `}
+            <a href="https://funprogramming.org/">Abe Pazos</a>.
+          </span>
+          <ul className={css.tutorialList}>
             {data.video.nodes.map((node, k) => {
+              const {
+                link,
+                title,
+                author,
+                intro,
+                coverImage,
+              } = node.childMdx.frontmatter;
+              console.log(node.childMdx.frontmatter);
               return (
-                <li key={k}>
-                  <Link to={node.childMdx.frontmatter.slug} language={locale}>
-                    {node.childMdx.frontmatter.title}
-                  </Link>
+                <li key={k} className={grid.col2}>
+                  <a href={link} language={locale}>
+                    <div className={css.cover}>
+                      <Img
+                        fluid={coverImage.childImageSharp.fluid}
+                        style={{ height: 140 }}
+                        objectFit="contain"
+                      />
+                    </div>
+                    <h4>{title}</h4>
+                    <span className={css.author}>by </span>
+                    <span className={css.authorName}>{author}</span>
+                  </a>
+                  <span className={css.brief}>{intro}</span>
                 </li>
               );
             })}
           </ul>
         </div>
-        <div className={classnames(grid.nest, css.part)}>
+        <div className={classnames(grid.nest, css.section)}>
           <h2 className={grid.col8}>Text Tutorials</h2>
-          <h3 className={grid.col3}>
+          <h3 className={classnames(grid.col3, grid.pull5)}>
             A collection of step-by-step lessons covering beginner,
             intermediate, and advanced topics.
           </h3>
-          <ul className={css.list}>
+          <ul className={css.tutorialList}>
             {data.text.nodes.map((node, k) => {
+              const {
+                slug,
+                title,
+                author,
+                intro,
+                level,
+              } = node.childMdx.frontmatter;
               return (
                 <li key={k} className={grid.col2}>
-                  <Link to={node.childMdx.frontmatter.slug} language={locale}>
-                    {node.childMdx.frontmatter.title}
+                  <Link to={slug} language={locale}>
+                    <div className={css.cover}></div>
+                    <h4>{title}</h4>
+                    <span className={css.author}>by </span>
+                    <span className={css.authorName}>{author}</span>
                   </Link>
-                  <span>{node.childMdx.frontmatter.intro}</span>
-                  <span>by {node.childMdx.frontmatter.author}</span>
-                  <span>level: {node.childMdx.frontmatter.level}</span>
+                  <span className={css.brief}>{intro}</span>
+                  <span className={css.level}>Level: {level}</span>
                 </li>
               );
             })}
@@ -75,11 +118,17 @@ export const query = graphql`
         name
         childMdx {
           frontmatter {
-            slug
+            link
             title
             author
             intro
-            level
+            coverImage {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
