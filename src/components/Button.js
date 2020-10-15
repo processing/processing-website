@@ -11,8 +11,6 @@ export const Button = ({ className, variant, to, onClick, children }) => {
     [css[variant]]: css[variant],
   });
 
-  console.log(to);
-
   return (
     <>
       {to ? (

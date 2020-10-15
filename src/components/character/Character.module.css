@@ -1,0 +1,11 @@
+.root {
+  position: relative;
+
+  & svg {
+    display: block;
+    position: relative;
+  }
+}
+
+.root:hover {
+}
