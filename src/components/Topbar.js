@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 
 import css from './Topbar.module.css';
 
@@ -23,9 +24,14 @@ export const items = [
   },
 ];
 
-const Topbar = () => {
+const Topbar = ({ show }) => {
   return (
-    <div className={css.root}>
+    <div
+      className={classnames(
+        css.root,
+        { [css.show]: show },
+        { [css.noshow]: !show }
+      )}>
       <ul className={css.menu}>
         {items.map((item, key) => (
           <li key={key} className={css.item}>
@@ -33,7 +39,7 @@ const Topbar = () => {
           </li>
         ))}
       </ul>
-      <Selector className={css.selector} />
+      <Selector />
     </div>
   );
 };

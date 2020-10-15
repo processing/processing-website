@@ -1,8 +1,9 @@
-import { Link } from 'gatsby';
 import React, { useRef } from 'react';
 import classnames from 'classnames';
 
 import SearchBarSmall from './SearchBarSmall';
+
+import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
 
 import css from './Navbar.module.css';
 import grid from '../styles/grid.module.css';
@@ -31,7 +32,7 @@ export const items = [
   },
   {
     name: 'Teach',
-    link: 'https://processingfoundation.org/education',
+    link: '/education',
   },
   {
     name: 'About',
@@ -43,10 +44,19 @@ export const items = [
   },
 ];
 
-const Navbar = ({ siteTitle, ref }) => {
+const Navbar = ({ siteTitle, ref, show }) => {
   const navRef = useRef(null);
+  const { locale } = useLocalization();
+
   return (
-    <div className={classnames(css.root, grid.grid)} ref={ref}>
+    <div
+      className={classnames(
+        css.root,
+        grid.grid,
+        { [css.show]: show },
+        { [css.noshow]: !show }
+      )}
+      ref={ref}>
       <h1 className={classnames(grid.col2, css.logo)}>
         <Link to="/">{siteTitle}</Link>
       </h1>
@@ -63,7 +73,9 @@ const Navbar = ({ siteTitle, ref }) => {
                 {item.children.map((subitem, j) => (
                   <li className={css.subitem} key={key + j}>
                     {subitem.link ? (
-                      <Link to={subitem.link}>{subitem.name}</Link>
+                      <Link to={subitem.link} language={locale}>
+                        {subitem.name}
+                      </Link>
                     ) : (
                       subitem.name
                     )}
@@ -74,7 +86,7 @@ const Navbar = ({ siteTitle, ref }) => {
           </li>
         ))}
       </ul>
-      <SearchBarSmall className={grid.pushHalf} />
+      <SearchBarSmall />
     </div>
   );
 };
