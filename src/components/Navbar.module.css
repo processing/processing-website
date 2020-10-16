@@ -13,13 +13,13 @@
 
   & .logo {
     font-size: var(--text-large);
-    transition: 0.5s ease-in-out;
+    transition: 1s ease-in-out;
   }
 }
 
 .logo {
   font-size: var(--text-xlarge);
-  transition: 0.5s ease-in-out;
+  transition: 1s ease-in-out;
 }
 
 .menu {

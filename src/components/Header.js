@@ -20,6 +20,10 @@ const Header = ({ siteTitle, menuItem }) => {
     };
 
     window.addEventListener('scroll', handleScroll);
+
+    return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
   });
 
   return (

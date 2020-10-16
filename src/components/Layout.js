@@ -34,8 +34,6 @@ const Layout = ({ children, menuItem }) => {
     img: (props) => <img {...props}></img>,
   };
 
-  console.log(menuItem);
-
   return (
     <div className={css.root}>
       <Header siteTitle={data.site.siteMetadata.title} menuItem={menuItem}/>
