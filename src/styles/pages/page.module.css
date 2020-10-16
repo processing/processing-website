@@ -27,22 +27,23 @@
     font-family: "Vollkorn", serif;
     font-size: var(--text-medium);
     line-height: 1.6em;
-    list-style-position: outside;
+    list-style-type: none;
 
     & li {
       font-family: inherit;
       margin-bottom: 10px;
       padding-left: 1em;
-      text-indent: -0.5em;
     }
 
     & li:before {
-      content: "•";
+      content: "• ";
+      float: left;
       font-family: "Space Grotesk";
       font-weight: 700;
-      display: inline-block;
-      width: 0.5em;
       color: var(--processing-blue-dark);
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
     }
   }
 

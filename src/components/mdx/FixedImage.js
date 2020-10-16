@@ -4,6 +4,7 @@ import css from './FixedImage.module.css';
 
 const FixedImage = ({
   children,
+  height,
   width,
   minWidth,
   float,
@@ -14,6 +15,7 @@ const FixedImage = ({
   let style = {};
   style['float'] = float ? float : '';
   style['width'] = width ? width : '';
+  style['height'] = height ? height : '';
   style['minWidth'] = minWidth ? minWidth : '';
   style['marginLeft'] = marginLeft ? marginLeft : block ? 'auto' : '';
   style['marginRight'] = marginRight ? marginRight : block ? 'auto' : '';

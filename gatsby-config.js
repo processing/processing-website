@@ -35,6 +35,9 @@ module.exports = {
               showCaptions: true,
             },
           },
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+          },
         ],
       },
     },
