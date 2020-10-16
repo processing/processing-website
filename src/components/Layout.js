@@ -16,7 +16,7 @@ import '../styles/fonts.css';
 
 import css from './Layout.module.css';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, menuItem }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -34,9 +34,11 @@ const Layout = ({ children }) => {
     img: (props) => <img {...props}></img>,
   };
 
+  console.log(menuItem);
+
   return (
     <div className={css.root}>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={data.site.siteMetadata.title} menuItem={menuItem}/>
       <main>
         {' '}
         <MDXProvider components={shortcodes}>{children}</MDXProvider>

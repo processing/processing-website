@@ -12,7 +12,7 @@ const Download = ({ data }) => {
   const { mdx } = data;
   const { frontmatter, body } = mdx;
   return (
-    <Layout>
+    <Layout menuItem={'Download'}>
       <div className={grid.grid}>
         <h1 className={classnames(grid.col5, grid.pull3)}>
           {frontmatter.title}

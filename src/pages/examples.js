@@ -9,7 +9,7 @@ import { filterItems, organizeExampleItems } from '../utils/data';
 
 import grid from '../styles/grid.module.css';
 
-const Examples = ({ data }) => {
+const Examples = ({ data, location }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const items = data.allFile.nodes;
@@ -20,7 +20,7 @@ const Examples = ({ data }) => {
   );
 
   return (
-    <Layout>
+    <Layout menuItem={'Learn'}>
       <div className={grid.grid}>
         <h1 className={grid.col8}>Examples</h1>
         <h3 className={grid.col3}>

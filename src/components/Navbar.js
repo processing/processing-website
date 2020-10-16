@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import classnames from 'classnames';
 
 import SearchBarSmall from './SearchBarSmall';
+import { Location } from '@reach/router';
 
 import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
 
@@ -44,7 +45,7 @@ export const items = [
   },
 ];
 
-const Navbar = ({ siteTitle, ref, show }) => {
+const Navbar = ({ siteTitle, ref, show, menuItem}) => {
   const navRef = useRef(null);
   const { locale } = useLocalization();
 
@@ -66,6 +67,7 @@ const Navbar = ({ siteTitle, ref, show }) => {
             key={key}
             className={classnames(css.item, {
               [css.hasSubmenu]: item.children,
+              [css.active]: item.name === menuItem,
             })}>
             {item.link ? <Link to={item.link}>{item.name}</Link> : item.name}
             {item.children && (

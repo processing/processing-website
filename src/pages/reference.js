@@ -10,7 +10,7 @@ import { filterItems, organizeReferenceItems } from '../utils/data';
 
 import grid from '../styles/grid.module.css';
 
-const Reference = ({ data }) => {
+const Reference = ({ data, location }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const items = data.allFile.nodes;
@@ -23,7 +23,7 @@ const Reference = ({ data }) => {
   const categories = tree.map((item) => item.name);
 
   return (
-    <Layout>
+    <Layout menuItem={'Documentation'}>
       <div className={grid.grid}>
         <h1 className={grid.col8}>References</h1>
         <Searchbar

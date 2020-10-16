@@ -30,6 +30,8 @@
 
 .item {
   display: inline-block;
+  padding-left: 8px;
+  border-left: solid 6px transparent;
   cursor: pointer;
   color: var(--processing-blue-dark);
   font-size: var(--text-medium);
@@ -37,11 +39,11 @@
 }
 
 .item:hover {
-  color: var(--processing-blue-mid);
+  border-left: solid 6px var(--processing-blue-dark);
 }
 
-.item:active {
-  color: var(--processing-blue-dark);
+.active {
+  border-left: solid 6px var(--processing-blue-dark);
 }
 
 .subitem {
