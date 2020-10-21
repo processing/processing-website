@@ -1,7 +1,14 @@
 .root {
+  margin-top: var(--vertical-gutter);
+  margin-bottom: var(--vertical-gutter);
+  & > picture,
+  & > img {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
   & img {
-    height: inherit;
-    width: inherit;
+    max-width: 100%;
+    max-height: 100%;
   }
 
   & figure {
@@ -16,8 +23,6 @@
 .root.inline {
   vertical-align: middle;
   display: inline-block;
-  & picture {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
+  margin-top: 0;
+  margin-bottom: 0;
 }

@@ -15,6 +15,7 @@ const FixedImage = ({
 }) => {
   const _style = {
     width,
+    height,
     marginLeft: center ? 'auto' : marginLeft,
     marginRight: center ? 'auto' : marginRight,
     ...style,
