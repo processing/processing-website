@@ -18,7 +18,7 @@ know](https://github.com/processing/processing-docs/issues?state=open).
 
 Before we begin programming with Processing, we must first channel our eighth grade selves, pull out a piece of graph paper, and draw a line. The shortest distance between two points is a good old fashioned line, and this is where we begin, with two points on that graph paper.
 
-<FixedImage block width={645} height={244}>
+<FixedImage center width={645} height={244}>
 
 ![](./drawing-01.svg)
 
@@ -32,7 +32,7 @@ line(1,0,4,5);
 
 Even without having studied the syntax of writing code, the above statement should make a fair amount of sense. We are providing a _command_ (which we will refer to as a "function") for the machine to follow entitled "line." In addition, we are specifying some arguments for how that line should be drawn, from point A (1,0) to point B (4,5). If you think of that line of code as a sentence, the function is a verb and the arguments are the objects of the sentence. The code sentence also ends with a semicolon instead of a period.
 
-<FixedImage block width={645} height={85}>
+<FixedImage center width={645} height={85}>
 
 ![](./drawing-02.svg)
 
@@ -41,7 +41,7 @@ Even without having studied the syntax of writing code, the above statement shou
 The key here is to realize that the computer screen is nothing more than a fancier piece of graph paper. Each pixel of the screen is a coordinate - two numbers, an "x" (horizontal) and a "y" (vertical) - that determines the location of a point in space. And it is our job to specify what shapes and colors should appear at these pixel coordinates.
 Nevertheless, there is a catch here. The graph paper from eighth grade ("Cartesian coordinate system") placed (0,0) in the center with the y-axis pointing up and the x-axis pointing to the right (in the positive direction, negative down and to the left). The coordinate system for pixels in a computer window, however, is reversed along the y-axis. (0,0) can be found at the top left with the positive direction to the right horizontally and down vertically.
 
-<FixedImage block width={645} height={244}>
+<FixedImage center width={645} height={244}>
 
 ![](./drawing-03.svg)
 
@@ -53,7 +53,7 @@ The vast majority of the programming examples you'll see with Processing are vis
 in nature. These examples, at their core, involve drawing shapes and setting pixels.
 Let's begin by looking at four primitive shapes.
 
-<FixedImage block width={645} height={244}>
+<FixedImage center width={645} height={244}>
 
 ![](./drawing-04.svg)
 
@@ -63,7 +63,7 @@ For each shape, we will ask ourselves what information is required to specify th
 
 A [`point()`](http://www.processing.org/reference/point_.html) is the easiest of the shapes and a good place to start. To draw a point, we only need an x and y coordinate.
 
-<FixedImage block width={500} height={244}>
+<FixedImage center width={500} height={244}>
 
 ![](./drawing-05.svg)
 
@@ -71,7 +71,7 @@ A [`point()`](http://www.processing.org/reference/point_.html) is the easiest of
 
 A [`line()`](http://www.processing.org/reference/line_.html) isn't terribly difficult either and simply requires two points: (x1,y1) and (x2,y2):
 
-<FixedImage block width={500} height={244}>
+<FixedImage center width={500} height={244}>
 
 ![](./drawing-06.svg)
 
@@ -79,7 +79,7 @@ A [`line()`](http://www.processing.org/reference/line_.html) isn't terribly diff
 
 Once we arrive at drawing a [`rect()`](http://www.processing.org/reference/rect_.html), things become a bit more complicated. In Processing, a rectangle is specified by the coordinate for the top left corner of the rectangle, as well as its width and height.
 
-<FixedImage block width={595} height={244}>
+<FixedImage center width={595} height={244}>
 
 ![](./drawing-07.svg)
 
@@ -87,7 +87,7 @@ Once we arrive at drawing a [`rect()`](http://www.processing.org/reference/rect_
 
 A second way to draw a rectangle involves specifying the centerpoint, along with width and height. If we prefer this method, we first indicate that we want to use the "CENTER" mode before the instruction for the rectangle itself. Note that Processing is case-sensitive.
 
-<FixedImage block width={635} height={244}>
+<FixedImage center width={635} height={244}>
 
 ![](./drawing-08.svg)
 
@@ -95,7 +95,7 @@ A second way to draw a rectangle involves specifying the centerpoint, along with
 
 Finally, we can also draw a rectangle with two points (the top left corner and the bottom right corner). The mode here is "CORNERS".
 
-<FixedImage block width={625} height={244}>
+<FixedImage center width={625} height={244}>
 
 ![](./drawing-09.svg)
 
@@ -103,19 +103,19 @@ Finally, we can also draw a rectangle with two points (the top left corner and t
 
 Once we have become comfortable with the concept of drawing a rectangle, an [`ellipse()`](http://www.processing.org/reference/ellipse_.html) is a snap. In fact, it is identical to rect() with the difference being that an ellipse is drawn where the bounding box of the rectangle would be. The default mode for _ellipse()_ is "CENTER", rather than "CORNER."
 
-<FixedImage block width={620} height={244}>
+<FixedImage center width={620} height={244}>
 
 ![](./drawing-10.svg)
 
 </FixedImage>
 
-<FixedImage block width={645} height={244}>
+<FixedImage center width={645} height={244}>
 
 ![](./drawing-11.svg)
 
 </FixedImage>
 
-<FixedImage block width={645} height={244}>
+<FixedImage center width={645} height={244}>
 
 ![](./drawing-12.svg)
 

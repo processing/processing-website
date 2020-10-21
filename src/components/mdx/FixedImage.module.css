@@ -1,9 +1,4 @@
 .root {
-  & picture {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
   & img {
     height: inherit;
     width: inherit;
@@ -15,5 +10,14 @@
 
   & figcaption {
     font-size: var(--text-xsmall);
+  }
+}
+
+.root.inline {
+  vertical-align: middle;
+  display: inline-block;
+  & picture {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
