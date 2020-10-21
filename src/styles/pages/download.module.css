@@ -1,2 +1,54 @@
 .root {
 }
+
+.latestVersionsWrapper {
+  display: inline-flex;
+}
+
+.latestVersion {
+  color: var(--processing-blue-dark);
+  &:hover {
+    color: var(--processing-blue-light);
+    & .latestVersionBit {
+      color: inherit;
+    }
+  }
+
+  & h3 {
+    display: inline;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+}
+
+.logo {
+}
+
+.latestNumber {
+  font-weight: bold;
+}
+
+.latestDate {
+  font-size: var(--text-xsmall);
+  color: var(--darkgray);
+}
+
+.latestVersionName {
+  font-size: var(--text-large);
+  font-weight: 700;
+}
+
+.latestVersionBit {
+  padding-left: 0.3rem;
+  font-size: var(--text-xsmall);
+  font-weight: normal;
+  color: var(--black);
+}
+
+.links {
+  border-left: solid 7px var(--lightgray);
+  color: var(--processing-blue-dark);
+  font-weight: 700;
+}

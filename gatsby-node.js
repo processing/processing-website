@@ -263,3 +263,49 @@ async function createExamples(actions, graphql) {
     });
   });
 }
+
+const fetch = require(`node-fetch`);
+
+exports.sourceNodes = async ({
+  actions: { createNode },
+  createContentDigest,
+}) => {
+  const latest = await fetch(
+    `https://api.github.com/repos/processing/processing/releases/latest`
+  );
+  const latestData = await latest.json();
+  createNode({
+    url: latestData.html_url,
+    name: latestData.name,
+    tagName: latestData.tag_name,
+    published: latestData.published_at,
+    assets: latestData.assets,
+    // required fields
+    id: `latest-release`,
+    parent: null,
+    children: [],
+    internal: {
+      type: `LatestRelease`,
+      contentDigest: createContentDigest(latestData),
+    },
+  });
+  const preRelease = await fetch(
+    `https://api.github.com/repos/processing/processing4/releases/latest`
+  );
+  const preReleaseData = await preRelease.json();
+  createNode({
+    url: preReleaseData.html_url,
+    name: preReleaseData.name,
+    tagName: preReleaseData.tag_name,
+    published: preReleaseData.published_at,
+    assets: preReleaseData.assets,
+    // required fields
+    id: `pre-release`,
+    parent: null,
+    children: [],
+    internal: {
+      type: `PreRelease`,
+      contentDigest: createContentDigest(preReleaseData),
+    },
+  });
+};
