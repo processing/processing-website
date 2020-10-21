@@ -10,6 +10,8 @@ import Shape from './Shape';
 import css from './SketchCode.module.css';
 import highlight from './processingIDE.css';
 
+const SKETCH_URL = 'https://editor.p5js.org/Anadroid/sketches/m9LpjIci2';
+
 hljs.registerLanguage('processing', processing);
 hljs.configure({ classPrefix: 'processingIDE__hljs-' });
 
@@ -26,10 +28,11 @@ const SketchCode = (props) => {
     onMouseLeaveShape,
     onDraggingShapeStart,
     onDraggingShapeEnd,
+    onChange,
   } = props;
 
-  const cols = useMemo(() => Math.floor(width / unit), [width, unit]);
-  const rows = useMemo(() => Math.floor(height / unit), [height, unit]);
+  const cols = Math.floor(width / unit);
+  const rows = Math.floor(height / unit);
 
   useEffect(() => {
     document.querySelectorAll('pre code').forEach((block) => {
@@ -41,7 +44,7 @@ const SketchCode = (props) => {
     shapes.forEach((shape, index) => {
       shape.pos.forEach((p, subindex) => {
         if (p > rows && subindex % 2 === 1) {
-          props.onChange(
+          onChange(
             'Adjusting strokes to rows',
             ['shapes', index, 'pos', subindex],
             rows
@@ -55,7 +58,7 @@ const SketchCode = (props) => {
     shapes.forEach((shape, index) => {
       shape.pos.forEach((p, subindex) => {
         if (p > cols && subindex % 2 === 0) {
-          props.onChange(
+          onChange(
             'Adjusting strokes to cols',
             ['shapes', index, 'pos', subindex],
             cols
@@ -66,8 +69,8 @@ const SketchCode = (props) => {
   }, [width, unit]);
 
   return (
-    <div className={css.root}>
-      <div className={classnames(css.code, { [css.visible]: isVisible })}>
+    <div className={classnames(css.root, { [css.visible]: isVisible })}>
+      <div className={css.code}>
         <div className={css.inCode}>
           <pre>
             <code>int width = </code>
@@ -78,7 +81,7 @@ const SketchCode = (props) => {
             value={width}
             range={{ min: 0, max: 1600 }}
             path={['width']}
-            onChange={props.onChange}></Draggable>
+            onChange={onChange}></Draggable>
           ;
           <br />
           <pre>
@@ -90,7 +93,7 @@ const SketchCode = (props) => {
             value={height}
             range={{ min: 0, max: 1200 }}
             path={['height']}
-            onChange={props.onChange}></Draggable>
+            onChange={onChange}></Draggable>
           ;
           <br />
           <pre>
@@ -102,7 +105,7 @@ const SketchCode = (props) => {
             value={unit}
             range={{ min: 20, max: 80 }}
             path={['unit']}
-            onChange={props.onChange}></Draggable>
+            onChange={onChange}></Draggable>
           ;
           <br />
           <pre>
@@ -112,7 +115,7 @@ const SketchCode = (props) => {
             name="showGrid"
             className={css.showGrid}
             value={showGrid}
-            onClick={(e) => props.onChange(e, ['showGrid'], !showGrid)}>
+            onClick={(e) => onChange(e, ['showGrid'], !showGrid)}>
             {showGrid ? 'true' : 'false'}
           </Button>
           ;
@@ -153,25 +156,22 @@ void draw() {
               range={{ min: 0.5, max: 2 }}
               path={['strokeWidth']}
               isInteger={false}
-              onChange={props.onChange}
-              label={{ prev: '    strokeWeight(', after: ' * u);' }}
+              onChange={onChange}
+              labelBefore={'strokeWeight('}
+              labelAfter={' * u);'}
             />
             {shapes.map((shape, index) => (
               <Fragment key={`shape-block-${index}`}>
                 <br />
                 <br />
                 stroke(
-                <Color
-                  onChange={props.onChange}
-                  shapes={shapes}
-                  shapesInx={index}
-                />
+                <Color onChange={onChange} shapes={shapes} shapesInx={index} />
                 );
                 <br />
                 <Button
-                  className={css.button}
+                  className={css.toggleShape}
                   onClick={(e) =>
-                    props.onChange(e, ['shapes', index, 'type'], !shape.type)
+                    onChange(e, ['shapes', index, 'type'], !shape.type)
                   }>
                   {shape.type ? '/' : '~'}
                 </Button>
@@ -180,7 +180,7 @@ void draw() {
                   onMouseLeave={onMouseLeaveShape}
                   onDraggingStart={onDraggingShapeStart}
                   onDraggingEnd={onDraggingShapeEnd}
-                  onChange={props.onChange}
+                  onChange={onChange}
                   shape={shape}
                   shapesInx={index}
                   rangeX={{ min: 0, max: cols }}
@@ -217,15 +217,10 @@ void draw() {
 			`}</code>
           </pre>
         </details>
-        <Button
-          className={css.link}
-          onClick={(e) =>
-            (window.location.href =
-              'https://editor.p5js.org/Anadroid/sketches/m9LpjIci2')
-          }>
-          Open in web editor
-        </Button>
       </div>
+      <Button className={css.link} href={SKETCH_URL} target="_blank">
+        Open in web editor
+      </Button>
     </div>
   );
 };

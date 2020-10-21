@@ -8,7 +8,8 @@ const Draggable = (props) => {
     range,
     path,
     isInteger = true,
-    label,
+    labelBefore,
+    labelAfter,
     onDraggingStart,
     onDraggingEnd,
     index,
@@ -62,7 +63,7 @@ const Draggable = (props) => {
 
   return (
     <Fragment>
-      {label && <span>{label.prev}</span>}
+      {labelBefore && <span>{labelBefore}</span>}
       <span
         role={'button'}
         tabIndex={'0'}
@@ -79,7 +80,7 @@ const Draggable = (props) => {
         </span>
         <span className={css.arrowRight}></span>
       </span>
-      <span>{label ? label.after : ''}</span>
+      {labelAfter && <span>{labelAfter}</span>}
     </Fragment>
   );
 };

@@ -1,6 +1,8 @@
 import React, { Fragment, useMemo, useState } from 'react';
 import classnames from 'classnames';
 
+import Button from '../Button';
+
 import css from './SketchGraphic.module.css';
 
 const gutterSize = 0;
@@ -19,9 +21,8 @@ const SketchGraphic = (props) => {
   const [mouseEntered, setMouseEntered] = useState(false);
 
   const modules = [];
-  const cols = useMemo(() => Math.floor(width / unit), [width, unit]);
-  const rows = useMemo(() => Math.floor(height / unit), [height, unit]);
-
+  const cols = Math.floor(width / unit);
+  const rows = Math.floor(height / unit);
   for (let i = 0; i < cols; i++) {
     modules.push([]);
     for (let j = 0; j < rows; j++) {
@@ -103,25 +104,19 @@ const SketchGraphic = (props) => {
 
   const handlers = (shape, index, color) => {
     const { showHandlers, dragging } = shape;
-    if (showHandlers)
+    if (showHandlers) {
       return [
         firstHandler(shape, index, color),
         secondHandler(shape, index, color),
       ];
-    else if (dragging) {
-      switch (dragging) {
-        case 2:
-          return firstHandler(shape, index, color);
-        case 3:
-          return firstHandler(shape, index, color);
-        case 4:
-          return secondHandler(shape, index, color);
-        case 5:
-          return secondHandler(shape, index, color);
-        default:
-          return null;
+    } else if (dragging) {
+      if ([2, 3].includes(dragging)) {
+        return firstHandler(shape, index, color);
+      } else if ([4, 5].includes(dragging)) {
+        return secondHandler(shape, index, color);
       }
-    } else return null;
+    }
+    return null;
   };
 
   return (
@@ -129,28 +124,25 @@ const SketchGraphic = (props) => {
       role={'button'}
       tabIndex={'0'}
       className={css.root}
-      onClick={onClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       style={{ width, height }}>
       <div
-        className={classnames(css.message, {
-          [css.show]: mouseEntered && !isVisible,
+        className={classnames(css.ui, {
+          [css.show]: mouseEntered,
         })}>
-        <span>Show code</span>
+        <Button className={css.button} onClick={onClick}>
+          {isVisible ? 'Hide code' : 'Show code'}
+        </Button>
       </div>
       <svg width={width} height={height}>
         {grid}
         {shapes.map((shape, index) => {
-          const color =
-            'rgb(' +
-            shape.color.r +
-            ',' +
-            shape.color.g +
-            ',' +
-            shape.color.b +
-            ')';
+          const { r, g, b } = shape.color;
+          const color = `rgb(${r},${g},${b})`;
+
           let dPoints = shape.pos.map((x) => x * unit);
+
           if (shape.pos.length > 4) {
             dPoints.splice(0, 0, 'M');
             dPoints.splice(3, 0, 'C');

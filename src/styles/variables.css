@@ -17,6 +17,8 @@
   --text-xlarge: 2.25rem;
   --text-xxlarge: 3.375rem;
   --margin: 48px;
+  --margin-half: calc(48px / 2);
+  --margin-quarter: calc(48px / 4);
   --gutter: 16px;
   --column-width: calc((100vw - 2 * var(--margin)) / 8);
   --gutter-half: calc(var(--gutter) / 2);
