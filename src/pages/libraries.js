@@ -31,7 +31,7 @@ const Libraries = ({ data }) => {
   let categories = unique(contributions.flatMap((con) => con.categories));
 
   return (
-    <Layout menuItem={'Documentation'}>
+    <Layout>
       <div className={grid.grid}>
         <h1 className={grid.col8}>Libraries</h1>
         <h3 className={classnames(grid.col3, grid.pull5)}>

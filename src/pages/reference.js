@@ -23,7 +23,7 @@ const Reference = ({ data, location }) => {
   const categories = tree.map((item) => item.name);
 
   return (
-    <Layout menuItem={'Documentation'}>
+    <Layout>
       <div className={grid.grid}>
         <h1 className={grid.col8}>References</h1>
         <Searchbar

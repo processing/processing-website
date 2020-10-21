@@ -14,7 +14,7 @@ const Tutorials = ({ data }) => {
   const { locale } = useLocalization();
 
   return (
-    <Layout menuItem={'Learn'}>
+    <Layout>
       <div className={grid.grid}>
         <h1 className={grid.col8}>Tutorials</h1>
         <div className={classnames(grid.nest, css.part)}>

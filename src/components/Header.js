@@ -6,7 +6,7 @@ import Navbar from './Navbar';
 
 import css from './Header.module.css';
 
-const Header = ({ siteTitle, menuItem }) => {
+const Header = ({ siteTitle }) => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -22,15 +22,15 @@ const Header = ({ siteTitle, menuItem }) => {
     window.addEventListener('scroll', handleScroll);
 
     return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
+      window.removeEventListener('scroll', handleScroll);
+    };
   });
 
   return (
     <header className={css.root}>
       <div>
         <Topbar show={!scrolled} />
-        <Navbar siteTitle={siteTitle} show={!scrolled} menuItem={menuItem}/>
+        <Navbar siteTitle={siteTitle} show={!scrolled} />
       </div>
     </header>
   );

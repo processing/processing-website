@@ -14,7 +14,7 @@ const Environment = ({ data }) => {
   console.log(data);
   const { frontmatter, body, tableOfContents } = mdx;
   return (
-    <Layout menuItem={'Documentation'}>
+    <Layout>
       <div className={grid.grid}>
         <TableOfContents items={tableOfContents.items} />
         <h1 className={classnames(grid.push2, grid.col5, grid.pull1)}>

@@ -31,7 +31,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
   };
 
   return (
-    <Layout menuItem={'Documentation'}>
+    <Layout>
       <Sidebar
         items={data.items}
         onChange={toggleSidebar}

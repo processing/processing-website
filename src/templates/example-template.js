@@ -16,7 +16,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
   };
 
   return (
-    <Layout menuItem={'Learn'}>
+    <Layout >
       <Sidebar
         items={examples}
         onChange={toggleSidebar}

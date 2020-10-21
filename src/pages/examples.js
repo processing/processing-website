@@ -20,7 +20,7 @@ const Examples = ({ data, location }) => {
   );
 
   return (
-    <Layout menuItem={'Learn'}>
+    <Layout>
       <div className={grid.grid}>
         <h1 className={grid.col8}>Examples</h1>
         <h3 className={grid.col3}>

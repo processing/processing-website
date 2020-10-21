@@ -19,7 +19,7 @@ const IndexRefTemplate = ({ data, pageContext: { libraryName } }) => {
   const tree = useMemo(() => organizeReferenceItems(items), [items]);
 
   return (
-    <Layout menuItem={'Documentation'}>
+    <Layout >
       {data.mdx !== null ? (
         <div>
           <MDXRenderer>{data.mdx.body}</MDXRenderer>
