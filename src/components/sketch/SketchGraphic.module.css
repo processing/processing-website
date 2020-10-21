@@ -6,12 +6,11 @@
   right: 0;
   position: relative;
   z-index: 200;
-}
 
-svg {
-  position: absolute;
+  svg {
+    position: absolute;
+  }
 }
-
 .ui {
   position: absolute;
   z-index: 200;
