@@ -2,6 +2,7 @@
 
 .root {
   position: relative;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   user-select: none;
@@ -10,63 +11,89 @@
   padding: 0px;
   font-family: var(--font-mono);
   font-size: 14px;
-}
+  white-space: pre;
+  height: 600px;
+  overflow: auto;
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 2%,
+    rgba(0, 0, 0, 1) 98%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  transform: translateX(100%);
+  opacity: 0;
 
-h1 {
-  font-family: var(--font);
-}
-
-pre,
-code {
-  display: block;
-  padding: 0;
-  margin: 0;
-}
-
-summary:after {
-  content: "}";
-  font-family: var(--font-mono);
-  border-radius: 5px;
-}
-
-details {
-  padding-left: var(--gutter);
-
-  & pre {
-    display: inline-flex;
-  }
-}
-
-details[open] {
-  & summary::after {
-    content: "";
+  &.visible {
+    transform: translateX(0%);
+    opacity: 1;
   }
 
-  & .dots {
-    visibility: hidden;
+  & h1 {
+    font-family: var(--font);
+  }
+
+  & pre,
+  & code {
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+
+  & summary:after {
+    content: "}";
+    font-family: var(--font-mono);
+    border-radius: 5px;
+  }
+
+  & details {
+    padding-left: var(--gutter);
+
+    & pre {
+      display: inline-flex;
+    }
+  }
+
+  & details[open] {
+    & summary::after {
+      content: "";
+    }
+
+    & .dots {
+      visibility: hidden;
+    }
+  }
+
+  & summary {
+    cursor: pointer;
+    &:hover {
+      color: var(--processing-blue-dark);
+    }
+
+    &::-webkit-details-marker {
+      color: var(--gray);
+    }
+
+    &::-webkit-details-marker:hover {
+      color: var(--processing-blue-dark);
+    }
   }
 }
 
 .dots {
+  display: inline-block;
   background-color: var(--gray);
-  color: white;
+  font-weight: 700;
+  font-size: 0.65em;
+  height: 0.8rem;
+  padding: 0 0.2rem;
+  vertical-align: middle;
+  line-height: 1;
   border-radius: 5px;
-}
-
-summary {
-  cursor: pointer;
-}
-
-summary:hover {
-  color: var(--processing-blue-dark);
-}
-
-summary::-webkit-details-marker {
-  color: var(--gray);
-}
-
-summary::-webkit-details-marker:hover {
-  color: var(--processing-blue-dark);
+  &:hover {
+    color: var(--lightgray);
+  }
 }
 
 .showGrid {
@@ -93,20 +120,14 @@ summary::-webkit-details-marker:hover {
 .code {
   position: absolute;
   padding-top: 20px;
-  max-height: 600px;
-  width: 0px;
-  max-width: 650px;
+  height: 100%;
+  width: 100%;
   overflow-y: overlay;
-  transition: width 0.4s ease;
+  transition: max-width 0.4s ease;
   background-color: var(--lightgray);
   float: right;
   right: 0;
   z-index: 1;
-}
-
-.visible {
-  width: 650px;
-  max-width: 650px;
 }
 
 .summary {
@@ -114,26 +135,21 @@ summary::-webkit-details-marker:hover {
   box-shadow: none;
 }
 
-.button {
+.toggleShape {
   margin-left: -54px;
   margin-right: 34px;
   width: 20px;
+  padding: 0;
   background-color: var(--gray);
   color: var(--black);
   border-radius: 5px;
 }
 
 .link {
-  margin-left: auto;
-  font-size: 14px;
-  font-family: "Space Grotesk";
-  padding: 5px 12px;
-  color: white;
-  border: none;
-  background-color: var(--gray);
-  min-width: 160px;
-  float: right;
-  margin: calc(var(--margin) / 2);
+  position: absolute;
+  z-index: 100;
+  bottom: var(--margin-quarter);
+  right: var(--margin-quarter);
 }
 
 .link:hover {
@@ -143,7 +159,7 @@ summary::-webkit-details-marker:hover {
 
 .inCode {
   width: 100%;
-  padding-left: calc(var(--gutter) * 2);
+  padding-left: var(--gutter-double);
 }
 
 .inCode pre,

@@ -5,10 +5,9 @@ import { Link } from 'gatsby';
 
 import css from './Button.module.css';
 
-export const Button = ({ className, variant, to, onClick, children }) => {
-  const classes = classnames(css.root, {
+export const Button = ({ className, to, href, target, onClick, children }) => {
+  const classNames = classnames(css.root, {
     [className]: className,
-    [css[variant]]: css[variant],
   });
 
   console.log(to);
@@ -16,11 +15,15 @@ export const Button = ({ className, variant, to, onClick, children }) => {
   return (
     <>
       {to ? (
-        <Link className={classes} to={to}>
+        <Link className={classNames} to={to}>
           {children}
         </Link>
+      ) : href ? (
+        <a className={classNames} href={href} target={target}>
+          {children}
+        </a>
       ) : (
-        <button className={classes} onClick={onClick}>
+        <button className={classNames} onClick={onClick}>
           {children}
         </button>
       )}

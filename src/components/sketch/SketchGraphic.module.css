@@ -5,33 +5,22 @@
   height: auto;
   right: 0;
   position: relative;
-}
+  z-index: 200;
 
-svg {
-  position: absolute;
+  svg {
+    position: absolute;
+  }
 }
-
-.message {
+.ui {
   position: absolute;
   z-index: 200;
-  height: 100%;
-  width: 100%;
-  background-color: var(--lightgray);
+  bottom: 0;
+  right: 0;
+  padding: var(--margin-quarter);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
 
 .show {
-  opacity: 0.8;
-}
-
-.message span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-weight: bold;
-  font-size: var(--regular);
-  text-align: center;
-  color: var(--black);
-  transform: translate(-50%, -50%);
+  opacity: 1;
 }

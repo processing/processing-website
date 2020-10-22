@@ -4,7 +4,7 @@
 .dragging {
   display: inline-block;
   cursor: ew-resize;
-  font-family: "Space Mono";
+  font-family: var(--font-mono);
   text-decoration: underline;
 }
 

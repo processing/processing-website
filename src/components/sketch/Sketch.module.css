@@ -1,6 +1,7 @@
 .root {
   display: flex;
   position: relative;
+  align-items: stretch;
 }
 
 h1 {

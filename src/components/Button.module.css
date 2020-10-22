@@ -1,11 +1,18 @@
 .root {
   width: fit-content;
-  background: var(--gray-light);
-  color: var(--gray);
+  background: var(--gray);
+  padding: 4px 18px;
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  border-radius: 50px;
+  color: white;
   outline: none;
   border: none;
 }
-
+.root:focus {
+  background: var(--lightgray);
+  color: white;
+}
 .root:hover {
   background: var(--processing-blue-mid);
   cursor: pointer;

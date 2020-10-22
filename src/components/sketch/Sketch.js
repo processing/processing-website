@@ -41,11 +41,10 @@ const initialState = fromJS({
 const Sketch = (props) => {
   const [state, setState] = useState(initialState);
   const [showCode, setShow] = useState(false);
+
   const changeStateHandler = (e, path, value) => {
     setState((state) => state.setIn(path, value));
   };
-
-  const stateJS = state.toJS();
 
   const handleClickOnSketch = () => {
     setState((state) => state.setIn(['showCode'], !showCode ? true : false));
@@ -71,6 +70,8 @@ const Sketch = (props) => {
   const handleDraggingShapeEnd = (shapeIdx) => {
     setState((state) => state.setIn(['shapes', shapeIdx, 'dragging'], null));
   };
+
+  const stateJS = state.toJS();
 
   return (
     <div className={classnames(css.root, grid.grid)}>
