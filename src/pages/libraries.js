@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import unique from 'array-unique';
 
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
+import { useLocalization } from 'gatsby-theme-i18n';
 
 import Layout from '../components/Layout';
 import CategoryNav from '../components/CategoryNav';
-import { useLocalization } from 'gatsby-theme-i18n';
+import Searchbar from '../components/Searchbar';
+
+import { filterItems } from '../utils/data';
 
 import css from '../styles/pages/libraries.module.css';
 import grid from '../styles/grid.module.css';
@@ -15,6 +18,7 @@ import grid from '../styles/grid.module.css';
 const Libraries = ({ data }) => {
   const { locale } = useLocalization();
   const { libraries, currentLang, english } = data;
+  const [searchTerm, setSearchTerm] = useState('');
 
   let contributions = [];
 
@@ -28,7 +32,12 @@ const Libraries = ({ data }) => {
     });
   });
 
-  let categories = unique(contributions.flatMap((con) => con.categories));
+  const filtered = useMemo(
+    () => filterItems(contributions, searchTerm),
+    [contributions, searchTerm]
+  );
+
+  let categories = unique(filtered.flatMap((con) => con.categories));
 
   return (
     <Layout>
@@ -60,10 +69,16 @@ const Libraries = ({ data }) => {
           })}
         </ul>
         <h1 className={grid.col8}>Contributions</h1>
+        <Searchbar
+        placeholder={'Search in the Libraries...'}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          searchTerm={searchTerm}
+          className={grid.push1}
+          large/>
         <CategoryNav categories={categories} />
         <ul className={css.contributionsList}>
           {categories.map((cat) => {
-            let contribs = contributions.filter((c) =>
+            let contribs = filtered.filter((c) =>
               c.categories.includes(cat)
             );
             return (
