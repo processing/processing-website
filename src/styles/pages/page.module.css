@@ -24,7 +24,7 @@
     line-height: 1.6em;
 
     & > pre {
-      font-family: "Space Mono", monospace;
+      font-family: var(--font-mono);
       font-size: var(--text-regular);
       font-style: normal;
     }

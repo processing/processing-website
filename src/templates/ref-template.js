@@ -32,7 +32,7 @@ const RefTemplate = ({ data, pageContext }) => {
   };
 
   return (
-    <Layout menuItem={'Documentation'}>
+    <Layout >
       <Sidebar
         items={data.items}
         onChange={toggleSidebar}

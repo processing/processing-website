@@ -1,0 +1,8 @@
+.root {
+  flex: 0 0 270px;
+  padding-right: 30px;
+  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}

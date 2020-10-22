@@ -26,6 +26,7 @@ const SearchBarSmall = ({ className }) => {
       className={classnames(
         { [className]: className },
         grid.col1andhalf,
+        grid.pushHalf,
         css.root
       )}>
       <input

@@ -11,7 +11,7 @@ const TutorialTemplate = ({ data, pageContext }) => {
   const { mdx } = data;
 
   return (
-    <Layout>
+    <Layout >
       <Contentbar content={mdx.tableOfContents.items} />
       {mdx !== null ? (
         <div style={{ marginLeft: '350px' }}>
