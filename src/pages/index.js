@@ -71,8 +71,7 @@ const IndexPage = () => {
               </Button>
             </div>
           </div>
-          <div className={grid.col4}>
-          </div>
+          <div className={grid.col4}></div>
         </div>
       </div>
       <div className={grid.grid}>

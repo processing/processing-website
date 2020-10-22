@@ -8,6 +8,7 @@ import css from './SidebarExampleList.module.css';
 
 const SidebarExampleList = ({ data }) => {
   const { locale } = useLocalization();
+
   return (
     <div className={css.root}>
       {data.map((category, key) => (

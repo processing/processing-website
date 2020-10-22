@@ -235,10 +235,12 @@ async function createExamples(actions, graphql) {
     `
       {
         allFile(filter: { sourceInstanceName: { eq: "examples" } }) {
-          nodes {
-            childMdx {
-              frontmatter {
-                slug
+          edges {
+            node {
+              name
+              relativeDirectory
+              childJson {
+                type
               }
             }
           }
@@ -251,14 +253,16 @@ async function createExamples(actions, graphql) {
     throw exampleResult.errors;
   }
 
-  const examplePages = exampleResult.data.allFile.nodes;
+  const examplePages = exampleResult.data.allFile.edges;
 
   examplePages.forEach((examplePage, index) => {
     createPage({
-      path: examplePage.childMdx.frontmatter.slug,
+      path: 'examples/' + examplePage.node.name.toLowerCase() + '.html',
       component: exampleTemplate,
       context: {
-        slug: examplePage.childMdx.frontmatter.slug,
+        slug: 'examples/' + examplePage.node.name.toLowerCase() + '.html',
+        name: examplePage.node.name,
+        relDir: examplePage.node.relativeDirectory,
       },
     });
   });

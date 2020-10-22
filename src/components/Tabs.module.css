@@ -1,0 +1,28 @@
+.root {
+  margin-top: var(--margin);
+
+  & ul {
+    position: relative;
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  padding: 0 var(--gutter);
+  background-color: var(--gray);
+}
+
+.active {
+  background-color: var(--lightgray);
+}
+
+.codeBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-width: calc((100vw - var(--margin) * 2) / 8 * 6);
+}
