@@ -6,6 +6,7 @@ import { useIntl } from 'react-intl';
 
 import Layout from '../components/Layout';
 import Button from '../components/Button';
+import Sketch from '../components/sketch/Sketch';
 
 import { useLocalization } from 'gatsby-theme-i18n';
 
@@ -40,13 +41,14 @@ export const items = [
 ];
 
 const IndexPage = () => {
+  //localization - will be needed
   const intl = useIntl();
   const { locale } = useLocalization();
   return (
     <Layout>
       <div className={css.hero}>
         <div className={classnames(grid.grid, grid.nest)}>
-          <div className={classnames(grid.col4, css.intro)}>
+          <div className={classnames(grid.col4, css.intro, grid.nest)}>
             <h1 className={classnames(grid.col2, grid.pull1)}>
               {' '}
               Welcome to Processing!{' '}
@@ -60,22 +62,21 @@ const IndexPage = () => {
               hobbyists who use Processing for learning and prototyping.
             </div>
             <div className={classnames(grid.col4, css.buttons)}>
-              <Button to={'/download'} className={classnames(css.button)}>
+              <Button to={'/download'} className={css.button}>
                 Download
               </Button>
-              <Button to={'/reference'} className={classnames(css.button)}>
+              <Button to={'/reference'} className={css.button}>
                 Reference
               </Button>
-              <Button to={'/donate'} className={classnames(css.button)}>
+              <Button to={'/donate'} className={css.button}>
                 Donate
               </Button>
             </div>
           </div>
-          <div className={grid.col4}>
-          </div>
         </div>
       </div>
-      <div className={grid.grid}>
+      <Sketch />
+      <div className={classnames(grid.grid, css.bottom)}>
         <div className={classnames(grid.col2, grid.nest)}>
           <ul className={classnames(grid.col2, css.list)}>
             {items.map((item, key) => (
@@ -96,7 +97,7 @@ const IndexPage = () => {
           <h3 className={classnames(grid.col6, grid.nest)}> Examples</h3>
         </div>
       </div>
-      <div className={grid.grid}>
+      <div className={classnames(grid.grid, css.bottom)}>
         <div className={classnames(grid.col4, grid.nest)}>
           <h3 className={grid.col4}>Getting started</h3>
           <div className={grid.col4}>
