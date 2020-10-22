@@ -24,17 +24,11 @@ const ExampleTemplate = ({ data, pageContext }) => {
 
   orderedPdes.unshift(mainPde);
 
-  const category = json.relativeDirectory.split('/')[0];
   const subcategory = json.relativeDirectory.split('/')[1];
 
-  const tree = useMemo(() => organizeExampleItems(examples.nodes), []);
-
-  const categoryItems = tree.filter(
-    (item) => item.name.toLowerCase() === category
-  )[0].children;
-  const related = categoryItems.filter(
-    (item) => item.name.toLowerCase() === subcategory
-  )[0].children;
+  const related = examples.nodes.filter(
+    (item) => item.relativeDirectory.split('/')[1] === subcategory
+  );
 
   const toggleSidebar = (show) => {
     setShow(show);
@@ -82,9 +76,11 @@ const ExampleTemplate = ({ data, pageContext }) => {
               <ul className={css.related}>
                 {related.map((rel, key) => {
                   return (
-                    rel.dir !== pageContext.relDir && (
+                    rel.relativeDirectory !== pageContext.relDir && (
                       <li key={key + 'rel'}>
-                        <Link to={'../' + rel.slug + '.html'}>{rel.name}</Link>
+                        <Link to={'../' + rel.name.toLowerCase() + '.html'}>
+                          {rel.name}
+                        </Link>
                       </li>
                     )
                   );
