@@ -1,0 +1,7 @@
+{
+  "name": "Forces With Vectors",
+  "title": "Forces (Gravity and Fluid Resistence) with Vectors",
+  "author": "Daniel Shiffman",
+  "description": "Demonstration of multiple force acting on bodies (Mover class)\n  Bodies experience gravity continuously\n  Bodies experience fluid resistance when in \"water\"\n\n  For the basics of working with PVector, see\n  http://processing.org/learning/pvector/\n  as well as examples in Topics/Vectors/",
+  "featured": ["one", "two"]
+}

@@ -91,10 +91,11 @@ export const organizeExampleItems = (items) => {
 
     tree[categoryIndex].children[subcategoryIndex].children.push({
       slug: item.relativeDirectory.split('/')[2],
-      name: item.childMdx.frontmatter.title,
+      name: item.childJson.name,
       dir: item.relativeDirectory,
-      ...item.childMDX,
+      ...item.childJSON,
     });
   });
+
   return tree;
 };

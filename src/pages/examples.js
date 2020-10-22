@@ -47,17 +47,15 @@ export const query = graphql`
     allFile(
       filter: {
         sourceInstanceName: { eq: "examples" }
-        childMdx: { fields: { locale: { eq: "en" } } }
+        fields: { lang: { eq: "en" } }
       }
     ) {
       nodes {
         name
         relativeDirectory
-        childMdx {
-          frontmatter {
-            slug
-            title
-          }
+        childJson {
+          name
+          title
         }
       }
     }
