@@ -7,21 +7,19 @@ import Layout from '../components/Layout';
 import ReferenceList from '../components/ReferenceList';
 
 import { organizeReferenceItems } from '../utils/data';
+import grid from '../styles/grid.module.css';
 
 const IndexRefTemplate = ({ data, pageContext: { libraryName } }) => {
-  const link =
-    libraryName === 'processing'
-      ? `/reference/`
-      : `/reference/libraries/${libraryName}/index.html`;
+  const link = (libraryName = `/reference/libraries/${libraryName}/index.html`);
 
   const items = data.allFile.nodes;
 
   const tree = useMemo(() => organizeReferenceItems(items), [items]);
 
   return (
-    <Layout >
+    <Layout>
       {data.mdx !== null ? (
-        <div>
+        <div className={grid.grid}>
           <MDXRenderer>{data.mdx.body}</MDXRenderer>
           <ReferenceList data={tree} library={libraryName} />
         </div>

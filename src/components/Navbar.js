@@ -49,7 +49,6 @@ const Navbar = ({ siteTitle, show }) => {
   const location = useLocation();
 
   const { locale } = useLocalization();
-  console.log(location);
   const current = useMemo(() => {
     for (var i = 0; i < items.length; i++) {
       const item = items[i];

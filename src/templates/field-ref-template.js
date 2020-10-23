@@ -31,13 +31,15 @@ const RefTemplate = ({ data, pageContext }) => {
   };
 
   return (
-    <Layout >
-      <Sidebar
-        items={data.items}
-        onChange={toggleSidebar}
-        show={show}
-        type={'reference'}
-      />
+    <Layout>
+      {pageContext.libraryName === 'processing' && (
+        <Sidebar
+          items={data.items}
+          onChange={toggleSidebar}
+          show={show}
+          type={'reference'}
+        />
+      )}
       {data.json !== null ? (
         <div
           className={classnames(grid.grid, css.root)}

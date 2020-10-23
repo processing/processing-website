@@ -32,12 +32,14 @@ const ClassRefTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <Sidebar
-        items={data.items}
-        onChange={toggleSidebar}
-        show={show}
-        type={'reference'}
-      />
+      {pageContext.libraryName === 'processing' && (
+        <Sidebar
+          items={data.items}
+          onChange={toggleSidebar}
+          show={show}
+          type={'reference'}
+        />
+      )}
       {entry ? (
         <div className={css.root}>
           <div

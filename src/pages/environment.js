@@ -11,7 +11,6 @@ import grid from '../styles/grid.module.css';
 
 const Environment = ({ data }) => {
   const { mdx } = data;
-  console.log(data);
   const { frontmatter, body, tableOfContents } = mdx;
   return (
     <Layout>
