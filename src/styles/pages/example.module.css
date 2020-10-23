@@ -1,7 +1,4 @@
 .root {
-  & h1 {
-    font-size: var(--text-xlarge);
-  }
 }
 
 .collapsed {

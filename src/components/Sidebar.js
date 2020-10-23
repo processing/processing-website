@@ -2,8 +2,7 @@ import React, { Fragment, useState, useMemo } from 'react';
 import classnames from 'classnames';
 
 import Searchbar from '../components/Searchbar';
-import SidebarExampleList from '../components/SidebarExampleList';
-import SidebarReferenceList from '../components/SidebarReferenceList';
+import SidebarList from '../components/SidebarList';
 
 import {
   filterItems,
@@ -46,11 +45,7 @@ const Sidebar = (props) => {
             searchTerm={searchTerm}
           />
           <div className={css.listWrapper}>
-            {type === 'reference' ? (
-              <SidebarReferenceList data={tree} />
-            ) : (
-              <SidebarExampleList data={tree} />
-            )}
+            <SidebarList data={tree} type={type} />
           </div>
         </Fragment>
       )}

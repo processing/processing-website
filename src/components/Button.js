@@ -10,8 +10,6 @@ export const Button = ({ className, to, href, target, onClick, children }) => {
     [className]: className,
   });
 
-  console.log(to);
-
   return (
     <>
       {to ? (
