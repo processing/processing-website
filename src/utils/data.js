@@ -8,11 +8,13 @@ export const filterItems = (items, searchTerm) => {
   if (searchTerm && searchTerm !== '') {
     return items.filter((item) => {
       try {
-        return item.childJson ? JSON.stringify(Object.values(item.childJson))
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase()) : JSON.stringify(item)
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase());
+        return item.childJson
+          ? JSON.stringify(Object.values(item.childJson))
+              .toLowerCase()
+              .includes(searchTerm.toLowerCase())
+          : JSON.stringify(item)
+              .toLowerCase()
+              .includes(searchTerm.toLowerCase());
       } catch (e) {
         return false;
       }

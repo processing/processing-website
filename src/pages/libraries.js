@@ -32,10 +32,10 @@ const Libraries = ({ data }) => {
     });
   });
 
-  const filtered = useMemo(
-    () => filterItems(contributions, searchTerm),
-    [contributions, searchTerm]
-  );
+  const filtered = useMemo(() => filterItems(contributions, searchTerm), [
+    contributions,
+    searchTerm,
+  ]);
 
   let categories = unique(filtered.flatMap((con) => con.categories));
 
@@ -70,17 +70,16 @@ const Libraries = ({ data }) => {
         </ul>
         <h1 className={grid.col8}>Contributions</h1>
         <Searchbar
-        placeholder={'Search in the Libraries...'}
+          placeholder={'Search in the Libraries...'}
           onChange={(e) => setSearchTerm(e.target.value)}
           searchTerm={searchTerm}
           className={grid.push1}
-          large/>
+          large
+        />
         <CategoryNav categories={categories} />
         <ul className={css.contributionsList}>
           {categories.map((cat) => {
-            let contribs = filtered.filter((c) =>
-              c.categories.includes(cat)
-            );
+            let contribs = filtered.filter((c) => c.categories.includes(cat));
             return (
               <li key={cat} className={grid.nest}>
                 <h2 className={grid.col1andhalf}>{cat}</h2>
@@ -96,7 +95,14 @@ const Libraries = ({ data }) => {
                             css.contributionData
                           )}>
                           <h3>{node.name}</h3>
-                          <span>{node.authors}</span>
+                          {node.authors.map((author, key) => (
+                            <a
+                              key={key + 'a'}
+                              href={author.link}
+                              target="_blank">
+                              {author.name}
+                            </a>
+                          ))}
                         </div>
                         <div className={grid.col4}>
                           <p>{node.sentence}</p>
@@ -148,7 +154,10 @@ export const query = graphql`
         name
         childJson {
           name
-          authors
+          authors {
+            name
+            link
+          }
           sentence
           categories
         }
