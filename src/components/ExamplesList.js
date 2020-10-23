@@ -18,7 +18,11 @@ const ExamplesList = ({ data }) => {
           className={classnames(grid.nest, css.category)}
           key={`category-${key}`}>
           <h2 className={grid.col8}>{category.name}</h2>
-          <p className={classnames(grid.col4, grid.pull4)}>Lorem ipsum</p>
+          <p className={classnames(grid.col4, grid.pull4, css.intro)}>
+            {category === 'topic'
+              ? 'Programs about to animation, interaction, motion, simulation, and more...'
+              : 'Programs about form, data, images, color, typography, and more...'}
+          </p>
           <ul className={classnames(grid.col8, grid.nest)}>
             {category.children.map((subcategory, key) => (
               <div key={`subcategory-${key}`} className={css.subcategory}>

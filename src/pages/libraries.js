@@ -70,7 +70,7 @@ const Libraries = ({ data }) => {
         </ul>
         <h1 className={grid.col8}>Contributions</h1>
         <Searchbar
-          placeholder={'Search in the Libraries...'}
+          placeholder={'Search in the Contributions...'}
           onChange={(e) => setSearchTerm(e.target.value)}
           searchTerm={searchTerm}
           className={grid.push1}

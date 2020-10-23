@@ -59,8 +59,8 @@ async function createReference(actions, graphql) {
   const fieldRefTemplate = path.resolve(
     `./src/templates/field-ref-template.js`
   );
-  const indexRefTemplate = path.resolve(
-    `./src/templates/index-ref-template.js`
+  const indexLibTemplate = path.resolve(
+    `./src/templates/index-lib-template.js`
   );
 
   const { createPage } = actions;
@@ -175,7 +175,7 @@ async function createReference(actions, graphql) {
   dirPages.forEach((dirPage, index) => {
     createPage({
       path: '/reference/libraries/' + dirPage.name + '/index.html',
-      component: indexRefTemplate,
+      component: indexLibTemplate,
       context: {
         libraryName: dirPage.name,
       },

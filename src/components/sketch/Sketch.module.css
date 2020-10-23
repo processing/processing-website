@@ -2,10 +2,10 @@
   display: flex;
   position: relative;
   align-items: stretch;
-}
 
-h1 {
-  font-size: 24px;
-  margin-top: auto;
-  margin-bottom: auto;
+  & h1 {
+    font-size: 24px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
 }

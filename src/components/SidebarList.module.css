@@ -7,8 +7,7 @@
     padding-left: var(--gutter);
     font-size: var(--text-small);
     line-height: 1.6rem;
-    font-family: var(--font);
-    font-weight: 400;
+    font-family: var(--font-mono);
     text-decoration: none;
     color: var(--black);
 
@@ -16,4 +15,9 @@
       color: var(--processing-blue-mid);
     }
   }
+}
+
+.examples {
+  font-family: var(--font);
+  font-weight: 400;
 }
