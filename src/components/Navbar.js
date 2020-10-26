@@ -20,7 +20,7 @@ export const items = [
       { name: 'Reference', href: '/reference' },
       { name: 'Environment', href: '/environment' },
       { name: 'Libraries', href: '/reference/libraries' },
-      { name: 'Tools', href: '/tools' },
+      { name: 'Tools', href: '/reference/tools' },
     ],
   },
   {

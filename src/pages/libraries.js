@@ -94,7 +94,11 @@ const Libraries = ({ data }) => {
                             grid.col2andhalf,
                             css.contributionData
                           )}>
-                          <h3>{node.name}</h3>
+                          <h3>
+                            <a href={node.url} target="_blank">
+                              {node.name}
+                            </a>
+                          </h3>
                           {node.authors.map((author, key) => (
                             <a
                               key={key + 'a'}
@@ -135,6 +139,7 @@ export const query = graphql`
       filter: {
         sourceInstanceName: { eq: "contributions" }
         fields: { lang: { eq: $locale } }
+        childJson: { type: { eq: "library" } }
       }
     ) {
       nodes {
@@ -148,12 +153,14 @@ export const query = graphql`
       filter: {
         sourceInstanceName: { eq: "contributions" }
         fields: { lang: { eq: "en" } }
+        childJson: { type: { eq: "library" } }
       }
     ) {
       nodes {
         name
         childJson {
           name
+          url
           authors {
             name
             link
