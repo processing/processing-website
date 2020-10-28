@@ -186,6 +186,11 @@ async function createReference(actions, graphql) {
     path: '/reference/libraries/',
     component: path.resolve(`./src/pages/libraries.js`),
   });
+
+  createPage({
+    path: '/reference/tools/',
+    component: path.resolve(`./src/pages/tools.js`),
+  });
 }
 
 async function createTutorials(actions, graphql) {

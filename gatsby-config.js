@@ -143,6 +143,13 @@ module.exports = {
         path: `${__dirname}/content/contributions`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `tools`,
+        path: `${__dirname}/content/tools`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-remark-images`,
