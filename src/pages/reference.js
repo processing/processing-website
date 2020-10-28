@@ -10,7 +10,7 @@ import { filterItems, organizeReferenceItems } from '../utils/data';
 
 import grid from '../styles/grid.module.css';
 
-const Reference = ({ data }) => {
+const Reference = ({ data, location }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const items = data.allFile.nodes;

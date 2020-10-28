@@ -1,0 +1,4 @@
+{
+  "name": "Movie Maker",
+  "description": "Creates a QuickTime movie from a sequence of images. Options include setting the size, frame rate, and compression, as well as an audio file."
+}

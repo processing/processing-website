@@ -1,0 +1,4 @@
+{
+  "name": "Archive Sketch",
+  "description": "Archives a copy of the current sketch in .zip format. The archive is placed in the same directory as the sketch."
+}

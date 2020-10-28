@@ -1,8 +1,10 @@
-import { Link } from 'gatsby';
-import React, { useRef } from 'react';
+import React, { useMemo } from 'react';
 import classnames from 'classnames';
 
 import SearchBarSmall from './SearchBarSmall';
+import { useLocation } from '@reach/router';
+
+import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
 
 import css from './Navbar.module.css';
 import grid from '../styles/grid.module.css';
@@ -10,43 +12,65 @@ import grid from '../styles/grid.module.css';
 export const items = [
   {
     name: 'Download',
-    link: '/download',
+    href: '/download',
   },
   {
     name: 'Documentation',
     children: [
-      { name: 'Reference', link: '/reference' },
-      { name: 'Environment', link: '/environment' },
-      { name: 'Libraries', link: '/reference/libraries' },
-      { name: 'Tools', link: '/tools' },
+      { name: 'Reference', href: '/reference' },
+      { name: 'Environment', href: '/environment' },
+      { name: 'Libraries', href: '/reference/libraries' },
+      { name: 'Tools', href: '/reference/tools' },
     ],
   },
   {
     name: 'Learn',
     children: [
-      { name: 'Tutorials', link: '/tutorials' },
-      { name: 'Examples', link: '/examples' },
-      { name: 'Books', link: '/books' },
+      { name: 'Tutorials', href: '/tutorials' },
+      { name: 'Examples', href: '/examples' },
+      { name: 'Books', href: '/books' },
     ],
   },
   {
     name: 'Teach',
-    link: 'https://processingfoundation.org/education',
+    href: '/education',
   },
   {
     name: 'About',
-    link: '/about',
+    href: '/about',
   },
   {
     name: 'Donate',
-    link: '/donate',
+    href: '/donate',
   },
 ];
 
-const Navbar = ({ siteTitle, ref }) => {
-  const navRef = useRef(null);
+const Navbar = ({ siteTitle, show }) => {
+  const location = useLocation();
+
+  const { locale } = useLocalization();
+  const current = useMemo(() => {
+    for (var i = 0; i < items.length; i++) {
+      const item = items[i];
+      if (item.href === location.pathname) {
+        return item.name;
+      } else if (
+        item.children &&
+        item.children.some((child) => child.href === location.pathname)
+      ) {
+        return item.name;
+      }
+    }
+  }, [location]);
+
   return (
-    <div className={classnames(css.root, grid.grid)} ref={ref}>
+    <div
+      className={classnames(
+        css.root,
+        grid.grid,
+        { [css.show]: show },
+        { [css.noshow]: !show }
+      )}>
       <h1 className={classnames(grid.col2, css.logo)}>
         <Link to="/">{siteTitle}</Link>
       </h1>
@@ -56,14 +80,17 @@ const Navbar = ({ siteTitle, ref }) => {
             key={key}
             className={classnames(css.item, {
               [css.hasSubmenu]: item.children,
+              [css.active]: item.name === current,
             })}>
-            {item.link ? <Link to={item.link}>{item.name}</Link> : item.name}
+            {item.href ? <Link to={item.href}>{item.name}</Link> : item.name}
             {item.children && (
               <ul className={css.submenu}>
                 {item.children.map((subitem, j) => (
                   <li className={css.subitem} key={key + j}>
-                    {subitem.link ? (
-                      <Link to={subitem.link}>{subitem.name}</Link>
+                    {subitem.href ? (
+                      <Link to={subitem.href} language={locale}>
+                        {subitem.name}
+                      </Link>
                     ) : (
                       subitem.name
                     )}

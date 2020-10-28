@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import unique from 'array-unique';
 
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
+import { useLocalization } from 'gatsby-theme-i18n';
 
 import Layout from '../components/Layout';
 import CategoryNav from '../components/CategoryNav';
-import { useLocalization } from 'gatsby-theme-i18n';
+import Searchbar from '../components/Searchbar';
+
+import { filterItems } from '../utils/data';
 
 import css from '../styles/pages/libraries.module.css';
 import grid from '../styles/grid.module.css';
@@ -15,6 +18,7 @@ import grid from '../styles/grid.module.css';
 const Libraries = ({ data }) => {
   const { locale } = useLocalization();
   const { libraries, currentLang, english } = data;
+  const [searchTerm, setSearchTerm] = useState('');
 
   let contributions = [];
 
@@ -28,7 +32,12 @@ const Libraries = ({ data }) => {
     });
   });
 
-  let categories = unique(contributions.flatMap((con) => con.categories));
+  const filtered = useMemo(() => filterItems(contributions, searchTerm), [
+    contributions,
+    searchTerm,
+  ]);
+
+  let categories = unique(filtered.flatMap((con) => con.categories));
 
   return (
     <Layout>
@@ -60,12 +69,17 @@ const Libraries = ({ data }) => {
           })}
         </ul>
         <h1 className={grid.col8}>Contributions</h1>
+        <Searchbar
+          placeholder={'Search in the Contributions...'}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          searchTerm={searchTerm}
+          className={grid.push1}
+          large
+        />
         <CategoryNav categories={categories} />
         <ul className={css.contributionsList}>
           {categories.map((cat) => {
-            let contribs = contributions.filter((c) =>
-              c.categories.includes(cat)
-            );
+            let contribs = filtered.filter((c) => c.categories.includes(cat));
             return (
               <li key={cat} className={grid.nest}>
                 <h2 className={grid.col1andhalf}>{cat}</h2>
@@ -80,8 +94,19 @@ const Libraries = ({ data }) => {
                             grid.col2andhalf,
                             css.contributionData
                           )}>
-                          <h3>{node.name}</h3>
-                          <span>{node.authors}</span>
+                          <h3>
+                            <a href={node.url} target="_blank">
+                              {node.name}
+                            </a>
+                          </h3>
+                          {node.authors.map((author, key) => (
+                            <a
+                              key={key + 'a'}
+                              href={author.link}
+                              target="_blank">
+                              {author.name}
+                            </a>
+                          ))}
                         </div>
                         <div className={grid.col4}>
                           <p>{node.sentence}</p>
@@ -114,6 +139,7 @@ export const query = graphql`
       filter: {
         sourceInstanceName: { eq: "contributions" }
         fields: { lang: { eq: $locale } }
+        childJson: { type: { eq: "library" } }
       }
     ) {
       nodes {
@@ -127,13 +153,18 @@ export const query = graphql`
       filter: {
         sourceInstanceName: { eq: "contributions" }
         fields: { lang: { eq: "en" } }
+        childJson: { type: { eq: "library" } }
       }
     ) {
       nodes {
         name
         childJson {
           name
-          authors
+          url
+          authors {
+            name
+            link
+          }
           sentence
           categories
         }

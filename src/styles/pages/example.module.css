@@ -1,0 +1,22 @@
+.root {
+}
+
+.collapsed {
+  margin-left: 0;
+}
+
+.section {
+  margin-bottom: var(--vertical-gutter);
+  width: 100%;
+}
+
+.related {
+  position: relative;
+  display: flex;
+  align-items: center;
+  list-style: none;
+
+  & li {
+    margin-right: var(--gutter);
+  }
+}

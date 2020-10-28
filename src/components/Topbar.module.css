@@ -4,10 +4,26 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 50px;
   padding: 0 16px;
   background-color: var(--processing-blue-dark);
   color: white;
+}
+
+.show {
+  height: 50px;
+  transition: 1s ease-in-out;
+  overflow: hidden;
+}
+
+.noshow {
+  visibility: hidden;
+  height: 0px;
+  transition: 1s ease-in-out;
+  overflow: hidden;
+
+  .menu {
+    visibility: hidden;
+  }
 }
 
 .menu {
@@ -31,8 +47,4 @@
 .item:hover {
   border-bottom: solid 6px var(--processing-blue-mid);
   padding-top: 6px;
-}
-
-.selector {
-  margin-right: 16px;
 }

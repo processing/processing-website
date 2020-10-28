@@ -3,16 +3,29 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Link } from 'gatsby';
 
-import css from './Button.css';
+import css from './Button.module.css';
 
-export const Button = ({ className, to, onClick, children }) => {
-  const classes = classnames(css.root, {
+export const Button = ({ className, to, href, target, onClick, children }) => {
+  const classNames = classnames(css.root, {
     [className]: className,
   });
+
   return (
-    <Link className={classes} to={to}>
-      {children}
-    </Link>
+    <>
+      {to ? (
+        <Link className={classNames} to={to}>
+          {children}
+        </Link>
+      ) : href ? (
+        <a className={classNames} href={href} target={target}>
+          {children}
+        </a>
+      ) : (
+        <button className={classNames} onClick={onClick}>
+          {children}
+        </button>
+      )}
+    </>
   );
 };
 

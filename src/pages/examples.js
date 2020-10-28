@@ -9,7 +9,7 @@ import { filterItems, organizeExampleItems } from '../utils/data';
 
 import grid from '../styles/grid.module.css';
 
-const Examples = ({ data }) => {
+const Examples = ({ data, location }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const items = data.allFile.nodes;
@@ -47,17 +47,15 @@ export const query = graphql`
     allFile(
       filter: {
         sourceInstanceName: { eq: "examples" }
-        childMdx: { fields: { locale: { eq: "en" } } }
+        fields: { lang: { eq: "en" } }
       }
     ) {
       nodes {
         name
         relativeDirectory
-        childMdx {
-          frontmatter {
-            slug
-            title
-          }
+        childJson {
+          name
+          title
         }
       }
     }

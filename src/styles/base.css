@@ -79,6 +79,9 @@ a {
 
 p {
   margin-top: 0;
+  & a {
+    color: var(--processing-blue-mid);
+  }
 }
 
 span {
@@ -87,7 +90,7 @@ span {
 
 code,
 pre {
-  font-family: "Space Mono", monospace;
+  font-family: var(--font-mono);
   font-size: var(--text-small);
 }
 

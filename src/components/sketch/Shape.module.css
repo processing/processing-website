@@ -1,0 +1,8 @@
+.root {
+}
+
+.blur {
+  color: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  cursor: ew-resize;
+}

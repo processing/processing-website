@@ -1,7 +1,7 @@
 .list {
   list-style: none;
   border-left: solid 7px var(--lightgray);
-  margin-bottom: 30px;
+  margin: var(--margin) 0;
 
   & li {
     width: 100%;
@@ -37,7 +37,7 @@
 
 .contributionsList {
   list-style: none;
-  margin-bottom: 30px;
+  margin: var(--margin) 0;
 
   & h2 {
     font-size: var(--text-xlarge);

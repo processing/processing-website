@@ -1,0 +1,17 @@
+.root {
+  cursor: ew-resize;
+}
+
+.color {
+  height: 20px;
+  width: 20px;
+  border: none;
+  outline: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.blur {
+  color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}

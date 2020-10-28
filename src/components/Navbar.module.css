@@ -1,10 +1,25 @@
 .root {
-  margin: var(--gutter) var(--margin);
   align-items: baseline;
+}
+
+.show {
+  margin: var(--gutter) var(--margin);
+  transition: 1s ease-in-out;
+}
+
+.noshow {
+  margin: calc(var(--gutter) / 2) var(--margin);
+  transition: 1s ease-in-out;
+
+  & .logo {
+    font-size: var(--text-large);
+    transition: 1s ease-in-out;
+  }
 }
 
 .logo {
   font-size: var(--text-xlarge);
+  transition: 1s ease-in-out;
 }
 
 .menu {
@@ -15,6 +30,8 @@
 
 .item {
   display: inline-block;
+  padding-left: 8px;
+  border-left: solid 6px transparent;
   cursor: pointer;
   color: var(--processing-blue-dark);
   font-size: var(--text-medium);
@@ -22,11 +39,11 @@
 }
 
 .item:hover {
-  color: var(--processing-blue-mid);
+  border-left: solid 6px var(--processing-blue-dark);
 }
 
-.item:active {
-  color: var(--processing-blue-dark);
+.active {
+  border-left: solid 6px var(--processing-blue-dark);
 }
 
 .subitem {

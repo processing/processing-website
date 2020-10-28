@@ -3,14 +3,18 @@ import { titleCase as _titleCase } from 'title-case';
 // applies title case after replacing _ by spaces
 export const titleCase = (slug) => _titleCase(slug.replace(/_/g, ' '));
 
-//filters the references based on a search text
+//filters the references/examples based on a search text
 export const filterItems = (items, searchTerm) => {
   if (searchTerm && searchTerm !== '') {
     return items.filter((item) => {
       try {
-        return JSON.stringify(Object.values(item.childJson))
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase());
+        return item.childJson
+          ? JSON.stringify(Object.values(item.childJson))
+              .toLowerCase()
+              .includes(searchTerm.toLowerCase())
+          : JSON.stringify(item)
+              .toLowerCase()
+              .includes(searchTerm.toLowerCase());
       } catch (e) {
         return false;
       }
@@ -91,10 +95,11 @@ export const organizeExampleItems = (items) => {
 
     tree[categoryIndex].children[subcategoryIndex].children.push({
       slug: item.relativeDirectory.split('/')[2],
-      name: item.childMdx.frontmatter.title,
+      name: item.childJson.name,
       dir: item.relativeDirectory,
-      ...item.childMDX,
+      ...item.childJSON,
     });
   });
+
   return tree;
 };

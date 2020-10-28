@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: `Processing`,
@@ -52,6 +56,15 @@ module.exports = {
       resolve: `gatsby-theme-i18n-react-intl`,
       options: {
         defaultLocale: `./i18n/react-intl/en.json`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        path: `${__dirname}/i18n/react-intl`,
+        languages: [`en`, `de`],
+        defaultLanguage: `en`,
+        redirect: false,
       },
     },
     {
@@ -133,6 +146,13 @@ module.exports = {
         path: `${__dirname}/content/contributions`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `tools`,
+        path: `${__dirname}/content/tools`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-remark-images`,
@@ -145,6 +165,17 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
+      },
+    },
+    {
+      resolve: `gatsby-source-graphql`,
+      options: {
+        typeName: `GitHub`,
+        fieldName: `github`,
+        url: `https://api.github.com/graphql`,
+        headers: {
+          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        },
       },
     },
   ],

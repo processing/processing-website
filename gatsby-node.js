@@ -59,8 +59,8 @@ async function createReference(actions, graphql) {
   const fieldRefTemplate = path.resolve(
     `./src/templates/field-ref-template.js`
   );
-  const indexRefTemplate = path.resolve(
-    `./src/templates/index-ref-template.js`
+  const indexLibTemplate = path.resolve(
+    `./src/templates/index-lib-template.js`
   );
 
   const { createPage } = actions;
@@ -175,7 +175,7 @@ async function createReference(actions, graphql) {
   dirPages.forEach((dirPage, index) => {
     createPage({
       path: '/reference/libraries/' + dirPage.name + '/index.html',
-      component: indexRefTemplate,
+      component: indexLibTemplate,
       context: {
         libraryName: dirPage.name,
       },
@@ -185,6 +185,11 @@ async function createReference(actions, graphql) {
   createPage({
     path: '/reference/libraries/',
     component: path.resolve(`./src/pages/libraries.js`),
+  });
+
+  createPage({
+    path: '/reference/tools/',
+    component: path.resolve(`./src/pages/tools.js`),
   });
 }
 
@@ -236,10 +241,12 @@ async function createExamples(actions, graphql) {
     `
       {
         allFile(filter: { sourceInstanceName: { eq: "examples" } }) {
-          nodes {
-            childMdx {
-              frontmatter {
-                slug
+          edges {
+            node {
+              name
+              relativeDirectory
+              childJson {
+                type
               }
             }
           }
@@ -252,14 +259,16 @@ async function createExamples(actions, graphql) {
     throw exampleResult.errors;
   }
 
-  const examplePages = exampleResult.data.allFile.nodes;
+  const examplePages = exampleResult.data.allFile.edges;
 
   examplePages.forEach((examplePage, index) => {
     createPage({
-      path: examplePage.childMdx.frontmatter.slug,
+      path: 'examples/' + examplePage.node.name.toLowerCase() + '.html',
       component: exampleTemplate,
       context: {
-        slug: examplePage.childMdx.frontmatter.slug,
+        slug: 'examples/' + examplePage.node.name.toLowerCase() + '.html',
+        name: examplePage.node.name,
+        relDir: examplePage.node.relativeDirectory,
       },
     });
   });

@@ -14,13 +14,5 @@
     "localName": "Deutsch",
     "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY"
-  },
-  {
-    "code": "es",
-    "hrefLang": "es-ES",
-    "name": "Spanish",
-    "localName": "Español",
-    "langDir": "ltr",
-    "dateFormat": "DD.MM.YYYY"
   }
 ]
