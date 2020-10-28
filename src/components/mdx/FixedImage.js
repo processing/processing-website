@@ -1,16 +1,30 @@
 import React from 'react';
+import classnames from 'classnames';
 
 import css from './FixedImage.module.css';
 
-const FixedImage = ({ children, minWidth, float, marginLeft, marginRight }) => {
-  let style = {};
-  style['float'] = float ? float : '';
-  style['minWidth'] = minWidth ? minWidth : '';
-  style['marginLeft'] = marginLeft ? marginLeft : '';
-  style['marginRight'] = marginRight ? marginRight : '';
-  if (children.props) children.props.style['margin'] = 0;
+const FixedImage = ({
+  children,
+  center,
+  inline,
+  height,
+  width,
+  marginLeft,
+  marginRight,
+  style,
+}) => {
+  const _style = {
+    width,
+    height,
+    marginLeft: center ? 'auto' : marginLeft,
+    marginRight: center ? 'auto' : marginRight,
+    ...style,
+  };
+
   return (
-    <div style={style} className={css.root}>
+    <div
+      className={classnames(css.root, { [css.inline]: inline })}
+      style={_style}>
       {children}
     </div>
   );

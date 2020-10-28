@@ -9,6 +9,7 @@ import Footer from './Footer';
 import FixedImage from './mdx/FixedImage';
 import Intro from './mdx/Intro';
 import HighlightBlock from './mdx/HighlightBlock';
+import Note from './mdx/Note';
 
 import '../styles/base.css';
 import '../styles/variables.css';
@@ -31,6 +32,7 @@ const Layout = ({ children }) => {
     FixedImage,
     Intro,
     HighlightBlock,
+    Note,
     img: (props) => <img {...props}></img>,
   };
 

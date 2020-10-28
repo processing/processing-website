@@ -1,0 +1,13 @@
+.root {
+  & span {
+    color: var(--darkgray);
+    font-family: "Space Grotesk";
+    font-size: var(--text-regular);
+
+    & p {
+      color: inherit;
+      font-family: inherit;
+      font-size: inherit;
+    }
+  }
+}
