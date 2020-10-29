@@ -8,10 +8,10 @@ import Img from 'gatsby-image';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 
-import css from '../styles/tutorials/ref-template.module.css';
+import css from '../styles/templates/ref-template.module.css';
 import grid from '../styles/grid.module.css';
 
-const RefTemplate = ({ data, pageContext }) => {
+const FieldRefTemplate = ({ data, pageContext }) => {
   let entry;
   const [show, setShow] = useState(false);
   const examples = data.pdes.edges;
@@ -40,29 +40,53 @@ const RefTemplate = ({ data, pageContext }) => {
           type={'reference'}
         />
       )}
-      {data.json !== null ? (
+      {entry !== null ? (
         <div
-          className={classnames(grid.grid, css.root)}
-          style={{ marginLeft: show ? '150px' : '50px' }}>
-          <h4 className={grid.col1}>Name</h4>
-          <h3 className={grid.col6}>{entry.name}</h3>
-          <h4 className={grid.col1}>Description</h4>
-          <p className={grid.col6}>{entry.description}</p>
+          className={classnames(
+            css.root,
+            { [css.collapsed]: !show },
+            { [css.expanded]: show }
+          )}>
+          <div className={classnames(css.section, grid.grid)}>
+            <h4 className={classnames(grid.col1, grid.push1)}>Name</h4>
+            <h3 className={classnames(grid.col4, grid.pull1)}>{entry.name}</h3>
+          </div>
+          <div className={classnames(css.section, grid.grid)}>
+            <h4 className={classnames(grid.col1, grid.push1)}>Description</h4>
+            <p className={classnames(grid.col4, grid.pull1, css.description)}>
+              {entry.description}
+            </p>
+          </div>
           {examples.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
-              <h4 className={grid.col1}>Examples</h4>
-              <ul className={classnames(grid.col6, css.list)}>
-                {examples.map((edge, key) => {
+              <h4 className={classnames(grid.col1, grid.push1)}>Examples</h4>
+              <ul
+                className={classnames(
+                  grid.col6,
+                  grid.push1,
+                  grid.nest,
+                  css.list
+                )}>
+                {examples.map((ex, key) => {
                   const img = images.filter(
-                    (img) => img.node.name === edge.node.name
+                    (img) => img.node.name === ex.node.name
                   );
                   return (
-                    <li key={'ex' + key} className={grid.col4}>
-                      <p>
-                        {edge.node.name}
-                        {edge.node.internal.content}
-                      </p>
-                      <Img fixed={img.node.childImageSharp.fixed} />
+                    <li className={css.example} key={'ex' + key}>
+                      <div className={grid.col4}>
+                        <pre className={css.codeBlock}>
+                          {ex.node.internal.content
+                            .split(/\r?\n/)
+                            .map((line, i) => (
+                              <code key={`line-${i}`}>{line}</code>
+                            ))}
+                        </pre>
+                      </div>
+                      {img.length > 0 && (
+                        <div className={grid.col2}>
+                          <Img fixed={img[0].node.childImageSharp.fixed} />
+                        </div>
+                      )}
                     </li>
                   );
                 })}
@@ -70,18 +94,24 @@ const RefTemplate = ({ data, pageContext }) => {
             </div>
           )}
           {entry.related.length > 0 && (
-            <>
-              <h4 className={grid.col1}>Related</h4>
-              <ul className={classnames(grid.col6, css.list)}>
+            <div className={classnames(css.section, grid.grid)}>
+              <h4 className={classnames(grid.col1, grid.push1)}>Related</h4>
+              <ul
+                className={classnames(
+                  grid.col4,
+                  grid.nest,
+                  css.list,
+                  grid.pull1
+                )}>
                 {entry.related.map((rel, key) => (
-                  <li key={key + 'rel'} className={grid.col2}>
-                    <a href={rel + '.html'} className={grid.col2}>
+                  <li key={key + 'rel'}>
+                    <a href={rel + '.html'} className={grid.col4}>
                       {rel.replace(/_/g, '()')}
                     </a>
                   </li>
                 ))}
               </ul>
-            </>
+            </div>
           )}
         </div>
       ) : (
@@ -94,7 +124,7 @@ const RefTemplate = ({ data, pageContext }) => {
   );
 };
 
-export default RefTemplate;
+export default FieldRefTemplate;
 
 export const query = graphql`
   query($name: String!, $assetsName: String!, $locale: String!) {

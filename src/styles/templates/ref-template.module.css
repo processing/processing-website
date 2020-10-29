@@ -9,6 +9,12 @@
 
 .collapsed {
   margin-left: 0;
+  transition: 0.4s ease;
+}
+
+.expanded {
+  margin-left: 100px;
+  transition: 0.4s ease;
 }
 
 .section {

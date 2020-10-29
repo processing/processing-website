@@ -7,7 +7,7 @@ import classnames from 'classnames';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 
-import css from '../styles/tutorials/ref-template.module.css';
+import css from '../styles/templates/ref-template.module.css';
 import grid from '../styles/grid.module.css';
 
 const ClassRefTemplate = ({ data, pageContext }) => {
@@ -30,6 +30,8 @@ const ClassRefTemplate = ({ data, pageContext }) => {
     setShow(show);
   };
 
+  console.log(data);
+
   return (
     <Layout>
       {pageContext.libraryName === 'processing' && (
@@ -41,10 +43,13 @@ const ClassRefTemplate = ({ data, pageContext }) => {
         />
       )}
       {entry ? (
-        <div className={css.root}>
-          <div
-            className={classnames(grid.grid, css.section)}
-            style={{ marginLeft: show ? '150px' : '50px' }}>
+        <div
+          className={classnames(
+            css.root,
+            { [css.collapsed]: !show },
+            { [css.expanded]: show }
+          )}>
+          <div className={classnames(grid.grid, css.section)}>
             <h4 className={classnames(grid.col1, grid.push1)}>Class name</h4>
             <h3 className={classnames(grid.col4, grid.pull1)}>{entry.name}</h3>
           </div>
@@ -58,18 +63,33 @@ const ClassRefTemplate = ({ data, pageContext }) => {
           {examples.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
               <h4 className={classnames(grid.col1, grid.push1)}>Examples</h4>
-              <ul className={classnames(grid.col4, grid.pull1, css.list)}>
+              <ul
+                className={classnames(
+                  grid.col6,
+                  grid.push1,
+                  grid.nest,
+                  css.list
+                )}>
                 {examples.map((ex, key) => {
                   const img = images.filter(
                     (img) => img.node.name === ex.node.name
                   );
                   return (
-                    <li key={'ex' + key} className={grid.col4}>
-                      <p>
-                        {ex.node.name}
-                        {ex.node.internal.content}
-                      </p>
-                      <Img fixed={img.node.childImageSharp.fixed} />
+                    <li key={'ex' + key} className={css.example}>
+                      <div className={grid.col4}>
+                        <pre className={css.codeBlock}>
+                          {ex.node.internal.content
+                            .split(/\r?\n/)
+                            .map((line, i) => (
+                              <code key={`line-${i}`}>{line}</code>
+                            ))}
+                        </pre>
+                      </div>
+                      {img.length > 0 && (
+                        <div className={grid.col2}>
+                          <Img fixed={img[0].node.childImageSharp.fixed} />
+                        </div>
+                      )}
                     </li>
                   );
                 })}
@@ -127,7 +147,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               </ul>
             </div>
           )}
-          {related && (
+          {related.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
               <h4 className={classnames(grid.col1, grid.push1)}>Related</h4>
               <ul

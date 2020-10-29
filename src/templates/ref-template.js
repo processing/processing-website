@@ -8,7 +8,7 @@ import Img from 'gatsby-image';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 
-import css from '../styles/tutorials/ref-template.module.css';
+import css from '../styles/templates/ref-template.module.css';
 import grid from '../styles/grid.module.css';
 
 const RefTemplate = ({ data, pageContext }) => {
@@ -42,25 +42,29 @@ const RefTemplate = ({ data, pageContext }) => {
         />
       )}
       {data.json !== null ? (
-        <div className={classnames(css.root, { [css.collapsed]: !show })}>
+        <div
+          className={classnames(
+            css.root,
+            { [css.collapsed]: !show },
+            { [css.expanded]: show }
+          )}>
           <div className={classnames(css.section, grid.grid)}>
             <h4 className={classnames(grid.col1, grid.push1)}>Name</h4>
             <h3 className={classnames(grid.col4, grid.pull1)}>{entry.name}</h3>
           </div>
           <div className={classnames(css.section, grid.grid)}>
             <h4 className={classnames(grid.col1, grid.push1)}>Description</h4>
-            <p
-              className={classnames(grid.col4, grid.pull1, css.description)}
-              dangerouslySetInnerHTML={{ __html: entry.description }}
-            />
+            <p className={classnames(grid.col4, grid.pull1, css.description)}>
+              {entry.description}
+            </p>
           </div>
           {examples.length > 0 && (
             <div className={classnames(css.section, grid.grid)}>
               <h4 className={classnames(grid.col1, grid.push1)}>Examples</h4>
               <ul
                 className={classnames(
-                  grid.col1,
                   grid.col6,
+                  grid.push1,
                   grid.nest,
                   css.list
                 )}>
@@ -79,7 +83,7 @@ const RefTemplate = ({ data, pageContext }) => {
                             ))}
                         </pre>
                       </div>
-                      {img && (
+                      {img.length > 0 && (
                         <div className={grid.col2}>
                           <Img fixed={img[0].node.childImageSharp.fixed} />
                         </div>
