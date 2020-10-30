@@ -72,7 +72,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
             </div>
             <Tabs pdes={orderedPdes} />
             <div className={grid.col4}>
-              <h3>Relate examples</h3>
+              <h3>Related examples</h3>
               <ul className={css.related}>
                 {related.map((rel, key) => {
                   return (

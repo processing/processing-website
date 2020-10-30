@@ -35,6 +35,11 @@
   padding: 0 16px;
 }
 
+.grid .col-3andhalf {
+  flex-basis: calc((100vw - var(--margin) * 2) / 8 * 3.5);
+  padding: 0 16px;
+}
+
 .grid .col-4 {
   flex-basis: calc((100vw - var(--margin) * 2) / 8 * 4);
   padding: 0 16px;
