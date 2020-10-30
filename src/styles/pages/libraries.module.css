@@ -85,6 +85,10 @@
   border-right: solid 3px var(--lightgray);
 }
 
+.contributionAuthor {
+  color: var(--processing-blue-mid);
+}
+
 .subgrid {
   display: flex;
   align-items: baseline;

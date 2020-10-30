@@ -103,7 +103,8 @@ const Libraries = ({ data }) => {
                             <a
                               key={key + 'a'}
                               href={author.link}
-                              target="_blank">
+                              target="_blank"
+                              className={css.contributionAuthor}>
                               {author.name}
                             </a>
                           ))}
