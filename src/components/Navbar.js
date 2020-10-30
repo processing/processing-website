@@ -9,6 +9,8 @@ import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
 import css from './Navbar.module.css';
 import grid from '../styles/grid.module.css';
 
+import LogoProcessing from '../images/logo-processing.svg';
+
 export const items = [
   {
     name: 'Download',
@@ -72,7 +74,10 @@ const Navbar = ({ siteTitle, show }) => {
         { [css.noshow]: !show }
       )}>
       <h1 className={classnames(grid.col2, css.logo)}>
-        <Link to="/">{siteTitle}</Link>
+        <Link to="/">
+          <LogoProcessing />
+          {siteTitle}
+        </Link>
       </h1>
       <ul className={classnames(css.menu, grid.col4)}>
         {items.map((item, key) => (

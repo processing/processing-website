@@ -20,6 +20,10 @@
 .logo {
   font-size: var(--text-xlarge);
   transition: 0.2s ease-in-out;
+  & svg {
+    width: 68px;
+    height: auto;
+  }
 }
 
 .menu {

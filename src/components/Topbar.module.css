@@ -48,3 +48,9 @@
   border-bottom: solid 6px var(--processing-blue-mid);
   padding-top: 6px;
 }
+
+.logo {
+  margin-right: 5px;
+  width: 30px;
+  height: auto;
+}

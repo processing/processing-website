@@ -6,21 +6,25 @@ import css from './Topbar.module.css';
 import TopbarItem from './TopbarItem';
 import Selector from './Selector';
 
+import LogoProcessing from '../images/logo-processing-dark.svg';
+import LogoP5js from '../images/logo-p5js-dark.svg';
+import LogoFoundation from '../images/logo-processingfoundation-dark.svg';
+
 export const items = [
   {
     name: 'Processing Foundation',
     link: 'https://processingfoundation.org',
-    logo: '',
+    logo: <LogoFoundation className={css.logo} />,
   },
   {
     name: 'Processing',
     link: 'https://processing.org',
-    logo: '',
+    logo: <LogoProcessing className={css.logo} />,
   },
   {
     name: 'p5.js',
     link: 'https://p5js.org/',
-    logo: '',
+    logo: <LogoP5js className={css.logo} />,
   },
 ];
 
