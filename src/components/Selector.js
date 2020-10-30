@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import classnames from 'classnames';
+import React from 'react';
 
 import { useLocalization } from 'gatsby-theme-i18n';
 import { changeLocale } from 'gatsby-plugin-intl';
@@ -7,7 +6,7 @@ import { changeLocale } from 'gatsby-plugin-intl';
 import css from './Selector.module.css';
 
 const Selector = () => {
-  const { config, defaultLang, locale } = useLocalization();
+  const { config, locale } = useLocalization();
 
   return (
     <div className={css.root}>

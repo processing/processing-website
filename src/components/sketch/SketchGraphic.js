@@ -1,4 +1,4 @@
-import React, { Fragment, useMemo, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import classnames from 'classnames';
 
 import Button from '../Button';
