@@ -53,14 +53,14 @@ const IndexPage = () => {
               {' '}
               Welcome to Processing!{' '}
             </h1>
-            <div className={grid.col4}>
+            <p className={grid.col4}>
               Processing is a flexible software sketchbook and a language for
               learning how to code within the context of the visual arts. Since
               2001, Processing has promoted software literacy within the visual
               arts and visual literacy within technology. There are tens of
               thousands of students, artists, designers, researchers, and
               hobbyists who use Processing for learning and prototyping.
-            </div>
+            </p>
             <div className={classnames(grid.col4, css.buttons)}>
               <Button to={'/download'} className={css.button}>
                 Download
@@ -94,7 +94,12 @@ const IndexPage = () => {
           </div>
         </div>
         <div className={classnames(grid.col6, grid.nest)}>
-          <h3 className={classnames(grid.col6, grid.nest)}> Examples</h3>
+          <h3 className={classnames(grid.col6, grid.nest)}>Examples</h3>
+          <ul className={classnames(grid.col6, grid.nest, css.examples)}>
+            <li className={grid.col2}><div className={css.placeholder}></div></li>
+            <li className={grid.col2}><div className={css.placeholder}></div></li>
+            <li className={grid.col2}><div className={css.placeholder}></div></li>
+          </ul>
         </div>
       </div>
       <div className={classnames(grid.grid, css.bottom)}>
@@ -152,7 +157,8 @@ const IndexPage = () => {
         </div>
         <div className={classnames(grid.col4, grid.nest)}>
           <h3 className={grid.col4}>News</h3>
-          <p>
+          <div className={grid.col4}><div className={css.placeholder}></div></div>
+          <p className={grid.col4}>
             The Processing Community Day (PCD) initiative is evolving. For 2020,
             we will offer a mentorship program for PCD Worldwide Organizers who
             are interested in learning from past community organizers and
@@ -161,6 +167,11 @@ const IndexPage = () => {
             to learn more about starting or attending an event in 2020!
           </p>
           <h3 className={grid.col4}>Partners</h3>
+          <ul className={classnames(grid.col6, grid.nest, css.examples)}>
+            <li className={grid.col1}><div className={classnames(css.placeholder, css.partner)}></div></li>
+            <li className={grid.col1}><div className={classnames(css.placeholder, css.partner)}></div></li>
+            <li className={grid.col1}><div className={classnames(css.placeholder, css.partner)}></div></li>
+          </ul>
         </div>
       </div>
     </Layout>

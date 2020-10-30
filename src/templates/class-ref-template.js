@@ -30,8 +30,6 @@ const ClassRefTemplate = ({ data, pageContext }) => {
     setShow(show);
   };
 
-  console.log(data);
-
   return (
     <Layout>
       {pageContext.libraryName === 'processing' && (

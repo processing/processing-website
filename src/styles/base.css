@@ -104,6 +104,10 @@ code {
   margin-bottom: 2px;
 }
 
+p {
+  cursor: text;
+}
+
 p code {
   margin: 0;
 }

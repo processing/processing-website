@@ -218,9 +218,6 @@ void draw() {
           </pre>
         </details>
       </div>
-      <Button className={css.link} href={SKETCH_URL} target="_blank">
-        Open in web editor
-      </Button>
     </div>
   );
 };

@@ -4,22 +4,22 @@
 
 .show {
   margin: var(--gutter) var(--margin);
-  transition: 1s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .noshow {
   margin: calc(var(--gutter) / 2) var(--margin);
-  transition: 1s ease-in-out;
+  transition: 0.5s ease-in-out;
 
   & .logo {
     font-size: var(--text-large);
-    transition: 1s ease-in-out;
+    transition: 0.5s ease-in-out;
   }
 }
 
 .logo {
   font-size: var(--text-xlarge);
-  transition: 1s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .menu {

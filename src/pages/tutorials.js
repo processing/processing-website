@@ -47,7 +47,6 @@ const Tutorials = ({ data }) => {
                 intro,
                 coverImage,
               } = node.childMdx.frontmatter;
-              console.log(node.childMdx.frontmatter);
               return (
                 <li key={k} className={grid.col2}>
                   <a href={link} language={locale}>
