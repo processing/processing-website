@@ -1,6 +1,6 @@
 .root {
   width: fit-content;
-  background: var(--gray);
+  background: var(--darkgray);
   padding: 4px 18px;
   font-family: var(--font-mono);
   font-size: var(--text-small);
@@ -10,7 +10,7 @@
   border: none;
 }
 .root:focus {
-  background: var(--lightgray);
+  background: var(--darkgray);
   color: white;
 }
 .root:hover {

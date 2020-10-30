@@ -6,8 +6,8 @@ const TopbarItem = (props) => {
   const { item } = props;
   return (
     <div className={css.root}>
-      {item.logo}
       <a href={item.link}>
+        {item.logo}
         <h4>{item.name}</h4>
       </a>
     </div>
