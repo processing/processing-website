@@ -77,13 +77,13 @@ const Libraries = ({ data }) => {
           large
         />
         <CategoryNav categories={categories} />
-        <ul className={css.contributionsList}>
+        <ul className={classnames(grid.col8, grid.nest, css.contributionsList)}>
           {categories.map((cat) => {
             let contribs = filtered.filter((c) => c.categories.includes(cat));
             return (
               <li key={cat} className={grid.nest}>
                 <h2 className={grid.col1andhalf}>{cat}</h2>
-                <ul className={classnames(grid.col5andhalf, grid.nest)}>
+                <ul className={classnames(grid.col5andhalf)}>
                   {contribs.map((node, key) => {
                     return (
                       <li

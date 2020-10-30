@@ -52,6 +52,7 @@
 
   & li {
     margin-bottom: 20px;
+    width: 100%;
   }
 
   & ul li:last-child {
