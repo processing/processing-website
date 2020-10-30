@@ -11,14 +11,14 @@
 
 .show {
   height: 50px;
-  transition: 1s ease-in-out;
+  transition: 0.5s ease-in-out;
   overflow: hidden;
 }
 
 .noshow {
   visibility: hidden;
   height: 0px;
-  transition: 1s ease-in-out;
+  transition: 0.5s ease-in-out;
   overflow: hidden;
 
   .menu {

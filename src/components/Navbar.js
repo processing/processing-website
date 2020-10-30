@@ -88,11 +88,15 @@ const Navbar = ({ siteTitle, show }) => {
                 {item.children.map((subitem, j) => (
                   <li className={css.subitem} key={key + j}>
                     {subitem.href ? (
-                      subitem.href.startsWith('https') ?
-                      <a href={subitem.href} target="_blank">{subitem.name}</a> :
-                      <Link to={subitem.href} language={locale}>
-                        {subitem.name}
-                      </Link>
+                      subitem.href.startsWith('https') ? (
+                        <a href={subitem.href} target="_blank">
+                          {subitem.name}
+                        </a>
+                      ) : (
+                        <Link to={subitem.href} language={locale}>
+                          {subitem.name}
+                        </Link>
+                      )
                     ) : (
                       subitem.name
                     )}
