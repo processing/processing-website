@@ -34,6 +34,7 @@
   }
   & code {
     margin-bottom: 0;
+    font-variant-ligatures: no-common-ligatures;
   }
 }
 

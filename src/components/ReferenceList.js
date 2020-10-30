@@ -16,11 +16,11 @@ const ReferenceList = ({ data, library }) => {
           key={`category-${key}`}>
           <h2 className={classnames(grid.col8)}>{category.name}</h2>
           <ul className={classnames(grid.col8, grid.nest)}>
-            <div className={css.verticalSeparator} />
             {category.children.map((subcategory, key) => {
               return (
                 subcategory !== null && (
                   <div className={css.subcategory} key={`subcategory-${key}`}>
+                    {subcategory.name !== "" && <div className={css.verticalSeparator} />}
                     <div className={grid.col1andhalf}>
                       <h3>{subcategory.name}</h3>
                     </div>
