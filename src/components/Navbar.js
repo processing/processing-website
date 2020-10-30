@@ -94,7 +94,7 @@ const Navbar = ({ siteTitle, show }) => {
                   <li className={css.subitem} key={key + j}>
                     {subitem.href ? (
                       subitem.href.startsWith('https') ? (
-                        <a href={subitem.href} target="_blank">
+                        <a href={subitem.href} target="_blank" rel="noreferrer">
                           {subitem.name}
                         </a>
                       ) : (

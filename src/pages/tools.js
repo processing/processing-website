@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
 
@@ -81,12 +81,16 @@ const Tools = ({ data }) => {
                     css.contributionData
                   )}>
                   <h3>
-                    <a href={node.url} target="_blank">
+                    <a href={node.url} target="_blank" rel="noreferrer">
                       {node.name}
                     </a>
                   </h3>
                   {node.authors.map((author, key) => (
-                    <a key={key + 'a'} href={author.link} target="_blank">
+                    <a
+                      key={key + 'a'}
+                      href={author.link}
+                      target="_blank"
+                      rel="noreferrer">
                       {author.name}
                     </a>
                   ))}

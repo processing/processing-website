@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import css from './Draggable.module.css';
-import cssColor from './ColorDraggable.module.css';
 
 const changeColor = (rgb, t) => {
   if (rgb + t < 0) return 0;

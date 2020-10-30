@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import classnames from 'classnames';
 import { graphql, useStaticQuery } from 'gatsby';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { DateTime } from 'luxon';
 
 import Layout from '../components/Layout';
@@ -111,10 +110,10 @@ const Download = () => {
           filename.includes(latestAsset.os) &&
           filename.includes(latestAsset.bit)
         )
-          latestAsset['url'] = a.downloadUrl;
-        else latestAsset['url'] = a.downloadUrl;
+          latestAsset['url'] = downloadUrl;
+        else latestAsset['url'] = downloadUrl;
       } else if (filename.includes(latestAsset.os))
-        latestAsset['url'] = a.downloadUrl;
+        latestAsset['url'] = downloadUrl;
     }
     const match = assetsData.find((asset) => {
       const name = asset.name.split('-').pop();

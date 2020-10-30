@@ -1,4 +1,4 @@
-import React, { Fragment, useMemo, useEffect } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import classnames from 'classnames';
 import hljs from 'highlight.js/lib/core';
 import processing from 'highlight.js/lib/languages/processing';
@@ -8,9 +8,6 @@ import Color from './Color';
 import Shape from './Shape';
 
 import css from './SketchCode.module.css';
-import highlight from './processingIDE.css';
-
-const SKETCH_URL = 'https://editor.p5js.org/Anadroid/sketches/m9LpjIci2';
 
 hljs.registerLanguage('processing', processing);
 hljs.configure({ classPrefix: 'processingIDE__hljs-' });

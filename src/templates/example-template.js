@@ -1,15 +1,11 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
 
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 import Tabs from '../components/Tabs';
-
-import { filterItems, organizeExampleItems } from '../utils/data';
 
 import css from '../styles/pages/example.module.css';
 import grid from '../styles/grid.module.css';

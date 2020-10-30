@@ -96,9 +96,15 @@ const IndexPage = () => {
         <div className={classnames(grid.col6, grid.nest)}>
           <h3 className={classnames(grid.col6, grid.nest)}>Examples</h3>
           <ul className={classnames(grid.col6, grid.nest, css.examples)}>
-            <li className={grid.col2}><div className={css.placeholder}></div></li>
-            <li className={grid.col2}><div className={css.placeholder}></div></li>
-            <li className={grid.col2}><div className={css.placeholder}></div></li>
+            <li className={grid.col2}>
+              <div className={css.placeholder}></div>
+            </li>
+            <li className={grid.col2}>
+              <div className={css.placeholder}></div>
+            </li>
+            <li className={grid.col2}>
+              <div className={css.placeholder}></div>
+            </li>
           </ul>
         </div>
       </div>
@@ -157,7 +163,9 @@ const IndexPage = () => {
         </div>
         <div className={classnames(grid.col4, grid.nest)}>
           <h3 className={grid.col4}>News</h3>
-          <div className={grid.col4}><div className={css.placeholder}></div></div>
+          <div className={grid.col4}>
+            <div className={css.placeholder}></div>
+          </div>
           <p className={grid.col4}>
             The Processing Community Day (PCD) initiative is evolving. For 2020,
             we will offer a mentorship program for PCD Worldwide Organizers who
@@ -168,9 +176,15 @@ const IndexPage = () => {
           </p>
           <h3 className={grid.col4}>Partners</h3>
           <ul className={classnames(grid.col6, grid.nest, css.examples)}>
-            <li className={grid.col1}><div className={classnames(css.placeholder, css.partner)}></div></li>
-            <li className={grid.col1}><div className={classnames(css.placeholder, css.partner)}></div></li>
-            <li className={grid.col1}><div className={classnames(css.placeholder, css.partner)}></div></li>
+            <li className={grid.col1}>
+              <div className={classnames(css.placeholder, css.partner)}></div>
+            </li>
+            <li className={grid.col1}>
+              <div className={classnames(css.placeholder, css.partner)}></div>
+            </li>
+            <li className={grid.col1}>
+              <div className={classnames(css.placeholder, css.partner)}></div>
+            </li>
           </ul>
         </div>
       </div>

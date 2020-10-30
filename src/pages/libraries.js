@@ -95,7 +95,7 @@ const Libraries = ({ data }) => {
                             css.contributionData
                           )}>
                           <h3>
-                            <a href={node.url} target="_blank">
+                            <a href={node.url} target="_blank" rel="noreferrer">
                               {node.name}
                             </a>
                           </h3>
@@ -104,6 +104,7 @@ const Libraries = ({ data }) => {
                               key={key + 'a'}
                               href={author.link}
                               target="_blank"
+                              rel="noreferrer"
                               className={css.contributionAuthor}>
                               {author.name}
                             </a>
