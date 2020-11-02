@@ -117,7 +117,9 @@ const ClassRefTemplate = ({ data, pageContext }) => {
                 {classFields.map((field, key) => {
                   return (
                     <li key={'f' + key}>
-                      <a href={field.anchor + '.html'} className={grid.col2}><code>{field.name}</code> </a>
+                      <a href={field.anchor + '.html'} className={grid.col2}>
+                        <code>{field.name}</code>{' '}
+                      </a>
                       <span className={grid.col3}>{field.desc}</span>
                     </li>
                   );

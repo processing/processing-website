@@ -42,20 +42,21 @@ const ExampleTemplate = ({ data, pageContext }) => {
         <div
           className={classnames(
             css.root,
-            {
-              [grid.push2]: show,
-            },
-            {
-              [grid.push1]: !show,
-            },
-            grid.grid
+            { [css.collapsed]: !show },
+            { [css.expanded]: show }
           )}>
-          <div className={classnames(css.section, grid.nest, grid.push1)}>
-            <h1 className={grid.col4}>{json.childJson.title}</h1>
+          <div className={classnames(css.section, grid.grid, grid.push1)}>
+            <h1 className={classnames(grid.col4, grid.push1)}>
+              {json.childJson.title}
+            </h1>
             {json.childJson.author && (
-              <h3 className={grid.col4}>by {json.childJson.author}</h3>
+              <h3 className={classnames(grid.col4, grid.push1)}>
+                by {json.childJson.author}
+              </h3>
             )}
-            <div className={grid.col4}>{json.childJson.description}</div>
+            <div className={classnames(grid.col4, grid.push1)}>
+              {json.childJson.description}
+            </div>
             <div className={grid.col2}>
               <h3>Featured functions</h3>
               <ul>
@@ -67,13 +68,16 @@ const ExampleTemplate = ({ data, pageContext }) => {
               </ul>
             </div>
             <Tabs pdes={orderedPdes} />
-            <div className={grid.col4}>
+            <div className={classnames(grid.col4, grid.push1)}>
               <h3>Related examples</h3>
               <ul className={css.related}>
                 {related.map((rel, key) => {
                   return (
                     rel.relativeDirectory !== pageContext.relDir && (
-                      <li key={key + 'rel'}>
+                      <li
+                        key={key + 'rel'}
+                        className={classnames(grid.col1, grid.nest)}>
+                        <div className={css.placeholder}></div>
                         <Link to={'../' + rel.name.toLowerCase() + '.html'}>
                           {rel.name}
                         </Link>
@@ -83,7 +87,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
                 })}
               </ul>
             </div>
-            <p className={grid.col6}>
+            <p className={classnames(grid.col6, grid.push1)}>
               This example is for Processing 3+. If you have a previous version,
               use the examples included with your software. If you see any
               errors or have suggestions, please{' '}

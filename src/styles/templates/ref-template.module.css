@@ -19,7 +19,6 @@
 
 .section {
   margin-bottom: var(--vertical-gutter);
-  width: 100%;
 }
 
 .description {

@@ -64,4 +64,23 @@
 
 .examples {
   display: inline-flex;
+
+  & a {
+    margin-top: var(--gutter-half);
+    color: var(--processing-blue-mid);
+  }
+}
+
+.logos {
+  display: inline-flex;
+  text-align: center;
+
+  & p {
+    margin-top: var(--gutter-half);
+    text-align: center;
+  }
+}
+
+.news {
+  margin-top: var(--gutter);
 }

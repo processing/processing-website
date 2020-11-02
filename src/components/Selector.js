@@ -15,6 +15,9 @@ const Selector = () => {
         value={locale}
         onBlur={(e) => {
           changeLocale(e.target.value, '/');
+        }}
+        onChange={(e) => {
+          changeLocale(e.target.value, '/');
         }}>
         {config.map((conf, key) => (
           <option key={key} className={css.option} value={conf.code}>

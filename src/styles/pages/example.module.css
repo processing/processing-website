@@ -1,13 +1,21 @@
 .root {
+  & p {
+    margin-top: var(--gutter-half);
+  }
 }
 
 .collapsed {
   margin-left: 0;
+  transition: 0.4s ease;
+}
+
+.expanded {
+  margin-left: 100px;
+  transition: 0.4s ease;
 }
 
 .section {
   margin-bottom: var(--vertical-gutter);
-  width: 100%;
 }
 
 .related {
@@ -19,4 +27,11 @@
   & li {
     margin-right: var(--gutter);
   }
+}
+
+.placeholder {
+  background-color: var(--gray);
+  height: 150px;
+  width: 150px;
+  padding-right: var(--gutter);
 }
