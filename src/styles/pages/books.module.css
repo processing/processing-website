@@ -1,0 +1,42 @@
+.booksList {
+  margin: var(--gutter-double) 0;
+  display: flex;
+  list-style: none;
+  flex-flow: wrap;
+
+  & li {
+    display: flex;
+    flex-direction: row;
+
+    & h4 {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.cover {
+  width: 100%;
+}
+
+.listItem {
+  margin-bottom: var(--margin);
+}
+
+.details {
+  color: var(--darkgray);
+  font-size: var(--text-small);
+}
+
+.author {
+  font-size: var(--text-regular);
+  margin-bottom: var(--gutter);
+}
+
+.test {
+  color: blue;
+  list-style: circle;
+}
+
+.read {
+  margin-top: var(--gutter);
+}
