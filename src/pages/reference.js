@@ -5,6 +5,7 @@ import Layout from '../components/Layout';
 import CategoryNav from '../components/CategoryNav';
 import ReferenceList from '../components/ReferenceList';
 import Searchbar from '../components/Searchbar';
+import Donate from '../components/character/Donate';
 
 import { filterItems, organizeReferenceItems } from '../utils/data';
 
@@ -26,6 +27,7 @@ const Reference = ({ data, location }) => {
     <Layout>
       <div className={grid.grid}>
         <h1 className={grid.col8}>References</h1>
+        <Donate />
         <Searchbar
           placeholder={'Search in the Reference...'}
           onChange={(e) => setSearchTerm(e.target.value)}

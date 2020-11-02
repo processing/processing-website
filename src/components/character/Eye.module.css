@@ -1,0 +1,77 @@
+.pupil {
+  animation-name: movePupil;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.topLid {
+  animation-name: blinkTop;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1.3s;
+  animation-iteration-count: infinite;
+}
+
+.bottomLid {
+  animation-name: blinkBottom;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1.3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes movePupil {
+  0% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translate(5px);
+  }
+  30% {
+    transform: translate(0px);
+  }
+  45%,
+  70% {
+    transform: translate(4px, 4px);
+  }
+  85% {
+    transform: translate(5px);
+  }
+}
+
+@keyframes blinkTop {
+  15% {
+    transform: translateY(8px);
+  }
+  30% {
+    transform: translateY(-8px);
+  }
+  45% {
+    transform: translateY(8px);
+  }
+  60% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes blinkBottom {
+  15% {
+    transform: translateY(-16px);
+  }
+  30% {
+    transform: translateY(16px);
+  }
+  45% {
+    transform: translateY(-16px);
+  }
+  60% {
+    transform: translateY(16px);
+  }
+}
+
+@keyframes blinkEye {
+  50% {
+  }
+  100% {
+    visibility: hidden;
+  }
+}

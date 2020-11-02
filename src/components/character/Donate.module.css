@@ -1,0 +1,20 @@
+.root {
+  position: fixed;
+  top: 50px;
+  right: 0;
+  width: 150px;
+  float: right;
+  text-align: center;
+  z-index: 1;
+
+  & h3 {
+    color: var(--processing-blue-mid);
+  }
+}
+
+.donate {
+  padding: calc(var(--gutter) / 2) var(--gutter);
+  color: white;
+  background-color: var(--processing-blue-dark);
+  border-radius: 20px;
+}
