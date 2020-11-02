@@ -102,6 +102,11 @@ pre {
 
 code {
   margin-bottom: 2px;
+  font-variant-ligatures: no-common-ligatures;
+}
+
+p {
+  cursor: text;
 }
 
 p code {

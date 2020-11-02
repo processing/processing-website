@@ -4,22 +4,26 @@
 
 .show {
   margin: var(--gutter) var(--margin);
-  transition: 1s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .noshow {
   margin: calc(var(--gutter) / 2) var(--margin);
-  transition: 1s ease-in-out;
+  transition: 0.2s ease-in-out;
 
   & .logo {
     font-size: var(--text-large);
-    transition: 1s ease-in-out;
+    transition: 0.2s ease-in-out;
   }
 }
 
 .logo {
   font-size: var(--text-xlarge);
-  transition: 1s ease-in-out;
+  transition: 0.2s ease-in-out;
+  & svg {
+    width: 68px;
+    height: auto;
+  }
 }
 
 .menu {
@@ -29,6 +33,7 @@
 }
 
 .item {
+  position: relative;
   display: inline-block;
   padding-left: 8px;
   border-left: solid 6px transparent;
@@ -55,6 +60,7 @@
   color: var(--processing-blue-dark);
   font-size: var(--text-regular);
   font-weight: 700;
+  word-break: keep-all;
 }
 
 .subitem:hover {
@@ -75,13 +81,17 @@
 }
 
 .submenu {
+  display: flex;
   position: absolute;
+  left: -6px;
   z-index: 30;
   opacity: 0;
   overflow: hidden;
-  margin: 0;
   max-height: 0;
   list-style: none;
+  padding-top: 14px;
+  padding-bottom: 10px;
+  background-color: white;
 }
 
 .hasSubmenu:hover {

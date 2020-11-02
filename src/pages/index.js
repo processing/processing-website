@@ -40,8 +40,10 @@ export const items = [
   },
 ];
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
   //localization - will be needed
+
+  console.log(data);
   const intl = useIntl();
   const { locale } = useLocalization();
   return (
@@ -53,14 +55,14 @@ const IndexPage = () => {
               {' '}
               Welcome to Processing!{' '}
             </h1>
-            <div className={grid.col4}>
+            <p className={grid.col4}>
               Processing is a flexible software sketchbook and a language for
               learning how to code within the context of the visual arts. Since
               2001, Processing has promoted software literacy within the visual
               arts and visual literacy within technology. There are tens of
               thousands of students, artists, designers, researchers, and
               hobbyists who use Processing for learning and prototyping.
-            </div>
+            </p>
             <div className={classnames(grid.col4, css.buttons)}>
               <Button to={'/download'} className={css.button}>
                 Download
@@ -94,7 +96,30 @@ const IndexPage = () => {
           </div>
         </div>
         <div className={classnames(grid.col6, grid.nest)}>
-          <h3 className={classnames(grid.col6, grid.nest)}> Examples</h3>
+          <h3 className={classnames(grid.col6, grid.nest)}>Examples</h3>
+          <ul className={classnames(grid.col6, grid.nest, css.examples)}>
+            <li className={classnames(grid.col2, grid.nest)}>
+              <img src={data.conway.childImageSharp.fluid.src} alt="" />
+              <a>Conway's game of life</a>
+              <p className={classnames(grid.col2, grid.nest)}>
+                in Topic examples
+              </p>
+            </li>
+            <li className={classnames(grid.col2, grid.nest)}>
+              <img src={data.flocking.childImageSharp.fluid.src} alt="" />
+              <a>Flocking</a>
+              <p className={classnames(grid.col2, grid.nest)}>
+                in Topic examples
+              </p>
+            </li>
+            <li className={classnames(grid.col2, grid.nest)}>
+              <img src={data.radial.childImageSharp.fluid.src} alt="" />
+              <a>Radial gradient</a>
+              <p className={classnames(grid.col2, grid.nest)}>
+                in Basic examples
+              </p>
+            </li>
+          </ul>
         </div>
       </div>
       <div className={classnames(grid.grid, css.bottom)}>
@@ -152,7 +177,10 @@ const IndexPage = () => {
         </div>
         <div className={classnames(grid.col4, grid.nest)}>
           <h3 className={grid.col4}>News</h3>
-          <p>
+          <div className={grid.col4}>
+            <img src={data.news.childImageSharp.fluid.src} alt="" />
+          </div>
+          <p className={classnames(grid.col4, css.news)}>
             The Processing Community Day (PCD) initiative is evolving. For 2020,
             we will offer a mentorship program for PCD Worldwide Organizers who
             are interested in learning from past community organizers and
@@ -161,6 +189,20 @@ const IndexPage = () => {
             to learn more about starting or attending an event in 2020!
           </p>
           <h3 className={grid.col4}>Partners</h3>
+          <ul className={classnames(grid.col6, grid.nest, css.logos)}>
+            <li className={grid.col1}>
+              <img src={data.fathom.childImageSharp.fluid.src} alt="" />
+              <p>Fathom</p>
+            </li>
+            <li className={grid.col1}>
+              <img src={data.itp.childImageSharp.fluid.src} alt="" />
+              <p>ITP NYU</p>
+            </li>
+            <li className={grid.col1}>
+              <img src={data.ucla.childImageSharp.fluid.src} alt="" />
+              <p>UCLA Design Media Arts</p>
+            </li>
+          </ul>
         </div>
       </div>
     </Layout>
@@ -168,3 +210,57 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+export const query = graphql`
+  query {
+    news: file(relativePath: { eq: "news.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800, maxHeight: 250) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    conway: file(relativePath: { eq: "conway.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 400, maxHeight: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    radial: file(relativePath: { eq: "radial.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 400, maxHeight: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    flocking: file(relativePath: { eq: "flocking.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 400, maxHeight: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    fathom: file(relativePath: { eq: "fathom.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 120, maxHeight: 120) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    itp: file(relativePath: { eq: "itp.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 150, maxHeight: 120) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    ucla: file(relativePath: { eq: "ucla.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 120, maxHeight: 120) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;

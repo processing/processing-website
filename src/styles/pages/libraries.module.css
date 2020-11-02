@@ -52,6 +52,7 @@
 
   & li {
     margin-bottom: 20px;
+    width: 100%;
   }
 
   & ul li:last-child {
@@ -82,6 +83,10 @@
 
 .contributionData {
   border-right: solid 3px var(--lightgray);
+}
+
+.contributionAuthor {
+  color: var(--processing-blue-mid);
 }
 
 .subgrid {

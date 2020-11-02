@@ -19,7 +19,6 @@
 
 .section {
   margin-bottom: var(--vertical-gutter);
-  width: 100%;
 }
 
 .description {
@@ -34,6 +33,7 @@
   }
   & code {
     margin-bottom: 0;
+    font-variant-ligatures: no-common-ligatures;
   }
 }
 

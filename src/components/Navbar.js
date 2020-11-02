@@ -9,6 +9,8 @@ import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
 import css from './Navbar.module.css';
 import grid from '../styles/grid.module.css';
 
+import LogoProcessing from '../images/logo-processing.svg';
+
 export const items = [
   {
     name: 'Download',
@@ -33,7 +35,7 @@ export const items = [
   },
   {
     name: 'Teach',
-    href: '/education',
+    href: 'https://processingfoundation.org/education',
   },
   {
     name: 'About',
@@ -41,7 +43,7 @@ export const items = [
   },
   {
     name: 'Donate',
-    href: '/donate',
+    href: 'https://processingfoundation.org/donate',
   },
 ];
 
@@ -72,7 +74,10 @@ const Navbar = ({ siteTitle, show }) => {
         { [css.noshow]: !show }
       )}>
       <h1 className={classnames(grid.col2, css.logo)}>
-        <Link to="/">{siteTitle}</Link>
+        <Link to="/">
+          <LogoProcessing />
+          {siteTitle}
+        </Link>
       </h1>
       <ul className={classnames(css.menu, grid.col4)}>
         {items.map((item, key) => (
@@ -88,9 +93,15 @@ const Navbar = ({ siteTitle, show }) => {
                 {item.children.map((subitem, j) => (
                   <li className={css.subitem} key={key + j}>
                     {subitem.href ? (
-                      <Link to={subitem.href} language={locale}>
-                        {subitem.name}
-                      </Link>
+                      subitem.href.startsWith('https') ? (
+                        <a href={subitem.href} target="_blank" rel="noreferrer">
+                          {subitem.name}
+                        </a>
+                      ) : (
+                        <Link to={subitem.href} language={locale}>
+                          {subitem.name}
+                        </Link>
+                      )
                     ) : (
                       subitem.name
                     )}
