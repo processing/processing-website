@@ -30,8 +30,6 @@ const ClassRefTemplate = ({ data, pageContext }) => {
     setShow(show);
   };
 
-  console.log(data);
-
   return (
     <Layout>
       {pageContext.libraryName === 'processing' && (
@@ -115,12 +113,14 @@ const ClassRefTemplate = ({ data, pageContext }) => {
           {classFields.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
               <h4 className={classnames(grid.col1, grid.push1)}>Fields</h4>
-              <ul className={classnames(grid.col4, grid.pull1, css.list)}>
+              <ul className={classnames(grid.col5, grid.nest, css.list)}>
                 {classFields.map((field, key) => {
                   return (
                     <li key={'f' + key}>
-                      <a href={field.anchor + '.html'}>{field.name} </a>
-                      {field.desc}
+                      <a href={field.anchor + '.html'} className={grid.col2}>
+                        <code>{field.name}</code>{' '}
+                      </a>
+                      <span className={grid.col3}>{field.desc}</span>
                     </li>
                   );
                 })}

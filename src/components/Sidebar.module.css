@@ -45,6 +45,6 @@
 
 .listWrapper {
   position: relative;
-  overflow-y: scroll;
-  height: 100%;
+  overflow-y: auto;
+  height: 47vh;
 }

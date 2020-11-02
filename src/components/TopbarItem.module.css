@@ -1,9 +1,12 @@
 .root {
-  display: flex;
-  flex-direction: row;
+  & a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
-  & h4 {
-    margin-bottom: 0;
-    color: white;
+    & h4 {
+      margin-bottom: 0;
+      color: white;
+    }
   }
 }

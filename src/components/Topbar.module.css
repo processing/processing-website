@@ -11,14 +11,14 @@
 
 .show {
   height: 50px;
-  transition: 1s ease-in-out;
+  transition: 0.3s ease-in-out;
   overflow: hidden;
 }
 
 .noshow {
   visibility: hidden;
   height: 0px;
-  transition: 1s ease-in-out;
+  transition: 0.3s ease-in-out;
   overflow: hidden;
 
   .menu {
@@ -47,4 +47,10 @@
 .item:hover {
   border-bottom: solid 6px var(--processing-blue-mid);
   padding-top: 6px;
+}
+
+.logo {
+  margin-right: 5px;
+  width: 30px;
+  height: auto;
 }
