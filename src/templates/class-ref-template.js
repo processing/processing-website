@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { Link } from 'gatsby';
@@ -9,12 +9,14 @@ import Sidebar from '../components/Sidebar';
 
 import css from '../styles/templates/ref-template.module.css';
 import grid from '../styles/grid.module.css';
+import { useHighlight } from '../utils/hooks';
 
 const ClassRefTemplate = ({ data, pageContext }) => {
   let entry;
   const [show, setShow] = useState(false);
   const images = data.images.edges;
   const examples = data.pdes.edges;
+  const ref = useHighlight();
 
   if (data.json !== null) {
     entry = data.json.childJson;
@@ -46,7 +48,8 @@ const ClassRefTemplate = ({ data, pageContext }) => {
             css.root,
             { [css.collapsed]: !show },
             { [css.expanded]: show }
-          )}>
+          )}
+          ref={ref}>
           <div className={classnames(grid.grid, css.section)}>
             <h4 className={classnames(grid.col1, grid.push1)}>Class name</h4>
             <h3 className={classnames(grid.col4, grid.pull1)}>{entry.name}</h3>

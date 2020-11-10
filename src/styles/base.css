@@ -122,3 +122,25 @@ button {
   border: none;
   background-color: inherit;
 }
+
+/* IDE Styling for code blocks using highlight.js */
+
+.hljs-comment {
+  color: #666666;
+}
+
+.hljs-number {
+}
+
+.hljs-keyword {
+  color: #33997e;
+}
+
+.hljs-title {
+  color: #006699;
+  font-weight: bold;
+}
+
+.hljs-built_in {
+  color: #006699;
+}

@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
+import hljs from 'highlight.js/lib/core';
+import processing from 'highlight.js/lib/languages/processing';
 
 import css from './Tabs.module.css';
 import grid from '../styles/grid.module.css';
 
 const Tabs = ({ pdes }) => {
   const [active, setActive] = useState(pdes[0].name);
+
+  useEffect(() => {
+    document.querySelectorAll('pre').forEach((block) => {
+      hljs.highlightBlock(block);
+    });
+  }, [active]);
 
   const onClick = (value) => {
     setActive(value);

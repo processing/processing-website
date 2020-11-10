@@ -43,7 +43,6 @@ export const items = [
 const IndexPage = ({ data }) => {
   //localization - will be needed
 
-  console.log(data);
   const intl = useIntl();
   const { locale } = useLocalization();
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
@@ -8,12 +8,15 @@ import Img from 'gatsby-image';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 
+import { useHighlight } from '../utils/hooks';
+
 import css from '../styles/templates/ref-template.module.css';
 import grid from '../styles/grid.module.css';
 
 const RefTemplate = ({ data, pageContext }) => {
   let entry;
   const [show, setShow] = useState(false);
+  const ref = useHighlight();
 
   if (data.json !== null) {
     entry = data.json.childJson;
@@ -47,16 +50,17 @@ const RefTemplate = ({ data, pageContext }) => {
             css.root,
             { [css.collapsed]: !show },
             { [css.expanded]: show }
-          )}>
+          )}
+          ref={ref}>
           <div className={classnames(css.section, grid.grid)}>
             <h4 className={classnames(grid.col1, grid.push1)}>Name</h4>
             <h3 className={classnames(grid.col4, grid.pull1)}>{entry.name}</h3>
           </div>
           <div className={classnames(css.section, grid.grid)}>
             <h4 className={classnames(grid.col1, grid.push1)}>Description</h4>
-            <p className={classnames(grid.col4, grid.pull1, css.description)}>
-              {entry.description}
-            </p>
+            <p
+              className={classnames(grid.col4, grid.pull1, css.description)}
+              dangerouslySetInnerHTML={{ __html: entry.description }}></p>
           </div>
           {examples.length > 0 && (
             <div className={classnames(css.section, grid.grid)}>
