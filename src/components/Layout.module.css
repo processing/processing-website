@@ -1,7 +1,9 @@
 main {
-  margin-top: 200px; /*change*/
+  top: 150px;
   position: relative;
   flex: 1;
+  transition: 0.2s ease-in-out;
+  padding-bottom: var(--margin);
 }
 
 .root {
@@ -9,4 +11,8 @@ main {
   flex-direction: column;
   height: 100%;
   min-height: 100%;
+}
+
+.headerScrolled {
+  top: 60px;
 }
