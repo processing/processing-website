@@ -1,11 +1,13 @@
 .root {
+  display: flex;
+  flex-flow: column;
   position: fixed;
   left: 0;
   z-index: 200;
   overflow: hidden;
-  transition: width 0.4s ease;
+  transition: width 0.4s ease, height 0.2s ease-in-out;
   width: var(--margin);
-  height: 84vh;
+  height: calc(100vh - 150px);
   background: var(--lightgray);
   white-space: nowrap;
 
@@ -31,6 +33,7 @@
 .show {
   width: calc(var(--column-width) * 1.5);
   padding-left: var(--gutter-double);
+  padding-bottom: 64px;
 }
 
 .toggleButton {
@@ -44,7 +47,11 @@
 }
 
 .listWrapper {
+  flex-grow: 1;
   position: relative;
   overflow-y: auto;
-  height: 47vh;
+}
+
+.headerScrolled {
+  height: calc(100vh - 64px);
 }

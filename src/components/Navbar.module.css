@@ -3,12 +3,14 @@
 }
 
 .show {
-  margin: var(--gutter) var(--margin);
+  height: 100px;
+  padding: var(--gutter) 0;
   transition: 0.2s ease-in-out;
 }
 
 .noshow {
-  margin: calc(var(--gutter) / 2) var(--margin);
+  height: 60px;
+  padding: calc(var(--gutter) / 2) 0;
   transition: 0.2s ease-in-out;
 
   & .logo {
@@ -18,11 +20,12 @@
 }
 
 .logo {
+  height: 100%;
   font-size: var(--text-xlarge);
   transition: 0.2s ease-in-out;
   & svg {
     width: 68px;
-    height: auto;
+    height: 100%;
   }
 }
 
