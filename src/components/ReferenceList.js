@@ -14,7 +14,9 @@ const ReferenceList = ({ data, library }) => {
         <ul
           className={classnames(grid.nest, css.category)}
           key={`category-${key}`}>
-          <h2 className={classnames(grid.col8)}>{category.name}</h2>
+          <h2 className={classnames(grid.col8)} id={category.name}>
+            {category.name}
+          </h2>
           <ul className={classnames(grid.col7, grid.nest)}>
             {category.children.map((subcategory, key) => {
               return (

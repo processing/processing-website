@@ -36,9 +36,11 @@ const Layout = ({ children }) => {
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      if (offset > 200) {
+      console.log(offset);
+      if (offset > 200 && !headerScrolled) {
         setScrolled(true);
-      } else {
+      }
+      if (offset < 60) {
         setScrolled(false);
       }
     };
