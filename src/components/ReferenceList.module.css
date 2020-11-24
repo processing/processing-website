@@ -33,7 +33,7 @@
     margin: 0;
     border-right: solid 3px var(--lightgray);
     height: 100%;
-    padding: 0 calc(var(--gutter) * 2);
+    padding: 0 calc(var(--gutter) + var(--gutter-half));
     font-size: var(--text-large);
     text-transform: capitalize;
   }
