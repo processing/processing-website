@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
@@ -8,16 +8,19 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../components/Layout';
 import TableOfContents from '../components/TableOfContents';
 
+import { useHighlight } from '../utils/hooks';
+
 import css from '../styles/pages/page.module.css';
 import grid from '../styles/grid.module.css';
 
 const TutorialTemplate = ({ data, pageContext }) => {
   const { mdx } = data;
   const { frontmatter, body, tableOfContents } = mdx;
+  const ref = useHighlight();
 
   return (
     <Layout>
-      <div className={grid.grid}>
+      <div className={grid.grid} ref={ref}>
         {mdx !== null ? (
           <Fragment>
             <TableOfContents items={tableOfContents.items} />

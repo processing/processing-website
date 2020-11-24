@@ -6,15 +6,19 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../components/Layout';
 import TableOfContents from '../components/TableOfContents';
 
+import { useHighlight } from '../utils/hooks';
+
 import css from '../styles/pages/page.module.css';
 import grid from '../styles/grid.module.css';
 
 const Environment = ({ data }) => {
   const { mdx } = data;
   const { frontmatter, body, tableOfContents } = mdx;
+  const ref = useHighlight();
+
   return (
     <Layout>
-      <div className={grid.grid}>
+      <div className={grid.grid} ref={ref}>
         <TableOfContents items={tableOfContents.items} />
         <h1 className={classnames(grid.push2, grid.col5, grid.pull1)}>
           {frontmatter.title}

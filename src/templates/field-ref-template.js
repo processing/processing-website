@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
@@ -8,6 +8,8 @@ import Img from 'gatsby-image';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 
+import { useHighlight } from '../utils/hooks';
+
 import css from '../styles/templates/ref-template.module.css';
 import grid from '../styles/grid.module.css';
 
@@ -16,6 +18,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
   const [show, setShow] = useState(false);
   const examples = data.pdes.edges;
   const images = data.images.edges;
+  const ref = useHighlight();
 
   if (data.json !== null) {
     entry = data.json.childJson;
@@ -46,7 +49,8 @@ const FieldRefTemplate = ({ data, pageContext }) => {
             css.root,
             { [css.collapsed]: !show },
             { [css.expanded]: show }
-          )}>
+          )}
+          ref={ref}>
           <div className={classnames(css.section, grid.grid)}>
             <h4 className={classnames(grid.col1, grid.push1)}>Name</h4>
             <h3 className={classnames(grid.col4, grid.pull1)}>{entry.name}</h3>

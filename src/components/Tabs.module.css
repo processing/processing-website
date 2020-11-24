@@ -21,8 +21,5 @@
 }
 
 .codeBlock {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
   min-width: calc((100vw - var(--margin) * 2) / 8 * 6);
 }

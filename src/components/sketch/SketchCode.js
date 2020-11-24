@@ -1,16 +1,14 @@
 import React, { Fragment, useEffect } from 'react';
 import classnames from 'classnames';
-import hljs from 'highlight.js/lib/core';
-import processing from 'highlight.js/lib/languages/processing';
+
 import Button from '../Button';
 import Draggable from './Draggable';
 import Color from './Color';
 import Shape from './Shape';
 
-import css from './SketchCode.module.css';
+import { useHighlight } from '../../utils/hooks';
 
-hljs.registerLanguage('processing', processing);
-hljs.configure({ classPrefix: 'processingIDE__hljs-' });
+import css from './SketchCode.module.css';
 
 const SketchCode = (props) => {
   const {
@@ -27,15 +25,10 @@ const SketchCode = (props) => {
     onDraggingShapeEnd,
     onChange,
   } = props;
+  const ref = useHighlight();
 
   const cols = Math.floor(width / unit);
   const rows = Math.floor(height / unit);
-
-  useEffect(() => {
-    document.querySelectorAll('pre code').forEach((block) => {
-      hljs.highlightBlock(block);
-    });
-  }, []);
 
   useEffect(() => {
     shapes.forEach((shape, index) => {
@@ -66,7 +59,9 @@ const SketchCode = (props) => {
   }, [width, unit]);
 
   return (
-    <div className={classnames(css.root, { [css.visible]: isVisible })}>
+    <div
+      className={classnames(css.root, { [css.visible]: isVisible })}
+      ref={ref}>
       <div className={css.code}>
         <div className={css.inCode}>
           <pre>
