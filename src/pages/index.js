@@ -42,8 +42,6 @@ export const items = [
 
 const IndexPage = ({ data }) => {
   //localization - will be needed
-
-  console.log(data);
   const intl = useIntl();
   const { locale } = useLocalization();
   return (
@@ -100,21 +98,21 @@ const IndexPage = ({ data }) => {
           <ul className={classnames(grid.col6, grid.nest, css.examples)}>
             <li className={classnames(grid.col2, grid.nest)}>
               <img src={data.conway.childImageSharp.fluid.src} alt="" />
-              <a>Conway's game of life</a>
+              <a href="#">Conway's game of life</a>
               <p className={classnames(grid.col2, grid.nest)}>
                 in Topic examples
               </p>
             </li>
             <li className={classnames(grid.col2, grid.nest)}>
               <img src={data.flocking.childImageSharp.fluid.src} alt="" />
-              <a>Flocking</a>
+              <a href="#">Flocking</a>
               <p className={classnames(grid.col2, grid.nest)}>
                 in Topic examples
               </p>
             </li>
             <li className={classnames(grid.col2, grid.nest)}>
               <img src={data.radial.childImageSharp.fluid.src} alt="" />
-              <a>Radial gradient</a>
+              <a href="#">Radial gradient</a>
               <p className={classnames(grid.col2, grid.nest)}>
                 in Basic examples
               </p>

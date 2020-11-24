@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useCallback, useState } from 'react';
+import { useLayoutEffect, useCallback, useState } from 'react';
 
 export const useHeight = (scrolled) => {
   const [height, setHeight] = useState(0);

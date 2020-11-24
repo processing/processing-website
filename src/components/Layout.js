@@ -12,8 +12,6 @@ import Intro from './mdx/Intro';
 import HighlightBlock from './mdx/HighlightBlock';
 import Note from './mdx/Note';
 
-import { useHeight } from '../utils/hooks';
-
 import '../styles/base.css';
 import '../styles/variables.css';
 import '../styles/fonts.css';

@@ -1,5 +1,5 @@
+import React from 'react';
 import PropTypes from 'prop-types';
-import React, { useState, useEffect, useRef, useContext } from 'react';
 
 import Topbar from './Topbar';
 import Navbar from './Navbar';

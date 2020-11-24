@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 
 import css from './Eye.module.css';
@@ -44,7 +44,7 @@ const Eye = ({ eye, index, blink }) => {
             fill="white"
           />
           <circle
-            className={classnames({ [css.pupil]: !blink})}
+            className={classnames({ [css.pupil]: !blink })}
             cx={blink ? position[0] + 1 : position[0] - 1}
             cy={blink ? position[1] - 1 : position[1]}
             r="4"
