@@ -87,7 +87,15 @@ const Navbar = ({ siteTitle, show }) => {
               [css.hasSubmenu]: item.children,
               [css.active]: item.name === current,
             })}>
-            {item.href ? <Link to={item.href}>{item.name}</Link> : item.name}
+            {item.href ? (
+              item.href.startsWith('https') ? (
+                <a href={item.href}>{item.name}</a>
+              ) : (
+                <Link to={item.href}>{item.name}</Link>
+              )
+            ) : (
+              item.name
+            )}
             {item.children && (
               <ul className={css.submenu}>
                 {item.children.map((subitem, j) => (

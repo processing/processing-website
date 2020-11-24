@@ -13,7 +13,7 @@ import { useHighlight } from '../utils/hooks';
 import css from '../styles/templates/ref-template.module.css';
 import grid from '../styles/grid.module.css';
 
-const RefTemplate = ({ data, pageContext }) => {
+const RefTemplate = ({ data, pageContext, ...props }) => {
   let entry;
   const [show, setShow] = useState(false);
   const ref = useHighlight();
@@ -21,6 +21,8 @@ const RefTemplate = ({ data, pageContext }) => {
   if (data.json !== null) {
     entry = data.json.childJson;
   }
+
+  console.log(props);
 
   const link =
     pageContext.libraryName === 'processing'

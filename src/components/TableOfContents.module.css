@@ -3,11 +3,11 @@
   left: 0;
   z-index: 100;
   overflow: hidden;
-  transition: width 0.4s ease;
+  transition: width 0.4s ease, height 0.2s ease-in-out;
+  height: calc(100vh - 150px);
   width: calc(var(--column-width) * 2 - var(--gutter));
   padding-left: var(--gutter-double);
   padding-right: var(--gutter-double);
-  height: 84vh;
   background: var(--lightgray);
   white-space: nowrap;
 
@@ -37,4 +37,8 @@
       color: var(--processing-blue-mid);
     }
   }
+}
+
+.headerScrolled {
+  height: calc(100vh - 64px);
 }

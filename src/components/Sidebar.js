@@ -1,8 +1,10 @@
-import React, { Fragment, useState, useMemo } from 'react';
+import React, { Fragment, useContext, useState, useMemo } from 'react';
 import classnames from 'classnames';
 
 import Searchbar from '../components/Searchbar';
 import SidebarList from '../components/SidebarList';
+
+import { LayoutContext } from '../components/Layout';
 
 import {
   filterItems,
@@ -15,6 +17,7 @@ import css from './Sidebar.module.css';
 const Sidebar = (props) => {
   const { items, show, type = 'reference', onChange } = props;
   const [searchTerm, setSearchTerm] = useState('');
+  const layout = useContext(LayoutContext);
 
   const filteredItems = useMemo(() => filterItems(items.nodes, searchTerm), [
     searchTerm,
@@ -28,8 +31,15 @@ const Sidebar = (props) => {
         : organizeExampleItems(filteredItems),
     [filteredItems, type]
   );
+
   return (
-    <div className={classnames(css.root, { [css.show]: show })}>
+    <div
+      className={classnames(
+        css.root,
+        { [css.show]: show },
+        { [css.headerScrolled]: layout.headerScrolled }
+      )}
+      style={{}}>
       <div
         className={css.toggleButton}
         onClick={(e) => onChange(!show)}

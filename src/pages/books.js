@@ -2,7 +2,6 @@ import React from 'react';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useLocalization } from 'gatsby-theme-i18n';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
@@ -57,7 +56,7 @@ const Books = ({ data }) => {
                     <ul>
                       {orderList.map((order, key) => (
                         <li key={key + 'l'}>
-                          <a href={order.link} target="_blank">
+                          <a href={order.link} target="_blank" rel="noreferrer">
                             {order.label}
                           </a>
                         </li>
