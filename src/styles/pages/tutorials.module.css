@@ -33,8 +33,6 @@
 
 .cover {
   width: 100%;
-  height: 140px;
-  max-height: 140px;
   background-color: var(--gray);
   margin-bottom: var(--gutter);
 }

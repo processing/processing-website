@@ -62,10 +62,17 @@ export const organizeReferenceItems = (items) => {
   return tree;
 };
 
-export const organizeExampleItems = (items) => {
+export const organizeExampleItems = (items, images) => {
   const tree = [];
 
   items.forEach((item) => {
+    const image = images
+      ? images.find((img) => img.relativeDirectory === item.relativeDirectory)
+      : '';
+    images &&
+      console.log(
+        images.find((img) => img.relativeDirectory === item.relativeDirectory)
+      );
     const category = item.relativeDirectory.split('/')[0];
     const subcategory = item.relativeDirectory.split('/')[1];
 
@@ -97,6 +104,7 @@ export const organizeExampleItems = (items) => {
       slug: item.relativeDirectory.split('/')[2],
       name: item.childJson.name,
       dir: item.relativeDirectory,
+      img: image,
       ...item.childJSON,
     });
   });

@@ -11,6 +11,8 @@ import grid from '../styles/grid.module.css';
 const ExamplesList = ({ data }) => {
   const { locale } = useLocalization();
 
+  console.log(data);
+
   return (
     <div className={classnames(css.root)}>
       {data.map((category, key) => (
@@ -31,7 +33,13 @@ const ExamplesList = ({ data }) => {
                   {subcategory.children.map((node, key) => (
                     <li key={`item-${key}`} className={grid.col1}>
                       <Link to={`${node.slug}.html`} language={locale}>
-                        {node.img && <Image />}
+                        {node.img && (
+                          <img
+                            className={css.cover}
+                            src={node.img.childImageSharp.fluid.srcWebp}
+                            srcSet={node.img.childImageSharp.fluid.srcSetWebp}
+                          />
+                        )}
                         <h4>{node.name}</h4>
                       </Link>
                     </li>
