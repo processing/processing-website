@@ -9,7 +9,7 @@ Repository for the new processing.org
 This folder contains all the content on the website and it is divide into:
 
 1. Examples
-   Examples are divided into category folders and each example has its own folder named like the example with files for every language. The english file is `index.mdx` and the other languages have their code before .mdx (e.g. `index.de.mdx`). Each example has to have a cover image for the index named liked the example file with a 16:9 ratio (minWidth 288px) and a cover image named `Cover.png/Cover.png` for the homepage with 1:1 ratio (minimum width 600px) placed on the same folder.
+   Examples are divided into category folders and each example has its own folder named like the example with files for every language. The english file is `index.mdx` and the other languages have their code before .mdx (e.g. `index.de.mdx`). Each example has to have a cover image for the index named liked the example file with a 16:9 ratio (minimum width 288px) and a cover image named `Cover.png/Cover.png` for the homepage with 1:1 ratio (minimum width 600px) placed on the same folder.
 
 2. References
    This folder contains all the files necessary for creating the reference pages and it is divided into two folders:
