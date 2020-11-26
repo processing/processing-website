@@ -10,7 +10,7 @@ This folder contains all the content on the website and it is divide into:
 
 1. Examples
 
-   Examples are divided into category folders and each example has its own folder named like the example with files for every language. The english file is `index.mdx` and the other languages have their code before .mdx (e.g. `index.de.mdx`). Each example has to have a cover image for the index named liked the example file with a 16:9 ratio (minimum width 288px) and a cover image named `Cover.png/Cover.png` for the homepage with 1:1 ratio (minimum width 600px) placed on the same folder.
+   Examples are divided into category folders and each example has its own folder named like the example with files for every language. The english file is `index.mdx` and the other languages have their code before .mdx (e.g. `index.de.mdx`). Each example has to have a cover image for the index named liked the example file with a 16:9 ratio (minimum width 288px) and a cover image named `Cover.png\.jpg` for the homepage with 1:1 ratio (minimum width 600px) placed on the same folder.
 
 2. References
 
@@ -54,9 +54,9 @@ This folder contains all the content on the website and it is divide into:
 
 This folder contains files necessary for localization (language control).
 
-- config.json file contains all the language information that is necessary for all the pages on the website. When adding a language first copy one of the existing language and then change all the fields to correspond to the language you are adding.
+- `config.json` file contains all the language information that is necessary for all the pages on the website. When adding a language first copy one of the existing language and then change all the fields to correspond to the language you are adding.
 
-- react-intl folder contains separate json files for every language and this is responsible for the localization of all the UI elements of the webpages. When adding a language first copy en.json file, rename it into the code<sup>1</sup> of the language you are adding and translate all the fields inside (just the right side)
+- `react-intl` folder contains separate json files for every language and this is responsible for the localization of all the UI elements of the webpages. When adding a language first copy en.json file, rename it into the code<sup>1</sup> of the language you are adding and translate all the fields inside (just the right side)
 
 ### src
 
