@@ -31,6 +31,10 @@ This folder contains all the content on the website and it is divide into:
    - `<HighlightBlock>{content}</HighlightBlock>` wraps content in a gray block to highlight a block of content.
    - `<Intro>{content}</Intro>` changes text styling for the introduction of pages.
    - `<Note>{content}</Note>` a small note with smaller font-size for disclaimer of a certain content.
+   
+   The current tutorials needs to be translated from their current format (.html) to MDX, see [Table of Components](https://mdxjs.com/table-of-components) for furtherd details. The custom MDX Components are meant to be used to accomplish formatting than the standard MDX components don't support.
+   
+   Each tutorial has a cover image for the Tutorial index view that needs to be declared in the header of its .mdx file as a `coverImage` with the filename of the cover that must be placed on the same folder. This image should have a 3:1 ratio with a minimum width of 600px.
 
 4. Books
 
