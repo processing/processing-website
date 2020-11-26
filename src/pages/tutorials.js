@@ -50,13 +50,15 @@ const Tutorials = ({ data }) => {
               return (
                 <li key={k} className={grid.col2}>
                   <a href={link} language={locale}>
-                    <div className={css.cover}>
-                      <Img
-                        fluid={coverImage.childImageSharp.fluid}
-                        style={{ height: 140 }}
-                        objectFit="contain"
-                      />
-                    </div>
+                    {coverImage && (
+                      <div className={css.cover}>
+                        <Img
+                          fluid={coverImage.childImageSharp.fluid}
+                          style={{ height: 100 }}
+                          objectFit="contain"
+                        />
+                      </div>
+                    )}
                     <h4>{title}</h4>
                     <span className={css.author}>by </span>
                     <span className={css.authorName}>{author}</span>
@@ -81,11 +83,20 @@ const Tutorials = ({ data }) => {
                 author,
                 intro,
                 level,
+                coverImage,
               } = node.childMdx.frontmatter;
               return (
                 <li key={k} className={grid.col2}>
                   <Link to={slug} language={locale}>
-                    <div className={css.cover}></div>
+                    {coverImage && (
+                      <div className={css.cover}>
+                        <Img
+                          fluid={coverImage.childImageSharp.fluid}
+                          style={{ height: 100 }}
+                          objectFit="contain"
+                        />
+                      </div>
+                    )}
                     <h4>{title}</h4>
                     <span className={css.author}>by </span>
                     <span className={css.authorName}>{author}</span>
@@ -123,7 +134,7 @@ export const query = graphql`
             intro
             coverImage {
               childImageSharp {
-                fluid(maxWidth: 800) {
+                fluid(maxWidth: 600) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -148,6 +159,13 @@ export const query = graphql`
             author
             intro
             level
+            coverImage {
+              childImageSharp {
+                fluid(maxWidth: 600) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

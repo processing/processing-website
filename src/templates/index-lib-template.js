@@ -29,8 +29,6 @@ const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
           <Link to={link}> english page</Link>
         </div>
       )}
-
-      <Link to="/">Go back to the homepage</Link>
     </Layout>
   );
 };

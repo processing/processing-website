@@ -22,8 +22,6 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
     entry = data.json.childJson;
   }
 
-  console.log(props);
-
   const link =
     pageContext.libraryName === 'processing'
       ? `/reference/${pageContext.name}.html`

@@ -12,10 +12,13 @@ import grid from '../styles/grid.module.css';
 const Examples = ({ data, location }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const items = data.allFile.nodes;
+  const items = data.examples.nodes;
+  const images = data.images.nodes;
+
+  console.log(data);
 
   const tree = useMemo(
-    () => organizeExampleItems(filterItems(items, searchTerm)),
+    () => organizeExampleItems(filterItems(items, searchTerm), images),
     [items, searchTerm]
   );
 
@@ -44,11 +47,12 @@ export default Examples;
 
 export const query = graphql`
   query {
-    allFile(
+    examples: allFile(
       filter: {
         sourceInstanceName: { eq: "examples" }
         fields: { lang: { eq: "en" } }
       }
+      sort: { order: ASC, fields: relativeDirectory }
     ) {
       nodes {
         name
@@ -56,6 +60,26 @@ export const query = graphql`
         childJson {
           name
           title
+        }
+      }
+    }
+    images: allFile(
+      filter: {
+        sourceInstanceName: { eq: "examples" }
+        extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
+      }
+    ) {
+      nodes {
+        name
+        relativeDirectory
+        childImageSharp {
+          fluid(maxWidth: 162) {
+            base64
+            srcWebp
+            srcSetWebp
+            originalImg
+            originalName
+          }
         }
       }
     }
