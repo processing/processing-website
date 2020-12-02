@@ -2,6 +2,11 @@
 
 Repository for the new processing.org website.
 
+## Install and run
+
+- `npm i` - Installs the dependencies
+- `npm run dev` or `gatsby develop` - Run the app for local development
+
 ## Folder structure
 
 ### `/content`
