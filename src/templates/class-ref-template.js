@@ -22,7 +22,6 @@ const ClassRefTemplate = ({ data, pageContext }) => {
     entry = data.json.childJson;
   }
 
-  const { constructors, classFields, methods, related } = entry;
   const link =
     pageContext.libraryName === 'processing'
       ? `/reference/${pageContext.name}.html`
@@ -42,7 +41,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
           type={'reference'}
         />
       )}
-      {entry ? (
+      {data.json ? (
         <div
           className={classnames(
             css.root,
@@ -97,27 +96,28 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               </ul>
             </div>
           )}
-          {constructors.length > 0 && (
+          {entry.constructors && (
             <div className={classnames(grid.grid, css.section)}>
               <h4 className={classnames(grid.col1, grid.push1)}>
                 Constructors
               </h4>
               <ul className={classnames(grid.col4, grid.pull1, css.list)}>
-                {constructors.map((cons, key) => {
-                  return (
-                    <li key={'f' + key}>
-                      <code>{cons}</code>
-                    </li>
-                  );
-                })}
+                {entry.constructors &&
+                  entry.constructors.map((cons, key) => {
+                    return (
+                      <li key={'f' + key}>
+                        <code>{cons}</code>
+                      </li>
+                    );
+                  })}
               </ul>
             </div>
           )}
-          {classFields.length > 0 && (
+          {entry.classFields.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
               <h4 className={classnames(grid.col1, grid.push1)}>Fields</h4>
               <ul className={classnames(grid.col5, grid.nest, css.list)}>
-                {classFields.map((field, key) => {
+                {entry.classFields.map((field, key) => {
                   return (
                     <li key={'f' + key}>
                       <a href={field.anchor + '.html'} className={grid.col2}>
@@ -130,11 +130,11 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               </ul>
             </div>
           )}
-          {methods.length > 0 && (
+          {entry.methods.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
               <h4 className={classnames(grid.col1, grid.push1)}>Methods</h4>
               <ul className={classnames(grid.col5, grid.nest, css.list)}>
-                {methods.map((method, key) => {
+                {entry.methods.map((method, key) => {
                   return (
                     <li key={'m' + key}>
                       <a href={method.anchor + '.html'} className={grid.col2}>
@@ -150,7 +150,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               </ul>
             </div>
           )}
-          {related.length > 0 && (
+          {entry.related.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
               <h4 className={classnames(grid.col1, grid.push1)}>Related</h4>
               <ul
@@ -160,7 +160,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
                   grid.nest,
                   css.list
                 )}>
-                {related.map((rel, key) => (
+                {entry.related.map((rel, key) => (
                   <li key={key + 'rel'}>
                     <a href={rel + '.html'} className={grid.col1}>
                       {rel.replace(/_/g, '()')}
