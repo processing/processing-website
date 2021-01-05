@@ -22,6 +22,9 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
     entry = data.json.childJson;
   }
 
+  console.log(pageContext);
+  console.log(data.json);
+
   const link =
     pageContext.libraryName === 'processing'
       ? `/reference/${pageContext.name}.html`
@@ -202,9 +205,16 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           </div>
         </div>
       ) : (
-        <div>
-          This page is not translated, please refer to the
-          <Link to={link}> english page</Link>
+        <div
+          className={classnames(
+            grid.grid,
+            { [css.collapsed]: !show },
+            { [css.expanded]: show }
+          )}>
+          <div className={classnames(grid.push1)}>
+            This page is not translated, please refer to the
+            <Link to={link}> english page</Link>
+          </div>
         </div>
       )}
     </Layout>
@@ -214,8 +224,8 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
 export default RefTemplate;
 
 export const query = graphql`
-  query($name: String!, $assetsName: String!, $locale: String!) {
-    json: file(fields: { name: { eq: $name }, lang: { eq: $locale } }) {
+  query($name: String!, $assetsName: String!, $lang: String!) {
+    json: file(fields: { name: { eq: $name }, lang: { eq: $lang } }) {
       childJson {
         name
         description

@@ -14,9 +14,15 @@ const ExampleTemplate = ({ data, pageContext }) => {
   const { json, pdes, examples } = data;
   const [show, setShow] = useState(false);
 
-  const mainPde = pdes.nodes.find((pde) => pde.name === pageContext.name);
+  console.log(pageContext.name);
 
-  const orderedPdes = pdes.nodes.filter((pde) => pde.name !== pageContext.name);
+  const mainPde = pdes.nodes.find(
+    (pde) => pde.name === pageContext.name.split('.')[0]
+  );
+
+  const orderedPdes = pdes.nodes.filter(
+    (pde) => pde.name !== pageContext.name.split('.')[0]
+  );
 
   orderedPdes.unshift(mainPde);
 
@@ -60,11 +66,12 @@ const ExampleTemplate = ({ data, pageContext }) => {
             <div className={grid.col2}>
               <h3>Featured functions</h3>
               <ul>
-                {json.childJson.featured.map((feature, key) => (
-                  <li key={key + 'f'}>
-                    <Link to={feature}>{feature}</Link>
-                  </li>
-                ))}
+                {json.childJson.featured &&
+                  json.childJson.featured.map((feature, key) => (
+                    <li key={key + 'f'}>
+                      <Link to={feature}>{feature}</Link>
+                    </li>
+                  ))}
               </ul>
             </div>
             <Tabs pdes={orderedPdes} />
@@ -102,9 +109,16 @@ const ExampleTemplate = ({ data, pageContext }) => {
           </div>
         </div>
       ) : (
-        <div style={{ marginLeft: show ? '350px' : '50px' }}>
-          This page is not translated, please refer to the
-          <Link to={pageContext.slug}> english page</Link>
+        <div
+          className={classnames(
+            grid.grid,
+            { [css.collapsed]: !show },
+            { [css.expanded]: show }
+          )}>
+          <div className={classnames(grid.push1)}>
+            This page is not translated, please refer to the
+            <Link to={pageContext.slug}> english page</Link>
+          </div>
         </div>
       )}
     </Layout>
@@ -114,8 +128,11 @@ const ExampleTemplate = ({ data, pageContext }) => {
 export default ExampleTemplate;
 
 export const query = graphql`
-  query($locale: String!, $name: String!, $relDir: String!) {
-    json: file(fields: { name: { eq: $name }, lang: { eq: $locale } }) {
+  query($name: String!, $relDir: String!) {
+    json: file(
+      fields: { name: { eq: $name } }
+      sourceInstanceName: { eq: "examples" }
+    ) {
       relativeDirectory
       childJson {
         name

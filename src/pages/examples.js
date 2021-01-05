@@ -15,8 +15,6 @@ const Examples = ({ data, location }) => {
   const items = data.examples.nodes;
   const images = data.images.nodes;
 
-  console.log(data);
-
   const tree = useMemo(
     () => organizeExampleItems(filterItems(items, searchTerm), images),
     [items, searchTerm]

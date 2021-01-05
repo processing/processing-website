@@ -130,6 +130,9 @@ async function createReference(actions, graphql) {
         refPage.node.name.split('.')[0] +
         '.html';
 
+    console.log(refPage.node.name);
+    console.log(refPath);
+
     if (
       refPage.node.childJson.type === 'function' ||
       refPage.node.childJson.type === 'method'
@@ -141,6 +144,7 @@ async function createReference(actions, graphql) {
           name: refPage.node.name,
           assetsName: libraryName + '/' + assetsName,
           libraryName: libraryName,
+          lang: lang,
           previous,
           next,
         },
@@ -262,11 +266,21 @@ async function createExamples(actions, graphql) {
   const examplePages = exampleResult.data.allFile.edges;
 
   examplePages.forEach((examplePage, index) => {
+    //if language is english we don't need to add it to the path hence ''
+    const lang =
+      examplePage.node.name.split('.').length > 1
+        ? examplePage.node.name.split('.')[1] + '/'
+        : '';
+    const name =
+      examplePage.node.name.split('.').length > 1
+        ? examplePage.node.name.split('.')[0].toLowerCase()
+        : examplePage.node.name.toLowerCase();
+
     createPage({
-      path: 'examples/' + examplePage.node.name.toLowerCase() + '.html',
+      path: lang + 'examples/' + name + '.html',
       component: exampleTemplate,
       context: {
-        slug: 'examples/' + examplePage.node.name.toLowerCase() + '.html',
+        slug: lang + '/examples/' + name + '.html',
         name: examplePage.node.name,
         relDir: examplePage.node.relativeDirectory,
       },

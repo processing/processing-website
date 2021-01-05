@@ -15,7 +15,7 @@ import grid from '../styles/grid.module.css';
 
 const TutorialTemplate = ({ data, pageContext }) => {
   const { mdx } = data;
-  const { frontmatter, body, tableOfContents } = mdx;
+  //const { frontmatter, body, tableOfContents } = mdx;
   const ref = useHighlight();
 
   return (
@@ -23,7 +23,7 @@ const TutorialTemplate = ({ data, pageContext }) => {
       <div className={grid.grid} ref={ref}>
         {mdx !== null ? (
           <Fragment>
-            <TableOfContents items={tableOfContents.items} />
+            <TableOfContents items={mdx.tableOfContents.items} />
             <h1
               className={classnames(
                 grid.push2,
@@ -31,7 +31,7 @@ const TutorialTemplate = ({ data, pageContext }) => {
                 grid.pull1,
                 css.title
               )}>
-              {frontmatter.title}
+              {mdx.frontmatter.title}
             </h1>
             <span
               className={classnames(
@@ -39,9 +39,9 @@ const TutorialTemplate = ({ data, pageContext }) => {
                 grid.col5,
                 grid.pull1,
                 css.author
-              )}>{`By ${frontmatter.author}`}</span>
+              )}>{`By ${mdx.frontmatter.author}`}</span>
             <div className={classnames(grid.col5, grid.push2, css.content)}>
-              <MDXRenderer>{body}</MDXRenderer>
+              <MDXRenderer>{mdx.body}</MDXRenderer>
             </div>
           </Fragment>
         ) : (

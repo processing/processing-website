@@ -119,9 +119,16 @@ const FieldRefTemplate = ({ data, pageContext }) => {
           )}
         </div>
       ) : (
-        <div>
-          This page is not translated, please refer to the
-          <Link to={link}> english page</Link>
+        <div
+          className={classnames(
+            grid.grid,
+            { [css.collapsed]: !show },
+            { [css.expanded]: show }
+          )}>
+          <div className={classnames(grid.push1)}>
+            This page is not translated, please refer to the
+            <Link to={link}> english page</Link>
+          </div>
         </div>
       )}
     </Layout>
@@ -131,8 +138,8 @@ const FieldRefTemplate = ({ data, pageContext }) => {
 export default FieldRefTemplate;
 
 export const query = graphql`
-  query($name: String!, $assetsName: String!, $locale: String!) {
-    json: file(fields: { name: { eq: $name }, lang: { eq: $locale } }) {
+  query($name: String!, $assetsName: String!) {
+    json: file(fields: { name: { eq: $name } }) {
       childJson {
         name
         description
