@@ -82,12 +82,12 @@ const Books = ({ data }) => {
 export default Books;
 
 export const query = graphql`
-  query {
+  query($locale: String!) {
     books: allFile(
       filter: {
         sourceInstanceName: { eq: "books" }
         extension: { eq: "mdx" }
-        childMdx: { fields: { locale: { eq: "en" } } }
+        childMdx: { fields: { locale: { eq: $locale } } }
       }
     ) {
       nodes {
