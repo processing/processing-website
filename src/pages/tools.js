@@ -52,24 +52,14 @@ const Tools = ({ data }) => {
             );
           })}
         </ul>
-        <h1 className={grid.col8}>Contributions</h1>
-        <h4 className={grid.col6}>
-          Contributed tools must be downloaded individually. Select "Add
-          Tool..." from the Tools menu to select a Tool to download. Contributed
-          tools are developed, documented, and maintained by members of the
-          Processing community. For feedback and support, please post to the
-          <a href="http://forum.processing.org/">Forum</a>. For development
-          discussions post to the{' '}
-          <a href="http://forum.processing.org/library-and-tool-development">
-            {' '}
-            Libraries and Tool Development
-          </a>{' '}
-          topic. Instructions for creating your own tool are on the
-          <a href="https://github.com/processing/processing/wiki">
-            Processing GitHub
-          </a>{' '}
-          site.
-        </h4>
+        <h1 className={grid.col8}>
+          {intl.formatMessage({ id: 'contributions' })}
+        </h1>
+        <h4
+          className={grid.col6}
+          dangerouslySetInnerHTML={{
+            __html: intl.formatMessage({ id: 'contributedTools' }),
+          }}></h4>
         <ul className={css.contributionsList}>
           {contributions.map((node, key) => {
             return (

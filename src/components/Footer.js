@@ -10,12 +10,11 @@ const Footer = ({ siteTitle }) => {
   const intl = useIntl();
   return (
     <footer className={css.root}>
-      <span className={classnames(grid.grid, css.span)}>
-        {intl.formatMessage({ id: 'footerText1' })}
-        <a href="https://benfry.com/">Ben Fry</a> and {''}
-        <a href="http://reas.com/">Casey Reas</a>.{' '}
-        {intl.formatMessage({ id: 'footerText2' })}
-      </span>
+      <span
+        className={classnames(grid.grid, css.span)}
+        dangerouslySetInnerHTML={{
+          __html: intl.formatMessage({ id: 'footer' }),
+        }}></span>
     </footer>
   );
 };

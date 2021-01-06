@@ -125,27 +125,18 @@ const IndexPage = ({ data }) => {
             {intl.formatMessage({ id: 'gettingStarted' })}
           </h3>
           <div className={grid.col4}>
-            <p>
-              Download and open the ‘Processing' application. Select something
-              from the Examples. Hit the Run button. Lather, rinse, repeat as
-              necessary. More information on using Processing itself is can be
-              found in the <Link to="/environment">environment</Link> section of
-              the reference.
-            </p>
-            <p>
-              To learn the Processing language, we recommend you try a few of
-              the built-in examples, and check out the{' '}
-              <Link to="/environment">reference</Link>. A group of diverse{' '}
-              <Link to="/books">books</Link> have been written to help people
-              with different goals and skill levels. If you're stuck or want to
-              talk about your work, head over to the forum section of the site
-              to find open minds and helpful peers.
-            </p>
-            <p>
-              For a more detailed overview, check the{' '}
-              <Link to="/tutorials/gettingstarted">Getting Started</Link>{' '}
-              tutorial.
-            </p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: intl.formatMessage({ id: 'gettingStartedP1' }),
+              }}></p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: intl.formatMessage({ id: 'gettingStartedP2' }),
+              }}></p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: intl.formatMessage({ id: 'gettingStartedP3' }),
+              }}></p>
           </div>
           <h3 className={grid.col4}>
             {intl.formatMessage({ id: 'contribute' })}
@@ -161,7 +152,7 @@ const IndexPage = ({ data }) => {
               <a href="https://github.com/processing/processing/wiki/Report-Bugs">
                 {intl.formatMessage({ id: 'reporting' })}
               </a>
-              , and{' '}
+              , {intl.formatMessage({ id: 'reporting' })}{' '}
               <a href="https://github.com/processing/processing/wiki">
                 {intl.formatMessage({ id: 'creating' })}
               </a>

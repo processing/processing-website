@@ -52,7 +52,9 @@ const Books = ({ data }) => {
                   <div className={grid.col3}>
                     <h3>{title}</h3>
                     <p className={css.details}>{details}</p>
-                    <p className={css.author}>by {author}</p>
+                    <p className={css.author}>
+                      {intl.formatMessage({ id: 'by' })} {author}
+                    </p>
                     {language && <p>{language}</p>}
                     <ul>
                       {orderList.map((order, key) => (
