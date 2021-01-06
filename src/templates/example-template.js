@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
+import { useIntl } from 'react-intl';
 
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
@@ -13,8 +14,7 @@ import grid from '../styles/grid.module.css';
 const ExampleTemplate = ({ data, pageContext }) => {
   const { json, pdes, examples } = data;
   const [show, setShow] = useState(false);
-
-  console.log(pageContext.name);
+  const intl = useIntl();
 
   const mainPde = pdes.nodes.find(
     (pde) => pde.name === pageContext.name.split('.')[0]
@@ -57,14 +57,14 @@ const ExampleTemplate = ({ data, pageContext }) => {
             </h1>
             {json.childJson.author && (
               <h3 className={classnames(grid.col4, grid.push1)}>
-                by {json.childJson.author}
+                {intl.formatMessage({ id: 'by' })} {json.childJson.author}
               </h3>
             )}
             <div className={classnames(grid.col4, grid.push1)}>
               {json.childJson.description}
             </div>
             <div className={grid.col2}>
-              <h3>Featured functions</h3>
+              <h3>{intl.formatMessage({ id: 'featured' })}</h3>
               <ul>
                 {json.childJson.featured &&
                   json.childJson.featured.map((feature, key) => (
@@ -76,7 +76,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
             </div>
             <Tabs pdes={orderedPdes} />
             <div className={classnames(grid.col4, grid.push1)}>
-              <h3>Related examples</h3>
+              <h3>{intl.formatMessage({ id: 'relatedExamples' })}</h3>
               <ul className={css.related}>
                 {related.map((rel, key) => {
                   return (
@@ -95,14 +95,12 @@ const ExampleTemplate = ({ data, pageContext }) => {
               </ul>
             </div>
             <p className={classnames(grid.col6, grid.push1)}>
-              This example is for Processing 3+. If you have a previous version,
-              use the examples included with your software. If you see any
-              errors or have suggestions, please{' '}
+              {intl.formatMessage({ id: 'exampleInfo' })}
               <a
                 href={
                   'https://github.com/processing/processing-docs/issues?state=open'
                 }>
-                let us know
+                {intl.formatMessage({ id: 'letUsKnow' })}
               </a>
               .
             </p>
@@ -116,8 +114,11 @@ const ExampleTemplate = ({ data, pageContext }) => {
             { [css.expanded]: show }
           )}>
           <div className={classnames(grid.push1)}>
-            This page is not translated, please refer to the
-            <Link to={pageContext.slug}> english page</Link>
+            {intl.formatMessage({ id: 'notTranslated' })}
+            <Link to={pageContext.slug}>
+              {' '}
+              {intl.formatMessage({ id: 'englishPage' })}
+            </Link>
           </div>
         </div>
       )}

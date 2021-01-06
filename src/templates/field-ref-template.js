@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
+import { useIntl } from 'react-intl';
 
 import Img from 'gatsby-image';
 
@@ -19,6 +20,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
   const examples = data.pdes.edges;
   const images = data.images.edges;
   const ref = useHighlight();
+  const intl = useIntl();
 
   if (data.json !== null) {
     entry = data.json.childJson;
@@ -52,18 +54,24 @@ const FieldRefTemplate = ({ data, pageContext }) => {
           )}
           ref={ref}>
           <div className={classnames(css.section, grid.grid)}>
-            <h4 className={classnames(grid.col1, grid.push1)}>Name</h4>
+            <h4 className={classnames(grid.col1, grid.push1)}>
+              {intl.formatMessage({ id: 'name' })}
+            </h4>
             <h3 className={classnames(grid.col4, grid.pull1)}>{entry.name}</h3>
           </div>
           <div className={classnames(css.section, grid.grid)}>
-            <h4 className={classnames(grid.col1, grid.push1)}>Description</h4>
+            <h4 className={classnames(grid.col1, grid.push1)}>
+              {intl.formatMessage({ id: 'description' })}
+            </h4>
             <p className={classnames(grid.col4, grid.pull1, css.description)}>
               {entry.description}
             </p>
           </div>
           {examples.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
-              <h4 className={classnames(grid.col1, grid.push1)}>Examples</h4>
+              <h4 className={classnames(grid.col1, grid.push1)}>
+                {intl.formatMessage({ id: 'examples' })}
+              </h4>
               <ul
                 className={classnames(
                   grid.col6,
@@ -99,7 +107,9 @@ const FieldRefTemplate = ({ data, pageContext }) => {
           )}
           {entry.related.length > 0 && (
             <div className={classnames(css.section, grid.grid)}>
-              <h4 className={classnames(grid.col1, grid.push1)}>Related</h4>
+              <h4 className={classnames(grid.col1, grid.push1)}>
+                {intl.formatMessage({ id: 'related' })}
+              </h4>
               <ul
                 className={classnames(
                   grid.col4,
@@ -126,8 +136,8 @@ const FieldRefTemplate = ({ data, pageContext }) => {
             { [css.expanded]: show }
           )}>
           <div className={classnames(grid.push1)}>
-            This page is not translated, please refer to the
-            <Link to={link}> english page</Link>
+            {intl.formatMessage({ id: 'notTranslated' })}
+            <Link to={link}> {intl.formatMessage({ id: 'englishPage' })}</Link>
           </div>
         </div>
       )}

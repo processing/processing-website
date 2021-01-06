@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { graphql } from 'gatsby';
+import { useIntl } from 'react-intl';
 
 import Layout from '../components/Layout';
 import CategoryNav from '../components/CategoryNav';
@@ -13,6 +14,7 @@ import grid from '../styles/grid.module.css';
 
 const Reference = ({ data, location }) => {
   const [searchTerm, setSearchTerm] = useState('');
+  const intl = useIntl();
 
   const items = data.allFile.nodes;
 
@@ -26,10 +28,12 @@ const Reference = ({ data, location }) => {
   return (
     <Layout>
       <div className={grid.grid}>
-        <h1 className={grid.col8}>References</h1>
+        <h1 className={grid.col8}>
+          {intl.formatMessage({ id: 'references' })}
+        </h1>
         <Donate />
         <Searchbar
-          placeholder={'Search in the Reference...'}
+          placeholder={intl.formatMessage({ id: 'referencesSearch' })}
           onChange={(e) => setSearchTerm(e.target.value)}
           searchTerm={searchTerm}
           className={grid.push1}

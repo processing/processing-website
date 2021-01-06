@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { useIntl } from 'react-intl';
 
 import Layout from '../components/Layout';
 import ReferenceList from '../components/ReferenceList';
@@ -11,6 +12,7 @@ import grid from '../styles/grid.module.css';
 
 const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
   const link = (libraryName = `/reference/libraries/${libraryName}/index.html`);
+  const intl = useIntl();
 
   const items = data.allFile.nodes;
 
@@ -25,8 +27,8 @@ const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
         </div>
       ) : (
         <div>
-          This page is not translated, please refer to the
-          <Link to={link}> english page</Link>
+          {intl.formatMessage({ id: 'notTranslated' })}
+          <Link to={link}>{intl.formatMessage({ id: 'englishPage' })}</Link>
         </div>
       )}
     </Layout>

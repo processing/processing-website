@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
+import { useIntl } from 'react-intl';
 
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
@@ -17,6 +18,7 @@ const TutorialTemplate = ({ data, pageContext }) => {
   const { mdx } = data;
   //const { frontmatter, body, tableOfContents } = mdx;
   const ref = useHighlight();
+  const intl = useIntl();
 
   return (
     <Layout>
@@ -39,15 +41,20 @@ const TutorialTemplate = ({ data, pageContext }) => {
                 grid.col5,
                 grid.pull1,
                 css.author
-              )}>{`By ${mdx.frontmatter.author}`}</span>
+              )}>{`${intl.formatMessage({ id: 'by' })} ${
+              mdx.frontmatter.author
+            }`}</span>
             <div className={classnames(grid.col5, grid.push2, css.content)}>
               <MDXRenderer>{mdx.body}</MDXRenderer>
             </div>
           </Fragment>
         ) : (
           <div>
-            This page is not translated, please refer to the
-            <Link to={pageContext.slug}> english page</Link>
+            {intl.formatMessage({ id: 'notTranslated' })}
+            <Link to={pageContext.slug}>
+              {' '}
+              {intl.formatMessage({ id: 'englishPage' })}
+            </Link>
           </div>
         )}
       </div>

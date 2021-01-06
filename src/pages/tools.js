@@ -1,6 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
+import { useIntl } from 'react-intl';
 
 import { useLocalization } from 'gatsby-theme-i18n';
 
@@ -12,6 +13,7 @@ import grid from '../styles/grid.module.css';
 const Tools = ({ data }) => {
   const { locale } = useLocalization();
   const { tools, currentLang, english } = data;
+  const intl = useIntl();
 
   let contributions = [];
 
@@ -30,12 +32,9 @@ const Tools = ({ data }) => {
   return (
     <Layout>
       <div className={grid.grid}>
-        <h1 className={grid.col8}>Tools</h1>
+        <h1 className={grid.col8}>{intl.formatMessage({ id: 'tools' })}</h1>
         <h4 className={classnames(grid.col6)}>
-          The following tools are included with the Processing software. Select
-          the tool you want to use from the Tools menu of the Processing
-          Environment. These tools are open source; the code is distributed with
-          Processing.
+          {intl.formatMessage({ id: 'toolsIntro' })}
         </h4>
         <ul
           className={classnames(

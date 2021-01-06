@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { useLocalization } from 'gatsby-theme-i18n';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { useIntl } from 'react-intl';
 
 import Layout from '../components/Layout';
 
@@ -12,6 +13,7 @@ import grid from '../styles/grid.module.css';
 
 const Books = ({ data }) => {
   const { locale } = useLocalization();
+  const intl = useIntl();
 
   const images = data.images.nodes;
 
@@ -20,8 +22,7 @@ const Books = ({ data }) => {
       <div className={grid.grid}>
         <h1 className={grid.col8}>Books</h1>
         <h3 className={grid.col3}>
-          Processing books cover topics from programming basics to
-          visualization. Browse this page to find the right books for you.
+          {intl.formatMessage({ id: 'booksIntro' })}
         </h3>
         <div className={classnames(grid.nest, css.section)}>
           <ul className={css.booksList}>
@@ -63,7 +64,9 @@ const Books = ({ data }) => {
                       ))}
                     </ul>
                     <details className={css.read}>
-                      <summary>Read more</summary>
+                      <summary>
+                        {intl.formatMessage({ id: 'readMore' })}
+                      </summary>
                       <div>
                         <MDXRenderer>{node.childMdx.body}</MDXRenderer>
                       </div>

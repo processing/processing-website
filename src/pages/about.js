@@ -2,6 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { useIntl } from 'react-intl';
 
 import Layout from '../components/Layout';
 
@@ -11,6 +12,7 @@ import grid from '../styles/grid.module.css';
 const About = ({ data }) => {
   const { mdx } = data;
   const { frontmatter, body } = mdx;
+  const intl = useIntl();
   return (
     <Layout>
       <div className={grid.grid}>
@@ -18,8 +20,7 @@ const About = ({ data }) => {
           {frontmatter.title}
         </h1>
         <h3 className={grid.col3}>
-          A short introduction to the Processing software and projects from the
-          community.
+          {intl.formatMessage({ id: 'aboutIntro' })}
         </h3>
         <div className={classnames(grid.col5, grid.push1, css.content)}>
           <MDXRenderer>{body}</MDXRenderer>
