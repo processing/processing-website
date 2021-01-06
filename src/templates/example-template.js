@@ -55,18 +55,23 @@ const ExampleTemplate = ({ data, pageContext }) => {
               </h3>
             )}
             <div className={classnames(grid.col4, grid.push1)}>
-              {json.childJson.description}
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: json.childJson.description,
+                }}></p>
             </div>
-            <div className={grid.col2}>
-              <h3>Featured functions</h3>
-              <ul>
-                {json.childJson.featured.map((feature, key) => (
-                  <li key={key + 'f'}>
-                    <Link to={feature}>{feature}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {json.childJson.featured && (
+              <div className={grid.col2}>
+                <h3>Featured functions</h3>
+                <ul>
+                  {json.childJson.featured.map((feature, key) => (
+                    <li key={key + 'f'}>
+                      <Link to={feature}>{feature}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
             <Tabs pdes={orderedPdes} />
             <div className={classnames(grid.col4, grid.push1)}>
               <h3>Related examples</h3>
@@ -77,9 +82,9 @@ const ExampleTemplate = ({ data, pageContext }) => {
                       <li
                         key={key + 'rel'}
                         className={classnames(grid.col1, grid.nest)}>
-                        <div className={css.placeholder}></div>
                         <Link to={'../' + rel.name.toLowerCase() + '.html'}>
-                          {rel.name}
+                          <div className={css.placeholder}></div>
+                          <span className={css.relatedName}>{rel.name}</span>
                         </Link>
                       </li>
                     )
@@ -87,7 +92,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
                 })}
               </ul>
             </div>
-            <p className={classnames(grid.col6, grid.push1)}>
+            <p className={classnames(grid.col6, grid.push1, css.note)}>
               This example is for Processing 3+. If you have a previous version,
               use the examples included with your software. If you see any
               errors or have suggestions, please{' '}

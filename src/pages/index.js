@@ -118,6 +118,9 @@ const IndexPage = ({ data }) => {
               </p>
             </li>
           </ul>
+          <h4>
+            <Link to="/examples">More Examples</Link>
+          </h4>
         </div>
       </div>
       <div className={classnames(grid.grid, css.bottom)}>

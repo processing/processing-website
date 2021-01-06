@@ -26,6 +26,15 @@
 
   & li {
     margin-right: var(--gutter);
+    & a span {
+      display: block;
+      padding-top: 4px;
+      color: var(--processing-blue-mid);
+    }
+
+    & a span:hover {
+      color: var(--processing-blue-light);
+    }
   }
 }
 
@@ -34,4 +43,9 @@
   height: 150px;
   width: 150px;
   padding-right: var(--gutter);
+}
+
+.note {
+  padding-top: var(--gutter-double);
+  color: var(--processing-blue-dark);
 }
