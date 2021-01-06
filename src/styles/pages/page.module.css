@@ -38,7 +38,7 @@
     & li:before {
       content: "• ";
       float: left;
-      font-family: "Space Grotesk";
+      font-family: var(--font);
       font-weight: 700;
       color: var(--processing-blue-dark);
       display: inline-block;

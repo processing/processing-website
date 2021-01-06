@@ -33,6 +33,7 @@ const Examples = ({ data, location }) => {
         <Searchbar
           placeholder={'Search in the Examples...'}
           onChange={(e) => setSearchTerm(e.target.value)}
+          onClick={(e) => setSearchTerm('')}
           searchTerm={searchTerm}
           className={grid.push1}
           large

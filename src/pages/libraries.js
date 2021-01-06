@@ -72,6 +72,7 @@ const Libraries = ({ data }) => {
         <Searchbar
           placeholder={'Search in the Contributions...'}
           onChange={(e) => setSearchTerm(e.target.value)}
+          onClick={(e) => setSearchTerm('')}
           searchTerm={searchTerm}
           className={grid.push1}
           large

@@ -31,6 +31,7 @@ const Reference = ({ data, location }) => {
         <Searchbar
           placeholder={'Search in the Reference...'}
           onChange={(e) => setSearchTerm(e.target.value)}
+          onClick={(e) => setSearchTerm('')}
           searchTerm={searchTerm}
           className={grid.push1}
           large
