@@ -12,7 +12,6 @@ const ReferenceList = ({ data, library }) => {
     ? '/reference/libraries/' + library + '/'
     : '/' + locale + '/reference/';
 
-  console.log(link);
   return (
     <div className={css.root}>
       {data.map((category, key) => (

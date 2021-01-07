@@ -12,23 +12,27 @@ import css from '../styles/pages/example.module.css';
 import grid from '../styles/grid.module.css';
 
 const ExampleTemplate = ({ data, pageContext }) => {
-  const { json, pdes, examples } = data;
   const [show, setShow] = useState(false);
   const intl = useIntl();
 
-  const mainPde = pdes.nodes.find(
+  let json, subcategory;
+
+  if (data.json !== null) {
+    json = data.json;
+    subcategory = data.json.relativeDirectory.split('/')[1];
+  }
+
+  const mainPde = data.pdes.nodes.find(
     (pde) => pde.name === pageContext.name.split('.')[0]
   );
 
-  const orderedPdes = pdes.nodes.filter(
+  const orderedPdes = data.pdes.nodes.filter(
     (pde) => pde.name !== pageContext.name.split('.')[0]
   );
 
   orderedPdes.unshift(mainPde);
 
-  const subcategory = json.relativeDirectory.split('/')[1];
-
-  const related = examples.nodes.filter(
+  const related = data.examples.nodes.filter(
     (item) => item.relativeDirectory.split('/')[1] === subcategory
   );
 
@@ -39,12 +43,12 @@ const ExampleTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
       <Sidebar
-        items={examples}
+        items={data.examples}
         onChange={toggleSidebar}
         show={show}
         type={'examples'}
       />
-      {json !== null ? (
+      {data.json !== null ? (
         <div
           className={classnames(
             css.root,

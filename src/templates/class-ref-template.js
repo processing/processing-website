@@ -22,8 +22,6 @@ const ClassRefTemplate = ({ data, pageContext }) => {
   const intl = useIntl();
   const { locale } = useLocalization();
 
-  console.log(locale);
-
   if (data.json !== null) {
     entry = data.json.childJson;
   }
