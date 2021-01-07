@@ -10,7 +10,7 @@ import { filterItems, organizeExampleItems } from '../utils/data';
 
 import grid from '../styles/grid.module.css';
 
-const Examples = ({ data, location }) => {
+const Examples = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const intl = useIntl();
 

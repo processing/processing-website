@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
-import { useLocalization } from 'gatsby-theme-i18n';
 
 import Img from 'gatsby-image';
 
@@ -20,16 +19,10 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
   const [show, setShow] = useState(false);
   const ref = useHighlight();
   const intl = useIntl();
-  const { locale } = useLocalization();
 
   if (data.json !== null) {
     entry = data.json.childJson;
   }
-
-  console.log(locale);
-  console.log('test');
-  console.log(pageContext);
-  console.log(data.json);
 
   const link =
     pageContext.libraryName === 'processing'
@@ -246,8 +239,8 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
 export default RefTemplate;
 
 export const query = graphql`
-  query($name: String!, $assetsName: String!, $lang: String!) {
-    json: file(fields: { name: { eq: $name }, lang: { eq: $lang } }) {
+  query($name: String!, $assetsName: String!, $locale: String!) {
+    json: file(fields: { name: { eq: $name }, lang: { eq: $locale } }) {
       childJson {
         name
         description

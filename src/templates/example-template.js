@@ -129,9 +129,9 @@ const ExampleTemplate = ({ data, pageContext }) => {
 export default ExampleTemplate;
 
 export const query = graphql`
-  query($name: String!, $relDir: String!) {
+  query($name: String!, $relDir: String!, $locale: String!) {
     json: file(
-      fields: { name: { eq: $name } }
+      fields: { name: { eq: $name }, lang: { eq: $locale } }
       sourceInstanceName: { eq: "examples" }
     ) {
       relativeDirectory

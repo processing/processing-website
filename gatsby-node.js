@@ -116,21 +116,19 @@ async function createReference(actions, graphql) {
     let assetsName = refPage.node.name.split('.')[0];
     let libraryName = refPage.node.relativeDirectory.split('/')[1];
     let lang = refPage.node.relativeDirectory.split('/')[0];
-    lang = lang === 'en' ? '' : lang;
+    loc = lang === 'en' ? '' : lang;
     let refPath;
     if (libraryName === 'processing')
-      refPath =
-        lang + '/reference/' + refPage.node.name.split('.')[0] + '.html';
+      refPath = loc + '/reference/' + refPage.node.name.split('.')[0] + '.html';
     else
       refPath =
-        lang +
+        loc +
         '/reference/libraries/' +
         libraryName +
         '/' +
         refPage.node.name.split('.')[0] +
         '.html';
 
-    console.log(refPage.node.name);
     console.log(refPath);
 
     if (
@@ -144,7 +142,6 @@ async function createReference(actions, graphql) {
           name: refPage.node.name,
           assetsName: libraryName + '/' + assetsName,
           libraryName: libraryName,
-          lang: lang,
           previous,
           next,
         },

@@ -4,6 +4,7 @@ import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
+import { useLocalization } from 'gatsby-theme-i18n';
 
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
@@ -19,6 +20,9 @@ const ClassRefTemplate = ({ data, pageContext }) => {
   const examples = data.pdes.edges;
   const ref = useHighlight();
   const intl = useIntl();
+  const { locale } = useLocalization();
+
+  console.log(locale);
 
   if (data.json !== null) {
     entry = data.json.childJson;
@@ -205,8 +209,8 @@ const ClassRefTemplate = ({ data, pageContext }) => {
 export default ClassRefTemplate;
 
 export const query = graphql`
-  query($name: String!, $assetsName: String!) {
-    json: file(fields: { name: { eq: $name } }) {
+  query($name: String!, $assetsName: String!, $locale: String!) {
+    json: file(fields: { name: { eq: $name }, lang: { eq: $locale } }) {
       childJson {
         name
         description

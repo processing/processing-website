@@ -59,7 +59,6 @@ export const organizeReferenceItems = (items) => {
       ...item.childJson,
     });
   });
-  console.log(tree);
   return tree;
 };
 

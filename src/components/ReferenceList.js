@@ -7,9 +7,12 @@ import grid from '../styles/grid.module.css';
 import css from './ReferenceList.module.css';
 
 const ReferenceList = ({ data, library }) => {
-  const link = library ? '../' : '/reference/';
   const { locale } = useLocalization();
+  const link = library
+    ? '/reference/libraries/' + library + '/'
+    : '/' + locale + '/reference/';
 
+  console.log(link);
   return (
     <div className={css.root}>
       {data.map((category, key) => (

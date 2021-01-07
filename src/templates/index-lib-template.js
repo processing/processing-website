@@ -11,7 +11,7 @@ import { organizeReferenceItems } from '../utils/data';
 import grid from '../styles/grid.module.css';
 
 const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
-  const link = (libraryName = `/reference/libraries/${libraryName}/index.html`);
+  const link = `/reference/libraries/${libraryName}/index.html`;
   const intl = useIntl();
 
   const items = data.allFile.nodes;
@@ -40,7 +40,7 @@ export default IndexLibraryTemplate;
 export const query = graphql`
   query($libraryName: String!, $locale: String!) {
     allFile(
-      filter: { fields: { lib: { eq: $libraryName }, lang: { eq: $locale } } }
+      filter: { fields: { lib: { eq: $libraryName }, lang: { eq: "en" } } }
     ) {
       nodes {
         name

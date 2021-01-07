@@ -9,8 +9,6 @@ import grid from '../styles/grid.module.css';
 const Tabs = ({ pdes }) => {
   const [active, setActive] = useState(pdes[0].name);
 
-  console.log(pdes);
-
   useEffect(() => {
     document.querySelectorAll('pre').forEach((block) => {
       hljs.highlightBlock(block);

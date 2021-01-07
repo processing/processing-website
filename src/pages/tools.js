@@ -17,8 +17,6 @@ const Tools = ({ data }) => {
 
   let contributions = [];
 
-  console.log(data);
-
   english.nodes.forEach((en) => {
     currentLang.nodes.forEach((con) => {
       if (en.name === con.name.split('.')[0]) {

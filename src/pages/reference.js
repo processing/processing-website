@@ -12,7 +12,7 @@ import { filterItems, organizeReferenceItems } from '../utils/data';
 
 import grid from '../styles/grid.module.css';
 
-const Reference = ({ data, location }) => {
+const Reference = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const intl = useIntl();
 
