@@ -129,8 +129,6 @@ async function createReference(actions, graphql) {
         refPage.node.name.split('.')[0] +
         '.html';
 
-    console.log(refPath);
-
     if (
       refPage.node.childJson.type === 'function' ||
       refPage.node.childJson.type === 'method'
