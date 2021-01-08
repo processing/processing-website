@@ -10,7 +10,7 @@ const ReferenceList = ({ data, library }) => {
   const { locale } = useLocalization();
   const link = library
     ? '/reference/libraries/' + library + '/'
-    : '/' + locale + '/reference/';
+    : '/reference/';
 
   return (
     <div className={css.root}>
