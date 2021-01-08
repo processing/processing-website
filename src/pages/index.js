@@ -13,29 +13,31 @@ import { useLocalization } from 'gatsby-theme-i18n';
 import css from '../styles/pages/index.module.css';
 import grid from '../styles/grid.module.css';
 
+//the name values are used to get the value from the intl files
+//it is not the name that is displayed
 export const items = [
   {
-    name: 'Forum',
+    name: 'forum',
     link: 'https://discourse.processing.org/',
   },
   {
-    name: 'Github',
+    name: 'github',
     link: 'https://github.com/processing',
   },
   {
-    name: 'Issues',
+    name: 'issues',
     link: 'https://github.com/processing/processing/issues?state=open',
   },
   {
-    name: 'Wiki',
+    name: 'wiki',
     link: 'https://github.com/processing/processing/wiki/',
   },
   {
-    name: 'FAQ',
+    name: 'faq',
     link: 'https://github.com/processing/processing/wiki/FAQ',
   },
   {
-    name: 'Medium',
+    name: 'medium',
     link: 'https://medium.com/@ProcessingOrg',
   },
 ];
@@ -51,25 +53,20 @@ const IndexPage = ({ data }) => {
           <div className={classnames(grid.col4, css.intro, grid.nest)}>
             <h1 className={classnames(grid.col2, grid.pull1)}>
               {' '}
-              Welcome to Processing!{' '}
+              {intl.formatMessage({ id: 'introTitle' })}{' '}
             </h1>
             <p className={grid.col4}>
-              Processing is a flexible software sketchbook and a language for
-              learning how to code within the context of the visual arts. Since
-              2001, Processing has promoted software literacy within the visual
-              arts and visual literacy within technology. There are tens of
-              thousands of students, artists, designers, researchers, and
-              hobbyists who use Processing for learning and prototyping.
+              {intl.formatMessage({ id: 'introText' })}
             </p>
             <div className={classnames(grid.col4, css.buttons)}>
               <Button to={'/download'} className={css.button}>
-                Download
+                {intl.formatMessage({ id: 'download' })}
               </Button>
               <Button to={'/reference'} className={css.button}>
-                Reference
+                {intl.formatMessage({ id: 'reference' })}
               </Button>
               <Button to={'/donate'} className={css.button}>
-                Donate
+                {intl.formatMessage({ id: 'donate' })}
               </Button>
             </div>
           </div>
@@ -81,20 +78,22 @@ const IndexPage = ({ data }) => {
           <ul className={classnames(grid.col2, css.list)}>
             {items.map((item, key) => (
               <li key={key}>
-                <a href={item.link}>{item.name}</a>
+                <a href={item.link}>{intl.formatMessage({ id: item.name })}</a>
               </li>
             ))}
           </ul>
           <div className={classnames(grid.col2, css.contact)}>
-            <h4>Contact</h4>
-            <span>Feel free to write us</span>
+            <h4>{intl.formatMessage({ id: 'contact' })}</h4>
+            <span>{intl.formatMessage({ id: 'contactText' })}</span>
             <a href="mailto: foundation@processing.org">
-              foundation@processing.org
+              {intl.formatMessage({ id: 'contactEmail' })}
             </a>
           </div>
         </div>
         <div className={classnames(grid.col6, grid.nest)}>
-          <h3 className={classnames(grid.col6, grid.nest)}>Examples</h3>
+          <h3 className={classnames(grid.col6, grid.nest)}>
+            {intl.formatMessage({ id: 'examples' })}
+          </h3>
           <ul className={classnames(grid.col6, grid.nest, css.examples)}>
             <li className={classnames(grid.col2, grid.nest)}>
               <img src={data.conway.childImageSharp.fluid.src} alt="" />
@@ -122,71 +121,56 @@ const IndexPage = ({ data }) => {
       </div>
       <div className={classnames(grid.grid, css.bottom)}>
         <div className={classnames(grid.col4, grid.nest)}>
-          <h3 className={grid.col4}>Getting started</h3>
+          <h3 className={grid.col4}>
+            {intl.formatMessage({ id: 'gettingStarted' })}
+          </h3>
           <div className={grid.col4}>
-            <p>
-              Download and open the ‘Processing' application. Select something
-              from the Examples. Hit the Run button. Lather, rinse, repeat as
-              necessary. More information on using Processing itself is can be
-              found in the <Link to="/environment">environment</Link> section of
-              the reference.
-            </p>
-            <p>
-              To learn the Processing language, we recommend you try a few of
-              the built-in examples, and check out the{' '}
-              <Link to="/environment">reference</Link>. A group of diverse{' '}
-              <Link to="/books">books</Link> have been written to help people
-              with different goals and skill levels. If you're stuck or want to
-              talk about your work, head over to the forum section of the site
-              to find open minds and helpful peers.
-            </p>
-            <p>
-              For a more detailed overview, check the{' '}
-              <Link to="/tutorials/gettingstarted">Getting Started</Link>{' '}
-              tutorial.
-            </p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: intl.formatMessage({ id: 'gettingStartedP1' }),
+              }}></p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: intl.formatMessage({ id: 'gettingStartedP2' }),
+              }}></p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: intl.formatMessage({ id: 'gettingStartedP3' }),
+              }}></p>
           </div>
-          <h3 className={grid.col4}>Contribute</h3>
+          <h3 className={grid.col4}>
+            {intl.formatMessage({ id: 'contribute' })}
+          </h3>
           <div className={grid.col4}>
+            <p>{intl.formatMessage({ id: 'contributeP1' })}</p>
             <p>
-              The core Processing software is augmented by libraries and tools
-              contributed through the community. These inventive extensions are
-              a bright future for the project. We have a list of Contributed
-              Libraries and Contributed Tools posted online. These contributions
-              can't be underestimated.
-            </p>
-            <p>
-              To contribute to Processing development, please visit Processing
-              on GitHub to read instructions for downloading the code,{' '}
+              {intl.formatMessage({ id: 'contributeP2' })}
               <a href="https://github.com/processing/processing/wiki/Build-Instructions">
-                building from the source
+                {intl.formatMessage({ id: 'building' })}
               </a>
               ,{' '}
               <a href="https://github.com/processing/processing/wiki/Report-Bugs">
-                reporting and tracking bugs
+                {intl.formatMessage({ id: 'reporting' })}
               </a>
-              , and{' '}
+              , {intl.formatMessage({ id: 'reporting' })}{' '}
               <a href="https://github.com/processing/processing/wiki">
-                creating libraries and tools
+                {intl.formatMessage({ id: 'creating' })}
               </a>
               .
             </p>
           </div>
         </div>
         <div className={classnames(grid.col4, grid.nest)}>
-          <h3 className={grid.col4}>News</h3>
+          <h3 className={grid.col4}>{intl.formatMessage({ id: 'news' })}</h3>
           <div className={grid.col4}>
             <img src={data.news.childImageSharp.fluid.src} alt="" />
           </div>
           <p className={classnames(grid.col4, css.news)}>
-            The Processing Community Day (PCD) initiative is evolving. For 2020,
-            we will offer a mentorship program for PCD Worldwide Organizers who
-            are interested in learning from past community organizers and
-            mentors. The goal is to help a diverse group of organizers launch a
-            PCD in their local communities. Check out the PCD @ Worldwide site
-            to learn more about starting or attending an event in 2020!
+            {intl.formatMessage({ id: 'newsText' })}
           </p>
-          <h3 className={grid.col4}>Partners</h3>
+          <h3 className={grid.col4}>
+            {intl.formatMessage({ id: 'partners' })}
+          </h3>
           <ul className={classnames(grid.col6, grid.nest, css.logos)}>
             <li className={grid.col1}>
               <img src={data.fathom.childImageSharp.fluid.src} alt="" />

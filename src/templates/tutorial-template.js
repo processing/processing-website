@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
+import { useIntl } from 'react-intl';
 
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
@@ -15,15 +16,16 @@ import grid from '../styles/grid.module.css';
 
 const TutorialTemplate = ({ data, pageContext }) => {
   const { mdx } = data;
-  const { frontmatter, body, tableOfContents } = mdx;
+  //const { frontmatter, body, tableOfContents } = mdx;
   const ref = useHighlight();
+  const intl = useIntl();
 
   return (
     <Layout>
       <div className={grid.grid} ref={ref}>
         {mdx !== null ? (
           <Fragment>
-            <TableOfContents items={tableOfContents.items} />
+            <TableOfContents items={mdx.tableOfContents.items} />
             <h1
               className={classnames(
                 grid.push2,
@@ -31,7 +33,7 @@ const TutorialTemplate = ({ data, pageContext }) => {
                 grid.pull1,
                 css.title
               )}>
-              {frontmatter.title}
+              {mdx.frontmatter.title}
             </h1>
             <span
               className={classnames(
@@ -39,15 +41,20 @@ const TutorialTemplate = ({ data, pageContext }) => {
                 grid.col5,
                 grid.pull1,
                 css.author
-              )}>{`By ${frontmatter.author}`}</span>
+              )}>{`${intl.formatMessage({ id: 'by' })} ${
+              mdx.frontmatter.author
+            }`}</span>
             <div className={classnames(grid.col5, grid.push2, css.content)}>
-              <MDXRenderer>{body}</MDXRenderer>
+              <MDXRenderer>{mdx.body}</MDXRenderer>
             </div>
           </Fragment>
         ) : (
           <div>
-            This page is not translated, please refer to the
-            <Link to={pageContext.slug}> english page</Link>
+            {intl.formatMessage({ id: 'notTranslated' })}
+            <Link to={pageContext.slug}>
+              {' '}
+              {intl.formatMessage({ id: 'englishPage' })}
+            </Link>
           </div>
         )}
       </div>

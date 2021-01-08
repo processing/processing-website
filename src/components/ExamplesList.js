@@ -2,6 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useLocalization } from 'gatsby-theme-i18n';
+import { useIntl } from 'react-intl';
 
 import Image from './Image';
 
@@ -10,8 +11,7 @@ import grid from '../styles/grid.module.css';
 
 const ExamplesList = ({ data }) => {
   const { locale } = useLocalization();
-
-  console.log(data);
+  const intl = useIntl();
 
   return (
     <div className={classnames(css.root)}>
@@ -22,8 +22,8 @@ const ExamplesList = ({ data }) => {
           <h2 className={grid.col8}>{category.name}</h2>
           <p className={classnames(grid.col4, grid.pull4, css.intro)}>
             {category === 'topic'
-              ? 'Programs about to animation, interaction, motion, simulation, and more...'
-              : 'Programs about form, data, images, color, typography, and more...'}
+              ? intl.formatMessage({ id: 'topicExamples' })
+              : intl.formatMessage({ id: 'basicExamples' })}
           </p>
           <ul className={classnames(grid.col8, grid.nest)}>
             {category.children.map((subcategory, key) => (
@@ -32,7 +32,9 @@ const ExamplesList = ({ data }) => {
                 <ul className={classnames(grid.col6, grid.nest)}>
                   {subcategory.children.map((node, key) => (
                     <li key={`item-${key}`} className={grid.col1}>
-                      <Link to={`${node.slug}.html`} language={locale}>
+                      <Link
+                        to={`/examples/${node.slug.toLowerCase()}.html`}
+                        language={locale}>
                         {node.img && (
                           <img
                             className={css.cover}

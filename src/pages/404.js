@@ -1,12 +1,17 @@
 import React from 'react';
+import { useIntl } from 'react-intl';
 
 import Layout from '../components/Layout';
 
-const NotFoundPage = () => (
-  <Layout>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn't exist... the sadness.</p>
-  </Layout>
-);
+const NotFoundPage = () => {
+  const intl = useIntl();
+
+  return (
+    <Layout>
+      <h1>{intl.formatMessage({ id: 'notFound' })}</h1>
+      <p>{intl.formatMessage({ id: 'notFoundText' })}</p>
+    </Layout>
+  );
+};
 
 export default NotFoundPage;

@@ -1,30 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
+import classnames from 'classnames';
+import { useLocalization, LocalizedLink as Link } from 'gatsby-theme-i18n';
 
-import { useLocalization } from 'gatsby-theme-i18n';
-import { changeLocale } from 'gatsby-plugin-intl';
+import { Button } from './Button';
 
 import css from './Selector.module.css';
 
 const Selector = () => {
   const { config, locale } = useLocalization();
+  const [showLanguage, setShowLanguage] = useState(false);
+
+  let path = typeof window !== 'undefined' ? window.location.pathname : '';
+  config.forEach((item) => (path = path.replace(`${item.code}/`, '')));
+
+  const onClick = () => {
+    setShowLanguage(!showLanguage);
+  };
 
   return (
     <div className={css.root}>
-      <select
-        className={css.select}
-        value={locale}
-        onBlur={(e) => {
-          changeLocale(e.target.value, '/');
-        }}
-        onChange={(e) => {
-          changeLocale(e.target.value, '/');
-        }}>
+      <Button onClick={onClick} className={css.languageButton}>
+        {config.filter((item) => item.code === locale)[0].localName}
+      </Button>
+      <ul
+        className={classnames(css.languagePicker, {
+          [css.show]: showLanguage,
+        })}>
         {config.map((conf, key) => (
-          <option key={key} className={css.option} value={conf.code}>
-            {conf.localName}
-          </option>
+          <li key={key}>
+            <Link to={path} language={conf.code}>
+              {conf.localName}
+            </Link>
+          </li>
         ))}
-      </select>
+      </ul>
     </div>
   );
 };

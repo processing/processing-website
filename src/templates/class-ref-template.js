@@ -3,6 +3,8 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
+import { useIntl } from 'react-intl';
+import { useLocalization } from 'gatsby-theme-i18n';
 
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
@@ -17,12 +19,13 @@ const ClassRefTemplate = ({ data, pageContext }) => {
   const images = data.images.edges;
   const examples = data.pdes.edges;
   const ref = useHighlight();
+  const intl = useIntl();
+  const { locale } = useLocalization();
 
   if (data.json !== null) {
     entry = data.json.childJson;
   }
 
-  const { constructors, classFields, methods, related } = entry;
   const link =
     pageContext.libraryName === 'processing'
       ? `/reference/${pageContext.name}.html`
@@ -42,7 +45,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
           type={'reference'}
         />
       )}
-      {entry ? (
+      {data.json ? (
         <div
           className={classnames(
             css.root,
@@ -51,11 +54,15 @@ const ClassRefTemplate = ({ data, pageContext }) => {
           )}
           ref={ref}>
           <div className={classnames(grid.grid, css.section)}>
-            <h4 className={classnames(grid.col1, grid.push1)}>Class name</h4>
+            <h4 className={classnames(grid.col1, grid.push1)}>
+              {intl.formatMessage({ id: 'className' })}
+            </h4>
             <h3 className={classnames(grid.col4, grid.pull1)}>{entry.name}</h3>
           </div>
           <div className={classnames(grid.grid, css.section)}>
-            <h4 className={classnames(grid.col1, grid.push1)}>Description</h4>
+            <h4 className={classnames(grid.col1, grid.push1)}>
+              {intl.formatMessage({ id: 'description' })}
+            </h4>
             <p
               className={classnames(grid.col4, grid.pull1, css.description)}
               dangerouslySetInnerHTML={{ __html: entry.description }}
@@ -63,7 +70,9 @@ const ClassRefTemplate = ({ data, pageContext }) => {
           </div>
           {examples.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
-              <h4 className={classnames(grid.col1, grid.push1)}>Examples</h4>
+              <h4 className={classnames(grid.col1, grid.push1)}>
+                {intl.formatMessage({ id: 'examples' })}
+              </h4>
               <ul
                 className={classnames(
                   grid.col6,
@@ -97,27 +106,30 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               </ul>
             </div>
           )}
-          {constructors.length > 0 && (
+          {entry.constructors && (
             <div className={classnames(grid.grid, css.section)}>
               <h4 className={classnames(grid.col1, grid.push1)}>
-                Constructors
+                {intl.formatMessage({ id: 'constructors' })}
               </h4>
               <ul className={classnames(grid.col4, grid.pull1, css.list)}>
-                {constructors.map((cons, key) => {
-                  return (
-                    <li key={'f' + key}>
-                      <code>{cons}</code>
-                    </li>
-                  );
-                })}
+                {entry.constructors &&
+                  entry.constructors.map((cons, key) => {
+                    return (
+                      <li key={'f' + key}>
+                        <code>{cons}</code>
+                      </li>
+                    );
+                  })}
               </ul>
             </div>
           )}
-          {classFields.length > 0 && (
+          {entry.classFields.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
-              <h4 className={classnames(grid.col1, grid.push1)}>Fields</h4>
+              <h4 className={classnames(grid.col1, grid.push1)}>
+                {intl.formatMessage({ id: 'fields' })}
+              </h4>
               <ul className={classnames(grid.col5, grid.nest, css.list)}>
-                {classFields.map((field, key) => {
+                {entry.classFields.map((field, key) => {
                   return (
                     <li key={'f' + key}>
                       <a href={field.anchor + '.html'} className={grid.col2}>
@@ -130,11 +142,13 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               </ul>
             </div>
           )}
-          {methods.length > 0 && (
+          {entry.methods.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
-              <h4 className={classnames(grid.col1, grid.push1)}>Methods</h4>
+              <h4 className={classnames(grid.col1, grid.push1)}>
+                {intl.formatMessage({ id: 'methods' })}
+              </h4>
               <ul className={classnames(grid.col5, grid.nest, css.list)}>
-                {methods.map((method, key) => {
+                {entry.methods.map((method, key) => {
                   return (
                     <li key={'m' + key}>
                       <a href={method.anchor + '.html'} className={grid.col2}>
@@ -150,9 +164,11 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               </ul>
             </div>
           )}
-          {related.length > 0 && (
+          {entry.related.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
-              <h4 className={classnames(grid.col1, grid.push1)}>Related</h4>
+              <h4 className={classnames(grid.col1, grid.push1)}>
+                {intl.formatMessage({ id: 'related' })}
+              </h4>
               <ul
                 className={classnames(
                   grid.col4,
@@ -160,7 +176,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
                   grid.nest,
                   css.list
                 )}>
-                {related.map((rel, key) => (
+                {entry.related.map((rel, key) => (
                   <li key={key + 'rel'}>
                     <a href={rel + '.html'} className={grid.col1}>
                       {rel.replace(/_/g, '()')}
@@ -172,9 +188,16 @@ const ClassRefTemplate = ({ data, pageContext }) => {
           )}
         </div>
       ) : (
-        <div>
-          This page is not translated, please refer to the
-          <Link to={link}> english page</Link>
+        <div
+          className={classnames(
+            grid.grid,
+            { [css.collapsed]: !show },
+            { [css.expanded]: show }
+          )}>
+          <div className={classnames(grid.push1)}>
+            {intl.formatMessage({ id: 'notTranslated' })}
+            <Link to={link}> {intl.formatMessage({ id: 'englishPage' })}</Link>
+          </div>
         </div>
       )}
     </Layout>

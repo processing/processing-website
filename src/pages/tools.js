@@ -1,6 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
+import { useIntl } from 'react-intl';
 
 import { useLocalization } from 'gatsby-theme-i18n';
 
@@ -12,6 +13,7 @@ import grid from '../styles/grid.module.css';
 const Tools = ({ data }) => {
   const { locale } = useLocalization();
   const { tools, currentLang, english } = data;
+  const intl = useIntl();
 
   let contributions = [];
 
@@ -28,12 +30,9 @@ const Tools = ({ data }) => {
   return (
     <Layout>
       <div className={grid.grid}>
-        <h1 className={grid.col8}>Tools</h1>
+        <h1 className={grid.col8}>{intl.formatMessage({ id: 'tools' })}</h1>
         <h4 className={classnames(grid.col6)}>
-          The following tools are included with the Processing software. Select
-          the tool you want to use from the Tools menu of the Processing
-          Environment. These tools are open source; the code is distributed with
-          Processing.
+          {intl.formatMessage({ id: 'toolsIntro' })}
         </h4>
         <ul
           className={classnames(
@@ -51,24 +50,14 @@ const Tools = ({ data }) => {
             );
           })}
         </ul>
-        <h1 className={grid.col8}>Contributions</h1>
-        <h4 className={grid.col6}>
-          Contributed tools must be downloaded individually. Select "Add
-          Tool..." from the Tools menu to select a Tool to download. Contributed
-          tools are developed, documented, and maintained by members of the
-          Processing community. For feedback and support, please post to the
-          <a href="http://forum.processing.org/">Forum</a>. For development
-          discussions post to the{' '}
-          <a href="http://forum.processing.org/library-and-tool-development">
-            {' '}
-            Libraries and Tool Development
-          </a>{' '}
-          topic. Instructions for creating your own tool are on the
-          <a href="https://github.com/processing/processing/wiki">
-            Processing GitHub
-          </a>{' '}
-          site.
-        </h4>
+        <h1 className={grid.col8}>
+          {intl.formatMessage({ id: 'contributions' })}
+        </h1>
+        <h4
+          className={grid.col6}
+          dangerouslySetInnerHTML={{
+            __html: intl.formatMessage({ id: 'contributedTools' }),
+          }}></h4>
         <ul className={css.contributionsList}>
           {contributions.map((node, key) => {
             return (

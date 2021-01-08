@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import classnames from 'classnames';
 import { graphql, useStaticQuery } from 'gatsby';
 import { DateTime } from 'luxon';
+import { useIntl } from 'react-intl';
 
 import Layout from '../components/Layout';
 
@@ -71,6 +72,7 @@ const Download = () => {
       }
     }
   `);
+  const intl = useIntl();
 
   const releases = releasesData.repository.releases.edges.map((e) => e.node);
   const selectedReleases = releases.filter((r) =>
@@ -134,8 +136,7 @@ const Download = () => {
       <div className={grid.grid}>
         <h1 className={classnames(grid.col5, grid.pull3)}>Download</h1>
         <h3 className={classnames(grid.col4, grid.pull4)}>
-          Processing is available for Linux, Mac OS X, and Windows. Select your
-          choice to download the software below.
+          {intl.formatMessage({ id: 'downloadIntro' })}
         </h3>
         <div
           className={classnames(grid.nest, grid.col6, grid.grid, css.section)}>
@@ -181,7 +182,7 @@ const Download = () => {
                 href={
                   'https://github.com/processing/processing/issues?q=is%3Aopen'
                 }>
-                Report Bugs
+                {intl.formatMessage({ id: 'report' })}
               </a>
             </li>
             <li>
@@ -192,18 +193,17 @@ const Download = () => {
                 href={
                   'https://github.com/processing/processing/wiki/Supported-Platforms'
                 }>
-                Supported Platforms
+                {intl.formatMessage({ id: 'supported' })}
               </a>
             </li>
           </ul>
         </div>
         <p className={grid.col5}>
-          Read about the changes in 3.0. The list of revisions covers the
-          differences between releases in detail.
+          {intl.formatMessage({ id: 'downloadChanges' })}
         </p>
         <div
           className={classnames(grid.nest, grid.col6, grid.push1, css.section)}>
-          <h3 className={grid.col6}>Stable Releases</h3>
+          <h3 className={grid.col6}>{intl.formatMessage({ id: 'stable' })}</h3>
           <ul className={css.releaseList}>
             {selectedReleases.map((release) => (
               <li className={css.releaseRow} key={release.name}>
@@ -245,41 +245,16 @@ const Download = () => {
             ))}
           </ul>
         </div>
-        <p className={grid.col5}>
-          Earlier releases have been removed because we can only support the
-          current versions of the software. To update old code, read the
-          <a href={'https://github.com/processing/processing/wiki/Changes'}>
-            {` changes `}
-          </a>
-          page. Changes for each release can be found in{' '}
-          <a
-            href={
-              'https://raw.githubusercontent.com/processing/processing/master/build/shared/revisions.txt'
-            }>{`revisions.txt`}</a>
-          . If you have problems with the current release, please{' '}
-          <a
-            href={
-              'https://github.com/processing/processing/issues?q=is%3Aopen'
-            }>{`file a bug`}</a>{' '}
-          so that we can fix it. Older releases can also be{' '}
-          <a
-            href={
-              'https://github.com/processing/processing'
-            }>{`built from the source`}</a>
-          .{' '}
-          <a
-            href={
-              'https://github.com/processing/processing/wiki/FAQ#whats-with-the-version-numbers'
-            }>
-            {`Read More`}
-          </a>{' '}
-          about the releases and their numbering. To use{' '}
-          <a href={'https://android.processing.org/'}>{`Android Mode`}</a>,
-          Processing 3 or later is required.
-        </p>
+        <p
+          className={grid.col5}
+          dangerouslySetInnerHTML={{
+            __html: intl.formatMessage({ id: 'earlierReleases' }),
+          }}></p>
         <div
           className={classnames(grid.nest, grid.col6, grid.push1, css.section)}>
-          <h3 className={grid.col6}>Pre-Releases</h3>
+          <h3 className={grid.col6}>
+            {intl.formatMessage({ id: 'preReleases' })}
+          </h3>
           <ul className={css.releaseList}>
             {selectedPreReleases.map((preRelease) => (
               <li className={css.releaseRow} key={preRelease.name}>
@@ -321,15 +296,11 @@ const Download = () => {
             ))}
           </ul>
         </div>
-        <p className={grid.col5}>
-          The{' '}
-          <a
-            href={
-              'https://github.com/processing/processing4/blob/master/build/shared/changes.md'
-            }>{`changes`}</a>{' '}
-          document covers incremental updates between 4.x releases, and is
-          especially important to read for pre-releases.
-        </p>
+        <p
+          className={grid.col5}
+          dangerouslySetInnerHTML={{
+            __html: intl.formatMessage({ id: 'downloadOutro' }),
+          }}></p>
       </div>
     </Layout>
   );

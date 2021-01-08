@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
+import { useIntl } from 'react-intl';
 
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
@@ -11,18 +12,27 @@ import css from '../styles/pages/example.module.css';
 import grid from '../styles/grid.module.css';
 
 const ExampleTemplate = ({ data, pageContext }) => {
-  const { json, pdes, examples } = data;
   const [show, setShow] = useState(false);
+  const intl = useIntl();
 
-  const mainPde = pdes.nodes.find((pde) => pde.name === pageContext.name);
+  let json, subcategory;
 
-  const orderedPdes = pdes.nodes.filter((pde) => pde.name !== pageContext.name);
+  if (data.json !== null) {
+    json = data.json;
+    subcategory = data.json.relativeDirectory.split('/')[1];
+  }
+
+  const mainPde = data.pdes.nodes.find(
+    (pde) => pde.name === pageContext.name.split('.')[0]
+  );
+
+  const orderedPdes = data.pdes.nodes.filter(
+    (pde) => pde.name !== pageContext.name.split('.')[0]
+  );
 
   orderedPdes.unshift(mainPde);
 
-  const subcategory = json.relativeDirectory.split('/')[1];
-
-  const related = examples.nodes.filter(
+  const related = data.examples.nodes.filter(
     (item) => item.relativeDirectory.split('/')[1] === subcategory
   );
 
@@ -33,12 +43,12 @@ const ExampleTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
       <Sidebar
-        items={examples}
+        items={data.examples}
         onChange={toggleSidebar}
         show={show}
         type={'examples'}
       />
-      {json !== null ? (
+      {data.json !== null ? (
         <div
           className={classnames(
             css.root,
@@ -51,25 +61,26 @@ const ExampleTemplate = ({ data, pageContext }) => {
             </h1>
             {json.childJson.author && (
               <h3 className={classnames(grid.col4, grid.push1)}>
-                by {json.childJson.author}
+                {intl.formatMessage({ id: 'by' })} {json.childJson.author}
               </h3>
             )}
             <div className={classnames(grid.col4, grid.push1)}>
               {json.childJson.description}
             </div>
             <div className={grid.col2}>
-              <h3>Featured functions</h3>
+              <h3>{intl.formatMessage({ id: 'featured' })}</h3>
               <ul>
-                {json.childJson.featured.map((feature, key) => (
-                  <li key={key + 'f'}>
-                    <Link to={feature}>{feature}</Link>
-                  </li>
-                ))}
+                {json.childJson.featured &&
+                  json.childJson.featured.map((feature, key) => (
+                    <li key={key + 'f'}>
+                      <Link to={feature}>{feature}</Link>
+                    </li>
+                  ))}
               </ul>
             </div>
             <Tabs pdes={orderedPdes} />
             <div className={classnames(grid.col4, grid.push1)}>
-              <h3>Related examples</h3>
+              <h3>{intl.formatMessage({ id: 'relatedExamples' })}</h3>
               <ul className={css.related}>
                 {related.map((rel, key) => {
                   return (
@@ -88,23 +99,31 @@ const ExampleTemplate = ({ data, pageContext }) => {
               </ul>
             </div>
             <p className={classnames(grid.col6, grid.push1)}>
-              This example is for Processing 3+. If you have a previous version,
-              use the examples included with your software. If you see any
-              errors or have suggestions, please{' '}
+              {intl.formatMessage({ id: 'exampleInfo' })}
               <a
                 href={
                   'https://github.com/processing/processing-docs/issues?state=open'
                 }>
-                let us know
+                {intl.formatMessage({ id: 'letUsKnow' })}
               </a>
               .
             </p>
           </div>
         </div>
       ) : (
-        <div style={{ marginLeft: show ? '350px' : '50px' }}>
-          This page is not translated, please refer to the
-          <Link to={pageContext.slug}> english page</Link>
+        <div
+          className={classnames(
+            grid.grid,
+            { [css.collapsed]: !show },
+            { [css.expanded]: show }
+          )}>
+          <div className={classnames(grid.push1)}>
+            {intl.formatMessage({ id: 'notTranslated' })}
+            <Link to={pageContext.slug}>
+              {' '}
+              {intl.formatMessage({ id: 'englishPage' })}
+            </Link>
+          </div>
         </div>
       )}
     </Layout>
@@ -114,8 +133,11 @@ const ExampleTemplate = ({ data, pageContext }) => {
 export default ExampleTemplate;
 
 export const query = graphql`
-  query($locale: String!, $name: String!, $relDir: String!) {
-    json: file(fields: { name: { eq: $name }, lang: { eq: $locale } }) {
+  query($name: String!, $relDir: String!, $locale: String!) {
+    json: file(
+      fields: { name: { eq: $name }, lang: { eq: $locale } }
+      sourceInstanceName: { eq: "examples" }
+    ) {
       relativeDirectory
       childJson {
         name

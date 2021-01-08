@@ -5,50 +5,54 @@ import SearchBarSmall from './SearchBarSmall';
 import { useLocation } from '@reach/router';
 
 import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
+import { useIntl } from 'react-intl';
 
 import css from './Navbar.module.css';
 import grid from '../styles/grid.module.css';
 
 import LogoProcessing from '../images/logo-processing.svg';
 
+//the name values are used to get the value from the intl files
+//it is not the name that is displayed
 export const items = [
   {
-    name: 'Download',
+    name: 'download',
     href: '/download',
   },
   {
-    name: 'Documentation',
+    name: 'documentation',
     children: [
-      { name: 'Reference', href: '/reference' },
-      { name: 'Environment', href: '/environment' },
-      { name: 'Libraries', href: '/reference/libraries' },
-      { name: 'Tools', href: '/reference/tools' },
+      { name: 'reference', href: '/reference' },
+      { name: 'environment', href: '/environment' },
+      { name: 'libraries', href: '/reference/libraries' },
+      { name: 'tools', href: '/reference/tools' },
     ],
   },
   {
-    name: 'Learn',
+    name: 'learn',
     children: [
-      { name: 'Tutorials', href: '/tutorials' },
-      { name: 'Examples', href: '/examples' },
-      { name: 'Books', href: '/books' },
+      { name: 'tutorials', href: '/tutorials' },
+      { name: 'examples', href: '/examples' },
+      { name: 'books', href: '/books' },
     ],
   },
   {
-    name: 'Teach',
+    name: 'teach',
     href: 'https://processingfoundation.org/education',
   },
   {
-    name: 'About',
+    name: 'about',
     href: '/about',
   },
   {
-    name: 'Donate',
+    name: 'donate',
     href: 'https://processingfoundation.org/donate',
   },
 ];
 
 const Navbar = ({ siteTitle, show }) => {
   const location = useLocation();
+  const intl = useIntl();
 
   const { locale } = useLocalization();
   const current = useMemo(() => {
@@ -89,12 +93,14 @@ const Navbar = ({ siteTitle, show }) => {
             })}>
             {item.href ? (
               item.href.startsWith('https') ? (
-                <a href={item.href}>{item.name}</a>
+                <a href={item.href}>{intl.formatMessage({ id: item.name })}</a>
               ) : (
-                <Link to={item.href}>{item.name}</Link>
+                <Link to={item.href}>
+                  {intl.formatMessage({ id: item.name })}
+                </Link>
               )
             ) : (
-              item.name
+              intl.formatMessage({ id: item.name })
             )}
             {item.children && (
               <ul className={css.submenu}>
@@ -103,15 +109,15 @@ const Navbar = ({ siteTitle, show }) => {
                     {subitem.href ? (
                       subitem.href.startsWith('https') ? (
                         <a href={subitem.href} target="_blank" rel="noreferrer">
-                          {subitem.name}
+                          {intl.formatMessage({ id: subitem.name })}
                         </a>
                       ) : (
                         <Link to={subitem.href} language={locale}>
-                          {subitem.name}
+                          {intl.formatMessage({ id: subitem.name })}
                         </Link>
                       )
                     ) : (
-                      subitem.name
+                      intl.formatMessage({ id: subitem.name })
                     )}
                   </li>
                 ))}

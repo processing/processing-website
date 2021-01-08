@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import unique from 'array-unique';
+import { useIntl } from 'react-intl';
 
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useLocalization } from 'gatsby-theme-i18n';
@@ -19,6 +20,7 @@ const Libraries = ({ data }) => {
   const { locale } = useLocalization();
   const { libraries, currentLang, english } = data;
   const [searchTerm, setSearchTerm] = useState('');
+  const intl = useIntl();
 
   let contributions = [];
 
@@ -42,10 +44,9 @@ const Libraries = ({ data }) => {
   return (
     <Layout>
       <div className={grid.grid}>
-        <h1 className={grid.col8}>Libraries</h1>
+        <h1 className={grid.col8}>{intl.formatMessage({ id: 'libraries' })}</h1>
         <h3 className={classnames(grid.col3, grid.pull5)}>
-          Extend Processing beyond graphics and images into audio, video, and
-          communication with other devices.
+          {intl.formatMessage({ id: 'librariesIntro' })}
         </h3>
         <ul
           className={classnames(
@@ -68,9 +69,11 @@ const Libraries = ({ data }) => {
             );
           })}
         </ul>
-        <h1 className={grid.col8}>Contributions</h1>
+        <h1 className={grid.col8}>
+          {intl.formatMessage({ id: 'contributions' })}
+        </h1>
         <Searchbar
-          placeholder={'Search in the Contributions...'}
+          placeholder={intl.formatMessage({ id: 'librariesSearch' })}
           onChange={(e) => setSearchTerm(e.target.value)}
           searchTerm={searchTerm}
           className={grid.push1}

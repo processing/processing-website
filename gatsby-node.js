@@ -116,14 +116,13 @@ async function createReference(actions, graphql) {
     let assetsName = refPage.node.name.split('.')[0];
     let libraryName = refPage.node.relativeDirectory.split('/')[1];
     let lang = refPage.node.relativeDirectory.split('/')[0];
-    lang = lang === 'en' ? '' : lang;
+    loc = lang === 'en' ? '' : lang;
     let refPath;
     if (libraryName === 'processing')
-      refPath =
-        lang + '/reference/' + refPage.node.name.split('.')[0] + '.html';
+      refPath = loc + '/reference/' + refPage.node.name.split('.')[0] + '.html';
     else
       refPath =
-        lang +
+        loc +
         '/reference/libraries/' +
         libraryName +
         '/' +
@@ -262,11 +261,21 @@ async function createExamples(actions, graphql) {
   const examplePages = exampleResult.data.allFile.edges;
 
   examplePages.forEach((examplePage, index) => {
+    //if language is english we don't need to add it to the path hence ''
+    const lang =
+      examplePage.node.name.split('.').length > 1
+        ? examplePage.node.name.split('.')[1] + '/'
+        : '';
+    const name =
+      examplePage.node.name.split('.').length > 1
+        ? examplePage.node.name.split('.')[0].toLowerCase()
+        : examplePage.node.name.toLowerCase();
+
     createPage({
-      path: 'examples/' + examplePage.node.name.toLowerCase() + '.html',
+      path: lang + 'examples/' + name + '.html',
       component: exampleTemplate,
       context: {
-        slug: 'examples/' + examplePage.node.name.toLowerCase() + '.html',
+        slug: lang + '/examples/' + name + '.html',
         name: examplePage.node.name,
         relDir: examplePage.node.relativeDirectory,
       },

@@ -27,6 +27,10 @@
     width: 68px;
     height: 100%;
   }
+
+  & a:hover {
+    color: var(--processing-blue-dark);
+  }
 }
 
 .menu {
@@ -44,6 +48,10 @@
   color: var(--processing-blue-dark);
   font-size: var(--text-medium);
   font-weight: 700;
+
+  & a:hover {
+    color: var(--processing-blue-dark);
+  }
 }
 
 .item:hover {

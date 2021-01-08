@@ -17,8 +17,4 @@
   &:focus {
     color: var(--processing-blue-dark);
   }
-
-  &:hover {
-    color: var(--processing-blue-dark);
-  }
 }

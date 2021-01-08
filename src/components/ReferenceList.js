@@ -1,12 +1,16 @@
 import React from 'react';
 import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
+import { useLocalization } from 'gatsby-theme-i18n';
 
 import grid from '../styles/grid.module.css';
 import css from './ReferenceList.module.css';
 
 const ReferenceList = ({ data, library }) => {
-  const link = library ? '../' : '/reference/';
+  const { locale } = useLocalization();
+  const link = library
+    ? '/reference/libraries/' + library + '/'
+    : '/reference/';
 
   return (
     <div className={css.root}>

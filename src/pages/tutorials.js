@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useLocalization } from 'gatsby-theme-i18n';
+import { useIntl } from 'react-intl';
 
 import Layout from '../components/Layout';
 
@@ -12,15 +13,18 @@ import grid from '../styles/grid.module.css';
 
 const Tutorials = ({ data }) => {
   const { locale } = useLocalization();
+  const intl = useIntl();
 
   return (
     <Layout>
       <div className={grid.grid}>
-        <h1 className={grid.col8}>Tutorials</h1>
+        <h1 className={grid.col8}>{intl.formatMessage({ id: 'tutorials' })}</h1>
         <div className={classnames(grid.nest, css.section)}>
-          <h2 className={grid.col8}>Video Tutorials</h2>
+          <h2 className={grid.col8}>
+            {intl.formatMessage({ id: 'videoTutorials' })}
+          </h2>
           <h3 className={classnames(grid.col3, grid.pull5)}>
-            Links to videos that cover the Processing basics.
+            {intl.formatMessage({ id: 'videoTutorialsIntro' })}
           </h3>
           <span className={classnames(grid.col4, grid.pull4, css.sectionIntro)}>
             {`Large collections of instructional Processing videos are online from `}
@@ -60,7 +64,9 @@ const Tutorials = ({ data }) => {
                       </div>
                     )}
                     <h4>{title}</h4>
-                    <span className={css.author}>by </span>
+                    <span className={css.author}>
+                      {intl.formatMessage({ id: 'by' })}{' '}
+                    </span>
                     <span className={css.authorName}>{author}</span>
                   </a>
                   <span className={css.brief}>{intro}</span>
@@ -70,10 +76,11 @@ const Tutorials = ({ data }) => {
           </ul>
         </div>
         <div className={classnames(grid.nest, css.section)}>
-          <h2 className={grid.col8}>Text Tutorials</h2>
+          <h2 className={grid.col8}>
+            {intl.formatMessage({ id: 'textTutorials' })}
+          </h2>
           <h3 className={classnames(grid.col3, grid.pull5)}>
-            A collection of step-by-step lessons covering beginner,
-            intermediate, and advanced topics.
+            {intl.formatMessage({ id: 'textTutorialsIntro' })}
           </h3>
           <ul className={css.tutorialList}>
             {data.text.nodes.map((node, k) => {
@@ -98,11 +105,15 @@ const Tutorials = ({ data }) => {
                       </div>
                     )}
                     <h4>{title}</h4>
-                    <span className={css.author}>by </span>
+                    <span className={css.author}>
+                      {intl.formatMessage({ id: 'by' })}{' '}
+                    </span>
                     <span className={css.authorName}>{author}</span>
                   </Link>
                   <span className={css.brief}>{intro}</span>
-                  <span className={css.level}>Level: {level}</span>
+                  <span className={css.level}>
+                    {intl.formatMessage({ id: 'level' })}: {level}
+                  </span>
                 </li>
               );
             })}

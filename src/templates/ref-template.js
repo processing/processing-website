@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
+import { useIntl } from 'react-intl';
 
 import Img from 'gatsby-image';
 
@@ -17,6 +18,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
   let entry;
   const [show, setShow] = useState(false);
   const ref = useHighlight();
+  const intl = useIntl();
 
   if (data.json !== null) {
     entry = data.json.childJson;
@@ -53,18 +55,24 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           )}
           ref={ref}>
           <div className={classnames(css.section, grid.grid)}>
-            <h4 className={classnames(grid.col1, grid.push1)}>Name</h4>
+            <h4 className={classnames(grid.col1, grid.push1)}>
+              {intl.formatMessage({ id: 'name' })}
+            </h4>
             <h3 className={classnames(grid.col4, grid.pull1)}>{entry.name}</h3>
           </div>
           <div className={classnames(css.section, grid.grid)}>
-            <h4 className={classnames(grid.col1, grid.push1)}>Description</h4>
+            <h4 className={classnames(grid.col1, grid.push1)}>
+              {intl.formatMessage({ id: 'description' })}
+            </h4>
             <p
               className={classnames(grid.col4, grid.pull1, css.description)}
               dangerouslySetInnerHTML={{ __html: entry.description }}></p>
           </div>
           {examples.length > 0 && (
             <div className={classnames(css.section, grid.grid)}>
-              <h4 className={classnames(grid.col1, grid.push1)}>Examples</h4>
+              <h4 className={classnames(grid.col1, grid.push1)}>
+                {intl.formatMessage({ id: 'examples' })}
+              </h4>
               <ul
                 className={classnames(
                   grid.col6,
@@ -99,7 +107,9 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
             </div>
           )}
           <div className={classnames(css.section, grid.grid)}>
-            <h4 className={classnames(grid.col1, grid.push1)}>Syntax</h4>
+            <h4 className={classnames(grid.col1, grid.push1)}>
+              {intl.formatMessage({ id: 'syntax' })}
+            </h4>
             <ul className={classnames(grid.col4, grid.pull1, css.list)}>
               {entry.syntax.map((syn, key) => {
                 return (
@@ -112,7 +122,9 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           </div>
           {entry.parameters.length > 0 && (
             <div className={classnames(css.section, grid.grid)}>
-              <h4 className={classnames(grid.col1, grid.push1)}>Parameters</h4>
+              <h4 className={classnames(grid.col1, grid.push1)}>
+                {intl.formatMessage({ id: 'parameters' })}
+              </h4>
               <ul className={classnames(grid.col5, grid.nest, css.list)}>
                 {entry.parameters.map((param, key) => {
                   return (
@@ -131,7 +143,9 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           )}
           {entry.returns && (
             <div className={classnames(css.section, grid.grid)}>
-              <h4 className={classnames(grid.col1, grid.push1)}>Return</h4>
+              <h4 className={classnames(grid.col1, grid.push1)}>
+                {intl.formatMessage({ id: 'return' })}
+              </h4>
               <p className={classnames(grid.col4, grid.pull1)}>
                 <code>{entry.returns}</code>
               </p>
@@ -139,7 +153,9 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           )}
           {entry.inUse && (
             <div className={classnames(css.section, grid.grid)}>
-              <h4 className={classnames(grid.col1, grid.push1)}>In use</h4>
+              <h4 className={classnames(grid.col1, grid.push1)}>
+                {intl.formatMessage({ id: 'inUse' })}
+              </h4>
               <ul
                 className={classnames(
                   grid.col4,
@@ -159,7 +175,9 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           )}
           {entry.related.length > 0 && (
             <div className={classnames(css.section, grid.grid)}>
-              <h4 className={classnames(grid.col1, grid.push1)}>Related</h4>
+              <h4 className={classnames(grid.col1, grid.push1)}>
+                {intl.formatMessage({ id: 'related' })}
+              </h4>
               <ul
                 className={classnames(
                   grid.col4,
@@ -202,9 +220,16 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           </div>
         </div>
       ) : (
-        <div>
-          This page is not translated, please refer to the
-          <Link to={link}> english page</Link>
+        <div
+          className={classnames(
+            grid.grid,
+            { [css.collapsed]: !show },
+            { [css.expanded]: show }
+          )}>
+          <div className={classnames(grid.push1)}>
+            {intl.formatMessage({ id: 'notTranslated' })}
+            <Link to={link}> {intl.formatMessage({ id: 'englishPage' })}</Link>
+          </div>
         </div>
       )}
     </Layout>
