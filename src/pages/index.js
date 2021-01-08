@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
 
+import Grid from './grid';
 import Layout from '../components/Layout';
 import Button from '../components/Button';
 import Sketch from '../components/sketch/Sketch';
@@ -46,6 +47,7 @@ const IndexPage = ({ data }) => {
   const { locale } = useLocalization();
   return (
     <Layout>
+      <Grid />
       <div className={css.hero}>
         <div className={classnames(grid.grid, grid.nest)}>
           <div className={classnames(grid.col4, css.intro, grid.nest)}>
