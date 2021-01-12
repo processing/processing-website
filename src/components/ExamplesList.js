@@ -1,10 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
-import { LocalizedLink as Link } from 'gatsby-theme-i18n';
-import { useLocalization } from 'gatsby-theme-i18n';
+import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
-
-import Image from './Image';
 
 import css from './ExamplesList.module.css';
 import grid from '../styles/grid.module.css';
@@ -40,6 +37,7 @@ const ExamplesList = ({ data }) => {
                             className={css.cover}
                             src={node.img.childImageSharp.fluid.srcWebp}
                             srcSet={node.img.childImageSharp.fluid.srcSetWebp}
+                            alt=""
                           />
                         )}
                         <h4>{node.name}</h4>

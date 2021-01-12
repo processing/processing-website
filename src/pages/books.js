@@ -2,7 +2,6 @@ import React from 'react';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import { useLocalization } from 'gatsby-theme-i18n';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { useIntl } from 'react-intl';
 
@@ -12,7 +11,6 @@ import css from '../styles/pages/books.module.css';
 import grid from '../styles/grid.module.css';
 
 const Books = ({ data }) => {
-  const { locale } = useLocalization();
   const intl = useIntl();
 
   const images = data.images.nodes;

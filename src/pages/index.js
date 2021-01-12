@@ -1,14 +1,11 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
 
 import Layout from '../components/Layout';
 import Button from '../components/Button';
 import Sketch from '../components/sketch/Sketch';
-
-import { useLocalization } from 'gatsby-theme-i18n';
 
 import css from '../styles/pages/index.module.css';
 import grid from '../styles/grid.module.css';
@@ -45,7 +42,6 @@ export const items = [
 const IndexPage = ({ data }) => {
   //localization - will be needed
   const intl = useIntl();
-  const { locale } = useLocalization();
   return (
     <Layout>
       <div className={css.hero}>

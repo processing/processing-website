@@ -23,7 +23,7 @@ const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
       {data.mdx !== null ? (
         <div className={grid.grid}>
           <MDXRenderer>{data.mdx.body}</MDXRenderer>
-          <ReferenceList data={tree} library={libraryName} />
+          {tree && <ReferenceList data={tree} library={libraryName} />}
         </div>
       ) : (
         <div>
@@ -54,7 +54,7 @@ export const query = graphql`
     }
     mdx(
       fields: { locale: { eq: $locale } }
-      frontmatter: { title: { eq: $libraryName } }
+      frontmatter: { name: { eq: $libraryName } }
     ) {
       body
     }

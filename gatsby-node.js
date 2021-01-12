@@ -86,9 +86,11 @@ async function createReference(actions, graphql) {
   const dirResult = await graphql(
     `
       {
-        allDirectory(filter: { relativeDirectory: { eq: "en" } }) {
+        allMdx(filter: { frontmatter: { library: { eq: "true" } } }) {
           nodes {
-            name
+            frontmatter {
+              name
+            }
           }
         }
       }
@@ -107,7 +109,7 @@ async function createReference(actions, graphql) {
   const refPages = result.data.allFile.edges;
 
   // Create library index pages
-  const dirPages = dirResult.data.allDirectory.nodes;
+  const dirPages = dirResult.data.allMdx.nodes;
 
   refPages.forEach((refPage, index) => {
     const previous =
@@ -173,10 +175,10 @@ async function createReference(actions, graphql) {
 
   dirPages.forEach((dirPage, index) => {
     createPage({
-      path: '/reference/libraries/' + dirPage.name + '/index.html',
+      path: '/reference/libraries/' + dirPage.frontmatter.name + '/index.html',
       component: indexLibTemplate,
       context: {
-        libraryName: dirPage.name,
+        libraryName: dirPage.frontmatter.name,
       },
     });
   });
