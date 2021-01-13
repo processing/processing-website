@@ -38,7 +38,6 @@ h4 {
 }
 
 h1 {
-  padding-left: var(--gutter);
   font-size: var(--text-xxlarge);
 }
 

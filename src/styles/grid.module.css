@@ -1,13 +1,26 @@
 .grid {
   display: flex;
   flex-wrap: wrap;
-  margin-left: var(--margin);
-  margin-right: var(--margin);
+  padding-left: var(--margin);
+  padding-right: var(--margin);
 }
 
 .fill {
   flex: 1;
   overflow: auto;
+}
+
+.col {
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.nest,
+.col.nest {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .grid .col-1 {

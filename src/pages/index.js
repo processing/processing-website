@@ -47,15 +47,11 @@ const IndexPage = ({ data }) => {
   const { locale } = useLocalization();
   return (
     <Layout>
-      <Grid />
       <div className={css.hero}>
-        <div className={classnames(grid.grid, grid.nest)}>
-          <div className={classnames(grid.col4, css.intro, grid.nest)}>
-            <h1 className={classnames(grid.col2, grid.pull1)}>
-              {' '}
-              Welcome to Processing!{' '}
-            </h1>
-            <p className={grid.col4}>
+        <div className={classnames(grid.grid)}>
+          <div className={classnames(grid.col, css.intro)}>
+            <h1> Welcome to Processing! </h1>
+            <p>
               Processing is a flexible software sketchbook and a language for
               learning how to code within the context of the visual arts. Since
               2001, Processing has promoted software literacy within the visual
@@ -63,7 +59,7 @@ const IndexPage = ({ data }) => {
               thousands of students, artists, designers, researchers, and
               hobbyists who use Processing for learning and prototyping.
             </p>
-            <div className={classnames(grid.col4, css.buttons)}>
+            <div className={css.buttons}>
               <Button to={'/download'} className={css.button}>
                 Download
               </Button>
@@ -75,9 +71,9 @@ const IndexPage = ({ data }) => {
               </Button>
             </div>
           </div>
+          <Sketch />
         </div>
       </div>
-      <Sketch />
       <div className={classnames(grid.grid, css.bottom)}>
         <div className={classnames(grid.col2, grid.nest)}>
           <ul className={classnames(grid.col2, css.list)}>

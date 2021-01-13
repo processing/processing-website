@@ -4,7 +4,7 @@
     white 20%,
     var(--processing-blue-gradient)
   );
-  position: absolute;
+  position: relative;
   height: 600px;
 
   & h1 {
@@ -14,7 +14,7 @@
 }
 
 .intro {
-  margin: var(--margin) 0;
+  flex-basis: cols(4, 8);
   z-index: 1;
 }
 
@@ -46,10 +46,6 @@
 
 .sketch {
   position: relative;
-}
-
-.bottom {
-  margin: var(--margin);
 }
 
 .placeholder {
