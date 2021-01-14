@@ -13,13 +13,13 @@ const ReferenceList = ({ data, library }) => {
   return (
     <div className={css.root}>
       {data.map((category, key) => (
-        <ul
+        <div
           className={classnames(grid.nest, css.category)}
           key={`category-${key}`}>
           <h2 className={classnames(grid.col8)} id={category.name}>
             {category.name}
           </h2>
-          <ul className={classnames(grid.col7, grid.nest)}>
+          <div className={classnames(grid.col7, grid.nest)}>
             {category.children.map((subcategory, key) => {
               return (
                 subcategory !== null && (
@@ -57,8 +57,8 @@ const ReferenceList = ({ data, library }) => {
                 )
               );
             })}
-          </ul>
-        </ul>
+          </div>
+        </div>
       ))}
     </div>
   );

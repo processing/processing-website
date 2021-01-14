@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
 
 import { useIntl } from 'react-intl';
@@ -44,6 +45,9 @@ const IndexPage = ({ data }) => {
   const intl = useIntl();
   return (
     <Layout>
+      <Helmet>
+        <title>{'Welcome to Processing!'}</title>
+      </Helmet>
       <div className={css.hero}>
         <div className={classnames(grid.grid, grid.nest)}>
           <div className={classnames(grid.col4, css.intro, grid.nest)}>

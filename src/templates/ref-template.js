@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
@@ -38,6 +39,9 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>{pageContext.name.replace('_', '')}</title>
+      </Helmet>
       {pageContext.libraryName === 'processing' && (
         <Sidebar
           items={data.items}

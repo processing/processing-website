@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
@@ -16,12 +17,14 @@ import grid from '../styles/grid.module.css';
 
 const TutorialTemplate = ({ data, pageContext }) => {
   const { mdx } = data;
-  //const { frontmatter, body, tableOfContents } = mdx;
   const ref = useHighlight();
   const intl = useIntl();
 
   return (
     <Layout>
+      <Helmet>
+        <title>{mdx && mdx.frontmatter.title}</title>
+      </Helmet>
       <div className={grid.grid} ref={ref}>
         {mdx !== null ? (
           <Fragment>

@@ -86,5 +86,13 @@
   "inUse": "In use",
   "notFound": "NOT FOUND",
   "notFoundText": "You just hit a route that doesn't exist... the sadness.",
-  "and": "and"
+  "and": "and",
+  "video": "Video",
+  "serial": "Serial",
+  "io": "Hardware I/O",
+  "net": "Network",
+  "sound": "Sound",
+  "svg": "SVG Export",
+  "pdf": "PDF Export",
+  "dxf": "DXF Export"
 }

@@ -47,6 +47,7 @@ const Color = (props) => {
           )
         }
         value={rgbToHex(shapes[shapesInx].color)}
+        aria-label="Choose color"
       />
     </span>
   );

@@ -36,7 +36,7 @@
 
 .latestDate {
   font-size: var(--text-xsmall);
-  color: var(--darkgray);
+  color: var(--darkergray);
 }
 
 .latestVersionName {
@@ -61,7 +61,7 @@
 
 .releaseDate {
   font-size: var(--text-xsmall);
-  color: var(--darkgray);
+  color: var(--darkergray);
 }
 
 .releaseList {

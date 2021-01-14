@@ -13,7 +13,7 @@ const ExamplesList = ({ data }) => {
   return (
     <div className={classnames(css.root)}>
       {data.map((category, key) => (
-        <ul
+        <div
           className={classnames(grid.nest, css.category)}
           key={`category-${key}`}>
           <h2 className={grid.col8}>{category.name}</h2>
@@ -22,7 +22,7 @@ const ExamplesList = ({ data }) => {
               ? intl.formatMessage({ id: 'topicExamples' })
               : intl.formatMessage({ id: 'basicExamples' })}
           </p>
-          <ul className={classnames(grid.col8, grid.nest)}>
+          <div className={classnames(grid.col8, grid.nest)}>
             {category.children.map((subcategory, key) => (
               <div key={`subcategory-${key}`} className={css.subcategory}>
                 <h3 className={grid.col1}>{subcategory.name}</h3>
@@ -47,8 +47,8 @@ const ExamplesList = ({ data }) => {
                 </ul>
               </div>
             ))}
-          </ul>
-        </ul>
+          </div>
+        </div>
       ))}
     </div>
   );

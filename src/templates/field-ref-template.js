@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
@@ -37,6 +38,9 @@ const FieldRefTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>{pageContext.name}</title>
+      </Helmet>
       {pageContext.libraryName === 'processing' && (
         <Sidebar
           items={data.items}

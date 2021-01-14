@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
@@ -17,6 +18,9 @@ const Tutorials = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>{'Tutorials'}</title>
+      </Helmet>
       <div className={grid.grid}>
         <h1 className={grid.col8}>{intl.formatMessage({ id: 'tutorials' })}</h1>
         <div className={classnames(grid.nest, css.section)}>

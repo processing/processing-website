@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
 
@@ -24,6 +25,9 @@ const Examples = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>{'Examples'}</title>
+      </Helmet>
       <div className={grid.grid}>
         <h1 className={grid.col8}>Examples</h1>
         <h3 className={grid.col3}>

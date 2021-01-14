@@ -62,7 +62,7 @@
     padding: 0 60px 12px;
     background-color: white;
     font-size: var(--text-xlarge);
-    color: var(--gray);
+    color: var(--darkergray);
   }
 
   & input:focus {
@@ -74,7 +74,7 @@
   & input::placeholder {
     opacity: 1;
     transition: color 0.2s, opacity 0.2s;
-    color: var(--gray);
+    color: var(--darkergray);
   }
 
   & input:focus::placeholder {
