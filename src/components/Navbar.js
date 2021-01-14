@@ -56,18 +56,23 @@ const Navbar = ({ siteTitle, show }) => {
 
   const { locale } = useLocalization();
   const current = useMemo(() => {
+    const removeIndex = location.pathname.indexOf('/', 1);
+    const currentLocation =
+      locale === 'en'
+        ? location.pathname
+        : location.pathname.slice(removeIndex);
     for (var i = 0; i < items.length; i++) {
       const item = items[i];
-      if (item.href === location.pathname) {
+      if (item.href === currentLocation) {
         return item.name;
       } else if (
         item.children &&
-        item.children.some((child) => child.href === location.pathname)
+        item.children.some((child) => child.href === currentLocation)
       ) {
         return item.name;
       }
     }
-  }, [location]);
+  }, [location, locale]);
 
   return (
     <div

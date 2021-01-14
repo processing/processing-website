@@ -48,7 +48,7 @@ const Draggable = (props) => {
         document.removeEventListener('mousemove', handleMouseMove);
       };
     }
-  }, [dragging]);
+  }, [dragging, index, isInteger, onDraggingEnd, path, props, range, value]);
 
   const registerMove = (e) => {
     props.blurRest && props.blurRest(e, true);

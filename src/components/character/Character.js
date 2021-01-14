@@ -14,7 +14,7 @@ const Character = ({ num }) => {
   let eyes = characters[num].eyes;
   const blink = characters[num].blink;
 
-  const moveEyes = () => {
+  useMemo(() => {
     if (moving)
       eyes.forEach((eye) => {
         if (!eye.open) eye.open = true;
@@ -24,9 +24,7 @@ const Character = ({ num }) => {
         if (eye.open) eye.open = false;
       });
     }
-  };
-
-  const newEyes = useMemo(() => moveEyes(eyes, moving), [eyes, moving]);
+  }, [eyes, moving]);
 
   const registerEnter = (e) => {
     setMoving(true);

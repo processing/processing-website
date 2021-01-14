@@ -19,7 +19,7 @@ const Examples = ({ data }) => {
 
   const tree = useMemo(
     () => organizeExampleItems(filterItems(items, searchTerm), images),
-    [items, searchTerm]
+    [items, searchTerm, images]
   );
 
   return (

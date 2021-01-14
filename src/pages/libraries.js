@@ -60,11 +60,15 @@ const Libraries = ({ data }) => {
               <li key={key} className={css.subgrid}>
                 <Link
                   className={grid.col1andhalf}
-                  to={'/reference/libraries/' + node.name + '/index.html'}
+                  to={
+                    '/reference/libraries/' +
+                    node.frontmatter.name +
+                    '/index.html'
+                  }
                   language={locale}>
-                  <h3>{node.name}</h3>
+                  <h3>{node.frontmatter.title}</h3>
                 </Link>
-                <p className={grid.col4}>Description</p>
+                <p className={grid.col4}>{node.frontmatter.description}</p>
               </li>
             );
           })}
@@ -133,11 +137,18 @@ export default Libraries;
 
 export const query = graphql`
   query($locale: String!) {
-    libraries: allDirectory(
-      filter: { relativeDirectory: { eq: "en" }, name: { ne: "processing" } }
+    libraries: allMdx(
+      filter: {
+        frontmatter: { library: { eq: "true" } }
+        fields: { locale: { eq: $locale } }
+      }
     ) {
       nodes {
-        name
+        frontmatter {
+          name
+          title
+          description
+        }
       }
     }
     currentLang: allFile(

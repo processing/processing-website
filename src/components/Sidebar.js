@@ -45,7 +45,9 @@ const Sidebar = (props) => {
       <div
         className={css.toggleButton}
         onClick={(e) => onChange(!show)}
-        role={'button'}>
+        onKeyDown={(e) => onChange(!show)}
+        role={'button'}
+        tabIndex={'0'}>
         {show ? '×' : '+'}
       </div>
       {show && (

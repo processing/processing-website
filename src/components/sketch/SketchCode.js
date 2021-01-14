@@ -42,7 +42,7 @@ const SketchCode = (props) => {
         }
       });
     });
-  }, [height, unit]);
+  }, [height, unit, onChange, rows, shapes]);
 
   useEffect(() => {
     shapes.forEach((shape, index) => {
@@ -56,7 +56,7 @@ const SketchCode = (props) => {
         }
       });
     });
-  }, [width, unit]);
+  }, [width, unit, cols, onChange, shapes]);
 
   return (
     <div
