@@ -3,8 +3,6 @@ import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useLocalization } from 'gatsby-theme-i18n';
 
-import Image from './Image';
-
 import css from './ExamplesList.module.css';
 import grid from '../styles/grid.module.css';
 
