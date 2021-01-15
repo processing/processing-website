@@ -6,7 +6,6 @@
   font-size: var(--text-small);
   border-radius: 50px;
   color: white;
-  outline: none;
   border: none;
 }
 .root:focus {

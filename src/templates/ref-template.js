@@ -33,8 +33,9 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
   const examples = data.pdes.edges;
   const images = data.images.edges;
 
-  const toggleSidebar = (show) => {
-    setShow(show);
+  const toggleSidebar = (e, show) => {
+    if (e.type === 'click') setShow(show);
+    else if (e.keyCode === 13) setShow(show);
   };
 
   return (

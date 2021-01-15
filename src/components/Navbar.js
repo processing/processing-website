@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import classnames from 'classnames';
 
 import SearchBarSmall from './SearchBarSmall';
@@ -53,6 +53,7 @@ export const items = [
 const Navbar = ({ siteTitle, show }) => {
   const location = useLocation();
   const intl = useIntl();
+  const [showSubmenu, setShowSubmenu] = useState(null);
 
   const { locale } = useLocalization();
   const current = useMemo(() => {
@@ -73,6 +74,22 @@ const Navbar = ({ siteTitle, show }) => {
       }
     }
   }, [location, locale]);
+
+  const onClick = (name) => {
+    setShowSubmenu(name);
+  };
+
+  useEffect(() => {
+    const onMouseDown = (e) => {
+      if (e.target.nodeName.toLowerCase() !== 'button') {
+        setShowSubmenu(null);
+      }
+    };
+    document.addEventListener('mousedown', onMouseDown);
+    return () => {
+      document.removeEventListener('mousedown', onMouseDown);
+    };
+  }, []);
 
   return (
     <div
@@ -105,19 +122,31 @@ const Navbar = ({ siteTitle, show }) => {
                 </Link>
               )
             ) : (
-              intl.formatMessage({ id: item.name })
+              <button onClick={() => onClick(item.name)}>
+                {intl.formatMessage({ id: item.name })}
+              </button>
             )}
             {item.children && (
-              <ul className={css.submenu}>
+              <ul
+                className={classnames(css.submenu, {
+                  [css.subMenuActive]: item.name === showSubmenu,
+                })}>
                 {item.children.map((subitem, j) => (
                   <li className={css.subitem} key={key + j}>
                     {subitem.href ? (
                       subitem.href.startsWith('https') ? (
-                        <a href={subitem.href} target="_blank" rel="noreferrer">
+                        <a
+                          href={subitem.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          tabIndex={item.name === showSubmenu ? 0 : -1}>
                           {intl.formatMessage({ id: subitem.name })}
                         </a>
                       ) : (
-                        <Link to={subitem.href} language={locale}>
+                        <Link
+                          to={subitem.href}
+                          language={locale}
+                          tabIndex={item.name === showSubmenu ? 0 : -1}>
                           {intl.formatMessage({ id: subitem.name })}
                         </Link>
                       )

@@ -37,8 +37,9 @@ const ExampleTemplate = ({ data, pageContext }) => {
     (item) => item.relativeDirectory.split('/')[1] === subcategory
   );
 
-  const toggleSidebar = (show) => {
-    setShow(show);
+  const toggleSidebar = (e, show) => {
+    if (e.type === 'click') setShow(show);
+    else if (e.keyCode === 13) setShow(show);
   };
 
   return (

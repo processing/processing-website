@@ -28,7 +28,10 @@ const Selector = () => {
         })}>
         {config.map((conf, key) => (
           <li key={key}>
-            <Link to={path} language={conf.code}>
+            <Link
+              to={path}
+              language={conf.code}
+              tabIndex={showLanguage ? 0 : -1}>
               {conf.localName}
             </Link>
           </li>
