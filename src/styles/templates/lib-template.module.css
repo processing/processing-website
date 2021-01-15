@@ -1,0 +1,13 @@
+.root {
+  & h1,
+  & h2 {
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+    flex-basis: cols(8, 8);
+  }
+  & p {
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+    flex-basis: cols(5, 8);
+  }
+}

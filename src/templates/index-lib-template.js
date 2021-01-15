@@ -2,12 +2,15 @@ import React, { useMemo } from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import classnames from 'classnames';
 
 import Layout from '../components/Layout';
 import ReferenceList from '../components/ReferenceList';
 
 import { organizeReferenceItems } from '../utils/data';
+
 import grid from '../styles/grid.module.css';
+import css from '../styles/templates/lib-template.module.css';
 
 const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
   const link = (libraryName = `/reference/libraries/${libraryName}/index.html`);
@@ -19,7 +22,7 @@ const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
   return (
     <Layout>
       {data.mdx !== null ? (
-        <div className={grid.grid}>
+        <div className={classnames(grid.grid, css.root)}>
           <MDXRenderer>{data.mdx.body}</MDXRenderer>
           <ReferenceList data={tree} library={libraryName} />
         </div>
