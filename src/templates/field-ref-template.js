@@ -64,20 +64,14 @@ const FieldRefTemplate = ({ data, pageContext }) => {
           {examples.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
               <h4 className={classnames(grid.col1, grid.push1)}>Examples</h4>
-              <ul
-                className={classnames(
-                  grid.col6,
-                  grid.push1,
-                  grid.nest,
-                  css.list
-                )}>
+              <ul className={classnames(grid.col6, grid.nest, css.list)}>
                 {examples.map((ex, key) => {
                   const img = images.filter(
                     (img) => img.node.name === ex.node.name
                   );
                   return (
                     <li className={css.example} key={'ex' + key}>
-                      <div className={grid.col4}>
+                      <div className={classnames(grid.col, css.exampleCode)}>
                         <pre className={css.codeBlock}>
                           {ex.node.internal.content
                             .split(/\r?\n/)
@@ -87,7 +81,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
                         </pre>
                       </div>
                       {img.length > 0 && (
-                        <div className={grid.col2}>
+                        <div className={classnames(grid.col, css.exampleImage)}>
                           <Img fixed={img[0].node.childImageSharp.fixed} />
                         </div>
                       )}
@@ -99,17 +93,11 @@ const FieldRefTemplate = ({ data, pageContext }) => {
           )}
           {entry.related.length > 0 && (
             <div className={classnames(css.section, grid.grid)}>
-              <h4 className={classnames(grid.col1, grid.push1)}>Related</h4>
-              <ul
-                className={classnames(
-                  grid.col4,
-                  grid.nest,
-                  css.list,
-                  grid.pull1
-                )}>
+              <h4 className={classnames(grid.col, grid.push1)}>Related</h4>
+              <ul className={classnames(grid.col, grid.nest, css.list)}>
                 {entry.related.map((rel, key) => (
                   <li key={key + 'rel'}>
-                    <a href={rel + '.html'} className={grid.col4}>
+                    <a href={rel + '.html'} className={grid.col}>
                       {rel.replace(/_/g, '()')}
                     </a>
                   </li>

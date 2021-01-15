@@ -154,13 +154,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           {entry.related.length > 0 && (
             <div className={classnames(css.section, grid.grid)}>
               <h4 className={classnames(grid.col1, grid.push1)}>Related</h4>
-              <ul
-                className={classnames(
-                  grid.col4,
-                  grid.nest,
-                  css.list,
-                  grid.pull1
-                )}>
+              <ul className={classnames(grid.col4, grid.nest, css.list)}>
                 {entry.related.map((rel, key) => (
                   <li key={key + 'rel'}>
                     <a href={rel + '.html'} className={grid.col4}>

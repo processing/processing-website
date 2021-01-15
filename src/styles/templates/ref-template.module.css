@@ -91,3 +91,11 @@
     margin-left: var(--gutter);
   }
 }
+
+.item {
+  flex-basis: cols(2, 8);
+}
+
+.itemDescription {
+  flex-basis: cols(5, 8);
+}

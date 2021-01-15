@@ -27,7 +27,7 @@ const TutorialTemplate = ({ data, pageContext }) => {
             <h1
               className={classnames(
                 grid.push2,
-                grid.col5,
+                grid.col,
                 grid.pull1,
                 css.title
               )}>
@@ -36,11 +36,11 @@ const TutorialTemplate = ({ data, pageContext }) => {
             <span
               className={classnames(
                 grid.push2,
-                grid.col5,
+                grid.col,
                 grid.pull1,
                 css.author
               )}>{`By ${frontmatter.author}`}</span>
-            <div className={classnames(grid.col5, grid.push2, css.content)}>
+            <div className={classnames(grid.col, grid.push2, css.content)}>
               <MDXRenderer>{body}</MDXRenderer>
             </div>
           </Fragment>
