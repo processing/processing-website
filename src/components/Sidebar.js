@@ -47,6 +47,7 @@ const Sidebar = (props) => {
         onClick={(e) => onChange(e, !show)}
         onKeyDown={(e) => onChange(e, !show)}
         role={'button'}
+        ariaLabel={show ? 'close' : 'open reference'}
         tabIndex={'0'}>
         {show ? '×' : '+'}
       </div>

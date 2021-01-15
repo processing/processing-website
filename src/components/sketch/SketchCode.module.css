@@ -22,11 +22,10 @@
     rgba(0, 0, 0, 0) 100%
   );
   transition: opacity 0.25s ease, transform 0.25s ease;
-  transform: translateX(100%);
   opacity: 0;
 
   &.visible {
-    transform: translateX(0%);
+    transform: translateX(-90%);
     opacity: 1;
   }
 

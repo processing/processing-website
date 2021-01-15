@@ -73,7 +73,8 @@ const SketchCode = (props) => {
             value={width}
             range={{ min: 0, max: 1600 }}
             path={['width']}
-            onChange={onChange}></Draggable>
+            onChange={onChange}
+            tabIndex={isVisible ? 0 : -1}></Draggable>
           ;
           <br />
           <pre>
@@ -85,7 +86,8 @@ const SketchCode = (props) => {
             value={height}
             range={{ min: 0, max: 1200 }}
             path={['height']}
-            onChange={onChange}></Draggable>
+            onChange={onChange}
+            tabIndex={isVisible ? 0 : -1}></Draggable>
           ;
           <br />
           <pre>
@@ -97,7 +99,8 @@ const SketchCode = (props) => {
             value={unit}
             range={{ min: 20, max: 80 }}
             path={['unit']}
-            onChange={onChange}></Draggable>
+            onChange={onChange}
+            tabIndex={isVisible ? 0 : -1}></Draggable>
           ;
           <br />
           <pre>
@@ -107,13 +110,14 @@ const SketchCode = (props) => {
             name="showGrid"
             className={css.showGrid}
             value={showGrid}
-            onClick={(e) => onChange(e, ['showGrid'], !showGrid)}>
+            onClick={(e) => onChange(e, ['showGrid'], !showGrid)}
+            tabIndex={isVisible ? 0 : -1}>
             {showGrid ? 'true' : 'false'}
           </Button>
           ;
         </div>
         <br />
-        <details className={css.details}>
+        <details className={css.details} tabIndex={isVisible ? 0 : -1}>
           <summary className={css.summary}>
             <pre>
               <code>
@@ -151,20 +155,27 @@ void draw() {
               onChange={onChange}
               labelBefore={'strokeWeight('}
               labelAfter={' * u);'}
+              tabIndex={isVisible ? 0 : -1}
             />
             {shapes.map((shape, index) => (
               <Fragment key={`shape-block-${index}`}>
                 <br />
                 <br />
                 stroke(
-                <Color onChange={onChange} shapes={shapes} shapesInx={index} />
+                <Color
+                  onChange={onChange}
+                  shapes={shapes}
+                  shapesInx={index}
+                  tabIndex={isVisible ? 0 : -1}
+                />
                 );
                 <br />
                 <Button
                   className={css.toggleShape}
                   onClick={(e) =>
                     onChange(e, ['shapes', index, 'type'], !shape.type)
-                  }>
+                  }
+                  tabIndex={isVisible ? 0 : -1}>
                   {shape.type ? '/' : '~'}
                 </Button>
                 <Shape
@@ -177,6 +188,7 @@ void draw() {
                   shapesInx={index}
                   rangeX={{ min: 0, max: cols }}
                   rangeY={{ min: 0, max: rows }}
+                  tabIndex={isVisible ? 0 : -1}
                 />
                 ;
               </Fragment>
@@ -186,7 +198,7 @@ void draw() {
             <code>{`}`}</code>
           </pre>
         </div>
-        <details className={css.details}>
+        <details className={css.details} tabIndex={isVisible ? 0 : -1}>
           <summary className={css.summary}>
             <pre>
               <code>

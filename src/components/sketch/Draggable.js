@@ -13,6 +13,7 @@ const Draggable = (props) => {
     onDraggingStart,
     onDraggingEnd,
     index,
+    tabIndex,
   } = props;
   const [dragging, setDragging] = useState(null);
 
@@ -66,7 +67,8 @@ const Draggable = (props) => {
       {labelBefore && <span>{labelBefore}</span>}
       <span
         role={'button'}
-        tabIndex={'0'}
+        ariaLabel={'change position'}
+        tabIndex={tabIndex}
         className={css.parent}
         onMouseDown={registerMove}
         onMouseUp={deregisterMove}>

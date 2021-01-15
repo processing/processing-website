@@ -12,6 +12,7 @@ const Shape = (props) => {
     onMouseLeave,
     onDraggingStart,
     onDraggingEnd,
+    tabIndex,
   } = props;
   const [shapeClass, setShapeClass] = useState(true);
 
@@ -42,6 +43,7 @@ const Shape = (props) => {
             path={['shapes', shapesInx, 'pos', index]}
             range={index % 2 === 0 ? rangeX : rangeY}
             blurRest={blurRest}
+            tabIndex={tabIndex}
           />
         );
         draggable.push(' * u, ');
@@ -63,6 +65,7 @@ const Shape = (props) => {
           value={shape.pos[index]}
           path={['shapes', shapesInx, 'pos', index]}
           blurRest={blurRest}
+          tabIndex={tabIndex}
         />
       );
       draggable.push(' * u, ');
@@ -74,7 +77,7 @@ const Shape = (props) => {
   return (
     <span
       role={'button'}
-      tabIndex={'0'}
+      tabIndex={tabIndex}
       className={shapeClass ? css.root : css.blur}
       onMouseEnter={() => onMouseEnter(shapesInx)}
       onMouseLeave={() => onMouseLeave(shapesInx)}>
