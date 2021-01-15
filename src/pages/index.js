@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
 
-import Grid from './grid';
 import Layout from '../components/Layout';
 import Button from '../components/Button';
 import Sketch from '../components/sketch/Sketch';
@@ -74,16 +73,16 @@ const IndexPage = ({ data }) => {
           <Sketch />
         </div>
       </div>
-      <div className={classnames(grid.grid, css.bottom)}>
-        <div className={classnames(grid.col2, grid.nest)}>
-          <ul className={classnames(grid.col2, css.list)}>
+      <div className={classnames(grid.grid)}>
+        <div className={classnames(grid.col, grid.nest, css.sidebar)}>
+          <ul className={classnames(grid.col, css.list)}>
             {items.map((item, key) => (
               <li key={key}>
                 <a href={item.link}>{item.name}</a>
               </li>
             ))}
           </ul>
-          <div className={classnames(grid.col2, css.contact)}>
+          <div className={classnames(grid.col, css.contact)}>
             <h4>Contact</h4>
             <span>Feel free to write us</span>
             <a href="mailto: foundation@processing.org">
@@ -91,40 +90,37 @@ const IndexPage = ({ data }) => {
             </a>
           </div>
         </div>
-        <div className={classnames(grid.col6, grid.nest)}>
-          <h3 className={classnames(grid.col6, grid.nest)}>Examples</h3>
-          <ul className={classnames(grid.col6, grid.nest, css.examples)}>
-            <li className={classnames(grid.col2, grid.nest)}>
+        <div className={classnames(grid.col, grid.nest, css.examples)}>
+          <h3 className={grid.col}>Examples</h3>
+          <ul>
+            <li className={classnames(css.example, grid.col)}>
               <img src={data.conway.childImageSharp.fluid.src} alt="" />
               <a href="#">Conway's game of life</a>
-              <p className={classnames(grid.col2, grid.nest)}>
-                in Topic examples
-              </p>
+              <br />
+              <p>in Topic examples</p>
             </li>
-            <li className={classnames(grid.col2, grid.nest)}>
+            <li className={classnames(css.example, grid.col)}>
               <img src={data.flocking.childImageSharp.fluid.src} alt="" />
               <a href="#">Flocking</a>
-              <p className={classnames(grid.col2, grid.nest)}>
-                in Topic examples
-              </p>
+              <br />
+              <p>in Topic examples</p>
             </li>
-            <li className={classnames(grid.col2, grid.nest)}>
+            <li className={classnames(css.example, grid.col)}>
               <img src={data.radial.childImageSharp.fluid.src} alt="" />
               <a href="#">Radial gradient</a>
-              <p className={classnames(grid.col2, grid.nest)}>
-                in Basic examples
-              </p>
+              <br />
+              <p>in Basic examples</p>
             </li>
           </ul>
-          <h4>
+          <h4 className={grid.col}>
             <Link to="/examples">More Examples</Link>
           </h4>
         </div>
       </div>
       <div className={classnames(grid.grid, css.bottom)}>
-        <div className={classnames(grid.col4, grid.nest)}>
-          <h3 className={grid.col4}>Getting started</h3>
-          <div className={grid.col4}>
+        <div className={classnames(grid.col, css.half)}>
+          <h3>Getting started</h3>
+          <div>
             <p>
               Download and open the ‘Processing' application. Select something
               from the Examples. Hit the Run button. Lather, rinse, repeat as
@@ -147,8 +143,8 @@ const IndexPage = ({ data }) => {
               tutorial.
             </p>
           </div>
-          <h3 className={grid.col4}>Contribute</h3>
-          <div className={grid.col4}>
+          <h3>Contribute</h3>
+          <div>
             <p>
               The core Processing software is augmented by libraries and tools
               contributed through the community. These inventive extensions are
@@ -174,12 +170,12 @@ const IndexPage = ({ data }) => {
             </p>
           </div>
         </div>
-        <div className={classnames(grid.col4, grid.nest)}>
-          <h3 className={grid.col4}>News</h3>
-          <div className={grid.col4}>
+        <div className={classnames(grid.col, css.half)}>
+          <h3>News</h3>
+          <div>
             <img src={data.news.childImageSharp.fluid.src} alt="" />
           </div>
-          <p className={classnames(grid.col4, css.news)}>
+          <p>
             The Processing Community Day (PCD) initiative is evolving. For 2020,
             we will offer a mentorship program for PCD Worldwide Organizers who
             are interested in learning from past community organizers and
@@ -187,17 +183,17 @@ const IndexPage = ({ data }) => {
             PCD in their local communities. Check out the PCD @ Worldwide site
             to learn more about starting or attending an event in 2020!
           </p>
-          <h3 className={grid.col4}>Partners</h3>
-          <ul className={classnames(grid.col6, grid.nest, css.logos)}>
-            <li className={grid.col1}>
+          <h3>Partners</h3>
+          <ul className={css.logos}>
+            <li>
               <img src={data.fathom.childImageSharp.fluid.src} alt="" />
               <p>Fathom</p>
             </li>
-            <li className={grid.col1}>
+            <li>
               <img src={data.itp.childImageSharp.fluid.src} alt="" />
               <p>ITP NYU</p>
             </li>
-            <li className={grid.col1}>
+            <li>
               <img src={data.ucla.childImageSharp.fluid.src} alt="" />
               <p>UCLA Design Media Arts</p>
             </li>

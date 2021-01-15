@@ -16,9 +16,26 @@
 
 .section {
   margin-bottom: var(--vertical-gutter);
+
+  & > h1 {
+    flex-basis: cols(4, 8);
+  }
+
+  & > h3 {
+    flex-basis: cols(4, 8);
+  }
+}
+
+.description {
+  flex-basis: cols(5, 8);
+}
+
+.featured {
+  flex-basis: cols(2, 8);
 }
 
 .related {
+  flex-basis: cols(4, 8);
   position: relative;
   display: flex;
   align-items: center;
@@ -46,6 +63,7 @@
 }
 
 .note {
+  flex-basis: cols(6, 8);
   padding-top: var(--gutter-double);
   color: var(--processing-blue-dark);
 }

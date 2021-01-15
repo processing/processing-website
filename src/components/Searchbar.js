@@ -14,7 +14,7 @@ const Searchbar = ({
 }) => {
   return large ? (
     <div
-      className={classnames(css.root, grid.col6, css.large, {
+      className={classnames(css.root, grid.col, css.large, {
         [className]: className,
       })}>
       <form action="" role="search">

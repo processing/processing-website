@@ -1,3 +1,12 @@
+.root {
+  & h1 {
+    flex-basis: cols(8, 8);
+  }
+  & h3 {
+    flex-basis: cols(5, 8);
+  }
+}
+
 .list {
   list-style: none;
   border-left: solid 7px var(--lightgray);
@@ -13,6 +22,7 @@
   }
 
   & p {
+    flex-basis: cols(4, 8);
     margin: 0;
   }
 
@@ -20,7 +30,12 @@
     text-decoration: none;
   }
 
+  & h1 {
+    flex-basis: cols(8, 8);
+  }
+
   & h3 {
+    flex-basis: cols(5, 8);
     font-size: var(--text-medium);
     border-right: solid 3px var(--lightgray);
     margin: 0;
@@ -35,15 +50,25 @@
   }
 }
 
+.librarieName {
+  flex-basis: cols(1.5, 8) !important;
+}
+
 .contributionsList {
   list-style: none;
   margin: var(--margin) 0;
+  flex-basis: cols(8, 8);
 
   & h2 {
+    flex-basis: cols(1.5, 8);
     font-size: var(--text-xlarge);
     text-transform: capitalize;
     border-right: solid 7px var(--lightgray);
     margin-bottom: 0;
+  }
+
+  & ul {
+    flex-basis: cols(6.5, 8);
   }
 
   & ul div:last-child {
@@ -82,6 +107,7 @@
 }
 
 .contributionData {
+  flex-basis: cols(2, 8);
   border-right: solid 3px var(--lightgray);
 }
 
@@ -90,6 +116,11 @@
 }
 
 .subgrid {
+  width: 100%;
   display: flex;
   align-items: baseline;
+}
+
+.contributionBrief {
+  flex-basis: cols(6, 8);
 }

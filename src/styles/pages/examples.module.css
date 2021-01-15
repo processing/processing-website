@@ -1,0 +1,8 @@
+.root {
+  & > h1 {
+    flex-basis: cols(8, 8);
+  }
+  & > h3 {
+    flex-basis: cols(3, 8);
+  }
+}

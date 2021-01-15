@@ -73,13 +73,13 @@ const Navbar = ({ siteTitle, show }) => {
         { [css.show]: show },
         { [css.noshow]: !show }
       )}>
-      <h1 className={classnames(grid.col2, css.logo)}>
+      <h1 className={classnames(grid.col, css.logo)}>
         <Link to="/">
           <LogoProcessing />
           {siteTitle}
         </Link>
       </h1>
-      <ul className={classnames(css.menu, grid.col4)}>
+      <ul className={classnames(grid.col, css.menu)}>
         {items.map((item, key) => (
           <li
             key={key}

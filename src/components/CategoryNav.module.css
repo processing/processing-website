@@ -1,4 +1,5 @@
 .root {
+  flex-basis: cols(6, 8);
   margin-bottom: calc(var(--margin) * 2);
   justify-content: center;
 

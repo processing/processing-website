@@ -21,6 +21,7 @@
 
 .logo {
   height: 100%;
+  flex-basis: cols(2, 8);
   font-size: var(--text-xlarge);
   transition: 0.2s ease-in-out;
   & svg {
@@ -31,6 +32,7 @@
 
 .menu {
   display: flex;
+  flex-basis: cols(4, 8);
   list-style: none;
   justify-content: space-between;
 }

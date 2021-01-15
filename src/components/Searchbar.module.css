@@ -87,6 +87,7 @@
   margin-top: var(--margin);
   margin-bottom: var(--margin);
   color: var(--gray);
+  flex-basis: cols(6, 8);
 
   & input {
     border-bottom: 3px solid var(--gray);

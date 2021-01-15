@@ -11,17 +11,20 @@
 }
 
 .sectionIntro {
+  flex-basis: cols(4, 8);
   & a {
     text-decoration: underline;
   }
 }
 
 .tutorialList {
+  width: 100%;
   margin: var(--gutter-double) 0;
   display: flex;
   list-style: none;
 
   & li {
+    flex-basis: cols(2, 8);
     display: flex;
     flex-direction: column;
 

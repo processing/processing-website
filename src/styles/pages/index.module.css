@@ -31,6 +31,11 @@
   margin: var(--margin) 0;
 }
 
+.sidebar {
+  flex-basis: cols(2, 8);
+  align-content: flex-start;
+}
+
 .list,
 .contact {
   border-left: solid 7px var(--lightgray);
@@ -42,6 +47,10 @@
 
 .contact a {
   font-size: var(--text-small);
+}
+
+.examples {
+  flex-basis: cols(6, 8);
 }
 
 .sketch {
@@ -58,13 +67,20 @@
   height: 100px;
 }
 
-.examples {
+.examples ul {
   display: inline-flex;
-
   & a {
     margin-top: var(--gutter-half);
     color: var(--processing-blue-mid);
   }
+}
+
+.example {
+  flex-basis: cols(2, 8);
+}
+
+.half {
+  flex-basis: cols(4, 8);
 }
 
 .logos {
@@ -74,6 +90,11 @@
   & p {
     margin-top: var(--gutter-half);
     text-align: center;
+  }
+
+  & li {
+    flex-basis: cols(2, 8);
+    margin-right: var(--gutter);
   }
 }
 

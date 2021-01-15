@@ -27,36 +27,39 @@ const Tools = ({ data }) => {
 
   return (
     <Layout>
-      <div className={grid.grid}>
-        <h1 className={grid.col8}>Tools</h1>
-        <h4 className={classnames(grid.col6)}>
+      <div className={classnames(grid.grid, css.root)}>
+        <h1 className={grid.col}>Tools</h1>
+        <h3 className={classnames(grid.col)}>
           The following tools are included with the Processing software. Select
           the tool you want to use from the Tools menu of the Processing
           Environment. These tools are open source; the code is distributed with
           Processing.
-        </h4>
+        </h3>
         <ul
           className={classnames(
             css.list,
-            grid.col5andhalf,
+            grid.col,
             grid.push1andhalf,
             grid.nest
           )}>
           {tools.nodes.map((node, key) => {
             return (
               <li key={key} className={css.subgrid}>
-                <h3 className={grid.col1andhalf}>{node.childJson.name}</h3>
-                <p className={grid.col4}>{node.childJson.description}</p>
+                <h3 className={classnames(grid.col, css.librarieName)}>
+                  {node.childJson.name}
+                </h3>
+                <p className={grid.col}>{node.childJson.description}</p>
               </li>
             );
           })}
         </ul>
-        <h1 className={grid.col8}>Contributions</h1>
-        <h4 className={grid.col6}>
-          Contributed tools must be downloaded individually. Select "Add
-          Tool..." from the Tools menu to select a Tool to download. Contributed
-          tools are developed, documented, and maintained by members of the
-          Processing community. For feedback and support, please post to the
+        <h1 className={grid.col}>Contributions</h1>
+        <h3 className={grid.col}>
+          Contributed tools must be downloaded individually. Select{' '}
+          <em>"Add Tool..."</em> from the Tools menu to select a Tool to
+          download. Contributed tools are developed, documented, and maintained
+          by members of the Processing community. For feedback and support,
+          please post to the
           <a href="http://forum.processing.org/">Forum</a>. For development
           discussions post to the{' '}
           <a href="http://forum.processing.org/library-and-tool-development">
@@ -68,18 +71,12 @@ const Tools = ({ data }) => {
             Processing GitHub
           </a>{' '}
           site.
-        </h4>
+        </h3>
         <ul className={css.contributionsList}>
           {contributions.map((node, key) => {
             return (
-              <li
-                key={key + 'c'}
-                className={classnames(css.subgrid, grid.col5andhalf)}>
-                <div
-                  className={classnames(
-                    grid.col2andhalf,
-                    css.contributionData
-                  )}>
+              <li key={key + 'c'} className={classnames(css.subgrid, grid.col)}>
+                <div className={classnames(grid.col, css.contributionData)}>
                   <h3>
                     <a href={node.url} target="_blank" rel="noreferrer">
                       {node.name}
@@ -90,12 +87,13 @@ const Tools = ({ data }) => {
                       key={key + 'a'}
                       href={author.link}
                       target="_blank"
-                      rel="noreferrer">
+                      rel="noreferrer"
+                      className={css.contributionAuthor}>
                       {author.name}
                     </a>
                   ))}
                 </div>
-                <div className={grid.col4}>
+                <div className={classnames(grid.col, css.contributionBrief)}>
                   <p>{node.sentence}</p>
                 </div>
               </li>

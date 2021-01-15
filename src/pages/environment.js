@@ -20,10 +20,10 @@ const Environment = ({ data }) => {
     <Layout>
       <div className={grid.grid} ref={ref}>
         <TableOfContents items={tableOfContents.items} />
-        <h1 className={classnames(grid.push2, grid.col5, grid.pull1)}>
+        <h1 className={classnames(grid.push2, grid.col, grid.pull1, css.title)}>
           {frontmatter.title}
         </h1>
-        <div className={classnames(grid.col5, grid.push2, css.content)}>
+        <div className={classnames(grid.col, grid.push2, css.content)}>
           <MDXRenderer>{body}</MDXRenderer>
         </div>
       </div>

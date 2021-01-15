@@ -19,9 +19,16 @@
 
 .section {
   margin-bottom: var(--vertical-gutter);
+  & > h4 {
+    flex-basis: cols(1, 8);
+  }
+  & > h3 {
+    flex-basis: cols(4, 8);
+  }
 }
 
 .description {
+  flex-basis: cols(4, 8);
   font-family: "Vollkorn", serif;
   font-size: var(--text-medium);
   line-height: 1.6em;
@@ -38,6 +45,7 @@
 }
 
 .list {
+  flex-basis: cols(6, 8);
   & li {
     display: flex;
     width: 100%;
@@ -54,7 +62,16 @@
 }
 
 .example {
+  flex-basis: cols(8, 8);
   margin-bottom: var(--vertical-gutter);
+}
+
+.exampleCode {
+  flex-basis: cols(6, 8);
+}
+
+.exampleImage {
+  flex-basis: cols(2, 8);
 }
 
 .param {

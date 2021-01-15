@@ -6,6 +6,10 @@
     text-transform: capitalize;
   }
 
+  & ul {
+    flex-basis: cols(8, 8);
+  }
+
   & ul div:last-child {
     margin-bottom: 0;
   }
@@ -22,6 +26,7 @@
   width: 100%;
 
   & h3 {
+    flex-basis: cols(1, 8);
     margin: 0;
     border-right: solid 6px var(--lightgray);
     font-size: var(--text-medium);
@@ -32,9 +37,18 @@
     font-size: var(--text-regular);
     font-weight: 400;
   }
+
+  & ul {
+    flex-basis: cols(8, 8);
+  }
+
+  & ul > li {
+    flex-basis: cols(1, 8);
+  }
 }
 
 .intro {
+  flex-basis: cols(4, 8);
   margin-bottom: calc(var(--margin) / 2);
 }
 

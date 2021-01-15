@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
@@ -53,32 +53,26 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           )}
           ref={ref}>
           <div className={classnames(css.section, grid.grid)}>
-            <h4 className={classnames(grid.col1, grid.push1)}>Name</h4>
-            <h3 className={classnames(grid.col4, grid.pull1)}>{entry.name}</h3>
+            <h4 className={classnames(grid.col, grid.push1)}>Name</h4>
+            <h3 className={classnames(grid.col, grid.pull1)}>{entry.name}</h3>
           </div>
           <div className={classnames(css.section, grid.grid)}>
-            <h4 className={classnames(grid.col1, grid.push1)}>Description</h4>
+            <h4 className={classnames(grid.col, grid.push1)}>Description</h4>
             <p
-              className={classnames(grid.col4, grid.pull1, css.description)}
+              className={classnames(grid.col, grid.pull1, css.description)}
               dangerouslySetInnerHTML={{ __html: entry.description }}></p>
           </div>
           {examples.length > 0 && (
             <div className={classnames(css.section, grid.grid)}>
-              <h4 className={classnames(grid.col1, grid.push1)}>Examples</h4>
-              <ul
-                className={classnames(
-                  grid.col6,
-                  grid.push1,
-                  grid.nest,
-                  css.list
-                )}>
+              <h4 className={classnames(grid.col, grid.push1)}>Examples</h4>
+              <ul className={classnames(grid.col, grid.nest, css.list)}>
                 {examples.map((ex, key) => {
                   const img = images.filter(
                     (img) => img.node.name === ex.node.name
                   );
                   return (
                     <li className={css.example} key={'ex' + key}>
-                      <div className={grid.col4}>
+                      <div className={classnames(grid.col, css.exampleCode)}>
                         <pre className={css.codeBlock}>
                           {ex.node.internal.content
                             .split(/\r?\n/)
@@ -88,7 +82,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
                         </pre>
                       </div>
                       {img.length > 0 && (
-                        <div className={grid.col2}>
+                        <div className={classnames(grid.col, css.exampleImage)}>
                           <Img fixed={img[0].node.childImageSharp.fixed} />
                         </div>
                       )}
@@ -99,8 +93,8 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
             </div>
           )}
           <div className={classnames(css.section, grid.grid)}>
-            <h4 className={classnames(grid.col1, grid.push1)}>Syntax</h4>
-            <ul className={classnames(grid.col4, grid.pull1, css.list)}>
+            <h4 className={classnames(grid.col, grid.push1)}>Syntax</h4>
+            <ul className={classnames(grid.col, css.list)}>
               {entry.syntax.map((syn, key) => {
                 return (
                   <li key={'s' + key}>
@@ -112,15 +106,15 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           </div>
           {entry.parameters.length > 0 && (
             <div className={classnames(css.section, grid.grid)}>
-              <h4 className={classnames(grid.col1, grid.push1)}>Parameters</h4>
-              <ul className={classnames(grid.col5, grid.nest, css.list)}>
+              <h4 className={classnames(grid.col, grid.push1)}>Parameters</h4>
+              <ul className={classnames(grid.col, grid.nest, css.list)}>
                 {entry.parameters.map((param, key) => {
                   return (
                     <li key={'param' + key} className={css.param}>
-                      <span className={classnames(grid.col1, css.paramName)}>
+                      <span className={classnames(grid.col, css.paramName)}>
                         {param.name}
                       </span>
-                      <span className={grid.col5}>
+                      <span className={grid.col}>
                         {param.type + ': ' + param.description}
                       </span>
                     </li>

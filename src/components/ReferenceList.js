@@ -14,10 +14,10 @@ const ReferenceList = ({ data, library }) => {
         <ul
           className={classnames(grid.nest, css.category)}
           key={`category-${key}`}>
-          <h2 className={classnames(grid.col8)} id={category.name}>
+          <h2 className={classnames(grid.col)} id={category.name}>
             {category.name}
           </h2>
-          <ul className={classnames(grid.col7, grid.nest)}>
+          <ul className={classnames(grid.col, grid.nest)}>
             {category.children.map((subcategory, key) => {
               return (
                 subcategory !== null && (
@@ -25,22 +25,18 @@ const ReferenceList = ({ data, library }) => {
                     {subcategory.name !== '' && (
                       <div className={css.verticalSeparator} />
                     )}
-                    <div className={grid.col1andhalf}>
-                      <h3>{subcategory.name}</h3>
-                    </div>
-                    <ul className={classnames(grid.col6andhalf, grid.nest)}>
+                    <h3>{subcategory.name}</h3>
+                    <ul className={classnames(grid.col, grid.nest)}>
                       {subcategory.children.map((item, key) => {
                         return (
                           <li key={key} className={css.itemLine}>
                             <Link
-                              className={classnames(
-                                grid.col1andhalf,
-                                css.itemName
-                              )}
+                              className={classnames(grid.col, css.itemName)}
                               to={`${link + item.slug}.html`}>
                               <span>{item.name}</span>
                             </Link>
-                            <div className={grid.col5}>
+                            <div
+                              className={classnames(grid.col, css.itemBrief)}>
                               <p
                                 dangerouslySetInnerHTML={{
                                   __html: item.brief,

@@ -19,19 +19,19 @@ const ExamplesList = ({ data }) => {
         <ul
           className={classnames(grid.nest, css.category)}
           key={`category-${key}`}>
-          <h2 className={grid.col8}>{category.name}</h2>
-          <p className={classnames(grid.col4, grid.pull4, css.intro)}>
+          <h2 className={grid.col}>{category.name}</h2>
+          <p className={classnames(grid.col, grid.pull4, css.intro)}>
             {category === 'topic'
               ? 'Programs about to animation, interaction, motion, simulation, and more...'
               : 'Programs about form, data, images, color, typography, and more...'}
           </p>
-          <ul className={classnames(grid.col8, grid.nest)}>
+          <ul className={classnames(grid.col, grid.nest)}>
             {category.children.map((subcategory, key) => (
               <div key={`subcategory-${key}`} className={css.subcategory}>
-                <h3 className={grid.col1}>{subcategory.name}</h3>
-                <ul className={classnames(grid.col6, grid.nest)}>
+                <h3 className={grid.col}>{subcategory.name}</h3>
+                <ul className={classnames(grid.col, grid.nest)}>
                   {subcategory.children.map((node, key) => (
-                    <li key={`item-${key}`} className={grid.col1}>
+                    <li key={`item-${key}`} className={grid.col}>
                       <Link to={`${node.slug}.html`} language={locale}>
                         {node.img && (
                           <img

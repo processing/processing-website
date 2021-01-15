@@ -26,7 +26,7 @@ const Reference = ({ data, location }) => {
   return (
     <Layout>
       <div className={grid.grid}>
-        <h1 className={grid.col8}>References</h1>
+        <h1 className={grid.col}>References</h1>
         <Donate />
         <Searchbar
           placeholder={'Search in the Reference...'}

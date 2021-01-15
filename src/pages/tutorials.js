@@ -16,13 +16,13 @@ const Tutorials = ({ data }) => {
   return (
     <Layout>
       <div className={grid.grid}>
-        <h1 className={grid.col8}>Tutorials</h1>
+        <h1 className={grid.col}>Tutorials</h1>
         <div className={classnames(grid.nest, css.section)}>
-          <h2 className={grid.col8}>Video Tutorials</h2>
-          <h3 className={classnames(grid.col3, grid.pull5)}>
+          <h2 className={grid.col}>Video Tutorials</h2>
+          <h3 className={classnames(grid.col, grid.pull5)}>
             Links to videos that cover the Processing basics.
           </h3>
-          <span className={classnames(grid.col4, grid.pull4, css.sectionIntro)}>
+          <span className={classnames(grid.col, grid.pull4, css.sectionIntro)}>
             {`Large collections of instructional Processing videos are online from `}
             <a href="https://www.youtube.com/user/shiffman/playlists">
               Daniel Shiffman
@@ -48,7 +48,7 @@ const Tutorials = ({ data }) => {
                 coverImage,
               } = node.childMdx.frontmatter;
               return (
-                <li key={k} className={grid.col2}>
+                <li key={k} className={grid.col}>
                   <a href={link} language={locale}>
                     {coverImage && (
                       <div className={css.cover}>
@@ -70,8 +70,8 @@ const Tutorials = ({ data }) => {
           </ul>
         </div>
         <div className={classnames(grid.nest, css.section)}>
-          <h2 className={grid.col8}>Text Tutorials</h2>
-          <h3 className={classnames(grid.col3, grid.pull5)}>
+          <h2 className={grid.col}>Text Tutorials</h2>
+          <h3 className={classnames(grid.col, grid.pull5)}>
             A collection of step-by-step lessons covering beginner,
             intermediate, and advanced topics.
           </h3>
@@ -86,7 +86,7 @@ const Tutorials = ({ data }) => {
                 coverImage,
               } = node.childMdx.frontmatter;
               return (
-                <li key={k} className={grid.col2}>
+                <li key={k} className={grid.col}>
                   <Link to={slug} language={locale}>
                     {coverImage && (
                       <div className={css.cover}>

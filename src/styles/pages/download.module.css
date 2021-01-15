@@ -1,11 +1,23 @@
 .root {
+  & h1 {
+    flex-basis: cols(8, 8);
+  }
+  & h3 {
+    flex-basis: cols(4, 8);
+    margin-right: cols(4, 8);
+  }
+  & p {
+    flex-basis: cols(5, 8);
+  }
 }
 
 .latestVersionsWrapper {
   display: inline-flex;
+  flex-basis: cols(4, 8);
 }
 
 .latestVersion {
+  flex-basis: cols(4, 8);
   color: var(--processing-blue-dark);
   &:hover {
     color: var(--processing-blue-light);
@@ -23,11 +35,23 @@
   }
 }
 
+.latestLabel {
+  flex-basis: cols(8, 8);
+}
+
 .section {
   margin: var(--gutter-double) 0;
+  flex-basis: cols(6, 8);
+  align-items: self-start;
 }
 
 .logo {
+  text-align: center;
+  flex-basis: cols(2, 8);
+  & svg {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .latestNumber {
@@ -51,6 +75,17 @@
   color: var(--black);
 }
 
+.sectionList {
+  flex-basis: cols(6, 8);
+  margin-left: cols(1, 8) !important;
+  padding: var(--gutter) 0 var(--gutter-double);
+}
+
+.releaseList {
+  width: 100%;
+  font-size: var(--text-small);
+}
+
 .releaseRow {
   display: flex;
   padding-bottom: 6px;
@@ -59,14 +94,14 @@
   }
 }
 
+.releaseName {
+  flex-basis: cols(1, 8);
+}
+
 .releaseDate {
   font-size: var(--text-xsmall);
   color: var(--darkgray);
-}
-
-.releaseList {
-  width: 100%;
-  font-size: var(--text-small);
+  flex-basis: cols(2, 8);
 }
 
 .assetLabel {

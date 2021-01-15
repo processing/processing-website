@@ -1,3 +1,13 @@
+.root {
+  & > h1 {
+    flex-basis: cols(8, 8);
+  }
+
+  & > h3 {
+    flex-basis: cols(5, 8);
+  }
+}
+
 .booksList {
   margin: var(--gutter-double) 0;
   display: flex;
@@ -14,12 +24,18 @@
   }
 }
 
+.listItem {
+  flex-basis: cols(4, 8);
+  margin-bottom: var(--margin);
+}
+
 .cover {
+  flex-basis: cols(2, 8);
   width: 100%;
 }
 
-.listItem {
-  margin-bottom: var(--margin);
+.book {
+  flex-basis: cols(6, 8);
 }
 
 .details {

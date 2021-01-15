@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { graphql } from 'gatsby';
+import classnames from 'classnames';
 
 import Layout from '../components/Layout';
 import ExamplesList from '../components/ExamplesList';
@@ -8,6 +9,7 @@ import Searchbar from '../components/Searchbar';
 import { filterItems, organizeExampleItems } from '../utils/data';
 
 import grid from '../styles/grid.module.css';
+import css from '../styles/pages/examples.module.css';
 
 const Examples = ({ data, location }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -24,7 +26,7 @@ const Examples = ({ data, location }) => {
 
   return (
     <Layout>
-      <div className={grid.grid}>
+      <div className={classnames(grid.grid, css.root)}>
         <h1 className={grid.col8}>Examples</h1>
         <h3 className={grid.col3}>
           Short, prototypical programs exploring the basics of programming with
