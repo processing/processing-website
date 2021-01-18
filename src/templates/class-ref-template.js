@@ -121,7 +121,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               </ul>
             </div>
           )}
-          {entry.classFields.length > 0 && (
+          {entry.classFields && (
             <div className={classnames(grid.grid, css.section)}>
               <h4 className={classnames(grid.col1, grid.push1)}>
                 {intl.formatMessage({ id: 'fields' })}
@@ -140,7 +140,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               </ul>
             </div>
           )}
-          {entry.methods.length > 0 && (
+          {entry.methods && (
             <div className={classnames(grid.grid, css.section)}>
               <h4 className={classnames(grid.col1, grid.push1)}>
                 {intl.formatMessage({ id: 'methods' })}
@@ -162,7 +162,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               </ul>
             </div>
           )}
-          {entry.related.length > 0 && (
+          {entry.related && (
             <div className={classnames(grid.grid, css.section)}>
               <h4 className={classnames(grid.col1, grid.push1)}>
                 {intl.formatMessage({ id: 'related' })}
