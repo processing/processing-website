@@ -14,14 +14,14 @@
 }
 
 .intro {
-  flex-basis: cols(4, 8);
+  flex-basis: var(--col4);
   z-index: 1;
   display: flex;
   flex-direction: column;
   height: 100%;
   padding-top: 100px;
   @media (--medium) {
-    flex-basis: cols(8, 8);
+    flex-basis: var(--col8);
   }
 }
 
@@ -39,7 +39,7 @@
 }
 
 .sidebar {
-  flex-basis: cols(2, 8);
+  flex-basis: var(--col2);
   align-content: flex-start;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .examples {
-  flex-basis: cols(6, 8);
+  flex-basis: var(--col6);
 }
 
 .sketch {
@@ -83,11 +83,11 @@
 }
 
 .example {
-  flex-basis: cols(2, 8);
+  flex-basis: var(--col2);
 }
 
 .half {
-  flex-basis: cols(4, 8);
+  flex-basis: var(--col4);
 }
 
 .logos {
@@ -96,12 +96,18 @@
 
   & p {
     margin-top: var(--gutter-half);
+    font-size: var(--text-small);
     text-align: center;
   }
 
   & li {
-    flex-basis: cols(2, 8);
+    flex-basis: var(--col2);
     margin-right: var(--gutter);
+    & div {
+      height: 60px;
+      width: 60px;
+      margin: 0 auto;
+    }
   }
 }
 

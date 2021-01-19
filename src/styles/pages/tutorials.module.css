@@ -17,7 +17,7 @@
 }
 
 .sectionIntro {
-  flex-basis: cols(8, 8);
+  flex-basis: var(--col8);
   padding-right: var(--col4);
   & a {
     text-decoration: underline;
@@ -31,7 +31,7 @@
   list-style: none;
 
   & li {
-    flex-basis: cols(2, 8);
+    flex-basis: var(--col2);
     display: flex;
     flex-direction: column;
 

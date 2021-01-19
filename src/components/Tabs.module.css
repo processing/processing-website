@@ -1,5 +1,5 @@
 .root {
-  flex-basis: cols(8, 8);
+  flex-basis: var(--col8);
   margin-top: var(--margin);
 
   & > ul {

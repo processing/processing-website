@@ -86,7 +86,7 @@
 .large {
   margin-top: var(--margin);
   margin-bottom: var(--margin);
-  flex-basis: cols(7, 8);
+  flex-basis: var(--col7);
   padding-left: var(--col1);
   color: var(--gray);
 

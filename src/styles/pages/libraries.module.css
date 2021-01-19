@@ -1,9 +1,9 @@
 .root {
   & > h1 {
-    flex-basis: cols(8, 8);
+    flex-basis: var(--col8);
   }
   & > h3 {
-    flex-basis: cols(8, 8);
+    flex-basis: var(--col8);
     padding-right: var(--col3);
   }
 }
@@ -28,7 +28,7 @@
   }
 
   & p {
-    flex-basis: cols(4, 8);
+    flex-basis: var(--col4);
     margin: 0;
   }
 
@@ -37,11 +37,11 @@
   }
 
   & h1 {
-    flex-basis: cols(8, 8);
+    flex-basis: var(--col8);
   }
 
   & h3 {
-    flex-basis: cols(5, 8);
+    flex-basis: var(--col5);
     font-size: var(--text-medium);
     border-right: solid 3px var(--lightgray);
     margin: 0;
@@ -64,7 +64,7 @@
   list-style: none;
   margin: var(--margin) 0;
   padding-left: var(--push1andHalf);
-  flex-basis: cols(8, 8);
+  flex-basis: var(--col8);
 
   & h2 {
     flex-basis: cols(1.5, 8);
@@ -114,7 +114,7 @@
 }
 
 .contributionData {
-  flex-basis: cols(2, 8);
+  flex-basis: var(--col2);
   border-right: solid 3px var(--lightgray);
 }
 
@@ -129,7 +129,7 @@
 }
 
 .contributionBrief {
-  flex-basis: cols(6, 8);
+  flex-basis: var(--col6);
 }
 
 .searchbar {

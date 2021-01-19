@@ -18,7 +18,7 @@ const ExamplesList = ({ data }) => {
           className={classnames(grid.nest, css.category)}
           key={`category-${key}`}>
           <h2 className={grid.col}>{category.name}</h2>
-          <p className={classnames(grid.col, grid.pull4, css.intro)}>
+          <p className={classnames(grid.col, css.intro)}>
             {category === 'topic'
               ? 'Programs about to animation, interaction, motion, simulation, and more...'
               : 'Programs about form, data, images, color, typography, and more...'}

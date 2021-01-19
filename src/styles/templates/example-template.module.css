@@ -18,27 +18,27 @@
   margin-bottom: var(--vertical-gutter);
 
   & > h1 {
-    flex-basis: cols(7, 8);
+    flex-basis: var(--col7);
     padding-left: var(--push1);
   }
 
   & > h3 {
-    flex-basis: cols(7, 8);
+    flex-basis: var(--col7);
     padding-left: var(--push1);
   }
 }
 
 .description {
-  flex-basis: cols(5, 8);
+  flex-basis: var(--col5);
   padding-left: var(--push1);
 }
 
 .featured {
-  flex-basis: cols(2, 8);
+  flex-basis: var(--col2);
 }
 
 .relatedWrapper {
-  flex-basis: cols(8, 8);
+  flex-basis: var(--col8);
   & > h3 {
     padding-left: var(--push1);
   }
@@ -46,7 +46,7 @@
 
 .related {
   display: flex;
-  flex-basis: cols(4, 8);
+  flex-basis: var(--col4);
   position: relative;
   padding-left: var(--push1);
   align-items: center;
@@ -76,7 +76,7 @@
 }
 
 .note {
-  flex-basis: cols(7, 8);
+  flex-basis: var(--col7);
   padding-left: var(--push1);
   padding-top: var(--gutter-double);
   color: var(--processing-blue-dark);

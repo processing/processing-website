@@ -1,11 +1,11 @@
 import React, { useState, useMemo } from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../components/Layout';
 import CategoryNav from '../components/CategoryNav';
+import Donate from '../components/character/Donate';
+import Layout from '../components/Layout';
 import ReferenceList from '../components/ReferenceList';
 import Searchbar from '../components/Searchbar';
-import Donate from '../components/character/Donate';
 
 import { filterItems, organizeReferenceItems } from '../utils/data';
 

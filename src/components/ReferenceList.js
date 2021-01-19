@@ -14,7 +14,7 @@ const ReferenceList = ({ data, library }) => {
         <ul
           className={classnames(grid.nest, css.category)}
           key={`category-${key}`}>
-          <h2 className={classnames(grid.col)} id={category.name}>
+          <h2 className={grid.col} id={category.name}>
             {category.name}
           </h2>
           <ul className={classnames(grid.col, grid.nest)}>

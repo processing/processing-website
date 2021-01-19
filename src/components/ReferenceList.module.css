@@ -10,13 +10,13 @@
 
   & h2 {
     font-size: var(--text-xlarge);
-    flex-basis: cols(8, 8);
+    flex-basis: var(--col8);
     text-transform: capitalize;
   }
 
   & ul {
     position: relative;
-    flex-basis: cols(8, 8);
+    flex-basis: var(--col8);
   }
 
   & ul div:last-child {
@@ -78,7 +78,7 @@
 }
 
 .itemName {
-  flex-basis: cols(2, 8);
+  flex-basis: var(--col2);
   font-family: var(--font-mono);
   font-size: var(--text-medium);
   text-decoration: none;
@@ -86,5 +86,5 @@
 }
 
 .itemBrief {
-  flex-basis: cols(5, 8);
+  flex-basis: var(--col5);
 }

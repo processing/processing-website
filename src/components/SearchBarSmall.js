@@ -21,14 +21,12 @@ const SearchBarSmall = ({ className, size }) => {
     }
   };
 
-  console.log(size);
-
   return (
     <div
       className={classnames(
         { [className]: className },
         grid.col,
-        { [grid.pushHalf]: size === 'large' },
+        { [css.large]: size === 'large' },
         css.root
       )}>
       {size === 'large' ? (

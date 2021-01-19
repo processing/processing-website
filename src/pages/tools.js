@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 
 import { useLocalization } from 'gatsby-theme-i18n';
 
+import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
 
 import css from '../styles/pages/libraries.module.css';
@@ -28,6 +29,7 @@ const Tools = ({ data }) => {
   return (
     <Layout>
       <div className={classnames(grid.grid, css.root)}>
+        <Donate />
         <h1 className={grid.col}>Tools</h1>
         <h3 className={grid.col}>
           The following tools are included with the Processing software. Select

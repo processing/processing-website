@@ -7,7 +7,7 @@
   }
 
   & ul {
-    flex-basis: cols(8, 8);
+    flex-basis: var(--col8);
   }
 
   & ul div:last-child {
@@ -19,6 +19,12 @@
   margin-bottom: var(--gutter-double);
 }
 
+.intro {
+  flex-basis: var(--col8);
+  padding-right: var(--col4);
+  margin-bottom: calc(var(--margin) / 2);
+}
+
 .subcategory {
   display: flex;
   flex-direction: row;
@@ -26,7 +32,7 @@
   width: 100%;
 
   & h3 {
-    flex-basis: cols(1, 8);
+    flex-basis: var(--col1);
     margin: 0;
     border-right: solid 6px var(--lightgray);
     font-size: var(--text-medium);
@@ -39,17 +45,12 @@
   }
 
   & ul {
-    flex-basis: cols(8, 8);
+    flex-basis: var(--col8);
   }
 
   & ul > li {
-    flex-basis: cols(1, 8);
+    flex-basis: var(--col1);
   }
-}
-
-.intro {
-  flex-basis: cols(4, 8);
-  margin-bottom: calc(var(--margin) / 2);
 }
 
 .cover {

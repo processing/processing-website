@@ -186,15 +186,21 @@ const IndexPage = ({ data }) => {
           <h3>Partners</h3>
           <ul className={css.logos}>
             <li>
-              <img src={data.fathom.childImageSharp.fluid.src} alt="" />
+              <div>
+                <img src={data.fathom.childImageSharp.fluid.src} alt="" />
+              </div>
               <p>Fathom</p>
             </li>
             <li>
-              <img src={data.itp.childImageSharp.fluid.src} alt="" />
+              <div>
+                <img src={data.itp.childImageSharp.fluid.src} alt="" />
+              </div>
               <p>ITP NYU</p>
             </li>
             <li>
-              <img src={data.ucla.childImageSharp.fluid.src} alt="" />
+              <div>
+                <img src={data.ucla.childImageSharp.fluid.src} alt="" />
+              </div>
               <p>UCLA Design Media Arts</p>
             </li>
           </ul>

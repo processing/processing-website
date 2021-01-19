@@ -1,23 +1,18 @@
 .root {
   & > h1 {
     flex-basis: var(--col8);
-    padding-left: var(--push2);
-    padding-right: var(--push1);
-    margin-bottom: 0;
   }
-}
 
-.author {
-  margin-bottom: 1rem;
-  font-size: var(--text-large);
-  font-weight: 700;
-  color: var(--processing-blue-dark);
+  & > h3 {
+    flex-basis: var(--col8);
+    padding-right: var(--push4);
+  }
 }
 
 .content {
   flex-basis: var(--col8);
-  padding-left: var(--push2);
-  padding-right: var(--push1);
+  padding-left: var(--push1);
+  padding-right: var(--push2);
   margin-bottom: var(--vertical-gutter);
 
   & h2 {
@@ -85,37 +80,8 @@
     }
   }
 
-  & picture {
-    margin: var(--vertical-gutter) 0;
-  }
-
-  & figcaption {
-    color: var(--darkgray);
-    font-size: var(--text-xsmall);
-    font-weight: 400;
-  }
-
   & h4 {
     border-left: solid var(--lightgray) 6px;
     padding-left: 10px;
-  }
-
-  & dl {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 16px;
-
-    & dt {
-      width: var(--col3);
-      font-weight: 700;
-      margin-bottom: 16px;
-      font-size: var(--text-small);
-    }
-
-    & dd {
-      margin-bottom: 16px;
-      margin-left: 0;
-      width: var(--col5);
-    }
   }
 }

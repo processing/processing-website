@@ -6,8 +6,9 @@ import unique from 'array-unique';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useLocalization } from 'gatsby-theme-i18n';
 
-import Layout from '../components/Layout';
 import CategoryNav from '../components/CategoryNav';
+import Donate from '../components/character/Donate';
+import Layout from '../components/Layout';
 import Searchbar from '../components/Searchbar';
 
 import { filterItems } from '../utils/data';
@@ -42,6 +43,7 @@ const Libraries = ({ data }) => {
   return (
     <Layout>
       <div className={classnames(grid.grid, css.root)}>
+        <Donate />
         <h1 className={grid.col}>Libraries</h1>
         <h3 className={grid.col}>
           Extend Processing beyond graphics and images into audio, video, and
