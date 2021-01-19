@@ -6,15 +6,18 @@ export const titleCase = (slug) => _titleCase(slug.replace(/_/g, ' '));
 //filters the references/examples based on a search text
 export const filterItems = (items, searchTerm) => {
   if (searchTerm && searchTerm !== '') {
+    const searchTerms = searchTerm.split(' ');
     return items.filter((item) => {
       try {
         return item.childJson
-          ? JSON.stringify(Object.values(item.childJson))
-              .toLowerCase()
-              .includes(searchTerm.toLowerCase())
-          : JSON.stringify(item)
-              .toLowerCase()
-              .includes(searchTerm.toLowerCase());
+          ? searchTerms.every((term) =>
+              JSON.stringify(Object.values(item.childJson))
+                .toLowerCase()
+                .includes(term.toLowerCase())
+            )
+          : searchTerms.every((term) =>
+              JSON.stringify(item).toLowerCase().includes(term.toLowerCase())
+            );
       } catch (e) {
         return false;
       }
