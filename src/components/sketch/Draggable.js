@@ -67,7 +67,7 @@ const Draggable = (props) => {
       {labelBefore && <span>{labelBefore}</span>}
       <span
         role={'button'}
-        ariaLabel={'change position'}
+        aria-label={'change position'}
         tabIndex={tabIndex}
         className={css.parent}
         onMouseDown={registerMove}

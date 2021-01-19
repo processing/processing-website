@@ -65,7 +65,7 @@ const ColorDraggable = (props) => {
       <span className={css.arrowLeft}></span>
       <span
         role={'button'}
-        ariaLabel={'change color value'}
+        aria-label={'change color value'}
         tabIndex={tabIndex}
         className={dragging ? css.dragging : css.root}
         onMouseDown={registerMove}
