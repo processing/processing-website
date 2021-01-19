@@ -72,10 +72,6 @@ export const organizeExampleItems = (items, images) => {
     const image = images
       ? images.find((img) => img.relativeDirectory === item.relativeDirectory)
       : '';
-    images &&
-      console.log(
-        images.find((img) => img.relativeDirectory === item.relativeDirectory)
-      );
     const category = item.relativeDirectory.split('/')[0];
     const subcategory = item.relativeDirectory.split('/')[1];
 

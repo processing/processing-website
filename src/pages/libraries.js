@@ -41,7 +41,6 @@ const Libraries = ({ data }) => {
   ]);
 
   let categories = unique(filtered.flatMap((con) => con.categories));
-  console.log(libraries);
 
   return (
     <Layout>
