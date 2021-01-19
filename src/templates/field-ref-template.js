@@ -120,7 +120,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
                 {entry.related.map((rel, key) => (
                   <li key={key + 'rel'}>
                     <a href={rel + '.html'} className={grid.col4}>
-                      {rel.replace(/_/g, '()')}
+                      <code>{rel.replace(/_/g, '()')}</code>
                     </a>
                   </li>
                 ))}

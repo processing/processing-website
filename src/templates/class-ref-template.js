@@ -19,6 +19,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
   const examples = data.pdes.edges;
   const ref = useHighlight();
   const intl = useIntl();
+  console.log(data);
 
   if (data.json !== null) {
     entry = data.json.childJson;
@@ -104,7 +105,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               </ul>
             </div>
           )}
-          {entry.constructors && entry.constructors.length>0 && (
+          {entry.constructors && entry.constructors.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
               <h4 className={classnames(grid.col1, grid.push1)}>
                 {intl.formatMessage({ id: 'constructors' })}
@@ -121,7 +122,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               </ul>
             </div>
           )}
-          {entry.classFields && entry.classFields.length>0 && (
+          {entry.classFields && entry.classFields.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
               <h4 className={classnames(grid.col1, grid.push1)}>
                 {intl.formatMessage({ id: 'fields' })}
@@ -140,7 +141,28 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               </ul>
             </div>
           )}
-          {entry.methods && (
+          {entry.parameters && entry.parameters.length > 0 && (
+            <div className={classnames(grid.grid, css.section)}>
+              <h4 className={classnames(grid.col1, grid.push1)}>
+                {intl.formatMessage({ id: 'parameters' })}
+              </h4>
+              <ul className={classnames(grid.col5, grid.nest, css.list)}>
+                {entry.parameters.map((param, key) => {
+                  return (
+                    <li key={'param' + key} className={css.param}>
+                      <span className={classnames(grid.col1, css.paramName)}>
+                        {param.name}
+                      </span>
+                      <span className={grid.col5}>
+                        {param.type + ': ' + param.description}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )}
+          {entry.methods && entry.methods.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
               <h4 className={classnames(grid.col1, grid.push1)}>
                 {intl.formatMessage({ id: 'methods' })}
@@ -162,7 +184,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               </ul>
             </div>
           )}
-          {entry.related && (
+          {entry.related && entry.related.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
               <h4 className={classnames(grid.col1, grid.push1)}>
                 {intl.formatMessage({ id: 'related' })}
@@ -177,7 +199,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
                 {entry.related.map((rel, key) => (
                   <li key={key + 'rel'}>
                     <a href={rel + '.html'} className={grid.col1}>
-                      {rel.replace(/_/g, '()')}
+                      <code>{rel.replace(/_/g, '()')}</code>
                     </a>
                   </li>
                 ))}
@@ -206,7 +228,10 @@ export default ClassRefTemplate;
 
 export const query = graphql`
   query($name: String!, $assetsName: String!, $locale: String!) {
-    json: file(fields: { name: { eq: $name }, lang: { eq: $locale } }) {
+    json: file(
+      fields: { name: { eq: $name }, lang: { eq: $locale } }
+      sourceInstanceName: { eq: "json" }
+    ) {
       childJson {
         name
         description
@@ -222,6 +247,10 @@ export const query = graphql`
           desc
         }
         related
+        parameters {
+          name
+          description
+        }
       }
     }
     images: allFile(
