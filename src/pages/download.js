@@ -3,8 +3,8 @@ import classnames from 'classnames';
 import { graphql, useStaticQuery } from 'gatsby';
 import { DateTime } from 'luxon';
 
+import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
-
 import LogoProcessing from '../images/logo-processing.svg';
 
 import {
@@ -134,6 +134,7 @@ const Download = () => {
   return (
     <Layout>
       <div className={classnames(grid.grid, css.root)}>
+        <Donate />
         <h1 className={grid.col}>Download</h1>
         <h3 className={classnames(grid.col, css.textBlock)}>
           Processing is available for Linux, Mac OS X, and Windows. Select your
@@ -283,13 +284,7 @@ const Download = () => {
           <a href={'https://android.processing.org/'}>{`Android Mode`}</a>,
           Processing 3 or later is required.
         </p>
-        <div
-          className={classnames(
-            grid.nest,
-            grid.col,
-            grid.push1,
-            css.sectionList
-          )}>
+        <div className={classnames(grid.nest, grid.col, css.sectionList)}>
           <h3 className={grid.col}>Pre-Releases</h3>
           <ul className={css.releaseList}>
             {selectedPreReleases.map((preRelease) => (

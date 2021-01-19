@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 
 import { useLocalization } from 'gatsby-theme-i18n';
 
+import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
 
 import css from '../styles/pages/libraries.module.css';
@@ -28,31 +29,28 @@ const Tools = ({ data }) => {
   return (
     <Layout>
       <div className={classnames(grid.grid, css.root)}>
+        <Donate />
         <h1 className={grid.col}>Tools</h1>
-        <h3 className={classnames(grid.col)}>
+        <h3 className={grid.col}>
           The following tools are included with the Processing software. Select
           the tool you want to use from the Tools menu of the Processing
           Environment. These tools are open source; the code is distributed with
           Processing.
         </h3>
-        <ul
-          className={classnames(
-            css.list,
-            grid.col,
-            grid.push1andhalf,
-            grid.nest
-          )}>
-          {tools.nodes.map((node, key) => {
-            return (
-              <li key={key} className={css.subgrid}>
-                <h3 className={classnames(grid.col, css.librarieName)}>
-                  {node.childJson.name}
-                </h3>
-                <p className={grid.col}>{node.childJson.description}</p>
-              </li>
-            );
-          })}
-        </ul>
+        <div className={css.listWrapper}>
+          <ul className={css.list}>
+            {tools.nodes.map((node, key) => {
+              return (
+                <li key={key} className={css.subgrid}>
+                  <h3 className={classnames(grid.col, css.librarieName)}>
+                    {node.childJson.name}
+                  </h3>
+                  <p className={grid.col}>{node.childJson.description}</p>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
         <h1 className={grid.col}>Contributions</h1>
         <h3 className={grid.col}>
           Contributed tools must be downloaded individually. Select{' '}

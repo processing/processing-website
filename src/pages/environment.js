@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
+import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
 import TableOfContents from '../components/TableOfContents';
 
@@ -18,12 +19,11 @@ const Environment = ({ data }) => {
 
   return (
     <Layout>
-      <div className={grid.grid} ref={ref}>
+      <div className={classnames(grid.grid, css.root)} ref={ref}>
+        <Donate />
         <TableOfContents items={tableOfContents.items} />
-        <h1 className={classnames(grid.push2, grid.col, grid.pull1, css.title)}>
-          {frontmatter.title}
-        </h1>
-        <div className={classnames(grid.col, grid.push2, css.content)}>
+        <h1 className={grid.col}>{frontmatter.title}</h1>
+        <div className={classnames(grid.col, css.content)}>
           <MDXRenderer>{body}</MDXRenderer>
         </div>
       </div>

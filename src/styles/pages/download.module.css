@@ -1,23 +1,23 @@
 .root {
   & h1 {
-    flex-basis: cols(8, 8);
+    flex-basis: var(--col8);
   }
   & h3 {
-    flex-basis: cols(4, 8);
-    margin-right: cols(4, 8);
+    flex-basis: var(--col4);
+    margin-right: var(--col4);
   }
   & p {
-    flex-basis: cols(5, 8);
+    flex-basis: var(--col5);
   }
 }
 
 .latestVersionsWrapper {
   display: inline-flex;
-  flex-basis: cols(4, 8);
+  flex-basis: var(--col4);
 }
 
 .latestVersion {
-  flex-basis: cols(4, 8);
+  flex-basis: var(--col4);
   color: var(--processing-blue-dark);
   &:hover {
     color: var(--processing-blue-light);
@@ -36,18 +36,18 @@
 }
 
 .latestLabel {
-  flex-basis: cols(8, 8);
+  flex-basis: var(--col8);
 }
 
 .section {
   margin: var(--gutter-double) 0;
-  flex-basis: cols(6, 8);
+  flex-basis: var(--col6);
   align-items: self-start;
 }
 
 .logo {
   text-align: center;
-  flex-basis: cols(2, 8);
+  flex-basis: var(--col2);
   & svg {
     width: 100px;
     height: 100px;
@@ -76,9 +76,10 @@
 }
 
 .sectionList {
-  flex-basis: cols(6, 8);
-  margin-left: cols(1, 8) !important;
+  flex-basis: var(--col7);
+  margin-left: var(--col1) !important;
   padding: var(--gutter) 0 var(--gutter-double);
+  padding-left: var(--col1);
 }
 
 .releaseList {
@@ -101,7 +102,7 @@
 .releaseDate {
   font-size: var(--text-xsmall);
   color: var(--darkgray);
-  flex-basis: cols(2, 8);
+  flex-basis: var(--col2);
 }
 
 .assetLabel {

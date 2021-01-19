@@ -20,27 +20,17 @@ const TutorialTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <div className={grid.grid} ref={ref}>
+      <div className={classnames(grid.grid, css.root)} ref={ref}>
         {mdx !== null ? (
           <Fragment>
             <TableOfContents items={tableOfContents.items} />
-            <h1
-              className={classnames(
-                grid.push2,
-                grid.col,
-                grid.pull1,
-                css.title
-              )}>
-              {frontmatter.title}
-            </h1>
+            <h1 className={grid.col}>{frontmatter.title}</h1>
             <span
               className={classnames(
-                grid.push2,
                 grid.col,
-                grid.pull1,
                 css.author
               )}>{`By ${frontmatter.author}`}</span>
-            <div className={classnames(grid.col, grid.push2, css.content)}>
+            <div className={classnames(grid.col, css.content)}>
               <MDXRenderer>{body}</MDXRenderer>
             </div>
           </Fragment>

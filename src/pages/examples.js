@@ -2,8 +2,9 @@ import React, { useMemo, useState } from 'react';
 import { graphql } from 'gatsby';
 import classnames from 'classnames';
 
-import Layout from '../components/Layout';
+import Donate from '../components/character/Donate';
 import ExamplesList from '../components/ExamplesList';
+import Layout from '../components/Layout';
 import Searchbar from '../components/Searchbar';
 
 import { filterItems, organizeExampleItems } from '../utils/data';
@@ -27,8 +28,9 @@ const Examples = ({ data, location }) => {
   return (
     <Layout>
       <div className={classnames(grid.grid, css.root)}>
-        <h1 className={grid.col8}>Examples</h1>
-        <h3 className={grid.col3}>
+        <Donate />
+        <h1 className={grid.col}>Examples</h1>
+        <h3 className={grid.col}>
           Short, prototypical programs exploring the basics of programming with
           Processing.
         </h3>
@@ -37,7 +39,6 @@ const Examples = ({ data, location }) => {
           onChange={(e) => setSearchTerm(e.target.value)}
           onClick={(e) => setSearchTerm('')}
           searchTerm={searchTerm}
-          className={grid.push1}
           large
         />
         <ExamplesList data={tree} />

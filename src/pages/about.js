@@ -3,9 +3,10 @@ import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
+import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
 
-import css from '../styles/pages/page.module.css';
+import css from '../styles/pages/about.module.css';
 import grid from '../styles/grid.module.css';
 
 const About = ({ data }) => {
@@ -13,15 +14,14 @@ const About = ({ data }) => {
   const { frontmatter, body } = mdx;
   return (
     <Layout>
-      <div className={grid.grid}>
-        <h1 className={classnames(grid.col, grid.pull3)}>
-          {frontmatter.title}
-        </h1>
+      <div className={classnames(grid.grid, css.root)}>
+        <Donate />
+        <h1 className={grid.col}>{frontmatter.title}</h1>
         <h3 className={grid.col}>
           A short introduction to the Processing software and projects from the
           community.
         </h3>
-        <div className={classnames(grid.col, grid.push1, css.content)}>
+        <div className={classnames(grid.col, css.content)}>
           <MDXRenderer>{body}</MDXRenderer>
         </div>
       </div>

@@ -31,7 +31,7 @@
 }
 
 .show {
-  width: calc(var(--column-width) * 1.5);
+  width: calc(var(--column) * 1.5);
   padding-left: var(--gutter-double);
   padding-bottom: 64px;
 }

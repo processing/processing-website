@@ -1,10 +1,10 @@
 .root {
   & > h1 {
-    flex-basis: cols(8, 8);
+    flex-basis: var(--col8);
   }
 
   & > h3 {
-    flex-basis: cols(5, 8);
+    flex-basis: var(--col5);
   }
 }
 
@@ -25,17 +25,17 @@
 }
 
 .listItem {
-  flex-basis: cols(4, 8);
+  flex-basis: var(--col4);
   margin-bottom: var(--margin);
 }
 
 .cover {
-  flex-basis: cols(2, 8);
+  flex-basis: var(--col2);
   width: 100%;
 }
 
 .book {
-  flex-basis: cols(6, 8);
+  flex-basis: var(--col6);
 }
 
 .details {

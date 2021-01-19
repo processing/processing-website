@@ -122,6 +122,10 @@ button {
   background-color: inherit;
 }
 
+img {
+  width: 100%;
+}
+
 /* IDE Styling for code blocks using highlight.js */
 
 .hljs-comment {

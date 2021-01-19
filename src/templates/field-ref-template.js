@@ -52,19 +52,19 @@ const FieldRefTemplate = ({ data, pageContext }) => {
           )}
           ref={ref}>
           <div className={classnames(css.section, grid.grid)}>
-            <h4 className={classnames(grid.col1, grid.push1)}>Name</h4>
-            <h3 className={classnames(grid.col4, grid.pull1)}>{entry.name}</h3>
+            <h4 className={grid.col}>Name</h4>
+            <h3 className={grid.col}>{entry.name}</h3>
           </div>
           <div className={classnames(css.section, grid.grid)}>
-            <h4 className={classnames(grid.col1, grid.push1)}>Description</h4>
-            <p className={classnames(grid.col4, grid.pull1, css.description)}>
+            <h4 className={grid.col}>Description</h4>
+            <p className={classnames(grid.col, css.description)}>
               {entry.description}
             </p>
           </div>
           {examples.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
-              <h4 className={classnames(grid.col1, grid.push1)}>Examples</h4>
-              <ul className={classnames(grid.col6, grid.nest, css.list)}>
+              <h4 className={grid.col}>Examples</h4>
+              <ul className={classnames(grid.col, grid.nest, css.list)}>
                 {examples.map((ex, key) => {
                   const img = images.filter(
                     (img) => img.node.name === ex.node.name
@@ -93,7 +93,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
           )}
           {entry.related.length > 0 && (
             <div className={classnames(css.section, grid.grid)}>
-              <h4 className={classnames(grid.col, grid.push1)}>Related</h4>
+              <h4 className={grid.col}>Related</h4>
               <ul className={classnames(grid.col, grid.nest, css.list)}>
                 {entry.related.map((rel, key) => (
                   <li key={key + 'rel'}>

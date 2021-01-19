@@ -20,7 +20,7 @@ const Tabs = ({ pdes }) => {
   };
 
   return (
-    <div className={classnames(css.root, grid.push1)}>
+    <div className={css.root}>
       <ul className={grid.col}>
         {pdes.map((pde, key) => (
           <li

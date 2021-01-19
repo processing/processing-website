@@ -53,18 +53,18 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           )}
           ref={ref}>
           <div className={classnames(css.section, grid.grid)}>
-            <h4 className={classnames(grid.col, grid.push1)}>Name</h4>
-            <h3 className={classnames(grid.col, grid.pull1)}>{entry.name}</h3>
+            <h4 className={grid.col}>Name</h4>
+            <h3 className={grid.col}>{entry.name}</h3>
           </div>
           <div className={classnames(css.section, grid.grid)}>
-            <h4 className={classnames(grid.col, grid.push1)}>Description</h4>
+            <h4 className={grid.col}>Description</h4>
             <p
-              className={classnames(grid.col, grid.pull1, css.description)}
+              className={classnames(grid.col, css.description)}
               dangerouslySetInnerHTML={{ __html: entry.description }}></p>
           </div>
           {examples.length > 0 && (
             <div className={classnames(css.section, grid.grid)}>
-              <h4 className={classnames(grid.col, grid.push1)}>Examples</h4>
+              <h4 className={grid.col}>Examples</h4>
               <ul className={classnames(grid.col, grid.nest, css.list)}>
                 {examples.map((ex, key) => {
                   const img = images.filter(
@@ -93,7 +93,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
             </div>
           )}
           <div className={classnames(css.section, grid.grid)}>
-            <h4 className={classnames(grid.col, grid.push1)}>Syntax</h4>
+            <h4 className={grid.col}>Syntax</h4>
             <ul className={classnames(grid.col, css.list)}>
               {entry.syntax.map((syn, key) => {
                 return (
@@ -106,7 +106,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           </div>
           {entry.parameters.length > 0 && (
             <div className={classnames(css.section, grid.grid)}>
-              <h4 className={classnames(grid.col, grid.push1)}>Parameters</h4>
+              <h4 className={grid.col}>Parameters</h4>
               <ul className={classnames(grid.col, grid.nest, css.list)}>
                 {entry.parameters.map((param, key) => {
                   return (
@@ -125,25 +125,19 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           )}
           {entry.returns && (
             <div className={classnames(css.section, grid.grid)}>
-              <h4 className={classnames(grid.col1, grid.push1)}>Return</h4>
-              <p className={classnames(grid.col4, grid.pull1)}>
+              <h4 className={grid.col}>Return</h4>
+              <p className={grid.col}>
                 <code>{entry.returns}</code>
               </p>
             </div>
           )}
           {entry.inUse && (
             <div className={classnames(css.section, grid.grid)}>
-              <h4 className={classnames(grid.col1, grid.push1)}>In use</h4>
-              <ul
-                className={classnames(
-                  grid.col4,
-                  grid.nest,
-                  css.list,
-                  grid.pull1
-                )}>
+              <h4 className={grid.col}>In use</h4>
+              <ul className={classnames(grid.col, grid.nest, css.list)}>
                 {entry.inUse.map((inUse, key) => (
                   <li key={key + 'rel'}>
-                    <a href={inUse + '.html'} className={grid.col4}>
+                    <a href={inUse + '.html'} className={grid.col}>
                       {inUse.replace(/_/g, '()')}
                     </a>
                   </li>
@@ -153,11 +147,11 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           )}
           {entry.related.length > 0 && (
             <div className={classnames(css.section, grid.grid)}>
-              <h4 className={classnames(grid.col1, grid.push1)}>Related</h4>
-              <ul className={classnames(grid.col4, grid.nest, css.list)}>
+              <h4 className={grid.col}>Related</h4>
+              <ul className={classnames(grid.col, grid.nest, css.list)}>
                 {entry.related.map((rel, key) => (
                   <li key={key + 'rel'}>
-                    <a href={rel + '.html'} className={grid.col4}>
+                    <a href={rel + '.html'} className={grid.col}>
                       {rel.replace(/_/g, '()')}
                     </a>
                   </li>
@@ -166,7 +160,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
             </div>
           )}
           <div className={classnames(css.section, grid.grid)}>
-            <div className={classnames(grid.col6, grid.push1, css.license)}>
+            <div className={classnames(grid.col, css.license)}>
               <a
                 rel="license"
                 href="http://creativecommons.org/licenses/by-nc-sa/4.0/">

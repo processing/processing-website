@@ -21,20 +21,31 @@
 
 .logo {
   height: 100%;
-  flex-basis: cols(2, 8);
+  flex-basis: var(--col2);
   font-size: var(--text-xlarge);
   transition: 0.2s ease-in-out;
   & svg {
     width: 68px;
     height: 100%;
   }
+  @media (--small), (--medium) {
+    text-align: center;
+    font-size: var(--text-large);
+    & svg {
+      width: 34px;
+      height: 100%;
+    }
+  }
 }
 
 .menu {
   display: flex;
-  flex-basis: cols(4, 8);
+  flex-basis: var(--col4);
   list-style: none;
   justify-content: space-between;
+  @media (--small), (--medium) {
+    flex-basis: var(--col5);
+  }
 }
 
 .item {
@@ -46,6 +57,9 @@
   color: var(--processing-blue-dark);
   font-size: var(--text-medium);
   font-weight: 700;
+  @media (--small), (--medium) {
+    font-size: var(--text-regular);
+  }
 }
 
 .item:hover {
@@ -66,6 +80,9 @@
   font-size: var(--text-regular);
   font-weight: 700;
   word-break: keep-all;
+  @media (--small), (--medium) {
+    font-size: var(--text-regular);
+  }
 }
 
 .subitem:hover {

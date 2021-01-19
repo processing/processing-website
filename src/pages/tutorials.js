@@ -15,14 +15,14 @@ const Tutorials = ({ data }) => {
 
   return (
     <Layout>
-      <div className={grid.grid}>
+      <div className={classnames(grid.grid, css.root)}>
         <h1 className={grid.col}>Tutorials</h1>
         <div className={classnames(grid.nest, css.section)}>
           <h2 className={grid.col}>Video Tutorials</h2>
-          <h3 className={classnames(grid.col, grid.pull5)}>
+          <h3 className={grid.col}>
             Links to videos that cover the Processing basics.
           </h3>
-          <span className={classnames(grid.col, grid.pull4, css.sectionIntro)}>
+          <span className={classnames(grid.col, css.sectionIntro)}>
             {`Large collections of instructional Processing videos are online from `}
             <a href="https://www.youtube.com/user/shiffman/playlists">
               Daniel Shiffman
@@ -71,7 +71,7 @@ const Tutorials = ({ data }) => {
         </div>
         <div className={classnames(grid.nest, css.section)}>
           <h2 className={grid.col}>Text Tutorials</h2>
-          <h3 className={classnames(grid.col, grid.pull5)}>
+          <h3 className={grid.col}>
             A collection of step-by-step lessons covering beginner,
             intermediate, and advanced topics.
           </h3>
