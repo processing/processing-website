@@ -56,6 +56,7 @@
     "title-case": "^3.0.2"
   },
   "devDependencies": {
+    "@designsystemsinternational/static": "^3.3.10",
     "prettier": "2.0.5"
   },
   "keywords": [
@@ -68,7 +69,8 @@
     "build": "gatsby build",
     "start": "gatsby serve",
     "clean": "gatsby clean",
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\""
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
+    "deploy": "static deploy"
   },
   "browserslist": "last 2 versions, >0.5%",
   "repository": {
@@ -77,5 +79,12 @@
   },
   "bugs": {
     "url": "https://github.com/designsystemsinternational/processing-website/issues"
+  },
+  "static": {
+    "profile": "dsi",
+    "region": "us-east-1",
+    "buildDir": "public",
+    "shouldRunBuildCommand": true,
+    "buildCommand": "npm run build"
   }
 }
