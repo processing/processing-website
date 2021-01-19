@@ -1,11 +1,13 @@
 import React from 'react';
 import classnames from 'classnames';
-
 import { useIntl } from 'react-intl';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 
 import Layout from '../components/Layout';
 import Button from '../components/Button';
 import Sketch from '../components/sketch/Sketch';
+
+import { useWindowSize } from '../utils/hooks';
 
 import css from '../styles/pages/index.module.css';
 import grid from '../styles/grid.module.css';
@@ -42,19 +44,16 @@ export const items = [
 const IndexPage = ({ data }) => {
   //localization - will be needed
   const intl = useIntl();
+
+  const winSize = useWindowSize();
   return (
     <Layout>
       <div className={css.hero}>
-        <div className={classnames(grid.grid, grid.nest)}>
-          <div className={classnames(grid.col4, css.intro, grid.nest)}>
-            <h1 className={classnames(grid.col2, grid.pull1)}>
-              {' '}
-              {intl.formatMessage({ id: 'introTitle' })}{' '}
-            </h1>
-            <p className={grid.col4}>
-              {intl.formatMessage({ id: 'introText' })}
-            </p>
-            <div className={classnames(grid.col4, css.buttons)}>
+        <div className={classnames(grid.grid)}>
+          <div className={classnames(grid.col, css.intro)}>
+            <h1>{intl.formatMessage({ id: 'introTitle' })}</h1>
+            <p>{intl.formatMessage({ id: 'introText' })}</p>
+            <div className={css.buttons}>
               <Button to={'/download'} className={css.button}>
                 {intl.formatMessage({ id: 'download' })}
               </Button>
@@ -66,19 +65,19 @@ const IndexPage = ({ data }) => {
               </Button>
             </div>
           </div>
+          {winSize.width > 1080 && <Sketch />}
         </div>
       </div>
-      <Sketch />
-      <div className={classnames(grid.grid, css.bottom)}>
-        <div className={classnames(grid.col2, grid.nest)}>
-          <ul className={classnames(grid.col2, css.list)}>
+      <div className={classnames(grid.grid)}>
+        <div className={classnames(grid.col, grid.nest, css.sidebar)}>
+          <ul className={classnames(grid.col, css.list)}>
             {items.map((item, key) => (
               <li key={key}>
                 <a href={item.link}>{intl.formatMessage({ id: item.name })}</a>
               </li>
             ))}
           </ul>
-          <div className={classnames(grid.col2, css.contact)}>
+          <div className={classnames(grid.col, css.contact)}>
             <h4>{intl.formatMessage({ id: 'contact' })}</h4>
             <span>{intl.formatMessage({ id: 'contactText' })}</span>
             <a href="mailto: foundation@processing.org">
@@ -86,41 +85,37 @@ const IndexPage = ({ data }) => {
             </a>
           </div>
         </div>
-        <div className={classnames(grid.col6, grid.nest)}>
-          <h3 className={classnames(grid.col6, grid.nest)}>
-            {intl.formatMessage({ id: 'examples' })}
-          </h3>
-          <ul className={classnames(grid.col6, grid.nest, css.examples)}>
-            <li className={classnames(grid.col2, grid.nest)}>
+        <div className={classnames(grid.col, grid.nest, css.examples)}>
+          <h3 className={grid.col}>{intl.formatMessage({ id: 'examples' })}</h3>
+          <ul>
+            <li className={classnames(css.example, grid.col)}>
               <img src={data.conway.childImageSharp.fluid.src} alt="" />
               <a href="#">Conway's game of life</a>
-              <p className={classnames(grid.col2, grid.nest)}>
-                in Topic examples
-              </p>
+              <br />
+              <p>in Topic examples</p>
             </li>
-            <li className={classnames(grid.col2, grid.nest)}>
+            <li className={classnames(css.example, grid.col)}>
               <img src={data.flocking.childImageSharp.fluid.src} alt="" />
               <a href="#">Flocking</a>
-              <p className={classnames(grid.col2, grid.nest)}>
-                in Topic examples
-              </p>
+              <br />
+              <p>in Topic examples</p>
             </li>
-            <li className={classnames(grid.col2, grid.nest)}>
+            <li className={classnames(css.example, grid.col)}>
               <img src={data.radial.childImageSharp.fluid.src} alt="" />
               <a href="#">Radial gradient</a>
-              <p className={classnames(grid.col2, grid.nest)}>
-                in Basic examples
-              </p>
+              <br />
+              <p>in Basic examples</p>
             </li>
           </ul>
+          <h4 className={grid.col}>
+            <Link to="/examples">More Examples</Link>
+          </h4>
         </div>
       </div>
       <div className={classnames(grid.grid, css.bottom)}>
-        <div className={classnames(grid.col4, grid.nest)}>
-          <h3 className={grid.col4}>
-            {intl.formatMessage({ id: 'gettingStarted' })}
-          </h3>
-          <div className={grid.col4}>
+        <div className={classnames(grid.col, css.half)}>
+          <h3>{intl.formatMessage({ id: 'gettingStarted' })}</h3>
+          <div>
             <p
               dangerouslySetInnerHTML={{
                 __html: intl.formatMessage({ id: 'gettingStartedP1' }),
@@ -134,10 +129,8 @@ const IndexPage = ({ data }) => {
                 __html: intl.formatMessage({ id: 'gettingStartedP3' }),
               }}></p>
           </div>
-          <h3 className={grid.col4}>
-            {intl.formatMessage({ id: 'contribute' })}
-          </h3>
-          <div className={grid.col4}>
+          <h3>{intl.formatMessage({ id: 'contribute' })}</h3>
+          <div>
             <p>{intl.formatMessage({ id: 'contributeP1' })}</p>
             <p>
               {intl.formatMessage({ id: 'contributeP2' })}
@@ -156,28 +149,28 @@ const IndexPage = ({ data }) => {
             </p>
           </div>
         </div>
-        <div className={classnames(grid.col4, grid.nest)}>
-          <h3 className={grid.col4}>{intl.formatMessage({ id: 'news' })}</h3>
-          <div className={grid.col4}>
-            <img src={data.news.childImageSharp.fluid.src} alt="" />
-          </div>
-          <p className={classnames(grid.col4, css.news)}>
-            {intl.formatMessage({ id: 'newsText' })}
-          </p>
-          <h3 className={grid.col4}>
-            {intl.formatMessage({ id: 'partners' })}
-          </h3>
-          <ul className={classnames(grid.col6, grid.nest, css.logos)}>
-            <li className={grid.col1}>
-              <img src={data.fathom.childImageSharp.fluid.src} alt="" />
+        <div className={classnames(grid.col, css.half)}>
+          <h3>{intl.formatMessage({ id: 'news' })}</h3>
+          <img src={data.news.childImageSharp.fluid.src} alt="" />
+          <p>{intl.formatMessage({ id: 'newsText' })}</p>
+          <h3>{intl.formatMessage({ id: 'partners' })}</h3>
+          <ul className={css.logos}>
+            <li>
+              <div>
+                <img src={data.fathom.childImageSharp.fluid.src} alt="" />
+              </div>
               <p>Fathom</p>
             </li>
-            <li className={grid.col1}>
-              <img src={data.itp.childImageSharp.fluid.src} alt="" />
+            <li>
+              <div>
+                <img src={data.itp.childImageSharp.fluid.src} alt="" />
+              </div>
               <p>ITP NYU</p>
             </li>
-            <li className={grid.col1}>
-              <img src={data.ucla.childImageSharp.fluid.src} alt="" />
+            <li>
+              <div>
+                <img src={data.ucla.childImageSharp.fluid.src} alt="" />
+              </div>
               <p>UCLA Design Media Arts</p>
             </li>
           </ul>

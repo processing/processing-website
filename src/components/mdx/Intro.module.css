@@ -4,6 +4,6 @@
     color: var(--processing-blue-dark);
     font-size: var(--text-large);
     font-weight: 700;
-    font-family: "Space Grotesk";
+    font-family: var(--font);
   }
 }

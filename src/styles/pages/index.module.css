@@ -4,7 +4,7 @@
     white 20%,
     var(--processing-blue-gradient)
   );
-  position: absolute;
+  position: relative;
   height: 600px;
 
   & h1 {
@@ -14,8 +14,15 @@
 }
 
 .intro {
-  margin: var(--margin) 0;
+  flex-basis: var(--col4);
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-top: 100px;
+  @media (--medium) {
+    flex-basis: var(--col8);
+  }
 }
 
 .button {
@@ -31,6 +38,11 @@
   margin: var(--margin) 0;
 }
 
+.sidebar {
+  flex-basis: var(--col2);
+  align-content: flex-start;
+}
+
 .list,
 .contact {
   border-left: solid 7px var(--lightgray);
@@ -44,12 +56,12 @@
   font-size: var(--text-small);
 }
 
-.sketch {
-  position: relative;
+.examples {
+  flex-basis: var(--col6);
 }
 
-.bottom {
-  margin: var(--margin);
+.sketch {
+  position: relative;
 }
 
 .placeholder {
@@ -62,13 +74,20 @@
   height: 100px;
 }
 
-.examples {
+.examples ul {
   display: inline-flex;
-
   & a {
     margin-top: var(--gutter-half);
     color: var(--processing-blue-mid);
   }
+}
+
+.example {
+  flex-basis: var(--col2);
+}
+
+.half {
+  flex-basis: var(--col4);
 }
 
 .logos {
@@ -77,7 +96,18 @@
 
   & p {
     margin-top: var(--gutter-half);
+    font-size: var(--text-small);
     text-align: center;
+  }
+
+  & li {
+    flex-basis: var(--col2);
+    margin-right: var(--gutter);
+    & div {
+      height: 60px;
+      width: 60px;
+      margin: 0 auto;
+    }
   }
 }
 

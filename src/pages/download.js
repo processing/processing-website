@@ -4,7 +4,9 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { DateTime } from 'luxon';
 import { useIntl } from 'react-intl';
 
+import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
+import LogoProcessing from '../images/logo-processing.svg';
 
 import {
   selectedReleasesNumbers,
@@ -133,23 +135,25 @@ const Download = () => {
 
   return (
     <Layout>
-      <div className={grid.grid}>
-        <h1 className={classnames(grid.col5, grid.pull3)}>Download</h1>
-        <h3 className={classnames(grid.col4, grid.pull4)}>
+      <div className={classnames(grid.grid, css.root)}>
+        <Donate />
+        <h1 className={grid.col}>Download</h1>
+        <h3 className={classnames(grid.col, css.textBlock)}>
           {intl.formatMessage({ id: 'downloadIntro' })}
         </h3>
         <div
-          className={classnames(grid.nest, grid.col6, grid.grid, css.section)}>
-          <div className={classnames(css.logo, grid.col2)}>
+          className={classnames(grid.nest, grid.col, grid.grid, css.section)}>
+          <div className={classnames(css.logo, grid.col)}>
+            <LogoProcessing />
             <h2>{latestRelease.name.split(' ').shift()}</h2>
           </div>
           <div
             className={classnames(
               css.latestVersionsWrapper,
               grid.nest,
-              grid.col3
+              grid.col
             )}>
-            <div className={grid.col3}>
+            <div className={classnames(grid.col, css.latestLabel)}>
               <span className={css.latestNumber}>
                 {latestRelease.name.split(' ').pop()}
               </span>
@@ -159,21 +163,25 @@ const Download = () => {
                 ).toLocaleString(DateTime.DATE_FULL)})`}
               </span>
             </div>
-            {latestAssets.map((v, i) => (
-              <div
-                key={`version-${i}`}
-                className={classnames(grid.col1, css.latestVersion)}>
-                <a href={v.url}>
-                  <span className={css.latestVersionName}>{v.label}</span>
-                  {v.bit && (
-                    <span
-                      className={css.latestVersionBit}>{`${v.bit}-bit`}</span>
-                  )}
-                </a>
-              </div>
-            ))}
+            {latestAssets
+              .sort((a, b) =>
+                a.label > b.label ? -1 : a.label < b.label ? 1 : 0
+              )
+              .map((v, i) => (
+                <div
+                  key={`version-${i}`}
+                  className={classnames(grid.col, css.latestVersion)}>
+                  <a href={v.url}>
+                    <span className={css.latestVersionName}>{v.label}</span>
+                    {v.bit && (
+                      <span
+                        className={css.latestVersionBit}>{`${v.bit}-bit`}</span>
+                    )}
+                  </a>
+                </div>
+              ))}
           </div>
-          <ul className={classnames(grid.col1, css.links)}>
+          <ul className={classnames(grid.col, css.links)}>
             <li>
               <a href={'https://github.com/processing'}>Github</a>
             </li>
@@ -198,26 +206,25 @@ const Download = () => {
             </li>
           </ul>
         </div>
-        <p className={grid.col5}>
+        <p className={grid.col}>
           {intl.formatMessage({ id: 'downloadChanges' })}
         </p>
-        <div
-          className={classnames(grid.nest, grid.col6, grid.push1, css.section)}>
-          <h3 className={grid.col6}>{intl.formatMessage({ id: 'stable' })}</h3>
+        <div className={classnames(grid.nest, grid.col, css.sectionList)}>
+          <h3 className={grid.col}>{intl.formatMessage({ id: 'stable' })}</h3>
           <ul className={css.releaseList}>
             {selectedReleases.map((release) => (
               <li className={css.releaseRow} key={release.name}>
-                <span className={grid.col1}>
+                <span className={classnames(grid.col, css.releaseName)}>
                   {release.name.replace('Processing ', '')}
                 </span>
                 <span
                   className={classnames(
-                    grid.col1,
+                    grid.col,
                     css.releaseDate
                   )}>{` (${DateTime.fromISO(release.publishedAt).toLocaleString(
                   DateTime.DATE_FULL
                 )})`}</span>
-                <span className={grid.col4}>
+                <span className={grid.col}>
                   {release.releaseAssets.edges
                     .sort((a, b) =>
                       a.node.name > b.node.name
@@ -246,29 +253,29 @@ const Download = () => {
           </ul>
         </div>
         <p
-          className={grid.col5}
+          className={grid.col}
           dangerouslySetInnerHTML={{
             __html: intl.formatMessage({ id: 'earlierReleases' }),
-          }}></p>
-        <div
-          className={classnames(grid.nest, grid.col6, grid.push1, css.section)}>
-          <h3 className={grid.col6}>
+          }}
+        />
+        <div className={classnames(grid.nest, grid.col, css.sectionList)}>
+          <h3 className={grid.col}>
             {intl.formatMessage({ id: 'preReleases' })}
           </h3>
           <ul className={css.releaseList}>
             {selectedPreReleases.map((preRelease) => (
               <li className={css.releaseRow} key={preRelease.name}>
-                <span className={grid.col1}>
+                <span className={classnames(grid.col, css.releaseName)}>
                   {preRelease.name.replace('Processing ', '')}
                 </span>
                 <span
                   className={classnames(
-                    grid.col1,
+                    grid.col,
                     css.releaseDate
                   )}>{` (${DateTime.fromISO(
                   preRelease.publishedAt
                 ).toLocaleString(DateTime.DATE_FULL)})`}</span>
-                <span className={grid.col4}>
+                <span className={grid.col}>
                   {preRelease.releaseAssets.edges
                     .sort((a, b) =>
                       a.node.name > b.node.name

@@ -23,10 +23,8 @@ const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
   return (
     <Layout>
       {data.mdx !== null ? (
-        <div className={grid.grid}>
-          <div className={classnames(grid.col6, css.intro)}>
-            <MDXRenderer>{data.mdx.body}</MDXRenderer>
-          </div>
+        <div className={classnames(grid.grid, css.root)}>
+          <MDXRenderer>{data.mdx.body}</MDXRenderer>
           {tree && <ReferenceList data={tree} library={libraryName} />}
         </div>
       ) : (

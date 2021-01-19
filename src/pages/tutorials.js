@@ -17,16 +17,16 @@ const Tutorials = ({ data }) => {
 
   return (
     <Layout>
-      <div className={grid.grid}>
-        <h1 className={grid.col8}>{intl.formatMessage({ id: 'tutorials' })}</h1>
+      <div className={classnames(grid.grid, css.root)}>
+        <h1 className={grid.col}>{intl.formatMessage({ id: 'tutorials' })}</h1>
         <div className={classnames(grid.nest, css.section)}>
-          <h2 className={grid.col8}>
+          <h2 className={grid.col}>
             {intl.formatMessage({ id: 'videoTutorials' })}
           </h2>
-          <h3 className={classnames(grid.col3, grid.pull5)}>
+          <h3 className={grid.col}>
             {intl.formatMessage({ id: 'videoTutorialsIntro' })}
           </h3>
-          <span className={classnames(grid.col4, grid.pull4, css.sectionIntro)}>
+          <span className={classnames(grid.col, css.sectionIntro)}>
             {`Large collections of instructional Processing videos are online from `}
             <a href="https://www.youtube.com/user/shiffman/playlists">
               Daniel Shiffman
@@ -52,7 +52,7 @@ const Tutorials = ({ data }) => {
                 coverImage,
               } = node.childMdx.frontmatter;
               return (
-                <li key={k} className={grid.col2}>
+                <li key={k} className={grid.col}>
                   <a href={link} language={locale}>
                     {coverImage && (
                       <div className={css.cover}>
@@ -76,10 +76,10 @@ const Tutorials = ({ data }) => {
           </ul>
         </div>
         <div className={classnames(grid.nest, css.section)}>
-          <h2 className={grid.col8}>
+          <h2 className={grid.col}>
             {intl.formatMessage({ id: 'textTutorials' })}
           </h2>
-          <h3 className={classnames(grid.col3, grid.pull5)}>
+          <h3 className={grid.col}>
             {intl.formatMessage({ id: 'textTutorialsIntro' })}
           </h3>
           <ul className={css.tutorialList}>
@@ -93,7 +93,7 @@ const Tutorials = ({ data }) => {
                 coverImage,
               } = node.childMdx.frontmatter;
               return (
-                <li key={k} className={grid.col2}>
+                <li key={k} className={grid.col}>
                   <Link to={slug} language={locale}>
                     {coverImage && (
                       <div className={css.cover}>

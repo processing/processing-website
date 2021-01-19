@@ -5,6 +5,7 @@ import { useIntl } from 'react-intl';
 
 import { useLocalization } from 'gatsby-theme-i18n';
 
+import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
 
 import css from '../styles/pages/libraries.module.css';
@@ -29,46 +30,38 @@ const Tools = ({ data }) => {
 
   return (
     <Layout>
-      <div className={grid.grid}>
-        <h1 className={grid.col8}>{intl.formatMessage({ id: 'tools' })}</h1>
-        <h4 className={classnames(grid.col6)}>
-          {intl.formatMessage({ id: 'toolsIntro' })}
-        </h4>
-        <ul
-          className={classnames(
-            css.list,
-            grid.col5andhalf,
-            grid.push1andhalf,
-            grid.nest
-          )}>
-          {tools.nodes.map((node, key) => {
-            return (
-              <li key={key} className={css.subgrid}>
-                <h3 className={grid.col1andhalf}>{node.childJson.name}</h3>
-                <p className={grid.col4}>{node.childJson.description}</p>
-              </li>
-            );
-          })}
-        </ul>
-        <h1 className={grid.col8}>
+      <div className={classnames(grid.grid, css.root)}>
+        <Donate />
+        <h1 className={grid.col}>{intl.formatMessage({ id: 'tools' })}</h1>
+        <h3 className={grid.col}>{intl.formatMessage({ id: 'toolsIntro' })}</h3>
+        <div className={css.listWrapper}>
+          <ul className={css.list}>
+            {tools.nodes.map((node, key) => {
+              return (
+                <li key={key} className={css.subgrid}>
+                  <h3 className={classnames(grid.col, css.librarieName)}>
+                    {node.childJson.name}
+                  </h3>
+                  <p className={grid.col}>{node.childJson.description}</p>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <h1 className={grid.col}>
           {intl.formatMessage({ id: 'contributions' })}
         </h1>
-        <h4
-          className={grid.col6}
+        <h3
+          className={grid.col}
           dangerouslySetInnerHTML={{
             __html: intl.formatMessage({ id: 'contributedTools' }),
-          }}></h4>
+          }}
+        />
         <ul className={css.contributionsList}>
           {contributions.map((node, key) => {
             return (
-              <li
-                key={key + 'c'}
-                className={classnames(css.subgrid, grid.col5andhalf)}>
-                <div
-                  className={classnames(
-                    grid.col2andhalf,
-                    css.contributionData
-                  )}>
+              <li key={key + 'c'} className={classnames(css.subgrid, grid.col)}>
+                <div className={classnames(grid.col, css.contributionData)}>
                   <h3>
                     <a href={node.url} target="_blank" rel="noreferrer">
                       {node.name}
@@ -79,12 +72,13 @@ const Tools = ({ data }) => {
                       key={key + 'a'}
                       href={author.link}
                       target="_blank"
-                      rel="noreferrer">
+                      rel="noreferrer"
+                      className={css.contributionAuthor}>
                       {author.name}
                     </a>
                   ))}
                 </div>
-                <div className={grid.col4}>
+                <div className={classnames(grid.col, css.contributionBrief)}>
                   <p>{node.sentence}</p>
                 </div>
               </li>

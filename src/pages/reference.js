@@ -2,11 +2,11 @@ import React, { useState, useMemo } from 'react';
 import { graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
 
-import Layout from '../components/Layout';
 import CategoryNav from '../components/CategoryNav';
+import Donate from '../components/character/Donate';
+import Layout from '../components/Layout';
 import ReferenceList from '../components/ReferenceList';
 import Searchbar from '../components/Searchbar';
-import Donate from '../components/character/Donate';
 
 import { filterItems, organizeReferenceItems } from '../utils/data';
 
@@ -28,15 +28,13 @@ const Reference = ({ data }) => {
   return (
     <Layout>
       <div className={grid.grid}>
-        <h1 className={grid.col8}>
-          {intl.formatMessage({ id: 'references' })}
-        </h1>
+        <h1 className={grid.col}>{intl.formatMessage({ id: 'references' })}</h1>
         <Donate />
         <Searchbar
           placeholder={intl.formatMessage({ id: 'referencesSearch' })}
           onChange={(e) => setSearchTerm(e.target.value)}
+          onClick={(e) => setSearchTerm('')}
           searchTerm={searchTerm}
-          className={grid.push1}
           large
         />
         <CategoryNav categories={categories} />

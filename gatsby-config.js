@@ -69,9 +69,14 @@ module.exports = {
           require('postcss-normalize'),
           require(`postcss-preset-env`)({
             stage: 0,
-            importFrom: [`${__dirname}/src/styles/variables.css`],
           }),
-          require(`postcss-calc`),
+          require('postcss-custom-properties')({
+            importFrom: './src/styles/variables.css',
+          }),
+          require('postcss-calc')(),
+          require(`postcss-functions`)({
+            functions: require('./src/styles/functions'),
+          }),
         ],
       },
     },
@@ -163,6 +168,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
+        icon: `src/images/logo-processing.svg`,
       },
     },
     {

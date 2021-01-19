@@ -3,7 +3,7 @@ main {
   position: relative;
   flex: 1;
   transition: 0.2s ease-in-out;
-  padding-bottom: var(--margin);
+  margin-bottom: calc(60px + var(--margin));
 }
 
 .root {

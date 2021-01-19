@@ -1,11 +1,23 @@
 .root {
+  & h1 {
+    flex-basis: var(--col8);
+  }
+  & h3 {
+    flex-basis: var(--col4);
+    margin-right: var(--col4);
+  }
+  & p {
+    flex-basis: var(--col5);
+  }
 }
 
 .latestVersionsWrapper {
   display: inline-flex;
+  flex-basis: var(--col4);
 }
 
 .latestVersion {
+  flex-basis: var(--col4);
   color: var(--processing-blue-dark);
   &:hover {
     color: var(--processing-blue-light);
@@ -23,11 +35,23 @@
   }
 }
 
+.latestLabel {
+  flex-basis: var(--col8);
+}
+
 .section {
   margin: var(--gutter-double) 0;
+  flex-basis: var(--col6);
+  align-items: self-start;
 }
 
 .logo {
+  text-align: center;
+  flex-basis: var(--col2);
+  & svg {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .latestNumber {
@@ -51,6 +75,18 @@
   color: var(--black);
 }
 
+.sectionList {
+  flex-basis: var(--col7);
+  margin-left: var(--col1) !important;
+  padding: var(--gutter) 0 var(--gutter-double);
+  padding-left: var(--col1);
+}
+
+.releaseList {
+  width: 100%;
+  font-size: var(--text-small);
+}
+
 .releaseRow {
   display: flex;
   padding-bottom: 6px;
@@ -59,14 +95,14 @@
   }
 }
 
+.releaseName {
+  flex-basis: cols(1, 8);
+}
+
 .releaseDate {
   font-size: var(--text-xsmall);
   color: var(--darkgray);
-}
-
-.releaseList {
-  width: 100%;
-  font-size: var(--text-small);
+  flex-basis: var(--col2);
 }
 
 .assetLabel {

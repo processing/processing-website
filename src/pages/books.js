@@ -17,11 +17,9 @@ const Books = ({ data }) => {
 
   return (
     <Layout>
-      <div className={grid.grid}>
-        <h1 className={grid.col8}>Books</h1>
-        <h3 className={grid.col3}>
-          {intl.formatMessage({ id: 'booksIntro' })}
-        </h3>
+      <div className={classnames(grid.grid, css.root)}>
+        <h1 className={grid.col}>Books</h1>
+        <h3 className={grid.col}>{intl.formatMessage({ id: 'booksIntro' })}</h3>
         <div className={classnames(grid.nest, css.section)}>
           <ul className={css.booksList}>
             {data.books.nodes.map((node, k) => {
@@ -40,14 +38,14 @@ const Books = ({ data }) => {
                 link: ord.split('-')[1],
               }));
               return (
-                <li key={k} className={classnames(grid.col4, css.listItem)}>
+                <li key={k} className={classnames(grid.col, css.listItem)}>
                   <div className={grid.col1}>
                     <Img
-                      className={classnames(grid.col1, css.cover)}
+                      className={classnames(grid.col, css.cover)}
                       fixed={img[0].childImageSharp.fixed}
                     />
                   </div>
-                  <div className={grid.col3}>
+                  <div className={classnames(grid.col, css.book)}>
                     <h3>{title}</h3>
                     <p className={css.details}>{details}</p>
                     <p className={css.author}>

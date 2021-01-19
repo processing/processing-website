@@ -10,11 +10,13 @@
 
   & h2 {
     font-size: var(--text-xlarge);
+    flex-basis: var(--col8);
     text-transform: capitalize;
   }
 
   & ul {
     position: relative;
+    flex-basis: var(--col8);
   }
 
   & ul div:last-child {
@@ -33,7 +35,8 @@
     margin: 0;
     border-right: solid 3px var(--lightgray);
     height: 100%;
-    padding: 0 calc(var(--gutter) + var(--gutter-half));
+    flex-basis: cols(1.5, 8);
+    padding: 0 var(--gutter-double);
     font-size: var(--text-large);
     text-transform: capitalize;
   }
@@ -75,8 +78,13 @@
 }
 
 .itemName {
+  flex-basis: var(--col2);
   font-family: var(--font-mono);
   font-size: var(--text-medium);
   text-decoration: none;
   color: var(--processing-blue-dark);
+}
+
+.itemBrief {
+  flex-basis: var(--col5);
 }
