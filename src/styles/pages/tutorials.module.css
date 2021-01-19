@@ -1,17 +1,24 @@
+.root {
+  & > h1 {
+    padding-right: var(--col3);
+  }
+}
+
 .section {
   flex-wrap: wrap;
 
-  & h2 {
+  & > h2 {
     margin-bottom: 0px;
   }
 
-  & h3 {
-    margin-bottom: var(--gutter);
+  & > h3 {
+    padding-right: var(--col5);
   }
 }
 
 .sectionIntro {
-  flex-basis: cols(4, 8);
+  flex-basis: cols(8, 8);
+  padding-right: var(--col4);
   & a {
     text-decoration: underline;
   }

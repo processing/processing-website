@@ -86,8 +86,9 @@
 .large {
   margin-top: var(--margin);
   margin-bottom: var(--margin);
+  flex-basis: cols(7, 8);
+  padding-left: var(--col1);
   color: var(--gray);
-  flex-basis: cols(6, 8);
 
   & input {
     border-bottom: 3px solid var(--gray);

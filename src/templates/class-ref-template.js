@@ -51,19 +51,19 @@ const ClassRefTemplate = ({ data, pageContext }) => {
           )}
           ref={ref}>
           <div className={classnames(grid.grid, css.section)}>
-            <h4 className={classnames(grid.col, grid.push1)}>Class name</h4>
-            <h3 className={classnames(grid.col, grid.pull1)}>{entry.name}</h3>
+            <h4 className={grid.col}>Class name</h4>
+            <h3 className={grid.col}>{entry.name}</h3>
           </div>
           <div className={classnames(grid.grid, css.section)}>
-            <h4 className={classnames(grid.col, grid.push1)}>Description</h4>
+            <h4 className={grid.col}>Description</h4>
             <p
-              className={classnames(grid.col, grid.pull1, css.description)}
+              className={classnames(grid.col, css.description)}
               dangerouslySetInnerHTML={{ __html: entry.description }}
             />
           </div>
           {examples.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
-              <h4 className={classnames(grid.col, grid.push1)}>Examples</h4>
+              <h4 className={grid.col}>Examples</h4>
               <ul className={classnames(grid.col, grid.nest, css.list)}>
                 {examples.map((ex, key) => {
                   const img = images.filter(
@@ -93,7 +93,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
           )}
           {constructors.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
-              <h4 className={classnames(grid.col, grid.push1)}>Constructors</h4>
+              <h4 className={grid.col}>Constructors</h4>
               <ul className={classnames(grid.col, css.list)}>
                 {constructors.map((cons, key) => {
                   return (
@@ -107,7 +107,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
           )}
           {classFields.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
-              <h4 className={classnames(grid.col, grid.push1)}>Fields</h4>
+              <h4 className={grid.col}>Fields</h4>
               <ul className={classnames(grid.col, grid.nest, css.list)}>
                 {classFields.map((field, key) => {
                   return (
@@ -129,7 +129,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
           )}
           {methods.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
-              <h4 className={classnames(grid.col, grid.push1)}>Methods</h4>
+              <h4 className={grid.col}>Methods</h4>
               <ul className={classnames(grid.col, grid.nest, css.list)}>
                 {methods.map((method, key) => {
                   return (
@@ -151,11 +151,11 @@ const ClassRefTemplate = ({ data, pageContext }) => {
           )}
           {related.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
-              <h4 className={classnames(grid.col, grid.push1)}>Related</h4>
+              <h4 className={grid.col}>Related</h4>
               <ul className={classnames(grid.col, grid.nest, css.list)}>
                 {related.map((rel, key) => (
                   <li key={key + 'rel'}>
-                    <a href={rel + '.html'} className={grid.col1}>
+                    <a href={rel + '.html'} className={grid.col}>
                       {rel.replace(/_/g, '()')}
                     </a>
                   </li>

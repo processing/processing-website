@@ -1,12 +1,19 @@
 .root {
-  flex-basis: cols(6, 8);
+  flex-basis: cols(8, 8);
   margin-top: var(--margin);
 
-  & ul {
+  & > ul {
     position: relative;
     display: flex;
+    padding-left: var(--push1);
+    padding-right: var(--push1);
     align-items: center;
     list-style: none;
+  }
+
+  & > div {
+    padding-left: var(--push1);
+    padding-right: var(--push1);
   }
 }
 

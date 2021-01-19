@@ -43,38 +43,34 @@ const Libraries = ({ data }) => {
     <Layout>
       <div className={classnames(grid.grid, css.root)}>
         <h1 className={grid.col}>Libraries</h1>
-        <h3 className={classnames(grid.col, grid.pull4)}>
+        <h3 className={grid.col}>
           Extend Processing beyond graphics and images into audio, video, and
           communication with other devices.
         </h3>
-        <ul
-          className={classnames(
-            css.list,
-            grid.col,
-            grid.nest,
-            grid.push1andhalf
-          )}>
-          {libraries.nodes.map((node, key) => {
-            return (
-              <li key={key} className={css.subgrid}>
-                <Link
-                  className={css.librarieName}
-                  to={'/reference/libraries/' + node.name + '/index.html'}
-                  language={locale}>
-                  <h3 className={grid.col}>{node.name}</h3>
-                </Link>
-                <p className={grid.col}>Description</p>
-              </li>
-            );
-          })}
-        </ul>
+        <div className={css.listWrapper}>
+          <ul className={css.list}>
+            {libraries.nodes.map((node, key) => {
+              return (
+                <li key={key} className={css.subgrid}>
+                  <Link
+                    className={classnames(css.librarieName, grid.col)}
+                    to={'/reference/libraries/' + node.name + '/index.html'}
+                    language={locale}>
+                    <h3>{node.name}</h3>
+                  </Link>
+                  <p className={grid.col}>Description</p>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
         <h1 className={grid.col}>Contributions</h1>
         <Searchbar
           placeholder={'Search in the Contributions...'}
           onChange={(e) => setSearchTerm(e.target.value)}
           onClick={(e) => setSearchTerm('')}
           searchTerm={searchTerm}
-          className={grid.push1}
+          className={css.searchbar}
           large
         />
         <CategoryNav categories={categories} />

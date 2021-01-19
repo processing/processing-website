@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import grid from '../styles/grid.module.css';
 import css from './SearchBarSmall.module.css';
 
-const SearchBarSmall = ({ className }) => {
+const SearchBarSmall = ({ className, size }) => {
   const [searchTerm, setSearchTerm] = useState();
 
   const onChangeHandler = (e) => {
@@ -21,21 +21,27 @@ const SearchBarSmall = ({ className }) => {
     }
   };
 
+  console.log(size);
+
   return (
     <div
       className={classnames(
         { [className]: className },
-        grid.col1andhalf,
-        grid.pushHalf,
+        grid.col,
+        { [grid.pushHalf]: size === 'large' },
         css.root
       )}>
-      <input
-        className={css.input}
-        type="text"
-        value={searchTerm || ''}
-        onChange={onChangeHandler}
-        onKeyDown={onKeyEnter}
-      />
+      {size === 'large' ? (
+        <input
+          className={css.input}
+          type="text"
+          value={searchTerm || ''}
+          onChange={onChangeHandler}
+          onKeyDown={onKeyEnter}
+        />
+      ) : (
+        <div className={classnames(css.searchButton, grid.col)}></div>
+      )}
     </div>
   );
 };

@@ -20,15 +20,18 @@
 .section {
   margin-bottom: var(--vertical-gutter);
   & > h4 {
-    flex-basis: cols(1, 8);
+    flex-basis: cols(2, 8);
+    padding-left: var(--push1);
   }
   & > h3 {
     flex-basis: cols(4, 8);
+    padding-right: var(--push1);
   }
 }
 
 .description {
-  flex-basis: cols(4, 8);
+  flex-basis: cols(5, 8);
+  padding-right: var(--push1);
   font-family: "Vollkorn", serif;
   font-size: var(--text-medium);
   line-height: 1.6em;
@@ -84,9 +87,12 @@
 }
 
 .license {
-  font-size: var(--text-small);
   display: flex;
   flex-direction: row;
+  flex-basis: cols(7, 8);
+  padding-left: var(--push1);
+  font-size: var(--text-small);
+
   & p {
     margin-left: var(--gutter);
   }

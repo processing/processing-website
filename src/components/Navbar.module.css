@@ -28,6 +28,14 @@
     width: 68px;
     height: 100%;
   }
+  @media (--small), (--medium) {
+    text-align: center;
+    font-size: var(--text-large);
+    & svg {
+      width: 34px;
+      height: 100%;
+    }
+  }
 }
 
 .menu {
@@ -35,6 +43,9 @@
   flex-basis: cols(4, 8);
   list-style: none;
   justify-content: space-between;
+  @media (--small), (--medium) {
+    flex-basis: cols(5, 8);
+  }
 }
 
 .item {
@@ -46,6 +57,9 @@
   color: var(--processing-blue-dark);
   font-size: var(--text-medium);
   font-weight: 700;
+  @media (--small), (--medium) {
+    font-size: var(--text-regular);
+  }
 }
 
 .item:hover {
@@ -66,6 +80,9 @@
   font-size: var(--text-regular);
   font-weight: 700;
   word-break: keep-all;
+  @media (--small), (--medium) {
+    font-size: var(--text-regular);
+  }
 }
 
 .subitem:hover {

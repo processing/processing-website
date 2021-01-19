@@ -14,9 +14,7 @@ const About = ({ data }) => {
   return (
     <Layout>
       <div className={grid.grid}>
-        <h1 className={classnames(grid.col, grid.pull3)}>
-          {frontmatter.title}
-        </h1>
+        <h1 className={grid.col}>{frontmatter.title}</h1>
         <h3 className={grid.col}>
           A short introduction to the Processing software and projects from the
           community.

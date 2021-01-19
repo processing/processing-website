@@ -2,13 +2,14 @@ import React from 'react';
 import classnames from 'classnames';
 
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
+import { useLocalization } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
 
 import Layout from '../components/Layout';
 import Button from '../components/Button';
 import Sketch from '../components/sketch/Sketch';
 
-import { useLocalization } from 'gatsby-theme-i18n';
+import { useWindowSize } from '../utils/hooks';
 
 import css from '../styles/pages/index.module.css';
 import grid from '../styles/grid.module.css';
@@ -44,6 +45,7 @@ const IndexPage = ({ data }) => {
   //localization - will be needed
   const intl = useIntl();
   const { locale } = useLocalization();
+  const winSize = useWindowSize();
   return (
     <Layout>
       <div className={css.hero}>
@@ -70,7 +72,7 @@ const IndexPage = ({ data }) => {
               </Button>
             </div>
           </div>
-          <Sketch />
+          {winSize.width > 1080 && <Sketch />}
         </div>
       </div>
       <div className={classnames(grid.grid)}>
@@ -172,9 +174,7 @@ const IndexPage = ({ data }) => {
         </div>
         <div className={classnames(grid.col, css.half)}>
           <h3>News</h3>
-          <div>
-            <img src={data.news.childImageSharp.fluid.src} alt="" />
-          </div>
+          <img src={data.news.childImageSharp.fluid.src} alt="" />
           <p>
             The Processing Community Day (PCD) initiative is evolving. For 2020,
             we will offer a mentorship program for PCD Worldwide Organizers who

@@ -1,10 +1,16 @@
 .root {
-  & h1 {
+  & > h1 {
     flex-basis: cols(8, 8);
   }
-  & h3 {
-    flex-basis: cols(5, 8);
+  & > h3 {
+    flex-basis: cols(8, 8);
+    padding-right: var(--col3);
   }
+}
+
+.listWrapper {
+  padding-left: var(--push1andHalf);
+  flex-basis: var(--col8);
 }
 
 .list {
@@ -57,6 +63,7 @@
 .contributionsList {
   list-style: none;
   margin: var(--margin) 0;
+  padding-left: var(--push1andHalf);
   flex-basis: cols(8, 8);
 
   & h2 {
@@ -123,4 +130,8 @@
 
 .contributionBrief {
   flex-basis: cols(6, 8);
+}
+
+.searchbar {
+  padding-left: var(--push1);
 }

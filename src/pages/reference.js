@@ -33,7 +33,6 @@ const Reference = ({ data, location }) => {
           onChange={(e) => setSearchTerm(e.target.value)}
           onClick={(e) => setSearchTerm('')}
           searchTerm={searchTerm}
-          className={grid.push1}
           large
         />
         <CategoryNav categories={categories} />

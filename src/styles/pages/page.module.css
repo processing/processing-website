@@ -100,7 +100,7 @@
     margin-left: 16px;
 
     & dt {
-      width: calc(var(--column-width) * 1.5 - 16px - var(--gutter) * 2);
+      width: calc(var(--column) * 1.5 - 16px - var(--gutter) * 2);
       font-weight: 700;
       margin-right: calc(var(--gutter) * 2);
       margin-bottom: 16px;
@@ -110,7 +110,7 @@
     & dd {
       margin-bottom: 16px;
       margin-left: 0;
-      width: calc(var(--column-width) * 3.5 - var(--gutter) * 2);
+      width: calc(var(--column) * 3.5 - var(--gutter) * 2);
     }
   }
 }

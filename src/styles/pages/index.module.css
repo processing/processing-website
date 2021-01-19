@@ -20,6 +20,9 @@
   flex-direction: column;
   height: 100%;
   padding-top: 100px;
+  @media (--medium) {
+    flex-basis: cols(8, 8);
+  }
 }
 
 .button {

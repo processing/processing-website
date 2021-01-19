@@ -6,11 +6,11 @@ import Navbar from './Navbar';
 
 import css from './Header.module.css';
 
-const Header = ({ siteTitle, scrolled }) => {
+const Header = ({ siteTitle, scrolled, size }) => {
   return (
     <header className={css.root}>
-      <Topbar show={!scrolled} />
-      <Navbar siteTitle={siteTitle} show={!scrolled} />
+      <Topbar show={!scrolled} size={size} />
+      <Navbar siteTitle={siteTitle} show={!scrolled} size={size} />
     </header>
   );
 };

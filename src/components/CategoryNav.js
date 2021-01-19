@@ -7,7 +7,7 @@ import grid from '../styles/grid.module.css';
 
 const CategoryNav = ({ categories }) => {
   return (
-    <div className={classnames(css.root, grid.nest, grid.push1)}>
+    <div className={classnames(css.root, grid.nest)}>
       <ul className={grid.col}>
         {categories.map((category, key) => (
           <li key={`category-navitem-${key}`}>

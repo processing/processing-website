@@ -7,6 +7,8 @@ import { MDXProvider } from '@mdx-js/react';
 import Header from './Header';
 import Footer from './Footer';
 
+import { useWindowSize } from '../utils/hooks';
+
 import FixedImage from './mdx/FixedImage';
 import Intro from './mdx/Intro';
 import HighlightBlock from './mdx/HighlightBlock';
@@ -22,6 +24,7 @@ export const LayoutContext = React.createContext({ headerHeight: 0 });
 
 const Layout = ({ children }) => {
   const [headerScrolled, setScrolled] = useState(false);
+  const winSize = useWindowSize();
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -59,12 +62,16 @@ const Layout = ({ children }) => {
     img: (props) => <img {...props}></img>,
   };
 
+  const size =
+    winSize.width < 720 ? 'small' : winSize.width < 1080 ? 'medium' : 'large';
+
   return (
     <div className={css.root}>
       <LayoutContext.Provider value={{ headerScrolled }}>
         <Header
           siteTitle={data.site.siteMetadata.title}
           scrolled={headerScrolled}
+          size={size}
         />
         <main className={classnames({ [css.headerScrolled]: headerScrolled })}>
           <MDXProvider components={shortcodes}>{children}</MDXProvider>

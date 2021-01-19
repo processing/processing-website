@@ -47,7 +47,7 @@ export const items = [
   },
 ];
 
-const Navbar = ({ siteTitle, show }) => {
+const Navbar = ({ siteTitle, size, show }) => {
   const location = useLocation();
 
   const { locale } = useLocalization();
@@ -79,7 +79,7 @@ const Navbar = ({ siteTitle, show }) => {
           {siteTitle}
         </Link>
       </h1>
-      <ul className={classnames(grid.col, css.menu)}>
+      <ul className={classnames(css.menu)}>
         {items.map((item, key) => (
           <li
             key={key}
@@ -120,7 +120,7 @@ const Navbar = ({ siteTitle, show }) => {
           </li>
         ))}
       </ul>
-      <SearchBarSmall />
+      <SearchBarSmall size={size} />
     </div>
   );
 };

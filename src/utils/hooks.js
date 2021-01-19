@@ -50,3 +50,33 @@ export const useHeight = (scrolled) => {
 
   return [ref, height];
 };
+
+const getWin = (useWindow) => {
+  let width = 1280;
+  let height = 800;
+
+  if (useWindow) {
+    width = window.innerWidth;
+    height = window.innerHeight;
+  }
+
+  return { width, height };
+};
+
+// A hook that returns the window size, throttled by requestAnimationFrame
+export const useWindowSize = () => {
+  const [win, setWin] = useState(getWin);
+  const handleResize = () => {
+    window.requestAnimationFrame(() => {
+      setWin(getWin(true));
+    });
+  };
+  useEffect(() => {
+    handleResize();
+    window.addEventListener('resize', handleResize, false);
+    return () => {
+      window.removeEventListener('resize', handleResize, false);
+    };
+  }, []);
+  return win;
+};
