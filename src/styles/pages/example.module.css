@@ -35,3 +35,11 @@
   width: 150px;
   padding-right: var(--gutter);
 }
+
+.cover {
+  margin-bottom: var(--gutter);
+  margin-top: var(--gutter);
+  & img {
+    width: 100%;
+  }
+}

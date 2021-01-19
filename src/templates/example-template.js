@@ -17,6 +17,8 @@ const ExampleTemplate = ({ data, pageContext }) => {
 
   let json, subcategory;
 
+  console.log(data.image);
+
   if (data.json !== null) {
     json = data.json;
     subcategory = data.json.relativeDirectory.split('/')[1];
@@ -77,6 +79,13 @@ const ExampleTemplate = ({ data, pageContext }) => {
                     </li>
                   ))}
               </ul>
+            </div>
+            <div className={classnames(grid.col6, grid.push1, css.cover)}>
+              <img
+                src={data.image.nodes[0].childImageSharp.fluid.srcWebp}
+                srcSet={data.image.nodes[0].childImageSharp.fluid.srcSetWebp}
+                alt=""
+              />
             </div>
             <Tabs pdes={orderedPdes} />
             <div className={classnames(grid.col4, grid.push1)}>
@@ -172,6 +181,26 @@ export const query = graphql`
         childJson {
           name
           title
+        }
+      }
+    }
+    image: allFile(
+      filter: {
+        relativeDirectory: { eq: $relDir }
+        extension: { regex: "/(png)/" }
+      }
+    ) {
+      nodes {
+        name
+        relativeDirectory
+        childImageSharp {
+          fluid(maxWidth: 162) {
+            base64
+            srcWebp
+            srcSetWebp
+            originalImg
+            originalName
+          }
         }
       }
     }
