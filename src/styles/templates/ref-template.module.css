@@ -19,9 +19,19 @@
 
 .section {
   margin-bottom: var(--vertical-gutter);
+  & > h4 {
+    flex-basis: var(--col2);
+    padding-left: var(--push1);
+  }
+  & > h3 {
+    flex-basis: var(--col4);
+    padding-right: var(--push1);
+  }
 }
 
 .description {
+  flex-basis: var(--col5);
+  padding-right: var(--push1);
   font-family: "Vollkorn", serif;
   font-size: var(--text-medium);
   line-height: 1.6em;
@@ -38,6 +48,7 @@
 }
 
 .list {
+  flex-basis: var(--col6);
   & li {
     display: flex;
     width: 100%;
@@ -54,7 +65,16 @@
 }
 
 .example {
+  flex-basis: var(--col8);
   margin-bottom: var(--vertical-gutter);
+}
+
+.exampleCode {
+  flex-basis: var(--col6);
+}
+
+.exampleImage {
+  flex-basis: var(--col2);
 }
 
 .param {
@@ -67,10 +87,21 @@
 }
 
 .license {
-  font-size: var(--text-small);
   display: flex;
   flex-direction: row;
+  flex-basis: var(--col7);
+  padding-left: var(--push1);
+  font-size: var(--text-small);
+
   & p {
     margin-left: var(--gutter);
   }
+}
+
+.item {
+  flex-basis: var(--col2);
+}
+
+.itemDescription {
+  flex-basis: var(--col5);
 }

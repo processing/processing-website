@@ -60,6 +60,7 @@ const Sidebar = (props) => {
           <Searchbar
             placeholder={'Search'}
             onChange={(e) => setSearchTerm(e.target.value)}
+            onClick={(e) => setSearchTerm('')}
             searchTerm={searchTerm}
           />
           <div className={css.listWrapper}>

@@ -4,9 +4,10 @@ import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { useIntl } from 'react-intl';
 
+import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
 
-import css from '../styles/pages/page.module.css';
+import css from '../styles/pages/about.module.css';
 import grid from '../styles/grid.module.css';
 
 const About = ({ data }) => {
@@ -15,14 +16,11 @@ const About = ({ data }) => {
   const intl = useIntl();
   return (
     <Layout>
-      <div className={grid.grid}>
-        <h1 className={classnames(grid.col5, grid.pull3)}>
-          {frontmatter.title}
-        </h1>
-        <h3 className={grid.col3}>
-          {intl.formatMessage({ id: 'aboutIntro' })}
-        </h3>
-        <div className={classnames(grid.col5, grid.push1, css.content)}>
+      <div className={classnames(grid.grid, css.root)}>
+        <Donate />
+        <h1 className={grid.col}>{frontmatter.title}</h1>
+        <h3 className={grid.col}>{intl.formatMessage({ id: 'aboutIntro' })}</h3>
+        <div className={classnames(grid.col, css.content)}>
           <MDXRenderer>{body}</MDXRenderer>
         </div>
       </div>

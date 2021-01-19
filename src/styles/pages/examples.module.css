@@ -1,0 +1,9 @@
+.root {
+  & > h1 {
+    flex-basis: var(--col8);
+  }
+  & > h3 {
+    flex-basis: var(--col8);
+    padding-right: var(--col5);
+  }
+}

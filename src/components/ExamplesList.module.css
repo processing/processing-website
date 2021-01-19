@@ -6,6 +6,10 @@
     text-transform: capitalize;
   }
 
+  & ul {
+    flex-basis: var(--col8);
+  }
+
   & ul div:last-child {
     margin-bottom: 0;
   }
@@ -15,6 +19,12 @@
   margin-bottom: var(--gutter-double);
 }
 
+.intro {
+  flex-basis: var(--col8);
+  padding-right: var(--col4);
+  margin-bottom: calc(var(--margin) / 2);
+}
+
 .subcategory {
   display: flex;
   flex-direction: row;
@@ -22,6 +32,7 @@
   width: 100%;
 
   & h3 {
+    flex-basis: var(--col1);
     margin: 0;
     border-right: solid 6px var(--lightgray);
     font-size: var(--text-medium);
@@ -32,10 +43,14 @@
     font-size: var(--text-regular);
     font-weight: 400;
   }
-}
 
-.intro {
-  margin-bottom: calc(var(--margin) / 2);
+  & ul {
+    flex-basis: var(--col8);
+  }
+
+  & ul > li {
+    flex-basis: var(--col1);
+  }
 }
 
 .cover {

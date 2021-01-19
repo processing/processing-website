@@ -1,5 +1,7 @@
 .root {
   margin-bottom: calc(var(--margin) * 2);
+  flex-basis: var(--col7);
+  padding-left: var(--col1);
   justify-content: center;
 
   & ul {

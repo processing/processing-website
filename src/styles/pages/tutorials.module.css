@@ -1,27 +1,37 @@
+.root {
+  & > h1 {
+    padding-right: var(--col3);
+  }
+}
+
 .section {
   flex-wrap: wrap;
 
-  & h2 {
+  & > h2 {
     margin-bottom: 0px;
   }
 
-  & h3 {
-    margin-bottom: var(--gutter);
+  & > h3 {
+    padding-right: var(--col5);
   }
 }
 
 .sectionIntro {
+  flex-basis: var(--col8);
+  padding-right: var(--col4);
   & a {
     text-decoration: underline;
   }
 }
 
 .tutorialList {
+  width: 100%;
   margin: var(--gutter-double) 0;
   display: flex;
   list-style: none;
 
   & li {
+    flex-basis: var(--col2);
     display: flex;
     flex-direction: column;
 

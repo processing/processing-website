@@ -66,6 +66,7 @@
   font-weight: 400;
   font-weight: normal;
   font-style: normal;
+  font-variant-ligatures: none;
   src: url("./fonts/Space Mono/SpaceMono-Regular.woff2") format("woff2"),
     url("./fonts/Space Mono/SpaceMono-Regular.ttf") format("ttf");
 }
@@ -75,6 +76,7 @@
   font-weight: 400;
   font-weight: normal;
   font-style: italic;
+  font-variant-ligatures: none;
   src: url("./fonts/Space Mono/SpaceMono-Italic.woff2") format("woff2"),
     url("./fonts/Space Mono/SpaceMono-Italic.ttf") format("ttf");
 }
@@ -84,6 +86,7 @@
   font-weight: 700;
   font-weight: bold;
   font-style: normal;
+  font-variant-ligatures: none;
   src: url("./fonts/Space Mono/SpaceMono-Bold.woff2") format("woff2"),
     url("./fonts/Space Mono/SpaceMono-Bold.ttf") format("ttf");
 }
@@ -93,6 +96,7 @@
   font-weight: 700;
   font-weight: bold;
   font-style: italic;
+  font-variant-ligatures: none;
   src: url("./fonts/Space Mono/SpaceMono-BoldItalic.woff2") format("woff2"),
     url("./fonts/Space Mono/SpaceMono-BoldItalic.ttf") format("ttf");
 }

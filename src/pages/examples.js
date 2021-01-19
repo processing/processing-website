@@ -1,14 +1,17 @@
 import React, { useMemo, useState } from 'react';
 import { graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
+import classnames from 'classnames';
 
-import Layout from '../components/Layout';
+import Donate from '../components/character/Donate';
 import ExamplesList from '../components/ExamplesList';
+import Layout from '../components/Layout';
 import Searchbar from '../components/Searchbar';
 
 import { filterItems, organizeExampleItems } from '../utils/data';
 
 import grid from '../styles/grid.module.css';
+import css from '../styles/pages/examples.module.css';
 
 const Examples = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -24,16 +27,17 @@ const Examples = ({ data }) => {
 
   return (
     <Layout>
-      <div className={grid.grid}>
-        <h1 className={grid.col8}>Examples</h1>
-        <h3 className={grid.col3}>
+      <div className={classnames(grid.grid, css.root)}>
+        <Donate />
+        <h1 className={grid.col}>Examples</h1>
+        <h3 className={grid.col}>
           {intl.formatMessage({ id: 'examplesIntro' })}
         </h3>
         <Searchbar
           placeholder={intl.formatMessage({ id: 'examplesSearch' })}
           onChange={(e) => setSearchTerm(e.target.value)}
+          onClick={(e) => setSearchTerm('')}
           searchTerm={searchTerm}
-          className={grid.push1}
           large
         />
         <ExamplesList data={tree} />

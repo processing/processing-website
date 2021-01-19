@@ -1,7 +1,8 @@
 :root {
-  --font: "Space Grotesque", Helvetica, Arial, sans-serif;
+  --font: "Space Grotesk", Helvetica, Arial, sans-serif;
   --font-serif: Vollkorn, Garamond, Georgia, serif;
   --font-mono: "Space Mono", Menlo, monospace;
+
   --processing-blue-light: #508bff;
   --processing-blue-mid: #0251c8;
   --processing-blue-dark: #1e2a67;
@@ -10,6 +11,7 @@
   --gray: #dbdbdb;
   --darkgray: #898989;
   --black: #0d0d0d;
+
   --text-xsmall: 0.8rem;
   --text-small: 0.875rem;
   --text-regular: 1rem;
@@ -17,12 +19,41 @@
   --text-large: 1.3rem;
   --text-xlarge: 2.25rem;
   --text-xxlarge: 3.375rem;
+
   --margin: 48px;
   --margin-half: calc(48px / 2);
   --margin-quarter: calc(48px / 4);
   --gutter: 16px;
-  --column-width: calc((100vw - 2 * var(--margin)) / 8);
   --gutter-half: calc(var(--gutter) / 2);
   --gutter-double: calc(var(--gutter) * 2);
   --vertical-gutter: 40px;
+
+  --column: cols(1, 8);
+  --column-half: cols(0.5, 8);
+  --column-double: cols(2, 8);
+  --col1: cols(1, 8);
+  --col2: cols(2, 8);
+  --col3: cols(3, 8);
+  --col4: cols(4, 8);
+  --col5: cols(5, 8);
+  --col6: cols(6, 8);
+  --col7: cols(7, 8);
+  --col8: cols(8, 8);
+
+  --pushHalf: calc(var(--column-half) + var(--gutter));
+  --push1: calc(var(--col1) + var(--gutter));
+  --push1andHalf: calc(var(--col1) + var(--column-half) + var(--gutter));
+  --push2: calc(var(--col2) + var(--gutter));
+  --push3: calc(var(--col3) + var(--gutter));
+  --push4: calc(var(--col4) + var(--gutter));
+  --push5: calc(var(--col5) + var(--gutter));
+  --push6: calc(var(--col6) + var(--gutter));
+  --push7: calc(var(--col7) + var(--gutter));
+  --push8: calc(var(--col8) + var(--gutter));
 }
+
+@custom-media --small (max-width: 720px);
+@custom-media --reduced (max-width: 960px);
+@custom-media --medium (max-width: 1080px);
+@custom-media --large (max-width: 1440px);
+@custom-media --xlarge (max-width: 9999px);

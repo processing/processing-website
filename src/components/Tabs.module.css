@@ -1,18 +1,26 @@
 .root {
+  flex-basis: var(--col8);
   margin-top: var(--margin);
 
-  & ul {
+  & > ul {
     position: relative;
     display: flex;
+    padding-left: var(--push1);
+    padding-right: var(--push1);
     align-items: center;
     list-style: none;
+  }
+
+  & > div {
+    padding-left: var(--push1);
+    padding-right: var(--push1);
   }
 }
 
 .tab {
   display: flex;
   align-items: center;
-  padding: 0 var(--gutter);
+  padding: var(--gutter-half) var(--gutter);
   background-color: var(--gray);
 }
 
@@ -22,4 +30,5 @@
 
 .codeBlock {
   min-width: calc((100vw - var(--margin) * 2) / 8 * 6);
+  padding-bottom: var(--gutter-double);
 }
