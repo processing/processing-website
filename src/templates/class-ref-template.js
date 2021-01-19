@@ -104,7 +104,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               </ul>
             </div>
           )}
-          {entry.constructors && (
+          {entry.constructors && entry.constructors.length>0 && (
             <div className={classnames(grid.grid, css.section)}>
               <h4 className={classnames(grid.col1, grid.push1)}>
                 {intl.formatMessage({ id: 'constructors' })}
@@ -121,7 +121,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               </ul>
             </div>
           )}
-          {entry.classFields && (
+          {entry.classFields && entry.classFields.length>0 && (
             <div className={classnames(grid.grid, css.section)}>
               <h4 className={classnames(grid.col1, grid.push1)}>
                 {intl.formatMessage({ id: 'fields' })}
