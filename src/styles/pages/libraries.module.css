@@ -63,7 +63,7 @@
 .contributionsList {
   list-style: none;
   margin: var(--margin) 0;
-  padding-left: var(--push1andHalf);
+  padding-right: var(--col1);
   flex-basis: var(--col8);
 
   & h2 {

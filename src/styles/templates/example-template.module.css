@@ -37,6 +37,11 @@
   flex-basis: var(--col2);
 }
 
+.cover {
+  flex-basis: var(--col7);
+  padding-left: var(--push1);
+}
+
 .relatedWrapper {
   flex-basis: var(--col8);
   & > h3 {

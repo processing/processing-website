@@ -83,7 +83,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
                     ))}
                   </ul>
                 </div>
-                <div className={classnames(css.cover)}>
+                <div className={classnames(css.cover, grid.col)}>
                   <img
                     src={data.image.nodes[0].childImageSharp.fluid.srcWebp}
                     srcSet={

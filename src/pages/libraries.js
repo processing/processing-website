@@ -41,6 +41,7 @@ const Libraries = ({ data }) => {
   ]);
 
   let categories = unique(filtered.flatMap((con) => con.categories));
+  console.log(libraries);
 
   return (
     <Layout>
@@ -57,11 +58,15 @@ const Libraries = ({ data }) => {
                 <li key={key} className={css.subgrid}>
                   <Link
                     className={classnames(css.librarieName, grid.col)}
-                    to={'/reference/libraries/' + node.name + '/index.html'}
+                    to={
+                      '/reference/libraries/' +
+                      node.frontmatter.name +
+                      '/index.html'
+                    }
                     language={locale}>
-                    <h3>{node.name}</h3>
+                    <h3>{node.frontmatter.title}</h3>
                   </Link>
-                  <p className={grid.col}>Description</p>
+                  <p className={grid.col}>{node.frontmatter.description}</p>
                 </li>
               );
             })}
@@ -79,7 +84,7 @@ const Libraries = ({ data }) => {
           large
         />
         <CategoryNav categories={categories} />
-        <ul className={classnames(grid.col, grid.nest, css.contributionsList)}>
+        <ul className={classnames(grid.col, css.contributionsList)}>
           {categories.map((cat) => {
             let contribs = filtered.filter((c) => c.categories.includes(cat));
             return (
