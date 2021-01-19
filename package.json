@@ -85,6 +85,30 @@
     "region": "us-east-1",
     "buildDir": "public",
     "shouldRunBuildCommand": true,
-    "buildCommand": "npm run build"
+    "buildCommand": "npm run build",
+    "environments": {
+      "user-testing": {
+        "stack": "processing-website-user-testing",
+        "bucket": "processing-website-user-testing",
+        "fileParams": [
+          {
+            "match": [
+              "!**/*.(html|json)"
+            ],
+            "params": {
+              "CacheControl": "public, max-age=31536000, immutable"
+            }
+          },
+          {
+            "match": [
+              "**/*.(html|json)"
+            ],
+            "params": {
+              "CacheControl": "public, max-age=300"
+            }
+          }
+        ]
+      }
+    }
   }
 }
