@@ -6,7 +6,9 @@ import grid from '../styles/grid.module.css';
 import css from './ReferenceList.module.css';
 
 const ReferenceList = ({ data, library }) => {
-  const link = library ? '../' : '/reference/';
+  const link = library
+    ? '/reference/libraries/' + library + '/'
+    : '/reference/';
 
   return (
     <div className={css.root}>

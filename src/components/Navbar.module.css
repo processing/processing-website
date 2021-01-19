@@ -24,9 +24,14 @@
   flex-basis: var(--col2);
   font-size: var(--text-xlarge);
   transition: 0.2s ease-in-out;
+
   & svg {
     width: 68px;
     height: 100%;
+  }
+
+  & a:hover {
+    color: var(--processing-blue-dark);
   }
   @media (--small), (--medium) {
     text-align: center;
@@ -57,6 +62,10 @@
   color: var(--processing-blue-dark);
   font-size: var(--text-medium);
   font-weight: 700;
+  & a:hover {
+    color: var(--processing-blue-dark);
+  }
+
   @media (--small), (--medium) {
     font-size: var(--text-regular);
   }

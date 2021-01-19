@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 import hljs from 'highlight.js/lib/core';
-import processing from 'highlight.js/lib/languages/processing';
 
 import css from './Tabs.module.css';
 import grid from '../styles/grid.module.css';
@@ -28,7 +27,8 @@ const Tabs = ({ pdes }) => {
               [css.active]: pde.name === active,
             })}
             key={key + 'tab'}
-            onClick={() => onClick(pde.name)}>
+            onClick={() => onClick(pde.name)}
+            onKeyDown={() => onClick(pde.name)}>
             {pde.name}
           </li>
         ))}

@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { graphql } from 'gatsby';
+import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 
 import Donate from '../components/character/Donate';
@@ -12,17 +13,16 @@ import { filterItems, organizeExampleItems } from '../utils/data';
 import grid from '../styles/grid.module.css';
 import css from '../styles/pages/examples.module.css';
 
-const Examples = ({ data, location }) => {
+const Examples = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('');
+  const intl = useIntl();
 
   const items = data.examples.nodes;
   const images = data.images.nodes;
 
-  console.log(data);
-
   const tree = useMemo(
     () => organizeExampleItems(filterItems(items, searchTerm), images),
-    [items, searchTerm]
+    [items, searchTerm, images]
   );
 
   return (
@@ -31,11 +31,10 @@ const Examples = ({ data, location }) => {
         <Donate />
         <h1 className={grid.col}>Examples</h1>
         <h3 className={grid.col}>
-          Short, prototypical programs exploring the basics of programming with
-          Processing.
+          {intl.formatMessage({ id: 'examplesIntro' })}
         </h3>
         <Searchbar
-          placeholder={'Search in the Examples...'}
+          placeholder={intl.formatMessage({ id: 'examplesSearch' })}
           onChange={(e) => setSearchTerm(e.target.value)}
           onClick={(e) => setSearchTerm('')}
           searchTerm={searchTerm}

@@ -1,6 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
+import { useIntl } from 'react-intl';
 
 import { useLocalization } from 'gatsby-theme-i18n';
 
@@ -13,6 +14,7 @@ import grid from '../styles/grid.module.css';
 const Tools = ({ data }) => {
   const { locale } = useLocalization();
   const { tools, currentLang, english } = data;
+  const intl = useIntl();
 
   let contributions = [];
 
@@ -30,13 +32,8 @@ const Tools = ({ data }) => {
     <Layout>
       <div className={classnames(grid.grid, css.root)}>
         <Donate />
-        <h1 className={grid.col}>Tools</h1>
-        <h3 className={grid.col}>
-          The following tools are included with the Processing software. Select
-          the tool you want to use from the Tools menu of the Processing
-          Environment. These tools are open source; the code is distributed with
-          Processing.
-        </h3>
+        <h1 className={grid.col}>{intl.formatMessage({ id: 'tools' })}</h1>
+        <h3 className={grid.col}>{intl.formatMessage({ id: 'toolsIntro' })}</h3>
         <div className={css.listWrapper}>
           <ul className={css.list}>
             {tools.nodes.map((node, key) => {
@@ -51,25 +48,15 @@ const Tools = ({ data }) => {
             })}
           </ul>
         </div>
-        <h1 className={grid.col}>Contributions</h1>
-        <h3 className={grid.col}>
-          Contributed tools must be downloaded individually. Select{' '}
-          <em>"Add Tool..."</em> from the Tools menu to select a Tool to
-          download. Contributed tools are developed, documented, and maintained
-          by members of the Processing community. For feedback and support,
-          please post to the
-          <a href="http://forum.processing.org/">Forum</a>. For development
-          discussions post to the{' '}
-          <a href="http://forum.processing.org/library-and-tool-development">
-            {' '}
-            Libraries and Tool Development
-          </a>{' '}
-          topic. Instructions for creating your own tool are on the
-          <a href="https://github.com/processing/processing/wiki">
-            Processing GitHub
-          </a>{' '}
-          site.
-        </h3>
+        <h1 className={grid.col}>
+          {intl.formatMessage({ id: 'contributions' })}
+        </h1>
+        <h3
+          className={grid.col}
+          dangerouslySetInnerHTML={{
+            __html: intl.formatMessage({ id: 'contributedTools' }),
+          }}
+        />
         <ul className={css.contributionsList}>
           {contributions.map((node, key) => {
             return (

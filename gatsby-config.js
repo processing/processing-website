@@ -59,15 +59,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-intl`,
-      options: {
-        path: `${__dirname}/i18n/react-intl`,
-        languages: [`en`, `de`],
-        defaultLanguage: `en`,
-        redirect: false,
-      },
-    },
-    {
       resolve: `gatsby-plugin-postcss`,
       options: {
         cssLoaderOptions: {

@@ -1,4 +1,4 @@
-import React, {
+import {
   useEffect,
   useRef,
   useLayoutEffect,
@@ -18,7 +18,7 @@ export const useHighlight = () => {
     ref.current.querySelectorAll('pre code').forEach((block) => {
       hljs.highlightBlock(block);
     });
-  }, [ref.current]);
+  }, []);
 
   return ref;
 };

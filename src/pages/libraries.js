@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import unique from 'array-unique';
+import { useIntl } from 'react-intl';
 
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useLocalization } from 'gatsby-theme-i18n';
@@ -20,6 +21,7 @@ const Libraries = ({ data }) => {
   const { locale } = useLocalization();
   const { libraries, currentLang, english } = data;
   const [searchTerm, setSearchTerm] = useState('');
+  const intl = useIntl();
 
   let contributions = [];
 
@@ -44,10 +46,9 @@ const Libraries = ({ data }) => {
     <Layout>
       <div className={classnames(grid.grid, css.root)}>
         <Donate />
-        <h1 className={grid.col}>Libraries</h1>
+        <h1 className={grid.col}>{intl.formatMessage({ id: 'libraries' })}</h1>
         <h3 className={grid.col}>
-          Extend Processing beyond graphics and images into audio, video, and
-          communication with other devices.
+          {intl.formatMessage({ id: 'librariesIntro' })}
         </h3>
         <div className={css.listWrapper}>
           <ul className={css.list}>
@@ -66,9 +67,11 @@ const Libraries = ({ data }) => {
             })}
           </ul>
         </div>
-        <h1 className={grid.col}>Contributions</h1>
+        <h1 className={grid.col}>
+          {intl.formatMessage({ id: 'contributions' })}
+        </h1>
         <Searchbar
-          placeholder={'Search in the Contributions...'}
+          placeholder={intl.formatMessage({ id: 'librariesSearch' })}
           onChange={(e) => setSearchTerm(e.target.value)}
           onClick={(e) => setSearchTerm('')}
           searchTerm={searchTerm}
@@ -131,11 +134,18 @@ export default Libraries;
 
 export const query = graphql`
   query($locale: String!) {
-    libraries: allDirectory(
-      filter: { relativeDirectory: { eq: "en" }, name: { ne: "processing" } }
+    libraries: allMdx(
+      filter: {
+        frontmatter: { library: { eq: "true" } }
+        fields: { locale: { eq: $locale } }
+      }
     ) {
       nodes {
-        name
+        frontmatter {
+          name
+          title
+          description
+        }
       }
     }
     currentLang: allFile(

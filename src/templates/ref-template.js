@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
+import { useIntl } from 'react-intl';
 
 import Img from 'gatsby-image';
 
@@ -17,6 +18,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
   let entry;
   const [show, setShow] = useState(false);
   const ref = useHighlight();
+  const intl = useIntl();
 
   if (data.json !== null) {
     entry = data.json.childJson;
@@ -53,18 +55,22 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           )}
           ref={ref}>
           <div className={classnames(css.section, grid.grid)}>
-            <h4 className={grid.col}>Name</h4>
+            <h4 className={grid.col}>{intl.formatMessage({ id: 'name' })}</h4>
             <h3 className={grid.col}>{entry.name}</h3>
           </div>
           <div className={classnames(css.section, grid.grid)}>
-            <h4 className={grid.col}>Description</h4>
+            <h4 className={grid.col}>
+              {intl.formatMessage({ id: 'description' })}
+            </h4>
             <p
               className={classnames(grid.col, css.description)}
               dangerouslySetInnerHTML={{ __html: entry.description }}></p>
           </div>
           {examples.length > 0 && (
             <div className={classnames(css.section, grid.grid)}>
-              <h4 className={grid.col}>Examples</h4>
+              <h4 className={grid.col}>
+                {intl.formatMessage({ id: 'examples' })}
+              </h4>
               <ul className={classnames(grid.col, grid.nest, css.list)}>
                 {examples.map((ex, key) => {
                   const img = images.filter(
@@ -93,7 +99,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
             </div>
           )}
           <div className={classnames(css.section, grid.grid)}>
-            <h4 className={grid.col}>Syntax</h4>
+            <h4 className={grid.col}>{intl.formatMessage({ id: 'syntax' })}</h4>
             <ul className={classnames(grid.col, css.list)}>
               {entry.syntax.map((syn, key) => {
                 return (
@@ -106,7 +112,9 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           </div>
           {entry.parameters.length > 0 && (
             <div className={classnames(css.section, grid.grid)}>
-              <h4 className={grid.col}>Parameters</h4>
+              <h4 className={grid.col}>
+                {intl.formatMessage({ id: 'parameters' })}
+              </h4>
               <ul className={classnames(grid.col, grid.nest, css.list)}>
                 {entry.parameters.map((param, key) => {
                   return (
@@ -125,7 +133,9 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           )}
           {entry.returns && (
             <div className={classnames(css.section, grid.grid)}>
-              <h4 className={grid.col}>Return</h4>
+              <h4 className={grid.col}>
+                {intl.formatMessage({ id: 'return' })}
+              </h4>
               <p className={grid.col}>
                 <code>{entry.returns}</code>
               </p>
@@ -133,7 +143,9 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           )}
           {entry.inUse && (
             <div className={classnames(css.section, grid.grid)}>
-              <h4 className={grid.col}>In use</h4>
+              <h4 className={grid.col}>
+                {intl.formatMessage({ id: 'inUse' })}
+              </h4>
               <ul className={classnames(grid.col, grid.nest, css.list)}>
                 {entry.inUse.map((inUse, key) => (
                   <li key={key + 'rel'}>
@@ -147,7 +159,9 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           )}
           {entry.related.length > 0 && (
             <div className={classnames(css.section, grid.grid)}>
-              <h4 className={grid.col}>Related</h4>
+              <h4 className={grid.col}>
+                {intl.formatMessage({ id: 'related' })}
+              </h4>
               <ul className={classnames(grid.col, grid.nest, css.list)}>
                 {entry.related.map((rel, key) => (
                   <li key={key + 'rel'}>
@@ -184,9 +198,16 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           </div>
         </div>
       ) : (
-        <div>
-          This page is not translated, please refer to the
-          <Link to={link}> english page</Link>
+        <div
+          className={classnames(
+            grid.grid,
+            { [css.collapsed]: !show },
+            { [css.expanded]: show }
+          )}>
+          <div className={classnames(grid.push1)}>
+            {intl.formatMessage({ id: 'notTranslated' })}
+            <Link to={link}> {intl.formatMessage({ id: 'englishPage' })}</Link>
+          </div>
         </div>
       )}
     </Layout>

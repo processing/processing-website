@@ -48,7 +48,7 @@ const ColorDraggable = (props) => {
         document.removeEventListener('mousemove', handleMouseMove);
       };
     }
-  }, [dragging]);
+  }, [dragging, colorInx, props, shape.color, shapesInx]);
 
   const registerMove = (e) => {
     props.blurRest(e, true);

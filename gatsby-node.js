@@ -86,9 +86,11 @@ async function createReference(actions, graphql) {
   const dirResult = await graphql(
     `
       {
-        allDirectory(filter: { relativeDirectory: { eq: "en" } }) {
+        allMdx(filter: { frontmatter: { library: { eq: "true" } } }) {
           nodes {
-            name
+            frontmatter {
+              name
+            }
           }
         }
       }
@@ -107,7 +109,7 @@ async function createReference(actions, graphql) {
   const refPages = result.data.allFile.edges;
 
   // Create library index pages
-  const dirPages = dirResult.data.allDirectory.nodes;
+  const dirPages = dirResult.data.allMdx.nodes;
 
   refPages.forEach((refPage, index) => {
     const previous =
@@ -116,14 +118,13 @@ async function createReference(actions, graphql) {
     let assetsName = refPage.node.name.split('.')[0];
     let libraryName = refPage.node.relativeDirectory.split('/')[1];
     let lang = refPage.node.relativeDirectory.split('/')[0];
-    lang = lang === 'en' ? '' : lang;
+    loc = lang === 'en' ? '' : lang;
     let refPath;
     if (libraryName === 'processing')
-      refPath =
-        lang + '/reference/' + refPage.node.name.split('.')[0] + '.html';
+      refPath = loc + '/reference/' + refPage.node.name.split('.')[0] + '.html';
     else
       refPath =
-        lang +
+        loc +
         '/reference/libraries/' +
         libraryName +
         '/' +
@@ -174,10 +175,10 @@ async function createReference(actions, graphql) {
 
   dirPages.forEach((dirPage, index) => {
     createPage({
-      path: '/reference/libraries/' + dirPage.name + '/index.html',
+      path: '/reference/libraries/' + dirPage.frontmatter.name + '/index.html',
       component: indexLibTemplate,
       context: {
-        libraryName: dirPage.name,
+        libraryName: dirPage.frontmatter.name,
       },
     });
   });
@@ -262,11 +263,21 @@ async function createExamples(actions, graphql) {
   const examplePages = exampleResult.data.allFile.edges;
 
   examplePages.forEach((examplePage, index) => {
+    //if language is english we don't need to add it to the path hence ''
+    const lang =
+      examplePage.node.name.split('.').length > 1
+        ? examplePage.node.name.split('.')[1] + '/'
+        : '';
+    const name =
+      examplePage.node.name.split('.').length > 1
+        ? examplePage.node.name.split('.')[0].toLowerCase()
+        : examplePage.node.name.toLowerCase();
+
     createPage({
-      path: 'examples/' + examplePage.node.name.toLowerCase() + '.html',
+      path: lang + 'examples/' + name + '.html',
       component: exampleTemplate,
       context: {
-        slug: 'examples/' + examplePage.node.name.toLowerCase() + '.html',
+        slug: lang + '/examples/' + name + '.html',
         name: examplePage.node.name,
         relDir: examplePage.node.relativeDirectory,
       },

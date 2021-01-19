@@ -1,19 +1,20 @@
 import React, { useMemo } from 'react';
+import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import classnames from 'classnames';
+import { useIntl } from 'react-intl';
 
 import Layout from '../components/Layout';
 import ReferenceList from '../components/ReferenceList';
 
 import { organizeReferenceItems } from '../utils/data';
-
+import css from '../styles/templates/index-lib-template.module.css';
 import grid from '../styles/grid.module.css';
-import css from '../styles/templates/lib-template.module.css';
 
 const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
-  const link = (libraryName = `/reference/libraries/${libraryName}/index.html`);
+  const link = `/reference/libraries/${libraryName}/index.html`;
+  const intl = useIntl();
 
   const items = data.allFile.nodes;
 
@@ -24,12 +25,12 @@ const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
       {data.mdx !== null ? (
         <div className={classnames(grid.grid, css.root)}>
           <MDXRenderer>{data.mdx.body}</MDXRenderer>
-          <ReferenceList data={tree} library={libraryName} />
+          {tree && <ReferenceList data={tree} library={libraryName} />}
         </div>
       ) : (
         <div>
-          This page is not translated, please refer to the
-          <Link to={link}> english page</Link>
+          {intl.formatMessage({ id: 'notTranslated' })}
+          <Link to={link}>{intl.formatMessage({ id: 'englishPage' })}</Link>
         </div>
       )}
     </Layout>
@@ -41,7 +42,7 @@ export default IndexLibraryTemplate;
 export const query = graphql`
   query($libraryName: String!, $locale: String!) {
     allFile(
-      filter: { fields: { lib: { eq: $libraryName }, lang: { eq: $locale } } }
+      filter: { fields: { lib: { eq: $libraryName }, lang: { eq: "en" } } }
     ) {
       nodes {
         name
@@ -55,7 +56,7 @@ export const query = graphql`
     }
     mdx(
       fields: { locale: { eq: $locale } }
-      frontmatter: { title: { eq: $libraryName } }
+      frontmatter: { name: { eq: $libraryName } }
     ) {
       body
     }

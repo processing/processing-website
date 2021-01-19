@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
+import { useIntl } from 'react-intl';
 
 import Img from 'gatsby-image';
 
@@ -19,6 +20,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
   const examples = data.pdes.edges;
   const images = data.images.edges;
   const ref = useHighlight();
+  const intl = useIntl();
 
   if (data.json !== null) {
     entry = data.json.childJson;
@@ -52,18 +54,22 @@ const FieldRefTemplate = ({ data, pageContext }) => {
           )}
           ref={ref}>
           <div className={classnames(css.section, grid.grid)}>
-            <h4 className={grid.col}>Name</h4>
+            <h4 className={grid.col}>{intl.formatMessage({ id: 'name' })}</h4>
             <h3 className={grid.col}>{entry.name}</h3>
           </div>
           <div className={classnames(css.section, grid.grid)}>
-            <h4 className={grid.col}>Description</h4>
+            <h4 className={grid.col}>
+              {intl.formatMessage({ id: 'description' })}
+            </h4>
             <p className={classnames(grid.col, css.description)}>
               {entry.description}
             </p>
           </div>
           {examples.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
-              <h4 className={grid.col}>Examples</h4>
+              <h4 className={grid.col}>
+                {intl.formatMessage({ id: 'examples' })}
+              </h4>
               <ul className={classnames(grid.col, grid.nest, css.list)}>
                 {examples.map((ex, key) => {
                   const img = images.filter(
@@ -93,7 +99,9 @@ const FieldRefTemplate = ({ data, pageContext }) => {
           )}
           {entry.related.length > 0 && (
             <div className={classnames(css.section, grid.grid)}>
-              <h4 className={grid.col}>Related</h4>
+              <h4 className={grid.col}>
+                {intl.formatMessage({ id: 'related' })}
+              </h4>
               <ul className={classnames(grid.col, grid.nest, css.list)}>
                 {entry.related.map((rel, key) => (
                   <li key={key + 'rel'}>
@@ -107,9 +115,16 @@ const FieldRefTemplate = ({ data, pageContext }) => {
           )}
         </div>
       ) : (
-        <div>
-          This page is not translated, please refer to the
-          <Link to={link}> english page</Link>
+        <div
+          className={classnames(
+            grid.grid,
+            { [css.collapsed]: !show },
+            { [css.expanded]: show }
+          )}>
+          <div className={classnames(grid.push1)}>
+            {intl.formatMessage({ id: 'notTranslated' })}
+            <Link to={link}> {intl.formatMessage({ id: 'englishPage' })}</Link>
+          </div>
         </div>
       )}
     </Layout>
@@ -119,8 +134,8 @@ const FieldRefTemplate = ({ data, pageContext }) => {
 export default FieldRefTemplate;
 
 export const query = graphql`
-  query($name: String!, $assetsName: String!, $locale: String!) {
-    json: file(fields: { name: { eq: $name }, lang: { eq: $locale } }) {
+  query($name: String!, $assetsName: String!) {
+    json: file(fields: { name: { eq: $name } }) {
       childJson {
         name
         description

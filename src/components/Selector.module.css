@@ -1,30 +1,40 @@
 .root {
-  display: flex;
+  display: block;
   margin-right: 16px;
-  flex-wrap: wrap;
   background-color: var(--processing-blue-dark);
   cursor: pointer;
   color: white;
 }
 
-.select {
-  display: flex;
-  background-color: var(--processing-blue-dark);
-  margin: 0;
-  border-style: none;
-  padding: 0 var(--gutter);
-  color: white;
+.languageButton {
+  height: 100%;
+  font-family: var(--font);
   font-size: var(--text-regular);
-  font-weight: 700;
-  text-align: right;
-  list-style: none;
+  border-radius: 0;
+  background-color: var(--processing-blue-dark);
+  border-top: solid 6px var(--processing-blue-dark);
+  border-bottom: solid 6px var(--processing-blue-dark);
 }
 
-.option {
-  position: relative;
-  margin-left: 1rem;
+.languageButton:hover {
   background-color: var(--processing-blue-dark);
-  border-style: none;
-  color: white;
-  appearance: none;
+  border-bottom: solid 6px var(--processing-blue-mid);
+}
+
+.languageButton:focus {
+  background-color: var(--processing-blue-dark);
+}
+
+.languagePicker {
+  position: fixed;
+  opacity: 0;
+  background-color: var(--processing-blue-dark);
+
+  & li {
+    padding: 16px;
+  }
+}
+
+.show {
+  opacity: 1;
 }

@@ -59,7 +59,7 @@ const Layout = ({ children }) => {
     Intro,
     HighlightBlock,
     Note,
-    img: (props) => <img {...props}></img>,
+    img: (props) => <img {...props} alt=""></img>,
   };
 
   const size =
