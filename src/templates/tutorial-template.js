@@ -16,7 +16,6 @@ import grid from '../styles/grid.module.css';
 
 const TutorialTemplate = ({ data, pageContext }) => {
   const { mdx } = data;
-  //const { frontmatter, body, tableOfContents } = mdx;
   const ref = useHighlight();
   const intl = useIntl();
 

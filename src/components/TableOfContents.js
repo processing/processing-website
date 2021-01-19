@@ -7,7 +7,7 @@ import { LayoutContext } from '../components/Layout';
 
 import css from './TableOfContents.module.css';
 
-export default ({ items }) => {
+export default ({ items = [] }) => {
   const layout = useContext(LayoutContext);
   const intl = useIntl();
 

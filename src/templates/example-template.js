@@ -17,8 +17,6 @@ const ExampleTemplate = ({ data, pageContext }) => {
 
   let json, subcategory;
 
-  console.log(data.image);
-
   if (data.json !== null) {
     json = data.json;
     subcategory = data.json.relativeDirectory.split('/')[1];

@@ -19,7 +19,6 @@ const ClassRefTemplate = ({ data, pageContext }) => {
   const examples = data.pdes.edges;
   const ref = useHighlight();
   const intl = useIntl();
-  console.log(data);
 
   if (data.json !== null) {
     entry = data.json.childJson;
