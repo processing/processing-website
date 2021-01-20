@@ -33,11 +33,13 @@ export const organizeReferenceItems = (items) => {
   items.forEach((item) => {
     const { category, subcategory } = item.childJson;
 
-    let categoryIndex = tree.findIndex((cat) => cat.slug === category);
+    let categoryIndex = tree.findIndex(
+      (cat) => cat.slug === category.toLowerCase()
+    );
 
     if (categoryIndex === -1) {
       tree.push({
-        slug: category,
+        slug: category.toLowerCase(),
         name: titleCase(category),
         children: [],
       });
@@ -45,7 +47,7 @@ export const organizeReferenceItems = (items) => {
     }
 
     let subcategoryIndex = tree[categoryIndex].children.findIndex(
-      (subcat) => subcat.slug === subcategory
+      (subcat) => subcat.slug.toLowerCase() === subcategory
     );
 
     if (subcategoryIndex === -1) {
@@ -62,6 +64,7 @@ export const organizeReferenceItems = (items) => {
       ...item.childJson,
     });
   });
+
   return tree;
 };
 
