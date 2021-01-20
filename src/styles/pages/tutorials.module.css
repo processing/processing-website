@@ -12,7 +12,8 @@
   }
 
   & > h3 {
-    padding-right: var(--col5);
+    flex-basis: var(--col8);
+    padding-right: var(--col4);
   }
 }
 
@@ -24,42 +25,69 @@
   }
 }
 
-.tutorialList {
+.list {
   width: 100%;
-  margin: var(--gutter-double) 0;
+  margin: var(--gutter) 0;
   display: flex;
   list-style: none;
 
   & li {
     flex-basis: var(--col2);
-    display: flex;
-    flex-direction: column;
+
+    & a {
+      display: flex;
+      flex-direction: column;
+    }
+
+    & a:hover {
+      color: var(--black);
+    }
 
     & h4 {
       margin-bottom: 0;
     }
   }
-}
 
-.cover {
-  width: 100%;
-  background-color: var(--gray);
-  margin-bottom: var(--gutter);
-}
+  & .card {
+    padding-top: var(--gutter);
+    padding-bottom: var(--gutter);
+    background-color: none;
+    transition: background 0.3s ease;
+    pointer-events: auto;
+  }
 
-.author {
-  color: var(--darkgray);
-}
+  & .card:hover {
+    color: var(--black);
+    background-color: var(--lightgray);
+  }
 
-.authorName {
-  color: var(--processing-blue-mid);
-  font-weight: 500;
-}
+  & .cover {
+    width: 100%;
+    background-color: var(--gray);
+    margin-bottom: var(--gutter);
+  }
 
-.brief {
-  margin-top: var(--gutter-half);
-}
+  & .author {
+    display: inline;
+    color: var(--darkgray);
+  }
 
-.level {
-  margin-top: var(--gutter-half);
+  & .authorName {
+    color: var(--processing-blue-mid);
+    font-weight: 500;
+  }
+
+  & .brief {
+    margin-top: var(--gutter-half);
+    color: inherit;
+    pointer-events: none;
+  }
+
+  & .brief:hover {
+    color: inherit;
+  }
+
+  & .level {
+    margin-top: var(--gutter-half);
+  }
 }

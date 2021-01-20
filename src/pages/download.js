@@ -183,7 +183,7 @@ const Download = () => {
           </div>
           <ul className={classnames(grid.col, css.links)}>
             <li>
-              <a href={'https://github.com/processing'}>Github</a>
+              <a href={'https://github.com/processing'}>GitHub</a>
             </li>
             <li>
               <a
