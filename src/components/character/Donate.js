@@ -15,7 +15,9 @@ const Donate = () => {
       </h3>
       <Character num={Math.floor(Math.random() * 3)} />
       <h4>Our software can only continue with your generosity!</h4>
-      <Button to="/donate" className={css.donate}>
+      <Button
+        to="https://processingfoundation.org/donate"
+        className={css.donate}>
         Donate
       </Button>
     </div>
