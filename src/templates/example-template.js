@@ -69,29 +69,25 @@ const ExampleTemplate = ({ data, pageContext }) => {
                   __html: json.childJson.description,
                 }}></p>
             </div>
-            {json.childJson.featured && (
-              <Fragment>
-                <div className={classnames(grid.col, css.featured)}>
-                  <h3>{intl.formatMessage({ id: 'featured' })}</h3>
-                  <ul>
-                    {json.childJson.featured.map((feature, key) => (
-                      <li key={key + 'f'}>
-                        <Link to={feature}>{feature}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className={classnames(css.cover, grid.col)}>
-                  <img
-                    src={data.image.nodes[0].childImageSharp.fluid.srcWebp}
-                    srcSet={
-                      data.image.nodes[0].childImageSharp.fluid.srcSetWebp
-                    }
-                    alt=""
-                  />
-                </div>
-              </Fragment>
+            {json.childJson.featured.length > 0 && (
+              <div className={classnames(grid.col, css.featured)}>
+                <h3>{intl.formatMessage({ id: 'featured' })}</h3>
+                <ul>
+                  {json.childJson.featured.map((feature, key) => (
+                    <li key={key + 'f'}>
+                      <Link to={feature}>{feature}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             )}
+            <div className={classnames(css.cover, grid.col)}>
+              <img
+                src={data.image.nodes[0].childImageSharp.fluid.srcWebp}
+                srcSet={data.image.nodes[0].childImageSharp.fluid.srcSetWebp}
+                alt=""
+              />
+            </div>
             <Tabs pdes={orderedPdes} />
             {related.length > 0 && (
               <div className={classnames(css.relatedWrapper, grid.nested)}>
@@ -99,7 +95,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
                   {intl.formatMessage({ id: 'relatedExamples' })}
                 </h3>
                 <ul className={css.related}>
-                  {related.map((rel, key) => {
+                  {related.slice(0, 6).map((rel, key) => {
                     return (
                       rel.relativeDirectory !== pageContext.relDir && (
                         <li key={key + 'rel'}>

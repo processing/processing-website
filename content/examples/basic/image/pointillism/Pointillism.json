@@ -1,0 +1,7 @@
+{
+  "name": "Pointillism",
+  "title": "Pointillism",
+  "author": "Daniel Shiffman",
+  "description": "Mouse horizontal location controls size of dots. Creates a simple pointillist effect using ellipses colored according to pixels in an image.",
+  "featured": []
+}

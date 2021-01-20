@@ -1,13 +1,12 @@
 @import "../../styles/variables.css";
 
 .root {
-  width: auto;
+  margin: auto;
+  width: var(--col6);
   height: auto;
-  right: 0;
   position: relative;
   z-index: 200;
-
-  svg {
+  & svg {
     position: absolute;
   }
 }

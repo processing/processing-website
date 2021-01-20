@@ -6,8 +6,7 @@
   display: flex;
   flex-direction: column;
   user-select: none;
-  width: 650px;
-  max-width: 650px;
+  width: var(--col4);
   padding: 0px;
   font-family: var(--font-mono);
   font-size: 14px;

@@ -9,7 +9,7 @@
 
   & h1 {
     margin-bottom: var(--margin);
-    font-size: var(--text-xlarge);
+    font-size: var(--text-xxlarge);
   }
 }
 
@@ -113,4 +113,8 @@
 
 .news {
   margin-top: var(--gutter);
+}
+
+.newsCover {
+  margin-bottom: var(--vertical-gutter);
 }

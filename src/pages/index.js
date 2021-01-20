@@ -60,7 +60,9 @@ const IndexPage = ({ data }) => {
               <Button to={'/reference'} className={css.button}>
                 {intl.formatMessage({ id: 'reference' })}
               </Button>
-              <Button to={'/donate'} className={css.button}>
+              <Button
+                to={'https://processingfoundation.org/donate'}
+                className={css.button}>
                 {intl.formatMessage({ id: 'donate' })}
               </Button>
             </div>
@@ -151,7 +153,11 @@ const IndexPage = ({ data }) => {
         </div>
         <div className={classnames(grid.col, css.half)}>
           <h3>{intl.formatMessage({ id: 'news' })}</h3>
-          <img src={data.news.childImageSharp.fluid.src} alt="" />
+          <img
+            src={data.news.childImageSharp.fluid.src}
+            alt=""
+            className={css.newsCover}
+          />
           <p>{intl.formatMessage({ id: 'newsText' })}</p>
           <h3>{intl.formatMessage({ id: 'partners' })}</h3>
           <ul className={css.logos}>

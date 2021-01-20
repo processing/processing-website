@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 
 import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
@@ -34,10 +35,7 @@ const Environment = ({ data }) => {
         ) : (
           <div>
             {intl.formatMessage({ id: 'notTranslated' })}
-            <Link to={pageContext.slug}>
-              {' '}
-              {intl.formatMessage({ id: 'englishPage' })}
-            </Link>
+            {intl.formatMessage({ id: 'englishPage' })}
           </div>
         )}
       </div>
