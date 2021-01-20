@@ -14,7 +14,6 @@ const Searchbar = ({
 }) => {
   const onKeyDown = (e) => {
     if (e.keyCode === 13) {
-      console.log('pressed');
       e.preventDefault();
     }
   };

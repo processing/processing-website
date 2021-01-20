@@ -123,7 +123,9 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
                         {param.name}
                       </span>
                       <span className={grid.col}>
-                        {param.type + ': ' + param.description}
+                        {param.type
+                          ? param.type + ': ' + param.description
+                          : param.description}
                       </span>
                     </li>
                   );

@@ -41,6 +41,11 @@
     font-size: var(--text-regular);
     font-style: normal;
   }
+
+  & b {
+    font-weight: normal;
+  }
+
   & code {
     margin-bottom: 0;
     font-variant-ligatures: no-common-ligatures;

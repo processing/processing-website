@@ -141,19 +141,17 @@ const ClassRefTemplate = ({ data, pageContext }) => {
           )}
           {entry.parameters && entry.parameters.length > 0 && (
             <div className={classnames(grid.grid, css.section)}>
-              <h4 className={classnames(grid.col1, grid.push1)}>
+              <h4 className={grid.col}>
                 {intl.formatMessage({ id: 'parameters' })}
               </h4>
-              <ul className={classnames(grid.col5, grid.nest, css.list)}>
+              <ul className={classnames(grid.col, grid.nest, css.list)}>
                 {entry.parameters.map((param, key) => {
                   return (
                     <li key={'param' + key} className={css.param}>
-                      <span className={classnames(grid.col1, css.paramName)}>
+                      <span className={classnames(grid.col, css.paramName)}>
                         {param.name}
                       </span>
-                      <span className={grid.col5}>
-                        {param.type + ': ' + param.description}
-                      </span>
+                      <span className={grid.col}>{param.description}</span>
                     </li>
                   );
                 })}
