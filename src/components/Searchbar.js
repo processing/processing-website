@@ -12,6 +12,12 @@ const Searchbar = ({
   onChange,
   onClick,
 }) => {
+  const onKeyDown = (e) => {
+    if (e.keyCode === 13) {
+      console.log('pressed');
+      e.preventDefault();
+    }
+  };
   return large ? (
     <div
       className={classnames(css.root, grid.col, css.large, {
@@ -25,6 +31,7 @@ const Searchbar = ({
           placeholder={placeholder}
           value={searchTerm}
           onChange={onChange}
+          onKeyDown={onKeyDown}
         />
         <button className={css.clearButton} onClick={onClick} type="button">
           x
