@@ -35,7 +35,7 @@ const ReferenceList = ({ data, library }) => {
                             <Link
                               className={classnames(grid.col, css.itemName)}
                               to={`${link + item.slug}.html`}>
-                              <span>{item.name}</span>
+                              <code>{item.name}</code>
                             </Link>
                             <div
                               className={classnames(grid.col, css.itemBrief)}>

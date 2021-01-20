@@ -20,6 +20,7 @@
     background-color: var(--lightgray);
     font-size: var(--text-medium);
     color: inherit;
+    font-variant-ligatures: no-common-ligatures;
   }
 
   & input:focus {
