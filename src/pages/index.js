@@ -42,26 +42,26 @@ export const items = [
 ];
 
 const IndexPage = ({ data }) => {
-  //localization - will be needed
   const intl = useIntl();
-
   const winSize = useWindowSize();
+
   return (
     <Layout>
       <div className={css.hero}>
-        <div className={classnames(grid.grid)}>
+        <div className={grid.grid}>
           <div className={classnames(grid.col, css.intro)}>
             <h1>{intl.formatMessage({ id: 'introTitle' })}</h1>
             <p>{intl.formatMessage({ id: 'introText' })}</p>
             <div className={css.buttons}>
-              <Button to={'/download'} className={css.button}>
+              <Button to={'/download'} size="large" className={css.button}>
                 {intl.formatMessage({ id: 'download' })}
               </Button>
-              <Button to={'/reference'} className={css.button}>
+              <Button to={'/reference'} size="large" className={css.button}>
                 {intl.formatMessage({ id: 'reference' })}
               </Button>
               <Button
                 to={'https://processingfoundation.org/donate'}
+                size="large"
                 className={css.button}>
                 {intl.formatMessage({ id: 'donate' })}
               </Button>
@@ -70,7 +70,7 @@ const IndexPage = ({ data }) => {
           {winSize.width > 1080 && <Sketch />}
         </div>
       </div>
-      <div className={classnames(grid.grid)}>
+      <div className={grid.grid}>
         <div className={classnames(grid.col, grid.nest, css.sidebar)}>
           <ul className={classnames(grid.col, css.list)}>
             {items.map((item, key) => (
@@ -109,9 +109,9 @@ const IndexPage = ({ data }) => {
               <p>in Basic examples</p>
             </li>
           </ul>
-          <h4 className={grid.col}>
-            <Link to="/examples">More Examples</Link>
-          </h4>
+          <div className={grid.col}>
+            <Button to={'/examples'}>More Examples</Button>
+          </div>
         </div>
       </div>
       <div className={classnames(grid.grid, css.bottom)}>
