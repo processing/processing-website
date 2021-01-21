@@ -12,6 +12,7 @@ import LogoFoundation from '../images/logo-processingfoundation-dark.svg';
 
 export const items = [
   {
+    className: css.foundation,
     name: 'Processing Foundation',
     link: 'https://processingfoundation.org',
     logo: <LogoFoundation className={css.logo} />,
@@ -22,6 +23,7 @@ export const items = [
     logo: <LogoProcessing className={css.logo} />,
   },
   {
+    className: css.p5,
     name: 'p5.js',
     link: 'https://p5js.org/',
     logo: <LogoP5js className={css.logo} />,
@@ -38,7 +40,7 @@ const Topbar = ({ show }) => {
       )}>
       <ul className={css.menu}>
         {items.map((item, key) => (
-          <li key={key} className={css.item}>
+          <li key={key} className={classnames(css.item, item.className)}>
             <TopbarItem item={item} />
           </li>
         ))}

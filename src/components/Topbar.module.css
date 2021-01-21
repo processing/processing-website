@@ -49,6 +49,14 @@
   padding-top: 6px;
 }
 
+.foundation:hover {
+  border-color: var(--foundation-mid);
+}
+
+.p5:hover {
+  border-color: var(--p5-mid);
+}
+
 .logo {
   margin-right: 5px;
   width: 30px;
