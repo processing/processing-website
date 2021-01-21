@@ -8,8 +8,12 @@
   height: 600px;
 
   & h1 {
-    margin-bottom: var(--margin);
+    margin-bottom: var(--margin-half);
     font-size: var(--text-xxlarge);
+  }
+
+  & p {
+    font-size: var(--text-large);
   }
 }
 
@@ -27,11 +31,6 @@
 
 .button {
   margin-right: var(--gutter-double);
-  font-family: var(--font-mono);
-  padding: var(--gutter) var(--gutter-double);
-  background-color: var(--processing-blue-dark);
-  color: var(--lightgray);
-  border-radius: 30px;
 }
 
 .buttons {

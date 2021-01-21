@@ -31,7 +31,6 @@ export const items = [
 ];
 
 const Topbar = ({ show }) => {
-  console.log('hello');
   return (
     <div
       className={classnames(

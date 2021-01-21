@@ -42,10 +42,9 @@ export const items = [
 ];
 
 const IndexPage = ({ data }) => {
-  //localization - will be needed
   const intl = useIntl();
-
   const winSize = useWindowSize();
+
   return (
     <Layout>
       <div className={css.hero}>
@@ -54,14 +53,15 @@ const IndexPage = ({ data }) => {
             <h1>{intl.formatMessage({ id: 'introTitle' })}</h1>
             <p>{intl.formatMessage({ id: 'introText' })}</p>
             <div className={css.buttons}>
-              <Button to={'/download'} className={css.button}>
+              <Button to={'/download'} size="large" className={css.button}>
                 {intl.formatMessage({ id: 'download' })}
               </Button>
-              <Button to={'/reference'} className={css.button}>
+              <Button to={'/reference'} size="large" className={css.button}>
                 {intl.formatMessage({ id: 'reference' })}
               </Button>
               <Button
                 to={'https://processingfoundation.org/donate'}
+                size="large"
                 className={css.button}>
                 {intl.formatMessage({ id: 'donate' })}
               </Button>
