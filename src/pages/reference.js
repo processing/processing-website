@@ -39,7 +39,7 @@ const Reference = ({ data }) => {
           searchTerm={searchTerm}
           large
         />
-        <CategoryNav categories={categories} />
+        {!searchTerm && <CategoryNav categories={categories} />}
         <ReferenceList data={tree} />
       </div>
     </Layout>
