@@ -7,11 +7,23 @@
 }
 
 .input {
-  border: solid 4px var(--gray);
+  border: solid 4px var(--lightgray);
+  background-color: var(--lightgray);
   border-radius: 40px;
   margin-left: auto;
   width: 100%;
   height: 100%;
+  padding: 1px 10px 0 10px;
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--darkgray);
+}
+
+.input::placeholder {
+  color: var(--darkgray);
+  opacity: 1;
 }
 
 .searchButton {

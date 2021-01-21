@@ -48,7 +48,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <div className={css.hero}>
-        <div className={classnames(grid.grid)}>
+        <div className={grid.grid}>
           <div className={classnames(grid.col, css.intro)}>
             <h1>{intl.formatMessage({ id: 'introTitle' })}</h1>
             <p>{intl.formatMessage({ id: 'introText' })}</p>
@@ -70,7 +70,7 @@ const IndexPage = ({ data }) => {
           {winSize.width > 1080 && <Sketch />}
         </div>
       </div>
-      <div className={classnames(grid.grid)}>
+      <div className={grid.grid}>
         <div className={classnames(grid.col, grid.nest, css.sidebar)}>
           <ul className={classnames(grid.col, css.list)}>
             {items.map((item, key) => (
@@ -109,9 +109,9 @@ const IndexPage = ({ data }) => {
               <p>in Basic examples</p>
             </li>
           </ul>
-          <h4 className={grid.col}>
-            <Link to="/examples">More Examples</Link>
-          </h4>
+          <div className={grid.col}>
+            <Button to={'/examples'}>More Examples</Button>
+          </div>
         </div>
       </div>
       <div className={classnames(grid.grid, css.bottom)}>

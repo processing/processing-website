@@ -2,7 +2,7 @@
   width: fit-content;
   background-color: var(--processing-blue-dark);
   color: white;
-  padding: 4px 18px;
+  padding: 6px 18px;
   font-family: var(--font-mono);
   font-size: var(--text-small);
   border-radius: 50px;

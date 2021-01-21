@@ -6,6 +6,7 @@
   );
   position: relative;
   height: 600px;
+  margin-bottom: var(--margin);
 
   & h1 {
     margin-bottom: var(--margin-half);
