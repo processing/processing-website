@@ -6,7 +6,6 @@
   );
   position: relative;
   height: 600px;
-  margin-bottom: var(--margin);
 
   & h1 {
     margin-bottom: var(--margin-half);
@@ -16,6 +15,10 @@
   & p {
     font-size: var(--text-large);
   }
+}
+
+.section {
+  margin-bottom: var(--margin);
 }
 
 .intro {
@@ -46,6 +49,7 @@
 .list,
 .contact {
   border-left: solid 7px var(--lightgray);
+  padding-left: var(--gutter);
 }
 
 .list {
@@ -84,6 +88,10 @@
 
 .example {
   flex-basis: var(--col2);
+}
+
+.example img {
+  margin-bottom: var(--gutter-half);
 }
 
 .half {

@@ -7,18 +7,18 @@
 }
 
 .input {
-  border: solid 4px var(--lightgray);
+  border: 2px solid var(--lightgray);
   background-color: var(--lightgray);
   border-radius: 40px;
   margin-left: auto;
   width: 100%;
   height: 100%;
-  padding: 1px 10px 0 10px;
+  padding: 4px 10px 2px 12px;
   outline: none;
 }
 
 .input:focus {
-  border-color: var(--darkgray);
+  border-color: var(--processing-blue-light);
 }
 
 .input::placeholder {

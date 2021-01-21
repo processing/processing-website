@@ -47,7 +47,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <div className={css.hero}>
+      <div className={classnames(css.hero, css.section)}>
         <div className={grid.grid}>
           <div className={classnames(grid.col, css.intro)}>
             <h1>{intl.formatMessage({ id: 'introTitle' })}</h1>
@@ -60,7 +60,7 @@ const IndexPage = ({ data }) => {
                 {intl.formatMessage({ id: 'reference' })}
               </Button>
               <Button
-                to={'https://processingfoundation.org/donate'}
+                href={'https://processingfoundation.org/donate'}
                 size="large"
                 className={css.button}>
                 {intl.formatMessage({ id: 'donate' })}
@@ -70,18 +70,19 @@ const IndexPage = ({ data }) => {
           {winSize.width > 1080 && <Sketch />}
         </div>
       </div>
-      <div className={grid.grid}>
-        <div className={classnames(grid.col, grid.nest, css.sidebar)}>
-          <ul className={classnames(grid.col, css.list)}>
+      <div className={classnames(grid.grid, css.section)}>
+        <div className={classnames(grid.col, css.sidebar)}>
+          <h3>{intl.formatMessage({ id: 'community' })}</h3>
+          <ul className={css.list}>
             {items.map((item, key) => (
               <li key={key}>
                 <a href={item.link}>{intl.formatMessage({ id: item.name })}</a>
               </li>
             ))}
           </ul>
-          <div className={classnames(grid.col, css.contact)}>
+          <div className={css.contact}>
             <h4>{intl.formatMessage({ id: 'contact' })}</h4>
-            <span>{intl.formatMessage({ id: 'contactText' })}</span>
+            <span>{intl.formatMessage({ id: 'contactText' })}&nbsp;</span>
             <a href="mailto: foundation@processing.org">
               {intl.formatMessage({ id: 'contactEmail' })}
             </a>
@@ -107,6 +108,12 @@ const IndexPage = ({ data }) => {
               <a href="#">Radial gradient</a>
               <br />
               <p>in Basic examples</p>
+            </li>
+            <li className={classnames(css.example, grid.col)}>
+              <img src={data.flocking.childImageSharp.fluid.src} alt="" />
+              <a href="#">Flocking</a>
+              <br />
+              <p>in Topic examples</p>
             </li>
           </ul>
           <div className={grid.col}>
