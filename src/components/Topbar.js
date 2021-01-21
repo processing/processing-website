@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import classnames from 'classnames';
 
 import css from './Topbar.module.css';
@@ -31,6 +31,7 @@ export const items = [
 ];
 
 const Topbar = ({ show }) => {
+  console.log('hello');
   return (
     <div
       className={classnames(
@@ -50,4 +51,4 @@ const Topbar = ({ show }) => {
   );
 };
 
-export default Topbar;
+export default memo(Topbar);
