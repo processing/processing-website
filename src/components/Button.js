@@ -10,11 +10,15 @@ export const Button = ({
   to,
   href,
   size,
+  color,
   target,
   onClick,
   children,
 }) => {
-  const classNames = classnames(css.root, className, [css[size]]);
+  const classNames = classnames(css.root, className, {
+    [css[size]]: size,
+    [css[color]]: color,
+  });
 
   return (
     <>
@@ -46,5 +50,6 @@ Button.propTypes = {
   className: PropTypes.string,
   to: PropTypes.string,
   onClick: PropTypes.func,
-  size: PropTypes.oneOf(['large']),
+  color: PropTypes.oneOf(['gray']),
+  size: PropTypes.oneOf(['large', 'small']),
 };

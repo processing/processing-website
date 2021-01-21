@@ -1,29 +1,27 @@
 .root {
-  margin-bottom: calc(var(--margin) * 2);
-  flex-basis: var(--col7);
-  padding-left: var(--col1);
+  flex-basis: cols(6);
   justify-content: center;
+  margin-top: var(--margin-half);
+}
 
-  & ul {
-    padding: 0;
-    margin: 0;
-    columns: 6;
-    list-style: none;
-  }
+.list {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
 
-  & a {
-    text-decoration: none;
-  }
+.item {
+  flex-basis: cols(1, 6);
+  display: flex;
 
-  & h3 {
-    text-transform: capitalize;
+  & .line {
+    border-left: 3px solid var(--lightgray);
+    height: 100%;
+    margin-right: 10px;
   }
-
-  & h3:hover {
-    color: inherit;
-  }
-
-  & h3:focus {
-    color: inherit;
-  }
+}
+.itemLink {
+  font-weight: bold;
+  margin-bottom: 5px;
 }

@@ -6,9 +6,8 @@
 }
 
 .category {
-  margin-bottom: 60px;
-
   & h2 {
+    padding-top: 60px;
     font-size: var(--text-xlarge);
     flex-basis: var(--col8);
     text-transform: capitalize;
