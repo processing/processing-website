@@ -4,8 +4,8 @@ The content on the download page is automatically pulled from GitHub on build ti
 
 In order to give us the ability to filter which releases are shown on the page, the [`utils/constants.js`](/src/utils/constants.js) file has a list of the releases and pre-releases that is used to filter content on the page.
 
-## How to show a new release of Processing
+## How to show a new release on the download page
 
 1. Make sure that the release has been published on GitHub
 2. Edit the [`utils/constants.js`](/src/utils/constants.js) file to reflect which releases the download page should feature.
-3. Publish the website
+3. [Publish the website](/docs/publish)

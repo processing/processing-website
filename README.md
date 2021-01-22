@@ -24,8 +24,8 @@ The following guides explain how to change the content on the website by section
 - [Download](/docs/download.md)
 - Documentation
   - [Reference](/docs/reference.md)
-  - [Environment](#)
-  - [Libraries](#)
+  - [Environment](/docs/markdown-pages.md)
+  - [Libraries](/docs/libraries.md)
   - [Tools](#)
 - Learn
   - [Tutorials](#)
