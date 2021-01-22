@@ -6,7 +6,7 @@ This repo holds the code for the [processing.org](https://processing.org) websit
 
 To run the site locally, make sure that you have Node.js installed (`v12` minimum).
 
-1. Clone down this repo and move into the folder via the command-line.
+1. Clone down this repo and `cd` into the folder via the command-line
 2. Run `npm install` to install the dependencies
 3. Run `npm run dev` to run the development server
 
