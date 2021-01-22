@@ -12,11 +12,16 @@ To run the site locally, make sure that you have Node.js installed (`v12` minimu
 
 Now open [localhost:8000](http://localhost:8000) in your browser of choice.
 
-## Changing the content
+## Editing content
+
+In order to maintain the website, it's important to know how the translation and internationalization frameworks are set up. For this, we distinguish between two things:
+
+- **UI language** that is more static, such as page headings and the descriptions on the front page. This is controlled by the `react-intl` package, and all definitions of UI language can be found in the `i18n/react-intl` folder. Each language will have its own `.json` file in this folder, and this is where edits to the UI language happens.
+- **Content** that changes more often, such as the individual items under reference, tutorials, etc. Each content type has its own translation setup based on where the source lives. As an example, the reference is generated from the Processing source code and has its own way of translating those generated files. You can read about how to change this content under the guide for each content item below.
 
 The following guides explain how to change the content on the website by section.
 
-- [Download](#)
+- [Download](/docs/download.md)
 - Documentation
   - [Reference](/docs/reference.md)
   - [Environment](#)
