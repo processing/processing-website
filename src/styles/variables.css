@@ -7,6 +7,8 @@
   --processing-blue-mid: #0251c8;
   --processing-blue-dark: #1e2a67;
   --processing-blue-gradient: #508bff2e;
+  --p5-mid: #ff4077;
+  --foundation-mid: #7446ac;
   --lightgray: #f5f5f5;
   --gray: #dbdbdb;
   --darkgray: #898989;
@@ -28,17 +30,17 @@
   --gutter-double: calc(var(--gutter) * 2);
   --vertical-gutter: 40px;
 
-  --column: cols(1, 8);
-  --column-half: cols(0.5, 8);
-  --column-double: cols(2, 8);
-  --col1: cols(1, 8);
-  --col2: cols(2, 8);
-  --col3: cols(3, 8);
-  --col4: cols(4, 8);
-  --col5: cols(5, 8);
-  --col6: cols(6, 8);
-  --col7: cols(7, 8);
-  --col8: cols(8, 8);
+  --column: cols(1);
+  --column-half: cols(0.5);
+  --column-double: cols(2);
+  --col1: cols(1);
+  --col2: cols(2);
+  --col3: cols(3);
+  --col4: cols(4);
+  --col5: cols(5);
+  --col6: cols(6);
+  --col7: cols(7);
+  --col8: cols(8);
 
   --pushHalf: calc(var(--column-half) + var(--gutter));
   --push1: calc(var(--col1) + var(--gutter));

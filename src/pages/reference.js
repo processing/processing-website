@@ -28,7 +28,9 @@ const Reference = ({ data }) => {
   return (
     <Layout>
       <div className={grid.grid}>
-        <h1 className={grid.col}>{intl.formatMessage({ id: 'references' })}</h1>
+        <h1 className={grid.col} style={{ flexBasis: '100%' }}>
+          {intl.formatMessage({ id: 'references' })}
+        </h1>
         <Donate />
         <Searchbar
           placeholder={intl.formatMessage({ id: 'referencesSearch' })}
@@ -37,7 +39,7 @@ const Reference = ({ data }) => {
           searchTerm={searchTerm}
           large
         />
-        <CategoryNav categories={categories} />
+        {!searchTerm && <CategoryNav categories={categories} />}
         <ReferenceList data={tree} />
       </div>
     </Layout>

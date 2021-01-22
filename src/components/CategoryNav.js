@@ -7,12 +7,16 @@ import grid from '../styles/grid.module.css';
 
 const CategoryNav = ({ categories }) => {
   return (
-    <div className={classnames(css.root, grid.nest)}>
-      <ul className={grid.col}>
+    <div className={css.root}>
+      <h4 className={grid.col}>Shortcuts</h4>
+      <ul className={css.list}>
         {categories.map((category, key) => (
-          <li key={`category-navitem-${key}`}>
-            <Link to={`#${category}`}>
-              <h3>{category.replace(/_/g, ' ')}</h3>
+          <li
+            className={classnames(css.item, grid.col)}
+            key={`category-navitem-${key}`}>
+            <div className={css.line} />
+            <Link className={css.itemLink} to={`#${category}`}>
+              {category.replace(/_/g, ' ')}
             </Link>
           </li>
         ))}

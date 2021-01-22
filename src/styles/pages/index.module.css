@@ -8,9 +8,17 @@
   height: 600px;
 
   & h1 {
-    margin-bottom: var(--margin);
+    margin-bottom: var(--margin-half);
     font-size: var(--text-xxlarge);
   }
+
+  & p {
+    font-size: var(--text-large);
+  }
+}
+
+.section {
+  margin-bottom: var(--margin);
 }
 
 .intro {
@@ -27,11 +35,6 @@
 
 .button {
   margin-right: var(--gutter-double);
-  font-family: var(--font-mono);
-  padding: var(--gutter) var(--gutter-double);
-  background-color: var(--processing-blue-dark);
-  color: var(--lightgray);
-  border-radius: 30px;
 }
 
 .buttons {
@@ -46,6 +49,7 @@
 .list,
 .contact {
   border-left: solid 7px var(--lightgray);
+  padding-left: var(--gutter);
 }
 
 .list {
@@ -84,6 +88,10 @@
 
 .example {
   flex-basis: var(--col2);
+}
+
+.example img {
+  margin-bottom: var(--gutter-half);
 }
 
 .half {

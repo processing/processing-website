@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { useIntl } from 'react-intl';
 import classnames from 'classnames';
-
 import grid from '../styles/grid.module.css';
 import css from './SearchBarSmall.module.css';
 
 const SearchBarSmall = ({ className, size }) => {
+  const intl = useIntl();
   const [searchTerm, setSearchTerm] = useState();
 
   const onChangeHandler = (e) => {
@@ -36,6 +37,7 @@ const SearchBarSmall = ({ className, size }) => {
           value={searchTerm || ''}
           onChange={onChangeHandler}
           onKeyDown={onKeyEnter}
+          placeholder={intl.formatMessage({ id: 'search' })}
         />
       ) : (
         <div className={classnames(css.searchButton, grid.col)}></div>

@@ -5,9 +5,19 @@ import { Link } from 'gatsby';
 
 import css from './Button.module.css';
 
-export const Button = ({ className, to, href, target, onClick, children }) => {
-  const classNames = classnames(css.root, {
-    [className]: className,
+export const Button = ({
+  className,
+  to,
+  href,
+  size,
+  color,
+  target,
+  onClick,
+  children,
+}) => {
+  const classNames = classnames(css.root, className, {
+    [css[size]]: size,
+    [css[color]]: color,
   });
 
   return (
@@ -40,4 +50,6 @@ Button.propTypes = {
   className: PropTypes.string,
   to: PropTypes.string,
   onClick: PropTypes.func,
+  color: PropTypes.oneOf(['gray']),
+  size: PropTypes.oneOf(['large', 'small']),
 };

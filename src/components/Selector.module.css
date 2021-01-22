@@ -27,7 +27,7 @@
 
 .languagePicker {
   position: fixed;
-  opacity: 0;
+  display: none;
   background-color: var(--processing-blue-dark);
 
   & li {
@@ -36,5 +36,5 @@
 }
 
 .show {
-  opacity: 1;
+  display: block;
 }
