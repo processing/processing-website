@@ -3,7 +3,6 @@ import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 
 import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';

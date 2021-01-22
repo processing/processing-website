@@ -1,6 +1,5 @@
 import React from 'react';
 import classnames from 'classnames';
-import Button from './Button';
 import { Link } from 'gatsby';
 
 import css from './CategoryNav.module.css';

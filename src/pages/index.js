@@ -1,7 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
-import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 
 import Layout from '../components/Layout';
 import Button from '../components/Button';
