@@ -10,7 +10,7 @@ import { useLocalization } from 'gatsby-theme-i18n';
 import CategoryNav from '../components/CategoryNav';
 import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
-import Searchbar from '../components/Searchbar';
+import FilterBar from '../components/FilterBar';
 
 import { filterItems } from '../utils/data';
 
@@ -74,12 +74,11 @@ const Libraries = ({ data }) => {
         <h1 className={grid.col}>
           {intl.formatMessage({ id: 'contributions' })}
         </h1>
-        <Searchbar
-          placeholder={intl.formatMessage({ id: 'librariesSearch' })}
+        <FilterBar
+          placeholder={intl.formatMessage({ id: 'librariesFilter' })}
           onChange={(e) => setSearchTerm(e.target.value)}
           onClick={(e) => setSearchTerm('')}
           searchTerm={searchTerm}
-          className={css.searchbar}
           large
         />
         <CategoryNav categories={categories} />

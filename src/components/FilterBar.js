@@ -1,10 +1,10 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import css from './Searchbar.module.css';
+import css from './FilterBar.module.css';
 import grid from '../styles/grid.module.css';
 
-const Searchbar = ({
+const FilterBar = ({
   large,
   placeholder,
   searchTerm,
@@ -58,4 +58,4 @@ const Searchbar = ({
   );
 };
 
-export default Searchbar;
+export default FilterBar;

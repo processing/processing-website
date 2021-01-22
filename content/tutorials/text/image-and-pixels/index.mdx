@@ -85,3 +85,23 @@ image(img,10,20,90,60);
 ## Your very first image processing filter
 
 When displaying an image, you might like to alter its appearance. Perhaps you would like the image to appear darker, transparent, blue-ish, etc. This type of simple image filtering is achieved with Processing's `tint()` function. `tint()` is essentially the image equivalent of shape's `fill()`, setting the color and alpha transparency for displaying an image on screen. An image, nevertheless, is not usually all one color. The arguments for `tint()` simply specify how much of a given color to use for every pixel of that image, as well as how transparent those pixels should appear.
+
+For the following examples, we will assume that two images (a sunflower and a dog) have been loaded and the dog is displayed as the background (which will allow us demonstrate transparency.)
+
+```
+PImage sunflower = loadImage("sunflower.jpg");
+PImage dog = loadImage("dog.jpg");
+background(dog);
+```
+
+If `tint()` receives one argument, only the brightness of the image is affected.
+
+![An image of a sunflower.](./tint1.jpg)
+
+```
+// The image retains its original state.
+tint(255);
+image(sunflower,0,0);
+```
+
+A second argument will change the image's alpha transparency.

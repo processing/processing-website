@@ -1,12 +1,12 @@
 .root {
-  & h1 {
+  & > h1 {
     flex-basis: var(--col8);
   }
-  & h3 {
+  & > h3 {
     flex-basis: var(--col4);
     margin-right: var(--col4);
   }
-  & p {
+  & > p {
     flex-basis: var(--col5);
   }
 }

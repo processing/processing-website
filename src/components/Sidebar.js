@@ -2,7 +2,7 @@ import React, { Fragment, useContext, useState, useMemo } from 'react';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 
-import Searchbar from '../components/Searchbar';
+import FilterBar from '../components/FilterBar';
 import SidebarList from '../components/SidebarList';
 
 import { LayoutContext } from '../components/Layout';
@@ -57,8 +57,8 @@ const Sidebar = (props) => {
               ? intl.formatMessage({ id: 'reference' })
               : intl.formatMessage({ id: 'examples' })}
           </h2>
-          <Searchbar
-            placeholder={'Search'}
+          <FilterBar
+            placeholder={'Filter'}
             onChange={(e) => setSearchTerm(e.target.value)}
             onClick={(e) => setSearchTerm('')}
             searchTerm={searchTerm}

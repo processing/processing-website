@@ -131,7 +131,3 @@
 .contributionBrief {
   flex-basis: var(--col6);
 }
-
-.searchbar {
-  padding-left: var(--push1);
-}

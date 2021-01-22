@@ -6,7 +6,7 @@ import classnames from 'classnames';
 import Donate from '../components/character/Donate';
 import ExamplesList from '../components/ExamplesList';
 import Layout from '../components/Layout';
-import Searchbar from '../components/Searchbar';
+import FilterBar from '../components/FilterBar';
 
 import { filterItems, organizeExampleItems } from '../utils/data';
 
@@ -33,8 +33,8 @@ const Examples = ({ data }) => {
         <h3 className={grid.col}>
           {intl.formatMessage({ id: 'examplesIntro' })}
         </h3>
-        <Searchbar
-          placeholder={intl.formatMessage({ id: 'examplesSearch' })}
+        <FilterBar
+          placeholder={intl.formatMessage({ id: 'examplesFilter' })}
           onChange={(e) => setSearchTerm(e.target.value)}
           onClick={(e) => setSearchTerm('')}
           searchTerm={searchTerm}

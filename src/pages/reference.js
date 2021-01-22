@@ -6,7 +6,7 @@ import CategoryNav from '../components/CategoryNav';
 import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
 import ReferenceList from '../components/ReferenceList';
-import Searchbar from '../components/Searchbar';
+import FilterBar from '../components/FilterBar';
 
 import { filterItems, organizeReferenceItems } from '../utils/data';
 
@@ -32,8 +32,8 @@ const Reference = ({ data }) => {
           {intl.formatMessage({ id: 'references' })}
         </h1>
         <Donate />
-        <Searchbar
-          placeholder={intl.formatMessage({ id: 'referencesSearch' })}
+        <FilterBar
+          placeholder={intl.formatMessage({ id: 'referencesFilter' })}
           onChange={(e) => setSearchTerm(e.target.value)}
           onClick={(e) => setSearchTerm('')}
           searchTerm={searchTerm}
