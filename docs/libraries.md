@@ -2,10 +2,7 @@
 
 The Libraries page consists of two separate pieces of content:
 
-1. Core libraries included with Processing
-2. Contributions
-
-## Core libraries
+## Libraries
 
 Each reference for a core library is created by combining a `.mdx` file (for the top text) and a set of `.json` files exported directly from the source code.
 
