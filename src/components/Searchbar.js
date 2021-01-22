@@ -32,9 +32,11 @@ const Searchbar = ({
           onChange={onChange}
           onKeyDown={onKeyDown}
         />
-        <button className={css.clearButton} onClick={onClick} type="button">
-          x
-        </button>
+        {searchTerm && (
+          <button className={css.clearButton} onClick={onClick} type="button">
+            &times;
+          </button>
+        )}
       </form>
     </div>
   ) : (

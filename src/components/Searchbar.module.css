@@ -1,14 +1,15 @@
 .root {
   display: flex;
+  position: relative;
   margin-top: var(--gutter);
   margin-bottom: var(--gutter-double);
-  margin-right: var(--gutter-double);
   justify-content: center;
-  color: var(--darkgray);
+
   transition: color 0.2s;
 
   & form {
     width: 100%;
+    padding: 0;
   }
 
   & input {
@@ -36,47 +37,41 @@
   & input::placeholder {
     opacity: 1;
     transition: color 0.2s, opacity 0.2s;
-    color: inherit;
+
+    color: var(--gray);
   }
 
   & input:focus::placeholder {
     opacity: 1;
-    color: var(--black);
+    color: var(--darkgray);
   }
+}
 
-  & input:focus:hover::placeholder {
-    opacity: 1;
-    color: var(--black);
-  }
+.clearButton {
+  position: absolute;
+  display: block;
+  z-index: 100;
+  right: var(--gutter);
+  top: 0;
+  align-self: baseline;
+  font-size: var(--text-medium);
+  color: inherit;
 
-  & .clearButton {
-    align-self: baseline;
-    font-size: var(--text-medium);
-    color: inherit;
-    margin-left: calc(-1 * var(--text-medium));
-    z-index: 100;
-    cursor: pointer;
-  }
-
-  & .clearButton:focus {
+  cursor: pointer;
+  &:focus {
     outline: none;
-  }
-
-  & form {
-    padding: 0;
   }
 }
 
 .root:hover {
-  color: var(--darkgray);
+  /* color: var(--darkgray); */
   & input {
-    opacity: 0.8;
+    /* opacity: 0.8; */
     border-color: 3px solid var(--darkgray);
     color: inherit;
   }
   & input::placeholder {
-    opacity: 0.8;
-    color: inherit;
+    color: var(--darkgray);
   }
   & .clearButton {
     opacity: 0.8;
@@ -85,21 +80,18 @@
 }
 
 .large {
-  margin-top: var(--margin);
-  margin-bottom: var(--margin);
-  flex-basis: var(--col7);
-  padding-left: var(--col1);
-  color: var(--gray);
+  margin: var(--margin-half) 0;
+  flex-basis: var(--col6);
 
   & input {
     border-bottom: 3px solid var(--gray);
-    padding: 0 60px 12px;
+    padding: 0 50px 12px 20px;
     background-color: white;
     font-size: var(--text-xlarge);
   }
 
   & .clearButton {
-    margin-left: calc(-1 * var(--text-xlarge) - 60px);
+    /* margin-left: calc(-1 * var(--text-xlarge) - 60px); */
     font-size: var(--text-xlarge);
   }
 
