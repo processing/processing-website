@@ -14,7 +14,7 @@ Now open [localhost:8000](http://localhost:8000) in your browser of choice.
 
 ## Editing content
 
-Please refer to the [Editing Content](/docs/editing-content.md) guide.
+Please refer to the [guides](/docs/README.md).
 
 ## Folder structure
 
