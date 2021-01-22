@@ -15,7 +15,7 @@ This content changes more often, and is often shown in list form. This includes 
   - [Reference](/docs/reference.md)
   - [Environment](/docs/markdown-pages.md)
   - [Libraries](/docs/libraries.md)
-  - [Tools](#)
+  - [Tools](/docs/tools.md)
 - Learn
   - [Tutorials](#)
   - [Examples](#)
