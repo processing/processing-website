@@ -17,9 +17,9 @@ This content changes more often, and is often shown in list form. This includes 
   - [Libraries](/docs/libraries.md)
   - [Tools](/docs/tools.md)
 - Learn
-  - [Tutorials](#)
-  - [Examples](#)
-  - [Books](#)
+  - [Tutorials](/docs/tutorials.md)
+  - [Examples](/docs/examples.md)
+  - [Books](/docs/markdown-pages.md)
 - [Teach](#)
 - [About](#)
 - [Donate](#)

@@ -24,30 +24,15 @@ This folder contains all the content on the website and it is divided into:
 
 1. `/examples`
 
-   Examples are divided into category folders and each example has its own folder named like the example with files for every language. The english file is named `index.mdx` and the other languages have their language code before the `.mdx` file type (e.g. `index.de.mdx`). Each example has to have a cover image for the index named liked the example file with a `16:9` ratio (minimum width 288px) and a cover image named `Cover.png\.jpg` for the homepage with 1:1 ratio (minimum width 600px) placed in the same folder.
-
-2. `/tutorials`
-
-   Every text tutorial has its own folder named after the tutorial with files for every language. The english file is index.mdx and the other languages have their language code<sup>1</sup> before `.mdx` (e.g. index.de.mdx). All `.mdx` files can use custom MDX Components that are globally available with the following tags:
-
-   - `<FixedImage>{image in MDX}</FixedImage>` wraps an image in a container to give it a fixed size. The style can be overriden through the style attribute.
-   - `<HighlightBlock>{content}</HighlightBlock>` wraps content in a gray block to highlight a block of content.
-   - `<Intro>{content}</Intro>` changes text styling for the introduction of pages.
-   - `<Note>{content}</Note>` a small note with smaller font-size for disclaimer of a certain content.
-
-   The current tutorials need to be translated from their current format (`.html`) to MDX, see [Table of Components](https://mdxjs.com/table-of-components) for further details.
-
-   Each tutorial has a cover image for the index pages that needs to be declared in the header of its .mdx file as a `coverImage` key with the filename of the cover that must be placed in the same folder. This image should have a `3:1` ratio with a minimum width of `600px`.
-
-3. `/books`
+3) `/books`
 
    Every book has its own folder with an `.mdx` file that includes the data of the book and a body text description. The cover of the book should be named after the folder.
 
-4. `/tools`
+4) `/tools`
 
    The tools are `.json` files that include the name and the description of the tool.
 
-5. `/pages`
+5) `/pages`
 
    This folder contains all the singular pages that don't belong to any template. Every page has its own folder and inside that folder, files for every language. The english file is named `index.mdx` and the other languages have their code before `.mdx` (e.g. `index.de.mdx`)
 
