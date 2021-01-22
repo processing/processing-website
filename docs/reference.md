@@ -7,9 +7,18 @@ The content for the reference lives inside the `/content/references` folder. Thi
 
 ## Adding content to the english reference
 
-You should never edit the `/content/references/translations/en` folder, since it is generated directly from JavaDoc comments in the Processing source code. Instead, submit a Pull Request to the Processing repo.
+You should never edit the `/content/references/translations/en` folder, since it is generated directly from JavaDoc comments in the `processing`, `sound` and `video` repo. Instead, make the changes in those repos as explained below.
 
-_TODO: Describe how to run the script to copy the content from the Processing repo to the website repo._
+_TODO: Explain how to use JavaDoc, including "in use"_
+
+Then run the following steps:
+
+1. [Run the content script](/docs/content-script.md)
+2. [Publish the website](/docs/publish.md)
+
+If you are adding content to the reference that does not live in the `processing` source code (such as some Java functions and `=;<>` symbols), do the following steps.
+
+_TODO_
 
 ## Translating the reference
 
