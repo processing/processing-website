@@ -2,9 +2,9 @@
 
 Some pages on the website are created via `.mdx` files. These are traditional markdown files that can embed React components for more interactive content. The following pages are all created this way, and the guide in this document works for all of these pages.
 
-- Environment (in the [`/src/pages/environment`](/src/pages/environment) folder)
-- About (in the [`/src/pages/about`](`/src/pages/about`) folder)
-- Libraries (in the [`/src/pages/libraries`](`/src/pages/libraries`) folder. Does not apply to Contributions on the same page)
+- Environment (in the [`/content/pages/environment`](/content/pages/environment) folder)
+- About (in the [`/content/pages/about`](`/content/pages/about`) folder)
+- Libraries (in the [`/content/pages/libraries`](`/content/pages/libraries`) folder. Does not apply to Contributions on the same page)
 
 ## Editing the english version of a page
 
