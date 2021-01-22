@@ -8,9 +8,9 @@ Each reference for a core library is created by combining a `.mdx` file (for the
 
 To edit a core library page:
 
-1. Edit the markdown file as explained in the [markdown pages guide](/docs/markdown-pages)
+1. Edit the markdown file as explained in the [markdown pages guide](/docs/markdown-pages.md)
 2. If needed, edit the source code of the core library to change the function descriptions
-3. If needed, [run the content script](/docs/content-script) to pull in the changes from the source code
+3. If needed, [run the content script](/docs/content-script.md) to pull in the changes from the source code
 4. [Publish the website](/docs/publish.md)
 
 ## Contributions
