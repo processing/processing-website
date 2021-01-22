@@ -8,4 +8,4 @@ In order to give us the ability to filter which releases are shown on the page, 
 
 1. Make sure that the release has been published on GitHub
 2. Edit the [`utils/constants.js`](/src/utils/constants.js) file to reflect which releases the download page should feature.
-3. [Publish the website](/docs/publish)
+3. [Publish the website](/docs/publish.md)

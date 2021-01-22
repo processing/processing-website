@@ -9,12 +9,12 @@ Some pages on the website are created via `.mdx` files. These are traditional ma
 ## Editing the english version of a page
 
 1. Find the `.mdx` file in a folder above and edit the content
-2. [Publish the website](/docs/publish)
+2. [Publish the website](/docs/publish.md)
 
 ## Translating a markdown page
 
 1. Find the `.mdx` file in a folder above
 2. Make a copy by adding the language name in the filename (e.g. `index.mdx` becomes `index.de.mdx`)
-3. [Publish the website](/docs/publish)
+3. [Publish the website](/docs/publish.md)
 
 If you are running the website locally with `npm run dev`, you might need to stop the development server and run `npm run clean` to clear the cache before seeing the changes on localhost.
