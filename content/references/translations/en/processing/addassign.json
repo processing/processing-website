@@ -6,13 +6,18 @@
   "syntax": ["value1 += value2"],
   "returns": "",
   "type": "function",
-  "category": "Math",
+  "category": "math",
   "subcategory": "Operators",
   "parameters": [
-    { "name": "value1", "description": "int or float" },
+    {
+      "name": "value1",
+      "description": "int or float",
+      "type": []
+    },
     {
       "name": "value2",
-      "description": "any numerical value the same datatype as value1"
+      "description": "any numerical value the same datatype as value1",
+      "type": []
     }
   ]
 }

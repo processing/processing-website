@@ -1,0 +1,37 @@
+{
+  "name": "PrintWriter",
+  "brief": "Allows characters to print to a text-output stream",
+  "description": "Allows characters to print to a text-output stream. A new PrintWriter object is created with the <b>createWriter()</b> function. For the file to be made correctly, it should be flushed and must be closed with its <b>flush()</b> and <b>close()</b> methods (see above example). \n",
+  "constructors": [],
+  "classFields": [],
+  "methods": [
+    {
+      "name": "print()",
+      "desc": "Adds data to the stream",
+      "anchor": "PrintWriter_print_"
+    },
+    {
+      "name": "println()",
+      "desc": "Adds data to the stream and starts a new line",
+      "anchor": "PrintWriter_println_"
+    },
+    {
+      "name": "flush()",
+      "desc": "Flushes the stream",
+      "anchor": "PrintWriter_flush_"
+    },
+    {
+      "name": "close()",
+      "desc": "Closes the stream",
+      "anchor": "PrintWriter_close_"
+    }
+  ],
+  "related": [
+    "createWriter_"
+  ],
+  "type": "class",
+  "classanchor": "PrintWriter",
+  "category": "output",
+  "subcategory": "files",
+  "parameters": []
+}

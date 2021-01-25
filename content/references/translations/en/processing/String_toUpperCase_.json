@@ -1,0 +1,21 @@
+{
+  "name": "toUpperCase()",
+  "brief": "Converts all of the characters in the string to uppercase",
+  "description": "Converts all of the characters in the string to uppercase. For example, \"abc\" will convert to \"ABC\". \n",
+  "related": [],
+  "syntax": [
+    "str.toUpperCase()"
+  ],
+  "returns": "String",
+  "type": "method",
+  "category": "string",
+  "subcategory": "method",
+  "classanchor": "String",
+  "parameters": [
+    {
+      "name": "str",
+      "description": "String: any variable of type String",
+      "type": []
+    }
+  ]
+}
