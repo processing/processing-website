@@ -20,7 +20,9 @@ All empty `""` should be filled with the information for that examples.
 
 The name is the name that will go to the url and the title is the title of the example shown on the page. You can find the name, title, author and description in the comments of the pde files [here](https://github.com/processing/processing-docs/tree/master/content/examples).
 
-Featured functions is a new feature of the example pages so you should choose no more than 6 functions that appear in the example. The name of the functions should be the same as the name of their `.json` files located in `/content/references/translations/en`.
+### Featured functions 
+
+This is a new feature of the example pages so you should choose no more than 6 functions that appear in the example (in the `.pde` files) and put them in the `.json ` file in the "features" field. The name of the functions should be the same as the name of their `.json` files located in `/content/references/translations/en`.
 
 ## Code files
 
