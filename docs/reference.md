@@ -11,7 +11,25 @@ You should never edit the `/content/references/translations/en` folder, since it
 
 _TODO: Explain how to use JavaDoc, including "in use"_
 
-Then run the following steps:
+In each source file, look for the `@webref` tag in the block comments. If the tag is there it means that the reference below the comment needs to be on the website so the block comment should be changed to fit the new structure. 
+
+/*
+* Description
+*
+* Advanced description
+*
+* @webref category:subcategory
+* @webBrief 
+* ...
+*/
+
+Description: this should be the main description of the reference. The description might already be there however it might not be correct (the newest version) so you need to copy it from the XML files located [here](https://github.com/processing/processing-docs/tree/master/content/api_en) under the <description> tag. 
+Advanced description: this is the advanced description that doesn't go on the webpage but in the in the expanded Java documentation. The advance description starts with an html heading (e.g. <h3>Advanced:</h3>). Not every reference contains this part, it case it is there you do not need to change it in any way, just leave it as it is. Advanced description always goes below the Description.
+@webref: tag that implies the reference goes on the website. It is followed by category and subcategory, if they exist, in the format category:subcategory. The category and subcategory are also in the XML files [here](https://github.com/processing/processing-docs/tree/master/content/api_en) under the <category> and <subcategory> tag. If they don't exist you do not have to add anything.
+@webBrief: this is the short version of description, just one sentence which is usually the first sentence of the Description. If the first sentence is too long or doesn't explain the reference, you can change it for a summary of the whole description.
+...: everything else that was already in the comment should stay there below the @webBrief tag
+
+When you finish adding all the information, run the following steps:
 
 1. [Run the content script](/docs/content-script.md)
 2. [Publish the website](/docs/publish.md)
