@@ -22,3 +22,11 @@
   padding-left: 0;
   padding-right: 0;
 }
+
+.rightBleed {
+  padding-right: 0px;
+}
+
+.leftBleed {
+  padding-left: 0px;
+}

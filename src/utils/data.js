@@ -113,3 +113,8 @@ export const organizeExampleItems = (items, images) => {
 
   return tree;
 };
+
+export const subcategoryFromDirectory = (relDir) => {
+  const category = relDir.split('/')[1];
+  return category.charAt(0).toUpperCase() + category.slice(1);
+};

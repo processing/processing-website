@@ -1,8 +1,7 @@
 @import "../../styles/variables.css";
 
 .root {
-  margin: auto;
-  width: var(--col6);
+  width: var(--col4);
   height: auto;
   position: relative;
   z-index: 200;
