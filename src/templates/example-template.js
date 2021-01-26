@@ -82,11 +82,11 @@ const ExampleTemplate = ({ data, pageContext }) => {
               </div>
             )}
             <div className={classnames(css.cover, grid.col)}>
-              <img
-                src={data.image.nodes[0].childImageSharp.fluid.srcWebp}
-                srcSet={data.image.nodes[0].childImageSharp.fluid.srcSetWebp}
-                alt=""
-              />
+             {data.image.nodes[0] !== undefined && <img
+                             src={data.image.nodes[0].childImageSharp.fluid.srcWebp}
+                             srcSet={data.image.nodes[0].childImageSharp.fluid.srcSetWebp}
+                             alt=""
+                           />}
             </div>
             <Tabs pdes={orderedPdes} />
             {related.length > 0 && (
