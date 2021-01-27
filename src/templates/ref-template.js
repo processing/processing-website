@@ -112,29 +112,32 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
               })}
             </ul>
           </div>
-          {entry.parameters && entry.parameters.length > 0 && (
-            <div className={classnames(css.section, grid.grid)}>
-              <h4 className={grid.col}>
-                {intl.formatMessage({ id: 'parameters' })}
-              </h4>
-              <ul className={classnames(grid.col, grid.nest, css.list)}>
-                {entry.parameters.map((param, key) => {
-                  return (
-                    <li key={'param' + key} className={css.param}>
-                      <span className={classnames(grid.col, css.paramName)}>
-                        {param.name}
-                      </span>
-                      <span className={grid.col}>
-                        {param.type
-                          ? param.type + ': ' + param.description
-                          : param.description}
-                      </span>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          )}
+          {entry.parameters &&
+            entry.parameters.length > 0 &&
+            entry.parameters[0] !=
+              null(
+                <div className={classnames(css.section, grid.grid)}>
+                  <h4 className={grid.col}>
+                    {intl.formatMessage({ id: 'parameters' })}
+                  </h4>
+                  <ul className={classnames(grid.col, grid.nest, css.list)}>
+                    {entry.parameters.map((param, key) => {
+                      return (
+                        <li key={'param' + key} className={css.param}>
+                          <span className={classnames(grid.col, css.paramName)}>
+                            {param.name}
+                          </span>
+                          <span className={grid.col}>
+                            {param.type
+                              ? param.type + ': ' + param.description
+                              : param.description}
+                          </span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              )}
           {entry.returns && (
             <div className={classnames(css.section, grid.grid)}>
               <h4 className={grid.col}>
