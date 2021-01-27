@@ -29,12 +29,14 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
       ? `/reference/${pageContext.name}.html`
       : `/reference/libraries/${pageContext.libraryName}/${pageContext.name}.html`;
 
-  const examples = data.pdes.edges;
+  const examples = data.pdes ? data.pdes.edges : [];
   const images = data.images.edges;
 
   const toggleSidebar = (show) => {
     setShow(show);
   };
+
+  console.log(entry);
 
   return (
     <Layout>
@@ -46,7 +48,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           type={'reference'}
         />
       )}
-      {data.json !== null ? (
+      {entry !== null ? (
         <div
           className={classnames(
             css.root,
@@ -56,7 +58,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           ref={ref}>
           <div className={classnames(css.section, grid.grid)}>
             <h4 className={grid.col}>{intl.formatMessage({ id: 'name' })}</h4>
-            <h3 className={grid.col}>{entry.name}</h3>
+            <h3 className={grid.col}>{entry.name}</h3>}
           </div>
           <div className={classnames(css.section, grid.grid)}>
             <h4 className={grid.col}>
@@ -110,7 +112,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
               })}
             </ul>
           </div>
-          {entry.parameters.length > 0 && (
+          {entry.parameters && entry.parameters.length > 0 && (
             <div className={classnames(css.section, grid.grid)}>
               <h4 className={grid.col}>
                 {intl.formatMessage({ id: 'parameters' })}
@@ -159,7 +161,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
               </ul>
             </div>
           )}
-          {entry.related.length > 0 && (
+          {entry.related && entry.related.length > 0 && (
             <div className={classnames(css.section, grid.grid)}>
               <h4 className={grid.col}>
                 {intl.formatMessage({ id: 'related' })}

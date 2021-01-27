@@ -34,7 +34,7 @@ export const organizeReferenceItems = (items) => {
     const { category, subcategory } = item.childJson;
 
     let categoryIndex = tree.findIndex(
-      (cat) => cat.slug === category.toLowerCase()
+      (cat) => cat.slug.toLowerCase() === category.toLowerCase()
     );
 
     if (categoryIndex === -1) {
@@ -47,7 +47,7 @@ export const organizeReferenceItems = (items) => {
     }
 
     let subcategoryIndex = tree[categoryIndex].children.findIndex(
-      (subcat) => subcat.slug.toLowerCase() === subcategory
+      (subcat) => subcat.slug.toLowerCase() === subcategory.toLowerCase()
     );
 
     if (subcategoryIndex === -1) {
