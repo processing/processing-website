@@ -48,7 +48,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           type={'reference'}
         />
       )}
-      {entry !== null ? (
+      {data.json ? (
         <div
           className={classnames(
             css.root,
@@ -58,7 +58,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           ref={ref}>
           <div className={classnames(css.section, grid.grid)}>
             <h4 className={grid.col}>{intl.formatMessage({ id: 'name' })}</h4>
-            {entry.name && <h3 className={grid.col}>{entry.name}</h3>}
+            {entry && <h3 className={grid.col}>{entry.name}</h3>}
           </div>
           <div className={classnames(css.section, grid.grid)}>
             <h4 className={grid.col}>
