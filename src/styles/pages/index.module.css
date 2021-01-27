@@ -90,10 +90,16 @@
     margin-top: var(--gutter-half);
     margin-bottom: 0px;
     color: var(--processing-blue-dark);
+    transition: color 0.2s ease;
   }
 
   & p {
     cursor: pointer;
+    transition: color 0.2s ease;
+  }
+
+  & .imgContainer {
+    transition: opacity 0.2s ease;
   }
 }
 
@@ -197,8 +203,6 @@
 .partners {
   margin: calc(-1 * var(--margin)) 0;
   padding-top: var(--margin);
-  /* border-left: calc(var(--gutter-double)) solid var(--lightgray); */
-  /* padding-left: var(--col1); */
 }
 
 .announcementCover {
