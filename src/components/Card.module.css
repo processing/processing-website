@@ -4,7 +4,7 @@
   justify-content: center;
   width: fit-content;
   outline: none;
-  border: 4px solid var(--lightgray);
+  border: 4px solid var(--processing-blue-dark);
   padding: 6px 24px;
   color: var(--processing-blue-dark);
   font-family: var(--font-mono);
@@ -22,6 +22,11 @@
   border: 2px solid var(--processing-blue-dark);
   background-color: var(--processing-blue-dark);
   color: white;
+}
+
+.root:active {
+  border: 2px solid var(--processing-blue-mid);
+  background-color: var(--processing-blue-mid);
 }
 
 /*  Colors  */

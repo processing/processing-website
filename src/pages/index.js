@@ -141,8 +141,8 @@ const IndexPage = ({ data }) => {
               }}></p>
           </div>
         </div>
-        <div className={classnames(css.half, grid.nest, css.buttonGrid)}>
-          <div className={classnames(css.half, grid.col, css.buttonCol)}>
+        <div className={classnames(css.half, grid.nest, css.cardGrid)}>
+          <div className={classnames(css.half, grid.col, css.cardCol)}>
             <Card
               to={'/tutorials/gettingstarted'}
               description={intl.formatMessage({
@@ -160,7 +160,7 @@ const IndexPage = ({ data }) => {
               {intl.formatMessage({ id: 'cardReference' })}
             </Card>
           </div>
-          <div className={classnames(css.half, grid.col, css.buttonCol)}>
+          <div className={classnames(css.half, grid.col, css.cardCol)}>
             <Card
               to={'/download'}
               description={intl.formatMessage({
@@ -211,7 +211,7 @@ const IndexPage = ({ data }) => {
             </Button>
           </div>
         </div>
-        <div className={classnames(grid.col, css.half, css.partners)}>
+        <div className={classnames(grid.col, css.half)}>
           <h2>{intl.formatMessage({ id: 'partners' })}</h2>
           <ul className={css.logos}>
             <li>
