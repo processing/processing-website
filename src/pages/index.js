@@ -77,7 +77,7 @@ const IndexPage = ({ data }) => {
   }, [data]);
 
   return (
-    <Layout>
+    <Layout isHomepage>
       <div className={classnames(css.hero)}>
         <div className={grid.grid}>
           <div className={classnames(grid.col, css.intro)}>

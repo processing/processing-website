@@ -22,7 +22,7 @@ import css from './Layout.module.css';
 
 export const LayoutContext = React.createContext({ headerHeight: 0 });
 
-const Layout = ({ children }) => {
+const Layout = ({ children, isHomepage }) => {
   const [headerScrolled, setScrolled] = useState(false);
   const winSize = useWindowSize();
 
@@ -73,7 +73,11 @@ const Layout = ({ children }) => {
           scrolled={headerScrolled}
           size={size}
         />
-        <main className={classnames({ [css.headerScrolled]: headerScrolled })}>
+        <main
+          className={classnames({
+            [css.headerScrolled]: headerScrolled,
+            [css.homepage]: isHomepage,
+          })}>
           <MDXProvider components={shortcodes}>{children}</MDXProvider>
         </main>
         <Footer siteTitle={data.site.siteMetadata.title} />

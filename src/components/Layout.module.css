@@ -3,7 +3,7 @@ main {
   position: relative;
   flex: 1;
   transition: 0.2s ease-in-out;
-  margin-bottom: 180px;
+  margin-bottom: calc(60px + var(--margin));
 }
 
 .root {
@@ -15,4 +15,8 @@ main {
 
 .headerScrolled {
   top: 60px;
+}
+
+.homepage {
+  margin-bottom: 60px;
 }
