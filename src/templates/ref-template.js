@@ -48,7 +48,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           type={'reference'}
         />
       )}
-      {data.json ? (
+      {data.json && entry ? (
         <div
           className={classnames(
             css.root,
