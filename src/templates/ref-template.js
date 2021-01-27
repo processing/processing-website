@@ -58,7 +58,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           ref={ref}>
           <div className={classnames(css.section, grid.grid)}>
             <h4 className={grid.col}>{intl.formatMessage({ id: 'name' })}</h4>
-            <h3 className={grid.col}>{entry.name}</h3>}
+            {entry.name && <h3 className={grid.col}>{entry.name}</h3>}
           </div>
           <div className={classnames(css.section, grid.grid)}>
             <h4 className={grid.col}>
