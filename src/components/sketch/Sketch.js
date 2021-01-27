@@ -74,7 +74,7 @@ const Sketch = (props) => {
   const stateJS = state.toJS();
 
   return (
-    <div className={classnames(css.root, grid.grid, grid.nest)}>
+    <div className={classnames(css.root, grid.nest, grid.col)}>
       <SketchCode
         onChange={changeStateHandler}
         isVisible={showCode}

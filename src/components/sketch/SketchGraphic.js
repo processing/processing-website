@@ -129,10 +129,10 @@ const SketchGraphic = (props) => {
       style={{ width, height }}>
       <div
         className={classnames(css.ui, {
-          [css.show]: mouseEntered,
+          [css.show]: mouseEntered || isVisible,
         })}>
-        <Button className={css.button} onClick={onClick}>
-          {isVisible ? 'Hide code' : 'Show code'}
+        <Button className={css.button} onClick={onClick} size={'large'}>
+          {isVisible ? 'Hide code' : 'Customize'}
         </Button>
       </div>
       <svg width={width} height={height}>

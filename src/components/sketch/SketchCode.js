@@ -65,30 +65,8 @@ const SketchCode = (props) => {
       <div className={css.code}>
         <div className={css.inCode}>
           <pre>
-            <code>int width = </code>
-          </pre>
-          <Draggable
-            name="width"
-            className={css.showGrid}
-            value={width}
-            range={{ min: 0, max: 1600 }}
-            path={['width']}
-            onChange={onChange}></Draggable>
-          ;
-          <br />
-          <pre>
-            <code>int height = </code>
-          </pre>
-          <Draggable
-            name="height"
-            className={css.showGrid}
-            value={height}
-            range={{ min: 0, max: 1200 }}
-            path={['height']}
-            onChange={onChange}></Draggable>
-          ;
-          <br />
-          <pre>
+            int width = {width}; <br />
+            int height = {height};<br />
             <code>int unit = </code>
           </pre>
           <Draggable

@@ -1,11 +1,11 @@
 .hero {
+  position: relative;
+  height: 600px;
   background-image: linear-gradient(
     to right,
     white 20%,
     var(--processing-blue-gradient)
   );
-  position: relative;
-  height: 600px;
 
   & h1 {
     margin-bottom: var(--margin-half);
@@ -18,18 +18,117 @@
 }
 
 .section {
-  margin-bottom: var(--margin);
+  padding-bottom: var(--margin);
+  padding-top: var(--margin);
+}
+
+.sectionDivider {
+  flex-basis: var(--col8);
+  height: 30px;
+  background-color: var(--lightgray);
+}
+
+.half {
+  flex-basis: var(--col4);
 }
 
 .intro {
+  display: flex;
   flex-basis: var(--col4);
+  flex-direction: column;
   z-index: 1;
+  height: 100%;
+  padding-top: 100px;
+
+  @media (--medium) {
+    flex-basis: var(--col8);
+  }
+}
+
+.buttons {
+  margin: var(--margin) 0;
+}
+
+.examples {
+  flex-basis: var(--col8);
+
+  & ul {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+}
+
+.example {
+  flex-basis: var(--col2);
+  cursor: pointer;
+
+  & h4 {
+    margin-top: var(--gutter-half);
+    margin-bottom: 0px;
+    color: var(--processing-blue-dark);
+    transition: color 0.2s ease;
+  }
+
+  & p {
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+
+  & .imgContainer {
+    transition: opacity 0.2s ease;
+  }
+}
+
+.example:hover {
+  & h4 {
+    color: var(--processing-blue-mid);
+  }
+
+  & .imgContainer {
+    opacity: 0.8;
+  }
+}
+
+.imgContainer {
+  display: flex;
+
+  & > img {
+    object-fit: cover;
+  }
+}
+
+.imgContainer:before {
+  display: block;
+  padding-top: 100%;
+  content: "";
+}
+
+.moreButton {
+  flex-basis: var(--col8);
+  padding-left: var(--col7);
+}
+
+.cardGrid {
+  display: flex;
+  align-items: baseline;
+  align-items: center;
+  margin-top: calc(-1 * var(--margin));
+  margin-bottom: calc(-1 * var(--margin));
+}
+
+.cardCol {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding-top: 100px;
-  @media (--medium) {
-    flex-basis: var(--col8);
+  padding: var(--gutter-double) var(--gutter);
+  min-height: 360px;
+  & > a:first-child {
+    margin-bottom: var(--gutter);
+  }
+  & > a:last-child {
+    margin-top: var(--gutter);
   }
 }
 
@@ -37,65 +136,21 @@
   margin-right: var(--gutter-double);
 }
 
-.buttons {
-  margin: var(--margin) 0;
-}
-
-.sidebar {
-  flex-basis: var(--col2);
-  align-content: flex-start;
-}
-
-.list,
-.contact {
-  border-left: solid 7px var(--lightgray);
-  padding-left: var(--gutter);
-}
-
-.list {
-  margin-bottom: var(--gutter-double);
-}
-
-.contact a {
+.card {
+  height: 50%;
+  width: 100%;
+  border: 2px solid var(--processing-blue-dark);
+  text-align: center;
   font-size: var(--text-small);
 }
 
-.examples {
-  flex-basis: var(--col6);
+.card:active {
+  border: 2px solid var(--processing-blue-mid);
+  background: var(--processing-blue-mid);
 }
 
-.sketch {
-  position: relative;
-}
-
-.placeholder {
-  background-color: var(--gray);
-  height: 200px;
-  padding-right: var(--gutter);
-}
-
-.partner {
-  height: 100px;
-}
-
-.examples ul {
+.contributeButtton {
   display: inline-flex;
-  & a {
-    margin-top: var(--gutter-half);
-    color: var(--processing-blue-mid);
-  }
-}
-
-.example {
-  flex-basis: var(--col2);
-}
-
-.example img {
-  margin-bottom: var(--gutter-half);
-}
-
-.half {
-  flex-basis: var(--col4);
 }
 
 .logos {
@@ -111,18 +166,22 @@
   & li {
     flex-basis: var(--col2);
     margin-right: var(--gutter);
+
     & div {
+      margin: 0 auto;
       height: 60px;
       width: 60px;
-      margin: 0 auto;
     }
   }
 }
 
-.news {
-  margin-top: var(--gutter);
+.announcementCover {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
-.newsCover {
-  margin-bottom: var(--vertical-gutter);
+.announcementSection {
+  margin-top: calc(-1 * var(--margin));
+  margin-bottom: calc(-1 * var(--margin));
 }

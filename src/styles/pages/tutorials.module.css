@@ -52,7 +52,7 @@
     padding-top: var(--gutter);
     padding-bottom: var(--gutter);
     background-color: none;
-    transition: background 0.3s ease;
+    transition: background 0.2s ease;
     pointer-events: auto;
   }
 
