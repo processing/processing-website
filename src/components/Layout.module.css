@@ -3,7 +3,7 @@ main {
   position: relative;
   flex: 1;
   transition: 0.2s ease-in-out;
-  margin-bottom: 60px;
+  margin-bottom: 180px;
 }
 
 .root {
