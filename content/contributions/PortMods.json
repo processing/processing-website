@@ -1,0 +1,23 @@
+{
+  "name": "PortMods",
+  "authors": [
+    "[Pike]"
+  ],
+  "url": "https://commonpike.github.io/nl.kw.processing.portmods/docs/PortMods.pdf",
+  "categories": [
+    "Utilities"
+  ],
+  "sentence": "Built for Processing 3, PortMods are pieces of Java code with input- and outputports that can be chained.",
+  "paragraph": "",
+  "id": "240",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://commonpike.github.io/nl.kw.processing.portmods/dist/PortMods.txt",
+      "download": "https://commonpike.github.io/nl.kw.processing.portmods/dist/PortMods.zip"
+    }
+  ]
+}

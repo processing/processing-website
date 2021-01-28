@@ -105,11 +105,17 @@ const Libraries = ({ data }) => {
                           {node.authors.map((author, key) => (
                             <a
                               key={key + 'a'}
-                              href={author.link}
+                              href={author.slice(
+                                author.indexOf('(') + 1,
+                                author.indexOf(')')
+                              )}
                               target="_blank"
                               rel="noreferrer"
                               className={css.contributionAuthor}>
-                              {author.name}
+                              {author.slice(
+                                author.indexOf('[') + 1,
+                                author.indexOf(']')
+                              )}
                             </a>
                           ))}
                         </div>
@@ -177,10 +183,7 @@ export const query = graphql`
         childJson {
           name
           url
-          authors {
-            name
-            link
-          }
+          authors
           sentence
           categories
         }

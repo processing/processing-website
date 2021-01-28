@@ -1,0 +1,23 @@
+{
+  "name": "AI for 2D Games",
+  "authors": [
+    "[Peter Lager](http://www.lagers.org.uk)"
+  ],
+  "url": "http://www.lagers.org.uk/ai4g/index.html",
+  "categories": [
+    "Simulation"
+  ],
+  "sentence": "An AI framework suitable for 2D games and simulations.",
+  "paragraph": "This supports the creation of sketches that require state driven autonomous agents.  Everything is here to get you started, including many examples demonstrating the library features. The [website] (http://www.lagers.org.uk/ai4g/index.html) has many articles and programming examples explaining this sophisticated library.",
+  "id": "127",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0227",
+      "maxRevision": "0",
+      "props": "http://www.lagers.org.uk/processing/ai4g/AI_for_2D_Games.txt",
+      "download": "http://www.lagers.org.uk/processing/ai4g/AI_for_2D_Games.zip"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Simple Multi-Touch (SMT)",
+  "authors": [
+    "[Erik Paluka](http://www.erikpaluka.com/), [Kalev Kalda Sikes](http://vialab.science.uoit.ca/portfolio/kalev-kalda-sikes), [Zachary Cook](http://vialab.science.uoit.ca/portfolio/zachary-cook), [Dr. Mark Hancock](http://markhancock.ca/), and [Dr. Christopher Collins](http://vialab.science.uoit.ca/portfolio/christopher-m-collins)"
+  ],
+  "url": "http://vialab.science.uoit.ca/SMT/",
+  "categories": [
+    "I/O"
+  ],
+  "sentence": "Multi-touch prototyping and development made simple.",
+  "paragraph": "SMT provides back-end device support for Tuio, Windows Touch* ( requires [VC2012 Redistributable](http://www.microsoft.com/en-au/download/details.aspx?id=30679) ), SmartSDK*, Leap Motion*, and Mouse Emulation. *Windows-Only",
+  "id": "098",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "228",
+      "props": "http://vialab.science.uoit.ca/smt/dl/SMT.txt",
+      "download": "http://vialab.science.uoit.ca/smt/dl/SMT.zip"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Dashed Lines",
+  "authors": [
+    "[Jose Luis Garcia del Castillo](http://www.garciadelcastillo.es)"
+  ],
+  "url": "https://github.com/garciadelcastillo/-dashed-lines-for-processing-",
+  "categories": [
+    "Geometry"
+  ],
+  "sentence": "Draw shapes with dashed lines!",
+  "paragraph": "This library allows you draw geometry with dashed strokes, using the same set of basic geometry methods as in Processing.",
+  "id": "214",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "http://www.garciadelcastillo.es/dashedlines/dashedlines.txt",
+      "download": "http://www.garciadelcastillo.es/dashedlines/dashedlines.zip"
+    }
+  ]
+}

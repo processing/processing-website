@@ -1,0 +1,23 @@
+{
+  "name": "Shapes 3D",
+  "authors": [
+    "[Peter Lager](http://www.lagers.org.uk)"
+  ],
+  "url": "http://www.lagers.org.uk/s3d4p/index.html",
+  "categories": [
+    "3D"
+  ],
+  "sentence": "3D Shape creation and display made easy.",
+  "paragraph": "Choose from a wide range of shapes including the sphere, box, cylinder, torus, helix, bezier shapes and various tubes. All of the shapes can be shown in wireframe, colour or textured with your own images. Many of library examples need the [PeasyCam](http://http://www.processing.org/reference/libraries/",
+  "id": "079",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0246",
+      "maxRevision": "0",
+      "props": "http://www.lagers.org.uk/processing3/shapes3d/Shapes3D.txt",
+      "download": "http://www.lagers.org.uk/processing3/shapes3d/Shapes3D.zip"
+    }
+  ]
+}

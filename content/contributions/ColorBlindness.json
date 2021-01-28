@@ -1,0 +1,23 @@
+{
+  "name": "ColorBlindness",
+  "authors": [
+    "[Jim Schmitz](https://ixora.io)"
+  ],
+  "url": "https://ixora.io/projects/colorblindness/",
+  "categories": [
+    "Utilities"
+  ],
+  "sentence": "Fast and easy to use utility for simulating color blindness or performing daltonization.",
+  "paragraph": "Transforms colors so you can see what a color blind person would see when they look at your sketch.",
+  "id": "202",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "227",
+      "maxRevision": "0",
+      "props": "https://ixora.io/downloads/colorblindness/ColorBlindness.txt",
+      "download": "https://ixora.io/downloads/colorblindness/ColorBlindness.zip"
+    }
+  ]
+}

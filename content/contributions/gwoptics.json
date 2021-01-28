@@ -1,0 +1,23 @@
+{
+  "name": "gwoptics",
+  "authors": [
+    "[Daniel Brown and Andreas Freise](http://www.gwoptics.org/processing/gwoptics_p5lib/)"
+  ],
+  "url": "http://www.gwoptics.org/processing/gwoptics_p5lib/",
+  "categories": [
+    "Math"
+  ],
+  "sentence": "Tools for drawing graphs in 2D and 3D.",
+  "paragraph": "We have developped the library to create simple scientific simulations and data displays, as shown on our [projects page](http://www.gwoptics.org/processing/).",
+  "id": "021",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "228",
+      "props": "http://www.gwoptics.org/processing/gwoptics_p5lib/download/gwoptics.txt",
+      "download": "http://www.gwoptics.org/processing/gwoptics_p5lib/download/gwoptics.zip"
+    }
+  ]
+}

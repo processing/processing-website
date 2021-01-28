@@ -1,0 +1,21 @@
+{
+  "name": "Font Highlighting Editor",
+  "authors": [
+    "[Rostyslav Zatserkovnyi](https://github.com/rzats)"
+  ],
+  "url": "https://github.com/rzats/font-highlighting-editor",
+  "categories": null,
+  "sentence": "A visual editor for Processing's font coloring settings.",
+  "paragraph": "",
+  "id": "182",
+  "type": "tool",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/rzats/font-highlighting-editor/releases/download/latest/FontHighlightingEditor.txt",
+      "download": "https://github.com/rzats/font-highlighting-editor/releases/download/latest/FontHighlightingEditor.zip"
+    }
+  ]
+}

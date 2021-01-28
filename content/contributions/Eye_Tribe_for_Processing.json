@@ -1,0 +1,23 @@
+{
+  "name": "Eye Tribe for Processing",
+  "authors": [
+    "[Jorge C. S. Cardoso](http://jorgecardoso.eu)"
+  ],
+  "url": "http://jorgecardoso.eu/processing/eyetribeprocessing",
+  "categories": [
+    "Hardware"
+  ],
+  "sentence": "A library to get eye gaze data from the [Eye Tribe](https://theeyetribe.com/) device.",
+  "paragraph": "",
+  "id": "164",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "http://jorgecardoso.eu/processing/eyetribeprocessing/download/EyeTribeProcessing.txt",
+      "download": "http://jorgecardoso.eu/processing/eyetribeprocessing/download/EyeTribeProcessing.zip"
+    }
+  ]
+}

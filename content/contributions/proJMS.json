@@ -1,0 +1,23 @@
+{
+  "name": "proJMS",
+  "authors": [
+    "[Hauke Altmann](http://graffitiresearchlab.de)"
+  ],
+  "url": "http://sourceforge.net/projects/projms/",
+  "categories": [
+    "I/O"
+  ],
+  "sentence": "Publish and consume text messages to create peer-to-peer communication between processing applications.",
+  "paragraph": "Implementing JMS messaging the library allows to send and receive messages to/from any other application using JMS.",
+  "id": "067",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "http://www.graffitiresearchlab.de/wp-content/uploads/proJMS.txt",
+      "download": "http://www.graffitiresearchlab.de/wp-content/uploads/proJMS.zip"
+    }
+  ]
+}

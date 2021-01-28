@@ -1,0 +1,23 @@
+{
+  "name": "SuperCollider client for Processing",
+  "authors": [
+    "[Daniel Jones](http://www.erase.net/)"
+  ],
+  "url": "http://www.erase.net/projects/processing-sc/",
+  "categories": [
+    "Sound"
+  ],
+  "sentence": "Framework to interface with the SuperCollider synthesis engine.",
+  "paragraph": "This library provides a simple approach to interfacing with the powerful [SuperCollider](http://supercollider.sourceforge.net) sound synthesis engine. It provides objects to encapsulate common functions such as creating and manipulating Synth, Buffer and Bus objects.",
+  "id": "035",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "http://www.erase.net/projects/processing-sc/files/processing-sc.txt",
+      "download": "http://www.erase.net/projects/processing-sc/files/processing-sc.zip"
+    }
+  ]
+}

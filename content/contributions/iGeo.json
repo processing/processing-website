@@ -1,0 +1,23 @@
+{
+  "name": "iGeo",
+  "authors": [
+    "[Satoru Sugihara](http://atlv.org/)"
+  ],
+  "url": "http://igeo.jp/",
+  "categories": [
+    "3D"
+  ],
+  "sentence": "3D geometry library with packages of NURBS geometry, polygon mesh geometry, vector math, 3D display and navigation, 3D data file I/O and agent-based 3D geometry modeling.",
+  "paragraph": "",
+  "id": "123",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "228",
+      "props": "http://igeo.jp/igeo.txt",
+      "download": "http://igeo.jp/igeo.zip"
+    }
+  ]
+}

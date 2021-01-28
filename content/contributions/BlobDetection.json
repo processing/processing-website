@@ -1,0 +1,23 @@
+{
+  "name": "BlobDetection",
+  "authors": [
+    "[Julien 'v3ga' Gachadoat](http://www.v3ga.net)"
+  ],
+  "url": "http://www.v3ga.net/processing/BlobDetection/",
+  "categories": [
+    "Video & Vision"
+  ],
+  "sentence": "Computer vision library for finding blobs in an image",
+  "paragraph": "",
+  "id": "023",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "http://www.v3ga.net/processing/BlobDetection/blobDetection.txt",
+      "download": "http://www.v3ga.net/processing/BlobDetection/blobDetection.zip"
+    }
+  ]
+}

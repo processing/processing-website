@@ -1,0 +1,23 @@
+{
+  "name": "OCT",
+  "authors": [
+    "[Thomas Wegener](http://www.thomaswegener.ch)"
+  ],
+  "url": "https://github.com/thwegene/OCT",
+  "categories": [
+    "Geometry"
+  ],
+  "sentence": "A Processing library to create, modify and display Octree structures.",
+  "paragraph": "",
+  "id": "204",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/thwegene/OCT/releases/download/latest/OCT.txt",
+      "download": "https://github.com/thwegene/OCT/releases/download/latest/OCT.zip"
+    }
+  ]
+}

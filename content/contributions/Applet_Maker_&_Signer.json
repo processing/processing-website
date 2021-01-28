@@ -1,0 +1,21 @@
+{
+  "name": "Applet Maker & Signer",
+  "authors": [
+    "[Peter Lager](http://www.lagers.org.uk)"
+  ],
+  "url": "http://www.lagers.org.uk/appletutil/",
+  "categories": null,
+  "sentence": "Enables the creation of self-signed Java Applets",
+  "paragraph": "Simple wizard style interface to export and sign (optional) applets from Processing 2.0",
+  "id": "096",
+  "type": "tool",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "228",
+      "props": "http://www.lagers.org.uk/processing/appletmaker/AppletMaker.txt",
+      "download": "http://www.lagers.org.uk/processing/appletmaker/AppletMaker.zip"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "planetarium",
+  "authors": [
+    "[Andres Colubri](http://andrescolubri.net/)"
+  ],
+  "url": "https://github.com/codeanticode/planetarium",
+  "categories": [
+    "3D"
+  ],
+  "sentence": "This library provides a renderer to project 3D scenes on a full dome.",
+  "paragraph": "It works by rendering the scene 5 times (one from each direction: top, right, etc) and then assembling the output of these renderings into a single environmental map that covers the entire dome.",
+  "id": "130",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0246",
+      "maxRevision": "0",
+      "props": "https://github.com/codeanticode/planetarium/releases/download/latest/planetarium.txt",
+      "download": "https://github.com/codeanticode/planetarium/releases/download/latest/planetarium.zip"
+    }
+  ]
+}

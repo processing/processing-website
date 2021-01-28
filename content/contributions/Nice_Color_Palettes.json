@@ -1,0 +1,23 @@
+{
+  "name": "Nice Color Palettes",
+  "authors": [
+    "[Federico Pepe](https://www.federicopepe.com)"
+  ],
+  "url": "https://github.com/federico-pepe/nice-color-palettes",
+  "categories": [
+    "Utilities"
+  ],
+  "sentence": "Use the best color palettes from ColourLovers.com in Processing.",
+  "paragraph": "Each palette contains five different colors that work well together.",
+  "id": "246",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/federico-pepe/nice-color-palettes/releases/download/latest/NiceColorPalettes.txt",
+      "download": "https://github.com/federico-pepe/nice-color-palettes/releases/download/latest/NiceColorPalettes.zip"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Camera 3D",
+  "authors": [
+    "[Jim Schmitz](https://ixora.io)"
+  ],
+  "url": "https://ixora.io/projects/camera-3D/",
+  "categories": [
+    "3D"
+  ],
+  "sentence": "Alter P3D Rendering to produce Stereoscopic Animations, 360 Video and other 3D effects.",
+  "paragraph": "Library will execute the draw method multiple times with different camera settings and combine them together to form one composite frame.",
+  "id": "174",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "233",
+      "maxRevision": "0",
+      "props": "https://ixora.io/downloads/camera3D/Camera3D.txt",
+      "download": "https://ixora.io/downloads/camera3D/Camera3D.zip"
+    }
+  ]
+}

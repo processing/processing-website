@@ -1,0 +1,22 @@
+{
+  "name": "GifAnimation",
+  "authors": [
+    "[Patrick Meister (extrapixel)](http://www.extrapixel.ch)"
+  ],
+  "url": "http://extrapixel.github.io/gif-animation/",
+  "categories": [
+    "I/O"
+  ],
+  "sentence": "Play, import and export gif animations. Render to GIF!",
+  "id": "136",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "228",
+      "props": "http://www.extrapixel.ch/processing/gifAnimation/gifAnimation.txt",
+      "download": "http://www.extrapixel.ch/processing/gifAnimation/gifAnimation.zip"
+    }
+  ]
+}

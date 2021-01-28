@@ -1,0 +1,23 @@
+{
+  "name": "QScript",
+  "authors": [
+    "[Peter Lager](http://www.lagers.org.uk)"
+  ],
+  "url": "http://www.lagers.org.uk/qscript",
+  "categories": [
+    "Math"
+  ],
+  "sentence": "Algorithm and Expression evaluator.",
+  "paragraph": "Not only will it evaluate mathematical expressions, it can execute a simple algorithm created from multiple expressions. Simple selection and iteration statements can be used in the algorithm to control execution flow. The more advanced user can easily extend the evaluator by adding their own methods.",
+  "id": "131",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0227",
+      "maxRevision": "0",
+      "props": "http://www.lagers.org.uk/processing/qscript/QScript.txt",
+      "download": "http://www.lagers.org.uk/processing/qscript/QScript.zip"
+    }
+  ]
+}
