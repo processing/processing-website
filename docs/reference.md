@@ -71,4 +71,6 @@ The .pde and .png file for the same example should be named the same as the refe
 
 ## Translating the reference
 
-If you want to add a translation, copy the `en` folder, rename it to the language code<sup>1</sup> and translate away. The individual files should also be renamed to include the code e.g. if the english reference file is bezier_.json, the german would be bezier_.de.json.
+If you want to add a translation, copy the `en` folder, rename it to the language code<sup>1</sup> and translate away. The individual files should also be renamed to include the code e.g. if the english reference file is `bezier_.json`, the german would be `bezier_.de.json`.
+
+<sup>1</sup> [Language codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
