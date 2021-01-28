@@ -2,14 +2,30 @@
 
 The content for the reference lives inside the `/content/references` folder. This folder has two subfolders:
 
-- The `/translations` folder contains a separate folder for every language with `en` being the default one. **The `en` folder should never be edited manually since it is auto-generated from the Processing and core libraries source codes.**. This folder is divided into subfolders that correspond to each of the processing libraries and a `processing` folder that contains the core processing reference.
+- The `/translations` folder contains a separate folder for every language with `en` being the default one. 
+
+**The `en` folder should never be edited manually since it is auto-generated from the Processing and core libraries source codes.**. This folder is divided into subfolders that correspond to each of the processing libraries and a `processing` folder that contains the core processing reference.
+
+The subfolders:
+
+* `/content/references/translations/en/io`
+* `/content/references/translations/en/net`
+* `/content/references/translations/en/processing`
+* `/content/references/translations/en/serial`
+
+are generated from the [Processing 4](https://github.com/processing/processing4) source code.
+
+The subfolder `/content/references/translations/en/sound` is generated from the [Sound](https://github.com/processing/processing-sound) source code.
+
+The subfolder `/content/references/translations/en/video` is generated from the [Video](https://github.com/processing/processing-video) source code.
+
+Libraries DFX Export, PDF Export and SVG Export don't have individual references so their pages are created from [here](https://github.com/processing/processing-website/tree/master/content/pages/libraries).
+
 - The `/examples` folder contains all the examples used inside the references. They are organized in the same folder structure as the `translations` folder. These folders contain all the `.pde` and `.png` files necessary for the examples. Each example image should have a size of `400x400px` and should be named after the corresponding example, e.g. the `bezier_0.pde` example has an image named `bezier_0.png`.
 
 ## Adding content to the english reference
 
 You should never edit the `/content/references/translations/en` folder, since it is generated directly from JavaDoc comments in the `processing`, `sound` and `video` repo. Instead, make the changes in those repos as explained below.
-
-_TODO: Explain how to use JavaDoc, including "in use"_
 
 In each source file, look for the `@webref` tag in the block comments. If the tag is there it means that the reference below the comment needs to be on the website so the block comment should be changed to fit the new structure. 
 
@@ -37,7 +53,8 @@ In each source file, look for the `@webref` tag in the block comments. If the ta
 
 When you finish adding all the information, run the following steps:
 
-1. [Run the content script](/docs/content-script.md)
+1. Set up the environment and run the content script following [this instruction](https://github.com/processing/processing4/tree/master/doclet).
+
 2. [Publish the website](/docs/publish.md)
 
 If you are adding content to the reference that does not live in the `processing` source code (such as some Java functions and `=;<>` symbols), do the following steps.
