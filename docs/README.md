@@ -19,7 +19,7 @@ This content changes more often, and is often shown in list form. This includes 
 - Learn
   - [Tutorials](/docs/tutorials.md)
   - [Examples](/docs/examples.md)
-  - [Books](/docs/markdown-pages.md)
+  - [Books](/docs/books.md)
 - Teach (External link)
 - [About](/docs/markdown-pages.md)
 - Donate (External link)
