@@ -1,6 +1,6 @@
 # Examples
 
-The content for the examples lives in `/content/examples` split into 2 folders corresponding to the categories: basic, and topic. Each example has a subfolder inside one of those folders. The subfolder contains all the files necessary to build the individual example pages: a `.json` that has the content, `.pde` files containing the code and `.png` file containing the image.
+The content for the examples lives in `/content/examples` split into 2 folders corresponding to the categories: `basic` and `topic`. Each example has a subfolder inside one of those folders. The subfolder contains all the files necessary to build the individual example page: a `.json` that has the content, `.pde` files containing the code and `.png` file for the image.
 
 ## Content file
 
@@ -26,7 +26,7 @@ This is a new feature of the example pages so you should choose no more than 6 f
 
 ## Code files
 
-You should copy all the .pde files from [here](https://github.com/processing/processing-docs/tree/master/content/examples) into the corresponding folders in `/content/examples`. **You should remove the block comment containing the name, author and description from these `.pde` since it already exists on the page.**
+You should copy all the .pde files from [here](https://github.com/processing/processing-docs/tree/master/content/examples) into the corresponding folders in `/content/examples`.
 
 ## Cover image
 
