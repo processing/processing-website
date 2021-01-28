@@ -23,3 +23,6 @@ This content changes more often, and is often shown in list form. This includes 
 - Teach (External link)
 - [About](/docs/markdown-pages.md)
 - Donate (External link)
+
+### Translating content lists
+When translating the content to a new language you need to edit the [`i18n/config.json`](/i18n/config.json) file and add you language information. Then follow the instructions for each Content list.
