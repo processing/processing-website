@@ -25,8 +25,14 @@
 
 .rightBleed {
   padding-right: 0px;
+  @media (--small), (--reduced) {
+    padding-right: var(--margin);
+  }
 }
 
 .leftBleed {
   padding-left: 0px;
+  @media (--small), (--reduced) {
+    padding-left: var(--margin);
+  }
 }

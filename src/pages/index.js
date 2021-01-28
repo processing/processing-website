@@ -142,7 +142,7 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
         <div className={classnames(css.half, grid.nest, css.cardGrid)}>
-          <div className={classnames(css.half, grid.col, css.cardCol)}>
+          <div className={classnames(grid.col, css.cardCol)}>
             <Card
               to={'/tutorials/gettingstarted'}
               description={intl.formatMessage({
@@ -160,7 +160,7 @@ const IndexPage = ({ data }) => {
               {intl.formatMessage({ id: 'cardReference' })}
             </Card>
           </div>
-          <div className={classnames(css.half, grid.col, css.cardCol)}>
+          <div className={classnames(grid.col, css.cardCol)}>
             <Card
               to={'/download'}
               description={intl.formatMessage({
@@ -213,7 +213,7 @@ const IndexPage = ({ data }) => {
         </div>
         <div className={classnames(grid.col, css.half)}>
           <h2>{intl.formatMessage({ id: 'partners' })}</h2>
-          <ul className={css.logos}>
+          <ul className={css.partners}>
             <li>
               <div>
                 <img src={data.fathom.childImageSharp.fluid.src} alt="" />
