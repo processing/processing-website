@@ -6,7 +6,6 @@ Some pages on the website are created via `.mdx` files. These are traditional ma
 - About (in the [`/content/pages/about`](/content/pages/about) folder)
 - Libraries (in the [`/content/pages/libraries`](/content/pages/libraries) folder. Does not apply to Contributions on the same page)
 - Tutorials (in the [`/content/tutorials`](/content/tutorials) folder)
-- Examples (in the [`/content/examples`](/content/examples) folder)
 - Books (in the [`/content/books`](/content/books) folder)
 
 ## Editing the english version of a page
