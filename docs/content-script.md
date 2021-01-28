@@ -6,10 +6,10 @@ Because the website relies on external data in order to populate the content, it
 
 The subfolders:
 
-*`/content/references/translations/en/io`
-*`/content/references/translations/en/net`
-*`/content/references/translations/en/processing`
-*`/content/references/translations/en/serial`
+* `/content/references/translations/en/io`
+* `/content/references/translations/en/net`
+* `/content/references/translations/en/processing`
+* `/content/references/translations/en/serial`
 
 are generated from the [Processing 4](https://github.com/processing/processing4) source code.
 
