@@ -1,0 +1,23 @@
+{
+  "name": "Simple Touch",
+  "authors": [
+    "[Gottfried Haider](http://gottfriedhaider.com/)"
+  ],
+  "url": "https://github.com/gohai/processing-simpletouch",
+  "categories": [
+    "I/O"
+  ],
+  "sentence": "Touch events for Raspberry Pi and other Linux-based computers.",
+  "paragraph": "(Only works on Linux)",
+  "id": "171",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/gohai/processing-simpletouch/releases/download/latest/processing-simpletouch.txt",
+      "download": "https://github.com/gohai/processing-simpletouch/releases/download/latest/processing-simpletouch.zip"
+    }
+  ]
+}

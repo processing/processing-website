@@ -1,0 +1,24 @@
+{
+  "name": "HiVis",
+  "authors": [
+    "[Philip Poronnik, Oliver Bown, Oliver Coleman, Phillip Gough, Narayan Sankaran](https://github.com/OliverColeman/)"
+  ],
+  "url": "https://github.com/OliverColeman/hivis",
+  "categories": [
+    "Data",
+    "Math"
+  ],
+  "sentence": "Import data and manipulate it with statistical and other functions. Designed to be simple to use for novice programmers while being highly flexible and extensible. Includes many examples and tutorials. Check out olivercoleman.github.io/hivis for a 30 second crash course.",
+  "paragraph": "Typically raw data is loaded from a data source, for example a spreadsheet, and then <strong>views</strong> of that data are derived from it via transformation operations or functions. Some example views are mathematical and statistical operations, filtering and rearranging elements of the data, sorting and grouping data, or applying a function to every element of the data. Custom views can be created too. If the data source changes, the derived views are updated in real-time.",
+  "id": "203",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/OliverColeman/hivis/releases/download/latest/HiVis.txt",
+      "download": "https://github.com/OliverColeman/hivis/releases/download/latest/HiVis.zip"
+    }
+  ]
+}

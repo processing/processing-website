@@ -1,0 +1,21 @@
+{
+  "name": "Art Station",
+  "authors": [
+    "[Justin Wilder](https://github.com/jwilder4690)"
+  ],
+  "url": "https://jwilder4690.github.io/tools/ArtStation/index.html",
+  "categories": null,
+  "sentence": "A drawing tool to aid developers",
+  "paragraph": "This application was created as a developer tool to aid in the creation of Processing sketches. Various shapes can be drawn and edited on screen. The export option can be used output the processing code to your clipboard or to create an image or SVG file.",
+  "id": "242",
+  "type": "tool",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://jwilder4690.github.io/tools/ArtStation/ArtStation.txt",
+      "download": "https://jwilder4690.github.io/tools/ArtStation/ArtStation.zip"
+    }
+  ]
+}

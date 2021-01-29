@@ -1,0 +1,23 @@
+{
+  "name": "MindSet Processing",
+  "authors": [
+    "[Jorge C. S. Cardoso](http://jorgecardoso.eu)"
+  ],
+  "url": "http://jorgecardoso.eu/processing/MindSetProcessing/",
+  "categories": [
+    "I/O"
+  ],
+  "sentence": "The MindSetProcessing library allows you to use the NeuroSky Mindset brainwave sensing headset with Processing.",
+  "paragraph": "It gives you access to the raw wave values, to the eSense meters (Attention and Meditation) and to the EEG values. It does not provide blink data. This library was implemented using the Think Gear Communications driver J2ME implementation provided in the Mindset Development Tools 2.1.",
+  "id": "026",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "228",
+      "props": "http://jorgecardoso.eu/processing/MindSetProcessing/download/MindsetProcessing.txt",
+      "download": "http://jorgecardoso.eu/processing/MindSetProcessing/download/MindsetProcessing.zip"
+    }
+  ]
+}

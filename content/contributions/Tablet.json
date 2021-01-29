@@ -1,0 +1,23 @@
+{
+  "name": "Tablet",
+  "authors": [
+    "[Andres Colubri](http://andrescolubri.net/)"
+  ],
+  "url": "http://interfaze.info/libraries/tablet/",
+  "categories": [
+    "I/O"
+  ],
+  "sentence": "Tablet is a library for using pen tablets from Processing.",
+  "paragraph": "It provides simplified access to the pen's pressure, tilt, etc. It is based on <a href=\"https://sourceforge.net/projects/jpen/\">JPen</a>, the Java Pen Tablet Access Library.",
+  "id": "121",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "239",
+      "maxRevision": "0",
+      "props": "https://github.com/codeanticode/tablet/releases/download/latest/Tablet.txt",
+      "download": "https://github.com/codeanticode/tablet/releases/download/latest/Tablet.zip"
+    }
+  ]
+}

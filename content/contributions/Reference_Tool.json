@@ -1,0 +1,21 @@
+{
+  "name": "Reference Tool",
+  "authors": [
+    "[Jae Hyun](https://www.github.com/jaewhyun)"
+  ],
+  "url": "https://www.github.com/ReferenceTool",
+  "categories": null,
+  "sentence": "A Tool that provides a built in reference for the Processing Development Environment.",
+  "paragraph": "",
+  "id": "234",
+  "type": "tool",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "228",
+      "maxRevision": "0",
+      "props": "https://github.com/jaewhyun/ReferenceTool/releases/download/latest/ReferenceTool.txt",
+      "download": "https://github.com/jaewhyun/ReferenceTool/releases/download/latest/ReferenceTool.zip"
+    }
+  ]
+}

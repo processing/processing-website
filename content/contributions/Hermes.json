@@ -1,0 +1,26 @@
+{
+  "name": "Hermes",
+  "authors": [
+    "Ryan Lester, Chris Novello, Sam Eilertsen, and Jen Kovnats"
+  ],
+  "url": "http://rdlester.github.com/hermes",
+  "categories": [
+    "Animation",
+    "Compilation",
+    "Geometry",
+    "Simulation"
+  ],
+  "sentence": "Experimental game framework and engine for rapid prototyping of games and simulations.",
+  "paragraph": "Leverges the strengths of Object-Oriented Design and the ease of Processing to make it easy to bring game mechanics to life. Built-in OSC support makes it easy to enable communication between your games and external data sources. Also includes animation/sprite and physics libraries that can be used outside the framework.",
+  "id": "083",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "228",
+      "props": "http://rdlester.github.com/hermes/downloads/hermes.txt",
+      "download": "http://rdlester.github.com/hermes/downloads/hermes.zip"
+    }
+  ]
+}

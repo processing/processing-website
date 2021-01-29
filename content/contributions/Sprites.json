@@ -1,0 +1,23 @@
+{
+  "name": "Sprites",
+  "authors": [
+    "[Peter Lager](http://www.lagers.org.uk)"
+  ],
+  "url": "http://www.lagers.org.uk/s4p",
+  "categories": [
+    "Animation"
+  ],
+  "sentence": "Sprite control and animation for games and other graphic applications.",
+  "paragraph": "Provides complete control over sprite image animation, sprite movement and collision detection. Examples can be seen [here](http://www.lagers.org.uk/s4p/applets/s4p_showcase)",
+  "id": "062",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0227",
+      "maxRevision": "0",
+      "props": "http://www.lagers.org.uk/processing/sprites/Sprites.txt",
+      "download": "http://www.lagers.org.uk/processing/sprites/Sprites.zip"
+    }
+  ]
+}

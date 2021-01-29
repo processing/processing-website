@@ -1,0 +1,23 @@
+{
+  "name": "ColorScheme",
+  "authors": [
+    "[J. Taylor OConnor](http://josephtaylor.github.io)"
+  ],
+  "url": "http://josephtaylor.github.io/ColorScheme",
+  "categories": [
+    "Utilities"
+  ],
+  "sentence": "A tool to import color schemes.",
+  "paragraph": "Generate color schemes from .xml files from paletton.com, .ase files from Adobe products, or from a source image.",
+  "id": "158",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "242",
+      "maxRevision": "0",
+      "props": "http://josephtaylor.github.io/ColorScheme/ColorScheme.txt",
+      "download": "http://josephtaylor.github.io/ColorScheme/ColorScheme.zip"
+    }
+  ]
+}

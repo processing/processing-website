@@ -1,0 +1,23 @@
+{
+  "name": "Simple HTTP Server",
+  "authors": [
+    "[Ramin Soleymani](http://diskordier.net)"
+  ],
+  "url": "http://diskordier.net/simpleHTTPServer",
+  "categories": [
+    "I/O"
+  ],
+  "sentence": "A simple HTTP Server for Processing, that serves static files and simplifies HttpHandler",
+  "paragraph": "Static Filehandler can handle html,css and js files. For different content-types a DynamicResponseHandler can be added, using a class that extends from the abstract class ResponseBuilder and implements String getResponse(String requestBody). For example JSON!",
+  "id": "168",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "253",
+      "maxRevision": "253",
+      "props": "http://transfluxus.github.io/SimpleHTTPServer/download/SimpleHTTPServer.txt",
+      "download": "http://transfluxus.github.io/SimpleHTTPServer/download/SimpleHTTPServer.zip"
+    }
+  ]
+}

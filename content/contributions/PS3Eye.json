@@ -1,0 +1,24 @@
+{
+  "name": "PS3Eye",
+  "authors": [
+    "[Thomas Diewald](http://www.thomasdiewald.com)"
+  ],
+  "url": "https://github.com/diwi/PS3Eye",
+  "categories": [
+    "Hardware",
+    "Video & Vision"
+  ],
+  "sentence": "A PS3Eye library using libusb.",
+  "paragraph": "",
+  "id": "211",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/diwi/PS3Eye/releases/download/latest/PS3Eye.txt",
+      "download": "https://github.com/diwi/PS3Eye/releases/download/latest/PS3Eye.zip"
+    }
+  ]
+}

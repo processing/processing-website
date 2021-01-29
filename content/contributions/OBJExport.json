@@ -1,0 +1,23 @@
+{
+  "name": "OBJExport",
+  "authors": [
+    "[Jesse Louis-Rosenberg](http://n-e-r-v-o-u-s.com)"
+  ],
+  "url": "http://n-e-r-v-o-u-s.com/tools/obj",
+  "categories": [
+    "I/O"
+  ],
+  "sentence": "This is a simple library to export surfaces from processing as OBJ files. It is used the same way the PDF library is used.",
+  "paragraph": "",
+  "id": "091",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "http://n-e-r-v-o-u-s.com/tools/obj/OBJExport.txt",
+      "download": "http://n-e-r-v-o-u-s.com/tools/obj/OBJExport.zip"
+    }
+  ]
+}

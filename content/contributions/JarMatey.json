@@ -1,0 +1,21 @@
+{
+  "name": "JarMatey",
+  "authors": [
+    "[Kevin Workman](http://StaticVoidGames.com)"
+  ],
+  "url": "http://StaticVoidGames.com/JarMatey/",
+  "categories": null,
+  "sentence": "A utility that creates a self-extracting jar that runs on any platform.",
+  "paragraph": "This is a workaround for Processing only exporting applications.",
+  "id": "141",
+  "type": "tool",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "228",
+      "props": "http://s3.staticvoidgames.com/JarMatey/JarMateyProcessingTool.txt",
+      "download": "http://s3.staticvoidgames.com/JarMatey/JarMateyProcessingTool.zip"
+    }
+  ]
+}

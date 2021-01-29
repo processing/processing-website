@@ -1,0 +1,21 @@
+{
+  "name": "CoffeeScript Mode",
+  "authors": [
+    "[Florian Jenett](http://bezier.de/)"
+  ],
+  "url": "https://github.com/fjenett/coffeescript-mode-processing",
+  "sentence": "Adds a CoffeeScript Mode based on Processing.js",
+  "paragraph": "CoffeeScript Mode is based on JavaScript Mode and runs on top of Processing.js. It runs through a server and inherits the template system from JavaScript mode. CoffeeScript is a functional language that compiles to JavaScript and was created by (Jeremy Ashkenas)[https://github.com/jashkenas/coffee-script].",
+  "id": "070",
+  "type": "mode",
+  "categories": null,
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "228",
+      "props": "http://bezier.de/processing/modes/CoffeeScriptMode.txt",
+      "download": "http://bezier.de/processing/modes/CoffeeScriptMode.zip"
+    }
+  ]
+}

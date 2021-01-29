@@ -1,0 +1,23 @@
+{
+  "name": "UDP",
+  "authors": [
+    "[Stephane Cousot](http://ubaa.net/)"
+  ],
+  "url": "http://ubaa.net/shared/processing/udp/",
+  "categories": [
+    "Data"
+  ],
+  "sentence": "Enables simple UDP communication, as well as multicast support.",
+  "paragraph": "",
+  "id": "073",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "http://ubaa.net/shared/processing/udp/udp.txt",
+      "download": "http://ubaa.net/shared/processing/udp/udp.zip"
+    }
+  ]
+}
