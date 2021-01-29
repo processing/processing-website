@@ -9,7 +9,6 @@ import Card from '../components/Card';
 import Sketch from '../components/sketch/Sketch';
 
 import { subcategoryFromDirectory } from '../utils/data';
-import { useWindowSize } from '../utils/hooks';
 
 import css from '../styles/pages/index.module.css';
 import grid from '../styles/grid.module.css';
@@ -46,7 +45,6 @@ export const items = [
 const IndexPage = ({ data }) => {
   const intl = useIntl();
   const { locale } = useLocalization();
-  const winSize = useWindowSize();
 
   const items = data.examples.nodes;
   const images = data.images.nodes;
@@ -78,28 +76,26 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout isHomepage>
-      <div className={classnames(css.hero)}>
-        <div className={grid.grid}>
-          <div className={classnames(grid.col, css.intro)}>
-            <h1>{intl.formatMessage({ id: 'introTitle' })}</h1>
-            <p>{intl.formatMessage({ id: 'introText' })}</p>
-            <div className={css.buttons}>
-              <Button to={'/download'} size="large" className={css.button}>
-                {intl.formatMessage({ id: 'download' })}
-              </Button>
-              <Button to={'/reference'} size="large" className={css.button}>
-                {intl.formatMessage({ id: 'reference' })}
-              </Button>
-              <Button
-                href={'https://processingfoundation.org/donate'}
-                size="large"
-                className={css.button}>
-                {intl.formatMessage({ id: 'donate' })}
-              </Button>
-            </div>
+      <div className={classnames(css.hero, grid.grid, grid.rightBleed)}>
+        <div className={classnames(grid.col, css.intro)}>
+          <h1>{intl.formatMessage({ id: 'introTitle' })}</h1>
+          <p>{intl.formatMessage({ id: 'introText' })}</p>
+          <div className={css.buttons}>
+            <Button to={'/download'} size="large" className={css.button}>
+              {intl.formatMessage({ id: 'download' })}
+            </Button>
+            <Button to={'/reference'} size="large" className={css.button}>
+              {intl.formatMessage({ id: 'reference' })}
+            </Button>
+            <Button
+              href={'https://processingfoundation.org/donate'}
+              size="large"
+              className={css.button}>
+              {intl.formatMessage({ id: 'donate' })}
+            </Button>
           </div>
-          {winSize.width > 1080 && <Sketch />}
         </div>
+        <Sketch />
       </div>
       <div className={classnames(grid.grid, css.section)}>
         <div className={classnames(grid.col, grid.nest, css.examples)}>

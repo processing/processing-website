@@ -41,4 +41,12 @@
 .large {
   padding: var(--gutter) var(--gutter-double);
   font-size: var(--text-regular);
+
+  @media (--medium) {
+    padding: var(--gutter) calc(var(--gutter-double) * 2 / 3);
+  }
+
+  @media (--reduced) {
+    padding: var(--gutter) calc(var(--gutter-double));
+  }
 }

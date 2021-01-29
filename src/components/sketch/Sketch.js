@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo, Fragment } from 'react';
 import classnames from 'classnames';
 import SketchGraphic from './SketchGraphic';
 import SketchCode from './SketchCode';
 import { fromJS } from 'immutable';
+
+import { useWindowSize } from '../../utils/hooks';
 
 import grid from '../../styles/grid.module.css';
 import css from './Sketch.module.css';
@@ -41,6 +43,7 @@ const initialState = fromJS({
 const Sketch = (props) => {
   const [state, setState] = useState(initialState);
   const [showCode, setShow] = useState(false);
+  const { width, height } = useWindowSize();
 
   const changeStateHandler = (e, path, value) => {
     setState((state) => state.setIn(path, value));
@@ -71,24 +74,34 @@ const Sketch = (props) => {
     setState((state) => state.setIn(['shapes', shapeIdx, 'dragging'], null));
   };
 
+  useMemo(() => {
+    setState((state) => state.setIn(['width'], width <= 960 ? 600 : 600));
+  }, [width]);
+
   const stateJS = state.toJS();
+  console.log(width);
+  console.log(stateJS);
 
   return (
     <div className={classnames(css.root, grid.nest, grid.col)}>
-      <SketchCode
-        onChange={changeStateHandler}
-        isVisible={showCode}
-        {...stateJS}
-        onMouseEnterShape={handleMouseEnterShapeLine}
-        onMouseLeaveShape={handleMouseLeaveShapeLine}
-        onDraggingShapeStart={handleDraggingShapeStart}
-        onDraggingShapeEnd={handleDraggingShapeEnd}
-      />
-      <SketchGraphic
-        onClick={() => handleClickOnSketch()}
-        {...stateJS}
-        isVisible={showCode}
-      />
+      {width > 960 && (
+        <Fragment>
+          <SketchCode
+            onChange={changeStateHandler}
+            isVisible={showCode}
+            {...stateJS}
+            onMouseEnterShape={handleMouseEnterShapeLine}
+            onMouseLeaveShape={handleMouseLeaveShapeLine}
+            onDraggingShapeStart={handleDraggingShapeStart}
+            onDraggingShapeEnd={handleDraggingShapeEnd}
+          />
+          <SketchGraphic
+            onClick={() => handleClickOnSketch()}
+            {...stateJS}
+            isVisible={showCode}
+          />
+        </Fragment>
+      )}
     </div>
   );
 };

@@ -1,6 +1,7 @@
 .hero {
   position: relative;
-  height: 600px;
+  flex-wrap: nowrap;
+  min-height: 600px;
   background-image: linear-gradient(
     to right,
     white 20%,
@@ -9,11 +10,32 @@
 
   & h1 {
     margin-bottom: var(--margin-half);
-    font-size: var(--text-xxlarge);
+    font-size: var(--text-xxxlarge);
   }
 
   & p {
     font-size: var(--text-large);
+  }
+
+  @media (--medium) {
+    & h1 {
+      font-size: var(--text-xxlarge);
+    }
+  }
+
+  @media (--reduced) {
+    & h1 {
+      font-size: var(--text-xxxlarge);
+    }
+  }
+
+  @media (--small) {
+    & h1 {
+      font-size: var(--text-xlarge);
+    }
+    & p {
+      font-size: var(--text-regular);
+    }
   }
 }
 
@@ -41,15 +63,48 @@
   flex-direction: column;
   z-index: 1;
   height: 100%;
-  padding-top: 100px;
+  padding-top: calc(var(--margin) * 2);
+  padding-bottom: var(--margin);
+
+  @media (--large) {
+    padding-top: var(--margin);
+    flex-basis: var(--col5);
+  }
 
   @media (--medium) {
+    padding-top: calc(var(--margin) * 2);
+    flex-basis: var(--col6);
+  }
+
+  @media (--reduced) {
     flex-basis: var(--col8);
+    height: auto;
+    padding-right: calc(var(--margin) + var(--gutter));
+    padding-top: var(--margin);
+    justify-content: space-around;
+  }
+
+  @media (--small) {
+    flex-basis: var(--col8);
+    height: auto;
+    padding-right: var(--gutter);
+    padding-top: var(--margin);
+    justify-content: space-around;
   }
 }
 
 .buttons {
   margin: var(--margin) 0;
+  @media (--medium) {
+    margin: var(--gutter-double) 0;
+  }
+}
+
+.button {
+  margin-right: var(--gutter-double);
+  @media (--medium) {
+    margin-right: var(--gutter);
+  }
 }
 
 .examples {
@@ -156,10 +211,6 @@
   & > a:last-child {
     margin-top: var(--gutter);
   }
-}
-
-.button {
-  margin-right: var(--gutter-double);
 }
 
 .card {
