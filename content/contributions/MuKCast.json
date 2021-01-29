@@ -1,0 +1,23 @@
+{
+  "name": "MuKCast",
+  "authors": [
+    "[Mathias Markl](http://www.mukprojects.at)"
+  ],
+  "url": "https://github.com/keshrath/MuKCast",
+  "categories": [
+    "I/O"
+  ],
+  "sentence": "MuKCast is an light-weight client/server library.",
+  "paragraph": "MuKCast can be used to send messages between a client and a server. There are three predefined messages in the library. (TextMessage, NumberMessage, ImageMessage) In case there is a need for a customized message, it is possible to create a custom message by implementing the interface `Message.java`.",
+  "id": "179",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/keshrath/MuKCast/releases/download/latest/MuKCast.txt",
+      "download": "https://github.com/keshrath/MuKCast/releases/download/latest/MuKCast.zip"
+    }
+  ]
+}

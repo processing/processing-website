@@ -1,0 +1,21 @@
+{
+  "name": "JavaScript Mode",
+  "authors": [
+    "[Florian Jenett](http://bezier.de/)"
+  ],
+  "url": "https://github.com/fjenett/javascript-mode-processing",
+  "sentence": "Adds a JavaScript Mode based on Processing.js",
+  "paragraph": "JavaScript Mode is based on Processing.js. It runs through a server and contains a simple template system.",
+  "id": "087",
+  "type": "mode",
+  "categories": null,
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "228",
+      "props": "http://bezier.de/processing/modes/JavaScriptMode.txt",
+      "download": "http://bezier.de/processing/modes/JavaScriptMode.zip"
+    }
+  ]
+}

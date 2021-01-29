@@ -1,0 +1,25 @@
+{
+  "name": "Processing Handbook, 2nd Edition",
+  "categories": [
+    "Books"
+  ],
+  "authors": [
+    "[Casey Reas](http://reas.com/) and [Ben Fry](http://benfry.com/)"
+  ],
+  "url": "http://www.processing.org",
+  "sentence": "Example code for the book Processing: A Programming Handbook for Visual Designers and Artists, Second Edition. MIT Press, 2014.",
+  "paragraph": "",
+  "minVersion": "0",
+  "maxVersion": "0",
+  "id": "165",
+  "type": "examples",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://processing.org/handbook/handbook_2e.txt",
+      "download": "https://processing.org/handbook/handbook_2e.zip"
+    }
+  ]
+}

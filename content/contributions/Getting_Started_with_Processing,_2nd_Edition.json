@@ -1,0 +1,24 @@
+{
+  "name": "Getting Started with Processing, 2nd Edition",
+  "authors": [
+    "[Casey Reas](http://reas.com/) and [Ben Fry](http://benfry.com/)"
+  ],
+  "url": "http://www.processing.org",
+  "categories": [
+    "Books"
+  ],
+  "sentence": "Example code for the book Getting Started with Processing, 2nd Edition. Maker Media, 2015.",
+  "paragraph": "",
+  "modes": "processing.mode.java.JavaMode",
+  "id": "166",
+  "type": "examples",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://processing.org/books/gswp_2e.txt",
+      "download": "https://processing.org/books/gswp_2e.zip"
+    }
+  ]
+}

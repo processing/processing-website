@@ -1,0 +1,24 @@
+{
+  "name": "AP-Sync",
+  "authors": [
+    "[Nigel Tiany](http://nigeltiany.com)"
+  ],
+  "url": "http://ap-sync.github.io",
+  "categories": [
+    "Data",
+    "I/O"
+  ],
+  "sentence": "AP-Sync it the easy way to sync data to processing from your arduino or any microcontroller to processing and back.",
+  "paragraph": "Its simple api makes syncing data a breeze.",
+  "id": "206",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "100",
+      "maxRevision": "0",
+      "props": "https://ap-sync.github.io/libs/AP_sync_processing/APsync.txt",
+      "download": "https://ap-sync.github.io/libs/AP_sync_processing/APsync.zip"
+    }
+  ]
+}

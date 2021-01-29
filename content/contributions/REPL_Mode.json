@@ -1,0 +1,23 @@
+{
+  "name": "REPL Mode",
+  "authors": [
+    "[Joel Moniz](http://joelmoniz.com)"
+  ],
+  "url": "https://github.com/joelmoniz/REPLmode",
+  "sentence": "Adds an REPL Console to view the output of code typed into it immediately. Also gives the PDE the ability to hot swap code.",
+  "paragraph": "This mode adds in a Read-Evaluate-Print-Loop console to processing in the form of a tab at the bottom. The console enables users to type in processing code and to view the output of this code immediately. Each subsequent line of code shows the output incrementally, much like how an REPL Console for any interpretive language (like Python, and the Linux bash terminal) would. The console also provides options to undo commands, to convert the valid commands entered so far into a function, and so on. Ths mode also gives the PDE the ability to hot swap code, wherein the output corresponding to changes made in a running sketch can be viewed by simply saving the sketch, without restarting it.",
+  "imports": "processing.mode.java.JavaMode",
+  "lastUpdated": "1443120511000",
+  "id": "162",
+  "type": "mode",
+  "categories": null,
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0242",
+      "maxRevision": "0",
+      "props": "https://github.com/joelmoniz/REPLmode/releases/download/latest/REPLMode.txt",
+      "download": "https://github.com/joelmoniz/REPLmode/releases/download/latest/REPLMode.zip"
+    }
+  ]
+}

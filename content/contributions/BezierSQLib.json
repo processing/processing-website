@@ -1,0 +1,23 @@
+{
+  "name": "BezierSQLib",
+  "authors": [
+    "[Florian Jenett](http://www.bezier.de/)"
+  ],
+  "url": "https://github.com/fjenett/sql-library-processing",
+  "categories": [
+    "Data"
+  ],
+  "sentence": "A library to facilitate communication with SQL-based databases",
+  "paragraph": "SQLibrary is an interface to MySQL, SQLite and PostgreSQL databases",
+  "id": "111",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/benfry/sql-library-processing/raw/master/release/BezierSQLib.txt",
+      "download": "https://github.com/benfry/sql-library-processing/raw/master/release/BezierSQLib.zip"
+    }
+  ]
+}
