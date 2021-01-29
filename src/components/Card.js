@@ -28,7 +28,7 @@ export const Card = ({
           to={to}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}>
-          {hovered ? description : children + ` →`}
+          {children}
         </Link>
       ) : href ? (
         <a
@@ -37,7 +37,7 @@ export const Card = ({
           target={target}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}>
-          {hovered ? description : children + `\n →`}
+          {children}
         </a>
       ) : (
         <button
@@ -45,7 +45,7 @@ export const Card = ({
           onClick={onClick}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}>
-          {hovered ? description : children}
+          {children}
         </button>
       )}
     </>

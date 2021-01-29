@@ -62,6 +62,7 @@ const Sidebar = (props) => {
             onChange={(e) => setSearchTerm(e.target.value)}
             onClick={(e) => setSearchTerm('')}
             searchTerm={searchTerm}
+            className={css.filterBar}
           />
           <div className={css.listWrapper}>
             <SidebarList data={tree} type={type} />

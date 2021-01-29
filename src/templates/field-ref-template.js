@@ -16,7 +16,7 @@ import grid from '../styles/grid.module.css';
 
 const FieldRefTemplate = ({ data, pageContext }) => {
   let entry;
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const examples = data.pdes.edges;
   const images = data.images.edges;
   const ref = useHighlight();

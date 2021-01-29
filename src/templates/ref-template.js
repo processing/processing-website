@@ -16,7 +16,7 @@ import grid from '../styles/grid.module.css';
 
 const RefTemplate = ({ data, pageContext, ...props }) => {
   let entry;
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const ref = useHighlight();
   const intl = useIntl();
 

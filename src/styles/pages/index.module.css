@@ -14,6 +14,7 @@
 
   & p {
     font-size: var(--text-large);
+    cursor: pointer;
   }
 }
 
@@ -86,6 +87,10 @@
     color: var(--processing-blue-mid);
   }
 
+  & p {
+    cursor: pointer;
+  }
+
   & .imgContainer {
     opacity: 0.8;
   }
@@ -139,7 +144,6 @@
 .card {
   height: 50%;
   width: 100%;
-  border: 2px solid var(--processing-blue-dark);
   text-align: center;
   font-size: var(--text-small);
 }

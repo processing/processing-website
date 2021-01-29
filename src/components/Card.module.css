@@ -2,15 +2,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: fit-content;
   outline: none;
-  border: 4px solid var(--processing-blue-dark);
+  border: 8px solid var(--lightgray);
   padding: 6px 24px;
   color: var(--processing-blue-dark);
   font-family: var(--font-mono);
   font-size: var(--text-small);
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease, border 0.2s ease;
+
+  & p {
+    cursor: pointer;
+  }
 }
 
 .root:focus {
@@ -19,13 +24,16 @@
 }
 
 .root:hover {
-  border: 2px solid var(--processing-blue-dark);
+  border: 8px solid var(--processing-blue-dark);
   background-color: var(--processing-blue-dark);
   color: white;
+  & h4 {
+    color: inherit;
+  }
 }
 
 .root:active {
-  border: 2px solid var(--processing-blue-mid);
+  border: 8px solid var(--processing-blue-mid);
   background-color: var(--processing-blue-mid);
 }
 

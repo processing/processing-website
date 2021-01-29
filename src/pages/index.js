@@ -143,39 +143,41 @@ const IndexPage = ({ data }) => {
         </div>
         <div className={classnames(css.half, grid.nest, css.cardGrid)}>
           <div className={classnames(css.half, grid.col, css.cardCol)}>
-            <Card
-              to={'/tutorials/gettingstarted'}
-              description={intl.formatMessage({
-                id: 'cardGettingStartedDescription',
-              })}
-              className={css.card}>
-              {intl.formatMessage({ id: 'cardGettingStarted' })}
+            <Card to={'/tutorials/gettingstarted'} className={css.card}>
+              <h4>{intl.formatMessage({ id: 'cardGettingStarted' })}</h4>
+              <p>
+                {intl.formatMessage({
+                  id: 'cardGettingStartedDescription',
+                })}
+              </p>
             </Card>
-            <Card
-              to={'/reference'}
-              description={intl.formatMessage({
-                id: 'cardReferenceDescription',
-              })}
-              className={css.card}>
-              {intl.formatMessage({ id: 'cardReference' })}
+            <Card to={'/reference'} className={css.card}>
+              <h4>{intl.formatMessage({ id: 'cardReference' })}</h4>
+              <p>
+                {intl.formatMessage({
+                  id: 'cardReferenceDescription',
+                })}
+              </p>
             </Card>
           </div>
           <div className={classnames(css.half, grid.col, css.cardCol)}>
-            <Card
-              to={'/download'}
-              description={intl.formatMessage({
-                id: 'cardDownloadDescription',
-              })}
-              className={css.card}>
-              {intl.formatMessage({ id: 'cardDownload' })}
+            <Card to={'/download'} className={css.card}>
+              <h4>{intl.formatMessage({ id: 'cardDownload' })}</h4>
+              <p>
+                {intl.formatMessage({
+                  id: 'cardDownloadDescription',
+                })}
+              </p>
             </Card>
             <Card
               href={'https://discourse.processing.org/'}
-              description={intl.formatMessage({
-                id: 'cardForumDescription',
-              })}
               className={css.card}>
-              {intl.formatMessage({ id: 'cardForum' })}
+              <h4>{intl.formatMessage({ id: 'cardForum' })}</h4>
+              <p>
+                {intl.formatMessage({
+                  id: 'cardForumDescription',
+                })}
+              </p>
             </Card>
           </div>
         </div>

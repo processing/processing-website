@@ -12,7 +12,7 @@ import css from '../styles/templates/example-template.module.css';
 import grid from '../styles/grid.module.css';
 
 const ExampleTemplate = ({ data, pageContext }) => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const intl = useIntl();
 
   let json, subcategory;

@@ -14,7 +14,7 @@ import { useHighlight } from '../utils/hooks';
 
 const ClassRefTemplate = ({ data, pageContext }) => {
   let entry;
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const images = data.images.edges;
   const examples = data.pdes.edges;
   const ref = useHighlight();
