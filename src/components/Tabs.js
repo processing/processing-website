@@ -26,10 +26,8 @@ const Tabs = ({ pdes }) => {
             className={classnames(css.tab, {
               [css.active]: pde.name === active,
             })}
-            key={key + 'tab'}
-            onClick={() => onClick(pde.name)}
-            onKeyDown={() => onClick(pde.name)}>
-            {pde.name}
+            key={key + 'tab'}>
+            <button onClick={() => onClick(pde.name)}>{pde.name}</button>
           </li>
         ))}
       </ul>

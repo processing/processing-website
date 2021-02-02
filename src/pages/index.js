@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
@@ -48,6 +49,9 @@ const IndexPage = ({ data }) => {
   const winSize = useWindowSize();
   return (
     <Layout>
+      <Helmet>
+        <title>{'Welcome to Processing!'}</title>
+      </Helmet>
       <div className={css.hero}>
         <div className={classnames(grid.grid)}>
           <div className={classnames(grid.col, css.intro)}>

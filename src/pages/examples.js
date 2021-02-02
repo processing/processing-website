@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
@@ -27,6 +28,9 @@ const Examples = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>{'Examples'}</title>
+      </Helmet>
       <div className={classnames(grid.grid, css.root)}>
         <Donate />
         <h1 className={grid.col}>Examples</h1>

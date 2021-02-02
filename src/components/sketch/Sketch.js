@@ -75,6 +75,11 @@ const Sketch = (props) => {
 
   return (
     <div className={classnames(css.root, grid.grid, grid.nest)}>
+      <SketchGraphic
+        onClick={() => handleClickOnSketch()}
+        {...stateJS}
+        isVisible={showCode}
+      />
       <SketchCode
         onChange={changeStateHandler}
         isVisible={showCode}
@@ -83,11 +88,6 @@ const Sketch = (props) => {
         onMouseLeaveShape={handleMouseLeaveShapeLine}
         onDraggingShapeStart={handleDraggingShapeStart}
         onDraggingShapeEnd={handleDraggingShapeEnd}
-      />
-      <SketchGraphic
-        onClick={() => handleClickOnSketch()}
-        {...stateJS}
-        isVisible={showCode}
       />
     </div>
   );

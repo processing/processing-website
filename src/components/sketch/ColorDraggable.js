@@ -9,7 +9,7 @@ const changeColor = (rgb, t) => {
 };
 
 const ColorDraggable = (props) => {
-  const { shape, shapesInx, colorInx } = props;
+  const { shape, shapesInx, colorInx, tabIndex } = props;
   const [dragging, setDragging] = useState(null);
 
   useEffect(() => {
@@ -65,7 +65,8 @@ const ColorDraggable = (props) => {
       <span className={css.arrowLeft}></span>
       <span
         role={'button'}
-        tabIndex={'0'}
+        aria-label={'change color value'}
+        tabIndex={tabIndex}
         className={dragging ? css.dragging : css.root}
         onMouseDown={registerMove}
         onMouseUp={deregisterMove}

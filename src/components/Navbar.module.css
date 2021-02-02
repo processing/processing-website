@@ -69,6 +69,12 @@
   @media (--small), (--medium) {
     font-size: var(--text-regular);
   }
+
+  & button {
+    font-size: var(--text-medium);
+    font-weight: 700;
+    color: var(--processing-blue-dark);
+  }
 }
 
 .item:hover {
@@ -129,6 +135,7 @@
   z-index: 40;
 }
 
+.subMenuActive,
 .item:hover .submenu {
   opacity: 1;
   max-height: 400px;

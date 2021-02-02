@@ -60,7 +60,7 @@
 
 .latestDate {
   font-size: var(--text-xsmall);
-  color: var(--darkgray);
+  color: var(--darkergray);
 }
 
 .latestVersionName {
@@ -96,13 +96,18 @@
 }
 
 .releaseName {
-  flex-basis: cols(1, 8);
+  flex-basis: var(--col1);
 }
 
 .releaseDate {
   font-size: var(--text-xsmall);
-  color: var(--darkgray);
   flex-basis: var(--col2);
+  color: var(--darkergray);
+}
+
+.releaseList {
+  width: 100%;
+  font-size: var(--text-small);
 }
 
 .assetLabel {

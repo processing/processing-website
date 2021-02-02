@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
 import { graphql, useStaticQuery } from 'gatsby';
 import { DateTime } from 'luxon';
@@ -135,6 +136,9 @@ const Download = () => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>{'Download'}</title>
+      </Helmet>
       <div className={classnames(grid.grid, css.root)}>
         <Donate />
         <h1 className={grid.col}>Download</h1>

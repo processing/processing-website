@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
@@ -36,12 +37,16 @@ const ExampleTemplate = ({ data, pageContext }) => {
     (item) => item.relativeDirectory.split('/')[1] === subcategory
   );
 
-  const toggleSidebar = (show) => {
-    setShow(show);
+  const toggleSidebar = (e, show) => {
+    if (e.type === 'click') setShow(show);
+    else if (e.keyCode === 13) setShow(show);
   };
 
   return (
     <Layout>
+      <Helmet>
+        <title>{data.json && json.childJson.title}</title>
+      </Helmet>
       <Sidebar
         items={data.examples}
         onChange={toggleSidebar}

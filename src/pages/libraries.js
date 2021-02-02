@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import unique from 'array-unique';
@@ -44,6 +45,9 @@ const Libraries = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>{'Libraries'}</title>
+      </Helmet>
       <div className={classnames(grid.grid, css.root)}>
         <Donate />
         <h1 className={grid.col}>{intl.formatMessage({ id: 'libraries' })}</h1>

@@ -5,7 +5,15 @@ import { Link } from 'gatsby';
 
 import css from './Button.module.css';
 
-export const Button = ({ className, to, href, target, onClick, children }) => {
+export const Button = ({
+  className,
+  to,
+  href,
+  target,
+  onClick,
+  children,
+  tabIndex,
+}) => {
   const classNames = classnames(css.root, {
     [className]: className,
   });
@@ -13,15 +21,22 @@ export const Button = ({ className, to, href, target, onClick, children }) => {
   return (
     <>
       {to ? (
-        <Link className={classNames} to={to}>
+        <Link className={classNames} to={to} tabIndex={tabIndex ? tabIndex : 0}>
           {children}
         </Link>
       ) : href ? (
-        <a className={classNames} href={href} target={target}>
+        <a
+          className={classNames}
+          href={href}
+          target={target}
+          tabIndex={tabIndex ? tabIndex : 0}>
           {children}
         </a>
       ) : (
-        <button className={classNames} onClick={onClick}>
+        <button
+          className={classNames}
+          onClick={onClick}
+          tabIndex={tabIndex ? tabIndex : 0}>
           {children}
         </button>
       )}

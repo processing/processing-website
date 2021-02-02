@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { Link } from 'gatsby';
@@ -29,12 +30,16 @@ const ClassRefTemplate = ({ data, pageContext }) => {
       ? `/reference/${pageContext.name}.html`
       : `/reference/libraries/${pageContext.libraryName}/${pageContext.name}.html`;
 
-  const toggleSidebar = (show) => {
-    setShow(show);
+  const toggleSidebar = (e, show) => {
+    if (e.type === 'click') setShow(show);
+    else if (e.keyCode === 13) setShow(show);
   };
 
   return (
     <Layout>
+      <Helmet>
+        <title>{pageContext.name}</title>
+      </Helmet>
       {pageContext.libraryName === 'processing' && (
         <Sidebar
           items={data.items}

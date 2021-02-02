@@ -4,7 +4,7 @@ import css from './Color.module.css';
 import { rgbToHex, hexToRgb } from '../../utils/editor';
 
 const Color = (props) => {
-  const { shapes, shapesInx } = props;
+  const { shapes, shapesInx, tabIndex } = props;
   const [colorClass, setColorClass] = useState(true);
 
   const blurRest = (e, value) => {
@@ -19,6 +19,7 @@ const Color = (props) => {
         shapesInx={shapesInx}
         blurRest={blurRest}
         colorInx={'r'}
+        tabIndex={tabIndex}
       />
       ,&nbsp;
       <ColorDraggable
@@ -27,6 +28,7 @@ const Color = (props) => {
         shapesInx={shapesInx}
         blurRest={blurRest}
         colorInx={'g'}
+        tabIndex={tabIndex}
       />
       ,&nbsp;
       <ColorDraggable
@@ -35,6 +37,7 @@ const Color = (props) => {
         shapesInx={shapesInx}
         blurRest={blurRest}
         colorInx={'b'}
+        tabIndex={tabIndex}
       />
       <input
         type="color"
@@ -47,6 +50,8 @@ const Color = (props) => {
           )
         }
         value={rgbToHex(shapes[shapesInx].color)}
+        aria-label="Choose color"
+        tabIndex={tabIndex}
       />
     </span>
   );

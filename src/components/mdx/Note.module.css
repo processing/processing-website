@@ -1,6 +1,6 @@
 .root {
   & span {
-    color: var(--darkgray);
+    color: var(--darkergray);
     font-family: var(--font);
     font-size: var(--text-regular);
 

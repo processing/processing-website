@@ -6,8 +6,9 @@
   right: 0;
   position: relative;
   z-index: 200;
+  transform: translateX(120%);
 
-  svg {
+  & svg {
     position: absolute;
   }
 }

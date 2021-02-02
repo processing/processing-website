@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
@@ -30,6 +31,9 @@ const Tools = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>{'Tools'}</title>
+      </Helmet>
       <div className={classnames(grid.grid, css.root)}>
         <Donate />
         <h1 className={grid.col}>{intl.formatMessage({ id: 'tools' })}</h1>

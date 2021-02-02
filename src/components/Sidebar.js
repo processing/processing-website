@@ -44,9 +44,10 @@ const Sidebar = (props) => {
       style={{}}>
       <div
         className={css.toggleButton}
-        onClick={(e) => onChange(!show)}
-        onKeyDown={(e) => onChange(!show)}
+        onClick={(e) => onChange(e, !show)}
+        onKeyDown={(e) => onChange(e, !show)}
         role={'button'}
+        aria-label={show ? 'close' : 'open reference'}
         tabIndex={'0'}>
         {show ? '×' : '+'}
       </div>
@@ -64,7 +65,7 @@ const Sidebar = (props) => {
             searchTerm={searchTerm}
           />
           <div className={css.listWrapper}>
-            <SidebarList data={tree} type={type} />
+            <SidebarList data={tree} type={type} show={show} />
           </div>
         </Fragment>
       )}

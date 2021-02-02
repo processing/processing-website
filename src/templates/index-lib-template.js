@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
@@ -22,6 +23,9 @@ const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>{intl.formatMessage({ id: libraryName })}</title>
+      </Helmet>
       {data.mdx !== null ? (
         <div className={classnames(grid.grid, css.root)}>
           <MDXRenderer>{data.mdx.body}</MDXRenderer>

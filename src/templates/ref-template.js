@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
@@ -32,12 +33,16 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
   const examples = data.pdes.edges;
   const images = data.images.edges;
 
-  const toggleSidebar = (show) => {
-    setShow(show);
+  const toggleSidebar = (e, show) => {
+    if (e.type === 'click') setShow(show);
+    else if (e.keyCode === 13) setShow(show);
   };
 
   return (
     <Layout>
+      <Helmet>
+        <title>{pageContext.name.replace('_', '')}</title>
+      </Helmet>
       {pageContext.libraryName === 'processing' && (
         <Sidebar
           items={data.items}

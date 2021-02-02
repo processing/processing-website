@@ -36,6 +36,7 @@ const SearchBarSmall = ({ className, size }) => {
           value={searchTerm || ''}
           onChange={onChangeHandler}
           onKeyDown={onKeyEnter}
+          aria-label="Search website"
         />
       ) : (
         <div className={classnames(css.searchButton, grid.col)}></div>

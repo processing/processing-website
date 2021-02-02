@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -16,7 +17,10 @@ const About = ({ data }) => {
   const intl = useIntl();
   return (
     <Layout>
-      <div className={classnames(grid.grid, css.root)}>
+      <Helmet>
+        <title>{'About'}</title>
+      </Helmet>
+      <div className={grid.grid}>
         <Donate />
         <h1 className={grid.col}>{frontmatter.title}</h1>
         <h3 className={grid.col}>{intl.formatMessage({ id: 'aboutIntro' })}</h3>

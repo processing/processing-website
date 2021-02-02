@@ -8,7 +8,7 @@ import SidebarLabel from './SidebarLabel';
 import grid from '../styles/grid.module.css';
 import css from './SidebarList.module.css';
 
-const SidebarList = ({ data, type }) => {
+const SidebarList = ({ data, type, show }) => {
   const { locale } = useLocalization();
 
   return (

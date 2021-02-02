@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -19,6 +20,9 @@ const Environment = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>{'Environment'}</title>
+      </Helmet>
       <div className={classnames(grid.grid, css.root)} ref={ref}>
         <Donate />
         <TableOfContents items={tableOfContents.items} />
