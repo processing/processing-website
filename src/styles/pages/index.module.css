@@ -73,7 +73,7 @@
 
   @media (--medium) {
     padding-top: calc(var(--margin) * 2);
-    flex-basis: var(--col6);
+    flex-basis: var(--col4);
   }
 
   @media (--reduced) {
@@ -94,6 +94,8 @@
 }
 
 .buttons {
+  display: flex;
+  flex-wrap: wrap;
   margin: var(--margin) 0;
   @media (--medium) {
     margin: var(--gutter-double) 0;
@@ -139,7 +141,7 @@
     transition: opacity 0.2s ease;
   }
 
-  @media (--medium) {
+  @media (--reduced) {
     flex-basis: var(--col4);
   }
 }
@@ -170,17 +172,20 @@
 
 .moreButton {
   flex-basis: var(--col8);
-  padding-left: var(--col7);
+  padding-left: var(--col6);
   text-align: end;
 
-  @media (--medium), (--large) {
-    flex-basis: var(--col8);
-    padding-left: var(--col6);
+  & > a {
+    display: block;
+    margin-left: auto;
   }
 
-  @media (--small), (--reduced) {
-    flex-basis: var(--col7);
-    padding-left: var(--col3);
+  @media (--medium), (--small), (--reduced) {
+    padding-left: var(--gutter);
+    flex-basis: var(--col8);
+    & a {
+      margin: auto;
+    }
   }
 }
 
@@ -253,6 +258,18 @@
   }
 }
 
+.announcement {
+  @media (--medium) {
+    padding-left: calc(var(--margin) + var(--gutter));
+    padding-right: calc(var(--margin) + var(--gutter));
+  }
+
+  @media (--reduced) {
+    padding-left: calc(var(--margin-mobile) + var(--gutter-mobile));
+    padding-right: calc(var(--margin-mobile) + var(--gutter-mobile));
+  }
+}
+
 .announcementCover {
   height: 100%;
   width: 100%;
@@ -263,7 +280,9 @@
   margin-top: calc(-1 * var(--margin));
   margin-bottom: calc(-1 * var(--margin));
 
-  @media (--small), (--reduced) {
+  @media (--medium), (--small), (--reduced) {
+    padding-left: 0;
+    padding-right: 0;
     margin-top: 0px;
     margin-bottom: 0px;
   }

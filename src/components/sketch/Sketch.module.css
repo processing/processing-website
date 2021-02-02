@@ -17,7 +17,6 @@
   }
 
   @media (--medium) {
-    max-width: calc(var(--col3) + var(--margin));
     flex-basis: calc(var(--col3) + var(--margin));
   }
 

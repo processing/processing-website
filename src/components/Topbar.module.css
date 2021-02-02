@@ -7,6 +7,9 @@
   padding: 0 16px;
   background-color: var(--processing-blue-dark);
   color: white;
+  @media (--small) {
+    font-size: var(--text-xsmall);
+  }
 }
 
 .show {
@@ -42,6 +45,10 @@
   margin-right: 2rem;
   box-sizing: border-box;
   height: 100%;
+  @media (--small) {
+    margin-right: 0;
+    padding-right: var(--gutter-mobile);
+  }
 }
 
 .item:hover {

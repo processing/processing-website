@@ -232,8 +232,14 @@ const IndexPage = ({ data }) => {
         </div>
       </div>
       <div className={css.sectionDivider} />
-      <div className={classnames(grid.grid, css.section, grid.rightBleed)}>
-        <div className={classnames(css.half, grid.col)}>
+      <div
+        className={classnames(
+          grid.grid,
+          css.section,
+          grid.rightBleed,
+          grid.bleedMedium
+        )}>
+        <div className={classnames(css.half, grid.col, css.announcement)}>
           <h2>{intl.formatMessage({ id: 'announcement' })}</h2>
           <p
             dangerouslySetInnerHTML={{

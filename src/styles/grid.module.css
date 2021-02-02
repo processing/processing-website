@@ -54,3 +54,10 @@
     padding-left: var(--margin-mobile);
   }
 }
+
+.bleedMedium {
+  @media (--medium) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
