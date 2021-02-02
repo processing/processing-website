@@ -22,11 +22,7 @@ const ExamplesList = ({ data }) => {
               ? intl.formatMessage({ id: 'topicExamples' })
               : intl.formatMessage({ id: 'basicExamples' })}
           </p>
-<<<<<<< HEAD
           <ul className={classnames(grid.col, grid.nest)}>
-=======
-          <div className={classnames(grid.col8, grid.nest)}>
->>>>>>> accessibility
             {category.children.map((subcategory, key) => (
               <div key={`subcategory-${key}`} className={css.subcategory}>
                 <h3 className={grid.col}>{subcategory.name}</h3>
@@ -51,7 +47,7 @@ const ExamplesList = ({ data }) => {
                 </ul>
               </div>
             ))}
-          </div>
+          </ul>
         </div>
       ))}
     </div>
