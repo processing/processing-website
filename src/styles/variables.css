@@ -1,3 +1,9 @@
+@custom-media --small (max-width: 720px);
+@custom-media --reduced (max-width: 960px);
+@custom-media --medium (max-width: 1234px);
+@custom-media --large (max-width: 1362px);
+@custom-media --xlarge (max-width: 9999px);
+
 :root {
   --font: "Space Grotesk", Helvetica, Arial, sans-serif;
   --font-serif: Vollkorn, Garamond, Georgia, serif;
@@ -24,20 +30,13 @@
   --text-xxxlarge: 3.375rem;
 
   --margin: 48px;
-  --margin-half: calc(48px / 2);
-  --margin-quarter: calc(48px / 4);
+  --margin-half: calc(var(--margin) / 2);
+  --margin-quarter: calc(var(--margin) / 4);
+  --margin-double: calc(var(--margin) * 2);
   --gutter: 16px;
   --gutter-half: calc(var(--gutter) / 2);
   --gutter-double: calc(var(--gutter) * 2);
   --vertical-gutter: 40px;
-
-  --margin-mobile: 24px;
-  --margin-half-mobile: calc(24px / 2);
-  --margin-quarter-mobile: calc(24px / 4);
-  --gutter-mobile: 8px;
-  --gutter-half-mobile: calc(var(--gutter) / 2);
-  --gutter-double-mobile: calc(var(--gutter) * 2);
-  --vertical-gutter-mobile: 20px;
 
   --column: cols(1);
   --column-half: cols(0.5);
@@ -63,8 +62,19 @@
   --push8: calc(var(--col8) + var(--gutter));
 }
 
-@custom-media --small (max-width: 720px);
-@custom-media --reduced (max-width: 960px);
-@custom-media --medium (max-width: 1234px);
-@custom-media --large (max-width: 1362px);
-@custom-media --xlarge (max-width: 9999px);
+@media (--small) {
+  :root {
+    --margin: 16px;
+    --gutter: 8px;
+    --vertical-gutter: 20px;
+
+    --text-xsmall: 0.7rem;
+    --text-small: 0.8rem;
+    --text-regular: 0.875rem;
+    --text-medium: 1rem;
+    --text-large: 1.2rem;
+    --text-xlarge: 1.3rem;
+    --text-xxlarge: 2rem;
+    --text-xxxlarge: 2.25rem;
+  }
+}

@@ -4,6 +4,9 @@ main {
   flex: 1;
   transition: 0.2s ease-in-out;
   margin-bottom: calc(60px + var(--margin));
+  @media (--small) {
+    top: 100px;
+  }
 }
 
 .root {

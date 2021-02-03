@@ -1,7 +1,12 @@
 .root {
-  flex-basis: cols(6);
+  flex-basis: var(--col6);
   justify-content: center;
   margin-top: var(--margin-half);
+
+  @media (--small) {
+    margin-top: var(--vertical-gutter);
+    flex-basis: var(--col8);
+  }
 }
 
 .list {
@@ -19,6 +24,10 @@
     border-left: 3px solid var(--lightgray);
     height: 100%;
     margin-right: 10px;
+  }
+
+  @media (--small) {
+    flex-basis: var(--col4);
   }
 }
 .itemLink {

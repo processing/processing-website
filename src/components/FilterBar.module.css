@@ -98,4 +98,8 @@
   & input:focus {
     border-bottom: 3px solid var(--black);
   }
+
+  @media (--small) {
+    flex-basis: var(--col8);
+  }
 }

@@ -38,12 +38,9 @@ const Books = ({ data }) => {
                 link: ord.split('-')[1],
               }));
               return (
-                <li key={k} className={classnames(grid.col, css.listItem)}>
-                  <div className={grid.col1}>
-                    <Img
-                      className={classnames(grid.col, css.cover)}
-                      fixed={img[0].childImageSharp.fixed}
-                    />
+                <li key={k} className={classnames(grid.nest, css.listItem)}>
+                  <div className={classnames(grid.col, css.cover)}>
+                    <Img fluid={img[0].childImageSharp.fluid} />
                   </div>
                   <div className={classnames(grid.col, css.book)}>
                     <h3>{title}</h3>
@@ -115,8 +112,8 @@ export const query = graphql`
       nodes {
         name
         childImageSharp {
-          fixed {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 1200) {
+            ...GatsbyImageSharpFluid
           }
         }
       }

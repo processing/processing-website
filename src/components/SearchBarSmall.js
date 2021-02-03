@@ -4,6 +4,8 @@ import classnames from 'classnames';
 import grid from '../styles/grid.module.css';
 import css from './SearchBarSmall.module.css';
 
+import SearchIcon from '../images/search-icon.svg';
+
 const SearchBarSmall = ({ className, size }) => {
   const intl = useIntl();
   const [searchTerm, setSearchTerm] = useState();
@@ -40,7 +42,7 @@ const SearchBarSmall = ({ className, size }) => {
           placeholder={intl.formatMessage({ id: 'search' })}
         />
       ) : (
-        <div className={classnames(css.searchButton, grid.col)}></div>
+        <SearchIcon />
       )}
     </div>
   );

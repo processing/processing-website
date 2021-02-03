@@ -3,11 +3,6 @@
   flex-wrap: wrap;
   padding-left: var(--margin);
   padding-right: var(--margin);
-
-  @media (--small) {
-    padding-left: var(--margin-mobile);
-    padding-right: var(--margin-mobile);
-  }
 }
 
 .fill {
@@ -18,11 +13,6 @@
 .col {
   padding-left: var(--gutter);
   padding-right: var(--gutter);
-
-  @media (--small) {
-    padding-left: var(--gutter-mobile);
-    padding-right: var(--gutter-mobile);
-  }
 }
 
 .nest,
@@ -40,7 +30,7 @@
   }
 
   @media (--small) {
-    padding-right: var(--margin-mobile);
+    padding-right: var(--margin);
   }
 }
 
@@ -51,7 +41,7 @@
   }
 
   @media (--small) {
-    padding-left: var(--margin-mobile);
+    padding-left: var(--margin);
   }
 }
 

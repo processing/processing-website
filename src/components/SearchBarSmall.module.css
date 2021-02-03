@@ -1,8 +1,12 @@
 .root {
   flex-basis: cols(1.5, 8);
-  @media (--medium), (--small) {
+  @media (--medium) {
     align-self: center;
     flex-basis: auto;
+  }
+  @media (--small) {
+    align-self: flex-start;
+    flex-basis: var(--col1);
   }
 }
 
@@ -24,13 +28,6 @@
 .input::placeholder {
   color: var(--darkgray);
   opacity: 1;
-}
-
-.searchButton {
-  border: solid 4px var(--gray);
-  border-radius: 36px;
-  width: 36px;
-  height: 36px;
 }
 
 .large {

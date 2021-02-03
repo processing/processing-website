@@ -207,7 +207,7 @@ const IndexPage = ({ data }) => {
             </Button>
           </div>
         </div>
-        <div className={classnames(grid.col, css.half)}>
+        <div className={classnames(grid.col, css.half, css.partnersContainer)}>
           <h2>{intl.formatMessage({ id: 'partners' })}</h2>
           <ul className={css.partners}>
             <li>
@@ -237,7 +237,8 @@ const IndexPage = ({ data }) => {
           grid.grid,
           css.section,
           grid.rightBleed,
-          grid.bleedMedium
+          grid.bleedMedium,
+          css.announcementSection
         )}>
         <div className={classnames(css.half, grid.col, css.announcement)}>
           <h2>{intl.formatMessage({ id: 'announcement' })}</h2>
@@ -252,12 +253,12 @@ const IndexPage = ({ data }) => {
             css.half,
             grid.col,
             grid.rightBleed,
-            css.announcementSection
+            css.announcementCover
           )}>
           <img
             src={data.news.childImageSharp.fluid.src}
             alt=""
-            className={css.announcementCover}
+            className={css.announcementImg}
           />
         </div>
       </div>

@@ -49,4 +49,8 @@
   @media (--reduced) {
     padding: var(--gutter) calc(var(--gutter-double));
   }
+
+  @media (--small) {
+    padding: var(--gutter-double) calc(var(--gutter-double) * 2);
+  }
 }

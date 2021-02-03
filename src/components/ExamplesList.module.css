@@ -17,12 +17,20 @@
 
 .category {
   margin-bottom: var(--gutter-double);
+
+  @media (--small) {
+    padding-top: var(--vertical-gutter);
+  }
 }
 
 .intro {
   flex-basis: var(--col8);
   padding-right: var(--col4);
   margin-bottom: calc(var(--margin) / 2);
+
+  @media (--small) {
+    padding-right: var(--gutter);
+  }
 }
 
 .subcategory {
@@ -37,6 +45,13 @@
     border-right: solid 6px var(--lightgray);
     font-size: var(--text-medium);
     text-transform: capitalize;
+
+    @media (--small) {
+      padding-top: var(--vertical-gutter);
+      padding-bottom: var(--margin);
+      flex-basis: var(--col8);
+      flex-wrap: wrap;
+    }
   }
 
   & h4 {
@@ -50,6 +65,10 @@
 
   & ul > li {
     flex-basis: var(--col1);
+
+    @media (--small) {
+      flex-basis: var(--col4);
+    }
   }
 }
 

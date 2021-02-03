@@ -45,9 +45,9 @@
   margin-right: 2rem;
   box-sizing: border-box;
   height: 100%;
+
   @media (--small) {
-    margin-right: 0;
-    padding-right: var(--gutter-mobile);
+    margin-right: var(--gutter-double);
   }
 }
 
@@ -68,4 +68,8 @@
   margin-right: 5px;
   width: 30px;
   height: auto;
+
+  @media (--small) {
+    margin-right: 0px;
+  }
 }

@@ -25,8 +25,8 @@ const Environment = ({ data }) => {
         <Donate />
         {mdx !== null ? (
           <Fragment>
-            <TableOfContents items={tableOfContents.items} />
             <h1 className={grid.col}>{frontmatter.title}</h1>
+            <TableOfContents items={tableOfContents.items} />
             <div className={classnames(grid.col, css.content)}>
               <MDXRenderer>{body}</MDXRenderer>
             </div>
