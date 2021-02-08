@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { useStaticQuery, graphql } from 'gatsby';
@@ -20,10 +20,13 @@ import '../styles/fonts.css';
 
 import css from './Layout.module.css';
 
-export const LayoutContext = React.createContext({ headerHeight: 0 });
+export const LayoutContext = React.createContext({
+  headerHeight: 0,
+});
 
-const Layout = ({ children, isHomepage }) => {
-  const [headerScrolled, setScrolled] = useState(false);
+const Layout = ({ children, isHomepage, hasSidebar }) => {
+  const mainRef = useRef();
+  const [headerScrolled, setHeaderScrolled] = useState(false);
   const winSize = useWindowSize();
 
   const data = useStaticQuery(graphql`
@@ -40,10 +43,10 @@ const Layout = ({ children, isHomepage }) => {
     const handleScroll = () => {
       const offset = window.scrollY;
       if (offset > 200 && !headerScrolled) {
-        setScrolled(true);
+        setHeaderScrolled(true);
       }
       if (offset < 60) {
-        setScrolled(false);
+        setHeaderScrolled(false);
       }
     };
 
@@ -77,10 +80,14 @@ const Layout = ({ children, isHomepage }) => {
           className={classnames({
             [css.headerScrolled]: headerScrolled,
             [css.homepage]: isHomepage,
-          })}>
+            [css.hasSidebar]: hasSidebar,
+          })}
+          ref={mainRef}>
           <MDXProvider components={shortcodes}>{children}</MDXProvider>
         </main>
-        <Footer siteTitle={data.site.siteMetadata.title} />
+        {!hasSidebar && (
+          <Footer siteTitle={data.site.siteMetadata.title} hasSidebar />
+        )}
       </LayoutContext.Provider>
     </div>
   );

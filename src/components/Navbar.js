@@ -6,7 +6,7 @@ import { useIntl } from 'react-intl';
 
 import { useWindowSize } from '../utils/hooks';
 
-import SearchBarSmall from './SearchBarSmall';
+import SearchBar from './SearchBar';
 
 import css from './Navbar.module.css';
 import grid from '../styles/grid.module.css';
@@ -83,7 +83,10 @@ const Navbar = ({ siteTitle, size, show }) => {
     }
   }, [location, locale]);
 
-  console.log(expanded);
+  const navItems = useMemo(
+    () => (width <= 720 ? items : items.slice(1, items.length)),
+    [width]
+  );
 
   return (
     <div
@@ -114,7 +117,7 @@ const Navbar = ({ siteTitle, size, show }) => {
           [grid.col]: width <= 720,
           [css.expanded]: expanded,
         })}>
-        {items.map((item, key) => (
+        {navItems.map((item, key) => (
           <li
             key={key}
             className={classnames(css.item, {
@@ -156,7 +159,7 @@ const Navbar = ({ siteTitle, size, show }) => {
           </li>
         ))}
       </ul>
-      <SearchBarSmall size={size} />
+      <SearchBar size={size} />
     </div>
   );
 };

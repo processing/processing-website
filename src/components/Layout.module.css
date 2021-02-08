@@ -3,7 +3,9 @@ main {
   position: relative;
   flex: 1;
   transition: 0.2s ease-in-out;
-  margin-bottom: calc(60px + var(--margin));
+  padding-bottom: var(--vertical-gutter);
+  margin-bottom: 60px;
+
   @media (--small) {
     top: 100px;
   }
@@ -18,8 +20,17 @@ main {
 
 .headerScrolled {
   top: 60px;
+  @media (--small) {
+    top: 100px;
+  }
 }
 
 .homepage {
+  padding-bottom: 0px;
   margin-bottom: 60px;
+}
+
+.hasSidebar {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }

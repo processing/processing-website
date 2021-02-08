@@ -18,16 +18,16 @@ const Footer = ({ siteTitle }) => {
       <div className={classnames(grid.col, css.socialmediaWrapper)}>
         <ul>
           <li>
-            <a href={'#'}>Twitter</a>
+            <a href={'https://twitter.com/ProcessingOrg'}>Twitter</a>
           </li>
           <li>
-            <a href={'#'}>Medium</a>
+            <a href={'https://medium.com/@ProcessingOrg'}>Medium</a>
           </li>
           <li>
-            <a href={'#'}>Instagram</a>
+            <a href={'https://www.instagram.com/processingorg/'}>Instagram</a>
           </li>
           <li>
-            <a href={'#'}>GitHub</a>
+            <a href={'http://github.com/processing/'}>GitHub</a>
           </li>
         </ul>
         <span

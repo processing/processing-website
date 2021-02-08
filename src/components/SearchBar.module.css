@@ -1,5 +1,5 @@
 .root {
-  flex-basis: cols(1.5, 8);
+  flex-basis: cols(1, 8);
   @media (--medium) {
     align-self: center;
     flex-basis: auto;
@@ -31,5 +31,5 @@
 }
 
 .large {
-  padding-left: var(--pushHalf);
+  padding-left: var(--push-half);
 }

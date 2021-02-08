@@ -30,6 +30,8 @@
   }
 
   @media (--small) {
+    padding-right: var(--margin);
+
     & p {
       padding-top: var(--vertical-gutter);
       font-size: var(--text-medium);
@@ -315,6 +317,8 @@
   @media (--small) {
     flex-direction: column-reverse;
     padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 

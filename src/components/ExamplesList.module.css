@@ -45,13 +45,6 @@
     border-right: solid 6px var(--lightgray);
     font-size: var(--text-medium);
     text-transform: capitalize;
-
-    @media (--small) {
-      padding-top: var(--vertical-gutter);
-      padding-bottom: var(--margin);
-      flex-basis: var(--col8);
-      flex-wrap: wrap;
-    }
   }
 
   & h4 {
@@ -65,9 +58,24 @@
 
   & ul > li {
     flex-basis: var(--col1);
+  }
 
-    @media (--small) {
+  @media (--small) {
+    flex-wrap: wrap;
+
+    & h3 {
+      border-right: none;
+      padding-top: var(--vertical-gutter);
+      padding-bottom: var(--margin);
+      flex-basis: var(--col8);
+      flex-wrap: wrap;
+    }
+
+    & ul > li {
       flex-basis: var(--col4);
+      & img {
+        min-height: 120px;
+      }
     }
   }
 }

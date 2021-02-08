@@ -45,9 +45,9 @@
   }
 }
 
-.bleedMedium {
-  @media (--medium) {
-    padding-right: 0;
-    padding-left: 0;
+.bleedMobile {
+  @media (--small), (--medium) {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
   }
 }

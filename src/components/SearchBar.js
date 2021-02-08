@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 import grid from '../styles/grid.module.css';
-import css from './SearchBarSmall.module.css';
+import css from './SearchBar.module.css';
 
 import SearchIcon from '../images/search-icon.svg';
 
-const SearchBarSmall = ({ className, size }) => {
+const SearchBar = ({ className, size }) => {
   const intl = useIntl();
   const [searchTerm, setSearchTerm] = useState();
 
@@ -48,4 +48,4 @@ const SearchBarSmall = ({ className, size }) => {
   );
 };
 
-export default SearchBarSmall;
+export default SearchBar;

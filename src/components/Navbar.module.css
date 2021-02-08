@@ -1,6 +1,6 @@
 .root {
   align-items: baseline;
-
+  justify-content: space-around;
   @media (--small) {
     align-items: flex-start;
     flex-direction: row;

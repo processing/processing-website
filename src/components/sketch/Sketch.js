@@ -43,13 +43,14 @@ const initialState = fromJS({
 const Sketch = (props) => {
   const [state, setState] = useState(initialState);
   const [showCode, setShow] = useState(false);
-  const { width, height } = useWindowSize();
+  const { width } = useWindowSize();
 
   const changeStateHandler = (e, path, value) => {
     setState((state) => state.setIn(path, value));
   };
 
-  const handleClickOnSketch = () => {
+  const handleClickOnSketch = (e) => {
+    e.stopPropagation();
     setState((state) => state.setIn(['showCode'], !showCode ? true : false));
     setShow((showCode) => !showCode);
   };
@@ -79,13 +80,16 @@ const Sketch = (props) => {
   }, [width]);
 
   const stateJS = state.toJS();
-  console.log(width);
-  console.log(stateJS);
 
   return (
     <div className={classnames(css.root, grid.nest, grid.col)}>
       {width > 960 && (
         <Fragment>
+          <SketchGraphic
+            onClick={handleClickOnSketch}
+            {...stateJS}
+            isVisible={showCode}
+          />
           <SketchCode
             onChange={changeStateHandler}
             isVisible={showCode}
@@ -94,11 +98,6 @@ const Sketch = (props) => {
             onMouseLeaveShape={handleMouseLeaveShapeLine}
             onDraggingShapeStart={handleDraggingShapeStart}
             onDraggingShapeEnd={handleDraggingShapeEnd}
-          />
-          <SketchGraphic
-            onClick={() => handleClickOnSketch()}
-            {...stateJS}
-            isVisible={showCode}
           />
         </Fragment>
       )}

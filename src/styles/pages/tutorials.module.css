@@ -76,6 +76,11 @@
     background-color: none;
     transition: background 0.2s ease;
     pointer-events: auto;
+
+    @media (--small) {
+      padding-top: var(--vertical-gutter);
+      padding-bottom: var(--vertical-gutter);
+    }
   }
 
   & .card:hover {

@@ -72,7 +72,7 @@ const IndexPage = ({ data }) => {
 
   const selectedExamples = useMemo(() => {
     return examples ? examples.slice(0, 4) : [];
-  }, [data]);
+  }, [examples]);
 
   return (
     <Layout isHomepage>
@@ -102,14 +102,16 @@ const IndexPage = ({ data }) => {
           <h3 className={grid.col}>{intl.formatMessage({ id: 'examples' })}</h3>
           <ul>
             {selectedExamples.map((example, i) => (
-              <li className={classnames(css.example, grid.col)}>
+              <li
+                className={classnames(css.example, grid.col)}
+                key={`example-${i}`}>
                 <Link
                   to={`/examples/${example.slug.toLowerCase()}.html`}
                   language={locale}>
                   <div className={css.imgContainer}>
                     <img
                       src={example.img.childImageSharp.fluid.srcWebp}
-                      srcSetWebp={example.img.childImageSharp.fluid.srcSetWebp}
+                      srcSet={example.img.childImageSharp.fluid.srcSetWebp}
                       alt=""
                     />
                   </div>

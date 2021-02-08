@@ -76,12 +76,8 @@ export const query = graphql`
         name
         relativeDirectory
         childImageSharp {
-          fluid(maxWidth: 162) {
-            base64
-            srcWebp
-            srcSetWebp
-            originalImg
-            originalName
+          fluid(maxWidth: 400) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
