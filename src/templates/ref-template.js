@@ -17,12 +17,8 @@ import grid from '../styles/grid.module.css';
 
 const RefTemplate = ({ data, pageContext, ...props }) => {
   let entry;
-<<<<<<< HEAD
-  const [show, setShow] = useState(true);
-=======
   const [show, setShow] = useState(width > 960 ? true : false);
   const { width } = useWindowSize();
->>>>>>> responsive
   const ref = useHighlight();
   const intl = useIntl();
 

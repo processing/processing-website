@@ -17,12 +17,8 @@ import grid from '../styles/grid.module.css';
 
 const FieldRefTemplate = ({ data, pageContext }) => {
   let entry;
-<<<<<<< HEAD
-  const [show, setShow] = useState(true);
-=======
   const [show, setShow] = useState(width > 960 ? true : false);
   const { width } = useWindowSize();
->>>>>>> responsive
   const examples = data.pdes.edges;
   const images = data.images.edges;
   const ref = useHighlight();

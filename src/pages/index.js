@@ -140,16 +140,6 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
         <div className={classnames(css.half, grid.nest, css.cardGrid)}>
-<<<<<<< HEAD
-          <div className={classnames(css.half, grid.col, css.cardCol)}>
-            <Card to={'/tutorials/gettingstarted'} className={css.card}>
-              <h4>{intl.formatMessage({ id: 'cardGettingStarted' })}</h4>
-              <p>
-                {intl.formatMessage({
-                  id: 'cardGettingStartedDescription',
-                })}
-              </p>
-=======
           <div className={classnames(grid.col, css.cardCol)}>
             <Card
               to={'/tutorials/gettingstarted'}
@@ -158,7 +148,6 @@ const IndexPage = ({ data }) => {
               })}
               className={css.card}>
               {intl.formatMessage({ id: 'cardGettingStarted' })}
->>>>>>> responsive
             </Card>
             <Card to={'/reference'} className={css.card}>
               <h4>{intl.formatMessage({ id: 'cardReference' })}</h4>
@@ -169,16 +158,6 @@ const IndexPage = ({ data }) => {
               </p>
             </Card>
           </div>
-<<<<<<< HEAD
-          <div className={classnames(css.half, grid.col, css.cardCol)}>
-            <Card to={'/download'} className={css.card}>
-              <h4>{intl.formatMessage({ id: 'cardDownload' })}</h4>
-              <p>
-                {intl.formatMessage({
-                  id: 'cardDownloadDescription',
-                })}
-              </p>
-=======
           <div className={classnames(grid.col, css.cardCol)}>
             <Card
               to={'/download'}
@@ -187,7 +166,6 @@ const IndexPage = ({ data }) => {
               })}
               className={css.card}>
               {intl.formatMessage({ id: 'cardDownload' })}
->>>>>>> responsive
             </Card>
             <Card
               href={'https://discourse.processing.org/'}

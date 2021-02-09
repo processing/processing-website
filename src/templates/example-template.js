@@ -17,12 +17,8 @@ import css from '../styles/templates/example-template.module.css';
 import grid from '../styles/grid.module.css';
 
 const ExampleTemplate = ({ data, pageContext }) => {
-<<<<<<< HEAD
-  const [show, setShow] = useState(true);
-=======
   const [show, setShow] = useState(width > 960 ? true : false);
   const { width } = useWindowSize();
->>>>>>> responsive
   const intl = useIntl();
 
   let json, subcategory;

@@ -16,12 +16,8 @@ import grid from '../styles/grid.module.css';
 
 const ClassRefTemplate = ({ data, pageContext }) => {
   let entry;
-<<<<<<< HEAD
-  const [show, setShow] = useState(true);
-=======
   const [show, setShow] = useState(width > 960 ? true : false);
   const { width } = useWindowSize();
->>>>>>> responsive
   const images = data.images.edges;
   const examples = data.pdes.edges;
   const ref = useHighlight();
