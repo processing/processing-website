@@ -104,7 +104,9 @@ const ExampleTemplate = ({ data, pageContext }) => {
                 </div>
               )}
               <div className={classnames(css.cover, grid.col)}>
-                <Img fluid={data.image.nodes[0].childImageSharp.fluid} />
+                {data.image.nodes[0] && (
+                  <Img fluid={data.image.nodes[0].childImageSharp.fluid} />
+                )}
               </div>
               <Tabs pdes={orderedPdes} className={css.tabs} />
               {relatedExamples.length > 0 && (
@@ -118,12 +120,14 @@ const ExampleTemplate = ({ data, pageContext }) => {
                         rel.dir !== pageContext.relDir && (
                           <li key={key + 'rel'} className={css.relatedItem}>
                             <Link to={'../' + rel.name.toLowerCase() + '.html'}>
-                              <Img
-                                className={css.img}
-                                fluid={rel.img.childImageSharp.fluid}
-                                objectFit={'cover'}
-                                objectPosition={'50% 50%'}
-                              />
+                              {rel.img && (
+                                <Img
+                                  className={css.img}
+                                  fluid={rel.img.childImageSharp.fluid}
+                                  objectFit={'cover'}
+                                  objectPosition={'50% 50%'}
+                                />
+                              )}
                               <span className={css.relatedName}>
                                 {rel.name}
                               </span>

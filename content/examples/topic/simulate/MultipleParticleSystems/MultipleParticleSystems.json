@@ -1,0 +1,1 @@
+{"name":"Multiple Particle Systems","title":"Multiple Particle Systemsby Daniel Shiffman","author":"","description":"Click the mouse to generate a burst of particles\n  at mouse position.\n\n  Each burst is one instance of a particle system\n  with Particles and CrazyParticles (a subclass of Particle)\n  Note use of Inheritance and Polymorphism here.","featured":[]}

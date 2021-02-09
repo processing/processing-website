@@ -1,0 +1,1 @@
+{"name":"Mouse Signals","title":"Mouse Signals","author":"","description":"Move and click the mouse to generate signals. \n  The top row is the signal from \"mouseX\", \n  the middle row is the signal from \"mouseY\",\n  and the bottom row is the signal from \"mousePressed\".","featured":[]}

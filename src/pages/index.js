@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
+import Img from 'gatsby-image';
 
 import Layout from '../components/Layout';
 import Button from '../components/Button';
@@ -113,11 +114,9 @@ const IndexPage = ({ data }) => {
                   to={`/examples/${example.slug.toLowerCase()}.html`}
                   language={locale}>
                   <div className={css.imgContainer}>
-                    <img
-                      src={example.img.childImageSharp.fluid.srcWebp}
-                      srcSet={example.img.childImageSharp.fluid.srcSetWebp}
-                      alt=""
-                    />
+                    {example.img && (
+                      <Img fluid={example.img.childImageSharp.fluid} />
+                    )}
                   </div>
                   <h4>{example.name}</h4>
                   <p>{`in ${subcategoryFromDirectory(
