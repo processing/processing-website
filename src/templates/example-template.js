@@ -44,10 +44,10 @@ const ExampleTemplate = ({ data, pageContext }) => {
 
   const images = data.images.nodes;
 
-  const relatedExamples = useMemo(
-    () => organizeExampleItems(related, images)[0].children[0].children,
-    [related, images]
-  );
+  const relatedExamples = useMemo(() => {
+    const items = organizeExampleItems(related, images)[0];
+    return items && items.length > 0 ? items.children[0].children : [];
+  }, [related, images]);
 
   const toggleSidebar = (show) => {
     setShow(show);
