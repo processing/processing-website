@@ -99,7 +99,7 @@
     border-bottom: 3px solid var(--black);
   }
 
-  @media (--small) {
+  @media (--reduced) {
     flex-basis: var(--col8);
   }
 }

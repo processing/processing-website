@@ -7,8 +7,17 @@
   padding: 0 16px;
   background-color: var(--processing-blue-dark);
   color: white;
+
+  @media (--reduced) {
+    & h4 {
+      font-size: var(--text-small);
+    }
+  }
+
   @media (--small) {
-    font-size: var(--text-xsmall);
+    & h4 {
+      font-size: var(--text-xsmall);
+    }
   }
 }
 
@@ -70,6 +79,7 @@
   height: auto;
 
   @media (--small) {
+    width: 26px;
     margin-right: 0px;
   }
 }

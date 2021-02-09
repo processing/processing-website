@@ -10,14 +10,15 @@ import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 
-import { useHighlight } from '../utils/hooks';
+import { useHighlight, useWindowSize } from '../utils/hooks';
 
 import css from '../styles/templates/ref-template.module.css';
 import grid from '../styles/grid.module.css';
 
 const FieldRefTemplate = ({ data, pageContext }) => {
   let entry;
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(width > 960 ? true : false);
+  const { width } = useWindowSize();
   const examples = data.pdes.edges;
   const images = data.images.edges;
   const ref = useHighlight();
@@ -131,7 +132,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
                 </div>
               )}
             </div>
-            <Footer />
+            {width > 960 && <Footer />}
           </div>
         ) : (
           <div

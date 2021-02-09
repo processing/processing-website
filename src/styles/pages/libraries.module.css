@@ -7,7 +7,7 @@
     padding-right: var(--col3);
   }
 
-  @media (--small) {
+  @media (--reduced) {
     & > h1 {
       padding-top: var(--vertical-gutter);
     }
@@ -29,12 +29,12 @@
     margin: var(--margin) 0;
     border-right: solid 7px var(--lightgray);
 
-    @media (--small) {
+    @media (--reduced) {
       flex-basis: var(--col8);
     }
   }
 
-  @media (--small) {
+  @media (--reduced) {
     padding-left: 0;
   }
 }
@@ -79,7 +79,7 @@
     color: inherit;
   }
 
-  @media (--small) {
+  @media (--reduced) {
     & p {
       flex-basis: var(--col5);
     }
@@ -90,7 +90,7 @@
   flex-basis: var(--col2) !important;
   border-right: solid 3px var(--lightgray);
 
-  @media (--small) {
+  @media (--reduced) {
     flex-basis: var(--col3) !important;
   }
 }
@@ -107,7 +107,7 @@
     border-right: solid 7px var(--lightgray);
     margin-bottom: 0;
 
-    @media (--small) {
+    @media (--reduced) {
       flex-basis: var(--col8);
     }
   }
@@ -150,7 +150,7 @@
     color: inherit;
   }
 
-  @media (--small) {
+  @media (--reduced) {
     padding-right: 0px;
 
     & h2 {
@@ -169,7 +169,7 @@
   flex-basis: var(--col2);
   border-right: solid 3px var(--lightgray);
 
-  @media (--small) {
+  @media (--reduced) {
     flex-basis: var(--col3);
   }
 }
@@ -188,7 +188,7 @@
 .contributionBrief {
   flex-basis: var(--col6);
 
-  @media (--small) {
+  @media (--reduced) {
     flex-basis: var(--col5);
   }
 }

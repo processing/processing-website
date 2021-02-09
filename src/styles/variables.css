@@ -64,6 +64,23 @@
   --push8: calc(var(--col8) + var(--gutter));
 }
 
+@media (--reduced) {
+  :root {
+    --margin: 24px;
+    --gutter: 16px;
+    --vertical-gutter: 20px;
+
+    --text-xsmall: 0.7rem;
+    --text-small: 0.8rem;
+    --text-regular: 0.875rem;
+    --text-medium: 1rem;
+    --text-large: 1.2rem;
+    --text-xlarge: 1.3rem;
+    --text-xxlarge: 2rem;
+    --text-xxxlarge: 2.25rem;
+  }
+}
+
 @media (--small) {
   :root {
     --margin: 16px;

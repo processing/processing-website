@@ -3,7 +3,7 @@
   justify-content: center;
   margin-top: var(--margin-half);
 
-  @media (--small) {
+  @media (--reduced) {
     margin-top: var(--vertical-gutter);
     flex-basis: var(--col8);
   }
@@ -17,7 +17,7 @@
 }
 
 .item {
-  flex-basis: cols(1, 6);
+  flex-basis: var(--col2);
   display: flex;
 
   & .line {

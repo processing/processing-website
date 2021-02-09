@@ -11,12 +11,14 @@ import Sidebar from '../components/Sidebar';
 import Tabs from '../components/Tabs';
 
 import { organizeExampleItems } from '../utils/data';
+import { useWindowSize } from '../utils/hooks';
 
 import css from '../styles/templates/example-template.module.css';
 import grid from '../styles/grid.module.css';
 
 const ExampleTemplate = ({ data, pageContext }) => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(width > 960 ? true : false);
+  const { width } = useWindowSize();
   const intl = useIntl();
 
   let json, subcategory;
@@ -102,8 +104,10 @@ const ExampleTemplate = ({ data, pageContext }) => {
               <Tabs pdes={orderedPdes} className={css.tabs} />
               {relatedExamples.length > 0 && (
                 <div className={classnames(css.relatedWrapper, grid.nest)}>
-                  <h3>{intl.formatMessage({ id: 'relatedExamples' })}</h3>
-                  <ul className={css.related}>
+                  <h3 className={grid.col}>
+                    {intl.formatMessage({ id: 'relatedExamples' })}
+                  </h3>
+                  <ul className={classnames(css.related, grid.col)}>
                     {relatedExamples.slice(0, 6).map((rel, key) => {
                       return (
                         rel.dir !== pageContext.relDir && (
@@ -153,7 +157,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
               </div>
             </div>
           )}
-          <Footer />
+          {width > 960 && <Footer />}
         </div>
       </div>
     </Layout>

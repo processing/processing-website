@@ -9,13 +9,15 @@ import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 
+import { useHighlight, useWindowSize } from '../utils/hooks';
+
 import css from '../styles/templates/ref-template.module.css';
 import grid from '../styles/grid.module.css';
-import { useHighlight } from '../utils/hooks';
 
 const ClassRefTemplate = ({ data, pageContext }) => {
   let entry;
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(width > 960 ? true : false);
+  const { width } = useWindowSize();
   const images = data.images.edges;
   const examples = data.pdes.edges;
   const ref = useHighlight();
@@ -218,7 +220,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
                 </div>
               )}
             </div>
-            <Footer />
+            {width > 960 && <Footer />}
           </div>
         ) : (
           <div

@@ -1,5 +1,5 @@
 .root {
-  align-items: baseline;
+  align-items: center;
   justify-content: space-around;
   @media (--small) {
     align-items: flex-start;
@@ -59,13 +59,25 @@
   }
 
   @media (--medium) {
+    display: flex;
     flex-basis: var(--col1);
     text-align: center;
-    font-size: var(--text-large);
+    font-size: var(--text-medium);
+
     & svg {
       width: 34px;
       height: 100%;
     }
+
+    & a {
+      align-self: center;
+    }
+  }
+
+  @media (--reduced) {
+    padding-left: 0;
+    padding-right: 0;
+    font-size: var(--text-small);
   }
 
   @media (--small) {
@@ -84,11 +96,14 @@
     flex-basis: var(--col5);
   }
 
+  @media (--reduced) {
+    flex-basis: var(--col6);
+  }
+
   @media (--small) {
     flex-basis: var(--col5);
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: space-between;
     padding-top: 4px;
     padding-bottom: calc(var(--margin) * 4);
     opacity: 0;
@@ -190,7 +205,7 @@
   word-break: keep-all;
 
   @media (--medium) {
-    font-size: var(--text-regular);
+    font-size: var(--text-small);
   }
   @media (--small) {
     display: block;

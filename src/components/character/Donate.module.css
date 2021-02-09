@@ -11,7 +11,7 @@
     color: var(--processing-blue-mid);
   }
 
-  @media (--small) {
+  @media (--reduced) {
     display: none;
   }
 }

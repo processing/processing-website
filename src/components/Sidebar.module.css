@@ -7,10 +7,23 @@
   height: 100%;
   white-space: nowrap;
 
-  @media (--small) {
-    width: var(--col1);
+  @media (--reduced) {
+    width: var(--margin-double);
+    position: absolute;
     left: auto;
     right: 0;
+  }
+
+  @media (--small) {
+    width: var(--margin-double);
+    left: auto;
+    right: 0;
+  }
+}
+
+.root.show {
+  @media (--reduced) {
+    width: 100%;
   }
 }
 
@@ -41,6 +54,11 @@
     &:hover {
       color: var(--processing-blue-mid);
     }
+  }
+
+  @media (--reduced) {
+    right: 0;
+    left: auto;
   }
 
   @media (--small) {

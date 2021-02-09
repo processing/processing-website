@@ -11,7 +11,6 @@ import { useIntl } from 'react-intl';
 
 import FilterBar from '../components/FilterBar';
 import SidebarList from '../components/SidebarList';
-
 import { LayoutContext } from '../components/Layout';
 
 import {
@@ -19,11 +18,13 @@ import {
   organizeExampleItems,
   organizeReferenceItems,
 } from '../utils/data';
+import { useWindowSize } from '../utils/hooks';
 
 import css from './Sidebar.module.css';
 
 const Sidebar = (props) => {
   const { items, show, type = 'reference', onChange } = props;
+  const { width: windowWidth } = useWindowSize();
   const [searchTerm, setSearchTerm] = useState('');
   const sidebarRef = useRef();
   const [width, setWidth] = useState(0);
@@ -44,10 +45,18 @@ const Sidebar = (props) => {
   );
 
   useEffect(() => {
-    console.log(sidebarRef.current.clientWidth);
     if (sidebarRef.current.clientWidth > width)
       setWidth((width) => sidebarRef.current.clientWidth);
   }, [sidebarRef, width]);
+
+  const widthStyle =
+    windowWidth <= 960 && show
+      ? `var(--col4)`
+      : windowWidth <= 960 && !show
+      ? `var(--margin-double)`
+      : show
+      ? `${width}px`
+      : `var(--margin)`;
 
   return (
     <div
@@ -58,7 +67,7 @@ const Sidebar = (props) => {
           [css.headerScrolled]: layout.headerScrolled,
         })}
         style={{
-          width: show ? `${width}px` : `var(--margin)`,
+          width: widthStyle,
         }}>
         <div
           className={css.toggleButton}
