@@ -17,8 +17,8 @@ import css from '../styles/templates/example-template.module.css';
 import grid from '../styles/grid.module.css';
 
 const ExampleTemplate = ({ data, pageContext }) => {
-  const [show, setShow] = useState(width > 960 ? true : false);
   const { width } = useWindowSize();
+  const [show, setShow] = useState(width > 960 ? true : false);
   const intl = useIntl();
 
   let json, subcategory;

@@ -15,7 +15,6 @@ import grid from '../styles/grid.module.css';
 const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
   const link = `/reference/libraries/${libraryName}/index.html`;
   const intl = useIntl();
-
   const items = data.allFile.nodes;
 
   const tree = useMemo(() => organizeReferenceItems(items), [items]);
