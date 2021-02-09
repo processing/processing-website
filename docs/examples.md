@@ -24,10 +24,6 @@ The name is the name that will go to the url and the title is the title of the e
 
 This is a new feature of the example pages so you should choose no more than 6 functions that appear in the example (in the `.pde` files) and put them in the `.json ` file in the "features" field. The name of the functions should be the same as the name of their `.json` files located in `/content/references/translations/en`.
 
-## Code files
-
-You should copy all the .pde files from [here](https://github.com/processing/processing-docs/tree/master/content/examples) into the corresponding folders in `/content/examples`.
-
 ## Cover image
 
-Each example has an image or animation that comes from P5.js code ... _TODO
+Each example has an image or animation that comes from P5.js code. The cover should be exported as a `.png` from the original p5.js code from [here](https://github.com/processing/processing-docs/tree/master/content/examples_p5) to a size of `1280px720` (keeping the same proportions than the original sketch). If the example doesn't have a p5.js file, then the upscaling has to be done from the `.pde` file.  The naming of the image it's the same than the content file.
