@@ -21,7 +21,7 @@ The subfolder `/content/references/translations/en/video` is generated from the 
 
 Libraries DFX Export, PDF Export and SVG Export don't have individual references so their pages are created from [here](https://github.com/processing/processing-website/tree/master/content/pages/libraries).
 
-- The `/examples` folder contains all the examples used inside the references. They are organized in the same folder structure as the `translations` folder. These folders contain all the `.pde` and `.png` files necessary for the examples. Each example image should have a size of `400x400px` and should be named after the corresponding example, e.g. the `bezier_0.pde` example has an image named `bezier_0.png`.
+- The `/examples` folder contains all the examples used inside the references. They are organized in the same folder structure as the `translations` folder. These folders contain all the `.pde` and `.png` files necessary for the examples. Each example image should have a size of `800x800px` and should be named after the corresponding example, e.g. the `bezier_0.pde` example has an image named `bezier_0.png`.
 
 ## Adding content to the english reference
 
