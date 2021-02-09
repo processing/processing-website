@@ -8,9 +8,9 @@
   opacity: 0;
   z-index: 100;
   overflow: auto;
-  margin-left: calc(-1 * (var(--col8) + var(--margin)));
+  margin-left: calc(-1 * var(--col8));
   height: 100%;
-  width: calc(100% + var(--margin));
+  width: 100%;
   padding: 0px;
   font-family: var(--font-mono);
   font-size: 14px;

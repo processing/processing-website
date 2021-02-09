@@ -1,18 +1,45 @@
 .root {
-  display: flex;
   flex-flow: column;
-  position: fixed;
+  flex-basis: var(--margin);
   left: 0;
   z-index: 200;
   overflow: hidden;
-  transition: width 0.4s ease, height 0.2s ease-in-out;
-  width: var(--margin);
-  height: calc(100vh - 150px);
-  background: var(--lightgray);
+  height: 100%;
   white-space: nowrap;
 
+  @media (--reduced) {
+    width: var(--margin-double);
+    position: absolute;
+    left: auto;
+    right: 0;
+  }
+
+  @media (--small) {
+    width: var(--margin-double);
+    left: auto;
+    right: 0;
+  }
+}
+
+.root.show {
+  @media (--reduced) {
+    width: 100%;
+  }
+}
+
+.sidebarWrapper {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 150px;
+  left: 0;
+  height: calc(100vh - 150px);
+  overflow-y: scroll;
+  transition: top 0.2s ease-in-out, width 0.4s ease;
+  background: var(--lightgray);
+
   & h2 {
-    margin-top: 14px;
+    padding-top: 14px;
   }
 
   & a {
@@ -28,12 +55,44 @@
       color: var(--processing-blue-mid);
     }
   }
+
+  @media (--reduced) {
+    right: 0;
+    left: auto;
+  }
+
+  @media (--small) {
+    padding-left: calc(var(--margin) + var(--gutter));
+    padding-right: calc(var(--margin) + var(--gutter));
+    padding-bottom: var(--vertical-gutter);
+    width: var(--col8);
+    left: auto;
+    right: 0;
+  }
+}
+
+.sidebarWrapper.headerScrolled {
+  top: 60px;
+  height: calc(100vh - 60px);
 }
 
 .show {
-  width: calc(var(--column) * 1.5);
-  padding-left: var(--gutter-double);
-  padding-bottom: 64px;
+  flex-basis: var(--col1-and-half);
+
+  & .sidebarWrapper {
+    padding-left: var(--margin);
+    padding-right: var(--gutter);
+    max-width: calc((100% + var(--margin) * 2 + var(--gutter) * 40) / 8 * 1.5);
+  }
+
+  @media (--small) {
+    padding-left: calc(var(--margin) + var(--gutter));
+    padding-right: calc(var(--margin) + var(--gutter));
+    padding-bottom: var(--vertical-gutter);
+    width: var(--col8);
+    left: auto;
+    right: 0;
+  }
 }
 
 .toggleButton {
@@ -51,6 +110,7 @@
   position: relative;
   overflow-y: auto;
 }
+<<<<<<< HEAD
 
 .headerScrolled {
   height: calc(100vh - 64px);
@@ -59,3 +119,5 @@
 .filterBar {
   margin-right: var(--gutter-double);
 }
+=======
+>>>>>>> responsive

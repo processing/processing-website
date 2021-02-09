@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 import grid from '../styles/grid.module.css';
-import css from './SearchBarSmall.module.css';
+import css from './SearchBar.module.css';
 
-const SearchBarSmall = ({ className, size }) => {
+import SearchIcon from '../images/search-icon.svg';
+
+const SearchBar = ({ className, size }) => {
   const intl = useIntl();
   const [searchTerm, setSearchTerm] = useState();
 
@@ -40,10 +42,10 @@ const SearchBarSmall = ({ className, size }) => {
           placeholder={intl.formatMessage({ id: 'search' })}
         />
       ) : (
-        <div className={classnames(css.searchButton, grid.col)}></div>
+        <SearchIcon />
       )}
     </div>
   );
 };
 
-export default SearchBarSmall;
+export default SearchBar;

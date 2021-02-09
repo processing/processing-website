@@ -1,27 +1,37 @@
 .root {
-  flex-basis: var(--col8);
+  flex-basis: cols(6, 6);
   margin-top: var(--margin);
 
   & > ul {
     position: relative;
     display: flex;
-    padding-left: var(--push1);
-    padding-right: var(--push1);
     align-items: center;
     list-style: none;
   }
 
   & > div {
-    padding-left: var(--push1);
-    padding-right: var(--push1);
+  }
+
+  @media (--small) {
+    & > ul {
+      padding-left: var(--gutter);
+      padding-right: var(--gutter);
+    }
+
+    & > div {
+      padding-left: var(--gutter);
+      padding-right: var(--gutter);
+    }
   }
 }
 
 .tab {
   display: flex;
   align-items: center;
+  border-radius: 0px;
   padding: var(--gutter-half) var(--gutter);
   background-color: var(--gray);
+  color: var(--black);
 }
 
 .active {
@@ -29,6 +39,7 @@
 }
 
 .codeBlock {
-  min-width: calc((100vw - var(--margin) * 2) / 8 * 6);
+  max-width: cols(6, 6);
   padding-bottom: var(--gutter-double);
+  white-space: break-spaces;
 }

@@ -7,7 +7,7 @@
 
 .category {
   & h2 {
-    padding-top: 60px;
+    padding-top: var(--vertical-gutter);
     font-size: var(--text-xlarge);
     flex-basis: var(--col8);
     text-transform: capitalize;
@@ -21,6 +21,10 @@
   & ul div:last-child {
     margin-bottom: 0;
   }
+
+  @media (--reduced) {
+    padding-top: calc(var(--vertical-gutter) * 2);
+  }
 }
 
 .subcategory {
@@ -29,6 +33,10 @@
   flex-direction: row;
   margin-bottom: 30px;
   width: 100%;
+
+  @media (--reduced) {
+    flex-direction: column;
+  }
 }
 
 .subcategoryTitle {
@@ -36,14 +44,33 @@
   height: 100%;
   display: flex;
   align-items: stretch;
+
   & .line {
     border-left: solid 7px var(--lightgray);
   }
+
   & h3 {
     margin: 0;
     padding-left: var(--gutter);
     font-size: var(--text-large);
     text-transform: capitalize;
+  }
+
+  @media (--reduced) {
+    flex-basis: var(--col3);
+    padding-left: 0;
+    padding-bottom: var(--gutter-double);
+
+    & .line {
+      border-left: solid 12px var(--lightgray);
+      margin-left: var(--gutter);
+    }
+  }
+
+  @media (--small) {
+    & .line {
+      border-left: solid 12px var(--lightgray);
+    }
   }
 }
 
@@ -51,6 +78,7 @@
   flex-basis: cols(5.5);
   display: flex;
   align-items: stretch;
+
   & .line {
     border-left: solid 3px var(--lightgray);
   }
@@ -59,6 +87,7 @@
     margin-bottom: 8px;
     width: 100%;
     list-style: none;
+
     &:hover {
       background-color: var(--lightgray);
     }
@@ -75,6 +104,22 @@
   & p {
     margin: 0;
   }
+
+  @media (--reduced) {
+    flex-basis: var(--col5);
+
+    & li {
+      margin-bottom: var(--gutter);
+    }
+  }
+
+  @media (--small) {
+    flex-basis: var(--col5);
+
+    & li {
+      margin-bottom: calc(var(--gutter) * 3);
+    }
+  }
 }
 .item {
   display: flex;
@@ -82,6 +127,10 @@
 
   & span {
     font-size: var(--text-regular);
+  }
+
+  @media (--reduced) {
+    flex-wrap: wrap;
   }
 }
 
@@ -92,8 +141,17 @@
   /* font-weight: bold; */
   text-decoration: none;
   color: var(--processing-blue-dark);
+
+  @media (--small) {
+    flex-basis: var(--col8);
+    margin-bottom: var(--gutter);
+  }
 }
 
 .itemBrief {
   flex-basis: cols(4, 5.5);
+
+  @media (--small) {
+    flex-basis: var(--col8);
+  }
 }

@@ -1,4 +1,6 @@
 .root {
+  width: 100%;
+
   & span {
     color: var(--darkgray);
     font-family: var(--font);

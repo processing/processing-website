@@ -9,7 +9,6 @@ import Card from '../components/Card';
 import Sketch from '../components/sketch/Sketch';
 
 import { subcategoryFromDirectory } from '../utils/data';
-import { useWindowSize } from '../utils/hooks';
 
 import css from '../styles/pages/index.module.css';
 import grid from '../styles/grid.module.css';
@@ -46,7 +45,6 @@ export const items = [
 const IndexPage = ({ data }) => {
   const intl = useIntl();
   const { locale } = useLocalization();
-  const winSize = useWindowSize();
 
   const items = data.examples.nodes;
   const images = data.images.nodes;
@@ -74,46 +72,46 @@ const IndexPage = ({ data }) => {
 
   const selectedExamples = useMemo(() => {
     return examples ? examples.slice(0, 4) : [];
-  }, [data]);
+  }, [examples]);
 
   return (
     <Layout isHomepage>
-      <div className={classnames(css.hero)}>
-        <div className={grid.grid}>
-          <div className={classnames(grid.col, css.intro)}>
-            <h1>{intl.formatMessage({ id: 'introTitle' })}</h1>
-            <p>{intl.formatMessage({ id: 'introText' })}</p>
-            <div className={css.buttons}>
-              <Button to={'/download'} size="large" className={css.button}>
-                {intl.formatMessage({ id: 'download' })}
-              </Button>
-              <Button to={'/reference'} size="large" className={css.button}>
-                {intl.formatMessage({ id: 'reference' })}
-              </Button>
-              <Button
-                href={'https://processingfoundation.org/donate'}
-                size="large"
-                className={css.button}>
-                {intl.formatMessage({ id: 'donate' })}
-              </Button>
-            </div>
+      <div className={classnames(css.hero, grid.grid, grid.rightBleed)}>
+        <div className={classnames(grid.col, css.intro)}>
+          <h1>{intl.formatMessage({ id: 'introTitle' })}</h1>
+          <p>{intl.formatMessage({ id: 'introText' })}</p>
+          <div className={css.buttons}>
+            <Button to={'/download'} size="large" className={css.button}>
+              {intl.formatMessage({ id: 'download' })}
+            </Button>
+            <Button to={'/reference'} size="large" className={css.button}>
+              {intl.formatMessage({ id: 'reference' })}
+            </Button>
+            <Button
+              href={'https://processingfoundation.org/donate'}
+              size="large"
+              className={css.button}>
+              {intl.formatMessage({ id: 'donate' })}
+            </Button>
           </div>
-          {winSize.width > 1080 && <Sketch />}
         </div>
+        <Sketch />
       </div>
       <div className={classnames(grid.grid, css.section)}>
         <div className={classnames(grid.col, grid.nest, css.examples)}>
           <h3 className={grid.col}>{intl.formatMessage({ id: 'examples' })}</h3>
           <ul>
             {selectedExamples.map((example, i) => (
-              <li className={classnames(css.example, grid.col)}>
+              <li
+                className={classnames(css.example, grid.col)}
+                key={`example-${i}`}>
                 <Link
                   to={`/examples/${example.slug.toLowerCase()}.html`}
                   language={locale}>
                   <div className={css.imgContainer}>
                     <img
                       src={example.img.childImageSharp.fluid.srcWebp}
-                      srcSetWebp={example.img.childImageSharp.fluid.srcSetWebp}
+                      srcSet={example.img.childImageSharp.fluid.srcSetWebp}
                       alt=""
                     />
                   </div>
@@ -142,6 +140,7 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
         <div className={classnames(css.half, grid.nest, css.cardGrid)}>
+<<<<<<< HEAD
           <div className={classnames(css.half, grid.col, css.cardCol)}>
             <Card to={'/tutorials/gettingstarted'} className={css.card}>
               <h4>{intl.formatMessage({ id: 'cardGettingStarted' })}</h4>
@@ -150,6 +149,16 @@ const IndexPage = ({ data }) => {
                   id: 'cardGettingStartedDescription',
                 })}
               </p>
+=======
+          <div className={classnames(grid.col, css.cardCol)}>
+            <Card
+              to={'/tutorials/gettingstarted'}
+              description={intl.formatMessage({
+                id: 'cardGettingStartedDescription',
+              })}
+              className={css.card}>
+              {intl.formatMessage({ id: 'cardGettingStarted' })}
+>>>>>>> responsive
             </Card>
             <Card to={'/reference'} className={css.card}>
               <h4>{intl.formatMessage({ id: 'cardReference' })}</h4>
@@ -160,6 +169,7 @@ const IndexPage = ({ data }) => {
               </p>
             </Card>
           </div>
+<<<<<<< HEAD
           <div className={classnames(css.half, grid.col, css.cardCol)}>
             <Card to={'/download'} className={css.card}>
               <h4>{intl.formatMessage({ id: 'cardDownload' })}</h4>
@@ -168,6 +178,16 @@ const IndexPage = ({ data }) => {
                   id: 'cardDownloadDescription',
                 })}
               </p>
+=======
+          <div className={classnames(grid.col, css.cardCol)}>
+            <Card
+              to={'/download'}
+              description={intl.formatMessage({
+                id: 'cardDownloadDescription',
+              })}
+              className={css.card}>
+              {intl.formatMessage({ id: 'cardDownload' })}
+>>>>>>> responsive
             </Card>
             <Card
               href={'https://discourse.processing.org/'}
@@ -213,9 +233,9 @@ const IndexPage = ({ data }) => {
             </Button>
           </div>
         </div>
-        <div className={classnames(grid.col, css.half)}>
+        <div className={classnames(grid.col, css.half, css.partnersContainer)}>
           <h2>{intl.formatMessage({ id: 'partners' })}</h2>
-          <ul className={css.logos}>
+          <ul className={css.partners}>
             <li>
               <div>
                 <img src={data.fathom.childImageSharp.fluid.src} alt="" />
@@ -238,8 +258,15 @@ const IndexPage = ({ data }) => {
         </div>
       </div>
       <div className={css.sectionDivider} />
-      <div className={classnames(grid.grid, css.section, grid.rightBleed)}>
-        <div className={classnames(css.half, grid.col)}>
+      <div
+        className={classnames(
+          grid.grid,
+          css.section,
+          grid.rightBleed,
+          grid.bleedMedium,
+          css.announcementSection
+        )}>
+        <div className={classnames(css.half, grid.col, css.announcement)}>
           <h2>{intl.formatMessage({ id: 'announcement' })}</h2>
           <p
             dangerouslySetInnerHTML={{
@@ -252,12 +279,12 @@ const IndexPage = ({ data }) => {
             css.half,
             grid.col,
             grid.rightBleed,
-            css.announcementSection
+            css.announcementCover
           )}>
           <img
             src={data.news.childImageSharp.fluid.src}
             alt=""
-            className={css.announcementCover}
+            className={css.announcementImg}
           />
         </div>
       </div>

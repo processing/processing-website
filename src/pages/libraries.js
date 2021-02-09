@@ -50,7 +50,8 @@ const Libraries = ({ data }) => {
         <h3 className={grid.col}>
           {intl.formatMessage({ id: 'librariesIntro' })}
         </h3>
-        <div className={css.listWrapper}>
+        <div className={classnames(grid.nest, css.listWrapper)}>
+          <h2 className={grid.col}>Core</h2>
           <ul className={css.list}>
             {libraries.nodes.map((node, key) => {
               return (
@@ -82,7 +83,7 @@ const Libraries = ({ data }) => {
           large
         />
         <CategoryNav categories={categories} />
-        <ul className={classnames(grid.col, css.contributionsList)}>
+        <ul className={classnames(grid.nest, css.contributionsList)}>
           {categories.map((cat) => {
             let contribs = filtered.filter((c) => c.categories.includes(cat));
             return (
@@ -91,7 +92,7 @@ const Libraries = ({ data }) => {
                 <ul className={classnames(grid.col, grid.nest)}>
                   {contribs.map((node, key) => {
                     return (
-                      <li key={key + 'c'} className={classnames(css.subgrid)}>
+                      <li key={key + 'c'} className={css.subgrid}>
                         <div
                           className={classnames(
                             grid.col,

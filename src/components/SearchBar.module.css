@@ -1,8 +1,12 @@
 .root {
-  flex-basis: cols(1.5, 8);
-  @media (--medium), (--small) {
+  flex-basis: cols(1, 8);
+  @media (--medium) {
     align-self: center;
     flex-basis: auto;
+  }
+  @media (--small) {
+    align-self: flex-start;
+    flex-basis: var(--col1);
   }
 }
 
@@ -26,13 +30,6 @@
   opacity: 1;
 }
 
-.searchButton {
-  border: solid 4px var(--gray);
-  border-radius: 36px;
-  width: 36px;
-  height: 36px;
-}
-
 .large {
-  padding-left: var(--pushHalf);
+  padding-left: var(--push-half);
 }

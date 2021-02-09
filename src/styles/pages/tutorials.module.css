@@ -2,26 +2,47 @@
   & > h1 {
     padding-right: var(--col3);
   }
+
+  @media (--small) {
+    & > h1 {
+      padding-top: var(--vertical-gutter);
+      padding-right: var(--gutter);
+    }
+  }
 }
 
 .section {
   flex-wrap: wrap;
 
   & > h2 {
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 
   & > h3 {
     flex-basis: var(--col8);
     padding-right: var(--col4);
   }
+
+  @media (--small) {
+    & > h3 {
+      padding-right: var(--gutter);
+    }
+    & > h2 {
+      margin-top: var(--vertical-gutter);
+    }
+  }
 }
 
 .sectionIntro {
   flex-basis: var(--col8);
   padding-right: var(--col4);
+
   & a {
     text-decoration: underline;
+  }
+
+  @media (--small) {
+    padding-right: var(--gutter);
   }
 }
 
@@ -29,6 +50,7 @@
   width: 100%;
   margin: var(--gutter) 0;
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
 
   & li {
@@ -54,6 +76,11 @@
     background-color: none;
     transition: background 0.2s ease;
     pointer-events: auto;
+
+    @media (--small) {
+      padding-top: var(--vertical-gutter);
+      padding-bottom: var(--vertical-gutter);
+    }
   }
 
   & .card:hover {
@@ -89,5 +116,11 @@
 
   & .level {
     margin-top: var(--gutter-half);
+  }
+
+  @media (--small) {
+    & li {
+      flex-basis: var(--col8);
+    }
   }
 }

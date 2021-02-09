@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
-import classnames from 'classnames';
 
 import CategoryNav from '../components/CategoryNav';
 import Donate from '../components/character/Donate';

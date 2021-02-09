@@ -6,10 +6,13 @@
   height: auto;
   position: relative;
   z-index: 200;
+
   & svg {
     position: absolute;
+    max-width: 100%;
   }
 }
+
 .ui {
   position: absolute;
   z-index: 200;

@@ -34,7 +34,7 @@ const Tools = ({ data }) => {
         <Donate />
         <h1 className={grid.col}>{intl.formatMessage({ id: 'tools' })}</h1>
         <h3 className={grid.col}>{intl.formatMessage({ id: 'toolsIntro' })}</h3>
-        <div className={css.listWrapper}>
+        <div className={classnames(grid.nest, css.listWrapper)}>
           <ul className={css.list}>
             {tools.nodes.map((node, key) => {
               return (
@@ -57,10 +57,10 @@ const Tools = ({ data }) => {
             __html: intl.formatMessage({ id: 'contributedTools' }),
           }}
         />
-        <ul className={css.contributionsList}>
+        <ul className={classnames(grid.nest, css.contributionsList)}>
           {contributions.map((node, key) => {
             return (
-              <li key={key + 'c'} className={classnames(css.subgrid, grid.col)}>
+              <li key={key + 'c'} className={css.subgrid}>
                 <div className={classnames(grid.col, css.contributionData)}>
                   <h3>
                     <a href={node.url} target="_blank" rel="noreferrer">

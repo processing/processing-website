@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 import hljs from 'highlight.js/lib/core';
 
-import css from './Tabs.module.css';
-import grid from '../styles/grid.module.css';
+import Button from './Button';
 
-const Tabs = ({ pdes }) => {
+import css from './Tabs.module.css';
+
+const Tabs = ({ pdes, className }) => {
   const [active, setActive] = useState(pdes[0].name);
 
   useEffect(() => {
@@ -19,21 +20,22 @@ const Tabs = ({ pdes }) => {
   };
 
   return (
-    <div className={css.root}>
-      <ul className={grid.col}>
+    <div className={classnames(css.root, className)}>
+      <ul>
         {pdes.map((pde, key) => (
-          <li
-            className={classnames(css.tab, {
-              [css.active]: pde.name === active,
-            })}
-            key={key + 'tab'}
-            onClick={() => onClick(pde.name)}
-            onKeyDown={() => onClick(pde.name)}>
-            {pde.name}
+          <li key={key + 'tab'}>
+            <Button
+              className={classnames(css.tab, {
+                [css.active]: pde.name === active,
+              })}
+              onClick={() => onClick(pde.name)}
+              onKeyDown={() => onClick(pde.name)}>
+              {pde.name}
+            </Button>
           </li>
         ))}
       </ul>
-      <div className={grid.col}>
+      <div>
         {pdes.map(
           (pde, key) =>
             pde.name === active && (
