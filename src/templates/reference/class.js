@@ -1,25 +1,26 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 
-import Img from 'gatsby-image';
+import Footer from '../../components/Footer';
+import Layout from '../../components/Layout';
+import Sidebar from '../../components/Sidebar';
 
-import Footer from '../components/Footer';
-import Layout from '../components/Layout';
-import Sidebar from '../components/Sidebar';
+import { useHighlight, useWindowSize } from '../../utils/hooks';
 
-import { useHighlight, useWindowSize } from '../utils/hooks';
+import css from '../../styles/templates/ref-template.module.css';
+import grid from '../../styles/grid.module.css';
 
-import css from '../styles/templates/ref-template.module.css';
-import grid from '../styles/grid.module.css';
-
-const RefTemplate = ({ data, pageContext, ...props }) => {
+const ClassRefTemplate = ({ data, pageContext }) => {
   let entry;
   const { width } = useWindowSize();
   const [show, setShow] = useState(width > 960 ? true : false);
+  const images = data.images.edges;
+  const examples = data.pdes.edges;
   const ref = useHighlight();
   const intl = useIntl();
 
@@ -32,9 +33,6 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
       ? `/reference/${pageContext.name}.html`
       : `/reference/libraries/${pageContext.libraryName}/${pageContext.name}.html`;
 
-  const examples = data.pdes ? data.pdes.edges : [];
-  const images = data.images.edges;
-
   const toggleSidebar = (e, show) => {
     if (e.type === 'click') setShow(show);
     else if (e.keyCode === 13) setShow(show);
@@ -43,9 +41,9 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
   return (
     <Layout hasSidebar>
       <Helmet>
-        <title>{pageContext.name.replace('_', '')}</title>
+        <title>{pageContext.name}</title>
       </Helmet>
-      <div className={classnames(css.root, grid.nest, grid.rightBleed)}>
+      <div className={classnames(css.root, grid.grid, grid.rightBleed)}>
         {pageContext.libraryName === 'processing' && (
           <Sidebar
             items={data.items}
@@ -54,9 +52,13 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
             type={'reference'}
           />
         )}
-        {data.json && entry ? (
+        {data.json ? (
           <div
-            className={classnames(css.wrapper, { [css.collapsed]: !show })}
+            className={classnames(
+              css.wrapper,
+              { [css.collapsed]: !show },
+              grid.nest
+            )}
             ref={ref}>
             <div
               className={classnames(
@@ -64,37 +66,33 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
                 { [css.collapsed]: !show },
                 grid.nest
               )}>
-              <div className={classnames(css.section, grid.nest)}>
+              <div className={classnames(grid.nest, css.section)}>
                 <h4 className={grid.col}>
-                  {intl.formatMessage({ id: 'name' })}
+                  {intl.formatMessage({ id: 'className' })}
                 </h4>
-                {entry && <h3 className={grid.col}>{entry.name}</h3>}
+                <h3 className={grid.col}>{entry.name}</h3>
               </div>
-              <div className={classnames(css.section, grid.nest)}>
+              <div className={classnames(grid.nest, css.section)}>
                 <h4 className={grid.col}>
                   {intl.formatMessage({ id: 'description' })}
                 </h4>
                 <p
                   className={classnames(grid.col, css.description)}
-                  dangerouslySetInnerHTML={{ __html: entry.description }}></p>
+                  dangerouslySetInnerHTML={{ __html: entry.description }}
+                />
               </div>
               {examples.length > 0 && (
-                <div className={classnames(css.section, grid.nest)}>
+                <div className={classnames(grid.nest, css.section)}>
                   <h4 className={grid.col}>
                     {intl.formatMessage({ id: 'examples' })}
                   </h4>
-                  <ul
-                    className={classnames(
-                      grid.col,
-                      grid.nest,
-                      css.exampleList
-                    )}>
+                  <ul className={classnames(grid.col, grid.nest, css.list)}>
                     {examples.map((ex, key) => {
                       const img = images.filter(
                         (img) => img.node.name === ex.node.name
                       );
                       return (
-                        <li className={css.example} key={'ex' + key}>
+                        <li key={'ex' + key} className={css.example}>
                           <div
                             className={classnames(grid.col, css.exampleCode)}>
                             <pre className={css.codeBlock}>
@@ -111,7 +109,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
                                 grid.col,
                                 css.exampleImage
                               )}>
-                              <Img fluid={img[0].node.childImageSharp.fluid} />
+                              <Img fixed={img[0].node.childImageSharp.fixed} />
                             </div>
                           )}
                         </li>
@@ -120,74 +118,98 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
                   </ul>
                 </div>
               )}
-              <div className={classnames(css.section, grid.nest)}>
-                <h4 className={grid.col}>
-                  {intl.formatMessage({ id: 'syntax' })}
-                </h4>
-                <ul className={classnames(grid.col, css.list)}>
-                  {entry.syntax.map((syn, key) => {
-                    return (
-                      <li key={'s' + key}>
-                        <code>{syn}</code>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-              {entry.parameters &&
-                entry.parameters.length > 0 &&
-                entry.parameters[0] != null && (
-                  <div className={classnames(css.section, grid.nest)}>
-                    <h4 className={grid.col}>
-                      {intl.formatMessage({ id: 'parameters' })}
-                    </h4>
-                    <ul className={classnames(grid.col, grid.nest, css.list)}>
-                      {entry.parameters.map((param, key) => {
-                        return (
-                          <li key={'param' + key} className={css.param}>
-                            <span
-                              className={classnames(grid.col, css.paramName)}>
-                              {param.name}
-                            </span>
-                            <span className={grid.col}>
-                              {param.type
-                                ? param.type + ': ' + param.description
-                                : param.description}
-                            </span>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-                )}
-              {entry.returns && (
-                <div className={classnames(css.section, grid.nest)}>
+              {entry.constructors && entry.constructors.length > 0 && (
+                <div className={classnames(grid.nest, css.section)}>
                   <h4 className={grid.col}>
-                    {intl.formatMessage({ id: 'return' })}
+                    {' '}
+                    {intl.formatMessage({ id: 'constructors' })}
                   </h4>
-                  <p className={grid.col}>
-                    <code>{entry.returns}</code>
-                  </p>
+                  <ul className={classnames(grid.col, css.list)}>
+                    {entry.constructors.map((cons, key) => {
+                      return (
+                        <li key={'f' + key}>
+                          <code>{cons}</code>
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </div>
               )}
-              {entry.inUse && (
-                <div className={classnames(css.section, grid.nest)}>
+              {entry.classFields && entry.classFields.length > 0 && (
+                <div className={classnames(grid.nest, css.section)}>
                   <h4 className={grid.col}>
-                    {intl.formatMessage({ id: 'inUse' })}
+                    {intl.formatMessage({ id: 'fields' })}
                   </h4>
                   <ul className={classnames(grid.col, grid.nest, css.list)}>
-                    {entry.inUse.map((inUse, key) => (
-                      <li key={key + 'rel'}>
-                        <a href={inUse + '.html'} className={grid.col}>
-                          {inUse.replace(/_/g, '()')}
-                        </a>
-                      </li>
-                    ))}
+                    {entry.classFields.map((field, key) => {
+                      return (
+                        <li key={'f' + key}>
+                          <a
+                            href={field.anchor + '.html'}
+                            className={classnames(grid.col, css.item)}>
+                            <code>{field.name}</code>{' '}
+                          </a>
+                          <span
+                            className={classnames(
+                              grid.col,
+                              css.itemDescription
+                            )}>
+                            {field.desc}
+                          </span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              )}
+              {entry.parameters && entry.parameters.length > 0 && (
+                <div className={classnames(grid.nest, css.section)}>
+                  <h4 className={grid.col}>
+                    {intl.formatMessage({ id: 'parameters' })}
+                  </h4>
+                  <ul className={classnames(grid.col, grid.nest, css.list)}>
+                    {entry.parameters.map((param, key) => {
+                      return (
+                        <li key={'param' + key} className={css.param}>
+                          <span className={classnames(grid.col, css.paramName)}>
+                            {param.name}
+                          </span>
+                          <span className={grid.col}>{param.description}</span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              )}
+              {entry.methods && entry.methods.length > 0 && (
+                <div className={classnames(grid.nest, css.section)}>
+                  <h4 className={grid.col}>
+                    {intl.formatMessage({ id: 'methods' })}
+                  </h4>
+                  <ul className={classnames(grid.col, grid.nest, css.list)}>
+                    {entry.methods.map((method, key) => {
+                      return (
+                        <li key={'m' + key}>
+                          <a
+                            href={method.anchor + '.html'}
+                            className={classnames(grid.col, css.item)}>
+                            <code>{method.name}</code>
+                          </a>
+                          <span
+                            className={classnames(
+                              grid.col,
+                              css.itemDescription
+                            )}
+                            dangerouslySetInnerHTML={{ __html: method.desc }}
+                          />
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               )}
               {entry.related && entry.related.length > 0 && (
-                <div className={classnames(css.section, grid.nest)}>
+                <div className={classnames(grid.nest, css.section)}>
                   <h4 className={grid.col}>
                     {intl.formatMessage({ id: 'related' })}
                   </h4>
@@ -202,29 +224,6 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
                   </ul>
                 </div>
               )}
-              <div className={classnames(css.section, grid.nest)}>
-                <div className={classnames(grid.col, css.license)}>
-                  <a
-                    rel="license"
-                    href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-                    <img
-                      alt="Creative Commons License"
-                      style={{ borderWidth: 0 }}
-                      src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
-                    />
-                  </a>
-                  <p>
-                    {`This work is licensed under a `}
-                    <a
-                      rel="license"
-                      href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-                      Creative Commons Attribution-NonCommercial-ShareAlike 4.0
-                      International License
-                    </a>
-                    .
-                  </p>
-                </div>
-              </div>
             </div>
             {width > 960 && <Footer />}
           </div>
@@ -249,22 +248,33 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
   );
 };
 
-export default RefTemplate;
+export default ClassRefTemplate;
 
 export const query = graphql`
   query($name: String!, $assetsName: String!, $locale: String!) {
-    json: file(fields: { name: { eq: $name }, lang: { eq: $locale } }) {
+    json: file(
+      fields: { name: { eq: $name }, lang: { eq: $locale } }
+      sourceInstanceName: { eq: "json" }
+    ) {
       childJson {
         name
         description
-        syntax
+        constructors
+        classFields {
+          anchor
+          name
+          desc
+        }
+        methods {
+          anchor
+          name
+          desc
+        }
+        related
         parameters {
           name
           description
-          type
         }
-        related
-        returns
       }
     }
     images: allFile(
@@ -281,8 +291,8 @@ export const query = graphql`
           }
           extension
           childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid
+            fixed {
+              ...GatsbyImageSharpFixed
             }
           }
         }
@@ -314,17 +324,9 @@ export const query = graphql`
         name
         relativeDirectory
         childJson {
-          name
-          brief
           category
           subcategory
-          syntax
-          parameters {
-            name
-            description
-          }
-          related
-          returns
+          name
         }
       }
     }

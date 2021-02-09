@@ -7,13 +7,13 @@ import { useIntl } from 'react-intl';
 
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import Layout from '../components/Layout';
-import TableOfContents from '../components/TableOfContents';
+import Layout from '../../components/Layout';
+import TableOfContents from '../../components/TableOfContents';
 
-import { useHighlight } from '../utils/hooks';
+import { useHighlight } from '../../utils/hooks';
 
-import css from '../styles/pages/page.module.css';
-import grid from '../styles/grid.module.css';
+import css from '../../styles/pages/page.module.css';
+import grid from '../../styles/grid.module.css';
 
 const TutorialTemplate = ({ data, pageContext }) => {
   const { mdx } = data;

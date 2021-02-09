@@ -6,16 +6,16 @@ import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 import Img from 'gatsby-image';
 
-import Footer from '../components/Footer';
-import Layout from '../components/Layout';
-import Sidebar from '../components/Sidebar';
-import Tabs from '../components/Tabs';
+import Footer from '../../components/Footer';
+import Layout from '../../components/Layout';
+import Sidebar from '../../components/Sidebar';
+import Tabs from '../../components/Tabs';
 
-import { organizeExampleItems } from '../utils/data';
-import { useWindowSize } from '../utils/hooks';
+import { organizeExampleItems } from '../../utils/data';
+import { useWindowSize } from '../../utils/hooks';
 
-import css from '../styles/templates/example-template.module.css';
-import grid from '../styles/grid.module.css';
+import css from '../../styles/templates/example-template.module.css';
+import grid from '../../styles/grid.module.css';
 
 const ExampleTemplate = ({ data, pageContext }) => {
   const { width } = useWindowSize();

@@ -52,16 +52,10 @@ exports.onCreateNode = ({ node, actions, getNode, loadNodeContent }) => {
 };
 
 async function createReference(actions, graphql) {
-  const refTemplate = path.resolve(`./src/templates/ref-template.js`);
-  const classRefTemplate = path.resolve(
-    `./src/templates/class-ref-template.js`
-  );
-  const fieldRefTemplate = path.resolve(
-    `./src/templates/field-ref-template.js`
-  );
-  const indexLibTemplate = path.resolve(
-    `./src/templates/index-lib-template.js`
-  );
+  const refTemplate = path.resolve(`./src/templates/reference/function.js`);
+  const classRefTemplate = path.resolve(`./src/templates/reference/class.js`);
+  const fieldRefTemplate = path.resolve(`./src/templates/reference/field.js`);
+  const indexLibTemplate = path.resolve(`./src/templates/library/index.js`);
 
   const { createPage } = actions;
 
@@ -195,7 +189,7 @@ async function createReference(actions, graphql) {
 }
 
 async function createTutorials(actions, graphql) {
-  const tutorialTemplate = path.resolve(`./src/templates/tutorial-template.js`);
+  const tutorialTemplate = path.resolve(`./src/templates/tutorial/tutorial.js`);
 
   const { createPage } = actions;
 
@@ -234,7 +228,7 @@ async function createTutorials(actions, graphql) {
 }
 
 async function createExamples(actions, graphql) {
-  const exampleTemplate = path.resolve(`./src/templates/example-template.js`);
+  const exampleTemplate = path.resolve(`./src/templates/example/example.js`);
 
   const { createPage } = actions;
 

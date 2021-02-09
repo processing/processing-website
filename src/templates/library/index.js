@@ -6,12 +6,12 @@ import { Link } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { useIntl } from 'react-intl';
 
-import Layout from '../components/Layout';
-import ReferenceList from '../components/ReferenceList';
+import Layout from '../../components/Layout';
+import ReferenceList from '../../components/ReferenceList';
 
-import { organizeReferenceItems } from '../utils/data';
-import css from '../styles/templates/index-lib-template.module.css';
-import grid from '../styles/grid.module.css';
+import { organizeReferenceItems } from '../../utils/data';
+import css from '../../styles/templates/index-lib-template.module.css';
+import grid from '../../styles/grid.module.css';
 
 const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
   const link = `/reference/libraries/${libraryName}/index.html`;
