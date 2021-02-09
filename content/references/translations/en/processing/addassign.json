@@ -1,0 +1,23 @@
+{
+  "name": "+= (add assign)",
+  "brief": "Combines addition with assignment",
+  "description": "Combines addition with assignment. The expression <b>a += b</b> is equivalent to <b>a = a + b</b>. \n",
+  "related": [],
+  "syntax": ["value1 += value2"],
+  "returns": "",
+  "type": "function",
+  "category": "math",
+  "subcategory": "Operators",
+  "parameters": [
+    {
+      "name": "value1",
+      "description": "int or float",
+      "type": []
+    },
+    {
+      "name": "value2",
+      "description": "any numerical value the same datatype as value1",
+      "type": []
+    }
+  ]
+}

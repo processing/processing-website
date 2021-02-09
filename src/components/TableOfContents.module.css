@@ -37,8 +37,30 @@
       color: var(--processing-blue-mid);
     }
   }
+
+  @media (--small) {
+    position: relative;
+    height: auto;
+    flex-basis: var(--col8);
+    margin-top: var(--vertical-gutter);
+    margin-bottom: var(--vertical-gutter);
+    padding-bottom: var(--vertical-gutter);
+
+    & h3 {
+      margin-top: var(--vertical-gutter);
+      margin-bottom: var(--gutter);
+    }
+
+    & h4 {
+      margin-bottom: 6px;
+    }
+  }
 }
 
 .headerScrolled {
   height: calc(100vh - 64px);
+
+  @media (--small) {
+    height: auto;
+  }
 }

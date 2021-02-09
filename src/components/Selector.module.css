@@ -4,6 +4,10 @@
   background-color: var(--processing-blue-dark);
   cursor: pointer;
   color: white;
+
+  @media (--small) {
+    margin-right: 0px;
+  }
 }
 
 .languageButton {
@@ -27,7 +31,7 @@
 
 .languagePicker {
   position: fixed;
-  opacity: 0;
+  display: none;
   background-color: var(--processing-blue-dark);
 
   & li {
@@ -36,5 +40,5 @@
 }
 
 .show {
-  opacity: 1;
+  display: block;
 }

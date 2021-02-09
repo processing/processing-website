@@ -1,0 +1,107 @@
+---
+slug: '/tutorials/image-and-pixels'
+title: 'Images and Pixels'
+author: 'Daniel Shiffman'
+intro: 'How to load and display images as well as access their pixels.'
+level: 'Intermediate'
+coverImage: pixels.jpg
+---
+
+<Note>
+
+This tutorial is from the book [Learning Processing](https://processing.org/books/#shiffman) by Daniel Shiffman, published by Morgan Kaufmann, © 2008 Elsevier Inc. All rights reserved. If you see any errors or have comments, [please let us know](https://github.com/processing/processing-docs/issues?q=is%3Aopen).
+
+</Note>
+
+A digital image is nothing more than data&mdash;numbers indicating variations of red, green, and blue at a particular location on a grid of pixels. Most of the time, we view these pixels as miniature rectangles sandwiched together on a computer screen. With a little creative thinking and some lower level manipulation of pixels with code, however, we can display that information in a myriad of ways. This tutorial is dedicated to breaking out of simple shape drawing in Processing and using images (and their pixels) as the building blocks of Processing graphics.
+
+## Getting started with images.
+
+Hopefully, you are comfortable with the idea of data types. You probably specify them often&mdash;a float variable "speed", an int "x", etc. These are all primitive data types, bits sitting in the computer's memory ready for our use. Though perhaps a bit trickier, you hopefully also use objects, complex data types that store multiple pieces of data (along with functionality)&mdash;a "Ball" class, for example, might include floating point variables for location, size, and speed as well as methods to move, display itself, and so on.
+
+In addition to user-defined objects (such as Ball), Processing has a bunch of handy classes all ready to go without us writing any code. In this tutorial, we'll examine [`PImage`](http://processing.org/reference/PImage.html), a class for loading and displaying an image as well as looking at its pixels.
+
+```
+PImage img;	// Declare a variable of type PImage
+
+void setup() {
+  size(320,240);
+  // Make a new instance of a PImage by loading an image file
+  img = loadImage("mysummervacation.jpg");
+}
+
+void draw() {
+  background(0);
+  // Draw the image to the screen at coordinate (0,0)
+  image(img,0,0);
+```
+
+Using an instance of a [`PImage`](http://processing.org/reference/PImage.html) object is no different than using a user-defined class. First, a variable of type [`PImage`](http://processing.org/reference/PImage.html), named "img," is declared. Second, a new instance of a [`PImage`](http://processing.org/reference/PImage.html) object is created via the [`loadImage()`](http://processing.org/reference/loadImage_.html) method. [`loadImage()`](http://processing.org/reference/loadImage_.html) takes one argument, a String indicating a file name, and loads the that file into memory. [`loadImage()`](http://processing.org/reference/loadImage_.html) looks for image files stored in your Processing sketch's "data" folder.
+
+<HighlightBlock>
+
+#### The Data Folder: How do I get there?
+
+Images can be added to the data folder automatically via:
+
+Sketch &rarr; Add File. . .
+
+or manually:
+
+Sketch &rarr; Show Sketch Folder
+
+This will open up the sketch folder. If there is no data directory create one. Otherwise, place your image files inside. Processing accepts the following file formats for images: GIF, JPG, TGA, PNG.
+
+</HighlightBlock>
+
+In the above example, it may seem a bit peculiar that we never called a "constructor" to instantiate the [PImage](http://processing.org/reference/PImage.html) object, saying `new PImage()`. After all, in most object-related examples, a constructor is a must for producing an object instance.
+
+```
+Spaceship ss = new Spaceship();
+Flower flr = new Flower(25);
+```
+
+yet:
+
+```
+PImage img = loadImage("file.jpg");
+```
+
+In fact, the [`loadImage()`](http://processing.org/reference/loadImage_.html) function performs the work of a constructor, returning a brand new instance of a [`PImage`](http://processing.org/reference/PImage.html) object generated from the specified filename. We can think of it as the [`PImage`](http://processing.org/reference/PImage.html) constructor for loading images from a file. For creating a blank image, the create [`image()`](http://processing.org/reference/image_.html) function is used.
+
+```
+// Create a blank image, 200 x 200 pixels with RGB color
+PImage img = createImage(200, 200,RGB);
+```
+
+We should also note that the process of loading the image from the hard drive into memory is a slow one, and we should make sure our program only has to do it once, in setup(). Loading images in draw() may result in slow performance as well as "Out of Memory" errors.
+
+Once the image is loaded, it is displayed with the [`image()`](http://processing.org/reference/image_.html) function. The [`image()`](http://processing.org/reference/image_.html) function must include 3 arguments&mdash;the image to be displayed, the x location, and the y location. Optionally two arguments can be added to resize the image to a certain width and height.
+
+```
+image(img,10,20,90,60);
+```
+
+## Your very first image processing filter
+
+When displaying an image, you might like to alter its appearance. Perhaps you would like the image to appear darker, transparent, blue-ish, etc. This type of simple image filtering is achieved with Processing's `tint()` function. `tint()` is essentially the image equivalent of shape's `fill()`, setting the color and alpha transparency for displaying an image on screen. An image, nevertheless, is not usually all one color. The arguments for `tint()` simply specify how much of a given color to use for every pixel of that image, as well as how transparent those pixels should appear.
+
+For the following examples, we will assume that two images (a sunflower and a dog) have been loaded and the dog is displayed as the background (which will allow us demonstrate transparency.)
+
+```
+PImage sunflower = loadImage("sunflower.jpg");
+PImage dog = loadImage("dog.jpg");
+background(dog);
+```
+
+If `tint()` receives one argument, only the brightness of the image is affected.
+
+![An image of a sunflower.](./tint1.jpg)
+
+```
+// The image retains its original state.
+tint(255);
+image(sunflower,0,0);
+```
+
+A second argument will change the image's alpha transparency.

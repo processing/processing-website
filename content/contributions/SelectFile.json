@@ -1,0 +1,23 @@
+{
+  "name": "SelectFile",
+  "authors": [
+    "[Ostap Andrusiv](http://andrusiv.com)"
+  ],
+  "url": "https://andrusiv.com/android-select-file/",
+  "categories": [
+    "I/O"
+  ],
+  "sentence": "Android library which provides Dialogs for selectInput(), selectFolder() and selectOutput() methods.",
+  "paragraph": "Android has no open&save file dialogs. SelectFile library adds these dialogs to the Processing for Android. Tested with Processing 3.0.",
+  "id": "097",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "228",
+      "maxRevision": "0",
+      "props": "https://andrusiv.com/android-select-file/download/SelectFile.txt",
+      "download": "https://andrusiv.com/android-select-file/download/SelectFile.zip"
+    }
+  ]
+}

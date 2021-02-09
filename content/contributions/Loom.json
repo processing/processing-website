@@ -1,0 +1,23 @@
+{
+  "name": "Loom",
+  "authors": [
+    "[Cora Johnson-Roberson](http://www.corajr.com)"
+  ],
+  "url": "http://corajr.github.io/loom",
+  "categories": [
+    "Sound"
+  ],
+  "sentence": "Patterns that change over time, flexibly mapped to audiovisual output.",
+  "paragraph": "Sequences of events can be rendered both sonically (through MIDI, Minim, SuperCollider, etc.) and graphically (through Processing itself).",
+  "id": "151",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://corajr.github.io/loom/download/loom.txt",
+      "download": "https://corajr.github.io/loom/download/loom.zip"
+    }
+  ]
+}

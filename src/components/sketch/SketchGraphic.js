@@ -124,15 +124,17 @@ const SketchGraphic = (props) => {
       role={'button'}
       tabIndex={'0'}
       className={css.root}
+      onClick={onClick}
+      onKeyDown={onClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       style={{ width, height }}>
       <div
         className={classnames(css.ui, {
-          [css.show]: mouseEntered,
+          [css.show]: mouseEntered || isVisible,
         })}>
-        <Button className={css.button} onClick={onClick}>
-          {isVisible ? 'Hide code' : 'Show code'}
+        <Button className={css.button} onClick={onClick} size={'large'}>
+          {isVisible ? 'Hide code' : 'Play'}
         </Button>
       </div>
       <svg width={width} height={height}>

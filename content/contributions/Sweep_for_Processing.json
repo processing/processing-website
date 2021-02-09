@@ -1,0 +1,23 @@
+{
+  "name": "Sweep for Processing",
+  "categories": [
+    "Hardware"
+  ],
+  "authors": [
+    "[Florian Bruggisser](https://bildspur.ch)"
+  ],
+  "url": "https://github.com/cansik/sweep-processing",
+  "sentence": "Scanse Sweep LIDAR API for Processing",
+  "paragraph": "Use the Scanse Sweep LIDAR together with Processing.",
+  "id": "218",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/cansik/sweep-processing/releases/download/latest/SweepProcessing.txt",
+      "download": "https://github.com/cansik/sweep-processing/releases/download/latest/SweepProcessing.zip"
+    }
+  ]
+}

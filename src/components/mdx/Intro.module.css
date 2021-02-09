@@ -1,5 +1,7 @@
 .root {
   margin-bottom: 2rem;
+  width: 100%;
+
   & span {
     color: var(--processing-blue-dark);
     font-size: var(--text-large);

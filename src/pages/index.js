@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
-import { LocalizedLink as Link } from 'gatsby-theme-i18n';
+import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
 
 import Layout from '../components/Layout';
 import Button from '../components/Button';
+import Card from '../components/Card';
 import Sketch from '../components/sketch/Sketch';
 
-import { useWindowSize } from '../utils/hooks';
+import { subcategoryFromDirectory } from '../utils/data';
 
 import css from '../styles/pages/index.module.css';
 import grid from '../styles/grid.module.css';
@@ -43,97 +44,150 @@ export const items = [
 ];
 
 const IndexPage = ({ data }) => {
-  //localization - will be needed
   const intl = useIntl();
+  const { locale } = useLocalization();
 
-  const winSize = useWindowSize();
+  const items = data.examples.nodes;
+  const images = data.images.nodes;
+
+  const examples = useMemo(
+    () =>
+      items.map((item, i) => {
+        const image = images
+          ? images.find(
+              (img) => img.relativeDirectory === item.relativeDirectory
+            )
+          : '';
+        const [cat, subcat, slug] = item.relativeDirectory.split('/');
+        return {
+          slug: slug,
+          subcat: subcat,
+          cat: cat,
+          name: item.name,
+          dir: item.relativeDirectory,
+          img: image,
+        };
+      }),
+    [items, images]
+  );
+
+  const selectedExamples = useMemo(() => {
+    return examples ? examples.slice(0, 4) : [];
+  }, [examples]);
+
   return (
-    <Layout>
+    <Layout isHomepage>
       <Helmet>
         <title>{'Welcome to Processing!'}</title>
       </Helmet>
-      <div className={css.hero}>
-        <div className={classnames(grid.grid)}>
-          <div className={classnames(grid.col, css.intro)}>
-            <h1>{intl.formatMessage({ id: 'introTitle' })}</h1>
-            <p>{intl.formatMessage({ id: 'introText' })}</p>
-            <div className={css.buttons}>
-              <Button to={'/download'} className={css.button}>
-                {intl.formatMessage({ id: 'download' })}
-              </Button>
-              <Button to={'/reference'} className={css.button}>
-                {intl.formatMessage({ id: 'reference' })}
-              </Button>
-              <Button to={'/donate'} className={css.button}>
-                {intl.formatMessage({ id: 'donate' })}
-              </Button>
-            </div>
+      <div className={classnames(css.hero, grid.grid, grid.rightBleed)}>
+        <div className={classnames(grid.col, css.intro)}>
+          <h1>{intl.formatMessage({ id: 'introTitle' })}</h1>
+          <p>{intl.formatMessage({ id: 'introText' })}</p>
+          <div className={css.buttons}>
+            <Button to={'/download'} size="large" className={css.button}>
+              {intl.formatMessage({ id: 'download' })}
+            </Button>
+            <Button to={'/reference'} size="large" className={css.button}>
+              {intl.formatMessage({ id: 'reference' })}
+            </Button>
+            <Button
+              href={'https://processingfoundation.org/donate'}
+              size="large"
+              className={css.button}>
+              {intl.formatMessage({ id: 'donate' })}
+            </Button>
           </div>
-          {winSize.width > 1080 && <Sketch />}
         </div>
+        <Sketch />
       </div>
-      <div className={classnames(grid.grid)}>
-        <div className={classnames(grid.col, grid.nest, css.sidebar)}>
-          <ul className={classnames(grid.col, css.list)}>
-            {items.map((item, key) => (
-              <li key={key}>
-                <a href={item.link}>{intl.formatMessage({ id: item.name })}</a>
-              </li>
-            ))}
-          </ul>
-          <div className={classnames(grid.col, css.contact)}>
-            <h4>{intl.formatMessage({ id: 'contact' })}</h4>
-            <span>{intl.formatMessage({ id: 'contactText' })}</span>
-            <a href="mailto: foundation@processing.org">
-              {intl.formatMessage({ id: 'contactEmail' })}
-            </a>
-          </div>
-        </div>
+      <div className={classnames(grid.grid, css.section)}>
         <div className={classnames(grid.col, grid.nest, css.examples)}>
           <h3 className={grid.col}>{intl.formatMessage({ id: 'examples' })}</h3>
           <ul>
-            <li className={classnames(css.example, grid.col)}>
-              <img src={data.conway.childImageSharp.fluid.src} alt="" />
-              <a href="#">Conway's game of life</a>
-              <br />
-              <p>in Topic examples</p>
-            </li>
-            <li className={classnames(css.example, grid.col)}>
-              <img src={data.flocking.childImageSharp.fluid.src} alt="" />
-              <a href="#">Flocking</a>
-              <br />
-              <p>in Topic examples</p>
-            </li>
-            <li className={classnames(css.example, grid.col)}>
-              <img src={data.radial.childImageSharp.fluid.src} alt="" />
-              <a href="#">Radial gradient</a>
-              <br />
-              <p>in Basic examples</p>
-            </li>
+            {selectedExamples.map((example, i) => (
+              <li
+                className={classnames(css.example, grid.col)}
+                key={`example-${i}`}>
+                <Link
+                  to={`/examples/${example.slug.toLowerCase()}.html`}
+                  language={locale}>
+                  <div className={css.imgContainer}>
+                    <img
+                      src={example.img.childImageSharp.fluid.srcWebp}
+                      srcSet={example.img.childImageSharp.fluid.srcSetWebp}
+                      alt=""
+                    />
+                  </div>
+                  <h4>{example.name}</h4>
+                  <p>{`in ${subcategoryFromDirectory(
+                    example.dir
+                  )} examples`}</p>
+                </Link>
+              </li>
+            ))}
           </ul>
-          <h4 className={grid.col}>
-            <Link to="/examples">More Examples</Link>
-          </h4>
+          <div className={classnames(grid.col, css.moreButton)}>
+            <Button to={'/examples'}>More Examples</Button>
+          </div>
         </div>
       </div>
-      <div className={classnames(grid.grid, css.bottom)}>
+      <div className={css.sectionDivider} />
+      <div className={classnames(grid.grid, css.section)}>
         <div className={classnames(grid.col, css.half)}>
-          <h3>{intl.formatMessage({ id: 'gettingStarted' })}</h3>
+          <h2>{intl.formatMessage({ id: 'gettingStarted' })}</h2>
           <div>
             <p
               dangerouslySetInnerHTML={{
                 __html: intl.formatMessage({ id: 'gettingStartedP1' }),
               }}></p>
-            <p
-              dangerouslySetInnerHTML={{
-                __html: intl.formatMessage({ id: 'gettingStartedP2' }),
-              }}></p>
-            <p
-              dangerouslySetInnerHTML={{
-                __html: intl.formatMessage({ id: 'gettingStartedP3' }),
-              }}></p>
           </div>
-          <h3>{intl.formatMessage({ id: 'contribute' })}</h3>
+        </div>
+        <div className={classnames(css.half, grid.nest, css.cardGrid)}>
+          <div className={classnames(grid.col, css.cardCol)}>
+            <Card
+              to={'/tutorials/gettingstarted'}
+              description={intl.formatMessage({
+                id: 'cardGettingStartedDescription',
+              })}
+              className={css.card}>
+              {intl.formatMessage({ id: 'cardGettingStarted' })}
+            </Card>
+            <Card to={'/reference'} className={css.card}>
+              <h4>{intl.formatMessage({ id: 'cardReference' })}</h4>
+              <p>
+                {intl.formatMessage({
+                  id: 'cardReferenceDescription',
+                })}
+              </p>
+            </Card>
+          </div>
+          <div className={classnames(grid.col, css.cardCol)}>
+            <Card
+              to={'/download'}
+              description={intl.formatMessage({
+                id: 'cardDownloadDescription',
+              })}
+              className={css.card}>
+              {intl.formatMessage({ id: 'cardDownload' })}
+            </Card>
+            <Card
+              href={'https://discourse.processing.org/'}
+              className={css.card}>
+              <h4>{intl.formatMessage({ id: 'cardForum' })}</h4>
+              <p>
+                {intl.formatMessage({
+                  id: 'cardForumDescription',
+                })}
+              </p>
+            </Card>
+          </div>
+        </div>
+      </div>
+      <div className={css.sectionDivider} />
+      <div className={classnames(grid.grid, css.section)}>
+        <div className={classnames(grid.col, css.half)}>
+          <h2>{intl.formatMessage({ id: 'contribute' })}</h2>
           <div>
             <p>{intl.formatMessage({ id: 'contributeP1' })}</p>
             <p>
@@ -152,13 +206,18 @@ const IndexPage = ({ data }) => {
               .
             </p>
           </div>
+          <div className={css.contributeButtton}>
+            <Button
+              href={'https://github.com/processing'}
+              size="large"
+              className={css.gettingStartedButton}>
+              {intl.formatMessage({ id: 'buttonContribute' })}
+            </Button>
+          </div>
         </div>
-        <div className={classnames(grid.col, css.half)}>
-          <h3>{intl.formatMessage({ id: 'news' })}</h3>
-          <img src={data.news.childImageSharp.fluid.src} alt="" />
-          <p>{intl.formatMessage({ id: 'newsText' })}</p>
-          <h3>{intl.formatMessage({ id: 'partners' })}</h3>
-          <ul className={css.logos}>
+        <div className={classnames(grid.col, css.half, css.partnersContainer)}>
+          <h2>{intl.formatMessage({ id: 'partners' })}</h2>
+          <ul className={css.partners}>
             <li>
               <div>
                 <img src={data.fathom.childImageSharp.fluid.src} alt="" />
@@ -180,6 +239,38 @@ const IndexPage = ({ data }) => {
           </ul>
         </div>
       </div>
+      <div className={css.sectionDivider} />
+      <div
+        className={classnames(
+          grid.grid,
+          css.section,
+          grid.rightBleed,
+          grid.bleedMedium,
+          css.announcementSection
+        )}>
+        <div className={classnames(css.half, grid.col, css.announcement)}>
+          <h2>{intl.formatMessage({ id: 'announcement' })}</h2>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: intl.formatMessage({ id: 'announcementText' }),
+            }}
+          />
+        </div>
+        <div
+          className={classnames(
+            css.half,
+            grid.col,
+            grid.rightBleed,
+            css.announcementCover
+          )}>
+          <img
+            src={data.news.childImageSharp.fluid.src}
+            alt=""
+            className={css.announcementImg}
+          />
+        </div>
+      </div>
+      <div className={css.sectionDivider} />
     </Layout>
   );
 };
@@ -188,9 +279,45 @@ export default IndexPage;
 
 export const query = graphql`
   query {
+    examples: allFile(
+      filter: {
+        sourceInstanceName: { eq: "examples" }
+        fields: { lang: { eq: "en" } }
+      }
+      sort: { order: ASC, fields: relativeDirectory }
+    ) {
+      nodes {
+        name
+        relativeDirectory
+        childJson {
+          name
+          title
+        }
+      }
+    }
+    images: allFile(
+      filter: {
+        sourceInstanceName: { eq: "examples" }
+        extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
+      }
+    ) {
+      nodes {
+        name
+        relativeDirectory
+        childImageSharp {
+          fluid(maxWidth: 800) {
+            base64
+            srcWebp
+            srcSetWebp
+            originalImg
+            originalName
+          }
+        }
+      }
+    }
     news: file(relativePath: { eq: "news.png" }) {
       childImageSharp {
-        fluid(maxWidth: 800, maxHeight: 250) {
+        fluid(maxWidth: 1280, maxHeight: 508) {
           ...GatsbyImageSharpFluid
         }
       }

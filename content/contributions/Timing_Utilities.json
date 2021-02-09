@@ -1,0 +1,24 @@
+{
+  "name": "Timing Utilities",
+  "authors": [
+    "Lord of Galaxy"
+  ],
+  "url": "https://github.com/Lord-of-the-Galaxy/Timing-Utilities",
+  "categories": [
+    "Utilities"
+  ],
+  "sentence": "Library containing a number of useful classes for time-keeping in Processing",
+  "paragraph": "Currently only has Stopwatch class.",
+  "lastUpdated": "0",
+  "id": "207",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/Lord-of-the-Galaxy/Timing-Utilities/releases/download/latest/timing_utils.txt",
+      "download": "https://github.com/Lord-of-the-Galaxy/Timing-Utilities/releases/download/latest/timing_utils.zip"
+    }
+  ]
+}

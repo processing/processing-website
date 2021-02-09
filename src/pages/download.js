@@ -149,7 +149,7 @@ const Download = () => {
           className={classnames(grid.nest, grid.col, grid.grid, css.section)}>
           <div className={classnames(css.logo, grid.col)}>
             <LogoProcessing />
-            <h2>{latestRelease.name.split(' ').shift()}</h2>
+            <h3>{latestRelease.name.split(' ').shift()}</h3>
           </div>
           <div
             className={classnames(
@@ -187,7 +187,7 @@ const Download = () => {
           </div>
           <ul className={classnames(grid.col, css.links)}>
             <li>
-              <a href={'https://github.com/processing'}>Github</a>
+              <a href={'https://github.com/processing'}>GitHub</a>
             </li>
             <li>
               <a
@@ -228,7 +228,7 @@ const Download = () => {
                   )}>{` (${DateTime.fromISO(release.publishedAt).toLocaleString(
                   DateTime.DATE_FULL
                 )})`}</span>
-                <span className={grid.col}>
+                <span className={classnames(grid.col, css.releaseAssets)}>
                   {release.releaseAssets.edges
                     .sort((a, b) =>
                       a.node.name > b.node.name
@@ -279,7 +279,7 @@ const Download = () => {
                   )}>{` (${DateTime.fromISO(
                   preRelease.publishedAt
                 ).toLocaleString(DateTime.DATE_FULL)})`}</span>
-                <span className={grid.col}>
+                <span className={classnames(grid.col, css.releaseAssets)}>
                   {preRelease.releaseAssets.edges
                     .sort((a, b) =>
                       a.node.name > b.node.name

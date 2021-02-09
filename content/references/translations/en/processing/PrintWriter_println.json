@@ -1,0 +1,26 @@
+{
+  "name": "println()",
+  "brief": "Writes data to a <b>PrintWriter</b> object stream and then starts a new line",
+  "description": "Writes data to a <b>PrintWriter</b> object stream and then starts a new line.\n",
+  "related": [],
+  "syntax": [
+    "pw.println(data)"
+  ],
+  "returns": "",
+  "type": "method",
+  "category": "PrintWriter",
+  "subcategory": "Method",
+  "classanchor": "PrintWriter",
+  "parameters": [
+    {
+      "name": "pw",
+      "description": "any object of the type PrintWriter",
+      "type": []
+    },
+    {
+      "name": "data",
+      "description": "boolean, byte, char, color, int, float, String",
+      "type": []
+    }
+  ]
+}

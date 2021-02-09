@@ -1,0 +1,23 @@
+{
+  "name": "GL Video",
+  "authors": [
+    "[Gottfried Haider](http://gottfriedhaider.com/)"
+  ],
+  "url": "https://github.com/gohai/processing-glvideo",
+  "categories": [
+    "Video & Vision"
+  ],
+  "sentence": "Hardware accelerated video on the Raspberry Pi & Linux",
+  "paragraph": "This uses GL textures and accelerated video decoding. Recommended for Raspberry Pi with Broadcom's binary GLES2 graphics driver.",
+  "id": "184",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "249",
+      "maxRevision": "0",
+      "props": "https://github.com/gohai/processing-glvideo/releases/download/latest/processing-glvideo.txt",
+      "download": "https://github.com/gohai/processing-glvideo/releases/download/latest/processing-glvideo.zip"
+    }
+  ]
+}

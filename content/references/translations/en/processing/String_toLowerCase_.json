@@ -1,0 +1,21 @@
+{
+  "name": "toLowerCase()",
+  "brief": "Converts all of the characters in the string to lowercase",
+  "description": "Converts all of the characters in the string to lowercase. For example, \"ABC\" will convert to \"abc\".\n",
+  "related": [],
+  "syntax": [
+    "str.toLowerCase()"
+  ],
+  "returns": "String",
+  "type": "method",
+  "category": "string",
+  "subcategory": "method",
+  "classanchor": "String",
+  "parameters": [
+    {
+      "name": "str",
+      "description": "String: any variable of type String",
+      "type": []
+    }
+  ]
+}

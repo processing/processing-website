@@ -1,0 +1,23 @@
+{
+  "name": "ToxicLibs",
+  "authors": [
+    "[Karsten Schmidt](http://postspectacular.com/) (updated for P3 by Daniel Shiffman)"
+  ],
+  "url": "http://toxiclibs.org/",
+  "categories": [
+    "Compilation"
+  ],
+  "sentence": "toxiclibs is an independent, open source library collection for computational design tasks.",
+  "paragraph": "toxiclibs is an independent, open source library collection for computational design tasks. The classes are purposefully kept fairly generic in order to maximize re-use in different contexts ranging from generative design, animation, interaction/interface design, data visualization to architecture and digital fabrication, use as teaching tool and more.",
+  "id": "200",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "246",
+      "maxRevision": "0",
+      "props": "http://shiffman.net/p5/libraries/processing3/toxiclibs/toxiclibs.txt",
+      "download": "http://shiffman.net/p5/libraries/processing3/toxiclibs/toxiclibs.zip"
+    }
+  ]
+}

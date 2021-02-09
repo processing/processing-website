@@ -1,0 +1,24 @@
+{
+  "name": "Websockets",
+  "authors": [
+    "Lasse Steenbock Vestergaard"
+  ],
+  "url": "https://github.com/alexandrainst/processing_websockets",
+  "categories": [
+    "Data",
+    "I/O"
+  ],
+  "sentence": "Create websocket servers and clients, which makes it possible to communicate with the outside world including web sites.",
+  "paragraph": "With this library it's possible to have true two way real-time connections with other Processing sketches, web sites, Internet of Things devises etc. For a concrete use case please take a look at the examples folder.",
+  "id": "175",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/alexandrainst/processing_websockets/releases/download/latest/webSockets.txt",
+      "download": "https://github.com/alexandrainst/processing_websockets/releases/download/latest/webSockets.zip"
+    }
+  ]
+}

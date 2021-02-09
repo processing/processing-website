@@ -2,64 +2,125 @@
   & > h1 {
     padding-right: var(--col3);
   }
+
+  @media (--small) {
+    & > h1 {
+      padding-top: var(--vertical-gutter);
+      padding-right: var(--gutter);
+    }
+  }
 }
 
 .section {
   flex-wrap: wrap;
 
   & > h2 {
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 
   & > h3 {
-    padding-right: var(--col5);
+    flex-basis: var(--col8);
+    padding-right: var(--col4);
+  }
+
+  @media (--small) {
+    & > h3 {
+      padding-right: var(--gutter);
+    }
+    & > h2 {
+      margin-top: var(--vertical-gutter);
+    }
   }
 }
 
 .sectionIntro {
   flex-basis: var(--col8);
   padding-right: var(--col4);
+
   & a {
     text-decoration: underline;
   }
+
+  @media (--small) {
+    padding-right: var(--gutter);
+  }
 }
 
-.tutorialList {
+.list {
   width: 100%;
-  margin: var(--gutter-double) 0;
+  margin: var(--gutter) 0;
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
 
   & li {
     flex-basis: var(--col2);
-    display: flex;
-    flex-direction: column;
+
+    & a {
+      display: flex;
+      flex-direction: column;
+    }
+
+    & a:hover {
+      color: var(--black);
+    }
 
     & h4 {
       margin-bottom: 0;
     }
   }
-}
 
-.cover {
-  width: 100%;
-  background-color: var(--gray);
-  margin-bottom: var(--gutter);
-}
+  & .card {
+    padding-top: var(--gutter);
+    padding-bottom: var(--gutter);
+    background-color: none;
+    transition: background 0.2s ease;
+    pointer-events: auto;
 
-.author {
-  color: var(--darkergray);
-}
+    @media (--small) {
+      padding-top: var(--vertical-gutter);
+      padding-bottom: var(--vertical-gutter);
+    }
+  }
 
-.authorName {
-  color: var(--processing-blue-mid);
-  font-weight: 500;
-}
+  & .card:hover {
+    color: var(--black);
+    background-color: var(--lightgray);
+  }
 
-.brief {
-  margin-top: var(--gutter-half);
-}
+  & .cover {
+    width: 100%;
+    background-color: var(--gray);
+    margin-bottom: var(--gutter);
+  }
 
-.level {
-  margin-top: var(--gutter-half);
+  & .author {
+    display: inline;
+    color: var(--darkergray);
+  }
+
+  & .authorName {
+    color: var(--processing-blue-mid);
+    font-weight: 500;
+  }
+
+  & .brief {
+    margin-top: var(--gutter-half);
+    color: inherit;
+    pointer-events: none;
+  }
+
+  & .brief:hover {
+    color: inherit;
+  }
+
+  & .level {
+    margin-top: var(--gutter-half);
+  }
+
+  @media (--small) {
+    & li {
+      flex-basis: var(--col8);
+    }
+  }
 }

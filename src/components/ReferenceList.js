@@ -16,7 +16,9 @@ const ReferenceList = ({ data, library }) => {
         <div
           className={classnames(grid.nest, css.category)}
           key={`category-${key}`}>
-          <h2 className={grid.col} id={category.name}>
+          <h2
+            className={classnames(css.categoryName, grid.col)}
+            id={category.name}>
             {category.name}
           </h2>
           <ul className={classnames(grid.col, grid.nest)}>
@@ -24,31 +26,34 @@ const ReferenceList = ({ data, library }) => {
               return (
                 subcategory !== null && (
                   <div className={css.subcategory} key={`subcategory-${key}`}>
-                    {subcategory.name !== '' && (
-                      <div className={css.verticalSeparator} />
-                    )}
-                    <h3>{subcategory.name}</h3>
-                    <ul className={classnames(grid.col, grid.nest)}>
-                      {subcategory.children.map((item, key) => {
-                        return (
-                          <li key={key} className={css.itemLine}>
-                            <Link
-                              className={classnames(grid.col, css.itemName)}
-                              to={`${link + item.slug}.html`}>
-                              <span>{item.name}</span>
-                            </Link>
-                            <div
-                              className={classnames(grid.col, css.itemBrief)}>
-                              <p
-                                dangerouslySetInnerHTML={{
-                                  __html: item.brief,
-                                }}
-                              />
-                            </div>
-                          </li>
-                        );
-                      })}
-                    </ul>
+                    <div className={classnames(css.subcategoryTitle, grid.col)}>
+                      {subcategory.name && <div className={css.line} />}
+                      {subcategory.name && <h3>{subcategory.name}</h3>}
+                    </div>
+                    <div className={classnames(css.subcategoryList, grid.col)}>
+                      <div className={css.line} />
+                      <ul className={classnames(grid.col, grid.nest)}>
+                        {subcategory.children.map((item, key) => {
+                          return (
+                            <li key={key} className={css.item}>
+                              <Link
+                                className={classnames(grid.col, css.itemName)}
+                                to={`${link + item.slug}.html`}>
+                                {item.name}
+                              </Link>
+                              <div
+                                className={classnames(grid.col, css.itemBrief)}>
+                                <p
+                                  dangerouslySetInnerHTML={{
+                                    __html: item.brief,
+                                  }}
+                                />
+                              </div>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
                   </div>
                 )
               );

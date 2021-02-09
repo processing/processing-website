@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
+import { useIntl } from 'react-intl';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
@@ -16,6 +17,7 @@ import grid from '../styles/grid.module.css';
 const Environment = ({ data }) => {
   const { mdx } = data;
   const { frontmatter, body, tableOfContents } = mdx;
+  const intl = useIntl();
   const ref = useHighlight();
 
   return (
@@ -25,11 +27,20 @@ const Environment = ({ data }) => {
       </Helmet>
       <div className={classnames(grid.grid, css.root)} ref={ref}>
         <Donate />
-        <TableOfContents items={tableOfContents.items} />
-        <h1 className={grid.col}>{frontmatter.title}</h1>
-        <div className={classnames(grid.col, css.content)}>
-          <MDXRenderer>{body}</MDXRenderer>
-        </div>
+        {mdx !== null ? (
+          <Fragment>
+            <h1 className={grid.col}>{frontmatter.title}</h1>
+            <TableOfContents items={tableOfContents.items} />
+            <div className={classnames(grid.col, css.content)}>
+              <MDXRenderer>{body}</MDXRenderer>
+            </div>
+          </Fragment>
+        ) : (
+          <div>
+            {intl.formatMessage({ id: 'notTranslated' })}
+            {intl.formatMessage({ id: 'englishPage' })}
+          </div>
+        )}
       </div>
     </Layout>
   );

@@ -9,13 +9,16 @@ export const Button = ({
   className,
   to,
   href,
+  size,
+  color,
   target,
   onClick,
   children,
   tabIndex,
 }) => {
-  const classNames = classnames(css.root, {
-    [className]: className,
+  const classNames = classnames(css.root, className, {
+    [css[size]]: size,
+    [css[color]]: color,
   });
 
   return (
@@ -55,4 +58,6 @@ Button.propTypes = {
   className: PropTypes.string,
   to: PropTypes.string,
   onClick: PropTypes.func,
+  color: PropTypes.oneOf(['gray']),
+  size: PropTypes.oneOf(['large', 'small']),
 };

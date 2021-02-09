@@ -1,0 +1,23 @@
+{
+  "name": "Rosetta Examples for P5",
+  "authors": [
+    "[Jeremy Douglass](http://jeremydouglass.com)"
+  ],
+  "url": "https://github.com/jeremydouglass/rosetta_examples_p5",
+  "categories": null,
+  "sentence": "Common coding tasks in Processing (Java, Python, and R modes) from the Rosetta Code chrestomathy website.",
+  "paragraph": "Rosetta Code is a programming chrestomathy site. The idea is to present solutions to the same task in as many different languages as possible, to demonstrate how languages are similar and different, and to aid a person with a grounding in one approach to a problem in learning another. This example set compiles the available RosettaCode.org tasks for Processing (Java, Python, and R modes).",
+  "minVersion": "0",
+  "maxVersion": "0",
+  "id": "249",
+  "type": "examples",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/jeremydouglass/rosetta_examples_p5/releases/latest/download/rosetta_examples_p5.txt",
+      "download": "https://github.com/jeremydouglass/rosetta_examples_p5/releases/latest/download/rosetta_examples_p5.zip"
+    }
+  ]
+}

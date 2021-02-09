@@ -46,7 +46,7 @@ const Tutorials = ({ data }) => {
             {`, and `}
             <a href="https://funprogramming.org/">Abe Pazos</a>.
           </span>
-          <ul className={css.tutorialList}>
+          <ul className={css.list}>
             {data.video.nodes.map((node, k) => {
               const {
                 link,
@@ -56,7 +56,7 @@ const Tutorials = ({ data }) => {
                 coverImage,
               } = node.childMdx.frontmatter;
               return (
-                <li key={k} className={grid.col}>
+                <li key={k} className={classnames(grid.col, css.card)}>
                   <a href={link} language={locale}>
                     {coverImage && (
                       <div className={css.cover}>
@@ -68,10 +68,12 @@ const Tutorials = ({ data }) => {
                       </div>
                     )}
                     <h4>{title}</h4>
-                    <span className={css.author}>
-                      {intl.formatMessage({ id: 'by' })}{' '}
-                    </span>
-                    <span className={css.authorName}>{author}</span>
+                    <div>
+                      <span className={css.author}>
+                        {intl.formatMessage({ id: 'by' })}{' '}
+                      </span>
+                      <span className={css.authorName}>{author}</span>
+                    </div>
                   </a>
                   <span className={css.brief}>{intro}</span>
                 </li>
@@ -86,7 +88,7 @@ const Tutorials = ({ data }) => {
           <h3 className={grid.col}>
             {intl.formatMessage({ id: 'textTutorialsIntro' })}
           </h3>
-          <ul className={css.tutorialList}>
+          <ul className={css.list}>
             {data.text.nodes.map((node, k) => {
               const {
                 slug,
@@ -97,7 +99,7 @@ const Tutorials = ({ data }) => {
                 coverImage,
               } = node.childMdx.frontmatter;
               return (
-                <li key={k} className={grid.col}>
+                <li key={k} className={classnames(grid.col, css.card)}>
                   <Link to={slug} language={locale}>
                     {coverImage && (
                       <div className={css.cover}>
@@ -109,15 +111,17 @@ const Tutorials = ({ data }) => {
                       </div>
                     )}
                     <h4>{title}</h4>
-                    <span className={css.author}>
-                      {intl.formatMessage({ id: 'by' })}{' '}
+                    <div>
+                      <span className={css.author}>
+                        {intl.formatMessage({ id: 'by' })}{' '}
+                      </span>
+                      <span className={css.authorName}>{author}</span>
+                    </div>
+                    <span className={css.brief}>{intro}</span>
+                    <span className={css.level}>
+                      {intl.formatMessage({ id: 'level' })}: {level}
                     </span>
-                    <span className={css.authorName}>{author}</span>
                   </Link>
-                  <span className={css.brief}>{intro}</span>
-                  <span className={css.level}>
-                    {intl.formatMessage({ id: 'level' })}: {level}
-                  </span>
                 </li>
               );
             })}

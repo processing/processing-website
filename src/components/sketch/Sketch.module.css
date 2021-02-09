@@ -1,11 +1,31 @@
 .root {
   display: flex;
-  position: absolute;
+  position: relative;
+  max-width: calc(var(--col4) + var(--margin));
+  flex-basis: calc(var(--col4) + var(--margin));
   align-items: stretch;
-  width: 100%;
+
   & h1 {
     font-size: 24px;
     margin-top: auto;
     margin-bottom: auto;
+  }
+
+  @media (--large) {
+    max-width: calc(var(--col4) + var(--margin));
+    flex-basis: calc(var(--col4) + var(--margin));
+  }
+
+  @media (--medium) {
+    flex-basis: calc(var(--col3) + var(--margin));
+  }
+
+  @media (--reduced) {
+    max-width: calc(var(--col2) + var(--margin));
+    flex-basis: calc(var(--col2) + var(--margin));
+    position: absolute;
+    right: 0;
+    z-index: 0;
+    pointer-events: none;
   }
 }

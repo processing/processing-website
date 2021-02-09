@@ -1,0 +1,23 @@
+{
+  "name": "OCD: Obsessive Camera Direction",
+  "authors": [
+    "[Kristian Damkjer](http://www.gdsstudios.com/)"
+  ],
+  "url": "http://www.gdsstudios.com/processing/libraries/ocd/",
+  "categories": [
+    "3D"
+  ],
+  "sentence": "The Obsessive Camera Direction (OCD) library allows intuitive control and creation of Processing viewport Cameras.",
+  "paragraph": "With OCD, it is easy set up several cameras and switch between them. It is also easy to manipulate individual cameras using standard camera movement commands.",
+  "id": "036",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "http://www.gdsstudios.com/processing/libraries/ocd/download/ocd.txt",
+      "download": "http://www.gdsstudios.com/processing/libraries/ocd/download/ocd.zip"
+    }
+  ]
+}

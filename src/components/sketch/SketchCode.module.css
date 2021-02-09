@@ -1,31 +1,26 @@
 @import "../../styles/variables.css";
 
 .root {
-  position: relative;
-  z-index: 100;
   display: flex;
   flex-direction: column;
-  user-select: none;
-  width: 650px;
-  max-width: 650px;
+  flex-basis: 100%;
+  position: absolute;
+  opacity: 0;
+  z-index: 100;
+  overflow: auto;
+  margin-left: calc(-1 * var(--col8));
+  height: 100%;
+  width: 100%;
   padding: 0px;
   font-family: var(--font-mono);
   font-size: 14px;
   white-space: pre;
-  height: 600px;
-  overflow: auto;
-  mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 1) 2%,
-    rgba(0, 0, 0, 1) 98%,
-    rgba(0, 0, 0, 0) 100%
-  );
   transition: opacity 0.25s ease, transform 0.25s ease;
-  opacity: 0;
+  transform: translateX(100%);
+  user-select: none;
 
   &.visible {
-    transform: translateX(-90%);
+    transform: translateX(0%);
     opacity: 1;
   }
 

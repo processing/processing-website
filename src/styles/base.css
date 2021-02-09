@@ -50,6 +50,10 @@ h3 {
   font-size: var(--text-large);
 }
 
+h4 {
+  font-size: var(--text-medium);
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -124,6 +128,12 @@ button {
 
 img {
   width: 100%;
+}
+
+@media (--small) {
+  p {
+    font-size: var(--text-regular);
+  }
 }
 
 /* IDE Styling for code blocks using highlight.js */

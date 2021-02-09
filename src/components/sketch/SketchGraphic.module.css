@@ -1,17 +1,18 @@
 @import "../../styles/variables.css";
 
 .root {
-  width: auto;
+  margin: auto;
+  width: var(--col4);
   height: auto;
-  right: 0;
   position: relative;
   z-index: 200;
-  transform: translateX(120%);
 
   & svg {
     position: absolute;
+    max-width: 100%;
   }
 }
+
 .ui {
   position: absolute;
   z-index: 200;

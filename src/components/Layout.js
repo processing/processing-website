@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { useStaticQuery, graphql } from 'gatsby';
@@ -20,11 +20,14 @@ import '../styles/fonts.css';
 
 import css from './Layout.module.css';
 
-export const LayoutContext = React.createContext({ headerHeight: 0 });
+export const LayoutContext = React.createContext({
+  headerHeight: 0,
+});
 
-const Layout = ({ children }) => {
-  const [headerScrolled, setScrolled] = useState(false);
-  const winSize = useWindowSize();
+const Layout = ({ children, isHomepage, hasSidebar }) => {
+  const mainRef = useRef();
+  const [headerScrolled, setHeaderScrolled] = useState(false);
+  const { width } = useWindowSize();
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -40,10 +43,10 @@ const Layout = ({ children }) => {
     const handleScroll = () => {
       const offset = window.scrollY;
       if (offset > 200 && !headerScrolled) {
-        setScrolled(true);
+        setHeaderScrolled(true);
       }
       if (offset < 60) {
-        setScrolled(false);
+        setHeaderScrolled(false);
       }
     };
 
@@ -62,21 +65,28 @@ const Layout = ({ children }) => {
     img: (props) => <img {...props} alt=""></img>,
   };
 
-  const size =
-    winSize.width < 720 ? 'small' : winSize.width < 1080 ? 'medium' : 'large';
-
   return (
     <div className={css.root}>
       <LayoutContext.Provider value={{ headerScrolled }}>
         <Header
           siteTitle={data.site.siteMetadata.title}
           scrolled={headerScrolled}
-          size={size}
         />
-        <main className={classnames({ [css.headerScrolled]: headerScrolled })}>
+        <main
+          className={classnames({
+            [css.headerScrolled]: headerScrolled,
+            [css.homepage]: isHomepage,
+            [css.hasSidebar]: hasSidebar,
+          })}
+          ref={mainRef}>
           <MDXProvider components={shortcodes}>{children}</MDXProvider>
         </main>
-        <Footer siteTitle={data.site.siteMetadata.title} />
+        {!hasSidebar && (
+          <Footer siteTitle={data.site.siteMetadata.title} hasSidebar />
+        )}
+        {width <= 960 && hasSidebar && (
+          <Footer siteTitle={data.site.siteMetadata.title} hasSidebar />
+        )}
       </LayoutContext.Provider>
     </div>
   );

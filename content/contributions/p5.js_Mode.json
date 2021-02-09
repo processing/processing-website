@@ -1,0 +1,22 @@
+{
+  "name": "p5.js Mode",
+  "categories": null,
+  "authors": [
+    "[Fathom Information Design](http://fathom.info/)"
+  ],
+  "url": "https://github.com/fathominfo/processing-p5js-mode",
+  "sentence": "Adds a simple editor for p5.js code",
+  "paragraph": "p5jsMode is a simple editor for p5.js",
+  "imports": "processing.mode.java.JavaMode",
+  "id": "199",
+  "type": "mode",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "252",
+      "maxRevision": "0",
+      "props": "https://github.com/fathominfo/processing-p5js-mode/releases/download/latest/p5jsMode.txt",
+      "download": "https://github.com/fathominfo/processing-p5js-mode/releases/download/latest/p5jsMode.zip"
+    }
+  ]
+}

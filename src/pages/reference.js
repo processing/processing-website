@@ -7,7 +7,7 @@ import CategoryNav from '../components/CategoryNav';
 import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
 import ReferenceList from '../components/ReferenceList';
-import Searchbar from '../components/Searchbar';
+import FilterBar from '../components/FilterBar';
 
 import { filterItems, organizeReferenceItems } from '../utils/data';
 
@@ -32,16 +32,18 @@ const Reference = ({ data }) => {
         <title>{'Reference'}</title>
       </Helmet>
       <div className={grid.grid}>
-        <h1 className={grid.col}>{intl.formatMessage({ id: 'references' })}</h1>
+        <h1 className={grid.col} style={{ flexBasis: '100%' }}>
+          {intl.formatMessage({ id: 'references' })}
+        </h1>
         <Donate />
-        <Searchbar
-          placeholder={intl.formatMessage({ id: 'referencesSearch' })}
+        <FilterBar
+          placeholder={intl.formatMessage({ id: 'referencesFilter' })}
           onChange={(e) => setSearchTerm(e.target.value)}
           onClick={(e) => setSearchTerm('')}
           searchTerm={searchTerm}
           large
         />
-        <CategoryNav categories={categories} />
+        {!searchTerm && <CategoryNav categories={categories} />}
         <ReferenceList data={tree} />
       </div>
     </Layout>

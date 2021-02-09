@@ -1,19 +1,40 @@
 .root {
-  & h1 {
+  & > h1 {
     flex-basis: var(--col8);
   }
-  & h3 {
-    flex-basis: var(--col4);
-    margin-right: var(--col4);
+  & > h3 {
+    flex-basis: var(--col8);
+    padding-right: var(--col4);
   }
-  & p {
+  & > p {
     flex-basis: var(--col5);
+  }
+
+  @media (--small) {
+    & > h1 {
+      padding-top: var(--vertical-gutter);
+    }
+    & > h3 {
+      padding-right: 0;
+      flex-basis: var(--col8);
+    }
+
+    & > p {
+      flex-basis: var(--col8);
+    }
   }
 }
 
 .latestVersionsWrapper {
   display: inline-flex;
   flex-basis: var(--col4);
+
+  @media (--small) {
+    flex-basis: var(--col5);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
 }
 
 .latestVersion {
@@ -41,16 +62,30 @@
 
 .section {
   margin: var(--gutter-double) 0;
-  flex-basis: var(--col6);
+  flex-basis: var(--col8);
   align-items: self-start;
 }
 
 .logo {
   text-align: center;
-  flex-basis: var(--col2);
+  flex-basis: var(--col1);
   & svg {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
+  }
+
+  @media (--small) {
+    flex-basis: var(--col3);
+    padding-right: var(--col1);
+
+    & h3 {
+      font-size: var(--text-regular);
+    }
+
+    & svg {
+      width: 70px;
+      height: 70px;
+    }
   }
 }
 
@@ -76,10 +111,8 @@
 }
 
 .sectionList {
-  flex-basis: var(--col7);
-  margin-left: var(--col1) !important;
+  flex-basis: var(--col8);
   padding: var(--gutter) 0 var(--gutter-double);
-  padding-left: var(--col1);
 }
 
 .releaseList {
@@ -90,24 +123,41 @@
 .releaseRow {
   display: flex;
   padding-bottom: 6px;
+
   & a {
     color: var(--processing-blue-mid);
+  }
+
+  @media (--small) {
+    flex-wrap: wrap;
   }
 }
 
 .releaseName {
   flex-basis: var(--col1);
+  color: var(--darkergray);
+
+  @media (--small) {
+    flex-basis: var(--col2);
+  }
 }
 
 .releaseDate {
   font-size: var(--text-xsmall);
   flex-basis: var(--col2);
-  color: var(--darkergray);
+
+  @media (--small) {
+    flex-basis: var(--col6);
+  }
 }
 
-.releaseList {
-  width: 100%;
-  font-size: var(--text-small);
+.releaseAssets {
+  flex-basis: var(--col4);
+
+  @media (--small) {
+    flex-basis: var(--col8);
+    padding-left: var(--push2);
+  }
 }
 
 .assetLabel {
@@ -119,6 +169,7 @@
 }
 
 .links {
+  margin: var(--vertical-gutter) 0;
   border-left: solid 7px var(--lightgray);
   color: var(--processing-blue-dark);
   font-weight: 700;

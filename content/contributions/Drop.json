@@ -1,0 +1,23 @@
+{
+  "name": "Drop",
+  "authors": [
+    "[Ramin Soleymani](http://diskordier.net), original sDrop by [Andreas Schlegel](http://www.sojamo.com)"
+  ],
+  "url": "http://transfluxus.github.io/drop/",
+  "categories": [
+    "I/O"
+  ],
+  "sentence": "Drop is a processing library that lets you drag and drop objects such as files, images, bookmarks, or text into your processing sketch.",
+  "paragraph": "Once dropped you can access the information of the object from a DropEvent that has been forwarded to the processing sketch.",
+  "id": "172",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "246",
+      "maxRevision": "0",
+      "props": "http://transfluxus.github.io/drop/download/Drop.txt",
+      "download": "http://transfluxus.github.io/drop/download/Drop.zip"
+    }
+  ]
+}

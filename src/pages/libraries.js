@@ -11,7 +11,7 @@ import { useLocalization } from 'gatsby-theme-i18n';
 import CategoryNav from '../components/CategoryNav';
 import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
-import Searchbar from '../components/Searchbar';
+import FilterBar from '../components/FilterBar';
 
 import { filterItems } from '../utils/data';
 
@@ -54,18 +54,23 @@ const Libraries = ({ data }) => {
         <h3 className={grid.col}>
           {intl.formatMessage({ id: 'librariesIntro' })}
         </h3>
-        <div className={css.listWrapper}>
+        <div className={classnames(grid.nest, css.listWrapper)}>
+          <h2 className={grid.col}>Core</h2>
           <ul className={css.list}>
             {libraries.nodes.map((node, key) => {
               return (
                 <li key={key} className={css.subgrid}>
                   <Link
                     className={classnames(css.librarieName, grid.col)}
-                    to={'/reference/libraries/' + node.name + '/index.html'}
+                    to={
+                      '/reference/libraries/' +
+                      node.frontmatter.name +
+                      '/index.html'
+                    }
                     language={locale}>
-                    <h3>{node.name}</h3>
+                    <h3>{node.frontmatter.title}</h3>
                   </Link>
-                  <p className={grid.col}>Description</p>
+                  <p className={grid.col}>{node.frontmatter.description}</p>
                 </li>
               );
             })}
@@ -74,16 +79,15 @@ const Libraries = ({ data }) => {
         <h1 className={grid.col}>
           {intl.formatMessage({ id: 'contributions' })}
         </h1>
-        <Searchbar
-          placeholder={intl.formatMessage({ id: 'librariesSearch' })}
+        <FilterBar
+          placeholder={intl.formatMessage({ id: 'librariesFilter' })}
           onChange={(e) => setSearchTerm(e.target.value)}
           onClick={(e) => setSearchTerm('')}
           searchTerm={searchTerm}
-          className={css.searchbar}
           large
         />
         <CategoryNav categories={categories} />
-        <ul className={classnames(grid.col, grid.nest, css.contributionsList)}>
+        <ul className={classnames(grid.nest, css.contributionsList)}>
           {categories.map((cat) => {
             let contribs = filtered.filter((c) => c.categories.includes(cat));
             return (
@@ -92,7 +96,7 @@ const Libraries = ({ data }) => {
                 <ul className={classnames(grid.col, grid.nest)}>
                   {contribs.map((node, key) => {
                     return (
-                      <li key={key + 'c'} className={classnames(css.subgrid)}>
+                      <li key={key + 'c'} className={css.subgrid}>
                         <div
                           className={classnames(
                             grid.col,
@@ -106,11 +110,17 @@ const Libraries = ({ data }) => {
                           {node.authors.map((author, key) => (
                             <a
                               key={key + 'a'}
-                              href={author.link}
+                              href={author.slice(
+                                author.indexOf('(') + 1,
+                                author.indexOf(')')
+                              )}
                               target="_blank"
                               rel="noreferrer"
                               className={css.contributionAuthor}>
-                              {author.name}
+                              {author.slice(
+                                author.indexOf('[') + 1,
+                                author.indexOf(']')
+                              )}
                             </a>
                           ))}
                         </div>
@@ -178,10 +188,7 @@ export const query = graphql`
         childJson {
           name
           url
-          authors {
-            name
-            link
-          }
+          authors
           sentence
           categories
         }

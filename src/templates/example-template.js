@@ -1,19 +1,25 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
+import Img from 'gatsby-image';
 
+import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
 import Tabs from '../components/Tabs';
+
+import { organizeExampleItems } from '../utils/data';
+import { useWindowSize } from '../utils/hooks';
 
 import css from '../styles/templates/example-template.module.css';
 import grid from '../styles/grid.module.css';
 
 const ExampleTemplate = ({ data, pageContext }) => {
-  const [show, setShow] = useState(false);
+  const { width } = useWindowSize();
+  const [show, setShow] = useState(width > 960 ? true : false);
   const intl = useIntl();
 
   let json, subcategory;
@@ -37,105 +43,128 @@ const ExampleTemplate = ({ data, pageContext }) => {
     (item) => item.relativeDirectory.split('/')[1] === subcategory
   );
 
+  const images = data.images.nodes;
+
+  const relatedExamples = useMemo(() => {
+    const items = organizeExampleItems(related, images)[0];
+    return items && items.length > 0 ? items.children[0].children : [];
+  }, [related, images]);
+
   const toggleSidebar = (e, show) => {
     if (e.type === 'click') setShow(show);
     else if (e.keyCode === 13) setShow(show);
   };
 
   return (
-    <Layout>
+    <Layout hasSidebar>
       <Helmet>
         <title>{data.json && json.childJson.title}</title>
       </Helmet>
-      <Sidebar
-        items={data.examples}
-        onChange={toggleSidebar}
-        show={show}
-        type={'examples'}
-      />
-      {data.json !== null ? (
+      <div className={classnames(css.root, grid.grid, grid.rightBleed)}>
+        <Sidebar
+          items={data.examples}
+          onChange={toggleSidebar}
+          show={show}
+          type={'examples'}
+        />
         <div
-          className={classnames(
-            css.root,
-            { [css.collapsed]: !show },
-            { [css.expanded]: show }
-          )}>
-          <div className={classnames(css.section, grid.grid)}>
-            <h1 className={grid.col}>{json.childJson.title}</h1>
-            {json.childJson.author && (
-              <h3 className={grid.col}>
-                {' '}
-                {intl.formatMessage({ id: 'by' })} {json.childJson.author}
-              </h3>
-            )}
-            <div className={classnames(grid.col, css.description)}>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: json.childJson.description,
-                }}></p>
-            </div>
-            {json.childJson.featured && (
-              <div className={classnames(grid.col, css.featured)}>
-                <h3>{intl.formatMessage({ id: 'featured' })}</h3>
-                <ul>
-                  {json.childJson.featured.map((feature, key) => (
-                    <li key={key + 'f'}>
-                      <Link to={feature}>{feature}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            <Tabs pdes={orderedPdes} />
-            {related.length > 0 && (
-              <div className={classnames(css.relatedWrapper, grid.nested)}>
+          className={classnames(grid.nest, css.wrapper, {
+            [css.collapsed]: !show,
+          })}>
+          {data.json !== null ? (
+            <div
+              className={classnames(
+                css.content,
+                { [css.collapsed]: !show },
+                grid.nest
+              )}>
+              <h1 className={grid.col}>{json.childJson.title}</h1>
+              {json.childJson.author && (
                 <h3 className={grid.col}>
-                  {intl.formatMessage({ id: 'relatedExamples' })}
+                  {' '}
+                  {intl.formatMessage({ id: 'by' })} {json.childJson.author}
                 </h3>
-                <ul className={css.related}>
-                  {related.map((rel, key) => {
-                    return (
-                      rel.relativeDirectory !== pageContext.relDir && (
-                        <li key={key + 'rel'}>
-                          <Link to={'../' + rel.name.toLowerCase() + '.html'}>
-                            <div className={css.placeholder}></div>
-                            <span className={css.relatedName}>{rel.name}</span>
-                          </Link>
-                        </li>
-                      )
-                    );
-                  })}
-                </ul>
+              )}
+              <div className={classnames(grid.col, css.description)}>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: json.childJson.description,
+                  }}></p>
               </div>
-            )}
-            <p className={classnames(grid.col, css.note)}>
-              {intl.formatMessage({ id: 'exampleInfo' })}
-              <a
-                href={
-                  'https://github.com/processing/processing-docs/issues?state=open'
-                }>
-                {intl.formatMessage({ id: 'letUsKnow' })}
-              </a>
-              .
-            </p>
-          </div>
+              {json.childJson.featured.length > 0 && (
+                <div className={classnames(grid.col, css.featured)}>
+                  <h3>{intl.formatMessage({ id: 'featured' })}</h3>
+                  <ul>
+                    {json.childJson.featured.map((feature, key) => (
+                      <li key={key + 'f'}>
+                        <Link to={feature}>{feature}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              <div className={classnames(css.cover, grid.col)}>
+                <Img fluid={data.image.nodes[0].childImageSharp.fluid} />
+              </div>
+              <Tabs pdes={orderedPdes} className={css.tabs} />
+              {relatedExamples.length > 0 && (
+                <div className={classnames(css.relatedWrapper, grid.nest)}>
+                  <h3 className={grid.col}>
+                    {intl.formatMessage({ id: 'relatedExamples' })}
+                  </h3>
+                  <ul className={classnames(css.related, grid.col)}>
+                    {relatedExamples.slice(0, 6).map((rel, key) => {
+                      return (
+                        rel.dir !== pageContext.relDir && (
+                          <li key={key + 'rel'} className={css.relatedItem}>
+                            <Link to={'../' + rel.name.toLowerCase() + '.html'}>
+                              <Img
+                                className={css.img}
+                                fluid={rel.img.childImageSharp.fluid}
+                                objectFit={'cover'}
+                                objectPosition={'50% 50%'}
+                              />
+                              <span className={css.relatedName}>
+                                {rel.name}
+                              </span>
+                            </Link>
+                          </li>
+                        )
+                      );
+                    })}
+                  </ul>
+                </div>
+              )}
+              <p className={classnames(grid.col, css.note)}>
+                {intl.formatMessage({ id: 'exampleInfo' })}
+                <a
+                  href={
+                    'https://github.com/processing/processing-docs/issues?state=open'
+                  }>
+                  {intl.formatMessage({ id: 'letUsKnow' })}
+                </a>
+                .
+              </p>
+            </div>
+          ) : (
+            <div
+              className={classnames(
+                grid.grid,
+                { [css.collapsed]: !show },
+                { [css.expanded]: show }
+              )}>
+              <div className={classnames(grid.push1)}>
+                {intl.formatMessage({ id: 'notTranslated' })}
+                <Link to={pageContext.slug}>
+                  {' '}
+                  {intl.formatMessage({ id: 'englishPage' })}
+                </Link>
+              </div>
+            </div>
+          )}
+          {width > 960 && <Footer />}
         </div>
-      ) : (
-        <div
-          className={classnames(
-            grid.grid,
-            { [css.collapsed]: !show },
-            { [css.expanded]: show }
-          )}>
-          <div className={classnames(grid.push1)}>
-            {intl.formatMessage({ id: 'notTranslated' })}
-            <Link to={pageContext.slug}>
-              {' '}
-              {intl.formatMessage({ id: 'englishPage' })}
-            </Link>
-          </div>
-        </div>
-      )}
+      </div>
     </Layout>
   );
 };
@@ -182,6 +211,38 @@ export const query = graphql`
         childJson {
           name
           title
+        }
+      }
+    }
+    images: allFile(
+      filter: {
+        sourceInstanceName: { eq: "examples" }
+        extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
+      }
+    ) {
+      nodes {
+        name
+        relativeDirectory
+        childImageSharp {
+          fluid(maxWidth: 200) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+    image: allFile(
+      filter: {
+        relativeDirectory: { eq: $relDir }
+        extension: { regex: "/(png)/" }
+      }
+    ) {
+      nodes {
+        name
+        relativeDirectory
+        childImageSharp {
+          fluid(maxWidth: 800) {
+            ...GatsbyImageSharpFluid
+          }
         }
       }
     }

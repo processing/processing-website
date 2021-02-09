@@ -1,14 +1,18 @@
 .root {
   position: fixed;
   top: 200px;
-  right: 0;
-  width: 150px;
+  right: var(--margin);
+  width: var(--col1);
   float: right;
   text-align: center;
   z-index: 1;
 
   & h3 {
     color: var(--processing-blue-mid);
+  }
+
+  @media (--reduced) {
+    display: none;
   }
 }
 

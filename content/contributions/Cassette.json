@@ -1,0 +1,23 @@
+{
+  "name": "Cassette",
+  "authors": [
+    "Shlomi Hod"
+  ],
+  "url": "https://github.com/shlomihod/cassette",
+  "categories": [
+    "Sound"
+  ],
+  "sentence": "Implementation of Processing Sound APIs for Android.",
+  "paragraph": "",
+  "id": "170",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "246",
+      "maxRevision": "0",
+      "props": "https://github.com/shlomihod/cassette/releases/download/latest/cassette.txt",
+      "download": "https://github.com/shlomihod/cassette/releases/download/latest/cassette.zip"
+    }
+  ]
+}

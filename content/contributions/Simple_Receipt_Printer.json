@@ -1,0 +1,23 @@
+{
+  "name": "Simple Receipt Printer",
+  "authors": [
+    "[Gottfried Haider](http://gottfriedhaider.com/)"
+  ],
+  "url": "https://github.com/gohai/processing-simplereceiptprinter",
+  "categories": [
+    "I/O"
+  ],
+  "sentence": "Print on attached Thermal Receipt Printers",
+  "paragraph": "Made for Linux-based Single Board Computers such as the Raspberry Pi",
+  "id": "209",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/gohai/processing-simplereceiptprinter/releases/download/latest/processing-simplereceiptprinter.txt",
+      "download": "https://github.com/gohai/processing-simplereceiptprinter/releases/download/latest/processing-simplereceiptprinter.zip"
+    }
+  ]
+}

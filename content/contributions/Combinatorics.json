@@ -1,0 +1,24 @@
+{
+  "name": "Combinatorics",
+  "authors": [
+    "[Florian Jenett](http://www.bezier.de/)"
+  ],
+  "url": "https://github.com/fjenett/combinatorics",
+  "categories": [
+    "Math",
+    "Simulation"
+  ],
+  "sentence": "Generate combinations, variations and permutations",
+  "paragraph": "This library provides an easy way to generate combinations, variations and permutations from a given set of values.",
+  "id": "055",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://raw.github.com/fjenett/combinatorics/latest/releases/Combinatorics.txt",
+      "download": "https://raw.github.com/fjenett/combinatorics/latest/releases/Combinatorics.zip"
+    }
+  ]
+}

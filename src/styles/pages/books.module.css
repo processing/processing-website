@@ -6,6 +6,16 @@
   & > h3 {
     flex-basis: var(--col5);
   }
+
+  @media (--small) {
+    & > h1 {
+      padding-top: var(--vertical-gutter);
+    }
+    & > h3 {
+      padding-right: 0;
+      flex-basis: var(--col8);
+    }
+  }
 }
 
 .booksList {
@@ -22,6 +32,18 @@
       margin-bottom: 0;
     }
   }
+
+  @media (--small) {
+    & > li {
+      flex-basis: var(--col8);
+      padding: var(--vertical-gutter) var(--gutter);
+      border-bottom: 2px solid var(--lightgray);
+    }
+
+    & > li:last-of-type {
+      border-bottom: none;
+    }
+  }
 }
 
 .listItem {
@@ -32,10 +54,23 @@
 .cover {
   flex-basis: var(--col2);
   width: 100%;
+
+  & img {
+    object-fit: contain !important;
+    object-position: top center !important;
+  }
+
+  @media (--small) {
+    flex-basis: var(--col3);
+  }
 }
 
 .book {
   flex-basis: var(--col6);
+
+  @media (--small) {
+    flex-basis: var(--col5);
+  }
 }
 
 .details {

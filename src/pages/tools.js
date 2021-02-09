@@ -38,7 +38,7 @@ const Tools = ({ data }) => {
         <Donate />
         <h1 className={grid.col}>{intl.formatMessage({ id: 'tools' })}</h1>
         <h3 className={grid.col}>{intl.formatMessage({ id: 'toolsIntro' })}</h3>
-        <div className={css.listWrapper}>
+        <div className={classnames(grid.nest, css.listWrapper)}>
           <ul className={css.list}>
             {tools.nodes.map((node, key) => {
               return (
@@ -61,10 +61,10 @@ const Tools = ({ data }) => {
             __html: intl.formatMessage({ id: 'contributedTools' }),
           }}
         />
-        <ul className={css.contributionsList}>
+        <ul className={classnames(grid.nest, css.contributionsList)}>
           {contributions.map((node, key) => {
             return (
-              <li key={key + 'c'} className={classnames(css.subgrid, grid.col)}>
+              <li key={key + 'c'} className={css.subgrid}>
                 <div className={classnames(grid.col, css.contributionData)}>
                   <h3>
                     <a href={node.url} target="_blank" rel="noreferrer">
@@ -74,11 +74,17 @@ const Tools = ({ data }) => {
                   {node.authors.map((author, key) => (
                     <a
                       key={key + 'a'}
-                      href={author.link}
+                      href={author.slice(
+                        author.indexOf('(') + 1,
+                        author.indexOf(')')
+                      )}
                       target="_blank"
                       rel="noreferrer"
                       className={css.contributionAuthor}>
-                      {author.name}
+                      {author.slice(
+                        author.indexOf('[') + 1,
+                        author.indexOf(']')
+                      )}
                     </a>
                   ))}
                 </div>
@@ -132,10 +138,7 @@ export const query = graphql`
         childJson {
           name
           url
-          authors {
-            name
-            link
-          }
+          authors
           sentence
           categories
         }

@@ -1,0 +1,23 @@
+{
+  "name": "MapThing",
+  "authors": [
+    "[Jon Reades](http://www.reades.com/)"
+  ],
+  "url": "http://www.reades.com/MapThing",
+  "categories": [
+    "Data"
+  ],
+  "sentence": "A collection of classes for reading and displaying Shape files (a.k.a. ESRI shapefiles), CSV, and GPX data in a map-based sketch.",
+  "paragraph": "There are four main classes with which you should be familiar: 1) BoundingBox defines the sketch's geographic 'envelope' by mapping a shapefile's geographic coordinates on to the viewable space of the sketch; 2) Lines is used to read and display single-part and multi-part line data; 3) Points is used to read and display point data; and 4) Polygons is used to read and display single and multi-part polygon data (this only works with shapefiles for now). GPX display needs work.",
+  "id": "044",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "http://www.reades.com/MapThing/MapThing.txt",
+      "download": "http://www.reades.com/MapThing/MapThing.zip"
+    }
+  ]
+}

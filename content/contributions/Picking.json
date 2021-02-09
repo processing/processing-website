@@ -1,0 +1,23 @@
+{
+  "name": "Picking",
+  "authors": [
+    "[Nicolas Clavaud](http://n.clavaud.free.fr/)"
+  ],
+  "url": "http://n.clavaud.free.fr/processing/library/picking/",
+  "categories": [
+    "3D"
+  ],
+  "sentence": "Pick an object in a 3D scene easily.",
+  "paragraph": "",
+  "id": "032",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "http://n.clavaud.free.fr/processing/library/picking/download/Picking.txt",
+      "download": "http://n.clavaud.free.fr/processing/library/picking/download/Picking.zip"
+    }
+  ]
+}

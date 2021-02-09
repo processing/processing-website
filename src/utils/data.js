@@ -6,15 +6,18 @@ export const titleCase = (slug) => _titleCase(slug.replace(/_/g, ' '));
 //filters the references/examples based on a search text
 export const filterItems = (items, searchTerm) => {
   if (searchTerm && searchTerm !== '') {
+    const searchTerms = searchTerm.split(' ');
     return items.filter((item) => {
       try {
         return item.childJson
-          ? JSON.stringify(Object.values(item.childJson))
-              .toLowerCase()
-              .includes(searchTerm.toLowerCase())
-          : JSON.stringify(item)
-              .toLowerCase()
-              .includes(searchTerm.toLowerCase());
+          ? searchTerms.every((term) =>
+              JSON.stringify(Object.values(item.childJson))
+                .toLowerCase()
+                .includes(term.toLowerCase())
+            )
+          : searchTerms.every((term) =>
+              JSON.stringify(item).toLowerCase().includes(term.toLowerCase())
+            );
       } catch (e) {
         return false;
       }
@@ -30,11 +33,13 @@ export const organizeReferenceItems = (items) => {
   items.forEach((item) => {
     const { category, subcategory } = item.childJson;
 
-    let categoryIndex = tree.findIndex((cat) => cat.slug === category);
+    let categoryIndex = tree.findIndex(
+      (cat) => cat.slug.toLowerCase() === category.toLowerCase()
+    );
 
     if (categoryIndex === -1) {
       tree.push({
-        slug: category,
+        slug: category.toLowerCase(),
         name: titleCase(category),
         children: [],
       });
@@ -42,7 +47,7 @@ export const organizeReferenceItems = (items) => {
     }
 
     let subcategoryIndex = tree[categoryIndex].children.findIndex(
-      (subcat) => subcat.slug === subcategory
+      (subcat) => subcat.slug.toLowerCase() === subcategory.toLowerCase()
     );
 
     if (subcategoryIndex === -1) {
@@ -59,6 +64,7 @@ export const organizeReferenceItems = (items) => {
       ...item.childJson,
     });
   });
+
   return tree;
 };
 
@@ -69,10 +75,6 @@ export const organizeExampleItems = (items, images) => {
     const image = images
       ? images.find((img) => img.relativeDirectory === item.relativeDirectory)
       : '';
-    images &&
-      console.log(
-        images.find((img) => img.relativeDirectory === item.relativeDirectory)
-      );
     const category = item.relativeDirectory.split('/')[0];
     const subcategory = item.relativeDirectory.split('/')[1];
 
@@ -110,4 +112,9 @@ export const organizeExampleItems = (items, images) => {
   });
 
   return tree;
+};
+
+export const subcategoryFromDirectory = (relDir) => {
+  const category = relDir.split('/')[1];
+  return category.charAt(0).toUpperCase() + category.slice(1);
 };

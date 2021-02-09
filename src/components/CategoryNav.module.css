@@ -1,29 +1,36 @@
 .root {
-  margin-bottom: calc(var(--margin) * 2);
-  flex-basis: var(--col7);
-  padding-left: var(--col1);
+  flex-basis: var(--col6);
   justify-content: center;
+  margin-top: var(--margin-half);
 
-  & ul {
-    padding: 0;
-    margin: 0;
-    columns: 6;
-    list-style: none;
+  @media (--reduced) {
+    margin-top: var(--vertical-gutter);
+    flex-basis: var(--col8);
+  }
+}
+
+.list {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.item {
+  flex-basis: var(--col2);
+  display: flex;
+
+  & .line {
+    border-left: 3px solid var(--lightgray);
+    height: 100%;
+    margin-right: 10px;
   }
 
-  & a {
-    text-decoration: none;
+  @media (--small) {
+    flex-basis: var(--col4);
   }
-
-  & h3 {
-    text-transform: capitalize;
-  }
-
-  & h3:hover {
-    color: inherit;
-  }
-
-  & h3:focus {
-    color: inherit;
-  }
+}
+.itemLink {
+  font-weight: bold;
+  margin-bottom: 5px;
 }
