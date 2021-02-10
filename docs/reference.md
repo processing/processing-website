@@ -68,9 +68,9 @@ The examples live inside the `/content/references/examples/` folder. The main pr
 - *.png files* if examples produce images. Images can be found [here](https://github.com/processing/processing-docs/tree/master/content/api_media). Each example image should have a size of `800x800px`. If the example has an image, then the code used to generate the images needs to be also updated on the corresponding .pde file with the new scales. The .pde and .png file for the same example should be named the same as the reference with the number of the example starting from 0 (e.g. for reference `ammbientLight_` there are `ammbientLight_0.pde` and `ammbientLight_1.pde` and `ammbientLight_0.png` and `ammbientLight_1.png`).
 
 For re-scaling the images and updating the examples codes the workflow should be:
-(1) Modifying the scales of the example code on each of the .pde files (consider not only the canvas size but also the coordinates of the elements if any).
-(2) Running the sketch on Processing and saving the new image (you can use a `keyPressed` handler and the native `save` function for this).
-(3) Uploading the new images and the updated code on the corresponding foler.
+1. Modifying the scales of the example code on each of the .pde files (consider not only the canvas size but also the coordinates of the elements if any).
+2. Running the sketch on Processing and saving the new image (you can use a `keyPressed` handler and the native `save` function for this).
+3. Uploading the new images and the updated code on the corresponding foler.
 
 ## Translating the reference
 
