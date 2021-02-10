@@ -26,64 +26,68 @@ let latestAssets = [
 ];
 
 const Download = () => {
-  const {
-    preReleases: preReleasesData,
-    releases: releasesData,
-  } = useStaticQuery(graphql`
-    query {
-      releases: github {
-        repository(name: "processing", owner: "processing") {
-          releases(first: 100, orderBy: { field: NAME, direction: DESC }) {
-            edges {
-              node {
-                name
-                tagName
-                publishedAt
-                releaseAssets(first: 10) {
-                  edges {
-                    node {
-                      name
-                      downloadUrl
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      preReleases: github {
-        repository(name: "processing4", owner: "processing") {
-          releases(first: 100, orderBy: { field: NAME, direction: DESC }) {
-            edges {
-              node {
-                name
-                tagName
-                publishedAt
-                releaseAssets(first: 10) {
-                  edges {
-                    node {
-                      name
-                      downloadUrl
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
+  let preReleasesData = null,
+    releasesData = null;
+  // const {
+  //   preReleases: preReleasesData,
+  //   releases: releasesData,
+  // } = useStaticQuery(graphql`
+  //   query {
+  //     releases: github {
+  //       repository(name: "processing", owner: "processing") {
+  //         releases(first: 100, orderBy: { field: NAME, direction: DESC }) {
+  //           edges {
+  //             node {
+  //               name
+  //               tagName
+  //               publishedAt
+  //               releaseAssets(first: 10) {
+  //                 edges {
+  //                   node {
+  //                     name
+  //                     downloadUrl
+  //                   }
+  //                 }
+  //               }
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //     preReleases: github {
+  //       repository(name: "processing4", owner: "processing") {
+  //         releases(first: 100, orderBy: { field: NAME, direction: DESC }) {
+  //           edges {
+  //             node {
+  //               name
+  //               tagName
+  //               publishedAt
+  //               releaseAssets(first: 10) {
+  //                 edges {
+  //                   node {
+  //                     name
+  //                     downloadUrl
+  //                   }
+  //                 }
+  //               }
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
   const intl = useIntl();
 
-  const releases = releasesData.repository.releases.edges.map((e) => e.node);
+  const releases = releasesData
+    ? releasesData.repository.releases.edges.map((e) => e.node)
+    : [];
   const selectedReleases = releases.filter((r) =>
     selectedReleasesNumbers.includes(r.name.split(' ').pop())
   );
-  const preReleases = preReleasesData.repository.releases.edges.map(
-    (e) => e.node
-  );
+  const preReleases = preReleasesData
+    ? preReleasesData.repository.releases.edges.map((e) => e.node)
+    : [];
   const selectedPreReleases = preReleases.filter((r) =>
     selectedPreReleasesNumbers.includes(r.tagName.split('-').pop())
   );
@@ -107,7 +111,9 @@ const Download = () => {
   };
 
   latestAssets = latestAssets.map((latestAsset) => {
-    const assetsData = latestRelease.releaseAssets.edges.map((e) => e.node);
+    const assetsData = latestRelease
+      ? latestRelease.releaseAssets.edges.map((e) => e.node)
+      : [];
     for (let a of assetsData) {
       const { name: filename, downloadUrl } = a;
       if (latestAsset.bit) {
@@ -145,71 +151,78 @@ const Download = () => {
         <h3 className={classnames(grid.col, css.textBlock)}>
           {intl.formatMessage({ id: 'downloadIntro' })}
         </h3>
-        <div
-          className={classnames(grid.nest, grid.col, grid.grid, css.section)}>
-          <div className={classnames(css.logo, grid.col)}>
-            <LogoProcessing />
-            <h3>{latestRelease.name.split(' ').shift()}</h3>
-          </div>
+        {latestRelease && (
           <div
-            className={classnames(
-              css.latestVersionsWrapper,
-              grid.nest,
-              grid.col
-            )}>
-            <div className={classnames(grid.col, css.latestLabel)}>
-              <span className={css.latestNumber}>
-                {latestRelease.name.split(' ').pop()}
-              </span>
-              <span className={css.latestDate}>
-                {` (${DateTime.fromISO(
-                  latestRelease.publishedAt
-                ).toLocaleString(DateTime.DATE_FULL)})`}
-              </span>
+            className={classnames(grid.nest, grid.col, grid.grid, css.section)}>
+            <div className={classnames(css.logo, grid.col)}>
+              <LogoProcessing />
+              <h3>{latestRelease.name.split(' ').shift()}</h3>
             </div>
-            {latestAssets
-              .sort((a, b) =>
-                a.label > b.label ? -1 : a.label < b.label ? 1 : 0
-              )
-              .map((v, i) => (
-                <div
-                  key={`version-${i}`}
-                  className={classnames(grid.col, css.latestVersion)}>
-                  <a href={v.url}>
-                    <span className={css.latestVersionName}>{v.label}</span>
-                    {v.bit && (
-                      <span
-                        className={css.latestVersionBit}>{`${v.bit}-bit`}</span>
-                    )}
-                  </a>
-                </div>
-              ))}
+            <div
+              className={classnames(
+                css.latestVersionsWrapper,
+                grid.nest,
+                grid.col
+              )}>
+              <div className={classnames(grid.col, css.latestLabel)}>
+                <span className={css.latestNumber}>
+                  {latestRelease.name.split(' ').pop()}
+                </span>
+                <span className={css.latestDate}>
+                  {` (${DateTime.fromISO(
+                    latestRelease.publishedAt
+                  ).toLocaleString(DateTime.DATE_FULL)})`}
+                </span>
+              </div>
+              {latestAssets
+                .sort((a, b) =>
+                  a.label > b.label ? -1 : a.label < b.label ? 1 : 0
+                )
+                .map((v, i) => (
+                  <div
+                    key={`version-${i}`}
+                    className={classnames(grid.col, css.latestVersion)}>
+                    <a href={v.url}>
+                      <span className={css.latestVersionName}>{v.label}</span>
+                      {v.bit && (
+                        <span
+                          className={
+                            css.latestVersionBit
+                          }>{`${v.bit}-bit`}</span>
+                      )}
+                    </a>
+                  </div>
+                ))}
+            </div>
+            <ul className={classnames(grid.col, css.links)}>
+              <li>
+                <a href={'https://github.com/processing'}>GitHub</a>
+              </li>
+              <li>
+                <a
+                  href={
+                    'https://github.com/processing/processing/issues?q=is%3Aopen'
+                  }>
+                  {intl.formatMessage({ id: 'report' })}
+                </a>
+              </li>
+              <li>
+                <a href={'https://github.com/processing/processing/wiki'}>
+                  Wiki
+                </a>
+              </li>{' '}
+              <li>
+                <a
+                  href={
+                    'https://github.com/processing/processing/wiki/Supported-Platforms'
+                  }>
+                  {intl.formatMessage({ id: 'supported' })}
+                </a>
+              </li>
+            </ul>
           </div>
-          <ul className={classnames(grid.col, css.links)}>
-            <li>
-              <a href={'https://github.com/processing'}>GitHub</a>
-            </li>
-            <li>
-              <a
-                href={
-                  'https://github.com/processing/processing/issues?q=is%3Aopen'
-                }>
-                {intl.formatMessage({ id: 'report' })}
-              </a>
-            </li>
-            <li>
-              <a href={'https://github.com/processing/processing/wiki'}>Wiki</a>
-            </li>{' '}
-            <li>
-              <a
-                href={
-                  'https://github.com/processing/processing/wiki/Supported-Platforms'
-                }>
-                {intl.formatMessage({ id: 'supported' })}
-              </a>
-            </li>
-          </ul>
-        </div>
+        )}
+
         <p className={grid.col}>
           {intl.formatMessage({ id: 'downloadChanges' })}
         </p>
