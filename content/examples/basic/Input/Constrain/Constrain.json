@@ -3,5 +3,5 @@
   "title": "Constrain",
   "author": "",
   "description": "Move the mouse across the screen to move the circle. \n  The program constrains the circle to its box.",
-  "featured": []
+  "featured": ["constrain_"]
 }
