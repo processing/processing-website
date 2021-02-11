@@ -3,5 +3,5 @@
   "title": "Additive Waveby Daniel Shiffman",
   "author": "",
   "description": "Create a more complex wave by adding two waves together.",
-  "featured": []
+  "featured": ["sin_", "cos_"]
 }
