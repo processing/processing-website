@@ -3,5 +3,5 @@
   "title": "Ignore Styles  Illustration",
   "author": "George Brower",
   "description": "Shapes are loaded with style information that tells them how\n  to draw (the color, stroke weight, etc.) The disableStyle() \n  method of PShape turns off this information. The enableStyle()\n  method turns it back on.",
-  "featured": []
+  "featured": ["PShape_enableStyle_", "PShape_disableStyle_", "shape", "loadShape_"]
 }
