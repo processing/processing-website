@@ -8,12 +8,12 @@
 PFont f;
 
 void setup() {
-  size(640, 360);
+  size(1280, 720);
   background(0);
 
   // Create the font
   printArray(PFont.list());
-  f = createFont("SpaceMono-Regular", 52);
+  f = createFont("SpaceMono-Regular.ttf", 52);
   textFont(f);
   textAlign(CENTER, CENTER);
 } 

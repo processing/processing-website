@@ -9,11 +9,11 @@
 PFont f;
   
 void setup() {
-  size(640, 360);
+  size(1280, 720);
   
   // Create the font
   printArray(PFont.list());
-  f = createFont("SourceCodePro-Regular.ttf", 24);
+  f = createFont("SpaceMono-Regular.ttf", 52);
   textFont(f);
 }
 
@@ -28,14 +28,13 @@ void draw() {
 }
 
 void drawType(float x) {
-  line(x, 0, x, 65);
-  line(x, 220, x, height);
+  line(x, 0, x, height);
   fill(0);
-  text("ichi", x, 95);
+  text("ichi", x, 195);
   fill(51);
-  text("ni", x, 130);
+  text("ni", x, 295);
   fill(204);
-  text("san", x, 165);
+  text("san", x, 395);
   fill(255);
-  text("shi", x, 210);
+  text("shi", x, 495);
 }
