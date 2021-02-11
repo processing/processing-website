@@ -13,7 +13,7 @@ void setup() {
 
   // Create the font
   printArray(PFont.list());
-  f = createFont("SourceCodePro-Regular.ttf", 24);
+  f = createFont("SpaceMono-Regular", 52);
   textFont(f);
   textAlign(CENTER, CENTER);
 } 
@@ -25,11 +25,11 @@ void draw() {
   int margin = 10;
   translate(margin*4, margin*4);
 
-  int gap = 46;
+  int gap = 90;
   int counter = 35;
   
-  for (int y = 0; y < height-gap; y += gap) {
-    for (int x = 0; x < width-gap; x += gap) {
+  for (int y = gap/2; y < height-gap; y += gap) {
+    for (int x = gap/2; x < width-gap; x += gap) {
 
       char letter = char(counter);
       
