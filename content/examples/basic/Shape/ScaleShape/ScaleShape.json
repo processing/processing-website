@@ -1,1 +1,7 @@
-{"name":"Scale Shape","title":"Scale Shape   Illustration","author":"George Brower","description":"Move the mouse left and right to zoom the SVG file.\n  This shows how, unlike an imported image, the lines\n  remain smooth at any size.","featured":[]}
+{
+  "name": "Scale Shape",
+  "title": "Scale Shape   Illustration",
+  "author": "George Brower",
+  "description": "Move the mouse left and right to zoom the SVG file.\n  This shows how, unlike an imported image, the lines\n  remain smooth at any size.",
+  "featured": []
+}

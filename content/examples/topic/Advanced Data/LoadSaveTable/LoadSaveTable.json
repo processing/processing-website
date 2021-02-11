@@ -1,1 +1,7 @@
-{"name":"Load Save Table","title":"Loading Tabular Databy Daniel Shiffman","author":"","description":"This example demonstrates how to use loadTable()\n  to retrieve data from a CSV file and make objects \n  from that data.\n\n  Here is what the CSV looks like:\n\n x,y,diameter,name\n 160,103,43.19838,Happy\n 372,137,52.42526,Sad\n 273,235,61.14072,Joyous\n 121,179,44.758068,Melancholy","featured":[]}
+{
+  "name": "Load Save Table",
+  "title": "Loading Tabular Databy Daniel Shiffman",
+  "author": "",
+  "description": "This example demonstrates how to use loadTable()\n  to retrieve data from a CSV file and make objects \n  from that data.\n\n  Here is what the CSV looks like:\n\n x,y,diameter,name\n 160,103,43.19838,Happy\n 372,137,52.42526,Sad\n 273,235,61.14072,Joyous\n 121,179,44.758068,Melancholy",
+  "featured": []
+}

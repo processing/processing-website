@@ -1,1 +1,7 @@
-{"name":"Noise Wave","title":"Noise Waveby Daniel Shiffman","author":"","description":"Using Perlin Noise to generate a wave-like pattern.","featured":[]}
+{
+  "name": "Noise Wave",
+  "title": "Noise Waveby Daniel Shiffman",
+  "author": "",
+  "description": "Using Perlin Noise to generate a wave-like pattern.",
+  "featured": []
+}

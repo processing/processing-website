@@ -1,1 +1,7 @@
-{"name":"Wolfram","title":"Wolfram Cellular Automataby Daniel Shiffman","author":"","description":"Simple demonstration of a Wolfram 1-dimensional cellular automata\n  When the system reaches bottom of the window, it restarts with a new ruleset\n  Mouse click restarts as well.","featured":[]}
+{
+  "name": "Wolfram",
+  "title": "Wolfram Cellular Automataby Daniel Shiffman",
+  "author": "",
+  "description": "Simple demonstration of a Wolfram 1-dimensional cellular automata\n  When the system reaches bottom of the window, it restarts with a new ruleset\n  Mouse click restarts as well.",
+  "featured": []
+}

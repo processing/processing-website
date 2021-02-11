@@ -1,1 +1,7 @@
-{"name":"Blur","title":"Blur","author":"","description":"A low-pass filter blurs an image. This program analyzes every\n  pixel in an image and blends it with the neighboring pixels\n  to blur the image.","featured":[]}
+{
+  "name": "Blur",
+  "title": "Blur",
+  "author": "",
+  "description": "A low-pass filter blurs an image. This program analyzes every\n  pixel in an image and blends it with the neighboring pixels\n  to blur the image.",
+  "featured": []
+}

@@ -1,1 +1,7 @@
-{"name":"Get Child","title":"Get Child","author":"","description":"SVG files can be made of many individual shapes. \n  Each of these shapes (called a \"child\") has its own name \n  that can be used to extract it from the \"parent\" file.\n  This example loads a map of the United States and creates\n  two new PShape objects by extracting the data from two states.","featured":[]}
+{
+  "name": "Get Child",
+  "title": "Get Child",
+  "author": "",
+  "description": "SVG files can be made of many individual shapes. \n  Each of these shapes (called a \"child\") has its own name \n  that can be used to extract it from the \"parent\" file.\n  This example loads a map of the United States and creates\n  two new PShape objects by extracting the data from two states.",
+  "featured": []
+}
