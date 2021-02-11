@@ -1,1 +1,7 @@
-{"name":"Smoke Particle System","title":"Smoke Particle Systemby Daniel Shiffman","author":"","description":"A basic smoke effect using a particle system. Each particle\n  is rendered as an alpha masked image.","featured":[]}
+{
+  "name": "Smoke Particle System",
+  "title": "Smoke Particle Systemby Daniel Shiffman",
+  "author": "",
+  "description": "A basic smoke effect using a particle system. Each particle\n  is rendered as an alpha masked image.",
+  "featured": []
+}

@@ -1,1 +1,7 @@
-{"name":"Regular Polygon","title":"Regular Polygon","author":"","description":"What is your favorite? Pentagon? Hexagon? Heptagon? \n  No? What about the icosagon? The polygon() function \n  created for this example is capable of drawing any \n  regular polygon. Try placing different numbers into the \n  polygon() function calls within draw() to explore.","featured":[]}
+{
+  "name": "Regular Polygon",
+  "title": "Regular Polygon",
+  "author": "",
+  "description": "What is your favorite? Pentagon? Hexagon? Heptagon? \n  No? What about the icosagon? The polygon() function \n  created for this example is capable of drawing any \n  regular polygon. Try placing different numbers into the \n  polygon() function calls within draw() to explore.",
+  "featured": []
+}

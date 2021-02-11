@@ -1,1 +1,7 @@
-{"name":"Conditionals1","title":"Conditionals 1","author":"","description":"Conditions are like questions. \n  They allow a program to decide to take one action if \n  the answer to a question is \"true\" or to do another action\n  if the answer to the question is \"false.\"<br /> \n  The questions asked within a program are always logical\n  or relational statements. For example, if the variable 'i' is \n  equal to zero then draw a line.","featured":[]}
+{
+  "name": "Conditionals1",
+  "title": "Conditionals 1",
+  "author": "",
+  "description": "Conditions are like questions. \n  They allow a program to decide to take one action if \n  the answer to a question is \"true\" or to do another action\n  if the answer to the question is \"false.\"<br /> \n  The questions asked within a program are always logical\n  or relational statements. For example, if the variable 'i' is \n  equal to zero then draw a line.",
+  "featured": []
+}

@@ -1,1 +1,7 @@
-{"name":"Double Random","title":"Double Random","author":"Ira Greenberg","description":"Using two random() calls and the point() function \n  to create an irregular sawtooth line.","featured":[]}
+{
+  "name": "Double Random",
+  "title": "Double Random",
+  "author": "Ira Greenberg",
+  "description": "Using two random() calls and the point() function \n  to create an irregular sawtooth line.",
+  "featured": []
+}

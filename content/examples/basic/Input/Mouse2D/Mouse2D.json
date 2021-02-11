@@ -1,1 +1,7 @@
-{"name":"Mouse2 D","title":"Mouse 2D","author":"","description":"Moving the mouse changes the position and size of each box.","featured":[]}
+{
+  "name": "Mouse2 D",
+  "title": "Mouse 2D",
+  "author": "",
+  "description": "Moving the mouse changes the position and size of each box.",
+  "featured": []
+}
