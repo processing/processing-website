@@ -1,1 +1,7 @@
-{"name":"Composite Objects","title":"Composite Objects","author":"","description":"An object can include several other objects. Creating such composite objects \n  is a good way to use the principles of modularity and build higher levels of \n  abstraction within a program.","featured":[]}
+{
+  "name": "Composite Objects",
+  "title": "Composite Objects",
+  "author": "",
+  "description": "An object can include several other objects. Creating such composite objects \n  is a good way to use the principles of modularity and build higher levels of \n  abstraction within a program.",
+  "featured": []
+}

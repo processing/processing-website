@@ -1,1 +1,7 @@
-{"name":"Simple Particle System","title":"Simple Particle Systemby Daniel Shiffman","author":"","description":"Particles are generated each cycle through draw(),\n  fall with gravity and fade out over time\n  A ParticleSystem object manages a variable size (ArrayList) \n  list of particles.","featured":[]}
+{
+  "name": "Simple Particle System",
+  "title": "Simple Particle Systemby Daniel Shiffman",
+  "author": "",
+  "description": "Particles are generated each cycle through draw(),\n  fall with gravity and fade out over time\n  A ParticleSystem object manages a variable size (ArrayList) \n  list of particles.",
+  "featured": []
+}

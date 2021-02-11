@@ -1,1 +1,7 @@
-{"name":"Operator Precedence","title":"Operator Precedence","author":"","description":"If you don't explicitly state the order in which\n  an expression is evaluated, they are evaluated based\n  on the operator precedence. For example, in the statement\n  \"4+28\", the 2 will first be multiplied by 8 and then the result will\n  be added to 4. This is because the \"\" has a higher precedence\n  than the \"+\". To avoid ambiguity in reading the program, \n  it is recommended that is statement is written as \"4+(28)\".\n  The order of evaluation can be controlled through placement of\n  parenthesis in the code. A table of operator precedence follows below.","featured":[]}
+{
+  "name": "Operator Precedence",
+  "title": "Operator Precedence",
+  "author": "",
+  "description": "If you don't explicitly state the order in which\n  an expression is evaluated, they are evaluated based\n  on the operator precedence. For example, in the statement\n  \"4+28\", the 2 will first be multiplied by 8 and then the result will\n  be added to 4. This is because the \"\" has a higher precedence\n  than the \"+\". To avoid ambiguity in reading the program, \n  it is recommended that is statement is written as \"4+(28)\".\n  The order of evaluation can be controlled through placement of\n  parenthesis in the code. A table of operator precedence follows below.",
+  "featured": []
+}

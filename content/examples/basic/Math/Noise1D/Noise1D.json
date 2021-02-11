@@ -1,1 +1,7 @@
-{"name":"Noise1 D","title":"Noise1D","author":"","description":"Using 1D Perlin Noise to assign location.","featured":[]}
+{
+  "name": "Noise1 D",
+  "title": "Noise1D",
+  "author": "",
+  "description": "Using 1D Perlin Noise to assign location.",
+  "featured": []
+}

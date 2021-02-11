@@ -1,1 +1,7 @@
-{"name":"Reach3","title":"Reach 3   based on code from Keith Peters","author":"","description":"The arm follows the position of the ball by\n  calculating the angles with atan2().","featured":[]}
+{
+  "name": "Reach3",
+  "title": "Reach 3   based on code from Keith Peters",
+  "author": "",
+  "description": "The arm follows the position of the ball by\n  calculating the angles with atan2().",
+  "featured": []
+}

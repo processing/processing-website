@@ -1,1 +1,7 @@
-{"name":"Bouncing Ball","title":"Bouncing Ball with Vectors","author":"Daniel Shiffman","description":"Demonstration of using vectors to control motion of body\n  This example is not object-oriented\n  See AccelerationWithVectors for an example of how to simulate motion using vectors in an object","featured":[]}
+{
+  "name": "Bouncing Ball",
+  "title": "Bouncing Ball with Vectors",
+  "author": "Daniel Shiffman",
+  "description": "Demonstration of using vectors to control motion of body\n  This example is not object-oriented\n  See AccelerationWithVectors for an example of how to simulate motion using vectors in an object",
+  "featured": []
+}

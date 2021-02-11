@@ -1,1 +1,7 @@
-{"name":"Vector Math","title":"Vector","author":"Daniel Shiffman","description":"Demonstration some basic vector math: subtraction, normalization, scaling\n  Normalizing a vector sets its length to 1.","featured":[]}
+{
+  "name": "Vector Math",
+  "title": "Vector",
+  "author": "Daniel Shiffman",
+  "description": "Demonstration some basic vector math: subtraction, normalization, scaling\n  Normalizing a vector sets its length to 1.",
+  "featured": []
+}
