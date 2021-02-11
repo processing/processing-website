@@ -2,6 +2,8 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
     title: `Processing`,
@@ -186,7 +188,7 @@ module.exports = {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: `${__dirname}/src/images`, // See below to configure properly
+          include: path.resolve(__dirname, 'src/images'),
         },
       },
     },
