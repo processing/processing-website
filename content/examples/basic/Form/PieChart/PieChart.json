@@ -3,5 +3,5 @@
   "title": "Pie Chart",
   "author": "",
   "description": "Uses the arc() function to generate a pie chart from the data\n  stored in an array.",
-  "featured": []
+  "featured": ["arc_"]
 }
