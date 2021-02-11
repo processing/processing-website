@@ -36,5 +36,5 @@ void drawType(float x) {
   fill(204);
   text("san", x, 395);
   fill(255);
-  text("shi", x, 495);
+  text("shi", x, 515);
 }
