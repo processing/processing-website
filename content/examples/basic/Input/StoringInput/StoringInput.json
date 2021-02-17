@@ -3,5 +3,5 @@
   "title": "Storing Input",
   "author": "",
   "description": "Move the mouse across the screen to change the position\n  of the circles. The positions of the mouse are recorded\n  into an array and played back every frame. Between each\n  frame, the newest value are added to the end of each array\n  and the oldest value is deleted.",
-  "featured": []
+  "featured": ["Array", "mouseX", "mouseY"]
 }
