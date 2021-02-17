@@ -3,5 +3,5 @@
   "title": "Letters",
   "author": "",
   "description": "Draws letters to the screen. This requires loading a font, \n  setting the font, and then drawing the letters.",
-  "featured": []
+  "featured": ["createFont_", "textFont_", "text_"]
 }

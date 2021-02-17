@@ -3,5 +3,5 @@
   "title": "Loading Images",
   "author": "",
   "description": "Processing applications can load images from the network.",
-  "featured": []
+  "featured": ["loadImage_", "image_"]
 }
