@@ -3,5 +3,5 @@
   "title": "Array Objects",
   "author": "",
   "description": "Demonstrates the syntax for creating an array of custom objects.",
-  "featured": ["ellipse"]
+  "featured": ["Array", "Object"]
 }
