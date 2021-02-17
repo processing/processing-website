@@ -3,5 +3,5 @@
   "title": "No Loop",
   "author": "",
   "description": "The noLoop() function causes draw() to only run once. \n  Without calling noLoop(), the code inside draw() is \n  run continually.",
-  "featured": []
+  "featured": ["noLoop_"]
 }

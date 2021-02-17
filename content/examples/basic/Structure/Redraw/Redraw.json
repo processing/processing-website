@@ -3,5 +3,5 @@
   "title": "Redraw",
   "author": "",
   "description": "The redraw() function makes draw() execute once.  \n  In this example, draw() is executed once every time \n  the mouse is clicked.",
-  "featured": []
+  "featured": ["redraw_", "noLoop_"]
 }
