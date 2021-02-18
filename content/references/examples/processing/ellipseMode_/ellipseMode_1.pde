@@ -1,3 +1,5 @@
+size(400, 400);
+
 ellipseMode(CORNER);  // Set ellipseMode is CORNER
 fill(255);  // Set fill to white
 ellipse(100, 100, 200, 200);  // Draw white ellipse using CORNER mode
