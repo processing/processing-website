@@ -1,9 +1,9 @@
 float[] distribution = new float[360];
 
 void setup() {
-  size(100, 100);
+  size(400, 400);
   for (int i = 0; i < distribution.length; i++) {
-    distribution[i] = int(randomGaussian() * 15);
+    distribution[i] = int(randomGaussian() * 60);
   }
 }
 
