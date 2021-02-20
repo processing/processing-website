@@ -3,5 +3,5 @@
   "title": "Load and Display an OBJ Shape",
   "author": "",
   "description": "The loadShape() command is used to read simple SVG (Scalable Vector Graphics)\n  files and OBJ (Object) files into a Processing sketch. This example loads an\n  OBJ file of a rocket and displays it to the screen.",
-  "featured": ["loadShape_", "shape_"]
+  "featured": ["PShape", "loadShape_", "shape_"]
 }
