@@ -3,5 +3,5 @@
   "title": "Rollover",
   "author": "",
   "description": "Roll over the colored squares in the center of the image\n  to change the color of the outside rectangle.",
-  "featured": []
+  "featured": ["ellipseMode_", "ellipse_", "sqrt_", "sq_", "color_"]
 }

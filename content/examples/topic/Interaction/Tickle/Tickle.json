@@ -3,5 +3,5 @@
   "title": "Tickle",
   "author": "",
   "description": "The word \"tickle\" jitters when the cursor hovers over.\n  Sometimes, it can be tickled off the screen.",
-  "featured": []
+  "featured": ["textFont_", "createFont_", "textAlign_", "textWidth_", "textAscent_", "textDescent_"]
 }

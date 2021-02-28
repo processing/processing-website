@@ -1,7 +1,7 @@
 {
   "name": "Reach1",
-  "title": "Reach 1  based on code from Keith Peters",
-  "author": "",
+  "title": "Reach 1",
+  "author": "based on code from Keith Peters",
   "description": "The arm follows the position of the mouse by\n  calculating the angles with atan2().",
-  "featured": []
+  "featured": ["atan2_", "cos_", "sin_", "pushMatrix_", "popMatrix_", "translate_"]
 }

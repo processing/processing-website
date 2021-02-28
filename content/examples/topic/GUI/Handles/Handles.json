@@ -3,5 +3,5 @@
   "title": "Handles",
   "author": "",
   "description": "Click and drag the white boxes to change their position.",
-  "featured": []
+  "featured": ["class", "Array"]
 }

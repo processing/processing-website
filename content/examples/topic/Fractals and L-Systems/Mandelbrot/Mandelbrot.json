@@ -1,7 +1,7 @@
 {
   "name": "Mandelbrot",
-  "title": "The Mandelbrot Setby Daniel Shiffman   (slight modification",
-  "author": "l8l)",
+  "title": "The Mandelbrot Set",
+  "author": "Daniel Shiffman (slight modification by l8l)",
   "description": "Simple rendering of the Mandelbrot set.",
-  "featured": []
+  "featured": ["loadPixels_", "updatePixels_", "pixels[]"]
 }
