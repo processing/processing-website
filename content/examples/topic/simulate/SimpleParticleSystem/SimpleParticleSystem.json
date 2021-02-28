@@ -1,7 +1,7 @@
 {
   "name": "Simple Particle System",
-  "title": "Simple Particle Systemby Daniel Shiffman",
-  "author": "",
+  "title": "Simple Particle System",
+  "author": "Daniel Shiffman",
   "description": "Particles are generated each cycle through draw(),\n  fall with gravity and fade out over time\n  A ParticleSystem object manages a variable size (ArrayList) \n  list of particles.",
-  "featured": []
+  "featured": ["ArrayList", "class", "PVector", "PVector_add_", "ellipse_"]
 }

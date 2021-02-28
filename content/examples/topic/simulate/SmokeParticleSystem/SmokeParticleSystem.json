@@ -3,5 +3,5 @@
   "title": "Smoke Particle Systemby Daniel Shiffman",
   "author": "",
   "description": "A basic smoke effect using a particle system. Each particle\n  is rendered as an alpha masked image.",
-  "featured": []
+  "featured": ["ArrayList", "class", "PVector", "PImage", "tint_", "image_"]
 }
