@@ -3,5 +3,5 @@
   "title": "Scrollbar",
   "author": "",
   "description": "Move the scrollbars left and right to change the positions of the images.",
-  "featured": []
+  "featured": ["class", "image_", "PImage"]
 }
