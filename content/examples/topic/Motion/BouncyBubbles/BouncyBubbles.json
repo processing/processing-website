@@ -1,7 +1,7 @@
 {
   "name": "Bouncy Bubbles",
-  "title": "Bouncy Bubbles   based on code from Keith Peters",
-  "author": "",
+  "title": "Bouncy Bubbles",
+  "author": "based on code from Keith Peters",
   "description": "Multiple-object collision.",
-  "featured": []
+  "featured": ["class", "random_", "Array", "atan2_"]
 }

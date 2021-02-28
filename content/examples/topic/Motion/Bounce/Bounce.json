@@ -3,5 +3,5 @@
   "title": "Bounce",
   "author": "",
   "description": "When the shape hits the edge of the window, it reverses its direction.",
-  "featured": []
+  "featured": ["ellipseMode_", "ellipse_"]
 }

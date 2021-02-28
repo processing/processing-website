@@ -3,5 +3,5 @@
   "title": "Non-orthogonal Collision with Multiple Ground Segments",
   "author": "Ira Greenberg",
   "description": "Based on Keith Peter's Solution in\n  Foundation Actionscript Animation: Making Things Move!",
-  "featured": []
+  "featured": ["PVector", "Array", "beginShape_", "endShape_", "vertex_"]
 }
