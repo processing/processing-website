@@ -2,6 +2,8 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
     title: `Processing`,
@@ -90,70 +92,70 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: path.resolve(__dirname, 'src/images'),
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `env-images`,
-        path: `${__dirname}/content/pages`,
+        path: path.resolve(__dirname, 'content/pages'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'json',
-        path: `${__dirname}/content/references/translations`,
+        path: path.resolve(__dirname, 'content/references/translations'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'in-examples',
-        path: `${__dirname}/content/references/examples`,
+        path: path.resolve(__dirname, 'content/references/examples'),
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
-        path: `${__dirname}/content/pages`,
+        path: path.resolve(__dirname, 'content/pages'),
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'examples',
-        path: `${__dirname}/content/examples`,
+        path: path.resolve(__dirname, 'content/examples'),
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `tutorials`,
-        path: `${__dirname}/content/tutorials`,
+        path: path.resolve(__dirname, 'content/tutorials'),
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `contributions`,
-        path: `${__dirname}/content/contributions`,
+        path: path.resolve(__dirname, 'content/contributions'),
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `tools`,
-        path: `${__dirname}/content/tools`,
+        path: path.resolve(__dirname, 'content/tools'),
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `books`,
-        path: `${__dirname}/content/books`,
+        path: path.resolve(__dirname, 'content/books'),
       },
     },
     `gatsby-transformer-sharp`,
@@ -186,7 +188,7 @@ module.exports = {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: `${__dirname}/src/images`, // See below to configure properly
+          include: path.resolve(__dirname, 'src/images'),
         },
       },
     },
