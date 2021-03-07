@@ -59,13 +59,10 @@ Arcs are fine, but they're plain. The next function, `curve()`, lets you draw cu
 curve(cpx1, cpy1, x1, y1, x2, y2, cpx2, cpy2);
 ```
 
-**cpx1, cpy1** 	Coordinates of the first control point
-
-**x1, y1** 	Coordinates of the curve's starting point
-
-**x2, y2** 	Coordinates of the curve's ending point
-
-**cpx2, cpy2** 	Coordinates of the second control point
+- **cpx1, cpy1** - Coordinates of the first control point
+- **x1, y1** - Coordinates of the curve's starting point
+- **x2, y2** - Coordinates of the curve's ending point
+- **cpx2, cpy2** - Coordinates of the second control point
 
 Here is an example that shows a `curve()`. The control
 points are shown in red and the curve points in blue.
@@ -143,13 +140,10 @@ Though better than arcs, spline curves don't seem to have those graceful, swoopi
 bezier(x1, y1, cpx1, cpy1, cpx2, cpy2, x2, y2);
 ```
 
-**x1, y1** 	Coordinates of the curve's starting point
-
-**cpx1, cpy1** 	Coordinates of the first control point
-
-**cpx2, cpy2** 	Coordinates of the second control point
-
-**x2, y2** 	Coordinates of the curve's ending point
+- **x1, y1** - Coordinates of the curve's starting point
+- **cpx1, cpy1** - Coordinates of the first control point
+- **cpx2, cpy2** - Coordinates of the second control point
+- **x2, y2** - Coordinates of the curve's ending point
 
 Here is a program that displays a B&eacute;zier curve and its control points.
   
@@ -182,11 +176,9 @@ Just as `curveVertex()` allows you to make continuous spline curves, `bezierVert
 bezierVertex(cpx1, cpy1, cpx2, cpy2, x, y);
 ```
 
-**cpx1, cpy1** 	Coordinates of the first control point
-
-**cpx2, cpy2** 	Coordinates of the second control point
-
-**x, y** 	The next point on the curve 
+- **cpx1, cpy1** - Coordinates of the first control point
+- **cpx2, cpy2** - Coordinates of the second control point
+- **x, y** - The next point on the curve 
 
 So, to draw the previous example using `bezierVertex()`, you would do this:
 
@@ -240,4 +232,3 @@ endShape();
 - Use `arc()` when you need a segment of a circle or an ellipse. You can't make continuous arcs or use them as part of a shape.
 - Use `curve()` when you need a small curve between two points. Use `curveVertex()` to make a continuous series of curves as part of a shape.
 - Use `bezier()` when you need long, smooth curves. Use `bezierVertex()` to make a continuous series of B&eacute;zier curves as part of a shape.
-
