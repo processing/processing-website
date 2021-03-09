@@ -1,3 +1,4 @@
+size(400,400);
 noStroke();
 colorMode(HSB, 255);
 color c = color(0, 126, 255);

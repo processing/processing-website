@@ -1,3 +1,4 @@
+size(400,400);
 arc(50, 55, 50, 50, 0, HALF_PI);
 noFill();
 arc(50, 55, 60, 60, HALF_PI, PI);

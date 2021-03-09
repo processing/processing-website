@@ -1,4 +1,4 @@
-size(800,800);
+size(400,400);
 background(loadImage("mt-fuji.jpg"));
 PImage img = loadImage("dandelions.jpg");
 image(img, 0, 0);

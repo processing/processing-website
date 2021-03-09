@@ -1,6 +1,7 @@
 PShape s;
 
 void setup() {
+  size(400,400);
   s = loadShape("bot.svg");
 }
 

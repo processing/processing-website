@@ -1,3 +1,4 @@
+size(400,400);
 color c;  // Declare color 'c'
 noStroke();  // Don't draw a stroke around shapes
 
