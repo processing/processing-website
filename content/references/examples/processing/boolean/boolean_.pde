@@ -1,4 +1,5 @@
 
+size(400,400);
 boolean a = false; 
 if (!a) { 
   rect(120, 80, 200, 200); 

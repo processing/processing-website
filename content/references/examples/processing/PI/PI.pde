@@ -1,3 +1,4 @@
+size(400, 400);
 float x = width/2;
 float y = height/2;
 float d = width * 0.8;

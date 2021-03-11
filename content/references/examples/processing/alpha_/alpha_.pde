@@ -1,3 +1,4 @@
+size(400,400);
 noStroke();
 color c = color(0, 126, 255, 102);
 fill(c);

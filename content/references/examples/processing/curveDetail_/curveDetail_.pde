@@ -1,3 +1,7 @@
+void setup(){
+  size(400,400);
+}
+
 void draw() {
   curveDetail(1);
   drawCurves(-60);
@@ -10,6 +14,7 @@ void draw() {
 }
 
 void drawCurves(float y) {
+  noFill();
   curve( 20, 112+y,  20, 112+y, 292, 104+y, 292, 252+y);
   curve( 20, 112+y, 292, 104+y, 292, 252+y, 60, 268+y); 
   curve(292, 104+y, 292, 252+y, 60, 268+y, 60, 268+y);

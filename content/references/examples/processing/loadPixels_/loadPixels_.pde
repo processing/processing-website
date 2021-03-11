@@ -1,3 +1,4 @@
+size(400,400);
 int halfImage = width*height/2;
 PImage myImage = loadImage("mt-fuji.jpg");
 image(myImage, 0, 0);

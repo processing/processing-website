@@ -1,3 +1,4 @@
+size(400, 400);
 PFont font;
 // The font must be located in the sketch's 
 // "data" directory to load successfully

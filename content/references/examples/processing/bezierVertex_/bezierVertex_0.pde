@@ -1,3 +1,4 @@
+size(400,400);
 noFill();
 beginShape();
 vertex(120, 80);

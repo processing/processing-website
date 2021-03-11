@@ -1,3 +1,4 @@
+size(400,400);
 PImage img = loadImage("mt-fuji.jpg");
 image(img, 0, 0);
 int halfImage = img.width * img.height/2;

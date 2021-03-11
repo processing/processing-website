@@ -1,4 +1,5 @@
-background(loadImage("rockies.jpg"));
-PImage img = loadImage("bricks.jpg");
+size(400,400);
+background(loadImage("mt-fuji.jpg"));
+PImage img = loadImage("dandelions.jpg");
 image(img, 0, 0);
-blend(img, 0, 0, 33, 100, 67, 0, 33, 100, ADD);
+blend(img, 0, 0, 132, 400, 268, 0, 132, 400, ADD); 

@@ -1,3 +1,4 @@
+size(400,400);
 color c = color(175, 100, 220);  // Define color 'c'
 fill(c);  // Use color variable 'c' as fill color
 rect(60, 80, 140, 240);  // Draw left rectangle

@@ -1,6 +1,7 @@
 
-stroke(255);
+size(400,400);
 background(51);
+stroke(255);
 color from = color(204, 102, 0);
 color to = color(0, 102, 153);
 color interA = lerpColor(from, to, .33);

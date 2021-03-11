@@ -1,3 +1,4 @@
+size(400,400);
 noStroke();
 colorMode(RGB, 400);
 for (int i = 0; i < 400; i++) {
