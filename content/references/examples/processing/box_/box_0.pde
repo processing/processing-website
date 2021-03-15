@@ -1,4 +1,5 @@
-translate(464, 384, 0); 
+size(400,400,P3D);
+translate(232, 192, 0); 
 rotateY(0.5);
 noFill();
-box(320);
+box(160);

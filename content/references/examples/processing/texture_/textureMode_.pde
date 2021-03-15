@@ -1,0 +1,11 @@
+size(400, 400, P3D);
+noStroke();
+PImage img = loadImage("shells.jpg");
+textureMode(NORMAL); 
+beginShape();
+texture(img);
+vertex(40, 80, 0, 0);
+vertex(320, 20, 1, 0);
+vertex(380, 360, 1, 1);
+vertex(160, 380, 0, 1);
+endShape();
