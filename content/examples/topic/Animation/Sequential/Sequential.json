@@ -1,7 +1,7 @@
 {
   "name": "Sequential",
-  "title": "Sequentialby James Paterson",
-  "author": "",
+  "title": "Sequential",
+  "author": "James Paterson",
   "description": "Displaying a sequence of images creates the illusion of motion. \n  Twelve images are loaded and each is displayed individually in a loop.",
-  "featured": []
+  "featured": ["PImage", "Array", "loadImage_", "image_"]
 }

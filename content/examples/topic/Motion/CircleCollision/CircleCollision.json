@@ -1,7 +1,7 @@
 {
   "name": "Circle Collision",
-  "title": "Circle Collision with Swapping Velocitiesby Ira Greenberg",
-  "author": "",
+  "title": "Circle Collision with Swapping Velocities",
+  "author": "Ira Greenberg",
   "description": "Based on Keith Peter's Solution in\n  Foundation Actionscript Animation: Making Things Move!",
-  "featured": []
+  "featured": ["PVector", "PVector_random2D_", "PVector_normalize_", "PVector_heading_", "PVector_mag_"]
 }

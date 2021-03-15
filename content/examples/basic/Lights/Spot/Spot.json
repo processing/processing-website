@@ -3,5 +3,5 @@
   "title": "Spot",
   "author": "",
   "description": "Move the mouse the change the position and concentation\n  of a blue spot light.",
-  "featured": []
+  "featured": ["spotLight_"]
 }

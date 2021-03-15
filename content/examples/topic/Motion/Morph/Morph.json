@@ -3,5 +3,5 @@
   "title": "Morph",
   "author": "",
   "description": "Changing one shape into another by interpolating\n  vertices from one to another",
-  "featured": []
+  "featured": ["ArrayList", "PVector", "PVector_dist_"]
 }

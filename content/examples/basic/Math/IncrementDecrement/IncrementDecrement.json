@@ -3,5 +3,5 @@
   "title": "Increment Decrement",
   "author": "",
   "description": "Writing \"a++\" is equivalent to \"a = a + 1\".  \n  Writing \"a--\" is equivalent to \"a = a - 1\".",
-  "featured": []
+  "featured": ["increment", "decrement"]
 }

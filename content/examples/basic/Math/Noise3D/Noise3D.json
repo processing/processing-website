@@ -3,5 +3,5 @@
   "title": "Noise3D",
   "author": "",
   "description": "Using 3D noise to create simple animated texture. \n  Here, the third dimension ('z') is treated as time.",
-  "featured": []
+  "featured": ["noise_"]
 }

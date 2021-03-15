@@ -3,5 +3,5 @@
   "title": "Rotate 1",
   "author": "",
   "description": "Rotating simultaneously in the X and Y axis. \n  Transformation functions such as rotate() are additive.\n  Successively calling rotate(1.0) and rotate(2.0)\n  is equivalent to calling rotate(3.0).",
-  "featured": []
+  "featured": ["rotateX_", "rotateY_"]
 }

@@ -3,5 +3,5 @@
   "title": "Create Image",
   "author": "",
   "description": "The createImage() function provides a fresh buffer of pixels to play with. This example creates an image gradient.",
-  "featured": []
+  "featured": ["createImage_", "PImage"]
 }

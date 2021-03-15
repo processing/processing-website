@@ -3,5 +3,5 @@
   "title": "Sine",
   "author": "",
   "description": "Smoothly scaling size with the sin() function.",
-  "featured": []
+  "featured": ["sin_"]
 }

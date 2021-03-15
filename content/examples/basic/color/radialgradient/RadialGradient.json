@@ -3,5 +3,5 @@
   "title": "Radial Gradient",
   "author": "",
   "description": "Draws a series of concentric circles to create a gradient \n  from one color to another.",
-  "featured": []
+  "featured": ["colorMode_", "fill_"]
 }

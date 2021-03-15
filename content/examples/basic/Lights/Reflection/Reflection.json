@@ -3,5 +3,5 @@
   "title": "Reflection",
   "author": "Simon Greenwold",
   "description": "Vary the specular reflection component of a material\n  with the horizontal position of the mouse.",
-  "featured": []
+  "featured": ["lightSpecular_", "specular_"]
 }

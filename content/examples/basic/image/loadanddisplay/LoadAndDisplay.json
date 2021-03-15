@@ -3,5 +3,5 @@
   "title": "Load and Display",
   "author": "",
   "description": "Images can be loaded and displayed to the screen at their actual size or any other size.",
-  "featured": []
+  "featured": ["loadImage_", "image_", "PImage"]
 }

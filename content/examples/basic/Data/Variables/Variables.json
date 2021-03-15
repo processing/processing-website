@@ -3,5 +3,5 @@
   "title": "Variables",
   "author": "",
   "description": "Variables are used for storing values. In this example, change \n  the values of variables to affect the composition.",
-  "featured": []
+  "featured": ["int"]
 }

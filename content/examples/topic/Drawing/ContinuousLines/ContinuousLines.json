@@ -3,5 +3,5 @@
   "title": "Continuous Lines",
   "author": "",
   "description": "Click and drag the mouse to draw a line.",
-  "featured": []
+  "featured": ["mouseX", "mouseY", "pmouseX", "pmouseY", "mousePressed", "line_" ]
 }

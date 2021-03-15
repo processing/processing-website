@@ -3,5 +3,5 @@
   "title": "Move Eye",
   "author": "Simon Greenwold",
   "description": "The camera lifts up (controlled by mouseY) while looking at the same point.",
-  "featured": []
+  "featured": ["camera_"]
 }

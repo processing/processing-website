@@ -3,5 +3,5 @@
   "title": "Brownian motion",
   "author": "",
   "description": "Recording random movement as a continuous line.",
-  "featured": []
+  "featured": ["Array", "random_", "constrain_", "stroke_", "line_"]
 }

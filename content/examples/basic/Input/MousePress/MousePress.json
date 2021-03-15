@@ -3,5 +3,5 @@
   "title": "Mouse Press",
   "author": "",
   "description": "Move the mouse to position the shape. \n  Press the mouse button to invert the color.",
-  "featured": []
+  "featured": ["mousePressed", "mouseX", "mouseY"]
 }

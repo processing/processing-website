@@ -3,5 +3,5 @@
   "title": "Mixture Grid   modified from an example",
   "author": "Simon Greenwold",
   "description": "Display a 2D grid of boxes with three different kinds of lights.",
-  "featured": []
+  "featured": ["pointLight_", "directionalLight_", "spotLight_"]
 }

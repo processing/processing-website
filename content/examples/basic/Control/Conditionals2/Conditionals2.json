@@ -3,5 +3,5 @@
   "title": "Conditionals 2",
   "author": "",
   "description": "We extend the language of conditionals from the previous\n  example by adding the keyword \"else\". This allows conditionals \n  to ask two or more sequential questions, each with a different\n  action.",
-  "featured": []
+  "featured": ["if", "else"]
 }
