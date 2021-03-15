@@ -13,7 +13,7 @@ void setup() {
   
   // Create the font
   printArray(PFont.list());
-  f = createFont("SourceCodePro-Regular.ttf", 24);
+  f = createFont("SpaceMono-Regular.ttf", 18);
   textFont(f);
 }
 
