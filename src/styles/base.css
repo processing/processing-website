@@ -116,6 +116,11 @@ p code {
   margin: 0;
 }
 
+hr {
+  margin: var(--vertical-gutter) 0;
+  border: 1px solid var(--lightgray);
+}
+
 input,
 select,
 button {

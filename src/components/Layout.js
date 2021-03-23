@@ -9,9 +9,10 @@ import Footer from './Footer';
 
 import { useWindowSize } from '../utils/hooks';
 
+import Column from './mdx/Column';
 import FixedImage from './mdx/FixedImage';
-import Intro from './mdx/Intro';
 import HighlightBlock from './mdx/HighlightBlock';
+import Intro from './mdx/Intro';
 import Note from './mdx/Note';
 
 import '../styles/base.css';
@@ -58,9 +59,10 @@ const Layout = ({ children, isHomepage, hasSidebar }) => {
   });
 
   const shortcodes = {
+    Column,
     FixedImage,
-    Intro,
     HighlightBlock,
+    Intro,
     Note,
     img: (props) => <img {...props} alt=""></img>,
   };
