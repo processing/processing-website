@@ -69,9 +69,7 @@ module.exports = {
         postCssPlugins: [
           require(`postcss-import`),
           require('postcss-normalize'),
-          require(`postcss-preset-env`)({
-            stage: 0,
-          }),
+          require('postcss-nesting'),
           require('postcss-custom-properties')({
             importFrom: './src/styles/variables.css',
           }),
@@ -79,6 +77,7 @@ module.exports = {
           require(`postcss-functions`)({
             functions: require('./src/styles/functions'),
           }),
+          require('postcss-custom-media')(),
         ],
       },
     },
