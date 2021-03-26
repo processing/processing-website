@@ -51,7 +51,7 @@ const Sidebar = (props) => {
 
   const widthStyle =
     windowWidth <= 960 && show
-      ? `var(--col4)`
+      ? `100%`
       : windowWidth <= 960 && !show
       ? `var(--margin-double)`
       : show
@@ -71,8 +71,8 @@ const Sidebar = (props) => {
         }}>
         <div
           className={css.toggleButton}
-          onClick={(e) => onChange(!show)}
-          onKeyDown={(e) => onChange(!show)}
+          onClick={(e) => onChange(e, !show)}
+          onKeyDown={(e) => onChange(e, !show)}
           role={'button'}
           tabIndex={'0'}>
           {show ? '×' : '+'}

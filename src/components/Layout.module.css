@@ -5,10 +5,6 @@ main {
   transition: 0.2s ease-in-out;
   padding-bottom: var(--vertical-gutter);
   margin-bottom: 60px;
-
-  @media (--small) {
-    top: 100px;
-  }
 }
 
 .root {
@@ -20,9 +16,6 @@ main {
 
 .headerScrolled {
   top: 60px;
-  @media (--small) {
-    top: 100px;
-  }
 }
 
 .homepage {
@@ -33,4 +26,14 @@ main {
 .hasSidebar {
   padding-bottom: 0px;
   margin-bottom: 0px;
+}
+
+@media (--small) {
+  main {
+    top: 100px;
+  }
+
+  .headerScrolled {
+    top: 100px;
+  }
 }

@@ -10,10 +10,6 @@
   & h3 {
     color: var(--processing-blue-mid);
   }
-
-  @media (--reduced) {
-    display: none;
-  }
 }
 
 .donate {
@@ -21,4 +17,10 @@
   color: white;
   background-color: var(--processing-blue-dark);
   border-radius: 20px;
+}
+
+@media (--reduced) {
+  .root {
+    display: none;
+  }
 }

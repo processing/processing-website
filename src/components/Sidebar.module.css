@@ -6,25 +6,6 @@
   overflow: hidden;
   height: 100%;
   white-space: nowrap;
-
-  @media (--reduced) {
-    width: var(--margin-double);
-    position: absolute;
-    left: auto;
-    right: 0;
-  }
-
-  @media (--small) {
-    width: var(--margin-double);
-    left: auto;
-    right: 0;
-  }
-}
-
-.root.show {
-  @media (--reduced) {
-    width: 100%;
-  }
 }
 
 .sidebarWrapper {
@@ -55,20 +36,6 @@
       color: var(--processing-blue-mid);
     }
   }
-
-  @media (--reduced) {
-    right: 0;
-    left: auto;
-  }
-
-  @media (--small) {
-    padding-left: calc(var(--margin) + var(--gutter));
-    padding-right: calc(var(--margin) + var(--gutter));
-    padding-bottom: var(--vertical-gutter);
-    width: var(--col8);
-    left: auto;
-    right: 0;
-  }
 }
 
 .sidebarWrapper.headerScrolled {
@@ -83,15 +50,6 @@
     padding-left: var(--margin);
     padding-right: var(--gutter);
     max-width: calc((100% + var(--margin) * 2 + var(--gutter) * 40) / 8 * 1.5);
-  }
-
-  @media (--small) {
-    padding-left: calc(var(--margin) + var(--gutter));
-    padding-right: calc(var(--margin) + var(--gutter));
-    padding-bottom: var(--vertical-gutter);
-    width: var(--col8);
-    left: auto;
-    right: 0;
   }
 }
 
@@ -109,4 +67,61 @@
   flex-grow: 1;
   position: relative;
   overflow-y: auto;
+}
+
+@media (--reduced) {
+  .root {
+    width: var(--margin-double);
+    position: absolute;
+    left: auto;
+    right: 0;
+  }
+
+  .root.show {
+    width: 100%;
+  }
+
+  .show {
+    & .sidebarWrapper {
+      max-width: none;
+    }
+  }
+
+  .sidebarWrapper {
+    right: 0;
+    left: auto;
+    width: 100%;
+    max-width: auto;
+  }
+}
+
+@media (--small) {
+  .root {
+    right: 0;
+    left: auto;
+    width: var(--margin);
+  }
+
+  .sidebarWrapper {
+    top: 100px;
+    right: 0;
+    left: auto;
+    height: calc(100vh - 100px);
+    width: var(--col8);
+    padding-left: calc(var(--margin-mobile) + var(--gutter-mobile));
+    padding-right: calc(var(--margin-mobile) + var(--gutter-mobile));
+    padding-bottom: var(--vertical-gutter);
+  }
+
+  .show {
+    right: 0;
+    left: auto;
+    width: var(--col8);
+    padding-left: calc(var(--margin-mobile) + var(--gutter-mobile));
+    padding-right: calc(var(--margin-mobile) + var(--gutter-mobile));
+    padding-bottom: var(--vertical-gutter);
+    & .sidebarWrapper {
+      max-width: auto;
+    }
+  }
 }

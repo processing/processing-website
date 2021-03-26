@@ -36,6 +36,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
   const images = data.images.edges;
 
   const toggleSidebar = (e, show) => {
+    console.log(e);
     if (e.type === 'click') setShow(show);
     else if (e.keyCode === 13) setShow(show);
   };
