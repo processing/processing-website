@@ -4,17 +4,26 @@ import { titleCase as _titleCase } from 'title-case';
 export const titleCase = (slug) => _titleCase(slug.replace(/_/g, ' '));
 
 //filters the references/examples based on a search text
-export const filterItems = (items, searchTerm) => {
+export const filterItems = (items, searchTerm, propsToFilter) => {
   if (searchTerm && searchTerm !== '') {
     const searchTerms = searchTerm.split(' ');
     return items.filter((item) => {
       try {
         return item.childJson
-          ? searchTerms.every((term) =>
-              JSON.stringify(Object.values(item.childJson))
+          ? searchTerms.every((term) => {
+              let data = {};
+              if (propsToFilter) {
+                for (let i = 0; i < propsToFilter.length; i++) {
+                  const prop = propsToFilter[i];
+                  data[prop] = item.childJson[prop];
+                }
+              } else {
+                data = item.childJson;
+              }
+              return JSON.stringify(Object.values(data))
                 .toLowerCase()
-                .includes(term.toLowerCase())
-            )
+                .includes(term.toLowerCase());
+            })
           : searchTerms.every((term) =>
               JSON.stringify(item).toLowerCase().includes(term.toLowerCase())
             );
@@ -75,8 +84,9 @@ export const organizeExampleItems = (items, images) => {
     const image = images
       ? images.find((img) => img.relativeDirectory === item.relativeDirectory)
       : '';
-    const category = item.relativeDirectory.split('/')[0];
-    const subcategory = item.relativeDirectory.split('/')[1];
+    const parts = item.relativeDirectory.split('/')[0];
+    const category = parts[0];
+    const subcategory = parts[1];
 
     let categoryIndex = tree.findIndex((cat) => cat.slug === category);
 

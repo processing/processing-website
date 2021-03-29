@@ -23,9 +23,11 @@ const TutorialTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
       <Helmet>
-        <title>{mdx && mdx.frontmatter.title}</title>
+        <title>{mdx && mdx.frontmatter.title} / Tutorial</title>
       </Helmet>
-      <div className={classnames(grid.grid, css.root)} ref={ref}>
+      <div
+        className={classnames(grid.grid, css.root, css.withSidebar)}
+        ref={ref}>
         {mdx !== null ? (
           <Fragment>
             <h1 className={grid.col}>{mdx.frontmatter.title}</h1>

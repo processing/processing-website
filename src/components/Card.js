@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Link } from 'gatsby';
@@ -15,7 +15,6 @@ export const Card = ({
   children,
   description,
 }) => {
-  const [hovered, setHovered] = useState(false);
   const classNames = classnames(css.root, className, {
     [css[color]]: color,
   });
@@ -23,28 +22,15 @@ export const Card = ({
   return (
     <>
       {to ? (
-        <Link
-          className={classNames}
-          to={to}
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}>
+        <Link className={classNames} to={to}>
           {children}
         </Link>
       ) : href ? (
-        <a
-          className={classNames}
-          href={href}
-          target={target}
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}>
+        <a className={classNames} href={href} target={target}>
           {children}
         </a>
       ) : (
-        <button
-          className={classNames}
-          onClick={onClick}
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}>
+        <button className={classNames} onClick={onClick}>
           {children}
         </button>
       )}

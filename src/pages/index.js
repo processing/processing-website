@@ -79,7 +79,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout isHomepage>
       <Helmet>
-        <title>{'Welcome to Processing!'}</title>
+        <title>Welcome to Processing!</title>
       </Helmet>
       <div className={classnames(css.hero, grid.grid, grid.rightBleed)}>
         <div className={classnames(grid.col, css.intro)}>

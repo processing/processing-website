@@ -6,7 +6,6 @@ import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 import Img from 'gatsby-image';
 
-import Footer from '../../components/Footer';
 import Layout from '../../components/Layout';
 import Sidebar from '../../components/Sidebar';
 import Tabs from '../../components/Tabs';
@@ -22,14 +21,10 @@ const ExampleTemplate = ({ data, pageContext }) => {
   const [show, setShow] = useState(width > 960 ? true : false);
   const intl = useIntl();
 
-  let json, subcategory;
+  const example = data?.json?.childJson;
+  const subcategory = data?.json?.relativeDirectory.split('/')[1];
 
-  if (data.json !== null) {
-    json = data.json;
-    subcategory = data.json.relativeDirectory.split('/')[1];
-  }
-
-  const mainPde = data.pdes.nodes.find(
+  const mainPde = data?.pdes?.nodes.find(
     (pde) => pde.name === pageContext.name.split('.')[0]
   );
 
@@ -39,31 +34,26 @@ const ExampleTemplate = ({ data, pageContext }) => {
 
   orderedPdes.unshift(mainPde);
 
-  const related = data.examples.nodes.filter(
+  const related = data?.examples?.nodes.filter(
     (item) => item.relativeDirectory.split('/')[1] === subcategory
   );
 
-  const images = data.images.nodes;
+  const images = data?.images?.nodes;
 
   const relatedExamples = useMemo(() => {
     const items = organizeExampleItems(related, images)[0];
     return items && items.length > 0 ? items.children[0].children : [];
   }, [related, images]);
 
-  const toggleSidebar = (e, show) => {
-    if (e.type === 'click') setShow(show);
-    else if (e.keyCode === 13) setShow(show);
-  };
-
   return (
-    <Layout hasSidebar>
+    <Layout withSidebar>
       <Helmet>
-        <title>{data.json && json.childJson.title}</title>
+        <title> {example.title ?? ''} / Examples</title>
       </Helmet>
       <div className={classnames(css.root, grid.grid, grid.rightBleed)}>
         <Sidebar
           items={data.examples}
-          onChange={toggleSidebar}
+          setShow={setShow}
           show={show}
           type={'examples'}
         />
@@ -78,24 +68,24 @@ const ExampleTemplate = ({ data, pageContext }) => {
                 { [css.collapsed]: !show },
                 grid.nest
               )}>
-              <h1 className={grid.col}>{json.childJson.title}</h1>
-              {json.childJson.author && (
+              <h1 className={grid.col}>{example.title}</h1>
+              {example.author && (
                 <h3 className={grid.col}>
                   {' '}
-                  {intl.formatMessage({ id: 'by' })} {json.childJson.author}
+                  {intl.formatMessage({ id: 'by' })} {example.author}
                 </h3>
               )}
               <div className={classnames(grid.col, css.description)}>
                 <p
                   dangerouslySetInnerHTML={{
-                    __html: json.childJson.description,
+                    __html: example.description,
                   }}></p>
               </div>
-              {json.childJson.featured.length > 0 && (
+              {example.featured.length > 0 && (
                 <div className={classnames(grid.col, css.featured)}>
                   <h3>{intl.formatMessage({ id: 'featured' })}</h3>
                   <ul>
-                    {json.childJson.featured.map((feature, key) => (
+                    {example.featured.map((feature, key) => (
                       <li key={key + 'f'}>
                         <Link to={feature}>{feature}</Link>
                       </li>
@@ -166,7 +156,6 @@ const ExampleTemplate = ({ data, pageContext }) => {
               </div>
             </div>
           )}
-          {width > 960 && <Footer />}
         </div>
       </div>
     </Layout>

@@ -23,7 +23,7 @@ const Environment = ({ data }) => {
   return (
     <Layout>
       <Helmet>
-        <title>{'Environment'}</title>
+        <title>Environment</title>
       </Helmet>
       <div className={classnames(grid.grid, css.root)} ref={ref}>
         <Donate />

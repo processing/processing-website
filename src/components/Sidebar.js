@@ -1,11 +1,4 @@
-import React, {
-  Fragment,
-  useContext,
-  useEffect,
-  useState,
-  useMemo,
-  useRef,
-} from 'react';
+import React, { Fragment, useContext, useState, useMemo } from 'react';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 
@@ -18,24 +11,27 @@ import {
   organizeExampleItems,
   organizeReferenceItems,
 } from '../utils/data';
-import { useWindowSize } from '../utils/hooks';
 
 import css from './Sidebar.module.css';
 
 const Sidebar = (props) => {
-  const { items, show, type = 'reference', onChange } = props;
-  const { width: windowWidth } = useWindowSize();
+  const { items, show, type = 'reference', setShow = () => {} } = props;
   const [searchTerm, setSearchTerm] = useState('');
-  const sidebarRef = useRef();
-  const [width, setWidth] = useState(0);
+
   const layout = useContext(LayoutContext);
   const intl = useIntl();
 
-  const filteredItems = useMemo(() => filterItems(items.nodes, searchTerm), [
-    searchTerm,
-    items.nodes,
-  ]);
-
+  const filteredItems = useMemo(
+    () =>
+      filterItems(items.nodes, searchTerm, [
+        'name',
+        'category',
+        'subcategory',
+        'relativeDirectory',
+      ]),
+    [searchTerm, items.nodes]
+  );
+  console.log(items.nodes);
   const tree = useMemo(
     () =>
       type === 'reference'
@@ -44,35 +40,16 @@ const Sidebar = (props) => {
     [filteredItems, type]
   );
 
-  useEffect(() => {
-    if (sidebarRef.current.clientWidth > width)
-      setWidth((width) => sidebarRef.current.clientWidth);
-  }, [sidebarRef, width]);
-
-  const widthStyle =
-    windowWidth <= 960 && show
-      ? `var(--col4)`
-      : windowWidth <= 960 && !show
-      ? `var(--margin-double)`
-      : show
-      ? `${width}px`
-      : `var(--margin)`;
-
   return (
-    <div
-      className={classnames(css.root, { [css.show]: show })}
-      ref={sidebarRef}>
+    <div className={classnames(css.root, { [css.show]: show })}>
       <div
         className={classnames(css.sidebarWrapper, {
           [css.headerScrolled]: layout.headerScrolled,
-        })}
-        style={{
-          width: widthStyle,
-        }}>
+        })}>
         <div
           className={css.toggleButton}
-          onClick={(e) => onChange(!show)}
-          onKeyDown={(e) => onChange(!show)}
+          onClick={() => setShow((s) => !s)}
+          onKeyDown={(e) => e.keyCode === 13 && setShow((s) => !s)}
           role={'button'}
           tabIndex={'0'}>
           {show ? '×' : '+'}
@@ -91,7 +68,11 @@ const Sidebar = (props) => {
               searchTerm={searchTerm}
             />
             <div className={css.listWrapper}>
-              <SidebarList data={tree} type={type} />
+              <SidebarList
+                data={tree}
+                type={type}
+                filtered={searchTerm !== ''}
+              />
             </div>
           </Fragment>
         )}

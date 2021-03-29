@@ -2,11 +2,10 @@
   flex-flow: column;
   flex-basis: var(--margin);
   left: 0;
-  z-index: 200;
+  z-index: 700;
   overflow: hidden;
   height: 100%;
   white-space: nowrap;
-
   @media (--reduced) {
     width: var(--margin-double);
     position: absolute;
@@ -22,8 +21,34 @@
 }
 
 .root.show {
+  flex-basis: var(--col2);
   @media (--reduced) {
     width: 100%;
+  }
+  @media (--small) {
+    padding-left: calc(var(--margin) + var(--gutter));
+    padding-right: calc(var(--margin) + var(--gutter));
+    padding-bottom: var(--vertical-gutter);
+    width: var(--col8);
+    left: auto;
+    right: 0;
+  }
+}
+
+.root.show .sidebarWrapper {
+  padding-left: var(--margin);
+  padding-right: var(--gutter);
+  width: var(--col2);
+  @media (--reduced) {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.root .sidebarWrapper {
+  width: var(--margin);
+  @media (--reduced) {
+    height: 40px;
   }
 }
 
@@ -37,7 +62,6 @@
   overflow-y: scroll;
   transition: top 0.2s ease-in-out, width 0.4s ease;
   background: var(--lightgray);
-
   & h2 {
     padding-top: 14px;
   }
@@ -74,25 +98,6 @@
 .sidebarWrapper.headerScrolled {
   top: 60px;
   height: calc(100vh - 60px);
-}
-
-.show {
-  flex-basis: var(--col1-and-half);
-
-  & .sidebarWrapper {
-    padding-left: var(--margin);
-    padding-right: var(--gutter);
-    max-width: calc((100% + var(--margin) * 2 + var(--gutter) * 40) / 8 * 1.5);
-  }
-
-  @media (--small) {
-    padding-left: calc(var(--margin) + var(--gutter));
-    padding-right: calc(var(--margin) + var(--gutter));
-    padding-bottom: var(--vertical-gutter);
-    width: var(--col8);
-    left: auto;
-    right: 0;
-  }
 }
 
 .toggleButton {

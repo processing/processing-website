@@ -3,21 +3,25 @@ import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useLocalization } from 'gatsby-theme-i18n';
 
-import SidebarLabel from './SidebarLabel';
+import SidebarGroup from './SidebarGroup';
 
 import grid from '../styles/grid.module.css';
 import css from './SidebarList.module.css';
 
-const SidebarList = ({ data, type, show }) => {
+const SidebarList = ({ data, type, filtered }) => {
   const { locale } = useLocalization();
 
   return (
     <div className={css.root}>
       {data.map((category, key) => (
-        <SidebarLabel label={category.name} key={`label-category-${key}`}>
+        <SidebarGroup
+          label={category.name}
+          key={`label-category-${key}`}
+          filtered={filtered}>
           <ul>
             {category.children.map((subcategory, key) => (
-              <SidebarLabel
+              <SidebarGroup
+                filtered={filtered}
                 label={subcategory.name}
                 key={`label-subcategory-${key}`}
                 secondary>
@@ -37,10 +41,10 @@ const SidebarList = ({ data, type, show }) => {
                     );
                   })}
                 </ul>
-              </SidebarLabel>
+              </SidebarGroup>
             ))}
           </ul>
-        </SidebarLabel>
+        </SidebarGroup>
       ))}
     </div>
   );
