@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { memo, useMemo, useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
@@ -19,63 +19,70 @@ import grid from '../../styles/grid.module.css';
 
 const ExampleTemplate = ({ data, pageContext }) => {
   const { width } = useWindowSize();
-  const [show, setShow] = useState(width > 960 ? true : false);
+  const [showSidebar, setShowSidebar] = useState(width > 960 ? true : false);
   const intl = useIntl();
 
-  let json, subcategory;
+  const { json } = data;
+  const { name, subCategory } = pageContext;
 
-  if (data.json !== null) {
-    json = data.json;
-    subcategory = data.json.relativeDirectory.split('/')[1];
-  }
-
-  const mainPde = data.pdes.nodes.find(
-    (pde) => pde.name === pageContext.name.split('.')[0]
-  );
-
-  const orderedPdes = data.pdes.nodes.filter(
-    (pde) => pde.name !== pageContext.name.split('.')[0]
-  );
-
+  const mainPde = data.pdes.nodes.find((pde) => pde.name === name);
+  const orderedPdes = data.pdes.nodes.filter((pde) => pde.name !== name);
   orderedPdes.unshift(mainPde);
 
   const related = data.examples.nodes.filter(
-    (item) => item.relativeDirectory.split('/')[1] === subcategory
+    (item) => item.relativeDirectory.split('/')[1] === subCategory
   );
 
-  const images = data.images.nodes;
+  console.log(related, data.images.nodes);
 
   const relatedExamples = useMemo(() => {
-    const items = organizeExampleItems(related, images)[0];
+    const items = organizeExampleItems(related, data.images.nodes)[0];
     return items && items.length > 0 ? items.children[0].children : [];
-  }, [related, images]);
+  }, [related, data.images.nodes]);
 
   const toggleSidebar = (e, show) => {
-    if (e.type === 'click') setShow(show);
-    else if (e.keyCode === 13) setShow(show);
+    if (e.type === 'click') {
+      setShowSidebar(show);
+    } else if (e.keyCode === 13) {
+      setShowSidebar(show);
+    }
   };
+
+  // Run live sketch
+  useEffect(() => {
+    if (data.liveSketch) {
+      setTimeout(() => {
+        if (window.runSketch) {
+          window.runSketch();
+        }
+      }, 1000);
+    }
+  }, [data.liveSketch]);
 
   return (
     <Layout hasSidebar>
       <Helmet>
-        <title>{data.json && json.childJson.title}</title>
+        {json && <title>{json.childJson.title}</title>}
+        {data.liveSketch && (
+          <script>{`${data.liveSketch.childRawCode.content}`}</script>
+        )}
       </Helmet>
       <div className={classnames(css.root, grid.grid, grid.rightBleed)}>
         <Sidebar
           items={data.examples}
           onChange={toggleSidebar}
-          show={show}
+          show={showSidebar}
           type={'examples'}
         />
         <div
           className={classnames(grid.nest, css.wrapper, {
-            [css.collapsed]: !show,
+            [css.collapsed]: !showSidebar,
           })}>
-          {data.json !== null ? (
+          {json !== null ? (
             <div
               className={classnames(
                 css.content,
-                { [css.collapsed]: !show },
+                { [css.collapsed]: !showSidebar },
                 grid.nest
               )}>
               <h1 className={grid.col}>{json.childJson.title}</h1>
@@ -154,8 +161,8 @@ const ExampleTemplate = ({ data, pageContext }) => {
             <div
               className={classnames(
                 grid.grid,
-                { [css.collapsed]: !show },
-                { [css.expanded]: show }
+                { [css.collapsed]: !showSidebar },
+                { [css.expanded]: showSidebar }
               )}>
               <div className={classnames(grid.push1)}>
                 {intl.formatMessage({ id: 'notTranslated' })}
@@ -248,6 +255,16 @@ export const query = graphql`
             ...GatsbyImageSharpFluid
           }
         }
+      }
+    }
+    liveSketch: file(
+      relativeDirectory: { eq: $relDir }
+      name: { eq: "liveSketch" }
+      extension: { regex: "/(js$)/" }
+    ) {
+      name
+      childRawCode {
+        content
       }
     }
   }

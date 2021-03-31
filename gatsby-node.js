@@ -232,10 +232,16 @@ async function createExamples(actions, graphql) {
 
   const { createPage } = actions;
 
+  // Load all JSON files within the examples folder
   const exampleResult = await graphql(
     `
       {
-        allFile(filter: { sourceInstanceName: { eq: "examples" } }) {
+        allFile(
+          filter: {
+            sourceInstanceName: { eq: "examples" }
+            extension: { regex: "/(json)/" }
+          }
+        ) {
           edges {
             node {
               name
@@ -257,22 +263,20 @@ async function createExamples(actions, graphql) {
   const examplePages = exampleResult.data.allFile.edges;
 
   examplePages.forEach((examplePage, index) => {
-    //if language is english we don't need to add it to the path hence ''
-    const lang =
-      examplePage.node.name.split('.').length > 1
-        ? examplePage.node.name.split('.')[1] + '/'
-        : '';
-    const name =
-      examplePage.node.name.split('.').length > 1
-        ? examplePage.node.name.split('.')[0].toLowerCase()
-        : examplePage.node.name.toLowerCase();
+    const splitName = examplePage.node.name.split('.');
+    const langCode = splitName.length > 1 ? splitName[1] + '/' : '';
+    // We lowercase the folder name to match the URL's on old processing.org site
+    const name = splitName[0];
+    const slug = langCode + '/examples/' + name.toLowerCase() + '.html';
+    const subCategory = examplePage.node.relativeDirectory.split('/')[1];
 
     createPage({
-      path: lang + 'examples/' + name + '.html',
+      path: slug,
       component: exampleTemplate,
       context: {
-        slug: lang + '/examples/' + name + '.html',
-        name: examplePage.node.name,
+        slug,
+        name,
+        subCategory,
         relDir: examplePage.node.relativeDirectory,
       },
     });
