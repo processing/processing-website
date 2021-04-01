@@ -298,6 +298,7 @@ export const query = graphql`
       filter: {
         sourceInstanceName: { eq: "examples" }
         extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
+        dir: { regex: "/.*[^data]$/" }
       }
     ) {
       nodes {
