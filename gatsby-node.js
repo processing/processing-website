@@ -227,16 +227,43 @@ async function createTutorials(actions, graphql) {
   });
 }
 
+/**
+  Generate /examples pages
+**/
+
+const parseExampleFileInfo = (node) => {
+  // Split name into needed info.
+  // Slug is lowercased to match old processing.org URL's
+  const splitName = node.name.split('.');
+  const langCode = splitName.length > 1 ? splitName[1] + '/' : '';
+  const name = splitName[0];
+  const slug = langCode + '/examples/' + name.toLowerCase() + '.html';
+
+  // Split relative dir into needed info
+  const splitDir = node.relativeDirectory.split('/');
+  const category = splitDir[0];
+  const subCategory = splitDir[1];
+
+  return {
+    name,
+    slug,
+    langCode,
+    category,
+    subCategory,
+  };
+};
+
 async function createExamples(actions, graphql) {
-  const exampleTemplate = path.resolve(`./src/templates/example/example.js`);
+  const exampleTemplate = path.resolve(`./src/templates/examples/example.js`);
 
   const { createPage } = actions;
 
   // Load all JSON files within the examples folder
-  const exampleResult = await graphql(
+  // Load all images (expect in /data folder ) within the examples folder
+  const result = await graphql(
     `
       {
-        allFile(
+        json: allFile(
           filter: {
             sourceInstanceName: { eq: "examples" }
             extension: { regex: "/(json)/" }
@@ -256,21 +283,35 @@ async function createExamples(actions, graphql) {
     `
   );
 
-  // TODO: Do the examples here, including sub categories, etc.
-
-  if (exampleResult.errors) {
-    throw exampleResult.errors;
+  if (result.errors) {
+    throw result.errors;
   }
 
-  const examplePages = exampleResult.data.allFile.edges;
+  const jsonFiles = result.data.json.edges;
 
-  examplePages.forEach((examplePage, index) => {
-    const splitName = examplePage.node.name.split('.');
-    const langCode = splitName.length > 1 ? splitName[1] + '/' : '';
-    // We lowercase the folder name to match the URL's on old processing.org site
-    const name = splitName[0];
-    const slug = langCode + '/examples/' + name.toLowerCase() + '.html';
-    const subCategory = examplePage.node.relativeDirectory.split('/')[1];
+  jsonFiles.forEach((jsonFile, index) => {
+    const {
+      name,
+      slug,
+      langCode,
+      category,
+      subCategory,
+    } = parseExampleFileInfo(jsonFile.node);
+
+    // Find related examples in the same sub category
+    // We use the empty langCode to not generate duplicates
+    // We pass the names of these to the template, so we don't need
+    // to load and filter all images on the frontend.
+    const related = jsonFiles
+      .map((f) => parseExampleFileInfo(f.node))
+      .filter((info) => {
+        return (
+          info.subCategory === subCategory &&
+          info.name !== name &&
+          info.langCode === ''
+        );
+      })
+      .map((info) => info.name);
 
     createPage({
       path: slug,
@@ -279,7 +320,8 @@ async function createExamples(actions, graphql) {
         slug,
         name,
         subCategory,
-        relDir: examplePage.node.relativeDirectory,
+        related,
+        relDir: jsonFile.node.relativeDirectory,
       },
     });
   });

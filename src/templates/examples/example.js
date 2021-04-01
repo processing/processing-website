@@ -12,7 +12,8 @@ import Sidebar from '../../components/Sidebar';
 import Tabs from '../../components/Tabs';
 
 import { organizeExampleItems } from '../../utils/data';
-import { useWindowSize } from '../../utils/hooks';
+import { useWindowSize } from '../../hooks';
+import { useOrderedPdes, useRelatedExamples } from '../../hooks/examples';
 
 import css from '../../styles/templates/example-template.module.css';
 import grid from '../../styles/grid.module.css';
@@ -22,23 +23,15 @@ const ExampleTemplate = ({ data, pageContext }) => {
   const [showSidebar, setShowSidebar] = useState(width > 960 ? true : false);
   const intl = useIntl();
 
-  const { json } = data;
-  const { name, subCategory } = pageContext;
+  const { json, image, examples, relatedImages } = data;
+  const { name, subCategory, related } = pageContext;
 
-  const mainPde = data.pdes.nodes.find((pde) => pde.name === name);
-  const orderedPdes = data.pdes.nodes.filter((pde) => pde.name !== name);
-  orderedPdes.unshift(mainPde);
-
-  const related = data.examples.nodes.filter(
-    (item) => item.relativeDirectory.split('/')[1] === subCategory
+  const pdes = useOrderedPdes(name, data.pdes.nodes);
+  const relatedExamples = useRelatedExamples(
+    related,
+    examples.nodes,
+    relatedImages.nodes
   );
-
-  console.log(related, data.images.nodes);
-
-  const relatedExamples = useMemo(() => {
-    const items = organizeExampleItems(related, data.images.nodes)[0];
-    return items && items.length > 0 ? items.children[0].children : [];
-  }, [related, data.images.nodes]);
 
   const toggleSidebar = (e, show) => {
     if (e.type === 'click') {
@@ -111,41 +104,13 @@ const ExampleTemplate = ({ data, pageContext }) => {
                 </div>
               )}
               <div className={classnames(css.cover, grid.col)}>
-                {data.image.nodes[0] && (
-                  <Img fluid={data.image.nodes[0].childImageSharp.fluid} />
-                )}
+                {image && <Img fluid={image.childImageSharp.fluid} />}
               </div>
-              <Tabs pdes={orderedPdes} className={css.tabs} />
-              {relatedExamples.length > 0 && (
-                <div className={classnames(css.relatedWrapper, grid.nest)}>
-                  <h3 className={grid.col}>
-                    {intl.formatMessage({ id: 'relatedExamples' })}
-                  </h3>
-                  <ul className={classnames(css.related, grid.col)}>
-                    {relatedExamples.slice(0, 6).map((rel, key) => {
-                      return (
-                        rel.dir !== pageContext.relDir && (
-                          <li key={key + 'rel'} className={css.relatedItem}>
-                            <Link to={'../' + rel.name.toLowerCase() + '.html'}>
-                              {rel.img && (
-                                <Img
-                                  className={css.img}
-                                  fluid={rel.img.childImageSharp.fluid}
-                                  objectFit={'cover'}
-                                  objectPosition={'50% 50%'}
-                                />
-                              )}
-                              <span className={css.relatedName}>
-                                {rel.name}
-                              </span>
-                            </Link>
-                          </li>
-                        )
-                      );
-                    })}
-                  </ul>
-                </div>
-              )}
+              <Tabs pdes={pdes} className={css.tabs} />
+              <RelatedExamples
+                examples={relatedExamples}
+                heading={intl.formatMessage({ id: 'relatedExamples' })}
+              />
               <p className={classnames(grid.col, css.note)}>
                 {intl.formatMessage({ id: 'exampleInfo' })}
                 <a
@@ -180,10 +145,42 @@ const ExampleTemplate = ({ data, pageContext }) => {
   );
 };
 
+const RelatedExamples = memo(({ heading, examples }) => {
+  return (
+    <div className={classnames(css.relatedWrapper, grid.nest)}>
+      <h3 className={grid.col}>{heading}</h3>
+      <ul className={classnames(css.related, grid.col)}>
+        {examples.slice(0, 6).map((example, key) => {
+          return (
+            <li key={key + 'rel'} className={css.relatedItem}>
+              <Link to={example.slug}>
+                {example.image && (
+                  <Img
+                    className={css.img}
+                    fluid={example.image.childImageSharp.fluid}
+                    objectFit={'cover'}
+                    objectPosition={'50% 50%'}
+                  />
+                )}
+                <span className={css.relatedName}>{example.name}</span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+});
+
 export default ExampleTemplate;
 
 export const query = graphql`
-  query($name: String!, $relDir: String!, $locale: String!) {
+  query(
+    $name: String!
+    $relDir: String!
+    $locale: String!
+    $related: [String!]!
+  ) {
     json: file(
       fields: { name: { eq: $name }, lang: { eq: $locale } }
       sourceInstanceName: { eq: "examples" }
@@ -225,35 +222,15 @@ export const query = graphql`
         }
       }
     }
-    images: allFile(
-      filter: {
-        sourceInstanceName: { eq: "examples" }
-        extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
-      }
+    image: file(
+      relativeDirectory: { eq: $relDir }
+      extension: { regex: "/(png)/" }
     ) {
-      nodes {
-        name
-        relativeDirectory
-        childImageSharp {
-          fluid(maxWidth: 200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-    image: allFile(
-      filter: {
-        relativeDirectory: { eq: $relDir }
-        extension: { regex: "/(png)/" }
-      }
-    ) {
-      nodes {
-        name
-        relativeDirectory
-        childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid
-          }
+      name
+      relativeDirectory
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
@@ -265,6 +242,24 @@ export const query = graphql`
       name
       childRawCode {
         content
+      }
+    }
+    relatedImages: allFile(
+      filter: {
+        name: { in: $related }
+        sourceInstanceName: { eq: "examples" }
+        extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
+        dir: { regex: "/.*[^data]$/" }
+      }
+    ) {
+      nodes {
+        name
+        relativeDirectory
+        childImageSharp {
+          fluid(maxWidth: 200) {
+            ...GatsbyImageSharpFluid
+          }
+        }
       }
     }
   }

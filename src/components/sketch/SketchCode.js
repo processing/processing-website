@@ -6,7 +6,7 @@ import Draggable from './Draggable';
 import Color from './Color';
 import Shape from './Shape';
 
-import { useHighlight } from '../../utils/hooks';
+import { useHighlight } from '../../hooks';
 
 import css from './SketchCode.module.css';
 
