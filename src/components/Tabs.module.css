@@ -23,6 +23,10 @@
   background-color: var(--lightgray);
 }
 
+.code {
+  position: relative;
+}
+
 .codeBlock {
   max-width: cols(6, 6);
   padding-bottom: var(--gutter-double);

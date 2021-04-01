@@ -115,6 +115,7 @@
     }
 
     & .exampleCode {
+      position: relative;
       flex-basis: cols(4, 6);
     }
 
