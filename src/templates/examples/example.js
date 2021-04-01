@@ -24,13 +24,13 @@ const ExampleTemplate = ({ data, pageContext }) => {
   const [showSidebar, setShowSidebar] = useState(width > 960 ? true : false);
   const intl = useIntl();
 
-  const { json, image, examples, relatedImages, liveSketch } = data;
+  const { example, image, allExamples, relatedImages, liveSketch } = data;
   const { name, subCategory, related } = pageContext;
 
   const pdes = useOrderedPdes(name, data.pdes.nodes);
   const relatedExamples = useRelatedExamples(
     related,
-    examples.nodes,
+    allExamples.nodes,
     relatedImages.nodes
   );
 
@@ -45,23 +45,28 @@ const ExampleTemplate = ({ data, pageContext }) => {
   // Run live sketch
   useEffect(() => {
     if (liveSketch) {
-      setTimeout(() => {
+      const tryToRunSketch = () => {
         if (window.runLiveSketch) {
+          console.log('Live sketch: running');
           const myp5 = new p5(window.runLiveSketch, 'example-cover');
+        } else {
+          console.log('Live sketch: Not ready');
+          setTimeout(tryToRunSketch, 50);
         }
-      }, 1000);
+      };
+      tryToRunSketch();
     }
   }, [liveSketch]);
 
   return (
     <Layout hasSidebar>
       <Helmet>
-        {json && <title>{json.childJson.title}</title>}
+        {example && <title>{example.childJson.title}</title>}
         {liveSketch && <script>{`${liveSketch.childRawCode.content}`}</script>}
       </Helmet>
       <div className={classnames(css.root, grid.grid, grid.rightBleed)}>
         <Sidebar
-          items={data.examples}
+          items={allExamples}
           onChange={toggleSidebar}
           show={showSidebar}
           type={'examples'}
@@ -70,31 +75,31 @@ const ExampleTemplate = ({ data, pageContext }) => {
           className={classnames(grid.nest, css.wrapper, {
             [css.collapsed]: !showSidebar,
           })}>
-          {json !== null ? (
+          {example !== null ? (
             <div
               className={classnames(
                 css.content,
                 { [css.collapsed]: !showSidebar },
                 grid.nest
               )}>
-              <h1 className={grid.col}>{json.childJson.title}</h1>
-              {json.childJson.author && (
+              <h1 className={grid.col}>{example.childJson.title}</h1>
+              {example.childJson.author && (
                 <h3 className={grid.col}>
                   {' '}
-                  {intl.formatMessage({ id: 'by' })} {json.childJson.author}
+                  {intl.formatMessage({ id: 'by' })} {example.childJson.author}
                 </h3>
               )}
               <div className={classnames(grid.col, css.description)}>
                 <p
                   dangerouslySetInnerHTML={{
-                    __html: json.childJson.description,
+                    __html: example.childJson.description,
                   }}></p>
               </div>
-              {json.childJson.featured.length > 0 && (
+              {example.childJson.featured.length > 0 && (
                 <div className={classnames(grid.col, css.featured)}>
                   <h3>{intl.formatMessage({ id: 'featured' })}</h3>
                   <ul>
-                    {json.childJson.featured.map((feature, key) => (
+                    {example.childJson.featured.map((feature, key) => (
                       <li key={key + 'f'}>
                         <Link to={feature}>{feature}</Link>
                       </li>
@@ -184,7 +189,7 @@ export const query = graphql`
     $locale: String!
     $related: [String!]!
   ) {
-    json: file(
+    example: file(
       fields: { name: { eq: $name }, lang: { eq: $locale } }
       sourceInstanceName: { eq: "examples" }
     ) {
@@ -199,6 +204,7 @@ export const query = graphql`
     }
     pdes: allFile(
       filter: {
+        sourceInstanceName: { eq: "examples" }
         relativeDirectory: { eq: $relDir }
         extension: { regex: "/(pde)/" }
       }
@@ -207,21 +213,6 @@ export const query = graphql`
         name
         internal {
           content
-        }
-      }
-    }
-    examples: allFile(
-      filter: {
-        sourceInstanceName: { eq: "examples" }
-        fields: { lang: { eq: "en" } }
-      }
-    ) {
-      nodes {
-        name
-        relativeDirectory
-        childJson {
-          name
-          title
         }
       }
     }
@@ -245,6 +236,21 @@ export const query = graphql`
       name
       childRawCode {
         content
+      }
+    }
+    allExamples: allFile(
+      filter: {
+        sourceInstanceName: { eq: "examples" }
+        fields: { lang: { eq: "en" } }
+      }
+    ) {
+      nodes {
+        name
+        relativeDirectory
+        childJson {
+          name
+          title
+        }
       }
     }
     relatedImages: allFile(
