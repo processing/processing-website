@@ -1,4 +1,5 @@
-import React, { useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
+import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
@@ -10,7 +11,8 @@ import Button from '../components/Button';
 import Card from '../components/Card';
 import Sketch from '../components/sketch/Sketch';
 
-import { shuffleArray, subcategoryFromDirectory } from '../utils/data';
+import { useRandomArray } from '../hooks';
+import { usePreparedExamples } from '../hooks/examples';
 
 import css from '../styles/pages/index.module.css';
 import grid from '../styles/grid.module.css';
@@ -44,60 +46,20 @@ export const items = [
   },
 ];
 
-const preselected = [
-  'keyboardfunctions',
-  'radialgradient',
-  'saturation',
-  'gameoflife',
-  'loadingimages',
-  'rotatepushpop',
-  'spot',
-  'lineargradient',
-  'penrosesnowflake',
-  'multipleparticlesystems',
-];
-
 const IndexPage = ({ data }) => {
   const intl = useIntl();
   const { locale } = useLocalization();
 
-  const items = data.examples.nodes;
-  const images = data.images.nodes;
-
-  const examples = useMemo(
-    () =>
-      items.map((item, i) => {
-        const image = images
-          ? images.find(
-              (img) => img.relativeDirectory === item.relativeDirectory
-            )
-          : '';
-        const [cat, subcat, slug] = item.relativeDirectory.split('/');
-        return {
-          slug: slug,
-          subcat: subcat,
-          cat: cat,
-          name: item.name,
-          dir: item.relativeDirectory,
-          img: image,
-        };
-      }),
-    [items, images]
+  const featuredExamples = usePreparedExamples(
+    data.examples.nodes,
+    data.exampleImages.nodes
   );
-
-  const selectedExamples = useMemo(() => {
-    const filteredExamples = examples
-      ? examples.filter((d) => preselected.includes(d.slug.toLowerCase()))
-      : [];
-    shuffleArray(filteredExamples);
-    const random = filteredExamples.slice(0, 4);
-    return random;
-  }, [examples]);
+  const randomExamples = useRandomArray(featuredExamples, 4);
 
   return (
     <Layout isHomepage>
       <Helmet>
-        <title>{'Welcome to Processing!'}</title>
+        <title>Welcome to Processing!</title>
       </Helmet>
       <div className={classnames(css.hero, grid.grid, grid.rightBleed)}>
         <div className={classnames(grid.col, css.intro)}>
@@ -120,37 +82,11 @@ const IndexPage = ({ data }) => {
         </div>
         <Sketch />
       </div>
-      <div className={classnames(grid.grid, css.section)}>
-        <div className={classnames(grid.col, grid.nest, css.examples)}>
-          <h3 className={grid.col}>{intl.formatMessage({ id: 'examples' })}</h3>
-          <ul>
-            {selectedExamples.map((example, i) => (
-              <li
-                className={classnames(css.example, grid.col)}
-                key={`example-${example.slug}`}>
-                <Link
-                  to={`/examples/${example.slug.toLowerCase()}.html`}
-                  language={locale}>
-                  <div
-                    className={css.imgContainer}
-                    key={`exampleImgContainer-${i}`}>
-                    {example.img && (
-                      <Img fluid={example.img.childImageSharp.fluid} />
-                    )}
-                  </div>
-                  <h4>{example.name}</h4>
-                  <p>{`in ${subcategoryFromDirectory(
-                    example.dir
-                  )} examples`}</p>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <div className={classnames(grid.col, css.moreButton)}>
-            <Button to={'/examples'}>More Examples</Button>
-          </div>
-        </div>
-      </div>
+      <FeaturedExamples
+        examples={randomExamples}
+        heading={intl.formatMessage({ id: 'examples' })}
+        locale={locale}
+      />
       <div className={css.sectionDivider} />
       <div className={classnames(grid.grid, css.section)}>
         <div className={classnames(grid.col, css.half)}>
@@ -294,14 +230,60 @@ const IndexPage = ({ data }) => {
   );
 };
 
+const FeaturedExamples = memo(({ heading, examples, locale }) => {
+  return (
+    <div className={classnames(grid.grid, css.section)}>
+      <div className={classnames(grid.col, grid.nest, css.examples)}>
+        <h3 className={grid.col}>{heading}</h3>
+        <ul>
+          {examples.map((example, i) => (
+            <li
+              className={classnames(css.example, grid.col)}
+              key={example.slug}>
+              <Link to={example.slug} language={locale}>
+                <div className={css.imgContainer}>
+                  {example.image && (
+                    <Img fluid={example.image.childImageSharp.fluid} />
+                  )}
+                </div>
+                <h4>{example.name}</h4>
+                <p>in {example.subCategory} examples</p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <div className={classnames(grid.col, css.moreButton)}>
+          <Button to={'/examples'}>More Examples</Button>
+        </div>
+      </div>
+    </div>
+  );
+});
+
 export default IndexPage;
 
 export const query = graphql`
-  query {
+  query(
+    $featuredExamples: [String] = [
+      "KeyboardFunctions"
+      "RadialGradient"
+      "Saturation"
+      "GameOfLife"
+      "LoadingImages"
+      "RotatePushPop"
+      "Spot"
+      "LinearGradient"
+      "PenroseSnowflake"
+      "MultipleParticleSystems"
+    ]
+  ) {
     examples: allFile(
       filter: {
+        name: { in: $featuredExamples }
+        extension: { eq: "json" }
         sourceInstanceName: { eq: "examples" }
         fields: { lang: { eq: "en" } }
+        dir: { regex: "/.*[^data]$/" }
       }
       sort: { order: ASC, fields: relativeDirectory }
     ) {
@@ -315,8 +297,9 @@ export const query = graphql`
         }
       }
     }
-    images: allFile(
+    exampleImages: allFile(
       filter: {
+        name: { in: $featuredExamples }
         sourceInstanceName: { eq: "examples" }
         extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
         dir: { regex: "/.*[^data]$/" }

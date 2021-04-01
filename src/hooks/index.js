@@ -1,14 +1,29 @@
 import {
   useEffect,
   useRef,
+  useMemo,
   useLayoutEffect,
   useCallback,
   useState,
 } from 'react';
 import hljs from 'highlight.js/lib/core';
 import processing from 'highlight.js/lib/languages/processing';
+import { shuffleArray } from '../utils/data';
 
 hljs.registerLanguage('processing', processing);
+
+/**
+  Hook to get random items from an array
+  @param {Array} arr Array of items
+  @param {number} num Number of items to select
+**/
+export const useRandomArray = (arr, num) => {
+  return useMemo(() => {
+    const copy = arr.slice();
+    shuffleArray(copy);
+    return num && num < copy.length ? copy.slice(0, num) : copy;
+  }, [arr, num]);
+};
 
 export const useHighlight = () => {
   const ref = useRef();

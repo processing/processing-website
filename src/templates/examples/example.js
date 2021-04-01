@@ -1,4 +1,4 @@
-import React, { memo, useMemo, useState, useEffect } from 'react';
+import React, { memo, useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
@@ -12,10 +12,9 @@ import Layout from '../../components/Layout';
 import Sidebar from '../../components/Sidebar';
 import Tabs from '../../components/Tabs';
 
-import { organizeExampleItems } from '../../utils/data';
 import { referencePath } from '../../utils/paths';
 import { useWindowSize } from '../../hooks';
-import { useOrderedPdes, useRelatedExamples } from '../../hooks/examples';
+import { useOrderedPdes, usePreparedExamples } from '../../hooks/examples';
 
 import css from '../../styles/templates/example-template.module.css';
 import grid from '../../styles/grid.module.css';
@@ -26,13 +25,13 @@ const ExampleTemplate = ({ data, pageContext }) => {
   const intl = useIntl();
 
   const { example, image, allExamples, relatedImages, liveSketch } = data;
-  const { name, subCategory, related } = pageContext;
+  const { name, related } = pageContext;
 
   const pdes = useOrderedPdes(name, data.pdes.nodes);
-  const relatedExamples = useRelatedExamples(
-    related,
+  const relatedExamples = usePreparedExamples(
     allExamples.nodes,
-    relatedImages.nodes
+    relatedImages.nodes,
+    related
   );
 
   const toggleSidebar = (e, show) => {
@@ -49,7 +48,8 @@ const ExampleTemplate = ({ data, pageContext }) => {
       const tryToRunSketch = () => {
         if (window.runLiveSketch) {
           console.log('Live sketch: running');
-          const myp5 = new p5(window.runLiveSketch, 'example-cover');
+          // TODO: Stop old sketch if running!
+          new p5(window.runLiveSketch, 'example-cover');
         } else {
           console.log('Live sketch: Not ready');
           setTimeout(tryToRunSketch, 50);
@@ -254,11 +254,14 @@ export const query = graphql`
       filter: {
         sourceInstanceName: { eq: "examples" }
         fields: { lang: { eq: "en" } }
+        extension: { eq: "json" }
+        dir: { regex: "/.*[^data]$/" }
       }
     ) {
       nodes {
         name
         relativeDirectory
+        relativePath
         childJson {
           name
           title
