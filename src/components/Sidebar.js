@@ -18,7 +18,7 @@ import {
   organizeExampleItems,
   organizeReferenceItems,
 } from '../utils/data';
-import { useWindowSize } from '../utils/hooks';
+import { useWindowSize } from '../hooks';
 
 import css from './Sidebar.module.css';
 

@@ -4,7 +4,7 @@ import SketchGraphic from './SketchGraphic';
 import SketchCode from './SketchCode';
 import { fromJS } from 'immutable';
 
-import { useWindowSize } from '../../utils/hooks';
+import { useWindowSize } from '../../hooks';
 
 import grid from '../../styles/grid.module.css';
 import css from './Sketch.module.css';
