@@ -7,18 +7,6 @@
   padding: 0 16px;
   background-color: var(--processing-blue-dark);
   color: white;
-
-  @media (--reduced) {
-    & h4 {
-      font-size: var(--text-small);
-    }
-  }
-
-  @media (--small) {
-    & h4 {
-      font-size: var(--text-xsmall);
-    }
-  }
 }
 
 .show {
@@ -54,10 +42,6 @@
   margin-right: 2rem;
   box-sizing: border-box;
   height: 100%;
-
-  @media (--small) {
-    margin-right: var(--gutter-double);
-  }
 }
 
 .item:hover {
@@ -77,8 +61,28 @@
   margin-right: 5px;
   width: 30px;
   height: auto;
+}
 
-  @media (--small) {
+@media (--reduced) {
+  .root {
+    & h4 {
+      font-size: var(--text-small);
+    }
+  }
+}
+
+@media (--small) {
+  .root {
+    & h4 {
+      font-size: var(--text-xsmall);
+    }
+  }
+
+  .item {
+    margin-right: var(--gutter-double);
+  }
+
+  .logo {
     width: 26px;
     margin-right: 0px;
   }

@@ -17,20 +17,12 @@
 
 .category {
   margin-bottom: var(--gutter-double);
-
-  @media (--small) {
-    padding-top: var(--vertical-gutter);
-  }
 }
 
 .intro {
   flex-basis: var(--col8);
   padding-right: var(--col4);
   margin-bottom: calc(var(--margin) / 2);
-
-  @media (--small) {
-    padding-right: var(--gutter);
-  }
 }
 
 .subcategory {
@@ -68,8 +60,23 @@
   & ul > li:hover h4 {
     color: var(--processing-blue-mid);
   }
+}
 
-  @media (--small) {
+.cover {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+@media (--small) {
+  .category {
+    padding-top: var(--vertical-gutter);
+  }
+
+  .intro {
+    padding-right: var(--gutter);
+  }
+
+  .subcategory {
     flex-wrap: wrap;
 
     & h3 {
@@ -87,9 +94,4 @@
       }
     }
   }
-}
-
-.cover {
-  width: 100%;
-  margin-bottom: 10px;
 }

@@ -16,10 +16,6 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-
-  @media (--reduced) {
-    flex-basis: var(--col8);
-  }
 }
 
 .wrapper.collapsed {
@@ -119,6 +115,7 @@
     }
 
     & .exampleCode {
+      position: relative;
       flex-basis: cols(4, 6);
     }
 
@@ -138,13 +135,84 @@
   & .license {
     flex-basis: cols(5, 6);
   }
+}
 
-  @media (--small) {
-    flex-direction: column;
+.description {
+  font-family: "Vollkorn", serif;
+  font-size: var(--text-medium);
+  line-height: 1.6em;
+
+  & > * {
+    font-family: var(--font-mono);
+    font-size: var(--text-regular);
+    font-style: normal;
+  }
+
+  & b {
+    font-weight: normal;
+  }
+
+  & code {
+    margin-bottom: 0;
+    font-variant-ligatures: no-common-ligatures;
   }
 }
 
+.list {
+  & li {
+    display: flex;
+    width: 100%;
+  }
+  & li:last-child .codeBlock {
+    margin-bottom: 0;
+  }
+}
+
+.codeBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  white-space: normal;
+}
+
+.example {
+  display: flex;
+  flex-grow: 1;
+  margin-bottom: var(--vertical-gutter);
+}
+
+.param {
+  margin-bottom: var(--gutter);
+}
+
+.paramName {
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.license {
+  display: flex;
+  flex-direction: row;
+  font-size: var(--text-small);
+
+  & p {
+    margin-left: var(--gutter);
+  }
+}
+
+.item {
+  flex-basis: var(--col2);
+}
+
+.itemDescription {
+  flex-basis: var(--col5);
+}
+
 @media (--reduced) {
+  .wrapper {
+    flex-basis: var(--col8);
+  }
+
   .content,
   .content.collapsed {
     flex-basis: var(--col8);
@@ -207,72 +275,8 @@
   }
 }
 
-.description {
-  font-family: "Vollkorn", serif;
-  font-size: var(--text-medium);
-  line-height: 1.6em;
-
-  & > * {
-    font-family: var(--font-mono);
-    font-size: var(--text-regular);
-    font-style: normal;
+@media (--small) {
+  .section {
+    flex-direction: column;
   }
-
-  & b {
-    font-weight: normal;
-  }
-
-  & code {
-    margin-bottom: 0;
-    font-variant-ligatures: no-common-ligatures;
-  }
-}
-
-.list {
-  & li {
-    display: flex;
-    width: 100%;
-  }
-  & li:last-child .codeBlock {
-    margin-bottom: 0;
-  }
-}
-
-.codeBlock {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.example {
-  display: flex;
-  flex-grow: 1;
-  margin-bottom: var(--vertical-gutter);
-}
-
-.param {
-  margin-bottom: var(--gutter);
-}
-
-.paramName {
-  font-family: var(--font-mono);
-  font-weight: 700;
-}
-
-.license {
-  display: flex;
-  flex-direction: row;
-  font-size: var(--text-small);
-
-  & p {
-    margin-left: var(--gutter);
-  }
-}
-
-.item {
-  flex-basis: var(--col2);
-}
-
-.itemDescription {
-  flex-basis: var(--col5);
 }

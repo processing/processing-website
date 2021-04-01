@@ -6,16 +6,6 @@
     flex-basis: var(--col8);
     padding-right: var(--col3);
   }
-
-  @media (--reduced) {
-    & > h1 {
-      padding-top: var(--vertical-gutter);
-    }
-    & > h3 {
-      padding-right: 0;
-      flex-basis: var(--col8);
-    }
-  }
 }
 
 .listWrapper {
@@ -28,14 +18,6 @@
     text-transform: capitalize;
     margin: var(--margin) 0;
     border-right: solid 7px var(--lightgray);
-
-    @media (--reduced) {
-      flex-basis: var(--col8);
-    }
-  }
-
-  @media (--reduced) {
-    padding-left: 0;
   }
 }
 
@@ -78,21 +60,11 @@
   & h3:focus {
     color: inherit;
   }
-
-  @media (--reduced) {
-    & p {
-      flex-basis: var(--col5);
-    }
-  }
 }
 
 .librarieName {
   flex-basis: var(--col2) !important;
   border-right: solid 3px var(--lightgray);
-
-  @media (--reduced) {
-    flex-basis: var(--col3) !important;
-  }
 }
 
 .contributionsList {
@@ -106,10 +78,6 @@
     text-transform: capitalize;
     border-right: solid 7px var(--lightgray);
     margin-bottom: 0;
-
-    @media (--reduced) {
-      flex-basis: var(--col8);
-    }
   }
 
   & ul {
@@ -149,29 +117,11 @@
   & h3:focus {
     color: inherit;
   }
-
-  @media (--reduced) {
-    padding-right: 0px;
-
-    & h2 {
-      border-right: none;
-    }
-
-    & ul {
-      flex-basis: var(--col8);
-      margin-top: var(--vertical-gutter);
-      border-left: solid 7px var(--lightgray);
-    }
-  }
 }
 
 .contributionData {
   flex-basis: var(--col2);
   border-right: solid 3px var(--lightgray);
-
-  @media (--reduced) {
-    flex-basis: var(--col3);
-  }
 }
 
 .contributionAuthor {
@@ -187,8 +137,56 @@
 
 .contributionBrief {
   flex-basis: var(--col6);
+}
 
-  @media (--reduced) {
+@media (--reduced) {
+  .root {
+    & > h1 {
+      padding-top: var(--vertical-gutter);
+    }
+    & > h3 {
+      padding-right: 0;
+      flex-basis: var(--col8);
+    }
+  }
+
+  .listWrapper {
+    padding-left: 0;
+    & h2 {
+      flex-basis: var(--col8);
+    }
+  }
+
+  .list {
+    & p {
+      flex-basis: var(--col5);
+    }
+  }
+
+  .librarieName {
+    flex-basis: var(--col3) !important;
+  }
+
+  .contributionsList {
+    padding-right: 0px;
+
+    & h2 {
+      border-right: none;
+      flex-basis: var(--col8);
+    }
+
+    & ul {
+      flex-basis: var(--col8);
+      margin-top: var(--vertical-gutter);
+      border-left: solid 7px var(--lightgray);
+    }
+  }
+
+  .contributionData {
+    flex-basis: var(--col3);
+  }
+
+  .contributionBrief {
     flex-basis: var(--col5);
   }
 }

@@ -7,6 +7,7 @@ import { useIntl } from 'react-intl';
 
 import Img from 'gatsby-image';
 
+import CopyButton from '../../components/CopyButton';
 import Footer from '../../components/Footer';
 import Layout from '../../components/Layout';
 import Sidebar from '../../components/Sidebar';
@@ -36,6 +37,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
   const images = data.images.edges;
 
   const toggleSidebar = (e, show) => {
+    console.log(e);
     if (e.type === 'click') setShow(show);
     else if (e.keyCode === 13) setShow(show);
   };
@@ -97,6 +99,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
                         <li className={css.example} key={'ex' + key}>
                           <div
                             className={classnames(grid.col, css.exampleCode)}>
+                            <CopyButton text={ex.node.internal.content} />
                             <pre className={css.codeBlock}>
                               {ex.node.internal.content
                                 .split(/\r?\n/)

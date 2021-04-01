@@ -10,7 +10,7 @@ import Button from '../components/Button';
 import Card from '../components/Card';
 import Sketch from '../components/sketch/Sketch';
 
-import { subcategoryFromDirectory } from '../utils/data';
+import { shuffleArray, subcategoryFromDirectory } from '../utils/data';
 
 import css from '../styles/pages/index.module.css';
 import grid from '../styles/grid.module.css';
@@ -44,6 +44,19 @@ export const items = [
   },
 ];
 
+const preselected = [
+  'keyboardfunctions',
+  'radialgradient',
+  'saturation',
+  'gameoflife',
+  'loadingimages',
+  'rotatepushpop',
+  'spot',
+  'lineargradient',
+  'penrosesnowflake',
+  'multipleparticlesystems',
+];
+
 const IndexPage = ({ data }) => {
   const intl = useIntl();
   const { locale } = useLocalization();
@@ -73,7 +86,12 @@ const IndexPage = ({ data }) => {
   );
 
   const selectedExamples = useMemo(() => {
-    return examples ? examples.slice(0, 4) : [];
+    const filteredExamples = examples
+      ? examples.filter((d) => preselected.includes(d.slug.toLowerCase()))
+      : [];
+    shuffleArray(filteredExamples);
+    const random = filteredExamples.slice(0, 4);
+    return random;
   }, [examples]);
 
   return (
@@ -109,11 +127,13 @@ const IndexPage = ({ data }) => {
             {selectedExamples.map((example, i) => (
               <li
                 className={classnames(css.example, grid.col)}
-                key={`example-${i}`}>
+                key={`example-${example.slug}`}>
                 <Link
                   to={`/examples/${example.slug.toLowerCase()}.html`}
                   language={locale}>
-                  <div className={css.imgContainer}>
+                  <div
+                    className={css.imgContainer}
+                    key={`exampleImgContainer-${i}`}>
                     {example.img && (
                       <Img fluid={example.img.childImageSharp.fluid} />
                     )}
@@ -286,6 +306,7 @@ export const query = graphql`
       sort: { order: ASC, fields: relativeDirectory }
     ) {
       nodes {
+        id
         name
         relativeDirectory
         childJson {
@@ -302,6 +323,7 @@ export const query = graphql`
       }
     ) {
       nodes {
+        id
         name
         relativeDirectory
         childImageSharp {

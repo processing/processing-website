@@ -10,6 +10,7 @@
     "array-flat-polyfill": "^1.0.1",
     "array-unique": "^0.3.2",
     "classnames": "^2.2.6",
+    "copy-to-clipboard": "^3.3.1",
     "gatsby": "^2.32.3",
     "gatsby-image": "^2.5.0",
     "gatsby-plugin-intl": "^0.3.3",

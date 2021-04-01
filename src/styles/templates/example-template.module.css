@@ -32,18 +32,6 @@
   & p {
     margin-top: var(--gutter-half);
   }
-
-  @media (--small) {
-    & > h1 {
-      flex-basis: var(--col6);
-      padding-left: var(--gutter);
-    }
-
-    & > h3 {
-      flex-basis: var(--col6);
-      padding-left: var(--gutter);
-    }
-  }
 }
 
 .content.collapsed {
@@ -104,35 +92,14 @@
   & .note {
     flex-basis: var(--col6);
   }
-
-  @media (--small) {
-    & > h1 {
-      flex-basis: var(--col6);
-      padding-left: var(--gutter);
-    }
-
-    & > h3 {
-      flex-basis: var(--col6);
-      padding-left: var(--gutter);
-    }
-  }
 }
 
 .description {
   flex-basis: cols(6, 6);
-
-  @media (--small) {
-    flex-basis: var(--col6);
-    padding-left: var(--gutter);
-  }
 }
 
 .featured {
   flex-basis: cols(2, 6);
-
-  @media (--small) {
-    flex-basis: var(--col6);
-  }
 }
 
 .cover {
@@ -140,21 +107,10 @@
   padding-top: var(--vertical-gutter);
   padding-left: cols(0.5, 5);
   padding-right: cols(0.5, 5);
-
-  @media (--small) {
-    flex-basis: var(--col6);
-    padding-left: var(--gutter);
-  }
 }
 
 .relatedWrapper {
   flex-basis: cols(6, 6);
-
-  @media (--small) {
-    & > h3 {
-      padding-left: var(--gutter);
-    }
-  }
 }
 
 .related {
@@ -174,16 +130,6 @@
       display: block;
       padding-top: 8px;
       color: var(--processing-blue-mid);
-    }
-  }
-
-  @media (--small) {
-    flex-basis: var(--col6);
-    padding-left: var(--gutter);
-
-    & li {
-      height: cols(2, 5);
-      width: cols(4, 5);
     }
   }
 }
@@ -212,8 +158,63 @@
   flex-basis: cols(5, 5);
   padding-top: var(--gutter-double);
   color: var(--processing-blue-dark);
+}
 
-  @media (--small) {
+@media (--small) {
+  .content {
+    & > h1 {
+      flex-basis: var(--col6);
+      padding-left: var(--gutter);
+    }
+
+    & > h3 {
+      flex-basis: var(--col6);
+      padding-left: var(--gutter);
+    }
+  }
+  .content.collapsed {
+    & > h1 {
+      flex-basis: var(--col6);
+      padding-left: var(--gutter);
+    }
+
+    & > h3 {
+      flex-basis: var(--col6);
+      padding-left: var(--gutter);
+    }
+  }
+
+  .description {
+    flex-basis: var(--col6);
+    padding-left: var(--gutter);
+  }
+
+  .featured {
+    flex-basis: var(--col6);
+  }
+
+  .cover {
+    flex-basis: var(--col6);
+    padding-left: var(--gutter);
+  }
+
+  .relatedWrapper {
+    & > h3 {
+      padding-left: var(--gutter);
+    }
+  }
+
+  .related {
+    flex-basis: var(--col6);
+    padding-left: var(--gutter);
+
+    & li {
+      height: cols(2, 5);
+      width: cols(4, 5);
+    }
+  }
+
+  .note {
     flex-basis: var(--col6);
     padding-left: var(--gutter);
   }

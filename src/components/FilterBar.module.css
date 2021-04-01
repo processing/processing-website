@@ -64,9 +64,7 @@
 }
 
 .root:hover {
-  /* color: var(--darkgray); */
   & input {
-    /* opacity: 0.8; */
     border-color: 3px solid var(--darkgray);
     color: inherit;
   }
@@ -92,7 +90,6 @@
   }
 
   & .clearButton {
-    /* margin-left: calc(-1 * var(--text-xlarge) - 60px); */
     font-size: var(--text-xlarge);
   }
 
@@ -111,8 +108,10 @@
   & input:focus {
     border-bottom: 3px solid var(--black);
   }
+}
 
-  @media (--reduced) {
+@media (--reduced) {
+  .large {
     flex-basis: var(--col8);
   }
 }

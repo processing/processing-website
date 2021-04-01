@@ -37,8 +37,14 @@
       color: var(--processing-blue-mid);
     }
   }
+}
 
-  @media (--small) {
+.headerScrolled {
+  height: calc(100vh - 64px);
+}
+
+@media (--small) {
+  .root {
     position: relative;
     height: auto;
     flex-basis: var(--col8);
@@ -55,12 +61,8 @@
       margin-bottom: 6px;
     }
   }
-}
 
-.headerScrolled {
-  height: calc(100vh - 64px);
-
-  @media (--small) {
+  .headerScrolled {
     height: auto;
   }
 }
