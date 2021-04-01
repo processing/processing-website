@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { examplePath } from '../utils/paths';
 
 /**
   Hook to sort a list of .pde files so the file with the same name
@@ -25,7 +26,7 @@ export const useRelatedExamples = (related, examples, images) => {
       const json = examples.find((f) => f.name === name);
       const image = images.find((f) => f.name === name);
       return {
-        slug: `/examples/${name.toLowerCase()}.html`,
+        slug: examplePath(name),
         name: json.childJson.name,
         image,
       };

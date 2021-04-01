@@ -13,6 +13,7 @@ import Sidebar from '../../components/Sidebar';
 import Tabs from '../../components/Tabs';
 
 import { organizeExampleItems } from '../../utils/data';
+import { referencePath } from '../../utils/paths';
 import { useWindowSize } from '../../hooks';
 import { useOrderedPdes, useRelatedExamples } from '../../hooks/examples';
 
@@ -96,16 +97,10 @@ const ExampleTemplate = ({ data, pageContext }) => {
                   }}></p>
               </div>
               {example.childJson.featured.length > 0 && (
-                <div className={classnames(grid.col, css.featured)}>
-                  <h3>{intl.formatMessage({ id: 'featured' })}</h3>
-                  <ul>
-                    {example.childJson.featured.map((feature, key) => (
-                      <li key={key + 'f'}>
-                        <Link to={feature}>{feature}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <FeaturedFunctions
+                  featured={example.childJson.featured}
+                  heading={intl.formatMessage({ id: 'featured' })}
+                />
               )}
               <div
                 className={classnames(css.cover, grid.col)}
@@ -152,6 +147,23 @@ const ExampleTemplate = ({ data, pageContext }) => {
     </Layout>
   );
 };
+
+const FeaturedFunctions = memo(({ heading, featured }) => {
+  return (
+    <div className={classnames(grid.col, css.featured)}>
+      <h3>{heading}</h3>
+      <ul>
+        {featured.map((feature, key) => (
+          <li key={key + 'f'}>
+            <Link to={referencePath(feature)}>
+              {feature.replace(/_/g, ' ')}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+});
 
 const RelatedExamples = memo(({ heading, examples }) => {
   return (
