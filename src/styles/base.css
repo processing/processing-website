@@ -157,3 +157,7 @@ img {
 .hljs-built_in {
   color: #006699;
 }
+
+.hljs-string {
+  color: #7d4793;
+}
