@@ -259,7 +259,6 @@ async function createExamples(actions, graphql) {
   const { createPage } = actions;
 
   // Load all JSON files within the examples folder
-  // Load all images (expect in /data folder ) within the examples folder
   const result = await graphql(
     `
       {
