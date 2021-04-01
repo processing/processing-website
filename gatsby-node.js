@@ -256,6 +256,8 @@ async function createExamples(actions, graphql) {
     `
   );
 
+  // TODO: Do the examples here, including sub categories, etc.
+
   if (exampleResult.errors) {
     throw exampleResult.errors;
   }
