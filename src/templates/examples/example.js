@@ -5,6 +5,7 @@ import { Link } from 'gatsby';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 import Img from 'gatsby-image';
+import p5 from 'p5';
 
 import Footer from '../../components/Footer';
 import Layout from '../../components/Layout';
@@ -23,7 +24,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
   const [showSidebar, setShowSidebar] = useState(width > 960 ? true : false);
   const intl = useIntl();
 
-  const { json, image, examples, relatedImages } = data;
+  const { json, image, examples, relatedImages, liveSketch } = data;
   const { name, subCategory, related } = pageContext;
 
   const pdes = useOrderedPdes(name, data.pdes.nodes);
@@ -43,22 +44,20 @@ const ExampleTemplate = ({ data, pageContext }) => {
 
   // Run live sketch
   useEffect(() => {
-    if (data.liveSketch) {
+    if (liveSketch) {
       setTimeout(() => {
-        if (window.runSketch) {
-          window.runSketch();
+        if (window.runLiveSketch) {
+          const myp5 = new p5(window.runLiveSketch, 'example-cover');
         }
       }, 1000);
     }
-  }, [data.liveSketch]);
+  }, [liveSketch]);
 
   return (
     <Layout hasSidebar>
       <Helmet>
         {json && <title>{json.childJson.title}</title>}
-        {data.liveSketch && (
-          <script>{`${data.liveSketch.childRawCode.content}`}</script>
-        )}
+        {liveSketch && <script>{`${liveSketch.childRawCode.content}`}</script>}
       </Helmet>
       <div className={classnames(css.root, grid.grid, grid.rightBleed)}>
         <Sidebar
@@ -103,8 +102,12 @@ const ExampleTemplate = ({ data, pageContext }) => {
                   </ul>
                 </div>
               )}
-              <div className={classnames(css.cover, grid.col)}>
-                {image && <Img fluid={image.childImageSharp.fluid} />}
+              <div
+                className={classnames(css.cover, grid.col)}
+                id="example-cover">
+                {!liveSketch && image && (
+                  <Img fluid={image.childImageSharp.fluid} />
+                )}
               </div>
               <Tabs pdes={pdes} className={css.tabs} />
               <RelatedExamples
