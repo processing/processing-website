@@ -16,20 +16,25 @@ export const useOrderedPdes = (name, nodes) => {
 
 /**
   Hook to find the json and image for each related example
-  @param {Array} related Array of strings with names of related examples
-  @param {Array} examples Array of all example JSON files returned from GraphQL
+  @param {Array} examples Array of example JSON files
   @param {Array} images Array of sharp image objects
+  @param {Array} filter Array of strings with names to filter examples by
 **/
-export const useRelatedExamples = (related, examples, images) => {
+export const usePreparedExamples = (examples, images, filter) => {
   return useMemo(() => {
-    return related.map((name) => {
-      const json = examples.find((f) => f.name === name);
-      const image = images.find((f) => f.name === name);
+    const filtered = filter
+      ? examples.filter((f) => filter.includes(f.name))
+      : examples;
+    return filtered.map((example) => {
+      const image = images.find((f) => f.name === example.name);
+      const [category, subCategory] = example.relativeDirectory.split('/');
       return {
-        slug: examplePath(name),
-        name: json.childJson.name,
+        slug: examplePath(example.name),
+        name: example.childJson.name,
+        category,
+        subCategory,
         image,
       };
     });
-  }, [related, examples, images]);
+  }, [examples, images, filter]);
 };

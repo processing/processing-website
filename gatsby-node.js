@@ -265,7 +265,7 @@ async function createExamples(actions, graphql) {
         json: allFile(
           filter: {
             sourceInstanceName: { eq: "examples" }
-            extension: { regex: "/(json)/" }
+            extension: { eq: "json" }
           }
         ) {
           edges {
