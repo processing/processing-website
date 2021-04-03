@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from 'react';
+import React, { memo } from 'react';
 import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
@@ -311,6 +311,7 @@ export const query = graphql`
         relativeDirectory
         childImageSharp {
           fluid(maxWidth: 800) {
+            ...GatsbyImageSharpFluid
             base64
             srcWebp
             srcSetWebp
