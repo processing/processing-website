@@ -14,7 +14,6 @@ import css from '../../styles/templates/index-lib-template.module.css';
 import grid from '../../styles/grid.module.css';
 
 const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
-  const link = `/reference/libraries/${libraryName}/index.html`;
   const intl = useIntl();
   const items = data.allFile.nodes;
 
@@ -33,7 +32,9 @@ const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
       ) : (
         <div>
           {intl.formatMessage({ id: 'notTranslated' })}
-          <Link to={link}>{intl.formatMessage({ id: 'englishPage' })}</Link>
+          <Link to={`/reference/libraries/${libraryName}/index.html`}>
+            {intl.formatMessage({ id: 'englishPage' })}
+          </Link>
         </div>
       )}
     </Layout>

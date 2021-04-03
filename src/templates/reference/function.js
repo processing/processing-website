@@ -13,6 +13,7 @@ import Layout from '../../components/Layout';
 import Sidebar from '../../components/Sidebar';
 
 import { useHighlight, useWindowSize } from '../../hooks';
+import { referencePath } from '../../utils/paths';
 
 import css from '../../styles/templates/ref-template.module.css';
 import grid from '../../styles/grid.module.css';
@@ -27,11 +28,6 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
   if (data.json !== null) {
     entry = data.json.childJson;
   }
-
-  const link =
-    pageContext.libraryName === 'processing'
-      ? `/reference/${pageContext.name}.html`
-      : `/reference/libraries/${pageContext.libraryName}/${pageContext.name}.html`;
 
   const examples = data.pdes ? data.pdes.edges : [];
   const images = data.images.edges;
@@ -240,7 +236,8 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
             )}>
             <div className={classnames(grid.push1)}>
               {intl.formatMessage({ id: 'notTranslated' })}
-              <Link to={link}>
+              <Link
+                to={referencePath(pageContext.name, pageContext.libraryName)}>
                 {' '}
                 {intl.formatMessage({ id: 'englishPage' })}
               </Link>

@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
+import { referencePath } from '../../utils/paths';
 
 import Img from 'gatsby-image';
 
@@ -29,11 +30,6 @@ const FieldRefTemplate = ({ data, pageContext }) => {
   if (data.json !== null) {
     entry = data.json.childJson;
   }
-
-  const link =
-    pageContext.libraryName === 'processing'
-      ? `/reference/${pageContext.name}.html`
-      : `/reference/libraries/${pageContext.libraryName}/${pageContext.name}.html`;
 
   const toggleSidebar = (e, show) => {
     if (e.type === 'click') setShow(show);
@@ -150,7 +146,8 @@ const FieldRefTemplate = ({ data, pageContext }) => {
             )}>
             <div className={classnames(grid.push1)}>
               {intl.formatMessage({ id: 'notTranslated' })}
-              <Link to={link}>
+              <Link
+                to={referencePath(pageContext.name, pageContext.libraryName)}>
                 {' '}
                 {intl.formatMessage({ id: 'englishPage' })}
               </Link>

@@ -7,21 +7,21 @@ export const titleCase = (slug) => _titleCase(slug.replace(/_/g, ' '));
 export const filterItems = (items, searchTerm) => {
   if (searchTerm && searchTerm !== '') {
     const searchTerms = searchTerm.split(' ');
-    return items.filter((item) => {
-      try {
-        return item.childJson
-          ? searchTerms.every((term) =>
-              JSON.stringify(Object.values(item.childJson))
-                .toLowerCase()
-                .includes(term.toLowerCase())
-            )
-          : searchTerms.every((term) =>
-              JSON.stringify(item).toLowerCase().includes(term.toLowerCase())
-            );
-      } catch (e) {
-        return false;
+    const filtered = [];
+    loop1: for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+      const searchString = item.childJson
+        ? JSON.stringify(Object.values(item.childJson)).toLowerCase()
+        : JSON.stringify(item).toLowerCase();
+      loop2: for (let j = 0; j < searchTerms.length; j++) {
+        // console.log(searchString, searchTerms[j]);
+        if (!searchString.includes(searchTerms[j].toLowerCase())) {
+          continue loop1;
+        }
       }
-    });
+      filtered.push(item);
+    }
+    return filtered;
   } else {
     return items;
   }
@@ -30,7 +30,8 @@ export const filterItems = (items, searchTerm) => {
 export const organizeReferenceItems = (items) => {
   const tree = [];
 
-  items.forEach((item) => {
+  for (let i = 0; i < items.length; i++) {
+    const item = items[i];
     const { category, subcategory } = item.childJson;
 
     let categoryIndex = tree.findIndex(
@@ -63,7 +64,7 @@ export const organizeReferenceItems = (items) => {
       dir: item.relativeDirectory,
       ...item.childJson,
     });
-  });
+  }
 
   return tree;
 };
@@ -71,45 +72,44 @@ export const organizeReferenceItems = (items) => {
 export const organizeExampleItems = (items, images) => {
   const tree = [];
 
-  items.forEach((item) => {
+  for (let i = 0; i < items.length; i++) {
+    const item = items[i];
     const image = images
       ? images.find((img) => img.relativeDirectory === item.relativeDirectory)
       : '';
-    const category = item.relativeDirectory.split('/')[0];
-    const subcategory = item.relativeDirectory.split('/')[1];
+    const [category, subcategory, exampleName] = item.relativeDirectory.split(
+      '/'
+    );
 
-    let categoryIndex = tree.findIndex((cat) => cat.slug === category);
+    let categoryIndex = tree.findIndex((cat) => cat.name === category);
 
     if (categoryIndex === -1) {
       tree.push({
-        slug: category,
-        name: titleCase(category),
+        name: category,
         children: [],
       });
       categoryIndex = tree.length - 1;
     }
 
     let subcategoryIndex = tree[categoryIndex].children.findIndex(
-      (subcat) => subcat.slug === subcategory
+      (subcat) => subcat.name === subcategory
     );
 
     if (subcategoryIndex === -1) {
       tree[categoryIndex].children.push({
-        slug: subcategory ? subcategory : '',
-        name: subcategory ? titleCase(subcategory) : '',
+        name: subcategory ?? '',
         children: [],
       });
       subcategoryIndex = tree[categoryIndex].children.length - 1;
     }
 
     tree[categoryIndex].children[subcategoryIndex].children.push({
-      slug: item.relativeDirectory.split('/')[2],
+      slug: exampleName,
       name: item.childJson.name,
-      dir: item.relativeDirectory,
-      img: image,
+      image: image,
       ...item.childJSON,
     });
-  });
+  }
 
   return tree;
 };

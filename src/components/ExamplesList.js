@@ -2,6 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
+import { examplePath } from '../utils/paths';
 import Img from 'gatsby-image';
 
 import css from './ExamplesList.module.css';
@@ -30,13 +31,11 @@ const ExamplesList = ({ data }) => {
                 <ul className={classnames(grid.col, grid.nest)}>
                   {subcategory.children.map((node, key) => (
                     <li key={`item-${key}`} className={grid.col}>
-                      <Link
-                        to={`/examples/${node.slug.toLowerCase()}.html`}
-                        language={locale}>
-                        {node.img && (
+                      <Link to={examplePath(node.slug)} language={locale}>
+                        {node.image && (
                           <Img
                             className={css.cover}
-                            fluid={node.img.childImageSharp.fluid}
+                            fluid={node.image.childImageSharp.fluid}
                           />
                         )}
                         <h4>{node.name}</h4>
