@@ -22,19 +22,43 @@ export const useOrderedPdes = (name, nodes) => {
 **/
 export const usePreparedExamples = (examples, images, filter) => {
   return useMemo(() => {
-    const filtered = filter
-      ? examples.filter((f) => filter.includes(f.name))
-      : examples;
-    return filtered.map((example) => {
-      const image = images.find((f) => f.name === example.name);
+    // Filter examples if needed
+    let filtered = examples;
+    if (filter) {
+      filtered = [];
+      for (let i = 0; i < examples.length; i++) {
+        if (filter.includes(examples[i].name)) {
+          filtered.push(examples[i]);
+        }
+      }
+    }
+
+    // Prepare examples by extracting the necessary info and
+    const prepared = [];
+
+    for (let i = 0; i < filtered.length; i++) {
+      const example = filtered[i];
+
+      // Find the image
+      let image;
+      for (let j = 0; j < images.length; j++) {
+        if (images[j].name === example.name) {
+          image = images[j];
+          break;
+        }
+      }
+
       const [category, subCategory] = example.relativeDirectory.split('/');
-      return {
-        slug: examplePath(example.name),
+      prepared.push({
+        slug: example.name,
+        path: examplePath(example.name),
         name: example.childJson.name,
         category,
         subCategory,
         image,
-      };
-    });
+      });
+    }
+
+    return prepared;
   }, [examples, images, filter]);
 };

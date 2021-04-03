@@ -173,7 +173,7 @@ const RelatedExamples = memo(({ heading, examples }) => {
         {examples.slice(0, 6).map((example, key) => {
           return (
             <li key={key + 'rel'} className={css.relatedItem}>
-              <Link to={example.slug}>
+              <Link to={example.path}>
                 {example.image && (
                   <Img
                     className={css.img}

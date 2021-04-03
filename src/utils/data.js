@@ -10,9 +10,10 @@ export const filterItems = (items, searchTerm) => {
     const filtered = [];
     loop1: for (let i = 0; i < items.length; i++) {
       const item = items[i];
-      const searchString = item.childJson
-        ? JSON.stringify(Object.values(item.childJson)).toLowerCase()
-        : JSON.stringify(item).toLowerCase();
+      const searchString = item.name; //item.childJson
+      console.log(searchString, item);
+      //? JSON.stringify(Object.values(item.childJson)).toLowerCase()
+      //: JSON.stringify(item).toLowerCase();
       loop2: for (let j = 0; j < searchTerms.length; j++) {
         // console.log(searchString, searchTerms[j]);
         if (!searchString.includes(searchTerms[j].toLowerCase())) {
@@ -69,46 +70,21 @@ export const organizeReferenceItems = (items) => {
   return tree;
 };
 
-export const organizeExampleItems = (items, images) => {
-  const tree = [];
+export const organizeExampleItems = (items) => {
+  const tree = {};
 
   for (let i = 0; i < items.length; i++) {
     const item = items[i];
-    const image = images
-      ? images.find((img) => img.relativeDirectory === item.relativeDirectory)
-      : '';
-    const [category, subcategory, exampleName] = item.relativeDirectory.split(
-      '/'
-    );
 
-    let categoryIndex = tree.findIndex((cat) => cat.name === category);
-
-    if (categoryIndex === -1) {
-      tree.push({
-        name: category,
-        children: [],
-      });
-      categoryIndex = tree.length - 1;
+    if (!tree[item.category]) {
+      tree[item.category] = {};
     }
 
-    let subcategoryIndex = tree[categoryIndex].children.findIndex(
-      (subcat) => subcat.name === subcategory
-    );
-
-    if (subcategoryIndex === -1) {
-      tree[categoryIndex].children.push({
-        name: subcategory ?? '',
-        children: [],
-      });
-      subcategoryIndex = tree[categoryIndex].children.length - 1;
+    if (!tree[item.category][item.subCategory]) {
+      tree[item.category][item.subCategory] = [];
     }
 
-    tree[categoryIndex].children[subcategoryIndex].children.push({
-      slug: exampleName,
-      name: item.childJson.name,
-      image: image,
-      ...item.childJSON,
-    });
+    tree[item.category][item.subCategory].push(item);
   }
 
   return tree;

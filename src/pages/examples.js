@@ -9,6 +9,7 @@ import ExamplesList from '../components/ExamplesList';
 import Layout from '../components/Layout';
 import FilterBar from '../components/FilterBar';
 
+import { usePreparedExamples } from '../hooks/examples';
 import { filterItems, organizeExampleItems } from '../utils/data';
 
 import grid from '../styles/grid.module.css';
@@ -18,12 +19,12 @@ const Examples = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const intl = useIntl();
 
-  const items = data.examples.nodes;
-  const images = data.images.nodes;
+  const examples = usePreparedExamples(data.examples.nodes, data.images.nodes);
 
+  // TODO: MERGE FILTER INTO ORGANIZEEXMPLEITEMS!
   const tree = useMemo(
-    () => organizeExampleItems(filterItems(items, searchTerm), images),
-    [items, searchTerm, images]
+    () => organizeExampleItems(filterItems(examples, searchTerm)),
+    [examples, searchTerm]
   );
 
   return (
@@ -44,7 +45,7 @@ const Examples = ({ data }) => {
           searchTerm={searchTerm}
           large
         />
-        <ExamplesList data={tree} />
+        <ExamplesList tree={tree} />
       </div>
     </Layout>
   );
