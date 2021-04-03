@@ -113,7 +113,7 @@ export const organizeExampleItems = (items, images) => {
     }
 
     tree[categoryIndex].children[subcategoryIndex].children.push({
-      slug: item.relativeDirectory.split('/')[2],
+      slug: item.relativeDirectory.split('/')[2]?.toLowerCase(),
       name: item.childJson.name,
       dir: item.relativeDirectory,
       img: image,

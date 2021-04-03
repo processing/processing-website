@@ -8,20 +8,16 @@ import SidebarGroup from './SidebarGroup';
 import grid from '../styles/grid.module.css';
 import css from './SidebarList.module.css';
 
-const SidebarList = ({ data, type, filtered }) => {
+const SidebarList = ({ data, type }) => {
   const { locale } = useLocalization();
 
   return (
     <div className={css.root}>
       {data.map((category, key) => (
-        <SidebarGroup
-          label={category.name}
-          key={`label-category-${key}`}
-          filtered={filtered}>
+        <SidebarGroup label={category.name} key={`label-category-${key}`}>
           <ul>
             {category.children.map((subcategory, key) => (
               <SidebarGroup
-                filtered={filtered}
                 label={subcategory.name}
                 key={`label-subcategory-${key}`}
                 secondary>
@@ -35,7 +31,7 @@ const SidebarList = ({ data, type, filtered }) => {
                           })}
                           to={`/${type}/${item.slug}.html`}
                           language={locale}>
-                          <span>{item.name}</span>
+                          {item.name}
                         </Link>
                       </li>
                     );

@@ -17,7 +17,6 @@ import css from './Sidebar.module.css';
 const Sidebar = (props) => {
   const { items, show, type = 'reference', setShow = () => {} } = props;
   const [searchTerm, setSearchTerm] = useState('');
-
   const layout = useContext(LayoutContext);
   const intl = useIntl();
 
@@ -31,7 +30,7 @@ const Sidebar = (props) => {
       ]),
     [searchTerm, items.nodes]
   );
-  console.log(items.nodes);
+
   const tree = useMemo(
     () =>
       type === 'reference'
@@ -68,11 +67,7 @@ const Sidebar = (props) => {
               searchTerm={searchTerm}
             />
             <div className={css.listWrapper}>
-              <SidebarList
-                data={tree}
-                type={type}
-                filtered={searchTerm !== ''}
-              />
+              <SidebarList data={tree} type={type} />
             </div>
           </Fragment>
         )}

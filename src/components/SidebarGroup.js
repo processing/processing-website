@@ -3,8 +3,8 @@ import classnames from 'classnames';
 
 import css from './SidebarGroup.module.css';
 
-const SidebarGroup = ({ label, children, secondary, filtered }) => {
-  const [expanded, setExpanded] = useState();
+const SidebarGroup = ({ label, children, secondary }) => {
+  const [expanded, setExpanded] = useState(true);
 
   useEffect(() => {
     !label && setExpanded(true);
@@ -15,7 +15,7 @@ const SidebarGroup = ({ label, children, secondary, filtered }) => {
       className={classnames(
         css.root,
         { [css.secondaryLabel]: secondary },
-        { [css.expanded]: expanded || filtered },
+        { [css.expanded]: expanded },
         { [css.noLabel]: !label }
       )}>
       <button
@@ -27,18 +27,17 @@ const SidebarGroup = ({ label, children, secondary, filtered }) => {
           <Fragment>
             {label && (
               <div className={css.secondaryWrapper}>
-                {!filtered && (
-                  <div className={css.expandButton}>
-                    <span>{expanded ? '−' : '+'}</span>
-                  </div>
-                )}
+                <div className={css.expandButton}>
+                  <span>{expanded ? '−' : '+'}</span>
+                </div>
+
                 <h4 className={css.label}>{label}</h4>
               </div>
             )}
           </Fragment>
         )}
       </button>
-      {(expanded || filtered) && children}
+      {expanded && children}
     </div>
   );
 };

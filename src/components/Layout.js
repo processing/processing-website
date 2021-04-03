@@ -8,8 +8,6 @@ import { MDXProvider } from '@mdx-js/react';
 import Header from './Header';
 import Footer from './Footer';
 
-import { useWindowSize } from '../hooks';
-
 import FixedImage from './mdx/FixedImage';
 import Intro from './mdx/Intro';
 import HighlightBlock from './mdx/HighlightBlock';
@@ -28,7 +26,6 @@ export const LayoutContext = React.createContext({
 const Layout = ({ children, isHomepage, withSidebar }) => {
   const mainRef = useRef();
   const [headerScrolled, setHeaderScrolled] = useState(false);
-  const { width } = useWindowSize();
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {

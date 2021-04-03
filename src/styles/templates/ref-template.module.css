@@ -32,7 +32,6 @@
   flex-basis: var(--col8);
   padding-left: 0;
   padding-right: var(--margin);
-  transition: 0.2s ease;
 
   & > * {
     padding-left: var(--push1);
