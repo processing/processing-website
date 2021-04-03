@@ -283,7 +283,7 @@ export const query = graphql`
         extension: { eq: "json" }
         sourceInstanceName: { eq: "examples" }
         fields: { lang: { eq: "en" } }
-        dir: { regex: "/.*[^data]$/" }
+        dir: { regex: "/^((?!data).)*$/" }
       }
       sort: { order: ASC, fields: relativeDirectory }
     ) {
@@ -302,7 +302,7 @@ export const query = graphql`
         name: { in: $featuredExamples }
         sourceInstanceName: { eq: "examples" }
         extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
-        dir: { regex: "/.*[^data]$/" }
+        dir: { regex: "/^((?!data).)*$/" }
       }
     ) {
       nodes {
