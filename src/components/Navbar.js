@@ -4,7 +4,7 @@ import { useLocation } from '@reach/router';
 import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
 
-import { useWindowSize } from '../utils/hooks';
+import { useWindowSize } from '../hooks';
 
 import SearchBar from './SearchBar';
 

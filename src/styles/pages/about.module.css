@@ -7,16 +7,6 @@
     flex-basis: var(--col8);
     padding-right: var(--push4);
   }
-
-  @media (--small) {
-    & > h1 {
-      padding-top: var(--vertical-gutter);
-    }
-    & > h3 {
-      padding-right: 0;
-      flex-basis: var(--col8);
-    }
-  }
 }
 
 .content {
@@ -94,8 +84,20 @@
     border-left: solid var(--lightgray) 6px;
     padding-left: 10px;
   }
+}
 
-  @media (--small) {
+@media (--small) {
+  .root {
+    & > h1 {
+      padding-top: var(--vertical-gutter);
+    }
+    & > h3 {
+      padding-right: 0;
+      flex-basis: var(--col8);
+    }
+  }
+
+  .content {
     padding-left: var(--gutter);
     padding-right: var(--gutter);
   }

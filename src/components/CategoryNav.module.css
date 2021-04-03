@@ -2,11 +2,6 @@
   flex-basis: var(--col6);
   justify-content: center;
   margin-top: var(--margin-half);
-
-  @media (--reduced) {
-    margin-top: var(--vertical-gutter);
-    flex-basis: var(--col8);
-  }
 }
 
 .list {
@@ -25,12 +20,22 @@
     height: 100%;
     margin-right: 10px;
   }
-
-  @media (--small) {
-    flex-basis: var(--col4);
-  }
 }
+
 .itemLink {
   font-weight: bold;
   margin-bottom: 5px;
+}
+
+@media (--reduced) {
+  .root {
+    margin-top: var(--vertical-gutter);
+    flex-basis: var(--col8);
+  }
+}
+
+@media (--small) {
+  .item {
+    flex-basis: var(--col4);
+  }
 }

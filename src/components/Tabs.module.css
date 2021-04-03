@@ -8,21 +8,6 @@
     align-items: center;
     list-style: none;
   }
-
-  & > div {
-  }
-
-  @media (--small) {
-    & > ul {
-      padding-left: var(--gutter);
-      padding-right: var(--gutter);
-    }
-
-    & > div {
-      padding-left: var(--gutter);
-      padding-right: var(--gutter);
-    }
-  }
 }
 
 .tab {
@@ -38,8 +23,26 @@
   background-color: var(--lightgray);
 }
 
+.code {
+  position: relative;
+}
+
 .codeBlock {
   max-width: cols(6, 6);
   padding-bottom: var(--gutter-double);
   white-space: break-spaces;
+}
+
+@media (--small) {
+  .root {
+    & > ul {
+      padding-left: var(--gutter);
+      padding-right: var(--gutter);
+    }
+
+    & > div {
+      padding-left: var(--gutter);
+      padding-right: var(--gutter);
+    }
+  }
 }

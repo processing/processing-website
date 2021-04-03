@@ -124,7 +124,9 @@ export const organizeExampleItems = (items, images) => {
   return tree;
 };
 
-export const subcategoryFromDirectory = (relDir) => {
-  const category = relDir.split('/')[1];
-  return category.charAt(0).toUpperCase() + category.slice(1);
+export const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
 };

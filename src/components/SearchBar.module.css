@@ -1,13 +1,5 @@
 .root {
   flex-basis: cols(1, 8);
-  @media (--medium) {
-    align-self: center;
-    flex-basis: auto;
-  }
-  @media (--small) {
-    align-self: flex-start;
-    flex-basis: var(--col1);
-  }
 }
 
 .input {
@@ -32,4 +24,17 @@
 
 .large {
   padding-left: var(--push-half);
+}
+
+@media (--medium) {
+  .root {
+    align-self: center;
+    flex-basis: auto;
+  }
+}
+@media (--small) {
+  .root {
+    align-self: flex-start;
+    flex-basis: var(--col1);
+  }
 }

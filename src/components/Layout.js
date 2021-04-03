@@ -8,7 +8,7 @@ import { MDXProvider } from '@mdx-js/react';
 import Header from './Header';
 import Footer from './Footer';
 
-import { useWindowSize } from '../utils/hooks';
+import { useWindowSize } from '../hooks';
 
 import FixedImage from './mdx/FixedImage';
 import Intro from './mdx/Intro';

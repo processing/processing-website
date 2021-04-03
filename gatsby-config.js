@@ -130,6 +130,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-transformer-code`,
+      options: {
+        name: `examples`,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `tutorials`,

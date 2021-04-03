@@ -5,18 +5,6 @@
     padding-right: var(--push1);
     margin-bottom: 0;
   }
-
-  @media (--small) {
-    & > h1 {
-      padding-top: var(--vertical-gutter);
-      padding-left: var(--gutter);
-      padding-right: var(--gutter);
-    }
-    & > h3 {
-      padding-right: var(--gutter);
-      flex-basis: var(--col8);
-    }
-  }
 }
 
 .author {
@@ -133,8 +121,22 @@
       width: var(--col5);
     }
   }
+}
 
-  @media (--small) {
+@media (--small) {
+  .root {
+    & > h1 {
+      padding-top: var(--vertical-gutter);
+      padding-left: var(--gutter);
+      padding-right: var(--gutter);
+    }
+    & > h3 {
+      padding-right: var(--gutter);
+      flex-basis: var(--col8);
+    }
+  }
+
+  .content {
     max-width: var(--col8);
     padding-left: var(--gutter);
     padding-right: var(--gutter);

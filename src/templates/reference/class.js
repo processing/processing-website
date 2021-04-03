@@ -6,10 +6,11 @@ import { Link } from 'gatsby';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 
+import CopyButton from '../../components/CopyButton';
 import Layout from '../../components/Layout';
 import Sidebar from '../../components/Sidebar';
 
-import { useHighlight, useWindowSize } from '../../utils/hooks';
+import { useHighlight, useWindowSize } from '../../hooks';
 
 import css from '../../styles/templates/ref-template.module.css';
 import grid from '../../styles/grid.module.css';
@@ -88,6 +89,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
                         <li key={'ex' + key} className={css.example}>
                           <div
                             className={classnames(grid.col, css.exampleCode)}>
+                            <CopyButton text={ex.node.internal.content} />
                             <pre className={css.codeBlock}>
                               {ex.node.internal.content
                                 .split(/\r?\n/)

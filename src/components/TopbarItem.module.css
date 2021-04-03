@@ -14,3 +14,13 @@
     }
   }
 }
+
+@media (--small) {
+  .root {
+    & a {
+      & h4 {
+        display: none;
+      }
+    }
+  }
+}

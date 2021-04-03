@@ -4,10 +4,6 @@
   background-color: var(--processing-blue-dark);
   cursor: pointer;
   color: white;
-
-  @media (--small) {
-    margin-right: 0px;
-  }
 }
 
 .languageButton {
@@ -41,4 +37,10 @@
 
 .show {
   display: block;
+}
+
+@media (--small) {
+  .root {
+    margin-right: 0px;
+  }
 }

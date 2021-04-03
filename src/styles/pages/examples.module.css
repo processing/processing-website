@@ -6,8 +6,10 @@
     flex-basis: var(--col8);
     padding-right: var(--col5);
   }
+}
 
-  @media (--small) {
+@media (--small) {
+  .root {
     & > h1 {
       padding-top: var(--vertical-gutter);
     }
