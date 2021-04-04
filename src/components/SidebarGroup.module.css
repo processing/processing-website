@@ -4,7 +4,7 @@
   padding: 10px 0;
   cursor: pointer;
   color: var(--processing-blue-dark);
-
+  white-space: nowrap;
   & .button {
     width: 100%;
     text-align: left;
@@ -25,8 +25,10 @@
   & ul {
     margin: 3px 0;
 
-    & li {
-      white-space: break-spaces;
+    & li a {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     & > div:last-child {

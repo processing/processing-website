@@ -8,6 +8,8 @@
 }
 
 .author {
+  flex-basis: var(--col8);
+  padding-left: var(--push2);
   margin-bottom: 1rem;
   font-size: var(--text-large);
   font-weight: 700;

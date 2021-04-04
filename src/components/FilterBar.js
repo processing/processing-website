@@ -12,14 +12,16 @@ const FilterBar = ({
   onChange,
   onClick,
 }) => {
-  const onKeyDown = (e) => {
-    if (e.keyCode === 13) {
+  const onKeyPress = (e) => {
+    if (e.key === 'Enter') {
       e.preventDefault();
     }
   };
-  return large ? (
+  return (
     <div
-      className={classnames(css.root, grid.col, css.large, {
+      className={classnames(css.root, {
+        [grid.col]: large,
+        [css.large]: large,
         [className]: className,
       })}>
       <form action="" role="search">
@@ -30,29 +32,13 @@ const FilterBar = ({
           placeholder={placeholder}
           value={searchTerm}
           onChange={onChange}
-          onKeyDown={onKeyDown}
+          onKeyPress={onKeyPress}
         />
         {searchTerm && (
           <button className={css.clearButton} onClick={onClick} type="button">
             &times;
           </button>
         )}
-      </form>
-    </div>
-  ) : (
-    <div className={classnames(css.root, { [className]: className })}>
-      <form action="" role="search">
-        <input
-          type="text"
-          id="search"
-          name="search"
-          placeholder={placeholder}
-          value={searchTerm}
-          onChange={onChange}
-        />
-        <button className={css.clearButton} onClick={onClick} type="button">
-          x
-        </button>
       </form>
     </div>
   );

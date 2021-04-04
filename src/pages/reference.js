@@ -29,7 +29,7 @@ const Reference = ({ data }) => {
   return (
     <Layout>
       <Helmet>
-        <title>{'Reference'}</title>
+        <title>Reference</title>
       </Helmet>
       <div className={grid.grid}>
         <h1 className={grid.col} style={{ flexBasis: '100%' }}>

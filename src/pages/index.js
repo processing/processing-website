@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from 'react';
+import React, { memo } from 'react';
 import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
