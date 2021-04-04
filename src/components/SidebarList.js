@@ -8,28 +8,28 @@ import SidebarGroup from './SidebarGroup';
 import grid from '../styles/grid.module.css';
 import css from './SidebarList.module.css';
 
-const SidebarList = ({ data, type }) => {
+const SidebarList = ({ tree, type }) => {
   const { locale } = useLocalization();
 
   return (
     <div className={css.root}>
-      {data.map((category, key) => (
-        <SidebarGroup label={category.name} key={`label-category-${key}`}>
+      {Object.keys(tree).map((category) => (
+        <SidebarGroup label={category} key={`label-category-${category}`}>
           <ul>
-            {category.children.map((subcategory, key) => (
+            {Object.keys(tree[category]).map((subCategory) => (
               <SidebarGroup
-                label={subcategory.name}
-                key={`label-subcategory-${key}`}
+                label={subCategory}
+                key={`label-subcategory-${subCategory}`}
                 secondary>
                 <ul>
-                  {subcategory.children.map((item, key) => {
+                  {tree[category][subCategory].map((item, key) => {
                     return (
                       <li key={key}>
                         <Link
                           className={classnames(grid.col1andhalf, {
                             [css.examples]: type === 'examples',
                           })}
-                          to={`/${type}/${item.slug}.html`}
+                          to={item.path}
                           language={locale}>
                           {item.name}
                         </Link>
