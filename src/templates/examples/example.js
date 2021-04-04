@@ -1,4 +1,4 @@
-import React, { memo, useState, useEffect } from 'react';
+import React, { memo, useState, useEffect, useMemo } from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
@@ -14,25 +14,29 @@ import Tabs from '../../components/Tabs';
 
 import { referencePath } from '../../utils/paths';
 import { useWindowSize } from '../../hooks';
-import { useOrderedPdes, usePreparedExamples } from '../../hooks/examples';
+import {
+  useOrderedPdes,
+  usePreparedExamples,
+  useOrganizedExamples,
+  useRelatedExamples,
+} from '../../hooks/examples';
 
 import css from '../../styles/templates/example-template.module.css';
 import grid from '../../styles/grid.module.css';
 
 const ExampleTemplate = ({ data, pageContext }) => {
   const { width } = useWindowSize();
-  const [showSidebar, setShowSidebar] = useState(width > 960 ? true : false);
+  const [showSidebar, setShowSidebar] = useState(width > 960);
   const intl = useIntl();
 
   const { example, image, allExamples, relatedImages, liveSketch } = data;
+  const { title, description, author, featured } = example.childJson;
   const { name, related } = pageContext;
 
   const pdes = useOrderedPdes(name, data.pdes.nodes);
-  const relatedExamples = usePreparedExamples(
-    allExamples.nodes,
-    relatedImages.nodes,
-    related
-  );
+  const examples = usePreparedExamples(allExamples.nodes, relatedImages.nodes);
+  const tree = useOrganizedExamples(examples, '');
+  const relatedExamples = useRelatedExamples(examples, related);
 
   const toggleSidebar = (e, show) => {
     if (e.type === 'click') {
@@ -62,12 +66,12 @@ const ExampleTemplate = ({ data, pageContext }) => {
   return (
     <Layout hasSidebar>
       <Helmet>
-        {example && <title>{example.childJson.title}</title>}
+        {example && <title>{title}</title>}
         {liveSketch && <script>{`${liveSketch.childRawCode.content}`}</script>}
       </Helmet>
       <div className={classnames(css.root, grid.grid, grid.rightBleed)}>
         <Sidebar
-          items={allExamples}
+          tree={tree}
           onChange={toggleSidebar}
           show={showSidebar}
           type={'examples'}
@@ -83,22 +87,22 @@ const ExampleTemplate = ({ data, pageContext }) => {
                 { [css.collapsed]: !showSidebar },
                 grid.nest
               )}>
-              <h1 className={grid.col}>{example.childJson.title}</h1>
-              {example.childJson.author && (
+              <h1 className={grid.col}>{title}</h1>
+              {author && (
                 <h3 className={grid.col}>
                   {' '}
-                  {intl.formatMessage({ id: 'by' })} {example.childJson.author}
+                  {intl.formatMessage({ id: 'by' })} {author}
                 </h3>
               )}
               <div className={classnames(grid.col, css.description)}>
                 <p
                   dangerouslySetInnerHTML={{
-                    __html: example.childJson.description,
+                    __html: description,
                   }}></p>
               </div>
-              {example.childJson.featured.length > 0 && (
+              {featured.length > 0 && (
                 <FeaturedFunctions
-                  featured={example.childJson.featured}
+                  featured={featured}
                   heading={intl.formatMessage({ id: 'featured' })}
                 />
               )}

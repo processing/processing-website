@@ -18,33 +18,23 @@ export const useOrderedPdes = (name, nodes) => {
   Hook to find the json and image for each related example
   @param {Array} examples Array of example JSON files
   @param {Array} images Array of sharp image objects
-  @param {Array} filter Array of strings with names to filter examples by
 **/
-export const usePreparedExamples = (examples, images, filter) => {
+export const usePreparedExamples = (examples, images) => {
   return useMemo(() => {
-    // Filter examples if needed
-    let filtered = examples;
-    if (filter) {
-      filtered = [];
-      for (let i = 0; i < examples.length; i++) {
-        if (filter.includes(examples[i].name)) {
-          filtered.push(examples[i]);
-        }
-      }
-    }
-
     // Prepare examples by extracting the necessary info and
     const prepared = [];
 
-    for (let i = 0; i < filtered.length; i++) {
-      const example = filtered[i];
+    for (let i = 0; i < examples.length; i++) {
+      const example = examples[i];
 
       // Find the image
       let image;
-      for (let j = 0; j < images.length; j++) {
-        if (images[j].name === example.name) {
-          image = images[j];
-          break;
+      if (Array.isArray(images)) {
+        for (let j = 0; j < images.length; j++) {
+          if (images[j].name === example.name) {
+            image = images[j];
+            break;
+          }
         }
       }
 
@@ -60,5 +50,63 @@ export const usePreparedExamples = (examples, images, filter) => {
     }
 
     return prepared;
-  }, [examples, images, filter]);
+  }, [examples, images]);
+};
+
+/**
+  Hook to turn an array of prepared examples into an object that represent
+  the tree of categories, subcategories, and items.
+  @param {Array} examples Array of examples that have been through usePreparedExamples()
+  @param {string} searchTerm String with search term to use for filtering
+**/
+export const useOrganizedExamples = (examples, searchTerm) => {
+  return useMemo(() => {
+    const tree = {};
+
+    itemLoop: for (let i = 0; i < examples.length; i++) {
+      const example = examples[i];
+
+      // If search term doesn't match, skip to next
+      if (searchTerm && searchTerm !== '') {
+        const searchTerms = searchTerm.split(' ');
+        let allMatch = true;
+        for (let j = 0; j < searchTerms.length; j++) {
+          if (
+            !example.name.toLowerCase().includes(searchTerms[j].toLowerCase())
+          ) {
+            continue itemLoop;
+          }
+        }
+      }
+
+      if (!tree[example.category]) {
+        tree[example.category] = {};
+      }
+
+      if (!tree[example.category][example.subCategory]) {
+        tree[example.category][example.subCategory] = [];
+      }
+
+      tree[example.category][example.subCategory].push(example);
+    }
+
+    return tree;
+  }, [examples, searchTerm]);
+};
+
+/**
+  Simple hook to sort an array of examples based on an array of string names
+  @param {Array} examples Array of examples that have been through usePreparedExamples()
+  @param {Array} related Array of string names
+**/
+export const useRelatedExamples = (examples, related) => {
+  return useMemo(() => {
+    const filtered = [];
+    for (let i = 0; i < examples.length; i++) {
+      if (related.includes(examples[i].slug)) {
+        filtered.push(examples[i]);
+      }
+    }
+    return filtered;
+  }, [examples, related]);
 };

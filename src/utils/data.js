@@ -10,12 +10,10 @@ export const filterItems = (items, searchTerm) => {
     const filtered = [];
     loop1: for (let i = 0; i < items.length; i++) {
       const item = items[i];
-      const searchString = item.name; //item.childJson
-      console.log(searchString, item);
-      //? JSON.stringify(Object.values(item.childJson)).toLowerCase()
-      //: JSON.stringify(item).toLowerCase();
+      const searchString = item.childJson
+        ? JSON.stringify(Object.values(item.childJson)).toLowerCase()
+        : JSON.stringify(item).toLowerCase();
       loop2: for (let j = 0; j < searchTerms.length; j++) {
-        // console.log(searchString, searchTerms[j]);
         if (!searchString.includes(searchTerms[j].toLowerCase())) {
           continue loop1;
         }
@@ -70,7 +68,7 @@ export const organizeReferenceItems = (items) => {
   return tree;
 };
 
-export const organizeExampleItems = (items) => {
+export const organizeExampleItems = (items, searchTerm) => {
   const tree = {};
 
   for (let i = 0; i < items.length; i++) {

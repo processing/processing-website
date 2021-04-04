@@ -13,17 +13,12 @@ import FilterBar from '../components/FilterBar';
 import SidebarList from '../components/SidebarList';
 import { LayoutContext } from '../components/Layout';
 
-import {
-  filterItems,
-  organizeExampleItems,
-  organizeReferenceItems,
-} from '../utils/data';
 import { useWindowSize } from '../hooks';
 
 import css from './Sidebar.module.css';
 
 const Sidebar = (props) => {
-  const { items, show, type = 'reference', onChange } = props;
+  const { tree, show, type = 'reference', onChange } = props;
   const { width: windowWidth } = useWindowSize();
   const [searchTerm, setSearchTerm] = useState('');
   const sidebarRef = useRef();
@@ -31,18 +26,15 @@ const Sidebar = (props) => {
   const layout = useContext(LayoutContext);
   const intl = useIntl();
 
-  const filteredItems = useMemo(() => filterItems(items.nodes, searchTerm), [
-    searchTerm,
-    items.nodes,
-  ]);
+  // const filteredItems = useMemo(() => filterItems(items.nodes, searchTerm), [
+  //   searchTerm,
+  //   items.nodes,
+  // ]);
 
-  const tree = useMemo(
-    () =>
-      type === 'reference'
-        ? organizeReferenceItems(filteredItems)
-        : organizeExampleItems(filteredItems),
-    [filteredItems, type]
-  );
+  // const tree =
+  //   type === 'reference'
+  //     ? useMemo(() => organizeReferenceItems(filteredItems), [filteredItems])
+  //     : useOrganizedExamples(items, searchTerm);
 
   useEffect(() => {
     if (sidebarRef.current.clientWidth > width)
@@ -91,7 +83,7 @@ const Sidebar = (props) => {
               searchTerm={searchTerm}
             />
             <div className={css.listWrapper}>
-              <SidebarList data={tree} type={type} />
+              <SidebarList tree={tree} type={type} />
             </div>
           </Fragment>
         )}

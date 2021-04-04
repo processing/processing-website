@@ -9,7 +9,7 @@ import ExamplesList from '../components/ExamplesList';
 import Layout from '../components/Layout';
 import FilterBar from '../components/FilterBar';
 
-import { usePreparedExamples } from '../hooks/examples';
+import { usePreparedExamples, useOrganizedExamples } from '../hooks/examples';
 import { filterItems, organizeExampleItems } from '../utils/data';
 
 import grid from '../styles/grid.module.css';
@@ -20,12 +20,7 @@ const Examples = ({ data }) => {
   const intl = useIntl();
 
   const examples = usePreparedExamples(data.examples.nodes, data.images.nodes);
-
-  // TODO: MERGE FILTER INTO ORGANIZEEXMPLEITEMS!
-  const tree = useMemo(
-    () => organizeExampleItems(filterItems(examples, searchTerm)),
-    [examples, searchTerm]
-  );
+  const tree = useOrganizedExamples(examples, searchTerm);
 
   return (
     <Layout>
@@ -59,6 +54,7 @@ export const query = graphql`
       filter: {
         sourceInstanceName: { eq: "examples" }
         fields: { lang: { eq: "en" } }
+        relativeDirectory: { regex: "/^((?!data).)*$/" }
       }
       sort: { order: ASC, fields: relativeDirectory }
     ) {
