@@ -22,7 +22,7 @@ const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
   return (
     <Layout>
       <Helmet>
-        <title>{intl.formatMessage({ id: libraryName })}</title>
+        <title>{intl.formatMessage({ id: libraryName })} / Libraries</title>
       </Helmet>
       {data.mdx !== null ? (
         <div className={classnames(grid.grid, css.root)}>

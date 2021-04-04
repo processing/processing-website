@@ -1,10 +1,10 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import classnames from 'classnames';
 
-import css from './SidebarLabel.module.css';
+import css from './SidebarGroup.module.css';
 
-const SidebarLabel = ({ label, children, secondary }) => {
-  const [expanded, setExpanded] = useState(false);
+const SidebarGroup = ({ label, children, secondary }) => {
+  const [expanded, setExpanded] = useState(true);
 
   useEffect(() => {
     !label && setExpanded(true);
@@ -30,6 +30,7 @@ const SidebarLabel = ({ label, children, secondary }) => {
                 <div className={css.expandButton}>
                   <span>{expanded ? '−' : '+'}</span>
                 </div>
+
                 <h4 className={css.label}>{label}</h4>
               </div>
             )}
@@ -41,4 +42,4 @@ const SidebarLabel = ({ label, children, secondary }) => {
   );
 };
 
-export default SidebarLabel;
+export default SidebarGroup;

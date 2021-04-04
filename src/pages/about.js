@@ -18,7 +18,7 @@ const About = ({ data }) => {
   return (
     <Layout>
       <Helmet>
-        <title>{'About'}</title>
+        <title>About</title>
       </Helmet>
       <div className={grid.grid}>
         <Donate />

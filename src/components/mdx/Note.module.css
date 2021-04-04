@@ -1,15 +1,12 @@
-.root {
+div.root {
   width: 100%;
+  color: var(--darkergray);
+  font-family: var(--font);
+  font-size: var(--text-regular);
 
-  & span {
-    color: var(--darkergray);
-    font-family: var(--font);
-    font-size: var(--text-regular);
-
-    & p {
-      color: inherit;
-      font-family: inherit;
-      font-size: inherit;
-    }
+  & p {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
   }
 }

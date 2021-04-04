@@ -7,7 +7,6 @@ import { useIntl } from 'react-intl';
 import Img from 'gatsby-image';
 import p5 from 'p5';
 
-import Footer from '../../components/Footer';
 import Layout from '../../components/Layout';
 import Sidebar from '../../components/Sidebar';
 import Tabs from '../../components/Tabs';
@@ -32,19 +31,11 @@ const ExampleTemplate = ({ data, pageContext }) => {
   const { example, image, allExamples, relatedImages, liveSketch } = data;
   const { title, description, author, featured } = example.childJson;
   const { name, related } = pageContext;
-
+  const entry = example?.childJson;
   const pdes = useOrderedPdes(name, data.pdes.nodes);
   const examples = usePreparedExamples(allExamples.nodes, relatedImages.nodes);
   const tree = useOrganizedExamples(examples, '');
   const relatedExamples = useRelatedExamples(examples, related);
-
-  const toggleSidebar = (e, show) => {
-    if (e.type === 'click') {
-      setShowSidebar(show);
-    } else if (e.keyCode === 13) {
-      setShowSidebar(show);
-    }
-  };
 
   // Run live sketch
   useEffect(() => {
@@ -66,13 +57,13 @@ const ExampleTemplate = ({ data, pageContext }) => {
   return (
     <Layout hasSidebar>
       <Helmet>
-        {example && <title>{title}</title>}
+        {entry && <title>{entry.title}</title>}
         {liveSketch && <script>{`${liveSketch.childRawCode.content}`}</script>}
       </Helmet>
       <div className={classnames(css.root, grid.grid, grid.rightBleed)}>
         <Sidebar
           tree={tree}
-          onChange={toggleSidebar}
+          setShow={setShowSidebar}
           show={showSidebar}
           type={'examples'}
         />
@@ -80,35 +71,32 @@ const ExampleTemplate = ({ data, pageContext }) => {
           className={classnames(grid.nest, css.wrapper, {
             [css.collapsed]: !showSidebar,
           })}>
-          {example !== null ? (
+          {entry ? (
             <div
               className={classnames(
                 css.content,
                 { [css.collapsed]: !showSidebar },
                 grid.nest
               )}>
-              <h1 className={grid.col}>{title}</h1>
-              {author && (
-                <h3 className={grid.col}>
-                  {' '}
-                  {intl.formatMessage({ id: 'by' })} {author}
+              <h1>{entry.title}</h1>
+              {entry.author && (
+                <h3>
+                  {intl.formatMessage({ id: 'by' })} {entry.author}
                 </h3>
               )}
-              <div className={classnames(grid.col, css.description)}>
+              <div className={css.description}>
                 <p
                   dangerouslySetInnerHTML={{
-                    __html: description,
+                    __html: entry.description,
                   }}></p>
               </div>
-              {featured.length > 0 && (
+              {entry.featured.length > 0 && (
                 <FeaturedFunctions
-                  featured={featured}
+                  featured={entry.featured}
                   heading={intl.formatMessage({ id: 'featured' })}
                 />
               )}
-              <div
-                className={classnames(css.cover, grid.col)}
-                id="example-cover">
+              <div className={classnames(css.cover)} id="example-cover">
                 {!liveSketch && image && (
                   <Img fluid={image.childImageSharp.fluid} />
                 )}
@@ -118,7 +106,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
                 examples={relatedExamples}
                 heading={intl.formatMessage({ id: 'relatedExamples' })}
               />
-              <p className={classnames(grid.col, css.note)}>
+              <p className={classnames(css.note)}>
                 {intl.formatMessage({ id: 'exampleInfo' })}
                 <a
                   href={
@@ -145,7 +133,6 @@ const ExampleTemplate = ({ data, pageContext }) => {
               </div>
             </div>
           )}
-          {width > 960 && <Footer />}
         </div>
       </div>
     </Layout>
@@ -158,9 +145,9 @@ const FeaturedFunctions = memo(({ heading, featured }) => {
       <h3>{heading}</h3>
       <ul>
         {featured.map((feature, key) => (
-          <li key={key + 'f'}>
+          <li key={`feature-${key}`}>
             <Link to={referencePath(feature)}>
-              {feature.replace(/_/g, ' ')}
+              {feature.replace(/_$/, '()').replace(/_/g, ' ')}
             </Link>
           </li>
         ))}
@@ -176,8 +163,8 @@ const RelatedExamples = memo(({ heading, examples }) => {
       <ul className={classnames(css.related, grid.col)}>
         {examples.slice(0, 6).map((example, key) => {
           return (
-            <li key={key + 'rel'} className={css.relatedItem}>
-              <Link to={example.path}>
+            <li key={`rel-${key}`} className={css.relatedItem}>
+              <Link to={example.slug}>
                 {example.image && (
                   <Img
                     className={css.img}

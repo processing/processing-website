@@ -4,7 +4,7 @@ import { titleCase as _titleCase } from 'title-case';
 export const titleCase = (slug) => _titleCase(slug.replace(/_/g, ' '));
 
 //filters the references/examples based on a search text
-export const filterItems = (items, searchTerm) => {
+export const filterItems = (items, searchTerm, propsToFilter) => {
   if (searchTerm && searchTerm !== '') {
     const searchTerms = searchTerm.split(' ');
     const filtered = [];

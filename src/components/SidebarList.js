@@ -1,64 +1,49 @@
-import React, { memo } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useLocalization } from 'gatsby-theme-i18n';
 
-import SidebarLabel from './SidebarLabel';
+import SidebarGroup from './SidebarGroup';
 
 import grid from '../styles/grid.module.css';
 import css from './SidebarList.module.css';
 
-const SidebarList = ({ tree, type, show }) => {
+const SidebarList = ({ data, type }) => {
   const { locale } = useLocalization();
 
-  const categoryEls = [];
-  for (const category in tree) {
-    const subCategoryEls = [];
-    for (const subCategory in tree[category]) {
-      const nodes = tree[category][subCategory];
-      const els = [];
-      for (let k = 0; k < nodes.length; k++) {
-        els.push(
-          <SidebarItem
-            item={nodes[k]}
-            type={type}
-            locale={locale}
-            key={`item-${nodes[k].name}`}
-          />
-        );
-      }
-      subCategoryEls.push(
-        <SidebarLabel
-          label={subCategory}
-          key={`label-subcategory-${subCategory}`}
-          secondary>
-          <ul>{els}</ul>
-        </SidebarLabel>
-      );
-    }
-    categoryEls.push(
-      <SidebarLabel label={category} key={`label-category-${category}`}>
-        <ul>{subCategoryEls}</ul>
-      </SidebarLabel>
-    );
-  }
-
-  return <div className={css.root}>{categoryEls}</div>;
+  return (
+    <div className={css.root}>
+      {data.map((category, key) => (
+        <SidebarGroup label={category.name} key={`label-category-${key}`}>
+          <ul>
+            {category.children.map((subcategory, key) => (
+              <SidebarGroup
+                label={subcategory.name}
+                key={`label-subcategory-${key}`}
+                secondary>
+                <ul>
+                  {subcategory.children.map((item, key) => {
+                    return (
+                      <li key={key}>
+                        <Link
+                          className={classnames(grid.col1andhalf, {
+                            [css.examples]: type === 'examples',
+                          })}
+                          to={`/${type}/${item.slug}.html`}
+                          language={locale}>
+                          {item.name}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </SidebarGroup>
+            ))}
+          </ul>
+        </SidebarGroup>
+      ))}
+    </div>
+  );
 };
 
-const SidebarItem = memo(({ item, type, locale }) => {
-  return (
-    <li>
-      <Link
-        className={classnames(grid.col1andhalf, {
-          [css.examples]: type === 'examples',
-        })}
-        to={item.path}
-        language={locale}>
-        <span>{item.name}</span>
-      </Link>
-    </li>
-  );
-});
-
-export default memo(SidebarList);
+export default SidebarList;
