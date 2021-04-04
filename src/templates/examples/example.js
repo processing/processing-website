@@ -31,7 +31,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
   const { example, image, allExamples, relatedImages, liveSketch } = data;
   const { title, description, author, featured } = example.childJson;
   const { name, related } = pageContext;
-  const entry = example?.childJson;
+
   const pdes = useOrderedPdes(name, data.pdes.nodes);
   const examples = usePreparedExamples(allExamples.nodes, relatedImages.nodes);
   const tree = useOrganizedExamples(examples, '');
@@ -57,7 +57,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
   return (
     <Layout hasSidebar>
       <Helmet>
-        {entry && <title>{entry.title}</title>}
+        {title && <title>{title}</title>}
         {liveSketch && <script>{`${liveSketch.childRawCode.content}`}</script>}
       </Helmet>
       <div className={classnames(css.root, grid.grid, grid.rightBleed)}>
@@ -71,28 +71,28 @@ const ExampleTemplate = ({ data, pageContext }) => {
           className={classnames(grid.nest, css.wrapper, {
             [css.collapsed]: !showSidebar,
           })}>
-          {entry ? (
+          {example.childJson ? (
             <div
               className={classnames(
                 css.content,
                 { [css.collapsed]: !showSidebar },
                 grid.nest
               )}>
-              <h1>{entry.title}</h1>
-              {entry.author && (
+              <h1>{title}</h1>
+              {author && (
                 <h3>
-                  {intl.formatMessage({ id: 'by' })} {entry.author}
+                  {intl.formatMessage({ id: 'by' })} {author}
                 </h3>
               )}
               <div className={css.description}>
                 <p
                   dangerouslySetInnerHTML={{
-                    __html: entry.description,
+                    __html: description,
                   }}></p>
               </div>
-              {entry.featured.length > 0 && (
+              {featured.length > 0 && (
                 <FeaturedFunctions
-                  featured={entry.featured}
+                  featured={featured}
                   heading={intl.formatMessage({ id: 'featured' })}
                 />
               )}
