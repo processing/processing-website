@@ -311,6 +311,7 @@ export const query = graphql`
         relativeDirectory
         childImageSharp {
           fluid(maxWidth: 800) {
+            ...GatsbyImageSharpFluid
             base64
             srcWebp
             srcSetWebp

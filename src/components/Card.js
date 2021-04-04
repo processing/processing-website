@@ -41,7 +41,7 @@ export const Card = ({
 export default Card;
 
 Card.defaultProps = {
-  onClick: () => {},
+  onClick: () => { },
 };
 
 Card.propTypes = {
