@@ -32,7 +32,7 @@ const Tools = ({ data }) => {
   return (
     <Layout>
       <Helmet>
-        <title>{'Tools'}</title>
+        <title>Tools</title>
       </Helmet>
       <div className={classnames(grid.grid, css.root)}>
         <Donate />

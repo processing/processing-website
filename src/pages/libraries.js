@@ -46,7 +46,7 @@ const Libraries = ({ data }) => {
   return (
     <Layout>
       <Helmet>
-        <title>{'Libraries'}</title>
+        <title>Libraries</title>
       </Helmet>
       <div className={classnames(grid.grid, css.root)}>
         <Donate />

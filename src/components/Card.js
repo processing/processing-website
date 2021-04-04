@@ -22,25 +22,15 @@ export const Card = ({
   return (
     <>
       {to ? (
-        <Link
-          className={classNames}
-          to={to}
-        >
+        <Link className={classNames} to={to}>
           {children}
         </Link>
       ) : href ? (
-        <a
-          className={classNames}
-          href={href}
-          target={target}
-        >
+        <a className={classNames} href={href} target={target}>
           {children}
         </a>
       ) : (
-        <button
-          className={classNames}
-          onClick={onClick}
-        >
+        <button className={classNames} onClick={onClick}>
           {children}
         </button>
       )}

@@ -12,7 +12,7 @@
 }
 
 .wrapper {
-  flex-basis: var(--col6-and-half);
+  flex-basis: var(--col6);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -23,10 +23,6 @@
 }
 
 .content {
-  flex-basis: cols(6, 6);
-  padding-left: var(--col-half);
-  padding-right: var(--margin);
-
   & p {
     margin-top: var(--gutter-half);
   }
@@ -36,7 +32,6 @@
   flex-basis: var(--col8);
   padding-left: 0;
   padding-right: var(--margin);
-  transition: 0.2s ease;
 
   & > * {
     padding-left: var(--push1);
@@ -46,33 +41,34 @@
     flex-basis: var(--col8);
 
     & > h4 {
-      flex-basis: cols(1, 7);
+      flex-basis: cols(1);
       padding-left: 0;
+      white-space: nowrap;
     }
 
     & > h3 {
-      flex-basis: cols(6, 7);
+      flex-basis: cols(6);
       padding-right: var(--gutter);
     }
 
     & .description {
-      flex-basis: cols(5, 7);
+      flex-basis: cols(6);
     }
 
     & .exampleList {
-      flex-basis: cols(7, 7);
+      flex-basis: cols(7);
 
       & .example {
-        flex-basis: cols(7, 7);
+        flex-basis: cols(7);
       }
 
       & .exampleCode {
         padding-left: 0;
-        flex-basis: cols(5, 7);
+        flex-basis: cols(5);
       }
 
       & .exampleImage {
-        flex-basis: cols(2, 7);
+        flex-basis: cols(2);
       }
 
       & li:last-child {
@@ -95,10 +91,12 @@
   margin-bottom: var(--vertical-gutter);
 
   & > h4 {
+    white-space: nowrap;
     flex-basis: cols(1, 6);
   }
 
   & > h3 {
+    font-size: var(--text-xlarge);
     flex-basis: cols(5, 6);
     padding-right: var(--push1);
   }
@@ -134,6 +132,75 @@
 
   & .license {
     flex-basis: cols(5, 6);
+  }
+
+  @media (--small) {
+    flex-direction: column;
+  }
+}
+
+@media (--reduced) {
+  .content,
+  .content.collapsed {
+    flex-basis: var(--col8);
+    padding-left: var(--margin);
+    padding-right: var(--margin);
+
+    & > * {
+      padding-left: 0;
+    }
+
+    & .section {
+      flex-basis: var(--col8);
+
+      & > h4 {
+        flex-basis: var(--col2);
+        padding-left: 0;
+        white-space: nowrap;
+      }
+
+      & > h3 {
+        font-size: var(--text-xxlarge);
+        flex-basis: var(--col6);
+        padding-right: var(--gutter);
+      }
+
+      & .description {
+        flex-basis: var(--col5);
+      }
+
+      & .exampleList {
+        flex-basis: var(--col8);
+
+        & .example {
+          flex-basis: var(--col8);
+        }
+
+        & .exampleCode {
+          padding-left: 0;
+          flex-basis: var(--col6);
+        }
+
+        & .exampleImage {
+          flex-basis: var(--col2);
+        }
+
+        & li:last-child {
+          margin-bottom: 0px;
+        }
+      }
+
+      & .list {
+        flex-basis: var(--col5);
+      }
+
+      & .license {
+        flex-basis: var(--col5);
+      }
+    }
+  }
+
+  .section {
   }
 }
 

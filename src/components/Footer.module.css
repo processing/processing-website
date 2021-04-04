@@ -1,5 +1,5 @@
 .root {
-  z-index: 1000;
+  z-index: 600;
   width: 100%;
   padding-top: var(--margin);
   padding-bottom: var(--margin);
@@ -18,6 +18,9 @@
   }
 }
 
+.root.withSidebar {
+  padding-left: var(--col2);
+}
 .contactWrapper {
   flex-basis: var(--col2);
   & p {

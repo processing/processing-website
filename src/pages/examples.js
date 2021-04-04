@@ -29,7 +29,7 @@ const Examples = ({ data }) => {
   return (
     <Layout>
       <Helmet>
-        <title>{'Examples'}</title>
+        <title>Examples</title>
       </Helmet>
       <div className={classnames(grid.grid, css.root)}>
         <Donate />

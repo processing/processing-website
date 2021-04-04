@@ -142,7 +142,7 @@ const Download = () => {
   return (
     <Layout>
       <Helmet>
-        <title>{'Download'}</title>
+        <title>Download</title>
       </Helmet>
       <div className={classnames(grid.grid, css.root)}>
         <Donate />
