@@ -4,6 +4,8 @@ import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
 import Img from 'gatsby-image';
 
+import ToggleButton from './ToggleButton';
+
 import css from './ExamplesList.module.css';
 import grid from '../styles/grid.module.css';
 
@@ -17,6 +19,7 @@ const ExamplesList = ({ data }) => {
         <div
           className={classnames(grid.nest, css.category)}
           key={`category-${key}`}>
+          <ToggleButton className={css.toggleButton} />
           <h2 className={grid.col}>{category.name}</h2>
           <p className={classnames(grid.col, css.intro)}>
             {category === 'topic'

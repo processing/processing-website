@@ -1,0 +1,17 @@
+.root {
+  height: 32px;
+  border-radius: 16px;
+  padding: 2px;
+  color: var(--darkergray);
+  background: var(--gray);
+
+  & span {
+    padding: 5px 8px;
+    border-radius: 20px;
+  }
+}
+
+.active {
+  color: white;
+  background: var(--processing-blue-mid);
+}
