@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 
@@ -33,25 +33,12 @@ const ReferenceList = ({ tree, library }) => {
                     <div className={classnames(css.subcategoryList, grid.col)}>
                       <div className={css.line} />
                       <ul className={classnames(grid.col, grid.nest)}>
-                        {tree[category][subcategory].map((item) => {
-                          return (
-                            <li key={`item-${item.name}`} className={css.item}>
-                              <Link
-                                className={classnames(grid.col, css.itemName)}
-                                to={`${link + item.slug}.html`}>
-                                {item.name}
-                              </Link>
-                              <div
-                                className={classnames(grid.col, css.itemBrief)}>
-                                <p
-                                  dangerouslySetInnerHTML={{
-                                    __html: item.brief,
-                                  }}
-                                />
-                              </div>
-                            </li>
-                          );
-                        })}
+                        {tree[category][subcategory].map((item) => (
+                          <ReferenceItem
+                            item={item}
+                            key={`item-${item.slug}`}
+                          />
+                        ))}
                       </ul>
                     </div>
                   </div>
@@ -64,5 +51,22 @@ const ReferenceList = ({ tree, library }) => {
     </div>
   );
 };
+
+const ReferenceItem = memo(({ item }) => {
+  return (
+    <li className={css.item}>
+      <Link className={classnames(grid.col, css.itemName)} to={item.path}>
+        {item.name}
+      </Link>
+      <div className={classnames(grid.col, css.itemBrief)}>
+        <p
+          dangerouslySetInnerHTML={{
+            __html: item.brief,
+          }}
+        />
+      </div>
+    </li>
+  );
+});
 
 export default ReferenceList;

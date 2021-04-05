@@ -93,9 +93,15 @@ export const useFilteredTree = (tree, searchTerm) => {
             }
           }
         }
+        // Only add subcategory if there are any filtered items
         if (filteredItems.length > 0) {
           filtered[category][subcategory] = filteredItems;
         }
+      }
+
+      // Remove category if there are no subcategories
+      if (Object.keys(filtered[category]).length === 0) {
+        delete filtered[category];
       }
     }
 

@@ -9,7 +9,7 @@ import Layout from '../components/Layout';
 import ReferenceList from '../components/ReferenceList';
 import FilterBar from '../components/FilterBar';
 
-import { useTree } from '../hooks';
+import { useTree, useFilteredTree } from '../hooks';
 import { usePreparedReferenceItems } from '../hooks/reference';
 import { filterItems, organizeReferenceItems } from '../utils/data';
 
@@ -21,9 +21,8 @@ const Reference = ({ data }) => {
 
   const items = usePreparedReferenceItems(data.items.nodes);
   const tree = useTree(items);
+  const filtered = useFilteredTree(tree, searchTerm);
   const categories = Object.keys(tree);
-
-  console.log(tree);
 
   return (
     <Layout>
@@ -43,7 +42,7 @@ const Reference = ({ data }) => {
           large
         />
         {!searchTerm && <CategoryNav categories={categories} />}
-        <ReferenceList tree={tree} />
+        <ReferenceList tree={filtered} />
       </div>
     </Layout>
   );
