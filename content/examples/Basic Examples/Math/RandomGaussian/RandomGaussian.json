@@ -2,6 +2,8 @@
   "name": "Random Gaussian",
   "title": "Random Gaussian",
   "author": "",
+  "level": "Beginner",
+  "order": "15",
   "description": "This sketch draws ellipses with x and y locations tied to a gaussian distribution of random numbers.",
   "featured": ["randomGaussian_"]
 }

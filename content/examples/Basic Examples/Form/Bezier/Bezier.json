@@ -2,6 +2,8 @@
   "name": "Bezier",
   "title": "Bezier",
   "author": "",
+  "level": "Intermediate",
+  "order": "6",
   "description": "The first two parameters for the bezier() function specify the \n  first point in the curve and the last two parameters specify \n  the last point. The middle parameters set the control points\n  that define the shape of the curve.",
   "featured": ["bezier_"]
 }

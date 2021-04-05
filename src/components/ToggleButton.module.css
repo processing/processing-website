@@ -1,17 +1,30 @@
 .root {
-  height: 32px;
-  border-radius: 16px;
-  padding: 2px;
+  position: relative;
+  border-radius: 19px;
+  height: 38px;
+  width: auto;
+  padding: 4px;
   color: var(--darkergray);
   background: var(--gray);
+  cursor: pointer;
+
+  & > div {
+    height: 100%;
+    border-radius: 16px;
+    width: auto;
+    background: var(--lightgray);
+  }
 
   & span {
-    padding: 5px 8px;
-    border-radius: 20px;
+    display: inline-block;
+    height: 30px;
+    line-height: 24px;
+    padding: 4px 12px;
+    border-radius: 16px;
   }
 }
 
-.active {
+.pressed {
   color: white;
   background: var(--processing-blue-mid);
 }

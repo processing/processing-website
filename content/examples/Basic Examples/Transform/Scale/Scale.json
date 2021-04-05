@@ -2,6 +2,8 @@
   "name": "Scale",
   "title": "Scale",
   "author": "Denis Grutze",
+  "level": "Beginner",
+  "order": "1",
   "description": "Paramenters for the scale() function are values specified \n  as decimal percentages. For example, the method call scale(2.0) \n  will increase the dimension of the shape by 200 percent. \n  Objects always scale from the origin.",
   "featured": ["scale_"]
 }

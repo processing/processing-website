@@ -2,6 +2,8 @@
   "name": "Constrain",
   "title": "Constrain",
   "author": "",
+  "level": "Beginner",
+  "order": "5",
   "description": "Move the mouse across the screen to move the circle. \n  The program constrains the circle to its box.",
   "featured": ["constrain_"]
 }

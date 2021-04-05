@@ -2,6 +2,8 @@
   "name": "Arctangent",
   "title": "Arctangent",
   "author": "",
+  "level": "Intermediate",
+  "order": "10",
   "description": "Move the mouse to change the direction of the eyes. \n  The atan2() function computes the angle from each eye \n  to the cursor.",
   "featured": ["atan2_"]
 }

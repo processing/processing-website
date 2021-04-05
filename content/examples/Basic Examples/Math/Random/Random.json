@@ -2,6 +2,8 @@
   "name": "Random",
   "title": "Random",
   "author": "",
+  "level": "Beginner",
+  "order": "13",
   "description": "Random numbers create the basis of this image. \n  Each time the program is loaded the result is different.",
   "featured": ["random_"]
 }

@@ -2,6 +2,8 @@
   "name": "Scale Shape",
   "title": "Scale Shape   Illustration",
   "author": "George Brower",
+  "level": "Beginner",
+  "order": "1",
   "description": "Move the mouse left and right to zoom the SVG file.\n  This shows how, unlike an imported image, the lines\n  remain smooth at any size.",
   "featured": ["PShape", "scale_", "shape_"]
 }

@@ -2,6 +2,8 @@
   "name": "Scrollbar",
   "title": "Scrollbar",
   "author": "",
+  "level": "Advanced",
+  "order": "3",
   "description": "Move the scrollbars left and right to change the positions of the images.",
   "featured": ["class", "image_", "PImage"]
 }

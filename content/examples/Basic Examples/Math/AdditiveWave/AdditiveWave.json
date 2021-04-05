@@ -2,6 +2,8 @@
   "name": "Additive Wave",
   "title": "Additive Waveby Daniel Shiffman",
   "author": "",
+  "level": "Intermediate",
+  "order": "8",
   "description": "Create a more complex wave by adding two waves together.",
   "featured": ["sin_", "cos_"]
 }

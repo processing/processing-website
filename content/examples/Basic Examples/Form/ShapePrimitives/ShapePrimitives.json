@@ -2,6 +2,8 @@
   "name": "Shape Primitives",
   "title": "Shape Primitives",
   "author": "",
+  "level": "Beginner",
+  "order": "1",
   "description": "The basic shape primitive functions are triangle(),\n  rect(), quad(), ellipse(), and arc(). Squares are made\n  with rect() and circles are made with ellipse(). Each \n  of these functions requires a number of parameters to \n  determine the shape's position and size.",
   "featured": ["triangle_", "rect_", "quad_", "ellipse_", "arc_"]
 }

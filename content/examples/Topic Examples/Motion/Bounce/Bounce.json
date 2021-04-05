@@ -2,6 +2,8 @@
   "name": "Bounce",
   "title": "Bounce",
   "author": "",
+  "level": "Intermediate",
+  "order": "1",
   "description": "When the shape hits the edge of the window, it reverses its direction.",
   "featured": ["ellipseMode_", "ellipse_"]
 }

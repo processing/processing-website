@@ -2,6 +2,8 @@
   "name": "Distance1 D",
   "title": "Distance 1D",
   "author": "",
+  "level": "Beginner",
+  "order": "2",
   "description": "Move the mouse left and right to control the \n  speed and direction of the moving shapes.",
   "featured": []
 }

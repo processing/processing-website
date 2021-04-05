@@ -2,6 +2,8 @@
   "name": "Mouse Functions",
   "title": "Mouse Functions",
   "author": "",
+  "level": "Intermediate",
+  "order": "7",
   "description": "Click on the box and drag it across the screen.",
   "featured": ["mousePressed_", "mouseReleased_", "mouseDragged_"]
 }

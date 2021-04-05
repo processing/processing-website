@@ -2,6 +2,8 @@
   "name": "Triangle Strip",
   "title": "Triangle Strip",
   "author": "Ira Greenberg",
+  "level": "Intermediate",
+  "order": "5",
   "description": "Generate a closed ring using the vertex() function and \n  beginShape(TRIANGLE_STRIP) mode. The outsideRadius and insideRadius \n  variables control ring's radii respectively.",
   "featured": ["beginShape_", "endShape_", "vertex_"]
 }

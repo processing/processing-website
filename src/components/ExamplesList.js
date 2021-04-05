@@ -13,13 +13,23 @@ const ExamplesList = ({ tree }) => {
   const { locale } = useLocalization();
   const intl = useIntl();
 
+  const handleToggle = () => {
+    console.log(tree);
+  };
+
   return (
     <div className={classnames(css.root)}>
       {Object.keys(tree).map((category) => (
         <div
           className={classnames(grid.nest, css.category)}
           key={`category-${category}`}>
-          <ToggleButton className={css.toggleButton} />
+          <ToggleButton
+            className={css.toggleButton}
+            defaultLabel={'A-Z'}
+            pressedLabel={'By level'}
+            ariaLabel={'Sort by level'}
+            onToggle={handleToggle}
+          />
           <h2 className={grid.col}>{category}</h2>
           <p className={classnames(grid.col, css.intro)}>
             {category === 'topic'

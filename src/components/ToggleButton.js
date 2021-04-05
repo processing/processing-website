@@ -3,10 +3,19 @@ import classnames from 'classnames';
 
 import css from './ToggleButton.module.css';
 
-const ToggleButton = ({ className, onToggle }) => {
+const ToggleButton = ({
+  className,
+  onToggle,
+  defaultLabel,
+  pressedLabel,
+  ariaLabel,
+}) => {
   const [toggle, setToggle] = useState(false);
   const style = classnames(css.root, className, style);
-  const states = { default: 'off', pressed: 'on' };
+  const states = {
+    default: defaultLabel ? defaultLabel : 'off',
+    pressed: pressedLabel ? pressedLabel : 'on',
+  };
 
   const toggleButton = (e) => {
     setToggle((toggle) => !toggle);
@@ -15,12 +24,18 @@ const ToggleButton = ({ className, onToggle }) => {
 
   return (
     <button
+      aria-label={ariaLabel}
       aria-pressed={toggle}
-      aria-label={`Toggle button`}
       className={style}
       onClick={(e) => toggleButton(e)}>
-      <span className={classnames({ [css.active]: !toggle })}>{'off'}</span>
-      <span className={classnames({ [css.active]: toggle })}>{'on'}</span>
+      <div>
+        <span className={classnames({ [css.pressed]: !toggle })}>
+          {states.default}
+        </span>
+        <span className={classnames({ [css.pressed]: toggle })}>
+          {states.pressed}
+        </span>
+      </div>
     </button>
   );
 };

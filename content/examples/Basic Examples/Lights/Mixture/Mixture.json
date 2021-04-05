@@ -2,6 +2,8 @@
   "name": "Mixture",
   "title": "Mixtureby Simon Greenwold",
   "author": "",
+  "level": "Intermediate",
+  "order": "4",
   "description": "Display a box with three different kinds of lights.",
   "featured": ["pointLight_", "directionalLight_", "spotLight_"]
 }

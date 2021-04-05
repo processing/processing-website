@@ -2,6 +2,8 @@
   "name": "Noise2 D",
   "title": "Noise2D",
   "author": "Daniel Shiffman",
+  "level": "Beginner",
+  "order": "17",
   "description": "Using 2D noise to create simple texture.",
   "featured": ["noise_", "noiseDetail_"]
 }

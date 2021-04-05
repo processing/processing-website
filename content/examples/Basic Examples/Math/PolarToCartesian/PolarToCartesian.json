@@ -2,6 +2,8 @@
   "name": "Polar To Cartesian",
   "title": "PolarToCartesianby Daniel Shiffman",
   "author": "",
+  "level": "Intermediate",
+  "order": "9",
   "description": "Convert a polar coordinate (r,theta) to cartesian (x,y):  \n  x = r  cos(theta)\n  y = r  sin(theta)",
   "featured": ["cos_", "sin_"]
 }

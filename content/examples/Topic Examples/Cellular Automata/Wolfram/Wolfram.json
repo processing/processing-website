@@ -2,6 +2,8 @@
   "name": "Wolfram",
   "title": "Wolfram Cellular Automata",
   "author": "Daniel Shiffman",
+  "level": "Advanced",
+  "order": "0",
   "description": "Simple demonstration of a Wolfram 1-dimensional cellular automata\n  When the system reaches bottom of the window, it restarts with a new ruleset\n  Mouse click restarts as well.",
   "featured": ["Array"]
 }
