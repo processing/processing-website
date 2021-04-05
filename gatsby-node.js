@@ -242,14 +242,14 @@ const parseExampleFileInfo = (node) => {
   // Split relative dir into needed info
   const splitDir = node.relativeDirectory.split('/');
   const category = splitDir[0];
-  const subCategory = splitDir[1];
+  const subcategory = splitDir[1];
 
   return {
     name,
     slug,
     langCode,
     category,
-    subCategory,
+    subcategory,
   };
 };
 
@@ -294,7 +294,7 @@ async function createExamples(actions, graphql) {
       slug,
       langCode,
       category,
-      subCategory,
+      subcategory,
     } = parseExampleFileInfo(jsonFile.node);
 
     // Find related examples in the same sub category
@@ -305,7 +305,7 @@ async function createExamples(actions, graphql) {
       .map((f) => parseExampleFileInfo(f.node))
       .filter((info) => {
         return (
-          info.subCategory === subCategory &&
+          info.subcategory === subcategory &&
           info.name !== name &&
           info.langCode === ''
         );
@@ -318,7 +318,7 @@ async function createExamples(actions, graphql) {
       context: {
         slug,
         name,
-        subCategory,
+        subcategory,
         related,
         relDir: jsonFile.node.relativeDirectory,
       },

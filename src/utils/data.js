@@ -78,11 +78,11 @@ export const organizeExampleItems = (items, searchTerm) => {
       tree[item.category] = {};
     }
 
-    if (!tree[item.category][item.subCategory]) {
-      tree[item.category][item.subCategory] = [];
+    if (!tree[item.category][item.subcategory]) {
+      tree[item.category][item.subcategory] = [];
     }
 
-    tree[item.category][item.subCategory].push(item);
+    tree[item.category][item.subcategory].push(item);
   }
 
   return tree;

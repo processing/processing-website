@@ -12,11 +12,10 @@ import Sidebar from '../../components/Sidebar';
 import Tabs from '../../components/Tabs';
 
 import { referencePath } from '../../utils/paths';
-import { useWindowSize } from '../../hooks';
+import { useWindowSize, useTree } from '../../hooks';
 import {
   useOrderedPdes,
   usePreparedExamples,
-  useOrganizedExamples,
   useRelatedExamples,
 } from '../../hooks/examples';
 
@@ -34,7 +33,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
 
   const pdes = useOrderedPdes(name, data.pdes.nodes);
   const examples = usePreparedExamples(allExamples.nodes, relatedImages.nodes);
-  const tree = useOrganizedExamples(examples, '');
+  const tree = useTree(examples);
   const relatedExamples = useRelatedExamples(examples, related);
 
   // Run live sketch

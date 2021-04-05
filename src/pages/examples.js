@@ -9,8 +9,8 @@ import ExamplesList from '../components/ExamplesList';
 import Layout from '../components/Layout';
 import FilterBar from '../components/FilterBar';
 
-import { useFilteredTree } from '../hooks';
-import { usePreparedExamples, useOrganizedExamples } from '../hooks/examples';
+import { useTree, useFilteredTree } from '../hooks';
+import { usePreparedExamples } from '../hooks/examples';
 import { filterItems, organizeExampleItems } from '../utils/data';
 
 import grid from '../styles/grid.module.css';
@@ -21,7 +21,7 @@ const Examples = ({ data }) => {
   const intl = useIntl();
 
   const examples = usePreparedExamples(data.examples.nodes, data.images.nodes);
-  const tree = useOrganizedExamples(examples, searchTerm);
+  const tree = useTree(examples);
   const filtered = useFilteredTree(tree, searchTerm);
 
   return (

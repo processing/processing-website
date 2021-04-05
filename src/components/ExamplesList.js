@@ -24,13 +24,13 @@ const ExamplesList = ({ tree }) => {
               : intl.formatMessage({ id: 'basicExamples' })}
           </p>
           <ul className={classnames(grid.col, grid.nest)}>
-            {Object.keys(tree[category]).map((subCategory) => (
+            {Object.keys(tree[category]).map((subcategory) => (
               <div
-                key={`subcategory-${subCategory}`}
+                key={`subcategory-${subcategory}`}
                 className={css.subcategory}>
-                <h3 className={grid.col}>{subCategory}</h3>
+                <h3 className={grid.col}>{subcategory}</h3>
                 <ul className={classnames(grid.col, grid.nest)}>
-                  {tree[category][subCategory].map((item, key) => (
+                  {tree[category][subcategory].map((item, key) => (
                     <ExampleItem
                       node={item}
                       locale={locale}

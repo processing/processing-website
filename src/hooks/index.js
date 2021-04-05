@@ -43,6 +43,33 @@ export const useHighlight = () => {
 };
 
 /**
+  Hook to turn an array of prepared examples into an object that represent
+  the tree of categories, subcategories, and items.
+  @param {Array} items Array of items with `category` and `subcategory`
+**/
+export const useTree = (items) => {
+  return useMemo(() => {
+    const tree = {};
+
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+
+      if (!tree[item.category]) {
+        tree[item.category] = {};
+      }
+
+      if (!tree[item.category][item.subcategory]) {
+        tree[item.category][item.subcategory] = [];
+      }
+
+      tree[item.category][item.subcategory].push(item);
+    }
+
+    return tree;
+  }, [items]);
+};
+
+/**
   Hook to filter items in an object tree of categories, subcategories, and items
   such as those used in reference and examples.
   @param {object} tree The tree object
@@ -55,8 +82,8 @@ export const useFilteredTree = (tree, searchTerm) => {
 
     for (const category in tree) {
       filtered[category] = {};
-      for (const subCategory in tree[category]) {
-        const items = tree[category][subCategory];
+      for (const subcategory in tree[category]) {
+        const items = tree[category][subcategory];
         const filteredItems = [];
         itemLoop: for (let i = 0; i < items.length; i++) {
           termLoop: for (let j = 0; j < terms.length; j++) {
@@ -67,7 +94,7 @@ export const useFilteredTree = (tree, searchTerm) => {
           }
         }
         if (filteredItems.length > 0) {
-          filtered[category][subCategory] = filteredItems;
+          filtered[category][subcategory] = filteredItems;
         }
       }
     }

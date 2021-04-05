@@ -16,13 +16,13 @@ const SidebarList = ({ tree, type }) => {
       {Object.keys(tree).map((category) => (
         <SidebarGroup label={category} key={`label-category-${category}`}>
           <ul>
-            {Object.keys(tree[category]).map((subCategory) => (
+            {Object.keys(tree[category]).map((subcategory) => (
               <SidebarGroup
-                label={subCategory}
-                key={`label-subcategory-${subCategory}`}
+                label={subcategory}
+                key={`label-subcategory-${subcategory}`}
                 secondary>
                 <ul>
-                  {tree[category][subCategory].map((item, key) => {
+                  {tree[category][subcategory].map((item, key) => {
                     return (
                       <li key={key}>
                         <Link

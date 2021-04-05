@@ -38,47 +38,19 @@ export const usePreparedExamples = (examples, images) => {
         }
       }
 
-      const [category, subCategory] = example.relativeDirectory.split('/');
+      const [category, subcategory] = example.relativeDirectory.split('/');
       prepared.push({
         slug: example.name,
         path: examplePath(example.name),
         name: example.childJson.name,
         category,
-        subCategory,
+        subcategory,
         image,
       });
     }
 
     return prepared;
   }, [examples, images]);
-};
-
-/**
-  Hook to turn an array of prepared examples into an object that represent
-  the tree of categories, subcategories, and items.
-  @param {Array} examples Array of examples that have been through usePreparedExamples()
-  @param {string} searchTerm String with search term to use for filtering
-**/
-export const useOrganizedExamples = (examples) => {
-  return useMemo(() => {
-    const tree = {};
-
-    for (let i = 0; i < examples.length; i++) {
-      const example = examples[i];
-
-      if (!tree[example.category]) {
-        tree[example.category] = {};
-      }
-
-      if (!tree[example.category][example.subCategory]) {
-        tree[example.category][example.subCategory] = [];
-      }
-
-      tree[example.category][example.subCategory].push(example);
-    }
-
-    return tree;
-  }, [examples]);
 };
 
 /**

@@ -9,6 +9,8 @@ import Layout from '../components/Layout';
 import ReferenceList from '../components/ReferenceList';
 import FilterBar from '../components/FilterBar';
 
+import { useTree } from '../hooks';
+import { usePreparedReferenceItems } from '../hooks/reference';
 import { filterItems, organizeReferenceItems } from '../utils/data';
 
 import grid from '../styles/grid.module.css';
@@ -17,14 +19,11 @@ const Reference = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const intl = useIntl();
 
-  const items = data.allFile.nodes;
+  const items = usePreparedReferenceItems(data.items.nodes);
+  const tree = useTree(items);
+  const categories = Object.keys(tree);
 
-  const tree = useMemo(
-    () => organizeReferenceItems(filterItems(items, searchTerm)),
-    [items, searchTerm]
-  );
-
-  const categories = tree.map((item) => item.name);
+  console.log(tree);
 
   return (
     <Layout>
@@ -44,7 +43,7 @@ const Reference = ({ data }) => {
           large
         />
         {!searchTerm && <CategoryNav categories={categories} />}
-        <ReferenceList data={tree} />
+        <ReferenceList tree={tree} />
       </div>
     </Layout>
   );
@@ -54,7 +53,7 @@ export default Reference;
 
 export const query = graphql`
   query {
-    allFile(
+    items: allFile(
       filter: {
         fields: { lang: { eq: "en" }, lib: { eq: "processing" } }
         childJson: { type: { nin: ["method", "field"] } }

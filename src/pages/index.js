@@ -247,7 +247,7 @@ const FeaturedExamples = memo(({ heading, examples, locale }) => {
                   )}
                 </div>
                 <h4>{example.name}</h4>
-                <p>in {example.subCategory} examples</p>
+                <p>in {example.subcategory} examples</p>
               </Link>
             </li>
           ))}
