@@ -59,25 +59,12 @@ export const usePreparedExamples = (examples, images) => {
   @param {Array} examples Array of examples that have been through usePreparedExamples()
   @param {string} searchTerm String with search term to use for filtering
 **/
-export const useOrganizedExamples = (examples, searchTerm) => {
+export const useOrganizedExamples = (examples) => {
   return useMemo(() => {
     const tree = {};
 
-    itemLoop: for (let i = 0; i < examples.length; i++) {
+    for (let i = 0; i < examples.length; i++) {
       const example = examples[i];
-
-      // If search term doesn't match, skip to next
-      if (searchTerm && searchTerm !== '') {
-        const searchTerms = searchTerm.split(' ');
-        let allMatch = true;
-        for (let j = 0; j < searchTerms.length; j++) {
-          if (
-            !example.name.toLowerCase().includes(searchTerms[j].toLowerCase())
-          ) {
-            continue itemLoop;
-          }
-        }
-      }
 
       if (!tree[example.category]) {
         tree[example.category] = {};
@@ -91,7 +78,7 @@ export const useOrganizedExamples = (examples, searchTerm) => {
     }
 
     return tree;
-  }, [examples, searchTerm]);
+  }, [examples]);
 };
 
 /**

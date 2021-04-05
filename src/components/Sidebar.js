@@ -6,13 +6,15 @@ import FilterBar from '../components/FilterBar';
 import SidebarList from '../components/SidebarList';
 import { LayoutContext } from '../components/Layout';
 
+import { useFilteredTree } from '../hooks';
+
 import css from './Sidebar.module.css';
 
-const Sidebar = (props) => {
-  const { tree, show, type = 'reference', setShow = () => {} } = props;
+const Sidebar = ({ tree, show, type = 'reference', setShow = () => {} }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const layout = useContext(LayoutContext);
   const intl = useIntl();
+  const filtered = useFilteredTree(tree, searchTerm);
 
   return (
     <div className={classnames(css.root, { [css.show]: show })}>
@@ -42,7 +44,7 @@ const Sidebar = (props) => {
               searchTerm={searchTerm}
             />
             <div className={css.listWrapper}>
-              <SidebarList tree={tree} type={type} />
+              <SidebarList tree={filtered} type={type} />
             </div>
           </Fragment>
         )}

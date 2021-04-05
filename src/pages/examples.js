@@ -9,6 +9,7 @@ import ExamplesList from '../components/ExamplesList';
 import Layout from '../components/Layout';
 import FilterBar from '../components/FilterBar';
 
+import { useFilteredTree } from '../hooks';
 import { usePreparedExamples, useOrganizedExamples } from '../hooks/examples';
 import { filterItems, organizeExampleItems } from '../utils/data';
 
@@ -21,6 +22,7 @@ const Examples = ({ data }) => {
 
   const examples = usePreparedExamples(data.examples.nodes, data.images.nodes);
   const tree = useOrganizedExamples(examples, searchTerm);
+  const filtered = useFilteredTree(tree, searchTerm);
 
   return (
     <Layout>
@@ -40,7 +42,7 @@ const Examples = ({ data }) => {
           searchTerm={searchTerm}
           large
         />
-        <ExamplesList tree={tree} />
+        <ExamplesList tree={filtered} />
       </div>
     </Layout>
   );

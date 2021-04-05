@@ -25,17 +25,55 @@ export const useRandomArray = (arr, num) => {
   }, [arr, num]);
 };
 
+/**
+  Performs syntax highlighting on all <pre><code> inside ref
+**/
 export const useHighlight = () => {
   const ref = useRef();
 
   useEffect(() => {
-    if (!ref.current) return;
-    ref.current.querySelectorAll('pre code').forEach((block) => {
-      hljs.highlightBlock(block);
-    });
+    if (ref.current) {
+      ref.current.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+      });
+    }
   }, []);
 
   return ref;
+};
+
+/**
+  Hook to filter items in an object tree of categories, subcategories, and items
+  such as those used in reference and examples.
+  @param {object} tree The tree object
+  @param {string} searchTerm The search term string entered by the user
+**/
+export const useFilteredTree = (tree, searchTerm) => {
+  return useMemo(() => {
+    const filtered = {};
+    const terms = searchTerm.split(' ');
+
+    for (const category in tree) {
+      filtered[category] = {};
+      for (const subCategory in tree[category]) {
+        const items = tree[category][subCategory];
+        const filteredItems = [];
+        itemLoop: for (let i = 0; i < items.length; i++) {
+          termLoop: for (let j = 0; j < terms.length; j++) {
+            if (items[i].name.toLowerCase().includes(terms[j].toLowerCase())) {
+              filteredItems.push(items[i]);
+              continue itemLoop;
+            }
+          }
+        }
+        if (filteredItems.length > 0) {
+          filtered[category][subCategory] = filteredItems;
+        }
+      }
+    }
+
+    return filtered;
+  }, [tree, searchTerm]);
 };
 
 export const useHeight = (scrolled) => {
