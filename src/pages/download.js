@@ -237,17 +237,19 @@ const Download = () => {
                   className={classnames(
                     grid.col,
                     css.releaseDate
-                  )}>{` (${DateTime.fromISO(release.publishedAt).toLocaleString(
-                  DateTime.DATE_FULL
-                )})`}</span>
+                  )}>
+                  {` (${DateTime.fromISO(release.publishedAt).toLocaleString(
+                    DateTime.DATE_FULL
+                  )})`}
+                </span>
                 <span className={classnames(grid.col, css.releaseAssets)}>
                   {release.releaseAssets.edges
                     .sort((a, b) =>
                       a.node.name > b.node.name
                         ? -1
                         : a.node.name < b.node.name
-                        ? 1
-                        : 0
+                          ? 1
+                          : 0
                     )
                     .map((asset, i) => {
                       const { name: filename, downloadUrl } = asset.node;
@@ -288,17 +290,19 @@ const Download = () => {
                   className={classnames(
                     grid.col,
                     css.releaseDate
-                  )}>{` (${DateTime.fromISO(
-                  preRelease.publishedAt
-                ).toLocaleString(DateTime.DATE_FULL)})`}</span>
+                  )}>
+                  {` (${DateTime.fromISO(
+                    preRelease.publishedAt
+                  ).toLocaleString(DateTime.DATE_FULL)})`}
+                </span>
                 <span className={classnames(grid.col, css.releaseAssets)}>
                   {preRelease.releaseAssets.edges
                     .sort((a, b) =>
                       a.node.name > b.node.name
                         ? -1
                         : a.node.name < b.node.name
-                        ? 1
-                        : 0
+                          ? 1
+                          : 0
                     )
                     .map((asset, i) => {
                       const { name: filename, downloadUrl } = asset.node;
