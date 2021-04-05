@@ -6,10 +6,6 @@ import grid from '../styles/grid.module.css';
 import css from './ReferenceList.module.css';
 
 const ReferenceList = ({ tree, library }) => {
-  const link = library
-    ? '/reference/libraries/' + library + '/'
-    : '/reference/';
-
   return (
     <div className={css.root}>
       {Object.keys(tree).map((category) => (
@@ -69,4 +65,4 @@ const ReferenceItem = memo(({ item }) => {
   );
 });
 
-export default ReferenceList;
+export default memo(ReferenceList);

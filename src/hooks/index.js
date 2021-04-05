@@ -8,7 +8,7 @@ import {
 } from 'react';
 import hljs from 'highlight.js/lib/core';
 import processing from 'highlight.js/lib/languages/processing';
-import { shuffleArray } from '../utils/data';
+import { shuffleArray } from '../utils';
 
 hljs.registerLanguage('processing', processing);
 

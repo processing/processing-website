@@ -9,15 +9,17 @@ import { useIntl } from 'react-intl';
 import Layout from '../../components/Layout';
 import ReferenceList from '../../components/ReferenceList';
 
-import { organizeReferenceItems } from '../../utils/data';
+import { referencePath } from '../../utils/paths';
+import { useTree } from '../../hooks';
+import { usePreparedReferenceItems } from '../../hooks/reference';
+
 import css from '../../styles/templates/index-lib-template.module.css';
 import grid from '../../styles/grid.module.css';
 
 const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
   const intl = useIntl();
-  const items = data.allFile.nodes;
-
-  const tree = useMemo(() => organizeReferenceItems(items), [items]);
+  const items = usePreparedReferenceItems(data.items.nodes, libraryName);
+  const tree = useTree(items);
 
   return (
     <Layout>
@@ -27,12 +29,12 @@ const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
       {data.mdx !== null ? (
         <div className={classnames(grid.grid, css.root)}>
           <MDXRenderer>{data.mdx.body}</MDXRenderer>
-          {tree && <ReferenceList data={tree} library={libraryName} />}
+          {tree && <ReferenceList tree={tree} library={libraryName} />}
         </div>
       ) : (
         <div>
           {intl.formatMessage({ id: 'notTranslated' })}
-          <Link to={`/reference/libraries/${libraryName}/index.html`}>
+          <Link to={referencePath('index', libraryName)}>
             {intl.formatMessage({ id: 'englishPage' })}
           </Link>
         </div>
@@ -45,7 +47,7 @@ export default IndexLibraryTemplate;
 
 export const query = graphql`
   query($libraryName: String!, $locale: String!) {
-    allFile(
+    items: allFile(
       filter: { fields: { lib: { eq: $libraryName }, lang: { eq: "en" } } }
     ) {
       nodes {

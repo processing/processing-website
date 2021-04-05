@@ -15,7 +15,6 @@ import FilterBar from '../components/FilterBar';
 
 import { useFilteredArray } from '../hooks';
 import { usePreparedContributions } from '../hooks/libraries';
-import { filterItems } from '../utils/data';
 import { referencePath } from '../utils/paths';
 
 import css from '../styles/pages/libraries.module.css';

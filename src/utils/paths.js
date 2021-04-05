@@ -1,13 +1,26 @@
 /**
+  NB: This file is written with node-like exports because it is used both
+  in the frontend and in the gatsby-node.js file.
+**/
+
+const langPrefix = (lang) =>
+  lang && lang !== '' && lang !== 'en' ? `/${lang}` : '';
+
+/**
   Returns the full path to an example
 **/
-export const examplePath = (name) => `/examples/${name.toLowerCase()}.html`;
+const examplePath = (name) => `/examples/${name.toLowerCase()}.html`;
 
 /**
   Returns the full path to a reference (processing or library) item
 **/
-export const referencePath = (name, libraryName) => {
+const referencePath = (name, libraryName, lang) => {
   return !libraryName || libraryName === 'processing'
-    ? `/reference/${name}.html`
-    : `/reference/libraries/${libraryName}/${name}.html`;
+    ? `${langPrefix(lang)}/reference/${name}.html`
+    : `${langPrefix(lang)}/reference/libraries/${libraryName}/${name}.html`;
+};
+
+module.exports = {
+  examplePath,
+  referencePath,
 };

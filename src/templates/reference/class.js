@@ -124,7 +124,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
                     {entry.constructors.map((cons, key) => {
                       return (
                         <li key={'f' + key}>
-                          <code>{cons}</code>
+                          <code dangerouslySetInnerHTML={{ __html: cons }} />
                         </li>
                       );
                     })}
@@ -141,7 +141,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
                       return (
                         <li key={'f' + key}>
                           <a
-                            href={field.anchor + '.html'}
+                            href={referencePath(field.anchor)}
                             className={classnames(grid.col, css.item)}>
                             <code>{field.name}</code>{' '}
                           </a>
@@ -247,7 +247,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
 export default ClassRefTemplate;
 
 export const query = graphql`
-  query($name: String!, $assetsName: String!, $locale: String!) {
+  query($name: String!, $relDir: String!, $locale: String!) {
     json: file(
       fields: { name: { eq: $name }, lang: { eq: $locale } }
       sourceInstanceName: { eq: "json" }
@@ -275,7 +275,7 @@ export const query = graphql`
     }
     images: allFile(
       filter: {
-        relativeDirectory: { eq: $assetsName }
+        relativeDirectory: { eq: $relDir }
         extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
       }
     ) {
@@ -296,7 +296,7 @@ export const query = graphql`
     }
     pdes: allFile(
       filter: {
-        relativeDirectory: { eq: $assetsName }
+        relativeDirectory: { eq: $relDir }
         extension: { regex: "/(pde)/" }
       }
     ) {
