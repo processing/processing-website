@@ -16,6 +16,7 @@ export const usePreparedReferenceItems = (items) => {
         path: referencePath(item.name),
         category: titleCase(item.childJson.category),
         subcategory: titleCase(item.childJson.subcategory),
+        search: `${item.childJson.name} ${item.childJson.brief}`,
       })
     );
   }, [items]);

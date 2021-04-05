@@ -12,7 +12,8 @@ import CopyButton from '../../components/CopyButton';
 import Layout from '../../components/Layout';
 import Sidebar from '../../components/Sidebar';
 
-import { useHighlight, useWindowSize } from '../../hooks';
+import { useTree, useHighlight, useWindowSize } from '../../hooks';
+import { usePreparedReferenceItems } from '../../hooks/reference';
 
 import css from '../../styles/templates/ref-template.module.css';
 import grid from '../../styles/grid.module.css';
@@ -24,6 +25,9 @@ const FieldRefTemplate = ({ data, pageContext }) => {
   const images = data.images.edges;
   const ref = useHighlight();
   const intl = useIntl();
+
+  const items = usePreparedReferenceItems(data.items.nodes);
+  const tree = useTree(items);
 
   const entry = data?.json?.childJson;
   const isProcessing = pageContext.libraryName === 'processing';
@@ -37,12 +41,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
       </Helmet>
       <div className={classnames(css.root, grid.grid, grid.rightBleed)}>
         {isProcessing && (
-          <Sidebar
-            items={data.items}
-            setShow={setShow}
-            show={show}
-            type="reference"
-          />
+          <Sidebar tree={tree} setShow={setShow} show={show} type="reference" />
         )}
         {entry ? (
           <div

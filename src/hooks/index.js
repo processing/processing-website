@@ -70,13 +70,47 @@ export const useTree = (items) => {
 };
 
 /**
+  Hook to filter items in an array based on a specific string attribute
+  such as those used in reference and examples.
+  @param {Array} array The array of items
+  @param {string} searchTerm The search term string entered by the user
+**/
+export const useFilteredArray = (array, searchTerm, searchKey = 'search') => {
+  return useMemo(() => {
+    if (!searchTerm || searchTerm === '') {
+      return array;
+    }
+
+    const filtered = [];
+    const terms = searchTerm.split(' ');
+
+    loop1: for (let i = 0; i < array.length; i++) {
+      loop2: for (let j = 0; j < terms.length; j++) {
+        if (
+          !array[i][searchKey].toLowerCase().includes(terms[j].toLowerCase())
+        ) {
+          continue loop1;
+        }
+      }
+      filtered.push(array[i]);
+    }
+
+    return filtered;
+  }, [array, searchTerm, searchKey]);
+};
+
+/**
   Hook to filter items in an object tree of categories, subcategories, and items
   such as those used in reference and examples.
   @param {object} tree The tree object
   @param {string} searchTerm The search term string entered by the user
 **/
-export const useFilteredTree = (tree, searchTerm) => {
+export const useFilteredTree = (tree, searchTerm, searchKey = 'search') => {
   return useMemo(() => {
+    if (!searchTerm || searchTerm === '') {
+      return tree;
+    }
+
     const filtered = {};
     const terms = searchTerm.split(' ');
 
@@ -87,7 +121,9 @@ export const useFilteredTree = (tree, searchTerm) => {
         const filteredItems = [];
         itemLoop: for (let i = 0; i < items.length; i++) {
           termLoop: for (let j = 0; j < terms.length; j++) {
-            if (items[i].name.toLowerCase().includes(terms[j].toLowerCase())) {
+            if (
+              items[i][searchKey].toLowerCase().includes(terms[j].toLowerCase())
+            ) {
               filteredItems.push(items[i]);
               continue itemLoop;
             }
@@ -106,7 +142,7 @@ export const useFilteredTree = (tree, searchTerm) => {
     }
 
     return filtered;
-  }, [tree, searchTerm]);
+  }, [tree, searchTerm, searchKey]);
 };
 
 export const useHeight = (scrolled) => {

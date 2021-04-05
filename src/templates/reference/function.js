@@ -11,7 +11,8 @@ import CopyButton from '../../components/CopyButton';
 import Layout from '../../components/Layout';
 import Sidebar from '../../components/Sidebar';
 
-import { useHighlight, useWindowSize } from '../../hooks';
+import { useTree, useHighlight, useWindowSize } from '../../hooks';
+import { usePreparedReferenceItems } from '../../hooks/reference';
 import { referencePath } from '../../utils/paths';
 
 import css from '../../styles/templates/ref-template.module.css';
@@ -22,6 +23,9 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
   const [show, setShow] = useState(width > 960 ? true : false);
   const ref = useHighlight();
   const intl = useIntl();
+
+  const items = usePreparedReferenceItems(data.items.nodes);
+  const tree = useTree(items);
 
   const isProcessing = pageContext.libraryName === 'processing';
   const entry = data?.json?.childJson;
@@ -40,12 +44,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
       </Helmet>
       <div className={classnames(css.root, grid.nest, grid.rightBleed)}>
         {isProcessing && (
-          <Sidebar
-            items={data.items}
-            setShow={setShow}
-            show={show}
-            type={'reference'}
-          />
+          <Sidebar tree={tree} setShow={setShow} show={show} type="reference" />
         )}
         {entry ? (
           <div

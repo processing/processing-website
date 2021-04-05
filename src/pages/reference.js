@@ -11,7 +11,6 @@ import FilterBar from '../components/FilterBar';
 
 import { useTree, useFilteredTree } from '../hooks';
 import { usePreparedReferenceItems } from '../hooks/reference';
-import { filterItems, organizeReferenceItems } from '../utils/data';
 
 import grid from '../styles/grid.module.css';
 

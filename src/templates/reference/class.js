@@ -5,13 +5,14 @@ import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
-import { referencePath } from '../../utils/paths';
 
 import CopyButton from '../../components/CopyButton';
 import Layout from '../../components/Layout';
 import Sidebar from '../../components/Sidebar';
 
-import { useHighlight, useWindowSize } from '../../hooks';
+import { useHighlight, useWindowSize, useTree } from '../../hooks';
+import { usePreparedReferenceItems } from '../../hooks/reference';
+import { referencePath } from '../../utils/paths';
 
 import css from '../../styles/templates/ref-template.module.css';
 import grid from '../../styles/grid.module.css';
@@ -23,6 +24,9 @@ const ClassRefTemplate = ({ data, pageContext }) => {
   const examples = data.pdes.edges;
   const ref = useHighlight();
   const intl = useIntl();
+
+  const items = usePreparedReferenceItems(data.items.nodes);
+  const tree = useTree(items);
 
   const entry = data?.json?.childJson;
   const isProcessing = pageContext.libraryName === 'processing';
@@ -37,7 +41,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
       <div className={classnames(css.root, grid.grid, grid.rightBleed)}>
         {isProcessing && (
           <Sidebar
-            items={data.items}
+            tree={tree}
             setShow={setShow}
             show={show}
             type={'reference'}

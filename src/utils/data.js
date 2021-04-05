@@ -4,7 +4,7 @@ import { titleCase as _titleCase } from 'title-case';
 export const titleCase = (slug) => _titleCase(slug.replace(/_/g, ' '));
 
 //filters the references/examples based on a search text
-export const filterItems = (items, searchTerm, propsToFilter) => {
+export const filterItems = (items, searchTerm) => {
   if (searchTerm && searchTerm !== '') {
     const searchTerms = searchTerm.split(' ');
     const filtered = [];
@@ -63,26 +63,6 @@ export const organizeReferenceItems = (items) => {
       dir: item.relativeDirectory,
       ...item.childJson,
     });
-  }
-
-  return tree;
-};
-
-export const organizeExampleItems = (items, searchTerm) => {
-  const tree = {};
-
-  for (let i = 0; i < items.length; i++) {
-    const item = items[i];
-
-    if (!tree[item.category]) {
-      tree[item.category] = {};
-    }
-
-    if (!tree[item.category][item.subcategory]) {
-      tree[item.category][item.subcategory] = [];
-    }
-
-    tree[item.category][item.subcategory].push(item);
   }
 
   return tree;
