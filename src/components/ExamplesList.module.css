@@ -45,11 +45,12 @@
   }
 
   & ul {
-    flex-basis: var(--col8);
+    flex-basis: var(--col7);
+    padding-right: var(--col1) !important;
   }
 
   & ul > li {
-    flex-basis: var(--col1);
+    flex-basis: cols(1, 6);
     transition: 0.2 ease;
   }
 

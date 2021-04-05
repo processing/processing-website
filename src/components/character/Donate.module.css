@@ -1,7 +1,8 @@
 .root {
   position: fixed;
-  top: 200px;
+  top: 160px;
   right: var(--margin);
+  padding: 0 var(--gutter);
   width: var(--col1);
   float: right;
   text-align: center;
