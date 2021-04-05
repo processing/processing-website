@@ -11,7 +11,9 @@ import CopyButton from '../../components/CopyButton';
 import Layout from '../../components/Layout';
 import Sidebar from '../../components/Sidebar';
 
-import { useHighlight, useWindowSize } from '../../hooks';
+import { useTree, useHighlight, useWindowSize } from '../../hooks';
+import { usePreparedReferenceItems } from '../../hooks/reference';
+import { referencePath } from '../../utils/paths';
 
 import css from '../../styles/templates/ref-template.module.css';
 import grid from '../../styles/grid.module.css';
@@ -22,12 +24,11 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
   const ref = useHighlight();
   const intl = useIntl();
 
-  const entry = data?.json?.childJson;
+  const items = usePreparedReferenceItems(data.items.nodes);
+  const tree = useTree(items);
 
   const isProcessing = pageContext.libraryName === 'processing';
-  const link = isProcessing
-    ? `/reference/${pageContext.name}.html`
-    : `/reference/libraries/${pageContext.libraryName}/${pageContext.name}.html`;
+  const entry = data?.json?.childJson;
 
   const examples = data.pdes ? data.pdes.edges : [];
   const images = data.images.edges;
@@ -42,13 +43,8 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
         </title>
       </Helmet>
       <div className={classnames(css.root, grid.nest, grid.rightBleed)}>
-        {pageContext.libraryName === 'processing' && (
-          <Sidebar
-            items={data.items}
-            setShow={setShow}
-            show={show}
-            type={'reference'}
-          />
+        {isProcessing && (
+          <Sidebar tree={tree} setShow={setShow} show={show} type="reference" />
         )}
         {entry ? (
           <div
@@ -233,7 +229,8 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
             )}>
             <div className={classnames(grid.push1)}>
               {intl.formatMessage({ id: 'notTranslated' })}
-              <Link to={link}>
+              <Link
+                to={referencePath(pageContext.name, pageContext.libraryName)}>
                 {' '}
                 {intl.formatMessage({ id: 'englishPage' })}
               </Link>
@@ -248,7 +245,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
 export default RefTemplate;
 
 export const query = graphql`
-  query($name: String!, $assetsName: String!, $locale: String!) {
+  query($name: String!, $relDir: String!, $locale: String!) {
     json: file(fields: { name: { eq: $name }, lang: { eq: $locale } }) {
       childJson {
         name
@@ -265,7 +262,7 @@ export const query = graphql`
     }
     images: allFile(
       filter: {
-        relativeDirectory: { eq: $assetsName }
+        relativeDirectory: { eq: $relDir }
         extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
       }
     ) {
@@ -286,7 +283,7 @@ export const query = graphql`
     }
     pdes: allFile(
       filter: {
-        relativeDirectory: { eq: $assetsName }
+        relativeDirectory: { eq: $relDir }
         extension: { regex: "/(pde)/" }
       }
     ) {

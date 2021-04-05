@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
+import { referencePath } from '../../utils/paths';
 
 import Img from 'gatsby-image';
 
@@ -11,7 +12,8 @@ import CopyButton from '../../components/CopyButton';
 import Layout from '../../components/Layout';
 import Sidebar from '../../components/Sidebar';
 
-import { useHighlight, useWindowSize } from '../../hooks';
+import { useTree, useHighlight, useWindowSize } from '../../hooks';
+import { usePreparedReferenceItems } from '../../hooks/reference';
 
 import css from '../../styles/templates/ref-template.module.css';
 import grid from '../../styles/grid.module.css';
@@ -24,12 +26,11 @@ const FieldRefTemplate = ({ data, pageContext }) => {
   const ref = useHighlight();
   const intl = useIntl();
 
-  const entry = data?.json?.childJson;
+  const items = usePreparedReferenceItems(data.items.nodes);
+  const tree = useTree(items);
 
+  const entry = data?.json?.childJson;
   const isProcessing = pageContext.libraryName === 'processing';
-  const link = isProcessing
-    ? `/reference/${pageContext.name}.html`
-    : `/reference/libraries/${pageContext.libraryName}/${pageContext.name}.html`;
 
   return (
     <Layout withSidebar>
@@ -39,13 +40,8 @@ const FieldRefTemplate = ({ data, pageContext }) => {
         </title>
       </Helmet>
       <div className={classnames(css.root, grid.grid, grid.rightBleed)}>
-        {pageContext.libraryName === 'processing' && (
-          <Sidebar
-            items={data.items}
-            setShow={setShow}
-            show={show}
-            type={'reference'}
-          />
+        {isProcessing && (
+          <Sidebar tree={tree} setShow={setShow} show={show} type="reference" />
         )}
         {entry ? (
           <div
@@ -142,7 +138,8 @@ const FieldRefTemplate = ({ data, pageContext }) => {
             )}>
             <div className={classnames(grid.push1)}>
               {intl.formatMessage({ id: 'notTranslated' })}
-              <Link to={link}>
+              <Link
+                to={referencePath(pageContext.name, pageContext.libraryName)}>
                 {' '}
                 {intl.formatMessage({ id: 'englishPage' })}
               </Link>
@@ -157,7 +154,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
 export default FieldRefTemplate;
 
 export const query = graphql`
-  query($name: String!, $assetsName: String!) {
+  query($name: String!, $relDir: String!) {
     json: file(fields: { name: { eq: $name } }) {
       childJson {
         name
@@ -173,7 +170,7 @@ export const query = graphql`
     }
     images: allFile(
       filter: {
-        relativeDirectory: { eq: $assetsName }
+        relativeDirectory: { eq: $relDir }
         extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
       }
     ) {
@@ -194,7 +191,7 @@ export const query = graphql`
     }
     pdes: allFile(
       filter: {
-        relativeDirectory: { eq: $assetsName }
+        relativeDirectory: { eq: $relDir }
         extension: { regex: "/(pde)/" }
       }
     ) {

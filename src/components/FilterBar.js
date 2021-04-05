@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import classnames from 'classnames';
 
 import css from './FilterBar.module.css';
@@ -44,4 +44,4 @@ const FilterBar = ({
   );
 };
 
-export default FilterBar;
+export default memo(FilterBar);

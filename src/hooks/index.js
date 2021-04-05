@@ -8,7 +8,7 @@ import {
 } from 'react';
 import hljs from 'highlight.js/lib/core';
 import processing from 'highlight.js/lib/languages/processing';
-import { shuffleArray } from '../utils/data';
+import { shuffleArray } from '../utils';
 
 hljs.registerLanguage('processing', processing);
 
@@ -25,17 +25,124 @@ export const useRandomArray = (arr, num) => {
   }, [arr, num]);
 };
 
+/**
+  Performs syntax highlighting on all <pre><code> inside ref
+**/
 export const useHighlight = () => {
   const ref = useRef();
 
   useEffect(() => {
-    if (!ref.current) return;
-    ref.current.querySelectorAll('pre code').forEach((block) => {
-      hljs.highlightBlock(block);
-    });
+    if (ref.current) {
+      ref.current.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+      });
+    }
   }, []);
 
   return ref;
+};
+
+/**
+  Hook to turn an array of prepared examples into an object that represent
+  the tree of categories, subcategories, and items.
+  @param {Array} items Array of items with `category` and `subcategory`
+**/
+export const useTree = (items) => {
+  return useMemo(() => {
+    const tree = {};
+
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+
+      if (!tree[item.category]) {
+        tree[item.category] = {};
+      }
+
+      if (!tree[item.category][item.subcategory]) {
+        tree[item.category][item.subcategory] = [];
+      }
+
+      tree[item.category][item.subcategory].push(item);
+    }
+
+    return tree;
+  }, [items]);
+};
+
+/**
+  Hook to filter items in an array based on a specific string attribute
+  such as those used in reference and examples.
+  @param {Array} array The array of items
+  @param {string} searchTerm The search term string entered by the user
+**/
+export const useFilteredArray = (array, searchTerm, searchKey = 'search') => {
+  return useMemo(() => {
+    if (!searchTerm || searchTerm === '') {
+      return array;
+    }
+
+    const filtered = [];
+    const terms = searchTerm.split(' ');
+
+    loop1: for (let i = 0; i < array.length; i++) {
+      loop2: for (let j = 0; j < terms.length; j++) {
+        if (
+          !array[i][searchKey].toLowerCase().includes(terms[j].toLowerCase())
+        ) {
+          continue loop1;
+        }
+      }
+      filtered.push(array[i]);
+    }
+
+    return filtered;
+  }, [array, searchTerm, searchKey]);
+};
+
+/**
+  Hook to filter items in an object tree of categories, subcategories, and items
+  such as those used in reference and examples.
+  @param {object} tree The tree object
+  @param {string} searchTerm The search term string entered by the user
+**/
+export const useFilteredTree = (tree, searchTerm, searchKey = 'search') => {
+  return useMemo(() => {
+    if (!searchTerm || searchTerm === '') {
+      return tree;
+    }
+
+    const filtered = {};
+    const terms = searchTerm.split(' ');
+
+    for (const category in tree) {
+      filtered[category] = {};
+      for (const subcategory in tree[category]) {
+        const items = tree[category][subcategory];
+        const filteredItems = [];
+        itemLoop: for (let i = 0; i < items.length; i++) {
+          termLoop: for (let j = 0; j < terms.length; j++) {
+            if (
+              items[i][searchKey].toLowerCase().includes(terms[j].toLowerCase())
+            ) {
+              filteredItems.push(items[i]);
+              continue itemLoop;
+            }
+          }
+        }
+        // Only add subcategory if there are any filtered items
+        if (filteredItems.length > 0) {
+          filtered[category][subcategory] = filteredItems;
+        }
+      }
+
+      // Remove category if there are no subcategories
+      if (Object.keys(filtered[category]).length === 0) {
+        delete filtered[category];
+      }
+    }
+
+    return filtered;
+  }, [tree, searchTerm, searchKey]);
 };
 
 export const useHeight = (scrolled) => {

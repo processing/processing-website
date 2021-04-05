@@ -239,15 +239,15 @@ const FeaturedExamples = memo(({ heading, examples, locale }) => {
           {examples.map((example, i) => (
             <li
               className={classnames(css.example, grid.col)}
-              key={example.slug}>
-              <Link to={example.slug} language={locale}>
+              key={example.path}>
+              <Link to={example.path} language={locale}>
                 <div className={css.imgContainer}>
                   {example.image && (
                     <Img fluid={example.image.childImageSharp.fluid} />
                   )}
                 </div>
                 <h4>{example.name}</h4>
-                <p>in {example.subCategory} examples</p>
+                <p>in {example.subcategory} examples</p>
               </Link>
             </li>
           ))}
