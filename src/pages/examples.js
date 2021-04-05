@@ -9,7 +9,8 @@ import ExamplesList from '../components/ExamplesList';
 import Layout from '../components/Layout';
 import FilterBar from '../components/FilterBar';
 
-import { filterItems, organizeExampleItems } from '../utils/data';
+import { useTree, useFilteredTree } from '../hooks';
+import { usePreparedExamples } from '../hooks/examples';
 
 import grid from '../styles/grid.module.css';
 import css from '../styles/pages/examples.module.css';
@@ -18,18 +19,14 @@ const Examples = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const intl = useIntl();
 
-  const items = data.examples.nodes;
-  const images = data.images.nodes;
-
-  const tree = useMemo(
-    () => organizeExampleItems(filterItems(items, searchTerm), images),
-    [items, searchTerm, images]
-  );
+  const examples = usePreparedExamples(data.examples.nodes, data.images.nodes);
+  const tree = useTree(examples);
+  const filtered = useFilteredTree(tree, searchTerm);
 
   return (
     <Layout>
       <Helmet>
-        <title>{'Examples'}</title>
+        <title>Examples</title>
       </Helmet>
       <div className={classnames(grid.grid, css.root)}>
         <Donate />
@@ -44,7 +41,7 @@ const Examples = ({ data }) => {
           searchTerm={searchTerm}
           large
         />
-        <ExamplesList data={tree} />
+        <ExamplesList tree={filtered} />
       </div>
     </Layout>
   );
@@ -58,6 +55,7 @@ export const query = graphql`
       filter: {
         sourceInstanceName: { eq: "examples" }
         fields: { lang: { eq: "en" } }
+        relativeDirectory: { regex: "/^((?!data).)*$/" }
       }
       sort: { order: ASC, fields: relativeDirectory }
     ) {
@@ -74,6 +72,7 @@ export const query = graphql`
       filter: {
         sourceInstanceName: { eq: "examples" }
         extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
+        relativeDirectory: { regex: "/^((?!data).)*$/" }
       }
     ) {
       nodes {

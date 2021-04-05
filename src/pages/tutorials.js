@@ -19,7 +19,7 @@ const Tutorials = ({ data }) => {
   return (
     <Layout>
       <Helmet>
-        <title>{'Tutorials'}</title>
+        <title>Tutorials</title>
       </Helmet>
       <div className={classnames(grid.grid, css.root)}>
         <h1 className={grid.col}>{intl.formatMessage({ id: 'tutorials' })}</h1>

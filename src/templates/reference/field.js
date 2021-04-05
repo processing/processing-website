@@ -4,21 +4,21 @@ import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
+import { referencePath } from '../../utils/paths';
 
 import Img from 'gatsby-image';
 
 import CopyButton from '../../components/CopyButton';
-import Footer from '../../components/Footer';
 import Layout from '../../components/Layout';
 import Sidebar from '../../components/Sidebar';
 
-import { useHighlight, useWindowSize } from '../../hooks';
+import { useTree, useHighlight, useWindowSize } from '../../hooks';
+import { usePreparedReferenceItems } from '../../hooks/reference';
 
 import css from '../../styles/templates/ref-template.module.css';
 import grid from '../../styles/grid.module.css';
 
 const FieldRefTemplate = ({ data, pageContext }) => {
-  let entry;
   const { width } = useWindowSize();
   const [show, setShow] = useState(width > 960 ? true : false);
   const examples = data.pdes.edges;
@@ -26,35 +26,24 @@ const FieldRefTemplate = ({ data, pageContext }) => {
   const ref = useHighlight();
   const intl = useIntl();
 
-  if (data.json !== null) {
-    entry = data.json.childJson;
-  }
+  const items = usePreparedReferenceItems(data.items.nodes);
+  const tree = useTree(items);
 
-  const link =
-    pageContext.libraryName === 'processing'
-      ? `/reference/${pageContext.name}.html`
-      : `/reference/libraries/${pageContext.libraryName}/${pageContext.name}.html`;
-
-  const toggleSidebar = (e, show) => {
-    if (e.type === 'click') setShow(show);
-    else if (e.keyCode === 13) setShow(show);
-  };
+  const entry = data?.json?.childJson;
+  const isProcessing = pageContext.libraryName === 'processing';
 
   return (
-    <Layout hasSidebar>
+    <Layout withSidebar>
       <Helmet>
-        <title>{pageContext.name}</title>
+        <title>
+          {pageContext.name} / {isProcessing ? 'Reference' : 'Libraries'}
+        </title>
       </Helmet>
       <div className={classnames(css.root, grid.grid, grid.rightBleed)}>
-        {pageContext.libraryName === 'processing' && (
-          <Sidebar
-            items={data.items}
-            onChange={toggleSidebar}
-            show={show}
-            type={'reference'}
-          />
+        {isProcessing && (
+          <Sidebar tree={tree} setShow={setShow} show={show} type="reference" />
         )}
-        {entry !== null ? (
+        {entry ? (
           <div
             className={classnames(
               css.wrapper,
@@ -139,7 +128,6 @@ const FieldRefTemplate = ({ data, pageContext }) => {
                 </div>
               )}
             </div>
-            {width > 960 && <Footer />}
           </div>
         ) : (
           <div
@@ -150,7 +138,8 @@ const FieldRefTemplate = ({ data, pageContext }) => {
             )}>
             <div className={classnames(grid.push1)}>
               {intl.formatMessage({ id: 'notTranslated' })}
-              <Link to={link}>
+              <Link
+                to={referencePath(pageContext.name, pageContext.libraryName)}>
                 {' '}
                 {intl.formatMessage({ id: 'englishPage' })}
               </Link>
@@ -165,7 +154,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
 export default FieldRefTemplate;
 
 export const query = graphql`
-  query($name: String!, $assetsName: String!) {
+  query($name: String!, $relDir: String!) {
     json: file(fields: { name: { eq: $name } }) {
       childJson {
         name
@@ -181,7 +170,7 @@ export const query = graphql`
     }
     images: allFile(
       filter: {
-        relativeDirectory: { eq: $assetsName }
+        relativeDirectory: { eq: $relDir }
         extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
       }
     ) {
@@ -202,7 +191,7 @@ export const query = graphql`
     }
     pdes: allFile(
       filter: {
-        relativeDirectory: { eq: $assetsName }
+        relativeDirectory: { eq: $relDir }
         extension: { regex: "/(pde)/" }
       }
     ) {

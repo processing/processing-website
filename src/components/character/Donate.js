@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 
 import Character from './Character';
 import Button from '../Button';
@@ -35,4 +35,4 @@ const Donate = () => {
   );
 };
 
-export default Donate;
+export default memo(Donate);

@@ -1,4 +1,4 @@
-import React, { memo, useState, useEffect } from 'react';
+import React, { memo, useState, useEffect, useMemo } from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
@@ -7,40 +7,34 @@ import { useIntl } from 'react-intl';
 import Img from 'gatsby-image';
 import p5 from 'p5';
 
-import Footer from '../../components/Footer';
 import Layout from '../../components/Layout';
 import Sidebar from '../../components/Sidebar';
 import Tabs from '../../components/Tabs';
 
 import { referencePath } from '../../utils/paths';
-import { useWindowSize } from '../../hooks';
-import { useOrderedPdes, usePreparedExamples } from '../../hooks/examples';
+import { useWindowSize, useTree } from '../../hooks';
+import {
+  useOrderedPdes,
+  usePreparedExamples,
+  useRelatedExamples,
+} from '../../hooks/examples';
 
 import css from '../../styles/templates/example-template.module.css';
 import grid from '../../styles/grid.module.css';
 
 const ExampleTemplate = ({ data, pageContext }) => {
   const { width } = useWindowSize();
-  const [showSidebar, setShowSidebar] = useState(width > 960 ? true : false);
+  const [showSidebar, setShowSidebar] = useState(width > 960);
   const intl = useIntl();
 
   const { example, image, allExamples, relatedImages, liveSketch } = data;
+  const { title, description, author, featured } = example.childJson;
   const { name, related } = pageContext;
 
   const pdes = useOrderedPdes(name, data.pdes.nodes);
-  const relatedExamples = usePreparedExamples(
-    allExamples.nodes,
-    relatedImages.nodes,
-    related
-  );
-
-  const toggleSidebar = (e, show) => {
-    if (e.type === 'click') {
-      setShowSidebar(show);
-    } else if (e.keyCode === 13) {
-      setShowSidebar(show);
-    }
-  };
+  const examples = usePreparedExamples(allExamples.nodes, relatedImages.nodes);
+  const tree = useTree(examples);
+  const relatedExamples = useRelatedExamples(examples, related);
 
   // Run live sketch
   useEffect(() => {
@@ -62,13 +56,13 @@ const ExampleTemplate = ({ data, pageContext }) => {
   return (
     <Layout hasSidebar>
       <Helmet>
-        {example && <title>{example.childJson.title}</title>}
+        {title && <title>{title}</title>}
         {liveSketch && <script>{`${liveSketch.childRawCode.content}`}</script>}
       </Helmet>
       <div className={classnames(css.root, grid.grid, grid.rightBleed)}>
         <Sidebar
-          items={allExamples}
-          onChange={toggleSidebar}
+          tree={tree}
+          setShow={setShowSidebar}
           show={showSidebar}
           type={'examples'}
         />
@@ -76,35 +70,32 @@ const ExampleTemplate = ({ data, pageContext }) => {
           className={classnames(grid.nest, css.wrapper, {
             [css.collapsed]: !showSidebar,
           })}>
-          {example !== null ? (
+          {example.childJson ? (
             <div
               className={classnames(
                 css.content,
                 { [css.collapsed]: !showSidebar },
                 grid.nest
               )}>
-              <h1 className={grid.col}>{example.childJson.title}</h1>
-              {example.childJson.author && (
-                <h3 className={grid.col}>
-                  {' '}
-                  {intl.formatMessage({ id: 'by' })} {example.childJson.author}
+              <h1>{title}</h1>
+              {author && (
+                <h3>
+                  {intl.formatMessage({ id: 'by' })} {author}
                 </h3>
               )}
-              <div className={classnames(grid.col, css.description)}>
+              <div className={css.description}>
                 <p
                   dangerouslySetInnerHTML={{
-                    __html: example.childJson.description,
+                    __html: description,
                   }}></p>
               </div>
-              {example.childJson.featured.length > 0 && (
+              {featured.length > 0 && (
                 <FeaturedFunctions
-                  featured={example.childJson.featured}
+                  featured={featured}
                   heading={intl.formatMessage({ id: 'featured' })}
                 />
               )}
-              <div
-                className={classnames(css.cover, grid.col)}
-                id="example-cover">
+              <div className={classnames(css.cover)} id="example-cover">
                 {!liveSketch && image && (
                   <Img fluid={image.childImageSharp.fluid} />
                 )}
@@ -114,7 +105,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
                 examples={relatedExamples}
                 heading={intl.formatMessage({ id: 'relatedExamples' })}
               />
-              <p className={classnames(grid.col, css.note)}>
+              <p className={classnames(css.note)}>
                 {intl.formatMessage({ id: 'exampleInfo' })}
                 <a
                   href={
@@ -141,7 +132,6 @@ const ExampleTemplate = ({ data, pageContext }) => {
               </div>
             </div>
           )}
-          {width > 960 && <Footer />}
         </div>
       </div>
     </Layout>
@@ -154,9 +144,9 @@ const FeaturedFunctions = memo(({ heading, featured }) => {
       <h3>{heading}</h3>
       <ul>
         {featured.map((feature, key) => (
-          <li key={key + 'f'}>
+          <li key={`feature-${key}`}>
             <Link to={referencePath(feature)}>
-              {feature.replace(/_/g, ' ')}
+              {feature.replace(/_$/, '()').replace(/_/g, ' ')}
             </Link>
           </li>
         ))}
@@ -172,8 +162,8 @@ const RelatedExamples = memo(({ heading, examples }) => {
       <ul className={classnames(css.related, grid.col)}>
         {examples.slice(0, 6).map((example, key) => {
           return (
-            <li key={key + 'rel'} className={css.relatedItem}>
-              <Link to={example.slug}>
+            <li key={`rel-${key}`} className={css.relatedItem}>
+              <Link to={example.path}>
                 {example.image && (
                   <Img
                     className={css.img}

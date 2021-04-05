@@ -6,6 +6,7 @@
 
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
+const { examplePath, referencePath } = require('./src/utils/paths');
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   await Promise.all([
@@ -55,7 +56,7 @@ async function createReference(actions, graphql) {
   const refTemplate = path.resolve(`./src/templates/reference/function.js`);
   const classRefTemplate = path.resolve(`./src/templates/reference/class.js`);
   const fieldRefTemplate = path.resolve(`./src/templates/reference/field.js`);
-  const indexLibTemplate = path.resolve(`./src/templates/library/index.js`);
+  const indexLibTemplate = path.resolve(`./src/templates/libraries/index.js`);
 
   const { createPage } = actions;
 
@@ -77,6 +78,55 @@ async function createReference(actions, graphql) {
     `
   );
 
+  if (result.errors) {
+    throw result.errors;
+  }
+
+  // Create reference pages.
+  const refPages = result.data.allFile.edges;
+
+  refPages.forEach((refPage, index) => {
+    const [name] = refPage.node.name.split('.');
+    const [lang, libraryName] = refPage.node.relativeDirectory.split('/');
+    const refPath = referencePath(name, libraryName, lang);
+    const relDir = libraryName + '/' + name;
+
+    if (
+      refPage.node.childJson.type === 'function' ||
+      refPage.node.childJson.type === 'method'
+    ) {
+      createPage({
+        path: refPath,
+        component: refTemplate,
+        context: {
+          name: refPage.node.name,
+          relDir,
+          libraryName,
+        },
+      });
+    } else if (refPage.node.childJson.type === 'class') {
+      createPage({
+        path: refPath,
+        component: classRefTemplate,
+        context: {
+          name: refPage.node.name,
+          relDir,
+          libraryName,
+        },
+      });
+    } else if (refPage.node.childJson.type === 'field') {
+      createPage({
+        path: refPath,
+        component: fieldRefTemplate,
+        context: {
+          name: refPage.node.name,
+          relDir,
+          libraryName,
+        },
+      });
+    }
+  });
+
   const dirResult = await graphql(
     `
       {
@@ -91,81 +141,12 @@ async function createReference(actions, graphql) {
     `
   );
 
-  if (result.errors) {
-    throw result.errors;
-  }
-
   if (dirResult.errors) {
     throw dirResult.errors;
   }
 
-  // Create reference pages.
-  const refPages = result.data.allFile.edges;
-
   // Create library index pages
   const dirPages = dirResult.data.allMdx.nodes;
-
-  refPages.forEach((refPage, index) => {
-    const previous =
-      index === refPages.length - 1 ? null : refPages[index + 1].node;
-    const next = index === 0 ? null : refPages[index - 1].node;
-    let assetsName = refPage.node.name.split('.')[0];
-    let libraryName = refPage.node.relativeDirectory.split('/')[1];
-    let lang = refPage.node.relativeDirectory.split('/')[0];
-    loc = lang === 'en' ? '' : lang;
-    let refPath;
-    if (libraryName === 'processing')
-      refPath = loc + '/reference/' + refPage.node.name.split('.')[0] + '.html';
-    else
-      refPath =
-        loc +
-        '/reference/libraries/' +
-        libraryName +
-        '/' +
-        refPage.node.name.split('.')[0] +
-        '.html';
-
-    if (
-      refPage.node.childJson.type === 'function' ||
-      refPage.node.childJson.type === 'method'
-    ) {
-      createPage({
-        path: refPath,
-        component: refTemplate,
-        context: {
-          name: refPage.node.name,
-          assetsName: libraryName + '/' + assetsName,
-          libraryName: libraryName,
-          previous,
-          next,
-        },
-      });
-    } else if (refPage.node.childJson.type === 'class') {
-      createPage({
-        path: refPath,
-        component: classRefTemplate,
-        context: {
-          name: refPage.node.name,
-          assetsName: libraryName + '/' + assetsName,
-          libraryName: libraryName,
-          previous,
-          next,
-        },
-      });
-    } else if (refPage.node.childJson.type === 'field') {
-      createPage({
-        path: refPath,
-        component: fieldRefTemplate,
-        context: {
-          name: refPage.node.name,
-          assetsName: libraryName + '/' + assetsName,
-          libraryName: libraryName,
-          previous,
-          next,
-        },
-      });
-    }
-  });
 
   dirPages.forEach((dirPage, index) => {
     createPage({
@@ -242,14 +223,14 @@ const parseExampleFileInfo = (node) => {
   // Split relative dir into needed info
   const splitDir = node.relativeDirectory.split('/');
   const category = splitDir[0];
-  const subCategory = splitDir[1];
+  const subcategory = splitDir[1];
 
   return {
     name,
     slug,
     langCode,
     category,
-    subCategory,
+    subcategory,
   };
 };
 
@@ -294,7 +275,7 @@ async function createExamples(actions, graphql) {
       slug,
       langCode,
       category,
-      subCategory,
+      subcategory,
     } = parseExampleFileInfo(jsonFile.node);
 
     // Find related examples in the same sub category
@@ -305,7 +286,7 @@ async function createExamples(actions, graphql) {
       .map((f) => parseExampleFileInfo(f.node))
       .filter((info) => {
         return (
-          info.subCategory === subCategory &&
+          info.subcategory === subcategory &&
           info.name !== name &&
           info.langCode === ''
         );
@@ -318,7 +299,7 @@ async function createExamples(actions, graphql) {
       context: {
         slug,
         name,
-        subCategory,
+        subcategory,
         related,
         relDir: jsonFile.node.relativeDirectory,
       },

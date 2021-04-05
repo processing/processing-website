@@ -4,7 +4,7 @@
 }
 
 .wrapper {
-  flex-basis: var(--col6-and-half);
+  flex-basis: var(--col6);
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -13,14 +13,15 @@
 .wrapper.collapsed {
   flex-basis: calc(var(--col8) - var(--margin));
 }
+.content.collapsed {
+  flex-basis: var(--col8);
+}
 
 .content {
   flex-basis: cols(6, 6);
   margin-bottom: var(--vertical-gutter);
   padding-left: var(--col-half);
   padding-right: calc(var(--margin) + var(--col1));
-  transition: 0.4s ease;
-
   & > h1 {
     flex-basis: cols(6, 6);
   }
@@ -36,35 +37,28 @@
 
 .content.collapsed {
   flex-basis: var(--col8);
-  padding-left: 0;
-  padding-right: var(--margin);
+
+  padding-right: var(--push1);
+  padding-left: var(--push1);
   margin-bottom: var(--vertical-gutter);
-  transition: 0.4s ease;
-
-  & > * {
-    padding-left: var(--push1);
-  }
-
   & > h1 {
-    flex-basis: var(--col8);
+    flex-basis: cols(8);
   }
 
   & > h3 {
-    flex-basis: var(--col8);
+    flex-basis: cols(8);
   }
 
   & .description {
-    flex-basis: var(--col6);
+    flex-basis: cols(5);
   }
 
   & .featured {
-    flex-basis: var(--col1);
+    flex-basis: cols(2);
   }
 
   & .cover {
-    flex-basis: var(--col7);
-    padding-left: calc(var(--push1) + var(--col-half));
-    padding-right: var(--col-half);
+    flex-basis: cols(7);
   }
 
   & .tabs {
@@ -80,8 +74,10 @@
   }
 
   & .related {
-    flex-basis: cols(6, 6);
+    flex-basis: calc(cols(6, 6) + var(--gutter-double));
+    margin: 0 calc(-1 * var(--gutter));
     padding-left: 0;
+    padding-right: 0;
 
     & li {
       flex-basis: cols(1, 6);
@@ -95,7 +91,7 @@
 }
 
 .description {
-  flex-basis: cols(6, 6);
+  flex-basis: cols(4, 6);
 }
 
 .featured {
@@ -105,8 +101,6 @@
 .cover {
   flex-basis: cols(5, 5);
   padding-top: var(--vertical-gutter);
-  padding-left: cols(0.5, 5);
-  padding-right: cols(0.5, 5);
 }
 
 .relatedWrapper {
@@ -132,10 +126,6 @@
       color: var(--processing-blue-mid);
     }
   }
-}
-
-.tabs {
-  padding: 0 var(--gutter);
 }
 
 .relatedItem:hover {

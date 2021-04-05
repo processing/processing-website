@@ -22,6 +22,7 @@
 }
 
 .logo {
+  white-space: nowrap;
   height: 100%;
   flex-basis: var(--col2);
   font-size: var(--text-xlarge);

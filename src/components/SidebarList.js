@@ -3,44 +3,44 @@ import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useLocalization } from 'gatsby-theme-i18n';
 
-import SidebarLabel from './SidebarLabel';
+import SidebarGroup from './SidebarGroup';
 
 import grid from '../styles/grid.module.css';
 import css from './SidebarList.module.css';
 
-const SidebarList = ({ data, type, show }) => {
+const SidebarList = ({ tree, type }) => {
   const { locale } = useLocalization();
 
   return (
     <div className={css.root}>
-      {data.map((category, key) => (
-        <SidebarLabel label={category.name} key={`label-category-${key}`}>
+      {Object.keys(tree).map((category) => (
+        <SidebarGroup label={category} key={`label-category-${category}`}>
           <ul>
-            {category.children.map((subcategory, key) => (
-              <SidebarLabel
-                label={subcategory.name}
-                key={`label-subcategory-${key}`}
+            {Object.keys(tree[category]).map((subcategory) => (
+              <SidebarGroup
+                label={subcategory}
+                key={`label-subcategory-${subcategory}`}
                 secondary>
                 <ul>
-                  {subcategory.children.map((item, key) => {
+                  {tree[category][subcategory].map((item, key) => {
                     return (
                       <li key={key}>
                         <Link
                           className={classnames(grid.col1andhalf, {
                             [css.examples]: type === 'examples',
                           })}
-                          to={`/${type}/${item.slug}.html`}
+                          to={item.path}
                           language={locale}>
-                          <span>{item.name}</span>
+                          {item.name}
                         </Link>
                       </li>
                     );
                   })}
                 </ul>
-              </SidebarLabel>
+              </SidebarGroup>
             ))}
           </ul>
-        </SidebarLabel>
+        </SidebarGroup>
       ))}
     </div>
   );

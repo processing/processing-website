@@ -8,55 +8,45 @@ import { useIntl } from 'react-intl';
 import Img from 'gatsby-image';
 
 import CopyButton from '../../components/CopyButton';
-import Footer from '../../components/Footer';
 import Layout from '../../components/Layout';
 import Sidebar from '../../components/Sidebar';
 
-import { useHighlight, useWindowSize } from '../../hooks';
+import { useTree, useHighlight, useWindowSize } from '../../hooks';
+import { usePreparedReferenceItems } from '../../hooks/reference';
+import { referencePath } from '../../utils/paths';
 
 import css from '../../styles/templates/ref-template.module.css';
 import grid from '../../styles/grid.module.css';
 
 const RefTemplate = ({ data, pageContext, ...props }) => {
-  let entry;
   const { width } = useWindowSize();
   const [show, setShow] = useState(width > 960 ? true : false);
   const ref = useHighlight();
   const intl = useIntl();
 
-  if (data.json !== null) {
-    entry = data.json.childJson;
-  }
+  const items = usePreparedReferenceItems(data.items.nodes);
+  const tree = useTree(items);
 
-  const link =
-    pageContext.libraryName === 'processing'
-      ? `/reference/${pageContext.name}.html`
-      : `/reference/libraries/${pageContext.libraryName}/${pageContext.name}.html`;
+  const isProcessing = pageContext.libraryName === 'processing';
+  const entry = data?.json?.childJson;
 
   const examples = data.pdes ? data.pdes.edges : [];
   const images = data.images.edges;
 
-  const toggleSidebar = (e, show) => {
-    console.log(e);
-    if (e.type === 'click') setShow(show);
-    else if (e.keyCode === 13) setShow(show);
-  };
-
   return (
-    <Layout hasSidebar>
+    <Layout withSidebar>
       <Helmet>
-        <title>{pageContext.name.replace('_', '')}</title>
+        <title>
+          {entry?.name ?? ''}
+          {' / '}
+          {isProcessing ? 'Reference' : 'Libraries'}
+        </title>
       </Helmet>
       <div className={classnames(css.root, grid.nest, grid.rightBleed)}>
-        {pageContext.libraryName === 'processing' && (
-          <Sidebar
-            items={data.items}
-            onChange={toggleSidebar}
-            show={show}
-            type={'reference'}
-          />
+        {isProcessing && (
+          <Sidebar tree={tree} setShow={setShow} show={show} type="reference" />
         )}
-        {data.json && entry ? (
+        {entry ? (
           <div
             className={classnames(css.wrapper, { [css.collapsed]: !show })}
             ref={ref}>
@@ -229,7 +219,6 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
                 </div>
               </div>
             </div>
-            {width > 960 && <Footer />}
           </div>
         ) : (
           <div
@@ -240,7 +229,8 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
             )}>
             <div className={classnames(grid.push1)}>
               {intl.formatMessage({ id: 'notTranslated' })}
-              <Link to={link}>
+              <Link
+                to={referencePath(pageContext.name, pageContext.libraryName)}>
                 {' '}
                 {intl.formatMessage({ id: 'englishPage' })}
               </Link>
@@ -255,7 +245,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
 export default RefTemplate;
 
 export const query = graphql`
-  query($name: String!, $assetsName: String!, $locale: String!) {
+  query($name: String!, $relDir: String!, $locale: String!) {
     json: file(fields: { name: { eq: $name }, lang: { eq: $locale } }) {
       childJson {
         name
@@ -272,7 +262,7 @@ export const query = graphql`
     }
     images: allFile(
       filter: {
-        relativeDirectory: { eq: $assetsName }
+        relativeDirectory: { eq: $relDir }
         extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
       }
     ) {
@@ -293,7 +283,7 @@ export const query = graphql`
     }
     pdes: allFile(
       filter: {
-        relativeDirectory: { eq: $assetsName }
+        relativeDirectory: { eq: $relDir }
         extension: { regex: "/(pde)/" }
       }
     ) {
