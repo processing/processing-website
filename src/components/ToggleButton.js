@@ -19,7 +19,7 @@ const ToggleButton = ({
 
   const toggleButton = (e) => {
     setToggle((toggle) => !toggle);
-    onToggle && onToggle();
+    onToggle && onToggle(toggle);
   };
 
   return (

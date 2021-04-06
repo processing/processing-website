@@ -30,6 +30,8 @@ export const usePreparedExamples = (examples, images) => {
         slug: example.name,
         path: examplePath(example.name),
         name: example.childJson.name,
+        order: example.childJson.order,
+        level: example.childJson.level,
         category,
         subcategory,
         image,
@@ -56,6 +58,32 @@ export const useRelatedExamples = (examples, related) => {
     }
     return filtered;
   }, [examples, related]);
+};
+
+/**
+  Simple hook to sort an tree based on given a attribute
+  @param {Object} tree Tree of objects that own the given attribute
+  @param {string} attr Atribute name
+  @param {boolean} curated If true, the tree is sorted by the attribute
+**/
+export const useTreeSort = (tree, attr, curated) => {
+  return useMemo(() => {
+    const sortedTree = {};
+    if (curated) {
+      Object.keys(tree).map((category) => {
+        if (!sortedTree[category]) sortedTree[category] = {};
+        Object.keys(tree[category]).map((subcategory) => {
+          const sorted = [];
+          for (let i = 0; i < tree[category][subcategory].length; i++) {
+            sorted[tree[category][subcategory][i][attr]] =
+              tree[category][subcategory][i];
+          }
+          sortedTree[category][subcategory] = sorted;
+        });
+      });
+    }
+    return curated ? sortedTree : tree;
+  }, [tree, attr, curated]);
 };
 
 /**
