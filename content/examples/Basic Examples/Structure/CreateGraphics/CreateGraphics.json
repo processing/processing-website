@@ -2,6 +2,13 @@
   "name": "Create Graphics",
   "title": "Create Graphics",
   "author": "",
+  "level": "Intermediate",
+  "order": "9",
   "description": "The createGraphics() function creates an object from the PGraphics class \n  PGraphics is the main graphics and rendering context for Processing. \n  The beginDraw() method is necessary to prepare for drawing and endDraw() is\n  necessary to finish. Use this class if you need to draw into an off-screen \n  graphics buffer or to maintain two contexts with different properties.",
-  "featured": ["PGraphics", "createGraphics_", "PGraphics_beginDraw_", "PGraphics_endDraw_"]
+  "featured": [
+    "PGraphics",
+    "createGraphics_",
+    "PGraphics_beginDraw_",
+    "PGraphics_endDraw_"
+  ]
 }

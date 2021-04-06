@@ -2,6 +2,8 @@
   "name": "Loading Images",
   "title": "Loading Images",
   "author": "",
+  "level": "Intermediate",
+  "order": "1",
   "description": "Processing applications can load images from the network.",
   "featured": ["loadImage_", "image_"]
 }

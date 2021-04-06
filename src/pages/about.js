@@ -20,7 +20,7 @@ const About = ({ data }) => {
       <Helmet>
         <title>About</title>
       </Helmet>
-      <div className={grid.grid}>
+      <div className={classnames(css.root, grid.grid)}>
         <Donate />
         <h1 className={grid.col}>{frontmatter.title}</h1>
         <h3 className={grid.col}>{intl.formatMessage({ id: 'aboutIntro' })}</h3>

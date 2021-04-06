@@ -2,6 +2,8 @@
   "name": "Sine",
   "title": "Sine",
   "author": "",
+  "level": "Beginner",
+  "order": "5",
   "description": "Smoothly scaling size with the sin() function.",
   "featured": ["sin_"]
 }

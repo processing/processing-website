@@ -2,6 +2,8 @@
   "name": "Reflection1",
   "title": "Non-orthogonal Reflection",
   "author": "Ira Greenberg",
+  "level": "Advanced",
+  "order": "7",
   "description": "Based on the equation (R = 2N(NL)-L) where R is the \n  reflection vector, N is the normal, and L is the incident\n  vector.",
   "featured": ["PVector", "PVector_random2D_", "PVector_dist_", "PVector_set_", "quad_", "ceil_"]
 }

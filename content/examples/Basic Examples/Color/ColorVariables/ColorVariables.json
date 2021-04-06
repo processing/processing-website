@@ -2,6 +2,8 @@
   "name": "Color Variables",
   "title": "Color Variables (Homage to Albers)",
   "author": "",
+  "level": "Beginner",
+  "order": "3",
   "description": "This example creates variables for colors that may be referred to \n  in the program by a name, rather than a number.",
   "featured": ["color_datatype", "fill_"]
 }

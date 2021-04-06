@@ -145,6 +145,35 @@ export const useFilteredTree = (tree, searchTerm, searchKey = 'search') => {
   }, [tree, searchTerm, searchKey]);
 };
 
+/**
+  Simple hook to sort an tree based on given a attribute
+  @param {Object} tree Tree of objects that own the given attribute
+  @param {string} attr Atribute name
+  @param {boolean} sort If true, the tree is sorted by the attribute
+**/
+export const useTreeSort = (tree, attr, sort) => {
+  return useMemo(() => {
+    if (!sort) {
+      return tree;
+    }
+    const sortedTree = {};
+    Object.keys(tree).map((category) => {
+      if (!sortedTree[category]) {
+        sortedTree[category] = {};
+      }
+      Object.keys(tree[category]).map((subcategory) => {
+        const sorted = [];
+        for (let i = 0; i < tree[category][subcategory].length; i++) {
+          sorted[tree[category][subcategory][i][attr]] =
+            tree[category][subcategory][i];
+        }
+        sortedTree[category][subcategory] = sorted;
+      });
+    });
+    return sortedTree;
+  }, [tree, attr, sort]);
+};
+
 export const useHeight = (scrolled) => {
   const [height, setHeight] = useState(0);
   const [node, setNode] = useState(null);

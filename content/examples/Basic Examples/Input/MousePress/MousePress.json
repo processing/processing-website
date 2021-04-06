@@ -2,6 +2,8 @@
   "name": "Mouse Press",
   "title": "Mouse Press",
   "author": "",
+  "level": "Beginner",
+  "order": "2",
   "description": "Move the mouse to position the shape. \n  Press the mouse button to invert the color.",
   "featured": ["mousePressed", "mouseX", "mouseY"]
 }

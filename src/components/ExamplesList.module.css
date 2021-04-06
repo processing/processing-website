@@ -1,7 +1,9 @@
 .root {
+  position: relative;
   margin-bottom: 60px;
 
   & h2 {
+    flex-basis: var(--col8);
     margin-bottom: 0;
     text-transform: capitalize;
   }
@@ -45,11 +47,12 @@
   }
 
   & ul {
-    flex-basis: var(--col8);
+    flex-basis: var(--col7);
+    padding-right: var(--col1) !important;
   }
 
   & ul > li {
-    flex-basis: var(--col1);
+    flex-basis: cols(1, 6);
     transition: 0.2 ease;
   }
 
@@ -65,6 +68,11 @@
 .cover {
   width: 100%;
   margin-bottom: 10px;
+}
+
+.toggleButton {
+  position: absolute;
+  right: calc(var(--col1) + var(--gutter));
 }
 
 @media (--small) {

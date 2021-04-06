@@ -2,6 +2,8 @@
   "name": "Increment Decrement",
   "title": "Increment Decrement",
   "author": "",
+  "level": "Beginner",
+  "order": "0",
   "description": "Writing \"a++\" is equivalent to \"a = a + 1\".  \n  Writing \"a--\" is equivalent to \"a = a - 1\".",
   "featured": ["increment", "decrement"]
 }

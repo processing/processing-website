@@ -2,6 +2,8 @@
   "name": "Pie Chart",
   "title": "Pie Chart",
   "author": "",
+  "level": "Beginner",
+  "order": "2",
   "description": "Uses the arc() function to generate a pie chart from the data\n  stored in an array.",
   "featured": ["arc_"]
 }

@@ -1,6 +1,8 @@
 {
   "name": "Bouncy Bubbles",
   "title": "Bouncy Bubbles",
+  "level": "Intermediate",
+  "order": "2",
   "author": "based on code from Keith Peters",
   "description": "Multiple-object collision.",
   "featured": ["class", "random_", "Array", "atan2_"]

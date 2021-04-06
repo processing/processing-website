@@ -65,6 +65,8 @@ export const query = graphql`
         childJson {
           name
           title
+          order
+          level
         }
       }
     }

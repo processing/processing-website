@@ -30,6 +30,8 @@ export const usePreparedExamples = (examples, images) => {
         slug: example.name,
         path: examplePath(example.name),
         name: example.childJson.name,
+        order: example.childJson.order,
+        level: example.childJson.level,
         category,
         subcategory,
         image,
