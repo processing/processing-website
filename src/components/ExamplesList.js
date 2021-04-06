@@ -33,6 +33,7 @@ const ExamplesList = ({ tree }) => {
             defaultLabel={'A-Z'}
             pressedLabel={'By level'}
             ariaLabel={'Sort by level'}
+            toggle={curated}
             onToggle={handleToggle}
           />
           <h2 className={grid.col}>{category}</h2>

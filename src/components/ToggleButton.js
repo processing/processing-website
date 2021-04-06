@@ -9,8 +9,8 @@ const ToggleButton = ({
   defaultLabel,
   pressedLabel,
   ariaLabel,
+  toggle = false,
 }) => {
-  const [toggle, setToggle] = useState(false);
   const style = classnames(css.root, className, style);
   const states = {
     default: defaultLabel ? defaultLabel : 'off',
@@ -18,8 +18,7 @@ const ToggleButton = ({
   };
 
   const toggleButton = (e) => {
-    setToggle((toggle) => !toggle);
-    onToggle && onToggle(toggle);
+    onToggle(!toggle);
   };
 
   return (
