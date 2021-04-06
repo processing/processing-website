@@ -6,7 +6,7 @@ import Img from 'gatsby-image';
 
 import ToggleButton from './ToggleButton';
 
-import { useTreeSort } from '../hooks/examples';
+import { useTreeSort } from '../hooks';
 
 import css from './ExamplesList.module.css';
 import grid from '../styles/grid.module.css';
