@@ -85,7 +85,7 @@ export const useFilteredArray = (array, searchTerm, searchKey = 'search') => {
     const terms = searchTerm.split(' ');
 
     loop1: for (let i = 0; i < array.length; i++) {
-      loop2: for (let j = 0; j < terms.length; j++) {
+      for (let j = 0; j < terms.length; j++) {
         if (
           !array[i][searchKey].toLowerCase().includes(terms[j].toLowerCase())
         ) {
@@ -120,7 +120,7 @@ export const useFilteredTree = (tree, searchTerm, searchKey = 'search') => {
         const items = tree[category][subcategory];
         const filteredItems = [];
         itemLoop: for (let i = 0; i < items.length; i++) {
-          termLoop: for (let j = 0; j < terms.length; j++) {
+          for (let j = 0; j < terms.length; j++) {
             if (
               items[i][searchKey].toLowerCase().includes(terms[j].toLowerCase())
             ) {
@@ -157,11 +157,11 @@ export const useTreeSort = (tree, attr, sort) => {
       return tree;
     }
     const sortedTree = {};
-    Object.keys(tree).map((category) => {
+    Object.keys(tree).forEach((category) => {
       if (!sortedTree[category]) {
         sortedTree[category] = {};
       }
-      Object.keys(tree[category]).map((subcategory) => {
+      Object.keys(tree[category]).forEach((subcategory) => {
         const sorted = [];
         for (let i = 0; i < tree[category][subcategory].length; i++) {
           sorted[tree[category][subcategory][i][attr]] =

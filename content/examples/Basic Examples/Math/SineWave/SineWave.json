@@ -1,7 +1,7 @@
 {
   "name": "Sine Wave",
-  "title": "Sine Waveby Daniel Shiffman",
-  "author": "",
+  "title": "Sine Wave",
+  "author": "Daniel Shiffman",
   "level": "Beginner",
   "order": "7",
   "description": "Render a simple sine wave.",
