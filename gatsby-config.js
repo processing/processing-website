@@ -77,7 +77,9 @@ module.exports = {
           require(`postcss-functions`)({
             functions: require('./src/styles/functions'),
           }),
-          require('postcss-custom-media')(),
+          require('postcss-custom-media')({
+            importFrom: './src/styles/variables.css',
+          }),
         ],
       },
     },
