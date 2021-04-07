@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 
 import css from './ToggleButton.module.css';
@@ -11,7 +11,7 @@ const ToggleButton = ({
   ariaLabel,
   toggle = false,
 }) => {
-  const style = classnames(css.root, className, style);
+  const style = classnames(css.root, className);
   const states = {
     default: defaultLabel ? defaultLabel : 'off',
     pressed: pressedLabel ? pressedLabel : 'on',

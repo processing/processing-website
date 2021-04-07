@@ -26,5 +26,5 @@ export const usePreparedContributions = (english, currentLang, locale) => {
     }
 
     return contributions;
-  }, [english, currentLang]);
+  }, [english, currentLang, locale]);
 };

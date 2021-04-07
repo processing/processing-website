@@ -20,5 +20,5 @@ export const usePreparedReferenceItems = (items, libraryName) => {
         search: `${item.childJson.name} ${item.childJson.brief ?? ''}`,
       })
     );
-  }, [items]);
+  }, [items, libraryName]);
 };
