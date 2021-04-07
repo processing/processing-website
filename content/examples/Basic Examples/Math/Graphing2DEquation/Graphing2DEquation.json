@@ -1,7 +1,7 @@
 {
   "name": "Graphing2 D Equation",
-  "title": "Graphing 2D Equationsby Daniel Shiffman",
-  "author": "",
+  "title": "Graphing 2D Equations",
+  "author": "Daniel Shiffman",
   "level": "Intermediate",
   "order": "11",
   "description": "Graphics the following equation: \n  sin(ncos(r) + 5theta) \n  where n is a function of horizontal mouse location.",

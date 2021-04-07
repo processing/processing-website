@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useState, useMemo } from 'react';
+import React, { Fragment, useContext, useState } from 'react';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 
