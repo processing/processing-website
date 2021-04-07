@@ -6,27 +6,33 @@
   width: fit-content;
   outline: none;
   border: 8px solid var(--lightgray);
-  padding: 6px 24px;
+  padding: 36px 40px;
   color: var(--processing-blue-dark);
   font-family: var(--font-mono);
   font-size: var(--text-small);
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease, border 0.2s ease;
 
+  & h4 {
+    font-size: var(--text-regular);
+  }
+
   & p {
+    font-family: var(--font);
+    font-weight: 400;
+    color: var(--darkgray);
     cursor: pointer;
   }
 }
 
 .root:focus {
-  background: var(--darkgray);
-  color: white;
+  background: var(--lightgray);
 }
 
 .root:hover {
-  border: 8px solid var(--processing-blue-dark);
-  background-color: var(--processing-blue-dark);
-  color: white;
+  border: 8px solid var(--lightgray);
+  background-color: var(--lightgray);
+  color: var(--processing-blue-dark);
   & h4 {
     color: inherit;
   }
@@ -35,6 +41,13 @@
 .root:active {
   border: 8px solid var(--processing-blue-mid);
   background-color: var(--processing-blue-mid);
+  color: white;
+  & h4 {
+    color: inherit;
+  }
+  & p {
+    color: inherit;
+  }
 }
 
 /*  Colors  */

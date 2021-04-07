@@ -106,15 +106,20 @@ const IndexPage = ({ data }) => {
                 id: 'cardGettingStartedDescription',
               })}
               className={css.card}>
-              {intl.formatMessage({ id: 'cardGettingStarted' })}
+              <h4>{intl.formatMessage({ id: 'cardGettingStarted' })}</h4>
+              <p>
+                {intl.formatMessage({ id: 'cardGettingStartedDescription' })}
+              </p>
+              <Button to={'/tutorials/gettingstarted'} size="small">
+                {intl.formatMessage({ id: 'cardGettingStartedButton' })}
+              </Button>
             </Card>
             <Card to={'/reference'} className={css.card}>
               <h4>{intl.formatMessage({ id: 'cardReference' })}</h4>
-              <p>
-                {intl.formatMessage({
-                  id: 'cardReferenceDescription',
-                })}
-              </p>
+              <p>{intl.formatMessage({ id: 'cardReferenceDescription' })}</p>
+              <Button to={'/reference'} size="small">
+                {intl.formatMessage({ id: 'cardReferenceButton' })}
+              </Button>
             </Card>
           </div>
           <div className={classnames(grid.col, css.cardCol)}>
@@ -124,17 +129,20 @@ const IndexPage = ({ data }) => {
                 id: 'cardDownloadDescription',
               })}
               className={css.card}>
-              {intl.formatMessage({ id: 'cardDownload' })}
+              <h4>{intl.formatMessage({ id: 'cardDownload' })}</h4>
+              <p>{intl.formatMessage({ id: 'cardDownloadDescription' })}</p>
+              <Button to={'/download'} size="small">
+                {intl.formatMessage({ id: 'cardDownloadButton' })}
+              </Button>
             </Card>
             <Card
               href={'https://discourse.processing.org/'}
               className={css.card}>
               <h4>{intl.formatMessage({ id: 'cardForum' })}</h4>
-              <p>
-                {intl.formatMessage({
-                  id: 'cardForumDescription',
-                })}
-              </p>
+              <p>{intl.formatMessage({ id: 'cardForumDescription' })}</p>
+              <Button href={'https://discourse.processing.org/'} size="small">
+                {intl.formatMessage({ id: 'cardForumButton' })}
+              </Button>
             </Card>
           </div>
         </div>

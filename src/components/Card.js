@@ -13,7 +13,6 @@ export const Card = ({
   target,
   onClick,
   children,
-  description,
 }) => {
   const classNames = classnames(css.root, className, {
     [css[color]]: color,
@@ -41,7 +40,7 @@ export const Card = ({
 export default Card;
 
 Card.defaultProps = {
-  onClick: () => { },
+  onClick: () => {},
 };
 
 Card.propTypes = {
