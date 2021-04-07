@@ -161,29 +161,24 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  /* padding: var(--gutter-double) var(--gutter); */
   padding: 0;
   min-height: 360px;
   flex-basis: var(--col4);
 
   & > div:first-child {
-    /* margin-bottom: var(--gutter); */
     border-top-width: 0px;
     border-bottom-width: 4px;
   }
 
   & > div:first-child:hover {
-    /* margin-bottom: var(--gutter); */
   }
 
   & > div:last-child {
-    /* margin-top: var(--gutter); */
     border-top-width: 4px;
     border-bottom-width: 0px;
   }
 
   & > div:last-child:hover {
-    /* margin-top: var(--gutter); */
     border-top-width: 4px;
   }
 }
@@ -306,9 +301,56 @@
     margin-top: 0px;
     margin-bottom: 0px;
   }
+
   .cardGrid {
     margin-top: 0;
     margin-bottom: 0;
+    padding-left: 0;
+
+    & > .cardCol:first-child {
+      padding-right: var(--gutter);
+
+      & > div {
+        border-right-width: 8px;
+      }
+
+      & > div:hover {
+        border-right-width: 8px;
+      }
+    }
+
+    & > .cardCol:last-child {
+      padding-left: var(--gutter);
+
+      & > div {
+        border-left-width: 8px;
+      }
+
+      & > div:hover {
+        border-left-width: 8px;
+      }
+    }
+  }
+
+  .cardCol {
+    & > div:first-child {
+      margin-bottom: var(--gutter);
+      border-top-width: 8px;
+      border-bottom-width: 8px;
+    }
+
+    & > div:first-child:hover {
+    }
+
+    & > div:last-child {
+      margin-top: var(--gutter);
+      border-top-width: 8px;
+      border-bottom-width: 8px;
+    }
+
+    & > div:last-child:hover {
+      border-top-width: 8px;
+    }
   }
 }
 
@@ -345,6 +387,30 @@
     & a {
       margin: auto;
     }
+  }
+
+  .cardGrid {
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    & .cardCol {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+
+    & > .cardCol:first-child {
+      margin-bottom: var(--gutter);
+      padding-right: 0;
+    }
+
+    & > .cardCol:last-child {
+      margin-top: var(--gutter);
+      padding-left: 0;
+    }
+  }
+
+  .card {
+    height: auto;
   }
 }
 
@@ -407,17 +473,15 @@
   }
 
   .partners {
-    @media (--small) {
-      display: flex;
-      overflow-x: scroll;
-      flex-direction: row;
-      flex-wrap: nowrap;
+    display: flex;
+    overflow-x: scroll;
+    flex-direction: row;
+    flex-wrap: nowrap;
 
-      & li {
-        flex: 0 0 auto;
-        margin-right: 20px;
-        max-width: 100px;
-      }
+    & li {
+      flex: 0 0 auto;
+      margin-right: 20px;
+      max-width: 100px;
     }
   }
 
@@ -426,5 +490,37 @@
     padding-right: 0;
     margin-top: 0px;
     margin-bottom: 0px;
+  }
+
+  .cardGrid {
+    height: auto;
+    flex-basis: auto;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    & .cardCol {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+
+    & > .cardCol:first-child {
+      margin-bottom: 0;
+      padding-right: 0;
+    }
+
+    & > .cardCol:last-child {
+      margin-top: 0;
+      padding-left: 0;
+    }
+  }
+
+  .cardCol {
+    & > div:last-child {
+      margin-bottom: var(--gutter-double);
+    }
+  }
+
+  .card {
+    height: auto;
   }
 }

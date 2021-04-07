@@ -88,6 +88,7 @@
 
 .section {
   flex-basis: cols(6, 6);
+  align-items: baseline;
   margin-bottom: var(--vertical-gutter);
 
   & > h4 {
@@ -228,6 +229,7 @@
 .list {
   & li {
     display: flex;
+    align-items: baseline;
     width: 100%;
   }
   & li:last-child .codeBlock {
