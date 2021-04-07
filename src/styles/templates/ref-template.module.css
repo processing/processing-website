@@ -272,6 +272,7 @@
 }
 
 .itemDescription {
+  font-size: var(--text-small);
   flex-basis: var(--col5);
 }
 

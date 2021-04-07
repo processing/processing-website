@@ -3,6 +3,7 @@ main {
   position: relative;
   flex: 1;
   transition: 0.2s ease-in-out;
+  padding-top: var(--vertical-gutter);
   padding-bottom: var(--vertical-gutter);
   margin-bottom: 60px;
 }

@@ -6,50 +6,20 @@
   overflow: hidden;
   height: 100%;
   white-space: nowrap;
-  @media (--reduced) {
-    width: var(--margin-double);
-    position: absolute;
-    left: auto;
-    right: 0;
-  }
-
-  @media (--small) {
-    width: var(--margin-double);
-    left: auto;
-    right: 0;
-  }
 }
 
 .root.show {
   flex-basis: var(--col2);
-  @media (--reduced) {
-    width: 100%;
-  }
-  @media (--small) {
-    padding-left: calc(var(--margin) + var(--gutter));
-    padding-right: calc(var(--margin) + var(--gutter));
-    padding-bottom: var(--vertical-gutter);
-    width: var(--col8);
-    left: auto;
-    right: 0;
-  }
 }
 
 .root.show .sidebarWrapper {
   padding-left: var(--margin);
   padding-right: var(--gutter);
   width: var(--col2);
-  @media (--reduced) {
-    width: 100%;
-    height: auto;
-  }
 }
 
 .root .sidebarWrapper {
   width: var(--margin);
-  @media (--reduced) {
-    height: 40px;
-  }
 }
 
 .sidebarWrapper {
@@ -104,27 +74,29 @@
 
 @media (--reduced) {
   .root {
-    width: var(--margin-double);
     position: absolute;
     left: auto;
     right: 0;
   }
 
-  .root.show {
-    width: 100%;
-  }
-
-  .show {
-    & .sidebarWrapper {
-      max-width: none;
-    }
-  }
-
-  .sidebarWrapper {
+  .root .sidebarWrapper {
+    top: 100px;
     right: 0;
     left: auto;
-    width: 100%;
-    max-width: auto;
+    height: calc(100vh - 100px);
+    width: var(--margin-double);
+  }
+
+  .root.show .sidebarWrapper {
+    right: 0;
+    left: auto;
+    width: var(--col8);
+    padding-left: calc(var(--margin) + var(--gutter));
+    padding-right: calc(var(--margin) + var(--gutter));
+    padding-bottom: var(--vertical-gutter);
+    & .sidebarWrapper {
+      max-width: auto;
+    }
   }
 }
 
@@ -132,26 +104,22 @@
   .root {
     right: 0;
     left: auto;
-    width: var(--margin);
   }
 
-  .sidebarWrapper {
+  .root .sidebarWrapper {
     top: 100px;
     right: 0;
     left: auto;
     height: calc(100vh - 100px);
-    width: var(--col8);
-    padding-left: calc(var(--margin-mobile) + var(--gutter-mobile));
-    padding-right: calc(var(--margin-mobile) + var(--gutter-mobile));
-    padding-bottom: var(--vertical-gutter);
+    width: var(--margin-double);
   }
 
-  .show {
+  .root.show .sidebarWrapper {
     right: 0;
     left: auto;
     width: var(--col8);
-    padding-left: calc(var(--margin-mobile) + var(--gutter-mobile));
-    padding-right: calc(var(--margin-mobile) + var(--gutter-mobile));
+    padding-left: calc(var(--margin) + var(--gutter));
+    padding-right: calc(var(--margin) + var(--gutter));
     padding-bottom: var(--vertical-gutter);
     & .sidebarWrapper {
       max-width: auto;
