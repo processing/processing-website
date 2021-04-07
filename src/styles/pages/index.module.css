@@ -138,20 +138,20 @@
   padding-left: var(--gutter);
 
   & > .cardCol:first-child {
-    & > a {
+    & > div {
       border-right-width: 4px;
     }
 
-    & > a:hover {
+    & > div:hover {
       border-right-width: 4px;
     }
   }
 
   & > .cardCol:last-child {
-    & > a {
+    & > div {
       border-left-width: 4px;
     }
-    & > a:hover {
+    & > div:hover {
       border-left-width: 4px;
     }
   }
@@ -166,23 +166,23 @@
   min-height: 360px;
   flex-basis: var(--col4);
 
-  & > a:first-child {
+  & > div:first-child {
     /* margin-bottom: var(--gutter); */
     border-top-width: 0px;
     border-bottom-width: 4px;
   }
 
-  & > a:first-child:hover {
+  & > div:first-child:hover {
     /* margin-bottom: var(--gutter); */
   }
 
-  & > a:last-child {
+  & > div:last-child {
     /* margin-top: var(--gutter); */
     border-top-width: 4px;
     border-bottom-width: 0px;
   }
 
-  & > a:last-child:hover {
+  & > div:last-child:hover {
     /* margin-top: var(--gutter); */
     border-top-width: 4px;
   }
