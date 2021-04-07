@@ -7,8 +7,6 @@
   outline: none;
   border: 8px solid var(--lightgray);
   padding: 36px 40px;
-  color: var(--processing-blue-dark);
-  font-family: var(--font-mono);
   font-size: var(--text-small);
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease, border 0.2s ease;
@@ -18,20 +16,19 @@
   }
 
   & p {
-    font-family: var(--font);
     font-weight: 400;
     color: var(--darkgray);
     cursor: pointer;
   }
 }
 
-.root:focus {
+.root:focus,
+.root:hover {
   background: var(--lightgray);
 }
 
 .root:hover {
   border: 8px solid var(--lightgray);
-  background-color: var(--lightgray);
   color: var(--processing-blue-dark);
   & h4 {
     color: inherit;
