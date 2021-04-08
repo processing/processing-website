@@ -6,6 +6,7 @@
   transition: width 0.4s ease, height 0.2s ease-in-out;
   height: calc(100vh - 150px);
   width: calc(var(--col) * 2 - var(--gutter));
+  margin-top: calc(-1 * var(--vertical-gutter));
   padding-left: var(--gutter-double);
   padding-right: var(--gutter-double);
   background: var(--lightgray);
@@ -40,7 +41,7 @@
 }
 
 .headerScrolled {
-  height: calc(100vh - 64px);
+  height: calc(100vh - 60px);
 }
 
 @media (--small) {

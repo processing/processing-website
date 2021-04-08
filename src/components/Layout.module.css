@@ -12,10 +12,26 @@ main {
   flex-direction: column;
   height: 100%;
   min-height: 100%;
+
+  & h2 {
+    scroll-margin-top: 150px;
+  }
+
+  & h3 {
+    scroll-margin-top: 150px;
+  }
 }
 
 .headerScrolled {
   top: 60px;
+
+  & h2 {
+    scroll-margin-top: 60px;
+  }
+
+  & h3 {
+    scroll-margin-top: 60px;
+  }
 }
 
 .homepage {
