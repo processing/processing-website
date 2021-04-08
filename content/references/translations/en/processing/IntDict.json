@@ -85,7 +85,7 @@
   "classFields": [],
   "description": "A simple class to use a String as a lookup for an int value. String \"keys\" are \n associated with integer values.",
   "type": "class",
-  "constructors": ["IntDict(", "IntDict(pairs)"],
+  "constructors": ["IntDict()", "IntDict(pairs)"],
   "related": ["FloatDict", "StringDict"],
   "name": "IntDict",
   "classanchor": "IntDict",

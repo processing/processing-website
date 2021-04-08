@@ -2,7 +2,7 @@
   "brief": "Clears the pixels within a buffer.",
   "related": [],
   "name": "clear()",
-  "description": "Clears the pixels within a buffer. This function only works on \n <b>PGraphics</b> objects created with the <b>createGraphics()</b> \n function. Unlike the main graphics context (the display window), \n pixels in additional graphics areas created with <b>createGraphics()</b> \n can be entirely or partially transparent. This function clears \n everything in a <b>PGraphics</b> object to make all of the pixels \n 100% transparent.",
+  "description": "Clears the pixels within a buffer. This function only works on\n <b>PGraphics</b> objects created with the <b>createGraphics()</b>\n function. Unlike the main graphics context (the display window),\n pixels in additional graphics areas created with <b>createGraphics()</b>\n can be entirely or partially transparent. This function clears\n everything in a <b>PGraphics</b> object to make all of the pixels\n 100% transparent.",
   "syntax": ["graphics.clear()"],
   "returns": "void",
   "type": "method",

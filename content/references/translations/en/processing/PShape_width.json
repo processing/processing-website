@@ -4,9 +4,9 @@
   "name": "width",
   "description": "The width of the PShape document.",
   "syntax": ["sh.width\n"],
-  "type": "field",
   "category": "pshape",
   "subcategory": "field",
+  "type": "field",
   "classanchor": "PShape",
   "parameters": [{ "name": "sh", "desc": " any variable of type PShape" }]
 }

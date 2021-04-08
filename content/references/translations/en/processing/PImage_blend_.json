@@ -37,12 +37,12 @@
     { "name": "sh", "description": "source image height", "type": ["int"] },
     {
       "name": "dx",
-      "description": "X coordinate of the destinations's upper left corner",
+      "description": "X coordinate of the destination's upper left corner",
       "type": ["int"]
     },
     {
       "name": "dy",
-      "description": "Y coordinate of the destinations's upper left corner",
+      "description": "Y coordinate of the destination's upper left corner",
       "type": ["int"]
     },
     { "name": "dw", "description": "destination image width", "type": ["int"] },

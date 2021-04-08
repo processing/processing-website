@@ -8,7 +8,7 @@
     "Table_matchRows_"
   ],
   "name": "findRow()",
-  "description": "Finds the first row in the <b>Table</b> that contains the value provided, \n and returns a reference to that row.  Even if multiple rows are possible \n matches, only the first matching row is returned. The column to search may \n be specified by either its ID or title.",
+  "description": "Finds the first row in the <b>Table</b> that contains the value provided,\n and returns a reference to that row.  Even if multiple rows are possible\n matches, only the first matching row is returned. The column to search may\n be specified by either its ID or title.",
   "syntax": [".findRow(value, column)", ".findRow(value, columnName)"],
   "returns": "TableRow",
   "type": "method",

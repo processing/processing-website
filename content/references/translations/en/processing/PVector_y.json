@@ -4,9 +4,9 @@
   "name": "y",
   "description": "The y component of the vector. This field (variable) can be used to both\n get and set the value (see above example.)",
   "syntax": [".y\n"],
-  "type": "field",
   "category": "pvector",
   "subcategory": "field",
+  "type": "field",
   "classanchor": "PVector",
   "parameters": [{ "name": "", "desc": "" }]
 }

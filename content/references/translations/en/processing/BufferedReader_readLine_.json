@@ -3,9 +3,7 @@
   "brief": "Returns a String that is the current line in the BufferedReader",
   "description": "Returns a String that is the current line in the BufferedReader.\n",
   "related": [],
-  "syntax": [
-    "br.readLine()"
-  ],
+  "syntax": ["br.readLine()"],
   "returns": "String",
   "type": "method",
   "category": "BufferedReader",

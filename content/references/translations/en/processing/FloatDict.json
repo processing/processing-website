@@ -94,7 +94,7 @@
   "classFields": [],
   "description": "A simple class to use a String as a lookup for an float value. String \"keys\"\n are associated with floating-point values.",
   "type": "class",
-  "constructors": ["FloatDict(", "FloatDict(pairs)"],
+  "constructors": ["FloatDict()", "FloatDict(pairs)"],
   "related": ["IntDict", "StringDict"],
   "name": "FloatDict",
   "classanchor": "FloatDict",

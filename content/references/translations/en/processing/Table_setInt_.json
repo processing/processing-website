@@ -9,7 +9,7 @@
     "Table_getStringColumn_"
   ],
   "name": "setInt()",
-  "description": "Stores an integer value in the <b>Table</b>'s specified row and column. \n The row is specified by its ID, while the column may be specified by \n either its ID or title.",
+  "description": "Stores an integer value in the <b>Table</b>'s specified row and column.\n The row is specified by its ID, while the column may be specified by\n either its ID or title.",
   "syntax": [".setInt(row, column, value)", ".setInt(row, columnName, value)"],
   "returns": "void",
   "type": "method",

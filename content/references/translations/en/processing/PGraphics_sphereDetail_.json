@@ -22,7 +22,7 @@
     },
     {
       "name": "ures",
-      "description": "number of segments used longitudinally per full circle revolutoin",
+      "description": "number of segments used longitudinally per full circle revolution",
       "type": ["int"]
     },
     {
