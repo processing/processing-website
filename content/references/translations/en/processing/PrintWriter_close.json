@@ -3,9 +3,7 @@
   "brief": "Closes the <b>PrintWriter</b> object",
   "description": "Closes the <b>PrintWriter</b> object.\n",
   "related": [],
-  "syntax": [
-    "pw.close()"
-  ],
+  "syntax": ["pw.close()"],
   "returns": "",
   "type": "method",
   "category": "PrintWriter",

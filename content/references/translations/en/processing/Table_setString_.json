@@ -9,7 +9,7 @@
     "Table_getStringColumn_"
   ],
   "name": "setString()",
-  "description": "Stores a String value in the <b>Table</b>'s specified row and column. \n The row is specified by its ID, while the column may be specified by \n either its ID or title.",
+  "description": "Stores a String value in the <b>Table</b>'s specified row and column.\n The row is specified by its ID, while the column may be specified by\n either its ID or title.",
   "syntax": [
     ".setString(row, column, value)",
     ".setString(row, columnName, value)"

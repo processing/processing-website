@@ -3,9 +3,7 @@
   "brief": "Flushes the <b>PrintWriter</b> object",
   "description": "Flushes the <b>PrintWriter</b> object. This is necessary to ensure all remaining data is written to the file before it is closed.\n",
   "related": [],
-  "syntax": [
-    "pw.flush()"
-  ],
+  "syntax": ["pw.flush()"],
   "returns": "",
   "type": "method",
   "category": "PrintWriter",

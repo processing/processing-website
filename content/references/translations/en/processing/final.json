@@ -1,1 +1,12 @@
-{"name":"final","brief":"Keyword used to state that a value, class, or method can't be changed","description":"Keyword used to state that a value, class, or method can't be changed. If the <b>final</b> keyword is used to define a variable, the variable can't be changed within the program. When used to define a class, a <b>final</b> class cannot be subclassed. When used to define a function or method, a <b>final</b> method can't be overridden by subclasses.<br />\n<br />\nThis keyword is an essential part of Java programming and is not usually used with Processing. Consult a Java language reference or tutorial for more information. \n","related":[],"syntax":[],"returns":"","type":"function","category":"structure","subcategory":"","parameters":[null]}
+{
+  "name": "final",
+  "brief": "Keyword used to state that a value, class, or method can't be changed",
+  "description": "Keyword used to state that a value, class, or method can't be changed. If the <b>final</b> keyword is used to define a variable, the variable can't be changed within the program. When used to define a class, a <b>final</b> class cannot be subclassed. When used to define a function or method, a <b>final</b> method can't be overridden by subclasses.<br />\n<br />\nThis keyword is an essential part of Java programming and is not usually used with Processing. Consult a Java language reference or tutorial for more information. \n",
+  "related": [],
+  "syntax": [],
+  "returns": "",
+  "type": "function",
+  "category": "structure",
+  "subcategory": "",
+  "parameters": [null]
+}

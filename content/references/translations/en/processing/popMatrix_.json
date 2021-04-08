@@ -2,7 +2,7 @@
   "brief": "Pops the current transformation matrix off the matrix stack.",
   "related": ["pushMatrix_"],
   "name": "popMatrix()",
-  "description": "Pops the current transformation matrix off the matrix stack.\n Understanding pushing and popping requires understanding the concept of\n a matrix stack. The <b>pushMatrix()</b> function saves the current\n coordinate system to the stack and <b>popMatrix()</b> restores the prior\n coordinate system. <b>pushMatrix()</b> and <b>popMatrix()</b> are used\n in conjuction with the other transformation functions and may be\n embedded to control the scope of the transformations.",
+  "description": "Pops the current transformation matrix off the matrix stack.\n Understanding pushing and popping requires understanding the concept of\n a matrix stack. The <b>pushMatrix()</b> function saves the current\n coordinate system to the stack and <b>popMatrix()</b> restores the prior\n coordinate system. <b>pushMatrix()</b> and <b>popMatrix()</b> are used\n in conjunction with the other transformation functions and may be\n embedded to control the scope of the transformations.",
   "syntax": ["popMatrix()"],
   "returns": "void",
   "type": "function",

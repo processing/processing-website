@@ -1,1 +1,18 @@
-{"name":"default","brief":"Keyword for defining the default condition of a <b>switch</b>","description":"Keyword for defining the default condition of a <b>switch</b>. If none of the case names match the <b>switch</b> parameter, the statement(s) after the <b>default</b> syntax are executed. Switch structures don't require a <b>default</b>.\n","related":[],"syntax":["default: statements"],"returns":"","type":"function","category":"Control","subcategory":"Conditionals","parameters":[{"name":"statements","description":"one or more valid statements to be executed","type":[]}]}
+{
+  "name": "default",
+  "brief": "Keyword for defining the default condition of a <b>switch</b>",
+  "description": "Keyword for defining the default condition of a <b>switch</b>. If none of the case names match the <b>switch</b> parameter, the statement(s) after the <b>default</b> syntax are executed. Switch structures don't require a <b>default</b>.\n",
+  "related": [],
+  "syntax": ["default: statements"],
+  "returns": "",
+  "type": "function",
+  "category": "Control",
+  "subcategory": "Conditionals",
+  "parameters": [
+    {
+      "name": "statements",
+      "description": "one or more valid statements to be executed",
+      "type": []
+    }
+  ]
+}

@@ -26,9 +26,7 @@
       "anchor": "PrintWriter_close_"
     }
   ],
-  "related": [
-    "createWriter_"
-  ],
+  "related": ["createWriter_"],
   "type": "class",
   "classanchor": "PrintWriter",
   "category": "output",

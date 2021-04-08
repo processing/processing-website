@@ -1,1 +1,37 @@
-{"name":"else","brief":"Extends the <b>if</b> structure allowing the program to choose between two or more blocks of code","description":"Extends the <b>if</b> structure allowing the program to choose between two or more blocks of code. It specifies a block of code to execute when the expression in <b>if</b> is <b>false</b>.\n","related":[],"syntax":["if (expression) { ","  statements ","} else { ","  statements ","} ","","if (expression) { ","  statements ","} else if (expression) { ","  statements ","} else { ","  statements ","}"],"returns":"","type":"function","category":"Control","subcategory":"Conditionals","parameters":[{"name":"expression","description":"any valid expression that evaluates to true or false","type":[]},{"name":"statements","description":"one or more statements to be executed","type":[]}]}
+{
+  "name": "else",
+  "brief": "Extends the <b>if</b> structure allowing the program to choose between two or more blocks of code",
+  "description": "Extends the <b>if</b> structure allowing the program to choose between two or more blocks of code. It specifies a block of code to execute when the expression in <b>if</b> is <b>false</b>.\n",
+  "related": [],
+  "syntax": [
+    "if (expression) { ",
+    "  statements ",
+    "} else { ",
+    "  statements ",
+    "} ",
+    "",
+    "if (expression) { ",
+    "  statements ",
+    "} else if (expression) { ",
+    "  statements ",
+    "} else { ",
+    "  statements ",
+    "}"
+  ],
+  "returns": "",
+  "type": "function",
+  "category": "Control",
+  "subcategory": "Conditionals",
+  "parameters": [
+    {
+      "name": "expression",
+      "description": "any valid expression that evaluates to true or false",
+      "type": []
+    },
+    {
+      "name": "statements",
+      "description": "one or more statements to be executed",
+      "type": []
+    }
+  ]
+}
