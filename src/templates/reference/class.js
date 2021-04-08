@@ -9,6 +9,8 @@ import { useIntl } from 'react-intl';
 import CopyButton from '../../components/CopyButton';
 import Layout from '../../components/Layout';
 import Sidebar from '../../components/Sidebar';
+import Section from '../../components/ReferenceItemSection';
+import List from '../../components/ReferenceItemList';
 
 import { useHighlight, useWindowSize, useTree } from '../../hooks';
 import { usePreparedReferenceItems } from '../../hooks/reference';
@@ -28,14 +30,15 @@ const ClassRefTemplate = ({ data, pageContext }) => {
   const items = usePreparedReferenceItems(data.items.nodes);
   const tree = useTree(items);
 
+  const { name, libraryName } = pageContext;
   const entry = data?.json?.childJson;
-  const isProcessing = pageContext.libraryName === 'processing';
+  const isProcessing = libraryName === 'processing';
 
   return (
     <Layout withSidebar>
       <Helmet>
         <title>
-          {pageContext.name} / {isProcessing ? 'Reference' : 'Libraries'}
+          {name} / {isProcessing ? 'Reference' : 'Libraries'}
         </title>
       </Helmet>
       <div className={classnames(css.root, grid.grid, grid.rightBleed)}>
@@ -61,29 +64,26 @@ const ClassRefTemplate = ({ data, pageContext }) => {
                 { [css.collapsed]: !show },
                 grid.nest
               )}>
-              <div className={classnames(grid.nest, css.section)}>
-                <h4 className={grid.col}>
-                  {intl.formatMessage({ id: 'className' })}
-                </h4>
-                <h3 className={grid.col}>{entry.name}</h3>
-              </div>
-              <div className={classnames(grid.nest, css.section)}>
-                <h4 className={grid.col}>
-                  {intl.formatMessage({ id: 'description' })}
-                </h4>
+              <Section
+                title={intl.formatMessage({ id: 'className' })}
+                collapsed={!show}>
+                <h3>{entry.name}</h3>
+              </Section>
+              <Section
+                title={intl.formatMessage({ id: 'description' })}
+                collapsed={!show}>
                 <p
-                  className={classnames(grid.col, css.description)}
+                  className={css.description}
                   dangerouslySetInnerHTML={{ __html: entry.description }}
                 />
-              </div>
+              </Section>
               {examples.length > 0 && (
-                <div className={classnames(grid.nest, css.section)}>
-                  <h4 className={grid.col}>
-                    {intl.formatMessage({ id: 'examples' })}
-                  </h4>
-                  <ul className={classnames(grid.col, grid.nest, css.list)}>
+                <Section
+                  title={intl.formatMessage({ id: 'examples' })}
+                  collapsed={!show}>
+                  <ul className={css.list}>
                     {examples.map((ex, key) => {
-                      const img = images.filter(
+                      const img = images.find(
                         (img) => img.node.name === ex.node.name
                       );
                       return (
@@ -99,126 +99,79 @@ const ClassRefTemplate = ({ data, pageContext }) => {
                                 ))}
                             </pre>
                           </div>
-                          {img.length > 0 && (
+                          {img && (
                             <div
                               className={classnames(
                                 grid.col,
                                 css.exampleImage
                               )}>
-                              <Img fixed={img[0].node.childImageSharp.fixed} />
+                              <Img fixed={img.node.childImageSharp.fixed} />
                             </div>
                           )}
                         </li>
                       );
                     })}
                   </ul>
-                </div>
+                </Section>
               )}
               {entry.constructors && entry.constructors.length > 0 && (
-                <div className={classnames(grid.nest, css.section)}>
-                  <h4 className={grid.col}>
-                    {' '}
-                    {intl.formatMessage({ id: 'constructors' })}
-                  </h4>
-                  <ul className={classnames(grid.col, css.list)}>
-                    {entry.constructors.map((cons, key) => {
-                      return (
-                        <li key={'f' + key}>
-                          <code dangerouslySetInnerHTML={{ __html: cons }} />
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
+                <Section
+                  title={intl.formatMessage({ id: 'constructors' })}
+                  collapsed={!show}>
+                  <List
+                    nameIsHtml
+                    items={entry.constructors.map((cons) => ({
+                      name: cons.replace(/_/g, '()'),
+                    }))}
+                  />
+                </Section>
               )}
               {entry.classFields && entry.classFields.length > 0 && (
-                <div className={classnames(grid.nest, css.section)}>
-                  <h4 className={grid.col}>
-                    {intl.formatMessage({ id: 'fields' })}
-                  </h4>
-                  <ul className={classnames(grid.col, grid.nest, css.list)}>
-                    {entry.classFields.map((field, key) => {
-                      return (
-                        <li key={'f' + key}>
-                          <a
-                            href={referencePath(field.anchor)}
-                            className={classnames(grid.col, css.item)}>
-                            <code>{field.name}</code>{' '}
-                          </a>
-                          <span
-                            className={classnames(
-                              grid.col,
-                              css.itemDescription
-                            )}>
-                            {field.desc}
-                          </span>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
+                <Section
+                  title={intl.formatMessage({ id: 'fields' })}
+                  collapsed={!show}>
+                  <List
+                    nameIsHtml
+                    items={entry.classFields.map((field) => ({
+                      name: field.name,
+                      description: field.desc,
+                      anchor: referencePath(field.anchor, libraryName),
+                    }))}
+                  />
+                </Section>
               )}
               {entry.parameters && entry.parameters.length > 0 && (
-                <div className={classnames(grid.nest, css.section)}>
-                  <h4 className={grid.col}>
-                    {intl.formatMessage({ id: 'parameters' })}
-                  </h4>
-                  <ul className={classnames(grid.col, grid.nest, css.list)}>
-                    {entry.parameters.map((param, key) => {
-                      return (
-                        <li key={'param' + key} className={css.param}>
-                          <span className={classnames(grid.col, css.paramName)}>
-                            {param.name}
-                          </span>
-                          <span className={grid.col}>{param.description}</span>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
+                <Section
+                  title={intl.formatMessage({ id: 'parameters' })}
+                  collapsed={!show}>
+                  <List variant="parameters" items={entry.parameters} />
+                </Section>
               )}
               {entry.methods && entry.methods.length > 0 && (
-                <div className={classnames(grid.nest, css.section)}>
-                  <h4 className={grid.col}>
-                    {intl.formatMessage({ id: 'methods' })}
-                  </h4>
-                  <ul className={classnames(grid.col, grid.nest, css.list)}>
-                    {entry.methods.map((method, key) => {
-                      return (
-                        <li key={'m' + key}>
-                          <a
-                            href={method.anchor + '.html'}
-                            className={classnames(grid.col, css.item)}>
-                            <code>{method.name}</code>
-                          </a>
-                          <span
-                            className={classnames(
-                              grid.col,
-                              css.itemDescription
-                            )}
-                            dangerouslySetInnerHTML={{ __html: method.desc }}
-                          />
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
+                <Section
+                  title={intl.formatMessage({ id: 'methods' })}
+                  collapsed={!show}>
+                  <List
+                    descriptionIsHtml
+                    items={entry.methods.map((method) => ({
+                      name: method.name,
+                      description: method.desc,
+                      anchor: referencePath(method.anchor, libraryName),
+                    }))}
+                  />
+                </Section>
               )}
               {entry.related && entry.related.length > 0 && (
-                <div className={classnames(grid.nest, css.section)}>
-                  <h4 className={grid.col}>
-                    {intl.formatMessage({ id: 'related' })}
-                  </h4>
-                  <ul className={classnames(grid.col, grid.nest, css.list)}>
-                    {entry.related.map((rel, key) => (
-                      <li key={key + 'rel'}>
-                        <a href={rel + '.html'} className={grid.col}>
-                          <code>{rel.replace(/_/g, '()')}</code>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <Section
+                  title={intl.formatMessage({ id: 'related' })}
+                  collapsed={!show}>
+                  <List
+                    items={entry.related.map((rel) => ({
+                      name: rel.replace(/_/g, '()'),
+                      anchor: referencePath(rel, libraryName),
+                    }))}
+                  />
+                </Section>
               )}
             </div>
           </div>
@@ -231,8 +184,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
             )}>
             <div className={classnames(grid.push1)}>
               {intl.formatMessage({ id: 'notTranslated' })}
-              <Link
-                to={referencePath(pageContext.name, pageContext.libraryName)}>
+              <Link to={referencePath(name, libraryName)}>
                 {' '}
                 {intl.formatMessage({ id: 'englishPage' })}
               </Link>

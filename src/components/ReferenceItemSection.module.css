@@ -1,0 +1,49 @@
+.root {
+  flex-basis: cols(6, 6);
+  margin-bottom: var(--vertical-gutter);
+}
+
+.title {
+  white-space: nowrap;
+  flex-basis: cols(1, 6);
+}
+
+.content {
+  flex-basis: cols(5, 6);
+}
+
+/* Collapsed */
+
+.root.collapsed {
+  flex-basis: var(--col8);
+}
+
+.collapsed .title {
+  flex-basis: cols(1);
+  padding-left: 0;
+}
+
+.collapsed .content {
+  flex-basis: cols(5, 7);
+}
+
+@media (--reduced) {
+  .root {
+    flex-basis: var(--col8);
+  }
+
+  .title {
+    flex-basis: var(--col2);
+    padding-left: 0;
+  }
+
+  .content {
+    flex-basis: var(--col5);
+  }
+}
+
+@media (--small) {
+  .root {
+    flex-direction: column;
+  }
+}
