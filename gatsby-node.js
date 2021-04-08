@@ -114,7 +114,7 @@ async function createReference(actions, graphql) {
           libraryName,
         },
       });
-    } else if (refPage.node.childJson.type === 'field') {
+    } else if (refPage.node.childJson.type === 'field' || refPage.node.childJson.type === 'other') {
       createPage({
         path: refPath,
         component: fieldRefTemplate,
