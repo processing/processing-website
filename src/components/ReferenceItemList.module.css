@@ -38,3 +38,7 @@
 .parameters code {
   font-weight: bold;
 }
+
+.parameters code.type {
+  font-weight: normal;
+}

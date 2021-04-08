@@ -10,6 +10,8 @@ import Img from 'gatsby-image';
 import CopyButton from '../../components/CopyButton';
 import Layout from '../../components/Layout';
 import Sidebar from '../../components/Sidebar';
+import Section from '../../components/ReferenceItemSection';
+import List from '../../components/ReferenceItemList';
 
 import { useTree, useHighlight, useWindowSize } from '../../hooks';
 import { usePreparedReferenceItems } from '../../hooks/reference';
@@ -56,20 +58,19 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
                 { [css.collapsed]: !show },
                 grid.nest
               )}>
-              <div className={classnames(css.section, grid.nest)}>
-                <h4 className={grid.col}>
-                  {intl.formatMessage({ id: 'name' })}
-                </h4>
-                {entry && <h3 className={grid.col}>{entry.name}</h3>}
-              </div>
-              <div className={classnames(css.section, grid.nest)}>
-                <h4 className={grid.col}>
-                  {intl.formatMessage({ id: 'description' })}
-                </h4>
+              <Section
+                title={intl.formatMessage({ id: 'name' })}
+                collapsed={!show}>
+                <h3>{entry.name}</h3>
+              </Section>
+              <Section
+                title={intl.formatMessage({ id: 'description' })}
+                collapsed={!show}>
                 <p
-                  className={classnames(grid.col, css.description)}
-                  dangerouslySetInnerHTML={{ __html: entry.description }}></p>
-              </div>
+                  className={css.description}
+                  dangerouslySetInnerHTML={{ __html: entry.description }}
+                />
+              </Section>
               {examples.length > 0 && (
                 <div className={classnames(css.section, grid.nest)}>
                   <h4 className={grid.col}>
@@ -113,87 +114,52 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
                   </ul>
                 </div>
               )}
-              <div className={classnames(css.section, grid.nest)}>
-                <h4 className={grid.col}>
-                  {intl.formatMessage({ id: 'syntax' })}
-                </h4>
-                <ul className={classnames(grid.col, css.list)}>
-                  {entry.syntax.map((syn, key) => {
-                    return (
-                      <li key={'s' + key}>
-                        <code>{syn}</code>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
+              <Section
+                title={intl.formatMessage({ id: 'syntax' })}
+                collapsed={!show}>
+                <List items={entry.syntax} />
+              </Section>
               {entry.parameters &&
                 entry.parameters.length > 0 &&
                 entry.parameters[0] != null && (
-                  <div className={classnames(css.section, grid.nest)}>
-                    <h4 className={grid.col}>
-                      {intl.formatMessage({ id: 'parameters' })}
-                    </h4>
-                    <ul className={classnames(grid.col, grid.nest, css.list)}>
-                      {entry.parameters.map((param, key) => {
-                        return (
-                          <li key={'param' + key} className={css.param}>
-                            <span
-                              className={classnames(grid.col, css.paramName)}>
-                              {param.name}
-                            </span>
-                            <span className={grid.col}>
-                              {param.type
-                                ? param.type + ': ' + param.description
-                                : param.description}
-                            </span>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
+                  <Section
+                    title={intl.formatMessage({ id: 'parameters' })}
+                    collapsed={!show}>
+                    <List variant="parameters" items={entry.parameters} />
+                  </Section>
                 )}
               {entry.returns && (
-                <div className={classnames(css.section, grid.nest)}>
-                  <h4 className={grid.col}>
-                    {intl.formatMessage({ id: 'return' })}
-                  </h4>
-                  <p className={grid.col}>
-                    <code>{entry.returns}</code>
-                  </p>
-                </div>
+                <Section
+                  title={intl.formatMessage({ id: 'return' })}
+                  collapsed={!show}>
+                  <List items={[entry.returns]} />
+                </Section>
               )}
               {entry.inUse && (
-                <div className={classnames(css.section, grid.nest)}>
-                  <h4 className={grid.col}>
-                    {intl.formatMessage({ id: 'inUse' })}
-                  </h4>
-                  <ul className={classnames(grid.col, grid.nest, css.list)}>
-                    {entry.inUse.map((inUse, key) => (
-                      <li key={key + 'rel'}>
-                        <a href={inUse + '.html'} className={grid.col}>
-                          {inUse.replace(/_/g, '()')}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <Section
+                  title={intl.formatMessage({ id: 'inUse' })}
+                  collapsed={!show}>
+                  <List
+                    nameIsPath
+                    items={entry.inUse.map((name) => ({
+                      name: name,
+                      anchor: referencePath(name, pageContext.libraryName),
+                    }))}
+                  />
+                </Section>
               )}
               {entry.related && entry.related.length > 0 && (
-                <div className={classnames(css.section, grid.nest)}>
-                  <h4 className={grid.col}>
-                    {intl.formatMessage({ id: 'related' })}
-                  </h4>
-                  <ul className={classnames(grid.col, grid.nest, css.list)}>
-                    {entry.related.map((rel, key) => (
-                      <li key={key + 'rel'}>
-                        <a href={rel + '.html'} className={grid.col}>
-                          <code>{rel.replace(/_/g, '()')}</code>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <Section
+                  title={intl.formatMessage({ id: 'related' })}
+                  collapsed={!show}>
+                  <List
+                    nameIsPath
+                    items={entry.related.map((name) => ({
+                      name: name,
+                      anchor: referencePath(name, pageContext.libraryName),
+                    }))}
+                  />
+                </Section>
               )}
               <div className={classnames(css.section, grid.nest)}>
                 <div className={classnames(grid.col, css.license)}>

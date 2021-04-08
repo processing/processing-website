@@ -14,7 +14,7 @@ import List from '../../components/ReferenceItemList';
 
 import { useHighlight, useWindowSize, useTree } from '../../hooks';
 import { usePreparedReferenceItems } from '../../hooks/reference';
-import { referencePath } from '../../utils/paths';
+import { referencePath, pathToName } from '../../utils/paths';
 
 import css from '../../styles/templates/ref-template.module.css';
 import grid from '../../styles/grid.module.css';
@@ -118,12 +118,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
                 <Section
                   title={intl.formatMessage({ id: 'constructors' })}
                   collapsed={!show}>
-                  <List
-                    nameIsHtml
-                    items={entry.constructors.map((cons) => ({
-                      name: cons.replace(/_/g, '()'),
-                    }))}
-                  />
+                  <List nameIsHtml nameIsPath items={entry.constructors} />
                 </Section>
               )}
               {entry.classFields && entry.classFields.length > 0 && (
@@ -167,7 +162,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
                   collapsed={!show}>
                   <List
                     items={entry.related.map((rel) => ({
-                      name: rel.replace(/_/g, '()'),
+                      name: pathToName(rel),
                       anchor: referencePath(rel, libraryName),
                     }))}
                   />

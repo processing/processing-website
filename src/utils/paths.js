@@ -20,7 +20,13 @@ const referencePath = (name, libraryName, lang) => {
     : `${langPrefix(lang)}/reference/libraries/${libraryName}/${name}.html`;
 };
 
+/**
+  Used to convert fill_ to fill()
+**/
+const pathToName = (name) => name.replace(/_/g, '()');
+
 module.exports = {
   examplePath,
   referencePath,
+  pathToName,
 };
