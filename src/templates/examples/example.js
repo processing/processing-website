@@ -20,7 +20,7 @@ import {
   useRelatedExamples,
 } from '../../hooks/examples';
 
-import css from '../../styles/templates/example.module.css';
+import css from '../../styles/templates/examples/example.module.css';
 import grid from '../../styles/grid.module.css';
 
 const ExampleTemplate = ({ data, pageContext }) => {

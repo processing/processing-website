@@ -13,7 +13,7 @@ import { referencePath } from '../../utils/paths';
 import { useTree } from '../../hooks';
 import { usePreparedItems } from '../../hooks/reference';
 
-import css from '../../styles/templates/index-lib-template.module.css';
+import css from '../../styles/templates/libraries/index.module.css';
 import grid from '../../styles/grid.module.css';
 
 const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
