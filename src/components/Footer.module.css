@@ -1,7 +1,6 @@
 .root {
   z-index: 600;
   width: 100%;
-  margin-top: 60px;
   padding-top: var(--margin);
   padding-bottom: var(--margin);
   background-color: var(--processing-blue-dark);
