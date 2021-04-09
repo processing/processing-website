@@ -14,12 +14,20 @@ import License from '../../components/ReferenceLicense';
 import { CodeList, ExampleList } from '../../components/ReferenceItemList';
 
 import { useTree, useHighlight, useWindowSize } from '../../hooks';
-import { usePreparedItems, usePreparedExamples } from '../../hooks/reference';
+import {
+  usePreparedItems,
+  usePreparedExamples,
+  usePreparedList,
+} from '../../hooks/reference';
 import { referencePath, pathToName } from '../../utils/paths';
 
 import grid from '../../styles/grid.module.css';
 
 const FieldRefTemplate = ({ data, pageContext }) => {
+  const entry = data?.json?.childJson;
+  const { name, libraryName } = pageContext;
+  const isProcessing = libraryName === 'processing';
+
   const { width } = useWindowSize();
   const [show, setShow] = useState(width > 960 ? true : false);
   const ref = useHighlight();
@@ -29,9 +37,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
   const examples = usePreparedExamples(data.pdes.edges, data.images.edges);
   const tree = useTree(items);
 
-  const entry = data?.json?.childJson;
-  const { name, libraryName } = pageContext;
-  const isProcessing = libraryName === 'processing';
+  const related = usePreparedList(entry?.related, libraryName, true, true);
 
   return (
     <Layout withSidebar>
@@ -46,35 +52,22 @@ const FieldRefTemplate = ({ data, pageContext }) => {
         )}
         {entry ? (
           <Content collapsed={!show}>
-            <Section
-              title={intl.formatMessage({ id: 'name' })}
-              collapsed={!show}>
+            <Section title={intl.formatMessage({ id: 'name' })}>
               <h3>{entry.name}</h3>
             </Section>
-            <Section
-              title={intl.formatMessage({ id: 'description' })}
-              collapsed={!show}>
+            <Section title={intl.formatMessage({ id: 'description' })}>
               <p dangerouslySetInnerHTML={{ __html: entry.description }} />
             </Section>
-            {examples.length > 0 && (
+            {examples && (
               <Section
                 columns={false}
-                title={intl.formatMessage({ id: 'examples' })}
-                collapsed={!show}>
+                title={intl.formatMessage({ id: 'examples' })}>
                 <ExampleList examples={examples} />
               </Section>
             )}
-            {entry.related.length > 0 && (
-              <Section
-                title={intl.formatMessage({ id: 'related' })}
-                collapsed={!show}>
-                <CodeList
-                  nameIsPath
-                  items={entry.related.map((rel) => ({
-                    name: pathToName(rel),
-                    anchor: referencePath(rel, libraryName),
-                  }))}
-                />
+            {related && (
+              <Section title={intl.formatMessage({ id: 'related' })}>
+                <CodeList items={related} />
               </Section>
             )}
             <License />
