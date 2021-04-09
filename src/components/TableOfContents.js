@@ -18,13 +18,18 @@ export default ({ items = [] }) => {
       })}>
       <h3>{intl.formatMessage({ id: 'tableOfContents' })}</h3>
       <ul>
-        {items.map((item) => (
-          <li key={item.title}>
-            <Link to={item.url}>
-              <h4>{item.title}</h4>
-            </Link>
-          </li>
-        ))}
+        {items.map((item) => {
+          const isCurrent = layout.currentHeading === item.url.replace('#', '');
+          return (
+            <li
+              key={item.title}
+              className={classnames({ [css.active]: isCurrent })}>
+              <Link to={item.url}>
+                <h4>{item.title}</h4>
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

@@ -19,6 +19,7 @@
 
   & h4 {
     margin-bottom: 12px;
+    font-size: var(--text-regular);
     color: inherit;
     &:hover {
       color: inherit;
@@ -42,6 +43,15 @@
 
 .headerScrolled {
   height: calc(100vh - 60px);
+}
+
+.active {
+  & h4 {
+    color: var(--processing-blue-mid);
+    &:hover {
+      color: var(--processing-blue-light);
+    }
+  }
 }
 
 @media (--small) {
