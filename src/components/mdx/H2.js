@@ -1,11 +1,11 @@
 import React, { useEffect, memo } from 'react';
-import slugify from 'slugify';
 
+import { useSlug } from '../../hooks/tutorials';
 import { useIntersect } from '../../hooks';
 
 const H2 = ({ children, setCurrent }) => {
-  const [ref, appearedOnScreen] = useIntersect({});
-  const slug = slugify(children, { lower: true, remove: /[*+~.()'"!:@]/g });
+  const [ref, appearedOnScreen] = useIntersect();
+  const slug = useSlug(children);
 
   useEffect(() => {
     if (appearedOnScreen) {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
@@ -55,16 +55,19 @@ const Layout = ({ children, isHomepage, withSidebar }) => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  });
+  }, []);
 
-  const shortcodes = {
-    FixedImage,
-    Intro,
-    HighlightBlock,
-    Note,
-    h2: ({ children }) => <H2 setCurrent={setCurrentHeading}>{children}</H2>,
-    img: (props) => <img {...props} alt=""></img>,
-  };
+  const shortcodes = useMemo(
+    () => ({
+      FixedImage,
+      Intro,
+      HighlightBlock,
+      Note,
+      h2: ({ children }) => <H2 setCurrent={setCurrentHeading}>{children}</H2>,
+      img: (props) => <img {...props} alt=""></img>,
+    }),
+    [setCurrentHeading]
+  );
 
   return (
     <div className={css.root}>
@@ -83,7 +86,6 @@ const Layout = ({ children, isHomepage, withSidebar }) => {
           ref={mainRef}>
           <MDXProvider components={shortcodes}>{children}</MDXProvider>
         </main>
-
         <Footer
           siteTitle={data.site.siteMetadata.title}
           withSidebar={withSidebar}
