@@ -25,7 +25,8 @@ const TutorialTemplate = ({ data, pageContext }) => {
       <Helmet>
         <title>{mdx && mdx.frontmatter.title} / Tutorial</title>
       </Helmet>
-      <div className={classnames(grid.grid, css.root, css.withSidebar)}>
+      <TableOfContents items={mdx.tableOfContents.items} />
+      <div className={classnames(grid.grid, css.root)}>
         {mdx !== null ? (
           <Fragment>
             <h1 className={grid.col}>{mdx.frontmatter.title}</h1>
@@ -36,7 +37,6 @@ const TutorialTemplate = ({ data, pageContext }) => {
               )}>{`${intl.formatMessage({ id: 'by' })} ${
               mdx.frontmatter.author
             }`}</span>
-            <TableOfContents items={mdx.tableOfContents.items} />
             <div className={classnames(grid.col, css.content)}>
               <MDXRenderer>{mdx.body}</MDXRenderer>
             </div>

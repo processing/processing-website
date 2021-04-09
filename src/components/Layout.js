@@ -10,6 +10,7 @@ import Footer from './Footer';
 
 import FixedImage from './mdx/FixedImage';
 import Intro from './mdx/Intro';
+import H2 from './mdx/H2';
 import HighlightBlock from './mdx/HighlightBlock';
 import Note from './mdx/Note';
 
@@ -26,6 +27,7 @@ export const LayoutContext = React.createContext({
 const Layout = ({ children, isHomepage, withSidebar }) => {
   const mainRef = useRef();
   const [headerScrolled, setHeaderScrolled] = useState(false);
+  const [currentHeading, setCurrentHeading] = useState('');
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -60,12 +62,13 @@ const Layout = ({ children, isHomepage, withSidebar }) => {
     Intro,
     HighlightBlock,
     Note,
+    h2: ({ children }) => <H2 setCurrent={setCurrentHeading}>{children}</H2>,
     img: (props) => <img {...props} alt=""></img>,
   };
 
   return (
     <div className={css.root}>
-      <LayoutContext.Provider value={{ headerScrolled }}>
+      <LayoutContext.Provider value={{ headerScrolled, currentHeading }}>
         <Helmet titleTemplate="%s / Processing.org" />
         <Header
           siteTitle={data.site.siteMetadata.title}

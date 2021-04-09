@@ -225,3 +225,36 @@ export const useWindowSize = () => {
   }, []);
   return win;
 };
+
+// A hook that lets us use IntersectionObserver
+// Source: https://medium.com/the-non-traditional-developer/how-to-use-an-intersectionobserver-in-a-react-hook-9fb061ac6cb5
+export const useIntersect = ({ root = null, rootMargin, threshold = 0 }) => {
+  const [appearedOnScreen, setAppearedOnScreen] = useState(false);
+  const [node, setNode] = useState(null);
+  const observer = useRef(null);
+
+  useEffect(() => {
+    observer.current = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setAppearedOnScreen(true);
+        else setAppearedOnScreen(false);
+      },
+      {
+        root,
+        rootMargin,
+        threshold,
+      }
+    );
+  }, []);
+
+  useEffect(() => {
+    const { current: currentObserver } = observer;
+    currentObserver.disconnect();
+    if (node && !appearedOnScreen) {
+      currentObserver.observe(node);
+    }
+    return () => currentObserver.disconnect();
+  }, [node]);
+
+  return [setNode, appearedOnScreen];
+};

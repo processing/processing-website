@@ -98,6 +98,11 @@
       max-width: auto;
     }
   }
+
+  .sidebarWrapper.headerScrolled {
+    top: 50px;
+    height: calc(100vh - 50px);
+  }
 }
 
 @media (--small) {
@@ -124,5 +129,10 @@
     & .sidebarWrapper {
       max-width: auto;
     }
+  }
+
+  .sidebarWrapper.headerScrolled {
+    top: 50px;
+    height: calc(100vh - 50px);
   }
 }
