@@ -94,7 +94,9 @@ const ContributionsList = memo(({ categories, libraries }) => {
         const filtered = libraries.filter((c) => c.categories.includes(cat));
         return (
           <li key={cat} className={grid.nest}>
-            <h2 className={grid.col}>{cat}</h2>
+            <h2 className={grid.col} id={cat}>
+              {cat}
+            </h2>
             <ul className={classnames(grid.col, grid.nest)}>
               {filtered.map((node, key) => {
                 return (
