@@ -1,11 +1,9 @@
 import React, { memo } from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
+import classnames from 'classnames';
 
 import CopyButton from './CopyButton';
-
-import { pathToName } from '../utils/paths';
-import classnames from 'classnames';
 
 import grid from '../styles/grid.module.css';
 import css from './ReferenceItemList.module.css';

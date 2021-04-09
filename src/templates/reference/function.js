@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
-import classnames from 'classnames';
 import { useIntl } from 'react-intl';
-
-import Img from 'gatsby-image';
 
 import Layout from '../../components/Layout';
 import Content from '../../components/ReferenceItemContent';

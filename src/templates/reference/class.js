@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import { Link } from 'gatsby';
-import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 
-import CopyButton from '../../components/CopyButton';
 import Layout from '../../components/Layout';
 import Content from '../../components/ReferenceItemContent';
 import Sidebar from '../../components/Sidebar';
@@ -20,7 +17,7 @@ import {
   usePreparedExamples,
   usePreparedList,
 } from '../../hooks/reference';
-import { referencePath, pathToName } from '../../utils/paths';
+import { referencePath } from '../../utils/paths';
 
 import grid from '../../styles/grid.module.css';
 
