@@ -26,20 +26,14 @@ export const useRandomArray = (arr, num) => {
 };
 
 /**
-  Performs syntax highlighting on all <pre><code> inside ref
+  Performs syntax highlighting on all <pre><code> in the body
 **/
 export const useHighlight = () => {
-  const ref = useRef();
-
   useEffect(() => {
-    if (ref.current) {
-      ref.current.querySelectorAll('pre code').forEach((block) => {
-        hljs.highlightBlock(block);
-      });
-    }
+    document.body.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightBlock(block);
+    });
   }, []);
-
-  return ref;
 };
 
 /**

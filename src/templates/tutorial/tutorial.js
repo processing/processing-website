@@ -17,17 +17,15 @@ import grid from '../../styles/grid.module.css';
 
 const TutorialTemplate = ({ data, pageContext }) => {
   const { mdx } = data;
-  const ref = useHighlight();
   const intl = useIntl();
+  useHighlight();
 
   return (
     <Layout>
       <Helmet>
         <title>{mdx && mdx.frontmatter.title} / Tutorial</title>
       </Helmet>
-      <div
-        className={classnames(grid.grid, css.root, css.withSidebar)}
-        ref={ref}>
+      <div className={classnames(grid.grid, css.root, css.withSidebar)}>
         {mdx !== null ? (
           <Fragment>
             <h1 className={grid.col}>{mdx.frontmatter.title}</h1>

@@ -18,14 +18,14 @@ const Environment = ({ data }) => {
   const { mdx } = data;
   const { frontmatter, body, tableOfContents } = mdx;
   const intl = useIntl();
-  const ref = useHighlight();
+  useHighlight();
 
   return (
     <Layout>
       <Helmet>
         <title>Environment</title>
       </Helmet>
-      <div className={classnames(grid.grid, css.root)} ref={ref}>
+      <div className={classnames(grid.grid, css.root)}>
         <Donate />
         {mdx !== null ? (
           <Fragment>

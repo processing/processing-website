@@ -31,8 +31,8 @@ const ClassRefTemplate = ({ data, pageContext }) => {
 
   const { width } = useWindowSize();
   const [show, setShow] = useState(width > 960 && isProcessing ? true : false);
-  const ref = useHighlight();
   const intl = useIntl();
+  useHighlight();
 
   const items = usePreparedItems(data.items.nodes);
   const examples = usePreparedExamples(data.pdes.edges, data.images.edges);
