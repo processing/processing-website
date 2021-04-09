@@ -4,16 +4,16 @@ import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
-import { referencePath } from '../../utils/paths';
-
 import Img from 'gatsby-image';
 
-import CopyButton from '../../components/CopyButton';
 import Layout from '../../components/Layout';
 import Sidebar from '../../components/Sidebar';
+import Section from '../../components/ReferenceItemSection';
+import { CodeList, ExampleList } from '../../components/ReferenceItemList';
 
 import { useTree, useHighlight, useWindowSize } from '../../hooks';
-import { usePreparedReferenceItems } from '../../hooks/reference';
+import { usePreparedItems, usePreparedExamples } from '../../hooks/reference';
+import { referencePath, pathToName } from '../../utils/paths';
 
 import css from '../../styles/templates/ref-template.module.css';
 import grid from '../../styles/grid.module.css';
@@ -21,22 +21,22 @@ import grid from '../../styles/grid.module.css';
 const FieldRefTemplate = ({ data, pageContext }) => {
   const { width } = useWindowSize();
   const [show, setShow] = useState(width > 960 ? true : false);
-  const examples = data.pdes.edges;
-  const images = data.images.edges;
   const ref = useHighlight();
   const intl = useIntl();
 
-  const items = usePreparedReferenceItems(data.items.nodes);
+  const items = usePreparedItems(data.items.nodes);
+  const examples = usePreparedExamples(data.pdes.edges, data.images.edges);
   const tree = useTree(items);
 
   const entry = data?.json?.childJson;
-  const isProcessing = pageContext.libraryName === 'processing';
+  const { name, libraryName } = pageContext;
+  const isProcessing = libraryName === 'processing';
 
   return (
     <Layout withSidebar>
       <Helmet>
         <title>
-          {pageContext.name} / {isProcessing ? 'Reference' : 'Libraries'}
+          {name} / {isProcessing ? 'Reference' : 'Libraries'}
         </title>
       </Helmet>
       <div className={classnames(css.root, grid.grid, grid.rightBleed)}>
@@ -59,73 +59,39 @@ const FieldRefTemplate = ({ data, pageContext }) => {
                 },
                 grid.nest
               )}>
-              <div className={classnames(css.section, grid.nest)}>
-                <h4 className={grid.col}>
-                  {intl.formatMessage({ id: 'name' })}
-                </h4>
-                <h3 className={grid.col}>{entry.name}</h3>
-              </div>
-              <div className={classnames(css.section, grid.nest)}>
-                <h4 className={grid.col}>
-                  {intl.formatMessage({ id: 'description' })}
-                </h4>
-                <p className={classnames(grid.col, css.description)}>
-                  {entry.description}
-                </p>
-              </div>
+              <Section
+                title={intl.formatMessage({ id: 'name' })}
+                collapsed={!show}>
+                <h3>{entry.name}</h3>
+              </Section>
+              <Section
+                title={intl.formatMessage({ id: 'description' })}
+                collapsed={!show}>
+                <p
+                  className={css.description}
+                  dangerouslySetInnerHTML={{ __html: entry.description }}
+                />
+              </Section>
               {examples.length > 0 && (
-                <div className={classnames(grid.nest, css.section)}>
-                  <h4 className={grid.col}>
-                    {intl.formatMessage({ id: 'examples' })}
-                  </h4>
-                  <ul className={classnames(grid.col, grid.nest, css.list)}>
-                    {examples.map((ex, key) => {
-                      const img = images.filter(
-                        (img) => img.node.name === ex.node.name
-                      );
-                      return (
-                        <li className={css.example} key={'ex' + key}>
-                          <div
-                            className={classnames(grid.col, css.exampleCode)}>
-                            <CopyButton text={ex.node.internal.content} />
-                            <pre className={css.codeBlock}>
-                              {ex.node.internal.content
-                                .split(/\r?\n/)
-                                .map((line, i) => (
-                                  <code key={`line-${i}`}>{line}</code>
-                                ))}
-                            </pre>
-                          </div>
-                          {img.length > 0 && (
-                            <div
-                              className={classnames(
-                                grid.col,
-                                css.exampleImage
-                              )}>
-                              <Img fixed={img[0].node.childImageSharp.fixed} />
-                            </div>
-                          )}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
+                <Section
+                  columns={false}
+                  title={intl.formatMessage({ id: 'examples' })}
+                  collapsed={!show}>
+                  <ExampleList examples={examples} />
+                </Section>
               )}
               {entry.related.length > 0 && (
-                <div className={classnames(css.section, grid.nest)}>
-                  <h4 className={grid.col}>
-                    {intl.formatMessage({ id: 'related' })}
-                  </h4>
-                  <ul className={classnames(grid.col, grid.nest, css.list)}>
-                    {entry.related.map((rel, key) => (
-                      <li key={key + 'rel'}>
-                        <a href={rel + '.html'} className={grid.col}>
-                          <code>{rel.replace(/_/g, '()')}</code>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <Section
+                  title={intl.formatMessage({ id: 'related' })}
+                  collapsed={!show}>
+                  <CodeList
+                    nameIsPath
+                    items={entry.related.map((rel) => ({
+                      name: pathToName(rel),
+                      anchor: referencePath(rel, libraryName),
+                    }))}
+                  />
+                </Section>
               )}
             </div>
           </div>
@@ -138,8 +104,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
             )}>
             <div className={classnames(grid.push1)}>
               {intl.formatMessage({ id: 'notTranslated' })}
-              <Link
-                to={referencePath(pageContext.name, pageContext.libraryName)}>
+              <Link to={referencePath(name, libraryName)}>
                 {' '}
                 {intl.formatMessage({ id: 'englishPage' })}
               </Link>
@@ -182,8 +147,8 @@ export const query = graphql`
           }
           extension
           childImageSharp {
-            fixed {
-              ...GatsbyImageSharpFixed
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid
             }
           }
         }

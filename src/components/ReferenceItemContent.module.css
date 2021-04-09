@@ -1,0 +1,8 @@
+.root {
+  flex-basis: var(--col6);
+}
+
+.root.collapsed {
+  flex-basis: var(--col6);
+  margin-left: var(--col2);
+}

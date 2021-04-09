@@ -7,14 +7,13 @@ import { useIntl } from 'react-intl';
 
 import Img from 'gatsby-image';
 
-import CopyButton from '../../components/CopyButton';
 import Layout from '../../components/Layout';
 import Sidebar from '../../components/Sidebar';
 import Section from '../../components/ReferenceItemSection';
-import List from '../../components/ReferenceItemList';
+import { CodeList, ExampleList } from '../../components/ReferenceItemList';
 
 import { useTree, useHighlight, useWindowSize } from '../../hooks';
-import { usePreparedReferenceItems } from '../../hooks/reference';
+import { usePreparedItems, usePreparedExamples } from '../../hooks/reference';
 import { referencePath } from '../../utils/paths';
 
 import css from '../../styles/templates/ref-template.module.css';
@@ -26,14 +25,12 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
   const ref = useHighlight();
   const intl = useIntl();
 
-  const items = usePreparedReferenceItems(data.items.nodes);
+  const items = usePreparedItems(data.items.nodes);
+  const examples = usePreparedExamples(data.pdes.edges, data.images.edges);
   const tree = useTree(items);
 
   const isProcessing = pageContext.libraryName === 'processing';
   const entry = data?.json?.childJson;
-
-  const examples = data.pdes ? data.pdes.edges : [];
-  const images = data.images.edges;
 
   return (
     <Layout withSidebar>
@@ -72,52 +69,17 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
                 />
               </Section>
               {examples.length > 0 && (
-                <div className={classnames(css.section, grid.nest)}>
-                  <h4 className={grid.col}>
-                    {intl.formatMessage({ id: 'examples' })}
-                  </h4>
-                  <ul
-                    className={classnames(
-                      grid.col,
-                      grid.nest,
-                      css.exampleList
-                    )}>
-                    {examples.map((ex, key) => {
-                      const img = images.filter(
-                        (img) => img.node.name === ex.node.name
-                      );
-                      return (
-                        <li className={css.example} key={'ex' + key}>
-                          <div
-                            className={classnames(grid.col, css.exampleCode)}>
-                            <CopyButton text={ex.node.internal.content} />
-                            <pre className={css.codeBlock}>
-                              {ex.node.internal.content
-                                .split(/\r?\n/)
-                                .map((line, i) => (
-                                  <code key={`line-${i}`}>{line}</code>
-                                ))}
-                            </pre>
-                          </div>
-                          {img.length > 0 && (
-                            <div
-                              className={classnames(
-                                grid.col,
-                                css.exampleImage
-                              )}>
-                              <Img fluid={img[0].node.childImageSharp.fluid} />
-                            </div>
-                          )}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
+                <Section
+                  columns={false}
+                  title={intl.formatMessage({ id: 'examples' })}
+                  collapsed={!show}>
+                  <ExampleList examples={examples} />
+                </Section>
               )}
               <Section
                 title={intl.formatMessage({ id: 'syntax' })}
                 collapsed={!show}>
-                <List items={entry.syntax} />
+                <CodeList items={entry.syntax} />
               </Section>
               {entry.parameters &&
                 entry.parameters.length > 0 &&
@@ -125,21 +87,21 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
                   <Section
                     title={intl.formatMessage({ id: 'parameters' })}
                     collapsed={!show}>
-                    <List variant="parameters" items={entry.parameters} />
+                    <CodeList variant="parameters" items={entry.parameters} />
                   </Section>
                 )}
               {entry.returns && (
                 <Section
                   title={intl.formatMessage({ id: 'return' })}
                   collapsed={!show}>
-                  <List items={[entry.returns]} />
+                  <CodeList items={[entry.returns]} />
                 </Section>
               )}
               {entry.inUse && (
                 <Section
                   title={intl.formatMessage({ id: 'inUse' })}
                   collapsed={!show}>
-                  <List
+                  <CodeList
                     nameIsPath
                     items={entry.inUse.map((name) => ({
                       name: name,
@@ -152,7 +114,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
                 <Section
                   title={intl.formatMessage({ id: 'related' })}
                   collapsed={!show}>
-                  <List
+                  <CodeList
                     nameIsPath
                     items={entry.related.map((name) => ({
                       name: name,
@@ -161,28 +123,26 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
                   />
                 </Section>
               )}
-              <div className={classnames(css.section, grid.nest)}>
-                <div className={classnames(grid.col, css.license)}>
+              <div className={css.license}>
+                <a
+                  rel="license"
+                  href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <img
+                    alt="Creative Commons License"
+                    style={{ borderWidth: 0 }}
+                    src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
+                  />
+                </a>
+                <p>
+                  {`This work is licensed under a `}
                   <a
                     rel="license"
                     href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-                    <img
-                      alt="Creative Commons License"
-                      style={{ borderWidth: 0 }}
-                      src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
-                    />
+                    Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+                    International License
                   </a>
-                  <p>
-                    {`This work is licensed under a `}
-                    <a
-                      rel="license"
-                      href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-                      Creative Commons Attribution-NonCommercial-ShareAlike 4.0
-                      International License
-                    </a>
-                    .
-                  </p>
-                </div>
+                  .
+                </p>
               </div>
             </div>
           </div>

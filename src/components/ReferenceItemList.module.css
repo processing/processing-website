@@ -1,28 +1,30 @@
-.root {
+/*  Code list  */
+
+.codeList {
   display: table;
 }
 
-.item {
+.codeList .item {
   display: table-row;
 }
 
-.root code,
-.root span {
+.codeList code,
+.codeList span {
   display: table-cell;
   padding-bottom: var(--margin-quarter);
 }
 
-.root code {
+.codeList code {
   font-size: var(--text-normal);
   padding-right: var(--gutter);
   white-space: nowrap;
 }
 
-.root span {
+.codeList span {
 }
 
-.root span b,
-.root span code {
+.codeList span b,
+.codeList span code {
   font-weight: normal;
   font-style: normal;
   font-family: var(--font-mono);
@@ -35,10 +37,25 @@
 
 /* Variant: reference */
 
-.parameters code {
+.codeList.parameters code {
   font-weight: bold;
 }
 
-.parameters code.type {
+.codeList.parameters code.type {
   font-weight: normal;
+}
+
+/*  Example list  */
+
+.exampleList .item {
+  margin-bottom: var(--margin-half);
+}
+
+.exampleList .code {
+  flex-basis: cols(4, 6);
+  position: relative;
+}
+
+.exampleList .image {
+  flex-basis: cols(2, 6);
 }

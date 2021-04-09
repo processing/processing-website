@@ -10,7 +10,7 @@ import ReferenceList from '../components/ReferenceList';
 import FilterBar from '../components/FilterBar';
 
 import { useTree, useFilteredTree } from '../hooks';
-import { usePreparedReferenceItems } from '../hooks/reference';
+import { usePreparedItems } from '../hooks/reference';
 
 import grid from '../styles/grid.module.css';
 
@@ -18,7 +18,7 @@ const Reference = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const intl = useIntl();
 
-  const items = usePreparedReferenceItems(data.items.nodes);
+  const items = usePreparedItems(data.items.nodes);
   const tree = useTree(items);
   const filtered = useFilteredTree(tree, searchTerm);
   const categories = Object.keys(tree);

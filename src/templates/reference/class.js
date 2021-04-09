@@ -10,29 +10,28 @@ import CopyButton from '../../components/CopyButton';
 import Layout from '../../components/Layout';
 import Sidebar from '../../components/Sidebar';
 import Section from '../../components/ReferenceItemSection';
-import List from '../../components/ReferenceItemList';
+import { CodeList, ExampleList } from '../../components/ReferenceItemList';
 
 import { useHighlight, useWindowSize, useTree } from '../../hooks';
-import { usePreparedReferenceItems } from '../../hooks/reference';
+import { usePreparedItems, usePreparedExamples } from '../../hooks/reference';
 import { referencePath, pathToName } from '../../utils/paths';
 
 import css from '../../styles/templates/ref-template.module.css';
 import grid from '../../styles/grid.module.css';
 
 const ClassRefTemplate = ({ data, pageContext }) => {
-  const { width } = useWindowSize();
-  const [show, setShow] = useState(width > 960 ? true : false);
-  const images = data.images.edges;
-  const examples = data.pdes.edges;
-  const ref = useHighlight();
-  const intl = useIntl();
-
-  const items = usePreparedReferenceItems(data.items.nodes);
-  const tree = useTree(items);
-
   const { name, libraryName } = pageContext;
   const entry = data?.json?.childJson;
   const isProcessing = libraryName === 'processing';
+
+  const { width } = useWindowSize();
+  const [show, setShow] = useState(width > 960 && isProcessing ? true : false);
+  const ref = useHighlight();
+  const intl = useIntl();
+
+  const items = usePreparedItems(data.items.nodes);
+  const examples = usePreparedExamples(data.pdes.edges, data.images.edges);
+  const tree = useTree(items);
 
   return (
     <Layout withSidebar>
@@ -79,53 +78,24 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               </Section>
               {examples.length > 0 && (
                 <Section
+                  columns={false}
                   title={intl.formatMessage({ id: 'examples' })}
                   collapsed={!show}>
-                  <ul className={css.list}>
-                    {examples.map((ex, key) => {
-                      const img = images.find(
-                        (img) => img.node.name === ex.node.name
-                      );
-                      return (
-                        <li key={'ex' + key} className={css.example}>
-                          <div
-                            className={classnames(grid.col, css.exampleCode)}>
-                            <CopyButton text={ex.node.internal.content} />
-                            <pre className={css.codeBlock}>
-                              {ex.node.internal.content
-                                .split(/\r?\n/)
-                                .map((line, i) => (
-                                  <code key={`line-${i}`}>{line}</code>
-                                ))}
-                            </pre>
-                          </div>
-                          {img && (
-                            <div
-                              className={classnames(
-                                grid.col,
-                                css.exampleImage
-                              )}>
-                              <Img fixed={img.node.childImageSharp.fixed} />
-                            </div>
-                          )}
-                        </li>
-                      );
-                    })}
-                  </ul>
+                  <ExampleList examples={examples} />
                 </Section>
               )}
               {entry.constructors && entry.constructors.length > 0 && (
                 <Section
                   title={intl.formatMessage({ id: 'constructors' })}
                   collapsed={!show}>
-                  <List nameIsHtml nameIsPath items={entry.constructors} />
+                  <CodeList nameIsHtml nameIsPath items={entry.constructors} />
                 </Section>
               )}
               {entry.classFields && entry.classFields.length > 0 && (
                 <Section
                   title={intl.formatMessage({ id: 'fields' })}
                   collapsed={!show}>
-                  <List
+                  <CodeList
                     nameIsHtml
                     items={entry.classFields.map((field) => ({
                       name: field.name,
@@ -139,14 +109,14 @@ const ClassRefTemplate = ({ data, pageContext }) => {
                 <Section
                   title={intl.formatMessage({ id: 'parameters' })}
                   collapsed={!show}>
-                  <List variant="parameters" items={entry.parameters} />
+                  <CodeList variant="parameters" items={entry.parameters} />
                 </Section>
               )}
               {entry.methods && entry.methods.length > 0 && (
                 <Section
                   title={intl.formatMessage({ id: 'methods' })}
                   collapsed={!show}>
-                  <List
+                  <CodeList
                     descriptionIsHtml
                     items={entry.methods.map((method) => ({
                       name: method.name,
@@ -160,7 +130,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
                 <Section
                   title={intl.formatMessage({ id: 'related' })}
                   collapsed={!show}>
-                  <List
+                  <CodeList
                     items={entry.related.map((rel) => ({
                       name: pathToName(rel),
                       anchor: referencePath(rel, libraryName),
@@ -234,8 +204,8 @@ export const query = graphql`
           }
           extension
           childImageSharp {
-            fixed {
-              ...GatsbyImageSharpFixed
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid
             }
           }
         }

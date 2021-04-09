@@ -22,30 +22,16 @@
   flex-basis: calc(var(--col8) - var(--margin));
 }
 
-.content {
-  & p {
-    margin-top: var(--gutter-half);
-  }
-}
-
 .content.collapsed {
-  flex-basis: var(--col8);
-  padding-left: 0;
-  padding-right: var(--margin);
+  /* flex-basis: var(--col8); */
+  /* padding-left: 0; */
+  /* padding-right: var(--margin); */
 
-  & > * {
+  /* & > * {
     padding-left: var(--push1);
-  }
+  } */
 
   & .section {
-    flex-basis: var(--col8);
-
-    & > h4 {
-      flex-basis: cols(1);
-      padding-left: 0;
-      white-space: nowrap;
-    }
-
     & > h3 {
       flex-basis: cols(6);
       padding-right: var(--gutter);
@@ -54,88 +40,16 @@
     & .description {
       flex-basis: cols(6);
     }
-
-    & .exampleList {
-      flex-basis: cols(7);
-
-      & .example {
-        flex-basis: cols(7);
-      }
-
-      & .exampleCode {
-        padding-left: 0;
-        flex-basis: cols(5);
-      }
-
-      & .exampleImage {
-        flex-basis: cols(2);
-      }
-
-      & li:last-child {
-        margin-bottom: 0px;
-      }
-    }
-
-    & .list {
-      flex-basis: cols(5, 7);
-    }
-
-    & .license {
-      flex-basis: cols(5, 7);
-    }
   }
 }
 
 .section {
   flex-basis: cols(6, 6);
-  margin-bottom: var(--vertical-gutter);
-
-  & > h4 {
-    white-space: nowrap;
-    flex-basis: cols(1, 6);
-  }
 
   & > h3 {
     font-size: var(--text-xlarge);
     flex-basis: cols(5, 6);
     padding-right: var(--push1);
-  }
-
-  & .description {
-    flex-basis: cols(4, 6);
-  }
-
-  & .exampleList {
-    flex-basis: cols(6, 6);
-
-    & .example {
-      flex-basis: cols(6, 6);
-    }
-
-    & .exampleCode {
-      position: relative;
-      flex-basis: cols(4, 6);
-    }
-
-    & .exampleImage {
-      flex-basis: cols(2, 6);
-    }
-
-    & li:last-child {
-      margin-bottom: 0px;
-    }
-  }
-
-  & .list {
-    flex-basis: cols(5, 6);
-  }
-
-  & .license {
-    flex-basis: cols(5, 6);
-  }
-
-  @media (--small) {
-    flex-direction: column;
   }
 }
 
@@ -168,35 +82,6 @@
       & .description {
         flex-basis: var(--col5);
       }
-
-      & .exampleList {
-        flex-basis: var(--col8);
-
-        & .example {
-          flex-basis: var(--col8);
-        }
-
-        & .exampleCode {
-          padding-left: 0;
-          flex-basis: var(--col6);
-        }
-
-        & .exampleImage {
-          flex-basis: var(--col2);
-        }
-
-        & li:last-child {
-          margin-bottom: 0px;
-        }
-      }
-
-      & .list {
-        flex-basis: var(--col5);
-      }
-
-      & .license {
-        flex-basis: var(--col5);
-      }
     }
   }
 }
@@ -207,61 +92,8 @@
   line-height: 1.6em;
 }
 
-.list {
-  & li {
-    display: flex;
-    width: 100%;
-  }
-  & li:last-child .codeBlock {
-    margin-bottom: 0;
-  }
-}
-
-.codeBlock {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  white-space: normal;
-}
-
-.example {
-  display: flex;
-  flex-grow: 1;
-  margin-bottom: var(--vertical-gutter);
-}
-
-.param {
-  margin-bottom: var(--gutter);
-}
-
-.paramName {
-  font-family: var(--font-mono);
-  font-weight: 700;
-}
-
-.license {
-  display: flex;
-  flex-direction: row;
-  font-size: var(--text-small);
-
-  & p {
-    margin-left: var(--gutter);
-  }
-}
-
-.item {
-  flex-basis: var(--col2);
-}
-
-.itemDescription {
-  font-size: var(--text-small);
-  flex-basis: var(--col5);
-}
-
 .description b,
-.description code,
-.itemDescription b,
-.itemDescription code {
+.description code {
   font-weight: normal;
   font-style: normal;
   font-family: var(--font-mono);
@@ -286,61 +118,5 @@
     & > * {
       padding-left: 0;
     }
-
-    & .section {
-      flex-basis: var(--col8);
-
-      & > h4 {
-        flex-basis: var(--col2);
-        padding-left: 0;
-      }
-
-      & > h3 {
-        flex-basis: var(--col6);
-        padding-right: var(--gutter);
-      }
-
-      & .description {
-        flex-basis: var(--col5);
-      }
-
-      & .exampleList {
-        flex-basis: var(--col8);
-
-        & .example {
-          flex-basis: var(--col8);
-        }
-
-        & .exampleCode {
-          padding-left: 0;
-          flex-basis: var(--col6);
-        }
-
-        & .exampleImage {
-          flex-basis: var(--col2);
-        }
-
-        & li:last-child {
-          margin-bottom: 0px;
-        }
-      }
-
-      & .list {
-        flex-basis: var(--col5);
-      }
-
-      & .license {
-        flex-basis: var(--col5);
-      }
-    }
-  }
-
-  .section {
-  }
-}
-
-@media (--small) {
-  .section {
-    flex-direction: column;
   }
 }
