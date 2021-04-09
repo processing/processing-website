@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 import { useIntl } from 'react-intl';
 
 import Layout from '../../components/Layout';
-import Content from '../../components/ReferenceItemContent';
+import Content from '../../components/ContentWithSidebar';
 import Sidebar from '../../components/Sidebar';
 import Section from '../../components/ReferenceItemSection';
 import License from '../../components/ReferenceLicense';

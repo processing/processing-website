@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import classnames from 'classnames';
 
-import css from './ReferenceItemContent.module.css';
+import css from './ContentWithSidebar.module.css';
 import grid from '../styles/grid.module.css';
 
 /**
@@ -9,10 +9,10 @@ import grid from '../styles/grid.module.css';
   content when the sidebar opens and closes
 **/
 
-const Content = ({ children, collapsed }) => {
+const Content = ({ children, collapsed, className }) => {
   return (
     <div
-      className={classnames(grid.col, css.root, {
+      className={classnames(grid.col, css.root, className, {
         [css.collapsed]: collapsed,
       })}>
       {children}
