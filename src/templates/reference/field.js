@@ -7,6 +7,7 @@ import { useIntl } from 'react-intl';
 import Img from 'gatsby-image';
 
 import Layout from '../../components/Layout';
+import Content from '../../components/ReferenceItemContent';
 import Sidebar from '../../components/Sidebar';
 import Section from '../../components/ReferenceItemSection';
 import { CodeList, ExampleList } from '../../components/ReferenceItemList';
@@ -15,7 +16,6 @@ import { useTree, useHighlight, useWindowSize } from '../../hooks';
 import { usePreparedItems, usePreparedExamples } from '../../hooks/reference';
 import { referencePath, pathToName } from '../../utils/paths';
 
-import css from '../../styles/templates/ref-template.module.css';
 import grid from '../../styles/grid.module.css';
 
 const FieldRefTemplate = ({ data, pageContext }) => {
@@ -39,77 +39,52 @@ const FieldRefTemplate = ({ data, pageContext }) => {
           {name} / {isProcessing ? 'Reference' : 'Libraries'}
         </title>
       </Helmet>
-      <div className={classnames(css.root, grid.grid, grid.rightBleed)}>
+      <div className={grid.grid}>
         {isProcessing && (
           <Sidebar tree={tree} setShow={setShow} show={show} type="reference" />
         )}
         {entry ? (
-          <div
-            className={classnames(
-              css.wrapper,
-              { [css.collapsed]: !show },
-              grid.nest
-            )}
-            ref={ref}>
-            <div
-              className={classnames(
-                css.content,
-                {
-                  [css.collapsed]: !show,
-                },
-                grid.nest
-              )}>
+          <Content collapsed={!show}>
+            <Section
+              title={intl.formatMessage({ id: 'name' })}
+              collapsed={!show}>
+              <h3>{entry.name}</h3>
+            </Section>
+            <Section
+              title={intl.formatMessage({ id: 'description' })}
+              collapsed={!show}>
+              <p dangerouslySetInnerHTML={{ __html: entry.description }} />
+            </Section>
+            {examples.length > 0 && (
               <Section
-                title={intl.formatMessage({ id: 'name' })}
+                columns={false}
+                title={intl.formatMessage({ id: 'examples' })}
                 collapsed={!show}>
-                <h3>{entry.name}</h3>
+                <ExampleList examples={examples} />
               </Section>
+            )}
+            {entry.related.length > 0 && (
               <Section
-                title={intl.formatMessage({ id: 'description' })}
+                title={intl.formatMessage({ id: 'related' })}
                 collapsed={!show}>
-                <p
-                  className={css.description}
-                  dangerouslySetInnerHTML={{ __html: entry.description }}
+                <CodeList
+                  nameIsPath
+                  items={entry.related.map((rel) => ({
+                    name: pathToName(rel),
+                    anchor: referencePath(rel, libraryName),
+                  }))}
                 />
               </Section>
-              {examples.length > 0 && (
-                <Section
-                  columns={false}
-                  title={intl.formatMessage({ id: 'examples' })}
-                  collapsed={!show}>
-                  <ExampleList examples={examples} />
-                </Section>
-              )}
-              {entry.related.length > 0 && (
-                <Section
-                  title={intl.formatMessage({ id: 'related' })}
-                  collapsed={!show}>
-                  <CodeList
-                    nameIsPath
-                    items={entry.related.map((rel) => ({
-                      name: pathToName(rel),
-                      anchor: referencePath(rel, libraryName),
-                    }))}
-                  />
-                </Section>
-              )}
-            </div>
-          </div>
+            )}
+          </Content>
         ) : (
-          <div
-            className={classnames(
-              grid.grid,
-              { [css.collapsed]: !show },
-              { [css.expanded]: show }
-            )}>
-            <div className={classnames(grid.push1)}>
-              {intl.formatMessage({ id: 'notTranslated' })}
-              <Link to={referencePath(name, libraryName)}>
-                {' '}
-                {intl.formatMessage({ id: 'englishPage' })}
-              </Link>
-            </div>
-          </div>
+          <Content collapsed={!show}>
+            {intl.formatMessage({ id: 'notTranslated' })}
+            <Link to={referencePath(name, libraryName)}>
+              {' '}
+              {intl.formatMessage({ id: 'englishPage' })}
+            </Link>
+          </Content>
         )}
       </div>
     </Layout>

@@ -20,7 +20,12 @@
   white-space: nowrap;
 }
 
-.codeList span {
+.codeList a {
+  color: var(--processing-blue-mid);
+}
+
+.codeList a:hover {
+  color: var(--processing-blue-light);
 }
 
 .codeList span b,

@@ -3,6 +3,13 @@
 }
 
 .root.collapsed {
-  flex-basis: var(--col6);
-  margin-left: var(--col2);
+  margin-left: var(--col1);
+}
+
+@media (--reduced) {
+  .root,
+  .root.collapsed {
+    flex-basis: var(--col8);
+    margin-left: 0;
+  }
 }

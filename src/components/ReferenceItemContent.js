@@ -1,9 +1,8 @@
 import React, { memo } from 'react';
 import classnames from 'classnames';
-import grid from '../styles/grid.module.css';
 
 import css from './ReferenceItemContent.module.css';
-import css from './ReferenceItemList.module.css';
+import grid from '../styles/grid.module.css';
 
 /**
   This class simply handles the collapsing / expansion of the
