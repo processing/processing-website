@@ -65,7 +65,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
           tree={tree}
           setShow={setShowSidebar}
           show={showSidebar}
-          type={'examples'}
+          type="examples"
         />
         {example.childJson ? (
           <Content collapsed={!showSidebar}>
@@ -75,18 +75,25 @@ const ExampleTemplate = ({ data, pageContext }) => {
                 {intl.formatMessage({ id: 'by' })} {author}
               </h3>
             )}
-            <div className={css.description}>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: description,
-                }}></p>
+            <div className={grid.nest}>
+              <div
+                className={classnames(
+                  grid.col,
+                  grid.leftBleed,
+                  css.description
+                )}>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: description,
+                  }}></p>
+              </div>
+              {featured.length > 0 && (
+                <FeaturedFunctions
+                  featured={featured}
+                  heading={intl.formatMessage({ id: 'featured' })}
+                />
+              )}
             </div>
-            {featured.length > 0 && (
-              <FeaturedFunctions
-                featured={featured}
-                heading={intl.formatMessage({ id: 'featured' })}
-              />
-            )}
             <div className={classnames(css.cover)} id="example-cover">
               {!liveSketch && image && (
                 <Img fluid={image.childImageSharp.fluid} />
@@ -124,7 +131,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
 
 const FeaturedFunctions = memo(({ heading, featured }) => {
   return (
-    <div className={classnames(grid.col, css.featured)}>
+    <div className={classnames(grid.col, grid.rightBleed, css.featured)}>
       <h3>{heading}</h3>
       <ul>
         {featured.map((feature, key) => (
@@ -141,9 +148,9 @@ const FeaturedFunctions = memo(({ heading, featured }) => {
 
 const RelatedExamples = memo(({ heading, examples }) => {
   return (
-    <div className={classnames(css.relatedWrapper, grid.nest)}>
-      <h3 className={grid.col}>{heading}</h3>
-      <ul className={classnames(css.related, grid.col)}>
+    <div>
+      <h3>{heading}</h3>
+      <ul className={css.related}>
         {examples.slice(0, 6).map((example, key) => {
           return (
             <li key={`rel-${key}`} className={css.relatedItem}>
