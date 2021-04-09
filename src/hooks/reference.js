@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { titleCase } from '../utils';
-import { referencePath } from '../utils/paths';
+import { referencePath, pathToName } from '../utils/paths';
 
 /**
   Hook to turn the reference items in an object that can be used in useTree
@@ -24,6 +24,64 @@ export const usePreparedItems = (items, libraryName) => {
 };
 
 /**
+  Hook to prepare either a list of strings or object to show in ReferenceItemList
+  @param {Array} items Array of string or objects from JSON reference files
+**/
+export const usePreparedList = (items, libraryName, nameIsPath, shouldLink) => {
+  return useMemo(() => {
+    if (!items || items.length === 0) {
+      return null;
+    }
+
+    // Convert string to a list object
+    const stringToListObject = (str) => {
+      const obj = {
+        name: nameIsPath ? pathToName(str) : str,
+      };
+
+      if (shouldLink) {
+        obj.anchor = referencePath(str, libraryName);
+      }
+
+      return obj;
+    };
+
+    const objectToListObject = (old) => {
+      const obj = {
+        name: nameIsPath ? pathToName(old.name) : old.name,
+        description: old.description ?? old.desc,
+      };
+      if (old.type) {
+        obj.type = old.type;
+      }
+      if (shouldLink) {
+        console.log(old);
+        obj.anchor = referencePath(old.anchor ?? old.name, libraryName);
+      }
+      return obj;
+    };
+
+    // If items is a string
+    if (typeof items === 'string') {
+      return [stringToListObject(items)];
+    }
+
+    // If items is an array
+    const prepared = [];
+    for (let i = 0; i < items.length; i++) {
+      if (typeof items[i] === 'string') {
+        prepared.push(stringToListObject(items[i]));
+      }
+      if (typeof items[i] === 'object') {
+        prepared.push(objectToListObject(items[i]));
+      }
+    }
+
+    return prepared.length === 0 ? null : prepared;
+  }, [items, libraryName, nameIsPath, shouldLink]);
+};
+
+/**
   Hook to prepare every reference example and find an image for it
   @param {Array} examples GraphQL reference examples
   @param {Array} images GraphQL image nodes
@@ -31,7 +89,7 @@ export const usePreparedItems = (items, libraryName) => {
 export const usePreparedExamples = (pdes, images) => {
   return useMemo(() => {
     if (!pdes || pdes.length === 0 || !images || images.length === 0) {
-      return [];
+      return null;
     }
     const prepared = [];
     for (let i = 0; i < pdes.length; i++) {

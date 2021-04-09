@@ -15,12 +15,19 @@ import License from '../../components/ReferenceLicense';
 import { CodeList, ExampleList } from '../../components/ReferenceItemList';
 
 import { useTree, useHighlight, useWindowSize } from '../../hooks';
-import { usePreparedItems, usePreparedExamples } from '../../hooks/reference';
+import {
+  usePreparedItems,
+  usePreparedExamples,
+  usePreparedList,
+} from '../../hooks/reference';
 import { referencePath } from '../../utils/paths';
 
 import grid from '../../styles/grid.module.css';
 
 const RefTemplate = ({ data, pageContext, ...props }) => {
+  const { name, libraryName } = pageContext;
+  const isProcessing = libraryName === 'processing';
+
   const { width } = useWindowSize();
   const [show, setShow] = useState(width > 960 ? true : false);
   const ref = useHighlight();
@@ -30,8 +37,13 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
   const examples = usePreparedExamples(data.pdes.edges, data.images.edges);
   const tree = useTree(items);
 
-  const isProcessing = pageContext.libraryName === 'processing';
   const entry = data?.json?.childJson;
+
+  const inUse = usePreparedList(entry?.inUse, libraryName, true, true);
+  const parameters = usePreparedList(entry?.parameters, libraryName);
+  const syntax = usePreparedList(entry?.syntax, libraryName);
+  const related = usePreparedList(entry?.related, libraryName, true, true);
+  const returns = usePreparedList(entry?.returns, libraryName);
 
   return (
     <Layout withSidebar>
@@ -48,69 +60,40 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
         )}
         {entry ? (
           <Content collapsed={!show}>
-            <Section
-              title={intl.formatMessage({ id: 'name' })}
-              collapsed={!show}>
+            <Section title={intl.formatMessage({ id: 'name' })}>
               <h3>{entry.name}</h3>
             </Section>
-            <Section
-              title={intl.formatMessage({ id: 'description' })}
-              collapsed={!show}>
+            <Section title={intl.formatMessage({ id: 'description' })}>
               <p dangerouslySetInnerHTML={{ __html: entry.description }} />
             </Section>
-            {examples.length > 0 && (
+            {examples && (
               <Section
                 columns={false}
-                title={intl.formatMessage({ id: 'examples' })}
-                collapsed={!show}>
+                title={intl.formatMessage({ id: 'examples' })}>
                 <ExampleList examples={examples} />
               </Section>
             )}
-            <Section
-              title={intl.formatMessage({ id: 'syntax' })}
-              collapsed={!show}>
-              <CodeList items={entry.syntax} />
+            <Section title={intl.formatMessage({ id: 'syntax' })}>
+              <CodeList items={syntax} />
             </Section>
-            {entry.parameters &&
-              entry.parameters.length > 0 &&
-              entry.parameters[0] != null && (
-                <Section
-                  title={intl.formatMessage({ id: 'parameters' })}
-                  collapsed={!show}>
-                  <CodeList variant="parameters" items={entry.parameters} />
-                </Section>
-              )}
-            {entry.returns && (
-              <Section
-                title={intl.formatMessage({ id: 'return' })}
-                collapsed={!show}>
-                <CodeList items={[entry.returns]} />
+            {parameters && (
+              <Section title={intl.formatMessage({ id: 'parameters' })}>
+                <CodeList variant="parameters" items={parameters} />
               </Section>
             )}
-            {entry.inUse && (
-              <Section
-                title={intl.formatMessage({ id: 'inUse' })}
-                collapsed={!show}>
-                <CodeList
-                  nameIsPath
-                  items={entry.inUse.map((name) => ({
-                    name: name,
-                    anchor: referencePath(name, pageContext.libraryName),
-                  }))}
-                />
+            {returns && (
+              <Section title={intl.formatMessage({ id: 'return' })}>
+                <CodeList items={returns} />
               </Section>
             )}
-            {entry.related && entry.related.length > 0 && (
-              <Section
-                title={intl.formatMessage({ id: 'related' })}
-                collapsed={!show}>
-                <CodeList
-                  nameIsPath
-                  items={entry.related.map((name) => ({
-                    name: name,
-                    anchor: referencePath(name, pageContext.libraryName),
-                  }))}
-                />
+            {inUse && (
+              <Section title={intl.formatMessage({ id: 'inUse' })}>
+                <CodeList items={inUse} />
+              </Section>
+            )}
+            {related && (
+              <Section title={intl.formatMessage({ id: 'related' })}>
+                <CodeList items={related} />
               </Section>
             )}
             <License />
@@ -118,7 +101,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
         ) : (
           <Content collapsed={!show}>
             {intl.formatMessage({ id: 'notTranslated' })}
-            <Link to={referencePath(pageContext.name, pageContext.libraryName)}>
+            <Link to={referencePath(name, libraryName)}>
               {' '}
               {intl.formatMessage({ id: 'englishPage' })}
             </Link>

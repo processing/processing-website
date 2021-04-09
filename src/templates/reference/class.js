@@ -15,7 +15,11 @@ import License from '../../components/ReferenceLicense';
 import { CodeList, ExampleList } from '../../components/ReferenceItemList';
 
 import { useHighlight, useWindowSize, useTree } from '../../hooks';
-import { usePreparedItems, usePreparedExamples } from '../../hooks/reference';
+import {
+  usePreparedItems,
+  usePreparedExamples,
+  usePreparedList,
+} from '../../hooks/reference';
 import { referencePath, pathToName } from '../../utils/paths';
 
 import grid from '../../styles/grid.module.css';
@@ -33,6 +37,12 @@ const ClassRefTemplate = ({ data, pageContext }) => {
   const items = usePreparedItems(data.items.nodes);
   const examples = usePreparedExamples(data.pdes.edges, data.images.edges);
   const tree = useTree(items);
+
+  const constructors = usePreparedList(entry?.constructors, libraryName);
+  const fields = usePreparedList(entry?.classFields, libraryName, false, true);
+  const parameters = usePreparedList(entry?.parameters, libraryName);
+  const methods = usePreparedList(entry?.methods, libraryName, false, true);
+  const related = usePreparedList(entry?.related, libraryName, true, true);
 
   return (
     <Layout withSidebar>
@@ -58,55 +68,36 @@ const ClassRefTemplate = ({ data, pageContext }) => {
             <Section title={intl.formatMessage({ id: 'description' })}>
               <p dangerouslySetInnerHTML={{ __html: entry.description }} />
             </Section>
-            {examples.length > 0 && (
+            {examples && (
               <Section
                 columns={false}
                 title={intl.formatMessage({ id: 'examples' })}>
                 <ExampleList examples={examples} />
               </Section>
             )}
-            {entry.constructors && entry.constructors.length > 0 && (
+            {constructors && (
               <Section title={intl.formatMessage({ id: 'constructors' })}>
-                <CodeList nameIsHtml nameIsPath items={entry.constructors} />
+                <CodeList nameIsHtml items={constructors} />
               </Section>
             )}
-            {entry.classFields && entry.classFields.length > 0 && (
+            {fields && (
               <Section title={intl.formatMessage({ id: 'fields' })}>
-                <CodeList
-                  nameIsHtml
-                  items={entry.classFields.map((field) => ({
-                    name: field.name,
-                    description: field.desc,
-                    anchor: referencePath(field.anchor, libraryName),
-                  }))}
-                />
+                <CodeList nameIsHtml items={fields} />
               </Section>
             )}
-            {entry.parameters && entry.parameters.length > 0 && (
+            {parameters && (
               <Section title={intl.formatMessage({ id: 'parameters' })}>
-                <CodeList variant="parameters" items={entry.parameters} />
+                <CodeList variant="parameters" items={parameters} />
               </Section>
             )}
-            {entry.methods && entry.methods.length > 0 && (
+            {methods && (
               <Section title={intl.formatMessage({ id: 'methods' })}>
-                <CodeList
-                  descriptionIsHtml
-                  items={entry.methods.map((method) => ({
-                    name: method.name,
-                    description: method.desc,
-                    anchor: referencePath(method.anchor, libraryName),
-                  }))}
-                />
+                <CodeList descriptionIsHtml items={methods} />
               </Section>
             )}
-            {entry.related && entry.related.length > 0 && (
+            {related && (
               <Section title={intl.formatMessage({ id: 'related' })}>
-                <CodeList
-                  items={entry.related.map((rel) => ({
-                    name: pathToName(rel),
-                    anchor: referencePath(rel, libraryName),
-                  }))}
-                />
+                <CodeList items={related} />
               </Section>
             )}
             <License />

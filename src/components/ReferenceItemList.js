@@ -11,56 +11,46 @@ import grid from '../styles/grid.module.css';
 import css from './ReferenceItemList.module.css';
 
 export const CodeList = memo(
-  ({ items, nameIsHtml, variant, descriptionIsHtml, nameIsPath }) => {
-    const isString = items[0] && typeof items[0] === 'string';
+  ({ items, variant, nameIsHtml, descriptionIsHtml }) => {
     return (
       <ul className={classnames(css.codeList, css[variant])}>
         {items.map((item) => {
           // Name
-          let nameLabel = isString ? item : item.name;
-          if (nameIsPath) {
-            nameLabel = pathToName(nameLabel);
-          }
-
-          if (nameLabel === '') {
+          if (item.name === '' || typeof item !== 'object') {
             return null;
           }
 
-          const name = nameIsHtml ? (
-            <code dangerouslySetInnerHTML={{ __html: nameLabel }} />
+          let name = nameIsHtml ? (
+            <code dangerouslySetInnerHTML={{ __html: item.name }} />
           ) : (
-            <code>{nameLabel}</code>
+            <code>{item.name}</code>
           );
 
           // Name as link
-          const nameLinkMaybe =
-            !isString && item.anchor ? (
-              <Link to={item.anchor}>{name}</Link>
-            ) : (
-              name
-            );
+          if (item.anchor) {
+            name = <Link to={item.anchor}>{name}</Link>;
+          }
 
           // Type
           let type = null;
           if (
-            !isString &&
             item.type &&
             item.type !== '' &&
-            !Array.isArray(item.type || item.type.length > 0)
+            (!Array.isArray(item.type) || item.type.length > 0)
           ) {
             type = <code className={css.type}>({item.type})</code>;
           }
 
           // Description
-          const description = isString ? null : descriptionIsHtml ? (
+          const description = descriptionIsHtml ? (
             <span dangerouslySetInnerHTML={{ __html: item.description }} />
           ) : (
             <span>{item.description}</span>
           );
 
           return (
-            <li key={`ril-${nameLabel}`} className={css.item}>
-              {nameLinkMaybe}
+            <li key={`ril-${item.name}`} className={css.item}>
+              {name}
               {type}
               {description}
             </li>
