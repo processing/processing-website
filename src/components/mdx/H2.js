@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, memo } from 'react';
 import slugify from 'slugify';
 
 import { useIntersect } from '../../hooks';
@@ -8,8 +8,10 @@ const H2 = ({ children, setCurrent }) => {
   const slug = slugify(children, { lower: true, remove: /[*+~.()'"!:@]/g });
 
   useEffect(() => {
-    if (appearedOnScreen) setCurrent(slug);
-  }, [appearedOnScreen]);
+    if (appearedOnScreen) {
+      setCurrent(slug);
+    }
+  }, [appearedOnScreen, setCurrent, slug]);
 
   return (
     <h2 ref={ref} id={slug}>
@@ -18,4 +20,4 @@ const H2 = ({ children, setCurrent }) => {
   );
 };
 
-export default H2;
+export default memo(H2);
