@@ -10,6 +10,7 @@ import Layout from '../../components/Layout';
 import Content from '../../components/ReferenceItemContent';
 import Sidebar from '../../components/Sidebar';
 import Section from '../../components/ReferenceItemSection';
+import License from '../../components/ReferenceLicense';
 import { CodeList, ExampleList } from '../../components/ReferenceItemList';
 
 import { useTree, useHighlight, useWindowSize } from '../../hooks';
@@ -76,6 +77,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
                 />
               </Section>
             )}
+            <License />
           </Content>
         ) : (
           <Content collapsed={!show}>
