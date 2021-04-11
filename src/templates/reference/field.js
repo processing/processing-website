@@ -17,7 +17,7 @@ import {
   usePreparedExamples,
   usePreparedList,
 } from '../../hooks/reference';
-import { referencePath } from '../../utils/paths';
+import { referencePath, pathToName } from '../../utils/paths';
 
 import grid from '../../styles/grid.module.css';
 
@@ -35,13 +35,15 @@ const FieldRefTemplate = ({ data, pageContext }) => {
   const examples = usePreparedExamples(data.pdes.edges, data.images.edges);
   const tree = useTree(items);
 
+  const parameters = usePreparedList(entry?.parameters, libraryName);
+  const syntax = usePreparedList(entry?.syntax, libraryName);
   const related = usePreparedList(entry?.related, libraryName, true, true);
 
   return (
     <Layout withSidebar>
       <Helmet>
         <title>
-          {name} / {isProcessing ? 'Reference' : 'Libraries'}
+          {pathToName(name)} / {isProcessing ? 'Reference' : 'Libraries'}
         </title>
       </Helmet>
       <div className={grid.grid}>
@@ -61,6 +63,16 @@ const FieldRefTemplate = ({ data, pageContext }) => {
                 columns={false}
                 title={intl.formatMessage({ id: 'examples' })}>
                 <ExampleList examples={examples} />
+              </Section>
+            )}
+            {syntax && (
+              <Section title={intl.formatMessage({ id: 'syntax' })}>
+                <CodeList items={syntax} />
+              </Section>
+            )}
+            {parameters && (
+              <Section title={intl.formatMessage({ id: 'parameters' })}>
+                <CodeList variant="parameters" items={parameters} />
               </Section>
             )}
             {related && (
@@ -92,6 +104,7 @@ export const query = graphql`
       childJson {
         name
         description
+        syntax
         parameters {
           name
           description

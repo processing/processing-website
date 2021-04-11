@@ -55,7 +55,6 @@ export const usePreparedList = (items, libraryName, nameIsPath, shouldLink) => {
         obj.type = old.type;
       }
       if (shouldLink) {
-        console.log(old);
         obj.anchor = referencePath(old.anchor ?? old.name, libraryName);
       }
       return obj;
