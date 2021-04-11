@@ -20,7 +20,13 @@ const referencePath = (name, libraryName, lang) => {
     : `${langPrefix(lang)}/reference/libraries/${libraryName}/${name}.html`;
 };
 
+/**
+  Used to convert fill_ to fill() and PShape_width to PShape::width
+**/
+const pathToName = (name) => name.replace(/_$/g, '()').replace(/_/g, '::');
+
 module.exports = {
   examplePath,
   referencePath,
+  pathToName,
 };

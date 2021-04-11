@@ -1,44 +1,54 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import { Link } from 'gatsby';
-import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 
-import CopyButton from '../../components/CopyButton';
 import Layout from '../../components/Layout';
+import Content from '../../components/ContentWithSidebar';
 import Sidebar from '../../components/Sidebar';
+import Section from '../../components/ReferenceItemSection';
+import License from '../../components/ReferenceLicense';
+import { CodeList, ExampleList } from '../../components/ReferenceItemList';
 
 import { useHighlight, useWindowSize, useTree } from '../../hooks';
-import { usePreparedReferenceItems } from '../../hooks/reference';
+import {
+  usePreparedItems,
+  usePreparedExamples,
+  usePreparedList,
+} from '../../hooks/reference';
 import { referencePath } from '../../utils/paths';
 
-import css from '../../styles/templates/ref-template.module.css';
 import grid from '../../styles/grid.module.css';
 
 const ClassRefTemplate = ({ data, pageContext }) => {
-  const { width } = useWindowSize();
-  const [show, setShow] = useState(width > 960 ? true : false);
-  const images = data.images.edges;
-  const examples = data.pdes.edges;
-  const ref = useHighlight();
-  const intl = useIntl();
+  const { name, libraryName } = pageContext;
+  const entry = data?.json?.childJson;
+  const isProcessing = libraryName === 'processing';
 
-  const items = usePreparedReferenceItems(data.items.nodes);
+  const { width } = useWindowSize();
+  const [show, setShow] = useState(width > 960 && isProcessing ? true : false);
+  const intl = useIntl();
+  useHighlight();
+
+  const items = usePreparedItems(data.items.nodes);
+  const examples = usePreparedExamples(data.pdes.edges, data.images.edges);
   const tree = useTree(items);
 
-  const entry = data?.json?.childJson;
-  const isProcessing = pageContext.libraryName === 'processing';
+  const constructors = usePreparedList(entry?.constructors, libraryName);
+  const fields = usePreparedList(entry?.classFields, libraryName, false, true);
+  const parameters = usePreparedList(entry?.parameters, libraryName);
+  const methods = usePreparedList(entry?.methods, libraryName, false, true);
+  const related = usePreparedList(entry?.related, libraryName, true, true);
 
   return (
     <Layout withSidebar>
       <Helmet>
         <title>
-          {pageContext.name} / {isProcessing ? 'Reference' : 'Libraries'}
+          {name} / {isProcessing ? 'Reference' : 'Libraries'}
         </title>
       </Helmet>
-      <div className={classnames(css.root, grid.grid, grid.rightBleed)}>
+      <div className={grid.grid}>
         {isProcessing && (
           <Sidebar
             tree={tree}
@@ -48,196 +58,55 @@ const ClassRefTemplate = ({ data, pageContext }) => {
           />
         )}
         {entry ? (
-          <div
-            className={classnames(
-              css.wrapper,
-              { [css.collapsed]: !show },
-              grid.nest
+          <Content collapsed={!show}>
+            <Section title={intl.formatMessage({ id: 'className' })}>
+              <h3>{entry.name}</h3>
+            </Section>
+            <Section title={intl.formatMessage({ id: 'description' })}>
+              <p dangerouslySetInnerHTML={{ __html: entry.description }} />
+            </Section>
+            {examples && (
+              <Section
+                columns={false}
+                title={intl.formatMessage({ id: 'examples' })}>
+                <ExampleList examples={examples} />
+              </Section>
             )}
-            ref={ref}>
-            <div
-              className={classnames(
-                css.content,
-                { [css.collapsed]: !show },
-                grid.nest
-              )}>
-              <div className={classnames(grid.nest, css.section)}>
-                <h4 className={grid.col}>
-                  {intl.formatMessage({ id: 'className' })}
-                </h4>
-                <h3 className={grid.col}>{entry.name}</h3>
-              </div>
-              <div className={classnames(grid.nest, css.section)}>
-                <h4 className={grid.col}>
-                  {intl.formatMessage({ id: 'description' })}
-                </h4>
-                <p
-                  className={classnames(grid.col, css.description)}
-                  dangerouslySetInnerHTML={{ __html: entry.description }}
-                />
-              </div>
-              {examples.length > 0 && (
-                <div className={classnames(grid.nest, css.section)}>
-                  <h4 className={grid.col}>
-                    {intl.formatMessage({ id: 'examples' })}
-                  </h4>
-                  <ul className={classnames(grid.col, grid.nest, css.list)}>
-                    {examples.map((ex, key) => {
-                      const img = images.filter(
-                        (img) => img.node.name === ex.node.name
-                      );
-                      return (
-                        <li key={'ex' + key} className={css.example}>
-                          <div
-                            className={classnames(grid.col, css.exampleCode)}>
-                            <CopyButton text={ex.node.internal.content} />
-                            <pre className={css.codeBlock}>
-                              {ex.node.internal.content
-                                .split(/\r?\n/)
-                                .map((line, i) => (
-                                  <code key={`line-${i}`}>{line}</code>
-                                ))}
-                            </pre>
-                          </div>
-                          {img.length > 0 && (
-                            <div
-                              className={classnames(
-                                grid.col,
-                                css.exampleImage
-                              )}>
-                              <Img fixed={img[0].node.childImageSharp.fixed} />
-                            </div>
-                          )}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              )}
-              {entry.constructors && entry.constructors.length > 0 && (
-                <div className={classnames(grid.nest, css.section)}>
-                  <h4 className={grid.col}>
-                    {' '}
-                    {intl.formatMessage({ id: 'constructors' })}
-                  </h4>
-                  <ul className={classnames(grid.col, css.list)}>
-                    {entry.constructors.map((cons, key) => {
-                      return (
-                        <li key={'f' + key}>
-                          <code dangerouslySetInnerHTML={{ __html: cons }} />
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              )}
-              {entry.classFields && entry.classFields.length > 0 && (
-                <div className={classnames(grid.nest, css.section)}>
-                  <h4 className={grid.col}>
-                    {intl.formatMessage({ id: 'fields' })}
-                  </h4>
-                  <ul className={classnames(grid.col, grid.nest, css.list)}>
-                    {entry.classFields.map((field, key) => {
-                      return (
-                        <li key={'f' + key}>
-                          <a
-                            href={referencePath(field.anchor)}
-                            className={classnames(grid.col, css.item)}>
-                            <code>{field.name}</code>{' '}
-                          </a>
-                          <span
-                            className={classnames(
-                              grid.col,
-                              css.itemDescription
-                            )}>
-                            {field.desc}
-                          </span>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              )}
-              {entry.parameters && entry.parameters.length > 0 && (
-                <div className={classnames(grid.nest, css.section)}>
-                  <h4 className={grid.col}>
-                    {intl.formatMessage({ id: 'parameters' })}
-                  </h4>
-                  <ul className={classnames(grid.col, grid.nest, css.list)}>
-                    {entry.parameters.map((param, key) => {
-                      return (
-                        <li key={'param' + key} className={css.param}>
-                          <span className={classnames(grid.col, css.paramName)}>
-                            {param.name}
-                          </span>
-                          <span className={grid.col}>{param.description}</span>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              )}
-              {entry.methods && entry.methods.length > 0 && (
-                <div className={classnames(grid.nest, css.section)}>
-                  <h4 className={grid.col}>
-                    {intl.formatMessage({ id: 'methods' })}
-                  </h4>
-                  <ul className={classnames(grid.col, grid.nest, css.list)}>
-                    {entry.methods.map((method, key) => {
-                      return (
-                        <li key={'m' + key}>
-                          <a
-                            href={method.anchor + '.html'}
-                            className={classnames(grid.col, css.item)}>
-                            <code>{method.name}</code>
-                          </a>
-                          <span
-                            className={classnames(
-                              grid.col,
-                              css.itemDescription
-                            )}
-                            dangerouslySetInnerHTML={{ __html: method.desc }}
-                          />
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              )}
-              {entry.related && entry.related.length > 0 && (
-                <div className={classnames(grid.nest, css.section)}>
-                  <h4 className={grid.col}>
-                    {intl.formatMessage({ id: 'related' })}
-                  </h4>
-                  <ul className={classnames(grid.col, grid.nest, css.list)}>
-                    {entry.related.map((rel, key) => (
-                      <li key={key + 'rel'}>
-                        <a href={rel + '.html'} className={grid.col}>
-                          <code>{rel.replace(/_/g, '()')}</code>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          </div>
+            {constructors && (
+              <Section title={intl.formatMessage({ id: 'constructors' })}>
+                <CodeList nameIsHtml items={constructors} />
+              </Section>
+            )}
+            {fields && (
+              <Section title={intl.formatMessage({ id: 'fields' })}>
+                <CodeList nameIsHtml items={fields} />
+              </Section>
+            )}
+            {parameters && (
+              <Section title={intl.formatMessage({ id: 'parameters' })}>
+                <CodeList variant="parameters" items={parameters} />
+              </Section>
+            )}
+            {methods && (
+              <Section title={intl.formatMessage({ id: 'methods' })}>
+                <CodeList descriptionIsHtml items={methods} />
+              </Section>
+            )}
+            {related && (
+              <Section title={intl.formatMessage({ id: 'related' })}>
+                <CodeList items={related} />
+              </Section>
+            )}
+            <License />
+          </Content>
         ) : (
-          <div
-            className={classnames(
-              grid.grid,
-              { [css.collapsed]: !show },
-              { [css.expanded]: show }
-            )}>
-            <div className={classnames(grid.push1)}>
-              {intl.formatMessage({ id: 'notTranslated' })}
-              <Link
-                to={referencePath(pageContext.name, pageContext.libraryName)}>
-                {' '}
-                {intl.formatMessage({ id: 'englishPage' })}
-              </Link>
-            </div>
-          </div>
+          <Content collapsed={!show}>
+            {intl.formatMessage({ id: 'notTranslated' })}
+            <Link to={referencePath(name, libraryName)}>
+              {' '}
+              {intl.formatMessage({ id: 'englishPage' })}
+            </Link>
+          </Content>
         )}
       </div>
     </Layout>
@@ -287,8 +156,8 @@ export const query = graphql`
           }
           extension
           childImageSharp {
-            fixed {
-              ...GatsbyImageSharpFixed
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid
             }
           }
         }

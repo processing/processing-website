@@ -11,14 +11,14 @@ import ReferenceList from '../../components/ReferenceList';
 
 import { referencePath } from '../../utils/paths';
 import { useTree } from '../../hooks';
-import { usePreparedReferenceItems } from '../../hooks/reference';
+import { usePreparedItems } from '../../hooks/reference';
 
-import css from '../../styles/templates/index-lib-template.module.css';
+import css from '../../styles/templates/libraries/index.module.css';
 import grid from '../../styles/grid.module.css';
 
 const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
   const intl = useIntl();
-  const items = usePreparedReferenceItems(data.items.nodes, libraryName);
+  const items = usePreparedItems(data.items.nodes, libraryName);
   const tree = useTree(items);
 
   return (

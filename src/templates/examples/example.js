@@ -8,6 +8,7 @@ import Img from 'gatsby-image';
 import p5 from 'p5';
 
 import Layout from '../../components/Layout';
+import Content from '../../components/ContentWithSidebar';
 import Sidebar from '../../components/Sidebar';
 import Tabs from '../../components/Tabs';
 
@@ -19,7 +20,7 @@ import {
   useRelatedExamples,
 } from '../../hooks/examples';
 
-import css from '../../styles/templates/example-template.module.css';
+import css from '../../styles/templates/examples/example.module.css';
 import grid from '../../styles/grid.module.css';
 
 const ExampleTemplate = ({ data, pageContext }) => {
@@ -59,31 +60,28 @@ const ExampleTemplate = ({ data, pageContext }) => {
         {title && <title>{title}</title>}
         {liveSketch && <script>{`${liveSketch.childRawCode.content}`}</script>}
       </Helmet>
-      <div className={classnames(css.root, grid.grid, grid.rightBleed)}>
+      <div className={grid.grid}>
         <Sidebar
           tree={tree}
           setShow={setShowSidebar}
           show={showSidebar}
-          type={'examples'}
+          type="examples"
         />
-        <div
-          className={classnames(grid.nest, css.wrapper, {
-            [css.collapsed]: !showSidebar,
-          })}>
-          {example.childJson ? (
-            <div
-              className={classnames(
-                css.content,
-                { [css.collapsed]: !showSidebar },
-                grid.nest
-              )}>
-              <h1>{title}</h1>
-              {author && (
-                <h3>
-                  {intl.formatMessage({ id: 'by' })} {author}
-                </h3>
-              )}
-              <div className={css.description}>
+        {example.childJson ? (
+          <Content collapsed={!showSidebar}>
+            <h1>{title}</h1>
+            {author && (
+              <h3>
+                {intl.formatMessage({ id: 'by' })} {author}
+              </h3>
+            )}
+            <div className={grid.nest}>
+              <div
+                className={classnames(
+                  grid.col,
+                  grid.leftBleed,
+                  css.description
+                )}>
                 <p
                   dangerouslySetInnerHTML={{
                     __html: description,
@@ -95,44 +93,37 @@ const ExampleTemplate = ({ data, pageContext }) => {
                   heading={intl.formatMessage({ id: 'featured' })}
                 />
               )}
-              <div className={classnames(css.cover)} id="example-cover">
-                {!liveSketch && image && (
-                  <Img fluid={image.childImageSharp.fluid} />
-                )}
-              </div>
-              <Tabs pdes={pdes} className={css.tabs} />
-              <RelatedExamples
-                examples={relatedExamples}
-                heading={intl.formatMessage({ id: 'relatedExamples' })}
-              />
-              <p className={classnames(css.note)}>
-                {intl.formatMessage({ id: 'exampleInfo' })}
-                <a
-                  href={
-                    'https://github.com/processing/processing-docs/issues?state=open'
-                  }>
-                  {intl.formatMessage({ id: 'letUsKnow' })}
-                </a>
-                .
-              </p>
             </div>
-          ) : (
-            <div
-              className={classnames(
-                grid.grid,
-                { [css.collapsed]: !showSidebar },
-                { [css.expanded]: showSidebar }
-              )}>
-              <div className={classnames(grid.push1)}>
-                {intl.formatMessage({ id: 'notTranslated' })}
-                <Link to={pageContext.slug}>
-                  {' '}
-                  {intl.formatMessage({ id: 'englishPage' })}
-                </Link>
-              </div>
+            <div className={classnames(css.cover)} id="example-cover">
+              {!liveSketch && image && (
+                <Img fluid={image.childImageSharp.fluid} />
+              )}
             </div>
-          )}
-        </div>
+            <Tabs pdes={pdes} className={css.tabs} />
+            <RelatedExamples
+              examples={relatedExamples}
+              heading={intl.formatMessage({ id: 'relatedExamples' })}
+            />
+            <p className={classnames(css.note)}>
+              {intl.formatMessage({ id: 'exampleInfo' })}
+              <a
+                href={
+                  'https://github.com/processing/processing-docs/issues?state=open'
+                }>
+                {intl.formatMessage({ id: 'letUsKnow' })}
+              </a>
+              .
+            </p>
+          </Content>
+        ) : (
+          <Content collapsed={!showSidebar}>
+            {intl.formatMessage({ id: 'notTranslated' })}
+            <Link to={pageContext.slug}>
+              {' '}
+              {intl.formatMessage({ id: 'englishPage' })}
+            </Link>
+          </Content>
+        )}
       </div>
     </Layout>
   );
@@ -140,7 +131,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
 
 const FeaturedFunctions = memo(({ heading, featured }) => {
   return (
-    <div className={classnames(grid.col, css.featured)}>
+    <div className={classnames(grid.col, grid.rightBleed, css.featured)}>
       <h3>{heading}</h3>
       <ul>
         {featured.map((feature, key) => (
@@ -157,9 +148,9 @@ const FeaturedFunctions = memo(({ heading, featured }) => {
 
 const RelatedExamples = memo(({ heading, examples }) => {
   return (
-    <div className={classnames(css.relatedWrapper, grid.nest)}>
-      <h3 className={grid.col}>{heading}</h3>
-      <ul className={classnames(css.related, grid.col)}>
+    <div>
+      <h3>{heading}</h3>
+      <ul className={css.related}>
         {examples.slice(0, 6).map((example, key) => {
           return (
             <li key={`rel-${key}`} className={css.relatedItem}>

@@ -26,20 +26,14 @@ export const useRandomArray = (arr, num) => {
 };
 
 /**
-  Performs syntax highlighting on all <pre><code> inside ref
+  Performs syntax highlighting on all <pre><code> in the body
 **/
 export const useHighlight = () => {
-  const ref = useRef();
-
   useEffect(() => {
-    if (ref.current) {
-      ref.current.querySelectorAll('pre code').forEach((block) => {
-        hljs.highlightBlock(block);
-      });
-    }
+    document.body.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightBlock(block);
+    });
   }, []);
-
-  return ref;
 };
 
 /**
@@ -230,4 +224,37 @@ export const useWindowSize = () => {
     };
   }, []);
   return win;
+};
+
+/**
+  A hook that lets us use IntersectionObserver
+  Source: https://medium.com/the-non-traditional-developer/how-to-use-an-intersectionobserver-in-a-react-hook-9fb061ac6cb5
+**/
+export const useIntersect = (root, rootMargin, threshold = 0) => {
+  const [appearedOnScreen, setAppearedOnScreen] = useState(false);
+  const ref = useRef();
+
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setAppearedOnScreen(true);
+        } else {
+          setAppearedOnScreen(false);
+        }
+      },
+      {
+        root,
+        rootMargin,
+        threshold,
+      }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return () => observer.disconnect();
+  }, [root, rootMargin, threshold, setAppearedOnScreen]);
+
+  return [ref, appearedOnScreen];
 };

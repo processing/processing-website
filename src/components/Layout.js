@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
@@ -10,6 +10,7 @@ import Footer from './Footer';
 
 import FixedImage from './mdx/FixedImage';
 import Intro from './mdx/Intro';
+import H2 from './mdx/H2';
 import HighlightBlock from './mdx/HighlightBlock';
 import Note from './mdx/Note';
 
@@ -26,6 +27,7 @@ export const LayoutContext = React.createContext({
 const Layout = ({ children, isHomepage, withSidebar }) => {
   const mainRef = useRef();
   const [headerScrolled, setHeaderScrolled] = useState(false);
+  const [currentHeading, setCurrentHeading] = useState('');
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -53,19 +55,23 @@ const Layout = ({ children, isHomepage, withSidebar }) => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  });
+  }, []);
 
-  const shortcodes = {
-    FixedImage,
-    Intro,
-    HighlightBlock,
-    Note,
-    img: (props) => <img {...props} alt=""></img>,
-  };
+  const shortcodes = useMemo(
+    () => ({
+      FixedImage,
+      Intro,
+      HighlightBlock,
+      Note,
+      h2: ({ children }) => <H2 setCurrent={setCurrentHeading}>{children}</H2>,
+      img: (props) => <img {...props} alt=""></img>,
+    }),
+    [setCurrentHeading]
+  );
 
   return (
     <div className={css.root}>
-      <LayoutContext.Provider value={{ headerScrolled }}>
+      <LayoutContext.Provider value={{ headerScrolled, currentHeading }}>
         <Helmet titleTemplate="%s / Processing.org" />
         <Header
           siteTitle={data.site.siteMetadata.title}
@@ -80,7 +86,6 @@ const Layout = ({ children, isHomepage, withSidebar }) => {
           ref={mainRef}>
           <MDXProvider components={shortcodes}>{children}</MDXProvider>
         </main>
-
         <Footer
           siteTitle={data.site.siteMetadata.title}
           withSidebar={withSidebar}

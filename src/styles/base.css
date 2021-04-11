@@ -4,6 +4,7 @@ html {
   font-family: "Space Grotesk", Helvetica, Arial, sans-serif;
   font-feature-settings: "ss02", "ss04", "ss05";
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
