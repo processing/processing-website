@@ -31,12 +31,8 @@ export const CodeList = memo(
 
           // Type
           let type = null;
-          if (
-            item.type &&
-            item.type !== '' &&
-            (!Array.isArray(item.type) || item.type.length > 0)
-          ) {
-            type = <code className={css.type}>({item.type})</code>;
+          if (item.type && Array.isArray(item.type) && item.type.length > 0) {
+            type = <code className={css.type}>({item.type.join(', ')})</code>;
           }
 
           // Description
