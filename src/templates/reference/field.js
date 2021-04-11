@@ -17,7 +17,7 @@ import {
   usePreparedExamples,
   usePreparedList,
 } from '../../hooks/reference';
-import { referencePath, pathToName } from '../../utils/paths';
+import { referencePath } from '../../utils/paths';
 
 import grid from '../../styles/grid.module.css';
 
@@ -39,11 +39,17 @@ const FieldRefTemplate = ({ data, pageContext }) => {
   const syntax = usePreparedList(entry?.syntax, libraryName);
   const related = usePreparedList(entry?.related, libraryName, true, true);
 
+  const title = entry?.classanchor
+    ? `${entry.classanchor}::${entry.name}`
+    : name;
+
+  console.log(entry);
+
   return (
     <Layout withSidebar>
       <Helmet>
         <title>
-          {pathToName(name)} / {isProcessing ? 'Reference' : 'Libraries'}
+          {title} / {isProcessing ? 'Reference' : 'Libraries'}
         </title>
       </Helmet>
       <div className={grid.grid}>
@@ -103,6 +109,7 @@ export const query = graphql`
     json: file(fields: { name: { eq: $name } }) {
       childJson {
         name
+        classanchor
         description
         syntax
         parameters {
