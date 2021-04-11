@@ -43,8 +43,6 @@ const FieldRefTemplate = ({ data, pageContext }) => {
     ? `${entry.classanchor}::${entry.name}`
     : name;
 
-  console.log(entry);
-
   return (
     <Layout withSidebar>
       <Helmet>
