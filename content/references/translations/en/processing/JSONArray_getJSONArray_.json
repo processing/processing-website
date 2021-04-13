@@ -1,5 +1,5 @@
 {
-  "brief": "Retrieves the <b>JSONArray</b> with the associated index value.",
+  "brief": "Retrieves the <b>JSONArray</b> with the associated index value",
   "related": [
     "JSONArray_getJSONObject_",
     "JSONArray_setJSONObject_",

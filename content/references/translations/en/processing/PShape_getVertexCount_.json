@@ -2,7 +2,7 @@
   "brief": "Returns the total number of vertices as an int",
   "related": ["PShape_getVertex_", "PShape_setVertex_"],
   "name": "getVertexCount()",
-  "description": "The <b>getVertexCount()</b> method returns the number of vertices that \n make up a PShape. In the above example, the value 4 is returned by the \n <b>getVertexCount()</b> method because 4 vertices are defined in \n <b>setup()</b>.",
+  "description": "The <b>getVertexCount()</b> method returns the number of vertices that \n make up a <b>PShape</b>. In the above example, the value 4 is returned by the \n <b>getVertexCount()</b> method because 4 vertices are defined in \n <b>setup()</b>.",
   "syntax": ["sh.getVertexCount()"],
   "returns": "int",
   "type": "method",

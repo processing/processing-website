@@ -1,5 +1,5 @@
 {
-  "brief": "Pushes the current transformation matrix onto the matrix stack.",
+  "brief": "Pushes the current transformation matrix onto the matrix stack",
   "related": [
     "popMatrix_",
     "translate_",

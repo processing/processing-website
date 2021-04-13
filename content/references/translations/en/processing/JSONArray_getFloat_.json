@@ -1,5 +1,5 @@
 {
-  "brief": "Gets the float value associated with the specified index.",
+  "brief": "Gets the float value associated with the specified index",
   "related": [
     "JSONArray_getInt_",
     "JSONArray_getString_",

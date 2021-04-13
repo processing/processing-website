@@ -1,5 +1,5 @@
 {
-  "brief": "The inverse of <b>tan()</b>, returns the arc tangent of a value.",
+  "brief": "The inverse of <b>tan()</b>, returns the arc tangent of a value",
   "related": ["tan_", "asin_", "acos_"],
   "name": "atan()",
   "description": "The inverse of <b>tan()</b>, returns the arc tangent of a value. This\n function expects the values in the range of -Infinity to Infinity\n (exclusive) and values are returned in the range <b>-PI/2</b> to <b>PI/2 </b>.",

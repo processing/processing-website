@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the resolution at which Beziers display.",
+  "brief": "Sets the resolution at which Beziers display",
   "related": ["curve_", "curveVertex_", "curveTightness_"],
   "name": "bezierDetail()",
   "description": "Sets the resolution at which Beziers display. The default value is 20. This\n function is only useful when using the <b>P3D</b> renderer; the default\n <b>P2D</b> renderer does not use this information.",

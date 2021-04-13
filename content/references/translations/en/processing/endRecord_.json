@@ -1,5 +1,5 @@
 {
-  "brief": "Stops the recording process started by <b>beginRecord()</b> and closes\n the file.",
+  "brief": "Stops the recording process started by <b>beginRecord()</b> and closes\n the file",
   "related": ["beginRecord_"],
   "name": "endRecord()",
   "description": "Stops the recording process started by <b>beginRecord()</b> and closes\n the file.",

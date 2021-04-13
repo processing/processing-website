@@ -1,8 +1,8 @@
 {
-  "brief": "Returns the total number of rows in a table",
+  "brief": "Returns the total number of rows in a <b>Table</b>",
   "related": ["Table_getColumnCount_"],
   "name": "getRowCount()",
-  "description": "Returns the total number of rows in a table.",
+  "description": "Returns the total number of rows in a <b>Table</b>.",
   "syntax": [".getRowCount()"],
   "returns": "int",
   "type": "method",

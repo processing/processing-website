@@ -1,5 +1,5 @@
 {
-  "brief": "Replaces the current matrix with the identity matrix.",
+  "brief": "Replaces the current matrix with the identity matrix",
   "related": [
     "PGraphics_pushMatrix_",
     "PGraphics_popMatrix_",

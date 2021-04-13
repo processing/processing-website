@@ -1,5 +1,5 @@
 {
-  "brief": "A JSONArray is an ordered sequence of values.",
+  "brief": "A JSONArray is an ordered sequence of values",
   "methods": [
     {
       "anchor": "JSONArray_getString_",
@@ -9,37 +9,37 @@
     {
       "anchor": "JSONArray_getInt_",
       "name": "getInt()",
-      "desc": "Gets the int value associated with the specified index."
+      "desc": "Gets the int value associated with the specified index"
     },
     {
       "anchor": "JSONArray_getFloat_",
       "name": "getFloat()",
-      "desc": "Gets the float value associated with the specified index."
+      "desc": "Gets the float value associated with the specified index"
     },
     {
       "anchor": "JSONArray_getBoolean_",
       "name": "getBoolean()",
-      "desc": "Gets the boolean value associated with the specified index."
+      "desc": "Gets the boolean value associated with the specified index"
     },
     {
       "anchor": "JSONArray_getJSONArray_",
       "name": "getJSONArray()",
-      "desc": "Retrieves the <b>JSONArray</b> with the associated index value."
+      "desc": "Retrieves the <b>JSONArray</b> with the associated index value"
     },
     {
       "anchor": "JSONArray_getJSONObject_",
       "name": "getJSONObject()",
-      "desc": "Retrieves the <b>JSONObject</b> with the associated index value."
+      "desc": "Retrieves the <b>JSONObject</b> with the associated index value"
     },
     {
       "anchor": "JSONArray_getStringArray_",
       "name": "getStringArray()",
-      "desc": "Returns the entire <b>JSONArray</b> as an array of Strings"
+      "desc": "Returns the entire <b>JSONArray</b> as an array of <b>Strings</b>"
     },
     {
       "anchor": "JSONArray_getIntArray_",
       "name": "getIntArray()",
-      "desc": "Returns the entire <b>JSONArray</b> as an array of ints"
+      "desc": "Returns the entire <b>JSONArray</b> as an array of <b>ints</b>"
     },
     {
       "anchor": "JSONArray_append_",
@@ -49,7 +49,7 @@
     {
       "anchor": "JSONArray_setString_",
       "name": "setString()",
-      "desc": "Inserts a new value into the <b>JSONArray</b> at the specified index position."
+      "desc": "Inserts a new value into the <b>JSONArray</b> at the specified index position"
     },
     {
       "anchor": "JSONArray_setInt_",

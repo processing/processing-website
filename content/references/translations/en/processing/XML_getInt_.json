@@ -1,8 +1,8 @@
 {
-  "brief": "Gets the content of an attribute as an int",
+  "brief": "Gets the content of an attribute as an <b>int</b>",
   "related": [],
   "name": "getInt()",
-  "description": "Returns an attribute value of the element as an int. If the <b>defaultValue</b> \n parameter is specified and the attribute doesn't exist, then <b>defaultValue</b> \n is returned. If no <b>defaultValue</b> is specified and the attribute doesn't \n exist, the value 0 is returned.",
+  "description": "Returns an attribute value of the element as an <b>int</b>. If the <b>defaultValue</b> \n parameter is specified and the attribute doesn't exist, then <b>defaultValue</b> \n is returned. If no <b>defaultValue</b> is specified and the attribute doesn't \n exist, the value 0 is returned.",
   "syntax": [".getInt(name)", ".getInt(name, defaultValue)"],
   "returns": "int",
   "type": "method",

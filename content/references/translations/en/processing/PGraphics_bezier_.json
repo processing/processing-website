@@ -1,5 +1,5 @@
 {
-  "brief": "Draws a Bezier curve on the screen.",
+  "brief": "Draws a Bezier curve on the screen",
   "related": ["PGraphics_bezierVertex_", "PGraphics_curve_"],
   "name": "bezier()",
   "description": "Draws a Bezier curve on the screen. These curves are defined by a series\n of anchor and control points. The first two parameters specify the first\n anchor point and the last two parameters specify the other anchor point.\n The middle parameters specify the control points which define the shape\n of the curve. Bezier curves were developed by French engineer Pierre\n Bezier. Using the 3D version requires rendering with P3D (see the\n Environment reference for more information).\n\n\n ",

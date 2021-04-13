@@ -1,5 +1,5 @@
 {
-  "brief": "Calculates the sine of an angle.",
+  "brief": "Calculates the sine of an angle",
   "related": ["cos_", "tan_", "radians_"],
   "name": "sin()",
   "description": "Calculates the sine of an angle. This function expects the values of the\n <b>angle</b> parameter to be provided in radians (values from 0 to\n 6.28). Values are returned in the range -1 to 1.",

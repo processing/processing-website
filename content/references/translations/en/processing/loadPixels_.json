@@ -1,5 +1,5 @@
 {
-  "brief": "Loads the pixel data for the display window into the\n           <b>pixels[]</b> array.",
+  "brief": "Loads the pixel data for the display window into the\n           <b>pixels[]</b> array",
   "related": ["pixels", "updatePixels_"],
   "name": "loadPixels()",
   "description": "Loads the pixel data of the current display window into the <b>pixels[]</b>\n array. This function must always be called before reading from or writing\n to <b>pixels[]</b>. Subsequent changes to the display window will not be\n reflected in <b>pixels</b> until <b>loadPixels()</b> is called again.\n\n ",

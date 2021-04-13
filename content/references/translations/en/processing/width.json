@@ -1,5 +1,5 @@
 {
-  "brief": "System variable which stores the width of the display window.",
+  "brief": "System variable which stores the width of the display window",
   "related": ["height", "size_"],
   "name": "width",
   "description": "System variable which stores the width of the display window. This value\n is set by the first parameter of the <b>size()</b> function. For\n example, the function call <b>size(320, 240)</b> sets the <b>width</b>\n variable to the value 320. The value of <b>width</b> defaults to 100 if\n <b>size()</b> is not used in a program.",

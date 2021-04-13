@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the amount of gloss in the surface of shapes.",
+  "brief": "Sets the amount of gloss in the surface of shapes",
   "related": [
     "PGraphics_emissive_",
     "PGraphics_ambient_",

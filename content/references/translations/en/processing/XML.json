@@ -1,10 +1,10 @@
 {
-  "brief": "This is the base class used for the Processing XML library,\n           representing a single node of an XML tree.",
+  "brief": "This is the base class used for the Processing XML library,\n           representing a single node of an <b>XML</b> tree",
   "methods": [
     {
       "anchor": "XML_parse_",
       "name": "parse()",
-      "desc": "Converts String content to an XML object"
+      "desc": "Converts <b>String</b> content to an <b>XML</b> object"
     },
     {
       "anchor": "XML_getParent_",
@@ -74,37 +74,37 @@
     {
       "anchor": "XML_getString_",
       "name": "getString()",
-      "desc": "Gets the content of an attribute as a String"
+      "desc": "Gets the content of an attribute as a <b>String</b>"
     },
     {
       "anchor": "XML_setString_",
       "name": "setString()",
-      "desc": "Sets the content of an attribute as a String"
+      "desc": "Sets the content of an attribute as a <b>String</b>"
     },
     {
       "anchor": "XML_getInt_",
       "name": "getInt()",
-      "desc": "Gets the content of an attribute as an int"
+      "desc": "Gets the content of an attribute as an <b>int</b>"
     },
     {
       "anchor": "XML_setInt_",
       "name": "setInt()",
-      "desc": "Sets the content of an attribute as an int"
+      "desc": "Sets the content of an attribute as an <b>int</b>"
     },
     {
       "anchor": "XML_setLong_",
       "name": "setLong()",
-      "desc": "Sets the content of an element as an int"
+      "desc": "Sets the content of an element as an <b>int</b>"
     },
     {
       "anchor": "XML_getFloat_",
       "name": "getFloat()",
-      "desc": "Gets the content of an attribute as a float"
+      "desc": "Gets the content of an attribute as a <b>float</b>"
     },
     {
       "anchor": "XML_setFloat_",
       "name": "setFloat()",
-      "desc": "Sets the content of an attribute as a float"
+      "desc": "Sets the content of an attribute as a <b>float</b>"
     },
     {
       "anchor": "XML_getContent_",
@@ -114,12 +114,12 @@
     {
       "anchor": "XML_getIntContent_",
       "name": "getIntContent()",
-      "desc": "Gets the content of an element as an int"
+      "desc": "Gets the content of an element as an <b>int</b>"
     },
     {
       "anchor": "XML_getFloatContent_",
       "name": "getFloatContent()",
-      "desc": "Gets the content of an element as a float"
+      "desc": "Gets the content of an element as a <b>float</b>"
     },
     {
       "anchor": "XML_setContent_",
@@ -129,18 +129,18 @@
     {
       "anchor": "XML_format_",
       "name": "format()",
-      "desc": "Formats XML data as a String"
+      "desc": "Formats <b>XML</b> data as a <b>String</b>"
     },
     {
       "anchor": "XML_toString_",
       "name": "toString()",
-      "desc": "Gets XML data as a String using default formatting"
+      "desc": "Gets <b>XML</b> data as a <b>String</b> using default formatting"
     }
   ],
   "csspath": "../../",
   "isLibrary": "true",
   "classFields": [],
-  "description": "<b>XML</b> is a representation of an XML object, able to parse XML code. Use\n <b>loadXML()</b> to load external XML files and create <b>XML</b>\n objects.<br />\n <br />\n Only files encoded as UTF-8 (or plain ASCII) are parsed properly; the\n encoding parameter inside XML files is ignored.",
+  "description": "<b>XML</b> is a representation of an <b>XML</b> object, able to parse <b>XML</b> code. Use\n <b>loadXML()</b> to load external XML files and create <b>XML</b>\n objects.<br />\n <br />\n Only files encoded as UTF-8 (or plain ASCII) are parsed properly; the\n encoding parameter inside <b>XML</b> files is ignored.",
   "type": "class",
   "constructors": ["XML(name)"],
   "related": ["loadXML_", "parseXML_", "saveXML_"],

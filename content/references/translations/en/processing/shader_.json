@@ -1,5 +1,5 @@
 {
-  "brief": "Applies the shader specified by the parameters.",
+  "brief": "Applies the shader specified by the parameters",
   "related": [],
   "name": "shader()",
   "description": "Applies the shader specified by the parameters. It's compatible with\n the P2D and P3D renderers, but not with the default renderer.",

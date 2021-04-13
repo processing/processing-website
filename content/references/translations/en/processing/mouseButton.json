@@ -1,5 +1,5 @@
 {
-  "brief": "Shows which mouse button is pressed.",
+  "brief": "Shows which mouse button is pressed",
   "related": [
     "mouseX",
     "mouseY",

@@ -1,5 +1,5 @@
 {
-  "brief": "The inverse of <b>sin()</b>, returns the arc sine of a value.",
+  "brief": "The inverse of <b>sin()</b>, returns the arc sine of a value",
   "related": ["sin_", "acos_", "atan_"],
   "name": "asin()",
   "description": "The inverse of <b>sin()</b>, returns the arc sine of a value. This\n function expects the values in the range of -1 to 1 and values are\n returned in the range <b>-PI/2</b> to <b>PI/2</b>.",

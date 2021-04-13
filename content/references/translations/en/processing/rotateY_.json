@@ -1,5 +1,5 @@
 {
-  "brief": "Rotates a shape around the y-axis the amount specified by the\n <b>angle</b> parameter.",
+  "brief": "Rotates a shape around the y-axis the amount specified by the\n <b>angle</b> parameter",
   "related": [
     "popMatrix_",
     "pushMatrix_",

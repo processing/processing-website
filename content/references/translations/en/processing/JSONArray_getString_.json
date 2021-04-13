@@ -6,7 +6,7 @@
     "JSONArray_getBoolean_"
   ],
   "name": "getString()",
-  "description": "Gets the String value associated with the specified index.",
+  "description": "Gets the <b>String</b> value associated with the specified index.",
   "syntax": [".getString(index)", ".getString(index, defaultValue)"],
   "returns": "String",
   "type": "method",

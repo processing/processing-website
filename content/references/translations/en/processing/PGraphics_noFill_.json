@@ -1,5 +1,5 @@
 {
-  "brief": "Disables filling geometry.",
+  "brief": "Disables filling geometry",
   "related": ["PGraphics_fill_", "PGraphics_stroke_", "PGraphics_noStroke_"],
   "name": "noFill()",
   "description": "Disables filling geometry. If both <b>noStroke()</b> and <b>noFill()</b>\n are called, nothing will be drawn to the screen.",

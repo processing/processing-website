@@ -2,7 +2,7 @@
   "brief": "Allows interrupts to happen",
   "related": [],
   "name": "interrupts()",
-  "description": "Allows interrupts to happen<br/>\n  <br/>\n  You can use <a href=\"GPIO_noInterrupts_.html\">noInterrupts()</a> \n  and interrupts() in tandem to make sure no interrupts are occuring \n  while your sketch is doing a particular task. By default, interrupts \n  are enabled.",
+  "description": "Allows interrupts to happen<br/>\n  <br/>\n  You can use <a href=\"GPIO_noInterrupts_.html\">noInterrupts()</a> \n  and <b>interrupts()</b> in tandem to make sure no interrupts are occuring \n  while your sketch is doing a particular task. By default, interrupts \n  are enabled.",
   "syntax": [".interrupts()"],
   "returns": "void",
   "type": "method",

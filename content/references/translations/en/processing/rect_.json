@@ -1,5 +1,5 @@
 {
-  "brief": "Draws a rectangle to the screen.",
+  "brief": "Draws a rectangle to the screen",
   "related": ["rectMode_", "quad_"],
   "name": "rect()",
   "description": "Draws a rectangle to the screen. A rectangle is a four-sided shape with every\n angle at ninety degrees. By default, the first two parameters set the\n location of the upper-left corner, the third sets the width, and the fourth\n sets the height. The way these parameters are interpreted, however, may be\n changed with the <b>rectMode()</b> function.<br />\n <br />\n To draw a rounded rectangle, add a fifth parameter, which is used as the\n radius value for all four corners.<br />\n <br />\n To use a different radius value for each corner, include eight parameters.\n When using eight parameters, the latter four set the radius of the arc at\n each corner separately, starting with the top-left corner and moving\n clockwise around the rectangle.",

@@ -1,8 +1,8 @@
 {
-  "brief": "Finalizes the rendering of a PGraphics object so that it can be shown on screen.",
+  "brief": "Finalizes the rendering of a <b>PGraphics</b> object so that it can be shown on screen",
   "related": [],
   "name": "endDraw()",
-  "description": "Finalizes the rendering of a PGraphics object so that it can be shown on screen.\n\n ",
+  "description": "Finalizes the rendering of a <b>PGraphics</b> object so that it can be shown on screen.\n\n ",
   "syntax": ["graphics.endDraw()"],
   "returns": "void",
   "type": "method",

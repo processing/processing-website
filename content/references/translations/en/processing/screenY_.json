@@ -1,5 +1,5 @@
 {
-  "brief": "Takes a three-dimensional X, Y, Z position and returns the Y value for\n where it will appear on a (two-dimensional) screen.",
+  "brief": "Takes a three-dimensional X, Y, Z position and returns the Y value for\n where it will appear on a (two-dimensional) screen",
   "related": ["screenX_", "screenZ_"],
   "name": "screenY()",
   "description": "Takes a three-dimensional X, Y, Z position and returns the Y value for\n where it will appear on a (two-dimensional) screen.",

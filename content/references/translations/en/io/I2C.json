@@ -9,12 +9,12 @@
     {
       "anchor": "I2C_close_",
       "name": "close()",
-      "desc": "Closes the I2C device."
+      "desc": "Closes the I2C device"
     },
     {
       "anchor": "I2C_endTransmission_",
       "name": "endTransmission()",
-      "desc": "Ends the current transmissions."
+      "desc": "Ends the current transmissions"
     },
     {
       "anchor": "I2C_list_",
@@ -24,12 +24,12 @@
     {
       "anchor": "I2C_read_",
       "name": "read()",
-      "desc": "Read bytes from the attached device."
+      "desc": "Read bytes from the attached device"
     },
     {
       "anchor": "I2C_write_",
       "name": "write()",
-      "desc": "Add bytes to be written to the device."
+      "desc": "Add bytes to be written to the device"
     }
   ],
   "csspath": "../../",

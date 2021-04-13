@@ -1,5 +1,5 @@
 {
-  "brief": "Calculates the ratio of the sine and cosine of an angle.",
+  "brief": "Calculates the ratio of the sine and cosine of an angle",
   "related": ["cos_", "sin_", "radians_"],
   "name": "tan()",
   "description": "Calculates the ratio of the sine and cosine of an angle. This function\n expects the values of the <b>angle</b> parameter to be provided in\n radians (values from 0 to PI*2). Values are returned in the range\n <b>infinity</b> to <b>-infinity</b>.",

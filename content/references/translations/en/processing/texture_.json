@@ -1,5 +1,5 @@
 {
-  "brief": "Sets a texture to be applied to vertex points.",
+  "brief": "Sets a texture to be applied to vertex points",
   "related": [
     "textureMode_",
     "textureWrap_",

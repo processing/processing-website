@@ -1,5 +1,5 @@
 {
-  "brief": "The client class is used to create client Objects which connect to a server to exchange data.",
+  "brief": "The client class is used to create client Objects which connect to a server to exchange data",
   "methods": [
     {
       "anchor": "Client_stop_",
@@ -14,7 +14,7 @@
     {
       "anchor": "Client_ip_",
       "name": "ip()",
-      "desc": "Returns the IP address of the machine as a String"
+      "desc": "Returns the IP address of the machine as a <b>String</b>"
     },
     {
       "anchor": "Client_available_",
@@ -39,7 +39,7 @@
     {
       "anchor": "Client_readBytes_",
       "name": "readBytes()",
-      "desc": "Reads a group of bytes from the buffer."
+      "desc": "Reads a group of bytes from the buffer"
     },
     {
       "anchor": "Client_readBytesUntil_",
@@ -49,17 +49,17 @@
     {
       "anchor": "Client_readString_",
       "name": "readString()",
-      "desc": "Returns the buffer as a String"
+      "desc": "Returns the buffer as a <b>String</b>"
     },
     {
       "anchor": "Client_readStringUntil_",
       "name": "readStringUntil()",
-      "desc": "Returns the buffer as a String up to and including a particular character"
+      "desc": "Returns the buffer as a <b>String</b> up to and including a particular character"
     },
     {
       "anchor": "Client_write_",
       "name": "write()",
-      "desc": "Writes bytes, chars, ints, bytes[], Strings"
+      "desc": "Writes <b>bytes</b>, <b>chars</b>, <b>ints</b>, <b>bytes[]</b>, <b>Strings</b>"
     }
   ],
   "csspath": "../../",

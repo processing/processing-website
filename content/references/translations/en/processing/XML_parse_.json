@@ -1,8 +1,8 @@
 {
-  "brief": "Converts String content to an XML object",
+  "brief": "Converts <b>String</b> content to an <b>XML</b> object",
   "related": [],
   "name": "parse()",
-  "description": "Converts String content to an XML object",
+  "description": "Converts <b>String</b> content to an <b>XML</b> object",
   "syntax": [],
   "returns": "XML",
   "type": "method",

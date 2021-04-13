@@ -9,7 +9,7 @@
     {
       "anchor": "SoftwareServo_attach_",
       "name": "attach()",
-      "desc": "Attaches a servo motor to a GPIO pin<br/>\n <br/>\n You must call this function before calling write(). Note that the servo motor\n will only be instructed to move after the first time write() is called.<br/>\n <br/>\n The optional parameters minPulse and maxPulse control the minimum and maximum\n pulse width durations. The default values, identical to those of Arduino's\n Servo class, should be compatible with most servo motors."
+      "desc": "Attaches a servo motor to a GPIO pin<br/>\n <br/>\n You must call this function before calling <b>write()</b>. Note that the servo motor\n will only be instructed to move after the first time <b>write()</b> is called.<br/>\n <br/>\n The optional parameters minPulse and maxPulse control the minimum and maximum\n pulse width durations. The default values, identical to those of Arduino's\n Servo class, should be compatible with most servo motors."
     },
     {
       "anchor": "SoftwareServo_write_",

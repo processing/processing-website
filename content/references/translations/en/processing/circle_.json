@@ -1,5 +1,5 @@
 {
-  "brief": "Draws a circle to the screen.",
+  "brief": "Draws a circle to the screen",
   "related": ["ellipse_", "ellipseMode_"],
   "name": "circle()",
   "description": "Draws a circle to the screen. By default, the first two parameters\n set the location of the center, and the third sets the shape's width\n and height. The origin may be changed with the <b>ellipseMode()</b>\n function.",

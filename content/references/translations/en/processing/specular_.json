@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the specular color of the materials used for shapes drawn to the\n screen, which sets the color of highlights.",
+  "brief": "Sets the specular color of the materials used for shapes drawn to the\n screen, which sets the color of highlights",
   "related": ["lightSpecular_", "ambient_", "emissive_", "shininess_"],
   "name": "specular()",
   "description": "Sets the specular color of the materials used for shapes drawn to the\n screen, which sets the color of highlights. Specular refers to light\n which bounces off a surface in a preferred direction (rather than\n bouncing in all directions like a diffuse light). Used in combination\n with <b>emissive()</b>, <b>ambient()</b>, and <b>shininess()</b> in\n setting the material properties of shapes.",

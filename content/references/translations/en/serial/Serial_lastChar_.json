@@ -1,5 +1,5 @@
 {
-  "brief": "Returns the last byte received as a char or -1 if there is none available.",
+  "brief": "Returns the last byte received as a char or -1 if there is none available",
   "related": [],
   "name": "lastChar()",
   "description": "Returns the last byte received as a char or -1 if there is none available.",
