@@ -158,3 +158,9 @@ img {
 .hljs-string {
   color: #7d4793;
 }
+
+/* These are not included in highlight.js but used other places */
+
+.hljs-datatype {
+  color: #e2661a;
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import css from './Line.module.css';
 
 const Line = ({ num, children }) => {
@@ -10,4 +10,4 @@ const Line = ({ num, children }) => {
   );
 };
 
-export default Line;
+export default memo(Line);

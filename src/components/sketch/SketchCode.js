@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect } from 'react';
 import classnames from 'classnames';
 
-import Button from '../Button';
 import Draggable from './Draggable';
 import Color from './Color';
 import Shape from './Shape';
@@ -57,10 +56,14 @@ const SketchCode = (props) => {
 
   return (
     <div className={css.root}>
-      <Line num={1}>int w = {width};</Line>
-      <Line num={2}>int h = {height};</Line>
+      <Line num={1}>
+        <span className="hljs-datatype">int</span> w = {width};
+      </Line>
+      <Line num={2}>
+        <span className="hljs-datatype">int</span> h = {height};
+      </Line>
       <Line num={3}>
-        int u ={' '}
+        <span className="hljs-datatype">int</span> u ={' '}
         <Draggable
           name="unit"
           className={css.showGrid}
@@ -72,15 +75,15 @@ const SketchCode = (props) => {
         ;
       </Line>
       <Line num={4}>
-        boolean showGrid ={' '}
-        <Button
+        <span className="hljs-datatype">boolean</span> showGrid ={' '}
+        <button
           name="showGrid"
-          className={css.showGrid}
+          className={classnames(css.showGrid, 'hljs-keyword')}
           value={showGrid}
           onClick={(e) => onChange(e, ['showGrid'], !showGrid)}
           tabIndex={isVisible ? 0 : -1}>
           {showGrid ? 'true' : 'false'}
-        </Button>
+        </button>
         ;
       </Line>
       <Line num={5} />
