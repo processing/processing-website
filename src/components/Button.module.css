@@ -34,7 +34,7 @@
 /*  Sizes  */
 
 .small {
-  padding: 4px 16px;
+  padding: 5px 18px 6px 18px;
   font-size: var(--text-small);
 }
 
