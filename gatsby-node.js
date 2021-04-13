@@ -13,6 +13,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     createReference(actions, graphql),
     createExamples(actions, graphql),
     createTutorials(actions, graphql),
+    createDownload(actions, graphql),
   ]);
 };
 
@@ -307,5 +308,44 @@ async function createExamples(actions, graphql) {
         relDir: jsonFile.node.relativeDirectory,
       },
     });
+  });
+}
+
+/**
+  Create the download page programmatically since we need access to the selected
+  releases in the pageQuery, thus we need to pass through pageContext.
+**/
+async function createDownload(actions, graphql) {
+  const downloadTemplate = path.resolve(`./src/templates/download.js`);
+  const { createPage } = actions;
+  const result = await graphql(
+    `
+      {
+        json: file(
+          sourceInstanceName: { eq: "download" }
+          relativePath: { eq: "selected.json" }
+        ) {
+          childJson {
+            selectedReleases
+            selectedPreReleases
+          }
+        }
+      }
+    `
+  );
+
+  if (result.errors) {
+    throw result.errors;
+  }
+
+  const { selectedReleases, selectedPreReleases } = result.data.json.childJson;
+
+  createPage({
+    path: '/download',
+    component: downloadTemplate,
+    context: {
+      selectedReleases,
+      selectedPreReleases,
+    },
   });
 }
