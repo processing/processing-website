@@ -5,8 +5,7 @@ import Button from '../Button';
 import Draggable from './Draggable';
 import Color from './Color';
 import Shape from './Shape';
-
-import { useHighlight } from '../../hooks';
+import Line from './Line';
 
 import css from './SketchCode.module.css';
 
@@ -27,7 +26,6 @@ const SketchCode = (props) => {
   } = props;
   const cols = Math.floor(width / unit);
   const rows = Math.floor(height / unit);
-  useHighlight();
 
   useEffect(() => {
     shapes.forEach((shape, index) => {
@@ -58,99 +56,81 @@ const SketchCode = (props) => {
   }, [width, unit, cols, onChange, shapes]);
 
   return (
-    <div className={classnames(css.root, { [css.visible]: isVisible })}>
-      <div className={css.code}>
-        <div className={css.inCode}>
-          <pre>
-            int width = {width}; <br />
-            int height = {height};<br />
-            <code>int unit = </code>
-          </pre>
+    <div className={css.root}>
+      <Line num={1}>int w = {width};</Line>
+      <Line num={2}>int h = {height};</Line>
+      <Line num={3}>
+        int u ={' '}
+        <Draggable
+          name="unit"
+          className={css.showGrid}
+          value={unit}
+          range={{ min: 20, max: 80 }}
+          path={['unit']}
+          onChange={onChange}
+          tabIndex={isVisible ? 0 : -1}></Draggable>
+        ;
+      </Line>
+      <Line num={4}>
+        boolean showGrid ={' '}
+        <Button
+          name="showGrid"
+          className={css.showGrid}
+          value={showGrid}
+          onClick={(e) => onChange(e, ['showGrid'], !showGrid)}
+          tabIndex={isVisible ? 0 : -1}>
+          {showGrid ? 'true' : 'false'}
+        </Button>
+        ;
+      </Line>
+      <Line num={5} />
+      <details>
+        <summary tabIndex={isVisible ? 0 : -1}>
+          <Line num={6}>{`void setup() {`}</Line>
+          <Folded />
+        </summary>
+        <Line num={7}>{`  size(width, height);`}</Line>
+        <Line num={8}>{`  background(255, 255, 255);`}</Line>
+        <Line num={9}>{`  if (showGrid) drawGrid();`}</Line>
+        <Line num={10}>{`}`}</Line>
+      </details>
+      <Line num={11} />
+      <details open>
+        <summary tabIndex={isVisible ? 0 : -1}>
+          <Line num={12}>{`void draw() {`}</Line>
+          <Folded />
+        </summary>
+        <Line num={13}>{`  if (showGrid) drawGrid();`}</Line>
+        <Line num={14}>{`  strokeCap(SQUARE);`}</Line>
+        <Line num={15}>
+          {`  strokeWeight(`}
           <Draggable
-            name="unit"
             className={css.showGrid}
-            value={unit}
-            range={{ min: 20, max: 80 }}
-            path={['unit']}
+            value={strokeWidth}
+            range={{ min: 0.5, max: 2 }}
+            path={['strokeWidth']}
+            isInteger={false}
             onChange={onChange}
-            tabIndex={isVisible ? 0 : -1}></Draggable>
-          ;
-          <br />
-          <pre>
-            <code>boolean showGrid = </code>
-          </pre>
-          <Button
-            name="showGrid"
-            className={css.showGrid}
-            value={showGrid}
-            onClick={(e) => onChange(e, ['showGrid'], !showGrid)}
-            tabIndex={isVisible ? 0 : -1}>
-            {showGrid ? 'true' : 'false'}
-          </Button>
-          ;
-        </div>
-        <br />
-        <details className={css.details}>
-          <summary className={css.summary} tabIndex={isVisible ? 0 : -1}>
-            <pre>
-              <code>
-                {`void setup() {`}
-                <span className={css.dots}>{`...`}</span>
-              </code>
-            </pre>
-          </summary>
-          <pre>
-            <code>
-              {`    size(width, height);
-    background(255, 255, 255);
-    if (showGrid) drawGrid();
-  }`}
-            </code>
-          </pre>
-        </details>
-        <div className={css.inCode}>
-          <pre>
-            <code>
-              {`
-void draw() {
-    if (showGrid) drawGrid();
-    strokeCap(SQUARE);`}
-            </code>
-          </pre>
-          <div className={css.codeStrokes}>
-            <Draggable
-              name="strokeWidth"
-              className={css.showGrid}
-              value={strokeWidth}
-              range={{ min: 0.5, max: 2 }}
-              path={['strokeWidth']}
-              isInteger={false}
-              onChange={onChange}
-              labelBefore={'strokeWeight('}
-              labelAfter={' * u);'}
-              tabIndex={isVisible ? 0 : -1}
-            />
-            {shapes.map((shape, index) => (
-              <Fragment key={`shape-block-${index}`}>
-                <br />
-                <br />
-                stroke(
+            tabIndex={isVisible ? 0 : -1}
+          />
+          {' * u);'}
+        </Line>
+        <Line num={16} />
+        {shapes.map((shape, i) => {
+          const num = 17 + i * 3;
+          return (
+            <Fragment key={`shape-block-${i}`}>
+              <Line num={num}>
+                {`  stroke(`}
                 <Color
                   onChange={onChange}
                   shapes={shapes}
-                  shapesInx={index}
+                  shapesInx={i}
                   tabIndex={isVisible ? 0 : -1}
                 />
                 );
-                <br />
-                <Button
-                  className={css.toggleShape}
-                  onClick={(e) =>
-                    onChange(e, ['shapes', index, 'type'], !shape.type)
-                  }
-                  tabIndex={isVisible ? 0 : -1}>
-                  {shape.type ? '/' : '~'}
-                </Button>
+              </Line>
+              <Line num={num + 1}>
                 <Shape
                   onMouseEnter={onMouseEnterShape}
                   onMouseLeave={onMouseLeaveShape}
@@ -158,43 +138,51 @@ void draw() {
                   onDraggingEnd={onDraggingShapeEnd}
                   onChange={onChange}
                   shape={shape}
-                  shapesInx={index}
+                  shapesInx={i}
                   rangeX={{ min: 0, max: cols }}
                   rangeY={{ min: 0, max: rows }}
                   tabIndex={isVisible ? 0 : -1}
                 />
                 ;
-              </Fragment>
-            ))}
-          </div>
-          <pre>
-            <code>{`}`}</code>
-          </pre>
-        </div>
-        <details className={css.details}>
-          <summary className={css.summary} tabIndex={isVisible ? 0 : -1}>
-            <pre>
-              <code>
-                {`void drawGrid() {`}
-                <span className={css.dots}>{`...`}</span>
-              </code>
-            </pre>
-          </summary>
-          <pre>
-            <code>{`    strokeWeight(1);
-    noFill();
-    stroke(200, 200, 200);
-    for (int col = 0; col < cols + 1; col++) {
-        line(col * u, 0, col * u, cols * u);
-    }
-    for (int row = 0; row < rows + 1; row++) {
-        line(0, row * u, rows * u, row * u);
-    }
-  }
-			`}</code>
-          </pre>
-        </details>
-      </div>
+              </Line>
+              <Line num={num + 2} />
+            </Fragment>
+          );
+        })}
+      </details>
+      <Line num={26} />
+      <details>
+        <summary tabIndex={isVisible ? 0 : -1}>
+          <Line num={27}>{`void drawGrid() {`}</Line>
+          <Folded />
+        </summary>
+        <Line num={28}>{`  strokeWeight(1);`}</Line>
+        <Line num={29}>{`  noFill();`}</Line>
+        <Line num={30}>{`  stroke(200, 200, 200);`}</Line>
+        <Line num={31}>{`  for (int col = 0; col < cols + 1; col++) {`}</Line>
+        <Line num={32}>{`    line(col * u, 0, col * u, cols * u);`}</Line>
+        <Line num={33}>{`  }`}</Line>
+        <Line num={34}>{`  for (int row = 0; row < rows + 1; row++) {`}</Line>
+        <Line num={35}>{`    line(0, row * u, rows * u, row * u);`}</Line>
+        <Line num={36}>{`  }`}</Line>
+        <Line num={37}>{`}`}</Line>
+      </details>
+    </div>
+  );
+};
+
+// <Button
+//   className={css.toggleShape}
+//   onClick={(e) => onChange(e, ['shapes', i, 'type'], !shape.type)}
+//   tabIndex={isVisible ? 0 : -1}>
+//   {shape.type ? '/' : '~'}
+// </Button>
+
+const Folded = () => {
+  return (
+    <div className={css.folded}>
+      <span>···</span>
+      {`}`}
     </div>
   );
 };

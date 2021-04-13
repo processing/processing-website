@@ -31,7 +31,7 @@ const Shape = (props) => {
   };
 
   if (shape.type === true) {
-    draggable.push('line(');
+    draggable.push('  line(');
     shape.pos.forEach((p, index) => {
       if (index < 2 || index > 5) {
         draggable.push(
@@ -52,7 +52,7 @@ const Shape = (props) => {
     draggable.pop();
     draggable.push(' * u)');
   } else {
-    draggable.push('bezier(');
+    draggable.push('  bezier(');
     shape.pos.forEach((p, index) => {
       draggable.push(
         <Draggable

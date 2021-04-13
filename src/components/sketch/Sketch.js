@@ -10,7 +10,7 @@ import grid from '../../styles/grid.module.css';
 import css from './Sketch.module.css';
 
 const initialState = fromJS({
-  showGrid: false,
+  showGrid: true,
   width: 600,
   height: 600,
   unit: 60,
@@ -40,9 +40,9 @@ const initialState = fromJS({
   ],
 });
 
-const Sketch = (props) => {
+const Sketch = ({ children }) => {
   const [state, setState] = useState(initialState);
-  const [showCode, setShow] = useState(false);
+  const [showCode, setShow] = useState(true);
   const { width } = useWindowSize();
 
   const changeStateHandler = (e, path, value) => {
@@ -82,25 +82,30 @@ const Sketch = (props) => {
   const stateJS = state.toJS();
 
   return (
-    <div className={classnames(css.root, grid.nest, grid.col)}>
-      {width > 960 && (
-        <Fragment>
-          <SketchGraphic
-            onClick={handleClickOnSketch}
-            {...stateJS}
-            isVisible={showCode}
-          />
-          <SketchCode
-            onChange={changeStateHandler}
-            isVisible={showCode}
-            {...stateJS}
-            onMouseEnterShape={handleMouseEnterShapeLine}
-            onMouseLeaveShape={handleMouseLeaveShapeLine}
-            onDraggingShapeStart={handleDraggingShapeStart}
-            onDraggingShapeEnd={handleDraggingShapeEnd}
-          />
-        </Fragment>
-      )}
+    <div className={classnames(css.root, grid.grid)}>
+      <div className={classnames(grid.col, css.left)}>
+        <div className={classnames(css.rail, { [css.codeVisible]: showCode })}>
+          <div className={css.slide}>{children}</div>
+          <div className={css.slide}>
+            <SketchCode
+              onChange={changeStateHandler}
+              isVisible={showCode}
+              {...stateJS}
+              onMouseEnterShape={handleMouseEnterShapeLine}
+              onMouseLeaveShape={handleMouseLeaveShapeLine}
+              onDraggingShapeStart={handleDraggingShapeStart}
+              onDraggingShapeEnd={handleDraggingShapeEnd}
+            />
+          </div>
+        </div>
+      </div>
+      <div className={classnames(grid.col, css.right)}>
+        <SketchGraphic
+          onClick={handleClickOnSketch}
+          {...stateJS}
+          isCodeVisible={showCode}
+        />
+      </div>
     </div>
   );
 };

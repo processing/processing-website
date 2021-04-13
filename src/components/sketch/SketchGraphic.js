@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useMemo } from 'react';
 import classnames from 'classnames';
 
 import Button from '../Button';
@@ -16,27 +16,32 @@ const SketchGraphic = (props) => {
     shapes,
     strokeWidth,
     onClick,
-    isVisible,
+    isCodeVisible,
   } = props;
-  const [mouseEntered, setMouseEntered] = useState(false);
 
-  const modules = [];
-  const cols = Math.floor(width / unit);
-  const rows = Math.floor(height / unit);
-  for (let i = 0; i < cols; i++) {
-    modules.push([]);
-    for (let j = 0; j < rows; j++) {
-      modules[modules.length - 1].push({
-        x: gutterSize + i * unit + i * 2 * gutterSize,
-        y: gutterSize + j * unit + j * 2 * gutterSize,
-        width: unit,
-        height: unit,
-      });
+  const modules = useMemo(() => {
+    const modules = [];
+    const cols = Math.floor(width / unit);
+    const rows = Math.floor(height / unit);
+    for (let i = 0; i < cols; i++) {
+      modules.push([]);
+      for (let j = 0; j < rows; j++) {
+        modules[modules.length - 1].push({
+          x: gutterSize + i * unit + i * 2 * gutterSize,
+          y: gutterSize + j * unit + j * 2 * gutterSize,
+          width: unit,
+          height: unit,
+        });
+      }
     }
-  }
+    return modules;
+  }, [width, height, unit]);
 
-  let grid = [];
-  if (showGrid) {
+  const grid = useMemo(() => {
+    if (!showGrid) {
+      return null;
+    }
+    const grid = [];
     for (let i = 0; i < modules.length; i++) {
       for (let j = 0; j < modules[i].length; j++) {
         grid.push(
@@ -50,25 +55,11 @@ const SketchGraphic = (props) => {
         );
       }
     }
-  }
-
-  const handleMouseEnter = () => {
-    setMouseEntered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setMouseEntered(false);
-  };
+    return grid;
+  }, [showGrid, modules]);
 
   const firstHandler = (shape, index, color) => (
     <g key={`handler-${index}-tocp1`}>
-      <circle
-        key={`circle-${index}-cp1`}
-        cx={shape.pos[2] * unit}
-        cy={shape.pos[3] * unit}
-        r={4}
-        fill={color}
-      />
       <line
         key={`line-${index}-tocp1`}
         x1={shape.pos[0] * unit}
@@ -77,6 +68,13 @@ const SketchGraphic = (props) => {
         y2={shape.pos[3] * unit}
         stroke={color}
         strokeDasharray="4"
+      />
+      <circle
+        key={`circle-${index}-cp1`}
+        cx={shape.pos[2] * unit}
+        cy={shape.pos[3] * unit}
+        r={4}
+        fill={color}
       />
     </g>
   );
@@ -126,15 +124,10 @@ const SketchGraphic = (props) => {
       className={css.root}
       onClick={onClick}
       onKeyDown={onClick}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
       style={{ width, height }}>
-      <div
-        className={classnames(css.ui, {
-          [css.show]: mouseEntered || isVisible,
-        })}>
+      <div className={css.ui}>
         <Button className={css.button} onClick={onClick} size={'large'}>
-          {isVisible ? 'Hide code' : 'Play'}
+          {isCodeVisible ? 'Hide code' : 'Play'}
         </Button>
       </div>
       <svg width={width} height={height}>

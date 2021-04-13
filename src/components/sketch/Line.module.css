@@ -1,0 +1,15 @@
+summary .root {
+  display: inline-block;
+}
+
+.num {
+  display: inline-block;
+  background-color: var(--processing-blue-dark);
+  text-align: right;
+  color: white;
+  padding: 0 5px;
+  margin-right: 10px;
+  width: 30px;
+  font-size: 12px;
+  line-height: 23px;
+}

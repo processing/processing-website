@@ -1,28 +1,17 @@
 @import "../../styles/variables.css";
 
 .root {
-  display: flex;
-  flex-direction: column;
   flex-basis: 100%;
-  position: absolute;
-  opacity: 0;
-  z-index: 100;
-  overflow: auto;
-  margin-left: calc(-1 * var(--col8));
-  height: 100%;
-  width: 100%;
-  padding: 0px;
+  background-color: white;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border: 1px solid var(--gray);
   font-family: var(--font-mono);
   font-size: 14px;
   white-space: pre;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  transform: translateX(100%);
   user-select: none;
-
-  &.visible {
-    transform: translateX(0%);
-    opacity: 1;
-  }
 
   & h1 {
     font-family: var(--font);
@@ -30,103 +19,38 @@
 
   & pre,
   & code {
-    display: block;
+    background-color: white;
+    display: inline;
     padding: 0;
     margin: 0;
   }
-
-  & summary:after {
-    content: "}";
-    font-family: var(--font-mono);
-    border-radius: 5px;
-  }
-
-  & details {
-    padding-left: var(--gutter);
-
-    & pre {
-      display: inline-flex;
-    }
-  }
-
-  & details[open] {
-    & summary::after {
-      content: "";
-    }
-
-    & .dots {
-      visibility: hidden;
-    }
-  }
-
-  & summary {
-    cursor: pointer;
-    &:hover {
-      color: var(--processing-blue-dark);
-    }
-
-    &::-webkit-details-marker {
-      color: var(--gray);
-    }
-
-    &::-webkit-details-marker:hover {
-      color: var(--processing-blue-dark);
-    }
-  }
 }
 
-.dots {
-  display: inline-block;
-  background-color: var(--gray);
-  font-weight: 700;
-  font-size: 0.65em;
-  height: 0.8rem;
-  padding: 0 0.2rem;
-  vertical-align: middle;
-  line-height: 1;
-  border-radius: 5px;
-  &:hover {
-    color: var(--lightgray);
-  }
-}
-
-.showGrid {
-  font-family: var(--font-mono);
-  font-size: 14px;
-  display: inline-block;
-  border-style: none;
-  font-size: inherit;
-  padding: 0;
-  padding: 0;
-  text-decoration: underline;
-  outline: none;
-  box-shadow: none;
+.root summary {
+  list-style: none;
   cursor: pointer;
-  background: none;
-  color: var(--black);
-}
-
-.showGrid:hover {
-  background: var(--lightgray);
-  color: var(--gray);
-}
-
-.code {
-  position: absolute;
-  padding-top: 20px;
-  height: 100%;
-  width: 100%;
-  overflow-y: overlay;
-  transition: max-width 0.4s ease;
-  background-color: var(--lightgray);
-  float: right;
-  right: 0;
-  z-index: 1;
-}
-
-.summary {
   outline: none;
   box-shadow: none;
+
+  &:hover {
+    color: var(--processing-blue-dark);
+  }
+
+  &::-webkit-details-marker {
+    color: var(--gray);
+  }
+
+  &::-webkit-details-marker:hover {
+    color: var(--processing-blue-dark);
+  }
+}
+
+.folded {
+  display: inline-block;
+}
+
+.root details[open] .folded {
+  display: none;
 }
 
 .toggleShape {
@@ -149,20 +73,4 @@
 .link:hover {
   color: white;
   background-color: var(--processing-blue-dark);
-}
-
-.inCode {
-  width: 100%;
-  padding-left: var(--gutter-double);
-}
-
-.inCode pre,
-.inCode code {
-  display: inline;
-}
-
-.codeStrokes {
-  display: block;
-  padding-left: 34px;
-  margin-bottom: 0px;
 }

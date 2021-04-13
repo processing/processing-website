@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import { scale, round } from '../../utils/editor';
 import css from './Draggable.module.css';
 
@@ -8,8 +8,6 @@ const Draggable = (props) => {
     range,
     path,
     isInteger = true,
-    labelBefore,
-    labelAfter,
     onDraggingStart,
     onDraggingEnd,
     index,
@@ -63,27 +61,23 @@ const Draggable = (props) => {
   };
 
   return (
-    <Fragment>
-      {labelBefore && <span>{labelBefore}</span>}
+    <span
+      role={'button'}
+      aria-label={'change position'}
+      tabIndex={tabIndex}
+      className={css.parent}
+      onMouseDown={registerMove}
+      onMouseUp={deregisterMove}>
+      <span className={css.arrowLeft}></span>
       <span
-        role={'button'}
-        aria-label={'change position'}
-        tabIndex={tabIndex}
-        className={css.parent}
-        onMouseDown={registerMove}
-        onMouseUp={deregisterMove}>
-        <span className={css.arrowLeft}></span>
-        <span
-          name="pos"
-          className={dragging ? css.dragging : css.root}
-          onChange={(e) => props.onChange(e, path, e.target.value)}
-          value={value}>
-          {value}
-        </span>
-        <span className={css.arrowRight}></span>
+        name="pos"
+        className={dragging ? css.dragging : css.root}
+        onChange={(e) => props.onChange(e, path, e.target.value)}
+        value={value}>
+        {value}
       </span>
-      {labelAfter && <span>{labelAfter}</span>}
-    </Fragment>
+      <span className={css.arrowRight}></span>
+    </span>
   );
 };
 
