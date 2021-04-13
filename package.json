@@ -7,6 +7,7 @@
   "dependencies": {
     "@mdx-js/mdx": "1.6.16",
     "@mdx-js/react": "1.6.16",
+    "@octokit/graphql": "^4.6.1",
     "array-flat-polyfill": "^1.0.1",
     "array-unique": "^0.3.2",
     "classnames": "^2.2.6",
@@ -74,6 +75,7 @@
     "start": "gatsby serve",
     "clean": "gatsby clean",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
+    "fetchReleases": "node scripts/fetchReleases.js",
     "deploy": "static deploy"
   },
   "browserslist": "last 2 versions, >0.5%",

@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { useStaticQuery } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
 import { DateTime } from 'luxon';
@@ -233,11 +234,7 @@ const Download = () => {
                 <span className={classnames(grid.col, css.releaseName)}>
                   {release.name.replace('Processing ', '')}
                 </span>
-                <span
-                  className={classnames(
-                    grid.col,
-                    css.releaseDate
-                  )}>
+                <span className={classnames(grid.col, css.releaseDate)}>
                   {` (${DateTime.fromISO(release.publishedAt).toLocaleString(
                     DateTime.DATE_FULL
                   )})`}
@@ -248,8 +245,8 @@ const Download = () => {
                       a.node.name > b.node.name
                         ? -1
                         : a.node.name < b.node.name
-                          ? 1
-                          : 0
+                        ? 1
+                        : 0
                     )
                     .map((asset, i) => {
                       const { name: filename, downloadUrl } = asset.node;
@@ -286,14 +283,10 @@ const Download = () => {
                 <span className={classnames(grid.col, css.releaseName)}>
                   {preRelease.name.replace('Processing ', '')}
                 </span>
-                <span
-                  className={classnames(
-                    grid.col,
-                    css.releaseDate
-                  )}>
-                  {` (${DateTime.fromISO(
-                    preRelease.publishedAt
-                  ).toLocaleString(DateTime.DATE_FULL)})`}
+                <span className={classnames(grid.col, css.releaseDate)}>
+                  {` (${DateTime.fromISO(preRelease.publishedAt).toLocaleString(
+                    DateTime.DATE_FULL
+                  )})`}
                 </span>
                 <span className={classnames(grid.col, css.releaseAssets)}>
                   {preRelease.releaseAssets.edges
@@ -301,8 +294,8 @@ const Download = () => {
                       a.node.name > b.node.name
                         ? -1
                         : a.node.name < b.node.name
-                          ? 1
-                          : 0
+                        ? 1
+                        : 0
                     )
                     .map((asset, i) => {
                       const { name: filename, downloadUrl } = asset.node;
