@@ -9,3 +9,9 @@ In order to not require an API token on GitHub in development, there is a separa
 1. Make sure that the release has been published on GitHub
 2. Edit the [`selected.json`](/content/download/selected.json) file to include the new release tag
 3. Make a PR to the `master` branch. When this PR is merged, a GitHub action will take care of fetching the release data from GitHub and redeploy the website.
+
+If you want to see the changes on your local machine before merging the PR, you can run the fetching script like this:
+
+```
+$ GITHUB_TOKEN=SOMETOKENHERE npm run fetchReleases
+```
