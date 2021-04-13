@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { scale, round } from '../../utils/editor';
+import classnames from 'classnames';
 import css from './Draggable.module.css';
 
 const Draggable = (props) => {
@@ -8,6 +9,7 @@ const Draggable = (props) => {
     range,
     path,
     isInteger = true,
+    className,
     onDraggingStart,
     onDraggingEnd,
     index,
@@ -65,7 +67,7 @@ const Draggable = (props) => {
       role={'button'}
       aria-label={'change position'}
       tabIndex={tabIndex}
-      className={css.parent}
+      className={classnames(css.parent, className)}
       onMouseDown={registerMove}
       onMouseUp={deregisterMove}>
       <span className={css.arrowLeft}></span>

@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import Draggable from './Draggable';
 import Color from './Color';
 import Shape from './Shape';
-import Line from './Line';
 
 import css from './SketchCode.module.css';
 
@@ -66,19 +65,20 @@ const SketchCode = (props) => {
         <span className="hljs-datatype">int</span> u ={' '}
         <Draggable
           name="unit"
-          className={css.showGrid}
+          className={css.interactive}
           value={unit}
           range={{ min: 20, max: 80 }}
           path={['unit']}
           onChange={onChange}
-          tabIndex={isVisible ? 0 : -1}></Draggable>
+          tabIndex={isVisible ? 0 : -1}
+        />
         ;
       </Line>
       <Line num={4}>
         <span className="hljs-datatype">boolean</span> showGrid ={' '}
         <button
           name="showGrid"
-          className={classnames(css.showGrid, 'hljs-keyword')}
+          className={classnames(css.interactive, 'hljs-keyword')}
           value={showGrid}
           onClick={(e) => onChange(e, ['showGrid'], !showGrid)}
           tabIndex={isVisible ? 0 : -1}>
@@ -108,7 +108,7 @@ const SketchCode = (props) => {
         <Line num={15}>
           {`  strokeWeight(`}
           <Draggable
-            className={css.showGrid}
+            className={css.interactive}
             value={strokeWidth}
             range={{ min: 0.5, max: 2 }}
             path={['strokeWidth']}
@@ -180,6 +180,15 @@ const SketchCode = (props) => {
 //   tabIndex={isVisible ? 0 : -1}>
 //   {shape.type ? '/' : '~'}
 // </Button>
+
+const Line = ({ num, children }) => {
+  return (
+    <div className={css.line}>
+      <span className={css.num}>{num}</span>
+      {children}
+    </div>
+  );
+};
 
 const Folded = () => {
   return (
