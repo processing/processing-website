@@ -54,17 +54,35 @@ const fetchReleases = async () => {
     }
   );
 
-  fs.writeFileSync(
-    path.join(__dirname, '..', 'content', 'download', 'github_releases.json'),
-    JSON.stringify(
-      {
-        releases: releases.releases,
-        preReleases: preReleases.releases,
-      },
-      null,
-      2
-    )
-  );
+  // Write releases to folder
+  releases.releases.edges.forEach((release) => {
+    fs.writeFileSync(
+      path.join(
+        __dirname,
+        '..',
+        'content',
+        'download',
+        'releases',
+        `${release.node.tagName}.json`
+      ),
+      JSON.stringify(release.node, null, 2)
+    );
+  });
+
+  // Write prereleases to folder
+  preReleases.releases.edges.forEach((release) => {
+    fs.writeFileSync(
+      path.join(
+        __dirname,
+        '..',
+        'content',
+        'download',
+        'prereleases',
+        `${release.node.tagName}.json`
+      ),
+      JSON.stringify(release.node, null, 2)
+    );
+  });
 };
 
 // only fetch if ENV has GITHUB_TOKEN

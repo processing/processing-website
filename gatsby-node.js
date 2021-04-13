@@ -56,7 +56,7 @@ async function createReference(actions, graphql) {
   const refTemplate = path.resolve(`./src/templates/reference/function.js`);
   const classRefTemplate = path.resolve(`./src/templates/reference/class.js`);
   const fieldRefTemplate = path.resolve(`./src/templates/reference/field.js`);
-  const indexLibTemplate = path.resolve(`./src/templates/libraries/index.js`);
+  const indexLibTemplate = path.resolve(`./src/templates/libraries.js`);
 
   const { createPage } = actions;
 
@@ -114,7 +114,10 @@ async function createReference(actions, graphql) {
           libraryName,
         },
       });
-    } else if (refPage.node.childJson.type === 'field' || refPage.node.childJson.type === 'other') {
+    } else if (
+      refPage.node.childJson.type === 'field' ||
+      refPage.node.childJson.type === 'other'
+    ) {
       createPage({
         path: refPath,
         component: fieldRefTemplate,
