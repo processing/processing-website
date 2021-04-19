@@ -1,4 +1,4 @@
-import React, { useState, useMemo, Fragment } from 'react';
+import React, { useState, useMemo, Fragment, useCallback } from 'react';
 import classnames from 'classnames';
 import SketchGraphic from './SketchGraphic';
 import SketchCode from './SketchCode';
@@ -45,39 +45,35 @@ const Sketch = ({ children }) => {
   const [showCode, setShow] = useState(true);
   const { width } = useWindowSize();
 
-  const changeStateHandler = (e, path, value) => {
+  const changeStateHandler = useCallback((e, path, value) => {
     setState((state) => state.setIn(path, value));
-  };
+  }, []);
 
-  const handleClickOnSketch = (e) => {
+  const handleClickOnSketch = useCallback((e) => {
     e.stopPropagation();
     setState((state) => state.setIn(['showCode'], !showCode ? true : false));
-    setShow((showCode) => !showCode);
-  };
+    setShow((show) => !show);
+  }, []);
 
-  const handleMouseEnterShapeLine = (shapeIdx) => {
+  const handleMouseEnterShapeLine = useCallback((shapeIdx) => {
     setState((state) =>
       state.setIn(['shapes', shapeIdx, 'showHandlers'], true)
     );
-  };
+  }, []);
 
-  const handleMouseLeaveShapeLine = (shapeIdx) => {
+  const handleMouseLeaveShapeLine = useCallback((shapeIdx) => {
     setState((state) =>
       state.setIn(['shapes', shapeIdx, 'showHandlers'], false)
     );
-  };
+  }, []);
 
-  const handleDraggingShapeStart = (shapeIdx, index) => {
+  const handleDraggingShapeStart = useCallback((shapeIdx, index) => {
     setState((state) => state.setIn(['shapes', shapeIdx, 'dragging'], index));
-  };
+  }, []);
 
-  const handleDraggingShapeEnd = (shapeIdx) => {
+  const handleDraggingShapeEnd = useCallback((shapeIdx) => {
     setState((state) => state.setIn(['shapes', shapeIdx, 'dragging'], null));
-  };
-
-  useMemo(() => {
-    setState((state) => state.setIn(['width'], width <= 960 ? 600 : 600));
-  }, [width]);
+  }, []);
 
   const stateJS = state.toJS();
 

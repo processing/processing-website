@@ -3,8 +3,6 @@
 .root {
   flex-basis: 100%;
   background-color: white;
-  margin-top: 15px;
-  margin-bottom: 15px;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   border: 1px solid var(--gray);
