@@ -70,9 +70,11 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
                 <ExampleList examples={examples} />
               </Section>
             )}
-            <Section title={intl.formatMessage({ id: 'syntax' })}>
-              <CodeList items={syntax} />
-            </Section>
+            {syntax && (
+              <Section title={intl.formatMessage({ id: 'syntax' })}>
+                <CodeList items={syntax} />
+              </Section>
+            )}
             {parameters && (
               <Section title={intl.formatMessage({ id: 'parameters' })}>
                 <CodeList variant="parameters" items={parameters} />
