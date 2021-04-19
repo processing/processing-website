@@ -2,80 +2,84 @@ import React, { useState, useMemo, Fragment, useCallback } from 'react';
 import classnames from 'classnames';
 import SketchGraphic from './SketchGraphic';
 import SketchCode from './SketchCode';
-import { fromJS } from 'immutable';
-
-import { useWindowSize } from '../../hooks';
 
 import grid from '../../styles/grid.module.css';
 import css from './Sketch.module.css';
 
-const initialState = fromJS({
+const initialState = {
   showGrid: true,
   width: 600,
   height: 600,
   unit: 60,
-  strokeWidth: 1.5,
+  strokeWeight: 1.5,
   shapes: [
     {
       line: true,
-      color: { r: 2, g: 81, b: 200 },
+      color: [2, 81, 200],
       pos: [1, 2, 0, 0, 0, 0, 7, 5],
       showHandlers: false,
       dragging: null,
     },
     {
       line: false,
-      color: { r: 80, g: 139, b: 255 },
+      color: [80, 139, 255],
       pos: [1, 5, 4, 4, 2, 2, 4, 1],
       showHandlers: false,
       dragging: null,
     },
     {
       line: true,
-      color: { r: 30, g: 42, b: 103 },
+      color: [30, 42, 103],
       pos: [6, 1, 0, 0, 0, 0, 4, 7],
       showHandlers: false,
       dragging: null,
     },
   ],
-});
+};
 
 const Sketch = ({ children }) => {
   const [state, setState] = useState(initialState);
-  const [showCode, setShow] = useState(true);
-  const { width } = useWindowSize();
+  const [showCode, setShowCode] = useState(true);
 
-  const changeStateHandler = useCallback((e, path, value) => {
-    setState((state) => state.setIn(path, value));
+  // Change handler for a simple attribute in state
+  const onChange = useCallback((e, key, value) => {
+    setState((oldState) => Object.assign({}, oldState, { [key]: value }));
   }, []);
+
+  // Change handler for a simple attribute in a shape
+  const onChangeShape = useCallback((e, shapeIdx, key, value) => {
+    // setState((oldState) => Object.assign({}, oldState, { [key]: value }));
+  }, []);
+
+  // const onChangeShapeArray
+
+  // const onChangeShapePos
 
   const handleClickOnSketch = useCallback((e) => {
     e.stopPropagation();
-    setState((state) => state.setIn(['showCode'], !showCode ? true : false));
-    setShow((show) => !show);
+    //setState((state) => state.setIn(['showCode'], !showCode ? true : false));
+    setShowCode((show) => !show);
   }, []);
 
   const handleMouseEnterShapeLine = useCallback((shapeIdx) => {
-    setState((state) =>
-      state.setIn(['shapes', shapeIdx, 'showHandlers'], true)
-    );
+    // setState((state) =>
+    //   state.setIn(['shapes', shapeIdx, 'showHandlers'], true)
+    // );
   }, []);
 
   const handleMouseLeaveShapeLine = useCallback((shapeIdx) => {
-    setState((state) =>
-      state.setIn(['shapes', shapeIdx, 'showHandlers'], false)
-    );
+    // setState((state) =>
+    //   state.setIn(['shapes', shapeIdx, 'showHandlers'], false)
+    // );
   }, []);
 
   const handleDraggingShapeStart = useCallback((shapeIdx, index) => {
-    setState((state) => state.setIn(['shapes', shapeIdx, 'dragging'], index));
+    // setState((state) => state.setIn(['shapes', shapeIdx, 'dragging'], index));
   }, []);
 
   const handleDraggingShapeEnd = useCallback((shapeIdx) => {
-    setState((state) => state.setIn(['shapes', shapeIdx, 'dragging'], null));
+    // setState((state) => state.setIn(['shapes', shapeIdx, 'dragging'], null));
   }, []);
-
-  const stateJS = state.toJS();
 
   return (
     <div className={classnames(css.root, grid.grid)}>
@@ -84,9 +88,9 @@ const Sketch = ({ children }) => {
           <div className={css.slide}>{children}</div>
           <div className={css.slide}>
             <SketchCode
-              onChange={changeStateHandler}
+              onChange={onChange}
               isVisible={showCode}
-              {...stateJS}
+              {...state}
               onMouseEnterShape={handleMouseEnterShapeLine}
               onMouseLeaveShape={handleMouseLeaveShapeLine}
               onDraggingShapeStart={handleDraggingShapeStart}
@@ -98,7 +102,7 @@ const Sketch = ({ children }) => {
       <div className={classnames(grid.col, css.right)}>
         <SketchGraphic
           onClick={handleClickOnSketch}
-          {...stateJS}
+          {...state}
           isCodeVisible={showCode}
         />
       </div>

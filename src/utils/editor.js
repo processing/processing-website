@@ -7,9 +7,9 @@ export const rgbToHex = (rgb) => {
   if (typeof rgb === 'string') return rgb;
   let hex =
     '#' +
-    rgb.r.toString(16).padStart(2, '0') +
-    rgb.g.toString(16).padStart(2, '0') +
-    rgb.b.toString(16).padStart(2, '0');
+    rgb[0].toString(16).padStart(2, '0') +
+    rgb[1].toString(16).padStart(2, '0') +
+    rgb[2].toString(16).padStart(2, '0');
   return hex;
 };
 
@@ -17,11 +17,7 @@ export const hexToRgb = (hex) => {
   if (typeof hex === 'object' && hex !== null) return hex;
   let rgb = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return rgb
-    ? {
-        r: parseInt(rgb[1], 16),
-        g: parseInt(rgb[2], 16),
-        b: parseInt(rgb[3], 16),
-      }
+    ? [parseInt(rgb[1], 16), parseInt(rgb[2], 16), parseInt(rgb[3], 16)]
     : null;
 };
 

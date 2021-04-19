@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import { scale, round } from '../../utils/editor';
 import classnames from 'classnames';
 import css from './Draggable.module.css';
@@ -6,7 +6,8 @@ import css from './Draggable.module.css';
 const Draggable = (props) => {
   const {
     value,
-    range,
+    min,
+    max,
     path,
     isInteger = true,
     className,
@@ -31,13 +32,13 @@ const Draggable = (props) => {
             e.screenX - dragging,
             -120,
             120,
-            -(range.max - range.min),
-            range.max - range.min
+            -(max - min),
+            max - min
           );
           const t = isInteger
             ? value + Math.floor(diff)
             : round(value + diff, 2);
-          if (t >= range.min && t <= range.max) props.onChange(e, path, t);
+          if (t >= min && t <= max) props.onChange(e, path, t);
         }
       };
 
@@ -49,7 +50,7 @@ const Draggable = (props) => {
         document.removeEventListener('mousemove', handleMouseMove);
       };
     }
-  }, [dragging, index, isInteger, onDraggingEnd, path, props, range, value]);
+  }, [dragging, index, isInteger, onDraggingEnd, path, props, min, max, value]);
 
   const registerMove = (e) => {
     props.blurRest && props.blurRest(e, true);
@@ -83,4 +84,4 @@ const Draggable = (props) => {
   );
 };
 
-export default Draggable;
+export default memo(Draggable);

@@ -36,7 +36,6 @@ const Shape = (props) => {
         draggable.push(
           <Draggable
             key={index}
-            className={css.Draggable}
             onChange={props.onChange}
             value={shape.pos[index]}
             path={['shapes', shapesInx, 'pos', index]}

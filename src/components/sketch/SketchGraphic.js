@@ -11,7 +11,7 @@ const SketchGraphic = (props) => {
     width,
     height,
     shapes,
-    strokeWidth,
+    strokeWeight,
     onClick,
     isCodeVisible,
   } = props;
@@ -116,8 +116,7 @@ const SketchGraphic = (props) => {
         <g transform={`translate(1, 1)`}>
           <g className={css.grid}>{grid}</g>
           {shapes.map((shape, index) => {
-            const { r, g, b } = shape.color;
-            const color = `rgb(${r},${g},${b})`;
+            const color = `rgb(${shape.color[0]},${shape.color[1]},${shape.color[2]})`;
 
             let dPoints = shape.pos.map((x) => x * unit);
 
@@ -134,7 +133,7 @@ const SketchGraphic = (props) => {
                 x2={shape.pos[6] * unit}
                 y2={shape.pos[7] * unit}
                 stroke={color}
-                strokeWidth={strokeWidth * unit}
+                strokeWidth={strokeWeight * unit}
               />
             ) : (
               <Fragment key={index}>
@@ -143,7 +142,7 @@ const SketchGraphic = (props) => {
                   d={dPoints.join(' ')}
                   stroke={color}
                   fill="none"
-                  strokeWidth={strokeWidth * unit}
+                  strokeWidth={strokeWeight * unit}
                 />
                 {handlers(shape, index, color)}
               </Fragment>

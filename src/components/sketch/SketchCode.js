@@ -14,45 +14,14 @@ const SketchCode = (props) => {
     unit,
     showGrid,
     shapes,
-    strokeWidth,
+    strokeWeight,
     isVisible,
+    onChange,
     onMouseEnterShape,
     onMouseLeaveShape,
     onDraggingShapeStart,
     onDraggingShapeEnd,
-    onChange,
   } = props;
-  //const cols = Math.floor(width / unit);
-  //const rows = Math.floor(height / unit);
-
-  // useEffect(() => {
-  //   shapes.forEach((shape, index) => {
-  //     shape.pos.forEach((p, subindex) => {
-  //       if (p > rows && subindex % 2 === 1) {
-  //         onChange(
-  //           'Adjusting strokes to rows',
-  //           ['shapes', index, 'pos', subindex],
-  //           rows
-  //         );
-  //       }
-  //     });
-  //   });
-  // }, [height, unit, onChange, rows, shapes]);
-  //
-  // useEffect(() => {
-  //   shapes.forEach((shape, index) => {
-  //     shape.pos.forEach((p, subindex) => {
-  //       if (p > cols && subindex % 2 === 0) {
-  //         onChange(
-  //           'Adjusting strokes to cols',
-  //           ['shapes', index, 'pos', subindex],
-  //           cols
-  //         );
-  //       }
-  //     });
-  //   });
-  // }, [width, unit, cols, onChange, shapes]);
-
   return (
     <div className={css.root}>
       <Line num={1}>
@@ -83,7 +52,7 @@ const SketchCode = (props) => {
           <span className="hljs-constant">SQUARE</span>);
         </Line>
         <StrokeWeight
-          strokeWidth={strokeWidth}
+          strokeWeight={strokeWeight}
           onChange={onChange}
           isVisible={isVisible}
         />
@@ -97,8 +66,7 @@ const SketchCode = (props) => {
                 <span className="hljs-built_in">stroke</span>(
                 <Color
                   onChange={onChange}
-                  shapes={shapes}
-                  shapesInx={i}
+                  value={shapes[i].color}
                   tabIndex={isVisible ? 0 : -1}
                 />
                 );
@@ -137,7 +105,7 @@ const ShowGrid = memo(({ showGrid, isVisible, onChange }) => {
         name="showGrid"
         className={classnames(css.interactive, 'hljs-keyword')}
         value={showGrid}
-        onClick={(e) => onChange(e, ['showGrid'], !showGrid)}
+        onClick={(e) => onChange(e, 'showGrid', !showGrid)}
         tabIndex={isVisible ? 0 : -1}>
         {showGrid ? 'true' : 'false'}
       </button>
@@ -167,16 +135,16 @@ const Setup = memo(({ isVisible }) => {
   );
 });
 
-const StrokeWeight = memo(({ strokeWidth, onChange, isVisible }) => {
+const StrokeWeight = memo(({ strokeWeight, onChange, isVisible }) => {
   return (
     <Line num={12}>
       {`  `}
       <span className="hljs-built_in">strokeWeight</span>(
       <Draggable
         className={css.interactive}
-        value={strokeWidth}
+        value={strokeWeight}
         range={{ min: 0.5, max: 2 }}
-        path={['strokeWidth']}
+        path={['strokeWeight']}
         isInteger={false}
         onChange={onChange}
         tabIndex={isVisible ? 0 : -1}

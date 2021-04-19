@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import ColorDraggable from './ColorDraggable';
+import React, { useState, memo } from 'react';
+import Draggable from './Draggable';
 import css from './Color.module.css';
 import { rgbToHex, hexToRgb } from '../../utils/editor';
 
@@ -13,7 +13,7 @@ const Color = (props) => {
 
   return (
     <span className={colorClass ? css.root : css.blur}>
-      <ColorDraggable
+      <Draggable
         onChange={props.onChange}
         shape={shapes[shapesInx]}
         shapesInx={shapesInx}
@@ -22,7 +22,7 @@ const Color = (props) => {
         tabIndex={tabIndex}
       />
       ,&nbsp;
-      <ColorDraggable
+      <Draggable
         onChange={props.onChange}
         shape={shapes[shapesInx]}
         shapesInx={shapesInx}
@@ -31,7 +31,7 @@ const Color = (props) => {
         tabIndex={tabIndex}
       />
       ,&nbsp;
-      <ColorDraggable
+      <Draggable
         onChange={props.onChange}
         shape={shapes[shapesInx]}
         shapesInx={shapesInx}
@@ -57,4 +57,4 @@ const Color = (props) => {
   );
 };
 
-export default Color;
+export default memo(Color);
