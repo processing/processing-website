@@ -10,6 +10,8 @@ import css from './ReferenceItemList.module.css';
 
 export const CodeList = memo(
   ({ items, variant, nameIsHtml, descriptionIsHtml }) => {
+    console.log(items);
+
     return (
       <ul className={classnames(css.codeList, css[variant])}>
         {items.map((item) => {
