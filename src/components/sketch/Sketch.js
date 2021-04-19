@@ -46,9 +46,17 @@ const Sketch = ({ children }) => {
     setState((oldState) => Object.assign({}, oldState, { [key]: value }));
   }, []);
 
-  // Change handler for a simple attribute in a shape
-  const onChangeShape = useCallback((e, shapeIdx, key, value) => {
-    // setState((oldState) => Object.assign({}, oldState, { [key]: value }));
+  // Change handler for attributes in a shape
+  const onChangeShape = useCallback((shapeIdx, key, value) => {
+    console.log('change shape', shapeIdx, key, value);
+    setState((oldState) => {
+      const newState = Object.assign({}, oldState);
+      newState.shapes = oldState.shapes.slice();
+      newState.shapes[shapeIdx] = Object.assign({}, newState.shapes[shapeIdx], {
+        [key]: value,
+      });
+      return newState;
+    });
   }, []);
 
   // const onChangeShapeArray
@@ -89,6 +97,7 @@ const Sketch = ({ children }) => {
           <div className={css.slide}>
             <SketchCode
               onChange={onChange}
+              onChangeShape={onChangeShape}
               isVisible={showCode}
               {...state}
               onMouseEnterShape={handleMouseEnterShapeLine}

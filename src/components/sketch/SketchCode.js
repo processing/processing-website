@@ -17,6 +17,7 @@ const SketchCode = (props) => {
     strokeWeight,
     isVisible,
     onChange,
+    onChangeShape,
     onMouseEnterShape,
     onMouseLeaveShape,
     onDraggingShapeStart,
@@ -65,8 +66,8 @@ const SketchCode = (props) => {
                 {`  `}
                 <span className="hljs-built_in">stroke</span>(
                 <Color
-                  onChange={onChange}
-                  value={shapes[i].color}
+                  onChange={(color) => onChangeShape(i, 'color', color)}
+                  color={shapes[i].color}
                   tabIndex={isVisible ? 0 : -1}
                 />
                 );

@@ -15,6 +15,7 @@ const Draggable = (props) => {
     onDraggingEnd,
     index,
     tabIndex,
+    onChange,
   } = props;
   const [dragging, setDragging] = useState(null);
 
@@ -38,7 +39,9 @@ const Draggable = (props) => {
           const t = isInteger
             ? value + Math.floor(diff)
             : round(value + diff, 2);
-          if (t >= min && t <= max) props.onChange(e, path, t);
+          if (t >= min && t <= max) {
+            onChange(t);
+          }
         }
       };
 
