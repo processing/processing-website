@@ -57,7 +57,7 @@
   "classFields": [],
   "description": "The GPIO class reads and writes from General Purpose I/O pins",
   "type": "class",
-  "constructors": ["GPIO("],
+  "constructors": ["GPIO()"],
   "related": [],
   "name": "GPIO",
   "classanchor": "io/GPIO",

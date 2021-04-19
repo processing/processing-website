@@ -1,0 +1,9 @@
+{
+  "name": "Distance2 D",
+  "title": "Distance 2D",
+  "author": "",
+  "level": "Beginner",
+  "order": "3",
+  "description": "Move the mouse across the image to obscure and reveal the matrix.  \n  Measures the distance from the mouse to each square and sets the\n  size proportionally.",
+  "featured": ["dist_"]
+}

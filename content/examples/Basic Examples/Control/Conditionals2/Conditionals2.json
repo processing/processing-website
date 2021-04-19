@@ -1,0 +1,9 @@
+{
+  "name": "Conditionals2",
+  "title": "Conditionals 2",
+  "author": "",
+  "level": "Beginner",
+  "order": "3",
+  "description": "We extend the language of conditionals from the previous\n  example by adding the keyword \"else\". This allows conditionals \n  to ask two or more sequential questions, each with a different\n  action.",
+  "featured": ["if", "else"]
+}

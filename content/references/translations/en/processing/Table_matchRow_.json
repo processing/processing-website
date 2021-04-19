@@ -8,7 +8,7 @@
     "Table_matchRows_"
   ],
   "name": "matchRow()",
-  "description": "Finds the first row in the <b>Table</b> that matches the regular expression \n provided, and returns a reference to that row.  Even if multiple rows are \n possible matches, only the first matching row is returned. The column to \n search may be specified by either its ID or title.",
+  "description": "Finds the first row in the <b>Table</b> that matches the regular expression\n provided, and returns a reference to that row.  Even if multiple rows are\n possible matches, only the first matching row is returned. The column to\n search may be specified by either its ID or title.",
   "syntax": [".matchRow(regexp, column)", ".matchRow(regexp, columnName)"],
   "returns": "TableRow",
   "type": "method",

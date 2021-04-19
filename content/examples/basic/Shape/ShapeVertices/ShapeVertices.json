@@ -1,1 +1,0 @@
-{"name":"Shape Vertices","title":"Shape Vertices","author":"","description":"How to iterate over the vertices of a shape.\n  When loading an obj or SVG, getVertexCount() \n  will typically return 0 since all the vertices \n  are in the child shapes. \n\n  You should iterate through the children and then\n  iterate through their vertices.","featured":[]}

@@ -1,0 +1,9 @@
+{
+  "name": "Pattern",
+  "title": "Patterns",
+  "author": "",
+  "level": "Intermediate",
+  "order": "2",
+  "description": "Move the cursor over the image to draw with a software tool \n  which responds to the speed of the mouse.",
+  "featured": ["abs_", "stroke_", "ellipse_"]
+}

@@ -1,1 +1,0 @@
-{"name":"Datatype Conversion","title":"Datatype Conversion","author":"","description":"It is sometimes beneficial to convert a value from one type of \n  data to another. Each of the conversion functions converts its parameter \n  to an equivalent representation within its datatype. \n  The conversion functions include int(), float(), char(), byte(), and others.","featured":[]}

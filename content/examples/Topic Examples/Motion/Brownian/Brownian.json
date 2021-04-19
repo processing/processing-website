@@ -1,0 +1,9 @@
+{
+  "name": "Brownian",
+  "title": "Brownian motion",
+  "author": "",
+  "level": "Intermediate",
+  "order": "4",
+  "description": "Recording random movement as a continuous line.",
+  "featured": ["Array", "random_", "constrain_", "stroke_", "line_"]
+}

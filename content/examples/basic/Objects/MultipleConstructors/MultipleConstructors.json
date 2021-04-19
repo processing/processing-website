@@ -1,1 +1,0 @@
-{"name":"Multiple Constructors","title":"Multiple constructors","author":"","description":"A class can have multiple constructors that assign the fields in different ways. \n  Sometimes it's beneficial to specify every aspect of an object's data by assigning \n  parameters to the fields, but other times it might be appropriate to define only \n  one or a few.","featured":[]}

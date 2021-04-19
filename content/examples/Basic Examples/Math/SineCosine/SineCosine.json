@@ -1,0 +1,9 @@
+{
+  "name": "Sine Cosine",
+  "title": "Sine Cosine",
+  "author": "",
+  "level": "Beginner",
+  "order": "6",
+  "description": "Linear movement with sin() and cos(). \n  Numbers between 0 and PI2 (TWO_PI which angles roughly 6.28) \n  are put into these functions and numbers between -1 and 1 are \n  returned. These values are then scaled to produce larger movements.",
+  "featured": ["sin_", "cos_"]
+}

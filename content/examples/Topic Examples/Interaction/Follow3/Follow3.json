@@ -1,0 +1,9 @@
+{
+  "name": "Follow3",
+  "title": "Follow 3",
+  "author": "based on code from Keith Peters",
+  "level": "Intermediate",
+  "order": "3",
+  "description": "A segmented line follows the mouse. The relative angle from\n  each segment to the next is calculated with atan2() and the\n  position of the next is calculated with sin() and cos().",
+  "featured": ["Array", "atan2_", "cos_", "sin_", "pushMatrix_", "popMatrix_"]
+}

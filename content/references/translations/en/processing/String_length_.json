@@ -3,9 +3,7 @@
   "brief": "Returns the total number of characters included in the <b>String</b> as an integer number",
   "description": "Returns the total number of characters included in the <b>String</b> as an integer number.\n<br /><br />\nPeople are often confused by the use of <b>length()</b> to get the size of a String and <b>length</b> to get the size of an array. Notice the absence of the parentheses when working with arrays. \n",
   "related": [],
-  "syntax": [
-    "str.length()"
-  ],
+  "syntax": ["str.length()"],
   "returns": "int",
   "type": "method",
   "category": "string",

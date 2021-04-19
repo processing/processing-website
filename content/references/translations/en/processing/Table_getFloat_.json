@@ -9,7 +9,7 @@
     "Table_setString_"
   ],
   "name": "getFloat()",
-  "description": "Retrieves a float value from the <b>Table</b>'s specified row and column. \n The row is specified by its ID, while the column may be specified by either \n its ID or title.",
+  "description": "Retrieves a float value from the <b>Table</b>'s specified row and column.\n The row is specified by its ID, while the column may be specified by either\n its ID or title.",
   "syntax": [".getFloat(row, column)", ".getFloat(row, columnName)"],
   "returns": "float",
   "type": "method",

@@ -1,0 +1,9 @@
+{
+  "name": "Double Random",
+  "title": "Double Random",
+  "author": "Ira Greenberg",
+  "level": "Beginner",
+  "order": "14",
+  "description": "Using two random() calls and the point() function \n  to create an irregular sawtooth line.",
+  "featured": ["random_"]
+}

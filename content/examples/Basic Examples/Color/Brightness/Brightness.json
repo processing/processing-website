@@ -1,0 +1,9 @@
+{
+  "name": "Brightness",
+  "title": "Brightness",
+  "author": "Rusty Robison",
+  "level": "Intermediate",
+  "order": "2",
+  "description": "Brightness is the relative lightness or darkness of a color.\n  Move the cursor vertically over each bar to alter its brightness.",
+  "featured": ["colorMode_", "fill_"]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Variable Scope",
+  "title": "Variable Scope",
+  "author": "",
+  "level": "Intermediate",
+  "order": "5",
+  "description": "Variables have a global or local \"scope\". \n  For example, variables declared within either the\n  setup() or draw() functions may be only used in these\n  functions. Global variables, variables declared outside\n  of setup() and draw(), may be used anywhere within the program.\n  If a local variable is declared with the same name as a\n  global variable, the program will use the local variable to make \n  its calculations within the current scope. Variables are localized\n  within each block, the space between a { and }.",
+  "featured": []
+}

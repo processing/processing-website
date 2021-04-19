@@ -19,7 +19,7 @@ const Books = ({ data }) => {
   return (
     <Layout>
       <Helmet>
-        <title>{'Books'}</title>
+        <title>Books</title>
       </Helmet>
       <div className={classnames(grid.grid, css.root)}>
         <h1 className={grid.col}>Books</h1>

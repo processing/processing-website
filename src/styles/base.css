@@ -4,6 +4,7 @@ html {
   font-family: "Space Grotesk", Helvetica, Arial, sans-serif;
   font-feature-settings: "ss02", "ss04", "ss05";
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -18,7 +19,7 @@ html,
 body,
 #___gatsby,
 #gatsby-focus-wrapper {
-  height: 100%;
+  min-height: 100%;
 }
 
 h1,
@@ -87,10 +88,6 @@ p {
   }
 }
 
-span {
-  font-size: var(--text-small);
-}
-
 code,
 pre {
   font-family: var(--font-mono);
@@ -156,4 +153,8 @@ img {
 
 .hljs-built_in {
   color: #006699;
+}
+
+.hljs-string {
+  color: #7d4793;
 }

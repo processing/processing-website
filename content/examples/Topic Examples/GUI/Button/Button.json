@@ -1,0 +1,9 @@
+{
+  "name": "Button",
+  "title": "Button",
+  "author": "",
+  "level": "Intermediate",
+  "order": "1",
+  "description": "Click on one of the colored shapes in the \n  center of the image to change the color of \n  the background.",
+  "featured": ["ellipse_", "ellipseMode_", "mousePressed_", "sqrt_"]
+}

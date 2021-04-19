@@ -89,7 +89,7 @@
   "classFields": [],
   "description": "Helper class for a list of floats. Lists are designed to have some of the\n features of ArrayLists, but to maintain the simplicity and efficiency of\n working with arrays.\n\n Functions like sort() and shuffle() always act on the list itself. To get\n a sorted copy, use list.copy().sort().",
   "type": "class",
-  "constructors": ["FloatList(", "FloatList(items)"],
+  "constructors": ["FloatList()", "FloatList(items)"],
   "related": ["IntList", "StringList"],
   "name": "FloatList",
   "classanchor": "FloatList",

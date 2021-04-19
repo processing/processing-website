@@ -1,6 +1,6 @@
 {
   "brief": "Main graphics and rendering context, as well as the base API\n           implementation for processing \"core\".",
-  "constructors": ["PGraphics("],
+  "constructors": ["PGraphics()"],
   "related": ["createGraphics_"],
   "methods": [
     {
@@ -211,7 +211,7 @@
     {
       "anchor": "PGraphics_curvePoint_",
       "name": "curvePoint()",
-      "desc": "Evalutes the curve at point t for points a, b, c, d."
+      "desc": "Evaluates the curve at point t for points a, b, c, d."
     },
     {
       "anchor": "PGraphics_curveTangent_",
@@ -506,7 +506,7 @@
     {
       "anchor": "PGraphics_specular_",
       "name": "specular()",
-      "desc": "Sets the specular color of the materials used for shapes drawn to the\n screen, which sets the color of hightlights."
+      "desc": "Sets the specular color of the materials used for shapes drawn to the\n screen, which sets the color of highlights."
     },
     {
       "anchor": "PGraphics_shininess_",
@@ -616,7 +616,7 @@
   ],
   "name": "PGraphics",
   "classFields": [],
-  "description": "Main graphics and rendering context, as well as the base API implementation\n for processing \"core\". Use this class if you need to draw into an off-screen\n graphics buffer. A PGraphics object can be constructed with the\n <b>createGraphics()</b> function. The <b>beginDraw()</b> and <b>endDraw()</b>\n methods (see above example) are necessary to set up the buffer and to\n finalize it. The fields and methods for this class are extensive. For a\n complete list, visit the\n <a href=\"http://processing.github.io/processing-javadocs/core/\">developer's\n reference.</a><br />\n <br />\n To create a new graphics context, use the <b>createGraphics()</b> function.\n Do not use the syntax <b>new PGraphics()</b>.\n \n ",
+  "description": "Main graphics and rendering context, as well as the base API implementation\n for processing \"core\". Use this class if you need to draw into an off-screen\n graphics buffer. A PGraphics object can be constructed with the\n <b>createGraphics()</b> function. The <b>beginDraw()</b> and <b>endDraw()</b>\n methods (see above example) are necessary to set up the buffer and to\n finalize it. The fields and methods for this class are extensive. For a\n complete list, visit the\n <a href=\"http://processing.github.io/processing-javadocs/core/\">developer's\n reference.</a><br />\n <br />\n To create a new graphics context, use the <b>createGraphics()</b> function.\n Do not use the syntax <b>new PGraphics()</b>.\n\n ",
   "type": "class",
   "classanchor": "PGraphics",
   "category": "rendering",

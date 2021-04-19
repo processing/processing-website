@@ -1,0 +1,66 @@
+/*  Code list  */
+
+.codeList {
+  display: table;
+}
+
+.codeList .item {
+  display: table-row;
+}
+
+.codeList code,
+.codeList span {
+  display: table-cell;
+  padding-bottom: var(--margin-quarter);
+}
+
+.codeList code {
+  font-size: var(--text-normal);
+  padding-right: var(--gutter);
+  white-space: nowrap;
+}
+
+.codeList a {
+  color: var(--processing-blue-mid);
+}
+
+.codeList a:hover {
+  color: var(--processing-blue-light);
+}
+
+.codeList span b,
+.codeList span code {
+  font-weight: normal;
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 85%;
+  background-color: var(--lightgray);
+  padding: 0.1em 0.3em;
+  border-radius: 6px;
+  font-variant-ligatures: no-common-ligatures;
+}
+
+/* Variant: reference */
+
+.codeList.parameters code {
+  font-weight: bold;
+}
+
+.codeList.parameters code.type {
+  font-weight: normal;
+}
+
+/*  Example list  */
+
+.exampleList .item {
+  margin-bottom: var(--margin-half);
+}
+
+.exampleList .code {
+  flex-basis: cols(4, 6);
+  position: relative;
+}
+
+.exampleList .image {
+  flex-basis: cols(2, 6);
+}

@@ -1,1 +1,34 @@
-{"name":"try","brief":"The <b>try</b> keyword is used with <b>catch</b> to handle exceptions","description":"The <b>try</b> keyword is used with <b>catch</b> to handle exceptions. Sun's Java documentation defines an exception as \"an event, which occurs during the execution of a program, that disrupts the normal flow of the program's instructions.\" This could be, for example, an error while a file is read.\n","related":[],"syntax":["try {","  tryStatements","} catch (exception) {","  catchStatements","} "],"returns":"","type":"function","category":"structure","subcategory":"","parameters":[{"name":"tryStatements","description":"if this code throws an exception, then the code in \"catch\" is run","type":[]},{"name":"exception","description":"the Java exception that was thrown","type":[]},{"name":"catchStatements","description":"code that handles the exception","type":[]}]}
+{
+  "name": "try",
+  "brief": "The <b>try</b> keyword is used with <b>catch</b> to handle exceptions",
+  "description": "The <b>try</b> keyword is used with <b>catch</b> to handle exceptions. Sun's Java documentation defines an exception as \"an event, which occurs during the execution of a program, that disrupts the normal flow of the program's instructions.\" This could be, for example, an error while a file is read.\n",
+  "related": [],
+  "syntax": [
+    "try {",
+    "  tryStatements",
+    "} catch (exception) {",
+    "  catchStatements",
+    "} "
+  ],
+  "returns": "",
+  "type": "function",
+  "category": "structure",
+  "subcategory": "",
+  "parameters": [
+    {
+      "name": "tryStatements",
+      "description": "if this code throws an exception, then the code in \"catch\" is run",
+      "type": []
+    },
+    {
+      "name": "exception",
+      "description": "the Java exception that was thrown",
+      "type": []
+    },
+    {
+      "name": "catchStatements",
+      "description": "code that handles the exception",
+      "type": []
+    }
+  ]
+}

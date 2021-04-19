@@ -72,7 +72,7 @@
   "classFields": [],
   "description": "A simple class to use a String as a lookup for an String value. String \"keys\" \n are associated with String values.",
   "type": "class",
-  "constructors": ["StringDict(", "StringDict(pairs)", "StringDict(row)"],
+  "constructors": ["StringDict()", "StringDict(pairs)", "StringDict(row)"],
   "related": ["IntDict", "FloatDict"],
   "name": "StringDict",
   "classanchor": "StringDict",

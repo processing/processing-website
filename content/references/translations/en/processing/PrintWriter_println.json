@@ -3,9 +3,7 @@
   "brief": "Writes data to a <b>PrintWriter</b> object stream and then starts a new line",
   "description": "Writes data to a <b>PrintWriter</b> object stream and then starts a new line.\n",
   "related": [],
-  "syntax": [
-    "pw.println(data)"
-  ],
+  "syntax": ["pw.println(data)"],
   "returns": "",
   "type": "method",
   "category": "PrintWriter",

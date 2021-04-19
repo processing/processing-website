@@ -6,7 +6,7 @@ import Draggable from './Draggable';
 import Color from './Color';
 import Shape from './Shape';
 
-import { useHighlight } from '../../utils/hooks';
+import { useHighlight } from '../../hooks';
 
 import css from './SketchCode.module.css';
 
@@ -25,10 +25,9 @@ const SketchCode = (props) => {
     onDraggingShapeEnd,
     onChange,
   } = props;
-  const ref = useHighlight();
-
   const cols = Math.floor(width / unit);
   const rows = Math.floor(height / unit);
+  useHighlight();
 
   useEffect(() => {
     shapes.forEach((shape, index) => {
@@ -59,9 +58,7 @@ const SketchCode = (props) => {
   }, [width, unit, cols, onChange, shapes]);
 
   return (
-    <div
-      className={classnames(css.root, { [css.visible]: isVisible })}
-      ref={ref}>
+    <div className={classnames(css.root, { [css.visible]: isVisible })}>
       <div className={css.code}>
         <div className={css.inCode}>
           <pre>

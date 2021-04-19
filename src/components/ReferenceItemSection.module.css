@@ -1,0 +1,65 @@
+.root {
+  flex-basis: cols(6, 6);
+  margin-bottom: var(--vertical-gutter);
+}
+
+.title,
+.content {
+  flex-basis: 100%;
+}
+
+.columns .title {
+  white-space: nowrap;
+  flex-basis: cols(1, 6);
+}
+
+.columns .content {
+  flex-basis: cols(5, 6);
+}
+
+/* Basic styling for the heading and the description */
+
+.content > h3 {
+  font-size: var(--text-xlarge);
+  font-variant-ligatures: no-common-ligatures;
+}
+
+.content > p {
+  font-family: "Vollkorn", serif;
+  font-size: var(--text-medium);
+  line-height: 1.6em;
+  max-width: 850px;
+}
+
+.content > p b,
+.content > p code {
+  font-weight: normal;
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 85%;
+  background-color: var(--lightgray);
+  padding: 0.1em 0.3em;
+  border-radius: 6px;
+  font-variant-ligatures: no-common-ligatures;
+}
+
+@media (--reduced) {
+  .root {
+    flex-basis: var(--col8);
+  }
+
+  .columns .title {
+    flex-basis: var(--col2);
+    padding-left: 0;
+  }
+
+  .columns .content {
+    flex-basis: var(--col5);
+  }
+}
+
+@media (--small) {
+  .root {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Array 2D",
+  "title": "Array 2D",
+  "author": "",
+  "level": "Intermediate",
+  "order": "1",
+  "description": "Demonstrates the syntax for creating a two-dimensional (2D) array.\n  Values in a 2D array are accessed through two index values.  \n  2D arrays are useful for storing images. In this example, each dot \n  is colored in relation to its distance from the center of the image.",
+  "featured": ["Array", "dist_"]
+}

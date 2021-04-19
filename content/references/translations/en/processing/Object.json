@@ -1,1 +1,25 @@
-{"name":"Object","brief":"Objects are instances of classes","description":"Objects are instances of classes. A class is a grouping of related methods (functions) and fields (variables and constants).\n","constructors":[],"classFields":[],"methods":[],"related":["class"],"type":"class","classanchor":"Object","category":"Data","subcategory":"Composite","parameters":[{"name":"ClassName","description":"the class from which to create the new object","type":[]},{"name":"instanceName","description":"the name for the new object","type":[]}]}
+{
+  "name": "Object",
+  "brief": "Objects are instances of classes",
+  "description": "Objects are instances of classes. A class is a grouping of related methods (functions) and fields (variables and constants).\n",
+  "constructors": [],
+  "classFields": [],
+  "methods": [],
+  "related": ["class"],
+  "type": "class",
+  "classanchor": "Object",
+  "category": "Data",
+  "subcategory": "Composite",
+  "parameters": [
+    {
+      "name": "ClassName",
+      "description": "the class from which to create the new object",
+      "type": []
+    },
+    {
+      "name": "instanceName",
+      "description": "the name for the new object",
+      "type": []
+    }
+  ]
+}

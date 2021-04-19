@@ -2,158 +2,98 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
-import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 
-import Img from 'gatsby-image';
-
-import Footer from '../../components/Footer';
 import Layout from '../../components/Layout';
+import Content from '../../components/ContentWithSidebar';
 import Sidebar from '../../components/Sidebar';
+import Section from '../../components/ReferenceItemSection';
+import License from '../../components/ReferenceLicense';
+import { CodeList, ExampleList } from '../../components/ReferenceItemList';
 
-import { useHighlight, useWindowSize } from '../../utils/hooks';
+import { useTree, useHighlight, useWindowSize } from '../../hooks';
+import {
+  usePreparedItems,
+  usePreparedExamples,
+  usePreparedList,
+} from '../../hooks/reference';
+import { referencePath } from '../../utils/paths';
 
-import css from '../../styles/templates/ref-template.module.css';
 import grid from '../../styles/grid.module.css';
 
 const FieldRefTemplate = ({ data, pageContext }) => {
-  let entry;
+  const entry = data?.json?.childJson;
+  const { name, libraryName } = pageContext;
+  const isProcessing = libraryName === 'processing';
+
   const { width } = useWindowSize();
   const [show, setShow] = useState(width > 960 ? true : false);
-  const examples = data.pdes.edges;
-  const images = data.images.edges;
-  const ref = useHighlight();
   const intl = useIntl();
+  useHighlight();
 
-  if (data.json !== null) {
-    entry = data.json.childJson;
-  }
+  const items = usePreparedItems(data.items.nodes);
+  const examples = usePreparedExamples(data.pdes.edges, data.images.edges);
+  const tree = useTree(items);
 
-  const link =
-    pageContext.libraryName === 'processing'
-      ? `/reference/${pageContext.name}.html`
-      : `/reference/libraries/${pageContext.libraryName}/${pageContext.name}.html`;
+  const parameters = usePreparedList(entry?.parameters, libraryName);
+  const syntax = usePreparedList(entry?.syntax, libraryName);
+  const related = usePreparedList(entry?.related, libraryName, true, true);
 
-  const toggleSidebar = (e, show) => {
-    if (e.type === 'click') setShow(show);
-    else if (e.keyCode === 13) setShow(show);
-  };
+  const title = entry?.classanchor
+    ? `${entry.classanchor}::${entry.name}`
+    : name;
 
   return (
-    <Layout hasSidebar>
+    <Layout withSidebar>
       <Helmet>
-        <title>{pageContext.name}</title>
+        <title>
+          {title} / {isProcessing ? 'Reference' : 'Libraries'}
+        </title>
       </Helmet>
-      <div className={classnames(css.root, grid.grid, grid.rightBleed)}>
-        {pageContext.libraryName === 'processing' && (
-          <Sidebar
-            items={data.items}
-            onChange={toggleSidebar}
-            show={show}
-            type={'reference'}
-          />
+      <div className={grid.grid}>
+        {isProcessing && (
+          <Sidebar tree={tree} setShow={setShow} show={show} type="reference" />
         )}
-        {entry !== null ? (
-          <div
-            className={classnames(
-              css.wrapper,
-              { [css.collapsed]: !show },
-              grid.nest
+        {entry ? (
+          <Content collapsed={!show}>
+            <Section title={intl.formatMessage({ id: 'name' })}>
+              <h3>{entry.name}</h3>
+            </Section>
+            <Section title={intl.formatMessage({ id: 'description' })}>
+              <p dangerouslySetInnerHTML={{ __html: entry.description }} />
+            </Section>
+            {examples && (
+              <Section
+                columns={false}
+                title={intl.formatMessage({ id: 'examples' })}>
+                <ExampleList examples={examples} />
+              </Section>
             )}
-            ref={ref}>
-            <div
-              className={classnames(
-                css.content,
-                {
-                  [css.collapsed]: !show,
-                },
-                grid.nest
-              )}>
-              <div className={classnames(css.section, grid.nest)}>
-                <h4 className={grid.col}>
-                  {intl.formatMessage({ id: 'name' })}
-                </h4>
-                <h3 className={grid.col}>{entry.name}</h3>
-              </div>
-              <div className={classnames(css.section, grid.nest)}>
-                <h4 className={grid.col}>
-                  {intl.formatMessage({ id: 'description' })}
-                </h4>
-                <p className={classnames(grid.col, css.description)}>
-                  {entry.description}
-                </p>
-              </div>
-              {examples.length > 0 && (
-                <div className={classnames(grid.nest, css.section)}>
-                  <h4 className={grid.col}>
-                    {intl.formatMessage({ id: 'examples' })}
-                  </h4>
-                  <ul className={classnames(grid.col, grid.nest, css.list)}>
-                    {examples.map((ex, key) => {
-                      const img = images.filter(
-                        (img) => img.node.name === ex.node.name
-                      );
-                      return (
-                        <li className={css.example} key={'ex' + key}>
-                          <div
-                            className={classnames(grid.col, css.exampleCode)}>
-                            <pre className={css.codeBlock}>
-                              {ex.node.internal.content
-                                .split(/\r?\n/)
-                                .map((line, i) => (
-                                  <code key={`line-${i}`}>{line}</code>
-                                ))}
-                            </pre>
-                          </div>
-                          {img.length > 0 && (
-                            <div
-                              className={classnames(
-                                grid.col,
-                                css.exampleImage
-                              )}>
-                              <Img fixed={img[0].node.childImageSharp.fixed} />
-                            </div>
-                          )}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              )}
-              {entry.related.length > 0 && (
-                <div className={classnames(css.section, grid.nest)}>
-                  <h4 className={grid.col}>
-                    {intl.formatMessage({ id: 'related' })}
-                  </h4>
-                  <ul className={classnames(grid.col, grid.nest, css.list)}>
-                    {entry.related.map((rel, key) => (
-                      <li key={key + 'rel'}>
-                        <a href={rel + '.html'} className={grid.col}>
-                          <code>{rel.replace(/_/g, '()')}</code>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-            {width > 960 && <Footer />}
-          </div>
+            {syntax && (
+              <Section title={intl.formatMessage({ id: 'syntax' })}>
+                <CodeList items={syntax} />
+              </Section>
+            )}
+            {parameters && (
+              <Section title={intl.formatMessage({ id: 'parameters' })}>
+                <CodeList variant="parameters" items={parameters} />
+              </Section>
+            )}
+            {related && (
+              <Section title={intl.formatMessage({ id: 'related' })}>
+                <CodeList items={related} />
+              </Section>
+            )}
+            <License />
+          </Content>
         ) : (
-          <div
-            className={classnames(
-              grid.grid,
-              { [css.collapsed]: !show },
-              { [css.expanded]: show }
-            )}>
-            <div className={classnames(grid.push1)}>
-              {intl.formatMessage({ id: 'notTranslated' })}
-              <Link to={link}>
-                {' '}
-                {intl.formatMessage({ id: 'englishPage' })}
-              </Link>
-            </div>
-          </div>
+          <Content collapsed={!show}>
+            {intl.formatMessage({ id: 'notTranslated' })}
+            <Link to={referencePath(name, libraryName)}>
+              {' '}
+              {intl.formatMessage({ id: 'englishPage' })}
+            </Link>
+          </Content>
         )}
       </div>
     </Layout>
@@ -163,11 +103,13 @@ const FieldRefTemplate = ({ data, pageContext }) => {
 export default FieldRefTemplate;
 
 export const query = graphql`
-  query($name: String!, $assetsName: String!) {
+  query($name: String!, $relDir: String!) {
     json: file(fields: { name: { eq: $name } }) {
       childJson {
         name
+        classanchor
         description
+        syntax
         parameters {
           name
           description
@@ -179,7 +121,7 @@ export const query = graphql`
     }
     images: allFile(
       filter: {
-        relativeDirectory: { eq: $assetsName }
+        relativeDirectory: { eq: $relDir }
         extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
       }
     ) {
@@ -191,8 +133,8 @@ export const query = graphql`
           }
           extension
           childImageSharp {
-            fixed {
-              ...GatsbyImageSharpFixed
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -200,7 +142,7 @@ export const query = graphql`
     }
     pdes: allFile(
       filter: {
-        relativeDirectory: { eq: $assetsName }
+        relativeDirectory: { eq: $relDir }
         extension: { regex: "/(pde)/" }
       }
     ) {

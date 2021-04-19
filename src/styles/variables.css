@@ -39,9 +39,9 @@
   --gutter-double: calc(var(--gutter) * 2);
   --vertical-gutter: 40px;
 
-  --column: cols(1);
+  --col: cols(1);
   --col-half: cols(0.5);
-  --column-double: cols(2);
+  --col-double: cols(2);
   --col1: cols(1);
   --col1-and-half: cols(1.5);
   --col2: cols(2);
@@ -53,9 +53,9 @@
   --col7: cols(7);
   --col8: cols(8);
 
-  --push-half: calc(var(--column-half) + var(--gutter));
+  --push-half: calc(var(--col-half) + var(--gutter));
   --push1: calc(var(--col1) + var(--gutter));
-  --push1-and-half: calc(var(--col1) + var(--column-half) + var(--gutter));
+  --push1-and-half: calc(var(--col1) + var(--col-half) + var(--gutter));
   --push2: calc(var(--col2) + var(--gutter));
   --push3: calc(var(--col3) + var(--gutter));
   --push4: calc(var(--col4) + var(--gutter));

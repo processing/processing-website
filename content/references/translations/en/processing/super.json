@@ -1,1 +1,12 @@
-{"name":"super","brief":"Keyword used to reference the superclass of a subclass","description":"Keyword used to reference the superclass of a subclass.\n","related":[],"syntax":[],"returns":"","type":"function","category":"structure","subcategory":"","parameters":[null]}
+{
+  "name": "super",
+  "brief": "Keyword used to reference the superclass of a subclass",
+  "description": "Keyword used to reference the superclass of a subclass.\n",
+  "related": [],
+  "syntax": [],
+  "returns": "",
+  "type": "function",
+  "category": "structure",
+  "subcategory": "",
+  "parameters": [null]
+}

@@ -9,7 +9,7 @@
     "Table_setString_"
   ],
   "name": "getStringColumn()",
-  "description": "Retrieves all values in the specified column, and returns them as a String \n array.  The column may be specified by either its ID or title.",
+  "description": "Retrieves all values in the specified column, and returns them as a String\n array.  The column may be specified by either its ID or title.",
   "syntax": [".getStringColumn(columnName)", ".getStringColumn(column)"],
   "returns": "String[]",
   "type": "method",

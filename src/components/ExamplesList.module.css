@@ -1,7 +1,9 @@
 .root {
+  position: relative;
   margin-bottom: 60px;
 
   & h2 {
+    flex-basis: var(--col8);
     margin-bottom: 0;
     text-transform: capitalize;
   }
@@ -17,20 +19,12 @@
 
 .category {
   margin-bottom: var(--gutter-double);
-
-  @media (--small) {
-    padding-top: var(--vertical-gutter);
-  }
 }
 
 .intro {
   flex-basis: var(--col8);
   padding-right: var(--col4);
   margin-bottom: calc(var(--margin) / 2);
-
-  @media (--small) {
-    padding-right: var(--gutter);
-  }
 }
 
 .subcategory {
@@ -53,11 +47,12 @@
   }
 
   & ul {
-    flex-basis: var(--col8);
+    flex-basis: var(--col7);
+    padding-right: var(--col1) !important;
   }
 
   & ul > li {
-    flex-basis: var(--col1);
+    flex-basis: cols(1, 6);
     transition: 0.2 ease;
   }
 
@@ -68,8 +63,28 @@
   & ul > li:hover h4 {
     color: var(--processing-blue-mid);
   }
+}
 
-  @media (--small) {
+.cover {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.toggleButton {
+  position: absolute;
+  right: calc(var(--col1) + var(--gutter));
+}
+
+@media (--small) {
+  .category {
+    padding-top: var(--vertical-gutter);
+  }
+
+  .intro {
+    padding-right: var(--gutter);
+  }
+
+  .subcategory {
     flex-wrap: wrap;
 
     & h3 {
@@ -87,9 +102,4 @@
       }
     }
   }
-}
-
-.cover {
-  width: 100%;
-  margin-bottom: 10px;
 }

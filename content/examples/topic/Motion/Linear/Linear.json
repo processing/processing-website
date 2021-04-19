@@ -1,1 +1,0 @@
-{"name":"Linear","title":"Linear Motion","author":"","description":"Changing a variable to create a moving line.  \n  When the line moves off the edge of the window, \n  the variable is set to 0, which places the line\n  back at the bottom of the screen.","featured":[]}

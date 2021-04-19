@@ -9,7 +9,7 @@
     "Table_setString_"
   ],
   "name": "getString()",
-  "description": "Retrieves a String value from the <b>Table</b>'s specified row and column. \n The row is specified by its ID, while the column may be specified by either \n its ID or title.",
+  "description": "Retrieves a String value from the <b>Table</b>'s specified row and column.\n The row is specified by its ID, while the column may be specified by either\n its ID or title.",
   "syntax": [".getString(row, column)", ".getString(row, columnName)"],
   "returns": "String",
   "type": "method",

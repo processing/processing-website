@@ -13,10 +13,9 @@
     "mouseDragged_",
     "mouseWheel_"
   ],
-  "classname": "",
   "name": "mouseButton",
   "description": "When a mouse button is pressed, the value of the system variable\n <b>mouseButton</b> is set to either <b>LEFT</b>, <b>RIGHT</b>, or\n <b>CENTER</b>, depending on which button is pressed. (If no button is\n pressed, <b>mouseButton</b> may be reset to <b>0</b>. For that reason,\n it's best to use <b>mousePressed</b> first to test if any button is being\n pressed, and only then test the value of <b>mouseButton</b>, as shown in\n the examples above.)\n\n\n ",
-  "type": "field",
   "category": "input",
-  "subcategory": "mouse"
+  "subcategory": "mouse",
+  "type": "other"
 }

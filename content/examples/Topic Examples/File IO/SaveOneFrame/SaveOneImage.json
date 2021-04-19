@@ -1,0 +1,7 @@
+{
+  "name": "Save One Image",
+  "title": "SaveOneImage",
+  "author": "",
+  "description": "The save() function allows you to save an image from the\n  display window. In this example, save() is run when a mouse\n  button is pressed. The image \"line.tif\" is saved to the\n  same folder as the sketch's program file.",
+  "featured": ["save_"]
+}

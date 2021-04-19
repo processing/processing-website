@@ -1,1 +1,12 @@
-{"name":"++ (increment)","brief":"Increases the value of an integer variable by 1","description":"Increases the value of an integer variable by 1. Equivalent to the operation <b>i = i + 1</b>. If the value of the variable <b>i</b> is five, then the expression <b>i++</b> increases the value of <b>i</b> to 6.\n","related":[],"syntax":["value++"],"returns":"","type":"function","category":"math","subcategory":"Operators","parameters":[{"name":"value","description":"int","type":[]}]}
+{
+  "name": "++ (increment)",
+  "brief": "Increases the value of an integer variable by 1",
+  "description": "Increases the value of an integer variable by 1. Equivalent to the operation <b>i = i + 1</b>. If the value of the variable <b>i</b> is five, then the expression <b>i++</b> increases the value of <b>i</b> to 6.\n",
+  "related": [],
+  "syntax": ["value++"],
+  "returns": "",
+  "type": "function",
+  "category": "math",
+  "subcategory": "Operators",
+  "parameters": [{ "name": "value", "description": "int", "type": [] }]
+}
