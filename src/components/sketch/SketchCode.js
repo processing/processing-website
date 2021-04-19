@@ -55,24 +55,8 @@ const SketchCode = (props) => {
 
   return (
     <div className={css.root}>
-      <Line num={1}>
-        <span className="hljs-datatype">int</span> w = {width};
-      </Line>
-      <Line num={2}>
-        <span className="hljs-datatype">int</span> h = {height};
-      </Line>
       <Line num={3}>
-        <span className="hljs-datatype">int</span> u ={' '}
-        <Draggable
-          name="unit"
-          className={css.interactive}
-          value={unit}
-          range={{ min: 20, max: 80 }}
-          path={['unit']}
-          onChange={onChange}
-          tabIndex={isVisible ? 0 : -1}
-        />
-        ;
+        <span className="hljs-datatype">int</span> u = 60;
       </Line>
       <Line num={4}>
         <span className="hljs-datatype">boolean</span> showGrid ={' '}
@@ -89,24 +73,44 @@ const SketchCode = (props) => {
       <Line num={5} />
       <details>
         <summary tabIndex={isVisible ? 0 : -1}>
-          <Line num={6}>{`void setup() {`}</Line>
+          <Line num={6}>
+            <span className="hljs-keyword">void</span>{' '}
+            <span className="hljs-title">setup</span>
+            {`() {`}
+          </Line>
           <Folded />
         </summary>
-        <Line num={7}>{`  size(width, height);`}</Line>
-        <Line num={8}>{`  background(255, 255, 255);`}</Line>
-        <Line num={9}>{`  if (showGrid) drawGrid();`}</Line>
-        <Line num={10}>{`}`}</Line>
+        <Line num={7}>
+          {`  `}
+          <span className="hljs-built_in">size</span>
+          {`(600, 600);`}
+        </Line>
+        <Line num={11}>{`}`}</Line>
       </details>
-      <Line num={11} />
+      <Line num={12} />
       <details open>
         <summary tabIndex={isVisible ? 0 : -1}>
-          <Line num={12}>{`void draw() {`}</Line>
+          <Line num={13}>
+            <span className="hljs-keyword">void</span>{' '}
+            <span className="hljs-title">draw</span>
+            {`() {`}
+          </Line>
           <Folded />
         </summary>
-        <Line num={13}>{`  if (showGrid) drawGrid();`}</Line>
-        <Line num={14}>{`  strokeCap(SQUARE);`}</Line>
+        <Line num={14}>
+          {`  `}
+          <span className="hljs-built_in">background</span>
+          {`(255);`}
+        </Line>
+        <Line num={14}>{`  if (showGrid) drawGrid();`}</Line>
         <Line num={15}>
-          {`  strokeWeight(`}
+          {`  `}
+          <span className="hljs-built_in">strokeCap</span>(
+          <span className="hljs-constant">SQUARE</span>);
+        </Line>
+        <Line num={16}>
+          {`  `}
+          <span className="hljs-built_in">strokeWeight</span>(
           <Draggable
             className={css.interactive}
             value={strokeWidth}
@@ -118,13 +122,14 @@ const SketchCode = (props) => {
           />
           {' * u);'}
         </Line>
-        <Line num={16} />
+        <Line num={17} />
         {shapes.map((shape, i) => {
-          const num = 17 + i * 3;
+          const num = 18 + i * 3;
           return (
             <Fragment key={`shape-block-${i}`}>
               <Line num={num}>
-                {`  stroke(`}
+                {`  `}
+                <span className="hljs-built_in">stroke</span>(
                 <Color
                   onChange={onChange}
                   shapes={shapes}
@@ -148,27 +153,58 @@ const SketchCode = (props) => {
                 />
                 ;
               </Line>
-              <Line num={num + 2} />
+              {i < shapes.length - 1 && <Line num={num + 2} />}
             </Fragment>
           );
         })}
       </details>
-      <Line num={26} />
+      <Line num={27}>}</Line>
+      <Line num={27} />
       <details>
         <summary tabIndex={isVisible ? 0 : -1}>
-          <Line num={27}>{`void drawGrid() {`}</Line>
+          <Line num={28}>
+            <span className="hljs-keyword">void</span>
+            {` drawGrid() {`}
+          </Line>
           <Folded />
         </summary>
-        <Line num={28}>{`  strokeWeight(1);`}</Line>
-        <Line num={29}>{`  noFill();`}</Line>
-        <Line num={30}>{`  stroke(200, 200, 200);`}</Line>
-        <Line num={31}>{`  for (int col = 0; col < cols + 1; col++) {`}</Line>
-        <Line num={32}>{`    line(col * u, 0, col * u, cols * u);`}</Line>
-        <Line num={33}>{`  }`}</Line>
-        <Line num={34}>{`  for (int row = 0; row < rows + 1; row++) {`}</Line>
-        <Line num={35}>{`    line(0, row * u, rows * u, row * u);`}</Line>
-        <Line num={36}>{`  }`}</Line>
-        <Line num={37}>{`}`}</Line>
+        <Line num={29}>
+          {`  `}
+          <span className="hljs-built_in">strokeWeight</span>(1);
+        </Line>
+        <Line num={29}>
+          {`  `}
+          <span className="hljs-built_in">noFill</span>();
+        </Line>
+        <Line num={29}>
+          {`  `}
+          <span className="hljs-built_in">stroke</span>(200);
+        </Line>
+        <Line num={32}>
+          {`  `}
+          <span className="hljs-loop">for</span>(
+          <span className="hljs-datatype">int</span>{' '}
+          {`col = 0; col < 9; col++) {`})
+        </Line>
+        <Line num={33}>
+          {`    `}
+          <span className="hljs-built_in">line</span>
+          {`(col * u, 0, col * u, 8 * u);`}
+        </Line>
+        <Line num={34}>{`  }`}</Line>
+        <Line num={32}>
+          {`  `}
+          <span className="hljs-loop">for</span>(
+          <span className="hljs-datatype">int</span>{' '}
+          {`row = 0; row < 9; row++) {`})
+        </Line>
+        <Line num={36}>
+          {`    `}
+          <span className="hljs-built_in">line</span>
+          {`(0, row * u, 8 * u, row * u);`}
+        </Line>
+        <Line num={37}>{`  }`}</Line>
+        <Line num={38}>{`}`}</Line>
       </details>
     </div>
   );
@@ -176,9 +212,9 @@ const SketchCode = (props) => {
 
 // <Button
 //   className={css.toggleShape}
-//   onClick={(e) => onChange(e, ['shapes', i, 'type'], !shape.type)}
+//   onClick={(e) => onChange(e, ['shapes', i, 'line'], !shape.line)}
 //   tabIndex={isVisible ? 0 : -1}>
-//   {shape.type ? '/' : '~'}
+//   {shape.line ? '/' : '~'}
 // </Button>
 
 const Line = ({ num, children }) => {

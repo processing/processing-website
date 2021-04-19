@@ -164,3 +164,11 @@ img {
 .hljs-datatype {
   color: #e2661a;
 }
+
+.hljs-constant {
+  color: #718a62;
+}
+
+.hljs-loop {
+  color: #669900;
+}

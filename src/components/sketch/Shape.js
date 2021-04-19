@@ -30,8 +30,7 @@ const Shape = (props) => {
     onDraggingEnd(shapesInx);
   };
 
-  if (shape.type === true) {
-    draggable.push('  line(');
+  if (shape.line === true) {
     shape.pos.forEach((p, index) => {
       if (index < 2 || index > 5) {
         draggable.push(
@@ -50,9 +49,8 @@ const Shape = (props) => {
       }
     });
     draggable.pop();
-    draggable.push(' * u)');
+    draggable.push(' * u');
   } else {
-    draggable.push('  bezier(');
     shape.pos.forEach((p, index) => {
       draggable.push(
         <Draggable
@@ -71,7 +69,7 @@ const Shape = (props) => {
       draggable.push(' * u, ');
     });
     draggable.pop();
-    draggable.push(' * u)');
+    draggable.push(' * u');
   }
 
   return (
@@ -81,7 +79,9 @@ const Shape = (props) => {
       className={shapeClass ? css.root : css.blur}
       onMouseEnter={() => onMouseEnter(shapesInx)}
       onMouseLeave={() => onMouseLeave(shapesInx)}>
-      {draggable}
+      {'  '}
+      <span className="hljs-built_in">{shape.line ? 'line' : 'bezier'}</span>(
+      {draggable})
     </span>
   );
 };

@@ -20,3 +20,8 @@
   right: 0;
   padding: var(--margin-quarter);
 }
+
+.grid {
+  fill: none;
+  stroke: rgba(80, 139, 255, 0.2);
+}

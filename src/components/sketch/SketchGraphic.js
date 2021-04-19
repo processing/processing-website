@@ -5,58 +5,40 @@ import Button from '../Button';
 
 import css from './SketchGraphic.module.css';
 
-const gutterSize = 0;
-
 const SketchGraphic = (props) => {
   const {
     showGrid,
     width,
     height,
-    unit,
     shapes,
     strokeWidth,
     onClick,
     isCodeVisible,
   } = props;
 
-  const modules = useMemo(() => {
-    const modules = [];
-    const cols = Math.floor(width / unit);
-    const rows = Math.floor(height / unit);
-    for (let i = 0; i < cols; i++) {
-      modules.push([]);
-      for (let j = 0; j < rows; j++) {
-        modules[modules.length - 1].push({
-          x: gutterSize + i * unit + i * 2 * gutterSize,
-          y: gutterSize + j * unit + j * 2 * gutterSize,
-          width: unit,
-          height: unit,
-        });
-      }
-    }
-    return modules;
-  }, [width, height, unit]);
+  // -2 in order to make the strokes fully visible
+  const unit = (width - 2) / 8;
 
   const grid = useMemo(() => {
     if (!showGrid) {
       return null;
     }
     const grid = [];
-    for (let i = 0; i < modules.length; i++) {
-      for (let j = 0; j < modules[i].length; j++) {
+    for (let i = 0; i < 8; i++) {
+      for (let j = 0; j < 8; j++) {
         grid.push(
           <rect
             key={`grid-${i}-${j}`}
-            {...modules[i][j]}
-            fill="none"
-            stroke="#212724"
-            opacity="0.1"
+            x={i * unit}
+            y={j * unit}
+            width={unit}
+            height={unit}
           />
         );
       }
     }
     return grid;
-  }, [showGrid, modules]);
+  }, [showGrid, unit]);
 
   const firstHandler = (shape, index, color) => (
     <g key={`handler-${index}-tocp1`}>
@@ -131,41 +113,43 @@ const SketchGraphic = (props) => {
         </Button>
       </div>
       <svg width={width} height={height}>
-        {grid}
-        {shapes.map((shape, index) => {
-          const { r, g, b } = shape.color;
-          const color = `rgb(${r},${g},${b})`;
+        <g transform={`translate(1, 1)`}>
+          <g className={css.grid}>{grid}</g>
+          {shapes.map((shape, index) => {
+            const { r, g, b } = shape.color;
+            const color = `rgb(${r},${g},${b})`;
 
-          let dPoints = shape.pos.map((x) => x * unit);
+            let dPoints = shape.pos.map((x) => x * unit);
 
-          if (shape.pos.length > 4) {
-            dPoints.splice(0, 0, 'M');
-            dPoints.splice(3, 0, 'C');
-          }
+            if (shape.pos.length > 4) {
+              dPoints.splice(0, 0, 'M');
+              dPoints.splice(3, 0, 'C');
+            }
 
-          return shape.type === true ? (
-            <line
-              key={index}
-              x1={shape.pos[0] * unit}
-              y1={shape.pos[1] * unit}
-              x2={shape.pos[6] * unit}
-              y2={shape.pos[7] * unit}
-              stroke={color}
-              strokeWidth={strokeWidth * unit}
-            />
-          ) : (
-            <Fragment key={index}>
-              <path
+            return shape.line ? (
+              <line
                 key={index}
-                d={dPoints.join(' ')}
+                x1={shape.pos[0] * unit}
+                y1={shape.pos[1] * unit}
+                x2={shape.pos[6] * unit}
+                y2={shape.pos[7] * unit}
                 stroke={color}
-                fill="none"
                 strokeWidth={strokeWidth * unit}
               />
-              {handlers(shape, index, color)}
-            </Fragment>
-          );
-        })}
+            ) : (
+              <Fragment key={index}>
+                <path
+                  key={index}
+                  d={dPoints.join(' ')}
+                  stroke={color}
+                  fill="none"
+                  strokeWidth={strokeWidth * unit}
+                />
+                {handlers(shape, index, color)}
+              </Fragment>
+            );
+          })}
+        </g>
       </svg>
     </div>
   );
