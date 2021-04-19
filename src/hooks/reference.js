@@ -87,7 +87,7 @@ export const usePreparedList = (items, libraryName, nameIsPath, shouldLink) => {
 **/
 export const usePreparedExamples = (pdes, images) => {
   return useMemo(() => {
-    if (!pdes || pdes.length === 0 || !images || images.length === 0) {
+    if (!pdes || pdes.length === 0) {
       return null;
     }
     const prepared = [];
@@ -96,14 +96,18 @@ export const usePreparedExamples = (pdes, images) => {
         code: pdes[i].node.internal.content,
       };
 
-      for (let j = 0; j < images.length; j++) {
-        if (images[j].node.name === pdes[i].node.name) {
-          example.image = images[j].node;
+      if (images) {
+        for (let j = 0; j < images.length; j++) {
+          if (images[j].node.name === pdes[i].node.name) {
+            example.image = images[j].node;
+            break;
+          }
         }
       }
 
       prepared.push(example);
     }
+
     return prepared;
   }, [pdes, images]);
 };
