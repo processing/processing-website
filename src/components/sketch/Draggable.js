@@ -20,6 +20,8 @@ const Draggable = ({
   onChange,
   onDraggingStart,
   onDraggingEnd,
+  onMouseEnter,
+  onMouseLeave,
   tabIndex
 }) => {
   const [draggingInfo, setDraggingInfo] = useState(null);
@@ -73,6 +75,18 @@ const Draggable = ({
     setDraggingInfo(null);
   };
 
+  const handleMouseEnter = (e) => {
+    if (onMouseEnter) {
+      onMouseEnter(index);
+    }
+  };
+
+  const handleMouseLeave = (e) => {
+    if (onMouseEnter) {
+      onMouseLeave(index);
+    }
+  };
+
   return (
     <span
       role={'button'}
@@ -81,6 +95,8 @@ const Draggable = ({
       className={classnames(css.root, className, {
         [css.dragging]: draggingInfo
       })}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       onMouseDown={registerMove}
       onMouseUp={deregisterMove}>
       {value}

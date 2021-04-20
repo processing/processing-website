@@ -49,6 +49,7 @@ const SketchGraphic = (props) => {
         {shapes.map((shape, index) => {
           const showHandlers = shape.showHandlers || shape.dragging !== null;
           const color = `rgb(${shape.color[0]},${shape.color[1]},${shape.color[2]})`;
+          const { dragging, showPoint } = shape;
 
           if (shape.line) {
             return (
@@ -64,6 +65,20 @@ const SketchGraphic = (props) => {
                 />
                 {showHandlers && (
                   <Handler
+                    circle1State={
+                      dragging === 0 || dragging === 1
+                        ? 'dragging'
+                        : showPoint === 0 || showPoint === 1
+                        ? 'over'
+                        : null
+                    }
+                    circle2State={
+                      dragging === 6 || dragging === 7
+                        ? 'dragging'
+                        : showPoint === 6 || showPoint === 7
+                        ? 'over'
+                        : null
+                    }
                     x1={shape.pos[0]}
                     y1={shape.pos[1]}
                     x2={shape.pos[6]}
@@ -92,6 +107,20 @@ const SketchGraphic = (props) => {
                   <g>
                     <Handler d={d} unit={unit} />
                     <Handler
+                      circle1State={
+                        dragging === 0 || dragging === 1
+                          ? 'dragging'
+                          : showPoint === 0 || showPoint === 1
+                          ? 'over'
+                          : null
+                      }
+                      circle2State={
+                        dragging === 2 || dragging === 3
+                          ? 'dragging'
+                          : showPoint === 2 || showPoint === 3
+                          ? 'over'
+                          : null
+                      }
                       x1={shape.pos[0]}
                       y1={shape.pos[1]}
                       x2={shape.pos[2]}
@@ -99,6 +128,20 @@ const SketchGraphic = (props) => {
                       unit={unit}
                     />
                     <Handler
+                      circle1State={
+                        dragging === 6 || dragging === 7
+                          ? 'dragging'
+                          : showPoint === 6 || showPoint === 7
+                          ? 'over'
+                          : null
+                      }
+                      circle2State={
+                        dragging === 4 || dragging === 5
+                          ? 'dragging'
+                          : showPoint === 4 || showPoint === 5
+                          ? 'over'
+                          : null
+                      }
                       x1={shape.pos[6]}
                       y1={shape.pos[7]}
                       x2={shape.pos[4]}
@@ -116,37 +159,41 @@ const SketchGraphic = (props) => {
   );
 };
 
-const Handler = memo(({ x1, y1, x2, y2, d, unit }) => {
-  return (
-    <g>
-      {d && <path d={d} className={css.handlerLine} />}
-      {!d && (
-        <line
-          x1={x1 * unit}
-          y1={y1 * unit}
-          x2={x2 * unit}
-          y2={y2 * unit}
-          className={css.handlerLine}
-        />
-      )}
-      {x1 > -1 && (
-        <circle
-          cx={x2 * unit}
-          cy={y2 * unit}
-          r={4}
-          className={css.handlerCircle}
-        />
-      )}
-      {x1 > -1 && (
-        <circle
-          cx={x1 * unit}
-          cy={y1 * unit}
-          r={4}
-          className={css.handlerCircle}
-        />
-      )}
-    </g>
-  );
-});
+const Handler = memo(
+  ({ x1, y1, x2, y2, d, unit, circle1State, circle2State }) => {
+    return (
+      <g>
+        {d && <path d={d} className={css.handlerLine} />}
+        {!d && (
+          <line
+            x1={x1 * unit}
+            y1={y1 * unit}
+            x2={x2 * unit}
+            y2={y2 * unit}
+            className={css.handlerLine}
+          />
+        )}
+        {x1 > -1 && (
+          <circle
+            cx={x1 * unit}
+            cy={y1 * unit}
+            r={circle1State ? 7 : 4}
+            stroke={circle1State ? '#FEEF6B' : null}
+            className={css.handlerCircle}
+          />
+        )}
+        {x1 > -1 && (
+          <circle
+            cx={x2 * unit}
+            cy={y2 * unit}
+            r={circle2State ? 7 : 4}
+            stroke={circle2State ? '#FEEF6B' : null}
+            className={css.handlerCircle}
+          />
+        )}
+      </g>
+    );
+  }
+);
 
 export default SketchGraphic;

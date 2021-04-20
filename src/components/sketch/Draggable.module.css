@@ -4,8 +4,3 @@
   display: inline-block;
   cursor: ew-resize;
 }
-
-.root:hover,
-.dragging {
-  color: var(--processing-blue-mid);
-}

@@ -15,4 +15,5 @@
 
 .handlerCircle {
   fill: black;
+  stroke-width: 2;
 }

@@ -32,12 +32,20 @@ const Shape = (props) => {
     onChangeShape(shapeIndex, 'dragging', null);
   };
 
-  const handleMouseEnter = () => {
+  const handleMouseEnterLine = () => {
     onChangeShape(shapeIndex, 'showHandlers', true);
   };
 
-  const handleMouseLeave = () => {
+  const handleMouseLeaveLine = () => {
     onChangeShape(shapeIndex, 'showHandlers', false);
+  };
+
+  const handleMouseEnterPoint = (idx) => {
+    onChangeShape(shapeIndex, 'showPoint', idx);
+  };
+
+  const handleMouseLeavePoint = () => {
+    onChangeShape(shapeIndex, 'showPoint', null);
   };
 
   const handleToggleShape = () => {
@@ -55,8 +63,10 @@ const Shape = (props) => {
           index={i}
           className={draggableClassName}
           onChange={handleChange}
-          onDraggingStart={shape.line ? null : handleDraggingStart}
-          onDraggingEnd={shape.line ? null : handleDraggingEnd}
+          onMouseEnter={handleMouseEnterPoint}
+          onMouseLeave={handleMouseLeavePoint}
+          onDraggingStart={handleDraggingStart}
+          onDraggingEnd={handleDraggingEnd}
           min={min}
           max={max}
           tabIndex={tabIndex}
@@ -71,8 +81,8 @@ const Shape = (props) => {
       role={'button'}
       tabIndex={tabIndex}
       className={css.root}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}>
+      onMouseEnter={handleMouseEnterLine}
+      onMouseLeave={handleMouseLeaveLine}>
       {'  '}
       <span className={css.breakWhitespace}>
         <button
