@@ -58,7 +58,7 @@ const Draggable = ({
   }, [draggingInfo, index, isInteger, onDraggingEnd, min, max]);
 
   const registerMove = (e) => {
-    const ratio = value / (max - min);
+    const ratio = (value - min) / (max - min);
     setDraggingInfo({
       startX: e.screenX,
       dragMin: -(dragArea * ratio),
