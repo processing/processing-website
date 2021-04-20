@@ -4,6 +4,8 @@ import { map } from '../../utils';
 import classnames from 'classnames';
 import css from './Draggable.module.css';
 
+const dragArea = 250;
+
 /**
   We pass the idx to the component in order to be able to memo the handler
   functions so the interactive sketch renders faster
@@ -20,18 +22,26 @@ const Draggable = ({
   onDraggingEnd,
   tabIndex
 }) => {
-  const [dragging, setDragging] = useState(null);
+  const [draggingInfo, setDraggingInfo] = useState(null);
 
   useEffect(() => {
-    if (dragging) {
+    if (draggingInfo) {
       const handleMouseUp = (e) => {
-        setDragging(false);
-        index === null && onDraggingEnd();
+        setDraggingInfo(null);
+        if (onDraggingEnd) {
+          onDraggingEnd();
+        }
       };
 
       const handleMouseMove = (e) => {
-        if (dragging !== null) {
-          const val = map(e.screenX - dragging, -120, 120, min, max);
+        if (draggingInfo) {
+          const val = map(
+            e.screenX - draggingInfo.startX,
+            draggingInfo.dragMin,
+            draggingInfo.dragMax,
+            min,
+            max
+          );
           const t = isInteger ? Math.round(val) : round(val, 2);
           index === null ? onChange(t) : onChange(index, t);
         }
@@ -45,15 +55,22 @@ const Draggable = ({
         document.removeEventListener('mousemove', handleMouseMove);
       };
     }
-  }, [dragging, index, isInteger, onDraggingEnd, min, max]);
+  }, [draggingInfo, index, isInteger, onDraggingEnd, min, max]);
 
   const registerMove = (e) => {
-    setDragging(e.screenX);
-    index === null && onDraggingStart(index);
+    const ratio = value / (max - min);
+    setDraggingInfo({
+      startX: e.screenX,
+      dragMin: -(dragArea * ratio),
+      dragMax: dragArea * (1 - ratio)
+    });
+    if (onDraggingStart) {
+      onDraggingStart();
+    }
   };
 
   const deregisterMove = (e) => {
-    setDragging(null);
+    setDraggingInfo(null);
   };
 
   return (
@@ -67,7 +84,7 @@ const Draggable = ({
       <span className={css.arrowLeft}></span>
       <span
         name="pos"
-        className={dragging ? css.dragging : css.root}
+        className={draggingInfo ? css.dragging : css.root}
         value={value}>
         {value}
       </span>
