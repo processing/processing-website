@@ -1,8 +1,13 @@
-.root {
-  cursor: ew-resize;
+.colorPatch {
+  display: inline-block;
+  border-radius: 4px;
+  line-height: 1em;
+  padding: 1px 2px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
-.color {
+.input {
   height: 20px;
   width: 20px;
   border: none;
@@ -11,28 +16,18 @@
   cursor: pointer;
 }
 
-.blur {
-  color: rgba(0, 0, 0, 0.5);
-  pointer-events: none;
-}
-
-.root input[type="color"] {
+.input {
   -webkit-appearance: none;
   border: none;
-  width: 10px;
+  width: 20px;
   height: 10px;
-  margin-left: 0.8rem;
-  margin-right: 0.2rem;
 }
 
-.root input[type="color"]:hover {
-  outline: 2px solid lightgray;
-}
-
-.root input[type="color"]::-webkit-color-swatch-wrapper {
+.input::-webkit-color-swatch-wrapper {
   padding: 0;
 }
 
-.root input[type="color"]::-webkit-color-swatch {
+.input::-webkit-color-swatch,
+.input::-moz-color-swatch {
   border: none;
 }

@@ -14,20 +14,16 @@ const Color = ({
   tabIndex,
   draggableClassName
 }) => {
-  const [colorClass, setColorClass] = useState(true);
-
-  const blurRest = (e, val) => {
-    setColorClass(!val);
-  };
-
   const handleChange = (idx, val) => {
     const newColor = color.slice();
     newColor[idx] = val;
     onChangeShape(shapeIndex, 'color', newColor);
   };
 
+  const hex = rgbToHex(color);
+
   return (
-    <span className={colorClass ? css.root : css.blur}>
+    <span>
       <Draggable
         className={draggableClassName}
         onChange={handleChange}
@@ -57,16 +53,18 @@ const Color = ({
         value={color[2]}
         tabIndex={tabIndex}
       />
-      <input
-        type="color"
-        className={css.color}
-        value={rgbToHex(color)}
-        aria-label="Choose color"
-        tabIndex={tabIndex}
-        onChange={(e) =>
-          onChangeShape(shapeIndex, 'color', hexToRgb(e.target.value))
-        }
-      />
+      <span className={css.colorPatch} style={{ backgroundColor: hex }}>
+        <input
+          type="color"
+          className={css.input}
+          value={hex}
+          aria-label="Choose color"
+          tabIndex={tabIndex}
+          onChange={(e) =>
+            onChangeShape(shapeIndex, 'color', hexToRgb(e.target.value))
+          }
+        />
+      </span>
     </span>
   );
 };

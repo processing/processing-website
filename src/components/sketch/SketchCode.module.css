@@ -5,6 +5,7 @@
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   border: 1px solid var(--gray);
+  border-left: none;
   font-family: var(--font-mono);
   font-size: 14px;
   white-space: pre;
@@ -34,11 +35,7 @@
   }
 
   &::-webkit-details-marker {
-    color: var(--gray);
-  }
-
-  &::-webkit-details-marker:hover {
-    color: var(--processing-blue-dark);
+    display: none;
   }
 }
 
