@@ -1,0 +1,51 @@
+{
+  "name": "Processing 3.1.2",
+  "tagName": "processing-0251-3.1.2",
+  "publishedAt": "2016-07-29T15:12:51Z",
+  "releaseAssets": {
+    "edges": [
+      {
+        "node": {
+          "name": "processing-3.1.2-windows64.zip",
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0251-3.1.2/processing-3.1.2-windows64.zip"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-3.1.2-macosx.zip",
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0251-3.1.2/processing-3.1.2-macosx.zip"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-3.1.2-windows32.zip",
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0251-3.1.2/processing-3.1.2-windows32.zip"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-3.1.2-linux32.tgz",
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0251-3.1.2/processing-3.1.2-linux32.tgz"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-3.1.2-linux64.tgz",
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0251-3.1.2/processing-3.1.2-linux64.tgz"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-3.1.2-linux-armv6hf.tgz",
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0251-3.1.2/processing-3.1.2-linux-armv6hf.tgz"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-3.1.2-linux-raspbian.zip",
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0251-3.1.2/processing-3.1.2-linux-raspbian.zip"
+        }
+      }
+    ]
+  }
+}

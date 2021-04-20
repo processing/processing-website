@@ -1,5 +1,5 @@
 {
-  "brief": "Array containing the values for all the pixels in the display window.",
+  "brief": "Array containing the values for all the pixels in the display window",
   "related": [
     "loadPixels_",
     "updatePixels_",

@@ -1,5 +1,5 @@
 {
-  "brief": "Returns a float from a random series of numbers having a mean of 0\n and standard deviation of 1.",
+  "brief": "Returns a float from a random series of numbers having a mean of 0\n and standard deviation of 1",
   "related": ["random_", "noise_"],
   "name": "randomGaussian()",
   "description": "Returns a float from a random series of numbers having a mean of 0\n and standard deviation of 1. Each time the <b>randomGaussian()</b>\n function is called, it returns a number fitting a Gaussian, or\n normal, distribution. There is theoretically no minimum or maximum\n value that <b>randomGaussian()</b> might return. Rather, there is\n just a very low probability that values far from the mean will be\n returned; and a higher probability that numbers near the mean will\n be returned.",

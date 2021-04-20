@@ -1,8 +1,8 @@
 {
-  "brief": "Sets the content of an attribute as a String",
+  "brief": "Sets the content of an attribute as a <b>String</b>",
   "related": [],
   "name": "setString()",
-  "description": "Sets the content of an element's attribute as a String.  The first String \n specifies the attribute name, while the second specifies the new content.",
+  "description": "Sets the content of an element's attribute as a <b>String</b>.  The first <b>String</b> \n specifies the attribute name, while the second specifies the new content.",
   "syntax": [".setString(name, value)"],
   "returns": "void",
   "type": "method",

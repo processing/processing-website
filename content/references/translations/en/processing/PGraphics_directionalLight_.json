@@ -1,5 +1,5 @@
 {
-  "brief": "Adds a directional light.",
+  "brief": "Adds a directional light",
   "related": [
     "PGraphics_lights_",
     "PGraphics_ambientLight_",

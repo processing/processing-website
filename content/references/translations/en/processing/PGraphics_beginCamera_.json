@@ -1,5 +1,5 @@
 {
-  "brief": "The <b>beginCamera()</b> and <b>endCamera()</b> functions enable\n advanced customization of the camera space.",
+  "brief": "The <b>beginCamera()</b> and <b>endCamera()</b> functions enable\n advanced customization of the camera space",
   "related": [
     "PGraphics_camera_",
     "PGraphics_endCamera_",

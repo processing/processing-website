@@ -1,5 +1,5 @@
 {
-  "brief": "Draws an ellipse (oval) in the display window.",
+  "brief": "Draws an ellipse (oval) in the display window",
   "related": ["ellipseMode_", "arc_"],
   "name": "ellipse()",
   "description": "Draws an ellipse (oval) to the screen. An ellipse with equal width and height\n is a circle. By default, the first two parameters set the location, and the\n third and fourth parameters set the shape's width and height. The origin may\n be changed with the <b>ellipseMode()</b> function.",

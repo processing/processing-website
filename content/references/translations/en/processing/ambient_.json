@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the ambient reflectance for shapes drawn to the screen.",
+  "brief": "Sets the ambient reflectance for shapes drawn to the screen",
   "related": ["emissive_", "specular_", "shininess_"],
   "name": "ambient()",
   "description": "Sets the ambient reflectance for shapes drawn to the screen. This is\n combined with the ambient light component of environment. The color\n components set through the parameters define the reflectance. For\n example in the default color mode, setting v1=255, v2=126, v3=0, would\n cause all the red light to reflect and half of the green light to\n reflect. Used in combination with <b>emissive()</b>, <b>specular()</b>,\n and <b>shininess()</b> in setting the material properties of shapes.",

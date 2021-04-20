@@ -1,8 +1,8 @@
 {
-  "brief": "Sets the content of an attribute as a float",
+  "brief": "Sets the content of an attribute as a <b>float</b>",
   "related": [],
   "name": "setFloat()",
-  "description": "Sets the content of an element's attribute as a float.  A String specifies \n the attribute name, while the float specifies the new content.",
+  "description": "Sets the content of an element's attribute as a <b>float</b>.  A <b>String</b> specifies \n the attribute name, while the <b>float</b> specifies the new content.",
   "syntax": [".setFloat(name, value)"],
   "returns": "void",
   "type": "method",

@@ -1,5 +1,5 @@
 {
-  "brief": "Begins recording vertices for the shape.",
+  "brief": "Begins recording vertices for the shape",
   "related": [],
   "name": "beginContour()",
   "description": "Use the <b>beginContour()</b> and <b>endContour()</b> function to\n create negative shapes within shapes such as the center of the\n letter 'O'. <b>beginContour()</b> begins recording vertices for the\n shape and <b>endContour()</b> stops recording. The vertices that\n define a negative shape must \"wind\" in the opposite direction from\n the exterior shape. First draw vertices for the exterior shape in\n clockwise order, then for internal shapes, draw vertices counterclockwise.<br />\n <br />\n These functions can only be used within a <b>beginShape()</b>/<b>endShape()</b>\n pair and transformations such as <b>translate()</b>, <b>rotate()</b>, and\n <b>scale()</b> do not work within a <b>beginContour()</b>/<b>endContour()</b>\n pair. It is also not possible to use other shapes, such as <b>ellipse()</b>\n or <b>rect()</b> within.",

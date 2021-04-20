@@ -1,5 +1,5 @@
 {
-  "brief": "Draws a line (a direct path between two points) to the screen.",
+  "brief": "Draws a line (a direct path between two points) to the screen",
   "related": [
     "PGraphics_strokeWeight_",
     "PGraphics_strokeJoin_",

@@ -1,12 +1,12 @@
 {
-  "brief": "Grayscale bitmap font class used by Processing.",
+  "brief": "Grayscale bitmap font class used by Processing",
   "constructors": [],
   "related": ["loadFont_", "createFont_", "PGraphics_textFont_"],
   "methods": [
     {
       "anchor": "PFont_list_",
       "name": "list()",
-      "desc": "Gets a list of the fonts installed on the system."
+      "desc": "Gets a list of the fonts installed on the system"
     }
   ],
   "name": "PFont",

@@ -1,5 +1,5 @@
 {
-  "brief": "Reverses the order of an array.",
+  "brief": "Reverses the order of an array",
   "related": ["sort_"],
   "name": "reverse()",
   "description": "Reverses the order of an array.",

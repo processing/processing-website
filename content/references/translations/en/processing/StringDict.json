@@ -1,5 +1,5 @@
 {
-  "brief": "A simple class to use a String as a lookup for an String value",
+  "brief": "A simple class to use a <b>String</b> as a lookup for an <b>String</b> value",
   "methods": [
     {
       "anchor": "StringDict_size_",
@@ -70,7 +70,7 @@
   "csspath": "../../",
   "isLibrary": "true",
   "classFields": [],
-  "description": "A simple class to use a String as a lookup for an String value. String \"keys\" \n are associated with String values.",
+  "description": "A simple class to use a <b>String</b> as a lookup for a <b>String</b> value. String \"keys\" \n are associated with <b>String</b> values.",
   "type": "class",
   "constructors": ["StringDict()", "StringDict(pairs)", "StringDict(row)"],
   "related": ["IntDict", "FloatDict"],

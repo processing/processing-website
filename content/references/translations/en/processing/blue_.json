@@ -1,5 +1,5 @@
 {
-  "brief": "Extracts the blue value from a color, scaled to match current\n           <b>colorMode()</b>.",
+  "brief": "Extracts the blue value from a color, scaled to match current\n           <b>colorMode()</b>",
   "related": [
     "red_",
     "green_",

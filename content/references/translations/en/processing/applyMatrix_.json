@@ -1,8 +1,8 @@
 {
-  "brief": "Multiplies the current matrix by the one specified through the\n parameters.",
+  "brief": "Multiplies the current matrix by the one specified through the\n parameters",
   "related": ["pushMatrix_", "popMatrix_", "resetMatrix_", "printMatrix_"],
   "name": "applyMatrix()",
-  "description": "Multiplies the current matrix by the one specified through the\n parameters. This is very slow because it will try to calculate the\n inverse of the transform, so avoid it whenever possible. The equivalent\n function in OpenGL is glMultMatrix().",
+  "description": "Multiplies the current matrix by the one specified through the\n parameters. This is very slow because it will try to calculate the\n inverse of the transform, so avoid it whenever possible. The equivalent\n function in OpenGL is <b>glMultMatrix()</b>.",
   "syntax": [
     "applyMatrix(source)",
     "applyMatrix(n00, n01, n02, n10, n11, n12)",

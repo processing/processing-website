@@ -1,5 +1,5 @@
 {
-  "brief": "A simple class to use a String as a lookup for an int value.",
+  "brief": "A simple class to use a <b>String</b> as a lookup for an int value",
   "methods": [
     {
       "anchor": "IntDict_size_",
@@ -83,7 +83,7 @@
   "csspath": "../../",
   "isLibrary": "true",
   "classFields": [],
-  "description": "A simple class to use a String as a lookup for an int value. String \"keys\" are \n associated with integer values.",
+  "description": "A simple class to use a <b>String</b> as a lookup for an int value. String \"keys\" are \n associated with integer values.",
   "type": "class",
   "constructors": ["IntDict()", "IntDict(pairs)"],
   "related": ["FloatDict", "StringDict"],

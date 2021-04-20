@@ -1,5 +1,5 @@
 {
-  "brief": "Calculates the closest int value that is less than or equal to the value\n of the parameter.",
+  "brief": "Calculates the closest int value that is less than or equal to the value\n of the parameter",
   "related": ["ceil_", "round_"],
   "name": "floor()",
   "description": "Calculates the closest int value that is less than or equal to the value\n of the parameter.",

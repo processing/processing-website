@@ -2,7 +2,7 @@
   "brief": "Checks whether or not an element has any children",
   "related": [],
   "name": "hasChildren()",
-  "description": "Checks whether or not the element has any children, and returns the result as a boolean.",
+  "description": "Checks whether or not the element has any children, and returns the result as a <b>boolean</b>.",
   "syntax": [".hasChildren()"],
   "returns": "boolean",
   "type": "method",

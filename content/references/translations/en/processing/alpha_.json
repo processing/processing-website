@@ -1,5 +1,5 @@
 {
-  "brief": "Extracts the alpha value from a color.",
+  "brief": "Extracts the alpha value from a color",
   "related": ["red_", "green_", "blue_", "hue_", "saturation_", "brightness_"],
   "name": "alpha()",
   "description": "Extracts the alpha value from a color.",

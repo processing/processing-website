@@ -1,5 +1,5 @@
 {
-  "brief": "Variable storing if a mouse button is pressed.",
+  "brief": "Variable storing if a mouse button is pressed",
   "related": [
     "mouseX",
     "mouseY",

@@ -1,12 +1,12 @@
 {
-  "brief": "Gets the boolean value associated with the specified key",
+  "brief": "Gets the <b>boolean</b> value associated with the specified key",
   "related": [
     "JSONObject_getInt_",
     "JSONObject_getFloat_",
     "JSONObject_getString_"
   ],
   "name": "getBoolean()",
-  "description": "Gets the boolean value associated with the specified key.",
+  "description": "Gets the <b>boolean</b> value associated with the specified key.",
   "syntax": [".getBoolean(key)", ".getBoolean(key, defaultValue)"],
   "returns": "boolean",
   "type": "method",

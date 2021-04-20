@@ -2,7 +2,7 @@
   "brief": "Returns the number of children",
   "related": [],
   "name": "getChildCount()",
-  "description": "Returns the number of children within the PShape.",
+  "description": "Returns the number of children within the <b>PShape</b>.",
   "syntax": ["sh.getChildCount()"],
   "returns": "int",
   "type": "method",

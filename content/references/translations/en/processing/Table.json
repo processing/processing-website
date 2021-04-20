@@ -1,5 +1,5 @@
 {
-  "brief": "Generic class for handling tabular data, typically from a CSV, TSV,\n           or other sort of spreadsheet file.",
+  "brief": "Generic class for handling tabular data, typically from a CSV, TSV,\n           or other sort of spreadsheet file",
   "methods": [
     {
       "anchor": "Table_addColumn_",
@@ -19,7 +19,7 @@
     {
       "anchor": "Table_getRowCount_",
       "name": "getRowCount()",
-      "desc": "Returns the total number of rows in a table"
+      "desc": "Returns the total number of rows in a <b>Table</b>"
     },
     {
       "anchor": "Table_clearRows_",

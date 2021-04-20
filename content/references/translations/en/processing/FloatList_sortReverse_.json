@@ -1,5 +1,5 @@
 {
-  "brief": "A sort in reverse.",
+  "brief": "A sort in reverse",
   "related": [],
   "name": "sortReverse()",
   "description": "A sort in reverse. It's equivalent to running <b>sort()</b> and then \n <b>reverse()</b>, but is more efficient than running each separately.",

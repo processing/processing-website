@@ -1,25 +1,25 @@
 {
-  "brief": "A JSONObject is an unordered collection of name/value pairs.",
+  "brief": "A <b>JSONObject</b> is an unordered collection of name/value pairs",
   "methods": [
     {
       "anchor": "JSONObject_getString_",
       "name": "getString()",
-      "desc": "Gets the String value associated with the specified key"
+      "desc": "Gets the <b>String</b> value associated with the specified key"
     },
     {
       "anchor": "JSONObject_getInt_",
       "name": "getInt()",
-      "desc": "Gets the int value associated with the specified key"
+      "desc": "Gets the <b>int</b> value associated with the specified key"
     },
     {
       "anchor": "JSONObject_getFloat_",
       "name": "getFloat()",
-      "desc": "Gets the float value associated with a key"
+      "desc": "Gets the <b>float</b> value associated with a key"
     },
     {
       "anchor": "JSONObject_getBoolean_",
       "name": "getBoolean()",
-      "desc": "Gets the boolean value associated with the specified key"
+      "desc": "Gets the <b>boolean</b> value associated with the specified key"
     },
     {
       "anchor": "JSONObject_getJSONArray_",
@@ -34,7 +34,7 @@
     {
       "anchor": "JSONObject_isNull_",
       "name": "isNull()",
-      "desc": "Determines if the value associated with the key is <b>null</b>, that is has \n no defined value (<b>false</b>) or if it has a value (<b>true</b>)."
+      "desc": "Determines if the value associated with the key is <b>null</b>, that is has \n no defined value (<b>false</b>) or if it has a value (<b>true</b>)"
     },
     {
       "anchor": "JSONObject_setString_",
@@ -49,12 +49,12 @@
     {
       "anchor": "JSONObject_setFloat_",
       "name": "setFloat()",
-      "desc": "Put a key/float pair in the JSONObject"
+      "desc": "Put a key/float pair in the <b>JSONObject</b>"
     },
     {
       "anchor": "JSONObject_setBoolean_",
       "name": "setBoolean()",
-      "desc": "Put a key/boolean pair in the JSONObject"
+      "desc": "Put a key/boolean pair in the <b>JSONObject</b>"
     },
     {
       "anchor": "JSONObject_setJSONObject_",
@@ -70,7 +70,7 @@
   "csspath": "../../",
   "isLibrary": "true",
   "classFields": [],
-  "description": "A <b>JSONObject</b> stores JSON data with multiple name/value pairs. Values\n can be numeric, Strings, booleans, other <b>JSONObject</b>s or\n <b>JSONArray</b>s, or null. <b>JSONObject</b> and <b>JSONArray</b> objects\n are quite similar and share most of the same methods; the primary difference\n is that the latter stores an array of JSON objects, while the former\n represents a single JSON object.<br />\n <br />\n JSON can be generated from scratch, dynamically, or using data from an\n existing file. JSON can also be output and saved to disk, as in the example\n above.\n \n ",
+  "description": "A <b>JSONObject</b> stores JSON data with multiple name/value pairs. Values\n can be numeric, <b>Strings</b>, <b>booleans</b>, other <b>JSONObject</b>s or\n <b>JSONArray</b>s, or null. <b>JSONObject</b> and <b>JSONArray</b> objects\n are quite similar and share most of the same methods; the primary difference\n is that the latter stores an array of JSON objects, while the former\n represents a single JSON object.<br />\n <br />\n JSON can be generated from scratch, dynamically, or using data from an\n existing file. JSON can also be output and saved to disk, as in the example\n above.\n \n ",
   "type": "class",
   "constructors": [],
   "related": [

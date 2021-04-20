@@ -1,8 +1,8 @@
 {
-  "brief": "Read bytes from the attached device.",
+  "brief": "Read bytes from the attached device",
   "related": [],
   "name": "read()",
-  "description": "Read bytes from the attached device<br/>\n <br/>\n You must call beginTransmission() before calling this function. This function\n also ends the current transmission and sends any data that was queued using\n write() before. It is not necessary to call\n <a href=\"I2C_endTransmission_.html\">endTransmission()</a> after read().",
+  "description": "Read bytes from the attached device<br/>\n <br/>\n You must call <b>beginTransmission()</b> before calling this function. This function\n also ends the current transmission and sends any data that was queued using\n <b>write()</b> before. It is not necessary to call\n <a href=\"I2C_endTransmission_.html\">endTransmission()</a> after <b>read()</b>.",
   "syntax": [".read(len)"],
   "returns": "byte[]",
   "type": "method",

@@ -1,5 +1,5 @@
 {
-  "brief": "Returns the next client in line with a new message.",
+  "brief": "Returns the next client in line with a new message",
   "related": [],
   "name": "available()",
   "description": "Returns the next client in line with a new message.",

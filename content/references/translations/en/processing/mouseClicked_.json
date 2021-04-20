@@ -1,5 +1,5 @@
 {
-  "brief": "Called once after a mouse button has been pressed and then\n           released.",
+  "brief": "Called once after a mouse button has been pressed and then\n           released",
   "related": [
     "mouseX",
     "mouseY",

@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the emissive color of the material used for drawing shapes drawn to\n the screen.",
+  "brief": "Sets the emissive color of the material used for drawing shapes drawn to\n the screen",
   "related": [
     "PGraphics_ambient_",
     "PGraphics_specular_",

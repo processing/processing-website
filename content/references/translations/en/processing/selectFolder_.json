@@ -1,5 +1,5 @@
 {
-  "brief": "Opens a platform-specific file chooser dialog to select a folder.",
+  "brief": "Opens a platform-specific file chooser dialog to select a folder",
   "related": [],
   "name": "selectFolder()",
   "description": "Opens a platform-specific file chooser dialog to select a folder.\n After the selection is made, the selection will be passed to the\n 'callback' function. If the dialog is closed or canceled, null\n will be sent to the function, so that the program is not waiting\n for additional input. The callback is necessary because of how\n threading works.",

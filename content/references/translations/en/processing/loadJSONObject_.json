@@ -1,5 +1,5 @@
 {
-  "brief": "Loads a JSON from the data folder or a URL, and returns a\n           <b>JSONObject</b>.",
+  "brief": "Loads a JSON from the data folder or a URL, and returns a\n           <b>JSONObject</b>",
   "related": [
     "JSONObject",
     "JSONArray",

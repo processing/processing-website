@@ -1,5 +1,5 @@
 {
-  "brief": "Determines the largest value in a sequence of numbers.",
+  "brief": "Determines the largest value in a sequence of numbers",
   "related": ["min_"],
   "name": "max()",
   "description": "Determines the largest value in a sequence of numbers, and then returns that\n value. <b>max()</b> accepts either two or three <b>float</b> or <b>int</b>\n values as parameters, or an array of any length.",

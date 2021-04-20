@@ -1,5 +1,5 @@
 {
-  "brief": "Disables filling geometry.",
+  "brief": "Disables filling geometry",
   "related": ["fill_", "stroke_", "noStroke_"],
   "name": "noFill()",
   "description": "Disables filling geometry. If both <b>noStroke()</b> and <b>noFill()</b>\n are called, nothing will be drawn to the screen.",

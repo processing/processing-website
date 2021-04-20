@@ -1,5 +1,5 @@
 {
-  "brief": "Calculates the tangent of a point on a curve.",
+  "brief": "Calculates the tangent of a point on a curve",
   "related": [
     "PGraphics_curve_",
     "PGraphics_curveVertex_",

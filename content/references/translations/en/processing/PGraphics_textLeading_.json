@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the spacing between lines of text in units of pixels.",
+  "brief": "Sets the spacing between lines of text in units of pixels",
   "related": [
     "loadFont_",
     "PGraphics_text_",
