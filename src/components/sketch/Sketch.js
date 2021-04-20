@@ -65,16 +65,14 @@ const Sketch = ({ children }) => {
   return (
     <div className={classnames(css.root, grid.grid)}>
       <div className={classnames(grid.col, css.left)}>
-        <div className={classnames(css.rail, { [css.codeVisible]: showCode })}>
-          <div className={css.slide}>{children}</div>
-          <div className={css.slide}>
-            <SketchCode
-              onChange={onChange}
-              onChangeShape={onChangeShape}
-              isVisible={showCode}
-              {...state}
-            />
-          </div>
+        <div className={css.splash}>{children}</div>
+        <div className={classnames(css.code, { [css.codeVisible]: showCode })}>
+          <SketchCode
+            onChange={onChange}
+            onChangeShape={onChangeShape}
+            isVisible={showCode}
+            {...state}
+          />
         </div>
       </div>
       <div className={classnames(grid.col, css.right)}>

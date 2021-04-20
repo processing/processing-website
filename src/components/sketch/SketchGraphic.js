@@ -57,6 +57,7 @@ const SketchGraphic = (props) => {
         <g transform={`translate(1, 1)`}>
           <g className={css.grid}>{grid}</g>
           {shapes.map((shape, index) => {
+            const showHandlers = shape.showHandlers || shape.dragging !== null;
             const color = `rgb(${shape.color[0]},${shape.color[1]},${shape.color[2]})`;
 
             let dPoints = shape.pos.map((x) => x * unit);
@@ -85,7 +86,7 @@ const SketchGraphic = (props) => {
                   fill="none"
                   strokeWidth={strokeWeight * unit}
                 />
-                {shape.showHandlers && (
+                {showHandlers && (
                   <Handler
                     x1={shape.pos[0]}
                     y1={shape.pos[1]}
@@ -94,7 +95,7 @@ const SketchGraphic = (props) => {
                     unit={unit}
                   />
                 )}
-                {shape.showHandlers && (
+                {showHandlers && (
                   <Handler
                     x1={shape.pos[6]}
                     y1={shape.pos[7]}

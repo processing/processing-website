@@ -18,17 +18,16 @@
   display: flex;
 }
 
-.rail {
-  display: flex;
+.splash,
+.code {
+  flex: 0 0 100%;
+  margin-right: var(--gutter);
+}
+
+.code {
   transition: transform 0.5s;
 }
 
-.rail.codeVisible {
-  transform: translate(-100%, 0);
-}
-
-.slide {
-  flex: 0 0 100%;
-  display: flex;
-  margin-right: var(--gutter);
+.code.codeVisible {
+  transform: translate(calc(-100% - var(--gutter)), 0);
 }

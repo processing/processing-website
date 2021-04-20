@@ -34,8 +34,8 @@ const SketchCode = (props) => {
             <span className="hljs-keyword">void</span>{' '}
             <span className="hljs-title">draw</span>
             {`() {`}
+            <Folded />
           </Line>
-          <Folded />
         </summary>
         <Line num={9}>
           {`  `}
@@ -116,8 +116,8 @@ const Setup = memo(({ isVisible }) => {
           <span className="hljs-keyword">void</span>{' '}
           <span className="hljs-title">setup</span>
           {`() {`}
+          <Folded />
         </Line>
-        <Folded />
       </summary>
       <Line num={5}>
         {`  `}
@@ -159,8 +159,8 @@ const BottomLines = memo(({ isVisible }) => {
           <Line num={24}>
             <span className="hljs-keyword">void</span>
             {` drawGrid() {`}
+            <Folded />
           </Line>
-          <Folded />
         </summary>
         <Line num={25}>
           {`  `}
@@ -207,8 +207,8 @@ const BottomLines = memo(({ isVisible }) => {
 const Line = ({ num, children }) => {
   return (
     <div className={css.line}>
-      <span className={css.num}>{num}</span>
-      {children}
+      <div className={css.num}>{num}</div>
+      <div className={css.code}>{children}</div>
     </div>
   );
 };

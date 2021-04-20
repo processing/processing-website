@@ -1,7 +1,6 @@
 @import "../../styles/variables.css";
 
 .root {
-  flex-basis: 100%;
   background-color: white;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -43,20 +42,28 @@
   }
 }
 
-.root summary .line {
-  display: inline-block;
+.line {
+  display: flex;
+}
+
+.line:hover .interactive {
+  background-color: #e9f4ff;
 }
 
 .num {
+  flex: 0 0 30px;
   display: inline-block;
   background-color: var(--processing-blue-dark);
   text-align: right;
   color: white;
   padding: 0 5px;
   margin-right: 10px;
-  width: 30px;
   font-size: 12px;
   line-height: 23px;
+}
+
+.code {
+  flex: 1;
 }
 
 .folded {
@@ -82,10 +89,6 @@
   padding: 0 3px;
   border-radius: 5px;
   transition: background-color 0.2s;
-}
-
-.line:hover .interactive {
-  background-color: #e9f4ff;
 }
 
 .toggleShape {
