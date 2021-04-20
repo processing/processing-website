@@ -48,52 +48,64 @@ const SketchGraphic = (props) => {
           const showHandlers = shape.showHandlers || shape.dragging !== null;
           const color = `rgb(${shape.color[0]},${shape.color[1]},${shape.color[2]})`;
 
-          let dPoints = shape.pos.map((x) => x * unit);
-
-          if (shape.pos.length > 4) {
-            dPoints.splice(0, 0, 'M');
-            dPoints.splice(3, 0, 'C');
+          if (shape.line) {
+            return (
+              <Fragment key={index}>
+                <line
+                  x1={shape.pos[0] * unit}
+                  y1={shape.pos[1] * unit}
+                  x2={shape.pos[6] * unit}
+                  y2={shape.pos[7] * unit}
+                  stroke={color}
+                  strokeWidth={strokeWeight * unit}
+                />
+                {showHandlers && (
+                  <Handler
+                    x1={shape.pos[0]}
+                    y1={shape.pos[1]}
+                    x2={shape.pos[6]}
+                    y2={shape.pos[7]}
+                    unit={unit}
+                  />
+                )}
+              </Fragment>
+            );
+          } else {
+            const d = `M ${shape.pos[0] * unit} ${shape.pos[1] * unit} C ${
+              shape.pos[2] * unit
+            } ${shape.pos[3] * unit} ${shape.pos[4] * unit} ${
+              shape.pos[5] * unit
+            } ${shape.pos[6] * unit} ${shape.pos[7] * unit}`;
+            return (
+              <Fragment key={index}>
+                <path
+                  d={d}
+                  stroke={color}
+                  fill="none"
+                  strokeWidth={strokeWeight * unit}
+                />
+                {showHandlers && (
+                  <g>
+                    <Handler d={d} unit={unit} />
+                    <Handler
+                      x1={shape.pos[0]}
+                      y1={shape.pos[1]}
+                      x2={shape.pos[2]}
+                      y2={shape.pos[3]}
+                      unit={unit}
+                    />
+                    <Handler
+                      x1={shape.pos[6]}
+                      y1={shape.pos[7]}
+                      x2={shape.pos[4]}
+                      y2={shape.pos[5]}
+                      unit={unit}
+                    />
+                  </g>
+                )}
+              </Fragment>
+            );
           }
-
-          return shape.line ? (
-            <line
-              key={index}
-              x1={shape.pos[0] * unit}
-              y1={shape.pos[1] * unit}
-              x2={shape.pos[6] * unit}
-              y2={shape.pos[7] * unit}
-              stroke={color}
-              strokeWidth={strokeWeight * unit}
-            />
-          ) : (
-            <Fragment key={index}>
-              <path
-                key={index}
-                d={dPoints.join(' ')}
-                stroke={color}
-                fill="none"
-                strokeWidth={strokeWeight * unit}
-              />
-              {showHandlers && (
-                <Handler
-                  x1={shape.pos[0]}
-                  y1={shape.pos[1]}
-                  x2={shape.pos[2]}
-                  y2={shape.pos[3]}
-                  unit={unit}
-                />
-              )}
-              {showHandlers && (
-                <Handler
-                  x1={shape.pos[6]}
-                  y1={shape.pos[7]}
-                  x2={shape.pos[4]}
-                  y2={shape.pos[5]}
-                  unit={unit}
-                />
-              )}
-            </Fragment>
-          );
         })}
       </g>
     </svg>
@@ -104,11 +116,35 @@ const SketchGraphic = (props) => {
 //   {isCodeVisible ? 'Hide code' : 'Play'}
 // </Button>
 
-const Handler = memo(({ x1, y1, x2, y2, unit }) => {
+const Handler = memo(({ x1, y1, x2, y2, d, unit }) => {
   return (
-    <g className={css.handler}>
-      <line x1={x1 * unit} y1={y1 * unit} x2={x2 * unit} y2={y2 * unit} />
-      <circle cx={x2 * unit} cy={y2 * unit} r={4} />
+    <g>
+      {d && <path d={d} className={css.handlerLine} />}
+      {!d && (
+        <line
+          x1={x1 * unit}
+          y1={y1 * unit}
+          x2={x2 * unit}
+          y2={y2 * unit}
+          className={css.handlerLine}
+        />
+      )}
+      {x1 > -1 && (
+        <circle
+          cx={x2 * unit}
+          cy={y2 * unit}
+          r={4}
+          className={css.handlerCircle}
+        />
+      )}
+      {x1 > -1 && (
+        <circle
+          cx={x1 * unit}
+          cy={y1 * unit}
+          r={4}
+          className={css.handlerCircle}
+        />
+      )}
     </g>
   );
 });

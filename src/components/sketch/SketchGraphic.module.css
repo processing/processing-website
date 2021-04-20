@@ -7,13 +7,12 @@
   stroke: rgba(80, 139, 255, 0.2);
 }
 
-.handler {
-  & line {
-    stroke: black;
-    stroke-dasharray: 4;
-  }
+.handlerLine {
+  fill: none;
+  stroke: black;
+  stroke-dasharray: 4;
+}
 
-  & circle {
-    fill: black;
-  }
+.handlerCircle {
+  fill: black;
 }
