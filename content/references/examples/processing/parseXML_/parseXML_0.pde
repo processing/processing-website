@@ -1,4 +1,4 @@
-String data = "&lt;mammals&gt;&lt;animal&gt;Goat&lt;/animal&gt;&lt;/mammals&gt;";
+String data = "<mammals><animal>Goat</animal></mammals>";
 
 void setup() {
   XML xml = parseXML(data);
