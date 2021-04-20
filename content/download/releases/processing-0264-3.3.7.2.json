@@ -1,0 +1,21 @@
+{
+  "name": "Processing 3.3.7.2",
+  "tagName": "processing-0264-3.3.7.2",
+  "publishedAt": "2018-07-22T17:06:26Z",
+  "releaseAssets": {
+    "edges": [
+      {
+        "node": {
+          "name": "processing-3.3.7.2-linux-armv6hf.tgz",
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0264-3.3.7.2/processing-3.3.7.2-linux-armv6hf.tgz"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-3.3.7.2-linux-raspbian.zip",
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0264-3.3.7.2/processing-3.3.7.2-linux-raspbian.zip"
+        }
+      }
+    ]
+  }
+}
