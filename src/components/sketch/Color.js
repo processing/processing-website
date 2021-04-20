@@ -1,9 +1,19 @@
-import React, { useState, memo } from 'react';
+import React, { useState, useCallback, memo } from 'react';
 import Draggable from './Draggable';
 import css from './Color.module.css';
-import { rgbToHex, hexToRgb } from '../../utils/editor';
+import { rgbToHex, hexToRgb } from '../../utils/sketch';
 
-const Color = ({ color, onChange, tabIndex }) => {
+/**
+  We pass the shapeIndex to the component in order to be able to memo the handler
+  functions so the interactive sketch renders faster
+**/
+const Color = ({
+  color,
+  shapeIndex,
+  onChangeShape,
+  tabIndex,
+  draggableClassName
+}) => {
   const [colorClass, setColorClass] = useState(true);
 
   const blurRest = (e, val) => {
@@ -11,34 +21,39 @@ const Color = ({ color, onChange, tabIndex }) => {
   };
 
   const handleChange = (idx, val) => {
-    console.log('VAL', idx, val);
     const newColor = color.slice();
     newColor[idx] = val;
-    onChange(newColor);
+    onChangeShape(shapeIndex, 'color', newColor);
   };
 
   return (
     <span className={colorClass ? css.root : css.blur}>
       <Draggable
-        onChange={(val) => handleChange(0, val)}
+        className={draggableClassName}
+        onChange={handleChange}
         min={0}
         max={255}
+        index={0}
         value={color[0]}
         tabIndex={tabIndex}
       />
       ,&nbsp;
       <Draggable
-        onChange={(val) => handleChange(1, val)}
+        className={draggableClassName}
+        onChange={handleChange}
         min={0}
         max={255}
+        index={1}
         value={color[1]}
         tabIndex={tabIndex}
       />
       ,&nbsp;
       <Draggable
-        onChange={(val) => handleChange(2, val)}
+        className={draggableClassName}
+        onChange={handleChange}
         min={0}
         max={255}
+        index={2}
         value={color[2]}
         tabIndex={tabIndex}
       />
@@ -48,13 +63,12 @@ const Color = ({ color, onChange, tabIndex }) => {
         value={rgbToHex(color)}
         aria-label="Choose color"
         tabIndex={tabIndex}
+        onChange={(e) =>
+          onChangeShape(shapeIndex, 'color', hexToRgb(e.target.value))
+        }
       />
     </span>
   );
 };
-
-// onChange={(e) =>
-//   //onChange(e, ['shapes', shapesInx, 'color'], hexToRgb(e.target.value))
-// }
 
 export default memo(Color);

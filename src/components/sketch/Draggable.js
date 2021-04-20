@@ -1,30 +1,33 @@
 import React, { useState, useEffect, memo } from 'react';
-import { scale, round } from '../../utils/editor';
+import { scale, round } from '../../utils/sketch';
 import classnames from 'classnames';
 import css from './Draggable.module.css';
 
+/**
+  We pass the idx to the component in order to be able to memo the handler
+  functions so the interactive sketch renders faster
+**/
 const Draggable = (props) => {
   const {
     value,
+    index = null,
     min,
     max,
     path,
     isInteger = true,
     className,
+    onChange,
     onDraggingStart,
     onDraggingEnd,
-    index,
-    tabIndex,
-    onChange,
+    tabIndex
   } = props;
   const [dragging, setDragging] = useState(null);
 
   useEffect(() => {
     if (dragging) {
       const handleMouseUp = (e) => {
-        props.blurRest && props.blurRest(e, false);
         setDragging(false);
-        index && onDraggingEnd();
+        index === null && onDraggingEnd();
       };
 
       const handleMouseMove = (e) => {
@@ -40,7 +43,7 @@ const Draggable = (props) => {
             ? value + Math.floor(diff)
             : round(value + diff, 2);
           if (t >= min && t <= max) {
-            onChange(t);
+            index === null ? onChange(t) : onChange(index, t);
           }
         }
       };
@@ -56,13 +59,11 @@ const Draggable = (props) => {
   }, [dragging, index, isInteger, onDraggingEnd, path, props, min, max, value]);
 
   const registerMove = (e) => {
-    props.blurRest && props.blurRest(e, true);
     setDragging(e.screenX);
-    index && onDraggingStart(index);
+    index === null && onDraggingStart(index);
   };
 
   const deregisterMove = (e) => {
-    props.blurRest && props.blurRest(e, false);
     setDragging(null);
   };
 

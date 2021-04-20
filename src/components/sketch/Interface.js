@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from '../Button';
 import css from './Interface.module.css';
-import { rgbToHex, hexToRgb } from '../../utils/editor';
+import { rgbToHex, hexToRgb } from '../../utils/sketch';
 
 const Interface = (props) => {
   const { showGrid, shapes } = props;

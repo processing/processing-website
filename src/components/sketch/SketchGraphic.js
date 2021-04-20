@@ -130,8 +130,8 @@ const SketchGraphic = (props) => {
                 key={index}
                 x1={shape.pos[0] * unit}
                 y1={shape.pos[1] * unit}
-                x2={shape.pos[6] * unit}
-                y2={shape.pos[7] * unit}
+                x2={shape.pos[2] * unit}
+                y2={shape.pos[3] * unit}
                 stroke={color}
                 strokeWidth={strokeWeight * unit}
               />

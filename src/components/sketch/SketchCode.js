@@ -21,7 +21,7 @@ const SketchCode = (props) => {
     onMouseEnterShape,
     onMouseLeaveShape,
     onDraggingShapeStart,
-    onDraggingShapeEnd,
+    onDraggingShapeEnd
   } = props;
   return (
     <div className={css.root}>
@@ -66,23 +66,26 @@ const SketchCode = (props) => {
                 {`  `}
                 <span className="hljs-built_in">stroke</span>(
                 <Color
-                  onChange={(color) => onChangeShape(i, 'color', color)}
+                  draggableClassName={css.interactive}
+                  onChangeShape={onChangeShape}
                   color={shapes[i].color}
+                  shapeIndex={i}
                   tabIndex={isVisible ? 0 : -1}
                 />
                 );
               </Line>
               <Line num={num + 1}>
                 <Shape
+                  shape={shape}
+                  shapeIndex={i}
+                  onChangeShape={onChangeShape}
                   onMouseEnter={onMouseEnterShape}
                   onMouseLeave={onMouseLeaveShape}
                   onDraggingStart={onDraggingShapeStart}
                   onDraggingEnd={onDraggingShapeEnd}
-                  onChange={onChange}
-                  shape={shape}
-                  shapesInx={i}
-                  rangeX={{ min: 0, max: 8 }}
-                  rangeY={{ min: 0, max: 8 }}
+                  draggableClassName={css.interactive}
+                  min={0}
+                  max={8}
                   tabIndex={isVisible ? 0 : -1}
                 />
                 ;
@@ -106,7 +109,7 @@ const ShowGrid = memo(({ showGrid, isVisible, onChange }) => {
         name="showGrid"
         className={classnames(css.interactive, 'hljs-keyword')}
         value={showGrid}
-        onClick={(e) => onChange(e, 'showGrid', !showGrid)}
+        onClick={(e) => onChange('showGrid', !showGrid)}
         tabIndex={isVisible ? 0 : -1}>
         {showGrid ? 'true' : 'false'}
       </button>
@@ -144,10 +147,10 @@ const StrokeWeight = memo(({ strokeWeight, onChange, isVisible }) => {
       <Draggable
         className={css.interactive}
         value={strokeWeight}
-        range={{ min: 0.5, max: 2 }}
-        path={['strokeWeight']}
+        min={0.5}
+        max={2}
         isInteger={false}
-        onChange={onChange}
+        onChange={(val) => onChange('strokeWeight', val)}
         tabIndex={isVisible ? 0 : -1}
       />
       {' * u);'}
@@ -213,7 +216,7 @@ const BottomLines = memo(({ isVisible }) => {
 
 // <Button
 //   className={css.toggleShape}
-//   onClick={(e) => onChange(e, ['shapes', i, 'line'], !shape.line)}
+//   onClick={(e) => onChange(['shapes', i, 'line'], !shape.line)}
 //   tabIndex={isVisible ? 0 : -1}>
 //   {shape.line ? '/' : '~'}
 // </Button>

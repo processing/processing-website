@@ -16,7 +16,7 @@ const initialState = {
     {
       line: true,
       color: [2, 81, 200],
-      pos: [1, 2, 0, 0, 0, 0, 7, 5],
+      pos: [1, 2, 7, 5],
       showHandlers: false,
       dragging: null,
     },
@@ -30,7 +30,7 @@ const initialState = {
     {
       line: true,
       color: [30, 42, 103],
-      pos: [6, 1, 0, 0, 0, 0, 4, 7],
+      pos: [6, 1, 4, 7],
       showHandlers: false,
       dragging: null,
     },
@@ -42,13 +42,12 @@ const Sketch = ({ children }) => {
   const [showCode, setShowCode] = useState(true);
 
   // Change handler for a simple attribute in state
-  const onChange = useCallback((e, key, value) => {
+  const onChange = useCallback((key, value) => {
     setState((oldState) => Object.assign({}, oldState, { [key]: value }));
   }, []);
 
   // Change handler for attributes in a shape
   const onChangeShape = useCallback((shapeIdx, key, value) => {
-    console.log('change shape', shapeIdx, key, value);
     setState((oldState) => {
       const newState = Object.assign({}, oldState);
       newState.shapes = oldState.shapes.slice();
@@ -58,10 +57,6 @@ const Sketch = ({ children }) => {
       return newState;
     });
   }, []);
-
-  // const onChangeShapeArray
-
-  // const onChangeShapePos
 
   const handleClickOnSketch = useCallback((e) => {
     e.stopPropagation();

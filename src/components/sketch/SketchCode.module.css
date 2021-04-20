@@ -63,6 +63,16 @@
   display: inline-block;
 }
 
+.folded > span {
+  background-color: var(--lightgray);
+  display: inline-block;
+  margin: 0 3px;
+  border-radius: 4px;
+  letter-spacing: -3px;
+  padding: 0 5px 0 3px;
+  text-align: center;
+}
+
 .root details[open] .folded {
   display: none;
 }
@@ -86,16 +96,4 @@
   background-color: var(--gray);
   color: var(--black);
   border-radius: 5px;
-}
-
-.link {
-  position: absolute;
-  z-index: 100;
-  bottom: var(--margin-quarter);
-  right: var(--margin-quarter);
-}
-
-.link:hover {
-  color: white;
-  background-color: var(--processing-blue-dark);
 }

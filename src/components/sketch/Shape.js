@@ -1,83 +1,67 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import Draggable from './Draggable';
 import css from './Shape.module.css';
 
+/**
+  We pass the shapeIndex to the component in order to be able to memo the handler
+  functions so the interactive sketch renders faster
+**/
 const Shape = (props) => {
   const {
+    draggableClassName,
     shape,
-    shapesInx,
-    rangeX,
-    rangeY,
+    shapeIndex,
+    min,
+    max,
+    onChangeShape,
     onMouseEnter,
     onMouseLeave,
     onDraggingStart,
     onDraggingEnd,
-    tabIndex,
+    tabIndex
   } = props;
-  const [shapeClass, setShapeClass] = useState(true);
 
-  let draggable = [];
-
-  const blurRest = (e, value) => {
-    setShapeClass(!value);
+  const handleChange = (idx, val) => {
+    const newPos = shape.pos.slice();
+    newPos[idx] = val;
+    onChangeShape(shapeIndex, 'pos', newPos);
   };
 
   const handleDraggingStart = (subindex) => {
-    onDraggingStart(shapesInx, subindex);
+    // onDraggingStart(shapesInx, subindex);
   };
 
   const handleDraggingEnd = () => {
-    onDraggingEnd(shapesInx);
+    // onDraggingEnd(shapesInx);
   };
 
-  if (shape.line === true) {
-    shape.pos.forEach((p, index) => {
-      if (index < 2 || index > 5) {
-        draggable.push(
-          <Draggable
-            key={index}
-            onChange={props.onChange}
-            value={shape.pos[index]}
-            path={['shapes', shapesInx, 'pos', index]}
-            range={index % 2 === 0 ? rangeX : rangeY}
-            blurRest={blurRest}
-            tabIndex={tabIndex}
-          />
-        );
-        draggable.push(' * u, ');
-      }
-    });
-    draggable.pop();
-    draggable.push(' * u');
-  } else {
-    shape.pos.forEach((p, index) => {
-      draggable.push(
-        <Draggable
-          key={index}
-          index={index}
-          onChange={props.onChange}
-          onDraggingStart={handleDraggingStart}
-          onDraggingEnd={handleDraggingEnd}
-          range={index % 2 === 0 ? rangeX : rangeY}
-          value={shape.pos[index]}
-          path={['shapes', shapesInx, 'pos', index]}
-          blurRest={blurRest}
-          tabIndex={tabIndex}
-        />
-      );
-      draggable.push(' * u, ');
-    });
-    draggable.pop();
-    draggable.push(' * u');
+  const draggable = [];
+
+  for (let i = 0; i < shape.pos.length; i++) {
+    draggable.push(
+      <Draggable
+        key={`shape-pos-${i}`}
+        index={i}
+        className={draggableClassName}
+        onChange={handleChange}
+        onDraggingStart={shape.line ? null : handleDraggingStart}
+        onDraggingEnd={shape.line ? null : handleDraggingEnd}
+        value={shape.pos[i]}
+        min={min}
+        max={max}
+        tabIndex={tabIndex}
+      />
+    );
+    draggable.push(i === shape.pos.length - 1 ? ' * u' : ' * u, ');
   }
 
   return (
     <span
       role={'button'}
       tabIndex={tabIndex}
-      className={shapeClass ? css.root : css.blur}
-      onMouseEnter={() => onMouseEnter(shapesInx)}
-      onMouseLeave={() => onMouseLeave(shapesInx)}>
+      className={css.root}
+      onMouseEnter={() => onMouseEnter(999)}
+      onMouseLeave={() => onMouseLeave(999)}>
       {'  '}
       <span className="hljs-built_in">{shape.line ? 'line' : 'bezier'}</span>(
       {draggable})
@@ -85,4 +69,4 @@ const Shape = (props) => {
   );
 };
 
-export default Shape;
+export default memo(Shape);
