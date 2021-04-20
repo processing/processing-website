@@ -1,5 +1,5 @@
 {
-  "brief": "The system variable that always contains the horizontal\n position of the mouse in the frame previous to the current frame.",
+  "brief": "The system variable that always contains the horizontal\n position of the mouse in the frame previous to the current frame",
   "related": [
     "mouseX",
     "mouseY",

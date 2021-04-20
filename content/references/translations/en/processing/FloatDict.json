@@ -1,5 +1,5 @@
 {
-  "brief": "A simple table class to use a String as a lookup for an float\n           value.",
+  "brief": "A simple table class to use a <b>String</b> as a lookup for a float\n           value",
   "methods": [
     {
       "anchor": "FloatDict_size_",
@@ -92,7 +92,7 @@
   "csspath": "../../",
   "isLibrary": "true",
   "classFields": [],
-  "description": "A simple class to use a String as a lookup for an float value. String \"keys\"\n are associated with floating-point values.",
+  "description": "A simple class to use a <b>String</b> as a lookup for a float value. String \"keys\"\n are associated with floating-point values.",
   "type": "class",
   "constructors": ["FloatDict()", "FloatDict(pairs)"],
   "related": ["IntDict", "StringDict"],

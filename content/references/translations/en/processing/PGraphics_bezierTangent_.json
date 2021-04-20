@@ -1,5 +1,5 @@
 {
-  "brief": "Calculates the tangent of a point on a Bezier curve.",
+  "brief": "Calculates the tangent of a point on a Bezier curve",
   "related": [
     "PGraphics_bezier_",
     "PGraphics_bezierVertex_",

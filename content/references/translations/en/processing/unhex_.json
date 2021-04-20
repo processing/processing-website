@@ -1,5 +1,5 @@
 {
-  "brief": "Converts a String representation of a hexadecimal number to its\n           equivalent integer value.",
+  "brief": "Converts a <b>String</b> representation of a hexadecimal number to its\n           equivalent integer value",
   "related": ["hex_", "binary_", "unbinary_"],
   "name": "unhex()",
   "description": "Converts a <b>String</b> representation of a hexadecimal number to its\n equivalent integer value.",

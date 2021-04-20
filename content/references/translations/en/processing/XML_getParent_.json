@@ -2,7 +2,7 @@
   "brief": "Gets a copy of the element's parent",
   "related": [],
   "name": "getParent()",
-  "description": "Gets a copy of the element's parent.  Returns the parent as another XML object.",
+  "description": "Gets a copy of the element's parent.  Returns the parent as another <b>XML</b> object.",
   "syntax": [".getParent()"],
   "returns": "XML",
   "type": "method",

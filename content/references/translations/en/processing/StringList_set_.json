@@ -2,7 +2,7 @@
   "brief": "Set an entry at a particular index",
   "related": [],
   "name": "set()",
-  "description": "Set the entry at a particular index. If the index is past the length of\n the list, it'll expand the list to accommodate, and fill the intermediate\n entries with \"null\".",
+  "description": "Set the entry at a particular index. If the index is past the length of\n the list, it'll expand the list to accommodate, and fill the intermediate\n entries with <b>null</b>.",
   "syntax": [".set(index, what)"],
   "returns": "void",
   "type": "method",

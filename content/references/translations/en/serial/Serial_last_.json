@@ -1,5 +1,5 @@
 {
-  "brief": "Returns last byte received or -1 if there is none available.",
+  "brief": "Returns last byte received or -1 if there is none available",
   "related": [],
   "name": "last()",
   "description": "Returns last byte received or -1 if there is none available.",

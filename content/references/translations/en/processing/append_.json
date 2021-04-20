@@ -1,5 +1,5 @@
 {
-  "brief": "Expands an array by one element and adds data to the new position.",
+  "brief": "Expands an array by one element and adds data to the new position",
   "related": ["shorten_", "expand_"],
   "name": "append()",
   "description": "Expands an array by one element and adds data to the new position. The\n datatype of the <b>element</b> parameter must be the same as the\n datatype of the array.\n <br/> <br/>\n When using an array of objects, the data returned from the function must\n be cast to the object array's data type. For example: <em>SomeClass[]\n items = (SomeClass[]) append(originalArray, element)</em>.",

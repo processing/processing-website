@@ -1,5 +1,5 @@
 {
-  "brief": "Returns the number of bytes available.",
+  "brief": "Returns the number of bytes available",
   "related": [],
   "name": "available()",
   "description": "Returns the number of bytes available.",

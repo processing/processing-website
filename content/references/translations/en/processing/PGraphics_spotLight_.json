@@ -1,5 +1,5 @@
 {
-  "brief": "Adds a spot light.",
+  "brief": "Adds a spot light",
   "related": [
     "PGraphics_lights_",
     "PGraphics_directionalLight_",

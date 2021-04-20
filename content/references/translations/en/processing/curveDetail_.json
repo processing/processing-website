@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the resolution at which curves display.",
+  "brief": "Sets the resolution at which curves display",
   "related": ["curve_", "curveVertex_", "curveTightness_"],
   "name": "curveDetail()",
   "description": "Sets the resolution at which curves display. The default value is 20.\n This function is only useful when using the P3D renderer as the default\n P2D renderer does not use this information.",

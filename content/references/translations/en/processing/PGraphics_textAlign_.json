@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the current alignment for drawing text.",
+  "brief": "Sets the current alignment for drawing text",
   "related": [
     "loadFont_",
     "PFont",

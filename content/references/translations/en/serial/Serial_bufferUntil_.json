@@ -1,5 +1,5 @@
 {
-  "brief": "Sets a specific byte to buffer until before calling <b>serialEvent()</b>.",
+  "brief": "Sets a specific byte to buffer until before calling <b>serialEvent()</b>",
   "related": [],
   "name": "bufferUntil()",
   "description": "Sets a specific byte to buffer until before calling <b>serialEvent()</b>.",

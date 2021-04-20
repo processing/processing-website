@@ -1,5 +1,5 @@
 {
-  "brief": "Stops data communication on this port.",
+  "brief": "Stops data communication on this port",
   "related": [],
   "name": "stop()",
   "description": "Stops data communication on this port. Use to shut the connection when you're finished with the Serial.",

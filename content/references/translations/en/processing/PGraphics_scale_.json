@@ -1,5 +1,5 @@
 {
-  "brief": "Increases or decreases the size of a shape by expanding and\n           contracting vertices.",
+  "brief": "Increases or decreases the size of a shape by expanding and\n           contracting vertices",
   "related": [
     "PGraphics_pushMatrix_",
     "PGraphics_popMatrix_",

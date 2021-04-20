@@ -2,7 +2,7 @@
   "brief": "Adds x, y, and z components to a vector, one vector to another, or\n           two independent vectors",
   "related": [],
   "name": "add()",
-  "description": "Adds x, y, and z components to a vector, adds one vector to another, or adds\n two independent vectors together. The version of the method that adds two\n vectors together is a static method and returns a new PVector, the others act\n directly on the vector itself. See the examples for more context.",
+  "description": "Adds x, y, and z components to a vector, adds one vector to another, or adds\n two independent vectors together. The version of the method that adds two\n vectors together is a static method and returns a new <b>PVector</b>, the others act\n directly on the vector itself. See the examples for more context.",
   "syntax": [
     ".add(v)",
     ".add(x, y)",

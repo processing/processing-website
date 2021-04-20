@@ -1,5 +1,5 @@
 {
-  "brief": "Draws an arc in the display window.",
+  "brief": "Draws an arc in the display window",
   "related": [
     "PGraphics_ellipse_",
     "PGraphics_ellipseMode_",

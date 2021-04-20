@@ -1,5 +1,5 @@
 {
-  "brief": "Displays images to the screen.",
+  "brief": "Displays images to the screen",
   "related": [
     "loadImage_",
     "PImage",

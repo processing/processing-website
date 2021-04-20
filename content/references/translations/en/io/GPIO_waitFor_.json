@@ -2,7 +2,7 @@
   "brief": "Waits for the value of an input pin to change",
   "related": [],
   "name": "waitFor()",
-  "description": "Waits for the value of an input pin to change<br/>\n  <br/>\n  The mode parameter determines when the function will return: GPIO.FALLING occurs \n  when the level changes from high to low, GPIO.RISING when the level changes from \n  low to high, and GPIO.CHANGE when either occurs.<br/>\n  <br/>\n  The optional timeout parameter determines how many milliseconds the function will \n  wait at the most. If the value of the input pin hasn't changed at this point, an \n  exception is raised for this line. Without a timeout parameter the function will \n  wait indefinitely until the input pin has changed to the desired state.\n\n  This function will throw a RuntimeException in case of a timeout.",
+  "description": "Waits for the value of an input pin to change<br/>\n  <br/>\n  The mode parameter determines when the function will return: <b>GPIO.FALLING</b> occurs \n  when the level changes from high to low, <b>GPIO.RISING</b> when the level changes from \n  low to high, and <b>GPIO.CHANGE</b> when either occurs.<br/>\n  <br/>\n  The optional timeout parameter determines how many milliseconds the function will \n  wait at the most. If the value of the input pin hasn't changed at this point, an \n  exception is raised for this line. Without a timeout parameter the function will \n  wait indefinitely until the input pin has changed to the desired state.\n\n  This function will throw a RuntimeException in case of a timeout.",
   "syntax": [".waitFor(pin, mode)", ".waitFor(pin, mode, timeout)"],
   "returns": "void",
   "type": "method",

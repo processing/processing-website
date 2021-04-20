@@ -1,8 +1,8 @@
 {
-  "brief": "Opens a platform-specific file chooser dialog to select a file for output.",
+  "brief": "Opens a platform-specific file chooser dialog to select a file for output",
   "related": [],
   "name": "selectOutput()",
-  "description": "Opens a platform-specific file chooser dialog to select a file for output.\n After the selection is made, the selected File will be passed to the\n 'callback' function. If the dialog is closed or canceled, null will be sent\n to the function, so that the program is not waiting for additional input.\n The callback is necessary because of how threading works.",
+  "description": "Opens a platform-specific file chooser dialog to select a file for output.\n After the selection is made, the selected File will be passed to the\n 'callback' function. If the dialog is closed or canceled, <b>null</b> will be sent\n to the function, so that the program is not waiting for additional input.\n The callback is necessary because of how threading works.",
   "syntax": [
     "selectOutput(prompt, callback)",
     "selectOutput(prompt, callback, file)",

@@ -1,8 +1,8 @@
 {
-  "brief": "Gets the content of an element as a float",
+  "brief": "Gets the content of an element as a <b>float</b>",
   "related": ["XML_getContent_", "XML_getIntContent_"],
   "name": "getFloatContent()",
-  "description": "Returns the content of an element as a float. If there is no such content, \n either <b>null</b> or the provided default value is returned.",
+  "description": "Returns the content of an element as a <b>float</b>. If there is no such content, \n either <b>null</b> or the provided default value is returned.",
   "syntax": [".getFloatContent()", ".getFloatContent(defaultValue)"],
   "returns": "float",
   "type": "method",

@@ -1,5 +1,5 @@
 {
-  "brief": "HALF_PI is a mathematical constant with the value\n           1.57079632679489661923.",
+  "brief": "HALF_PI is a mathematical constant with the value\n           1.57079632679489661923",
   "related": ["PI", "TWO_PI", "TAU", "QUARTER_PI"],
   "name": "HALF_PI",
   "description": "<b>HALF_PI</b> is a mathematical constant with the value 1.5707964. It is\n half the ratio of the circumference of a circle to its diameter. It is useful\n in combination with the trigonometric functions <b>sin()</b> and\n <b>cos()</b>.",

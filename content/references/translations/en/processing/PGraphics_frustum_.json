@@ -1,5 +1,5 @@
 {
-  "brief": "Sets a perspective matrix defined through the parameters.",
+  "brief": "Sets a perspective matrix defined through the parameters",
   "related": [
     "PGraphics_camera_",
     "PGraphics_beginCamera_",

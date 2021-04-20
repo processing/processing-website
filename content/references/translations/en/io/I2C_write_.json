@@ -1,8 +1,8 @@
 {
-  "brief": "Add bytes to be written to the device.",
+  "brief": "Add bytes to be written to the device",
   "related": [],
   "name": "write()",
-  "description": "Add bytes to be written to the device<br/>\n <br/>\n You must call beginTransmission() before calling this function. The actual\n writing takes part when read() or endTransmission() is being called.",
+  "description": "Add bytes to be written to the device<br/>\n <br/>\n You must call <b>beginTransmission()</b> before calling this function. The actual\n writing takes part when <b>read()</b> or <b>endTransmission()</b> is being called.",
   "syntax": [".write(out)"],
   "returns": "void",
   "type": "method",

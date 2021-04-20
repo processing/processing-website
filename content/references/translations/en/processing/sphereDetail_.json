@@ -1,5 +1,5 @@
 {
-  "brief": "Controls the detail used to render a sphere by adjusting the number of\n vertices of the sphere mesh.",
+  "brief": "Controls the detail used to render a sphere by adjusting the number of\n vertices of the sphere mesh",
   "related": ["sphere_"],
   "name": "sphereDetail()",
   "description": "Controls the detail used to render a sphere by adjusting the number of\n vertices of the sphere mesh. The default resolution is 30, which creates\n a fairly detailed sphere definition with vertices every 360/30 = 12\n degrees. If you're going to render a great number of spheres per frame,\n it is advised to reduce the level of detail using this function. The\n setting stays active until <b>sphereDetail()</b> is called again with a\n new parameter and so should <i>not</i> be called prior to every\n <b>sphere()</b> statement, unless you wish to render spheres with\n different settings, e.g. using less detail for smaller spheres or ones\n further away from the camera. To control the detail of the horizontal\n and vertical resolution independently, use the version of the functions\n with two parameters.\n\n\n ",

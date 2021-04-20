@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the position of the camera.",
+  "brief": "Sets the position of the camera",
   "related": ["beginCamera_", "endCamera_", "frustum_"],
   "name": "camera()",
   "description": "Sets the position of the camera through setting the eye position, the\n center of the scene, and which axis is facing upward. Moving the eye\n position and the direction it is pointing (the center of the scene)\n allows the images to be seen from different angles. The version without\n any parameters sets the camera to the default position, pointing to the\n center of the display window with the Y axis as up. The default values\n are <b>camera(width/2.0, height/2.0, (height/2.0) / tan(PI*30.0 /\n 180.0), width/2.0, height/2.0, 0, 0, 1, 0)</b>. This function is similar\n to <b>gluLookAt()</b> in OpenGL, but it first clears the current camera settings.",

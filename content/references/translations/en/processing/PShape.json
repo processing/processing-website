@@ -1,12 +1,12 @@
 {
-  "brief": "Datatype for storing shapes.",
+  "brief": "Datatype for storing shapes",
   "constructors": ["PShape(g, kind, params)"],
   "related": ["loadShape_", "createShape_", "shapeMode_"],
   "methods": [
     {
       "anchor": "PShape_isVisible_",
       "name": "isVisible()",
-      "desc": "Returns a boolean value \"true\" if the image is set to be visible,\n           \"false\" if not"
+      "desc": "Returns a boolean value <b>true</b> if the image is set to be visible,\n           <b>false</b> if not"
     },
     {
       "anchor": "PShape_setVisible_",
@@ -36,12 +36,12 @@
     {
       "anchor": "PShape_beginShape_",
       "name": "beginShape()",
-      "desc": "Starts the creation of a new PShape"
+      "desc": "Starts the creation of a new <b>PShape</b>"
     },
     {
       "anchor": "PShape_endShape_",
       "name": "endShape()",
-      "desc": "Finishes the creation of a new PShape"
+      "desc": "Finishes the creation of a new <b>PShape</b>"
     },
     {
       "anchor": "PShape_getChildCount_",
@@ -51,7 +51,7 @@
     {
       "anchor": "PShape_getChild_",
       "name": "getChild()",
-      "desc": "Returns a child element of a shape as a PShape object"
+      "desc": "Returns a child element of a shape as a <b>PShape</b> object"
     },
     {
       "anchor": "PShape_addChild_",

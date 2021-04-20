@@ -1,5 +1,5 @@
 {
-  "brief": "Calculates the absolute value (magnitude) of a number.",
+  "brief": "Calculates the absolute value (magnitude) of a number",
   "related": [],
   "name": "abs()",
   "description": "Calculates the absolute value (magnitude) of a number. The absolute\n value of a number is always positive.",

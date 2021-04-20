@@ -1,5 +1,5 @@
 {
-  "brief": "Writes bytes, chars, ints, bytes[], Strings",
+  "brief": "Writes <b>bytes</b>, <b>chars</b>, <b>ints</b>, <b>bytes[]</b>, <b>Strings</b>",
   "related": [],
   "name": "write()",
   "description": "Writes data to a server specified when constructing the client, or writes \n data to the specific client obtained from the Server <b>available()</b> \n method.",

@@ -1,5 +1,5 @@
 {
-  "brief": "Specifies vertex coordinates for quadratic Bezier curves.",
+  "brief": "Specifies vertex coordinates for quadratic Bezier curves",
   "related": ["curveVertex_", "vertex_", "bezierVertex_", "bezier_"],
   "name": "quadraticVertex()",
   "description": "Specifies vertex coordinates for quadratic Bezier curves. Each call\n to <b>quadraticVertex()</b> defines the position of one control\n point and one anchor point of a Bezier curve, adding a new segment\n to a line or shape. The first time <b>quadraticVertex()</b> is used\n within a <b>beginShape()</b> call, it must be prefaced with a call\n to <b>vertex()</b> to set the first anchor point. This function must\n be used between <b>beginShape()</b> and <b>endShape()</b> and only\n when there is no MODE parameter specified to <b>beginShape()</b>.\n Using the 3D version requires rendering with P3D (see the Environment\n reference for more information).",

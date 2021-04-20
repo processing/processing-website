@@ -1,5 +1,5 @@
 {
-  "brief": "Specifies vertex coordinates for quadratic Bezier curves.",
+  "brief": "Specifies vertex coordinates for quadratic Bezier curves",
   "related": [
     "PGraphics_curveVertex_",
     "PGraphics_vertex_",

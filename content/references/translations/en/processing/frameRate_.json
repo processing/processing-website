@@ -1,5 +1,5 @@
 {
-  "brief": "Specifies the number of frames to be displayed every second.",
+  "brief": "Specifies the number of frames to be displayed every second",
   "related": [
     "frameRate",
     "frameCount",

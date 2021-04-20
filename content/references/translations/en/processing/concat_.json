@@ -1,5 +1,5 @@
 {
-  "brief": "Concatenates two arrays.",
+  "brief": "Concatenates two arrays",
   "related": ["splice_", "arrayCopy_"],
   "name": "concat()",
   "description": "Concatenates two arrays. For example, concatenating the array { 1, 2, 3 }\n and the array { 4, 5, 6 } yields { 1, 2, 3, 4, 5, 6 }. Both parameters must\n be arrays of the same datatype. <br />\n <br />\n When using an array of objects, the data returned from the function must be\n cast to the object array's data type. For example: <em>SomeClass[] items =\n (SomeClass[]) concat(array1, array2)</em>.",

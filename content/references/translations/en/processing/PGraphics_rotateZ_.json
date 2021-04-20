@@ -1,5 +1,5 @@
 {
-  "brief": "Rotates a shape around the z-axis the amount specified by the\n <b>angle</b> parameter.",
+  "brief": "Rotates a shape around the z-axis the amount specified by the\n <b>angle</b> parameter",
   "related": [
     "PGraphics_popMatrix_",
     "PGraphics_pushMatrix_",

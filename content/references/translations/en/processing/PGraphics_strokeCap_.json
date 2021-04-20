@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the style for rendering line endings.",
+  "brief": "Sets the style for rendering line endings",
   "related": [
     "PGraphics_stroke_",
     "PGraphics_strokeWeight_",

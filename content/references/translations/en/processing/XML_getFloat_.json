@@ -1,5 +1,5 @@
 {
-  "brief": "Gets the content of an attribute as a float",
+  "brief": "Gets the content of an attribute as a <b>float</b>",
   "related": [],
   "name": "getFloat()",
   "description": "Returns an attribute value of the element as a float. If the\n <b>defaultValue</b> parameter is specified and the attribute doesn't exist,\n then <b>defaultValue</b> is returned. If no <b>defaultValue</b> is specified\n and the attribute doesn't exist, the value 0.0 is returned.",

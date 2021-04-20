@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the specular color of the materials used for shapes drawn to the\n screen, which sets the color of highlights.",
+  "brief": "Sets the specular color of the materials used for shapes drawn to the\n screen, which sets the color of highlights",
   "related": [
     "PGraphics_lightSpecular_",
     "PGraphics_ambient_",

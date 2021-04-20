@@ -1,5 +1,5 @@
 {
-  "brief": "Opposite of <b>loadBytes()</b>, will write an entire array of\n           bytes to a file.",
+  "brief": "Opposite of <b>loadBytes()</b>, will write an entire array of\n           bytes to a file",
   "related": ["loadStrings_", "loadBytes_", "saveStrings_"],
   "name": "saveBytes()",
   "description": "As the opposite of <b>loadBytes()</b>, this function will write an entire\n array of bytes to a file. The data is saved in binary format. This file is\n saved to the sketch's folder, which is opened by selecting \"Show Sketch\n Folder\" from the \"Sketch\" menu. Alternatively, the files can be saved to\n any location on the computer by using an absolute path (something that\n starts with / on Unix and Linux, or a drive letter on Windows).",

@@ -1,5 +1,5 @@
 {
-  "brief": "Prints the current matrix to the Console (the text window at the bottom\n of Processing).",
+  "brief": "Prints the current matrix to the Console (the text window at the bottom\n of Processing)",
   "related": [
     "PGraphics_pushMatrix_",
     "PGraphics_popMatrix_",

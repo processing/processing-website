@@ -1,5 +1,5 @@
 {
-  "brief": "Calculates the distance between two points.",
+  "brief": "Calculates the distance between two points",
   "related": [],
   "name": "dist()",
   "description": "Calculates the distance between two points.",
