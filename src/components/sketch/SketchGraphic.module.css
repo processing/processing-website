@@ -26,3 +26,14 @@
   fill: none;
   stroke: rgba(80, 139, 255, 0.2);
 }
+
+.handler {
+  & line {
+    stroke: black;
+    stroke-dasharray: 4;
+  }
+
+  & circle {
+    fill: black;
+  }
+}

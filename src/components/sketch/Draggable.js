@@ -29,7 +29,7 @@ const Draggable = ({
       const handleMouseUp = (e) => {
         setDraggingInfo(null);
         if (onDraggingEnd) {
-          onDraggingEnd();
+          onDraggingEnd(index);
         }
       };
 
@@ -65,7 +65,7 @@ const Draggable = ({
       dragMax: dragArea * (1 - ratio)
     });
     if (onDraggingStart) {
-      onDraggingStart();
+      onDraggingStart(index);
     }
   };
 

@@ -18,23 +18,23 @@ const initialState = {
       color: [2, 81, 200],
       pos: [1, 2, 7, 5],
       showHandlers: false,
-      dragging: null,
+      dragging: null
     },
     {
       line: false,
       color: [80, 139, 255],
       pos: [1, 5, 4, 4, 2, 2, 4, 1],
       showHandlers: false,
-      dragging: null,
+      dragging: null
     },
     {
       line: true,
       color: [30, 42, 103],
       pos: [6, 1, 4, 7],
       showHandlers: false,
-      dragging: null,
-    },
-  ],
+      dragging: null
+    }
+  ]
 };
 
 const Sketch = ({ children }) => {
@@ -52,7 +52,7 @@ const Sketch = ({ children }) => {
       const newState = Object.assign({}, oldState);
       newState.shapes = oldState.shapes.slice();
       newState.shapes[shapeIdx] = Object.assign({}, newState.shapes[shapeIdx], {
-        [key]: value,
+        [key]: value
       });
       return newState;
     });
@@ -60,28 +60,7 @@ const Sketch = ({ children }) => {
 
   const handleClickOnSketch = useCallback((e) => {
     e.stopPropagation();
-    //setState((state) => state.setIn(['showCode'], !showCode ? true : false));
     setShowCode((show) => !show);
-  }, []);
-
-  const handleMouseEnterShapeLine = useCallback((shapeIdx) => {
-    // setState((state) =>
-    //   state.setIn(['shapes', shapeIdx, 'showHandlers'], true)
-    // );
-  }, []);
-
-  const handleMouseLeaveShapeLine = useCallback((shapeIdx) => {
-    // setState((state) =>
-    //   state.setIn(['shapes', shapeIdx, 'showHandlers'], false)
-    // );
-  }, []);
-
-  const handleDraggingShapeStart = useCallback((shapeIdx, index) => {
-    // setState((state) => state.setIn(['shapes', shapeIdx, 'dragging'], index));
-  }, []);
-
-  const handleDraggingShapeEnd = useCallback((shapeIdx) => {
-    // setState((state) => state.setIn(['shapes', shapeIdx, 'dragging'], null));
   }, []);
 
   return (
@@ -95,10 +74,6 @@ const Sketch = ({ children }) => {
               onChangeShape={onChangeShape}
               isVisible={showCode}
               {...state}
-              onMouseEnterShape={handleMouseEnterShapeLine}
-              onMouseLeaveShape={handleMouseLeaveShapeLine}
-              onDraggingShapeStart={handleDraggingShapeStart}
-              onDraggingShapeEnd={handleDraggingShapeEnd}
             />
           </div>
         </div>

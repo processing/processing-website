@@ -14,10 +14,6 @@ const Shape = (props) => {
     min,
     max,
     onChangeShape,
-    onMouseEnter,
-    onMouseLeave,
-    onDraggingStart,
-    onDraggingEnd,
     tabIndex
   } = props;
 
@@ -27,12 +23,20 @@ const Shape = (props) => {
     onChangeShape(shapeIndex, 'pos', newPos);
   };
 
-  const handleDraggingStart = (subindex) => {
-    // onDraggingStart(shapesInx, subindex);
+  const handleDraggingStart = (idx) => {
+    onChangeShape(shapeIndex, 'dragging', idx);
   };
 
   const handleDraggingEnd = () => {
-    // onDraggingEnd(shapesInx);
+    onChangeShape(shapeIndex, 'dragging', null);
+  };
+
+  const handleMouseEnter = () => {
+    onChangeShape(shapeIndex, 'showHandlers', true);
+  };
+
+  const handleMouseLeave = () => {
+    onChangeShape(shapeIndex, 'showHandlers', false);
   };
 
   const draggable = [];
@@ -60,8 +64,8 @@ const Shape = (props) => {
       role={'button'}
       tabIndex={tabIndex}
       className={css.root}
-      onMouseEnter={() => onMouseEnter(999)}
-      onMouseLeave={() => onMouseLeave(999)}>
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}>
       {'  '}
       <span className="hljs-built_in">{shape.line ? 'line' : 'bezier'}</span>(
       {draggable})

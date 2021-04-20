@@ -17,11 +17,7 @@ const SketchCode = (props) => {
     strokeWeight,
     isVisible,
     onChange,
-    onChangeShape,
-    onMouseEnterShape,
-    onMouseLeaveShape,
-    onDraggingShapeStart,
-    onDraggingShapeEnd
+    onChangeShape
   } = props;
   return (
     <div className={css.root}>
@@ -79,10 +75,6 @@ const SketchCode = (props) => {
                   shape={shape}
                   shapeIndex={i}
                   onChangeShape={onChangeShape}
-                  onMouseEnter={onMouseEnterShape}
-                  onMouseLeave={onMouseLeaveShape}
-                  onDraggingStart={onDraggingShapeStart}
-                  onDraggingEnd={onDraggingShapeEnd}
                   draggableClassName={css.interactive}
                   min={0}
                   max={8}

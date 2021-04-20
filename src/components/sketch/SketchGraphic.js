@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useMemo } from 'react';
+import React, { Fragment, useState, useMemo, memo } from 'react';
 import classnames from 'classnames';
 
 import Button from '../Button';
@@ -13,7 +13,7 @@ const SketchGraphic = (props) => {
     shapes,
     strokeWeight,
     onClick,
-    isCodeVisible,
+    isCodeVisible
   } = props;
 
   // -2 in order to make the strokes fully visible
@@ -39,65 +39,6 @@ const SketchGraphic = (props) => {
     }
     return grid;
   }, [showGrid, unit]);
-
-  const firstHandler = (shape, index, color) => (
-    <g key={`handler-${index}-tocp1`}>
-      <line
-        key={`line-${index}-tocp1`}
-        x1={shape.pos[0] * unit}
-        y1={shape.pos[1] * unit}
-        x2={shape.pos[2] * unit}
-        y2={shape.pos[3] * unit}
-        stroke={color}
-        strokeDasharray="4"
-      />
-      <circle
-        key={`circle-${index}-cp1`}
-        cx={shape.pos[2] * unit}
-        cy={shape.pos[3] * unit}
-        r={4}
-        fill={color}
-      />
-    </g>
-  );
-
-  const secondHandler = (shape, index, color) => (
-    <g key={`handler-${index}-tocp2`}>
-      <line
-        key={`line-${index}-tocp2`}
-        x1={shape.pos[6] * unit}
-        y1={shape.pos[7] * unit}
-        x2={shape.pos[4] * unit}
-        y2={shape.pos[5] * unit}
-        stroke={color}
-        strokeDasharray="4"
-      />
-      <circle
-        key={`circle-${index}-cp2`}
-        cx={shape.pos[4] * unit}
-        cy={shape.pos[5] * unit}
-        r={4}
-        fill={color}
-      />
-    </g>
-  );
-
-  const handlers = (shape, index, color) => {
-    const { showHandlers, dragging } = shape;
-    if (showHandlers) {
-      return [
-        firstHandler(shape, index, color),
-        secondHandler(shape, index, color),
-      ];
-    } else if (dragging) {
-      if ([2, 3].includes(dragging)) {
-        return firstHandler(shape, index, color);
-      } else if ([4, 5].includes(dragging)) {
-        return secondHandler(shape, index, color);
-      }
-    }
-    return null;
-  };
 
   return (
     <div
@@ -144,7 +85,24 @@ const SketchGraphic = (props) => {
                   fill="none"
                   strokeWidth={strokeWeight * unit}
                 />
-                {handlers(shape, index, color)}
+                {shape.showHandlers && (
+                  <Handler
+                    x1={shape.pos[0]}
+                    y1={shape.pos[1]}
+                    x2={shape.pos[2]}
+                    y2={shape.pos[3]}
+                    unit={unit}
+                  />
+                )}
+                {shape.showHandlers && (
+                  <Handler
+                    x1={shape.pos[6]}
+                    y1={shape.pos[7]}
+                    x2={shape.pos[4]}
+                    y2={shape.pos[5]}
+                    unit={unit}
+                  />
+                )}
               </Fragment>
             );
           })}
@@ -153,5 +111,14 @@ const SketchGraphic = (props) => {
     </div>
   );
 };
+
+const Handler = memo(({ x1, y1, x2, y2, unit }) => {
+  return (
+    <g className={css.handler}>
+      <line x1={x1 * unit} y1={y1 * unit} x2={x2 * unit} y2={y2 * unit} />
+      <circle cx={x2 * unit} cy={y2 * unit} r={4} />
+    </g>
+  );
+});
 
 export default SketchGraphic;
