@@ -7,18 +7,18 @@ import Shape from './Shape';
 
 import css from './SketchCode.module.css';
 
-const SketchCode = (props) => {
-  const {
-    width,
-    height,
-    unit,
-    showGrid,
-    shapes,
-    strokeWeight,
-    isVisible,
-    onChange,
-    onChangeShape
-  } = props;
+const SketchCode = ({
+  width,
+  height,
+  unit,
+  showGrid,
+  shapes,
+  strokeWeight,
+  strokeCap,
+  isVisible,
+  onChange,
+  onChangeShape
+}) => {
   return (
     <div className={css.root}>
       <Line num={1}>
@@ -70,7 +70,13 @@ const SketchCode = (props) => {
         <Line num={11}>
           {`  `}
           <span className="hljs-built_in">strokeCap</span>(
-          <span className="hljs-constant">SQUARE</span>);
+          <button
+            className={classnames(css.interactive, 'hljs-constant')}
+            onClick={(e) => onChange('strokeCap', !strokeCap)}
+            tabIndex={isVisible ? 0 : -1}>
+            {strokeCap ? 'SQUARE' : 'ROUND'}
+          </button>
+          );
         </Line>
         <Line num={12}>
           {`  `}

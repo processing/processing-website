@@ -12,6 +12,7 @@ const SketchGraphic = (props) => {
     height,
     shapes,
     strokeWeight,
+    strokeCap,
     onClick,
     isCodeVisible
   } = props;
@@ -40,6 +41,8 @@ const SketchGraphic = (props) => {
     return grid;
   }, [showGrid, unit]);
 
+  const strokeLineCap = strokeCap ? 'butt' : 'round';
+
   return (
     <svg viewBox={`0 0 ${width} ${height}`} className={css.root}>
       <g transform={`translate(1, 1)`}>
@@ -58,6 +61,7 @@ const SketchGraphic = (props) => {
                   y2={shape.pos[7] * unit}
                   stroke={color}
                   strokeWidth={strokeWeight * unit}
+                  strokeLinecap={strokeLineCap}
                 />
                 {showHandlers && (
                   <Handler
@@ -83,6 +87,7 @@ const SketchGraphic = (props) => {
                   stroke={color}
                   fill="none"
                   strokeWidth={strokeWeight * unit}
+                  strokeLinecap={strokeLineCap}
                 />
                 {showHandlers && (
                   <g>

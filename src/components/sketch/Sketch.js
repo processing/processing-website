@@ -12,6 +12,7 @@ const initialState = {
   height: 600,
   unit: 60,
   strokeWeight: 1.5,
+  strokeCap: true,
   shapes: [
     {
       line: true,
