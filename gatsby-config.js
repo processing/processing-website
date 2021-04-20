@@ -165,6 +165,13 @@ module.exports = {
         path: path.resolve(__dirname, 'content/books'),
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `download`,
+        path: path.resolve(__dirname, 'content/download'),
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-remark-images`,
@@ -180,17 +187,6 @@ module.exports = {
         icon: `src/images/logo-processing.svg`,
       },
     },
-    // {
-    //   resolve: `gatsby-source-graphql`,
-    //   options: {
-    //     typeName: `GitHub`,
-    //     fieldName: `github`,
-    //     url: `https://api.github.com/graphql`,
-    //     headers: {
-    //       Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-    //     },
-    //   },
-    // },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {

@@ -1,5 +1,5 @@
 {
-  "brief": "Using the <b>beginShape()</b> and <b>endShape()</b> functions allow\n           creating more complex forms.",
+  "brief": "Using the <b>beginShape()</b> and <b>endShape()</b> functions allow\n           creating more complex forms",
   "related": [
     "PShape",
     "PGraphics_endShape_",

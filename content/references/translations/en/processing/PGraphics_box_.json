@@ -1,8 +1,8 @@
 {
-  "brief": "A box is an extruded rectangle.",
+  "brief": "A box is an extruded <b>rectangle</b>",
   "related": ["PGraphics_sphere_"],
   "name": "box()",
-  "description": "A box is an extruded rectangle. A box with equal dimension on all sides\n is a cube.",
+  "description": "A box is an extruded <b>rectangle</b>. A box with equal dimension on all sides\n is a cube.",
   "syntax": ["graphics.box(size)", "graphics.box(w, h, d)"],
   "returns": "void",
   "type": "method",

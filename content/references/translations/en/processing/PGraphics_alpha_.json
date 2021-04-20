@@ -1,5 +1,5 @@
 {
-  "brief": "Extracts the alpha value from a color.",
+  "brief": "Extracts the alpha value from a color",
   "related": [
     "PGraphics_red_",
     "PGraphics_green_",

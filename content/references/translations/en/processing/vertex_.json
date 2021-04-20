@@ -1,5 +1,5 @@
 {
-  "brief": "All shapes are constructed by connecting a series of vertices.",
+  "brief": "All shapes are constructed by connecting a series of vertices",
   "related": [
     "beginShape_",
     "endShape_",

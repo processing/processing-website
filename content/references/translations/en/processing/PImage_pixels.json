@@ -1,8 +1,8 @@
 {
-  "brief": "Array containing the color of every pixel in the image.",
+  "brief": "Array containing the color of every pixel in the image",
   "related": [],
   "name": "pixels[]",
-  "description": "The pixels[] array contains the values for all the pixels in the image. These\n values are of the color datatype. This array is the size of the image,\n meaning if the image is 100 x 100 pixels, there will be 10,000 values and if\n the window is 200 x 300 pixels, there will be 60,000 values. <br />\n <br />\n Before accessing this array, the data must loaded with the\n <b>loadPixels()</b> method. Failure to do so may result in a\n NullPointerException. After the array data has been modified, the\n <b>updatePixels()</b> method must be run to update the content of the display\n window.",
+  "description": "The <b>pixels[]</b> array contains the values for all the pixels in the image. These\n values are of the color datatype. This array is the size of the image,\n meaning if the image is 100 x 100 pixels, there will be 10,000 values and if\n the window is 200 x 300 pixels, there will be 60,000 values. <br />\n <br />\n Before accessing this array, the data must loaded with the\n <b>loadPixels()</b> method. Failure to do so may result in a\n NullPointerException. After the array data has been modified, the\n <b>updatePixels()</b> method must be run to update the content of the display\n window.",
   "syntax": ["pimg.pixels[]\n"],
   "category": "image",
   "subcategory": "pixels",

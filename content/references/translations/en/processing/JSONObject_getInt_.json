@@ -1,12 +1,12 @@
 {
-  "brief": "Gets the int value associated with the specified key",
+  "brief": "Gets the <b>int</b> value associated with the specified key",
   "related": [
     "JSONObject_getFloat_",
     "JSONObject_getString_",
     "JSONObject_getBoolean_"
   ],
   "name": "getInt()",
-  "description": "Gets the int value associated with the specified key.",
+  "description": "Gets the <b>int</b> value associated with the specified key.",
   "syntax": [".getInt(key)", ".getInt(key, defaultValue)"],
   "returns": "int",
   "type": "method",

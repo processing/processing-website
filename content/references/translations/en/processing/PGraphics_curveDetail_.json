@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the resolution at which curves display.",
+  "brief": "Sets the resolution at which curves display",
   "related": [
     "PGraphics_curve_",
     "PGraphics_curveVertex_",

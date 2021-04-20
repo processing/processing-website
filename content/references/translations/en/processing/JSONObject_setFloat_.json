@@ -1,5 +1,5 @@
 {
-  "brief": "Put a key/float pair in the JSONObject",
+  "brief": "Put a key/float pair in the <b>JSONObject</b>",
   "related": [
     "JSONObject_setInt_",
     "JSONObject_setString_",

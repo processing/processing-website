@@ -1,5 +1,5 @@
 {
-  "brief": "A quad is a quadrilateral, a four sided polygon.",
+  "brief": "A quad is a quadrilateral, a four sided polygon",
   "related": [],
   "name": "quad()",
   "description": "A quad is a quadrilateral, a four sided polygon. It is similar to a\n rectangle, but the angles between its edges are not constrained to\n ninety degrees. The first pair of parameters (x1,y1) sets the first\n vertex and the subsequent pairs should proceed clockwise or\n counter-clockwise around the defined shape.",

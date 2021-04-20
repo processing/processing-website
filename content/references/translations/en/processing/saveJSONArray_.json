@@ -1,5 +1,5 @@
 {
-  "brief": "Writes the contents of a <b>JSONArray</b> object to a file.",
+  "brief": "Writes the contents of a <b>JSONArray</b> object to a file",
   "related": [
     "JSONObject",
     "JSONArray",

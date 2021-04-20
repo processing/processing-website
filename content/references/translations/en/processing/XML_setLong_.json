@@ -1,8 +1,8 @@
 {
-  "brief": "Sets the content of an element as an int",
+  "brief": "Sets the content of an element as an <b>int</b>",
   "related": [],
   "name": "setLong()",
-  "description": "Sets the content of an element as an int",
+  "description": "Sets the content of an element as an <b>int</b>",
   "syntax": [".setLong(name, value)"],
   "returns": "void",
   "type": "method",

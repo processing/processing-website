@@ -1,5 +1,5 @@
 {
-  "brief": "Get a float value from the specified column",
+  "brief": "Get a <b>float</b> value from the specified column",
   "related": ["TableRow_getInt_", "TableRow_getString_"],
   "name": "getFloat()",
   "description": "Retrieves a float value from the <b>TableRow</b>'s specified column. \n The column may be specified by either its ID or title.",

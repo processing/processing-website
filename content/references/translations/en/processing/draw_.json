@@ -1,5 +1,5 @@
 {
-  "brief": "Called directly after <b>setup()</b> and continuously executes the lines\n of code contained inside its block until the program is stopped or\n <b>noLoop()</b> is called.",
+  "brief": "Called directly after <b>setup()</b> and continuously executes the lines\n of code contained inside its block until the program is stopped or\n <b>noLoop()</b> is called",
   "related": [
     "setup_",
     "loop_",

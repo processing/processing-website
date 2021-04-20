@@ -1,8 +1,8 @@
 {
-  "brief": "Returns the entire <b>JSONArray</b> as an array of Strings",
+  "brief": "Returns the entire <b>JSONArray</b> as an array of <b>Strings</b>",
   "related": ["JSONArray_getIntArray_"],
   "name": "getStringArray()",
-  "description": "Returns the entire <b>JSONArray</b> as an array of Strings.  \n (All values in the array must be of the String type.)",
+  "description": "Returns the entire <b>JSONArray</b> as an array of <b>Strings</b>.  \n (All values in the array must be of the <b>String</b> type.)",
   "syntax": [".getStringArray()"],
   "returns": "String[]",
   "type": "method",

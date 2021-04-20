@@ -1,5 +1,5 @@
 {
-  "brief": "A class to describe a two or three dimensional vector.",
+  "brief": "A class to describe a two or three dimensional vector",
   "constructors": ["PVector()", "PVector(x, y, z)", "PVector(x, y)"],
   "related": [],
   "methods": [
@@ -11,12 +11,12 @@
     {
       "anchor": "PVector_random2D_",
       "name": "random2D()",
-      "desc": "Make a new 2D unit vector with a random direction."
+      "desc": "Make a new 2D unit vector with a random direction"
     },
     {
       "anchor": "PVector_random3D_",
       "name": "random3D()",
-      "desc": "Make a new 3D unit vector with a random direction."
+      "desc": "Make a new 3D unit vector with a random direction"
     },
     {
       "anchor": "PVector_fromAngle_",

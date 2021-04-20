@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the falloff rates for point lights, spot lights, and ambient\n           lights.",
+  "brief": "Sets the falloff rates for point lights, spot lights, and ambient\n           lights",
   "related": [
     "lights_",
     "ambientLight_",

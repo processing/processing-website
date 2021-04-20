@@ -1,5 +1,5 @@
 {
-  "brief": "Quits/stops/exits the program.",
+  "brief": "Quits/stops/exits the program",
   "related": [],
   "name": "exit()",
   "description": "Quits/stops/exits the program. Programs without a <b>draw()</b> function\n exit automatically after the last line has run, but programs with\n <b>draw()</b> run continuously until the program is manually stopped or\n <b>exit()</b> is run.<br />\n <br />\n Rather than terminating immediately, <b>exit()</b> will cause the sketch\n to exit after <b>draw()</b> has completed (or after <b>setup()</b>\n completes if called during the <b>setup()</b> function).<br />\n <br />\n For Java programmers, this is <em>not</em> the same as System.exit().\n Further, System.exit() should not be used because closing out an\n application while <b>draw()</b> is running may cause a crash\n (particularly with P3D).",

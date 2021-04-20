@@ -1,5 +1,5 @@
 {
-  "brief": "Shears a shape around the x-axis the amount specified by the\n <b>angle</b> parameter.",
+  "brief": "Shears a shape around the x-axis the amount specified by the\n <b>angle</b> parameter",
   "related": [
     "PGraphics_popMatrix_",
     "PGraphics_pushMatrix_",

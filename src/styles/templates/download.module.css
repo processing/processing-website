@@ -59,6 +59,7 @@
 }
 
 .latestDate {
+  margin-left: 5px;
   font-size: var(--text-xsmall);
   color: var(--darkergray);
 }

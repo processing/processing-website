@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the ambient reflectance for shapes drawn to the screen.",
+  "brief": "Sets the ambient reflectance for shapes drawn to the screen",
   "related": [
     "PGraphics_emissive_",
     "PGraphics_specular_",

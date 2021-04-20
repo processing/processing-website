@@ -2,7 +2,7 @@
   "brief": "Subtract x, y, and z components from a vector, one vector from\n           another, or two independent vectors",
   "related": [],
   "name": "sub()",
-  "description": "Subtracts x, y, and z components from a vector, subtracts one vector from\n another, or subtracts two independent vectors. The version of the method that\n substracts two vectors is a static method and returns a PVector, the others\n act directly on the vector. See the examples for more context. In all cases,\n the second vector (v2) is subtracted from the first (v1), resulting in v1-v2.",
+  "description": "Subtracts x, y, and z components from a vector, subtracts one vector from\n another, or subtracts two independent vectors. The version of the method that\n substracts two vectors is a static method and returns a <b>PVector</b>, the others\n act directly on the vector. See the examples for more context. In all cases,\n the second vector (v2) is subtracted from the first (v1), resulting in v1-v2.",
   "syntax": [
     ".sub(v)",
     ".sub(x, y)",

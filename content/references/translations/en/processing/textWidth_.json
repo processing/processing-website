@@ -1,5 +1,5 @@
 {
-  "brief": "Calculates and returns the width of any character or text string.",
+  "brief": "Calculates and returns the width of any character or text string",
   "related": ["loadFont_", "text_", "textFont_", "textSize_"],
   "name": "textWidth()",
   "description": "Calculates and returns the width of any character or text string.",

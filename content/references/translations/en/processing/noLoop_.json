@@ -1,5 +1,5 @@
 {
-  "brief": "Stops Processing from continuously executing the code within <b>draw()</b>.",
+  "brief": "Stops Processing from continuously executing the code within <b>draw()</b>",
   "related": ["loop_", "redraw_", "draw_"],
   "name": "noLoop()",
   "description": "Stops Processing from continuously executing the code within\n <b>draw()</b>. If <b>loop()</b> is called, the code in <b>draw()</b>\n begin to run continuously again. If using <b>noLoop()</b> in\n <b>setup()</b>, it should be the last line inside the block.\n <br/> <br/>\n When <b>noLoop()</b> is used, it's not possible to manipulate or access\n the screen inside event handling functions such as <b>mousePressed()</b>\n or <b>keyPressed()</b>. Instead, use those functions to call\n <b>redraw()</b> or <b>loop()</b>, which will run <b>draw()</b>, which\n can update the screen properly. This means that when noLoop() has been\n called, no drawing can happen, and functions like saveFrame() or\n loadPixels() may not be used.\n <br/> <br/>\n Note that if the sketch is resized, <b>redraw()</b> will be called to\n update the sketch, even after <b>noLoop()</b> has been specified.\n Otherwise, the sketch would enter an odd state until <b>loop()</b> was called.",

@@ -1,5 +1,5 @@
 {
-  "brief": "Draws a curved line on the screen.",
+  "brief": "Draws a curved line on the screen",
   "related": ["curveVertex_", "curveTightness_", "bezier_"],
   "name": "curve()",
   "description": "Draws a curved line on the screen. The first and second parameters\n specify the beginning control point and the last two parameters specify\n the ending control point. The middle parameters specify the start and\n stop of the curve. Longer curves can be created by putting a series of\n <b>curve()</b> functions together or using <b>curveVertex()</b>. An\n additional function called <b>curveTightness()</b> provides control for\n the visual quality of the curve. The <b>curve()</b> function is an\n implementation of Catmull-Rom splines. Using the 3D version requires\n rendering with P3D (see the Environment reference for more information).\n\n\n ",

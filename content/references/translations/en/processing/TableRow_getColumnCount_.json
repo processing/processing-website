@@ -1,5 +1,5 @@
 {
-  "brief": "Get the column count.",
+  "brief": "Get the column count",
   "related": [],
   "name": "getColumnCount()",
   "description": "Returns the number of columns in a <b>TableRow</b>.",

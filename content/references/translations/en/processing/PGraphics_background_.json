@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the color used for the background of the Processing window.",
+  "brief": "Sets the color used for the background of the Processing window",
   "related": [
     "PGraphics_stroke_",
     "PGraphics_fill_",

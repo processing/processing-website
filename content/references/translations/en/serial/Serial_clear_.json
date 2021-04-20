@@ -1,5 +1,5 @@
 {
-  "brief": "Empty the buffer, removes all the data stored there.",
+  "brief": "Empty the buffer, removes all the data stored there",
   "related": [],
   "name": "clear()",
   "description": "Empty the buffer, removes all the data stored there.",

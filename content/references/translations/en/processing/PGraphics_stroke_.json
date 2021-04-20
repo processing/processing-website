@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the color used to draw lines and borders around shapes.",
+  "brief": "Sets the color used to draw lines and borders around shapes",
   "related": [
     "PGraphics_noStroke_",
     "PGraphics_strokeWeight_",

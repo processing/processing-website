@@ -1,5 +1,5 @@
 {
-  "brief": "Blends two color values together based on the blending mode given as the\n <b>MODE</b> parameter.",
+  "brief": "Blends two color values together based on the blending mode given as the\n <b>MODE</b> parameter",
   "related": ["PImage_blend_"],
   "name": "blendColor()",
   "description": "Blends two color values together based on the blending mode given as the\n <b>MODE</b> parameter. The possible modes are described in the reference\n for the <b>blend()</b> function.\n\n ",

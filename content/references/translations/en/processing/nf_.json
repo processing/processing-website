@@ -1,5 +1,5 @@
 {
-  "brief": "Utility function for formatting numbers into strings.",
+  "brief": "Utility function for formatting numbers into strings",
   "related": ["nfs_", "nfp_", "nfc_"],
   "name": "nf()",
   "description": "Utility function for formatting numbers into strings. There are two\n versions: one for formatting floats, and one for formatting ints. The\n values for the <b>digits</b> and <b>right</b> parameters should always be\n positive integers. The <b>left</b> parameter should be positive or 0. If it\n is zero, only the right side is formatted.<br />\n <br />\n As shown in the above example, <b>nf()</b> is used to add zeros to the left\n and/or right of a number. This is typically for aligning a list of numbers.\n To <em>remove</em> digits from a floating-point number, use the\n <b>int()</b>, <b>ceil()</b>, <b>floor()</b>, or <b>round()</b> functions.",

@@ -1,8 +1,8 @@
 {
-  "brief": "Calculates a color or colors between two color at a specific\n           increment.",
+  "brief": "Calculates a <b>color</b> or <b>colors</b> between two <b>colors</b> at a specific\n           increment",
   "related": ["PImage_blendColor_", "lerp_"],
   "name": "lerpColor()",
-  "description": "Calculates a color between two colors at a specific increment. The <b>amt</b>\n parameter is the amount to interpolate between the two values where 0.0 is\n equal to the first point, 0.1 is very near the first point, 0.5 is halfway in\n between, etc. <br />\n An amount below 0 will be treated as 0. Likewise, amounts above 1 will be\n capped at 1. This is different from the behavior of lerp(), but necessary\n because otherwise numbers outside the range will produce strange and\n unexpected colors.",
+  "description": "Calculates a color between two colors at a specific increment. The <b>amt</b>\n parameter is the amount to interpolate between the two values where 0.0 is\n equal to the first point, 0.1 is very near the first point, 0.5 is halfway in\n between, etc. <br />\n An amount below 0 will be treated as 0. Likewise, amounts above 1 will be\n capped at 1. This is different from the behavior of <b>lerp()</b>, but necessary\n because otherwise numbers outside the range will produce strange and\n unexpected colors.",
   "syntax": ["graphics.lerpColor(c1, c2, amt)"],
   "returns": "int",
   "type": "method",

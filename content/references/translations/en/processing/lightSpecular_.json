@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the specular color for lights.",
+  "brief": "Sets the specular color for lights",
   "related": [
     "specular_",
     "lights_",

@@ -1,5 +1,5 @@
 {
-  "brief": "Determines the smallest value in a sequence of numbers.",
+  "brief": "Determines the smallest value in a sequence of numbers",
   "related": ["max_"],
   "name": "min()",
   "description": "Determines the smallest value in a sequence of numbers, and then returns that\n value. <b>min()</b> accepts either two or three <b>float</b> or <b>int</b>\n values as parameters, or an array of any length.",

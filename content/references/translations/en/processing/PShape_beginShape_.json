@@ -1,5 +1,5 @@
 {
-  "brief": "Starts the creation of a new PShape",
+  "brief": "Starts the creation of a new <b>PShape</b>",
   "related": ["PShape_endShape_"],
   "name": "beginShape()",
   "description": "This method is used to start a custom shape created with the <b>createShape()</b> \n function. It's always and only used with <b>createShape()</b>.",

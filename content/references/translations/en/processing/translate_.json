@@ -1,5 +1,5 @@
 {
-  "brief": "Specifies an amount to displace objects within the display window.",
+  "brief": "Specifies an amount to displace objects within the display window",
   "related": [
     "popMatrix_",
     "pushMatrix_",

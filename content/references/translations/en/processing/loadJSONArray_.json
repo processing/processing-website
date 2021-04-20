@@ -1,5 +1,5 @@
 {
-  "brief": "Takes a <b>String</b>, parses its contents, and returns a\n           <b>JSONArray</b>.",
+  "brief": "Takes a <b>String</b>, parses its contents, and returns a\n           <b>JSONArray</b>",
   "related": [
     "JSONArray",
     "loadJSONObject_",
