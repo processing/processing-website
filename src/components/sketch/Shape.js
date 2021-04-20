@@ -1,5 +1,6 @@
 import React, { useState, memo } from 'react';
 import Draggable from './Draggable';
+import classnames from 'classnames';
 import css from './Shape.module.css';
 
 /**
@@ -39,24 +40,30 @@ const Shape = (props) => {
     onChangeShape(shapeIndex, 'showHandlers', false);
   };
 
+  const handleToggleShape = () => {
+    onChangeShape(shapeIndex, 'line', !shape.line);
+  };
+
   const draggable = [];
 
   for (let i = 0; i < shape.pos.length; i++) {
-    draggable.push(
-      <Draggable
-        key={`shape-pos-${i}`}
-        index={i}
-        className={draggableClassName}
-        onChange={handleChange}
-        onDraggingStart={shape.line ? null : handleDraggingStart}
-        onDraggingEnd={shape.line ? null : handleDraggingEnd}
-        value={shape.pos[i]}
-        min={min}
-        max={max}
-        tabIndex={tabIndex}
-      />
-    );
-    draggable.push(i === shape.pos.length - 1 ? ' * u' : ' * u, ');
+    if (!shape.line || i < 2 || i > 5) {
+      draggable.push(
+        <Draggable
+          key={`shape-pos-${i}`}
+          value={shape.pos[i]}
+          index={i}
+          className={draggableClassName}
+          onChange={handleChange}
+          onDraggingStart={shape.line ? null : handleDraggingStart}
+          onDraggingEnd={shape.line ? null : handleDraggingEnd}
+          min={min}
+          max={max}
+          tabIndex={tabIndex}
+        />
+      );
+      draggable.push(i === shape.pos.length - 1 ? ' * u' : ' * u, ');
+    }
   }
 
   return (
@@ -67,8 +74,13 @@ const Shape = (props) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}>
       {'  '}
-      <span className="hljs-built_in">{shape.line ? 'line' : 'bezier'}</span>(
-      {draggable})
+      <button
+        className={classnames(draggableClassName, 'hljs-built_in')}
+        onClick={handleToggleShape}
+        tabIndex={tabIndex}>
+        {shape.line ? 'line' : 'bezier'}
+      </button>
+      ({draggable})
     </span>
   );
 };

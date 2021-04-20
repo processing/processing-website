@@ -16,12 +16,11 @@ const initialState = {
     {
       line: true,
       color: [2, 81, 200],
-      pos: [1, 2, 7, 5],
+      pos: [1, 2, 4, 1, 5, 2, 7, 5],
       showHandlers: false,
       dragging: null
     },
     {
-      line: false,
       color: [80, 139, 255],
       pos: [1, 5, 4, 4, 2, 2, 4, 1],
       showHandlers: false,
@@ -30,7 +29,7 @@ const initialState = {
     {
       line: true,
       color: [30, 42, 103],
-      pos: [6, 1, 4, 7],
+      pos: [6, 1, 7, 3, 6, 6, 4, 7],
       showHandlers: false,
       dragging: null
     }

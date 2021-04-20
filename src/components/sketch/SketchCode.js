@@ -98,9 +98,7 @@ const ShowGrid = memo(({ showGrid, isVisible, onChange }) => {
     <Line num={2}>
       <span className="hljs-datatype">boolean</span> showGrid ={' '}
       <button
-        name="showGrid"
         className={classnames(css.interactive, 'hljs-keyword')}
-        value={showGrid}
         onClick={(e) => onChange('showGrid', !showGrid)}
         tabIndex={isVisible ? 0 : -1}>
         {showGrid ? 'true' : 'false'}
@@ -205,13 +203,6 @@ const BottomLines = memo(({ isVisible }) => {
     </>
   );
 });
-
-// <Button
-//   className={css.toggleShape}
-//   onClick={(e) => onChange(['shapes', i, 'line'], !shape.line)}
-//   tabIndex={isVisible ? 0 : -1}>
-//   {shape.line ? '/' : '~'}
-// </Button>
 
 const Line = ({ num, children }) => {
   return (

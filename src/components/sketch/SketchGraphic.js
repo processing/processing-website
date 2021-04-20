@@ -16,7 +16,7 @@ const SketchGraphic = (props) => {
     isCodeVisible
   } = props;
 
-  // -2 in order to make the strokes fully visible
+  // -2 in order to make the grid fully visible in the SVG
   const unit = (width - 2) / 8;
 
   const grid = useMemo(() => {
@@ -71,8 +71,8 @@ const SketchGraphic = (props) => {
                 key={index}
                 x1={shape.pos[0] * unit}
                 y1={shape.pos[1] * unit}
-                x2={shape.pos[2] * unit}
-                y2={shape.pos[3] * unit}
+                x2={shape.pos[6] * unit}
+                y2={shape.pos[7] * unit}
                 stroke={color}
                 strokeWidth={strokeWeight * unit}
               />
