@@ -13,7 +13,6 @@ const SketchGraphic = (props) => {
     shapes,
     strokeWeight,
     strokeCap,
-    onClick,
     isCodeVisible
   } = props;
 
@@ -116,10 +115,6 @@ const SketchGraphic = (props) => {
     </svg>
   );
 };
-
-// <Button className={css.button} onClick={onClick} size={'large'}>
-//   {isCodeVisible ? 'Hide code' : 'Play'}
-// </Button>
 
 const Handler = memo(({ x1, y1, x2, y2, d, unit }) => {
   return (

@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import Draggable from './Draggable';
 import Color from './Color';
 import Shape from './Shape';
+import Button from '../Button';
 
 import css from './SketchCode.module.css';
 
@@ -17,7 +18,8 @@ const SketchCode = ({
   strokeCap,
   isVisible,
   onChange,
-  onChangeShape
+  onChangeShape,
+  onResetState
 }) => {
   return (
     <div className={css.root}>
@@ -174,6 +176,13 @@ const SketchCode = ({
         <Line num={33}>{`  }`}</Line>
         <Line num={34}>{`}`}</Line>
       </details>
+      <Button
+        className={css.reset}
+        color="gray"
+        size="small"
+        onClick={onResetState}>
+        Reset
+      </Button>
     </div>
   );
 };

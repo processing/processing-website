@@ -1,6 +1,7 @@
 @import "../../styles/variables.css";
 
 .root {
+  position: relative;
   background-color: white;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -89,12 +90,8 @@
   transition: background-color 0.2s;
 }
 
-.toggleShape {
-  margin-left: -54px;
-  margin-right: 34px;
-  width: 20px;
-  padding: 0;
-  background-color: var(--gray);
-  color: var(--black);
-  border-radius: 5px;
+.reset {
+  position: absolute;
+  top: 8px;
+  right: 8px;
 }

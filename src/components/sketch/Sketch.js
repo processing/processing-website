@@ -1,7 +1,15 @@
-import React, { useState, useMemo, Fragment, useCallback } from 'react';
+import React, {
+  useState,
+  useEffect,
+  useMemo,
+  Fragment,
+  useCallback
+} from 'react';
+import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 import SketchGraphic from './SketchGraphic';
 import SketchCode from './SketchCode';
+import CoolButton from './CoolButton';
 
 import grid from '../../styles/grid.module.css';
 import css from './Sketch.module.css';
@@ -37,9 +45,21 @@ const initialState = {
   ]
 };
 
+const loadedState =
+  window.localStorage && window.localStorage.getItem('sketch');
+const parsedState = loadedState ? JSON.parse(loadedState) : initialState;
+
 const Sketch = ({ children }) => {
-  const [state, setState] = useState(initialState);
-  const [showCode, setShowCode] = useState(true);
+  const [state, setState] = useState(parsedState);
+  const [showCode, setShowCode] = useState(false);
+  const intl = useIntl();
+
+  // Sync state to local storage
+  useEffect(() => {
+    if (window.localStorage) {
+      window.localStorage.setItem('sketch', JSON.stringify(state));
+    }
+  }, [state]);
 
   // Change handler for a simple attribute in state
   const onChange = useCallback((key, value) => {
@@ -58,9 +78,13 @@ const Sketch = ({ children }) => {
     });
   }, []);
 
-  const handleClickOnSketch = useCallback((e) => {
-    e.stopPropagation();
+  const onCodeToggle = useCallback(() => {
     setShowCode((show) => !show);
+  }, []);
+
+  // Change handler for a simple attribute in state
+  const onResetState = useCallback(() => {
+    setState(initialState);
   }, []);
 
   return (
@@ -71,17 +95,19 @@ const Sketch = ({ children }) => {
           <SketchCode
             onChange={onChange}
             onChangeShape={onChangeShape}
+            onResetState={onResetState}
             isVisible={showCode}
             {...state}
           />
         </div>
       </div>
       <div className={classnames(grid.col, css.right)}>
-        <SketchGraphic
-          onClick={handleClickOnSketch}
-          {...state}
-          isCodeVisible={showCode}
-        />
+        <SketchGraphic isCodeVisible={showCode} {...state} />
+        <CoolButton onClick={onCodeToggle}>
+          {showCode
+            ? intl.formatMessage({ id: 'closeEditor' })
+            : intl.formatMessage({ id: 'openEditor' })}
+        </CoolButton>
       </div>
     </div>
   );
