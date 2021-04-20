@@ -18,6 +18,10 @@
   display: flex;
 }
 
+.right {
+  text-align: center;
+}
+
 .splash,
 .code {
   flex: 0 0 100%;
@@ -30,4 +34,19 @@
 
 .code.codeVisible {
   transform: translate(calc(-100% - var(--gutter)), 0);
+}
+
+@media (--reduced) {
+  .root {
+    flex-direction: row-reverse;
+  }
+
+  .left,
+  .right {
+    flex-basis: var(--col8);
+  }
+
+  .left {
+    margin-bottom: var(--margin);
+  }
 }

@@ -1,25 +1,5 @@
-@import "../../styles/variables.css";
-
 .root {
-  margin: auto;
-  width: var(--col4);
-  height: auto;
-  position: relative;
-  z-index: 200;
-
-  & svg {
-    position: absolute;
-    max-width: 100%;
-    cursor: pointer;
-  }
-}
-
-.ui {
-  position: absolute;
-  z-index: 200;
-  bottom: 0;
-  right: 0;
-  padding: var(--margin-quarter);
+  max-width: 600px;
 }
 
 .grid {

@@ -41,77 +41,68 @@ const SketchGraphic = (props) => {
   }, [showGrid, unit]);
 
   return (
-    <div
-      role={'button'}
-      tabIndex={'0'}
-      className={css.root}
-      onClick={onClick}
-      onKeyDown={onClick}
-      style={{ width, height }}>
-      <div className={css.ui}>
-        <Button className={css.button} onClick={onClick} size={'large'}>
-          {isCodeVisible ? 'Hide code' : 'Play'}
-        </Button>
-      </div>
-      <svg width={width} height={height}>
-        <g transform={`translate(1, 1)`}>
-          <g className={css.grid}>{grid}</g>
-          {shapes.map((shape, index) => {
-            const showHandlers = shape.showHandlers || shape.dragging !== null;
-            const color = `rgb(${shape.color[0]},${shape.color[1]},${shape.color[2]})`;
+    <svg viewBox={`0 0 ${width} ${height}`} className={css.root}>
+      <g transform={`translate(1, 1)`}>
+        <g className={css.grid}>{grid}</g>
+        {shapes.map((shape, index) => {
+          const showHandlers = shape.showHandlers || shape.dragging !== null;
+          const color = `rgb(${shape.color[0]},${shape.color[1]},${shape.color[2]})`;
 
-            let dPoints = shape.pos.map((x) => x * unit);
+          let dPoints = shape.pos.map((x) => x * unit);
 
-            if (shape.pos.length > 4) {
-              dPoints.splice(0, 0, 'M');
-              dPoints.splice(3, 0, 'C');
-            }
+          if (shape.pos.length > 4) {
+            dPoints.splice(0, 0, 'M');
+            dPoints.splice(3, 0, 'C');
+          }
 
-            return shape.line ? (
-              <line
+          return shape.line ? (
+            <line
+              key={index}
+              x1={shape.pos[0] * unit}
+              y1={shape.pos[1] * unit}
+              x2={shape.pos[6] * unit}
+              y2={shape.pos[7] * unit}
+              stroke={color}
+              strokeWidth={strokeWeight * unit}
+            />
+          ) : (
+            <Fragment key={index}>
+              <path
                 key={index}
-                x1={shape.pos[0] * unit}
-                y1={shape.pos[1] * unit}
-                x2={shape.pos[6] * unit}
-                y2={shape.pos[7] * unit}
+                d={dPoints.join(' ')}
                 stroke={color}
+                fill="none"
                 strokeWidth={strokeWeight * unit}
               />
-            ) : (
-              <Fragment key={index}>
-                <path
-                  key={index}
-                  d={dPoints.join(' ')}
-                  stroke={color}
-                  fill="none"
-                  strokeWidth={strokeWeight * unit}
+              {showHandlers && (
+                <Handler
+                  x1={shape.pos[0]}
+                  y1={shape.pos[1]}
+                  x2={shape.pos[2]}
+                  y2={shape.pos[3]}
+                  unit={unit}
                 />
-                {showHandlers && (
-                  <Handler
-                    x1={shape.pos[0]}
-                    y1={shape.pos[1]}
-                    x2={shape.pos[2]}
-                    y2={shape.pos[3]}
-                    unit={unit}
-                  />
-                )}
-                {showHandlers && (
-                  <Handler
-                    x1={shape.pos[6]}
-                    y1={shape.pos[7]}
-                    x2={shape.pos[4]}
-                    y2={shape.pos[5]}
-                    unit={unit}
-                  />
-                )}
-              </Fragment>
-            );
-          })}
-        </g>
-      </svg>
-    </div>
+              )}
+              {showHandlers && (
+                <Handler
+                  x1={shape.pos[6]}
+                  y1={shape.pos[7]}
+                  x2={shape.pos[4]}
+                  y2={shape.pos[5]}
+                  unit={unit}
+                />
+              )}
+            </Fragment>
+          );
+        })}
+      </g>
+    </svg>
   );
 };
+
+// <Button className={css.button} onClick={onClick} size={'large'}>
+//   {isCodeVisible ? 'Hide code' : 'Play'}
+// </Button>
 
 const Handler = memo(({ x1, y1, x2, y2, unit }) => {
   return (

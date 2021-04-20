@@ -74,13 +74,15 @@ const Shape = (props) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}>
       {'  '}
-      <button
-        className={classnames(draggableClassName, 'hljs-built_in')}
-        onClick={handleToggleShape}
-        tabIndex={tabIndex}>
-        {shape.line ? 'line' : 'bezier'}
-      </button>
-      ({draggable})
+      <span className={css.breakWhitespace}>
+        <button
+          className={classnames(draggableClassName, 'hljs-built_in')}
+          onClick={handleToggleShape}
+          tabIndex={tabIndex}>
+          {shape.line ? 'line' : 'bezier'}
+        </button>
+        ({draggable})
+      </span>
     </span>
   );
 };

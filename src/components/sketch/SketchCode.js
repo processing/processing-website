@@ -24,9 +24,33 @@ const SketchCode = (props) => {
       <Line num={1}>
         <span className="hljs-datatype">int</span> u = 60;
       </Line>
-      <ShowGrid showGrid={showGrid} isVisible={isVisible} onChange={onChange} />
+      <Line num={2}>
+        <span className="hljs-datatype">boolean</span> showGrid ={' '}
+        <button
+          className={classnames(css.interactive, 'hljs-keyword')}
+          onClick={(e) => onChange('showGrid', !showGrid)}
+          tabIndex={isVisible ? 0 : -1}>
+          {showGrid ? 'true' : 'false'}
+        </button>
+        ;
+      </Line>
       <Line num={3} />
-      <Setup isVisible={isVisible} />
+      <details open>
+        <summary tabIndex={isVisible ? 0 : -1}>
+          <Line num={4}>
+            <span className="hljs-keyword">void</span>{' '}
+            <span className="hljs-title">setup</span>
+            {`() {`}
+            <Folded />
+          </Line>
+        </summary>
+        <Line num={5}>
+          {`  `}
+          <span className="hljs-built_in">size</span>
+          {`(600, 600);`}
+        </Line>
+        <Line num={6}>{`}`}</Line>
+      </details>
       <Line num={7} />
       <details open>
         <summary tabIndex={isVisible ? 0 : -1}>
@@ -48,11 +72,20 @@ const SketchCode = (props) => {
           <span className="hljs-built_in">strokeCap</span>(
           <span className="hljs-constant">SQUARE</span>);
         </Line>
-        <StrokeWeight
-          strokeWeight={strokeWeight}
-          onChange={onChange}
-          isVisible={isVisible}
-        />
+        <Line num={12}>
+          {`  `}
+          <span className="hljs-built_in">strokeWeight</span>(
+          <Draggable
+            className={css.interactive}
+            value={strokeWeight}
+            min={0.5}
+            max={2}
+            isInteger={false}
+            onChange={(val) => onChange('strokeWeight', val)}
+            tabIndex={isVisible ? 0 : -1}
+          />
+          {' * u);'}
+        </Line>
         <Line num={13} />
         {shapes.map((shape, i) => {
           const num = 14 + i * 3;
@@ -88,71 +121,6 @@ const SketchCode = (props) => {
         })}
         <Line num={22}>}</Line>
       </details>
-      <BottomLines isVisible={isVisible} />
-    </div>
-  );
-};
-
-const ShowGrid = memo(({ showGrid, isVisible, onChange }) => {
-  return (
-    <Line num={2}>
-      <span className="hljs-datatype">boolean</span> showGrid ={' '}
-      <button
-        className={classnames(css.interactive, 'hljs-keyword')}
-        onClick={(e) => onChange('showGrid', !showGrid)}
-        tabIndex={isVisible ? 0 : -1}>
-        {showGrid ? 'true' : 'false'}
-      </button>
-      ;
-    </Line>
-  );
-});
-
-const Setup = memo(({ isVisible }) => {
-  return (
-    <details open>
-      <summary tabIndex={isVisible ? 0 : -1}>
-        <Line num={4}>
-          <span className="hljs-keyword">void</span>{' '}
-          <span className="hljs-title">setup</span>
-          {`() {`}
-          <Folded />
-        </Line>
-      </summary>
-      <Line num={5}>
-        {`  `}
-        <span className="hljs-built_in">size</span>
-        {`(600, 600);`}
-      </Line>
-      <Line num={6}>{`}`}</Line>
-    </details>
-  );
-});
-
-const StrokeWeight = memo(({ strokeWeight, onChange, isVisible }) => {
-  return (
-    <Line num={12}>
-      {`  `}
-      <span className="hljs-built_in">strokeWeight</span>(
-      <Draggable
-        className={css.interactive}
-        value={strokeWeight}
-        min={0.5}
-        max={2}
-        isInteger={false}
-        onChange={(val) => onChange('strokeWeight', val)}
-        tabIndex={isVisible ? 0 : -1}
-      />
-      {' * u);'}
-    </Line>
-  );
-});
-
-const MiddleLines = memo(() => {});
-
-const BottomLines = memo(({ isVisible }) => {
-  return (
-    <>
       <Line num={23} />
       <details>
         <summary tabIndex={isVisible ? 0 : -1}>
@@ -200,9 +168,9 @@ const BottomLines = memo(({ isVisible }) => {
         <Line num={33}>{`  }`}</Line>
         <Line num={34}>{`}`}</Line>
       </details>
-    </>
+    </div>
   );
-});
+};
 
 const Line = ({ num, children }) => {
   return (
