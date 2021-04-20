@@ -21,9 +21,5 @@ export const hexToRgb = (hex) => {
     : null;
 };
 
-export const scale = (n, iniMin, iniMax, endMin, endMax) => {
-  return ((n - iniMin) * (endMax - endMin)) / (iniMax - iniMin) + endMin;
-};
-
 export const round = (value, decimals) =>
   Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, memo } from 'react';
 import { scale, round } from '../../utils/sketch';
+import { map } from '../../utils';
 import classnames from 'classnames';
 import css from './Draggable.module.css';
 
@@ -7,20 +8,18 @@ import css from './Draggable.module.css';
   We pass the idx to the component in order to be able to memo the handler
   functions so the interactive sketch renders faster
 **/
-const Draggable = (props) => {
-  const {
-    value,
-    index = null,
-    min,
-    max,
-    path,
-    isInteger = true,
-    className,
-    onChange,
-    onDraggingStart,
-    onDraggingEnd,
-    tabIndex
-  } = props;
+const Draggable = ({
+  value,
+  index = null,
+  min,
+  max,
+  isInteger = true,
+  className,
+  onChange,
+  onDraggingStart,
+  onDraggingEnd,
+  tabIndex
+}) => {
   const [dragging, setDragging] = useState(null);
 
   useEffect(() => {
@@ -32,19 +31,9 @@ const Draggable = (props) => {
 
       const handleMouseMove = (e) => {
         if (dragging !== null) {
-          const diff = scale(
-            e.screenX - dragging,
-            -120,
-            120,
-            -(max - min),
-            max - min
-          );
-          const t = isInteger
-            ? value + Math.floor(diff)
-            : round(value + diff, 2);
-          if (t >= min && t <= max) {
-            index === null ? onChange(t) : onChange(index, t);
-          }
+          const val = map(e.screenX - dragging, -120, 120, min, max);
+          const t = isInteger ? Math.round(val) : round(val, 2);
+          index === null ? onChange(t) : onChange(index, t);
         }
       };
 
@@ -56,7 +45,7 @@ const Draggable = (props) => {
         document.removeEventListener('mousemove', handleMouseMove);
       };
     }
-  }, [dragging, index, isInteger, onDraggingEnd, path, props, min, max, value]);
+  }, [dragging, index, isInteger, onDraggingEnd, min, max]);
 
   const registerMove = (e) => {
     setDragging(e.screenX);
@@ -79,7 +68,6 @@ const Draggable = (props) => {
       <span
         name="pos"
         className={dragging ? css.dragging : css.root}
-        onChange={(e) => props.onChange(e, path, e.target.value)}
         value={value}>
         {value}
       </span>

@@ -9,3 +9,8 @@ export const shuffleArray = (array) => {
     [array[i], array[j]] = [array[j], array[i]];
   }
 };
+
+export const map = (n, start1, stop1, start2, stop2) => {
+  const prog = Math.min(1, Math.max(0, (n - start1) / (stop1 - start1)));
+  return prog * (stop2 - start2) + start2;
+};
