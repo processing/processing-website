@@ -78,17 +78,12 @@ const Draggable = ({
       role={'button'}
       aria-label={'change position'}
       tabIndex={tabIndex}
-      className={classnames(css.parent, className)}
+      className={classnames(css.root, className, {
+        [css.dragging]: draggingInfo
+      })}
       onMouseDown={registerMove}
       onMouseUp={deregisterMove}>
-      <span className={css.arrowLeft}></span>
-      <span
-        name="pos"
-        className={draggingInfo ? css.dragging : css.root}
-        value={value}>
-        {value}
-      </span>
-      <span className={css.arrowRight}></span>
+      {value}
     </span>
   );
 };
