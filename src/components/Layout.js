@@ -21,7 +21,7 @@ import '../styles/fonts.css';
 import css from './Layout.module.css';
 
 export const LayoutContext = React.createContext({
-  headerHeight: 0,
+  headerHeight: 0
 });
 
 const Layout = ({ children, isHomepage, withSidebar }) => {
@@ -55,7 +55,7 @@ const Layout = ({ children, isHomepage, withSidebar }) => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [headerScrolled]);
 
   const shortcodes = useMemo(
     () => ({
@@ -64,7 +64,7 @@ const Layout = ({ children, isHomepage, withSidebar }) => {
       HighlightBlock,
       Note,
       h2: ({ children }) => <H2 setCurrent={setCurrentHeading}>{children}</H2>,
-      img: (props) => <img {...props} alt=""></img>,
+      img: (props) => <img {...props} alt=""></img>
     }),
     [setCurrentHeading]
   );
@@ -81,7 +81,7 @@ const Layout = ({ children, isHomepage, withSidebar }) => {
           className={classnames({
             [css.headerScrolled]: headerScrolled,
             [css.homepage]: isHomepage,
-            [css.withSidebar]: withSidebar,
+            [css.withSidebar]: withSidebar
           })}
           ref={mainRef}>
           <MDXProvider components={shortcodes}>{children}</MDXProvider>
@@ -96,7 +96,7 @@ const Layout = ({ children, isHomepage, withSidebar }) => {
 };
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 export default Layout;

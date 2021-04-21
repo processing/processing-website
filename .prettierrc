@@ -4,7 +4,7 @@
   "useTabs": false,
   "jsxBracketSameLine": true,
   "arrowParens": "always",
-  "trailingComma": "es5",
+  "trailingComma": "none",
   "overrides": [
     {
       "files": ["*.css", "*.scss"],

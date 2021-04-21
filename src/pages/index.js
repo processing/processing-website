@@ -61,8 +61,8 @@ const IndexPage = ({ data }) => {
       <Helmet>
         <title>Welcome to Processing!</title>
       </Helmet>
-      <div className={classnames(css.hero, grid.grid, grid.rightBleed)}>
-        <div className={classnames(grid.col, css.intro)}>
+      <Sketch>
+        <div className={css.hero}>
           <h1>{intl.formatMessage({ id: 'introTitle' })}</h1>
           <p>{intl.formatMessage({ id: 'introText' })}</p>
           <div className={css.buttons}>
@@ -80,8 +80,7 @@ const IndexPage = ({ data }) => {
             </Button>
           </div>
         </div>
-        <Sketch />
-      </div>
+      </Sketch>
       <FeaturedExamples
         examples={randomExamples}
         heading={intl.formatMessage({ id: 'examples' })}
@@ -239,7 +238,10 @@ const FeaturedExamples = memo(({ heading, examples, locale }) => {
               <Link to={example.path} language={locale}>
                 <div className={css.imgContainer}>
                   {example.image && (
-                    <Img fluid={example.image.childImageSharp.fluid} />
+                    <Img
+                      fluid={example.image.childImageSharp.fluid}
+                      loading="eager"
+                    />
                   )}
                 </div>
                 <h4>{example.name}</h4>

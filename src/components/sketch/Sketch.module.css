@@ -1,31 +1,53 @@
 .root {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-image: linear-gradient(
+    to right,
+    white 20%,
+    var(--processing-blue-gradient)
+  );
+}
+
+.left,
+.right {
+  flex-basis: var(--col4);
+}
+
+.left {
+  overflow: hidden;
   display: flex;
+}
+
+.right {
+  text-align: center;
   position: relative;
-  max-width: calc(var(--col4) + var(--margin));
-  flex-basis: calc(var(--col4) + var(--margin));
-  align-items: stretch;
+}
 
-  & h1 {
-    font-size: 24px;
-    margin-top: auto;
-    margin-bottom: auto;
+.splash,
+.code {
+  flex: 0 0 100%;
+  margin-right: var(--gutter);
+}
+
+.code {
+  transition: transform 0.5s;
+}
+
+.code.codeVisible {
+  transform: translate(calc(-100% - var(--gutter)), 0);
+}
+
+@media (--reduced) {
+  .root {
+    flex-direction: row-reverse;
   }
 
-  @media (--large) {
-    max-width: calc(var(--col4) + var(--margin));
-    flex-basis: calc(var(--col4) + var(--margin));
+  .left,
+  .right {
+    flex-basis: var(--col8);
   }
 
-  @media (--medium) {
-    flex-basis: calc(var(--col3) + var(--margin));
-  }
-
-  @media (--reduced) {
-    max-width: calc(var(--col2) + var(--margin));
-    flex-basis: calc(var(--col2) + var(--margin));
-    position: absolute;
-    right: 0;
-    z-index: 0;
-    pointer-events: none;
+  .left {
+    margin-bottom: var(--margin);
   }
 }

@@ -1,43 +1,51 @@
-import React, { useState, useEffect, Fragment } from 'react';
-import { scale, round } from '../../utils/editor';
+import React, { useState, useEffect, memo } from 'react';
+import { round } from '../../utils/sketch';
+import { map } from '../../utils';
+import classnames from 'classnames';
 import css from './Draggable.module.css';
 
-const Draggable = (props) => {
-  const {
-    value,
-    range,
-    path,
-    isInteger = true,
-    labelBefore,
-    labelAfter,
-    onDraggingStart,
-    onDraggingEnd,
-    index,
-    tabIndex,
-  } = props;
-  const [dragging, setDragging] = useState(null);
+const dragArea = 250;
+
+/**
+  We pass the idx to the component in order to be able to memo the handler
+  functions so the interactive sketch renders faster
+**/
+const Draggable = ({
+  value,
+  index = null,
+  min,
+  max,
+  isInteger = true,
+  className,
+  onChange,
+  onDraggingStart,
+  onDraggingEnd,
+  onMouseEnter,
+  onMouseLeave,
+  tabIndex
+}) => {
+  const [draggingInfo, setDraggingInfo] = useState(null);
 
   useEffect(() => {
-    if (dragging) {
+    if (draggingInfo) {
       const handleMouseUp = (e) => {
-        props.blurRest && props.blurRest(e, false);
-        setDragging(false);
-        index && onDraggingEnd();
+        setDraggingInfo(null);
+        if (onDraggingEnd) {
+          onDraggingEnd(index);
+        }
       };
 
       const handleMouseMove = (e) => {
-        if (dragging !== null) {
-          const diff = scale(
-            e.screenX - dragging,
-            -120,
-            120,
-            -(range.max - range.min),
-            range.max - range.min
+        if (draggingInfo) {
+          const val = map(
+            e.screenX - draggingInfo.startX,
+            draggingInfo.dragMin,
+            draggingInfo.dragMax,
+            min,
+            max
           );
-          const t = isInteger
-            ? value + Math.floor(diff)
-            : round(value + diff, 2);
-          if (t >= range.min && t <= range.max) props.onChange(e, path, t);
+          const t = isInteger ? Math.round(val) : round(val, 2);
+          index === null ? onChange(t) : onChange(index, t);
         }
       };
 
@@ -49,42 +57,51 @@ const Draggable = (props) => {
         document.removeEventListener('mousemove', handleMouseMove);
       };
     }
-  }, [dragging, index, isInteger, onDraggingEnd, path, props, range, value]);
+  }, [draggingInfo, index, isInteger, onChange, onDraggingEnd, min, max]);
 
   const registerMove = (e) => {
-    props.blurRest && props.blurRest(e, true);
-    setDragging(e.screenX);
-    index && onDraggingStart(index);
+    const ratio = (value - min) / (max - min);
+    setDraggingInfo({
+      startX: e.screenX,
+      dragMin: -(dragArea * ratio),
+      dragMax: dragArea * (1 - ratio)
+    });
+    if (onDraggingStart) {
+      onDraggingStart(index);
+    }
   };
 
   const deregisterMove = (e) => {
-    props.blurRest && props.blurRest(e, false);
-    setDragging(null);
+    setDraggingInfo(null);
+  };
+
+  const handleMouseEnter = (e) => {
+    if (onMouseEnter) {
+      onMouseEnter(index);
+    }
+  };
+
+  const handleMouseLeave = (e) => {
+    if (onMouseEnter) {
+      onMouseLeave(index);
+    }
   };
 
   return (
-    <Fragment>
-      {labelBefore && <span>{labelBefore}</span>}
-      <span
-        role={'button'}
-        aria-label={'change position'}
-        tabIndex={tabIndex}
-        className={css.parent}
-        onMouseDown={registerMove}
-        onMouseUp={deregisterMove}>
-        <span className={css.arrowLeft}></span>
-        <span
-          name="pos"
-          className={dragging ? css.dragging : css.root}
-          onChange={(e) => props.onChange(e, path, e.target.value)}
-          value={value}>
-          {value}
-        </span>
-        <span className={css.arrowRight}></span>
-      </span>
-      {labelAfter && <span>{labelAfter}</span>}
-    </Fragment>
+    <span
+      role={'button'}
+      aria-label={'change position'}
+      tabIndex={tabIndex}
+      className={classnames(className, css.root, {
+        [css.dragging]: draggingInfo
+      })}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onMouseDown={registerMove}
+      onMouseUp={deregisterMove}>
+      {value}
+    </span>
   );
 };
 
-export default Draggable;
+export default memo(Draggable);

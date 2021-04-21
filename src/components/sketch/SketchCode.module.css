@@ -1,28 +1,27 @@
-@import "../../styles/variables.css";
+@keyframes blink {
+  0% {
+    background-color: white;
+  }
+  50% {
+    background-color: #bee0ff;
+  }
+  100% {
+    background-color: white;
+  }
+}
 
 .root {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 100%;
-  position: absolute;
-  opacity: 0;
-  z-index: 100;
-  overflow: auto;
-  margin-left: calc(-1 * var(--col8));
-  height: 100%;
-  width: 100%;
-  padding: 0px;
+  position: relative;
+  background-color: white;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border: 1px solid var(--gray);
+  border-left: none;
   font-family: var(--font-mono);
   font-size: 14px;
   white-space: pre;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  transform: translateX(100%);
   user-select: none;
-
-  &.visible {
-    transform: translateX(0%);
-    opacity: 1;
-  }
+  min-height: 600px;
 
   & h1 {
     font-family: var(--font);
@@ -30,139 +29,104 @@
 
   & pre,
   & code {
-    display: block;
+    background-color: white;
+    display: inline;
     padding: 0;
     margin: 0;
   }
-
-  & summary:after {
-    content: "}";
-    font-family: var(--font-mono);
-    border-radius: 5px;
-  }
-
-  & details {
-    padding-left: var(--gutter);
-
-    & pre {
-      display: inline-flex;
-    }
-  }
-
-  & details[open] {
-    & summary::after {
-      content: "";
-    }
-
-    & .dots {
-      visibility: hidden;
-    }
-  }
-
-  & summary {
-    cursor: pointer;
-    &:hover {
-      color: var(--processing-blue-dark);
-    }
-
-    &::-webkit-details-marker {
-      color: var(--gray);
-    }
-
-    &::-webkit-details-marker:hover {
-      color: var(--processing-blue-dark);
-    }
-  }
 }
 
-.dots {
-  display: inline-block;
-  background-color: var(--gray);
-  font-weight: 700;
-  font-size: 0.65em;
-  height: 0.8rem;
-  padding: 0 0.2rem;
-  vertical-align: middle;
-  line-height: 1;
-  border-radius: 5px;
-  &:hover {
-    color: var(--lightgray);
-  }
+.numBar {
+  position: absolute;
+  left: 0px;
+  top: -1px;
+  bottom: -1px;
+  width: 30px;
+  background-color: var(--processing-blue-dark);
+  z-index: 0;
 }
 
-.showGrid {
-  font-family: var(--font-mono);
-  font-size: 14px;
-  display: inline-block;
-  border-style: none;
-  font-size: inherit;
-  padding: 0;
-  padding: 0;
-  text-decoration: underline;
+.root summary {
+  list-style: none;
+  cursor: pointer;
   outline: none;
   box-shadow: none;
-  cursor: pointer;
-  background: none;
-  color: var(--black);
+
+  &::-webkit-details-marker {
+    display: none;
+  }
 }
 
-.showGrid:hover {
-  background: var(--lightgray);
-  color: var(--gray);
+.line {
+  position: relative;
+  z-index: 1;
+  display: flex;
+}
+
+.num {
+  flex: 0 0 30px;
+  display: inline-block;
+  background-color: var(--processing-blue-dark);
+  text-align: right;
+  color: white;
+  padding: 0 5px;
+  margin-right: 10px;
+  font-size: 12px;
+  line-height: 23px;
 }
 
 .code {
-  position: absolute;
-  padding-top: 20px;
-  height: 100%;
-  width: 100%;
-  overflow-y: overlay;
-  transition: max-width 0.4s ease;
+  flex: 1;
+}
+
+.folded {
+  display: inline-block;
+}
+
+.folded > span {
   background-color: var(--lightgray);
-  float: right;
-  right: 0;
+  display: inline-block;
+  margin: 0 3px;
+  border-radius: 4px;
+  letter-spacing: -3px;
+  padding: 0 5px 0 3px;
+  text-align: center;
+}
+
+.root details[open] .folded {
+  display: none;
+}
+
+.interactive {
+  background-color: white;
+  padding: 0 3px;
+  margin: 0 -3px;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.blink .interactive {
+  animation: blink 2s ease-in infinite;
+}
+
+.line:hover .interactive {
+  background-color: #e9f4ff;
+}
+
+.line .interactive:hover {
+  background-color: #bee0ff;
+}
+
+.reset {
+  position: absolute;
+  top: 8px;
+  right: 8px;
   z-index: 1;
 }
 
-.summary {
-  outline: none;
-  box-shadow: none;
-}
-
-.toggleShape {
-  margin-left: -54px;
-  margin-right: 34px;
-  width: 20px;
-  padding: 0;
-  background-color: var(--gray);
-  color: var(--black);
-  border-radius: 5px;
-}
-
-.link {
-  position: absolute;
-  z-index: 100;
-  bottom: var(--margin-quarter);
-  right: var(--margin-quarter);
-}
-
-.link:hover {
-  color: white;
-  background-color: var(--processing-blue-dark);
-}
-
-.inCode {
-  width: 100%;
-  padding-left: var(--gutter-double);
-}
-
-.inCode pre,
-.inCode code {
-  display: inline;
-}
-
-.codeStrokes {
-  display: block;
-  padding-left: 34px;
-  margin-bottom: 0px;
+@media (--reduced) {
+  .root {
+    min-height: 400px;
+  }
 }

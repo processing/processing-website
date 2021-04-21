@@ -1,200 +1,210 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { useState, Fragment } from 'react';
 import classnames from 'classnames';
 
-import Button from '../Button';
 import Draggable from './Draggable';
 import Color from './Color';
 import Shape from './Shape';
-
-import { useHighlight } from '../../hooks';
+import Button from '../Button';
 
 import css from './SketchCode.module.css';
 
-const SketchCode = (props) => {
-  const {
-    width,
-    height,
-    unit,
-    showGrid,
-    shapes,
-    strokeWidth,
-    isVisible,
-    onMouseEnterShape,
-    onMouseLeaveShape,
-    onDraggingShapeStart,
-    onDraggingShapeEnd,
-    onChange,
-  } = props;
-  const cols = Math.floor(width / unit);
-  const rows = Math.floor(height / unit);
-  useHighlight();
-
-  useEffect(() => {
-    shapes.forEach((shape, index) => {
-      shape.pos.forEach((p, subindex) => {
-        if (p > rows && subindex % 2 === 1) {
-          onChange(
-            'Adjusting strokes to rows',
-            ['shapes', index, 'pos', subindex],
-            rows
-          );
-        }
-      });
-    });
-  }, [height, unit, onChange, rows, shapes]);
-
-  useEffect(() => {
-    shapes.forEach((shape, index) => {
-      shape.pos.forEach((p, subindex) => {
-        if (p > cols && subindex % 2 === 0) {
-          onChange(
-            'Adjusting strokes to cols',
-            ['shapes', index, 'pos', subindex],
-            cols
-          );
-        }
-      });
-    });
-  }, [width, unit, cols, onChange, shapes]);
-
+const SketchCode = ({
+  width,
+  height,
+  unit,
+  showGrid,
+  shapes,
+  strokeWeight,
+  strokeCap,
+  isVisible,
+  onChange,
+  onChangeShape,
+  onResetState
+}) => {
+  const [hasInteracted, setHasInteracted] = useState(false);
   return (
-    <div className={classnames(css.root, { [css.visible]: isVisible })}>
-      <div className={css.code}>
-        <div className={css.inCode}>
-          <pre>
-            int width = {width}; <br />
-            int height = {height};<br />
-            <code>int unit = </code>
-          </pre>
-          <Draggable
-            name="unit"
-            className={css.showGrid}
-            value={unit}
-            range={{ min: 20, max: 80 }}
-            path={['unit']}
-            onChange={onChange}
-            tabIndex={isVisible ? 0 : -1}></Draggable>
-          ;
-          <br />
-          <pre>
-            <code>boolean showGrid = </code>
-          </pre>
-          <Button
-            name="showGrid"
-            className={css.showGrid}
-            value={showGrid}
-            onClick={(e) => onChange(e, ['showGrid'], !showGrid)}
+    <div
+      className={classnames(css.root, { [css.blink]: !hasInteracted })}
+      onMouseEnter={() => setHasInteracted(true)}>
+      <div className={css.numBar}></div>
+      <Line num={1}>
+        <span className="hljs-datatype">int</span> u = 60;
+      </Line>
+      <Line num={2}>
+        <span className="hljs-datatype">boolean</span> showGrid ={' '}
+        <button
+          className={classnames(css.interactive, 'hljs-keyword')}
+          onClick={(e) => onChange('showGrid', !showGrid)}
+          tabIndex={isVisible ? 0 : -1}>
+          {showGrid ? 'true' : 'false'}
+        </button>
+        ;
+      </Line>
+      <Line num={3} />
+      <details open>
+        <summary tabIndex={isVisible ? 0 : -1}>
+          <Line num={4}>
+            <span className="hljs-keyword">void</span>{' '}
+            <span className="hljs-title">setup</span>
+            {`() {`}
+            <Folded />
+          </Line>
+        </summary>
+        <Line num={5}>
+          {`  `}
+          <span className="hljs-built_in">size</span>
+          {`(600, 600);`}
+        </Line>
+        <Line num={6}>{`}`}</Line>
+      </details>
+      <Line num={7} />
+      <details open>
+        <summary tabIndex={isVisible ? 0 : -1}>
+          <Line num={8}>
+            <span className="hljs-keyword">void</span>{' '}
+            <span className="hljs-title">draw</span>
+            {`() {`}
+            <Folded />
+          </Line>
+        </summary>
+        <Line num={9}>
+          {`  `}
+          <span className="hljs-built_in">background</span>
+          {`(255);`}
+        </Line>
+        <Line num={10}>{`  if (showGrid) drawGrid();`}</Line>
+        <Line num={11}>
+          {`  `}
+          <span className="hljs-built_in">strokeCap</span>(
+          <button
+            className={classnames(css.interactive, 'hljs-constant')}
+            onClick={(e) => onChange('strokeCap', !strokeCap)}
             tabIndex={isVisible ? 0 : -1}>
-            {showGrid ? 'true' : 'false'}
-          </Button>
-          ;
-        </div>
-        <br />
-        <details className={css.details}>
-          <summary className={css.summary} tabIndex={isVisible ? 0 : -1}>
-            <pre>
-              <code>
-                {`void setup() {`}
-                <span className={css.dots}>{`...`}</span>
-              </code>
-            </pre>
-          </summary>
-          <pre>
-            <code>
-              {`    size(width, height);
-    background(255, 255, 255);
-    if (showGrid) drawGrid();
-  }`}
-            </code>
-          </pre>
-        </details>
-        <div className={css.inCode}>
-          <pre>
-            <code>
-              {`
-void draw() {
-    if (showGrid) drawGrid();
-    strokeCap(SQUARE);`}
-            </code>
-          </pre>
-          <div className={css.codeStrokes}>
-            <Draggable
-              name="strokeWidth"
-              className={css.showGrid}
-              value={strokeWidth}
-              range={{ min: 0.5, max: 2 }}
-              path={['strokeWidth']}
-              isInteger={false}
-              onChange={onChange}
-              labelBefore={'strokeWeight('}
-              labelAfter={' * u);'}
-              tabIndex={isVisible ? 0 : -1}
-            />
-            {shapes.map((shape, index) => (
-              <Fragment key={`shape-block-${index}`}>
-                <br />
-                <br />
-                stroke(
+            {strokeCap ? 'SQUARE' : 'ROUND'}
+          </button>
+          );
+        </Line>
+        <Line num={12}>
+          {`  `}
+          <span className="hljs-built_in">strokeWeight</span>(
+          <Draggable
+            className={css.interactive}
+            value={strokeWeight}
+            min={0.5}
+            max={2}
+            isInteger={false}
+            onChange={(val) => onChange('strokeWeight', val)}
+            tabIndex={isVisible ? 0 : -1}
+          />
+          {' * u);'}
+        </Line>
+        <Line num={13} />
+        {shapes.map((shape, i) => {
+          const num = 14 + i * 3;
+          return (
+            <Fragment key={`shape-block-${i}`}>
+              <Line num={num}>
+                {`  `}
+                <span className="hljs-built_in">stroke</span>(
                 <Color
-                  onChange={onChange}
-                  shapes={shapes}
-                  shapesInx={index}
+                  draggableClassName={css.interactive}
+                  onChangeShape={onChangeShape}
+                  color={shapes[i].color}
+                  shapeIndex={i}
                   tabIndex={isVisible ? 0 : -1}
                 />
                 );
-                <br />
-                <Button
-                  className={css.toggleShape}
-                  onClick={(e) =>
-                    onChange(e, ['shapes', index, 'type'], !shape.type)
-                  }
-                  tabIndex={isVisible ? 0 : -1}>
-                  {shape.type ? '/' : '~'}
-                </Button>
+              </Line>
+              <Line num={num + 1}>
                 <Shape
-                  onMouseEnter={onMouseEnterShape}
-                  onMouseLeave={onMouseLeaveShape}
-                  onDraggingStart={onDraggingShapeStart}
-                  onDraggingEnd={onDraggingShapeEnd}
-                  onChange={onChange}
                   shape={shape}
-                  shapesInx={index}
-                  rangeX={{ min: 0, max: cols }}
-                  rangeY={{ min: 0, max: rows }}
+                  shapeIndex={i}
+                  onChangeShape={onChangeShape}
+                  draggableClassName={css.interactive}
+                  min={0}
+                  max={8}
                   tabIndex={isVisible ? 0 : -1}
                 />
                 ;
-              </Fragment>
-            ))}
-          </div>
-          <pre>
-            <code>{`}`}</code>
-          </pre>
-        </div>
-        <details className={css.details}>
-          <summary className={css.summary} tabIndex={isVisible ? 0 : -1}>
-            <pre>
-              <code>
-                {`void drawGrid() {`}
-                <span className={css.dots}>{`...`}</span>
-              </code>
-            </pre>
-          </summary>
-          <pre>
-            <code>{`    strokeWeight(1);
-    noFill();
-    stroke(200, 200, 200);
-    for (int col = 0; col < cols + 1; col++) {
-        line(col * u, 0, col * u, cols * u);
-    }
-    for (int row = 0; row < rows + 1; row++) {
-        line(0, row * u, rows * u, row * u);
-    }
-  }
-			`}</code>
-          </pre>
-        </details>
-      </div>
+              </Line>
+              {i < shapes.length - 1 && <Line num={num + 2} />}
+            </Fragment>
+          );
+        })}
+        <Line num={22}>}</Line>
+      </details>
+      <Line num={23} />
+      <details>
+        <summary tabIndex={isVisible ? 0 : -1}>
+          <Line num={24}>
+            <span className="hljs-keyword">void</span>
+            {` drawGrid() {`}
+            <Folded />
+          </Line>
+        </summary>
+        <Line num={25}>
+          {`  `}
+          <span className="hljs-built_in">strokeWeight</span>(1);
+        </Line>
+        <Line num={26}>
+          {`  `}
+          <span className="hljs-built_in">noFill</span>();
+        </Line>
+        <Line num={27}>
+          {`  `}
+          <span className="hljs-built_in">stroke</span>(200);
+        </Line>
+        <Line num={28}>
+          {`  `}
+          <span className="hljs-loop">for</span>(
+          <span className="hljs-datatype">int</span>{' '}
+          {`col = 0; col < 9; col++) {`})
+        </Line>
+        <Line num={29}>
+          {`    `}
+          <span className="hljs-built_in">line</span>
+          {`(col * u, 0, col * u, 8 * u);`}
+        </Line>
+        <Line num={30}>{`  }`}</Line>
+        <Line num={31}>
+          {`  `}
+          <span className="hljs-loop">for</span>(
+          <span className="hljs-datatype">int</span>{' '}
+          {`row = 0; row < 9; row++) {`})
+        </Line>
+        <Line num={32}>
+          {`    `}
+          <span className="hljs-built_in">line</span>
+          {`(0, row * u, 8 * u, row * u);`}
+        </Line>
+        <Line num={33}>{`  }`}</Line>
+        <Line num={34}>{`}`}</Line>
+      </details>
+      <Button
+        className={css.reset}
+        color="gray"
+        size="small"
+        onClick={onResetState}>
+        Reset
+      </Button>
+    </div>
+  );
+};
+
+const Line = ({ num, children }) => {
+  return (
+    <div className={css.line}>
+      <div className={css.num}>{num}</div>
+      <div className={css.code}>{children}</div>
+    </div>
+  );
+};
+
+const Folded = () => {
+  return (
+    <div className={css.folded}>
+      <span>···</span>
+      {`}`}
     </div>
   );
 };
