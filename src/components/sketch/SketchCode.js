@@ -23,6 +23,7 @@ const SketchCode = ({
 }) => {
   return (
     <div className={css.root}>
+      <div className={css.numBar}></div>
       <Line num={1}>
         <span className="hljs-datatype">int</span> u = 60;
       </Line>

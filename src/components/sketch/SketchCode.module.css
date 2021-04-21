@@ -11,6 +11,7 @@
   font-size: 14px;
   white-space: pre;
   user-select: none;
+  min-height: 600px;
 
   & h1 {
     font-family: var(--font);
@@ -25,6 +26,16 @@
   }
 }
 
+.numBar {
+  position: absolute;
+  left: 0px;
+  top: -1px;
+  bottom: -1px;
+  width: 30px;
+  background-color: var(--processing-blue-dark);
+  z-index: 0;
+}
+
 .root summary {
   list-style: none;
   cursor: pointer;
@@ -37,6 +48,8 @@
 }
 
 .line {
+  position: relative;
+  z-index: 1;
   display: flex;
 }
 
@@ -94,4 +107,10 @@
   position: absolute;
   top: 8px;
   right: 8px;
+}
+
+@media (--reduced) {
+  .root {
+    min-height: 400px;
+  }
 }
