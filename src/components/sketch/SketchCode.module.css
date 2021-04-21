@@ -1,4 +1,14 @@
-@import "../../styles/variables.css";
+@keyframes blink {
+  0% {
+    background-color: white;
+  }
+  50% {
+    background-color: #bee0ff;
+  }
+  100% {
+    background-color: white;
+  }
+}
 
 .root {
   position: relative;
@@ -94,6 +104,10 @@
   border-radius: 5px;
   transition: background-color 0.2s;
   cursor: pointer;
+}
+
+.blink .interactive {
+  animation: blink 2s ease-in infinite;
 }
 
 .line:hover .interactive {

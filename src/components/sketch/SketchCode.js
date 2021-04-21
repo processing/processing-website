@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { useState, Fragment } from 'react';
 import classnames from 'classnames';
 
 import Draggable from './Draggable';
@@ -21,8 +21,11 @@ const SketchCode = ({
   onChangeShape,
   onResetState
 }) => {
+  const [hasInteracted, setHasInteracted] = useState(false);
   return (
-    <div className={css.root}>
+    <div
+      className={classnames(css.root, { [css.blink]: !hasInteracted })}
+      onMouseEnter={() => setHasInteracted(true)}>
       <div className={css.numBar}></div>
       <Line num={1}>
         <span className="hljs-datatype">int</span> u = 60;
