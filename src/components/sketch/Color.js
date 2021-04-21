@@ -1,60 +1,72 @@
-import React, { useState } from 'react';
-import ColorDraggable from './ColorDraggable';
+import React, { memo } from 'react';
+import Draggable from './Draggable';
 import css from './Color.module.css';
-import { rgbToHex, hexToRgb } from '../../utils/editor';
+import { rgbToHex, hexToRgb } from '../../utils/sketch';
 
-const Color = (props) => {
-  const { shapes, shapesInx, tabIndex } = props;
-  const [colorClass, setColorClass] = useState(true);
-
-  const blurRest = (e, value) => {
-    setColorClass(!value);
+/**
+  We pass the shapeIndex to the component in order to be able to memo the handler
+  functions so the interactive sketch renders faster
+**/
+const Color = ({
+  color,
+  shapeIndex,
+  onChangeShape,
+  tabIndex,
+  draggableClassName
+}) => {
+  const handleChange = (idx, val) => {
+    const newColor = color.slice();
+    newColor[idx] = val;
+    onChangeShape(shapeIndex, 'color', newColor);
   };
 
+  const hex = rgbToHex(color);
+
   return (
-    <span className={colorClass ? css.root : css.blur}>
-      <ColorDraggable
-        onChange={props.onChange}
-        shape={shapes[shapesInx]}
-        shapesInx={shapesInx}
-        blurRest={blurRest}
-        colorInx={'r'}
+    <span>
+      <Draggable
+        className={draggableClassName}
+        onChange={handleChange}
+        min={0}
+        max={255}
+        index={0}
+        value={color[0]}
         tabIndex={tabIndex}
       />
       ,&nbsp;
-      <ColorDraggable
-        onChange={props.onChange}
-        shape={shapes[shapesInx]}
-        shapesInx={shapesInx}
-        blurRest={blurRest}
-        colorInx={'g'}
+      <Draggable
+        className={draggableClassName}
+        onChange={handleChange}
+        min={0}
+        max={255}
+        index={1}
+        value={color[1]}
         tabIndex={tabIndex}
       />
       ,&nbsp;
-      <ColorDraggable
-        onChange={props.onChange}
-        shape={shapes[shapesInx]}
-        shapesInx={shapesInx}
-        blurRest={blurRest}
-        colorInx={'b'}
+      <Draggable
+        className={draggableClassName}
+        onChange={handleChange}
+        min={0}
+        max={255}
+        index={2}
+        value={color[2]}
         tabIndex={tabIndex}
       />
-      <input
-        type="color"
-        className={css.color}
-        onChange={(e) =>
-          props.onChange(
-            e,
-            ['shapes', shapesInx, 'color'],
-            hexToRgb(e.target.value)
-          )
-        }
-        value={rgbToHex(shapes[shapesInx].color)}
-        aria-label="Choose color"
-        tabIndex={tabIndex}
-      />
+      <span className={css.colorPatch} style={{ backgroundColor: hex }}>
+        <input
+          type="color"
+          className={css.input}
+          value={hex}
+          aria-label="Choose color"
+          tabIndex={tabIndex}
+          onChange={(e) =>
+            onChangeShape(shapeIndex, 'color', hexToRgb(e.target.value))
+          }
+        />
+      </span>
     </span>
   );
 };
 
-export default Color;
+export default memo(Color);

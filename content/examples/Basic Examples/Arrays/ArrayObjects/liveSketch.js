@@ -69,7 +69,6 @@ function runLiveSketch(s) {
   };
 
   s.redrawWithProps = (props) => {
-    console.log(props);
     s.resizeCanvas(props.width, props.height);
     s.noStroke();
     wideCount = props.width / unit;

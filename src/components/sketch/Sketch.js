@@ -1,106 +1,111 @@
-import React, { useState, useMemo, Fragment } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 import SketchGraphic from './SketchGraphic';
 import SketchCode from './SketchCode';
-import { fromJS } from 'immutable';
-
-import { useWindowSize } from '../../hooks';
+import CoolButton from './CoolButton';
 
 import grid from '../../styles/grid.module.css';
 import css from './Sketch.module.css';
 
-const initialState = fromJS({
-  showGrid: false,
+const initialState = {
+  showGrid: true,
   width: 600,
   height: 600,
   unit: 60,
-  strokeWidth: 1.5,
+  strokeWeight: 1.5,
+  strokeCap: true,
   shapes: [
     {
-      type: true,
-      color: { r: 30, g: 42, b: 103 },
-      pos: [1, 1, 0, 0, 0, 0, 9, 7],
+      line: true,
+      color: [2, 81, 200],
+      pos: [1, 2, 4, 1, 5, 2, 7, 5],
       showHandlers: false,
-      dragging: null,
+      showPoint: null,
+      dragging: null
     },
     {
-      type: false,
-      color: { r: 2, g: 81, b: 200 },
-      pos: [7, 3, 8, 0, 1, 0, 5, 8],
+      color: [80, 139, 255],
+      pos: [1, 5, 4, 4, 2, 2, 4, 1],
       showHandlers: false,
-      dragging: null,
+      showPoint: null,
+      dragging: null
     },
     {
-      type: false,
-      color: { r: 80, g: 139, b: 255 },
-      pos: [1, 3, 3, 8, 5, 2, 9, 7],
+      line: true,
+      color: [30, 42, 103],
+      pos: [6, 1, 7, 3, 6, 6, 4, 7],
       showHandlers: false,
-      dragging: null,
-    },
-  ],
-});
+      showPoint: null,
+      dragging: null
+    }
+  ]
+};
 
-const Sketch = (props) => {
-  const [state, setState] = useState(initialState);
-  const [showCode, setShow] = useState(false);
-  const { width } = useWindowSize();
+const loadedState =
+  window.localStorage && window.localStorage.getItem('sketch');
+const parsedState = loadedState ? JSON.parse(loadedState) : initialState;
 
-  const changeStateHandler = (e, path, value) => {
-    setState((state) => state.setIn(path, value));
-  };
+const Sketch = ({ children }) => {
+  const [state, setState] = useState(parsedState);
+  const [showCode, setShowCode] = useState(false);
+  const intl = useIntl();
 
-  const handleClickOnSketch = (e) => {
-    e.stopPropagation();
-    setState((state) => state.setIn(['showCode'], !showCode ? true : false));
-    setShow((showCode) => !showCode);
-  };
+  // Sync state to local storage
+  useEffect(() => {
+    if (window.localStorage) {
+      window.localStorage.setItem('sketch', JSON.stringify(state));
+    }
+  }, [state]);
 
-  const handleMouseEnterShapeLine = (shapeIdx) => {
-    setState((state) =>
-      state.setIn(['shapes', shapeIdx, 'showHandlers'], true)
-    );
-  };
+  // Change handler for a simple attribute in state
+  const onChange = useCallback((key, value) => {
+    setState((oldState) => Object.assign({}, oldState, { [key]: value }));
+  }, []);
 
-  const handleMouseLeaveShapeLine = (shapeIdx) => {
-    setState((state) =>
-      state.setIn(['shapes', shapeIdx, 'showHandlers'], false)
-    );
-  };
+  // Change handler for attributes in a shape
+  const onChangeShape = useCallback((shapeIdx, key, value) => {
+    setState((oldState) => {
+      const newState = Object.assign({}, oldState);
+      newState.shapes = oldState.shapes.slice();
+      newState.shapes[shapeIdx] = Object.assign({}, newState.shapes[shapeIdx], {
+        [key]: value
+      });
+      return newState;
+    });
+  }, []);
 
-  const handleDraggingShapeStart = (shapeIdx, index) => {
-    setState((state) => state.setIn(['shapes', shapeIdx, 'dragging'], index));
-  };
+  const onCodeToggle = useCallback(() => {
+    setShowCode((show) => !show);
+  }, []);
 
-  const handleDraggingShapeEnd = (shapeIdx) => {
-    setState((state) => state.setIn(['shapes', shapeIdx, 'dragging'], null));
-  };
-
-  useMemo(() => {
-    setState((state) => state.setIn(['width'], width <= 960 ? 600 : 600));
-  }, [width]);
-
-  const stateJS = state.toJS();
+  // Change handler for a simple attribute in state
+  const onResetState = useCallback(() => {
+    setState(initialState);
+  }, []);
 
   return (
-    <div className={classnames(css.root, grid.nest, grid.col)}>
-      {width > 960 && (
-        <Fragment>
-          <SketchGraphic
-            onClick={handleClickOnSketch}
-            {...stateJS}
-            isVisible={showCode}
-          />
+    <div className={classnames(css.root, grid.grid)}>
+      <div className={classnames(grid.col, css.left)}>
+        <div className={css.splash}>{children}</div>
+        <div className={classnames(css.code, { [css.codeVisible]: showCode })}>
           <SketchCode
-            onChange={changeStateHandler}
+            onChange={onChange}
+            onChangeShape={onChangeShape}
+            onResetState={onResetState}
             isVisible={showCode}
-            {...stateJS}
-            onMouseEnterShape={handleMouseEnterShapeLine}
-            onMouseLeaveShape={handleMouseLeaveShapeLine}
-            onDraggingShapeStart={handleDraggingShapeStart}
-            onDraggingShapeEnd={handleDraggingShapeEnd}
+            {...state}
           />
-        </Fragment>
-      )}
+        </div>
+      </div>
+      <div className={classnames(grid.col, css.right)}>
+        <SketchGraphic {...state} />
+        <CoolButton onClick={onCodeToggle}>
+          {showCode
+            ? intl.formatMessage({ id: 'closeEditor' })
+            : intl.formatMessage({ id: 'openEditor' })}
+        </CoolButton>
+      </div>
     </div>
   );
 };
