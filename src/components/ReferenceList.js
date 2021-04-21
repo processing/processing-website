@@ -15,7 +15,7 @@ const ReferenceList = ({ tree, library }) => {
           <h2 className={classnames(css.categoryName, grid.col)} id={category}>
             {category}
           </h2>
-          <ul className={classnames(grid.col, grid.nest)}>
+          <div className={classnames(grid.col, grid.nest)}>
             {Object.keys(tree[category]).map((subcategory) => {
               return (
                 subcategory !== null && (
@@ -41,7 +41,7 @@ const ReferenceList = ({ tree, library }) => {
                 )
               );
             })}
-          </ul>
+          </div>
         </div>
       ))}
     </div>
