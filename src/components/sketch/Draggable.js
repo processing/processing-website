@@ -92,7 +92,7 @@ const Draggable = ({
       role={'button'}
       aria-label={'change position'}
       tabIndex={tabIndex}
-      className={classnames(css.root, className, {
+      className={classnames(className, css.root, {
         [css.dragging]: draggingInfo
       })}
       onMouseEnter={handleMouseEnter}

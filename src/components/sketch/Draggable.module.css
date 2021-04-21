@@ -2,5 +2,8 @@
 
 .root {
   display: inline-block;
+}
+
+.root:hover {
   cursor: ew-resize;
 }
