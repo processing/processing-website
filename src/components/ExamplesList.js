@@ -42,7 +42,7 @@ const ExamplesList = ({ tree }) => {
               ? intl.formatMessage({ id: 'topicExamples' })
               : intl.formatMessage({ id: 'basicExamples' })}
           </p>
-          <ul className={classnames(grid.col, grid.nest)}>
+          <div className={classnames(grid.col, grid.nest)}>
             {Object.keys(sortedTree[category]).map((subcategory) => (
               <div
                 key={`subcategory-${subcategory}`}
@@ -59,7 +59,7 @@ const ExamplesList = ({ tree }) => {
                 </ul>
               </div>
             ))}
-          </ul>
+          </div>
         </div>
       ))}
     </div>

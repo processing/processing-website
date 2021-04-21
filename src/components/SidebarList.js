@@ -15,7 +15,7 @@ const SidebarList = ({ tree, type }) => {
     <div className={css.root}>
       {Object.keys(tree).map((category) => (
         <SidebarGroup label={category} key={`label-category-${category}`}>
-          <ul>
+          <div>
             {Object.keys(tree[category]).map((subcategory) => (
               <SidebarGroup
                 label={subcategory}
@@ -39,7 +39,7 @@ const SidebarList = ({ tree, type }) => {
                 </ul>
               </SidebarGroup>
             ))}
-          </ul>
+          </div>
         </SidebarGroup>
       ))}
     </div>
