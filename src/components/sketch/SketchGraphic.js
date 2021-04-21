@@ -65,19 +65,17 @@ const SketchGraphic = (props) => {
                 />
                 {showHandlers && (
                   <Handler
-                    circle1State={
-                      dragging === 0 || dragging === 1
-                        ? 'dragging'
-                        : showPoint === 0 || showPoint === 1
-                        ? 'over'
-                        : null
+                    growCircle1={
+                      dragging === 0 ||
+                      dragging === 1 ||
+                      showPoint == 0 ||
+                      showPoint == 1
                     }
-                    circle2State={
-                      dragging === 6 || dragging === 7
-                        ? 'dragging'
-                        : showPoint === 6 || showPoint === 7
-                        ? 'over'
-                        : null
+                    growCircle2={
+                      dragging === 6 ||
+                      dragging === 7 ||
+                      showPoint === 6 ||
+                      showPoint === 7
                     }
                     x1={shape.pos[0]}
                     y1={shape.pos[1]}
@@ -107,19 +105,17 @@ const SketchGraphic = (props) => {
                   <g>
                     <Handler d={d} unit={unit} />
                     <Handler
-                      circle1State={
-                        dragging === 0 || dragging === 1
-                          ? 'dragging'
-                          : showPoint === 0 || showPoint === 1
-                          ? 'over'
-                          : null
+                      growCircle1={
+                        dragging === 0 ||
+                        dragging === 1 ||
+                        showPoint === 0 ||
+                        showPoint === 1
                       }
-                      circle2State={
-                        dragging === 2 || dragging === 3
-                          ? 'dragging'
-                          : showPoint === 2 || showPoint === 3
-                          ? 'over'
-                          : null
+                      growCircle2={
+                        dragging === 2 ||
+                        dragging === 3 ||
+                        showPoint === 2 ||
+                        showPoint === 3
                       }
                       x1={shape.pos[0]}
                       y1={shape.pos[1]}
@@ -128,19 +124,17 @@ const SketchGraphic = (props) => {
                       unit={unit}
                     />
                     <Handler
-                      circle1State={
-                        dragging === 6 || dragging === 7
-                          ? 'dragging'
-                          : showPoint === 6 || showPoint === 7
-                          ? 'over'
-                          : null
+                      growCircle1={
+                        dragging === 6 ||
+                        dragging === 7 ||
+                        showPoint === 6 ||
+                        showPoint === 7
                       }
-                      circle2State={
-                        dragging === 4 || dragging === 5
-                          ? 'dragging'
-                          : showPoint === 4 || showPoint === 5
-                          ? 'over'
-                          : null
+                      growCircle2={
+                        dragging === 4 ||
+                        dragging === 5 ||
+                        showPoint === 4 ||
+                        showPoint === 5
                       }
                       x1={shape.pos[6]}
                       y1={shape.pos[7]}
@@ -160,7 +154,7 @@ const SketchGraphic = (props) => {
 };
 
 const Handler = memo(
-  ({ x1, y1, x2, y2, d, unit, circle1State, circle2State }) => {
+  ({ x1, y1, x2, y2, d, unit, growCircle1, growCircle2 }) => {
     return (
       <g>
         {d && <path d={d} className={css.handlerLine} />}
@@ -177,8 +171,8 @@ const Handler = memo(
           <circle
             cx={x1 * unit}
             cy={y1 * unit}
-            r={circle1State ? 7 : 4}
-            stroke={circle1State ? '#FEEF6B' : null}
+            r={growCircle1 ? 7 : 4}
+            stroke={growCircle1 ? '#FEEF6B' : null}
             className={css.handlerCircle}
           />
         )}
@@ -186,8 +180,8 @@ const Handler = memo(
           <circle
             cx={x2 * unit}
             cy={y2 * unit}
-            r={circle2State ? 7 : 4}
-            stroke={circle2State ? '#FEEF6B' : null}
+            r={growCircle2 ? 7 : 4}
+            stroke={growCircle2 ? '#FEEF6B' : null}
             className={css.handlerCircle}
           />
         )}
