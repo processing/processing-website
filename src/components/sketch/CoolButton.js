@@ -1,4 +1,4 @@
-import React, { useState, useEffect, memo } from 'react';
+import React, { memo } from 'react';
 import Button from '../Button';
 import css from './CoolButton.module.css';
 

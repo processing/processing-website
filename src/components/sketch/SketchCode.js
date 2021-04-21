@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, memo } from 'react';
+import React, { Fragment } from 'react';
 import classnames from 'classnames';
 
 import Draggable from './Draggable';

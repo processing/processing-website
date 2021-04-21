@@ -1,5 +1,5 @@
 import React, { useState, useEffect, memo } from 'react';
-import { scale, round } from '../../utils/sketch';
+import { round } from '../../utils/sketch';
 import { map } from '../../utils';
 import classnames from 'classnames';
 import css from './Draggable.module.css';
@@ -57,7 +57,7 @@ const Draggable = ({
         document.removeEventListener('mousemove', handleMouseMove);
       };
     }
-  }, [draggingInfo, index, isInteger, onDraggingEnd, min, max]);
+  }, [draggingInfo, index, isInteger, onChange, onDraggingEnd, min, max]);
 
   const registerMove = (e) => {
     const ratio = (value - min) / (max - min);

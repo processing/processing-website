@@ -1,4 +1,4 @@
-import React, { useState, useCallback, memo } from 'react';
+import React, { memo } from 'react';
 import Draggable from './Draggable';
 import css from './Color.module.css';
 import { rgbToHex, hexToRgb } from '../../utils/sketch';

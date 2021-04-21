@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  useMemo,
-  Fragment,
-  useCallback
-} from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 import SketchGraphic from './SketchGraphic';
@@ -105,7 +99,7 @@ const Sketch = ({ children }) => {
         </div>
       </div>
       <div className={classnames(grid.col, css.right)}>
-        <SketchGraphic isCodeVisible={showCode} {...state} />
+        <SketchGraphic {...state} />
         <CoolButton onClick={onCodeToggle}>
           {showCode
             ? intl.formatMessage({ id: 'closeEditor' })

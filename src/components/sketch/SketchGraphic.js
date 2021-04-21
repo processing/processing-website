@@ -1,20 +1,8 @@
-import React, { Fragment, useState, useMemo, memo } from 'react';
-import classnames from 'classnames';
-
-import Button from '../Button';
-
+import React, { Fragment, useMemo, memo } from 'react';
 import css from './SketchGraphic.module.css';
 
 const SketchGraphic = (props) => {
-  const {
-    showGrid,
-    width,
-    height,
-    shapes,
-    strokeWeight,
-    strokeCap,
-    isCodeVisible
-  } = props;
+  const { showGrid, width, height, shapes, strokeWeight, strokeCap } = props;
 
   // -2 in order to make the grid fully visible in the SVG
   const unit = (width - 2) / 8;
@@ -68,8 +56,8 @@ const SketchGraphic = (props) => {
                     growCircle1={
                       dragging === 0 ||
                       dragging === 1 ||
-                      showPoint == 0 ||
-                      showPoint == 1
+                      showPoint === 0 ||
+                      showPoint === 1
                     }
                     growCircle2={
                       dragging === 6 ||
