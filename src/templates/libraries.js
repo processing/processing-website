@@ -52,9 +52,9 @@ export const query = graphql`
     ) {
       nodes {
         name
-        relativeDirectory
         childJson {
           name
+          brief
           category
           subcategory
         }
