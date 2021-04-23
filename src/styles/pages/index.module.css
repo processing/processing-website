@@ -197,27 +197,11 @@
   display: inline-flex;
   flex: 1;
   align-items: flex-end;
-
-  @media (--medium) {
-    margin-bottom: var(--vertical-gutter);
-  }
-
-  @media (--small) {
-    align-self: center;
-  }
 }
 
 .contributeButtton {
   margin-top: var(--gutter);
   display: inline-flex;
-
-  @media (--medium) {
-    margin-bottom: var(--vertical-gutter);
-  }
-
-  @media (--small) {
-    align-self: center;
-  }
 }
 
 .externalLinks {
@@ -232,22 +216,10 @@
       color: var(--processing-blue-mid);
     }
   }
-
-  @media (--small) {
-    margin-bottom: var(--vertical-gutter);
-
-    & ul {
-      columns: 1;
-    }
-  }
 }
 
 .partnersContainer {
   overflow-x: hidden;
-
-  @media (--small) {
-    margin-bottom: var(--vertical-gutter);
-  }
 }
 
 .partners {
@@ -270,26 +242,6 @@
       width: 60px;
     }
   }
-}
-
-.announcementSection {
-  @media (--small) {
-    flex-direction: column-reverse;
-    padding-top: 0;
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-.announcementImg {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.announcementCover {
-  margin-top: calc(-1 * var(--margin));
-  margin-bottom: calc(-1 * var(--margin));
 }
 
 @media (--large) {
@@ -329,19 +281,6 @@
     & a {
       margin: auto;
     }
-  }
-
-  .announcement {
-    padding-top: var(--margin);
-    padding-left: calc(var(--margin) + var(--gutter));
-    padding-right: calc(var(--margin) + var(--gutter));
-  }
-
-  .announcementCover {
-    padding-left: 0;
-    padding-right: 0;
-    margin-top: 0px;
-    margin-bottom: 0px;
   }
 
   .cardGrid {
@@ -394,6 +333,10 @@
       border-top-width: 8px;
     }
   }
+
+  .participateButtton, .contributeButtton {
+    margin-bottom: var(--vertical-gutter);
+  }
 }
 
 @media (--reduced) {
@@ -410,13 +353,6 @@
     padding-right: calc(var(--margin) + var(--gutter));
     padding-top: var(--margin);
     justify-content: space-around;
-  }
-
-  .announcementCover {
-    padding-left: 0;
-    padding-right: 0;
-    margin-top: 0px;
-    margin-bottom: 0px;
   }
 
   .example {
@@ -527,13 +463,6 @@
     }
   }
 
-  .announcementCover {
-    padding-left: 0;
-    padding-right: 0;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
   .cardGrid {
     height: auto;
     flex-basis: auto;
@@ -564,5 +493,21 @@
 
   .card {
     height: auto;
+  }
+
+  .participateButtton, .contributeButtton {
+    align-self: center;
+  }
+
+  .externalLinks {
+    margin-bottom: var(--vertical-gutter);
+
+    & ul {
+      columns: 1;
+    }
+  }
+
+  .partnersContainer {
+    margin-bottom: var(--vertical-gutter);
   }
 }
