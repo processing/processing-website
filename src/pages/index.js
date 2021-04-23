@@ -17,35 +17,6 @@ import { usePreparedExamples } from '../hooks/examples';
 import css from '../styles/pages/index.module.css';
 import grid from '../styles/grid.module.css';
 
-//the name values are used to get the value from the intl files
-//it is not the name that is displayed
-export const items = [
-  {
-    name: 'forum',
-    link: 'https://discourse.processing.org/',
-  },
-  {
-    name: 'github',
-    link: 'https://github.com/processing',
-  },
-  {
-    name: 'issues',
-    link: 'https://github.com/processing/processing/issues?state=open',
-  },
-  {
-    name: 'wiki',
-    link: 'https://github.com/processing/processing/wiki/',
-  },
-  {
-    name: 'faq',
-    link: 'https://github.com/processing/processing/wiki/FAQ',
-  },
-  {
-    name: 'medium',
-    link: 'https://medium.com/@ProcessingOrg',
-  },
-];
-
 const IndexPage = ({ data }) => {
   const intl = useIntl();
   const { locale } = useLocalization();
@@ -93,7 +64,7 @@ const IndexPage = ({ data }) => {
           <div>
             <p
               dangerouslySetInnerHTML={{
-                __html: intl.formatMessage({ id: 'gettingStartedP1' }),
+                __html: intl.formatMessage({ id: 'gettingStartedP1' })
               }}></p>
           </div>
         </div>
@@ -136,7 +107,22 @@ const IndexPage = ({ data }) => {
       </div>
       <div className={css.sectionDivider} />
       <div className={classnames(grid.grid, css.section)}>
-        <div className={classnames(grid.col, css.half)}>
+        <div className={classnames(grid.col, css.half, css.participate)}>
+          <h2>{intl.formatMessage({ id: 'participate' })}</h2>
+          <div>
+            <p>{intl.formatMessage({ id: 'participateP1' })}</p>
+          </div>
+          <div className={css.participateButtton}>
+            <Button
+              href={
+                'https://processingfoundation.org/advocacy/processing-community-day-2020'
+              }
+              size="large">
+              {intl.formatMessage({ id: 'buttonParticipate' })}
+            </Button>
+          </div>
+        </div>
+        <div className={classnames(grid.col, css.half, css.participate)}>
           <h2>{intl.formatMessage({ id: 'contribute' })}</h2>
           <div>
             <p>{intl.formatMessage({ id: 'contributeP1' })}</p>
@@ -157,13 +143,40 @@ const IndexPage = ({ data }) => {
             </p>
           </div>
           <div className={css.contributeButtton}>
-            <Button
-              href={'https://github.com/processing'}
-              size="large"
-              className={css.gettingStartedButton}>
+            <Button href={'https://github.com/processing'} size="large">
               {intl.formatMessage({ id: 'buttonContribute' })}
             </Button>
           </div>
+        </div>
+      </div>
+      <div className={css.sectionDivider} />
+      <div className={classnames(grid.grid, css.section)}>
+        <div className={classnames(css.half, grid.col, css.externalLinks)}>
+          <h2>{intl.formatMessage({ id: 'externalLinks' })}</h2>
+          <ul>
+            <li>
+              <a href="https://www.creativeapplications.net/category/processing/">
+                Creative Applications
+              </a>
+            </li>
+            <li>
+              <a href="https://openprocessing.org/">OpenProcessing</a>
+            </li>
+            <li>
+              <a href="https://fyprocessing.tumblr.com/">For your Processing</a>
+            </li>
+            <li>
+              <a href="https://www.reddit.com/r/processing/">
+                Processing Subreddit
+              </a>
+            </li>
+            <li>
+              <a href="https://vimeo.com/groups/processing">Vimeo</a>
+            </li>
+            <li>
+              <a href="http://sketchpad.cc/">Studio Sketchpad</a>
+            </li>
+          </ul>
         </div>
         <div className={classnames(grid.col, css.half, css.partnersContainer)}>
           <h2>{intl.formatMessage({ id: 'partners' })}</h2>
@@ -187,37 +200,6 @@ const IndexPage = ({ data }) => {
               <p>UCLA Design Media Arts</p>
             </li>
           </ul>
-        </div>
-      </div>
-      <div className={css.sectionDivider} />
-      <div
-        className={classnames(
-          grid.grid,
-          css.section,
-          grid.rightBleed,
-          grid.bleedMedium,
-          css.announcementSection
-        )}>
-        <div className={classnames(css.half, grid.col, css.announcement)}>
-          <h2>{intl.formatMessage({ id: 'announcement' })}</h2>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: intl.formatMessage({ id: 'announcementText' }),
-            }}
-          />
-        </div>
-        <div
-          className={classnames(
-            css.half,
-            grid.col,
-            grid.rightBleed,
-            css.announcementCover
-          )}>
-          <img
-            src={data.news.childImageSharp.fluid.src}
-            alt=""
-            className={css.announcementImg}
-          />
         </div>
       </div>
       <div className={css.sectionDivider} />
