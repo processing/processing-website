@@ -8,6 +8,7 @@ import { MDXProvider } from '@mdx-js/react';
 import Header from './Header';
 import Footer from './Footer';
 
+import Column from './mdx/Column';
 import FixedImage from './mdx/FixedImage';
 import Intro from './mdx/Intro';
 import H2 from './mdx/H2';
@@ -59,6 +60,7 @@ const Layout = ({ children, isHomepage, withSidebar }) => {
 
   const shortcodes = useMemo(
     () => ({
+      Column,
       FixedImage,
       Intro,
       HighlightBlock,

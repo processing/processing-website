@@ -113,6 +113,28 @@ p code {
   margin: 0;
 }
 
+hr {
+  margin: var(--vertical-gutter) 0;
+  border: 1px solid var(--lightgray);
+}
+
+thead {
+  text-align: left;
+}
+
+table {
+  margin-bottom: var(--vertical-gutter);
+}
+
+tbody tr {
+  border-top: 1px solid var(--lightgray);
+}
+
+tr td {
+  padding: 6px 0;
+  padding-right: 20px;
+}
+
 input,
 select,
 button {
