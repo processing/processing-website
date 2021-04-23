@@ -1,28 +1,19 @@
-@import "../../styles/variables.css";
-
 .root {
-  margin: auto;
-  width: var(--col4);
-  height: auto;
-  position: relative;
-  z-index: 200;
-
-  & svg {
-    position: absolute;
-    max-width: 100%;
-  }
+  max-width: 600px;
 }
 
-.ui {
-  position: absolute;
-  z-index: 200;
-  bottom: 0;
-  right: 0;
-  padding: var(--margin-quarter);
-  opacity: 0;
-  transition: opacity 0.4s ease;
+.grid {
+  fill: none;
+  stroke: rgba(80, 139, 255, 0.2);
 }
 
-.show {
-  opacity: 1;
+.handlerLine {
+  fill: none;
+  stroke: black;
+  stroke-dasharray: 4;
+}
+
+.handlerCircle {
+  fill: black;
+  stroke-width: 2;
 }

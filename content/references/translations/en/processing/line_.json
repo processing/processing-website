@@ -1,5 +1,5 @@
 {
-  "brief": "Draws a line (a direct path between two points) to the screen.",
+  "brief": "Draws a line (a direct path between two points) to the screen",
   "related": ["strokeWeight_", "strokeJoin_", "strokeCap_", "beginShape_"],
   "name": "line()",
   "description": "Draws a line (a direct path between two points) to the screen. The\n version of <b>line()</b> with four parameters draws the line in 2D.  To\n color a line, use the <b>stroke()</b> function. A line cannot be filled,\n therefore the <b>fill()</b> function will not affect the color of a\n line. 2D lines are drawn with a width of one pixel by default, but this\n can be changed with the <b>strokeWeight()</b> function. The version with\n six parameters allows the line to be placed anywhere within XYZ space.\n Drawing this shape in 3D with the <b>z</b> parameter requires the P3D\n parameter in combination with <b>size()</b> as shown in the above example.",

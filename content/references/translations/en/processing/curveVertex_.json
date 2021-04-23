@@ -1,5 +1,5 @@
 {
-  "brief": "Specifies vertex coordinates for curves.",
+  "brief": "Specifies vertex coordinates for curves",
   "related": [
     "curve_",
     "beginShape_",

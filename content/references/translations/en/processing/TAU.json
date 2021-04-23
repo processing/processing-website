@@ -1,10 +1,9 @@
 {
-  "brief": "An alias for TWO_PI",
+  "brief": "An alias for <b>TWO_PI</b>",
   "related": ["PI", "TWO_PI", "HALF_PI", "QUARTER_PI"],
-  "classname": "",
   "name": "TAU",
   "description": "<b>TAU</b> is a mathematical constant with the value 6.2831855. It is the\n circle constant relating the circumference of a circle to its linear\n dimension, the ratio of the circumference of a circle to its radius. It is\n useful in combination with trigonometric functions such as <b>sin()</b> and\n <b>cos()</b>.",
-  "type": "field",
   "category": "constants",
-  "subcategory": ""
+  "subcategory": "",
+  "type": "other"
 }

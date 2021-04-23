@@ -2,7 +2,7 @@
   "brief": "Sets the element's name",
   "related": [],
   "name": "setName()",
-  "description": "Sets the element's name, which is specified as a String.",
+  "description": "Sets the element's name, which is specified as a <b>String</b>.",
   "syntax": [".setName(newName)"],
   "returns": "void",
   "type": "method",

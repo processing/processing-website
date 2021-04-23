@@ -1,0 +1,9 @@
+{
+  "name": "On Off",
+  "title": "On/Off",
+  "author": "",
+  "level": "Intermediate",
+  "order": "0",
+  "description": "Uses the default lights to show a simple box. The lights() function\n  is used to turn on the default lighting. Click the mouse to turn the\n  lights off.",
+  "featured": ["lights_"]
+}

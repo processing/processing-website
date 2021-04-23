@@ -1,4 +1,4 @@
-size(100, 100, P3D);
+size(400, 400, P3D);
 noFill();
 
 beginCamera();
@@ -6,6 +6,7 @@ camera();
 rotateX(-PI/6);
 endCamera();
 
-translate(50, 50, 0);
+translate(200, 200, 0);
 rotateY(PI/3);
-box(45);
+box(180);
+

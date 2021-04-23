@@ -1,5 +1,5 @@
 {
-  "brief": "Draws a curved line on the screen.",
+  "brief": "Draws a curved line on the screen",
   "related": [
     "PGraphics_curveVertex_",
     "PGraphics_curveTightness_",

@@ -1,0 +1,186 @@
+.root {
+  & > h1 {
+    flex-basis: var(--col8);
+  }
+  & > h3 {
+    flex-basis: var(--col8);
+    padding-right: var(--col4);
+  }
+  & > p {
+    flex-basis: var(--col5);
+  }
+}
+
+.latestVersionsWrapper {
+  display: inline-flex;
+  flex-basis: var(--col4);
+}
+
+.latestVersion {
+  flex-basis: var(--col4);
+  color: var(--processing-blue-dark);
+  &:hover {
+    color: var(--processing-blue-light);
+    & .latestVersionBit {
+      color: inherit;
+    }
+  }
+
+  & h3 {
+    display: inline;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+}
+
+.latestLabel {
+  flex-basis: var(--col8);
+}
+
+.section {
+  margin: var(--gutter-double) 0;
+  flex-basis: var(--col8);
+  align-items: self-start;
+}
+
+.logo {
+  text-align: center;
+  flex-basis: var(--col1);
+  & svg {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+.latestNumber {
+  font-weight: bold;
+}
+
+.latestDate {
+  margin-left: 5px;
+  font-size: var(--text-xsmall);
+  color: var(--darkergray);
+}
+
+.latestVersionName {
+  font-size: var(--text-large);
+  font-weight: 700;
+}
+
+.latestVersionBit {
+  padding-left: 0.3rem;
+  font-size: var(--text-xsmall);
+  font-weight: normal;
+  color: var(--black);
+}
+
+.sectionList {
+  flex-basis: var(--col8);
+  padding: var(--gutter) 0 var(--gutter-double);
+}
+
+.releaseList {
+  width: 100%;
+  font-size: var(--text-small);
+}
+
+.releaseRow {
+  display: flex;
+  padding-bottom: 6px;
+
+  & a {
+    color: var(--processing-blue-mid);
+  }
+}
+
+.releaseName {
+  flex-basis: var(--col1);
+  color: var(--darkergray);
+}
+
+.releaseDate {
+  font-size: var(--text-xsmall);
+  flex-basis: var(--col2);
+}
+
+.releaseAssets {
+  flex-basis: var(--col4);
+}
+
+.assetLabel {
+  white-space: nowrap;
+}
+
+.assetSeparator {
+  padding: 0 4px;
+}
+
+.links {
+  margin: var(--vertical-gutter) 0;
+  border-left: solid 7px var(--lightgray);
+  color: var(--processing-blue-dark);
+  font-weight: 700;
+}
+
+@media (--small) {
+  .root {
+    & > h1 {
+      padding-top: var(--vertical-gutter);
+    }
+    & > h3 {
+      padding-right: 0;
+      flex-basis: var(--col8);
+    }
+
+    & > p {
+      flex-basis: var(--col8);
+    }
+  }
+
+  .latestVersionsWrapper {
+    & > h1 {
+      padding-top: var(--vertical-gutter);
+    }
+    & > h3 {
+      padding-right: 0;
+      flex-basis: var(--col8);
+    }
+
+    & > p {
+      flex-basis: var(--col8);
+    }
+  }
+
+  .logo {
+    flex-basis: var(--col3);
+    padding-right: var(--col1);
+
+    & h3 {
+      font-size: var(--text-regular);
+    }
+
+    & svg {
+      width: 70px;
+      height: 70px;
+    }
+  }
+
+  .releaseRow {
+    flex-wrap: wrap;
+  }
+
+  .releaseName {
+    flex-basis: var(--col2);
+  }
+
+  .releaseDate {
+    flex-basis: var(--col6);
+  }
+
+  .releaseAssets {
+    flex-basis: var(--col8);
+    padding-left: var(--push2);
+  }
+}

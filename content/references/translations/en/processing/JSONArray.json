@@ -1,5 +1,5 @@
 {
-  "brief": "A JSONArray is an ordered sequence of values.",
+  "brief": "A JSONArray is an ordered sequence of values",
   "methods": [
     {
       "anchor": "JSONArray_getString_",
@@ -9,37 +9,37 @@
     {
       "anchor": "JSONArray_getInt_",
       "name": "getInt()",
-      "desc": "Gets the int value associated with the specified index."
+      "desc": "Gets the int value associated with the specified index"
     },
     {
       "anchor": "JSONArray_getFloat_",
       "name": "getFloat()",
-      "desc": "Gets the float value associated with the specified index."
+      "desc": "Gets the float value associated with the specified index"
     },
     {
       "anchor": "JSONArray_getBoolean_",
       "name": "getBoolean()",
-      "desc": "Gets the boolean value associated with the specified index."
+      "desc": "Gets the boolean value associated with the specified index"
     },
     {
       "anchor": "JSONArray_getJSONArray_",
       "name": "getJSONArray()",
-      "desc": "Retrieves the <b>JSONArray</b> with the associated index value."
+      "desc": "Retrieves the <b>JSONArray</b> with the associated index value"
     },
     {
       "anchor": "JSONArray_getJSONObject_",
       "name": "getJSONObject()",
-      "desc": "Retrieves the <b>JSONObject</b> with the associated index value."
+      "desc": "Retrieves the <b>JSONObject</b> with the associated index value"
     },
     {
       "anchor": "JSONArray_getStringArray_",
       "name": "getStringArray()",
-      "desc": "Returns the entire <b>JSONArray</b> as an array of Strings"
+      "desc": "Returns the entire <b>JSONArray</b> as an array of <b>Strings</b>"
     },
     {
       "anchor": "JSONArray_getIntArray_",
       "name": "getIntArray()",
-      "desc": "Returns the entire <b>JSONArray</b> as an array of ints"
+      "desc": "Returns the entire <b>JSONArray</b> as an array of <b>ints</b>"
     },
     {
       "anchor": "JSONArray_append_",
@@ -49,7 +49,7 @@
     {
       "anchor": "JSONArray_setString_",
       "name": "setString()",
-      "desc": "Inserts a new value into the <b>JSONArray</b> at the specified index position."
+      "desc": "Inserts a new value into the <b>JSONArray</b> at the specified index position"
     },
     {
       "anchor": "JSONArray_setInt_",
@@ -95,9 +95,9 @@
   "csspath": "../../",
   "isLibrary": "true",
   "classFields": [],
-  "description": "A <b>JSONArray</b> stores an array of JSON objects. <b>JSONArray</b>s can \n be generated from scratch, dynamically, or using data from an existing file.  \n JSON can also be output and saved to disk, as in the example above.\n \n A JSONArray is an ordered sequence of values. Its external text form is a\n string wrapped in square brackets with commas separating the values. The\n internal form is an object having <code>get</code> and <code>opt</code>\n methods for accessing the values by index, and <code>put</code> methods for\n adding or replacing values. The values can be any of these types:\n <code>Boolean</code>, <code>JSONArray</code>, <code>JSONObject</code>,\n <code>Number</code>, <code>String</code>, or the\n <code>JSONObject.NULL object</code>.\n <p>\n The constructor can convert a JSON text into a Java object. The\n <code>toString</code> method converts to JSON text.\n <p>\n A <code>get</code> method returns a value if one can be found, and throws an\n exception if one cannot be found. An <code>opt</code> method returns a\n default value instead of throwing an exception, and so is useful for\n obtaining optional values.\n <p>\n The generic <code>get()</code> and <code>opt()</code> methods return an\n object which you can cast or query for type. There are also typed\n <code>get</code> and <code>opt</code> methods that do type checking and type\n coercion for you.\n <p>\n The texts produced by the <code>toString</code> methods strictly conform to\n JSON syntax rules. The constructors are more forgiving in the texts they will\n accept:\n <ul>\n <li>An extra <code>,</code>&nbsp;<small>(comma)</small> may appear just\n before the closing bracket.</li>\n <li>The <code>null</code> value will be inserted when there is <code>,</code>\n &nbsp;<small>(comma)</small> elision.</li>\n <li>Strings may be quoted with <code>'</code>&nbsp;<small>(single\n quote)</small>.</li>\n <li>Strings do not need to be quoted at all if they do not begin with a quote\n or single quote, and if they do not contain leading or trailing spaces, and\n if they do not contain any of these characters:\n <code>{ } [ ] / \\ : , = ; #</code> and if they do not look like numbers and\n if they are not the reserved words <code>true</code>, <code>false</code>, or\n <code>null</code>.</li>\n <li>Values can be separated by <code>;</code> <small>(semicolon)</small> as\n well as by <code>,</code> <small>(comma)</small>.</li>\n </ul>",
+  "description": "A <b>JSONArray</b> stores an array of JSON objects. <b>JSONArray</b>s can \n be generated from scratch, dynamically, or using data from an existing file.  \n JSON can also be output and saved to disk, as in the example above.\n \n ",
   "type": "class",
-  "constructors": ["JSONArray("],
+  "constructors": ["JSONArray()"],
   "related": [
     "JSONObject",
     "loadJSONObject_",

@@ -1,7 +1,0 @@
-{
-  "name": "Histogram",
-  "title": "Histogram",
-  "author": "",
-  "description": "Calculates the histogram of an image. \n  A histogram is the frequency distribution \n  of the gray levels with the number of pure black values\n  displayed on the left and number of pure white values on the right. \n\n  Note that this sketch will behave differently on Android, \n  since most images will no longer be full 24-bit color.",
-  "featured": []
-}

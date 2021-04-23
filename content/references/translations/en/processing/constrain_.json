@@ -1,5 +1,5 @@
 {
-  "brief": "Constrains a value to not exceed a maximum and minimum value.",
+  "brief": "Constrains a value to not exceed a maximum and minimum value",
   "related": ["max_", "min_"],
   "name": "constrain()",
   "description": "Constrains a value to not exceed a maximum and minimum value.",

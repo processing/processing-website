@@ -1,8 +1,8 @@
 {
-  "brief": "Converts String content to an XML object",
+  "brief": "Converts String content to an <b>XML</b> object",
   "related": ["XML", "loadXML_", "saveXML_"],
   "name": "parseXML()",
-  "description": "Takes a String, parses its contents, and returns an XML object. If the\n String does not contain XML data or cannot be parsed, a null value is\n returned.<br />\n <br />\n <b>parseXML()</b> is most useful when pulling data dynamically, such as\n from third-party APIs. Normally, API results would be saved to a String,\n and then can be converted to a structured XML object using\n <b>parseXML()</b>. Be sure to check if null is returned before performing\n operations on the new XML object, in case the String content could not be\n parsed.<br />\n <br />\n If your data already exists as an XML file in the data folder, it is\n simpler to use <b>loadXML()</b>.",
+  "description": "Takes a String, parses its contents, and returns an XML object. If the\n String does not contain XML data or cannot be parsed, a <b>null</b> value is\n returned.<br />\n <br />\n <b>parseXML()</b> is most useful when pulling data dynamically, such as\n from third-party APIs. Normally, API results would be saved to a String,\n and then can be converted to a structured XML object using\n <b>parseXML()</b>. Be sure to check if <b>null</b> is returned before performing\n operations on the new XML object, in case the String content could not be\n parsed.<br />\n <br />\n If your data already exists as an XML file in the data folder, it is\n simpler to use <b>loadXML()</b>.",
   "syntax": ["parseXML(xmlString)", "parseXML(xmlString, options)"],
   "returns": "XML",
   "type": "function",

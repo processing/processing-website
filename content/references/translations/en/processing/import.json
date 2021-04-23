@@ -1,1 +1,18 @@
-{"name":"import","brief":"The keyword <b>import</b> is used to load a library into a Processing sketch","description":"The keyword <b>import</b> is used to load a library into a Processing sketch. \nA library is one or more classes that are grouped together to extend the capabilities of Processing. \nThe <b>*</b> character is often used at the end of the import line (see the code example above)\nto load all of the related classes at once, without having to reference them individually.<br />\n<br />\nThe import statement will be created for you by selecting a library from the \"Import Library...\" \nitem in the Sketch menu.\n","related":[],"syntax":["import libraryName"],"returns":"","type":"function","category":"structure","subcategory":"","parameters":[{"name":"libraryName","description":"the name of the library to load (e.g. \"processing.pdf.*\")","type":[]}]}
+{
+  "name": "import",
+  "brief": "The keyword <b>import</b> is used to load a library into a Processing sketch",
+  "description": "The keyword <b>import</b> is used to load a library into a Processing sketch. \nA library is one or more classes that are grouped together to extend the capabilities of Processing. \nThe <b>*</b> character is often used at the end of the import line (see the code example above)\nto load all of the related classes at once, without having to reference them individually.<br />\n<br />\nThe import statement will be created for you by selecting a library from the \"Import Library...\" \nitem in the Sketch menu.\n",
+  "related": [],
+  "syntax": ["import libraryName"],
+  "returns": "",
+  "type": "function",
+  "category": "structure",
+  "subcategory": "",
+  "parameters": [
+    {
+      "name": "libraryName",
+      "description": "the name of the library to load (e.g. \"processing.pdf.*\")",
+      "type": []
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Continuous Lines",
+  "title": "Continuous Lines",
+  "author": "",
+  "level": "Beginner",
+  "order": "0",
+  "description": "Click and drag the mouse to draw a line.",
+  "featured": ["mouseX", "mouseY", "pmouseX", "pmouseY", "mousePressed", "line_" ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Noise Wave",
+  "title": "Noise Wave",
+  "author": "Daniel Shiffman",
+  "level": "Intermediate",
+  "order": "19",
+  "description": "Using Perlin Noise to generate a wave-like pattern.",
+  "featured": ["noise_"]
+}

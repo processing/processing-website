@@ -1,8 +1,8 @@
 {
-  "brief": "Restores the default shaders.",
+  "brief": "Restores the default shaders",
   "related": [],
   "name": "resetShader()",
-  "description": "Restores the default shaders. Code that runs after <b>resetShader()</b> \n will not be affected by previously defined shaders.",
+  "description": "Restores the default shaders. Code that runs after <b>resetShader()</b>\n will not be affected by previously defined shaders.",
   "syntax": ["resetShader()", "resetShader(kind)"],
   "returns": "void",
   "type": "function",

@@ -1,5 +1,5 @@
 {
-  "brief": "Disables the clipping previously started by the <b>clip()</b> function.",
+  "brief": "Disables the clipping previously started by the <b>clip()</b> function",
   "related": [],
   "name": "noClip()",
   "description": "Disables the clipping previously started by the <b>clip()</b> function.",

@@ -1,0 +1,9 @@
+{
+  "name": "Load and Display",
+  "title": "Load and Display",
+  "author": "",
+  "level": "Beginner",
+  "order": "0",
+  "description": "Images can be loaded and displayed to the screen at their actual size or any other size.",
+  "featured": ["loadImage_", "image_", "PImage"]
+}

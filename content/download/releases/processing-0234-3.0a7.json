@@ -1,0 +1,39 @@
+{
+  "name": "Processing 3.0a7",
+  "tagName": "processing-0234-3.0a7",
+  "publishedAt": "2015-04-27T02:07:35Z",
+  "releaseAssets": {
+    "edges": [
+      {
+        "node": {
+          "name": "processing-3.0a7-macosx.zip",
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0234-3.0a7/processing-3.0a7-macosx.zip"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-3.0a7-windows32.zip",
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0234-3.0a7/processing-3.0a7-windows32.zip"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-3.0a7-windows64.zip",
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0234-3.0a7/processing-3.0a7-windows64.zip"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-3.0a7-linux32.tgz",
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0234-3.0a7/processing-3.0a7-linux32.tgz"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-3.0a7-linux64.tgz",
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0234-3.0a7/processing-3.0a7-linux64.tgz"
+        }
+      }
+    ]
+  }
+}

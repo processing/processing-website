@@ -1,0 +1,9 @@
+{
+  "name": "Functions",
+  "title": "Functions",
+  "author": "",
+  "level": "Beginner",
+  "order": "7",
+  "description": "The drawTarget() function makes it easy to draw many distinct targets. \n  Each call to drawTarget() specifies the position, size, and number of \n  rings for each target.",
+  "featured": []
+}

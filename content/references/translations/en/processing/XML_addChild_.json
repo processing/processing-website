@@ -2,7 +2,7 @@
   "brief": "Appends a new child to the element",
   "related": [],
   "name": "addChild()",
-  "description": "Appends a new child to the element. The child can be specified with either a\n String, which will be used as the new tag's name, or as a reference to an\n existing XML object.<br />\n <br />\n A reference to the newly created child is returned as an XML object.",
+  "description": "Appends a new child to the element. The child can be specified with either a\n <b>String</b>, which will be used as the new tag's name, or as a reference to an\n existing <b>XML</b> object.<br />\n <br />\n A reference to the newly created child is returned as an <b>XML</b> object.",
   "syntax": [".addChild(tag)", ".addChild(child)"],
   "returns": "XML",
   "type": "method",

@@ -1,0 +1,39 @@
+{
+  "name": "Processing 3.0a11",
+  "tagName": "processing-0238-3.0a11",
+  "publishedAt": "2015-07-16T20:22:09Z",
+  "releaseAssets": {
+    "edges": [
+      {
+        "node": {
+          "name": "processing-3.0a11-macosx.zip",
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0238-3.0a11/processing-3.0a11-macosx.zip"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-3.0a11-linux32.tgz",
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0238-3.0a11/processing-3.0a11-linux32.tgz"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-3.0a11-linux64.tgz",
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0238-3.0a11/processing-3.0a11-linux64.tgz"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-3.0a11-windows32.zip",
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0238-3.0a11/processing-3.0a11-windows32.zip"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-3.0a11-windows64.zip",
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0238-3.0a11/processing-3.0a11-windows64.zip"
+        }
+      }
+    ]
+  }
+}

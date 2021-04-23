@@ -1,8 +1,8 @@
 {
-  "brief": "Limits the rendering to the boundaries of a rectangle defined\n by the parameters.",
+  "brief": "Limits the rendering to the boundaries of a rectangle defined\n by the parameters",
   "related": [],
   "name": "clip()",
-  "description": "Limits the rendering to the boundaries of a rectangle defined\n by the parameters. The boundaries are drawn based on the state\n of the <b>imageMode()</b> fuction, either CORNER, CORNERS, or CENTER.",
+  "description": "Limits the rendering to the boundaries of a rectangle defined\n by the parameters. The boundaries are drawn based on the state\n of the <b>imageMode()</b> function, either CORNER, CORNERS, or CENTER.",
   "syntax": ["graphics.clip(a, b, c, d)"],
   "returns": "void",
   "type": "method",

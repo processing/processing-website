@@ -1,7 +1,0 @@
-{
-  "name": "Loop",
-  "title": "Loop",
-  "author": "",
-  "description": "If noLoop() is run in setup(), the code in draw() \n  is only run once. In this example, click the mouse \n  to run the loop() function to cause the draw() the \n  run continuously.",
-  "featured": []
-}

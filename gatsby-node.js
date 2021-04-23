@@ -6,12 +6,14 @@
 
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
+const { examplePath, referencePath } = require('./src/utils/paths');
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   await Promise.all([
     createReference(actions, graphql),
     createExamples(actions, graphql),
     createTutorials(actions, graphql),
+    createDownload(actions, graphql),
   ]);
 };
 
@@ -55,7 +57,7 @@ async function createReference(actions, graphql) {
   const refTemplate = path.resolve(`./src/templates/reference/function.js`);
   const classRefTemplate = path.resolve(`./src/templates/reference/class.js`);
   const fieldRefTemplate = path.resolve(`./src/templates/reference/field.js`);
-  const indexLibTemplate = path.resolve(`./src/templates/library/index.js`);
+  const indexLibTemplate = path.resolve(`./src/templates/libraries.js`);
 
   const { createPage } = actions;
 
@@ -77,6 +79,58 @@ async function createReference(actions, graphql) {
     `
   );
 
+  if (result.errors) {
+    throw result.errors;
+  }
+
+  // Create reference pages.
+  const refPages = result.data.allFile.edges;
+
+  refPages.forEach((refPage, index) => {
+    const [name] = refPage.node.name.split('.');
+    const [lang, libraryName] = refPage.node.relativeDirectory.split('/');
+    const refPath = referencePath(name, libraryName, lang);
+    const relDir = libraryName + '/' + name;
+
+    if (
+      refPage.node.childJson.type === 'function' ||
+      refPage.node.childJson.type === 'method'
+    ) {
+      createPage({
+        path: refPath,
+        component: refTemplate,
+        context: {
+          name: refPage.node.name,
+          relDir,
+          libraryName,
+        },
+      });
+    } else if (refPage.node.childJson.type === 'class') {
+      createPage({
+        path: refPath,
+        component: classRefTemplate,
+        context: {
+          name: refPage.node.name,
+          relDir,
+          libraryName,
+        },
+      });
+    } else if (
+      refPage.node.childJson.type === 'field' ||
+      refPage.node.childJson.type === 'other'
+    ) {
+      createPage({
+        path: refPath,
+        component: fieldRefTemplate,
+        context: {
+          name: refPage.node.name,
+          relDir,
+          libraryName,
+        },
+      });
+    }
+  });
+
   const dirResult = await graphql(
     `
       {
@@ -91,81 +145,12 @@ async function createReference(actions, graphql) {
     `
   );
 
-  if (result.errors) {
-    throw result.errors;
-  }
-
   if (dirResult.errors) {
     throw dirResult.errors;
   }
 
-  // Create reference pages.
-  const refPages = result.data.allFile.edges;
-
   // Create library index pages
   const dirPages = dirResult.data.allMdx.nodes;
-
-  refPages.forEach((refPage, index) => {
-    const previous =
-      index === refPages.length - 1 ? null : refPages[index + 1].node;
-    const next = index === 0 ? null : refPages[index - 1].node;
-    let assetsName = refPage.node.name.split('.')[0];
-    let libraryName = refPage.node.relativeDirectory.split('/')[1];
-    let lang = refPage.node.relativeDirectory.split('/')[0];
-    loc = lang === 'en' ? '' : lang;
-    let refPath;
-    if (libraryName === 'processing')
-      refPath = loc + '/reference/' + refPage.node.name.split('.')[0] + '.html';
-    else
-      refPath =
-        loc +
-        '/reference/libraries/' +
-        libraryName +
-        '/' +
-        refPage.node.name.split('.')[0] +
-        '.html';
-
-    if (
-      refPage.node.childJson.type === 'function' ||
-      refPage.node.childJson.type === 'method'
-    ) {
-      createPage({
-        path: refPath,
-        component: refTemplate,
-        context: {
-          name: refPage.node.name,
-          assetsName: libraryName + '/' + assetsName,
-          libraryName: libraryName,
-          previous,
-          next,
-        },
-      });
-    } else if (refPage.node.childJson.type === 'class') {
-      createPage({
-        path: refPath,
-        component: classRefTemplate,
-        context: {
-          name: refPage.node.name,
-          assetsName: libraryName + '/' + assetsName,
-          libraryName: libraryName,
-          previous,
-          next,
-        },
-      });
-    } else if (refPage.node.childJson.type === 'field') {
-      createPage({
-        path: refPath,
-        component: fieldRefTemplate,
-        context: {
-          name: refPage.node.name,
-          assetsName: libraryName + '/' + assetsName,
-          libraryName: libraryName,
-          previous,
-          next,
-        },
-      });
-    }
-  });
 
   dirPages.forEach((dirPage, index) => {
     createPage({
@@ -227,15 +212,47 @@ async function createTutorials(actions, graphql) {
   });
 }
 
+/**
+  Generate /examples pages
+**/
+
+const parseExampleFileInfo = (node) => {
+  // Split name into needed info.
+  // Slug is lowercased to match old processing.org URL's
+  const splitName = node.name.split('.');
+  const langCode = splitName.length > 1 ? splitName[1] + '/' : '';
+  const name = splitName[0];
+  const slug = langCode + '/examples/' + name.toLowerCase() + '.html';
+
+  // Split relative dir into needed info
+  const splitDir = node.relativeDirectory.split('/');
+  const category = splitDir[0];
+  const subcategory = splitDir[1];
+
+  return {
+    name,
+    slug,
+    langCode,
+    category,
+    subcategory,
+  };
+};
+
 async function createExamples(actions, graphql) {
-  const exampleTemplate = path.resolve(`./src/templates/example/example.js`);
+  const exampleTemplate = path.resolve(`./src/templates/examples/example.js`);
 
   const { createPage } = actions;
 
-  const exampleResult = await graphql(
+  // Load all JSON files within the examples folder
+  const result = await graphql(
     `
       {
-        allFile(filter: { sourceInstanceName: { eq: "examples" } }) {
+        json: allFile(
+          filter: {
+            sourceInstanceName: { eq: "examples" }
+            extension: { eq: "json" }
+          }
+        ) {
           edges {
             node {
               name
@@ -250,31 +267,85 @@ async function createExamples(actions, graphql) {
     `
   );
 
-  if (exampleResult.errors) {
-    throw exampleResult.errors;
+  if (result.errors) {
+    throw result.errors;
   }
 
-  const examplePages = exampleResult.data.allFile.edges;
+  const jsonFiles = result.data.json.edges;
 
-  examplePages.forEach((examplePage, index) => {
-    //if language is english we don't need to add it to the path hence ''
-    const lang =
-      examplePage.node.name.split('.').length > 1
-        ? examplePage.node.name.split('.')[1] + '/'
-        : '';
-    const name =
-      examplePage.node.name.split('.').length > 1
-        ? examplePage.node.name.split('.')[0].toLowerCase()
-        : examplePage.node.name.toLowerCase();
+  jsonFiles.forEach((jsonFile, index) => {
+    const {
+      name,
+      slug,
+      langCode,
+      category,
+      subcategory,
+    } = parseExampleFileInfo(jsonFile.node);
+
+    // Find related examples in the same sub category
+    // We use the empty langCode to not generate duplicates
+    // We pass the names of these to the template, so we don't need
+    // to load and filter all images on the frontend.
+    const related = jsonFiles
+      .map((f) => parseExampleFileInfo(f.node))
+      .filter((info) => {
+        return (
+          info.subcategory === subcategory &&
+          info.name !== name &&
+          info.langCode === ''
+        );
+      })
+      .map((info) => info.name);
 
     createPage({
-      path: lang + 'examples/' + name + '.html',
+      path: slug,
       component: exampleTemplate,
       context: {
-        slug: lang + '/examples/' + name + '.html',
-        name: examplePage.node.name,
-        relDir: examplePage.node.relativeDirectory,
+        slug,
+        name,
+        subcategory,
+        related,
+        relDir: jsonFile.node.relativeDirectory,
       },
     });
+  });
+}
+
+/**
+  Create the download page programmatically since we need access to the selected
+  releases in the pageQuery, thus we need to pass through pageContext.
+**/
+async function createDownload(actions, graphql) {
+  const downloadTemplate = path.resolve(`./src/templates/download.js`);
+  const { createPage } = actions;
+  const result = await graphql(
+    `
+      {
+        json: file(
+          sourceInstanceName: { eq: "download" }
+          relativePath: { eq: "selected.json" }
+        ) {
+          childJson {
+            selectedReleases
+            selectedPreReleases
+          }
+        }
+      }
+    `
+  );
+
+  if (result.errors) {
+    throw result.errors;
+  }
+
+  const { selectedReleases, selectedPreReleases } = result.data.json.childJson;
+
+  createPage({
+    path: '/download',
+    component: downloadTemplate,
+    context: {
+      selectedReleases,
+      selectedPreReleases,
+    },
   });
 }

@@ -1,5 +1,6 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
 import { useStaticQuery, graphql } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
@@ -7,12 +8,11 @@ import { MDXProvider } from '@mdx-js/react';
 import Header from './Header';
 import Footer from './Footer';
 
-import { useWindowSize } from '../utils/hooks';
-
 import Column from './mdx/Column';
 import FixedImage from './mdx/FixedImage';
-import HighlightBlock from './mdx/HighlightBlock';
 import Intro from './mdx/Intro';
+import H2 from './mdx/H2';
+import HighlightBlock from './mdx/HighlightBlock';
 import Note from './mdx/Note';
 
 import '../styles/base.css';
@@ -22,13 +22,13 @@ import '../styles/fonts.css';
 import css from './Layout.module.css';
 
 export const LayoutContext = React.createContext({
-  headerHeight: 0,
+  headerHeight: 0
 });
 
-const Layout = ({ children, isHomepage, hasSidebar }) => {
+const Layout = ({ children, isHomepage, withSidebar }) => {
   const mainRef = useRef();
   const [headerScrolled, setHeaderScrolled] = useState(false);
-  const { width } = useWindowSize();
+  const [currentHeading, setCurrentHeading] = useState('');
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -56,20 +56,25 @@ const Layout = ({ children, isHomepage, hasSidebar }) => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  });
+  }, [headerScrolled]);
 
-  const shortcodes = {
-    Column,
-    FixedImage,
-    HighlightBlock,
-    Intro,
-    Note,
-    img: (props) => <img {...props} alt=""></img>,
-  };
+  const shortcodes = useMemo(
+    () => ({
+      Column,
+      FixedImage,
+      Intro,
+      HighlightBlock,
+      Note,
+      h2: ({ children }) => <H2 setCurrent={setCurrentHeading}>{children}</H2>,
+      img: (props) => <img {...props} alt=""></img>
+    }),
+    [setCurrentHeading]
+  );
 
   return (
     <div className={css.root}>
-      <LayoutContext.Provider value={{ headerScrolled }}>
+      <LayoutContext.Provider value={{ headerScrolled, currentHeading }}>
+        <Helmet titleTemplate="%s / Processing.org" />
         <Header
           siteTitle={data.site.siteMetadata.title}
           scrolled={headerScrolled}
@@ -78,24 +83,22 @@ const Layout = ({ children, isHomepage, hasSidebar }) => {
           className={classnames({
             [css.headerScrolled]: headerScrolled,
             [css.homepage]: isHomepage,
-            [css.hasSidebar]: hasSidebar,
+            [css.withSidebar]: withSidebar
           })}
           ref={mainRef}>
           <MDXProvider components={shortcodes}>{children}</MDXProvider>
         </main>
-        {!hasSidebar && (
-          <Footer siteTitle={data.site.siteMetadata.title} hasSidebar />
-        )}
-        {width <= 960 && hasSidebar && (
-          <Footer siteTitle={data.site.siteMetadata.title} hasSidebar />
-        )}
+        <Footer
+          siteTitle={data.site.siteMetadata.title}
+          withSidebar={withSidebar}
+        />
       </LayoutContext.Provider>
     </div>
   );
 };
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 export default Layout;

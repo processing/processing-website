@@ -1,5 +1,5 @@
 {
-  "brief": "Updates the image with the data in its <b>pixels[]</b> array.",
+  "brief": "Updates the image with the data in its <b>pixels[]</b> array",
   "related": [],
   "name": "updatePixels()",
   "description": "Updates the display window with the data in the <b>pixels[]</b> array. Use in\n conjunction with <b>loadPixels()</b>. If you're only reading pixels from the\n array, there's no need to call <b>updatePixels()</b> &mdash; updating is only\n necessary to apply changes.\n\n ",

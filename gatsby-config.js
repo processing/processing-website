@@ -69,15 +69,16 @@ module.exports = {
         postCssPlugins: [
           require(`postcss-import`),
           require('postcss-normalize'),
-          require(`postcss-preset-env`)({
-            stage: 0,
-          }),
+          require('postcss-nesting'),
           require('postcss-custom-properties')({
             importFrom: './src/styles/variables.css',
           }),
           require('postcss-calc')(),
           require(`postcss-functions`)({
             functions: require('./src/styles/functions'),
+          }),
+          require('postcss-custom-media')({
+            importFrom: './src/styles/variables.css',
           }),
         ],
       },
@@ -131,6 +132,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-transformer-code`,
+      options: {
+        name: `examples`,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `tutorials`,
@@ -158,6 +165,13 @@ module.exports = {
         path: path.resolve(__dirname, 'content/books'),
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `download`,
+        path: path.resolve(__dirname, 'content/download'),
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-remark-images`,
@@ -173,17 +187,6 @@ module.exports = {
         icon: `src/images/logo-processing.svg`,
       },
     },
-    // {
-    //   resolve: `gatsby-source-graphql`,
-    //   options: {
-    //     typeName: `GitHub`,
-    //     fieldName: `github`,
-    //     url: `https://api.github.com/graphql`,
-    //     headers: {
-    //       Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-    //     },
-    //   },
-    // },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {

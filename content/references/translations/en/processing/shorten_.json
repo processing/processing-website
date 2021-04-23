@@ -1,5 +1,5 @@
 {
-  "brief": "Decreases an array by one element and returns the shortened array.",
+  "brief": "Decreases an array by one element and returns the shortened array",
   "related": ["append_", "expand_"],
   "name": "shorten()",
   "description": "Decreases an array by one element and returns the shortened array.\n <br/> <br/>\n When using an array of objects, the data returned from the function must\n be cast to the object array's data type. For example: <em>SomeClass[]\n items = (SomeClass[]) shorten(originalArray)</em>.",

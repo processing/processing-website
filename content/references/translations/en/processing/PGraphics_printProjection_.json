@@ -1,5 +1,5 @@
 {
-  "brief": "Prints the current projection matrix to the Console.",
+  "brief": "Prints the current projection matrix to the Console",
   "related": ["PGraphics_camera_"],
   "name": "printProjection()",
   "description": "Prints the current projection matrix to the Console (the text window at\n the bottom of Processing).",

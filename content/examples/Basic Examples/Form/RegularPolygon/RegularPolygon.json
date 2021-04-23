@@ -1,0 +1,9 @@
+{
+  "name": "Regular Polygon",
+  "title": "Regular Polygon",
+  "author": "",
+  "level": "Beginner",
+  "order": "3",
+  "description": "What is your favorite? Pentagon? Hexagon? Heptagon? \n  No? What about the icosagon? The polygon() function \n  created for this example is capable of drawing any \n  regular polygon. Try placing different numbers into the \n  polygon() function calls within draw() to explore.",
+  "featured": ["beginShape_", "endShape_", "vertex_"]
+}

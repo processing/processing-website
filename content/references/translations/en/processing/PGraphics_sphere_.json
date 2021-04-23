@@ -1,5 +1,5 @@
 {
-  "brief": "A sphere is a hollow ball made from tessellated triangles.",
+  "brief": "A sphere is a hollow ball made from tessellated triangles",
   "related": ["PGraphics_sphereDetail_"],
   "name": "sphere()",
   "description": "A sphere is a hollow ball made from tessellated triangles.\n\n\n ",

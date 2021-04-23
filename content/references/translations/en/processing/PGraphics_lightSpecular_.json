@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the specular color for lights.",
+  "brief": "Sets the specular color for lights",
   "related": [
     "PGraphics_specular_",
     "PGraphics_lights_",
@@ -8,7 +8,7 @@
     "PGraphics_spotLight_"
   ],
   "name": "lightSpecular()",
-  "description": "Sets the specular color for lights. Like <b>fill()</b>, it affects only\n the elements which are created after it in the code. Specular refers to\n light which bounces off a surface in a perferred direction (rather than\n bouncing in all directions like a diffuse light) and is used for\n creating highlights. The specular quality of a light interacts with the\n specular material qualities set through the <b>specular()</b> and\n <b>shininess()</b> functions.",
+  "description": "Sets the specular color for lights. Like <b>fill()</b>, it affects only\n the elements which are created after it in the code. Specular refers to\n light which bounces off a surface in a preferred direction (rather than\n bouncing in all directions like a diffuse light) and is used for\n creating highlights. The specular quality of a light interacts with the\n specular material qualities set through the <b>specular()</b> and\n <b>shininess()</b> functions.",
   "syntax": ["graphics.lightSpecular(v1, v2, v3)"],
   "returns": "void",
   "type": "method",

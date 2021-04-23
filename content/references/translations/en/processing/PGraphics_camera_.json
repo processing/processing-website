@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the position of the camera.",
+  "brief": "Sets the position of the camera",
   "related": [
     "PGraphics_beginCamera_",
     "PGraphics_endCamera_",

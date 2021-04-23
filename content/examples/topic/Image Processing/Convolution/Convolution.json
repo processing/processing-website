@@ -1,7 +1,0 @@
-{
-  "name": "Convolution",
-  "title": "Convolutionby Daniel Shiffman",
-  "author": "",
-  "description": "Applies a convolution matrix to a portion of an image. Move mouse to \n  apply filter to different parts of the image. This example is currently\n  not accurate in JavaScript mode.",
-  "featured": []
-}

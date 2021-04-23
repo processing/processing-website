@@ -1,8 +1,13 @@
-.root {
-  cursor: ew-resize;
+.colorPatch {
+  display: inline-block;
+  border-radius: 4px;
+  line-height: 1em;
+  padding: 1px 2px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
-.color {
+.input {
   height: 20px;
   width: 20px;
   border: none;
@@ -11,7 +16,21 @@
   cursor: pointer;
 }
 
-.blur {
-  color: rgba(0, 0, 0, 0.5);
-  pointer-events: none;
+.input {
+  -webkit-appearance: none;
+  border: none;
+  width: 20px;
+  height: 10px;
+}
+
+.input::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.input::-webkit-color-swatch {
+  border: none;
+}
+
+.input::-moz-color-swatch {
+  border: none;
 }

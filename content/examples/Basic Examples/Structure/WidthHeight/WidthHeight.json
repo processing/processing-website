@@ -1,0 +1,9 @@
+{
+  "name": "Width Height",
+  "title": "Width and Height",
+  "author": "",
+  "level": "Beginner",
+  "order": "2",
+  "description": "The 'width' and 'height' variables contain the width and height \n  of the display window as defined in the size() function.",
+  "featured": ["size_", "width", "height"]
+}

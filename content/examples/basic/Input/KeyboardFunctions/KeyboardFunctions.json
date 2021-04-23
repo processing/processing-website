@@ -1,7 +1,0 @@
-{
-  "name": "Keyboard Functions",
-  "title": "Keyboard Functions  Modified from code",
-  "author": "Martin  Original 'Color Typewriter' concept",
-  "description": "Click on the window to give it focus and press the letter keys to type colors. \n  The keyboard function keyPressed() is called whenever\n  a key is pressed. keyReleased() is another keyboard\n  function that is called when a key is released.",
-  "featured": []
-}

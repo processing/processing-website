@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the width of the stroke used for lines, points, and the border\n           around shapes.",
+  "brief": "Sets the width of the stroke used for lines, points, and the border\n           around shapes",
   "related": [
     "PGraphics_stroke_",
     "PGraphics_strokeJoin_",

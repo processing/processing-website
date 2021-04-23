@@ -1,0 +1,9 @@
+{
+  "name": "Create Image",
+  "title": "Create Image",
+  "author": "",
+  "level": "Intermediate",
+  "order": "4",
+  "description": "The createImage() function provides a fresh buffer of pixels to play with. This example creates an image gradient.",
+  "featured": ["createImage_", "PImage"]
+}

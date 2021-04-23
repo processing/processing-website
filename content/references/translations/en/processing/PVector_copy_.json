@@ -2,7 +2,7 @@
   "brief": "Get a copy of the vector",
   "related": [],
   "name": "copy()",
-  "description": "Copies the components of the vector and returns the result as a PVector.",
+  "description": "Copies the components of the vector and returns the result as a <b>PVector</b>.",
   "syntax": [".copy()"],
   "returns": "PVector",
   "type": "method",

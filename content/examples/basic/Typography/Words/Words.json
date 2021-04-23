@@ -1,7 +1,0 @@
-{
-  "name": "Words",
-  "title": "Words",
-  "author": "",
-  "description": "The text() function is used for writing words to the screen.\n  The letters can be aligned left, center, or right with the \n  textAlign() function.",
-  "featured": []
-}

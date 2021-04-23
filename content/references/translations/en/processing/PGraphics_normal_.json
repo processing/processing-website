@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the current normal vector.",
+  "brief": "Sets the current normal vector",
   "related": [
     "PGraphics_beginShape_",
     "PGraphics_endShape_",

@@ -1,7 +1,0 @@
-{
-  "name": "Array List Class",
-  "title": "ArrayList of objectsby Daniel Shiffman",
-  "author": "",
-  "description": "This example demonstrates how to use a Java ArrayList to store \n  a variable number of objects.  Items can be added and removed\n  from the ArrayList.\n\n  Click the mouse to add bouncing balls.",
-  "featured": []
-}

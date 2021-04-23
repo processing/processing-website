@@ -96,5 +96,7 @@
   "sound": "Sound",
   "svg": "SVG Export",
   "pdf": "PDF Export",
-  "dxf": "DXF Export"
+  "dxf": "DXF Export",
+  "openEditor": "Open Editor",
+  "closeEditor": "Close Editor"
 }

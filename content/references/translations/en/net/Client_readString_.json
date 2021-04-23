@@ -1,8 +1,8 @@
 {
-  "brief": "Returns the buffer as a String",
+  "brief": "Returns the buffer as a <b>String</b>",
   "related": [],
   "name": "readString()",
-  "description": "Returns the all the data from the buffer as a String. This method \n assumes the incoming characters are ASCII. If you want to transfer \n Unicode data, first convert the String to a byte stream in the \n representation of your choice (i.e. UTF8 or two-byte Unicode data), and \n send it as a byte array.",
+  "description": "Returns the all the data from the buffer as a <b>String</b>. This method \n assumes the incoming characters are ASCII. If you want to transfer \n Unicode data, first convert the String to a byte stream in the \n representation of your choice (i.e. UTF8 or two-byte Unicode data), and \n send it as a byte array.",
   "syntax": ["client.readString()"],
   "returns": "String",
   "type": "method",

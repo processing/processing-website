@@ -1,12 +1,5 @@
 .hero {
-  position: relative;
-  flex-wrap: nowrap;
-  min-height: 600px;
-  background-image: linear-gradient(
-    to right,
-    white 20%,
-    var(--processing-blue-gradient)
-  );
+  padding: 60px 0;
 
   & h1 {
     margin-bottom: var(--margin-half);
@@ -15,28 +8,6 @@
 
   & p {
     font-size: var(--text-large);
-    cursor: pointer;
-  }
-
-  @media (--medium) {
-    & h1 {
-      font-size: var(--text-xxlarge);
-    }
-  }
-
-  @media (--reduced) {
-    & h1 {
-      font-size: var(--text-xxxlarge);
-    }
-  }
-
-  @media (--small) {
-    padding-right: var(--margin);
-
-    & p {
-      padding-top: var(--vertical-gutter);
-      font-size: var(--text-medium);
-    }
   }
 }
 
@@ -53,9 +24,6 @@
 
 .half {
   flex-basis: var(--col4);
-  @media (--medium) {
-    flex-basis: var(--col8);
-  }
 }
 
 .intro {
@@ -66,60 +34,16 @@
   height: 100%;
   padding-top: calc(var(--margin) * 2);
   padding-bottom: var(--margin);
-
-  @media (--large) {
-    padding-top: var(--margin);
-    flex-basis: var(--col5);
-  }
-
-  @media (--medium) {
-    padding-top: calc(var(--margin) * 2);
-    flex-basis: var(--col4);
-  }
-
-  @media (--reduced) {
-    flex-basis: var(--col8);
-    height: auto;
-    padding-right: calc(var(--margin) + var(--gutter));
-    padding-top: var(--margin);
-    justify-content: space-around;
-  }
-
-  @media (--small) {
-    flex-basis: var(--col8);
-    height: auto;
-    padding-right: var(--gutter);
-    padding-top: calc(var(--vertical-gutter) * 2);
-    justify-content: space-around;
-  }
 }
 
 .buttons {
   display: flex;
   flex-wrap: wrap;
   margin: var(--margin) 0;
-
-  @media (--medium) {
-    margin: var(--gutter-double) 0;
-  }
-
-  @media (--small) {
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 0;
-  }
 }
 
 .button {
   margin-right: var(--gutter-double);
-
-  @media (--medium) {
-    margin-right: var(--gutter);
-  }
-
-  @media (--small) {
-    margin-bottom: var(--vertical-gutter);
-  }
 }
 
 .examples {
@@ -131,23 +55,6 @@
     flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
-  }
-
-  @media (--small) {
-    flex-basis: var(--col8);
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-
-    & ul {
-      overflow-x: scroll;
-      flex-wrap: nowrap;
-      justify-content: flex-start;
-    }
-
-    & li {
-      flex: 0 0 auto;
-    }
   }
 }
 
@@ -169,15 +76,9 @@
 
   & .imgContainer {
     transition: opacity 0.2s ease;
-  }
-
-  @media (--reduced) {
-    flex-basis: var(--col4);
-  }
-
-  @media (--small) {
-    width: 100%;
-    flex-shrink: 0;
+    & > div {
+      width: 100%;
+    }
   }
 }
 
@@ -218,14 +119,6 @@
     display: block;
     margin-left: auto;
   }
-
-  @media (--medium), (--small), (--reduced) {
-    padding-left: var(--gutter);
-    flex-basis: var(--col8);
-    & a {
-      margin: auto;
-    }
-  }
 }
 
 .cardGrid {
@@ -234,10 +127,25 @@
   align-items: center;
   margin-top: calc(-1 * var(--margin));
   margin-bottom: calc(-1 * var(--margin));
+  padding-left: var(--gutter);
 
-  @media (--medium), (--reduced), (--small) {
-    margin-top: 0;
-    margin-bottom: 0;
+  & > .cardCol:first-child {
+    & > div {
+      border-right-width: 4px;
+    }
+
+    & > div:hover {
+      border-right-width: 4px;
+    }
+  }
+
+  & > .cardCol:last-child {
+    & > div {
+      border-left-width: 4px;
+    }
+    & > div:hover {
+      border-left-width: 4px;
+    }
   }
 }
 
@@ -245,15 +153,25 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: var(--gutter-double) var(--gutter);
+  padding: 0;
   min-height: 360px;
   flex-basis: var(--col4);
 
-  & > a:first-child {
-    margin-bottom: var(--gutter);
+  & > div:first-child {
+    border-top-width: 0px;
+    border-bottom-width: 4px;
   }
-  & > a:last-child {
-    margin-top: var(--gutter);
+
+  & > div:first-child:hover {
+  }
+
+  & > div:last-child {
+    border-top-width: 4px;
+    border-bottom-width: 0px;
+  }
+
+  & > div:last-child:hover {
+    border-top-width: 4px;
   }
 }
 
@@ -265,7 +183,7 @@
 }
 
 .card:active {
-  border: 2px solid var(--processing-blue-mid);
+  border-color: var(--processing-blue-mid);
   background: var(--processing-blue-mid);
 }
 
@@ -302,19 +220,6 @@
       width: 60px;
     }
   }
-
-  @media (--small) {
-    display: flex;
-    overflow-x: scroll;
-    flex-direction: row;
-    flex-wrap: nowrap;
-
-    & li {
-      flex: 0 0 auto;
-      margin-right: 20px;
-      max-width: 100px;
-    }
-  }
 }
 
 .announcementSection {
@@ -323,14 +228,6 @@
     padding-top: 0;
     padding-left: 0;
     padding-right: 0;
-  }
-}
-
-.announcement {
-  @media (--medium) {
-    padding-top: var(--margin);
-    padding-left: calc(var(--margin) + var(--gutter));
-    padding-right: calc(var(--margin) + var(--gutter));
   }
 }
 
@@ -343,11 +240,279 @@
 .announcementCover {
   margin-top: calc(-1 * var(--margin));
   margin-bottom: calc(-1 * var(--margin));
+}
 
-  @media (--medium), (--small), (--reduced) {
+@media (--large) {
+  .intro {
+    padding-top: var(--margin);
+    flex-basis: var(--col5);
+  }
+}
+
+@media (--medium) {
+  .hero {
+    & h1 {
+      font-size: var(--text-xxlarge);
+    }
+  }
+
+  .half {
+    flex-basis: var(--col8);
+  }
+
+  .intro {
+    padding-top: calc(var(--margin) * 2);
+    flex-basis: var(--col4);
+  }
+
+  .buttons {
+    margin: var(--gutter-double) 0;
+  }
+
+  .button {
+    margin-right: var(--gutter);
+  }
+
+  .moreButton {
+    padding-left: var(--gutter);
+    flex-basis: var(--col8);
+    & a {
+      margin: auto;
+    }
+  }
+
+  .announcement {
+    padding-top: var(--margin);
+    padding-left: calc(var(--margin) + var(--gutter));
+    padding-right: calc(var(--margin) + var(--gutter));
+  }
+
+  .announcementCover {
     padding-left: 0;
     padding-right: 0;
     margin-top: 0px;
     margin-bottom: 0px;
+  }
+
+  .cardGrid {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    & > .cardCol:first-child {
+      padding-right: var(--gutter);
+
+      & > div {
+        border-right-width: 8px;
+      }
+
+      & > div:hover {
+        border-right-width: 8px;
+      }
+    }
+
+    & > .cardCol:last-child {
+      padding-left: var(--gutter);
+
+      & > div {
+        border-left-width: 8px;
+      }
+
+      & > div:hover {
+        border-left-width: 8px;
+      }
+    }
+  }
+
+  .cardCol {
+    & > div:first-child {
+      margin-bottom: var(--gutter);
+      border-top-width: 8px;
+      border-bottom-width: 8px;
+    }
+
+    & > div:first-child:hover {
+    }
+
+    & > div:last-child {
+      margin-top: var(--gutter);
+      border-top-width: 8px;
+      border-bottom-width: 8px;
+    }
+
+    & > div:last-child:hover {
+      border-top-width: 8px;
+    }
+  }
+}
+
+@media (--reduced) {
+  .hero {
+    min-height: auto;
+    & h1 {
+      font-size: var(--text-xxxlarge);
+    }
+  }
+
+  .intro {
+    flex-basis: var(--col8);
+    height: auto;
+    padding-right: calc(var(--margin) + var(--gutter));
+    padding-top: var(--margin);
+    justify-content: space-around;
+  }
+
+  .announcementCover {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .example {
+    flex-basis: var(--col4);
+  }
+
+  .moreButton {
+    padding-left: var(--gutter);
+    flex-basis: var(--col8);
+    & a {
+      margin: auto;
+    }
+  }
+
+  .cardGrid {
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    & .cardCol {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+
+    & > .cardCol:first-child {
+      margin-bottom: var(--gutter);
+      padding-right: 0;
+    }
+
+    & > .cardCol:last-child {
+      margin-top: var(--gutter);
+      padding-left: 0;
+    }
+  }
+
+  .card {
+    height: auto;
+  }
+}
+
+@media (--small) {
+  .hero {
+    min-height: auto;
+    padding-right: var(--margin);
+    & p {
+      padding-top: var(--vertical-gutter);
+      font-size: var(--text-medium);
+    }
+  }
+
+  .intro {
+    flex-basis: var(--col8);
+    height: auto;
+    padding-right: var(--gutter);
+    padding-top: calc(var(--vertical-gutter) * 2);
+    justify-content: space-around;
+  }
+
+  .buttons {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+  }
+
+  .button {
+    margin-bottom: var(--vertical-gutter);
+  }
+
+  .moreButton {
+    padding-left: var(--gutter);
+    flex-basis: var(--col8);
+    & a {
+      margin: auto;
+    }
+  }
+
+  .examples {
+    flex-basis: var(--col8);
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+
+    & ul {
+      overflow-x: scroll;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+    }
+
+    & li {
+      flex: 0 0 auto;
+    }
+  }
+
+  .example {
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  .partners {
+    display: flex;
+    overflow-x: scroll;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    & li {
+      flex: 0 0 auto;
+      margin-right: 20px;
+      max-width: 100px;
+    }
+  }
+
+  .announcementCover {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .cardGrid {
+    height: auto;
+    flex-basis: auto;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    & .cardCol {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+
+    & > .cardCol:first-child {
+      margin-bottom: 0;
+      padding-right: 0;
+    }
+
+    & > .cardCol:last-child {
+      margin-top: 0;
+      padding-left: 0;
+    }
+  }
+
+  .cardCol {
+    & > div:last-child {
+      margin-bottom: var(--gutter-double);
+    }
+  }
+
+  .card {
+    height: auto;
   }
 }

@@ -1,5 +1,5 @@
 {
-  "brief": "Pushes the current transformation matrix onto the matrix stack.",
+  "brief": "Pushes the current transformation matrix onto the matrix stack",
   "related": [
     "PGraphics_popMatrix_",
     "PGraphics_translate_",
@@ -10,7 +10,7 @@
     "PGraphics_rotateZ_"
   ],
   "name": "pushMatrix()",
-  "description": "Pushes the current transformation matrix onto the matrix stack.\n Understanding <b>pushMatrix()</b> and <b>popMatrix()</b> requires\n understanding the concept of a matrix stack. The <b>pushMatrix()</b>\n function saves the current coordinate system to the stack and\n <b>popMatrix()</b> restores the prior coordinate system.\n <b>pushMatrix()</b> and <b>popMatrix()</b> are used in conjuction with\n the other transformation functions and may be embedded to control the\n scope of the transformations.",
+  "description": "Pushes the current transformation matrix onto the matrix stack.\n Understanding <b>pushMatrix()</b> and <b>popMatrix()</b> requires\n understanding the concept of a matrix stack. The <b>pushMatrix()</b>\n function saves the current coordinate system to the stack and\n <b>popMatrix()</b> restores the prior coordinate system.\n <b>pushMatrix()</b> and <b>popMatrix()</b> are used in conjunction with\n the other transformation functions and may be embedded to control the\n scope of the transformations.",
   "syntax": ["graphics.pushMatrix()"],
   "returns": "void",
   "type": "method",

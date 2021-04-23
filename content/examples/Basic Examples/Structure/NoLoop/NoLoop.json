@@ -1,0 +1,9 @@
+{
+  "name": "No Loop",
+  "title": "No Loop",
+  "author": "",
+  "level": "Beginner",
+  "order": "4",
+  "description": "The noLoop() function causes draw() to only run once. \n  Without calling noLoop(), the code inside draw() is \n  run continually.",
+  "featured": ["noLoop_"]
+}

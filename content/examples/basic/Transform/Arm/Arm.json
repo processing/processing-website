@@ -1,7 +1,0 @@
-{
-  "name": "Arm",
-  "title": "Arm",
-  "author": "",
-  "description": "The angle of each segment is controlled with the mouseX and\n  mouseY position. The transformations applied to the first segment\n  are also applied to the second segment because they are inside\n  the same pushMatrix() and popMatrix() group.",
-  "featured": []
-}

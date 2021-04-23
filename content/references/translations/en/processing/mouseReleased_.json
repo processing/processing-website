@@ -1,5 +1,5 @@
 {
-  "brief": "Called every time a mouse button is released.",
+  "brief": "Called every time a mouse button is released",
   "related": [
     "mouseX",
     "mouseY",

@@ -1,5 +1,5 @@
 {
-  "brief": "Adds a point light.",
+  "brief": "Adds a point light",
   "related": ["lights_", "directionalLight_", "ambientLight_", "spotLight_"],
   "name": "pointLight()",
   "description": "Adds a point light. Lights need to be included in the <b>draw()</b> to remain\n persistent in a looping program. Placing them in the <b>setup()</b> of a\n looping program will cause them to only have an effect the first time through\n the loop. The <b>v1</b>, <b>v2</b>, and <b>v3</b> parameters are interpreted\n as either RGB or HSB values, depending on the current color mode. The\n <b>x</b>, <b>y</b>, and <b>z</b> parameters set the position of the light.",

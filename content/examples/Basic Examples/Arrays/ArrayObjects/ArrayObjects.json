@@ -1,0 +1,9 @@
+{
+  "name": "Array Objects",
+  "title": "Array Objects",
+  "author": "",
+  "level": "Advanced",
+  "order": "2",
+  "description": "Demonstrates the syntax for creating an array of custom objects.",
+  "featured": ["Array", "Object"]
+}

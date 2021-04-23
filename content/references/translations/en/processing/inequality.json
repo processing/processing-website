@@ -1,1 +1,23 @@
-{"name":"!= (inequality)","brief":"Determines if one expression is not equivalent to another","description":"Determines if one expression is not equivalent to another.\n","related":[],"syntax":["value1 != value2"],"returns":"","type":"function","category":"Control","subcategory":"Relational Operators","parameters":[{"name":"value1","description":"int, float, char, byte, boolean","type":[]},{"name":"value2","description":"int, float, char, byte, boolean","type":[]}]}
+{
+  "name": "!= (inequality)",
+  "brief": "Determines if one expression is not equivalent to another",
+  "description": "Determines if one expression is not equivalent to another.\n",
+  "related": [],
+  "syntax": ["value1 != value2"],
+  "returns": "",
+  "type": "function",
+  "category": "Control",
+  "subcategory": "Relational Operators",
+  "parameters": [
+    {
+      "name": "value1",
+      "description": "int, float, char, byte, boolean",
+      "type": []
+    },
+    {
+      "name": "value2",
+      "description": "int, float, char, byte, boolean",
+      "type": []
+    }
+  ]
+}

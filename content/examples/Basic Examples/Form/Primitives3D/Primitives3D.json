@@ -1,0 +1,7 @@
+{
+  "name": "Primitives3 D",
+  "title": "Primitives 3D",
+  "author": "",
+  "description": "Placing mathematically 3D objects in synthetic space.\n  The lights() method reveals their imagined dimension.\n  The box() and sphere() functions each have one parameter\n  which is used to specify their size. These shapes are\n  positioned using the translate() function.",
+  "featured": ["translate_", "rotateX_", "rotateY_", "popMatrix_", "pushMatrix_"]
+}

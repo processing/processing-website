@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import classnames from 'classnames';
 import hljs from 'highlight.js/lib/core';
 
 import Button from './Button';
+import CopyButton from './CopyButton';
 
 import css from './Tabs.module.css';
 
@@ -35,13 +36,16 @@ const Tabs = ({ pdes, className }) => {
           </li>
         ))}
       </ul>
-      <div>
+      <div className={css.code}>
         {pdes.map(
           (pde, key) =>
             pde.name === active && (
-              <pre className={css.codeBlock} key={key}>
-                {pde.internal.content}
-              </pre>
+              <Fragment key={key}>
+                <CopyButton text={pde.internal.content} />
+                <pre className={css.codeBlock} key={`code-${key}`}>
+                  {pde.internal.content}
+                </pre>
+              </Fragment>
             )
         )}
       </div>

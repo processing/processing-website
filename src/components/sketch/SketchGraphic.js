@@ -1,181 +1,181 @@
-import React, { Fragment, useState } from 'react';
-import classnames from 'classnames';
-
-import Button from '../Button';
-
+import React, { Fragment, useMemo, memo } from 'react';
 import css from './SketchGraphic.module.css';
 
-const gutterSize = 0;
-
 const SketchGraphic = (props) => {
-  const {
-    showGrid,
-    width,
-    height,
-    unit,
-    shapes,
-    strokeWidth,
-    onClick,
-    isVisible,
-  } = props;
-  const [mouseEntered, setMouseEntered] = useState(false);
+  const { showGrid, width, height, shapes, strokeWeight, strokeCap } = props;
 
-  const modules = [];
-  const cols = Math.floor(width / unit);
-  const rows = Math.floor(height / unit);
-  for (let i = 0; i < cols; i++) {
-    modules.push([]);
-    for (let j = 0; j < rows; j++) {
-      modules[modules.length - 1].push({
-        x: gutterSize + i * unit + i * 2 * gutterSize,
-        y: gutterSize + j * unit + j * 2 * gutterSize,
-        width: unit,
-        height: unit,
-      });
+  // -2 in order to make the grid fully visible in the SVG
+  const unit = (width - 2) / 8;
+
+  const grid = useMemo(() => {
+    if (!showGrid) {
+      return null;
     }
-  }
-
-  let grid = [];
-  if (showGrid) {
-    for (let i = 0; i < modules.length; i++) {
-      for (let j = 0; j < modules[i].length; j++) {
+    const grid = [];
+    for (let i = 0; i < 8; i++) {
+      for (let j = 0; j < 8; j++) {
         grid.push(
           <rect
             key={`grid-${i}-${j}`}
-            {...modules[i][j]}
-            fill="none"
-            stroke="#212724"
-            opacity="0.1"
+            x={i * unit}
+            y={j * unit}
+            width={unit}
+            height={unit}
           />
         );
       }
     }
-  }
+    return grid;
+  }, [showGrid, unit]);
 
-  const handleMouseEnter = () => {
-    setMouseEntered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setMouseEntered(false);
-  };
-
-  const firstHandler = (shape, index, color) => (
-    <g key={`handler-${index}-tocp1`}>
-      <circle
-        key={`circle-${index}-cp1`}
-        cx={shape.pos[2] * unit}
-        cy={shape.pos[3] * unit}
-        r={4}
-        fill={color}
-      />
-      <line
-        key={`line-${index}-tocp1`}
-        x1={shape.pos[0] * unit}
-        y1={shape.pos[1] * unit}
-        x2={shape.pos[2] * unit}
-        y2={shape.pos[3] * unit}
-        stroke={color}
-        strokeDasharray="4"
-      />
-    </g>
-  );
-
-  const secondHandler = (shape, index, color) => (
-    <g key={`handler-${index}-tocp2`}>
-      <line
-        key={`line-${index}-tocp2`}
-        x1={shape.pos[6] * unit}
-        y1={shape.pos[7] * unit}
-        x2={shape.pos[4] * unit}
-        y2={shape.pos[5] * unit}
-        stroke={color}
-        strokeDasharray="4"
-      />
-      <circle
-        key={`circle-${index}-cp2`}
-        cx={shape.pos[4] * unit}
-        cy={shape.pos[5] * unit}
-        r={4}
-        fill={color}
-      />
-    </g>
-  );
-
-  const handlers = (shape, index, color) => {
-    const { showHandlers, dragging } = shape;
-    if (showHandlers) {
-      return [
-        firstHandler(shape, index, color),
-        secondHandler(shape, index, color),
-      ];
-    } else if (dragging) {
-      if ([2, 3].includes(dragging)) {
-        return firstHandler(shape, index, color);
-      } else if ([4, 5].includes(dragging)) {
-        return secondHandler(shape, index, color);
-      }
-    }
-    return null;
-  };
+  const strokeLineCap = strokeCap ? 'butt' : 'round';
 
   return (
-    <div
-      role={'button'}
-      tabIndex={'0'}
-      className={css.root}
-      onClick={onClick}
-      onKeyDown={onClick}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      style={{ width, height }}>
-      <div
-        className={classnames(css.ui, {
-          [css.show]: mouseEntered || isVisible,
-        })}>
-        <Button className={css.button} onClick={onClick} size={'large'}>
-          {isVisible ? 'Hide code' : 'Play'}
-        </Button>
-      </div>
-      <svg width={width} height={height}>
-        {grid}
+    <svg viewBox={`0 0 ${width} ${height}`} className={css.root}>
+      <g transform={`translate(1, 1)`}>
+        <g className={css.grid}>{grid}</g>
         {shapes.map((shape, index) => {
-          const { r, g, b } = shape.color;
-          const color = `rgb(${r},${g},${b})`;
+          const showHandlers = shape.showHandlers || shape.dragging !== null;
+          const color = `rgb(${shape.color[0]},${shape.color[1]},${shape.color[2]})`;
+          const { dragging, showPoint } = shape;
 
-          let dPoints = shape.pos.map((x) => x * unit);
-
-          if (shape.pos.length > 4) {
-            dPoints.splice(0, 0, 'M');
-            dPoints.splice(3, 0, 'C');
+          if (shape.line) {
+            return (
+              <Fragment key={index}>
+                <line
+                  x1={shape.pos[0] * unit}
+                  y1={shape.pos[1] * unit}
+                  x2={shape.pos[6] * unit}
+                  y2={shape.pos[7] * unit}
+                  stroke={color}
+                  strokeWidth={strokeWeight * unit}
+                  strokeLinecap={strokeLineCap}
+                />
+                {showHandlers && (
+                  <Handler
+                    growCircle1={
+                      dragging === 0 ||
+                      dragging === 1 ||
+                      showPoint === 0 ||
+                      showPoint === 1
+                    }
+                    growCircle2={
+                      dragging === 6 ||
+                      dragging === 7 ||
+                      showPoint === 6 ||
+                      showPoint === 7
+                    }
+                    x1={shape.pos[0]}
+                    y1={shape.pos[1]}
+                    x2={shape.pos[6]}
+                    y2={shape.pos[7]}
+                    unit={unit}
+                  />
+                )}
+              </Fragment>
+            );
+          } else {
+            const d = `M ${shape.pos[0] * unit} ${shape.pos[1] * unit} C ${
+              shape.pos[2] * unit
+            } ${shape.pos[3] * unit} ${shape.pos[4] * unit} ${
+              shape.pos[5] * unit
+            } ${shape.pos[6] * unit} ${shape.pos[7] * unit}`;
+            return (
+              <Fragment key={index}>
+                <path
+                  d={d}
+                  stroke={color}
+                  fill="none"
+                  strokeWidth={strokeWeight * unit}
+                  strokeLinecap={strokeLineCap}
+                />
+                {showHandlers && (
+                  <g>
+                    <Handler d={d} unit={unit} />
+                    <Handler
+                      growCircle1={
+                        dragging === 0 ||
+                        dragging === 1 ||
+                        showPoint === 0 ||
+                        showPoint === 1
+                      }
+                      growCircle2={
+                        dragging === 2 ||
+                        dragging === 3 ||
+                        showPoint === 2 ||
+                        showPoint === 3
+                      }
+                      x1={shape.pos[0]}
+                      y1={shape.pos[1]}
+                      x2={shape.pos[2]}
+                      y2={shape.pos[3]}
+                      unit={unit}
+                    />
+                    <Handler
+                      growCircle1={
+                        dragging === 6 ||
+                        dragging === 7 ||
+                        showPoint === 6 ||
+                        showPoint === 7
+                      }
+                      growCircle2={
+                        dragging === 4 ||
+                        dragging === 5 ||
+                        showPoint === 4 ||
+                        showPoint === 5
+                      }
+                      x1={shape.pos[6]}
+                      y1={shape.pos[7]}
+                      x2={shape.pos[4]}
+                      y2={shape.pos[5]}
+                      unit={unit}
+                    />
+                  </g>
+                )}
+              </Fragment>
+            );
           }
-
-          return shape.type === true ? (
-            <line
-              key={index}
-              x1={shape.pos[0] * unit}
-              y1={shape.pos[1] * unit}
-              x2={shape.pos[6] * unit}
-              y2={shape.pos[7] * unit}
-              stroke={color}
-              strokeWidth={strokeWidth * unit}
-            />
-          ) : (
-            <Fragment key={index}>
-              <path
-                key={index}
-                d={dPoints.join(' ')}
-                stroke={color}
-                fill="none"
-                strokeWidth={strokeWidth * unit}
-              />
-              {handlers(shape, index, color)}
-            </Fragment>
-          );
         })}
-      </svg>
-    </div>
+      </g>
+    </svg>
   );
 };
+
+const Handler = memo(
+  ({ x1, y1, x2, y2, d, unit, growCircle1, growCircle2 }) => {
+    return (
+      <g>
+        {d && <path d={d} className={css.handlerLine} />}
+        {!d && (
+          <line
+            x1={x1 * unit}
+            y1={y1 * unit}
+            x2={x2 * unit}
+            y2={y2 * unit}
+            className={css.handlerLine}
+          />
+        )}
+        {x1 > -1 && (
+          <circle
+            cx={x1 * unit}
+            cy={y1 * unit}
+            r={growCircle1 ? 7 : 4}
+            stroke={growCircle1 ? '#FEEF6B' : null}
+            className={css.handlerCircle}
+          />
+        )}
+        {x1 > -1 && (
+          <circle
+            cx={x2 * unit}
+            cy={y2 * unit}
+            r={growCircle2 ? 7 : 4}
+            stroke={growCircle2 ? '#FEEF6B' : null}
+            className={css.handlerCircle}
+          />
+        )}
+      </g>
+    );
+  }
+);
 
 export default SketchGraphic;

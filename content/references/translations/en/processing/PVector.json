@@ -1,6 +1,6 @@
 {
-  "brief": "A class to describe a two or three dimensional vector.",
-  "constructors": ["PVector(", "PVector(x, y, z)", "PVector(x, y)"],
+  "brief": "A class to describe a two or three dimensional vector",
+  "constructors": ["PVector()", "PVector(x, y, z)", "PVector(x, y)"],
   "related": [],
   "methods": [
     {
@@ -11,12 +11,12 @@
     {
       "anchor": "PVector_random2D_",
       "name": "random2D()",
-      "desc": "Make a new 2D unit vector with a random direction."
+      "desc": "Make a new 2D unit vector with a random direction"
     },
     {
       "anchor": "PVector_random3D_",
       "name": "random3D()",
-      "desc": "Make a new 3D unit vector with a random direction."
+      "desc": "Make a new 3D unit vector with a random direction"
     },
     {
       "anchor": "PVector_fromAngle_",
@@ -132,7 +132,7 @@
       "desc": "The z component of the vector"
     }
   ],
-  "description": "A class to describe a two or three dimensional vector, specifically a\n Euclidean (also known as geometric) vector. A vector is an entity that has\n both magnitude and direction. The datatype, however, stores the components of\n the vector (x,y for 2D, and x,y,z for 3D). The magnitude and direction can be\n accessed via the methods <b>mag()</b> and <b>heading()</b>.<br />\n <br />\n In many of the Processing examples, you will see <b>PVector</b> used to\n describe a position, velocity, or acceleration. For example, if you consider\n a rectangle moving across the screen, at any given instant it has a position\n (a vector that points from the origin to its location), a velocity (the rate\n at which the object's position changes per time unit, expressed as a vector),\n and acceleration (the rate at which the object's velocity changes per time\n unit, expressed as a vector). Since vectors represent groupings of values, we\n cannot simply use traditional addition/multiplication/etc. Instead, we'll\n need to do some \"vector\" math, which is made easy by the methods inside the\n <b>PVector</b> class.\n\n\n A class to describe a two or three dimensional vector.\n <p>\n The result of all functions are applied to the vector itself, with the\n exception of cross(), which returns a new PVector (or writes to a specified\n 'target' PVector). That is, add() will add the contents of one vector to this\n one. Using add() with additional parameters allows you to put the result into\n a new PVector. Functions that act on multiple vectors also include static\n versions. Because creating new objects can be computationally expensive, most\n functions include an optional 'target' PVector, so that a new PVector object\n is not created with each operation.\n <p>\n Initially based on the Vector3D class by\n <a href=\"http://www.shiffman.net\">Dan Shiffman</a>.",
+  "description": "A class to describe a two or three dimensional vector, specifically a\n Euclidean (also known as geometric) vector. A vector is an entity that has\n both magnitude and direction. The datatype, however, stores the components of\n the vector (x,y for 2D, and x,y,z for 3D). The magnitude and direction can be\n accessed via the methods <b>mag()</b> and <b>heading()</b>.<br />\n <br />\n In many of the Processing examples, you will see <b>PVector</b> used to\n describe a position, velocity, or acceleration. For example, if you consider\n a rectangle moving across the screen, at any given instant it has a position\n (a vector that points from the origin to its location), a velocity (the rate\n at which the object's position changes per time unit, expressed as a vector),\n and acceleration (the rate at which the object's velocity changes per time\n unit, expressed as a vector). Since vectors represent groupings of values, we\n cannot simply use traditional addition/multiplication/etc. Instead, we'll\n need to do some \"vector\" math, which is made easy by the methods inside the\n <b>PVector</b> class.\n\n ",
   "type": "class",
   "classanchor": "PVector",
   "category": "math",

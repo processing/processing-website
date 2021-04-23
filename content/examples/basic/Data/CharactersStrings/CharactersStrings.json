@@ -1,7 +1,0 @@
-{
-  "name": "Characters Strings",
-  "title": "Characters Strings",
-  "author": "",
-  "description": "The character datatype, abbreviated as char, stores letters and \n  symbols in the Unicode format, a coding system developed to support \n  a variety of world languages. Characters are distinguished from other\n  symbols by putting them between single quotes ('P').<br />\n  <br />\n  A string is a sequence of characters. A string is noted by surrounding \n  a group of letters with double quotes (\"Processing\"). \n  Chars and strings are most often used with the keyboard methods, \n  to display text to the screen, and to load images or files.<br />\n  <br />\n  The String datatype must be capitalized because it is a complex datatype.\n  A String is actually a class with its own methods, some of which are\n  featured below.",
-  "featured": []
-}

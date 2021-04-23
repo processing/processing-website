@@ -1,8 +1,8 @@
 {
-  "brief": "Returns the three-dimensional X, Y, Z position in model space.",
+  "brief": "Returns the three-dimensional X, Y, Z position in model space",
   "related": ["modelX_", "modelZ_"],
   "name": "modelY()",
-  "description": "Returns the three-dimensional X, Y, Z position in model space. This\n returns the Y value for a given coordinate based on the current set of\n transformations (scale, rotate, translate, etc.) The Y value can be used\n to place an object in space relative to the location of the original\n point once the transformations are no longer in use.<br />\n <br />\n In the example, the <b>modelX()</b>, <b>modelY()</b>, and\n <b>modelZ()</b> functions record the location of a box in space after\n being placed using a series of translate and rotate commands. After\n popMatrix() is called, those transformations no longer apply, but the\n (x, y, z) coordinate returned by the model functions is used to place\n another box in the same location.",
+  "description": "Returns the three-dimensional X, Y, Z position in model space. This\n returns the Y value for a given coordinate based on the current set of\n transformations (scale, rotate, translate, etc.) The Y value can be used\n to place an object in space relative to the location of the original\n point once the transformations are no longer in use.<br />\n <br />\n In the example, the <b>modelX()</b>, <b>modelY()</b>, and\n <b>modelZ()</b> functions record the location of a box in space after\n being placed using a series of translate and rotate commands. After\n <b>popMatrix()</b> is called, those transformations no longer apply, but the\n <b>(x, y, z)</b> coordinate returned by the model functions is used to place\n another box in the same location.",
   "syntax": ["modelY(x, y, z)"],
   "returns": "float",
   "type": "function",

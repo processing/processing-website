@@ -1,7 +1,5 @@
 .root {
-  margin-right: var(--gutter-double);
-  padding: 10px 0;
-  height: 47vh;
+  padding: 0px 0 var(--gutter-double);
 
   & a {
     display: block;

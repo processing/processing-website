@@ -1,5 +1,5 @@
 {
-  "brief": "Inserts a new value into the <b>JSONArray</b> at the specified index position.",
+  "brief": "Inserts a new value into the <b>JSONArray</b> at the specified index position",
   "related": [
     "JSONArray_setInt_",
     "JSONArray_setFloat_",

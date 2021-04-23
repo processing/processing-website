@@ -1,4 +1,5 @@
-import React, { useMemo } from 'react';
+import React, { memo } from 'react';
+import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
@@ -10,7 +11,8 @@ import Button from '../components/Button';
 import Card from '../components/Card';
 import Sketch from '../components/sketch/Sketch';
 
-import { subcategoryFromDirectory } from '../utils/data';
+import { useRandomArray } from '../hooks';
+import { usePreparedExamples } from '../hooks/examples';
 
 import css from '../styles/pages/index.module.css';
 import grid from '../styles/grid.module.css';
@@ -48,41 +50,19 @@ const IndexPage = ({ data }) => {
   const intl = useIntl();
   const { locale } = useLocalization();
 
-  const items = data.examples.nodes;
-  const images = data.images.nodes;
-
-  const examples = useMemo(
-    () =>
-      items.map((item, i) => {
-        const image = images
-          ? images.find(
-              (img) => img.relativeDirectory === item.relativeDirectory
-            )
-          : '';
-        const [cat, subcat, slug] = item.relativeDirectory.split('/');
-        return {
-          slug: slug,
-          subcat: subcat,
-          cat: cat,
-          name: item.name,
-          dir: item.relativeDirectory,
-          img: image,
-        };
-      }),
-    [items, images]
+  const featuredExamples = usePreparedExamples(
+    data.examples.nodes,
+    data.exampleImages.nodes
   );
-
-  const selectedExamples = useMemo(() => {
-    return examples ? examples.slice(0, 4) : [];
-  }, [examples]);
+  const randomExamples = useRandomArray(featuredExamples, 4);
 
   return (
     <Layout isHomepage>
       <Helmet>
-        <title>{'Welcome to Processing!'}</title>
+        <title>Welcome to Processing!</title>
       </Helmet>
-      <div className={classnames(css.hero, grid.grid, grid.rightBleed)}>
-        <div className={classnames(grid.col, css.intro)}>
+      <Sketch>
+        <div className={css.hero}>
           <h1>{intl.formatMessage({ id: 'introTitle' })}</h1>
           <p>{intl.formatMessage({ id: 'introText' })}</p>
           <div className={css.buttons}>
@@ -100,37 +80,12 @@ const IndexPage = ({ data }) => {
             </Button>
           </div>
         </div>
-        <Sketch />
-      </div>
-      <div className={classnames(grid.grid, css.section)}>
-        <div className={classnames(grid.col, grid.nest, css.examples)}>
-          <h3 className={grid.col}>{intl.formatMessage({ id: 'examples' })}</h3>
-          <ul>
-            {selectedExamples.map((example, i) => (
-              <li
-                className={classnames(css.example, grid.col)}
-                key={`example-${i}`}>
-                <Link
-                  to={`/examples/${example.slug.toLowerCase()}.html`}
-                  language={locale}>
-                  <div className={css.imgContainer}>
-                    {example.img && (
-                      <Img fluid={example.img.childImageSharp.fluid} />
-                    )}
-                  </div>
-                  <h4>{example.name}</h4>
-                  <p>{`in ${subcategoryFromDirectory(
-                    example.dir
-                  )} examples`}</p>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <div className={classnames(grid.col, css.moreButton)}>
-            <Button to={'/examples'}>More Examples</Button>
-          </div>
-        </div>
-      </div>
+      </Sketch>
+      <FeaturedExamples
+        examples={randomExamples}
+        heading={intl.formatMessage({ id: 'examples' })}
+        locale={locale}
+      />
       <div className={css.sectionDivider} />
       <div className={classnames(grid.grid, css.section)}>
         <div className={classnames(grid.col, css.half)}>
@@ -144,41 +99,37 @@ const IndexPage = ({ data }) => {
         </div>
         <div className={classnames(css.half, grid.nest, css.cardGrid)}>
           <div className={classnames(grid.col, css.cardCol)}>
-            <Card
-              to={'/tutorials/gettingstarted'}
-              description={intl.formatMessage({
-                id: 'cardGettingStartedDescription',
-              })}
-              className={css.card}>
-              {intl.formatMessage({ id: 'cardGettingStarted' })}
-            </Card>
-            <Card to={'/reference'} className={css.card}>
-              <h4>{intl.formatMessage({ id: 'cardReference' })}</h4>
+            <Card className={css.card}>
+              <h4>{intl.formatMessage({ id: 'cardGettingStarted' })}</h4>
               <p>
-                {intl.formatMessage({
-                  id: 'cardReferenceDescription',
-                })}
+                {intl.formatMessage({ id: 'cardGettingStartedDescription' })}
               </p>
+              <Button to={'/tutorials/gettingstarted'} size="small">
+                {intl.formatMessage({ id: 'cardGettingStartedButton' })}
+              </Button>
+            </Card>
+            <Card className={css.card}>
+              <h4>{intl.formatMessage({ id: 'cardReference' })}</h4>
+              <p>{intl.formatMessage({ id: 'cardReferenceDescription' })}</p>
+              <Button to={'/reference'} size="small">
+                {intl.formatMessage({ id: 'cardReferenceButton' })}
+              </Button>
             </Card>
           </div>
           <div className={classnames(grid.col, css.cardCol)}>
-            <Card
-              to={'/download'}
-              description={intl.formatMessage({
-                id: 'cardDownloadDescription',
-              })}
-              className={css.card}>
-              {intl.formatMessage({ id: 'cardDownload' })}
+            <Card className={css.card}>
+              <h4>{intl.formatMessage({ id: 'cardDownload' })}</h4>
+              <p>{intl.formatMessage({ id: 'cardDownloadDescription' })}</p>
+              <Button to={'/download'} size="small">
+                {intl.formatMessage({ id: 'cardDownloadButton' })}
+              </Button>
             </Card>
-            <Card
-              href={'https://discourse.processing.org/'}
-              className={css.card}>
+            <Card className={css.card}>
               <h4>{intl.formatMessage({ id: 'cardForum' })}</h4>
-              <p>
-                {intl.formatMessage({
-                  id: 'cardForumDescription',
-                })}
-              </p>
+              <p>{intl.formatMessage({ id: 'cardForumDescription' })}</p>
+              <Button href={'https://discourse.processing.org/'} size="small">
+                {intl.formatMessage({ id: 'cardForumButton' })}
+              </Button>
             </Card>
           </div>
         </div>
@@ -274,18 +225,68 @@ const IndexPage = ({ data }) => {
   );
 };
 
+const FeaturedExamples = memo(({ heading, examples, locale }) => {
+  return (
+    <div className={classnames(grid.grid, css.section)}>
+      <div className={classnames(grid.col, grid.nest, css.examples)}>
+        <h3 className={grid.col}>{heading}</h3>
+        <ul>
+          {examples.map((example, i) => (
+            <li
+              className={classnames(css.example, grid.col)}
+              key={example.path}>
+              <Link to={example.path} language={locale}>
+                <div className={css.imgContainer}>
+                  {example.image && (
+                    <Img
+                      fluid={example.image.childImageSharp.fluid}
+                      loading="eager"
+                    />
+                  )}
+                </div>
+                <h4>{example.name}</h4>
+                <p>in {example.subcategory} examples</p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <div className={classnames(grid.col, css.moreButton)}>
+          <Button to={'/examples'}>More Examples</Button>
+        </div>
+      </div>
+    </div>
+  );
+});
+
 export default IndexPage;
 
 export const query = graphql`
-  query {
+  query(
+    $featuredExamples: [String] = [
+      "KeyboardFunctions"
+      "RadialGradient"
+      "Saturation"
+      "GameOfLife"
+      "LoadingImages"
+      "RotatePushPop"
+      "Spot"
+      "LinearGradient"
+      "PenroseSnowflake"
+      "MultipleParticleSystems"
+    ]
+  ) {
     examples: allFile(
       filter: {
+        name: { in: $featuredExamples }
+        extension: { eq: "json" }
         sourceInstanceName: { eq: "examples" }
         fields: { lang: { eq: "en" } }
+        dir: { regex: "/^((?!data).)*$/" }
       }
       sort: { order: ASC, fields: relativeDirectory }
     ) {
       nodes {
+        id
         name
         relativeDirectory
         childJson {
@@ -294,17 +295,21 @@ export const query = graphql`
         }
       }
     }
-    images: allFile(
+    exampleImages: allFile(
       filter: {
+        name: { in: $featuredExamples }
         sourceInstanceName: { eq: "examples" }
         extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
+        dir: { regex: "/^((?!data).)*$/" }
       }
     ) {
       nodes {
+        id
         name
         relativeDirectory
         childImageSharp {
           fluid(maxWidth: 800) {
+            ...GatsbyImageSharpFluid
             base64
             srcWebp
             srcSetWebp

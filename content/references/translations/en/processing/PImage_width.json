@@ -1,12 +1,12 @@
 {
-  "brief": "The width of the image in units of pixels.",
+  "brief": "The width of the image in units of pixels",
   "related": [],
   "name": "width",
   "description": "The width of the image in units of pixels.",
   "syntax": ["pimg.width\n"],
-  "type": "field",
   "category": "pimage",
   "subcategory": "field",
+  "type": "field",
   "classanchor": "PImage",
   "parameters": [{ "name": "pimg", "desc": " any object of type PImage" }]
 }

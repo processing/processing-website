@@ -1,5 +1,5 @@
 {
-  "brief": "Returns the IP address of the machine as a String",
+  "brief": "Returns the IP address of the machine as a <b>String</b>",
   "related": [],
   "name": "ip()",
   "description": "Returns the IP address of the computer to which the Client is attached.",

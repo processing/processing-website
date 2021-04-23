@@ -8,7 +8,7 @@
     "Table_matchRow_"
   ],
   "name": "matchRows()",
-  "description": "Finds the rows in the <b>Table</b> that match the regular expression provided, \n and returns references to those rows.  Returns an iterator, so <b>for</b> \n must be used to iterate through all the rows, as shown in the example above. \n The column to search may be specified by either its ID or title.",
+  "description": "Finds the rows in the <b>Table</b> that match the regular expression provided,\n and returns references to those rows.  Returns an iterator, so <b>for</b>\n must be used to iterate through all the rows, as shown in the example above.\n The column to search may be specified by either its ID or title.",
   "syntax": [".matchRows(regexp, column)", ".matchRows(regexp, columnName)"],
   "returns": "Iterable",
   "type": "method",

@@ -1,5 +1,5 @@
 {
-  "brief": "Generic class for handling tabular data, typically from a CSV, TSV,\n           or other sort of spreadsheet file.",
+  "brief": "Generic class for handling tabular data, typically from a CSV, TSV,\n           or other sort of spreadsheet file",
   "methods": [
     {
       "anchor": "Table_addColumn_",
@@ -19,7 +19,7 @@
     {
       "anchor": "Table_getRowCount_",
       "name": "getRowCount()",
-      "desc": "Returns the total number of rows in a table"
+      "desc": "Returns the total number of rows in a <b>Table</b>"
     },
     {
       "anchor": "Table_clearRows_",
@@ -125,9 +125,9 @@
   "csspath": "../../",
   "isLibrary": "true",
   "classFields": [],
-  "description": "<b>Table</b> objects store data with multiple rows and columns, much like in\n a traditional spreadsheet. Tables can be generated from scratch, dynamically,\n or using data from an existing file. Tables can also be output and saved to\n disk, as in the example above.<br />\n <br />\n Additional <b>Table</b> methods are documented in the <a href=\n \"http://processing.github.io/processing-javadocs/core/processing/data/Table.html\">Processing\n Table Javadoc</a>.\n \n <p>\n Generic class for handling tabular data, typically from a CSV, TSV, or other\n sort of spreadsheet file.\n </p>\n <p>\n CSV files are\n <a href=\"http://en.wikipedia.org/wiki/Comma-separated_values\">comma separated\n values</a>, often with the data in quotes. TSV files use tabs as separators,\n and usually don't bother with the quotes.\n </p>\n <p>\n File names should end with .csv if they're comma separated.\n </p>\n <p>\n A rough \"spec\" for CSV can be found\n <a href=\"http://tools.ietf.org/html/rfc4180\">here</a>.\n </p>",
+  "description": "<b>Table</b> objects store data with multiple rows and columns, much like in\n a traditional spreadsheet. Tables can be generated from scratch, dynamically,\n or using data from an existing file. Tables can also be output and saved to\n disk, as in the example above.<br />\n <br />\n Additional <b>Table</b> methods are documented in the <a href=\n \"http://processing.github.io/processing-javadocs/core/processing/data/Table.html\">Processing\n Table Javadoc</a>.\n\n ",
   "type": "class",
-  "constructors": ["Table(", "Table(rows)"],
+  "constructors": ["Table()", "Table(rows)"],
   "related": ["loadTable_", "saveTable_", "TableRow"],
   "name": "Table",
   "classanchor": "Table",

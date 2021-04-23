@@ -1,0 +1,9 @@
+{
+  "name": "Penrose Snowflake",
+  "title": "Penrose Snowflake",
+  "level": "Advanced",
+  "order": "3",
+  "author": "Geraldine Sarmiento (based on Patrick Dwyer's L-System class",
+  "description": "",
+  "featured": ["pushMatrix_", "popMatrix_", "translate_", "rotate_"]
+}

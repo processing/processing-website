@@ -9,7 +9,7 @@ import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
 import TableOfContents from '../components/TableOfContents';
 
-import { useHighlight } from '../utils/hooks';
+import { useHighlight } from '../hooks';
 
 import css from '../styles/pages/page.module.css';
 import grid from '../styles/grid.module.css';
@@ -18,14 +18,14 @@ const Environment = ({ data }) => {
   const { mdx } = data;
   const { frontmatter, body, tableOfContents } = mdx;
   const intl = useIntl();
-  const ref = useHighlight();
+  useHighlight();
 
   return (
     <Layout>
       <Helmet>
-        <title>{'Environment'}</title>
+        <title>Environment</title>
       </Helmet>
-      <div className={classnames(grid.grid, css.root)} ref={ref}>
+      <div className={classnames(grid.grid, css.root)}>
         <Donate />
         {mdx !== null ? (
           <Fragment>

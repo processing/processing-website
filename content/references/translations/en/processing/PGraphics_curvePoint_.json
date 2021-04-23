@@ -1,5 +1,5 @@
 {
-  "brief": "Evalutes the curve at point t for points a, b, c, d.",
+  "brief": "Evaluates the curve at point t for points a, b, c, d",
   "related": [
     "PGraphics_curve_",
     "PGraphics_curveVertex_",

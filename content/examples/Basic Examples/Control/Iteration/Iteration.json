@@ -1,0 +1,9 @@
+{
+  "name": "Iteration",
+  "title": "Iteration",
+  "author": "",
+  "level": "Beginner",
+  "order": "0",
+  "description": "Iteration with a \"for\" structure to construct repetitive forms.",
+  "featured": ["for"]
+}

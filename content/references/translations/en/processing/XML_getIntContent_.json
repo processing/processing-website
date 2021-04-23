@@ -1,8 +1,8 @@
 {
-  "brief": "Gets the content of an element as an int",
+  "brief": "Gets the content of an element as an <b>int</b>",
   "related": ["XML_getContent_", "XML_getFloatContent_"],
   "name": "getIntContent()",
-  "description": "Returns the content of an element as an int. If there is no such content, \n either <b>null</b> or the provided default value is returned.",
+  "description": "Returns the content of an element as an <b>int</b>. If there is no such content, \n either <b>null</b> or the provided default value is returned.",
   "syntax": [".getIntContent()", ".getIntContent(defaultValue)"],
   "returns": "int",
   "type": "method",

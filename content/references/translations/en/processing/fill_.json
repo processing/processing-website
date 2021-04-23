@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the color used to fill shapes.",
+  "brief": "Sets the color used to fill shapes",
   "related": [
     "noFill_",
     "stroke_",

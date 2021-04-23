@@ -6,10 +6,13 @@ import { useIntl } from 'react-intl';
 import grid from '../styles/grid.module.css';
 import css from './Footer.module.css';
 
-const Footer = ({ siteTitle }) => {
+const Footer = ({ siteTitle, withSidebar }) => {
   const intl = useIntl();
   return (
-    <footer className={classnames(css.root, grid.grid)}>
+    <footer
+      className={classnames(css.root, grid.grid, {
+        [css.withSidebar]: withSidebar,
+      })}>
       <div className={classnames(grid.col, css.contactWrapper)}>
         <h3>{intl.formatMessage({ id: 'contactUs' })}</h3>
         <p>{intl.formatMessage({ id: 'contactUsDescription' })}</p>

@@ -1,5 +1,5 @@
 {
-  "brief": "Disconnect a particular client.",
+  "brief": "Disconnect a particular client",
   "related": [],
   "name": "disconnect()",
   "description": "Disconnect a particular client.",

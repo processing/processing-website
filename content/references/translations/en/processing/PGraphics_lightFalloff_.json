@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the falloff rates for point lights, spot lights, and ambient\n           lights.",
+  "brief": "Sets the falloff rates for point lights, spot lights, and ambient\n           lights",
   "related": [
     "PGraphics_lights_",
     "PGraphics_ambientLight_",
@@ -8,7 +8,7 @@
     "PGraphics_lightSpecular_"
   ],
   "name": "lightFalloff()",
-  "description": "Sets the falloff rates for point lights, spot lights, and ambient lights.\n Like <b>fill()</b>, it affects only the elements which are created after it\n in the code. The default value is <b>lightFalloff(1.0, 0.0, 0.0)</b>, and the\n parameters are used to calculate the falloff with the following\n equation:<br />\n <br />\n d = distance from light position to vertex position<br />\n falloff = 1 / (CONSTANT + d * LINEAR + (d*d) * QUADRATIC)<br />\n <br />\n Thinking about an ambient light with a falloff can be tricky. If you want a\n region of your scene to be lit ambiently with one color and another region to\n be lit ambiently with another color, you could use an ambient light with\n location and falloff. You can think of it as a point light that doesn't care\n which direction a surface is facing.",
+  "description": "Sets the falloff rates for point lights, spot lights, and ambient lights.\n Like <b>fill()</b>, it affects only the elements which are created after it\n in the code. The default value is <b>lightFalloff(1.0, 0.0, 0.0)</b>, and the\n parameters are used to calculate the falloff with the following\n equation:<br />\n <br />\n d = distance from light position to vertex position<br />\n falloff = 1 / (CONSTANT + d * LINEAR + (d*d) * QUADRATIC)<br />\n <br />\n Thinking about an ambient light with a falloff can be tricky. If you want a\n region of your scene to be ambient lit with one color and another region to\n be ambient lit with another color, you could use an ambient light with\n location and falloff. You can think of it as a point light that doesn't care\n which direction a surface is facing.",
   "syntax": ["graphics.lightFalloff(constant, linear, quadratic)"],
   "returns": "void",
   "type": "method",

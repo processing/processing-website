@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the style of the joints which connect line segments.",
+  "brief": "Sets the style of the joints which connect line segments",
   "related": [
     "PGraphics_stroke_",
     "PGraphics_strokeWeight_",

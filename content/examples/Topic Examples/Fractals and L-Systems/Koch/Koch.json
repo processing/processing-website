@@ -1,0 +1,9 @@
+{
+  "name": "Koch",
+  "title": "Koch Curve",
+  "author": "Daniel Shiffman",
+  "level": "Advanced",
+  "order": "2",
+  "description": "Renders a simple fractal, the Koch snowflake. \n  Each recursive level is drawn in sequence.",
+  "featured": ["PVector", "PVector_copy_", "PVector_sub_", "PVector_div_", "PVector_add_", "PVector_rotate_"]
+}

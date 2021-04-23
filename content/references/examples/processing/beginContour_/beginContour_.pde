@@ -1,17 +1,17 @@
-size(100, 100);
-translate(50, 50);
+size(400,400);
+translate(200, 200);
 stroke(255, 0, 0);
 beginShape();
 // Exterior part of shape, clockwise winding
-vertex(-40, -40);
-vertex(40, -40);
-vertex(40, 40);
-vertex(-40, 40);
+vertex(-160, -160);
+vertex(160, -160);
+vertex(160, 160);
+vertex(-160, 160);
 // Interior part of shape, counter-clockwise winding
 beginContour();
-vertex(-20, -20);
-vertex(-20, 20);
-vertex(20, 20);
-vertex(20, -20);
+vertex(-80, -80);
+vertex(-80, 80);
+vertex(80, 80);
+vertex(80, -80);
 endContour();
 endShape(CLOSE);

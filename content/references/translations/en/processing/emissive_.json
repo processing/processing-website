@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the emissive color of the material used for drawing shapes drawn to\n the screen.",
+  "brief": "Sets the emissive color of the material used for drawing shapes drawn to\n the screen",
   "related": ["ambient_", "specular_", "shininess_"],
   "name": "emissive()",
   "description": "Sets the emissive color of the material used for drawing shapes drawn to\n the screen. Used in combination with <b>ambient()</b>,\n <b>specular()</b>, and <b>shininess()</b> in setting the material\n properties of shapes.",

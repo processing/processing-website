@@ -1,0 +1,9 @@
+{
+  "name": "Flocking",
+  "title": "Flocking",
+  "author": "Daniel Shiffman",
+  "level": "Advanced",
+  "order": "4",
+  "description": "An implementation of Craig Reynold's Boids program to simulate\n  the flocking behavior of birds. Each boid steers itself based on \n  rules of avoidance, alignment, and coherence.\n\n  Click the mouse to add a new boid.",
+  "featured": ["PVector", "ArrayList", "PVector_normalize_", "PVector_limit_", "PVector_heading_", "PVector_dist_"]
+}

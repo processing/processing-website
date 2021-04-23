@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the current font that will be drawn with the <b>text()</b>\n           function.",
+  "brief": "Sets the current font that will be drawn with the <b>text()</b>\n           function",
   "related": ["loadFont_", "PFont", "PGraphics_text_", "PGraphics_textSize_"],
   "name": "textFont()",
   "description": "Sets the current font that will be drawn with the <b>text()</b> function.\n Fonts must be created for Processing with <b>createFont()</b> or loaded with\n <b>loadFont()</b> before they can be used. The font set through\n <b>textFont()</b> will be used in all subsequent calls to the <b>text()</b>\n function. If no <b>size</b> parameter is specified, the font size defaults to\n the original size (the size in which it was created with the \"Create Font...\"\n tool) overriding any previous calls to <b>textFont()</b> or\n <b>textSize()</b>.<br />\n <br />\n When fonts are rendered as an image texture (as is the case with the P2D and\n P3D renderers as well as with <b>loadFont()</b> and vlw files), you should\n create fonts at the sizes that will be used most commonly. Using\n <b>textFont()</b> without the size parameter will result in the cleanest\n type.<br />\n <br />",

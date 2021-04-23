@@ -1,5 +1,5 @@
 {
-  "brief": "Draws text to the screen.",
+  "brief": "Draws text to the screen",
   "related": [
     "PGraphics_textAlign_",
     "PGraphics_textFont_",
@@ -47,7 +47,7 @@
     { "name": "z", "description": "z-coordinate of text", "type": ["float"] },
     {
       "name": "chars",
-      "description": "the alphanumberic symbols to be displayed",
+      "description": "the alphanumeric symbols to be displayed",
       "type": ["char[]"]
     },
     {

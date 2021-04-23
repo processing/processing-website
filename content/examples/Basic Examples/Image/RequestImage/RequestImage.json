@@ -1,0 +1,9 @@
+{
+  "name": "Request Image",
+  "title": "Request Image",
+  "author": "Ira Greenberg ( From Processing for Flash Developers).",
+  "level": "Intermediate",
+  "order": "5",
+  "description": "Shows how to use the requestImage() function with preloader animation. The requestImage() function loads images on a separate thread so that the sketch does not freeze while they load. It's very useful when you are loading large images. /n These images are small for a quick download, but try it with your own huge images to get the full effect.",
+  "featured": ["requestImage_", "PImage"]
+}

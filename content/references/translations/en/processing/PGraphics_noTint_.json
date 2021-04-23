@@ -1,5 +1,5 @@
 {
-  "brief": "Removes the current fill value for displaying images and reverts to\n displaying images with their original hues.",
+  "brief": "Removes the current fill value for displaying images and reverts to\n displaying images with their original hues",
   "related": ["PGraphics_tint_", "PGraphics_image_"],
   "name": "noTint()",
   "description": "Removes the current fill value for displaying images and reverts to\n displaying images with their original hues.",

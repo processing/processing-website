@@ -1,0 +1,45 @@
+.root {
+  position: absolute;
+  display: block;
+  right: 0;
+  bottom: 0;
+  border-radius: 0px;
+}
+
+.root::before,
+.root::after {
+  content: "";
+  position: absolute;
+  /* border-radius: 50px; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s;
+}
+
+.root::before {
+  z-index: -1;
+  background-color: #0251c8;
+  transform: translate(3px, -3px) rotate(2deg);
+}
+
+.root:hover::before {
+  transform: translate(-10px, -10px) rotate(-4deg);
+}
+
+.root::after {
+  z-index: -1;
+  background-color: #508bff;
+  transform: translate(-3px, 3px) rotate(2deg);
+}
+
+.root:hover::after {
+  transform: translate(10px, 10px) rotate(-4deg);
+}
+
+.root:focus,
+.root:hover,
+.root:active {
+  background-color: var(--processing-blue-dark);
+}

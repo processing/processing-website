@@ -1,5 +1,5 @@
 {
-  "brief": "A triangle is a plane created by connecting three points.",
+  "brief": "A triangle is a plane created by connecting three points",
   "related": ["beginShape_"],
   "name": "triangle()",
   "description": "A triangle is a plane created by connecting three points. The first two\n arguments specify the first point, the middle two arguments specify the\n second point, and the last two arguments specify the third point.",

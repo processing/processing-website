@@ -1,89 +1,100 @@
-import React, { useState } from 'react';
+import React, { memo } from 'react';
 import Draggable from './Draggable';
+import classnames from 'classnames';
 import css from './Shape.module.css';
 
+/**
+  We pass the shapeIndex to the component in order to be able to memo the handler
+  functions so the interactive sketch renders faster
+**/
 const Shape = (props) => {
   const {
+    draggableClassName,
     shape,
-    shapesInx,
-    rangeX,
-    rangeY,
-    onMouseEnter,
-    onMouseLeave,
-    onDraggingStart,
-    onDraggingEnd,
-    tabIndex,
+    shapeIndex,
+    min,
+    max,
+    onChangeShape,
+    tabIndex
   } = props;
-  const [shapeClass, setShapeClass] = useState(true);
 
-  let draggable = [];
-
-  const blurRest = (e, value) => {
-    setShapeClass(!value);
+  const handleChange = (idx, val) => {
+    const newPos = shape.pos.slice();
+    newPos[idx] = val;
+    onChangeShape(shapeIndex, 'pos', newPos);
   };
 
-  const handleDraggingStart = (subindex) => {
-    onDraggingStart(shapesInx, subindex);
+  const handleDraggingStart = (idx) => {
+    onChangeShape(shapeIndex, 'dragging', idx);
   };
 
   const handleDraggingEnd = () => {
-    onDraggingEnd(shapesInx);
+    onChangeShape(shapeIndex, 'dragging', null);
   };
 
-  if (shape.type === true) {
-    draggable.push('line(');
-    shape.pos.forEach((p, index) => {
-      if (index < 2 || index > 5) {
-        draggable.push(
-          <Draggable
-            key={index}
-            className={css.Draggable}
-            onChange={props.onChange}
-            value={shape.pos[index]}
-            path={['shapes', shapesInx, 'pos', index]}
-            range={index % 2 === 0 ? rangeX : rangeY}
-            blurRest={blurRest}
-            tabIndex={tabIndex}
-          />
-        );
-        draggable.push(' * u, ');
-      }
-    });
-    draggable.pop();
-    draggable.push(' * u)');
-  } else {
-    draggable.push('bezier(');
-    shape.pos.forEach((p, index) => {
+  const handleMouseEnterLine = () => {
+    onChangeShape(shapeIndex, 'showHandlers', true);
+  };
+
+  const handleMouseLeaveLine = () => {
+    onChangeShape(shapeIndex, 'showHandlers', false);
+  };
+
+  const handleMouseEnterPoint = (idx) => {
+    onChangeShape(shapeIndex, 'showPoint', idx);
+  };
+
+  const handleMouseLeavePoint = () => {
+    onChangeShape(shapeIndex, 'showPoint', null);
+  };
+
+  const handleToggleShape = () => {
+    onChangeShape(shapeIndex, 'line', !shape.line);
+  };
+
+  const draggable = [];
+
+  for (let i = 0; i < shape.pos.length; i++) {
+    if (!shape.line || i < 2 || i > 5) {
       draggable.push(
         <Draggable
-          key={index}
-          index={index}
-          onChange={props.onChange}
+          key={`shape-pos-${i}`}
+          value={shape.pos[i]}
+          index={i}
+          className={draggableClassName}
+          onChange={handleChange}
+          onMouseEnter={handleMouseEnterPoint}
+          onMouseLeave={handleMouseLeavePoint}
           onDraggingStart={handleDraggingStart}
           onDraggingEnd={handleDraggingEnd}
-          range={index % 2 === 0 ? rangeX : rangeY}
-          value={shape.pos[index]}
-          path={['shapes', shapesInx, 'pos', index]}
-          blurRest={blurRest}
+          min={min}
+          max={max}
           tabIndex={tabIndex}
         />
       );
-      draggable.push(' * u, ');
-    });
-    draggable.pop();
-    draggable.push(' * u)');
+      draggable.push(i === shape.pos.length - 1 ? ' * u' : ' * u, ');
+    }
   }
 
   return (
     <span
       role={'button'}
       tabIndex={tabIndex}
-      className={shapeClass ? css.root : css.blur}
-      onMouseEnter={() => onMouseEnter(shapesInx)}
-      onMouseLeave={() => onMouseLeave(shapesInx)}>
-      {draggable}
+      className={css.root}
+      onMouseEnter={handleMouseEnterLine}
+      onMouseLeave={handleMouseLeaveLine}>
+      {'  '}
+      <span className={css.breakWhitespace}>
+        <button
+          className={classnames(draggableClassName, 'hljs-built_in')}
+          onClick={handleToggleShape}
+          tabIndex={tabIndex}>
+          {shape.line ? 'line' : 'bezier'}
+        </button>
+        ({draggable})
+      </span>
     </span>
   );
 };
 
-export default Shape;
+export default memo(Shape);

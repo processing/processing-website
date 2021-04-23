@@ -6,27 +6,30 @@
   width: fit-content;
   outline: none;
   border: 8px solid var(--lightgray);
-  padding: 6px 24px;
-  color: var(--processing-blue-dark);
-  font-family: var(--font-mono);
+  padding: 36px 40px;
   font-size: var(--text-small);
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease, border 0.2s ease;
 
+  & h4 {
+    font-size: var(--text-regular);
+  }
+
   & p {
+    font-weight: 400;
+    color: var(--darkgray);
     cursor: pointer;
   }
 }
 
-.root:focus {
-  background: var(--darkgray);
-  color: white;
+.root:focus,
+.root:hover {
+  background: var(--lightgray);
 }
 
 .root:hover {
-  border: 8px solid var(--processing-blue-dark);
-  background-color: var(--processing-blue-dark);
-  color: white;
+  border: 8px solid var(--lightgray);
+  color: var(--processing-blue-dark);
   & h4 {
     color: inherit;
   }
@@ -35,26 +38,11 @@
 .root:active {
   border: 8px solid var(--processing-blue-mid);
   background-color: var(--processing-blue-mid);
-}
-
-/*  Colors  */
-
-.root.gray {
-  background-color: var(--lightgray);
-  color: black;
-  &:hover {
-    background-color: var(--gray);
+  color: white;
+  & h4 {
+    color: inherit;
   }
-}
-
-/*  Sizes  */
-
-.small {
-  padding: 4px 16px;
-  font-size: var(--text-small);
-}
-
-.large {
-  padding: var(--gutter) var(--gutter-double);
-  font-size: var(--text-regular);
+  & p {
+    color: inherit;
+  }
 }

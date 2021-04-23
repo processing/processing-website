@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
@@ -9,7 +9,8 @@ import Layout from '../components/Layout';
 import ReferenceList from '../components/ReferenceList';
 import FilterBar from '../components/FilterBar';
 
-import { filterItems, organizeReferenceItems } from '../utils/data';
+import { useTree, useFilteredTree } from '../hooks';
+import { usePreparedItems } from '../hooks/reference';
 
 import grid from '../styles/grid.module.css';
 
@@ -17,19 +18,15 @@ const Reference = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const intl = useIntl();
 
-  const items = data.allFile.nodes;
-
-  const tree = useMemo(
-    () => organizeReferenceItems(filterItems(items, searchTerm)),
-    [items, searchTerm]
-  );
-
-  const categories = tree.map((item) => item.name);
+  const items = usePreparedItems(data.items.nodes);
+  const tree = useTree(items);
+  const filtered = useFilteredTree(tree, searchTerm);
+  const categories = Object.keys(tree);
 
   return (
     <Layout>
       <Helmet>
-        <title>{'Reference'}</title>
+        <title>Reference</title>
       </Helmet>
       <div className={grid.grid}>
         <h1 className={grid.col} style={{ flexBasis: '100%' }}>
@@ -44,7 +41,7 @@ const Reference = ({ data }) => {
           large
         />
         {!searchTerm && <CategoryNav categories={categories} />}
-        <ReferenceList data={tree} />
+        <ReferenceList tree={filtered} />
       </div>
     </Layout>
   );
@@ -54,7 +51,7 @@ export default Reference;
 
 export const query = graphql`
   query {
-    allFile(
+    items: allFile(
       filter: {
         fields: { lang: { eq: "en" }, lib: { eq: "processing" } }
         childJson: { type: { nin: ["method", "field"] } }
@@ -62,19 +59,11 @@ export const query = graphql`
     ) {
       nodes {
         name
-        relativeDirectory
         childJson {
           name
           brief
           category
           subcategory
-          syntax
-          parameters {
-            name
-            description
-          }
-          related
-          returns
         }
       }
     }

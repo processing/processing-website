@@ -1,0 +1,9 @@
+{
+  "name": "Logical Operators",
+  "title": "Logical Operators",
+  "author": "",
+  "level": "Beginner",
+  "order": "4",
+  "description": "The logical operators for AND (&&) and OR (||) are used to \n  combine simple relational statements into more complex expressions.\n  The NOT (!) operator is used to negate a boolean statement.",
+  "featured": ["logicalAND", "logicalOR", "logicalNOT"]
+}

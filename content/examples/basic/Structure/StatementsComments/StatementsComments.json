@@ -1,7 +1,0 @@
-{
-  "name": "Statements Comments",
-  "title": "Statements and Comments",
-  "author": "",
-  "description": "Statements are the elements that make up programs. \n  The \";\" (semi-colon) symbol is used to end statements.  \n  It is called the \"statement terminator.\" \n  Comments are used for making notes to help people better understand programs. \n  A comment begins with two forward slashes (\"//\").",
-  "featured": []
-}

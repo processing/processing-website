@@ -1,12 +1,12 @@
 {
-  "brief": "The height of the image in units of pixels.",
+  "brief": "The height of the image in units of pixels",
   "related": [],
   "name": "height",
   "description": "The height of the image in units of pixels.",
   "syntax": ["pimg.height\n"],
-  "type": "field",
   "category": "pimage",
   "subcategory": "field",
+  "type": "field",
   "classanchor": "PImage",
   "parameters": [{ "name": "pimg", "desc": " any object of type PImage" }]
 }

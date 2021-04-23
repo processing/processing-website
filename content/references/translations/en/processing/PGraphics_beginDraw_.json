@@ -1,8 +1,8 @@
 {
-  "brief": "Sets the default properties for a PGraphics object.",
+  "brief": "Sets the default properties for a <b>PGraphics</b> object",
   "related": [],
   "name": "beginDraw()",
-  "description": "Sets the default properties for a PGraphics object. It should be called\n before anything is drawn into the object.\n\n ",
+  "description": "Sets the default properties for a <b>PGraphics</b> object. It should be called\n before anything is drawn into the object.\n\n ",
   "syntax": ["graphics.beginDraw()"],
   "returns": "void",
   "type": "method",

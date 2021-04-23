@@ -1,0 +1,9 @@
+{
+  "name": "Load File1",
+  "title": "LoadFile 1",
+  "author": "",
+  "level": "Intermediate",
+  "order": "0",
+  "description": "Loads a text file that contains two numbers separated by a tab ('\\t').\n  A new pair of numbers is loaded each frame and used to draw a point on the screen.",
+  "featured": ["loadStrings_", "split_"]
+}

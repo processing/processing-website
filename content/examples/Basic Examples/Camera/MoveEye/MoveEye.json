@@ -1,0 +1,9 @@
+{
+  "name": "Move Eye",
+  "title": "Move Eye",
+  "author": "Simon Greenwold",
+  "level": "Intermediate",
+  "order": "0",
+  "description": "The camera lifts up (controlled by mouseY) while looking at the same point.",
+  "featured": ["camera_"]
+}

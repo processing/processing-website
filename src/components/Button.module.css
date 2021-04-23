@@ -34,23 +34,29 @@
 /*  Sizes  */
 
 .small {
-  padding: 4px 16px;
+  padding: 5px 18px 6px 18px;
   font-size: var(--text-small);
 }
 
 .large {
   padding: var(--gutter) var(--gutter-double);
   font-size: var(--text-regular);
+}
 
-  @media (--medium) {
+@media (--medium) {
+  .large {
     padding: var(--gutter) calc(var(--gutter-double) * 2 / 3);
   }
+}
 
-  @media (--reduced) {
+@media (--reduced) {
+  .large {
     padding: var(--gutter) calc(var(--gutter-double));
   }
+}
 
-  @media (--small) {
+@media (--small) {
+  .large {
     padding: var(--gutter-double) calc(var(--gutter-double) * 2);
   }
 }

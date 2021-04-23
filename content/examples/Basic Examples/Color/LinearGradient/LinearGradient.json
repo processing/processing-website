@@ -1,0 +1,9 @@
+{
+  "name": "Linear Gradient",
+  "title": "Simple Linear Gradient",
+  "author": "",
+  "level": "Intermediate",
+  "order": "5",
+  "description": "The lerpColor() function is useful for interpolating\n  between two colors.",
+  "featured": ["lerpColor_", "color_datatype"]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Animated Sprite",
+  "title": "Animated Sprite (Shifty + Teddy)",
+  "author": "James Paterson",
+  "level": "Intermediate",
+  "order": "1",
+  "description": "Press the mouse button to change animations.\n  Demonstrates loading, displaying, and animating GIF images.\n  It would be easy to write a program to display \n  animated GIFs, but would not allow as much control over \n  the display sequence and rate of display.",
+  "featured": ["PImage", "Array", "loadImage_"]
+}

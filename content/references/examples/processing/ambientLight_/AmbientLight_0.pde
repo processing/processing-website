@@ -1,10 +1,10 @@
-size(100, 100, P3D);
+size(400, 400, P3D);
 background(0);
 noStroke();
 // The spheres are white by default so
 // the ambient light changes their color
 ambientLight(51, 102, 126);
-translate(20, 50, 0);
-sphere(30);
-translate(60, 0, 0);
-sphere(30);
+translate(40, 200, 0);
+sphere(120);
+translate(240, 0, 0);
+sphere(120);

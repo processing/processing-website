@@ -1,5 +1,4 @@
 import React from 'react';
-import classnames from 'classnames';
 
 import css from './Column.module.css';
 
@@ -11,7 +10,7 @@ const Column = ({ children, float, style }) => {
   const _style = {
     float,
     padding,
-    ...style,
+    ...style
   };
 
   return (

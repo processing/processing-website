@@ -1,0 +1,9 @@
+{
+  "name": "Radial Gradient",
+  "title": "Radial Gradient",
+  "author": "",
+  "level": "Intermediate",
+  "order": "6",
+  "description": "Draws a series of concentric circles to create a gradient \n  from one color to another.",
+  "featured": ["colorMode_", "fill_"]
+}

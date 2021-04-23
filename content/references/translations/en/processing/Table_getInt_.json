@@ -9,7 +9,7 @@
     "Table_setString_"
   ],
   "name": "getInt()",
-  "description": "Retrieves an integer value from the <b>Table</b>'s specified row and column. \n The row is specified by its ID, while the column may be specified by either \n its ID or title.",
+  "description": "Retrieves an integer value from the <b>Table</b>'s specified row and column.\n The row is specified by its ID, while the column may be specified by either\n its ID or title.",
   "syntax": [".getInt(row, column)", ".getInt(row, columnName)"],
   "returns": "int",
   "type": "method",

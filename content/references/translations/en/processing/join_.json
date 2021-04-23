@@ -1,5 +1,5 @@
 {
-  "brief": "Combines an array of Strings into one String, each separated by the\n character(s) used for the <b>separator</b> parameter.",
+  "brief": "Combines an array of <b>Strings</b> into one <b>String</b>, each separated by the\n character(s) used for the <b>separator</b> parameter",
   "related": ["split_", "trim_", "nf_", "nfs_"],
   "name": "join()",
   "description": "Combines an array of Strings into one String, each separated by the\n character(s) used for the <b>separator</b> parameter. To join arrays of\n ints or floats, it's necessary to first convert them to Strings using\n <b>nf()</b> or <b>nfs()</b>.",

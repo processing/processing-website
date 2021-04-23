@@ -8,7 +8,7 @@
     "Table_matchRows_"
   ],
   "name": "getRow()",
-  "description": "Returns a reference to the specified <b>TableRow</b>.  The reference can then \n be used to get and set values of the selected row, as illustrated in the example above.",
+  "description": "Returns a reference to the specified <b>TableRow</b>.  The reference can then\n be used to get and set values of the selected row, as illustrated in the example above.",
   "syntax": [".getRow(row)"],
   "returns": "TableRow",
   "type": "method",
