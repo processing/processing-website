@@ -23,6 +23,7 @@ const SketchCode = ({
 }) => {
   const [hasInteracted, setHasInteracted] = useState(false);
   return (
+    /* eslint-disable-next-line jsx-a11y/no-static-element-interactions */
     <div
       className={classnames(css.root, { [css.blink]: !hasInteracted })}
       onMouseEnter={() => setHasInteracted(true)}>
