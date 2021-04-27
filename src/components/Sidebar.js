@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 
 import FilterBar from '../components/FilterBar';
-import SidebarList from '../components/SidebarList';
+import SidebarTreeList from '../components/SidebarTreeList';
 import { LayoutContext } from '../components/Layout';
 
 import { useFilteredTree } from '../hooks';
@@ -20,7 +20,7 @@ const Sidebar = ({ tree, show, type = 'reference', setShow = () => {} }) => {
     <div className={classnames(css.root, { [css.show]: show })}>
       <div
         className={classnames(css.sidebarWrapper, {
-          [css.headerScrolled]: layout.headerScrolled,
+          [css.headerScrolled]: layout.headerScrolled
         })}>
         <div
           className={css.toggleButton}
@@ -44,7 +44,7 @@ const Sidebar = ({ tree, show, type = 'reference', setShow = () => {} }) => {
               searchTerm={searchTerm}
             />
             <div className={css.listWrapper}>
-              <SidebarList tree={filtered} type={type} />
+              <SidebarTreeList tree={filtered} useSerif={type === 'examples'} />
             </div>
           </Fragment>
         )}

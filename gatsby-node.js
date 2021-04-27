@@ -13,7 +13,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     createReference(actions, graphql),
     createExamples(actions, graphql),
     createTutorials(actions, graphql),
-    createDownload(actions, graphql),
+    createDownload(actions, graphql)
   ]);
 };
 
@@ -32,23 +32,23 @@ exports.onCreateNode = ({ node, actions, getNode, loadNodeContent }) => {
     createNodeField({
       name: `name`,
       node,
-      value: node.name,
+      value: node.name
     });
     createNodeField({
       name: `lang`,
       node,
-      value: lang,
+      value: lang
     });
     createNodeField({
       name: `lib`,
       node,
-      value: library,
+      value: library
     });
   } else if (node.internal.mediaType === `text/x-processing`) {
     createNodeField({
       name: `name`,
       node,
-      content: loadNodeContent(node),
+      content: loadNodeContent(node)
     });
   }
 };
@@ -102,8 +102,8 @@ async function createReference(actions, graphql) {
         context: {
           name: refPage.node.name,
           relDir,
-          libraryName,
-        },
+          libraryName
+        }
       });
     } else if (refPage.node.childJson.type === 'class') {
       createPage({
@@ -112,8 +112,8 @@ async function createReference(actions, graphql) {
         context: {
           name: refPage.node.name,
           relDir,
-          libraryName,
-        },
+          libraryName
+        }
       });
     } else if (
       refPage.node.childJson.type === 'field' ||
@@ -125,8 +125,8 @@ async function createReference(actions, graphql) {
         context: {
           name: refPage.node.name,
           relDir,
-          libraryName,
-        },
+          libraryName
+        }
       });
     }
   });
@@ -157,24 +157,26 @@ async function createReference(actions, graphql) {
       path: '/reference/libraries/' + dirPage.frontmatter.name + '/index.html',
       component: indexLibTemplate,
       context: {
-        libraryName: dirPage.frontmatter.name,
-      },
+        libraryName: dirPage.frontmatter.name
+      }
     });
   });
 
   createPage({
     path: '/reference/libraries/',
-    component: path.resolve(`./src/pages/libraries.js`),
+    component: path.resolve(`./src/pages/libraries.js`)
   });
 
   createPage({
     path: '/reference/tools/',
-    component: path.resolve(`./src/pages/tools.js`),
+    component: path.resolve(`./src/pages/tools.js`)
   });
 }
 
 async function createTutorials(actions, graphql) {
-  const tutorialTemplate = path.resolve(`./src/templates/tutorial/tutorial.js`);
+  const tutorialTemplate = path.resolve(
+    `./src/templates/tutorials/tutorial.js`
+  );
 
   const { createPage } = actions;
 
@@ -206,8 +208,8 @@ async function createTutorials(actions, graphql) {
         path: tutorialPage.childMdx.frontmatter.slug,
         component: tutorialTemplate,
         context: {
-          slug: tutorialPage.childMdx.frontmatter.slug,
-        },
+          slug: tutorialPage.childMdx.frontmatter.slug
+        }
       });
   });
 }
@@ -234,7 +236,7 @@ const parseExampleFileInfo = (node) => {
     slug,
     langCode,
     category,
-    subcategory,
+    subcategory
   };
 };
 
@@ -279,7 +281,7 @@ async function createExamples(actions, graphql) {
       slug,
       langCode,
       category,
-      subcategory,
+      subcategory
     } = parseExampleFileInfo(jsonFile.node);
 
     // Find related examples in the same sub category
@@ -305,8 +307,8 @@ async function createExamples(actions, graphql) {
         name,
         subcategory,
         related,
-        relDir: jsonFile.node.relativeDirectory,
-      },
+        relDir: jsonFile.node.relativeDirectory
+      }
     });
   });
 }
@@ -345,7 +347,7 @@ async function createDownload(actions, graphql) {
     component: downloadTemplate,
     context: {
       selectedReleases,
-      selectedPreReleases,
-    },
+      selectedPreReleases
+    }
   });
 }
