@@ -22,7 +22,7 @@ import css from './Layout.module.css';
 
 export const LayoutContext = React.createContext();
 
-const Layout = ({ children, isHomepage, withSidebar }) => {
+const Layout = ({ children, withSidebar }) => {
   const [headerScrolled, setHeaderScrolled] = useState(false);
   const [currentHeading, setCurrentHeading] = useState('');
 
