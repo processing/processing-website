@@ -1,4 +1,6 @@
 .root {
+  position: relative;
+  top: 150px;
   z-index: 600;
   width: 100%;
   padding-top: var(--margin);
@@ -21,6 +23,7 @@
 .root.withSidebar {
   padding-left: var(--col2);
 }
+
 .contactWrapper {
   flex-basis: var(--col2);
   font-size: var(--text-small);
