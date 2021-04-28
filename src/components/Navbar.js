@@ -56,7 +56,7 @@ export const items = [
   },
   {
     name: 'donate',
-    href: 'https://processingfoundation.org/donate',
+    href: '/donate',
   },
 ];
 
