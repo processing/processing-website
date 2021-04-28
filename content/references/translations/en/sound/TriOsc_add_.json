@@ -1,12 +1,12 @@
 {
-  "brief": "Offset the output of this generator by given value",
+  "brief": "Offset the output of this generator by given value.",
   "related": [],
   "name": "add()",
-  "description": "Offset the output of this generator by given value",
+  "description": "Offset the output of this generator by given value.",
   "syntax": [".add(add)"],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "triosc",
   "subcategory": "",
   "classanchor": "TriOsc",
   "parameters": [

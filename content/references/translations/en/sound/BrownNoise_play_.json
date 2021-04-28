@@ -1,8 +1,8 @@
 {
-  "brief": "Start the generator",
+  "brief": "Start the generator.",
   "related": [],
   "name": "play()",
-  "description": "Start the generator",
+  "description": "Start the generator.",
   "syntax": [
     ".play()",
     ".play(amp)",
@@ -11,7 +11,7 @@
   ],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "brownnoise",
   "subcategory": "",
   "classanchor": "BrownNoise",
   "parameters": [

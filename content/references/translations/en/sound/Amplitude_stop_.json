@@ -1,0 +1,13 @@
+{
+  "brief": "",
+  "related": [],
+  "name": "stop()",
+  "description": "",
+  "syntax": [".stop()"],
+  "returns": "void",
+  "type": "method",
+  "category": "amplitude",
+  "subcategory": "",
+  "classanchor": "Amplitude",
+  "parameters": []
+}

@@ -6,7 +6,7 @@
   "syntax": [".input(input)"],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "waveform",
   "subcategory": "",
   "classanchor": "Waveform",
   "parameters": [

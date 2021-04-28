@@ -1,12 +1,12 @@
 {
-  "brief": "Stop the playback of the file, but cue it to the current position so that the\n next call to play() will continue playing where it left off.",
+  "brief": "Stop the playback of the file, but cue it to the current position.",
   "related": [],
   "name": "pause()",
-  "description": "Stop the playback of the file, but cue it to the current position so that the\n next call to play() will continue playing where it left off.",
+  "description": "Stop the playback of the file, but cue it to the current position. The\n next call to <b>play()</b> will continue playing where it left off.",
   "syntax": [".pause()"],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "soundfile",
   "subcategory": "",
   "classanchor": "SoundFile",
   "parameters": []

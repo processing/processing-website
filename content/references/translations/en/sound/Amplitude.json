@@ -1,5 +1,5 @@
 {
-  "brief": "This is a volume analyzer. It calculates the root mean square of the\n amplitude of each audio block and returns that value.",
+  "brief": "This is a volume analyzer.",
   "methods": [
     {
       "anchor": "Amplitude_analyze_",
@@ -21,7 +21,7 @@
   "related": [],
   "name": "Amplitude",
   "classanchor": "sound/Amplitude",
-  "category": "sound",
+  "category": "analysis",
   "subcategory": "",
   "parameters": [
     {

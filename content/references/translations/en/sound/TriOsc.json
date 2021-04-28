@@ -1,15 +1,15 @@
 {
-  "brief": "This is a simple triangle (or \"saw\") wave oscillator",
+  "brief": "This is a simple triangle (or \"saw\") wave oscillator.",
   "methods": [
     {
       "anchor": "TriOsc_play_",
       "name": "play()",
-      "desc": "Starts the oscillator"
+      "desc": "Starts the oscillator."
     },
     {
       "anchor": "TriOsc_set_",
       "name": "set()",
-      "desc": "Set multiple parameters at once"
+      "desc": "Set multiple parameters at once."
     },
     {
       "anchor": "TriOsc_freq_",
@@ -19,12 +19,12 @@
     {
       "anchor": "TriOsc_amp_",
       "name": "amp()",
-      "desc": "Change the amplitude/volume of this sound."
+      "desc": "Changes the amplitude/volume of the triangle oscillator."
     },
     {
       "anchor": "TriOsc_add_",
       "name": "add()",
-      "desc": "Offset the output of this generator by given value"
+      "desc": "Offset the output of this generator by given value."
     },
     {
       "anchor": "TriOsc_pan_",
@@ -40,13 +40,13 @@
   "csspath": "../../",
   "isLibrary": "true",
   "classFields": [],
-  "description": "This is a simple triangle (or \"saw\") wave oscillator",
+  "description": "This is a simple triangle (or \"saw\") wave oscillator.",
   "type": "class",
   "constructors": ["TriOsc(parent)"],
   "related": [],
   "name": "TriOsc",
   "classanchor": "sound/TriOsc",
-  "category": "sound",
+  "category": "oscillators",
   "subcategory": "",
   "parameters": [
     {

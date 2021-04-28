@@ -9,7 +9,7 @@
     {
       "anchor": "BandPass_freq_",
       "name": "freq()",
-      "desc": "Set the cutoff frequency for the filter"
+      "desc": "Set the cutoff frequency for the filter."
     },
     {
       "anchor": "BandPass_set_",
@@ -26,7 +26,7 @@
   "related": [],
   "name": "BandPass",
   "classanchor": "sound/BandPass",
-  "category": "sound",
+  "category": "effects",
   "subcategory": "",
   "parameters": []
 }

@@ -1,12 +1,12 @@
 {
-  "brief": "Set multiple parameters at once",
+  "brief": "Set multiple parameters at once.",
   "related": [],
   "name": "set()",
-  "description": "Set multiple parameters at once",
+  "description": "Set multiple parameters at once.",
   "syntax": [".set(freq, amp, add, pos)"],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "sawosc",
   "subcategory": "",
   "classanchor": "SawOsc",
   "parameters": [

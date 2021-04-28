@@ -1,8 +1,8 @@
 {
-  "brief": "Get frame index of current sound file playback position.\n \n Note that, if this audio sample was at some point played back in parallel\n (triggered by another call to play() before the original playback had finished),\n the position returned by this function can be of any of the concurrent playbacks,\n not necessarily the last one that was triggered.",
+  "brief": "Get frame index of current sound file playback position.",
   "related": [],
   "name": "positionFrame()",
-  "description": "Get frame index of current sound file playback position.\n \n Note that, if this audio sample was at some point played back in parallel\n (triggered by another call to play() before the original playback had finished),\n the position returned by this function can be of any of the concurrent playbacks,\n not necessarily the last one that was triggered.",
+  "description": "Get frame index of current sound file playback position.\n \n Note that, if this audio sample was at some point played back in parallel\n (triggered by another call to <b>play()</b> before the original playback had finished),\n the position returned by this function can be of any of the concurrent playbacks,\n not necessarily the last one that was triggered.",
   "syntax": [".positionFrame()"],
   "returns": "int",
   "type": "method",

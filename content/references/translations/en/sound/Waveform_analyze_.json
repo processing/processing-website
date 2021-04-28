@@ -6,7 +6,7 @@
   "syntax": [".analyze()", ".analyze(value)"],
   "returns": "float[]",
   "type": "method",
-  "category": "sound",
+  "category": "waveform",
   "subcategory": "",
   "classanchor": "Waveform",
   "parameters": [

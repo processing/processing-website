@@ -6,7 +6,7 @@
   "syntax": [".sampleRate()"],
   "returns": "int",
   "type": "method",
-  "category": "sound",
+  "category": "audiosample",
   "subcategory": "",
   "classanchor": "AudioSample",
   "parameters": []

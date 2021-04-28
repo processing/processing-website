@@ -1,10 +1,10 @@
 {
-  "brief": "This class can be used for configuring the Processing Sound library.\n\n The Sound class allows for configuring global properties of the sound\n library's audio synthesis and playback, such as the output device, sample\n rate or global output volume.\n\n Information on available input and output devices can be obtained by calling\n Sound.list()",
+  "brief": "This class can be used for configuring the Processing Sound library.",
   "methods": [
     {
       "anchor": "Sound_list_",
       "name": "list()",
-      "desc": "Print and return information on available audio devices and their number of\n input/output channels."
+      "desc": "Print and return information on available audio devices and their number of input/output channels."
     },
     {
       "anchor": "Sound_sampleRate_",
@@ -14,12 +14,12 @@
     {
       "anchor": "Sound_inputDevice_",
       "name": "inputDevice()",
-      "desc": "Choose the device (sound card) which should be used for grabbing audio input\n using AudioIn."
+      "desc": "Choose the device (sound card) which should be used for grabbing audio input using AudioIn."
     },
     {
       "anchor": "Sound_outputDevice_",
       "name": "outputDevice()",
-      "desc": "Choose the device (sound card) which the Sound library's audio output should\n be sent to."
+      "desc": "Choose the device (sound card) which the Sound library's audio output should be sent to."
     },
     {
       "anchor": "Sound_volume_",
@@ -30,7 +30,7 @@
   "csspath": "../../",
   "isLibrary": "true",
   "classFields": [],
-  "description": "This class can be used for configuring the Processing Sound library.\n\n The Sound class allows for configuring global properties of the sound\n library's audio synthesis and playback, such as the output device, sample\n rate or global output volume.\n\n Information on available input and output devices can be obtained by calling\n Sound.list()",
+  "description": "This class can be used for configuring the Processing Sound library.\n\n The Sound class allows for configuring global properties of the sound\n library's audio synthesis and playback, such as the output device, sample\n rate or global output volume.\n\n Information on available input and output devices can be obtained by calling\n <b>Sound.list()</b>",
   "type": "class",
   "constructors": [
     "Sound(parent)",
@@ -39,7 +39,7 @@
   "related": [],
   "name": "Sound",
   "classanchor": "sound/Sound",
-  "category": "sound",
+  "category": "configuration",
   "subcategory": "",
   "parameters": [
     {
