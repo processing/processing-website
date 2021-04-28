@@ -26,7 +26,7 @@
   "related": [],
   "name": "AudioIn",
   "classanchor": "sound/AudioIn",
-  "category": "IO",
+  "category": "I/O",
   "subcategory": "",
   "parameters": [
     {
