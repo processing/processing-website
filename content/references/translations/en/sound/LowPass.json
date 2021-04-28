@@ -1,0 +1,22 @@
+{
+  "brief": "This is a low pass filter.",
+  "methods": [
+    {
+      "anchor": "LowPass_freq_",
+      "name": "freq()",
+      "desc": "Set the cut off frequency for the filter."
+    }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "This is a low pass filter.",
+  "type": "class",
+  "constructors": ["LowPass(parent)"],
+  "related": [],
+  "name": "LowPass",
+  "classanchor": "sound/LowPass",
+  "category": "effects",
+  "subcategory": "",
+  "parameters": []
+}

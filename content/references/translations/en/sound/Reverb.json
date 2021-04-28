@@ -4,7 +4,7 @@
     {
       "anchor": "Reverb_damp_",
       "name": "damp()",
-      "desc": "Change the damping of the reverb effect"
+      "desc": "Changes the damping factor of the reverb effect."
     },
     {
       "anchor": "Reverb_room_",
@@ -14,12 +14,12 @@
     {
       "anchor": "Reverb_set_",
       "name": "set()",
-      "desc": "Set multiple parameters at once"
+      "desc": "Set multiple parameters of the reverb."
     },
     {
       "anchor": "Reverb_wet_",
       "name": "wet()",
-      "desc": "Change the dry/wet ratio of the delay effect"
+      "desc": "Change the wet/dry ratio of the reverb."
     }
   ],
   "csspath": "../../",
@@ -31,7 +31,7 @@
   "related": [],
   "name": "Reverb",
   "classanchor": "sound/Reverb",
-  "category": "sound",
+  "category": "effects",
   "subcategory": "",
   "parameters": []
 }

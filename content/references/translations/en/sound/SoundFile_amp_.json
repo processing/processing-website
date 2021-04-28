@@ -1,12 +1,12 @@
 {
-  "brief": "Change the amplitude/volume of this audiosample.",
+  "brief": "Changes the amplitude/volume of the player.",
   "related": [],
   "name": "amp()",
   "description": "Change the amplitude/volume of this audiosample.",
   "syntax": [".amp(amp)"],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "soundfile",
   "subcategory": "",
   "classanchor": "SoundFile",
   "parameters": [

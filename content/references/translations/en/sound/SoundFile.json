@@ -1,5 +1,5 @@
 {
-  "brief": "This is a Soundfile player which allows to play back and manipulate sound\n files. Supported formats are: WAV, AIF/AIFF, and MP3.",
+  "brief": "This is a Soundfile Player which allows to play back and manipulate soundfiles.",
   "methods": [
     {
       "anchor": "SoundFile_removeFromCache_",
@@ -9,7 +9,7 @@
     {
       "anchor": "SoundFile_channels_",
       "name": "channels()",
-      "desc": "Returns the number of channels of the soundfile."
+      "desc": "Returns the number of channels of the soundfile as an int (1 for mono, 2 for stereo)."
     },
     {
       "anchor": "SoundFile_cue_",
@@ -29,17 +29,17 @@
     {
       "anchor": "SoundFile_play_",
       "name": "play()",
-      "desc": "Starts the playback of the soundfile. Only plays to the end of the\n audiosample once."
+      "desc": "Starts the playback of the soundfile."
     },
     {
       "anchor": "SoundFile_jump_",
       "name": "jump()",
-      "desc": "Jump to a specific position in the soundfile while continuing to play."
+      "desc": "Jump to a specific position in the soundfile while continuing to play (or starting to play if it wasn't playing already)."
     },
     {
       "anchor": "SoundFile_pause_",
       "name": "pause()",
-      "desc": "Stop the playback of the file, but cue it to the current position so that the\n next call to play() will continue playing where it left off."
+      "desc": "Stop the playback of the file, but cue it to the current position."
     },
     {
       "anchor": "SoundFile_isPlaying_",
@@ -54,12 +54,12 @@
     {
       "anchor": "SoundFile_amp_",
       "name": "amp()",
-      "desc": "Change the amplitude/volume of this audiosample."
+      "desc": "Changes the amplitude/volume of the player."
     },
     {
       "anchor": "SoundFile_pan_",
       "name": "pan()",
-      "desc": "Move the sound in a stereo panorama. Only works for mono soundfiles!"
+      "desc": "Move the sound in a stereo panorama."
     },
     {
       "anchor": "SoundFile_rate_",
@@ -75,13 +75,13 @@
   "csspath": "../../",
   "isLibrary": "true",
   "classFields": [],
-  "description": "This is a Soundfile player which allows to play back and manipulate sound\n files. Supported formats are: WAV, AIF/AIFF, and MP3.",
+  "description": "This is a Soundfile player which allows to play back and manipulate sound\n files. Supported formats are: WAV, AIF/AIFF, and MP3.\n \n MP3 decoding can be very slow on ARM processors (Android/Raspberry Pi), we generally recommend you use lossless WAV or AIF files.",
   "type": "class",
   "constructors": ["SoundFile(parent, path)", "SoundFile(parent, path, cache)"],
   "related": [],
   "name": "SoundFile",
   "classanchor": "sound/SoundFile",
-  "category": "sound",
+  "category": "sampling",
   "subcategory": "",
   "parameters": [
     {

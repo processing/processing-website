@@ -1,0 +1,13 @@
+{
+  "brief": "Stops the reverb.",
+  "related": [],
+  "name": "stop()",
+  "description": "Stops the reverb.",
+  "syntax": [".stop()"],
+  "returns": "void",
+  "type": "method",
+  "category": "reverb",
+  "subcategory": "",
+  "classanchor": "Reverb",
+  "parameters": []
+}

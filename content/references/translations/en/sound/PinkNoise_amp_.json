@@ -6,7 +6,7 @@
   "syntax": [".amp(amp)"],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "pinknoise",
   "subcategory": "",
   "classanchor": "PinkNoise",
   "parameters": [

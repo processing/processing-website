@@ -1,0 +1,13 @@
+{
+  "brief": "Stops the effect.",
+  "related": [],
+  "name": "stop()",
+  "description": "Stops the effect.",
+  "syntax": [".stop()"],
+  "returns": "void",
+  "type": "method",
+  "category": "delay",
+  "subcategory": "",
+  "classanchor": "Delay",
+  "parameters": []
+}

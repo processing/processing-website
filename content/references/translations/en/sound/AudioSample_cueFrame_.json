@@ -6,7 +6,7 @@
   "syntax": [".cueFrame(frameNumber)"],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "audiosample",
   "subcategory": "",
   "classanchor": "AudioSample",
   "parameters": [

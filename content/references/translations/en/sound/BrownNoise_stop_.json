@@ -1,12 +1,12 @@
 {
-  "brief": "Stop the generator",
+  "brief": "Stops the Brown Noise generator.",
   "related": [],
   "name": "stop()",
   "description": "Stop the generator",
   "syntax": [".stop()"],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "brownnoise",
   "subcategory": "",
   "classanchor": "BrownNoise",
   "parameters": []

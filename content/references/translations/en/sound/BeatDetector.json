@@ -1,0 +1,38 @@
+{
+  "brief": "Looks for spikes in the energy of an audio signal\n which are often associated with rhythmic musical beats and can be used to trigger a\n response whenever the incoming audio signal pulses.",
+  "methods": [
+    {
+      "anchor": "BeatDetector_isBeat_",
+      "name": "isBeat()",
+      "desc": "Returns whether or not the current moment of audio contains a beat or not."
+    },
+    {
+      "anchor": "BeatDetector_sensitivity_",
+      "name": "sensitivity()",
+      "desc": "Sets the sensitivity, in milliseconds, of the beat detection algorithm."
+    },
+    {
+      "anchor": "BeatDetector_sensitivity_",
+      "name": "sensitivity()",
+      "desc": "Sets the sensitivity of the beat detector."
+    }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "The BeatDetector analyzer looks for spikes in the energy of an audio signal\n which are often associated with rhythmic musical beats and can be used to trigger a\n response whenever the incoming audio signal pulses. Note that this\n implementation does not return a tempo or BPM (beats per minute) value \u2014 it\n can only tell you whether the current moment of audio contains a beat or not.",
+  "type": "class",
+  "constructors": ["BeatDetector(parent)"],
+  "related": [],
+  "name": "BeatDetector",
+  "classanchor": "sound/BeatDetector",
+  "category": "analysis",
+  "subcategory": "",
+  "parameters": [
+    {
+      "name": "parent",
+      "description": "Typically \"this\"",
+      "type": ["PApplet"]
+    }
+  ]
+}

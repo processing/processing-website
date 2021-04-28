@@ -1,12 +1,12 @@
 {
-  "brief": "Set the pulse width of the oscillator.",
+  "brief": "Changes the pulse width of the pulse oscillator.",
   "related": [],
   "name": "width()",
-  "description": "Set the pulse width of the oscillator.",
+  "description": "Changes the pulse width of the pulse oscillator. Allowed values are between 0.0 and 1.0.",
   "syntax": [".width(width)"],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "pulse",
   "subcategory": "",
   "classanchor": "Pulse",
   "parameters": [

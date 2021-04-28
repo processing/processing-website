@@ -1,15 +1,15 @@
 {
-  "brief": "This is a pink noise generator. Pink Noise has a decrease of 3dB per octave.",
+  "brief": "This is a pink noise generator.",
   "methods": [
     {
       "anchor": "PinkNoise_play_",
       "name": "play()",
-      "desc": "Start the generator"
+      "desc": "Start the generator."
     },
     {
       "anchor": "PinkNoise_set_",
       "name": "set()",
-      "desc": "Set multiple parameters at once."
+      "desc": "Sets amplitude, add and pan position with one method."
     },
     {
       "anchor": "PinkNoise_amp_",
@@ -19,17 +19,17 @@
     {
       "anchor": "PinkNoise_add_",
       "name": "add()",
-      "desc": "Offset the output of this generator by a fixed value"
+      "desc": "Offset the output of this generator by a fixed value."
     },
     {
       "anchor": "PinkNoise_pan_",
       "name": "pan()",
-      "desc": "Move the sound in a stereo panorama."
+      "desc": "Pan the generator in a stereo panorama."
     },
     {
       "anchor": "PinkNoise_stop_",
       "name": "stop()",
-      "desc": "Stop the generator"
+      "desc": "Stops the Pink Noise generator."
     }
   ],
   "csspath": "../../",
@@ -41,7 +41,7 @@
   "related": [],
   "name": "PinkNoise",
   "classanchor": "sound/PinkNoise",
-  "category": "sound",
+  "category": "noise",
   "subcategory": "",
   "parameters": [
     {

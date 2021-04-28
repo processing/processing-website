@@ -1,5 +1,5 @@
 {
-  "brief": "Sets the relative playback speed of the movie. The <b>rate</b>\n parameters sets the speed where 2.0 will play the movie twice as fast,\n 0.5 will play at half the speed, and -1 will play the movie in normal\n speed in reverse.",
+  "brief": "Sets the relative playback speed of the movie.",
   "related": [],
   "name": "speed()",
   "description": "Sets the relative playback speed of the movie. The <b>rate</b>\n parameters sets the speed where 2.0 will play the movie twice as fast,\n 0.5 will play at half the speed, and -1 will play the movie in normal\n speed in reverse.",

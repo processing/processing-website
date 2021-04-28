@@ -1,5 +1,5 @@
 {
-  "brief": "Pauses a movie during playback. If a movie is started again with play(),\n it will continue from where it was paused.",
+  "brief": "Pauses a movie during playback.",
   "related": [],
   "name": "pause()",
   "description": "Pauses a movie during playback. If a movie is started again with play(),\n it will continue from where it was paused.",
