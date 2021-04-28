@@ -19,7 +19,7 @@ const getBit = (name) => {
 /**
   Hook to find turn a releases GraphQL array into an array of objects
   to use on the download page
-  @param {Array} examples Array of releases JSON files
+  @param {Array} releases Array of releases JSON files
 **/
 export const usePreparedReleases = (releases) => {
   return useMemo(() => {
@@ -35,7 +35,7 @@ export const usePreparedReleases = (releases) => {
         publishedAt: DateTime.fromISO(release.publishedAt).toLocaleString(
           DateTime.DATE_FULL
         ),
-        assets: [],
+        assets: []
       };
 
       // Prepare release assets
@@ -45,7 +45,7 @@ export const usePreparedReleases = (releases) => {
           name: asset.name,
           os: getOS(asset.name),
           bit: getBit(asset.name),
-          url: asset.downloadUrl,
+          url: asset.downloadUrl
         });
       }
 

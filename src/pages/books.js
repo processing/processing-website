@@ -8,13 +8,14 @@ import { useIntl } from 'react-intl';
 
 import Layout from '../components/Layout';
 
+import { usePreparedBooks } from '../hooks/books';
+
 import css from '../styles/pages/books.module.css';
 import grid from '../styles/grid.module.css';
 
 const Books = ({ data }) => {
   const intl = useIntl();
-
-  const images = data.images.nodes;
+  const books = usePreparedBooks(data.books.nodes, data.images.nodes);
 
   return (
     <Layout>
@@ -26,48 +27,43 @@ const Books = ({ data }) => {
         <h3 className={grid.col}>{intl.formatMessage({ id: 'booksIntro' })}</h3>
         <div className={classnames(grid.nest, css.section)}>
           <ul className={css.booksList}>
-            {data.books.nodes.map((node, k) => {
-              const {
-                title,
-                author,
-                details,
-                order,
-                language,
-              } = node.childMdx.frontmatter;
-              const img = images.filter(
-                (img) => img.name === node.relativeDirectory
-              );
-              const orderList = order.split(',').map((ord) => ({
-                label: ord.split('-')[0],
-                link: ord.split('-')[1],
-              }));
+            {books.map((book) => {
               return (
-                <li key={k} className={classnames(grid.nest, css.listItem)}>
+                <li
+                  key={book.title}
+                  className={classnames(grid.nest, css.listItem)}>
                   <div className={classnames(grid.col, css.cover)}>
-                    <Img fluid={img[0].childImageSharp.fluid} />
+                    {book.image && (
+                      <Img fluid={book.image.childImageSharp.fluid} />
+                    )}
                   </div>
                   <div className={classnames(grid.col, css.book)}>
-                    <h3>{title}</h3>
-                    <p className={css.details}>{details}</p>
+                    <h3>{book.title}</h3>
+                    <p className={css.details}>{book.details}</p>
                     <p className={css.author}>
-                      {intl.formatMessage({ id: 'by' })} {author}
+                      {intl.formatMessage({ id: 'by' })} {book.author}
                     </p>
-                    {language && <p>{language}</p>}
-                    <ul>
-                      {orderList.map((order, key) => (
-                        <li key={key + 'l'}>
-                          <a href={order.link} target="_blank" rel="noreferrer">
-                            {order.label}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
+                    {book.language && <p>{book.language}</p>}
+                    {book.orderList && (
+                      <ul>
+                        {book.orderList.map((order) => (
+                          <li key={order.link}>
+                            <a
+                              href={order.link}
+                              target="_blank"
+                              rel="noreferrer">
+                              {order.label}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                     <details className={css.read}>
                       <summary>
                         {intl.formatMessage({ id: 'readMore' })}
                       </summary>
                       <div>
-                        <MDXRenderer>{node.childMdx.body}</MDXRenderer>
+                        <MDXRenderer>{book.body}</MDXRenderer>
                       </div>
                     </details>
                   </div>
