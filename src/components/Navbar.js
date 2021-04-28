@@ -49,7 +49,10 @@ export const items = [
   },
   {
     name: 'about',
-    href: '/about',
+    children: [
+      { name: 'overview', href: '/overview' },
+      { name: 'people', href: '/people' },
+    ],
   },
   {
     name: 'donate',
