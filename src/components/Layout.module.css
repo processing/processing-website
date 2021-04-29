@@ -22,7 +22,7 @@
 }
 
 @media (--small) {
-  main {
-    top: 100px;
+  .root main {
+    top: 50px;
   }
 }

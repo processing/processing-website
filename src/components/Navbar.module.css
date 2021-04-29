@@ -129,7 +129,7 @@
 
 .menuToggle {
   flex-basis: var(--col2);
-  padding-right: var(--col1);
+  padding-right: var(--col2);
 }
 
 .root.expanded {
@@ -170,10 +170,6 @@
     }
   }
 
-  .menu {
-    flex-basis: var(--col5);
-  }
-
   .item {
     font-size: var(--text-regular);
   }
@@ -184,19 +180,8 @@
 }
 
 @media (--reduced) {
-  .logo {
-    padding-left: 0;
-    padding-right: 0;
-    font-size: var(--text-small);
-  }
-
-  .menu {
-    flex-basis: var(--col6);
-  }
-}
-
-@media (--small) {
   .root {
+    padding: 8px;
     align-items: flex-start;
     flex-direction: row;
     justify-content: space-between;

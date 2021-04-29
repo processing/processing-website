@@ -74,6 +74,7 @@ const Layout = ({ children, withSidebar }) => {
         <Header
           siteTitle={data.site.siteMetadata.title}
           scrolled={headerScrolled}
+          size={'large'}
         />
         <main>
           <MDXProvider components={shortcodes}>{children}</MDXProvider>

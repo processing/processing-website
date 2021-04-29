@@ -25,6 +25,7 @@ const Draggable = ({
   tabIndex
 }) => {
   const [draggingInfo, setDraggingInfo] = useState(null);
+  const [keyInfo, setKeyInfo] = useState(null);
 
   useEffect(() => {
     if (draggingInfo) {
@@ -57,7 +58,35 @@ const Draggable = ({
         document.removeEventListener('mousemove', handleMouseMove);
       };
     }
-  }, [draggingInfo, index, isInteger, onChange, onDraggingEnd, min, max]);
+
+    if (keyInfo) {
+      const handleKeyDown = (e) => {
+        setKeyInfo(false);
+        if (e.keyCode === 39) {
+          const val = isInteger ? value + 1 : round(value + 0.1, 2);
+          if (val <= max) index === null ? onChange(val) : onChange(index, val);
+        } else if (e.keyCode === 37) {
+          const val = isInteger ? value - 1 : round(value - 0.1, 2);
+          if (val >= min) index === null ? onChange(val) : onChange(index, val);
+        }
+      };
+
+      document.addEventListener('keydown', handleKeyDown);
+
+      return () => {
+        document.removeEventListener('keydown', handleKeyDown);
+      };
+    }
+  }, [
+    draggingInfo,
+    index,
+    isInteger,
+    onChange,
+    onDraggingEnd,
+    min,
+    max,
+    keyInfo
+  ]);
 
   const registerMove = (e) => {
     const ratio = (value - min) / (max - min);
@@ -87,6 +116,10 @@ const Draggable = ({
     }
   };
 
+  const registerKey = (e) => {
+    setKeyInfo(true);
+  };
+
   return (
     <span
       role={'button'}
@@ -98,7 +131,8 @@ const Draggable = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onMouseDown={registerMove}
-      onMouseUp={deregisterMove}>
+      onMouseUp={deregisterMove}
+      onKeyDown={registerKey}>
       {value}
     </span>
   );

@@ -20,11 +20,11 @@ import MenuIcon from '../images/menu-icon.svg';
 export const items = [
   {
     name: 'home',
-    href: '/',
+    href: '/'
   },
   {
     name: 'download',
-    href: '/download',
+    href: '/download'
   },
   {
     name: 'documentation',
@@ -32,32 +32,32 @@ export const items = [
       { name: 'reference', href: '/reference' },
       { name: 'environment', href: '/environment' },
       { name: 'libraries', href: '/reference/libraries' },
-      { name: 'tools', href: '/reference/tools' },
-    ],
+      { name: 'tools', href: '/reference/tools' }
+    ]
   },
   {
     name: 'learn',
     children: [
       { name: 'tutorials', href: '/tutorials' },
       { name: 'examples', href: '/examples' },
-      { name: 'books', href: '/books' },
-    ],
+      { name: 'books', href: '/books' }
+    ]
   },
   {
     name: 'teach',
-    href: 'https://processingfoundation.org/education',
+    href: 'https://processingfoundation.org/education'
   },
   {
     name: 'about',
     children: [
       { name: 'overview', href: '/overview' },
-      { name: 'people', href: '/people' },
-    ],
+      { name: 'people', href: '/people' }
+    ]
   },
   {
     name: 'donate',
-    href: '/donate',
-  },
+    href: '/donate'
+  }
 ];
 
 const Navbar = ({ siteTitle, size, show }) => {
@@ -123,7 +123,7 @@ const Navbar = ({ siteTitle, size, show }) => {
           {siteTitle}
         </Link>
       </h1>
-      {width <= 720 && (
+      {width <= 960 && (
         <button
           className={css.menuToggle}
           aria-label="Main menu"
@@ -135,14 +135,14 @@ const Navbar = ({ siteTitle, size, show }) => {
       <ul
         className={classnames(css.menu, {
           [grid.col]: width <= 720,
-          [css.expanded]: expanded,
+          [css.expanded]: expanded
         })}>
         {navItems.map((item, key) => (
           <li
             key={key}
             className={classnames(css.item, {
               [css.hasSubmenu]: item.children,
-              [css.active]: item.name === current,
+              [css.active]: item.name === current
             })}>
             {item.href ? (
               item.href.startsWith('https') ? (
@@ -160,7 +160,7 @@ const Navbar = ({ siteTitle, size, show }) => {
             {item.children && (
               <ul
                 className={classnames(css.submenu, {
-                  [css.subMenuActive]: item.name === showSubmenu,
+                  [css.subMenuActive]: item.name === showSubmenu
                 })}>
                 {item.children.map((subitem, j) => (
                   <li className={css.subitem} key={key + j}>

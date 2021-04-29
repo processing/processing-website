@@ -4,11 +4,15 @@ import classnames from 'classnames';
 import grid from '../styles/grid.module.css';
 import css from './SearchBar.module.css';
 
+import { useWindowSize } from '../hooks';
+
 import SearchIcon from '../images/search-icon.svg';
 
 const SearchBar = ({ className, size }) => {
   const intl = useIntl();
   const [searchTerm, setSearchTerm] = useState();
+  const { width } = useWindowSize();
+  const [showSearchBar, setShowSearchBar] = useState();
 
   const onChangeHandler = (e) => {
     setSearchTerm(e.target.value);
@@ -32,7 +36,7 @@ const SearchBar = ({ className, size }) => {
         { [css.large]: size === 'large' },
         css.root
       )}>
-      {size === 'large' ? (
+      {width >= 960 ? (
         <input
           className={css.input}
           type="text"
@@ -42,7 +46,22 @@ const SearchBar = ({ className, size }) => {
           placeholder={intl.formatMessage({ id: 'search' })}
         />
       ) : (
-        <SearchIcon />
+        <div className={css.searchBar}>
+          <input
+            className={classnames(css.input, {
+              [css.inputShow]: showSearchBar
+            })}
+            type="text"
+            value={searchTerm || ''}
+            onChange={onChangeHandler}
+            onKeyDown={onKeyEnter}
+            placeholder={intl.formatMessage({ id: 'search' })}
+          />
+          <SearchIcon
+            className={css.searchIcon}
+            onClick={() => setShowSearchBar(!showSearchBar)}
+          />
+        </div>
       )}
     </div>
   );
