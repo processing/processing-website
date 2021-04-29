@@ -21,7 +21,7 @@
   padding-bottom: var(--vertical-gutter);
 }
 
-@media (--small) {
+@media (--reduced) {
   .root main {
     top: 50px;
   }

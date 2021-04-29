@@ -6,21 +6,21 @@ import Navbar from './Navbar';
 
 import css from './Header.module.css';
 
-const Header = ({ siteTitle, scrolled, size }) => {
+const Header = ({ siteTitle, scrolled }) => {
   return (
     <header className={css.root}>
-      <Topbar show={!scrolled} size={size} />
-      <Navbar siteTitle={siteTitle} show={!scrolled} size={size} />
+      <Topbar show={!scrolled} />
+      <Navbar siteTitle={siteTitle} show={!scrolled} />
     </header>
   );
 };
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+  siteTitle: PropTypes.string
 };
 
 Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: ``
 };
 
 export default Header;

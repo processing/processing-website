@@ -36,11 +36,19 @@
   }
 }
 
+.menuToggle {
+  display: none;
+}
+
 .menu {
   display: flex;
   flex-basis: var(--col4);
   list-style: none;
   justify-content: space-between;
+}
+
+.item:first-child {
+  display: none;
 }
 
 .item {
@@ -125,11 +133,6 @@
 .item:hover .submenu {
   opacity: 1;
   max-height: 400px;
-}
-
-.menuToggle {
-  flex-basis: var(--col2);
-  padding-right: var(--col2);
 }
 
 .root.expanded {
@@ -238,6 +241,10 @@
     & > .subitem:hover {
       border-left: none;
     }
+  }
+
+  .menuToggle {
+    display: block;
   }
 
   .item {

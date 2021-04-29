@@ -4,8 +4,6 @@ import { useLocation } from '@reach/router';
 import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
 
-import { useWindowSize } from '../hooks';
-
 import SearchBar from './SearchBar';
 
 import css from './Navbar.module.css';
@@ -60,11 +58,10 @@ export const items = [
   }
 ];
 
-const Navbar = ({ siteTitle, size, show }) => {
+const Navbar = ({ siteTitle, show }) => {
   const location = useLocation();
   const intl = useIntl();
   const [showSubmenu, setShowSubmenu] = useState(null);
-  const { width } = useWindowSize();
   const { locale } = useLocalization();
   const [expanded, setExpanded] = useState(false);
 
@@ -103,11 +100,6 @@ const Navbar = ({ siteTitle, size, show }) => {
     };
   }, []);
 
-  const navItems = useMemo(
-    () => (width <= 720 ? items : items.slice(1, items.length)),
-    [width]
-  );
-
   return (
     <div
       className={classnames(
@@ -123,21 +115,18 @@ const Navbar = ({ siteTitle, size, show }) => {
           {siteTitle}
         </Link>
       </h1>
-      {width <= 960 && (
-        <button
-          className={css.menuToggle}
-          aria-label="Main menu"
-          aria-expanded={expanded}
-          onClick={() => setExpanded(!expanded)}>
-          {expanded ? <CloseIcon /> : <MenuIcon />}
-        </button>
-      )}
+      <button
+        className={css.menuToggle}
+        aria-label="Main menu"
+        aria-expanded={expanded}
+        onClick={() => setExpanded(!expanded)}>
+        {expanded ? <CloseIcon /> : <MenuIcon />}
+      </button>
       <ul
         className={classnames(css.menu, {
-          [grid.col]: width <= 720,
           [css.expanded]: expanded
         })}>
-        {navItems.map((item, key) => (
+        {items.map((item, key) => (
           <li
             key={key}
             className={classnames(css.item, {
@@ -191,7 +180,7 @@ const Navbar = ({ siteTitle, size, show }) => {
           </li>
         ))}
       </ul>
-      <SearchBar size={size} />
+      <SearchBar />
     </div>
   );
 };

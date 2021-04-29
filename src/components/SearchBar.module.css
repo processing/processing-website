@@ -32,16 +32,6 @@
   justify-content: flex-end;
 }
 
-.searchBarBig {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.searchIcon {
-  align-items: flex-end;
-}
-
 .hint {
   position: absolute;
   margin-top: 30px;
@@ -51,7 +41,7 @@
 
 @media (--medium) {
   .root {
-    align-self: center;
+    align-self: baseline;
     flex-basis: var(--col2);
   }
 }
@@ -60,28 +50,9 @@
     flex-basis: var(--col12);
   }
 
-  .input {
-    background-color: transparent;
-    border: 2px solid transparent;
-    border-radius: 40px;
-    margin-left: auto;
-    width: 0%;
-    padding: 4px 10px 2px 12px;
-    height: 100%;
-    outline: none;
-    transition: 0.5s ease;
-  }
-
-  .inputShow {
-    width: var(--col6);
-    padding: 4px 10px 2px 12px;
-    border: 2px solid var(--lightgray);
-    background-color: var(--lightgray);
-  }
-
   .hint {
     position: absolute;
-    top: 100px;
+    margin-top: 30px;
     font-size: var(--text-small);
     color: var(--processing-blue-mid);
   }
