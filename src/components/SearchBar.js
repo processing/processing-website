@@ -4,11 +4,10 @@ import classnames from 'classnames';
 import grid from '../styles/grid.module.css';
 import css from './SearchBar.module.css';
 
-import SearchIcon from '../images/search-icon.svg';
-
-const SearchBar = ({ className, size }) => {
+const SearchBar = ({ className }) => {
   const intl = useIntl();
   const [searchTerm, setSearchTerm] = useState();
+  const [showHint, setShowHint] = useState(false);
 
   const onChangeHandler = (e) => {
     setSearchTerm(e.target.value);
@@ -25,25 +24,24 @@ const SearchBar = ({ className, size }) => {
   };
 
   return (
-    <div
-      className={classnames(
-        { [className]: className },
-        grid.col,
-        { [css.large]: size === 'large' },
-        css.root
-      )}>
-      {size === 'large' ? (
+    <div className={classnames({ [className]: className }, grid.col, css.root)}>
+      <div className={css.searchBar}>
         <input
-          className={css.input}
+          className={classnames(css.input)}
           type="text"
           value={searchTerm || ''}
           onChange={onChangeHandler}
+          onFocus={() => setShowHint(true)}
+          onBlur={() => setShowHint(false)}
           onKeyDown={onKeyEnter}
           placeholder={intl.formatMessage({ id: 'search' })}
         />
-      ) : (
-        <SearchIcon />
-      )}
+        {showHint ? (
+          <span className={css.hint}>{'Goes through Google'}</span>
+        ) : (
+          ''
+        )}
+      </div>
     </div>
   );
 };

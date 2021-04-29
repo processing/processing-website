@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useRef, useEffect } from 'react';
 import classnames from 'classnames';
 
 import Draggable from './Draggable';
@@ -22,6 +22,15 @@ const SketchCode = ({
   onResetState
 }) => {
   const [hasInteracted, setHasInteracted] = useState(false);
+  const showGridButton = useRef(null);
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (isVisible) showGridButton.current.focus();
+      else showGridButton.current.blur();
+    }, 500);
+  }, [isVisible]);
+
   return (
     /* eslint-disable-next-line jsx-a11y/no-static-element-interactions */
     <div
@@ -36,7 +45,8 @@ const SketchCode = ({
         <button
           className={classnames(css.interactive, 'hljs-keyword')}
           onClick={(e) => onChange('showGrid', !showGrid)}
-          tabIndex={isVisible ? 0 : -1}>
+          tabIndex={isVisible ? 0 : -1}
+          ref={showGridButton}>
           {showGrid ? 'true' : 'false'}
         </button>
         ;
@@ -185,7 +195,8 @@ const SketchCode = ({
         className={css.reset}
         color="gray"
         size="small"
-        onClick={onResetState}>
+        onClick={onResetState}
+        tabIndex={isVisible ? 0 : -1}>
         Reset
       </Button>
     </div>

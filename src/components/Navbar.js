@@ -4,8 +4,6 @@ import { useLocation } from '@reach/router';
 import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
 
-import { useWindowSize } from '../hooks';
-
 import SearchBar from './SearchBar';
 
 import css from './Navbar.module.css';
@@ -20,11 +18,11 @@ import MenuIcon from '../images/menu-icon.svg';
 export const items = [
   {
     name: 'home',
-    href: '/',
+    href: '/'
   },
   {
     name: 'download',
-    href: '/download',
+    href: '/download'
   },
   {
     name: 'documentation',
@@ -32,39 +30,38 @@ export const items = [
       { name: 'reference', href: '/reference' },
       { name: 'environment', href: '/environment' },
       { name: 'libraries', href: '/reference/libraries' },
-      { name: 'tools', href: '/reference/tools' },
-    ],
+      { name: 'tools', href: '/reference/tools' }
+    ]
   },
   {
     name: 'learn',
     children: [
       { name: 'tutorials', href: '/tutorials' },
       { name: 'examples', href: '/examples' },
-      { name: 'books', href: '/books' },
-    ],
+      { name: 'books', href: '/books' }
+    ]
   },
   {
     name: 'teach',
-    href: 'https://processingfoundation.org/education',
+    href: 'https://processingfoundation.org/education'
   },
   {
     name: 'about',
     children: [
       { name: 'overview', href: '/overview' },
-      { name: 'people', href: '/people' },
-    ],
+      { name: 'people', href: '/people' }
+    ]
   },
   {
     name: 'donate',
-    href: '/donate',
-  },
+    href: '/donate'
+  }
 ];
 
-const Navbar = ({ siteTitle, size, show }) => {
+const Navbar = ({ siteTitle, show }) => {
   const location = useLocation();
   const intl = useIntl();
   const [showSubmenu, setShowSubmenu] = useState(null);
-  const { width } = useWindowSize();
   const { locale } = useLocalization();
   const [expanded, setExpanded] = useState(false);
 
@@ -103,11 +100,6 @@ const Navbar = ({ siteTitle, size, show }) => {
     };
   }, []);
 
-  const navItems = useMemo(
-    () => (width <= 720 ? items : items.slice(1, items.length)),
-    [width]
-  );
-
   return (
     <div
       className={classnames(
@@ -123,26 +115,23 @@ const Navbar = ({ siteTitle, size, show }) => {
           {siteTitle}
         </Link>
       </h1>
-      {width <= 720 && (
-        <button
-          className={css.menuToggle}
-          aria-label="Main menu"
-          aria-expanded={expanded}
-          onClick={() => setExpanded(!expanded)}>
-          {expanded ? <CloseIcon /> : <MenuIcon />}
-        </button>
-      )}
+      <button
+        className={css.menuToggle}
+        aria-label="Main menu"
+        aria-expanded={expanded}
+        onClick={() => setExpanded(!expanded)}>
+        {expanded ? <CloseIcon /> : <MenuIcon />}
+      </button>
       <ul
         className={classnames(css.menu, {
-          [grid.col]: width <= 720,
-          [css.expanded]: expanded,
+          [css.expanded]: expanded
         })}>
-        {navItems.map((item, key) => (
+        {items.map((item, key) => (
           <li
             key={key}
             className={classnames(css.item, {
               [css.hasSubmenu]: item.children,
-              [css.active]: item.name === current,
+              [css.active]: item.name === current
             })}>
             {item.href ? (
               item.href.startsWith('https') ? (
@@ -160,7 +149,7 @@ const Navbar = ({ siteTitle, size, show }) => {
             {item.children && (
               <ul
                 className={classnames(css.submenu, {
-                  [css.subMenuActive]: item.name === showSubmenu,
+                  [css.subMenuActive]: item.name === showSubmenu
                 })}>
                 {item.children.map((subitem, j) => (
                   <li className={css.subitem} key={key + j}>
@@ -191,7 +180,7 @@ const Navbar = ({ siteTitle, size, show }) => {
           </li>
         ))}
       </ul>
-      <SearchBar size={size} />
+      <SearchBar />
     </div>
   );
 };
