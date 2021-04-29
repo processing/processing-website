@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { useState, Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
@@ -8,7 +8,9 @@ import { useIntl } from 'react-intl';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Layout from '../../components/Layout';
-import TableOfContents from '../../components/TableOfContents';
+import Content from '../../components/ContentWithSidebar';
+import { Sidebar } from '../../components/Sidebar';
+// import TableOfContents from '../../components/TableOfContents';
 
 import { useHighlight } from '../../hooks';
 
@@ -16,19 +18,28 @@ import css from '../../styles/pages/page.module.css';
 import grid from '../../styles/grid.module.css';
 
 const TutorialTemplate = ({ data, pageContext }) => {
-  const { mdx } = data;
+  const [showSidebar, setShowSidebar] = useState(true);
   const intl = useIntl();
   useHighlight();
+
+  const { mdx } = data;
+
+  // <TableOfContents items={mdx.tableOfContents.items} />
 
   return (
     <Layout>
       <Helmet>
         <title>{mdx && mdx.frontmatter.title} / Tutorial</title>
       </Helmet>
-      <TableOfContents items={mdx.tableOfContents.items} />
       <div className={classnames(grid.grid, css.root)}>
+        <Sidebar
+          title={intl.formatMessage({ id: 'tableOfContents' })}
+          setShow={setShowSidebar}
+          show={showSidebar}>
+          This is a sidebar!
+        </Sidebar>
         {mdx !== null ? (
-          <Fragment>
+          <Content collapsed={!showSidebar}>
             <h1 className={grid.col}>{mdx.frontmatter.title}</h1>
             <span
               className={classnames(
@@ -40,7 +51,7 @@ const TutorialTemplate = ({ data, pageContext }) => {
             <div className={classnames(grid.col, css.content)}>
               <MDXRenderer>{mdx.body}</MDXRenderer>
             </div>
-          </Fragment>
+          </Content>
         ) : (
           <div>
             {intl.formatMessage({ id: 'notTranslated' })}

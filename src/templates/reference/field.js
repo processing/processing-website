@@ -6,7 +6,7 @@ import { useIntl } from 'react-intl';
 
 import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
-import Sidebar from '../../components/Sidebar';
+import { SidebarTree } from '../../components/Sidebar';
 import Section from '../../components/ReferenceItemSection';
 import License from '../../components/ReferenceLicense';
 import { CodeList, ExampleList } from '../../components/ReferenceItemList';
@@ -15,7 +15,7 @@ import { useTree, useHighlight, useWindowSize } from '../../hooks';
 import {
   usePreparedItems,
   usePreparedExamples,
-  usePreparedList,
+  usePreparedList
 } from '../../hooks/reference';
 import { referencePath } from '../../utils/paths';
 
@@ -52,7 +52,12 @@ const FieldRefTemplate = ({ data, pageContext }) => {
       </Helmet>
       <div className={grid.grid}>
         {isProcessing && (
-          <Sidebar tree={tree} setShow={setShow} show={show} type="reference" />
+          <SidebarTree
+            title={intl.formatMessage({ id: 'reference' })}
+            tree={tree}
+            setShow={setShow}
+            show={show}
+          />
         )}
         {entry ? (
           <Content collapsed={!show}>
