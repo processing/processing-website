@@ -11,7 +11,7 @@
   ],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "audioin",
   "subcategory": "",
   "classanchor": "AudioIn",
   "parameters": [

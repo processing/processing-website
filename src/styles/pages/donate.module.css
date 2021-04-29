@@ -1,0 +1,29 @@
+.root {
+  & > h1 {
+    flex-basis: var(--col8);
+  }
+
+  & > h3 {
+    flex-basis: var(--col8);
+    padding-right: var(--push4);
+  }
+}
+
+.donate {
+	max-width: 500px;
+	min-width: 500px;
+	height: 500px;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	border: none;
+	padding-left: var(--gutter);
+}
+
+.content {
+  flex-basis: var(--col8);
+  padding-right: var(--push3);
+  margin-bottom: var(--vertical-gutter);
+  font-family: "Vollkorn", serif;
+  font-size: var(--text-medium);
+  line-height: 1.6em;
+}

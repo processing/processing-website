@@ -1,0 +1,13 @@
+{
+  "brief": "Stops the Input Stream.",
+  "related": [],
+  "name": "stop()",
+  "description": "Stops the Input Stream.",
+  "syntax": [".stop()"],
+  "returns": "void",
+  "type": "method",
+  "category": "audioin",
+  "subcategory": "",
+  "classanchor": "AudioIn",
+  "parameters": []
+}

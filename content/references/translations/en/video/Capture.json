@@ -1,10 +1,10 @@
 {
-  "brief": "Datatype for storing and manipulating video frames from an attached capture device such as a camera.",
+  "brief": "Datatype for storing and manipulating video frames from an \n attached capture device such as a camera.",
   "methods": [
     {
       "anchor": "Capture_frameRate_",
       "name": "frameRate()",
-      "desc": "Sets how often frames are read from the capture device. Setting the <b>fps</b>\n parameter to 4, for example, will cause 4 frames to be read per second."
+      "desc": "Sets how often frames are read from the capture device."
     },
     {
       "anchor": "Capture_available_",
@@ -14,7 +14,7 @@
     {
       "anchor": "Capture_start_",
       "name": "start()",
-      "desc": "Starts capturing frames from the selected device."
+      "desc": "Starts capturing frames from an attached device."
     },
     {
       "anchor": "Capture_stop_",
@@ -30,7 +30,7 @@
   "csspath": "../../",
   "isLibrary": "true",
   "classFields": [],
-  "description": "Datatype for storing and manipulating video frames from an attached capture device such as a camera.",
+  "description": "Datatype for storing and manipulating video frames from an attached \n capture device such as a camera. Use <b>Capture.list()</b> to show \n the names of any attached devices. Using the version of the constructor \n without <b>name</b> will attempt to use the last device used by a \n QuickTime program.",
   "type": "class",
   "constructors": [
     "Capture(parent)",
@@ -43,7 +43,7 @@
   "related": [],
   "name": "Capture",
   "classanchor": "video/Capture",
-  "category": "video",
+  "category": "capture",
   "subcategory": "",
   "parameters": [
     {
@@ -51,51 +51,9 @@
       "description": "PApplet, typically \"this\"",
       "type": ["PApplet"]
     },
-    {
-      "name": "parent",
-      "description": "PApplet, typically \"this\"",
-      "type": ["PApplet"]
-    },
     { "name": "device", "description": "device name", "type": ["String"] },
-    {
-      "name": "parent",
-      "description": "PApplet, typically \"this\"",
-      "type": ["PApplet"]
-    },
     { "name": "width", "description": "width in pixels", "type": ["int"] },
     { "name": "height", "description": "height in pixels", "type": ["int"] },
-    {
-      "name": "parent",
-      "description": "PApplet, typically \"this\"",
-      "type": ["PApplet"]
-    },
-    { "name": "width", "description": "width in pixels", "type": ["int"] },
-    { "name": "height", "description": "height in pixels", "type": ["int"] },
-    { "name": "fps", "description": "frames per second", "type": ["float"] },
-    {
-      "name": "parent",
-      "description": "PApplet, typically \"this\"",
-      "type": ["PApplet"]
-    },
-    { "name": "width", "description": "width in pixels", "type": ["int"] },
-    { "name": "height", "description": "height in pixels", "type": ["int"] },
-    { "name": "device", "description": "device name", "type": ["String"] },
-    {
-      "name": "parent",
-      "description": "PApplet, typically \"this\"",
-      "type": ["PApplet"]
-    },
-    { "name": "width", "description": "width in pixels", "type": ["int"] },
-    { "name": "height", "description": "height in pixels", "type": ["int"] },
-    {
-      "name": "device",
-      "description": "device name (null opens the default device)",
-      "type": ["String"]
-    },
-    {
-      "name": "fps",
-      "description": "frames per second (0 uses the default framerate)",
-      "type": ["float"]
-    }
+    { "name": "fps", "description": "frames per second", "type": ["float"] }
   ]
 }

@@ -2,11 +2,11 @@
   "brief": "Move the sound in a stereo panorama.",
   "related": [],
   "name": "pan()",
-  "description": "Move the sound in a stereo panorama.",
+  "description": "Move the sound in a stereo panorama. -1.0 pans to the left channel and 1.0 to the right channel.",
   "syntax": [".pan(pos)"],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "triosc",
   "subcategory": "",
   "classanchor": "TriOsc",
   "parameters": [

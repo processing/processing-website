@@ -6,7 +6,7 @@
   "syntax": [".stop()"],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "soundfile",
   "subcategory": "",
   "classanchor": "SoundFile",
   "parameters": []

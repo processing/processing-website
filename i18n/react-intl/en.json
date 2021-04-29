@@ -14,6 +14,8 @@
   "books": "Books",
   "teach": "Teach",
   "about": "About",
+  "overview": "Overview",
+  "people": "People",
   "donate": "Donate",
   "search": "Search",
   "introTitle": "Welcome to Processing!",
@@ -64,7 +66,8 @@
   "contactUs": "Contact Us",
   "contactUsDescription": "Feel free to write us!",
   "footer": "Processing is an open project intiated by <a href='https://benfry.com/''>Ben Fry</a> and <a href='http://reas.com/'>Casey Reas</a>. It is developed by a team of volunteers around the world.",
-  "aboutIntro": "A short introduction to the Processing software and projects from the community.",
+  "overviewIntro": "A short introduction to the Processing software and projects from the community.",
+  "peopleIntro": "Processing is a community effort led by a small group of volunteers.",
   "booksIntro": "Processing books cover topics from programming basics to visualization. Browse this page to find the right books for you.",
   "readMore": "Read more",
   "downloadIntro": "Processing is available for Linux, Mac OS X, and Windows. Select your choice to download the software below.",
@@ -118,5 +121,7 @@
   "pdf": "PDF Export",
   "dxf": "DXF Export",
   "openEditor": "Open Editor",
-  "closeEditor": "Close Editor"
+  "closeEditor": "Close Editor",
+  "donateIntro": "We need your help! Please support Processing by making a donation to the Processing Foundation. Your donation contributes to software development, education resources like code examples and tutorials, Fellowships, and community events.",
+  "donateOutro": "The Processing Foundation was established in 2012 after more than a decade of work with the Processing software. The Foundation’s mission is to promote software literacy within the visual arts, and visual literacy within technology-related fields — and to make these fields accessible to diverse communities. Our goal is to empower people of all interests and backgrounds to learn how to program and make creative work with code, especially those who might not otherwise have access to these tools and resources. You can read more about the history of Processing in the short essay <a href='https://medium.com/processing-foundation/a-modern-prometheus-59aed94abe85'>'A Modern Prometheus'</a>."
 }

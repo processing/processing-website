@@ -1,12 +1,12 @@
 {
-  "brief": "Offset the output of this generator by a fixed value",
+  "brief": "Offset the output of this generator by a fixed value.",
   "related": [],
   "name": "add()",
-  "description": "Offset the output of this generator by a fixed value",
+  "description": "Offset the output of this generator by a fixed value.",
   "syntax": [".add(add)"],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "brownnoise",
   "subcategory": "",
   "classanchor": "BrownNoise",
   "parameters": [

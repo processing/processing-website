@@ -2,7 +2,7 @@
   "brief": "Starts the oscillator",
   "related": [],
   "name": "play()",
-  "description": "Starts the oscillator",
+  "description": "Starts the oscillator.",
   "syntax": [
     ".play()",
     ".play(freq, amp)",
@@ -11,7 +11,7 @@
   ],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "pulse",
   "subcategory": "",
   "classanchor": "Pulse",
   "parameters": [

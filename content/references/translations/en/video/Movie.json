@@ -1,30 +1,30 @@
 {
-  "brief": "Datatype for storing and playing movies. Movies must be located in the sketch's data folder \n or an accessible place on the network to load without an error.",
+  "brief": "Datatype for storing and playing movies.",
   "methods": [
     {
       "anchor": "Movie_frameRate_",
       "name": "frameRate()",
-      "desc": "Sets how often frames are read from the movie. Setting the <b>fps</b>\n parameter to 4, for example, will cause 4 frames to be read per second."
+      "desc": "Sets how often frames are read from the movie."
     },
     {
       "anchor": "Movie_speed_",
       "name": "speed()",
-      "desc": "Sets the relative playback speed of the movie. The <b>rate</b>\n parameters sets the speed where 2.0 will play the movie twice as fast,\n 0.5 will play at half the speed, and -1 will play the movie in normal\n speed in reverse."
+      "desc": "Sets the relative playback speed of the movie."
     },
     {
       "anchor": "Movie_duration_",
       "name": "duration()",
-      "desc": "Returns the length of the movie in seconds. If the movie is 1 minute and\n 20 seconds long the value returned will be 80.0."
+      "desc": "Returns the length of the movie in seconds."
     },
     {
       "anchor": "Movie_time_",
       "name": "time()",
-      "desc": "Returns the location of the playback head in seconds. For example, if\n the movie has been playing for 4 seconds, the number 4.0 will be returned."
+      "desc": "Returns the location of the playback head in seconds."
     },
     {
       "anchor": "Movie_jump_",
       "name": "jump()",
-      "desc": "Jumps to a specific location within a movie. The parameter <b>where</b>\n is in terms of seconds. For example, if the movie is 12.2 seconds long,\n calling <b>jump(6.1)</b> would go to the middle of the movie."
+      "desc": "Jumps to a specific location within a movie."
     },
     {
       "anchor": "Movie_available_",
@@ -44,17 +44,17 @@
     {
       "anchor": "Movie_noLoop_",
       "name": "noLoop()",
-      "desc": "If a movie is looping, calling noLoop() will cause it to play until the\n end and then stop on the last frame."
+      "desc": "If a movie is looping, this will cause it to play until the\n end and then stop on the last frame."
     },
     {
       "anchor": "Movie_pause_",
       "name": "pause()",
-      "desc": "Pauses a movie during playback. If a movie is started again with play(),\n it will continue from where it was paused."
+      "desc": "Pauses a movie during playback."
     },
     {
       "anchor": "Movie_stop_",
       "name": "stop()",
-      "desc": "Stops a movie from continuing. The playback returns to the beginning so\n when a movie is played, it will begin from the beginning."
+      "desc": "Stops a movie from continuing."
     },
     {
       "anchor": "Movie_read_",
@@ -71,7 +71,7 @@
   "related": [],
   "name": "Movie",
   "classanchor": "video/Movie",
-  "category": "video",
+  "category": "movie",
   "subcategory": "",
   "parameters": [
     { "name": "parent", "description": "PApplet", "type": ["PApplet"] },

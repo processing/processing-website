@@ -1,12 +1,12 @@
 {
-  "brief": "Set multiple parameters at once",
+  "brief": "Set multiple parameters of the reverb.",
   "related": [],
   "name": "set()",
-  "description": "Set multiple parameters at once",
+  "description": "Set multiple parameters of the reverb. Parameters have to be in the right order.",
   "syntax": [".set(room, damp, wet)"],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "reverb",
   "subcategory": "",
   "classanchor": "Reverb",
   "parameters": [

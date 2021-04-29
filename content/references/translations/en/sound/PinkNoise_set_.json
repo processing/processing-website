@@ -1,12 +1,12 @@
 {
-  "brief": "Set multiple parameters at once.",
+  "brief": "Sets amplitude, add and pan position with one method.",
   "related": [],
   "name": "set()",
-  "description": "Set multiple parameters at once.",
+  "description": "Sets amplitude, add and pan position with one method.",
   "syntax": [".set(amp, add, pos)"],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "pinknoise",
   "subcategory": "",
   "classanchor": "PinkNoise",
   "parameters": [

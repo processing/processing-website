@@ -1,12 +1,12 @@
 {
-  "brief": "Set the frequency of the oscillator in Hz.",
+  "brief": "Changes the frequency of the pulse oscillator in Hz.",
   "related": [],
   "name": "freq()",
-  "description": "Set the frequency of the oscillator in Hz.",
+  "description": "Changes the frequency of the pulse oscillator in Hz.",
   "syntax": [".freq(freq)"],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "pulse",
   "subcategory": "",
   "classanchor": "Pulse",
   "parameters": [

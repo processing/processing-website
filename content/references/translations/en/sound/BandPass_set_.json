@@ -6,7 +6,7 @@
   "syntax": [".set(freq, bw)"],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "bandpass",
   "subcategory": "",
   "classanchor": "BandPass",
   "parameters": [

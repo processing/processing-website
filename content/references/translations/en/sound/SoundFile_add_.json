@@ -1,0 +1,19 @@
+{
+  "brief": "Offset the output of the player by the given value.",
+  "related": [],
+  "name": "add()",
+  "description": "Offset the output of the player by the given value.",
+  "syntax": [".add(add)"],
+  "returns": "void",
+  "type": "method",
+  "category": "soundfile",
+  "subcategory": "",
+  "classanchor": "SoundFile",
+  "parameters": [
+    {
+      "name": "add",
+      "description": "offset the output of the player by the given value",
+      "type": ["float"]
+    }
+  ]
+}

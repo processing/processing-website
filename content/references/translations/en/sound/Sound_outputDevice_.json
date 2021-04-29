@@ -1,8 +1,8 @@
 {
-  "brief": "Choose the device (sound card) which the Sound library's audio output should\n be sent to.",
+  "brief": "Choose the device (sound card) which the Sound library's audio output should be sent to.",
   "related": [],
   "name": "outputDevice()",
-  "description": "Choose the device (sound card) which the Sound library's audio output should\n be sent to.",
+  "description": "Choose the device (sound card) which the Sound library's audio output should\n be sent to. The output device should support stereo output (2 channels).",
   "syntax": [".outputDevice(deviceId)"],
   "returns": "void",
   "type": "method",

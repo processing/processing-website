@@ -11,7 +11,7 @@
 
 .show {
   height: 50px;
-  transition: 0.3s ease-in-out;
+  transition: 0.15s ease-in-out;
   overflow: hidden;
 }
 

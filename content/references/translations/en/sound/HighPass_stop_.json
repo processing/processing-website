@@ -1,0 +1,13 @@
+{
+  "brief": "Stops the Filter.",
+  "related": [],
+  "name": "stop()",
+  "description": "Stops the Filter.",
+  "syntax": [".stop()"],
+  "returns": "void",
+  "type": "method",
+  "category": "highpass",
+  "subcategory": "",
+  "classanchor": "HighPass",
+  "parameters": []
+}

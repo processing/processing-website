@@ -1,12 +1,12 @@
 {
-  "brief": "Stop the oscillator.",
+  "brief": "Stops the oscillator.",
   "related": [],
   "name": "stop()",
   "description": "Stop the oscillator.",
   "syntax": [".stop()"],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "sinosc",
   "subcategory": "",
   "classanchor": "SinOsc",
   "parameters": []

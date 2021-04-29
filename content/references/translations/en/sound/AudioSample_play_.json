@@ -1,8 +1,8 @@
 {
-  "brief": "Starts the playback of the audiosample. Only plays to the end of the\n audiosample once.",
+  "brief": "Starts the playback of the audiosample.",
   "related": [],
   "name": "play()",
-  "description": "Starts the playback of the audiosample. Only plays to the end of the\n audiosample once.",
+  "description": "Starts the playback of the audiosample. Only plays to the end of the audiosample \n once. If <b>cue()</b> or <b>pause()</b> were called previously, playback will resume from the cued position.",
   "syntax": [
     ".play()",
     ".play(rate)",
@@ -13,7 +13,7 @@
   ],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "audiosample",
   "subcategory": "",
   "classanchor": "AudioSample",
   "parameters": [

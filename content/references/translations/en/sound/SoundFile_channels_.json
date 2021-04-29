@@ -1,12 +1,12 @@
 {
-  "brief": "Returns the number of channels of the soundfile.",
+  "brief": "Returns the number of channels of the soundfile as an int (1 for mono, 2 for stereo).",
   "related": [],
   "name": "channels()",
-  "description": "Returns the number of channels of the soundfile.",
+  "description": "Returns the number of channels of the soundfile as an int (1 for mono, 2 for stereo).",
   "syntax": [".channels()"],
   "returns": "int",
   "type": "method",
-  "category": "sound",
+  "category": "soundfile",
   "subcategory": "",
   "classanchor": "SoundFile",
   "parameters": []

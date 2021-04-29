@@ -1,5 +1,5 @@
 {
-  "brief": "This is a Waveform analyzer. It returns the waveform of the \n of an audio stream the moment it is queried with the analyze()\n method.",
+  "brief": "This is a Waveform analyzer.",
   "methods": [
     {
       "anchor": "Waveform_analyze_",
@@ -15,13 +15,13 @@
   "csspath": "../../",
   "isLibrary": "true",
   "classFields": [],
-  "description": "This is a Waveform analyzer. It returns the waveform of the \n of an audio stream the moment it is queried with the analyze()\n method.",
+  "description": "This is a Waveform analyzer. It returns the waveform of the \n of an audio stream the moment it is queried with the <b>analyze()</b>\n method.",
   "type": "class",
   "constructors": ["Waveform(parent, nsamples)"],
   "related": [],
   "name": "Waveform",
   "classanchor": "sound/Waveform",
-  "category": "sound",
+  "category": "analysis",
   "subcategory": "",
   "parameters": [
     {

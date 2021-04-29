@@ -1,12 +1,12 @@
 {
-  "brief": "Set the playback rate of the audiosample.",
+  "brief": "Set the relative playback rate of the audiosample.",
   "related": [],
   "name": "rate()",
-  "description": "Set the playback rate of the audiosample.",
+  "description": "Set the relative playback rate of the audiosample. 1 is the original speed. \n 0.5 is half speed and one octave down. 2 is double the speed and one octave up.",
   "syntax": [".rate(rate)"],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "audiosample",
   "subcategory": "",
   "classanchor": "AudioSample",
   "parameters": [

@@ -1,15 +1,15 @@
 {
-  "brief": "Start the delay effect",
+  "brief": "Start the delay effect.",
   "related": [],
   "name": "process()",
-  "description": "Start the delay effect",
+  "description": "Start the delay effect.",
   "syntax": [
     ".process(input, maxDelayTime, delayTime)",
     ".process(input, maxDelayTime)"
   ],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "delay",
   "subcategory": "",
   "classanchor": "Delay",
   "parameters": [
