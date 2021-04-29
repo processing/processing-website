@@ -25,7 +25,6 @@ const Draggable = ({
   tabIndex
 }) => {
   const [draggingInfo, setDraggingInfo] = useState(null);
-  const [keyInfo, setKeyInfo] = useState(null);
 
   useEffect(() => {
     if (draggingInfo) {
@@ -58,35 +57,7 @@ const Draggable = ({
         document.removeEventListener('mousemove', handleMouseMove);
       };
     }
-
-    if (keyInfo) {
-      const handleKeyDown = (e) => {
-        setKeyInfo(false);
-        if (e.keyCode === 39) {
-          const val = isInteger ? value + 1 : round(value + 0.1, 2);
-          if (val <= max) index === null ? onChange(val) : onChange(index, val);
-        } else if (e.keyCode === 37) {
-          const val = isInteger ? value - 1 : round(value - 0.1, 2);
-          if (val >= min) index === null ? onChange(val) : onChange(index, val);
-        }
-      };
-
-      document.addEventListener('keydown', handleKeyDown);
-
-      return () => {
-        document.removeEventListener('keydown', handleKeyDown);
-      };
-    }
-  }, [
-    draggingInfo,
-    index,
-    isInteger,
-    onChange,
-    onDraggingEnd,
-    min,
-    max,
-    keyInfo
-  ]);
+  }, [draggingInfo, index, isInteger, onChange, onDraggingEnd, min, max]);
 
   const registerMove = (e) => {
     const ratio = (value - min) / (max - min);
@@ -116,8 +87,14 @@ const Draggable = ({
     }
   };
 
-  const registerKey = (e) => {
-    setKeyInfo(true);
+  const handleKeyDown = (e) => {
+    if (e.keyCode === 39) {
+      const val = isInteger ? value + 1 : round(value + 0.1, 2);
+      if (val <= max) index === null ? onChange(val) : onChange(index, val);
+    } else if (e.keyCode === 37) {
+      const val = isInteger ? value - 1 : round(value - 0.1, 2);
+      if (val >= min) index === null ? onChange(val) : onChange(index, val);
+    }
   };
 
   return (
@@ -132,7 +109,7 @@ const Draggable = ({
       onMouseLeave={handleMouseLeave}
       onMouseDown={registerMove}
       onMouseUp={deregisterMove}
-      onKeyDown={registerKey}>
+      onKeyDown={handleKeyDown}>
       {value}
     </span>
   );
