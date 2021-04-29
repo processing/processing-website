@@ -107,6 +107,25 @@
   }
 }
 
+.tocItem {
+  & a {
+    font-family: var(--font);
+    text-overflow: ellipsis;
+    color: var(--processing-blue-dark);
+    &:hover {
+      color: var(--processing-blue-mid);
+    }
+  }
+
+  & h4 {
+    font-size: var(--text-regular);
+    color: inherit;
+    &:hover {
+      color: inherit;
+    }
+  }
+}
+
 @media (--small) {
   .root {
     right: 0;
