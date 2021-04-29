@@ -13,6 +13,7 @@ const SearchBar = ({ className, size }) => {
   const [searchTerm, setSearchTerm] = useState();
   const { width } = useWindowSize();
   const [showSearchBar, setShowSearchBar] = useState();
+  const [showHint, setShowHint] = useState(false);
 
   const onChangeHandler = (e) => {
     setSearchTerm(e.target.value);
@@ -37,14 +38,23 @@ const SearchBar = ({ className, size }) => {
         css.root
       )}>
       {width >= 960 ? (
-        <input
-          className={css.input}
-          type="text"
-          value={searchTerm || ''}
-          onChange={onChangeHandler}
-          onKeyDown={onKeyEnter}
-          placeholder={intl.formatMessage({ id: 'search' })}
-        />
+        <div className={css.searchBarBig}>
+          <input
+            className={css.input}
+            type="text"
+            value={searchTerm || ''}
+            onChange={onChangeHandler}
+            onFocus={() => setShowHint(true)}
+            onBlur={() => setShowHint(false)}
+            onKeyDown={onKeyEnter}
+            placeholder={intl.formatMessage({ id: 'search' })}
+          />
+          {showHint ? (
+            <span className={css.hint}>{'Goes through Google'}</span>
+          ) : (
+            ''
+          )}
+        </div>
       ) : (
         <div className={css.searchBar}>
           <input
@@ -54,6 +64,8 @@ const SearchBar = ({ className, size }) => {
             type="text"
             value={searchTerm || ''}
             onChange={onChangeHandler}
+            onFocus={() => setShowHint(true)}
+            onBlur={() => setShowHint(false)}
             onKeyDown={onKeyEnter}
             placeholder={intl.formatMessage({ id: 'search' })}
           />
@@ -61,6 +73,11 @@ const SearchBar = ({ className, size }) => {
             className={css.searchIcon}
             onClick={() => setShowSearchBar(!showSearchBar)}
           />
+          {showHint ? (
+            <span className={css.hint}>{'Goes through Google'}</span>
+          ) : (
+            ''
+          )}
         </div>
       )}
     </div>

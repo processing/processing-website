@@ -22,12 +22,10 @@ const SketchCode = ({
   onResetState
 }) => {
   const [hasInteracted, setHasInteracted] = useState(false);
-  const [open, setOpen] = useState(false);
   const showGridButton = useRef(null);
 
   useEffect(() => {
-    setOpen(!open);
-    if (open) showGridButton.current.focus();
+    if (isVisible) showGridButton.current.focus();
     else showGridButton.current.blur();
   }, [isVisible]);
 
