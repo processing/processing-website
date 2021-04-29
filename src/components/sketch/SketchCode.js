@@ -25,8 +25,10 @@ const SketchCode = ({
   const showGridButton = useRef(null);
 
   useEffect(() => {
-    if (isVisible) showGridButton.current.focus();
-    else showGridButton.current.blur();
+    setTimeout(() => {
+      if (isVisible) showGridButton.current.focus();
+      else showGridButton.current.blur();
+    }, 500);
   }, [isVisible]);
 
   return (
