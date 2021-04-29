@@ -1,4 +1,5 @@
 import React, { Fragment, useContext, useState, memo } from 'react';
+import { Link } from 'gatsby';
 import classnames from 'classnames';
 
 import FilterBar from '../components/FilterBar';
@@ -55,3 +56,31 @@ export const SidebarTree = memo(({ tree, title, show, useSerif, setShow }) => {
     </Sidebar>
   );
 });
+
+export const SidebarTableOfContents = memo(
+  ({ items, title, show, useSerif, setShow }) => {
+    const { currentHeading } = useContext(LayoutContext);
+    return (
+      <Sidebar title={title} show={show} setShow={setShow}>
+        <div className={css.listWrapper}>
+          <ul>
+            {items.map((item) => {
+              const isCurrent = currentHeading === item.url.replace('#', '');
+              return (
+                <li
+                  key={item.title}
+                  className={classnames(css.tocItem, {
+                    [css.active]: isCurrent
+                  })}>
+                  <Link to={item.url}>
+                    <h4>{item.title}</h4>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </Sidebar>
+    );
+  }
+);

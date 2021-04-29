@@ -1,25 +1,17 @@
 .root {
-  & > h1 {
-    flex-basis: var(--col8);
-    padding-left: var(--push2);
-    padding-right: var(--push1);
+  & h1 {
     margin-bottom: 0;
   }
 }
 
 .author {
-  flex-basis: var(--col8);
-  padding-left: var(--push2);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-size: var(--text-large);
   font-weight: 700;
   color: var(--processing-blue-dark);
 }
 
 .content {
-  flex-basis: var(--col8);
-  padding-left: var(--push2);
-  padding-right: var(--push1);
   margin-bottom: var(--vertical-gutter);
 
   & h2 {
@@ -98,6 +90,7 @@
   }
 
   & p {
+    max-width: 900px;
     font-family: "Vollkorn", serif;
     font-size: var(--text-medium);
     line-height: 1.6em;

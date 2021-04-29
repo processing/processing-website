@@ -9,7 +9,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
-import { Sidebar } from '../../components/Sidebar';
+import { SidebarTableOfContents } from '../../components/Sidebar';
 // import TableOfContents from '../../components/TableOfContents';
 
 import { useHighlight } from '../../hooks';
@@ -24,30 +24,28 @@ const TutorialTemplate = ({ data, pageContext }) => {
 
   const { mdx } = data;
 
-  // <TableOfContents items={mdx.tableOfContents.items} />
-
   return (
     <Layout>
       <Helmet>
         <title>{mdx && mdx.frontmatter.title} / Tutorial</title>
       </Helmet>
       <div className={classnames(grid.grid, css.root)}>
-        <Sidebar
+        <SidebarTableOfContents
+          items={mdx.tableOfContents.items}
           title={intl.formatMessage({ id: 'tableOfContents' })}
           setShow={setShowSidebar}
-          show={showSidebar}>
-          This is a sidebar!
-        </Sidebar>
+          show={showSidebar}
+        />
         {mdx !== null ? (
           <Content collapsed={!showSidebar}>
             <h1 className={grid.col}>{mdx.frontmatter.title}</h1>
-            <span
+            <p
               className={classnames(
                 grid.col,
                 css.author
               )}>{`${intl.formatMessage({ id: 'by' })} ${
               mdx.frontmatter.author
-            }`}</span>
+            }`}</p>
             <div className={classnames(grid.col, css.content)}>
               <MDXRenderer>{mdx.body}</MDXRenderer>
             </div>
