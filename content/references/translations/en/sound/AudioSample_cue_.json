@@ -2,11 +2,11 @@
   "brief": "Cues the playhead to a fixed position in the audiosample.",
   "related": [],
   "name": "cue()",
-  "description": "Cues the playhead to a fixed position in the audiosample.",
+  "description": "Cues the playhead to a fixed position in the audiosample. Note that <b>cue()</b> only affects the playhead for future calls to <b>play()</b>, but not to <b>loop()</b>.",
   "syntax": [".cue(time)"],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "audiosample",
   "subcategory": "",
   "classanchor": "AudioSample",
   "parameters": [

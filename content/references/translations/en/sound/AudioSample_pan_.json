@@ -1,12 +1,12 @@
 {
-  "brief": "Move the sound in a stereo panorama. Only works for mono audiosamples!",
+  "brief": "Pan the soundfile in a stereo panorama.",
   "related": [],
   "name": "pan()",
-  "description": "Move the sound in a stereo panorama. Only works for mono audiosamples!",
+  "description": "Pan the soundfile in a stereo panorama. -1.0 pans to the left channel and 1.0 to the right channel. \n Note that panning is only supported for mono (1 channel) audiosamples.",
   "syntax": [".pan(pos)"],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "audiosample",
   "subcategory": "",
   "classanchor": "AudioSample",
   "parameters": [

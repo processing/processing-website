@@ -87,6 +87,16 @@ const Draggable = ({
     }
   };
 
+  const handleKeyDown = (e) => {
+    if (e.keyCode === 39) {
+      const val = isInteger ? value + 1 : round(value + 0.1, 2);
+      if (val <= max) index === null ? onChange(val) : onChange(index, val);
+    } else if (e.keyCode === 37) {
+      const val = isInteger ? value - 1 : round(value - 0.1, 2);
+      if (val >= min) index === null ? onChange(val) : onChange(index, val);
+    }
+  };
+
   return (
     <span
       role={'button'}
@@ -98,7 +108,8 @@ const Draggable = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onMouseDown={registerMove}
-      onMouseUp={deregisterMove}>
+      onMouseUp={deregisterMove}
+      onKeyDown={handleKeyDown}>
       {value}
     </span>
   );

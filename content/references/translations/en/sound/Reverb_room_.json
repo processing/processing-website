@@ -6,7 +6,7 @@
   "syntax": [".room(room)"],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "reverb",
   "subcategory": "",
   "classanchor": "Reverb",
   "parameters": [

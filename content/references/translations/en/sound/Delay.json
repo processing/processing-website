@@ -4,12 +4,12 @@
     {
       "anchor": "Delay_process_",
       "name": "process()",
-      "desc": "Start the delay effect"
+      "desc": "Start the delay effect."
     },
     {
       "anchor": "Delay_set_",
       "name": "set()",
-      "desc": "Set delay time and feedback values at once"
+      "desc": "Set delay time and feedback values at once."
     },
     {
       "anchor": "Delay_time_",
@@ -31,7 +31,7 @@
   "related": [],
   "name": "Delay",
   "classanchor": "sound/Delay",
-  "category": "sound",
+  "category": "effects",
   "subcategory": "",
   "parameters": []
 }

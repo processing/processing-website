@@ -1,12 +1,12 @@
 {
-  "brief": "Returns the number of channels in the audiosample.",
+  "brief": "Returns the number of channels in the audiosample as an int (1 for mono, 2 for stereo).",
   "related": [],
   "name": "channels()",
-  "description": "Returns the number of channels in the audiosample.",
+  "description": "Returns the number of channels in the audiosample as an int (1 for mono, 2 for stereo).",
   "syntax": [".channels()"],
   "returns": "int",
   "type": "method",
-  "category": "sound",
+  "category": "audiosample",
   "subcategory": "",
   "classanchor": "AudioSample",
   "parameters": []

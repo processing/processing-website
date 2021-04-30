@@ -1,13 +1,13 @@
-import React, { useEffect, useState, useRef, useMemo } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import classnames from 'classnames';
 import { useStaticQuery, graphql } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 
 import Header from './Header';
 import Footer from './Footer';
 
+import Column from './mdx/Column';
 import FixedImage from './mdx/FixedImage';
 import Intro from './mdx/Intro';
 import H2 from './mdx/H2';
@@ -20,12 +20,9 @@ import '../styles/fonts.css';
 
 import css from './Layout.module.css';
 
-export const LayoutContext = React.createContext({
-  headerHeight: 0
-});
+export const LayoutContext = React.createContext();
 
-const Layout = ({ children, isHomepage, withSidebar }) => {
-  const mainRef = useRef();
+const Layout = ({ children, withSidebar }) => {
   const [headerScrolled, setHeaderScrolled] = useState(false);
   const [currentHeading, setCurrentHeading] = useState('');
 
@@ -59,6 +56,7 @@ const Layout = ({ children, isHomepage, withSidebar }) => {
 
   const shortcodes = useMemo(
     () => ({
+      Column,
       FixedImage,
       Intro,
       HighlightBlock,
@@ -77,13 +75,7 @@ const Layout = ({ children, isHomepage, withSidebar }) => {
           siteTitle={data.site.siteMetadata.title}
           scrolled={headerScrolled}
         />
-        <main
-          className={classnames({
-            [css.headerScrolled]: headerScrolled,
-            [css.homepage]: isHomepage,
-            [css.withSidebar]: withSidebar
-          })}
-          ref={mainRef}>
+        <main>
           <MDXProvider components={shortcodes}>{children}</MDXProvider>
         </main>
         <Footer

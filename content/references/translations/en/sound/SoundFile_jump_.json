@@ -1,12 +1,12 @@
 {
-  "brief": "Jump to a specific position in the soundfile while continuing to play.",
+  "brief": "Jump to a specific position in the soundfile while continuing to play (or starting to play if it wasn't playing already).",
   "related": [],
   "name": "jump()",
-  "description": "Jump to a specific position in the soundfile while continuing to play.",
+  "description": "Jump to a specific position in the soundfile while continuing to play \n (or starting to play if it wasn't playing already).",
   "syntax": [".jump(time)"],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "soundfile",
   "subcategory": "",
   "classanchor": "SoundFile",
   "parameters": [

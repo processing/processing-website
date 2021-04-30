@@ -6,7 +6,7 @@
   "syntax": [".analyze()"],
   "returns": "float",
   "type": "method",
-  "category": "sound",
+  "category": "amplitude",
   "subcategory": "",
   "classanchor": "Amplitude",
   "parameters": []

@@ -78,7 +78,6 @@ const Shape = (props) => {
 
   return (
     <span
-      role={'button'}
       tabIndex={tabIndex}
       className={css.root}
       onMouseEnter={handleMouseEnterLine}

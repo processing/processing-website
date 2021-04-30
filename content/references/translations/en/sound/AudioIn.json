@@ -9,7 +9,7 @@
     {
       "anchor": "AudioIn_start_",
       "name": "start()",
-      "desc": "Start the input stream without routing it to the audio output. This is useful\n if you only want to perform audio analysis based on the microphone input."
+      "desc": "Start the input stream without routing it to the audio output."
     },
     {
       "anchor": "AudioIn_set_",
@@ -26,7 +26,7 @@
   "related": [],
   "name": "AudioIn",
   "classanchor": "sound/AudioIn",
-  "category": "sound",
+  "category": "I/O",
   "subcategory": "",
   "parameters": [
     {

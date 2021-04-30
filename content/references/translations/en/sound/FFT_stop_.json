@@ -1,0 +1,13 @@
+{
+  "brief": "Stops the FFT.",
+  "related": [],
+  "name": "stop()",
+  "description": "Stops the FFT.",
+  "syntax": [".stop()"],
+  "returns": "void",
+  "type": "method",
+  "category": "fft",
+  "subcategory": "",
+  "classanchor": "FFT",
+  "parameters": []
+}

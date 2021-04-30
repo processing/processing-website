@@ -2,11 +2,11 @@
   "brief": "Change the amplitude/volume of this sound.",
   "related": [],
   "name": "amp()",
-  "description": "Change the amplitude/volume of this sound.",
+  "description": "Change the amplitude/volume of this sound. Allowed values are between 0.0 and 1.0.",
   "syntax": [".amp(amp)"],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "whitenoise",
   "subcategory": "",
   "classanchor": "WhiteNoise",
   "parameters": [

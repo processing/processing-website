@@ -1,10 +1,10 @@
 {
-  "brief": "This is a White Noise Generator. White Noise has a flat spectrum.",
+  "brief": "This is a White Noise Generator.",
   "methods": [
     {
       "anchor": "WhiteNoise_play_",
       "name": "play()",
-      "desc": "Start the generator"
+      "desc": "Start the generator."
     },
     {
       "anchor": "WhiteNoise_set_",
@@ -19,7 +19,7 @@
     {
       "anchor": "WhiteNoise_add_",
       "name": "add()",
-      "desc": "Offset the output of this generator by a fixed value"
+      "desc": "Offset the output of this generator by a fixed value."
     },
     {
       "anchor": "WhiteNoise_pan_",
@@ -29,7 +29,7 @@
     {
       "anchor": "WhiteNoise_stop_",
       "name": "stop()",
-      "desc": "Stop the generator"
+      "desc": "Stop the generator."
     }
   ],
   "csspath": "../../",
@@ -41,7 +41,7 @@
   "related": [],
   "name": "WhiteNoise",
   "classanchor": "sound/WhiteNoise",
-  "category": "sound",
+  "category": "noise",
   "subcategory": "",
   "parameters": [
     {

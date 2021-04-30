@@ -1,12 +1,12 @@
 {
-  "brief": "Change the amplitude/volume of this sound.",
+  "brief": "Changes the amplitude/volume of the sine oscillator.",
   "related": [],
   "name": "amp()",
-  "description": "Change the amplitude/volume of this sound.",
+  "description": "Changes the amplitude/volume of the sine oscillator. Allowed values are between 0.0 and 1.0.",
   "syntax": [".amp(amp)"],
   "returns": "void",
   "type": "method",
-  "category": "sound",
+  "category": "sinosc",
   "subcategory": "",
   "classanchor": "SinOsc",
   "parameters": [
