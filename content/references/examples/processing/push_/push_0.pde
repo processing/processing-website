@@ -1,11 +1,11 @@
 fill(255);
-rect(0, 0, 50, 50);  // White rectangle
+rect(0, 0, 200, 200);  // White rectangle
 
 push();
-translate(30, 20);
+translate(80, 70);
 fill(0);  
-rect(0, 0, 50, 50);  // Black rectangle
+rect(0, 0, 200, 200);  // Black rectangle
 pop();  // Restore original settings
 
 fill(100);  
-rect(15, 10, 50, 50);  // Gray rectangle
+rect(40, 40, 200, 200);  // Gray rectangle

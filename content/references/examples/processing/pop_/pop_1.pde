@@ -1,9 +1,9 @@
-ellipse(0, 50, 33, 33);  // Left circle
+ellipse(0, 200, 133, 133);  // Left circle
 
-push();
-strokeWeight(10);
+push(); 
+strokeWeight(40);
 fill(204, 153, 0);
-ellipse(50, 50, 33, 33);  // Middle circle
+ellipse(200, 200, 133, 133);  // Middle circle
 pop();  // Restore original settings
 
-ellipse(100, 50, 33, 33);  // Right circle
+ellipse(400, 200, 133, 133);  // Right circle
