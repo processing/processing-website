@@ -20,17 +20,20 @@ const Donate = () => {
         <h3 className={grid.col}>
           {intl.formatMessage({ id: 'donateIntro' })}
         </h3>
-        <div>
-          <script src="https://donorbox.org/widget.js" paypalExpress="true"></script>
+        <div className={classnames(grid.col, css.donateWrapper)}>
+          <script
+            src="https://donorbox.org/widget.js"
+            paypalExpress="true"></script>
           <iframe
             className={css.donate}
             allowpaymentrequest=""
             src="https://donorbox.org/embed/support-the-processing-foundation?hide_donation_meter=true"></iframe>
         </div>
-        <div className={classnames(grid.col, css.content)} dangerouslySetInnerHTML={{
-            __html: intl.formatMessage({ id: 'donateOutro' }),
-          }}>
-        </div>
+        <div
+          className={classnames(grid.col, css.content)}
+          dangerouslySetInnerHTML={{
+            __html: intl.formatMessage({ id: 'donateOutro' })
+          }}></div>
       </div>
     </Layout>
   );
