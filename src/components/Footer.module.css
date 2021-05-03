@@ -80,7 +80,6 @@
 
     & ul {
       flex-wrap: wrap;
-      justify-content: center;
       padding-bottom: var(--margin);
       font-size: var(--text-xsmall);
       text-align: center;

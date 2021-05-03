@@ -47,8 +47,7 @@
   }
 
   & ul {
-    flex-basis: var(--col7);
-    padding-right: var(--col1) !important;
+    flex-basis: var(--col8);
   }
 
   & ul > li {
@@ -73,6 +72,22 @@
 .toggleButton {
   position: absolute;
   right: calc(var(--col1) + var(--gutter));
+}
+
+@media (--reduced) {
+  .subcategory {
+    & h3 {
+      flex-basis: var(--col2);
+    }
+
+    & ul > li {
+      flex-basis: var(--col2);
+    }
+  }
+
+  .toggleButton {
+    right: var(--gutter);
+  }
 }
 
 @media (--small) {
@@ -101,5 +116,9 @@
         min-height: 120px;
       }
     }
+  }
+
+  .toggleButton {
+    right: var(--gutter);
   }
 }
