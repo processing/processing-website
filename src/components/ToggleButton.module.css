@@ -28,3 +28,14 @@
   color: white;
   background: var(--processing-blue-mid);
 }
+
+@media (--small) {
+  .root {
+    height: 32px;
+
+    & span {
+      height: 24px;
+      line-height: 18px;
+    }
+  }
+}
