@@ -10,4 +10,37 @@
     padding-right: var(--gutter);
     flex-basis: var(--col5);
   }
+  & pre {
+    margin-left: var(--gutter);
+    margin-right: var(--gutter);
+    flex-basis: var(--col4);
+  }
+}
+
+@media (--medium) {
+  .root {
+    & p {
+      flex-basis: var(--col6);
+    }
+    & pre {
+      flex-basis: var(--col5);
+    }
+  }
+}
+
+@media (--reduced) {
+  .root {
+    & p {
+      flex-basis: var(--col8);
+    }
+    & pre {
+      flex-basis: var(--col7);
+    }
+  }
+}
+
+@media (--small) {
+  .root pre {
+    flex-basis: var(--col8);
+  }
 }
