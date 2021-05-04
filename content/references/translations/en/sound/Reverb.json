@@ -32,6 +32,6 @@
   "name": "Reverb",
   "classanchor": "sound/Reverb",
   "category": "effects",
-  "subcategory": "",
+  "subcategory": "Reverb",
   "parameters": []
 }

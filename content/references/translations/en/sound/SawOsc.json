@@ -47,7 +47,7 @@
   "name": "SawOsc",
   "classanchor": "sound/SawOsc",
   "category": "oscillators",
-  "subcategory": "",
+  "subcategory": "SawOsc",
   "parameters": [
     {
       "name": "parent",

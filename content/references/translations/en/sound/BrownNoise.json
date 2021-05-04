@@ -42,7 +42,7 @@
   "name": "BrownNoise",
   "classanchor": "sound/BrownNoise",
   "category": "noise",
-  "subcategory": "",
+  "subcategory": "BrownNoise",
   "parameters": [
     {
       "name": "parent",

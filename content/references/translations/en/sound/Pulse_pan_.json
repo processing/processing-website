@@ -6,8 +6,8 @@
   "syntax": [".pan(pos)"],
   "returns": "void",
   "type": "method",
-  "category": "pulse",
-  "subcategory": "",
+  "category": "oscillators",
+  "subcategory": "Pulse",
   "classanchor": "Pulse",
   "parameters": [
     {

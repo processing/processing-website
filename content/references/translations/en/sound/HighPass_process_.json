@@ -6,8 +6,8 @@
   "syntax": [".process(input)"],
   "returns": "void",
   "type": "method",
-  "category": "highpass",
-  "subcategory": "",
+  "category": "effects",
+  "subcategory": "HighPass",
   "classanchor": "HighPass",
   "parameters": [
     {

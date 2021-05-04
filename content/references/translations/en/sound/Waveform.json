@@ -22,7 +22,7 @@
   "name": "Waveform",
   "classanchor": "sound/Waveform",
   "category": "analysis",
-  "subcategory": "",
+  "subcategory": "Waveform",
   "parameters": [
     {
       "name": "parent",

@@ -6,8 +6,8 @@
   "syntax": [".process(input)"],
   "returns": "void",
   "type": "method",
-  "category": "reverb",
-  "subcategory": "",
+  "category": "effects",
+  "subcategory": "Reverb",
   "classanchor": "Reverb",
   "parameters": [
     {
