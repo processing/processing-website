@@ -62,7 +62,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
             </Section>
             {entry?.classanchor && (
               <Section title={intl.formatMessage({ id: 'class' })}>
-                <h3>{entry.classanchor}</h3>
+                <h4>{entry.classanchor}</h4>
               </Section>
             )}
             <Section title={intl.formatMessage({ id: 'description' })}>
