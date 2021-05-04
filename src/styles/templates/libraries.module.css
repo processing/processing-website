@@ -5,10 +5,18 @@
     padding-right: var(--gutter);
     flex-basis: var(--col8);
   }
-  & p {
+  & p,
+  & ul {
     padding-left: var(--gutter);
     padding-right: var(--gutter);
     flex-basis: var(--col5);
+  }
+
+  & li {
+    margin-left: var(--gutter);
+    padding-left: var(--gutter-half);
+    padding-right: var(--gutter);
+    list-style: disc;
   }
   & pre {
     margin-left: var(--gutter);
@@ -19,7 +27,8 @@
 
 @media (--medium) {
   .root {
-    & p {
+    & p,
+    & ul {
       flex-basis: var(--col6);
     }
     & pre {
@@ -30,7 +39,8 @@
 
 @media (--reduced) {
   .root {
-    & p {
+    & p,
+    & ul {
       flex-basis: var(--col8);
     }
     & pre {
