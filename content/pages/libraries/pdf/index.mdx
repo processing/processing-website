@@ -58,7 +58,7 @@ void draw() {
 }
 ```
 
-##Single Frame (With Screen Display)
+## Single Frame (With Screen Display)
 
 To draw to the screen while also saving a PDF, use the beginRecord() and endRecord() functions. This is slower, but is useful when you need to see what you're working on as it saves.
 
@@ -253,12 +253,10 @@ If you want 3D data, use the DXF recording library instead.
 - Another option for type, is to use createFont() with a TrueType font (some OpenType fonts also work). Any font that shows up in PFont.list() should work, or if not, adding a .ttf file to the data directory and calling createFont("fontname.ttf") will also work.
 - If loadFont() is used instead of createFont(), the text may show up bitmapped and ugly. In some cases, hint(ENABLE_NATIVE_FONTS) may improve the situation if the font is installed on the machine.
 - Starting a new page is a matter of calling nextPage() like so:
-
-```
-PGraphicsPDF pdf = (PGraphicsPDF) g;
-pdf.nextPage();
-```
-
-(This example is also shown above)
+  ```
+  PGraphicsPDF pdf = (PGraphicsPDF) g;
+  pdf.nextPage();
+  ```
+  (This example is also shown above)
 
 - Again, exit() is really important when using PDF with size().

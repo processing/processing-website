@@ -17,6 +17,11 @@
     padding-left: var(--gutter-half);
     padding-right: var(--gutter);
     list-style: disc;
+
+    & pre {
+      margin-top: var(--gutter);
+      margin-bottom: var(--gutter);
+    }
   }
   & pre {
     margin-left: var(--gutter);
