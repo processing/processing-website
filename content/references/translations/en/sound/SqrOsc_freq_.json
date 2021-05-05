@@ -6,8 +6,8 @@
   "syntax": [".freq(freq)"],
   "returns": "void",
   "type": "method",
-  "category": "sqrosc",
-  "subcategory": "",
+  "category": "oscillators",
+  "subcategory": "SqrOsc",
   "classanchor": "SqrOsc",
   "parameters": [
     {

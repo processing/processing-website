@@ -11,4 +11,6 @@ void setup() {
 }
 
 void draw() {
+	//the image is just for informative purposes
+	//on how the soundwave looks
 }

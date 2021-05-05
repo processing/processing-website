@@ -22,7 +22,7 @@
   "name": "Amplitude",
   "classanchor": "sound/Amplitude",
   "category": "analysis",
-  "subcategory": "",
+  "subcategory": "amplitude",
   "parameters": [
     {
       "name": "parent",

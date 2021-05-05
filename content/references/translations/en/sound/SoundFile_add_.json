@@ -6,8 +6,8 @@
   "syntax": [".add(add)"],
   "returns": "void",
   "type": "method",
-  "category": "soundfile",
-  "subcategory": "",
+  "category": "sampling",
+  "subcategory": "SoundFile",
   "classanchor": "SoundFile",
   "parameters": [
     {

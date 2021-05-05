@@ -27,6 +27,6 @@
   "name": "BandPass",
   "classanchor": "sound/BandPass",
   "category": "effects",
-  "subcategory": "",
+  "subcategory": "BandPass",
   "parameters": []
 }

@@ -42,7 +42,7 @@
   "name": "PinkNoise",
   "classanchor": "sound/PinkNoise",
   "category": "noise",
-  "subcategory": "",
+  "subcategory": "PinkNoise",
   "parameters": [
     {
       "name": "parent",

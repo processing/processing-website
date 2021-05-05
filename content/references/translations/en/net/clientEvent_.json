@@ -1,0 +1,21 @@
+{
+  "brief": "This function is called when a server sends a value to an existing <b>Client</b> object.",
+  "related": ["Server"],
+  "name": "clientEvent()",
+  "description": "This function is called when a server sends a value to an existing <b>Client</b> object.",
+  "syntax": ["void clientEvent(client) {\r","  statements\r","}\r"],
+  "returns": "",
+  "type": "function",
+  "category": "NetworkEvents",
+  "subcategory": "",
+  "parameters": [
+    {
+      "name": "statements",
+      "description": "any valid statements"
+    },
+    {
+      "name": "client",
+      "description": "the client with new data"
+    }
+  ]
+}

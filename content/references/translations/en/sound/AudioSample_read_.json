@@ -11,8 +11,8 @@
   ],
   "returns": "void or float",
   "type": "method",
-  "category": "audiosample",
-  "subcategory": "",
+  "category": "sampling",
+  "subcategory": "AudioSample",
   "classanchor": "AudioSample",
   "parameters": [
     {

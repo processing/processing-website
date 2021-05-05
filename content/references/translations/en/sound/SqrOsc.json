@@ -47,7 +47,7 @@
   "name": "SqrOsc",
   "classanchor": "sound/SqrOsc",
   "category": "oscillators",
-  "subcategory": "",
+  "subcategory": "SqrOsc",
   "parameters": [
     {
       "name": "parent",

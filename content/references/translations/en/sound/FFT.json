@@ -22,7 +22,7 @@
   "name": "FFT",
   "classanchor": "sound/FFT",
   "category": "analysis",
-  "subcategory": "",
+  "subcategory": "FFT",
   "parameters": [
     {
       "name": "parent",

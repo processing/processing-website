@@ -6,8 +6,8 @@
   "syntax": [".set(delayTime, feedback)"],
   "returns": "void",
   "type": "method",
-  "category": "delay",
-  "subcategory": "",
+  "category": "effects",
+  "subcategory": "Delay",
   "classanchor": "Delay",
   "parameters": [
     {
