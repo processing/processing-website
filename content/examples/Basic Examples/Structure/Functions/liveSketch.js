@@ -1,0 +1,31 @@
+/**
+ * Functions.
+ *
+ * The drawTarget() function makes it easy to draw many distinct targets.
+ * Each call to drawTarget() specifies the position, size, and number of
+ * rings for each target.
+ */
+
+function runLiveSketch(s) {
+  s.setup = () => {
+    s.createCanvas(640, 360);
+    s.background(51);
+    s.noStroke();
+    s.noLoop();
+  };
+
+  s.draw = () => {
+    drawTarget(s.width * 0.25, s.height * 0.4, 200, 4);
+    drawTarget(s.width * 0.5, s.height * 0.5, 300, 10);
+    drawTarget(s.width * 0.75, s.height * 0.3, 120, 6);
+  };
+
+  function drawTarget(xloc, yloc, size, num) {
+    var grayvalues = 255 / num;
+    var steps = size / num;
+    for (var i = 0; i < num; i++) {
+      s.fill(i * grayvalues);
+      s.ellipse(xloc, yloc, size - i * steps, size - i * steps);
+    }
+  }
+}

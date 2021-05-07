@@ -5,5 +5,12 @@
   "level": "Advanced",
   "order": "4",
   "description": "Applies a convolution matrix to a portion of an image. Move mouse to \n  apply filter to different parts of the image. This example is currently\n  not accurate in JavaScript mode.",
-  "featured": ["PImage_", "Array", "loadImage_", "constrain_", "loadPixels_", "updatePixels_"]
+  "featured": [
+    "PImage_",
+    "Array",
+    "loadImage_",
+    "constrain_",
+    "loadPixels_",
+    "updatePixels_"
+  ]
 }

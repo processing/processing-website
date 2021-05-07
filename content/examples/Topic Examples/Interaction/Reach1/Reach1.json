@@ -5,5 +5,12 @@
   "level": "Intermediate",
   "order": "4",
   "description": "The arm follows the position of the mouse by\n  calculating the angles with atan2().",
-  "featured": ["atan2_", "cos_", "sin_", "pushMatrix_", "popMatrix_", "translate_"]
+  "featured": [
+    "atan2_",
+    "cos_",
+    "sin_",
+    "pushMatrix_",
+    "popMatrix_",
+    "translate_"
+  ]
 }

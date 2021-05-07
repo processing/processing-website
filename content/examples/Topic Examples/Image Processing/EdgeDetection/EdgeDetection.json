@@ -5,5 +5,12 @@
   "level": "Advanced",
   "order": "3",
   "description": "A high-pass filter sharpens an image. This program analyzes every\n  pixel in an image in relation to the neighboring pixels to sharpen \n  the image. This example is currently not accurate in JavaScript mode.",
-  "featured": ["PImage", "loadPixels_", "image_", "PImage_loadPixels_", "PImage_updatePixels_", "noLoop_"]
+  "featured": [
+    "PImage",
+    "loadPixels_",
+    "image_",
+    "PImage_loadPixels_",
+    "PImage_updatePixels_",
+    "noLoop_"
+  ]
 }

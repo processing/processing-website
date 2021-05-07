@@ -18,7 +18,7 @@ function runLiveSketch(s) {
   };
 
   s.draw = () => {
-    var whichBar = s.mouseX / barWidth;
+    var whichBar = mouseX / barWidth;
     if (whichBar != lastBar) {
       var barX = whichBar * barWidth;
       s.fill(barX, 100, s.mouseY);

@@ -5,5 +5,12 @@
   "level": "Advanced",
   "order": "2",
   "description": "This example demonstrates how to use loadJSON()\n  to retrieve data from a JSON file and make objects \n  from that data.\n\n  Here is what the JSON looks like (partial):\n\n {\n \"bubbles\": [\n {\n \"position\": {\n \"x\": 160,\n \"y\": 103\n },\n \"diameter\": 43.19838,\n \"label\": \"Happy\"\n },\n {\n \"position\": {\n \"x\": 372,\n \"y\": 137\n },\n \"diameter\": 52.42526,\n \"label\": \"Sad\"\n }\n ]\n }",
-  "featured": ["JSONObject", "loadJSONObject_", "JSONArray", "JSONObject_getJSONArray_", "JSONArray_getJSONObject_", "JSONObject_setJSONObject_"]
+  "featured": [
+    "JSONObject",
+    "loadJSONObject_",
+    "JSONArray",
+    "JSONObject_getJSONArray_",
+    "JSONArray_getJSONObject_",
+    "JSONObject_setJSONObject_"
+  ]
 }
