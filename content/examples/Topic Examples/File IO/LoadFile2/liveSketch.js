@@ -14,7 +14,7 @@ function runLiveSketch(s) {
   var startingEntry = 0; // Display from this entry number
 
   s.preload = () => {
-    lines = s.loadStrings('cars2.tsv');
+    lines = s.loadStrings('/cars2.tsv');
   };
 
   s.setup = () => {
@@ -56,4 +56,16 @@ function runLiveSketch(s) {
     }
     s.redraw();
   };
+
+  function Record(pieces) {
+    this.name = pieces[0];
+    this.mpg = s.float(pieces[1]);
+    this.cylinders = s.int(pieces[2]);
+    this.displacement = s.float(pieces[3]);
+    this.horsepower = s.float(pieces[4]);
+    this.weight = s.float(pieces[5]);
+    this.acceleration = s.float(pieces[6]);
+    this.year = s.int(pieces[7]);
+    this.origin = s.float(pieces[8]);
+  }
 }

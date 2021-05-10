@@ -13,8 +13,8 @@ function runLiveSketch(s) {
 
   s.preload = () => {
     // Load images
-    img1 = s.loadImage('seedTop.jpg');
-    img2 = s.loadImage('seedBottom.jpg');
+    img1 = s.loadImage('/seedTop.jpg');
+    img2 = s.loadImage('/seedBottom.jpg');
   };
 
   s.setup = () => {
@@ -70,10 +70,10 @@ function runLiveSketch(s) {
       } else {
         this.over = false;
       }
-      if (mouseIsPressed && this.over) {
+      if (s.mouseIsPressed && this.over) {
         this.locked = true;
       }
-      if (!mouseIsPressed) {
+      if (!s.mouseIsPressed) {
         this.locked = false;
       }
       if (this.locked) {

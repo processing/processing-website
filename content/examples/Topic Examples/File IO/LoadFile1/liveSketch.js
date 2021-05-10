@@ -10,7 +10,7 @@ function runLiveSketch(s) {
   var index = 0;
 
   s.preload = () => {
-    lines = s.loadStrings('positions.txt');
+    lines = s.loadStrings('/positions.txt');
   };
 
   s.setup = () => {
