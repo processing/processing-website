@@ -8,9 +8,9 @@
 
 // pjs preload must be used to preload media if the program is
 // running with Processing.js
-/* @pjs preload="PT_anim0000.gif, PT_anim0001.gif, PT_anim0002.gif, PT_anim0003.gif,
-PT_anim0004.gif, PT_anim0005.gif, PT_anim0006.gif, PT_anim0007.gif, PT_anim0008.gif,
-PT_anim0009.gif, PT_anim0010.gif, PT_anim0011.gif"; */
+/* @pjs preload="PT_anim0000.png, PT_anim0001.png, PT_anim0002.png, PT_anim0003.png,
+PT_anim0004.png, PT_anim0005.png, PT_anim0006.png, PT_anim0007.png, PT_anim0008.png,
+PT_anim0009.png, PT_anim0010.png, PT_anim0011.png"; */
 
 function runLiveSketch(s) {
   var numFrames = 12; // The number of frames in the animation
@@ -18,18 +18,18 @@ function runLiveSketch(s) {
   var images = [];
 
   s.preload = () => {
-    images[0] = s.loadImage('/PT_anim0000.gif');
-    images[1] = s.loadImage('/PT_anim0001.gif');
-    images[2] = s.loadImage('/PT_anim0002.gif');
-    images[3] = s.loadImage('/PT_anim0003.gif');
-    images[4] = s.loadImage('/PT_anim0004.gif');
-    images[5] = s.loadImage('/PT_anim0005.gif');
-    images[6] = s.loadImage('/PT_anim0006.gif');
-    images[7] = s.loadImage('/PT_anim0007.gif');
-    images[8] = s.loadImage('/PT_anim0008.gif');
-    images[9] = s.loadImage('/PT_anim0009.gif');
-    images[10] = s.loadImage('/PT_anim0010.gif');
-    images[11] = s.loadImage('/PT_anim0011.gif');
+    images[0] = s.loadImage('/sequential/PT_anim0000.png');
+    images[1] = s.loadImage('/sequential/PT_anim0001.png');
+    images[2] = s.loadImage('/sequential/PT_anim0002.png');
+    images[3] = s.loadImage('/sequential/PT_anim0003.png');
+    images[4] = s.loadImage('/sequential/PT_anim0004.png');
+    images[5] = s.loadImage('/sequential/PT_anim0005.png');
+    images[6] = s.loadImage('/sequential/PT_anim0006.png');
+    images[7] = s.loadImage('/sequential/PT_anim0007.png');
+    images[8] = s.loadImage('/sequential/PT_anim0008.png');
+    images[9] = s.loadImage('/sequential/PT_anim0009.png');
+    images[10] = s.loadImage('/sequential/PT_anim0010.png');
+    images[11] = s.loadImage('/sequential/PT_anim0011.png');
 
     // If you don't want to load each image separately
     // and you know how many frames you have, you

@@ -126,7 +126,7 @@ function runLiveSketch(s) {
       s.vertex(0, -this.r * 2);
       s.vertex(-this.r, this.r * 2);
       s.vertex(this.r, this.r * 2);
-      s.endShape(CLOSE);
+      s.endShape(s.CLOSE);
       s.pop();
     };
 
@@ -177,7 +177,7 @@ function runLiveSketch(s) {
     // For every nearby boid in the system, calculate the average velocity
     this.align = function (boids) {
       var neighbordist = 50;
-      var sum = createVector(0, 0);
+      var sum = s.createVector(0, 0);
       var count = 0;
       for (var i = 0; i < boids.length; i++) {
         var d = p5.Vector.dist(this.position, boids[i].position);

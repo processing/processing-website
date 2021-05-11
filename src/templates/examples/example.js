@@ -23,6 +23,8 @@ import {
 import css from '../../styles/templates/examples/example.module.css';
 import grid from '../../styles/grid.module.css';
 
+window.p5 = p5;
+
 const ExampleTemplate = ({ data, pageContext }) => {
   const { width } = useWindowSize();
   const [showSidebar, setShowSidebar] = useState(width > 960);
