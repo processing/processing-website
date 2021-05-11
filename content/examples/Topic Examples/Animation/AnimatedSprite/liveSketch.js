@@ -51,7 +51,7 @@ function runLiveSketch(s) {
 
     for (var i = 0; i < this.imageCount; i++) {
       // Use nf() to number format 'i' into four digits
-      var filename = imagePrefix + s.nf(i, 4) + '.gif';
+      var filename = imagePrefix + s.nf(i, 4) + '.png';
       this.images[i] = s.loadImage(filename);
     }
 
