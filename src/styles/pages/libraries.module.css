@@ -89,7 +89,7 @@
   }
 
   & li {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     width: 100%;
   }
 
@@ -158,6 +158,8 @@
   }
 
   .list {
+    flex-basis: var(--col8);
+
     & p {
       flex-basis: var(--col5);
     }
@@ -178,7 +180,6 @@
     & ul {
       flex-basis: var(--col8);
       margin-top: var(--vertical-gutter);
-      border-left: solid 7px var(--lightgray);
     }
   }
 

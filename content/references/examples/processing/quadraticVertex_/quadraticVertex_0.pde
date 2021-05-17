@@ -1,0 +1,7 @@
+size(400, 400);
+noFill();
+strokeWeight(16);
+beginShape();
+vertex(80, 80);
+quadraticVertex(320, 80, 200, 200);
+endShape();

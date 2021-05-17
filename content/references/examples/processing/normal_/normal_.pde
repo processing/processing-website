@@ -1,0 +1,11 @@
+size(400, 400, P3D);
+noStroke();
+background(0);
+pointLight(150, 250, 150, 40, 120, 200);
+beginShape();
+normal(0, 0, 4);
+vertex(80, 80, -40);
+vertex(320, 80, 40);
+vertex(320, 320, -40);
+vertex(80, 320, 40);
+endShape(CLOSE);

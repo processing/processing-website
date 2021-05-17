@@ -1,0 +1,13 @@
+size(400, 400, P3D);
+background(0);
+noStroke();
+background(0);
+fill(0, 51, 102);
+lightSpecular(255, 255, 255);
+directionalLight(204, 204, 204, 0, 0, -1);
+translate(80, 200, 0);
+specular(255, 255, 255);
+sphere(120);
+translate(240, 0, 0);
+specular(204, 102, 0);
+sphere(120);

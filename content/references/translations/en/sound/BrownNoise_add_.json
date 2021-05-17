@@ -6,8 +6,8 @@
   "syntax": [".add(add)"],
   "returns": "void",
   "type": "method",
-  "category": "brownnoise",
-  "subcategory": "",
+  "category": "noise",
+  "subcategory": "BrownNoise",
   "classanchor": "BrownNoise",
   "parameters": [
     {

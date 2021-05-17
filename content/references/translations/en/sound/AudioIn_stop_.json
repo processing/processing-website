@@ -6,8 +6,8 @@
   "syntax": [".stop()"],
   "returns": "void",
   "type": "method",
-  "category": "audioin",
-  "subcategory": "",
+  "category": "I/O",
+  "subcategory": "AudioIn",
   "classanchor": "AudioIn",
   "parameters": []
 }

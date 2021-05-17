@@ -27,7 +27,7 @@
   "name": "BeatDetector",
   "classanchor": "sound/BeatDetector",
   "category": "analysis",
-  "subcategory": "",
+  "subcategory": "BeatDetector",
   "parameters": [
     {
       "name": "parent",

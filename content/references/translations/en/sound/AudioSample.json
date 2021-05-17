@@ -136,7 +136,7 @@
   "name": "AudioSample",
   "classanchor": "sound/AudioSample",
   "category": "sampling",
-  "subcategory": "",
+  "subcategory": "AudioSample",
   "parameters": [
     {
       "name": "parent",

@@ -1,0 +1,10 @@
+size(400, 400);
+noFill();
+beginShape();
+curveVertex(336,  364);
+curveVertex(336,  364);
+curveVertex(272,  76);
+curveVertex(84,  68);
+curveVertex(128, 400);
+curveVertex(128, 400);
+endShape();
