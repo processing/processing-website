@@ -58,7 +58,7 @@ export const SidebarTree = memo(({ tree, title, show, useSerif, setShow }) => {
 });
 
 export const SidebarTableOfContents = memo(
-  ({ items, title, show, useSerif, setShow }) => {
+  ({ items = [], title, show, useSerif, setShow }) => {
     const { currentHeading } = useContext(LayoutContext);
     return (
       <Sidebar title={title} show={show} setShow={setShow}>

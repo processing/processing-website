@@ -58,7 +58,6 @@
     "react-router-dom": "^5.2.0",
     "remark-slug": "^6.0.0",
     "remark-unwrap-images": "^2.0.0",
-    "slugify": "^1.4.5",
     "title-case": "^3.0.2"
   },
   "devDependencies": {

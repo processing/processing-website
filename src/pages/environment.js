@@ -7,8 +7,8 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
-import Content from '../../components/ContentWithSidebar';
-import { SidebarTableOfContents } from '../../components/Sidebar';
+import Content from '../components/ContentWithSidebar';
+import { SidebarTableOfContents } from '../components/Sidebar';
 
 import { useHighlight } from '../hooks';
 

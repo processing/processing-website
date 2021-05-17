@@ -12,8 +12,6 @@
 }
 
 .content {
-  margin-bottom: var(--vertical-gutter);
-
   & h2 {
     font-size: var(--text-large);
     margin-top: var(--vertical-gutter);
@@ -27,7 +25,7 @@
   & ul {
     padding-left: 20px;
     padding-bottom: 20px;
-    font-family: "Vollkorn", serif;
+    font-family: var(--font-serif);
     font-size: var(--text-medium);
     line-height: 1.6em;
     list-style-type: none;
@@ -170,10 +168,6 @@
   }
 
   .content {
-    max-width: var(--col8);
-    padding-left: var(--gutter);
-    padding-right: var(--gutter);
-
     & dl {
       margin-left: 0;
     }
