@@ -103,10 +103,6 @@
 }
 
 @media (--reduced) {
-  .category {
-    padding-top: calc(var(--vertical-gutter) * 2);
-  }
-
   .subcategory {
     flex-direction: column;
   }

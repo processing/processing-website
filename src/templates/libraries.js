@@ -49,6 +49,7 @@ export const query = graphql`
   query($libraryName: String!, $locale: String!) {
     items: allFile(
       filter: { fields: { lib: { eq: $libraryName }, lang: { eq: "en" } } }
+      sort: { fields: childJson___name }
     ) {
       nodes {
         name

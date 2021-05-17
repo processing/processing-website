@@ -1,0 +1,13 @@
+size(400, 400);
+background(0);
+stroke(153);
+textSize(44);
+textAlign(CENTER, BOTTOM);
+line(0, 120, width, 120);
+text("CENTER,BOTTOM", 200, 120);
+textAlign(CENTER, CENTER);
+line(0, 200, width, 200);
+text("CENTER,CENTER", 200, 200);
+textAlign(CENTER, TOP);
+line(0, 280, width, 280);
+text("CENTER,TOP", 200, 280);

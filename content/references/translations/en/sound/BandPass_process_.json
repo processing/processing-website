@@ -6,8 +6,8 @@
   "syntax": [".process(input)"],
   "returns": "void",
   "type": "method",
-  "category": "bandpass",
-  "subcategory": "",
+  "category": "effects",
+  "subcategory": "BandPass",
   "classanchor": "BandPass",
   "parameters": [
     {

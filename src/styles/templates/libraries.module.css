@@ -5,9 +5,57 @@
     padding-right: var(--gutter);
     flex-basis: var(--col8);
   }
-  & p {
+  & p,
+  & ul {
     padding-left: var(--gutter);
     padding-right: var(--gutter);
     flex-basis: var(--col5);
+  }
+
+  & li {
+    margin-left: var(--gutter);
+    padding-left: var(--gutter-half);
+    padding-right: var(--gutter);
+    list-style: disc;
+
+    & pre {
+      margin-top: var(--gutter);
+      margin-bottom: var(--gutter);
+    }
+  }
+  & pre {
+    margin-left: var(--gutter);
+    margin-right: var(--gutter);
+    flex-basis: var(--col4);
+  }
+}
+
+@media (--medium) {
+  .root {
+    & p,
+    & ul {
+      flex-basis: var(--col6);
+    }
+    & pre {
+      flex-basis: var(--col5);
+    }
+  }
+}
+
+@media (--reduced) {
+  .root {
+    & p,
+    & ul {
+      flex-basis: var(--col8);
+    }
+    & pre {
+      flex-basis: var(--col7);
+    }
+  }
+}
+
+@media (--small) {
+  .root pre {
+    flex-basis: var(--col8);
   }
 }

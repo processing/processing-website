@@ -6,8 +6,8 @@
   "syntax": [".analyze()", ".analyze(value)"],
   "returns": "float[]",
   "type": "method",
-  "category": "waveform",
-  "subcategory": "",
+  "category": "analysis",
+  "subcategory": "Waveform",
   "classanchor": "Waveform",
   "parameters": [
     {

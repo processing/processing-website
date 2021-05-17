@@ -11,8 +11,8 @@
   ],
   "returns": "void",
   "type": "method",
-  "category": "pinknoise",
-  "subcategory": "",
+  "category": "noise",
+  "subcategory": "PinkNoise",
   "classanchor": "PinkNoise",
   "parameters": [
     {

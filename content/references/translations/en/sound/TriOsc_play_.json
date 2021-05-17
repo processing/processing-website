@@ -11,8 +11,8 @@
   ],
   "returns": "void",
   "type": "method",
-  "category": "triosc",
-  "subcategory": "",
+  "category": "oscillators",
+  "subcategory": "TriOsc",
   "classanchor": "TriOsc",
   "parameters": [
     {

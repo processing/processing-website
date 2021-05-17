@@ -65,6 +65,11 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
             <Section title={intl.formatMessage({ id: 'name' })}>
               <h3>{entry.name}</h3>
             </Section>
+            {entry?.classanchor && (
+              <Section title={intl.formatMessage({ id: 'class' })}>
+                <h4>{entry.classanchor}</h4>
+              </Section>
+            )}
             <Section title={intl.formatMessage({ id: 'description' })}>
               <p dangerouslySetInnerHTML={{ __html: entry.description }} />
             </Section>
@@ -132,6 +137,7 @@ export const query = graphql`
         }
         related
         returns
+        classanchor
       }
     }
     images: allFile(

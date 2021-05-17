@@ -40,7 +40,7 @@
   "name": "Sound",
   "classanchor": "sound/Sound",
   "category": "configuration",
-  "subcategory": "",
+  "subcategory": "Sound",
   "parameters": [
     {
       "name": "parent",

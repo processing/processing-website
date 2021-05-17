@@ -6,8 +6,8 @@
   "syntax": [".input(input)"],
   "returns": "void",
   "type": "method",
-  "category": "fft",
-  "subcategory": "",
+  "category": "analysis",
+  "subcategory": "FFT",
   "classanchor": "FFT",
   "parameters": [
     {

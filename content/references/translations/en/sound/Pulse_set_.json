@@ -6,8 +6,8 @@
   "syntax": [".set(freq, width, amp, add, pos)", ".set(freq, amp, add, pos)"],
   "returns": "void",
   "type": "method",
-  "category": "pulse",
-  "subcategory": "",
+  "category": "oscillators",
+  "subcategory": "Pulse",
   "classanchor": "Pulse",
   "parameters": [
     {

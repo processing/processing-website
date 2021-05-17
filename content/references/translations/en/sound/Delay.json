@@ -32,6 +32,6 @@
   "name": "Delay",
   "classanchor": "sound/Delay",
   "category": "effects",
-  "subcategory": "",
+  "subcategory": "Delay",
   "parameters": []
 }

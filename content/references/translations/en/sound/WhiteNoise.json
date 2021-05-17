@@ -42,7 +42,7 @@
   "name": "WhiteNoise",
   "classanchor": "sound/WhiteNoise",
   "category": "noise",
-  "subcategory": "",
+  "subcategory": "WhiteNoise",
   "parameters": [
     {
       "name": "parent",

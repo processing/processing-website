@@ -6,8 +6,8 @@
   "syntax": [".set(freq, amp, add, pos)"],
   "returns": "void",
   "type": "method",
-  "category": "sinosc",
-  "subcategory": "",
+  "category": "oscillators",
+  "subcategory": "SinOsc",
   "classanchor": "SinOsc",
   "parameters": [
     {
