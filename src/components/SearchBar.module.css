@@ -41,12 +41,12 @@
 
 @media (--medium) {
   .root {
-    align-self: baseline;
     flex-basis: var(--col2);
   }
 }
 @media (--reduced) {
   .root {
+    align-self: baseline;
     flex-basis: var(--col12);
   }
 
