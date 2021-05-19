@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
@@ -7,7 +7,8 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
-import TableOfContents from '../components/TableOfContents';
+import Content from '../components/ContentWithSidebar';
+import { SidebarTableOfContents } from '../components/Sidebar';
 
 import { useHighlight } from '../hooks';
 
@@ -15,10 +16,11 @@ import css from '../styles/pages/page.module.css';
 import grid from '../styles/grid.module.css';
 
 const Environment = ({ data }) => {
-  const { mdx } = data;
-  const { frontmatter, body, tableOfContents } = mdx;
+  const [showSidebar, setShowSidebar] = useState(true);
   const intl = useIntl();
   useHighlight();
+
+  const { mdx } = data;
 
   return (
     <Layout>
@@ -27,19 +29,24 @@ const Environment = ({ data }) => {
       </Helmet>
       <div className={classnames(grid.grid, css.root)}>
         <Donate />
+        <SidebarTableOfContents
+          items={mdx.tableOfContents.items}
+          title={intl.formatMessage({ id: 'tableOfContents' })}
+          setShow={setShowSidebar}
+          show={showSidebar}
+        />
         {mdx !== null ? (
-          <Fragment>
-            <h1 className={grid.col}>{frontmatter.title}</h1>
-            <TableOfContents items={tableOfContents.items} />
-            <div className={classnames(grid.col, css.content)}>
-              <MDXRenderer>{body}</MDXRenderer>
+          <Content collapsed={!showSidebar}>
+            <h1>{mdx.frontmatter.title}</h1>
+            <div className={css.content}>
+              <MDXRenderer>{mdx.body}</MDXRenderer>
             </div>
-          </Fragment>
+          </Content>
         ) : (
-          <div>
+          <Content collapsed={!showSidebar}>
             {intl.formatMessage({ id: 'notTranslated' })}
             {intl.formatMessage({ id: 'englishPage' })}
-          </div>
+          </Content>
         )}
       </div>
     </Layout>

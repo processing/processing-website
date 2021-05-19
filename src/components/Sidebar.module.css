@@ -6,6 +6,11 @@
   overflow: hidden;
   height: 100%;
   white-space: nowrap;
+
+  & h2 {
+    font-size: var(--text-reduced);
+    padding-top: 20px;
+  }
 }
 
 .root.show {
@@ -32,9 +37,6 @@
   overflow-y: scroll;
   transition: top 0.2s ease-in-out, width 0.4s ease;
   background: var(--lightgray);
-  & h2 {
-    padding-top: 14px;
-  }
 
   & a {
     padding-left: var(--gutter);
@@ -102,6 +104,25 @@
   .sidebarWrapper.headerScrolled {
     top: 50px;
     height: calc(100vh - 50px);
+  }
+}
+
+.tocItem {
+  & a {
+    font-family: var(--font);
+    text-overflow: ellipsis;
+    color: var(--processing-blue-dark);
+    &:hover {
+      color: var(--processing-blue-mid);
+    }
+  }
+
+  & h4 {
+    font-size: var(--text-regular);
+    color: inherit;
+    &:hover {
+      color: inherit;
+    }
   }
 }
 

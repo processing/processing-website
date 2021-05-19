@@ -7,7 +7,7 @@ import classnames from 'classnames';
 
 import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
-import Sidebar from '../../components/Sidebar';
+import { SidebarTree } from '../../components/Sidebar';
 import Section from '../../components/ReferenceItemSection';
 import License from '../../components/ReferenceLicense';
 import { CodeList, ExampleList } from '../../components/ReferenceItemList';
@@ -62,7 +62,12 @@ const FieldRefTemplate = ({ data, pageContext }) => {
       </Helmet>
       <div className={grid.grid}>
         {isProcessing && (
-          <Sidebar tree={tree} setShow={setShow} show={show} type="reference" />
+          <SidebarTree
+            title={intl.formatMessage({ id: 'reference' })}
+            tree={tree}
+            setShow={setShow}
+            show={show}
+          />
         )}
         {entry ? (
           <Content collapsed={!show}>

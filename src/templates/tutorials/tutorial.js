@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
@@ -8,7 +8,8 @@ import { useIntl } from 'react-intl';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Layout from '../../components/Layout';
-import TableOfContents from '../../components/TableOfContents';
+import Content from '../../components/ContentWithSidebar';
+import { SidebarTableOfContents } from '../../components/Sidebar';
 
 import { useHighlight } from '../../hooks';
 
@@ -17,6 +18,7 @@ import grid from '../../styles/grid.module.css';
 
 const TutorialTemplate = ({ data, pageContext }) => {
   const { mdx } = data;
+  const [showSidebar, setShowSidebar] = useState(!!mdx.tableOfContents.items);
   const intl = useIntl();
   useHighlight();
 
@@ -25,22 +27,25 @@ const TutorialTemplate = ({ data, pageContext }) => {
       <Helmet>
         <title>{mdx && mdx.frontmatter.title} / Tutorial</title>
       </Helmet>
-      <TableOfContents items={mdx.tableOfContents.items} />
       <div className={classnames(grid.grid, css.root)}>
+        {mdx.tableOfContents.items && (
+          <SidebarTableOfContents
+            items={mdx.tableOfContents.items}
+            title={intl.formatMessage({ id: 'tableOfContents' })}
+            setShow={setShowSidebar}
+            show={showSidebar}
+          />
+        )}
         {mdx !== null ? (
-          <Fragment>
-            <h1 className={grid.col}>{mdx.frontmatter.title}</h1>
-            <span
-              className={classnames(
-                grid.col,
-                css.author
-              )}>{`${intl.formatMessage({ id: 'by' })} ${
+          <Content collapsed={!showSidebar}>
+            <h1>{mdx.frontmatter.title}</h1>
+            <p className={css.author}>{`${intl.formatMessage({ id: 'by' })} ${
               mdx.frontmatter.author
-            }`}</span>
-            <div className={classnames(grid.col, css.content)}>
+            }`}</p>
+            <div className={css.content}>
               <MDXRenderer>{mdx.body}</MDXRenderer>
             </div>
-          </Fragment>
+          </Content>
         ) : (
           <div>
             {intl.formatMessage({ id: 'notTranslated' })}

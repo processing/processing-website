@@ -30,7 +30,6 @@ const SidebarGroup = ({ label, children, secondary }) => {
                 <div className={css.expandButton}>
                   <span>{expanded ? '−' : '+'}</span>
                 </div>
-
                 <h4 className={css.label}>{label}</h4>
               </div>
             )}

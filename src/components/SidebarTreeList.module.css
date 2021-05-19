@@ -16,7 +16,7 @@
   }
 }
 
-.examples {
+.root a.serif {
   font-family: var(--font);
   font-weight: 400;
 }

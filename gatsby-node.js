@@ -215,7 +215,9 @@ async function createReference(actions, graphql) {
 }
 
 async function createTutorials(actions, graphql) {
-  const tutorialTemplate = path.resolve(`./src/templates/tutorial/tutorial.js`);
+  const tutorialTemplate = path.resolve(
+    `./src/templates/tutorials/tutorial.js`
+  );
 
   const { createPage } = actions;
 
