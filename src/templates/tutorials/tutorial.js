@@ -17,11 +17,10 @@ import css from '../../styles/pages/page.module.css';
 import grid from '../../styles/grid.module.css';
 
 const TutorialTemplate = ({ data, pageContext }) => {
-  const [showSidebar, setShowSidebar] = useState(true);
+  const { mdx } = data;
+  const [showSidebar, setShowSidebar] = useState(!!mdx.tableOfContents.items);
   const intl = useIntl();
   useHighlight();
-
-  const { mdx } = data;
 
   return (
     <Layout>
@@ -29,12 +28,14 @@ const TutorialTemplate = ({ data, pageContext }) => {
         <title>{mdx && mdx.frontmatter.title} / Tutorial</title>
       </Helmet>
       <div className={classnames(grid.grid, css.root)}>
-        <SidebarTableOfContents
-          items={mdx.tableOfContents.items}
-          title={intl.formatMessage({ id: 'tableOfContents' })}
-          setShow={setShowSidebar}
-          show={showSidebar}
-        />
+        {mdx.tableOfContents.items && (
+          <SidebarTableOfContents
+            items={mdx.tableOfContents.items}
+            title={intl.formatMessage({ id: 'tableOfContents' })}
+            setShow={setShowSidebar}
+            show={showSidebar}
+          />
+        )}
         {mdx !== null ? (
           <Content collapsed={!showSidebar}>
             <h1>{mdx.frontmatter.title}</h1>
