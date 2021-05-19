@@ -66,7 +66,7 @@ const ExamplesList = ({ tree }) => {
   );
 };
 
-const ExampleItem = memo(({ node, locale }) => {
+export const ExampleItem = memo(({ node, locale }) => {
   return (
     <li className={grid.col}>
       <Link to={node.path} language={locale}>

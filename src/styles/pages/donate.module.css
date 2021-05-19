@@ -9,14 +9,17 @@
   }
 }
 
+.donateWrapper {
+  flex-basis: var(--col8);
+}
+
 .donate {
-	max-width: 500px;
-	min-width: 500px;
-	height: 500px;
-	margin-top: 1em;
-	margin-bottom: 1em;
-	border: none;
-	padding-left: var(--gutter);
+  width: 100%;
+  height: 550px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border: none;
+  padding-left: var(--gutter);
 }
 
 .content {
@@ -26,4 +29,25 @@
   font-family: "Vollkorn", serif;
   font-size: var(--text-medium);
   line-height: 1.6em;
+}
+
+@media (--small) {
+  .root {
+    & > h1 {
+      padding-top: var(--vertical-gutter);
+    }
+    & > h3 {
+      padding-right: 0;
+      flex-basis: var(--col8);
+    }
+  }
+
+  .donate {
+    padding-left: 0px;
+  }
+
+  .content {
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+  }
 }

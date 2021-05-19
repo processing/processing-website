@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import { useIntl } from 'react-intl';
+import classnames from 'classnames';
 
 import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
@@ -10,16 +11,19 @@ import { SidebarTree } from '../../components/Sidebar';
 import Section from '../../components/ReferenceItemSection';
 import License from '../../components/ReferenceLicense';
 import { CodeList, ExampleList } from '../../components/ReferenceItemList';
+import { ExampleItem } from '../../components/ExamplesList';
 
 import { useTree, useHighlight, useWindowSize } from '../../hooks';
 import {
   usePreparedItems,
   usePreparedExamples,
-  usePreparedList
+  usePreparedList,
+  useInUseExamples
 } from '../../hooks/reference';
 import { referencePath } from '../../utils/paths';
 
 import grid from '../../styles/grid.module.css';
+import css from '../../styles/templates/examples/example.module.css';
 
 const FieldRefTemplate = ({ data, pageContext }) => {
   const entry = data?.json?.childJson;
@@ -38,6 +42,12 @@ const FieldRefTemplate = ({ data, pageContext }) => {
   const parameters = usePreparedList(entry?.parameters, libraryName);
   const syntax = usePreparedList(entry?.syntax, libraryName);
   const related = usePreparedList(entry?.related, libraryName, true, true);
+  const inUseExamples = useInUseExamples(
+    pageContext.inUseExamples,
+    data.inUseImages
+  );
+
+  console.log(pageContext.inUseExamples);
 
   const title = entry?.classanchor
     ? `${entry.classanchor}::${entry.name}`
@@ -89,6 +99,15 @@ const FieldRefTemplate = ({ data, pageContext }) => {
                 <CodeList items={related} />
               </Section>
             )}
+            {inUseExamples && (
+              <Section title={intl.formatMessage({ id: 'inUse' })}>
+                <ul className={classnames(css.related, css.inuse)}>
+                  {inUseExamples.slice(0, 6).map((e, key) => (
+                    <ExampleItem node={e} key={`e-${e.name}`} />
+                  ))}
+                </ul>
+              </Section>
+            )}
             <License />
           </Content>
         ) : (
@@ -108,7 +127,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
 export default FieldRefTemplate;
 
 export const query = graphql`
-  query($name: String!, $relDir: String!) {
+  query($name: String!, $relDir: String!, $inUseExamples: [String!]!) {
     json: file(fields: { name: { eq: $name } }) {
       childJson {
         name
@@ -174,6 +193,24 @@ export const query = graphql`
           category
           subcategory
           name
+        }
+      }
+    }
+    inUseImages: allFile(
+      filter: {
+        name: { in: $inUseExamples }
+        sourceInstanceName: { eq: "examples" }
+        extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
+        dir: { regex: "/.*[^data]$/" }
+      }
+    ) {
+      nodes {
+        name
+        relativeDirectory
+        childImageSharp {
+          fluid(maxWidth: 200) {
+            ...GatsbyImageSharpFluid
+          }
         }
       }
     }

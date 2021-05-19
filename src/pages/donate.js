@@ -20,7 +20,7 @@ const Donate = () => {
         <h3 className={grid.col}>
           {intl.formatMessage({ id: 'donateIntro' })}
         </h3>
-        <div>
+        <div className={classnames(grid.col, css.donateWrapper)}>
           <script
             src="https://donorbox.org/widget.js"
             paypalExpress="true"></script>

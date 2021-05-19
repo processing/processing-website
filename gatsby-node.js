@@ -79,8 +79,34 @@ async function createReference(actions, graphql) {
     `
   );
 
+  const inUse = await graphql(
+    `
+      {
+        allFile(
+          filter: {
+            sourceInstanceName: { eq: "examples" }
+            fields: { lang: { eq: "en" } }
+          }
+        ) {
+          edges {
+            node {
+              name
+              childJson {
+                featured
+              }
+            }
+          }
+        }
+      }
+    `
+  );
+
   if (result.errors) {
     throw result.errors;
+  }
+
+  if (inUse.errors) {
+    throw inUse.errors;
   }
 
   // Create reference pages.
@@ -92,6 +118,18 @@ async function createReference(actions, graphql) {
     const refPath = referencePath(name, libraryName, lang);
     const relDir = libraryName + '/' + name;
 
+    const inUseExamples = inUse.data.allFile.edges
+      .filter((n) => {
+        if (
+          n.node.childJson !== undefined &&
+          n.node.childJson !== null &&
+          n.node.childJson.featured !== null &&
+          n.node.childJson.featured.includes(refPage.node.name)
+        )
+          return n.node.name;
+      })
+      .map((e) => e.node.name);
+
     if (
       refPage.node.childJson.type === 'function' ||
       refPage.node.childJson.type === 'method'
@@ -102,7 +140,8 @@ async function createReference(actions, graphql) {
         context: {
           name: refPage.node.name,
           relDir,
-          libraryName
+          libraryName,
+          inUseExamples: inUseExamples
         }
       });
     } else if (refPage.node.childJson.type === 'class') {
@@ -112,7 +151,8 @@ async function createReference(actions, graphql) {
         context: {
           name: refPage.node.name,
           relDir,
-          libraryName
+          libraryName,
+          inUseExamples: inUseExamples
         }
       });
     } else if (
@@ -125,7 +165,8 @@ async function createReference(actions, graphql) {
         context: {
           name: refPage.node.name,
           relDir,
-          libraryName
+          libraryName,
+          inUseExamples: inUseExamples
         }
       });
     }
