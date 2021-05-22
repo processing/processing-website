@@ -57,8 +57,7 @@ const IndexPage = ({ data }) => {
         heading={intl.formatMessage({ id: 'examples' })}
         locale={locale}
       />
-      <div className={css.sectionDivider} />
-      <div className={classnames(grid.grid, css.section)}>
+      <div className={classnames(grid.grid, css.section, css.divider)}>
         <div className={classnames(grid.col, css.half)}>
           <h2>{intl.formatMessage({ id: 'gettingStarted' })}</h2>
           <div>
@@ -105,8 +104,7 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </div>
-      <div className={css.sectionDivider} />
-      <div className={classnames(grid.grid, css.section)}>
+      <div className={classnames(grid.grid, css.section, css.divider)}>
         <div className={classnames(grid.col, css.half, css.participate)}>
           <h2>{intl.formatMessage({ id: 'participate' })}</h2>
           <div>
@@ -149,8 +147,7 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </div>
-      <div className={css.sectionDivider} />
-      <div className={classnames(grid.grid, css.section)}>
+      <div className={classnames(grid.grid, css.section, css.divider)}>
         <div className={classnames(css.half, grid.col, css.externalLinks)}>
           <h2>{intl.formatMessage({ id: 'externalLinks' })}</h2>
           <ul>
@@ -202,39 +199,32 @@ const IndexPage = ({ data }) => {
           </ul>
         </div>
       </div>
-      <div className={css.sectionDivider} />
     </Layout>
   );
 };
 
 const FeaturedExamples = memo(({ heading, examples, locale }) => {
   return (
-    <div className={classnames(grid.grid, css.section)}>
-      <div className={classnames(grid.col, grid.nest, css.examples)}>
-        <h3 className={grid.col}>{heading}</h3>
-        <ul>
-          {examples.map((example, i) => (
-            <li
-              className={classnames(css.example, grid.col)}
-              key={example.path}>
-              <Link to={example.path} language={locale}>
-                <div className={css.imgContainer}>
-                  {example.image && (
-                    <Img
-                      fluid={example.image.childImageSharp.fluid}
-                      loading="eager"
-                    />
-                  )}
-                </div>
-                <h4>{example.name}</h4>
-                <p>in {example.subcategory} examples</p>
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <div className={classnames(grid.col, css.moreButton)}>
-          <Button to={'/examples'}>More Examples</Button>
+    <div className={classnames(grid.grid, css.section, css.divider)}>
+      <h3 className={classnames(grid.col, css.examplesHeading)}>{heading}</h3>
+      {examples.map((example, i) => (
+        <div className={classnames(css.example, grid.col)} key={example.path}>
+          <Link to={example.path} language={locale}>
+            <div className={css.imgContainer}>
+              {example.image && (
+                <Img
+                  fluid={example.image.childImageSharp.fluid}
+                  loading="eager"
+                />
+              )}
+            </div>
+            <h4>{example.name}</h4>
+            <p>in {example.subcategory} examples</p>
+          </Link>
         </div>
+      ))}
+      <div className={classnames(grid.col, css.moreButton)}>
+        <Button to={'/examples'}>More Examples</Button>
       </div>
     </div>
   );

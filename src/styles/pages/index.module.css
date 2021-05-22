@@ -16,6 +16,10 @@
   padding-top: var(--margin);
 }
 
+.divider {
+  border-bottom: 30px solid var(--lightgray);
+}
+
 .sectionDivider {
   flex-basis: var(--col8);
   height: 30px;
@@ -46,16 +50,8 @@
   margin-right: var(--gutter-double);
 }
 
-.examples {
+.examplesHeading {
   flex-basis: var(--col8);
-
-  & ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 100%;
-  }
 }
 
 .example {
@@ -98,7 +94,6 @@
 
 .imgContainer {
   display: flex;
-
   & > img {
     object-fit: cover;
   }
@@ -112,13 +107,7 @@
 
 .moreButton {
   flex-basis: var(--col8);
-  padding-left: var(--col6);
-  text-align: end;
-
-  & > a {
-    display: block;
-    margin-left: auto;
-  }
+  text-align: right;
 }
 
 .cardGrid {
@@ -334,7 +323,8 @@
     }
   }
 
-  .participateButtton, .contributeButtton {
+  .participateButtton,
+  .contributeButtton {
     margin-bottom: var(--vertical-gutter);
   }
 }
@@ -495,7 +485,8 @@
     height: auto;
   }
 
-  .participateButtton, .contributeButtton {
+  .participateButtton,
+  .contributeButtton {
     align-self: center;
   }
 
