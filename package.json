@@ -47,6 +47,7 @@
     "postcss-custom-properties": "^11.0.0",
     "postcss-functions": "^4.0.2",
     "postcss-import": "^14.0.0",
+    "postcss-mixins": "^8.0.0",
     "postcss-nesting": "^7.0.1",
     "postcss-normalize": "^9.0.0",
     "postcss-preset-env": "^6.7.0",

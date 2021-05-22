@@ -52,7 +52,7 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </Sketch>
-      <FeaturedExamples
+      <Examples
         examples={randomExamples}
         heading={intl.formatMessage({ id: 'examples' })}
         locale={locale}
@@ -203,12 +203,12 @@ const IndexPage = ({ data }) => {
   );
 };
 
-const FeaturedExamples = memo(({ heading, examples, locale }) => {
+const Examples = memo(({ heading, examples, locale }) => {
   return (
-    <div className={classnames(grid.grid, css.section, css.divider)}>
-      <h3 className={classnames(grid.col, css.examplesHeading)}>{heading}</h3>
+    <div className={classnames(css.examples, css.section, css.divider)}>
+      <h3 className={css.examplesHeading}>{heading}</h3>
       {examples.map((example, i) => (
-        <div className={classnames(css.example, grid.col)} key={example.path}>
+        <div className={css.example} key={example.path}>
           <Link to={example.path} language={locale}>
             <div className={css.imgContainer}>
               {example.image && (
@@ -223,7 +223,7 @@ const FeaturedExamples = memo(({ heading, examples, locale }) => {
           </Link>
         </div>
       ))}
-      <div className={classnames(grid.col, css.moreButton)}>
+      <div className={css.moreExamples}>
         <Button to={'/examples'}>More Examples</Button>
       </div>
     </div>

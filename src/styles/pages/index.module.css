@@ -50,12 +50,16 @@
   margin-right: var(--gutter-double);
 }
 
+.examples {
+  @mixin grid;
+}
+
 .examplesHeading {
-  flex-basis: var(--col8);
+  @mixin column;
 }
 
 .example {
-  flex-basis: var(--col2);
+  @mixin column 2;
   cursor: pointer;
 
   & h4 {
@@ -105,8 +109,8 @@
   content: "";
 }
 
-.moreButton {
-  flex-basis: var(--col8);
+.moreExamples {
+  @mixin column;
   text-align: right;
 }
 
