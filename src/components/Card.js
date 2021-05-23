@@ -5,15 +5,13 @@ import classnames from 'classnames';
 import css from './Card.module.css';
 
 export const Card = ({ className, children }) => {
-  const classNames = classnames(css.root, className);
-
-  return <div className={classNames}>{children}</div>;
+  return <div className={classnames(css.root, className)}>{children}</div>;
 };
 
 export default Card;
 
 Card.defaultProps = {
-  onClick: () => {},
+  onClick: () => {}
 };
 
 Card.propTypes = {
@@ -21,5 +19,5 @@ Card.propTypes = {
   className: PropTypes.string,
   to: PropTypes.string,
   onClick: PropTypes.func,
-  color: PropTypes.oneOf(['gray']),
+  color: PropTypes.oneOf(['gray'])
 };

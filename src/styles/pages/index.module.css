@@ -50,6 +50,40 @@
   margin-right: var(--gutter-double);
 }
 
+/* Getting Started */
+
+.gettingStarted {
+  @mixin grid;
+}
+
+.gettingStartedMessage,
+.cardGrid {
+  @mixin column 4;
+}
+
+.cardGrid {
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: baseline;
+  align-items: center; */
+  margin-top: calc(-1 * var(--margin));
+  margin-bottom: calc(-1 * var(--margin));
+  /* padding-left: var(--gutter); */
+}
+
+.card {
+  flex: 0 0 50%;
+  text-align: center;
+  font-size: var(--text-small);
+}
+
+.card:active {
+  border-color: var(--processing-blue-mid);
+  background: var(--processing-blue-mid);
+}
+
+/* Examples */
+
 .examples {
   @mixin grid;
 }
@@ -112,72 +146,6 @@
 .moreExamples {
   @mixin column;
   text-align: right;
-}
-
-.cardGrid {
-  display: flex;
-  align-items: baseline;
-  align-items: center;
-  margin-top: calc(-1 * var(--margin));
-  margin-bottom: calc(-1 * var(--margin));
-  padding-left: var(--gutter);
-
-  & > .cardCol:first-child {
-    & > div {
-      border-right-width: 4px;
-    }
-
-    & > div:hover {
-      border-right-width: 4px;
-    }
-  }
-
-  & > .cardCol:last-child {
-    & > div {
-      border-left-width: 4px;
-    }
-    & > div:hover {
-      border-left-width: 4px;
-    }
-  }
-}
-
-.cardCol {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 0;
-  min-height: 360px;
-  flex-basis: var(--col4);
-
-  & > div:first-child {
-    border-top-width: 0px;
-    border-bottom-width: 4px;
-  }
-
-  & > div:first-child:hover {
-  }
-
-  & > div:last-child {
-    border-top-width: 4px;
-    border-bottom-width: 0px;
-  }
-
-  & > div:last-child:hover {
-    border-top-width: 4px;
-  }
-}
-
-.card {
-  height: 50%;
-  width: 100%;
-  text-align: center;
-  font-size: var(--text-small);
-}
-
-.card:active {
-  border-color: var(--processing-blue-mid);
-  background: var(--processing-blue-mid);
 }
 
 .participate {
@@ -268,14 +236,6 @@
     margin-right: var(--gutter);
   }
 
-  .moreButton {
-    padding-left: var(--gutter);
-    flex-basis: var(--col8);
-    & a {
-      margin: auto;
-    }
-  }
-
   .cardGrid {
     margin-top: 0;
     margin-bottom: 0;
@@ -353,14 +313,6 @@
     flex-basis: var(--col4);
   }
 
-  .moreButton {
-    padding-left: var(--gutter);
-    flex-basis: var(--col8);
-    & a {
-      margin: auto;
-    }
-  }
-
   .cardGrid {
     flex-direction: column;
     flex-wrap: nowrap;
@@ -412,14 +364,6 @@
 
   .button {
     margin-bottom: var(--vertical-gutter);
-  }
-
-  .moreButton {
-    padding-left: var(--gutter);
-    flex-basis: var(--col8);
-    & a {
-      margin: auto;
-    }
   }
 
   .examples {
