@@ -57,7 +57,7 @@ const IndexPage = ({ data }) => {
         heading={intl.formatMessage({ id: 'examples' })}
         locale={locale}
       />
-      <div className={classnames(css.gettingStarted, css.section, css.divider)}>
+      <div className={classnames(css.gettingStarted, css.divider)}>
         <div className={css.gettingStartedMessage}>
           <h2>{intl.formatMessage({ id: 'gettingStarted' })}</h2>
           <div>
@@ -67,35 +67,39 @@ const IndexPage = ({ data }) => {
               }}></p>
           </div>
         </div>
-        <div className={css.cardGrid}>
-          <Card className={css.card}>
-            <h4>{intl.formatMessage({ id: 'cardGettingStarted' })}</h4>
-            <p>{intl.formatMessage({ id: 'cardGettingStartedDescription' })}</p>
-            <Button to={'/tutorials/gettingstarted'} size="small">
-              {intl.formatMessage({ id: 'cardGettingStartedButton' })}
-            </Button>
-          </Card>
-          <Card className={css.card}>
-            <h4>{intl.formatMessage({ id: 'cardReference' })}</h4>
-            <p>{intl.formatMessage({ id: 'cardReferenceDescription' })}</p>
-            <Button to={'/reference'} size="small">
-              {intl.formatMessage({ id: 'cardReferenceButton' })}
-            </Button>
-          </Card>
-          <Card className={css.card}>
-            <h4>{intl.formatMessage({ id: 'cardDownload' })}</h4>
-            <p>{intl.formatMessage({ id: 'cardDownloadDescription' })}</p>
-            <Button to={'/download'} size="small">
-              {intl.formatMessage({ id: 'cardDownloadButton' })}
-            </Button>
-          </Card>
-          <Card className={css.card}>
-            <h4>{intl.formatMessage({ id: 'cardForum' })}</h4>
-            <p>{intl.formatMessage({ id: 'cardForumDescription' })}</p>
-            <Button href={'https://discourse.processing.org/'} size="small">
-              {intl.formatMessage({ id: 'cardForumButton' })}
-            </Button>
-          </Card>
+        <div className={css.cards}>
+          <div className={css.cardsWrapper}>
+            <Card className={css.card}>
+              <h4>{intl.formatMessage({ id: 'cardGettingStarted' })}</h4>
+              <p>
+                {intl.formatMessage({ id: 'cardGettingStartedDescription' })}
+              </p>
+              <Button to={'/tutorials/gettingstarted'} size="small">
+                {intl.formatMessage({ id: 'cardGettingStartedButton' })}
+              </Button>
+            </Card>
+            <Card className={css.card}>
+              <h4>{intl.formatMessage({ id: 'cardReference' })}</h4>
+              <p>{intl.formatMessage({ id: 'cardReferenceDescription' })}</p>
+              <Button to={'/reference'} size="small">
+                {intl.formatMessage({ id: 'cardReferenceButton' })}
+              </Button>
+            </Card>
+            <Card className={css.card}>
+              <h4>{intl.formatMessage({ id: 'cardDownload' })}</h4>
+              <p>{intl.formatMessage({ id: 'cardDownloadDescription' })}</p>
+              <Button to={'/download'} size="small">
+                {intl.formatMessage({ id: 'cardDownloadButton' })}
+              </Button>
+            </Card>
+            <Card className={css.card}>
+              <h4>{intl.formatMessage({ id: 'cardForum' })}</h4>
+              <p>{intl.formatMessage({ id: 'cardForumDescription' })}</p>
+              <Button href={'https://discourse.processing.org/'} size="small">
+                {intl.formatMessage({ id: 'cardForumButton' })}
+              </Button>
+            </Card>
+          </div>
         </div>
       </div>
       <div className={classnames(grid.grid, css.section, css.divider)}>

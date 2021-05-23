@@ -50,38 +50,6 @@
   margin-right: var(--gutter-double);
 }
 
-/* Getting Started */
-
-.gettingStarted {
-  @mixin grid;
-}
-
-.gettingStartedMessage,
-.cardGrid {
-  @mixin column 4;
-}
-
-.cardGrid {
-  display: flex;
-  flex-wrap: wrap;
-  /* align-items: baseline;
-  align-items: center; */
-  margin-top: calc(-1 * var(--margin));
-  margin-bottom: calc(-1 * var(--margin));
-  /* padding-left: var(--gutter); */
-}
-
-.card {
-  flex: 0 0 50%;
-  text-align: center;
-  font-size: var(--text-small);
-}
-
-.card:active {
-  border-color: var(--processing-blue-mid);
-  background: var(--processing-blue-mid);
-}
-
 /* Examples */
 
 .examples {
@@ -147,6 +115,44 @@
   @mixin column;
   text-align: right;
 }
+
+/* Getting Started */
+
+.gettingStarted {
+  @mixin grid;
+}
+
+.gettingStartedMessage,
+.cards {
+  @mixin column 4;
+}
+
+.gettingStartedMessage {
+  padding-bottom: var(--margin);
+  padding-top: var(--margin);
+}
+
+.cardsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  margin: -4px 0;
+  background-color: var(--lightgray);
+}
+
+.card {
+  flex: 0 0 50%;
+  border: 4px solid var(--lightgray);
+  text-align: center;
+  font-size: var(--text-small);
+}
+
+.card:active {
+  border-color: var(--processing-blue-mid);
+  background: var(--processing-blue-mid);
+}
+
+/*  Participate */
 
 .participate {
   display: flex;
@@ -236,55 +242,25 @@
     margin-right: var(--gutter);
   }
 
-  .cardGrid {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-left: 0;
-
-    & > .cardCol:first-child {
-      padding-right: var(--gutter);
-
-      & > div {
-        border-right-width: 8px;
-      }
-
-      & > div:hover {
-        border-right-width: 8px;
-      }
-    }
-
-    & > .cardCol:last-child {
-      padding-left: var(--gutter);
-
-      & > div {
-        border-left-width: 8px;
-      }
-
-      & > div:hover {
-        border-left-width: 8px;
-      }
-    }
+  .gettingStartedMessage,
+  .cards {
+    @mixin column 8;
   }
 
-  .cardCol {
-    & > div:first-child {
-      margin-bottom: var(--gutter);
-      border-top-width: 8px;
-      border-bottom-width: 8px;
-    }
+  .cards {
+    padding-bottom: var(--margin);
+  }
 
-    & > div:first-child:hover {
-    }
+  .gettingStartedMessage {
+    padding-bottom: var(--margin-half);
+  }
 
-    & > div:last-child {
-      margin-top: var(--gutter);
-      border-top-width: 8px;
-      border-bottom-width: 8px;
-    }
-
-    & > div:last-child:hover {
-      border-top-width: 8px;
-    }
+  .cardsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4px;
+    margin: 0;
+    background-color: var(--lightgray);
   }
 
   .participateButtton,
@@ -311,30 +287,6 @@
 
   .example {
     flex-basis: var(--col4);
-  }
-
-  .cardGrid {
-    flex-direction: column;
-    flex-wrap: nowrap;
-
-    & .cardCol {
-      flex-direction: column;
-      flex-wrap: nowrap;
-    }
-
-    & > .cardCol:first-child {
-      margin-bottom: var(--gutter);
-      padding-right: 0;
-    }
-
-    & > .cardCol:last-child {
-      margin-top: var(--gutter);
-      padding-left: 0;
-    }
-  }
-
-  .card {
-    height: auto;
   }
 }
 
@@ -401,36 +353,8 @@
     }
   }
 
-  .cardGrid {
-    height: auto;
-    flex-basis: auto;
+  .cardsWrapper {
     flex-direction: column;
-    flex-wrap: nowrap;
-
-    & .cardCol {
-      flex-direction: column;
-      flex-wrap: nowrap;
-    }
-
-    & > .cardCol:first-child {
-      margin-bottom: 0;
-      padding-right: 0;
-    }
-
-    & > .cardCol:last-child {
-      margin-top: 0;
-      padding-left: 0;
-    }
-  }
-
-  .cardCol {
-    & > div:last-child {
-      margin-bottom: var(--gutter-double);
-    }
-  }
-
-  .card {
-    height: auto;
   }
 
   .participateButtton,

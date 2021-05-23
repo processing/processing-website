@@ -1,11 +1,11 @@
 .root {
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   width: fit-content;
   outline: none;
-  border: 8px solid var(--lightgray);
   padding: 36px 40px;
   font-size: var(--text-small);
   cursor: pointer;
@@ -28,7 +28,6 @@
 }
 
 .root:hover {
-  border: 8px solid var(--lightgray);
   color: var(--processing-blue-dark);
   & h4 {
     color: inherit;
@@ -36,7 +35,7 @@
 }
 
 .root:active {
-  border: 8px solid var(--processing-blue-mid);
+  border-color: var(--processing-blue-mid);
   background-color: var(--processing-blue-mid);
   color: white;
   & h4 {
