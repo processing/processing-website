@@ -1,4 +1,5 @@
 .root {
+  @mixin grid;
   position: relative;
   top: 150px;
   z-index: 600;
@@ -25,7 +26,7 @@
 }
 
 .contactWrapper {
-  flex-basis: var(--col2);
+  @mixin column 2;
   font-size: var(--text-small);
   & p {
     margin-bottom: 0;
@@ -37,9 +38,7 @@
 }
 
 .socialmediaWrapper {
-  display: flex;
-  flex-direction: column;
-  flex-basis: var(--col6);
+  @mixin column 6;
 
   & > ul {
     display: flex;
@@ -52,8 +51,8 @@
   }
 }
 
-.span {
-  margin-top: var(--gutter);
+.disclaimer {
+  margin-top: var(--margin-quarter);
   font-size: var(--text-xsmall);
   white-space: pre-wrap;
 }
@@ -62,6 +61,7 @@
   .root {
     min-height: auto;
   }
+
   .root.withSidebar {
     padding-left: var(--margin);
   }
