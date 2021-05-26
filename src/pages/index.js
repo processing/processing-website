@@ -15,7 +15,6 @@ import { useRandomArray } from '../hooks';
 import { usePreparedExamples } from '../hooks/examples';
 
 import css from '../styles/pages/index.module.css';
-import grid from '../styles/grid.module.css';
 
 const IndexPage = ({ data }) => {
   const intl = useIntl();
@@ -102,13 +101,13 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </div>
-      <div className={classnames(grid.grid, css.section, css.divider)}>
-        <div className={classnames(grid.col, css.half, css.participate)}>
+      <div className={classnames(css.section, css.divider)}>
+        <div className={classnames(css.participate, css.half)}>
           <h2>{intl.formatMessage({ id: 'participate' })}</h2>
           <div>
             <p>{intl.formatMessage({ id: 'participateP1' })}</p>
           </div>
-          <div className={css.participateButtton}>
+          <div className={css.participateButton}>
             <Button
               href={
                 'https://processingfoundation.org/advocacy/processing-community-day-2020'
@@ -118,7 +117,7 @@ const IndexPage = ({ data }) => {
             </Button>
           </div>
         </div>
-        <div className={classnames(grid.col, css.half, css.participate)}>
+        <div className={classnames(css.contribute, css.half)}>
           <h2>{intl.formatMessage({ id: 'contribute' })}</h2>
           <div>
             <p>{intl.formatMessage({ id: 'contributeP1' })}</p>
@@ -138,15 +137,15 @@ const IndexPage = ({ data }) => {
               .
             </p>
           </div>
-          <div className={css.contributeButtton}>
+          <div className={css.contributeButton}>
             <Button href={'https://github.com/processing'} size="large">
               {intl.formatMessage({ id: 'buttonContribute' })}
             </Button>
           </div>
         </div>
       </div>
-      <div className={classnames(grid.grid, css.section, css.divider)}>
-        <div className={classnames(css.half, grid.col, css.externalLinks)}>
+      <div className={classnames(css.section, css.divider)}>
+        <div className={classnames(css.half, css.externalLinks)}>
           <h2>{intl.formatMessage({ id: 'externalLinks' })}</h2>
           <ul>
             <li>
@@ -173,7 +172,7 @@ const IndexPage = ({ data }) => {
             </li>
           </ul>
         </div>
-        <div className={classnames(grid.col, css.half, css.partnersContainer)}>
+        <div className={classnames(css.half, css.partnersContainer)}>
           <h2>{intl.formatMessage({ id: 'partners' })}</h2>
           <ul className={css.partners}>
             <li>
@@ -203,7 +202,7 @@ const IndexPage = ({ data }) => {
 
 const Examples = memo(({ heading, examples, locale }) => {
   return (
-    <div className={classnames(css.examples, css.section, css.divider)}>
+    <div className={classnames(css.section, css.divider)}>
       <h3 className={css.examplesHeading}>{heading}</h3>
       {examples.map((example, i) => (
         <div className={css.example} key={example.path}>

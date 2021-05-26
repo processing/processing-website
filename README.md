@@ -16,6 +16,10 @@ Now open [localhost:8000](http://localhost:8000) in your browser of choice.
 
 Please refer to the [guides](/docs/README.md).
 
+## Writing code
+
+Please refer to the [guides](/docs/README.md).
+
 ## Links:
 
 1. [list of codes under 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)

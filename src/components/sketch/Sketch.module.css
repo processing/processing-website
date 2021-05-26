@@ -1,4 +1,5 @@
 .root {
+  @mixin grid;
   padding-top: 30px;
   padding-bottom: 30px;
   background-image: linear-gradient(
@@ -10,7 +11,7 @@
 
 .left,
 .right {
-  flex-basis: var(--col4);
+  @mixin column 4;
 }
 
 .left {

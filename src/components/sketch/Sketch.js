@@ -85,8 +85,8 @@ const Sketch = ({ children }) => {
   }, []);
 
   return (
-    <div className={classnames(css.root, grid.grid)}>
-      <div className={classnames(grid.col, css.left)}>
+    <div className={css.root}>
+      <div className={css.left}>
         <div className={css.splash}>{children}</div>
         <div className={classnames(css.code, { [css.codeVisible]: showCode })}>
           <SketchCode
@@ -98,7 +98,7 @@ const Sketch = ({ children }) => {
           />
         </div>
       </div>
-      <div className={classnames(grid.col, css.right)}>
+      <div className={css.right}>
         <SketchGraphic {...state} />
         <CoolButton onClick={onCodeToggle}>
           {showCode

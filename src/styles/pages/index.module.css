@@ -12,6 +12,7 @@
 }
 
 .section {
+  @mixin grid;
   padding-bottom: var(--margin);
   padding-top: var(--margin);
 }
@@ -27,7 +28,7 @@
 }
 
 .half {
-  flex-basis: var(--col4);
+  @mixin column 4;
 }
 
 .intro {
@@ -51,10 +52,6 @@
 }
 
 /* Examples */
-
-.examples {
-  @mixin grid;
-}
 
 .examplesHeading {
   @mixin column;
@@ -154,19 +151,20 @@
 
 /*  Participate */
 
-.participate {
+.participate,
+.contribute {
   display: flex;
   flex-direction: column;
   align-content: space-around;
 }
 
-.participateButtton {
+.participateButton {
   display: inline-flex;
   flex: 1;
   align-items: flex-end;
 }
 
-.contributeButtton {
+.contributeButton {
   margin-top: var(--gutter);
   display: inline-flex;
 }
@@ -266,6 +264,10 @@
   .participateButtton,
   .contributeButtton {
     margin-bottom: var(--vertical-gutter);
+  }
+
+  .contribute {
+    margin-top: var(--margin);
   }
 }
 

@@ -25,3 +25,9 @@
   padding-left: var(--margin);
   padding-right: var(--margin);
 }
+
+@define-mixin container {
+  max-width: var(--container-widt);
+  margin-left: auto;
+  margin-right: auto;
+}

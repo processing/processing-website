@@ -13,7 +13,7 @@
   }
 }
 
-.root main {
+.main {
   top: 150px;
   position: relative;
   flex: 1;
@@ -22,7 +22,7 @@
 }
 
 @media (--reduced) {
-  .root main {
+  .main {
     top: 50px;
   }
 }
