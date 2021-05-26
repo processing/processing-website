@@ -39,13 +39,10 @@
 .participate,
 .contribute,
 .externalLinks,
-.partnersContainer {
+.partnersContainer,
+.gettingStartedMessage,
+.cards {
   @mixin column 4;
-}
-
-/* Center the element with a max-width */
-.container {
-  @mixin container;
 }
 
 .buttons {
@@ -121,15 +118,6 @@
 }
 
 /* Getting Started */
-
-.gettingStarted .container {
-  @mixin grid;
-}
-
-.gettingStartedMessage,
-.cards {
-  @mixin column 4;
-}
 
 .gettingStartedMessage {
   padding-bottom: var(--margin);
@@ -226,7 +214,9 @@
   .participate,
   .contribute,
   .externalLinks,
-  .partnersContainer {
+  .partnersContainer,
+  .gettingStartedMessage,
+  .cards {
     flex-basis: var(--col8);
   }
 
@@ -236,11 +226,6 @@
 
   .button {
     margin-right: var(--gutter);
-  }
-
-  .gettingStartedMessage,
-  .cards {
-    @mixin column 8;
   }
 
   .cards {
