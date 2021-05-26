@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
-import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
 import Img from 'gatsby-image';
