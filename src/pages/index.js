@@ -56,144 +56,152 @@ const IndexPage = ({ data }) => {
         heading={intl.formatMessage({ id: 'examples' })}
         locale={locale}
       />
-      <div className={classnames(css.gettingStarted, css.divider)}>
-        <div className={css.gettingStartedMessage}>
-          <h2>{intl.formatMessage({ id: 'gettingStarted' })}</h2>
-          <div>
-            <p
-              dangerouslySetInnerHTML={{
-                __html: intl.formatMessage({ id: 'gettingStartedP1' })
-              }}></p>
+      <div className={css.gettingStarted}>
+        <div className={css.gettingStartedInner}>
+          <div className={css.gettingStartedMessage}>
+            <h2>{intl.formatMessage({ id: 'gettingStarted' })}</h2>
+            <div>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: intl.formatMessage({ id: 'gettingStartedP1' })
+                }}></p>
+            </div>
+          </div>
+          <div className={css.cards}>
+            <div className={css.cardsWrapper}>
+              <Card className={css.card}>
+                <h4>{intl.formatMessage({ id: 'cardGettingStarted' })}</h4>
+                <p>
+                  {intl.formatMessage({ id: 'cardGettingStartedDescription' })}
+                </p>
+                <Button to={'/tutorials/gettingstarted'} size="small">
+                  {intl.formatMessage({ id: 'cardGettingStartedButton' })}
+                </Button>
+              </Card>
+              <Card className={css.card}>
+                <h4>{intl.formatMessage({ id: 'cardReference' })}</h4>
+                <p>{intl.formatMessage({ id: 'cardReferenceDescription' })}</p>
+                <Button to={'/reference'} size="small">
+                  {intl.formatMessage({ id: 'cardReferenceButton' })}
+                </Button>
+              </Card>
+              <Card className={css.card}>
+                <h4>{intl.formatMessage({ id: 'cardDownload' })}</h4>
+                <p>{intl.formatMessage({ id: 'cardDownloadDescription' })}</p>
+                <Button to={'/download'} size="small">
+                  {intl.formatMessage({ id: 'cardDownloadButton' })}
+                </Button>
+              </Card>
+              <Card className={css.card}>
+                <h4>{intl.formatMessage({ id: 'cardForum' })}</h4>
+                <p>{intl.formatMessage({ id: 'cardForumDescription' })}</p>
+                <Button href={'https://discourse.processing.org/'} size="small">
+                  {intl.formatMessage({ id: 'cardForumButton' })}
+                </Button>
+              </Card>
+            </div>
           </div>
         </div>
-        <div className={css.cards}>
-          <div className={css.cardsWrapper}>
-            <Card className={css.card}>
-              <h4>{intl.formatMessage({ id: 'cardGettingStarted' })}</h4>
+      </div>
+      <div className={css.takePart}>
+        <div className={css.takePartInner}>
+          <div className={css.participate}>
+            <h2>{intl.formatMessage({ id: 'participate' })}</h2>
+            <div>
+              <p>{intl.formatMessage({ id: 'participateP1' })}</p>
+            </div>
+            <div className={css.participateButton}>
+              <Button
+                href={
+                  'https://processingfoundation.org/advocacy/processing-community-day-2020'
+                }
+                size="large">
+                {intl.formatMessage({ id: 'buttonParticipate' })}
+              </Button>
+            </div>
+          </div>
+          <div className={css.contribute}>
+            <h2>{intl.formatMessage({ id: 'contribute' })}</h2>
+            <div>
+              <p>{intl.formatMessage({ id: 'contributeP1' })}</p>
               <p>
-                {intl.formatMessage({ id: 'cardGettingStartedDescription' })}
+                {intl.formatMessage({ id: 'contributeP2' })}
+                <a href="https://github.com/processing/processing/wiki/Build-Instructions">
+                  {intl.formatMessage({ id: 'building' })}
+                </a>
+                ,{' '}
+                <a href="https://github.com/processing/processing/wiki/Report-Bugs">
+                  {intl.formatMessage({ id: 'reporting' })}
+                </a>
+                , {intl.formatMessage({ id: 'reporting' })}{' '}
+                <a href="https://github.com/processing/processing/wiki">
+                  {intl.formatMessage({ id: 'creating' })}
+                </a>
+                .
               </p>
-              <Button to={'/tutorials/gettingstarted'} size="small">
-                {intl.formatMessage({ id: 'cardGettingStartedButton' })}
+            </div>
+            <div className={css.contributeButton}>
+              <Button href={'https://github.com/processing'} size="large">
+                {intl.formatMessage({ id: 'buttonContribute' })}
               </Button>
-            </Card>
-            <Card className={css.card}>
-              <h4>{intl.formatMessage({ id: 'cardReference' })}</h4>
-              <p>{intl.formatMessage({ id: 'cardReferenceDescription' })}</p>
-              <Button to={'/reference'} size="small">
-                {intl.formatMessage({ id: 'cardReferenceButton' })}
-              </Button>
-            </Card>
-            <Card className={css.card}>
-              <h4>{intl.formatMessage({ id: 'cardDownload' })}</h4>
-              <p>{intl.formatMessage({ id: 'cardDownloadDescription' })}</p>
-              <Button to={'/download'} size="small">
-                {intl.formatMessage({ id: 'cardDownloadButton' })}
-              </Button>
-            </Card>
-            <Card className={css.card}>
-              <h4>{intl.formatMessage({ id: 'cardForum' })}</h4>
-              <p>{intl.formatMessage({ id: 'cardForumDescription' })}</p>
-              <Button href={'https://discourse.processing.org/'} size="small">
-                {intl.formatMessage({ id: 'cardForumButton' })}
-              </Button>
-            </Card>
+            </div>
           </div>
         </div>
       </div>
-      <div className={classnames(css.section, css.divider)}>
-        <div className={classnames(css.participate, css.half)}>
-          <h2>{intl.formatMessage({ id: 'participate' })}</h2>
-          <div>
-            <p>{intl.formatMessage({ id: 'participateP1' })}</p>
+      <div className={css.external}>
+        <div className={css.externalInner}>
+          <div className={css.externalLinks}>
+            <h2>{intl.formatMessage({ id: 'externalLinks' })}</h2>
+            <ul>
+              <li>
+                <a href="https://www.creativeapplications.net/category/processing/">
+                  Creative Applications
+                </a>
+              </li>
+              <li>
+                <a href="https://openprocessing.org/">OpenProcessing</a>
+              </li>
+              <li>
+                <a href="https://fyprocessing.tumblr.com/">
+                  For your Processing
+                </a>
+              </li>
+              <li>
+                <a href="https://www.reddit.com/r/processing/">
+                  Processing Subreddit
+                </a>
+              </li>
+              <li>
+                <a href="https://vimeo.com/groups/processing">Vimeo</a>
+              </li>
+              <li>
+                <a href="http://sketchpad.cc/">Studio Sketchpad</a>
+              </li>
+            </ul>
           </div>
-          <div className={css.participateButton}>
-            <Button
-              href={
-                'https://processingfoundation.org/advocacy/processing-community-day-2020'
-              }
-              size="large">
-              {intl.formatMessage({ id: 'buttonParticipate' })}
-            </Button>
+          <div className={css.partnersContainer}>
+            <h2>{intl.formatMessage({ id: 'partners' })}</h2>
+            <ul className={css.partners}>
+              <li>
+                <div>
+                  <img src={data.fathom.childImageSharp.fluid.src} alt="" />
+                </div>
+                <p>Fathom</p>
+              </li>
+              <li>
+                <div>
+                  <img src={data.itp.childImageSharp.fluid.src} alt="" />
+                </div>
+                <p>ITP NYU</p>
+              </li>
+              <li>
+                <div>
+                  <img src={data.ucla.childImageSharp.fluid.src} alt="" />
+                </div>
+                <p>UCLA Design Media Arts</p>
+              </li>
+            </ul>
           </div>
-        </div>
-        <div className={classnames(css.contribute, css.half)}>
-          <h2>{intl.formatMessage({ id: 'contribute' })}</h2>
-          <div>
-            <p>{intl.formatMessage({ id: 'contributeP1' })}</p>
-            <p>
-              {intl.formatMessage({ id: 'contributeP2' })}
-              <a href="https://github.com/processing/processing/wiki/Build-Instructions">
-                {intl.formatMessage({ id: 'building' })}
-              </a>
-              ,{' '}
-              <a href="https://github.com/processing/processing/wiki/Report-Bugs">
-                {intl.formatMessage({ id: 'reporting' })}
-              </a>
-              , {intl.formatMessage({ id: 'reporting' })}{' '}
-              <a href="https://github.com/processing/processing/wiki">
-                {intl.formatMessage({ id: 'creating' })}
-              </a>
-              .
-            </p>
-          </div>
-          <div className={css.contributeButton}>
-            <Button href={'https://github.com/processing'} size="large">
-              {intl.formatMessage({ id: 'buttonContribute' })}
-            </Button>
-          </div>
-        </div>
-      </div>
-      <div className={classnames(css.section, css.divider)}>
-        <div className={classnames(css.half, css.externalLinks)}>
-          <h2>{intl.formatMessage({ id: 'externalLinks' })}</h2>
-          <ul>
-            <li>
-              <a href="https://www.creativeapplications.net/category/processing/">
-                Creative Applications
-              </a>
-            </li>
-            <li>
-              <a href="https://openprocessing.org/">OpenProcessing</a>
-            </li>
-            <li>
-              <a href="https://fyprocessing.tumblr.com/">For your Processing</a>
-            </li>
-            <li>
-              <a href="https://www.reddit.com/r/processing/">
-                Processing Subreddit
-              </a>
-            </li>
-            <li>
-              <a href="https://vimeo.com/groups/processing">Vimeo</a>
-            </li>
-            <li>
-              <a href="http://sketchpad.cc/">Studio Sketchpad</a>
-            </li>
-          </ul>
-        </div>
-        <div className={classnames(css.half, css.partnersContainer)}>
-          <h2>{intl.formatMessage({ id: 'partners' })}</h2>
-          <ul className={css.partners}>
-            <li>
-              <div>
-                <img src={data.fathom.childImageSharp.fluid.src} alt="" />
-              </div>
-              <p>Fathom</p>
-            </li>
-            <li>
-              <div>
-                <img src={data.itp.childImageSharp.fluid.src} alt="" />
-              </div>
-              <p>ITP NYU</p>
-            </li>
-            <li>
-              <div>
-                <img src={data.ucla.childImageSharp.fluid.src} alt="" />
-              </div>
-              <p>UCLA Design Media Arts</p>
-            </li>
-          </ul>
         </div>
       </div>
     </Layout>
@@ -202,7 +210,7 @@ const IndexPage = ({ data }) => {
 
 const Examples = memo(({ heading, examples, locale }) => {
   return (
-    <div className={classnames(css.section, css.divider)}>
+    <div className={css.examples}>
       <h3 className={css.examplesHeading}>{heading}</h3>
       {examples.map((example, i) => (
         <div className={css.example} key={example.path}>

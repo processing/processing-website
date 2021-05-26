@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: fit-content;
   outline: none;
   padding: 36px 40px;
   font-size: var(--text-small);

@@ -1,12 +1,16 @@
 .root {
-  @mixin grid;
-  padding-top: 30px;
-  padding-bottom: 30px;
   background-image: linear-gradient(
     to right,
     white 20%,
     var(--processing-blue-gradient)
   );
+}
+
+.container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  @mixin grid;
+  @mixin container;
 }
 
 .left,

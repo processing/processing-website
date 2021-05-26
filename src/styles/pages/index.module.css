@@ -11,34 +11,41 @@
   }
 }
 
-.section {
-  @mixin grid;
+/* Add padding to the correct elements */
+.examples,
+.takePart,
+.external {
   padding-bottom: var(--margin);
   padding-top: var(--margin);
 }
 
-.divider {
+/* Add grid to the correct elements */
+.examples,
+.gettingStartedInner,
+.takePartInner,
+.externalInner {
+  @mixin grid;
+}
+
+/* Add border bottom to correct elements */
+.examples,
+.gettingStarted,
+.takePart,
+.external {
   border-bottom: 30px solid var(--lightgray);
 }
 
-.sectionDivider {
-  flex-basis: var(--col8);
-  height: 30px;
-  background-color: var(--lightgray);
-}
-
-.half {
+/* Shortcut for 4 columns */
+.participate,
+.contribute,
+.externalLinks,
+.partnersContainer {
   @mixin column 4;
 }
 
-.intro {
-  display: flex;
-  flex-basis: var(--col4);
-  flex-direction: column;
-  z-index: 1;
-  height: 100%;
-  padding-top: calc(var(--margin) * 2);
-  padding-bottom: var(--margin);
+/* Center the element with a max-width */
+.container {
+  @mixin container;
 }
 
 .buttons {
@@ -115,7 +122,7 @@
 
 /* Getting Started */
 
-.gettingStarted {
+.gettingStarted .container {
   @mixin grid;
 }
 
@@ -209,13 +216,6 @@
   }
 }
 
-@media (--large) {
-  .intro {
-    padding-top: var(--margin);
-    flex-basis: var(--col5);
-  }
-}
-
 @media (--medium) {
   .hero {
     & h1 {
@@ -223,13 +223,11 @@
     }
   }
 
-  .half {
+  .participate,
+  .contribute,
+  .externalLinks,
+  .partnersContainer {
     flex-basis: var(--col8);
-  }
-
-  .intro {
-    padding-top: calc(var(--margin) * 2);
-    flex-basis: var(--col4);
   }
 
   .buttons {
@@ -279,14 +277,6 @@
     }
   }
 
-  .intro {
-    flex-basis: var(--col8);
-    height: auto;
-    padding-right: calc(var(--margin) + var(--gutter));
-    padding-top: var(--margin);
-    justify-content: space-around;
-  }
-
   .example {
     flex-basis: var(--col4);
   }
@@ -300,14 +290,6 @@
       padding-top: var(--vertical-gutter);
       font-size: var(--text-medium);
     }
-  }
-
-  .intro {
-    flex-basis: var(--col8);
-    height: auto;
-    padding-right: var(--gutter);
-    padding-top: calc(var(--vertical-gutter) * 2);
-    justify-content: space-around;
   }
 
   .buttons {
