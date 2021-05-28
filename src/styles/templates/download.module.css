@@ -144,10 +144,14 @@
 }
 
 .links {
-  padding-left: 15px;
-  border-left: solid 5px var(--processing-blue-dark);
   color: var(--processing-blue-dark);
   font-weight: 700;
+  margin-bottom: var(--margin-quarter);
+
+  & li {
+    display: inline;
+    margin-right: 25px;
+  }
 }
 
 @media (--small) {
