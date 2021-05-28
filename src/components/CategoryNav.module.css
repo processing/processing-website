@@ -1,13 +1,13 @@
-.root {
+.heading {
   @mixin column 6;
-  justify-content: center;
   margin-top: var(--margin-half);
 }
 
 .list {
   margin: 0;
-  @mixin nest;
   list-style: none;
+  @mixin column 6;
+  @mixin nest;
 }
 
 .item {
@@ -27,8 +27,12 @@
 }
 
 @media (--reduced) {
-  .root {
+  .heading {
     margin-top: var(--vertical-gutter);
+    flex-basis: var(--col8);
+  }
+
+  .list {
     flex-basis: var(--col8);
   }
 }

@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { Fragment, memo } from 'react';
 import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 
@@ -7,46 +7,38 @@ import css from './ReferenceList.module.css';
 
 const ReferenceList = ({ tree, library }) => {
   return (
-    <div className={css.root}>
+    <>
       {Object.keys(tree).map((category) => (
-        <div
-          className={classnames(grid.nest, css.category)}
-          key={`category-${category}`}>
-          <h2 className={classnames(css.categoryName, grid.col)} id={category}>
+        <Fragment key={`category-${category}`}>
+          <h2 className={css.category} id={category}>
             {category}
           </h2>
-          <div className={classnames(grid.col, grid.nest)}>
-            {Object.keys(tree[category]).map((subcategory) => {
-              return (
-                subcategory !== null && (
-                  <div
-                    className={css.subcategory}
-                    key={`subcategory-${subcategory}`}>
-                    <div className={classnames(css.subcategoryTitle, grid.col)}>
-                      {subcategory && <div className={css.line} />}
-                      {subcategory && <h3>{subcategory}</h3>}
-                    </div>
-                    <div className={classnames(css.subcategoryList, grid.col)}>
-                      <div className={css.line} />
-                      <ul className={classnames(grid.col, grid.nest)}>
-                        {tree[category][subcategory].map((item) => (
-                          <ReferenceItem
-                            item={item}
-                            key={`item-${item.slug}`}
-                          />
-                        ))}
-                      </ul>
-                    </div>
+          {Object.keys(tree[category]).map((subcategory) => {
+            return (
+              subcategory !== null && (
+                <div
+                  className={css.subcategory}
+                  key={`subcategory-${subcategory}`}>
+                  <div className={css.subcategoryTitle}>
+                    {subcategory && <div className={css.line} />}
+                    {subcategory && <h3>{subcategory}</h3>}
                   </div>
-                )
-              );
-            })}
-          </div>
-        </div>
+                  <ul className={css.subcategoryList}>
+                    {tree[category][subcategory].map((item) => (
+                      <ReferenceItem item={item} key={`item-${item.slug}`} />
+                    ))}
+                  </ul>
+                </div>
+              )
+            );
+          })}
+        </Fragment>
       ))}
-    </div>
+    </>
   );
 };
+
+// <div className={css.line} />;
 
 const ReferenceItem = memo(({ item }) => {
   return (
@@ -57,7 +49,7 @@ const ReferenceItem = memo(({ item }) => {
       <div className={classnames(grid.col, css.itemBrief)}>
         <p
           dangerouslySetInnerHTML={{
-            __html: item.brief,
+            __html: item.brief
           }}
         />
       </div>

@@ -1,41 +1,20 @@
-.root {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  height: 100%;
-}
-
 .category {
-  & h2 {
-    padding-top: var(--vertical-gutter);
-    font-size: var(--text-xlarge);
-    flex-basis: var(--col8);
-    text-transform: capitalize;
-  }
-
-  & ul {
-    position: relative;
-    flex-basis: var(--col8);
-  }
-
-  & ul div:last-child {
-    margin-bottom: 0;
-  }
+  @mixin column;
+  margin-top: var(--vertical-gutter);
+  font-size: var(--text-xlarge);
+  text-transform: capitalize;
 }
 
 .subcategory {
+  @mixin column;
+  @mixin nest;
   position: relative;
-  display: flex;
-  flex-direction: row;
   margin-bottom: 30px;
-  width: 100%;
 }
 
 .subcategoryTitle {
-  flex-basis: cols(1.5);
-  height: 100%;
+  @mixin column 1.5;
   display: flex;
-  align-items: stretch;
 
   & .line {
     border-left: solid 7px var(--lightgray);
@@ -50,26 +29,16 @@
 }
 
 .subcategoryList {
-  flex-basis: cols(5.5);
-  display: flex;
-  align-items: stretch;
-
-  & .line {
-    border-left: solid 3px var(--lightgray);
-  }
+  @mixin column 5.5;
 
   & li {
-    margin-bottom: 8px;
-    width: 100%;
+    padding: 4px 0;
+    border-left: solid 3px var(--lightgray);
     list-style: none;
 
     &:hover {
       background-color: var(--lightgray);
     }
-  }
-
-  & ul li:last-child {
-    margin-bottom: 0;
   }
 
   & li > * {
@@ -100,6 +69,10 @@
 
 .itemBrief {
   flex-basis: cols(4, 5.5);
+
+  & b {
+    @mixin code;
+  }
 }
 
 @media (--reduced) {

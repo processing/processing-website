@@ -31,6 +31,9 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
 
   const { width } = useWindowSize();
   const [show, setShow] = useState(width > 960 ? true : false);
+
+  console.log('collapsed', !show);
+
   const intl = useIntl();
   useHighlight();
 

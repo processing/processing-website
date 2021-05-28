@@ -10,8 +10,6 @@
   flex-wrap: wrap;
   padding-left: 0;
   padding-right: 0;
-  margin-left: calc(-1 * var(--gutter));
-  margin-right: calc(-1 * var(--gutter));
 }
 
 @define-mixin column $count: 8, $push: 0, $total: 8 {
@@ -24,4 +22,15 @@
   max-width: var(--container-width);
   margin-left: auto;
   margin-right: auto;
+}
+
+@define-mixin code {
+  font-weight: normal;
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 85%;
+  background-color: var(--lightgray);
+  padding: 0.1em 0.3em;
+  border-radius: 6px;
+  font-variant-ligatures: no-common-ligatures;
 }

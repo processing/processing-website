@@ -64,10 +64,6 @@
 }
 
 .root:hover {
-  & input {
-    border-color: 3px solid var(--darkgray);
-    color: inherit;
-  }
   & input::placeholder {
     color: var(--darkgray);
   }

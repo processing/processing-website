@@ -30,14 +30,7 @@
 
 .codeList span b,
 .codeList span code {
-  font-weight: normal;
-  font-style: normal;
-  font-family: var(--font-mono);
-  font-size: 85%;
-  background-color: var(--lightgray);
-  padding: 0.1em 0.3em;
-  border-radius: 6px;
-  font-variant-ligatures: no-common-ligatures;
+  @mixin code;
 }
 
 /* Variant: reference */
