@@ -1,18 +1,17 @@
 .root {
-  flex-basis: var(--col6);
+  @mixin column 6;
   justify-content: center;
   margin-top: var(--margin-half);
 }
 
 .list {
   margin: 0;
-  display: flex;
-  flex-wrap: wrap;
+  @mixin nest;
   list-style: none;
 }
 
 .item {
-  flex-basis: var(--col2);
+  @mixin column 2;
   display: flex;
 
   & .line {

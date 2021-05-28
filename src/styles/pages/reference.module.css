@@ -1,0 +1,8 @@
+.root {
+  @mixin grid;
+  @mixin container;
+}
+
+.heading {
+  @mixin column;
+}

@@ -78,14 +78,14 @@
 }
 
 .large {
+  @mixin column 6;
   margin: var(--margin-half) 0;
-  flex-basis: var(--col6);
 
   & input {
     border-bottom: 3px solid var(--gray);
     padding: 0 50px 12px 20px;
     background-color: white;
-    font-size: var(--text-xlarge);
+    font-size: var(--text-reduced);
     color: var(--darkergray);
   }
 

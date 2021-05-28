@@ -12,7 +12,7 @@ import FilterBar from '../components/FilterBar';
 import { useTree, useFilteredTree } from '../hooks';
 import { usePreparedItems } from '../hooks/reference';
 
-import grid from '../styles/grid.module.css';
+import css from '../styles/pages/reference.module.css';
 
 const Reference = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -28,8 +28,8 @@ const Reference = ({ data }) => {
       <Helmet>
         <title>Reference</title>
       </Helmet>
-      <div className={grid.grid}>
-        <h1 className={grid.col} style={{ flexBasis: '100%' }}>
+      <div className={css.root}>
+        <h1 className={css.heading}>
           {intl.formatMessage({ id: 'references' })}
         </h1>
         <Donate />

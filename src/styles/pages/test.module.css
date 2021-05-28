@@ -1,0 +1,29 @@
+.grid {
+  @mixin grid;
+}
+
+.col {
+  @mixin column 1;
+  & > div {
+    background-color: rgba(255, 0, 0, 0.1);
+    min-height: 200px;
+  }
+}
+
+.col5 {
+  @mixin column 5;
+}
+
+.nest {
+  @mixin nest;
+  background-color: rgba(255, 0, 0, 0.2);
+  min-height: 200px;
+}
+
+.nestCol {
+  @mixin column 1, 0, 5;
+  & > div {
+    background-color: rgba(255, 0, 0, 0.3);
+    min-height: 200px;
+  }
+}
