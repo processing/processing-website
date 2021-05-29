@@ -38,15 +38,13 @@ const ReferenceList = ({ tree, library }) => {
   );
 };
 
-// <div className={css.line} />;
-
 const ReferenceItem = memo(({ item }) => {
   return (
     <li className={css.item}>
-      <Link className={classnames(grid.col, css.itemName)} to={item.path}>
+      <Link className={css.itemName} to={item.path}>
         {item.name}
       </Link>
-      <div className={classnames(grid.col, css.itemBrief)}>
+      <div className={css.itemBrief}>
         <p
           dangerouslySetInnerHTML={{
             __html: item.brief

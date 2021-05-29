@@ -47,8 +47,6 @@ const FieldRefTemplate = ({ data, pageContext }) => {
     data.inUseImages
   );
 
-  console.log(pageContext.inUseExamples);
-
   const title = entry?.classanchor
     ? `${entry.classanchor}::${entry.name}`
     : name;
