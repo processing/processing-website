@@ -5,7 +5,7 @@ import css from './CategoryNav.module.css';
 
 const CategoryNav = ({ categories }) => {
   return (
-    <>
+    <div className={css.root}>
       <h4 className={css.heading}>Shortcuts</h4>
       <ul className={css.list}>
         {categories.map((category, key) => (
@@ -17,7 +17,7 @@ const CategoryNav = ({ categories }) => {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };
 

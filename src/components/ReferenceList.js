@@ -2,7 +2,6 @@ import React, { Fragment, memo } from 'react';
 import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 
-import grid from '../styles/grid.module.css';
 import css from './ReferenceList.module.css';
 
 const ReferenceList = ({ tree, library }) => {

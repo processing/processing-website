@@ -1,52 +1,51 @@
 .root {
-  & > h1 {
-    flex-basis: var(--col8);
+  @mixin grid;
+  @mixin container;
+}
+
+.text {
+  @mixin column;
+
+  & h1,
+  & h3 {
+    max-width: 950px;
   }
-  & > h3 {
-    flex-basis: var(--col8);
-    padding-right: var(--col3);
+
+  & h3 {
+    margin-bottom: 0;
   }
 }
 
-.listWrapper {
-  flex-basis: var(--col8);
-  display: flex;
+.pushDown {
+  margin-top: var(--margin);
+}
 
-  & h2 {
-    flex-basis: var(--col2);
-    font-size: var(--text-xlarge);
-    text-transform: capitalize;
-    margin: var(--margin) 0;
-    border-right: solid 7px var(--lightgray);
-  }
+.category {
+  @mixin column 2;
+  font-size: var(--text-xlarge);
+  text-transform: capitalize;
+  margin-top: var(--margin);
+  border-right: solid 7px var(--lightgray);
 }
 
 .list {
+  @mixin column 6;
+  @mixin nest;
+
+  margin-top: var(--margin);
   list-style: none;
-  margin: var(--margin) 0;
-  flex-basis: var(--col6);
+}
 
-  & li {
-    width: 100%;
-    margin-bottom: 20px;
-  }
+.item {
+  flex-basis: 100%;
+  margin-bottom: var(--margin-half);
+  display: flex;
+  align-items: baseline;
+}
 
-  & ul li:last-child {
-    margin-bottom: 0;
-  }
-
-  & p {
-    flex-basis: var(--col6);
-    margin: 0;
-  }
-
-  & a {
-    text-decoration: none;
-  }
-
-  & h1 {
-    flex-basis: var(--col8);
-  }
+.itemName {
+  @mixin column 1.5, 0, 6;
+  border-right: solid 3px var(--lightgray);
 
   & h3 {
     font-size: var(--text-medium);
@@ -62,99 +61,19 @@
   }
 }
 
-.librarieName {
-  flex-basis: var(--col2) !important;
-  border-right: solid 3px var(--lightgray);
-}
-
-.contributionsList {
-  list-style: none;
-  margin: var(--margin) 0;
-  flex-basis: var(--col8);
-
-  & h2 {
-    flex-basis: var(--col2);
-    font-size: var(--text-xlarge);
-    text-transform: capitalize;
-    border-right: solid 7px var(--lightgray);
-    margin-bottom: 0;
-  }
-
-  & ul {
-    flex-basis: var(--col6);
-  }
-
-  & ul div:last-child {
-    margin-bottom: 0;
-  }
-
-  & li {
-    margin-bottom: 30px;
-    width: 100%;
-  }
-
-  & ul li:last-child {
-    margin-bottom: 0;
-  }
-
-  & p {
-    margin: 0;
-  }
-
-  & a {
-    text-decoration: none;
-  }
-
-  & h3 {
-    font-size: var(--text-medium);
-    margin: 0;
-  }
-
-  & h3:hover {
-    color: inherit;
-  }
-
-  & h3:focus {
-    color: inherit;
-  }
-}
-
-.contributionData {
-  flex-basis: var(--col2);
-  border-right: solid 3px var(--lightgray);
+.itemDescription {
+  @mixin column 4.5, 0, 6;
+  margin: 0;
 }
 
 .contributionAuthor {
   color: var(--processing-blue-mid);
 }
 
-.subgrid {
-  width: 100%;
-  display: flex;
-  align-items: baseline;
-  padding-right: var(--col1);
-}
-
-.contributionBrief {
-  flex-basis: var(--col6);
-}
-
 @media (--reduced) {
-  .root {
-    & > h1 {
-      padding-top: var(--vertical-gutter);
-    }
-    & > h3 {
-      padding-right: 0;
-      flex-basis: var(--col8);
-    }
-  }
-
-  .listWrapper {
-    padding-left: 0;
-    & h2 {
-      flex-basis: var(--col8);
-    }
+  .category {
+    flex-basis: var(--col8);
+    border: none;
   }
 
   .list {
@@ -165,29 +84,7 @@
     }
   }
 
-  .librarieName {
-    flex-basis: var(--col3) !important;
-  }
-
-  .contributionsList {
-    padding-right: 0px;
-
-    & h2 {
-      border-right: none;
-      flex-basis: var(--col8);
-    }
-
-    & ul {
-      flex-basis: var(--col8);
-      margin-top: var(--vertical-gutter);
-    }
-  }
-
-  .contributionData {
-    flex-basis: var(--col3);
-  }
-
-  .contributionBrief {
-    flex-basis: var(--col5);
+  .itemName {
+    @mixin column 3, 0, 6;
   }
 }

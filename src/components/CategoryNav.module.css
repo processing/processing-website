@@ -1,3 +1,8 @@
+.root {
+  @mixin column;
+  @mixin nest;
+}
+
 .heading {
   @mixin column 6;
   margin-top: var(--margin-half);

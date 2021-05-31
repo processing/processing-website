@@ -10,7 +10,6 @@ import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
 
 import css from '../styles/pages/libraries.module.css';
-import grid from '../styles/grid.module.css';
 
 const Tools = ({ data }) => {
   const { locale } = useLocalization();
@@ -34,43 +33,42 @@ const Tools = ({ data }) => {
       <Helmet>
         <title>Tools</title>
       </Helmet>
-      <div className={classnames(grid.grid, css.root)}>
+      <div className={css.root}>
         <Donate />
-        <h1 className={grid.col}>{intl.formatMessage({ id: 'tools' })}</h1>
-        <h3 className={grid.col}>{intl.formatMessage({ id: 'toolsIntro' })}</h3>
-        <div className={classnames(grid.nest, css.listWrapper)}>
-          <ul className={css.list}>
-            {tools.nodes.map((node, key) => {
-              return (
-                <li key={key} className={css.subgrid}>
-                  <h3 className={classnames(grid.col, css.librarieName)}>
-                    {node.childJson.name}
-                  </h3>
-                  <p className={grid.col}>{node.childJson.description}</p>
-                </li>
-              );
-            })}
-          </ul>
+        <div className={css.text}>
+          <h1>{intl.formatMessage({ id: 'tools' })}</h1>
+          <h3>{intl.formatMessage({ id: 'toolsIntro' })}</h3>
         </div>
-        <h1 className={grid.col}>
-          {intl.formatMessage({ id: 'contributions' })}
-        </h1>
-        <h3
-          className={grid.col}
-          dangerouslySetInnerHTML={{
-            __html: intl.formatMessage({ id: 'contributedTools' }),
-          }}
-        />
-        <ul className={classnames(grid.nest, css.contributionsList)}>
+        <ul className={css.list}>
+          {tools.nodes.map((node, key) => {
+            return (
+              <li key={key} className={css.item}>
+                <div className={css.itemName}>
+                  <h3>{node.childJson.name}</h3>
+                </div>
+                <p className={css.itemDescription}>
+                  {node.childJson.description}
+                </p>
+              </li>
+            );
+          })}
+        </ul>
+        <div className={classnames(css.text, css.pushDown)}>
+          <h1>{intl.formatMessage({ id: 'contributions' })}</h1>
+          <h3
+            dangerouslySetInnerHTML={{
+              __html: intl.formatMessage({ id: 'contributedTools' })
+            }}
+          />
+        </div>
+        <ul className={css.list}>
           {contributions.map((node, key) => {
             return (
-              <li key={key + 'c'} className={css.subgrid}>
-                <div className={classnames(grid.col, css.contributionData)}>
-                  <h3>
-                    <a href={node.url} target="_blank" rel="noreferrer">
-                      {node.name}
-                    </a>
-                  </h3>
+              <li key={key + 'c'} className={css.item}>
+                <div className={css.itemName}>
+                  <a href={node.url} target="_blank" rel="noreferrer">
+                    <h3>{node.name}</h3>
+                  </a>
                   {node.authors.map((author, key) => (
                     <a
                       key={key + 'a'}
@@ -88,7 +86,7 @@ const Tools = ({ data }) => {
                     </a>
                   ))}
                 </div>
-                <div className={classnames(grid.col, css.contributionBrief)}>
+                <div className={css.itemDescription}>
                   <p>{node.sentence}</p>
                 </div>
               </li>

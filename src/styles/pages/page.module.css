@@ -1,4 +1,5 @@
 .root {
+  @mixin grid;
   & h1 {
     margin-bottom: 0;
   }

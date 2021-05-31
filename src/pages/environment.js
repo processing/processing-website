@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -13,7 +12,6 @@ import { SidebarTableOfContents } from '../components/Sidebar';
 import { useHighlight } from '../hooks';
 
 import css from '../styles/pages/page.module.css';
-import grid from '../styles/grid.module.css';
 
 const Environment = ({ data }) => {
   const [showSidebar, setShowSidebar] = useState(true);
@@ -27,7 +25,7 @@ const Environment = ({ data }) => {
       <Helmet>
         <title>Environment</title>
       </Helmet>
-      <div className={classnames(grid.grid, css.root)}>
+      <div className={css.root}>
         <Donate />
         <SidebarTableOfContents
           items={mdx.tableOfContents.items}

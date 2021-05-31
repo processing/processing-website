@@ -1,8 +1,8 @@
-import React, { useState, memo } from 'react';
+import React, { Fragment, useState, memo } from 'react';
 import { Helmet } from 'react-helmet';
-import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import unique from 'array-unique';
+import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
@@ -18,7 +18,6 @@ import { usePreparedContributions } from '../hooks/libraries';
 import { referencePath } from '../utils/paths';
 
 import css from '../styles/pages/libraries.module.css';
-import grid from '../styles/grid.module.css';
 
 const Libraries = ({ data }) => {
   const { locale } = useLocalization();
@@ -40,16 +39,16 @@ const Libraries = ({ data }) => {
       <Helmet>
         <title>Libraries</title>
       </Helmet>
-      <div className={classnames(grid.grid, css.root)}>
+      <div className={css.root}>
         <Donate />
-        <h1 className={grid.col}>{intl.formatMessage({ id: 'libraries' })}</h1>
-        <h3 className={grid.col}>
-          {intl.formatMessage({ id: 'librariesIntro' })}
-        </h3>
+        <div className={css.text}>
+          <h1>{intl.formatMessage({ id: 'libraries' })}</h1>
+          <h3>{intl.formatMessage({ id: 'librariesIntro' })}</h3>
+        </div>
         <CoreList libraries={coreLibraries} locale={locale} />
-        <h1 className={grid.col}>
-          {intl.formatMessage({ id: 'contributions' })}
-        </h1>
+        <div className={classnames(css.text, css.pushDown)}>
+          <h1>{intl.formatMessage({ id: 'contributions' })}</h1>
+        </div>
         <FilterBar
           placeholder={intl.formatMessage({ id: 'librariesFilter' })}
           onChange={(e) => setSearchTerm(e.target.value)}
@@ -66,77 +65,71 @@ const Libraries = ({ data }) => {
 
 const CoreList = memo(({ libraries, locale }) => {
   return (
-    <div className={classnames(grid.nest, css.listWrapper)}>
-      <h2 className={grid.col}>Core</h2>
+    <>
+      <h2 className={css.category}>Core</h2>
       <ul className={css.list}>
         {libraries.nodes.map((node, key) => {
           return (
-            <li key={key} className={css.subgrid}>
-              <Link
-                className={classnames(css.librarieName, grid.col)}
-                to={referencePath('index', node.frontmatter.name)}
-                language={locale}>
-                <h3>{node.frontmatter.title}</h3>
-              </Link>
-              <p className={grid.col}>{node.frontmatter.description}</p>
+            <li key={key} className={css.item}>
+              <div className={css.itemName}>
+                <Link
+                  to={referencePath('index', node.frontmatter.name)}
+                  language={locale}>
+                  <h3>{node.frontmatter.title}</h3>
+                </Link>
+              </div>
+              <p className={css.itemDescription}>
+                {node.frontmatter.description}
+              </p>
             </li>
           );
         })}
       </ul>
-    </div>
+    </>
   );
 });
 
 const ContributionsList = memo(({ categories, libraries }) => {
-  return (
-    <ul className={classnames(grid.nest, css.contributionsList)}>
-      {categories.map((cat) => {
-        const filtered = libraries.filter((c) => c.categories.includes(cat));
-        return (
-          <li key={cat} className={grid.nest}>
-            <h2 className={grid.col} id={cat}>
-              {cat}
-            </h2>
-            <ul className={classnames(grid.col, grid.nest)}>
-              {filtered.map((node, key) => {
-                return (
-                  <li key={key + 'c'} className={css.subgrid}>
-                    <div className={classnames(grid.col, css.contributionData)}>
-                      <h3>
-                        <a href={node.url} target="_blank" rel="noreferrer">
-                          {node.name}
-                        </a>
-                      </h3>
-                      {node.authors.map((author, key) => (
-                        <a
-                          key={key + 'a'}
-                          href={author.slice(
-                            author.indexOf('(') + 1,
-                            author.indexOf(')')
-                          )}
-                          target="_blank"
-                          rel="noreferrer"
-                          className={css.contributionAuthor}>
-                          {author.slice(
-                            author.indexOf('[') + 1,
-                            author.indexOf(']')
-                          )}
-                        </a>
-                      ))}
-                    </div>
-                    <div
-                      className={classnames(grid.col, css.contributionBrief)}>
-                      <p>{node.sentence}</p>
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
-          </li>
-        );
-      })}
-    </ul>
-  );
+  return categories.map((cat) => {
+    const filtered = libraries.filter((c) => c.categories.includes(cat));
+    return (
+      <Fragment key={cat}>
+        <h2 className={css.category} id={cat}>
+          {cat}
+        </h2>
+        <ul className={css.list}>
+          {filtered.map((node, key) => {
+            return (
+              <li key={key + 'c'} className={css.item}>
+                <div className={css.itemName}>
+                  <a href={node.url} target="_blank" rel="noreferrer">
+                    <h3>{node.name}</h3>
+                  </a>
+                  {node.authors.map((author, key) => (
+                    <a
+                      key={key + 'a'}
+                      href={author.slice(
+                        author.indexOf('(') + 1,
+                        author.indexOf(')')
+                      )}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={css.contributionAuthor}>
+                      {author.slice(
+                        author.indexOf('[') + 1,
+                        author.indexOf(']')
+                      )}
+                    </a>
+                  ))}
+                </div>
+                <p className={css.itemDescription}>{node.sentence}</p>
+              </li>
+            );
+          })}
+        </ul>
+      </Fragment>
+    );
+  });
 });
 
 export default Libraries;
