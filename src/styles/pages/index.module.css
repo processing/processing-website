@@ -19,14 +19,6 @@
   padding-top: var(--margin);
 }
 
-/* Add grid to the correct elements */
-.examples,
-.gettingStartedInner,
-.takePartInner,
-.externalInner {
-  @mixin grid;
-}
-
 /* Add border bottom to correct elements */
 .examples,
 .gettingStarted,
@@ -42,7 +34,7 @@
 .partnersContainer,
 .gettingStartedMessage,
 .cards {
-  @mixin column 4;
+  flex-basis: var(--col4);
 }
 
 .buttons {
@@ -58,11 +50,11 @@
 /* Examples */
 
 .examplesHeading {
-  @mixin column;
+  flex-basis: var(--col8);
 }
 
 .example {
-  @mixin column 2;
+  flex-basis: var(--col2);
   cursor: pointer;
 
   & h4 {
@@ -113,7 +105,7 @@
 }
 
 .moreExamples {
-  @mixin column;
+  flex-basis: var(--col8);
   text-align: right;
 }
 

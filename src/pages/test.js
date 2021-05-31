@@ -5,6 +5,7 @@ import classnames from 'classnames';
 import Layout from '../components/Layout';
 
 import css from '../styles/pages/test.module.css';
+import grid from '../styles/grid.module.css';
 
 const Test = () => {
   return (
@@ -12,58 +13,91 @@ const Test = () => {
       <Helmet>
         <title>Test</title>
       </Helmet>
-      <div className={css.grid}>
-        <div className={css.col}>
-          <div />
+      <h3>Normal grid</h3>
+      <div className={classnames(grid.grid, grid.container)}>
+        <div className={classnames(grid.col, css.col1)}>
+          <div className={css.red} />
         </div>
-        <div className={css.col}>
-          <div />
+        <div className={classnames(grid.col, css.col1)}>
+          <div className={css.red} />
         </div>
-        <div className={css.col}>
-          <div />
+        <div className={classnames(grid.col, css.col1)}>
+          <div className={css.red} />
         </div>
-        <div className={css.col}>
-          <div />
+        <div className={classnames(grid.col, css.col1)}>
+          <div className={css.red} />
         </div>
-        <div className={css.col}>
-          <div />
+        <div className={classnames(grid.col, css.col1)}>
+          <div className={css.red} />
         </div>
-        <div className={css.col}>
-          <div />
+        <div className={classnames(grid.col, css.col1)}>
+          <div className={css.red} />
         </div>
-        <div className={css.col}>
-          <div />
+        <div className={classnames(grid.col, css.col1)}>
+          <div className={css.red} />
         </div>
-        <div className={css.col}>
-          <div />
+        <div className={classnames(grid.col, css.col1)}>
+          <div className={css.red} />
         </div>
       </div>
-      <div className={css.grid}>
-        <div className={css.col}>
-          <div />
+      <h3>Nested grid inside column</h3>
+      <div className={classnames(grid.grid, grid.container)}>
+        <div className={classnames(grid.col, css.col1)}>
+          <div className={css.red} />
         </div>
-        <div className={css.col}>
-          <div />
+        <div className={classnames(grid.col, css.col1)}>
+          <div className={css.red} />
         </div>
-        <div className={classnames(css.col5, css.nest)}>
-          <div className={css.nestCol}>
-            <div />
+        <div className={classnames(grid.col, grid.grid, css.col5)}>
+          <div className={classnames(grid.col, css.nestCol)}>
+            <div className={css.red} />
           </div>
-          <div className={css.nestCol}>
-            <div />
+          <div className={classnames(grid.col, css.nestCol)}>
+            <div className={css.red} />
           </div>
-          <div className={css.nestCol}>
-            <div />
+          <div className={classnames(grid.col, css.nestCol)}>
+            <div className={css.red} />
           </div>
-          <div className={css.nestCol}>
-            <div />
+          <div className={classnames(grid.col, css.nestCol)}>
+            <div className={css.red} />
           </div>
-          <div className={css.nestCol}>
-            <div />
+          <div className={classnames(grid.col, css.nestCol)}>
+            <div className={css.red} />
           </div>
         </div>
-        <div className={css.col}>
-          <div />
+        <div className={classnames(grid.col, css.col1)}>
+          <div className={css.red} />
+        </div>
+      </div>
+      <h3>Nested grid inside element inside column</h3>
+      <div className={classnames(grid.grid, grid.container)}>
+        <div className={classnames(grid.col, css.col1)}>
+          <div className={css.red} />
+        </div>
+        <div className={classnames(grid.col, css.col1)}>
+          <div className={css.red} />
+        </div>
+        <div className={classnames(grid.col, css.col5)}>
+          <div className={grid.grid}>
+            <div className={classnames(grid.col, css.nestCol)}>
+              <div className={css.red} />
+            </div>
+            <div className={classnames(grid.col, css.nestCol)}>
+              <div className={css.red} />
+            </div>
+            <div className={classnames(grid.col, css.nestCol)}>
+              <div className={css.red} />
+            </div>
+            <div className={classnames(grid.col, css.nestCol)}>
+              <div className={css.red} />
+            </div>
+            <div className={classnames(grid.col, css.nestCol)}>
+              <div className={css.red} />
+            </div>
+          </div>
+        </div>
+        <div className={classnames(grid.col, css.col1)}>
+          <div className={css.red} />
         </div>
       </div>
     </Layout>

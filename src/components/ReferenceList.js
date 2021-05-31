@@ -1,5 +1,4 @@
 import React, { Fragment, memo } from 'react';
-import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 
 import css from './ReferenceList.module.css';

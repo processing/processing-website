@@ -6,16 +6,14 @@
   );
 }
 
-.container {
+.wrapper {
   padding-top: 30px;
   padding-bottom: 30px;
-  @mixin grid;
-  @mixin container;
 }
 
 .left,
 .right {
-  @mixin column 4;
+  flex-basis: var(--col4);
 }
 
 .left {

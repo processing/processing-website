@@ -1,33 +1,34 @@
 .root {
-  position: relative;
-  margin-bottom: 60px;
-
-  & h2 {
-    flex-basis: var(--col8);
-    margin-bottom: 0;
-    text-transform: capitalize;
-  }
-
-  & ul {
-    flex-basis: var(--col8);
-  }
-
-  & ul div:last-child {
-    margin-bottom: 0;
-  }
 }
 
 .category {
-  margin-bottom: var(--gutter-double);
+  @mixin nestedGrid;
+  & > h2 {
+    text-transform: capitalize;
+  }
 }
 
-.intro {
-  flex-basis: var(--col8);
-  padding-right: var(--col4);
-  margin-bottom: calc(var(--margin) / 2);
+.categoryName {
+  @mixin column 6;
 }
 
-.subcategory {
+.toggleButton {
+  flex: 0 0 200px;
+}
+
+.categoryDescription {
+  @mixin column;
+}
+
+.subcategoryName {
+  @mixin column 1;
+}
+
+.examples {
+  @mixin column 7;
+}
+
+/* .subcategory {
   display: flex;
   flex-direction: row;
   margin-bottom: 30px;
@@ -62,16 +63,11 @@
   & ul > li:hover h4 {
     color: var(--processing-blue-mid);
   }
-}
+} */
 
 .cover {
   width: 100%;
   margin-bottom: 10px;
-}
-
-.toggleButton {
-  position: absolute;
-  right: calc(var(--col1) + var(--gutter));
 }
 
 @media (--reduced) {
@@ -84,10 +80,6 @@
       flex-basis: var(--col2);
     }
   }
-
-  .toggleButton {
-    right: var(--gutter);
-  }
 }
 
 @media (--small) {
@@ -99,7 +91,7 @@
     padding-right: var(--gutter);
   }
 
-  .subcategory {
+  /* .subcategory {
     flex-wrap: wrap;
 
     & h3 {
@@ -116,9 +108,5 @@
         min-height: 120px;
       }
     }
-  }
-
-  .toggleButton {
-    right: var(--gutter);
-  }
+  } */
 }

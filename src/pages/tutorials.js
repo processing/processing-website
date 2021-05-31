@@ -1,6 +1,5 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';

@@ -1,29 +1,17 @@
-.grid {
-  @mixin grid;
-}
-
-.col {
-  @mixin column 1;
-  & > div {
-    background-color: rgba(255, 0, 0, 0.1);
-    min-height: 200px;
-  }
+.col1 {
+  flex-basis: var(--col1);
 }
 
 .col5 {
-  @mixin column 5;
-}
-
-.nest {
-  @mixin nest;
   background-color: rgba(255, 0, 0, 0.2);
-  min-height: 200px;
+  flex-basis: var(--col5);
 }
 
 .nestCol {
-  @mixin column 1, 0, 5;
-  & > div {
-    background-color: rgba(255, 0, 0, 0.3);
-    min-height: 200px;
-  }
+  flex-basis: calc(100% / 5 * 1);
+}
+
+.red {
+  background-color: rgba(255, 0, 0, 0.1);
+  min-height: 200px;
 }

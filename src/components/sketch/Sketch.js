@@ -6,6 +6,7 @@ import SketchCode from './SketchCode';
 import CoolButton from './CoolButton';
 
 import css from './Sketch.module.css';
+import grid from '../../styles/grid.module.css';
 
 const initialState = {
   showGrid: true,
@@ -85,8 +86,8 @@ const Sketch = ({ children }) => {
 
   return (
     <div className={css.root}>
-      <div className={css.container}>
-        <div className={css.left}>
+      <div className={classnames(grid.container, grid.grid, css.wrapper)}>
+        <div className={classnames(grid.col, css.left)}>
           <div className={css.splash}>{children}</div>
           <div
             className={classnames(css.code, { [css.codeVisible]: showCode })}>
@@ -99,7 +100,7 @@ const Sketch = ({ children }) => {
             />
           </div>
         </div>
-        <div className={css.right}>
+        <div className={classnames(grid.col, css.right)}>
           <SketchGraphic {...state} />
           <CoolButton onClick={onCodeToggle}>
             {showCode

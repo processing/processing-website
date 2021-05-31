@@ -1,3 +1,15 @@
+/*
+  Gives a max-width to an element. Normally used alongside .grid
+*/
+.container {
+  max-width: var(--container-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+  Grid have a margin with columns inside of it.
+*/
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -5,34 +17,43 @@
   padding-right: var(--margin);
 }
 
-.fill {
-  flex: 1;
-  overflow: auto;
-}
-
+/*
+  All columns have gutter
+*/
 .col {
   padding-left: var(--gutter);
   padding-right: var(--gutter);
 }
 
-.nest,
-.col.nest {
-  display: flex;
-  flex-grow: 1;
-  flex-wrap: wrap;
+/*
+  .grid inside .col negatively offset the .col padding ...
+*/
+.col .grid {
+  margin-left: calc(-1 * var(--gutter));
+  margin-right: calc(-1 * var(--gutter));
   padding-left: 0;
   padding-right: 0;
 }
 
-.rightBleed {
+/*
+  ... except for nested grids set directly on a column
+*/
+.col.grid {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* .rightBleed {
   padding-right: 0px;
 }
 
 .leftBleed {
   padding-left: 0px;
-}
+} */
 
-@media (--medium) {
+/* @media (--medium) {
   .bleedMobile {
     padding-right: 0 !important;
     padding-left: 0 !important;
@@ -57,4 +78,4 @@
   .leftBleed {
     padding-left: var(--margin);
   }
-}
+} */

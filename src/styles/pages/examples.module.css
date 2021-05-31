@@ -1,21 +1,16 @@
 .root {
-  & > h1 {
-    flex-basis: var(--col8);
-  }
-  & > h3 {
-    flex-basis: var(--col8);
-    padding-right: var(--col5);
-  }
+  @mixin grid;
+  @mixin container;
+}
+
+.content {
+  @mixin column;
 }
 
 @media (--small) {
   .root {
     & > h1 {
       padding-top: var(--vertical-gutter);
-    }
-    & > h3 {
-      padding-right: 0;
-      flex-basis: var(--col8);
     }
   }
 }

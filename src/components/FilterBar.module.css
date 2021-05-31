@@ -74,7 +74,6 @@
 }
 
 .large {
-  @mixin column 6;
   margin: var(--margin-half) 0;
 
   & input {
@@ -103,11 +102,5 @@
 
   & input:focus {
     border-bottom: 3px solid var(--black);
-  }
-}
-
-@media (--reduced) {
-  .large {
-    flex-basis: var(--col8);
   }
 }

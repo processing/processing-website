@@ -5,6 +5,16 @@
   padding-right: var(--margin);
 }
 
+/*
+  Use this mixin on any element that is inside a column.
+*/
+@define-mixin nestedGrid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--gutter));
+  margin-right: calc(-1 * var(--gutter));
+}
+
 @define-mixin nest {
   display: flex;
   flex-wrap: wrap;

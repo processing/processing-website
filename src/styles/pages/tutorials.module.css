@@ -1,5 +1,6 @@
 .root {
   @mixin grid;
+  @mixin container;
 
   & > h1,
   & > h2,

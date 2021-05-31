@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { useIntl } from 'react-intl';
+import classnames from 'classnames';
 import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
 import Img from 'gatsby-image';
 
@@ -14,6 +15,7 @@ import { useRandomArray } from '../hooks';
 import { usePreparedExamples } from '../hooks/examples';
 
 import css from '../styles/pages/index.module.css';
+import grid from '../styles/grid.module.css';
 
 const IndexPage = ({ data }) => {
   const intl = useIntl();
@@ -56,8 +58,8 @@ const IndexPage = ({ data }) => {
         locale={locale}
       />
       <div className={css.gettingStarted}>
-        <div className={css.gettingStartedInner}>
-          <div className={css.gettingStartedMessage}>
+        <div className={classnames(grid.grid, css.gettingStartedInner)}>
+          <div className={classnames(grid.col, css.gettingStartedMessage)}>
             <h2>{intl.formatMessage({ id: 'gettingStarted' })}</h2>
             <div>
               <p
@@ -66,7 +68,7 @@ const IndexPage = ({ data }) => {
                 }}></p>
             </div>
           </div>
-          <div className={css.cards}>
+          <div className={classnames(grid.col, css.cards)}>
             <div className={css.cardsWrapper}>
               <Card className={css.card}>
                 <h4>{intl.formatMessage({ id: 'cardGettingStarted' })}</h4>
@@ -103,8 +105,8 @@ const IndexPage = ({ data }) => {
         </div>
       </div>
       <div className={css.takePart}>
-        <div className={css.takePartInner}>
-          <div className={css.participate}>
+        <div className={classnames(grid.grid, css.takePartInner)}>
+          <div className={classnames(grid.col, css.participate)}>
             <h2>{intl.formatMessage({ id: 'participate' })}</h2>
             <div>
               <p>{intl.formatMessage({ id: 'participateP1' })}</p>
@@ -119,7 +121,7 @@ const IndexPage = ({ data }) => {
               </Button>
             </div>
           </div>
-          <div className={css.contribute}>
+          <div className={classnames(grid.col, css.contribute)}>
             <h2>{intl.formatMessage({ id: 'contribute' })}</h2>
             <div>
               <p>{intl.formatMessage({ id: 'contributeP1' })}</p>
@@ -148,8 +150,8 @@ const IndexPage = ({ data }) => {
         </div>
       </div>
       <div className={css.external}>
-        <div className={css.externalInner}>
-          <div className={css.externalLinks}>
+        <div className={classnames(grid.grid, css.externalInner)}>
+          <div className={classnames(grid.col, css.externalLinks)}>
             <h2>{intl.formatMessage({ id: 'externalLinks' })}</h2>
             <ul>
               <li>
@@ -178,7 +180,7 @@ const IndexPage = ({ data }) => {
               </li>
             </ul>
           </div>
-          <div className={css.partnersContainer}>
+          <div className={classnames(grid.col, css.partnersContainer)}>
             <h2>{intl.formatMessage({ id: 'partners' })}</h2>
             <ul className={css.partners}>
               <li>
@@ -209,10 +211,10 @@ const IndexPage = ({ data }) => {
 
 const Examples = memo(({ heading, examples, locale }) => {
   return (
-    <div className={css.examples}>
-      <h3 className={css.examplesHeading}>{heading}</h3>
+    <div className={classnames(grid.grid, css.examples)}>
+      <h3 className={classnames(grid.col, css.examplesHeading)}>{heading}</h3>
       {examples.map((example, i) => (
-        <div className={css.example} key={example.path}>
+        <div className={classnames(grid.col, css.example)} key={example.path}>
           <Link to={example.path} language={locale}>
             <div className={css.imgContainer}>
               {example.image && (
@@ -227,7 +229,7 @@ const Examples = memo(({ heading, examples, locale }) => {
           </Link>
         </div>
       ))}
-      <div className={css.moreExamples}>
+      <div className={classnames(grid.col, css.moreExamples)}>
         <Button to={'/examples'}>More Examples</Button>
       </div>
     </div>
