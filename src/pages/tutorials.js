@@ -10,7 +10,6 @@ import { useIntl } from 'react-intl';
 import Layout from '../components/Layout';
 
 import css from '../styles/pages/tutorials.module.css';
-import grid from '../styles/grid.module.css';
 
 const Tutorials = ({ data }) => {
   const { locale } = useLocalization();
@@ -21,112 +20,100 @@ const Tutorials = ({ data }) => {
       <Helmet>
         <title>Tutorials</title>
       </Helmet>
-      <div className={classnames(grid.grid, css.root)}>
-        <h1 className={grid.col}>{intl.formatMessage({ id: 'tutorials' })}</h1>
-        <div className={classnames(grid.nest, css.section)}>
-          <h2 className={grid.col}>
-            {intl.formatMessage({ id: 'videoTutorials' })}
-          </h2>
-          <h3 className={grid.col}>
-            {intl.formatMessage({ id: 'videoTutorialsIntro' })}
-          </h3>
-          <span className={classnames(grid.col, css.sectionIntro)}>
-            {`Large collections of instructional Processing videos are online from `}
-            <a href="https://www.youtube.com/user/shiffman/playlists">
-              Daniel Shiffman
-            </a>
-            {`, `}
-            <a href="https://imaginary-institute.com/scheduleenroll.php">
-              Andrew Glassner
-            </a>
-            {`, `}
-            <a href="https://www.plethora-project.com/education/2011/09/12/processing-tutorials/">
-              Jose Sanchez
-            </a>
-            {`, and `}
-            <a href="https://funprogramming.org/">Abe Pazos</a>.
-          </span>
-          <ul className={css.list}>
-            {data.video.nodes.map((node, k) => {
-              const {
-                link,
-                title,
-                author,
-                intro,
-                coverImage,
-              } = node.childMdx.frontmatter;
-              return (
-                <li key={k} className={classnames(grid.col, css.card)}>
-                  <a href={link} language={locale}>
-                    {coverImage && (
-                      <div className={css.cover}>
-                        <Img
-                          fluid={coverImage.childImageSharp.fluid}
-                          style={{ height: 100 }}
-                          objectFit="contain"
-                        />
-                      </div>
-                    )}
-                    <h4>{title}</h4>
-                    <div>
-                      <span className={css.author}>
-                        {intl.formatMessage({ id: 'by' })}{' '}
-                      </span>
-                      <span className={css.authorName}>{author}</span>
+      <div className={css.root}>
+        <h1>{intl.formatMessage({ id: 'tutorials' })}</h1>
+        <h2>{intl.formatMessage({ id: 'videoTutorials' })}</h2>
+        <h3>{intl.formatMessage({ id: 'videoTutorialsIntro' })}</h3>
+        <p className={css.sectionIntro}>
+          {`Large collections of instructional Processing videos are online from `}
+          <a href="https://www.youtube.com/user/shiffman/playlists">
+            Daniel Shiffman
+          </a>
+          {`, `}
+          <a href="https://imaginary-institute.com/scheduleenroll.php">
+            Andrew Glassner
+          </a>
+          {`, `}
+          <a href="https://www.plethora-project.com/education/2011/09/12/processing-tutorials/">
+            Jose Sanchez
+          </a>
+          {`, and `}
+          <a href="https://funprogramming.org/">Abe Pazos</a>.
+        </p>
+        <ul className={css.list}>
+          {data.video.nodes.map((node, k) => {
+            const {
+              link,
+              title,
+              author,
+              intro,
+              coverImage
+            } = node.childMdx.frontmatter;
+            return (
+              <li key={k} className={css.card}>
+                <a href={link} language={locale}>
+                  {coverImage && (
+                    <div className={css.cover}>
+                      <Img
+                        fluid={coverImage.childImageSharp.fluid}
+                        style={{ height: 100 }}
+                        objectFit="contain"
+                      />
                     </div>
-                  </a>
-                  <span className={css.brief}>{intro}</span>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-        <div className={classnames(grid.nest, css.section)}>
-          <h2 className={grid.col}>
-            {intl.formatMessage({ id: 'textTutorials' })}
-          </h2>
-          <h3 className={grid.col}>
-            {intl.formatMessage({ id: 'textTutorialsIntro' })}
-          </h3>
-          <ul className={css.list}>
-            {data.text.nodes.map((node, k) => {
-              const {
-                slug,
-                title,
-                author,
-                intro,
-                level,
-                coverImage,
-              } = node.childMdx.frontmatter;
-              return (
-                <li key={k} className={classnames(grid.col, css.card)}>
-                  <Link to={slug} language={locale}>
-                    {coverImage && (
-                      <div className={css.cover}>
-                        <Img
-                          fluid={coverImage.childImageSharp.fluid}
-                          style={{ height: 100 }}
-                          objectFit="contain"
-                        />
-                      </div>
-                    )}
-                    <h4>{title}</h4>
-                    <div>
-                      <span className={css.author}>
-                        {intl.formatMessage({ id: 'by' })}{' '}
-                      </span>
-                      <span className={css.authorName}>{author}</span>
-                    </div>
-                    <span className={css.brief}>{intro}</span>
-                    <span className={css.level}>
-                      {intl.formatMessage({ id: 'level' })}: {level}
+                  )}
+                  <h4>{title}</h4>
+                  <div>
+                    <span className={css.author}>
+                      {intl.formatMessage({ id: 'by' })}{' '}
                     </span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+                    <span className={css.authorName}>{author}</span>
+                  </div>
+                </a>
+                <span className={css.brief}>{intro}</span>
+              </li>
+            );
+          })}
+        </ul>
+        <h2>{intl.formatMessage({ id: 'textTutorials' })}</h2>
+        <h3>{intl.formatMessage({ id: 'textTutorialsIntro' })}</h3>
+        <ul className={css.list}>
+          {data.text.nodes.map((node, k) => {
+            const {
+              slug,
+              title,
+              author,
+              intro,
+              level,
+              coverImage
+            } = node.childMdx.frontmatter;
+            return (
+              <li key={k} className={css.card}>
+                <Link to={slug} language={locale}>
+                  {coverImage && (
+                    <div className={css.cover}>
+                      <Img
+                        fluid={coverImage.childImageSharp.fluid}
+                        style={{ height: 100 }}
+                        objectFit="contain"
+                      />
+                    </div>
+                  )}
+                  <h4>{title}</h4>
+                  <div>
+                    <span className={css.author}>
+                      {intl.formatMessage({ id: 'by' })}{' '}
+                    </span>
+                    <span className={css.authorName}>{author}</span>
+                  </div>
+                  <span className={css.brief}>{intro}</span>
+                  <span className={css.level}>
+                    {intl.formatMessage({ id: 'level' })}: {level}
+                  </span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </Layout>
   );

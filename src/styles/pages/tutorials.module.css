@@ -1,25 +1,20 @@
 .root {
-  & > h1 {
-    padding-right: var(--col3);
-  }
-}
+  @mixin grid;
 
-.section {
-  flex-wrap: wrap;
+  & > h1,
+  & > h2,
+  & > h3 {
+    @mixin column;
+  }
 
   & > h2 {
     margin-bottom: 0;
   }
-
-  & > h3 {
-    flex-basis: var(--col8);
-    padding-right: var(--col4);
-  }
 }
 
 .sectionIntro {
-  flex-basis: var(--col8);
-  padding-right: var(--col4);
+  @mixin column;
+  margin: 0;
 
   & a {
     text-decoration: underline;
@@ -27,85 +22,75 @@
 }
 
 .list {
-  width: 100%;
+  @mixin column;
+  @mixin nest;
   margin: var(--gutter) 0;
-  display: flex;
-  flex-wrap: wrap;
   list-style: none;
+}
 
-  & li {
-    flex-basis: var(--col2);
+.card {
+  @mixin column 2;
+  padding-top: var(--gutter);
+  padding-bottom: var(--gutter);
+  background-color: none;
+  transition: background 0.2s ease;
+  pointer-events: auto;
 
-    & a {
-      display: flex;
-      flex-direction: column;
-    }
-
-    & a:hover {
-      color: var(--black);
-    }
-
-    & h4 {
-      margin-bottom: 0;
-    }
+  & a {
+    display: flex;
+    flex-direction: column;
   }
 
-  & .card {
-    padding-top: var(--gutter);
-    padding-bottom: var(--gutter);
-    background-color: none;
-    transition: background 0.2s ease;
-    pointer-events: auto;
-  }
-
-  & .card:hover {
+  & a:hover {
     color: var(--black);
-    background-color: var(--lightgray);
   }
 
-  & .cover {
-    width: 100%;
-    background-color: var(--gray);
-    margin-bottom: var(--gutter);
+  & h4 {
+    margin-bottom: 0;
   }
+}
 
-  & .author {
-    display: inline;
-    color: var(--darkergray);
-  }
+.card:hover {
+  color: var(--black);
+  background-color: var(--lightgray);
+}
 
-  & .authorName {
-    color: var(--processing-blue-mid);
-    font-weight: 500;
-  }
+.cover {
+  width: 100%;
+  background-color: var(--gray);
+  margin-bottom: var(--gutter);
+}
 
-  & .brief {
-    margin-top: var(--gutter-half);
-    color: inherit;
-    pointer-events: none;
-  }
+.author {
+  display: inline;
+  color: var(--darkergray);
+}
 
-  & .brief:hover {
-    color: inherit;
-  }
+.authorName {
+  color: var(--processing-blue-mid);
+  font-weight: 500;
+}
 
-  & .level {
-    margin-top: var(--gutter-half);
-  }
+.brief {
+  margin-top: var(--gutter-half);
+  color: inherit;
+  pointer-events: none;
+}
+
+.brief:hover {
+  color: inherit;
+}
+
+.level {
+  margin-top: var(--gutter-half);
 }
 
 @media (--small) {
   .root {
     & > h1 {
       padding-top: var(--vertical-gutter);
-      padding-right: var(--gutter);
     }
-  }
 
-  .section {
-    & > h3 {
-      padding-right: var(--gutter);
-    }
     & > h2 {
       margin-top: var(--vertical-gutter);
     }
@@ -115,14 +100,9 @@
     padding-right: var(--gutter);
   }
 
-  .list {
-    & li {
-      flex-basis: var(--col8);
-    }
-
-    & .card {
-      padding-top: var(--vertical-gutter);
-      padding-bottom: var(--vertical-gutter);
-    }
+  .card {
+    flex-basis: var(--col8);
+    padding-top: var(--vertical-gutter);
+    padding-bottom: var(--vertical-gutter);
   }
 }
