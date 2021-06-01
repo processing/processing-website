@@ -44,8 +44,6 @@ function runLiveSketch(s) {
   s.setup = () => {
     s.createCanvas(640, 360);
     s.frameRate(24);
-
-    console.log(images[0]);
   };
 
   s.draw = () => {

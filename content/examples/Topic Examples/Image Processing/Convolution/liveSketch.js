@@ -81,7 +81,6 @@ function runLiveSketch(s) {
         rtotal += img.pixels[loc] * matrix[i][j];
         gtotal += img.pixels[loc + 1] * matrix[i][j];
         btotal += img.pixels[loc + 2] * matrix[i][j];
-        //console.log(img.pixels[loc    ], matrix[i][j]);
       }
     }
 

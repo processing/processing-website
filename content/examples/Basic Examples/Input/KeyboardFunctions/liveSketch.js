@@ -47,13 +47,11 @@ function runLiveSketch(s) {
         s.fill(numChars / 2);
         s.rect(x, y_pos - minHeight, letterWidth, letterHeight);
       }
-      console.log(letterWidth, letterHeight);
       newletter = false;
     }
   };
 
   s.keyTyped = () => {
-    console.log(s.key);
     var keyVal = s.key.charCodeAt(0);
     // If the key is between 'A'(65) to 'Z' and 'a' to 'z'(122)
     if (

@@ -1,9 +1,9 @@
 /**
  * Loading Tabular Data
- * by Daniel Shiffman.  
- * 
+ * by Daniel Shiffman.
+ *
  * This example demonstrates how to use loadTable()
- * to retrieve data from a CSV file and make objects 
+ * to retrieve data from a CSV file and make objects
  * from that data.
  *
  * Here is what the CSV looks like:
@@ -57,7 +57,7 @@ function runLiveSketch(s) {
     var rowCount = 0;
     for (var i = 0; i < table.getRowCount(); i++) {
       var row = table.getRow(i);
-      console.log(row);
+
       // You can access the fields via their column name (or index)
       var x = row.getNum('x');
       var y = row.getNum('y');
