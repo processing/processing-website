@@ -12,8 +12,8 @@ import FilterBar from '../components/FilterBar';
 import { useTree, useFilteredTree } from '../hooks';
 import { usePreparedExamples } from '../hooks/examples';
 
-import grid from '../styles/grid.module.css';
 import css from '../styles/pages/examples.module.css';
+import grid from '../styles/grid.module.css';
 
 const Examples = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -28,19 +28,21 @@ const Examples = ({ data }) => {
       <Helmet>
         <title>Examples</title>
       </Helmet>
-      <div className={classnames(grid.grid, css.root)}>
+      <div className={classnames(grid.container, grid.grid)}>
         <Donate />
-        <h1 className={grid.col}>Examples</h1>
-        <h3 className={grid.col}>
-          {intl.formatMessage({ id: 'examplesIntro' })}
-        </h3>
-        <FilterBar
-          placeholder={intl.formatMessage({ id: 'examplesFilter' })}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          onClick={(e) => setSearchTerm('')}
-          searchTerm={searchTerm}
-          large
-        />
+        <div className={classnames(grid.col, css.text)}>
+          <h1>Examples</h1>
+          <h3>{intl.formatMessage({ id: 'examplesIntro' })}</h3>
+        </div>
+        <div className={classnames(grid.col, css.filter)}>
+          <FilterBar
+            placeholder={intl.formatMessage({ id: 'examplesFilter' })}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            onClick={(e) => setSearchTerm('')}
+            searchTerm={searchTerm}
+            large
+          />
+        </div>
         <ExamplesList tree={filtered} />
       </div>
     </Layout>

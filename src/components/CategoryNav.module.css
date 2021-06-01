@@ -1,13 +1,15 @@
 .root {
+  flex-basis: var(--col8);
+}
+
+.heading {
   flex-basis: var(--col6);
-  justify-content: center;
   margin-top: var(--margin-half);
 }
 
 .list {
+  flex-basis: var(--col6);
   margin: 0;
-  display: flex;
-  flex-wrap: wrap;
   list-style: none;
 }
 
@@ -28,8 +30,12 @@
 }
 
 @media (--reduced) {
-  .root {
+  .heading {
     margin-top: var(--vertical-gutter);
+    flex-basis: var(--col8);
+  }
+
+  .list {
     flex-basis: var(--col8);
   }
 }

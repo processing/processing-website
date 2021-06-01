@@ -1,20 +1,18 @@
 import React, { useEffect, memo } from 'react';
 
-import { useSlug } from '../../hooks/tutorials';
 import { useIntersect } from '../../hooks';
 
-const H2 = ({ children, setCurrent }) => {
+const H2 = ({ children, id, setCurrent }) => {
   const [ref, appearedOnScreen] = useIntersect();
-  const slug = useSlug(children);
 
   useEffect(() => {
     if (appearedOnScreen) {
-      setCurrent(slug);
+      setCurrent(id);
     }
-  }, [appearedOnScreen, setCurrent, slug]);
+  }, [appearedOnScreen, setCurrent, id]);
 
   return (
-    <h2 ref={ref} id={slug}>
+    <h2 ref={ref} id={id}>
       {children}
     </h2>
   );

@@ -9,7 +9,7 @@ import p5 from 'p5';
 
 import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
-import Sidebar from '../../components/Sidebar';
+import { SidebarTree } from '../../components/Sidebar';
 import Tabs from '../../components/Tabs';
 
 import { referencePath } from '../../utils/paths';
@@ -17,7 +17,7 @@ import { useWindowSize, useTree } from '../../hooks';
 import {
   useOrderedPdes,
   usePreparedExamples,
-  useRelatedExamples,
+  useRelatedExamples
 } from '../../hooks/examples';
 
 import css from '../../styles/templates/examples/example.module.css';
@@ -63,11 +63,12 @@ const ExampleTemplate = ({ data, pageContext }) => {
         {liveSketch && <script>{`${liveSketch.childRawCode.content}`}</script>}
       </Helmet>
       <div className={grid.grid}>
-        <Sidebar
+        <SidebarTree
+          title={intl.formatMessage({ id: 'examples' })}
           tree={tree}
           setShow={setShowSidebar}
           show={showSidebar}
-          type="examples"
+          useSerif
         />
         {example.childJson ? (
           <Content collapsed={!showSidebar}>
@@ -77,16 +78,11 @@ const ExampleTemplate = ({ data, pageContext }) => {
                 {intl.formatMessage({ id: 'by' })} {author}
               </h3>
             )}
-            <div className={grid.nest}>
-              <div
-                className={classnames(
-                  grid.col,
-                  grid.leftBleed,
-                  css.description
-                )}>
+            <div className={grid.grid}>
+              <div className={classnames(grid.col, css.description)}>
                 <p
                   dangerouslySetInnerHTML={{
-                    __html: description,
+                    __html: description
                   }}></p>
               </div>
               {featured.length > 0 && (

@@ -7,6 +7,7 @@
     font-size: var(--text-small);
     line-height: 1.6rem;
     font-family: var(--font-mono);
+    font-variant-ligatures: no-common-ligatures;
     text-decoration: none;
     color: var(--black);
 
@@ -16,7 +17,7 @@
   }
 }
 
-.examples {
+.root a.serif {
   font-family: var(--font);
   font-weight: 400;
 }

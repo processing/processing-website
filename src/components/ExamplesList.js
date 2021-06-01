@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { Fragment, memo, useState } from 'react';
 import classnames from 'classnames';
 import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
@@ -23,32 +23,33 @@ const ExamplesList = ({ tree }) => {
   const sortedTree = useTreeSort(tree, `order`, curated);
 
   return (
-    <div className={classnames(css.root)}>
+    <div className={classnames(grid.col, css.root)}>
       {Object.keys(sortedTree).map((category) => (
-        <div
-          className={classnames(grid.nest, css.category)}
-          key={`category-${category}`}>
-          <ToggleButton
-            className={css.toggleButton}
-            defaultLabel={'A-Z'}
-            pressedLabel={'By level'}
-            ariaLabel={'Sort by level'}
-            toggle={curated}
-            onToggle={handleToggle}
-          />
-          <h2 className={grid.col}>{category}</h2>
-          <p className={classnames(grid.col, css.intro)}>
+        <Fragment key={`category-${category}`}>
+          <div className={css.categoryName}>
+            <h2>{category}</h2>
+            <div className={css.toggleButton}>
+              <ToggleButton
+                defaultLabel="A-Z"
+                pressedLabel="By level"
+                ariaLabel="Sort by level"
+                toggle={curated}
+                onToggle={handleToggle}
+              />
+            </div>
+          </div>
+          <p className={css.categoryDescription}>
             {category === 'topic'
               ? intl.formatMessage({ id: 'topicExamples' })
               : intl.formatMessage({ id: 'basicExamples' })}
           </p>
-          <div className={classnames(grid.col, grid.nest)}>
+          <div className={classnames(grid.grid, css.category)}>
             {Object.keys(sortedTree[category]).map((subcategory) => (
-              <div
-                key={`subcategory-${subcategory}`}
-                className={css.subcategory}>
-                <h3 className={grid.col}>{subcategory}</h3>
-                <ul className={classnames(grid.col, grid.nest)}>
+              <Fragment key={`subcategory-${subcategory}`}>
+                <h3 className={classnames(grid.col, css.subcategoryName)}>
+                  {subcategory}
+                </h3>
+                <ul className={classnames(grid.col, grid.grid, css.examples)}>
                   {sortedTree[category][subcategory].map((item, key) => (
                     <ExampleItem
                       node={item}
@@ -57,18 +58,18 @@ const ExamplesList = ({ tree }) => {
                     />
                   ))}
                 </ul>
-              </div>
+              </Fragment>
             ))}
           </div>
-        </div>
+        </Fragment>
       ))}
     </div>
   );
 };
 
-const ExampleItem = memo(({ node, locale }) => {
+export const ExampleItem = memo(({ node, locale }) => {
   return (
-    <li className={grid.col}>
+    <li className={classnames(grid.col, css.item)}>
       <Link to={node.path} language={locale}>
         {node.image && (
           <Img className={css.cover} fluid={node.image.childImageSharp.fluid} />

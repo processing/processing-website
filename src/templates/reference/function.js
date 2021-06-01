@@ -3,23 +3,27 @@ import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import { useIntl } from 'react-intl';
+import classnames from 'classnames';
 
 import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
-import Sidebar from '../../components/Sidebar';
+import { SidebarTree } from '../../components/Sidebar';
 import Section from '../../components/ReferenceItemSection';
 import License from '../../components/ReferenceLicense';
 import { CodeList, ExampleList } from '../../components/ReferenceItemList';
+import { ExampleItem } from '../../components/ExamplesList';
 
 import { useTree, useHighlight, useWindowSize } from '../../hooks';
 import {
   usePreparedItems,
   usePreparedExamples,
   usePreparedList,
+  useInUseExamples
 } from '../../hooks/reference';
 import { referencePath } from '../../utils/paths';
 
 import grid from '../../styles/grid.module.css';
+import css from '../../styles/templates/examples/example.module.css';
 
 const RefTemplate = ({ data, pageContext, ...props }) => {
   const { name, libraryName } = pageContext;
@@ -27,6 +31,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
 
   const { width } = useWindowSize();
   const [show, setShow] = useState(width > 960 ? true : false);
+
   const intl = useIntl();
   useHighlight();
 
@@ -41,6 +46,10 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
   const syntax = usePreparedList(entry?.syntax, libraryName);
   const related = usePreparedList(entry?.related, libraryName, true, true);
   const returns = usePreparedList(entry?.returns, libraryName);
+  const inUseExamples = useInUseExamples(
+    pageContext.inUseExamples,
+    data.inUseImages
+  );
 
   return (
     <Layout withSidebar>
@@ -53,13 +62,23 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
       </Helmet>
       <div className={grid.grid}>
         {isProcessing && (
-          <Sidebar tree={tree} setShow={setShow} show={show} type="reference" />
+          <SidebarTree
+            title={intl.formatMessage({ id: 'reference' })}
+            tree={tree}
+            setShow={setShow}
+            show={show}
+          />
         )}
         {entry ? (
           <Content collapsed={!show}>
             <Section title={intl.formatMessage({ id: 'name' })}>
               <h3>{entry.name}</h3>
             </Section>
+            {entry?.classanchor && (
+              <Section title={intl.formatMessage({ id: 'class' })}>
+                <h4>{entry.classanchor}</h4>
+              </Section>
+            )}
             <Section title={intl.formatMessage({ id: 'description' })}>
               <p dangerouslySetInnerHTML={{ __html: entry.description }} />
             </Section>
@@ -95,6 +114,15 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
                 <CodeList items={related} />
               </Section>
             )}
+            {inUseExamples && (
+              <Section title={intl.formatMessage({ id: 'inUse' })}>
+                <ul className={classnames(grid.grid, css.related, css.inuse)}>
+                  {inUseExamples.slice(0, 6).map((e, key) => (
+                    <ExampleItem node={e} key={`e-${e.name}`} />
+                  ))}
+                </ul>
+              </Section>
+            )}
             <License />
           </Content>
         ) : (
@@ -114,7 +142,12 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
 export default RefTemplate;
 
 export const query = graphql`
-  query($name: String!, $relDir: String!, $locale: String!) {
+  query(
+    $name: String!
+    $relDir: String!
+    $locale: String!
+    $inUseExamples: [String!]!
+  ) {
     json: file(fields: { name: { eq: $name }, lang: { eq: $locale } }) {
       childJson {
         name
@@ -127,6 +160,7 @@ export const query = graphql`
         }
         related
         returns
+        classanchor
       }
     }
     images: allFile(
@@ -179,6 +213,24 @@ export const query = graphql`
           category
           subcategory
           name
+        }
+      }
+    }
+    inUseImages: allFile(
+      filter: {
+        name: { in: $inUseExamples }
+        sourceInstanceName: { eq: "examples" }
+        extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
+        dir: { regex: "/.*[^data]$/" }
+      }
+    ) {
+      nodes {
+        name
+        relativeDirectory
+        childImageSharp {
+          fluid(maxWidth: 200) {
+            ...GatsbyImageSharpFluid
+          }
         }
       }
     }

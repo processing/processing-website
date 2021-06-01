@@ -45,7 +45,6 @@
     "postcss-calc": "^8.0.0",
     "postcss-custom-media": "^8.0.0",
     "postcss-custom-properties": "^11.0.0",
-    "postcss-functions": "^4.0.2",
     "postcss-import": "^14.0.0",
     "postcss-nesting": "^7.0.1",
     "postcss-normalize": "^9.0.0",
@@ -58,7 +57,6 @@
     "react-router-dom": "^5.2.0",
     "remark-slug": "^6.0.0",
     "remark-unwrap-images": "^2.0.0",
-    "slugify": "^1.4.5",
     "title-case": "^3.0.2"
   },
   "devDependencies": {

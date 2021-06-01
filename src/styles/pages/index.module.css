@@ -11,29 +11,30 @@
   }
 }
 
-.section {
+/* Add padding to the correct elements */
+.examples,
+.takePart,
+.external {
   padding-bottom: var(--margin);
   padding-top: var(--margin);
 }
 
-.sectionDivider {
-  flex-basis: var(--col8);
-  height: 30px;
-  background-color: var(--lightgray);
+/* Add border bottom to correct elements */
+.examples,
+.gettingStarted,
+.takePart,
+.external {
+  border-bottom: 30px solid var(--lightgray);
 }
 
-.half {
+/* Shortcut for 4 columns */
+.participate,
+.contribute,
+.externalLinks,
+.partnersContainer,
+.gettingStartedMessage,
+.cards {
   flex-basis: var(--col4);
-}
-
-.intro {
-  display: flex;
-  flex-basis: var(--col4);
-  flex-direction: column;
-  z-index: 1;
-  height: 100%;
-  padding-top: calc(var(--margin) * 2);
-  padding-bottom: var(--margin);
 }
 
 .buttons {
@@ -46,16 +47,10 @@
   margin-right: var(--gutter-double);
 }
 
-.examples {
-  flex-basis: var(--col8);
+/* Examples */
 
-  & ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 100%;
-  }
+.examplesHeading {
+  flex-basis: var(--col8);
 }
 
 .example {
@@ -98,7 +93,6 @@
 
 .imgContainer {
   display: flex;
-
   & > img {
     object-fit: cover;
   }
@@ -110,74 +104,29 @@
   content: "";
 }
 
-.moreButton {
+.moreExamples {
   flex-basis: var(--col8);
-  padding-left: var(--col6);
-  text-align: end;
-
-  & > a {
-    display: block;
-    margin-left: auto;
-  }
+  text-align: right;
 }
 
-.cardGrid {
-  display: flex;
-  align-items: baseline;
-  align-items: center;
-  margin-top: calc(-1 * var(--margin));
-  margin-bottom: calc(-1 * var(--margin));
-  padding-left: var(--gutter);
+/* Getting Started */
 
-  & > .cardCol:first-child {
-    & > div {
-      border-right-width: 4px;
-    }
-
-    & > div:hover {
-      border-right-width: 4px;
-    }
-  }
-
-  & > .cardCol:last-child {
-    & > div {
-      border-left-width: 4px;
-    }
-    & > div:hover {
-      border-left-width: 4px;
-    }
-  }
+.gettingStartedMessage {
+  padding-bottom: var(--margin);
+  padding-top: var(--margin);
 }
 
-.cardCol {
+.cardsWrapper {
   display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 0;
-  min-height: 360px;
-  flex-basis: var(--col4);
-
-  & > div:first-child {
-    border-top-width: 0px;
-    border-bottom-width: 4px;
-  }
-
-  & > div:first-child:hover {
-  }
-
-  & > div:last-child {
-    border-top-width: 4px;
-    border-bottom-width: 0px;
-  }
-
-  & > div:last-child:hover {
-    border-top-width: 4px;
-  }
+  flex-wrap: wrap;
+  padding: 0 4px;
+  margin: -4px 0;
+  background-color: var(--lightgray);
 }
 
 .card {
-  height: 50%;
-  width: 100%;
+  flex: 0 0 50%;
+  border: 4px solid var(--lightgray);
   text-align: center;
   font-size: var(--text-small);
 }
@@ -187,19 +136,22 @@
   background: var(--processing-blue-mid);
 }
 
-.participate {
+/*  Participate */
+
+.participate,
+.contribute {
   display: flex;
   flex-direction: column;
   align-content: space-around;
 }
 
-.participateButtton {
+.participateButton {
   display: inline-flex;
   flex: 1;
   align-items: flex-end;
 }
 
-.contributeButtton {
+.contributeButton {
   margin-top: var(--gutter);
   display: inline-flex;
 }
@@ -244,13 +196,6 @@
   }
 }
 
-@media (--large) {
-  .intro {
-    padding-top: var(--margin);
-    flex-basis: var(--col5);
-  }
-}
-
 @media (--medium) {
   .hero {
     & h1 {
@@ -258,13 +203,13 @@
     }
   }
 
-  .half {
+  .participate,
+  .contribute,
+  .externalLinks,
+  .partnersContainer,
+  .gettingStartedMessage,
+  .cards {
     flex-basis: var(--col8);
-  }
-
-  .intro {
-    padding-top: calc(var(--margin) * 2);
-    flex-basis: var(--col4);
   }
 
   .buttons {
@@ -275,67 +220,29 @@
     margin-right: var(--gutter);
   }
 
-  .moreButton {
-    padding-left: var(--gutter);
-    flex-basis: var(--col8);
-    & a {
-      margin: auto;
-    }
+  .cards {
+    padding-bottom: var(--margin);
   }
 
-  .cardGrid {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-left: 0;
-
-    & > .cardCol:first-child {
-      padding-right: var(--gutter);
-
-      & > div {
-        border-right-width: 8px;
-      }
-
-      & > div:hover {
-        border-right-width: 8px;
-      }
-    }
-
-    & > .cardCol:last-child {
-      padding-left: var(--gutter);
-
-      & > div {
-        border-left-width: 8px;
-      }
-
-      & > div:hover {
-        border-left-width: 8px;
-      }
-    }
+  .gettingStartedMessage {
+    padding-bottom: var(--margin-half);
   }
 
-  .cardCol {
-    & > div:first-child {
-      margin-bottom: var(--gutter);
-      border-top-width: 8px;
-      border-bottom-width: 8px;
-    }
-
-    & > div:first-child:hover {
-    }
-
-    & > div:last-child {
-      margin-top: var(--gutter);
-      border-top-width: 8px;
-      border-bottom-width: 8px;
-    }
-
-    & > div:last-child:hover {
-      border-top-width: 8px;
-    }
+  .cardsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4px;
+    margin: 0;
+    background-color: var(--lightgray);
   }
 
-  .participateButtton, .contributeButtton {
+  .participateButtton,
+  .contributeButtton {
     margin-bottom: var(--vertical-gutter);
+  }
+
+  .contribute {
+    margin-top: var(--margin);
   }
 }
 
@@ -347,48 +254,8 @@
     }
   }
 
-  .intro {
-    flex-basis: var(--col8);
-    height: auto;
-    padding-right: calc(var(--margin) + var(--gutter));
-    padding-top: var(--margin);
-    justify-content: space-around;
-  }
-
   .example {
     flex-basis: var(--col4);
-  }
-
-  .moreButton {
-    padding-left: var(--gutter);
-    flex-basis: var(--col8);
-    & a {
-      margin: auto;
-    }
-  }
-
-  .cardGrid {
-    flex-direction: column;
-    flex-wrap: nowrap;
-
-    & .cardCol {
-      flex-direction: column;
-      flex-wrap: nowrap;
-    }
-
-    & > .cardCol:first-child {
-      margin-bottom: var(--gutter);
-      padding-right: 0;
-    }
-
-    & > .cardCol:last-child {
-      margin-top: var(--gutter);
-      padding-left: 0;
-    }
-  }
-
-  .card {
-    height: auto;
   }
 }
 
@@ -402,14 +269,6 @@
     }
   }
 
-  .intro {
-    flex-basis: var(--col8);
-    height: auto;
-    padding-right: var(--gutter);
-    padding-top: calc(var(--vertical-gutter) * 2);
-    justify-content: space-around;
-  }
-
   .buttons {
     justify-content: center;
     align-items: center;
@@ -418,14 +277,6 @@
 
   .button {
     margin-bottom: var(--vertical-gutter);
-  }
-
-  .moreButton {
-    padding-left: var(--gutter);
-    flex-basis: var(--col8);
-    & a {
-      margin: auto;
-    }
   }
 
   .examples {
@@ -463,39 +314,12 @@
     }
   }
 
-  .cardGrid {
-    height: auto;
-    flex-basis: auto;
+  .cardsWrapper {
     flex-direction: column;
-    flex-wrap: nowrap;
-
-    & .cardCol {
-      flex-direction: column;
-      flex-wrap: nowrap;
-    }
-
-    & > .cardCol:first-child {
-      margin-bottom: 0;
-      padding-right: 0;
-    }
-
-    & > .cardCol:last-child {
-      margin-top: 0;
-      padding-left: 0;
-    }
   }
 
-  .cardCol {
-    & > div:last-child {
-      margin-bottom: var(--gutter-double);
-    }
-  }
-
-  .card {
-    height: auto;
-  }
-
-  .participateButtton, .contributeButtton {
+  .participateButtton,
+  .contributeButtton {
     align-self: center;
   }
 

@@ -37,8 +37,6 @@
 }
 
 .socialmediaWrapper {
-  display: flex;
-  flex-direction: column;
   flex-basis: var(--col6);
 
   & > ul {
@@ -52,8 +50,8 @@
   }
 }
 
-.span {
-  margin-top: var(--gutter);
+.disclaimer {
+  margin-top: var(--margin-quarter);
   font-size: var(--text-xsmall);
   white-space: pre-wrap;
 }
@@ -62,6 +60,7 @@
   .root {
     min-height: auto;
   }
+
   .root.withSidebar {
     padding-left: var(--margin);
   }

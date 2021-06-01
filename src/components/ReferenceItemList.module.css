@@ -57,10 +57,10 @@
 }
 
 .exampleList .code {
-  flex-basis: cols(4, 6);
+  flex-basis: calc(100% / 6 * 4);
   position: relative;
 }
 
 .exampleList .image {
-  flex-basis: cols(2, 6);
+  flex-basis: calc(100% / 6 * 2);
 }

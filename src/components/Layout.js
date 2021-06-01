@@ -61,7 +61,11 @@ const Layout = ({ children, withSidebar }) => {
       Intro,
       HighlightBlock,
       Note,
-      h2: ({ children }) => <H2 setCurrent={setCurrentHeading}>{children}</H2>,
+      h2: ({ children, id }) => (
+        <H2 setCurrent={setCurrentHeading} id={id}>
+          {children}
+        </H2>
+      ),
       img: (props) => <img {...props} alt=""></img>
     }),
     [setCurrentHeading]
@@ -75,7 +79,7 @@ const Layout = ({ children, withSidebar }) => {
           siteTitle={data.site.siteMetadata.title}
           scrolled={headerScrolled}
         />
-        <main>
+        <main className={css.main}>
           <MDXProvider components={shortcodes}>{children}</MDXProvider>
         </main>
         <Footer

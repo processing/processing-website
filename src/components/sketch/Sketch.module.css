@@ -1,11 +1,14 @@
 .root {
-  padding-top: 30px;
-  padding-bottom: 30px;
   background-image: linear-gradient(
     to right,
     white 20%,
     var(--processing-blue-gradient)
   );
+}
+
+.wrapper {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .left,

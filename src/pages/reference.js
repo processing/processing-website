@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
+import classnames from 'classnames';
 
 import CategoryNav from '../components/CategoryNav';
 import Donate from '../components/character/Donate';
@@ -12,6 +13,7 @@ import FilterBar from '../components/FilterBar';
 import { useTree, useFilteredTree } from '../hooks';
 import { usePreparedItems } from '../hooks/reference';
 
+import css from '../styles/pages/reference.module.css';
 import grid from '../styles/grid.module.css';
 
 const Reference = ({ data }) => {
@@ -28,18 +30,20 @@ const Reference = ({ data }) => {
       <Helmet>
         <title>Reference</title>
       </Helmet>
-      <div className={grid.grid}>
-        <h1 className={grid.col} style={{ flexBasis: '100%' }}>
+      <div className={classnames(grid.container, grid.grid)}>
+        <h1 className={classnames(grid.col, css.heading)}>
           {intl.formatMessage({ id: 'references' })}
         </h1>
         <Donate />
-        <FilterBar
-          placeholder={intl.formatMessage({ id: 'referencesFilter' })}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          onClick={(e) => setSearchTerm('')}
-          searchTerm={searchTerm}
-          large
-        />
+        <div className={classnames(grid.col, css.filter)}>
+          <FilterBar
+            placeholder={intl.formatMessage({ id: 'referencesFilter' })}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            onClick={(e) => setSearchTerm('')}
+            searchTerm={searchTerm}
+            large
+          />
+        </div>
         {!searchTerm && <CategoryNav categories={categories} />}
         <ReferenceList tree={filtered} />
       </div>

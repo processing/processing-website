@@ -1,17 +1,16 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 
-import grid from '../styles/grid.module.css';
 import css from './Footer.module.css';
+import grid from '../styles/grid.module.css';
 
-const Footer = ({ siteTitle, withSidebar }) => {
+const Footer = ({ withSidebar }) => {
   const intl = useIntl();
   return (
     <footer
-      className={classnames(css.root, grid.grid, {
-        [css.withSidebar]: withSidebar,
+      className={classnames(grid.grid, css.root, {
+        [css.withSidebar]: withSidebar
       })}>
       <div className={classnames(grid.col, css.contactWrapper)}>
         <h3>{intl.formatMessage({ id: 'contactUs' })}</h3>
@@ -33,22 +32,14 @@ const Footer = ({ siteTitle, withSidebar }) => {
             <a href={'http://github.com/processing/'}>GitHub</a>
           </li>
         </ul>
-        <span
-          className={classnames(css.span)}
+        <p
+          className={css.disclaimer}
           dangerouslySetInnerHTML={{
-            __html: intl.formatMessage({ id: 'footer' }),
-          }}></span>
+            __html: intl.formatMessage({ id: 'footer' })
+          }}></p>
       </div>
     </footer>
   );
-};
-
-Footer.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Footer.defaultProps = {
-  siteTitle: ``,
 };
 
 export default Footer;
