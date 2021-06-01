@@ -9,18 +9,22 @@
 }
 
 .categoryName {
-  flex-basis: var(--col6);
-  margin-bottom: 0;
+  display: flex;
+  align-items: center;
   margin-top: var(--margin-half);
-}
 
-.toggleButton {
-  flex: 0 0 200px;
-  margin-top: var(--margin-half);
+  & h2 {
+    flex: 1;
+    margin-bottom: 0;
+  }
+
+  & .toggleButton {
+    text-align: right;
+    flex: 0 0 200px;
+  }
 }
 
 .categoryDescription {
-  flex-basis: var(--col8);
   margin-bottom: var(--margin);
 }
 
@@ -70,6 +74,6 @@
   }
 
   .item {
-    flex-basis: var(--col3);
+    flex-basis: var(--col4);
   }
 }

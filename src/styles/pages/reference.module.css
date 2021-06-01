@@ -5,3 +5,9 @@
 .filter {
   flex-basis: var(--col6);
 }
+
+@media (--reduced) {
+  .filter {
+    flex-basis: var(--col8);
+  }
+}

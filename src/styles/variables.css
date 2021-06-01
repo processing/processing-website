@@ -42,14 +42,13 @@
   --gutter-double: calc(var(--gutter) * 2);
   --vertical-gutter: 40px;
 
-  --col-half: 6.25%;
-  --col1: 12.5%;
-  --col2: 25%;
-  --col3: 37.5%;
-  --col4: 50%;
-  --col5: 62.5%;
-  --col6: 75%;
-  --col7: 87.5%;
+  --col1: calc(100% / 8);
+  --col2: calc(100% / 8 * 2);
+  --col3: calc(100% / 8 * 3);
+  --col4: calc(100% / 8 * 4);
+  --col5: calc(100% / 8 * 5);
+  --col6: calc(100% / 8 * 6);
+  --col7: calc(100% / 8 * 7);
   --col8: 100%;
 
   --push1: calc(var(--col1) + var(--gutter));

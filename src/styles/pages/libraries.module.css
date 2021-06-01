@@ -66,6 +66,10 @@
 }
 
 @media (--reduced) {
+  .filter {
+    flex-basis: var(--col8);
+  }
+
   .category {
     flex-basis: var(--col8);
     border: none;

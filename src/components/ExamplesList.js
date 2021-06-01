@@ -25,41 +25,43 @@ const ExamplesList = ({ tree }) => {
   return (
     <div className={classnames(grid.col, css.root)}>
       {Object.keys(sortedTree).map((category) => (
-        <div
-          className={classnames(grid.grid, css.category)}
-          key={`category-${category}`}>
-          <h2 className={classnames(grid.col, css.categoryName)}>{category}</h2>
-          <div className={css.toggleButton}>
-            <ToggleButton
-              defaultLabel="A-Z"
-              pressedLabel="By level"
-              ariaLabel="Sort by level"
-              toggle={curated}
-              onToggle={handleToggle}
-            />
+        <Fragment key={`category-${category}`}>
+          <div className={css.categoryName}>
+            <h2>{category}</h2>
+            <div className={css.toggleButton}>
+              <ToggleButton
+                defaultLabel="A-Z"
+                pressedLabel="By level"
+                ariaLabel="Sort by level"
+                toggle={curated}
+                onToggle={handleToggle}
+              />
+            </div>
           </div>
-          <p className={classnames(grid.col, css.categoryDescription)}>
+          <p className={css.categoryDescription}>
             {category === 'topic'
               ? intl.formatMessage({ id: 'topicExamples' })
               : intl.formatMessage({ id: 'basicExamples' })}
           </p>
-          {Object.keys(sortedTree[category]).map((subcategory) => (
-            <Fragment key={`subcategory-${subcategory}`}>
-              <h3 className={classnames(grid.col, css.subcategoryName)}>
-                {subcategory}
-              </h3>
-              <ul className={classnames(grid.col, grid.grid, css.examples)}>
-                {sortedTree[category][subcategory].map((item, key) => (
-                  <ExampleItem
-                    node={item}
-                    locale={locale}
-                    key={`item-${item.name}`}
-                  />
-                ))}
-              </ul>
-            </Fragment>
-          ))}
-        </div>
+          <div className={classnames(grid.grid, css.category)}>
+            {Object.keys(sortedTree[category]).map((subcategory) => (
+              <Fragment key={`subcategory-${subcategory}`}>
+                <h3 className={classnames(grid.col, css.subcategoryName)}>
+                  {subcategory}
+                </h3>
+                <ul className={classnames(grid.col, grid.grid, css.examples)}>
+                  {sortedTree[category][subcategory].map((item, key) => (
+                    <ExampleItem
+                      node={item}
+                      locale={locale}
+                      key={`item-${item.name}`}
+                    />
+                  ))}
+                </ul>
+              </Fragment>
+            ))}
+          </div>
+        </Fragment>
       ))}
     </div>
   );
