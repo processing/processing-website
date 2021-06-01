@@ -3,8 +3,6 @@
 }
 
 .container {
-  @mixin grid;
-  @mixin container;
   align-items: center;
   justify-content: space-between;
   height: 100%;
@@ -28,7 +26,7 @@
 }
 
 .logo {
-  @mixin column 2;
+  flex-basis: var(--col2);
   white-space: nowrap;
   height: 100%;
   font-size: var(--text-xlarge);

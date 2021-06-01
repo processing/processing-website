@@ -67,7 +67,6 @@ module.exports = {
           localIdentName: '[name]-[local]-[hash:base64:3]'
         },
         postCssPlugins: [
-          require('postcss-mixins')({ mixinsDir: './src/styles' }),
           require(`postcss-import`),
           require('postcss-normalize'),
           require('postcss-nesting'),
@@ -75,9 +74,6 @@ module.exports = {
             importFrom: './src/styles/variables.css'
           }),
           require('postcss-calc')(),
-          require(`postcss-functions`)({
-            functions: require('./src/styles/functions')
-          }),
           require('postcss-custom-media')({
             importFrom: './src/styles/variables.css'
           })

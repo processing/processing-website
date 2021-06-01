@@ -9,24 +9,20 @@
 }
 
 .booksList {
+  flex-basis: var(--col8);
   margin: var(--gutter-double) 0;
-  display: flex;
   list-style: none;
-  flex-flow: wrap;
-
-  & li {
-    display: flex;
-    flex-direction: row;
-
-    & h4 {
-      margin-bottom: 0;
-    }
-  }
 }
 
 .listItem {
   flex-basis: var(--col4);
   margin-bottom: var(--margin);
+  display: flex;
+  flex-direction: row;
+
+  & h4 {
+    margin-bottom: 0;
+  }
 }
 
 .cover {
@@ -73,16 +69,14 @@
     }
   }
 
-  .booksList {
-    & > li {
-      flex-basis: var(--col8);
-      padding: var(--vertical-gutter) var(--gutter);
-      border-bottom: 2px solid var(--lightgray);
-    }
+  .listItem {
+    flex-basis: var(--col8);
+    padding: var(--vertical-gutter) var(--gutter);
+    border-bottom: 2px solid var(--lightgray);
+  }
 
-    & > li:last-of-type {
-      border-bottom: none;
-    }
+  .listItem:last-of-type {
+    border-bottom: none;
   }
 
   .cover {

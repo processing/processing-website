@@ -25,53 +25,46 @@ const Books = ({ data }) => {
       <div className={classnames(grid.grid, css.root)}>
         <h1 className={grid.col}>Books</h1>
         <h3 className={grid.col}>{intl.formatMessage({ id: 'booksIntro' })}</h3>
-        <div className={classnames(grid.nest, css.section)}>
-          <ul className={css.booksList}>
-            {books.map((book) => {
-              return (
-                <li
-                  key={book.title}
-                  className={classnames(grid.nest, css.listItem)}>
-                  <div className={classnames(grid.col, css.cover)}>
-                    {book.image && (
-                      <Img fluid={book.image.childImageSharp.fluid} />
-                    )}
-                  </div>
-                  <div className={classnames(grid.col, css.book)}>
-                    <h3>{book.title}</h3>
-                    <p className={css.details}>{book.details}</p>
-                    <p className={css.author}>
-                      {intl.formatMessage({ id: 'by' })} {book.author}
-                    </p>
-                    {book.language && <p>{book.language}</p>}
-                    {book.orderList && (
-                      <ul>
-                        {book.orderList.map((order) => (
-                          <li key={order.link}>
-                            <a
-                              href={order.link}
-                              target="_blank"
-                              rel="noreferrer">
-                              {order.label}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                    <details className={css.read}>
-                      <summary>
-                        {intl.formatMessage({ id: 'readMore' })}
-                      </summary>
-                      <div>
-                        <MDXRenderer>{book.body}</MDXRenderer>
-                      </div>
-                    </details>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+        <ul className={classnames(grid.col, grid.grid, css.booksList)}>
+          {books.map((book, i) => {
+            return (
+              <li
+                key={`${book.title}-${i}`}
+                className={classnames(grid.nest, css.listItem)}>
+                <div className={classnames(grid.col, css.cover)}>
+                  {book.image && (
+                    <Img fluid={book.image.childImageSharp.fluid} />
+                  )}
+                </div>
+                <div className={classnames(grid.col, css.book)}>
+                  <h3>{book.title}</h3>
+                  <p className={css.details}>{book.details}</p>
+                  <p className={css.author}>
+                    {intl.formatMessage({ id: 'by' })} {book.author}
+                  </p>
+                  {book.language && <p>{book.language}</p>}
+                  {book.orderList && (
+                    <ul>
+                      {book.orderList.map((order) => (
+                        <li key={order.link}>
+                          <a href={order.link} target="_blank" rel="noreferrer">
+                            {order.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <details className={css.read}>
+                    <summary>{intl.formatMessage({ id: 'readMore' })}</summary>
+                    <div>
+                      <MDXRenderer>{book.body}</MDXRenderer>
+                    </div>
+                  </details>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </Layout>
   );

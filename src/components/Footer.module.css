@@ -1,5 +1,4 @@
 .root {
-  @mixin grid;
   position: relative;
   top: 150px;
   z-index: 600;
@@ -26,7 +25,7 @@
 }
 
 .contactWrapper {
-  @mixin column 2;
+  flex-basis: var(--col2);
   font-size: var(--text-small);
   & p {
     margin-bottom: 0;
@@ -38,7 +37,7 @@
 }
 
 .socialmediaWrapper {
-  @mixin column 6;
+  flex-basis: var(--col6);
 
   & > ul {
     display: flex;

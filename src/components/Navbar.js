@@ -7,6 +7,7 @@ import { useIntl } from 'react-intl';
 import SearchBar from './SearchBar';
 
 import css from './Navbar.module.css';
+import grid from '../styles/grid.module.css';
 
 import LogoProcessing from '../images/logo-processing.svg';
 import CloseIcon from '../images/close-icon.svg';
@@ -107,14 +108,14 @@ const Navbar = ({ siteTitle, show }) => {
         { [css.noshow]: !show },
         { [css.expanded]: expanded }
       )}>
-      <div className={css.container}>
-        <h1 className={css.logo}>
+      <div className={classnames(grid.container, grid.grid, css.container)}>
+        <h1 className={classnames(grid.col, css.logo)}>
           <Link to="/">
             <LogoProcessing />
             {siteTitle}
           </Link>
         </h1>
-        <div className={css.menuWrapper}>
+        <div className={classnames(grid.col, css.menuWrapper)}>
           <button
             className={css.menuToggle}
             aria-label="Main menu"

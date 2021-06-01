@@ -15,7 +15,7 @@ const Donate = () => {
       <Helmet>
         <title>{intl.formatMessage({ id: 'donate' })}</title>
       </Helmet>
-      <div className={classnames(css.root, grid.grid)}>
+      <div className={classnames(grid.grid, css.root)}>
         <h1 className={grid.col}>{intl.formatMessage({ id: 'donate' })}</h1>
         <h3 className={grid.col}>
           {intl.formatMessage({ id: 'donateIntro' })}
