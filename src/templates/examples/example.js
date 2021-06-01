@@ -23,8 +23,6 @@ import {
 import css from '../../styles/templates/examples/example.module.css';
 import grid from '../../styles/grid.module.css';
 
-// window.p5 = p5;
-
 const ExampleTemplate = ({ data, pageContext }) => {
   const { width } = useWindowSize();
   const [showSidebar, setShowSidebar] = useState(width > 960);
@@ -54,8 +52,10 @@ const ExampleTemplate = ({ data, pageContext }) => {
       };
       setTimeout(tryToRunSketch, 500);
       return () => {
-        console.log('Live sketch: Removing');
-        p5Instance.remove();
+        if (p5Instance) {
+          console.log('Live sketch: Removing');
+          p5Instance.remove();
+        }
       };
     }
   }, [liveSketch]);
@@ -238,7 +238,7 @@ export const query = graphql`
         sourceInstanceName: { eq: "examples" }
         fields: { lang: { eq: "en" } }
         extension: { eq: "json" }
-        dir: { regex: "/.*[^data]$/" }
+        relativeDirectory: { regex: "/^((?!data).)*$/" }
       }
     ) {
       nodes {
