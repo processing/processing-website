@@ -22,7 +22,7 @@ const Books = ({ data }) => {
       <Helmet>
         <title>Books</title>
       </Helmet>
-      <div className={classnames(grid.grid, css.root)}>
+      <div className={classnames(grid.grid, grid.container, css.root)}>
         <h1 className={grid.col}>Books</h1>
         <h3 className={grid.col}>{intl.formatMessage({ id: 'booksIntro' })}</h3>
         <ul className={classnames(grid.col, grid.grid, css.booksList)}>

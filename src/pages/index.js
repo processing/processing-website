@@ -58,7 +58,12 @@ const IndexPage = ({ data }) => {
         locale={locale}
       />
       <div className={css.gettingStarted}>
-        <div className={classnames(grid.grid, css.gettingStartedInner)}>
+        <div
+          className={classnames(
+            grid.grid,
+            grid.container,
+            css.gettingStartedInner
+          )}>
           <div className={classnames(grid.col, css.gettingStartedMessage)}>
             <h2>{intl.formatMessage({ id: 'gettingStarted' })}</h2>
             <div>
@@ -105,7 +110,8 @@ const IndexPage = ({ data }) => {
         </div>
       </div>
       <div className={css.takePart}>
-        <div className={classnames(grid.grid, css.takePartInner)}>
+        <div
+          className={classnames(grid.grid, grid.container, css.takePartInner)}>
           <div className={classnames(grid.col, css.participate)}>
             <h2>{intl.formatMessage({ id: 'participate' })}</h2>
             <div>
@@ -150,7 +156,8 @@ const IndexPage = ({ data }) => {
         </div>
       </div>
       <div className={css.external}>
-        <div className={classnames(grid.grid, css.externalInner)}>
+        <div
+          className={classnames(grid.grid, grid.container, css.externalInner)}>
           <div className={classnames(grid.col, css.externalLinks)}>
             <h2>{intl.formatMessage({ id: 'externalLinks' })}</h2>
             <ul>

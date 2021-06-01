@@ -20,7 +20,7 @@ const People = ({ data }) => {
       <Helmet>
         <title>{intl.formatMessage({ id: 'people' })}</title>
       </Helmet>
-      <div className={classnames(css.root, grid.grid)}>
+      <div className={classnames(grid.grid, grid.container, css.root)}>
         <Donate />
         <h1 className={grid.col}>{frontmatter.title}</h1>
         <h3 className={grid.col}>
