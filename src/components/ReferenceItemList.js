@@ -5,8 +5,8 @@ import classnames from 'classnames';
 
 import CopyButton from './CopyButton';
 
-import grid from '../styles/grid.module.css';
 import css from './ReferenceItemList.module.css';
+import grid from '../styles/grid.module.css';
 
 export const CodeList = memo(
   ({ items, variant, nameIsHtml, descriptionIsHtml }) => {
@@ -60,15 +60,15 @@ export const ExampleList = memo(({ examples }) => {
     <ul className={css.exampleList}>
       {examples.map((example, i) => {
         return (
-          <li key={'ex' + i} className={classnames(grid.nest, css.item)}>
-            <div className={classnames(grid.col, grid.leftBleed, css.code)}>
+          <li key={'ex' + i} className={classnames(grid.grid, css.item)}>
+            <div className={classnames(grid.col, css.code)}>
               <CopyButton text={example.code} />
               <pre>
                 <code>{example.code}</code>
               </pre>
             </div>
             {example.image && (
-              <div className={classnames(grid.col, grid.rightBleed, css.image)}>
+              <div className={classnames(grid.col, css.image)}>
                 <Img fluid={example.image.childImageSharp.fluid} />
               </div>
             )}

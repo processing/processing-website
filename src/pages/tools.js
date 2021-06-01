@@ -10,6 +10,7 @@ import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
 
 import css from '../styles/pages/libraries.module.css';
+import grid from '../styles/grid.module.css';
 
 const Tools = ({ data }) => {
   const { locale } = useLocalization();
@@ -33,27 +34,27 @@ const Tools = ({ data }) => {
       <Helmet>
         <title>Tools</title>
       </Helmet>
-      <div className={css.root}>
+      <div className={classnames(grid.container, grid.grid)}>
         <Donate />
-        <div className={css.text}>
+        <div className={classnames(grid.col, css.text)}>
           <h1>{intl.formatMessage({ id: 'tools' })}</h1>
           <h3>{intl.formatMessage({ id: 'toolsIntro' })}</h3>
         </div>
-        <ul className={css.list}>
+        <ul className={classnames(grid.col, css.list)}>
           {tools.nodes.map((node, key) => {
             return (
-              <li key={key} className={css.item}>
-                <div className={css.itemName}>
+              <li key={key} className={classnames(grid.grid, css.item)}>
+                <div className={classnames(grid.col, css.itemName)}>
                   <h3>{node.childJson.name}</h3>
                 </div>
-                <p className={css.itemDescription}>
+                <p className={classnames(grid.col, css.itemDescription)}>
                   {node.childJson.description}
                 </p>
               </li>
             );
           })}
         </ul>
-        <div className={classnames(css.text, css.pushDown)}>
+        <div className={classnames(grid.col, css.text, css.pushDown)}>
           <h1>{intl.formatMessage({ id: 'contributions' })}</h1>
           <h3
             dangerouslySetInnerHTML={{
@@ -61,11 +62,11 @@ const Tools = ({ data }) => {
             }}
           />
         </div>
-        <ul className={css.list}>
+        <ul className={classnames(grid.col, css.list)}>
           {contributions.map((node, key) => {
             return (
-              <li key={key + 'c'} className={css.item}>
-                <div className={css.itemName}>
+              <li key={key + 'c'} className={classnames(grid.grid, css.item)}>
+                <div className={classnames(grid.col, css.itemName)}>
                   <a href={node.url} target="_blank" rel="noreferrer">
                     <h3>{node.name}</h3>
                   </a>
@@ -86,7 +87,7 @@ const Tools = ({ data }) => {
                     </a>
                   ))}
                 </div>
-                <div className={css.itemDescription}>
+                <div className={classnames(grid.col, css.itemDescription)}>
                   <p>{node.sentence}</p>
                 </div>
               </li>

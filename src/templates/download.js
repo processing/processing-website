@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { useIntl } from 'react-intl';
+import classnames from 'classnames';
 
 import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
@@ -10,6 +11,7 @@ import LogoProcessing from '../images/logo-processing.svg';
 import { usePreparedReleases } from '../hooks/download';
 
 import css from '../styles/templates/download.module.css';
+import grid from '../styles/grid.module.css';
 
 const Download = ({ data }) => {
   const intl = useIntl();
@@ -21,8 +23,8 @@ const Download = ({ data }) => {
       <Helmet>
         <title>Download</title>
       </Helmet>
-      <div className={css.root}>
-        <div className={css.content}>
+      <div className={classnames(grid.container, grid.grid)}>
+        <div className={classnames(grid.col, css.content)}>
           <Donate />
           <h1>Download</h1>
           <h3>{intl.formatMessage({ id: 'downloadIntro' })}</h3>

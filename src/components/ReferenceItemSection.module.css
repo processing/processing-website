@@ -1,5 +1,5 @@
 .root {
-  flex-basis: cols(6, 6);
+  flex-basis: 100%;
   margin-bottom: var(--vertical-gutter);
 }
 
@@ -10,11 +10,11 @@
 
 .columns .title {
   white-space: nowrap;
-  flex-basis: cols(1, 6);
+  flex-basis: calc(100% / 6);
 }
 
 .columns .content {
-  flex-basis: cols(5, 6);
+  flex-basis: calc(100% / 6 * 5);
 }
 
 /* Basic styling for the heading and the description */
@@ -33,7 +33,14 @@
 
 .content > p b,
 .content > p code {
-  @mixin code;
+  font-weight: normal;
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 85%;
+  background-color: var(--lightgray);
+  padding: 0.1em 0.3em;
+  border-radius: 6px;
+  font-variant-ligatures: no-common-ligatures;
 }
 
 @media (--reduced) {

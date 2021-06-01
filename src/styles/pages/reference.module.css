@@ -1,8 +1,7 @@
-.root {
-  @mixin grid;
-  @mixin container;
+.heading {
+  flex-basis: var(--col8);
 }
 
-.heading {
-  @mixin column;
+.filter {
+  flex-basis: var(--col6);
 }

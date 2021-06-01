@@ -13,6 +13,7 @@ import { useTree, useFilteredTree } from '../hooks';
 import { usePreparedExamples } from '../hooks/examples';
 
 import css from '../styles/pages/examples.module.css';
+import grid from '../styles/grid.module.css';
 
 const Examples = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -27,11 +28,13 @@ const Examples = ({ data }) => {
       <Helmet>
         <title>Examples</title>
       </Helmet>
-      <div className={css.root}>
+      <div className={classnames(grid.container, grid.grid)}>
         <Donate />
-        <div className={css.content}>
+        <div className={classnames(grid.col, css.text)}>
           <h1>Examples</h1>
           <h3>{intl.formatMessage({ id: 'examplesIntro' })}</h3>
+        </div>
+        <div className={classnames(grid.col, css.filter)}>
           <FilterBar
             placeholder={intl.formatMessage({ id: 'examplesFilter' })}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -39,8 +42,8 @@ const Examples = ({ data }) => {
             searchTerm={searchTerm}
             large
           />
-          <ExamplesList tree={filtered} />
         </div>
+        <ExamplesList tree={filtered} />
       </div>
     </Layout>
   );

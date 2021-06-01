@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import { useIntl } from 'react-intl';
+import classnames from 'classnames';
 
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
@@ -13,6 +14,7 @@ import { SidebarTableOfContents } from '../../components/Sidebar';
 import { useHighlight } from '../../hooks';
 
 import css from '../../styles/pages/page.module.css';
+import grid from '../../styles/grid.module.css';
 
 const TutorialTemplate = ({ data, pageContext }) => {
   const { mdx } = data;
@@ -25,7 +27,7 @@ const TutorialTemplate = ({ data, pageContext }) => {
       <Helmet>
         <title>{mdx && mdx.frontmatter.title} / Tutorial</title>
       </Helmet>
-      <div className={css.root}>
+      <div className={classnames(grid.grid, css.root)}>
         {mdx.tableOfContents.items && (
           <SidebarTableOfContents
             items={mdx.tableOfContents.items}

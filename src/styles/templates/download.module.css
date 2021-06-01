@@ -1,10 +1,5 @@
-.root {
-  @mixin grid;
-  @mixin container;
-}
-
 .content {
-  @mixin column;
+  flex-basis: var(--col8);
 
   & p,
   & > h3 {

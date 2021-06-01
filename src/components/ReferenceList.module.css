@@ -1,19 +1,33 @@
 .category {
-  @mixin column;
+  flex-basis: var(--col8);
   margin-top: var(--vertical-gutter);
   font-size: var(--text-xlarge);
   text-transform: capitalize;
 }
 
 .subcategory {
-  @mixin column;
-  @mixin nest;
-  position: relative;
+  flex-basis: var(--col8);
   margin-bottom: 30px;
 }
 
+.subcategoryTitle {
+  flex-basis: calc(100% / 8 * 1.5);
+  display: flex;
+
+  & .line {
+    border-left: solid 7px var(--lightgray);
+  }
+
+  & h3 {
+    margin: 0;
+    padding-left: var(--gutter);
+    font-size: var(--text-large);
+    text-transform: capitalize;
+  }
+}
+
 .subcategoryList {
-  @mixin column 5.5;
+  flex-basis: calc(100% / 8 * 5.5);
 
   & li {
     padding: 4px 0;
@@ -34,24 +48,7 @@
   }
 }
 
-.subcategoryTitle {
-  @mixin column 1.5;
-  display: flex;
-
-  & .line {
-    border-left: solid 7px var(--lightgray);
-  }
-
-  & h3 {
-    margin: 0;
-    padding-left: var(--gutter);
-    font-size: var(--text-large);
-    text-transform: capitalize;
-  }
-}
-
 .item {
-  display: flex;
   align-items: baseline;
 
   & span {
@@ -60,7 +57,7 @@
 }
 
 .itemName {
-  @mixin column 1.5, 0, 5.5;
+  flex-basis: calc(100% / 5.5 * 1.5);
   font-family: var(--font-mono);
   font-size: var(--text-regular);
   font-variant-ligatures: no-common-ligatures;
@@ -69,10 +66,17 @@
 }
 
 .itemBrief {
-  @mixin column 4, 0, 5.5;
+  flex-basis: calc(100% / 5.5 * 4);
 
   & b {
-    @mixin code;
+    font-weight: normal;
+    font-style: normal;
+    font-family: var(--font-mono);
+    font-size: 85%;
+    background-color: var(--lightgray);
+    padding: 0.1em 0.3em;
+    border-radius: 6px;
+    font-variant-ligatures: no-common-ligatures;
   }
 }
 

@@ -1,20 +1,12 @@
-.root {
-  @mixin grid;
-  @mixin container;
+.text {
+  flex-basis: var(--col8);
 
-  & > h1,
-  & > h2,
-  & > h3 {
-    @mixin column;
-  }
-
-  & > h2 {
+  & h2 {
     margin-bottom: 0;
   }
 }
 
 .sectionIntro {
-  @mixin column;
   margin: 0;
 
   & a {
@@ -23,18 +15,17 @@
 }
 
 .list {
-  @mixin column;
-  @mixin nest;
+  flex-basis: var(--col8);
   margin: var(--gutter) 0;
   list-style: none;
 }
 
 .card {
-  @mixin column 2;
+  flex-basis: var(--col2);
   padding-top: var(--gutter);
   padding-bottom: var(--gutter);
   background-color: none;
-  transition: background 0.2s ease;
+  transition: background-color 0.2s ease;
   pointer-events: auto;
 
   & a {
@@ -87,12 +78,12 @@
 }
 
 @media (--small) {
-  .root {
-    & > h1 {
+  .text {
+    & h1 {
       padding-top: var(--vertical-gutter);
     }
 
-    & > h2 {
+    & h2 {
       margin-top: var(--vertical-gutter);
     }
   }

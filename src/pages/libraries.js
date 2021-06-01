@@ -18,6 +18,7 @@ import { usePreparedContributions } from '../hooks/libraries';
 import { referencePath } from '../utils/paths';
 
 import css from '../styles/pages/libraries.module.css';
+import grid from '../styles/grid.module.css';
 
 const Libraries = ({ data }) => {
   const { locale } = useLocalization();
@@ -39,23 +40,25 @@ const Libraries = ({ data }) => {
       <Helmet>
         <title>Libraries</title>
       </Helmet>
-      <div className={css.root}>
+      <div className={classnames(grid.container, grid.grid)}>
         <Donate />
-        <div className={css.text}>
+        <div className={classnames(grid.col, css.text)}>
           <h1>{intl.formatMessage({ id: 'libraries' })}</h1>
           <h3>{intl.formatMessage({ id: 'librariesIntro' })}</h3>
         </div>
         <CoreList libraries={coreLibraries} locale={locale} />
-        <div className={classnames(css.text, css.pushDown)}>
+        <div className={classnames(grid.col, css.text, css.pushDown)}>
           <h1>{intl.formatMessage({ id: 'contributions' })}</h1>
         </div>
-        <FilterBar
-          placeholder={intl.formatMessage({ id: 'librariesFilter' })}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          onClick={(e) => setSearchTerm('')}
-          searchTerm={searchTerm}
-          large
-        />
+        <div className={classnames(grid.col, css.filter)}>
+          <FilterBar
+            placeholder={intl.formatMessage({ id: 'librariesFilter' })}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            onClick={(e) => setSearchTerm('')}
+            searchTerm={searchTerm}
+            large
+          />
+        </div>
         <CategoryNav categories={categories} />
         <ContributionsList libraries={filtered} categories={categories} />
       </div>
@@ -66,19 +69,19 @@ const Libraries = ({ data }) => {
 const CoreList = memo(({ libraries, locale }) => {
   return (
     <>
-      <h2 className={css.category}>Core</h2>
-      <ul className={css.list}>
+      <h2 className={classnames(grid.col, css.category)}>Core</h2>
+      <ul className={classnames(grid.col, css.list)}>
         {libraries.nodes.map((node, key) => {
           return (
-            <li key={key} className={css.item}>
-              <div className={css.itemName}>
+            <li key={key} className={classnames(grid.grid, css.item)}>
+              <div className={classnames(grid.col, css.itemName)}>
                 <Link
                   to={referencePath('index', node.frontmatter.name)}
                   language={locale}>
                   <h3>{node.frontmatter.title}</h3>
                 </Link>
               </div>
-              <p className={css.itemDescription}>
+              <p className={classnames(grid.col, css.itemDescription)}>
                 {node.frontmatter.description}
               </p>
             </li>
@@ -94,14 +97,14 @@ const ContributionsList = memo(({ categories, libraries }) => {
     const filtered = libraries.filter((c) => c.categories.includes(cat));
     return (
       <Fragment key={cat}>
-        <h2 className={css.category} id={cat}>
+        <h2 className={classnames(grid.col, css.category)} id={cat}>
           {cat}
         </h2>
-        <ul className={css.list}>
+        <ul className={classnames(grid.col, css.list)}>
           {filtered.map((node, key) => {
             return (
-              <li key={key + 'c'} className={css.item}>
-                <div className={css.itemName}>
+              <li key={key + 'c'} className={classnames(grid.grid, css.item)}>
+                <div className={classnames(grid.col, css.itemName)}>
                   <a href={node.url} target="_blank" rel="noreferrer">
                     <h3>{node.name}</h3>
                   </a>
@@ -122,7 +125,9 @@ const ContributionsList = memo(({ categories, libraries }) => {
                     </a>
                   ))}
                 </div>
-                <p className={css.itemDescription}>{node.sentence}</p>
+                <p className={classnames(grid.col, css.itemDescription)}>
+                  {node.sentence}
+                </p>
               </li>
             );
           })}

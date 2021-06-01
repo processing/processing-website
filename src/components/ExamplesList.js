@@ -23,10 +23,12 @@ const ExamplesList = ({ tree }) => {
   const sortedTree = useTreeSort(tree, `order`, curated);
 
   return (
-    <div className={css.root}>
+    <div className={classnames(grid.col, css.root)}>
       {Object.keys(sortedTree).map((category) => (
-        <div className={css.category} key={`category-${category}`}>
-          <h2 className={css.categoryName}>{category}</h2>
+        <div
+          className={classnames(grid.grid, css.category)}
+          key={`category-${category}`}>
+          <h2 className={classnames(grid.col, css.categoryName)}>{category}</h2>
           <div className={css.toggleButton}>
             <ToggleButton
               defaultLabel="A-Z"
@@ -36,15 +38,17 @@ const ExamplesList = ({ tree }) => {
               onToggle={handleToggle}
             />
           </div>
-          <p className={css.categoryDescription}>
+          <p className={classnames(grid.col, css.categoryDescription)}>
             {category === 'topic'
               ? intl.formatMessage({ id: 'topicExamples' })
               : intl.formatMessage({ id: 'basicExamples' })}
           </p>
           {Object.keys(sortedTree[category]).map((subcategory) => (
             <Fragment key={`subcategory-${subcategory}`}>
-              <h3 className={css.subcategoryName}>{subcategory}</h3>
-              <ul className={css.examples}>
+              <h3 className={classnames(grid.col, css.subcategoryName)}>
+                {subcategory}
+              </h3>
+              <ul className={classnames(grid.col, grid.grid, css.examples)}>
                 {sortedTree[category][subcategory].map((item, key) => (
                   <ExampleItem
                     node={item}
@@ -63,7 +67,7 @@ const ExamplesList = ({ tree }) => {
 
 export const ExampleItem = memo(({ node, locale }) => {
   return (
-    <li className={grid.col}>
+    <li className={classnames(grid.col, css.item)}>
       <Link to={node.path} language={locale}>
         {node.image && (
           <Img className={css.cover} fluid={node.image.childImageSharp.fluid} />

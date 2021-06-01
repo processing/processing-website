@@ -1,10 +1,5 @@
-.root {
-  @mixin grid;
-  @mixin container;
-}
-
 .text {
-  @mixin column;
+  flex-basis: var(--col8);
 
   & h1,
   & h3 {
@@ -21,30 +16,30 @@
 }
 
 .category {
-  @mixin column 2;
+  flex-basis: var(--col2);
   font-size: var(--text-xlarge);
   text-transform: capitalize;
   margin-top: var(--margin);
   border-right: solid 7px var(--lightgray);
 }
 
-.list {
-  @mixin column 6;
-  @mixin nest;
+.filter {
+  flex-basis: var(--col6);
+}
 
+.list {
+  flex-basis: var(--col6);
   margin-top: var(--margin);
   list-style: none;
 }
 
 .item {
-  flex-basis: 100%;
   margin-bottom: var(--margin-half);
-  display: flex;
   align-items: baseline;
 }
 
 .itemName {
-  @mixin column 1.5, 0, 6;
+  flex-basis: calc(100% / 6 * 1.5);
   border-right: solid 3px var(--lightgray);
 
   & h3 {
@@ -62,7 +57,7 @@
 }
 
 .itemDescription {
-  @mixin column 4.5, 0, 6;
+  flex-basis: calc(100% / 6 * 4.5);
   margin: 0;
 }
 
@@ -85,6 +80,6 @@
   }
 
   .itemName {
-    @mixin column 3, 0, 6;
+    flex-basis: calc(100% / 6 * 3);
   }
 }
