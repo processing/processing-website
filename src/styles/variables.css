@@ -6,7 +6,7 @@
 
 :root {
   --font: "Space Grotesk", Helvetica, Arial, sans-serif;
-  --font-serif: Vollkorn, Garamond, Georgia, serif;
+  --font-serif: "Vollkorn", Garamond, Georgia, serif;
   --font-mono: "Space Mono", Menlo, monospace;
 
   --processing-blue-light: #508bff;
@@ -31,6 +31,8 @@
   --text-xxlarge: 2.75rem;
   --text-xxxlarge: 3.375rem;
 
+  --container-width: 1920px;
+
   --margin: 48px;
   --margin-half: calc(var(--margin) / 2);
   --margin-quarter: calc(var(--margin) / 4);
@@ -40,23 +42,16 @@
   --gutter-double: calc(var(--gutter) * 2);
   --vertical-gutter: 40px;
 
-  --col: cols(1);
-  --col-half: cols(0.5);
-  --col-double: cols(2);
-  --col1: cols(1);
-  --col1-and-half: cols(1.5);
-  --col2: cols(2);
-  --col3: cols(3);
-  --col4: cols(4);
-  --col5: cols(5);
-  --col6: cols(6);
-  --col6-and-half: cols(6.5);
-  --col7: cols(7);
-  --col8: cols(8);
+  --col1: calc(100% / 8);
+  --col2: calc(100% / 8 * 2);
+  --col3: calc(100% / 8 * 3);
+  --col4: calc(100% / 8 * 4);
+  --col5: calc(100% / 8 * 5);
+  --col6: calc(100% / 8 * 6);
+  --col7: calc(100% / 8 * 7);
+  --col8: 100%;
 
-  --push-half: calc(var(--col-half) + var(--gutter));
   --push1: calc(var(--col1) + var(--gutter));
-  --push1-and-half: calc(var(--col1) + var(--col-half) + var(--gutter));
   --push2: calc(var(--col2) + var(--gutter));
   --push3: calc(var(--col3) + var(--gutter));
   --push4: calc(var(--col4) + var(--gutter));

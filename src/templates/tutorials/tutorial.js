@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
-import classnames from 'classnames';
 import { useIntl } from 'react-intl';
+import classnames from 'classnames';
 
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 

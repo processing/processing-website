@@ -1,5 +1,5 @@
 .root {
-  flex-basis: cols(6, 6);
+  flex-basis: 100%;
   margin-top: var(--margin);
 
   & > ul {
@@ -28,7 +28,7 @@
 }
 
 .codeBlock {
-  max-width: cols(6, 6);
+  max-width: 100%;
   padding-bottom: var(--gutter-double);
   white-space: break-spaces;
 }

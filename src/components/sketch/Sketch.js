@@ -5,8 +5,8 @@ import SketchGraphic from './SketchGraphic';
 import SketchCode from './SketchCode';
 import CoolButton from './CoolButton';
 
-import grid from '../../styles/grid.module.css';
 import css from './Sketch.module.css';
+import grid from '../../styles/grid.module.css';
 
 const initialState = {
   showGrid: true,
@@ -85,26 +85,29 @@ const Sketch = ({ children }) => {
   }, []);
 
   return (
-    <div className={classnames(css.root, grid.grid)}>
-      <div className={classnames(grid.col, css.left)}>
-        <div className={css.splash}>{children}</div>
-        <div className={classnames(css.code, { [css.codeVisible]: showCode })}>
-          <SketchCode
-            onChange={onChange}
-            onChangeShape={onChangeShape}
-            onResetState={onResetState}
-            isVisible={showCode}
-            {...state}
-          />
+    <div className={css.root}>
+      <div className={classnames(grid.container, grid.grid, css.wrapper)}>
+        <div className={classnames(grid.col, css.left)}>
+          <div className={css.splash}>{children}</div>
+          <div
+            className={classnames(css.code, { [css.codeVisible]: showCode })}>
+            <SketchCode
+              onChange={onChange}
+              onChangeShape={onChangeShape}
+              onResetState={onResetState}
+              isVisible={showCode}
+              {...state}
+            />
+          </div>
         </div>
-      </div>
-      <div className={classnames(grid.col, css.right)}>
-        <SketchGraphic {...state} />
-        <CoolButton onClick={onCodeToggle}>
-          {showCode
-            ? intl.formatMessage({ id: 'closeEditor' })
-            : intl.formatMessage({ id: 'openEditor' })}
-        </CoolButton>
+        <div className={classnames(grid.col, css.right)}>
+          <SketchGraphic {...state} />
+          <CoolButton onClick={onCodeToggle}>
+            {showCode
+              ? intl.formatMessage({ id: 'closeEditor' })
+              : intl.formatMessage({ id: 'openEditor' })}
+          </CoolButton>
+        </div>
       </div>
     </div>
   );

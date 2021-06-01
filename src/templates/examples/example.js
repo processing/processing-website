@@ -76,13 +76,8 @@ const ExampleTemplate = ({ data, pageContext }) => {
                 {intl.formatMessage({ id: 'by' })} {author}
               </h3>
             )}
-            <div className={grid.nest}>
-              <div
-                className={classnames(
-                  grid.col,
-                  grid.leftBleed,
-                  css.description
-                )}>
+            <div className={grid.grid}>
+              <div className={classnames(grid.col, css.description)}>
                 <p
                   dangerouslySetInnerHTML={{
                     __html: description

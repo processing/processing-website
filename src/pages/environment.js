@@ -1,9 +1,9 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import classnames from 'classnames';
 
 import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';

@@ -1,67 +1,39 @@
 .root {
-  position: relative;
-  margin-bottom: 60px;
-
-  & h2 {
-    flex-basis: var(--col8);
-    margin-bottom: 0;
-    text-transform: capitalize;
-  }
-
-  & ul {
-    flex-basis: var(--col8);
-  }
-
-  & ul div:last-child {
-    margin-bottom: 0;
-  }
+  flex-basis: var(--col8);
 }
 
 .category {
-  margin-bottom: var(--gutter-double);
-}
-
-.intro {
-  flex-basis: var(--col8);
-  padding-right: var(--col4);
-  margin-bottom: calc(var(--margin) / 2);
-}
-
-.subcategory {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 30px;
-  width: 100%;
-
-  & h3 {
-    flex-basis: var(--col1);
-    margin: 0;
-    border-right: solid 6px var(--lightgray);
-    font-size: var(--text-medium);
+  & > h2 {
     text-transform: capitalize;
   }
+}
 
-  & h4 {
-    font-size: var(--text-regular);
-    font-weight: 400;
+.categoryName {
+  display: flex;
+  align-items: center;
+  margin-top: var(--margin-half);
+
+  & h2 {
+    flex: 1;
+    margin-bottom: 0;
   }
 
-  & ul {
-    flex-basis: var(--col8);
+  & .toggleButton {
+    text-align: right;
+    flex: 0 0 200px;
   }
+}
 
-  & ul > li {
-    flex-basis: cols(1, 6);
-    transition: 0.2 ease;
-  }
+.categoryDescription {
+  margin-bottom: var(--margin);
+}
 
-  & ul > li:hover .cover {
-    opacity: 0.7;
-  }
+.subcategoryName {
+  flex-basis: var(--col1);
+}
 
-  & ul > li:hover h4 {
-    color: var(--processing-blue-mid);
-  }
+.examples {
+  flex-basis: var(--col7);
 }
 
 .cover {
@@ -69,24 +41,26 @@
   margin-bottom: 10px;
 }
 
-.toggleButton {
-  position: absolute;
-  right: calc(var(--col1) + var(--gutter));
+.item {
+  flex-basis: calc(100% / 7);
+
+  & h4 {
+    font-size: var(--text-regular);
+    font-weight: 400;
+  }
 }
 
 @media (--reduced) {
-  .subcategory {
-    & h3 {
-      flex-basis: var(--col2);
-    }
-
-    & ul > li {
-      flex-basis: var(--col2);
-    }
+  .subcategoryName {
+    flex-basis: var(--col8);
   }
 
-  .toggleButton {
-    right: var(--gutter);
+  .examples {
+    flex-basis: var(--col8);
+  }
+
+  .item {
+    flex-basis: var(--col2);
   }
 }
 
@@ -99,26 +73,7 @@
     padding-right: var(--gutter);
   }
 
-  .subcategory {
-    flex-wrap: wrap;
-
-    & h3 {
-      border-right: none;
-      padding-top: var(--vertical-gutter);
-      padding-bottom: var(--margin);
-      flex-basis: var(--col8);
-      flex-wrap: wrap;
-    }
-
-    & ul > li {
-      flex-basis: var(--col4);
-      & img {
-        min-height: 120px;
-      }
-    }
-  }
-
-  .toggleButton {
-    right: var(--gutter);
+  .item {
+    flex-basis: var(--col4);
   }
 }

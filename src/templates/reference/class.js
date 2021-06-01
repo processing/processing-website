@@ -106,7 +106,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
             )}
             {inUseExamples && (
               <Section title={intl.formatMessage({ id: 'inUse' })}>
-                <ul className={classnames(css.related, css.inuse)}>
+                <ul className={classnames(grid.grid, css.related, css.inuse)}>
                   {inUseExamples.slice(0, 6).map((e, key) => (
                     <ExampleItem node={e} key={`e-${e.name}`} />
                   ))}

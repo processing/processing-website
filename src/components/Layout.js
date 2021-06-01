@@ -79,7 +79,7 @@ const Layout = ({ children, withSidebar }) => {
           siteTitle={data.site.siteMetadata.title}
           scrolled={headerScrolled}
         />
-        <main>
+        <main className={css.main}>
           <MDXProvider components={shortcodes}>{children}</MDXProvider>
         </main>
         <Footer

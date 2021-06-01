@@ -2,7 +2,6 @@ import React, { memo } from 'react';
 import classnames from 'classnames';
 
 import css from './FilterBar.module.css';
-import grid from '../styles/grid.module.css';
 
 const FilterBar = ({
   large,
@@ -10,7 +9,7 @@ const FilterBar = ({
   searchTerm,
   className,
   onChange,
-  onClick,
+  onClick
 }) => {
   const onKeyPress = (e) => {
     if (e.key === 'Enter') {
@@ -19,10 +18,8 @@ const FilterBar = ({
   };
   return (
     <div
-      className={classnames(css.root, {
-        [grid.col]: large,
-        [css.large]: large,
-        [className]: className,
+      className={classnames(css.root, className, {
+        [css.large]: large
       })}>
       <form action="" role="search">
         <input
