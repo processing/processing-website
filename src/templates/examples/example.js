@@ -23,7 +23,7 @@ import {
 import css from '../../styles/templates/examples/example.module.css';
 import grid from '../../styles/grid.module.css';
 
-window.p5 = p5;
+// window.p5 = p5;
 
 const ExampleTemplate = ({ data, pageContext }) => {
   const { width } = useWindowSize();
@@ -42,17 +42,21 @@ const ExampleTemplate = ({ data, pageContext }) => {
   // Run live sketch
   useEffect(() => {
     if (liveSketch) {
+      let p5Instance;
       const tryToRunSketch = () => {
         if (window.runLiveSketch) {
           console.log('Live sketch: running');
-          // TODO: Stop old sketch if running!
-          new p5(window.runLiveSketch, 'example-cover');
+          p5Instance = new p5(window.runLiveSketch, 'example-cover');
         } else {
           console.log('Live sketch: Not ready');
           setTimeout(tryToRunSketch, 50);
         }
       };
-      tryToRunSketch();
+      setTimeout(tryToRunSketch, 500);
+      return () => {
+        console.log('Live sketch: Removing');
+        p5Instance.remove();
+      };
     }
   }, [liveSketch]);
 
