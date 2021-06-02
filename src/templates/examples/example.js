@@ -23,6 +23,10 @@ import {
 import css from '../../styles/templates/examples/example.module.css';
 import grid from '../../styles/grid.module.css';
 
+// This is to make sure that p5.Vector and other namespaced classes
+// work in the live sketch examples.
+window.p5 = p5;
+
 const ExampleTemplate = ({ data, pageContext }) => {
   const { width } = useWindowSize();
   const [showSidebar, setShowSidebar] = useState(width > 960);
@@ -40,17 +44,23 @@ const ExampleTemplate = ({ data, pageContext }) => {
   // Run live sketch
   useEffect(() => {
     if (liveSketch) {
+      let p5Instance;
       const tryToRunSketch = () => {
         if (window.runLiveSketch) {
           console.log('Live sketch: running');
-          // TODO: Stop old sketch if running!
-          new p5(window.runLiveSketch, 'example-cover');
+          p5Instance = new p5(window.runLiveSketch, 'example-cover');
         } else {
           console.log('Live sketch: Not ready');
           setTimeout(tryToRunSketch, 50);
         }
       };
-      tryToRunSketch();
+      setTimeout(tryToRunSketch, 500);
+      return () => {
+        if (p5Instance) {
+          console.log('Live sketch: Removing');
+          p5Instance.remove();
+        }
+      };
     }
   }, [liveSketch]);
 
@@ -232,7 +242,7 @@ export const query = graphql`
         sourceInstanceName: { eq: "examples" }
         fields: { lang: { eq: "en" } }
         extension: { eq: "json" }
-        dir: { regex: "/.*[^data]$/" }
+        relativeDirectory: { regex: "/^((?!data).)*$/" }
       }
     ) {
       nodes {

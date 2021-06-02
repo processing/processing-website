@@ -5,5 +5,12 @@
   "level": "Intermediate",
   "order": "1",
   "description": "This program adjusts the brightness of a part of the image by\n  calculating the distance of each pixel to the mouse.",
-  "featured": ["PImage", "PImage_loadPixels_", "loadPixels_", "updatePixels_", "red_", "dist_"]
+  "featured": [
+    "PImage",
+    "PImage_loadPixels_",
+    "loadPixels_",
+    "updatePixels_",
+    "red_",
+    "dist_"
+  ]
 }

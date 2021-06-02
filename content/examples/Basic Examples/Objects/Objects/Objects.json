@@ -1,7 +1,7 @@
 {
   "name": "Objects",
-  "title": "Objectsby hbarragan",
-  "author": "",
+  "title": "Objects",
+  "author": "hbarragan",
   "level": "Intermediate",
   "order": "0",
   "description": "Move the cursor across the image to change the speed and positions\n  of the geometry. The class MRect defines a group of lines.",

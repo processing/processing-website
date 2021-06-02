@@ -5,5 +5,11 @@
   "level": "Advanced",
   "order": "5",
   "description": "Based on Keith Peter's Solution in\n  Foundation Actionscript Animation: Making Things Move!",
-  "featured": ["PVector", "PVector_random2D_", "PVector_normalize_", "PVector_heading_", "PVector_mag_"]
+  "featured": [
+    "PVector",
+    "PVector_random2D_",
+    "PVector_normalize_",
+    "PVector_heading_",
+    "PVector_mag_"
+  ]
 }
