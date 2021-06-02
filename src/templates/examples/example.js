@@ -1,7 +1,7 @@
 import React, { memo, useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
-import { Link } from 'gatsby';
+import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 import Img from 'gatsby-image';
@@ -11,6 +11,7 @@ import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
 import { SidebarTree } from '../../components/Sidebar';
 import Tabs from '../../components/Tabs';
+import { ExampleItem }from '../../components/ExamplesList';
 
 import { referencePath } from '../../utils/paths';
 import { useWindowSize, useTree } from '../../hooks';
@@ -143,27 +144,14 @@ const FeaturedFunctions = memo(({ heading, featured }) => {
 });
 
 const RelatedExamples = memo(({ heading, examples }) => {
+  const { locale } = useLocalization();
   return (
     <div>
       <h3>{heading}</h3>
-      <ul className={css.related}>
-        {examples.slice(0, 6).map((example, key) => {
-          return (
-            <li key={`rel-${key}`} className={css.relatedItem}>
-              <Link to={example.path}>
-                {example.image && (
-                  <Img
-                    className={css.img}
-                    fluid={example.image.childImageSharp.fluid}
-                    objectFit={'cover'}
-                    objectPosition={'50% 50%'}
-                  />
-                )}
-                <span className={css.relatedName}>{example.name}</span>
-              </Link>
-            </li>
-          );
-        })}
+      <ul className={classnames(grid.grid, grid.col, css.related)}>
+        {examples.slice(0, 6).map((example, key) => (
+            <ExampleItem node={example} locale={locale} key={`example-${example.name}`}/>
+        ))}
       </ul>
     </div>
   );
