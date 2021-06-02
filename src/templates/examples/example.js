@@ -23,6 +23,10 @@ import {
 import css from '../../styles/templates/examples/example.module.css';
 import grid from '../../styles/grid.module.css';
 
+// This is to make sure that p5.Vector and other namespaced classes
+// work in the live sketch examples.
+window.p5 = p5;
+
 const ExampleTemplate = ({ data, pageContext }) => {
   const { width } = useWindowSize();
   const [showSidebar, setShowSidebar] = useState(width > 960);
