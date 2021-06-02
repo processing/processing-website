@@ -11,7 +11,7 @@ import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
 import { SidebarTree } from '../../components/Sidebar';
 import Tabs from '../../components/Tabs';
-import { ExampleItem }from '../../components/ExamplesList';
+import { ExampleItem } from '../../components/ExamplesList';
 
 import { referencePath } from '../../utils/paths';
 import { useWindowSize, useTree } from '../../hooks';
@@ -158,9 +158,14 @@ const RelatedExamples = memo(({ heading, examples }) => {
   return (
     <div>
       <h3>{heading}</h3>
-      <ul className={classnames(grid.grid, grid.col, css.related)}>
+      <ul className={classnames(grid.grid, css.related)}>
         {examples.slice(0, 6).map((example, key) => (
-            <ExampleItem node={example} locale={locale} key={`example-${example.name}`}/>
+          <ExampleItem
+            node={example}
+            locale={locale}
+            key={`example-${example.name}`}
+            variant="related"
+          />
         ))}
       </ul>
     </div>
@@ -248,7 +253,7 @@ export const query = graphql`
         name: { in: $related }
         sourceInstanceName: { eq: "examples" }
         extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
-        dir: { regex: "/.*[^data]$/" }
+        relativeDirectory: { regex: "/^((?!data).)*$/" }
       }
     ) {
       nodes {

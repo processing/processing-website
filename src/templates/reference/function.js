@@ -23,7 +23,6 @@ import {
 import { referencePath } from '../../utils/paths';
 
 import grid from '../../styles/grid.module.css';
-import css from '../../styles/templates/examples/example.module.css';
 
 const RefTemplate = ({ data, pageContext, ...props }) => {
   const { name, libraryName } = pageContext;
@@ -116,9 +115,13 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
             )}
             {inUseExamples && (
               <Section title={intl.formatMessage({ id: 'inUse' })}>
-                <ul className={classnames(grid.grid, css.related, css.inuse)}>
+                <ul className={grid.grid}>
                   {inUseExamples.slice(0, 6).map((e, key) => (
-                    <ExampleItem node={e} key={`e-${e.name}`} />
+                    <ExampleItem
+                      node={e}
+                      key={`e-${e.name}`}
+                      variant="related"
+                    />
                   ))}
                 </ul>
               </Section>
@@ -221,7 +224,7 @@ export const query = graphql`
         name: { in: $inUseExamples }
         sourceInstanceName: { eq: "examples" }
         extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
-        dir: { regex: "/.*[^data]$/" }
+        relativeDirectory: { regex: "/^((?!data).)*$/" }
       }
     ) {
       nodes {

@@ -42,12 +42,16 @@
 }
 
 .item {
-  flex-basis: calc(100% / 7);
+  flex-basis: calc(100% / 5);
 
   & h4 {
     font-size: var(--text-regular);
     font-weight: 400;
   }
+}
+
+.item.related {
+  flex-basis: var(--col2);
 }
 
 @media (--reduced) {

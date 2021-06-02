@@ -67,9 +67,9 @@ const ExamplesList = ({ tree }) => {
   );
 };
 
-export const ExampleItem = memo(({ node, locale }) => {
+export const ExampleItem = memo(({ node, locale, variant }) => {
   return (
-    <li className={classnames(grid.col, css.item)}>
+    <li className={classnames(grid.col, css.item, { [css[variant]]: variant })}>
       <Link to={node.path} language={locale}>
         {node.image && (
           <Img className={css.cover} fluid={node.image.childImageSharp.fluid} />

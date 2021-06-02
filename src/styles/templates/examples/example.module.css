@@ -10,43 +10,6 @@
   padding-top: var(--vertical-gutter);
 }
 
-.related {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  position: relative;
-  list-style: none;
-
-  & li {
-    height: auto;
-    flex-basis: calc(100% / 5);
-    padding-right: var(--gutter-double);
-
-    & a span {
-      display: block;
-      padding-top: 8px;
-      color: var(--processing-blue-mid);
-    }
-  }
-}
-
-.relatedItem:hover {
-  & a span {
-    color: var(--processing-blue-light);
-  }
-
-  & .img {
-    opacity: 0.8;
-    width: 100%;
-  }
-}
-
-.inuse {
-  & li {
-    flex-basis: calc(100% / 3);
-  }
-}
-
 .img {
   width: 100%;
   min-height: 100px;
