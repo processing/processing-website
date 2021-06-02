@@ -17,7 +17,6 @@
 .codeList code {
   font-size: var(--text-normal);
   padding-right: var(--gutter);
-  white-space: nowrap;
 }
 
 .codeList a {
@@ -46,8 +45,13 @@
   font-weight: bold;
 }
 
+.codeList code.name {
+  white-space: nowrap;
+}
+
 .codeList.parameters code.type {
   font-weight: normal;
+  max-width: 600px;
 }
 
 /*  Example list  */
