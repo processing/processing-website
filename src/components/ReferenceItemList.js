@@ -19,9 +19,12 @@ export const CodeList = memo(
           }
 
           let name = nameIsHtml ? (
-            <code dangerouslySetInnerHTML={{ __html: item.name }} />
+            <code
+              dangerouslySetInnerHTML={{ __html: item.name }}
+              className={css.name}
+            />
           ) : (
-            <code>{item.name}</code>
+            <code className={css.name}>{item.name}</code>
           );
 
           // Name as link
