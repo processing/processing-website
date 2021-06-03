@@ -2,13 +2,42 @@
   width: fit-content;
   background-color: var(--processing-blue-dark);
   color: white;
-  padding: 6px 18px;
-  font-family: var(--font-mono);
+  padding: 5px 18px 6px 18px;
   font-size: var(--text-small);
-  border-radius: 50px;
+  font-family: var(--font-mono);
   outline: none;
   border: none;
   cursor: pointer;
+}
+
+.animate {
+  position: relative;
+}
+
+.animate::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s;
+  z-index: -1;
+  background-color: var(--processing-blue-light);
+  transform: translate(-3px, 3px);
+}
+
+.animate:hover::before {
+  transform: translate(3px, -3px);
+  color: white;
+}
+
+.animate.large::before {
+  transform: translate(-5px, 5px);
+}
+
+.animate.large:hover::before {
+  transform: translate(5px, -5px);
 }
 
 .root:focus {
@@ -17,7 +46,7 @@
 }
 
 .root:hover {
-  background: var(--processing-blue-mid);
+  /* background: var(--processing-blue-mid); */
   color: white;
 }
 
@@ -32,11 +61,6 @@
 }
 
 /*  Sizes  */
-
-.small {
-  padding: 5px 18px 6px 18px;
-  font-size: var(--text-small);
-}
 
 .large {
   padding: var(--gutter) var(--gutter-double);

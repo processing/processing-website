@@ -194,7 +194,6 @@ const SketchCode = ({
       <Button
         className={css.reset}
         color="gray"
-        size="small"
         onClick={onResetState}
         tabIndex={isVisible ? 0 : -1}>
         Reset

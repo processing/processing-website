@@ -1,5 +1,7 @@
 .hero {
   padding: 60px 0;
+  position: relative;
+  z-index: 1;
 
   & h1 {
     margin-bottom: var(--margin-half);
@@ -256,6 +258,10 @@
 
   .example {
     flex-basis: var(--col4);
+  }
+
+  .moreExamples {
+    text-align: center;
   }
 }
 
