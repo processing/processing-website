@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import { useIntl } from 'react-intl';
-import classnames from 'classnames';
 
 import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
