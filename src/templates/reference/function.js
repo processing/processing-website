@@ -39,6 +39,8 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
 
   const entry = data?.json?.childJson;
 
+  console.log(entry);
+
   const inUse = usePreparedList(entry?.inUse, libraryName, true, true);
   const parameters = usePreparedList(entry?.parameters, libraryName);
   const syntax = usePreparedList(entry?.syntax, libraryName);
