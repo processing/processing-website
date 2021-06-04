@@ -2,7 +2,7 @@
   "name": "-= (subtract assign)",
   "brief": "Combines subtraction with assignment",
   "description": "Combines subtraction with assignment. The expression <b>a -= b</b> is equivalent to <b>a = a - b</b>. \n",
-  "related": [],
+  "related": ["addassign", "minus"],
   "syntax": ["value1 -= value2"],
   "returns": "",
   "type": "function",

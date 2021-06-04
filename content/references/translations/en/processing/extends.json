@@ -2,11 +2,11 @@
   "name": "extends",
   "brief": "Allows a new class to <em>inherit</em> the methods and data fields (variables and constants) from an existing class",
   "description": "Allows a new class to <em>inherit</em> the methods and data fields (variables and constants) from an existing class. In code, state the name of the new class, followed by the keyword <b>extends</b> and the name of the <i>base class</i>. The concept of inheritance is one of the fundamental principles of object oriented programming.<br />\n<br />\nNote that in Java, and therefore also Processing, you cannot extend a class more than once. Instead, see <b>implements</b>.\n",
-  "related": [],
+  "related": ["class", "super", "implements"],
   "syntax": [],
   "returns": "",
   "type": "function",
   "category": "structure",
   "subcategory": "",
-  "parameters": [null]
+  "parameters": []
 }

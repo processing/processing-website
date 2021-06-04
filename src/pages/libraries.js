@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import unique from 'array-unique';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
+import { widont } from '../utils/index.js';
 
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useLocalization } from 'gatsby-theme-i18n';
@@ -126,7 +127,7 @@ const ContributionsList = memo(({ categories, libraries }) => {
                   ))}
                 </div>
                 <p className={classnames(grid.col, css.itemDescription)}>
-                  {node.sentence}
+                  {widont(node.sentence)}
                 </p>
               </li>
             );

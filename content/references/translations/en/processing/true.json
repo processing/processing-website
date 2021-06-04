@@ -2,11 +2,11 @@
   "name": "true",
   "brief": "Reserved word representing the logical value \"true\"",
   "description": "Reserved word representing the logical value \"true\". Only variables of type <b>boolean</b> may be assigned the value <b>true</b>.\n",
-  "related": [],
+  "related": ["false", "boolean"],
   "syntax": [],
   "returns": "",
   "type": "function",
   "category": "structure",
   "subcategory": "",
-  "parameters": [null]
+  "parameters": []
 }

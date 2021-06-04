@@ -11,6 +11,7 @@ import Section from '../../components/ReferenceItemSection';
 import License from '../../components/ReferenceLicense';
 import { CodeList, ExampleList } from '../../components/ReferenceItemList';
 import { ExampleItem } from '../../components/ExamplesList';
+import { widont } from '../../utils/index.js';
 
 import { useTree, useHighlight } from '../../hooks';
 import {
@@ -77,7 +78,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
               </Section>
             )}
             <Section title={intl.formatMessage({ id: 'description' })}>
-              <p dangerouslySetInnerHTML={{ __html: entry.description }} />
+              <p dangerouslySetInnerHTML={{ __html: widont(entry.description) }} />
             </Section>
             {examples && (
               <Section

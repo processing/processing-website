@@ -2,7 +2,7 @@
   "name": "+= (add assign)",
   "brief": "Combines addition with assignment",
   "description": "Combines addition with assignment. The expression <b>a += b</b> is equivalent to <b>a = a + b</b>. \n",
-  "related": [],
+  "related": ["assign", "addition", "subtractassign"],
   "syntax": ["value1 += value2"],
   "returns": "",
   "type": "function",

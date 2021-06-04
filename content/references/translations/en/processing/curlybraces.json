@@ -2,7 +2,7 @@
   "name": "{} (curly braces)",
   "brief": "Define the beginning and end of functions blocks and statement blocks such as the <b>for</b> and <b>if</b> structures",
   "description": "Define the beginning and end of functions blocks and statement blocks such as the <b>for</b> and <b>if</b> structures. Curly braces are also used for defining initial values in array declarations.\n",
-  "related": [],
+  "related": ["parentheses"],
   "syntax": ["{ statements }", "{ ele0, ..., eleN }"],
   "returns": "",
   "type": "function",

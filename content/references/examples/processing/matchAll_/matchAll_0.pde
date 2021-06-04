@@ -1,7 +1,7 @@
-String s = "Inside tags, you will find &lt;tag&gt;multiple&lt;/tag&gt; ";
-       s += "&lt;tag&gt;pieces&lt;/tag&gt; of &lt;tag&gt;content&lt;/tag&gt;.";
+String s = "Inside tags, you will find <tag>multiple< /tag>";
+       s += "<tag>pieces</tag> of <tag>content</tag>.";
 
-String[][] m = matchAll(s, "&lt;tag&gt;(.*?)&lt;/tag&gt;");
+String[][] m = matchAll(s, "<tag>(.*?)</tag>");
 for (int i = 0; i < m.length; i++) {
   println("Found '" + m[i][1] + "' inside a tag.");
 }

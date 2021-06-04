@@ -2,7 +2,7 @@
   "name": "break",
   "brief": "Ends the execution of a structure such as <b>switch</b>, <b>for</b>, or <b>while</b> and jumps to the next statement after",
   "description": "Ends the execution of a structure such as <b>switch</b>, <b>for</b>, or <b>while</b> and jumps to the next statement after.\n",
-  "related": [],
+  "related": ["switch", "for", "while"],
   "syntax": [],
   "returns": "",
   "type": "function",

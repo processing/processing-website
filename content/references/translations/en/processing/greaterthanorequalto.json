@@ -2,7 +2,13 @@
   "name": ">= (greater than or equal to)",
   "brief": "Tests if the value on the left is larger than the value on the right or if the values are equivalent",
   "description": "Tests if the value on the left is larger than the value on the right or if the values are equivalent. \n",
-  "related": [],
+  "related": [
+    "greaterthan",
+    "lessthan",
+    "lessthanorequalto",
+    "equality",
+    "inequality"
+  ],
   "syntax": ["value1 >= value2"],
   "returns": "",
   "type": "function",

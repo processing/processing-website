@@ -18,3 +18,20 @@ export const map = (n, start1, stop1, start2, stop2) => {
 export const getWin = () => {
   return [window.innerWidth, window.innerHeight];
 };
+
+const WIDONT_REGEX = /([^\s])\s+([^\s]+)\s*$/;
+const DASH_REGEX = /-/g;
+const SPACE = '\u00a0'; //'&nbsp;';
+const HYPHEN = '\u2011'; //'&#8209;'
+
+export const widont = (str) => {
+  if (typeof str !== 'string') {
+    return str;
+  }
+  return str.replace(WIDONT_REGEX, (str, lead, word) => {
+    if (word.indexOf('-') >= 0) {
+      return lead + ' ' + word.replace(DASH_REGEX, HYPHEN);
+    }
+    return lead + SPACE + word;
+  });
+};
