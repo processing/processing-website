@@ -227,6 +227,7 @@
   }
 
   .menu {
+    display: none;
     flex-basis: var(--col5);
     flex-direction: column;
     flex-wrap: nowrap;
@@ -236,7 +237,6 @@
     padding-bottom: var(--margin);
     justify-content: flex-start;
     overflow-y: scroll;
-    opacity: 0;
     position: relative;
     z-index: -1;
     height: 0;
@@ -259,6 +259,10 @@
     & > .subitem:hover {
       border-left: none;
     }
+  }
+
+  .menu.expanded {
+    display: block;
   }
 
   .menuToggle {
