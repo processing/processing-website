@@ -1,4 +1,4 @@
-import { useMemo, useEffect, useState } from 'react';
+import { useMemo } from 'react';
 import { titleCase } from '../utils';
 import { referencePath, pathToName, examplePath } from '../utils/paths';
 
@@ -11,15 +11,28 @@ export const usePreparedItems = (items, libraryName) => {
     // This makes up for some weirdness in lowercase/uppercase category and subcategory
     // names and removes underscores and adds title cases. Some of these should be fixed
     // in the JavaDoc comments instead.
-    return items.map((item) =>
-      Object.assign({}, item.childJson, {
-        slug: item.name,
-        path: referencePath(item.name, libraryName),
-        category: titleCase(item.childJson.category),
-        subcategory: titleCase(item.childJson.subcategory),
-        search: `${item.childJson.name} ${item.childJson.brief ?? ''}`
-      })
-    );
+    const prepared = [];
+
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+      // Processing does not list methods or fields in reference list or sidebar. Libraries do.
+      if (
+        libraryName !== 'processing' ||
+        (item.childJson.type !== 'method' && item.childJson.type !== 'field')
+      ) {
+        prepared.push(
+          Object.assign({}, item.childJson, {
+            slug: item.name,
+            path: referencePath(item.name, libraryName),
+            category: titleCase(item.childJson.category),
+            subcategory: titleCase(item.childJson.subcategory),
+            search: `${item.childJson.name} ${item.childJson.brief ?? ''}`
+          })
+        );
+      }
+    }
+
+    return prepared;
   }, [items, libraryName]);
 };
 

@@ -33,7 +33,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
   const intl = useIntl();
   useHighlight();
 
-  const items = usePreparedItems(data.items.nodes);
+  const items = usePreparedItems(data.items.nodes, libraryName);
   const examples = usePreparedExamples(data.pdes.edges, data.images.edges);
   const tree = useTree(items);
 
@@ -57,14 +57,12 @@ const FieldRefTemplate = ({ data, pageContext }) => {
         </title>
       </Helmet>
       <div className={grid.grid}>
-        {isProcessing && (
-          <SidebarTree
-            title={intl.formatMessage({ id: 'reference' })}
-            tree={tree}
-            setShow={setShowSidebar}
-            show={showSidebar}
-          />
-        )}
+        <SidebarTree
+          title={intl.formatMessage({ id: 'reference' })}
+          tree={tree}
+          setShow={setShowSidebar}
+          show={showSidebar}
+        />
         {entry ? (
           <Content collapsed={!showSidebar}>
             <Section title={intl.formatMessage({ id: 'name' })}>
@@ -129,7 +127,12 @@ const FieldRefTemplate = ({ data, pageContext }) => {
 export default FieldRefTemplate;
 
 export const query = graphql`
-  query($name: String!, $relDir: String!, $inUseExamples: [String!]!) {
+  query(
+    $name: String!
+    $relDir: String!
+    $inUseExamples: [String!]!
+    $libraryName: String!
+  ) {
     json: file(fields: { name: { eq: $name } }) {
       childJson {
         name
@@ -183,10 +186,7 @@ export const query = graphql`
       }
     }
     items: allFile(
-      filter: {
-        fields: { lang: { eq: "en" }, lib: { eq: "processing" } }
-        childJson: { type: { nin: ["method", "field"] } }
-      }
+      filter: { fields: { lib: { eq: $libraryName }, lang: { eq: "en" } } }
     ) {
       nodes {
         name
@@ -195,6 +195,7 @@ export const query = graphql`
           category
           subcategory
           name
+          type
         }
       }
     }

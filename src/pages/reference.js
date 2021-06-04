@@ -20,7 +20,7 @@ const Reference = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const intl = useIntl();
 
-  const items = usePreparedItems(data.items.nodes);
+  const items = usePreparedItems(data.items.nodes, 'processing');
   const tree = useTree(items);
   const filtered = useFilteredTree(tree, searchTerm);
   const categories = Object.keys(tree);
@@ -68,6 +68,7 @@ export const query = graphql`
           brief
           category
           subcategory
+          type
         }
       }
     }
