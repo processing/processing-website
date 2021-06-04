@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
@@ -13,7 +13,7 @@ import { CodeList, ExampleList } from '../../components/ReferenceItemList';
 import { ExampleItem } from '../../components/ExamplesList';
 import { widont } from '../../utils/index.js';
 
-import { useTree, useHighlight, useWindowSize } from '../../hooks';
+import { useTree, useHighlight, useSidebar } from '../../hooks';
 import {
   usePreparedItems,
   usePreparedExamples,
@@ -27,14 +27,12 @@ import grid from '../../styles/grid.module.css';
 const RefTemplate = ({ data, pageContext, ...props }) => {
   const { name, libraryName } = pageContext;
   const isProcessing = libraryName === 'processing';
-
-  const { width } = useWindowSize();
-  const [show, setShow] = useState(width > 960 ? true : false);
+  const [showSidebar, setShowSidebar] = useSidebar();
 
   const intl = useIntl();
   useHighlight();
 
-  const items = usePreparedItems(data.items.nodes);
+  const items = usePreparedItems(data.items.nodes, libraryName);
   const examples = usePreparedExamples(data.pdes.edges, data.images.edges);
   const tree = useTree(items);
 
@@ -60,16 +58,14 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
         </title>
       </Helmet>
       <div className={grid.grid}>
-        {isProcessing && (
-          <SidebarTree
-            title={intl.formatMessage({ id: 'reference' })}
-            tree={tree}
-            setShow={setShow}
-            show={show}
-          />
-        )}
+        <SidebarTree
+          title={intl.formatMessage({ id: 'reference' })}
+          tree={tree}
+          setShow={setShowSidebar}
+          show={showSidebar}
+        />
         {entry ? (
-          <Content collapsed={!show}>
+          <Content collapsed={!showSidebar}>
             <Section title={intl.formatMessage({ id: 'name' })}>
               <h3>{entry.name}</h3>
             </Section>
@@ -79,7 +75,9 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
               </Section>
             )}
             <Section title={intl.formatMessage({ id: 'description' })}>
-              <p dangerouslySetInnerHTML={{ __html: widont(entry.description) }} />
+              <p
+                dangerouslySetInnerHTML={{ __html: widont(entry.description) }}
+              />
             </Section>
             {examples && (
               <Section
@@ -129,7 +127,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
             <License />
           </Content>
         ) : (
-          <Content collapsed={!show}>
+          <Content collapsed={!showSidebar}>
             {intl.formatMessage({ id: 'notTranslated' })}
             <Link to={referencePath(name, libraryName)}>
               {' '}
@@ -150,6 +148,7 @@ export const query = graphql`
     $relDir: String!
     $locale: String!
     $inUseExamples: [String!]!
+    $libraryName: String!
   ) {
     json: file(fields: { name: { eq: $name }, lang: { eq: $locale } }) {
       childJson {
@@ -204,10 +203,7 @@ export const query = graphql`
       }
     }
     items: allFile(
-      filter: {
-        fields: { lang: { eq: "en" }, lib: { eq: "processing" } }
-        childJson: { type: { nin: ["method", "field"] } }
-      }
+      filter: { fields: { lib: { eq: $libraryName }, lang: { eq: "en" } } }
     ) {
       nodes {
         name
@@ -216,6 +212,7 @@ export const query = graphql`
           category
           subcategory
           name
+          type
         }
       }
     }

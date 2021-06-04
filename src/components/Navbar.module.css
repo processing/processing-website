@@ -48,6 +48,7 @@
 
 .menuToggle {
   display: none;
+  padding: 0;
 }
 
 .menu {
@@ -207,14 +208,7 @@
   }
 
   .show {
-    height: auto;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
-  }
-
-  .noshow {
-    height: auto;
-    padding-left: var(--margin);
-    padding-right: var(--margin);
   }
 
   .logo {
@@ -222,11 +216,8 @@
     height: 0px;
   }
 
-  .menuWrapper {
-    padding-bottom: var(--gutter);
-  }
-
   .menu {
+    display: none;
     flex-basis: var(--col5);
     flex-direction: column;
     flex-wrap: nowrap;
@@ -236,7 +227,6 @@
     padding-bottom: var(--margin);
     justify-content: flex-start;
     overflow-y: scroll;
-    opacity: 0;
     position: relative;
     z-index: -1;
     height: 0;
@@ -261,9 +251,12 @@
     }
   }
 
+  .menu.expanded {
+    display: block;
+  }
+
   .menuToggle {
     display: block;
-    padding-left: var(--gutter-half);
   }
 
   .item {

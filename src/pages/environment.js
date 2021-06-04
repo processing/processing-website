@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useIntl } from 'react-intl';
 import { graphql } from 'gatsby';
@@ -10,13 +10,13 @@ import Layout from '../components/Layout';
 import Content from '../components/ContentWithSidebar';
 import { SidebarTableOfContents } from '../components/Sidebar';
 
-import { useHighlight } from '../hooks';
+import { useHighlight, useSidebar } from '../hooks';
 
 import css from '../styles/pages/page.module.css';
 import grid from '../styles/grid.module.css';
 
 const Environment = ({ data }) => {
-  const [showSidebar, setShowSidebar] = useState(true);
+  const [showSidebar, setShowSidebar] = useSidebar();
   const intl = useIntl();
   useHighlight();
 

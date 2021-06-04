@@ -4,11 +4,11 @@ import {
   useMemo,
   useLayoutEffect,
   useCallback,
-  useState,
+  useState
 } from 'react';
 import hljs from 'highlight.js/lib/core';
 import processing from 'highlight.js/lib/languages/processing';
-import { shuffleArray } from '../utils';
+import { shuffleArray, getWin } from '../utils';
 
 hljs.registerLanguage('processing', processing);
 
@@ -196,24 +196,13 @@ export const useHeight = (scrolled) => {
   return [ref, height];
 };
 
-const getWin = (useWindow) => {
-  let width = 1280;
-  let height = 800;
-
-  if (useWindow) {
-    width = window.innerWidth;
-    height = window.innerHeight;
-  }
-
-  return { width, height };
-};
-
 // A hook that returns the window size, throttled by requestAnimationFrame
-export const useWindowSize = () => {
-  const [win, setWin] = useState(getWin);
+// defaultWidth and defaultHeight are the values used for win on SSR.
+export const useWindowSize = (defaultWidth = null, defaultHeight = null) => {
+  const [win, setWin] = useState([defaultWidth, defaultHeight]);
   const handleResize = () => {
     window.requestAnimationFrame(() => {
-      setWin(getWin(true));
+      setWin(getWin());
     });
   };
   useEffect(() => {
@@ -246,7 +235,7 @@ export const useIntersect = (root, rootMargin, threshold = 0) => {
       {
         root,
         rootMargin,
-        threshold,
+        threshold
       }
     );
 
@@ -257,4 +246,23 @@ export const useIntersect = (root, rootMargin, threshold = 0) => {
   }, [root, rootMargin, threshold, setAppearedOnScreen]);
 
   return [ref, appearedOnScreen];
+};
+
+/**
+  Hook to handle sidebar functionality. Hides sidebar as default but shows
+  it when the page renders in the browser if the screen is wider than 960.
+  We cannot do this on initial render since that is done SSR where there
+  is not window width.
+**/
+export const useSidebar = (showDefault = false) => {
+  const [showSidebar, setShowSidebar] = useState(showDefault);
+
+  useEffect(() => {
+    const [winWidth] = getWin();
+    if (winWidth > 960) {
+      setShowSidebar(true);
+    }
+  }, []);
+
+  return [showSidebar, setShowSidebar];
 };

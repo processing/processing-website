@@ -50,10 +50,6 @@
   }
 }
 
-.item.related {
-  flex-basis: var(--col2);
-}
-
 @media (--reduced) {
   .subcategoryName {
     flex-basis: var(--col8);

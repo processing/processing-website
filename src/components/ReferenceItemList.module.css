@@ -2,6 +2,7 @@
 
 .codeList {
   display: table;
+  font-size: var(--text-regular);
 }
 
 .codeList .item {
@@ -39,18 +40,17 @@
   font-variant-ligatures: no-common-ligatures;
 }
 
+.codeList code {
+  word-break: keep-all;
+}
+
 /* Variant: reference */
 
 .codeList.parameters code {
   font-weight: bold;
 }
 
-.codeList.parameters code.name {
-  white-space: nowrap;
-}
-
 .codeList.parameters code.type {
-  word-break: keep-all;
   font-weight: normal;
   max-width: 600px;
 }
@@ -58,7 +58,7 @@
 /*  Example list  */
 
 .exampleList .item {
-  margin-bottom: var(--margin-half);
+  margin-bottom: var(--vertical-margin-large);
 }
 
 .exampleList .code {
@@ -69,4 +69,9 @@
 
 .exampleList .image {
   flex-basis: calc(100% / 6 * 2);
+}
+
+.exampleList pre {
+  margin: 0;
+  white-space: pre-wrap;
 }
