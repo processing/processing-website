@@ -65,6 +65,11 @@ const FieldRefTemplate = ({ data, pageContext }) => {
         />
         {entry ? (
           <Content collapsed={!showSidebar}>
+            {!isProcessing && (
+              <Section title={intl.formatMessage({ id: 'library' })}>
+                <h4>{data.libName.frontmatter.title}</h4>
+              </Section>
+            )}
             <Section title={intl.formatMessage({ id: 'name' })}>
               <h3>{entry.name}</h3>
             </Section>
@@ -215,6 +220,11 @@ export const query = graphql`
             ...GatsbyImageSharpFluid
           }
         }
+      }
+    }
+    libName: mdx(frontmatter: { name: { eq: $libraryName } }) {
+      frontmatter {
+        title
       }
     }
   }
