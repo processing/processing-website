@@ -11,6 +11,7 @@
 .columns .title {
   white-space: nowrap;
   flex-basis: calc(100% / 6);
+  margin: 0;
 }
 
 .columns .content {
@@ -22,6 +23,7 @@
 .content > h3 {
   font-size: var(--text-xlarge);
   font-variant-ligatures: no-common-ligatures;
+  margin: 0;
 }
 
 .content > p {
