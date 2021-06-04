@@ -14,7 +14,7 @@ import Tabs from '../../components/Tabs';
 import { ExampleItem } from '../../components/ExamplesList';
 
 import { referencePath } from '../../utils/paths';
-import { useWindowSize, useTree } from '../../hooks';
+import { useTree, useSidebar } from '../../hooks';
 import {
   useOrderedPdes,
   usePreparedExamples,
@@ -29,8 +29,7 @@ import grid from '../../styles/grid.module.css';
 window.p5 = p5;
 
 const ExampleTemplate = ({ data, pageContext }) => {
-  const [width] = useWindowSize();
-  const [showSidebar, setShowSidebar] = useState(width > 960);
+  const [showSidebar, setShowSidebar] = useSidebar();
   const intl = useIntl();
 
   const { example, image, allExamples, relatedImages, liveSketch } = data;
@@ -101,7 +100,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
                 />
               )}
             </div>
-            <div className={classnames(css.cover)} id="example-cover">
+            <div className={css.cover} id="example-cover">
               {!liveSketch && image && (
                 <Img fluid={image.childImageSharp.fluid} />
               )}
@@ -138,7 +137,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
 
 const FeaturedFunctions = memo(({ heading, featured }) => {
   return (
-    <div className={classnames(grid.col, grid.rightBleed, css.featured)}>
+    <div className={classnames(grid.col, css.featured)}>
       <h3>{heading}</h3>
       <ul>
         {featured.map((feature, key) => (

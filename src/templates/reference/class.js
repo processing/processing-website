@@ -13,13 +13,12 @@ import License from '../../components/ReferenceLicense';
 import { CodeList, ExampleList } from '../../components/ReferenceItemList';
 import { ExampleItem } from '../../components/ExamplesList';
 
-import { useHighlight, useTree } from '../../hooks';
+import { useHighlight, useTree, useSidebar } from '../../hooks';
 import {
   usePreparedItems,
   usePreparedExamples,
   usePreparedList,
-  useInUseExamples,
-  useSidebar
+  useInUseExamples
 } from '../../hooks/reference';
 import { referencePath } from '../../utils/paths';
 
@@ -69,7 +68,9 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               <h3>{entry.name}</h3>
             </Section>
             <Section title={intl.formatMessage({ id: 'description' })}>
-              <p dangerouslySetInnerHTML={{ __html: widont(entry.description) }} />
+              <p
+                dangerouslySetInnerHTML={{ __html: widont(entry.description) }}
+              />
             </Section>
             {examples && (
               <Section

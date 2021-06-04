@@ -1,5 +1,5 @@
 import { useMemo, useEffect, useState } from 'react';
-import { titleCase, getWin } from '../utils';
+import { titleCase } from '../utils';
 import { referencePath, pathToName, examplePath } from '../utils/paths';
 
 /**
@@ -142,23 +142,4 @@ export const useInUseExamples = (inUseExamples, images) => {
     }
     return prepared;
   }, [inUseExamples, images]);
-};
-
-/**
-  Hook to handle sidebar functionality. Hides sidebar as default but shows
-  it when the page renders in the browser if the screen is wider than 960.
-  We cannot do this on initial render since that is done SSR where there
-  is not window width.
-**/
-export const useSidebar = () => {
-  const [showSidebar, setShowSidebar] = useState(false);
-
-  useEffect(() => {
-    const [winWidth] = getWin();
-    if (winWidth > 960) {
-      setShowSidebar(true);
-    }
-  }, []);
-
-  return [showSidebar, setShowSidebar];
 };

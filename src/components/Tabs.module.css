@@ -32,17 +32,3 @@
   padding-bottom: var(--gutter-double);
   white-space: break-spaces;
 }
-
-@media (--small) {
-  .root {
-    & > ul {
-      padding-left: var(--gutter);
-      padding-right: var(--gutter);
-    }
-
-    & > div {
-      padding-left: var(--gutter);
-      padding-right: var(--gutter);
-    }
-  }
-}

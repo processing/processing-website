@@ -247,3 +247,22 @@ export const useIntersect = (root, rootMargin, threshold = 0) => {
 
   return [ref, appearedOnScreen];
 };
+
+/**
+  Hook to handle sidebar functionality. Hides sidebar as default but shows
+  it when the page renders in the browser if the screen is wider than 960.
+  We cannot do this on initial render since that is done SSR where there
+  is not window width.
+**/
+export const useSidebar = () => {
+  const [showSidebar, setShowSidebar] = useState(false);
+
+  useEffect(() => {
+    const [winWidth] = getWin();
+    if (winWidth > 960) {
+      setShowSidebar(true);
+    }
+  }, []);
+
+  return [showSidebar, setShowSidebar];
+};

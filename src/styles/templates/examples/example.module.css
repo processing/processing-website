@@ -4,10 +4,18 @@
 
 .featured {
   flex-basis: calc(100% / 6 * 2);
+
+  & h3 {
+    margin-bottom: var(--vertical-spacing-large);
+  }
 }
 
 .cover {
   padding-top: var(--vertical-margin-large);
+
+  & canvas {
+    max-width: 100%;
+  }
 }
 
 .img {
@@ -18,4 +26,11 @@
 .note {
   padding-top: var(--gutter-double);
   color: var(--processing-blue-dark);
+}
+
+@media (--small) {
+  .description,
+  .featured {
+    flex-basis: 100%;
+  }
 }

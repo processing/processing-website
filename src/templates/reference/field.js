@@ -13,13 +13,12 @@ import { CodeList, ExampleList } from '../../components/ReferenceItemList';
 import { ExampleItem } from '../../components/ExamplesList';
 import { widont } from '../../utils/index.js';
 
-import { useTree, useHighlight } from '../../hooks';
+import { useTree, useHighlight, useSidebar } from '../../hooks';
 import {
   usePreparedItems,
   usePreparedExamples,
   usePreparedList,
-  useInUseExamples,
-  useSidebar
+  useInUseExamples
 } from '../../hooks/reference';
 import { referencePath } from '../../utils/paths';
 
@@ -72,7 +71,9 @@ const FieldRefTemplate = ({ data, pageContext }) => {
               <h3>{entry.name}</h3>
             </Section>
             <Section title={intl.formatMessage({ id: 'description' })}>
-              <p dangerouslySetInnerHTML={{ __html: widont(entry.description) }} />
+              <p
+                dangerouslySetInnerHTML={{ __html: widont(entry.description) }}
+              />
             </Section>
             {examples && (
               <Section
