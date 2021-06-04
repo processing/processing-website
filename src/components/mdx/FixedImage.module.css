@@ -1,6 +1,6 @@
 .root {
-  margin-top: var(--vertical-gutter);
-  margin-bottom: var(--vertical-gutter);
+  margin-top: var(--vertical-margin-large);
+  margin-bottom: var(--vertical-margin-large);
   max-width: 100%;
 
   & > picture,

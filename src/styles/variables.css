@@ -40,7 +40,9 @@
   --gutter: 16px;
   --gutter-half: calc(var(--gutter) / 2);
   --gutter-double: calc(var(--gutter) * 2);
-  --vertical-gutter: 40px;
+
+  --vertical-margin-small: 20px;
+  --vertical-margin-large: 40px;
 
   --col1: calc(100% / 8);
   --col2: calc(100% / 8 * 2);
@@ -65,7 +67,9 @@
   :root {
     --margin: 24px;
     --gutter: 16px;
-    --vertical-gutter: 20px;
+
+    --vertical-margin-small: 10px;
+    --vertical-margin-large: 20px;
 
     --text-xsmall: 0.7rem;
     --text-small: 0.8rem;

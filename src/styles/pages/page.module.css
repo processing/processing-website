@@ -14,12 +14,12 @@
 .content {
   & h2 {
     font-size: var(--text-large);
-    margin-top: var(--vertical-gutter);
+    margin-top: var(--vertical-margin-large);
     margin-bottom: 1rem;
   }
 
   & h3 {
-    margin-top: var(--vertical-gutter);
+    margin-top: var(--vertical-margin-large);
   }
 
   & ul {
@@ -120,7 +120,7 @@
   }
 
   & picture {
-    margin: var(--vertical-gutter) 0;
+    margin: var(--vertical-margin-large) 0;
   }
 
   & figcaption {
@@ -157,7 +157,7 @@
 @media (--small) {
   .root {
     & > h1 {
-      padding-top: var(--vertical-gutter);
+      padding-top: var(--vertical-margin-large);
       padding-left: var(--gutter);
       padding-right: var(--gutter);
     }

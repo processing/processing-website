@@ -7,7 +7,7 @@
 }
 
 .cover {
-  padding-top: var(--vertical-gutter);
+  padding-top: var(--vertical-margin-large);
 }
 
 .img {

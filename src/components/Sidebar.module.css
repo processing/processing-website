@@ -96,7 +96,7 @@
     width: var(--col8);
     padding-left: calc(var(--margin) + var(--gutter));
     padding-right: calc(var(--margin) + var(--gutter));
-    padding-bottom: var(--vertical-gutter);
+    padding-bottom: var(--vertical-margin-large);
     & .sidebarWrapper {
       max-width: auto;
     }
@@ -147,7 +147,7 @@
     width: var(--col8);
     padding-left: calc(var(--margin) + var(--gutter));
     padding-right: calc(var(--margin) + var(--gutter));
-    padding-bottom: var(--vertical-gutter);
+    padding-bottom: var(--vertical-margin-large);
     & .sidebarWrapper {
       max-width: auto;
     }

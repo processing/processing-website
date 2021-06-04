@@ -100,6 +100,22 @@ const Test = () => {
           <div className={css.red} />
         </div>
       </div>
+      <h3>Vertical margins</h3>
+      <div className={css.large}>
+        <div className={css.small}></div>
+        <div className={css.small}></div>
+        <div className={css.small}></div>
+      </div>
+      <div className={css.large}>
+        <div className={css.small}></div>
+        <div className={css.small}></div>
+        <div className={css.small}></div>
+      </div>
+      <div className={css.large}>
+        <div className={css.small}></div>
+        <div className={css.small}></div>
+        <div className={css.small}></div>
+      </div>
     </Layout>
   );
 };
