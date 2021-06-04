@@ -12,12 +12,13 @@ import License from '../../components/ReferenceLicense';
 import { CodeList, ExampleList } from '../../components/ReferenceItemList';
 import { ExampleItem } from '../../components/ExamplesList';
 
-import { useHighlight, useWindowSize, useTree } from '../../hooks';
+import { useHighlight, useTree } from '../../hooks';
 import {
   usePreparedItems,
   usePreparedExamples,
   usePreparedList,
-  useInUseExamples
+  useInUseExamples,
+  useSidebar
 } from '../../hooks/reference';
 import { referencePath } from '../../utils/paths';
 
@@ -27,9 +28,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
   const { name, libraryName } = pageContext;
   const entry = data?.json?.childJson;
   const isProcessing = libraryName === 'processing';
-
-  const { width } = useWindowSize();
-  const [show, setShow] = useState(width > 960 && isProcessing ? true : false);
+  const [showSidebar, setShowSidebar] = useSidebar();
   const intl = useIntl();
   useHighlight();
 
@@ -59,12 +58,12 @@ const ClassRefTemplate = ({ data, pageContext }) => {
           <SidebarTree
             title={intl.formatMessage({ id: 'reference' })}
             tree={tree}
-            setShow={setShow}
-            show={show}
+            setShow={setShowSidebar}
+            show={showSidebar}
           />
         )}
         {entry ? (
-          <Content collapsed={!show}>
+          <Content collapsed={!showSidebar}>
             <Section title={intl.formatMessage({ id: 'className' })}>
               <h3>{entry.name}</h3>
             </Section>
@@ -119,7 +118,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
             <License />
           </Content>
         ) : (
-          <Content collapsed={!show}>
+          <Content collapsed={!showSidebar}>
             {intl.formatMessage({ id: 'notTranslated' })}
             <Link to={referencePath(name, libraryName)}>
               {' '}

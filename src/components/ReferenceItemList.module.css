@@ -39,18 +39,17 @@
   font-variant-ligatures: no-common-ligatures;
 }
 
+.codeList code {
+  word-break: keep-all;
+}
+
 /* Variant: reference */
 
 .codeList.parameters code {
   font-weight: bold;
 }
 
-.codeList.parameters code.name {
-  white-space: nowrap;
-}
-
 .codeList.parameters code.type {
-  word-break: keep-all;
   font-weight: normal;
   max-width: 600px;
 }

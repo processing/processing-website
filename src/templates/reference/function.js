@@ -12,12 +12,13 @@ import License from '../../components/ReferenceLicense';
 import { CodeList, ExampleList } from '../../components/ReferenceItemList';
 import { ExampleItem } from '../../components/ExamplesList';
 
-import { useTree, useHighlight, useWindowSize } from '../../hooks';
+import { useTree, useHighlight } from '../../hooks';
 import {
   usePreparedItems,
   usePreparedExamples,
   usePreparedList,
-  useInUseExamples
+  useInUseExamples,
+  useSidebar
 } from '../../hooks/reference';
 import { referencePath } from '../../utils/paths';
 
@@ -26,9 +27,7 @@ import grid from '../../styles/grid.module.css';
 const RefTemplate = ({ data, pageContext, ...props }) => {
   const { name, libraryName } = pageContext;
   const isProcessing = libraryName === 'processing';
-
-  const { width } = useWindowSize();
-  const [show, setShow] = useState(width > 960);
+  const [showSidebar, setShowSidebar] = useSidebar();
 
   const intl = useIntl();
   useHighlight();
@@ -63,12 +62,12 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           <SidebarTree
             title={intl.formatMessage({ id: 'reference' })}
             tree={tree}
-            setShow={setShow}
-            show={show}
+            setShow={setShowSidebar}
+            show={showSidebar}
           />
         )}
         {entry ? (
-          <Content collapsed={!show}>
+          <Content collapsed={!showSidebar}>
             <Section title={intl.formatMessage({ id: 'name' })}>
               <h3>{entry.name}</h3>
             </Section>
@@ -128,7 +127,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
             <License />
           </Content>
         ) : (
-          <Content collapsed={!show}>
+          <Content collapsed={!showSidebar}>
             {intl.formatMessage({ id: 'notTranslated' })}
             <Link to={referencePath(name, libraryName)}>
               {' '}

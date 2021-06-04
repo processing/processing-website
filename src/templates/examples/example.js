@@ -29,7 +29,7 @@ import grid from '../../styles/grid.module.css';
 window.p5 = p5;
 
 const ExampleTemplate = ({ data, pageContext }) => {
-  const { width } = useWindowSize();
+  const [width] = useWindowSize();
   const [showSidebar, setShowSidebar] = useState(width > 960);
   const intl = useIntl();
 
