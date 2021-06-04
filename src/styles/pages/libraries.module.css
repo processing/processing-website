@@ -19,7 +19,8 @@
   flex-basis: var(--col2);
   font-size: var(--text-xlarge);
   text-transform: capitalize;
-  margin-top: var(--margin);
+  margin-top: var(--vertical-margin-large);
+  margin-bottom: 0;
   border-right: solid 7px var(--lightgray);
 }
 
@@ -29,12 +30,12 @@
 
 .list {
   flex-basis: var(--col6);
-  margin-top: var(--margin);
+  margin-top: var(--vertical-margin-large);
   list-style: none;
 }
 
 .item {
-  margin-bottom: var(--margin-half);
+  margin-bottom: var(--vertical-margin-medium);
   align-items: baseline;
 }
 
@@ -77,13 +78,24 @@
 
   .list {
     flex-basis: var(--col8);
-
-    & p {
-      flex-basis: var(--col5);
-    }
   }
 
   .itemName {
-    flex-basis: calc(100% / 6 * 3);
+    flex-basis: calc(100% / 6 * 2);
+  }
+
+  .itemDescription {
+    flex-basis: calc(100% / 6 * 4);
+  }
+}
+
+@media (--small) {
+  .itemName {
+    border-right: none;
+  }
+
+  .itemName,
+  .itemDescription {
+    flex-basis: 100%;
   }
 }

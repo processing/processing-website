@@ -42,6 +42,7 @@
   --gutter-double: calc(var(--gutter) * 2);
 
   --vertical-margin-small: 20px;
+  --vertical-margin-medium: 30px;
   --vertical-margin-large: 40px;
 
   --col1: calc(100% / 8);
@@ -69,6 +70,7 @@
     --gutter: 16px;
 
     --vertical-margin-small: 10px;
+    --vertical-margin-medium: 15px;
     --vertical-margin-large: 20px;
 
     --text-xsmall: 0.7rem;
