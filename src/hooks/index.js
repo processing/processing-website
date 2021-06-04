@@ -254,8 +254,8 @@ export const useIntersect = (root, rootMargin, threshold = 0) => {
   We cannot do this on initial render since that is done SSR where there
   is not window width.
 **/
-export const useSidebar = () => {
-  const [showSidebar, setShowSidebar] = useState(false);
+export const useSidebar = (showDefault = false) => {
+  const [showSidebar, setShowSidebar] = useState(showDefault);
 
   useEffect(() => {
     const [winWidth] = getWin();

@@ -11,14 +11,16 @@ import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
 import { SidebarTableOfContents } from '../../components/Sidebar';
 
-import { useHighlight } from '../../hooks';
+import { useHighlight, useSidebar } from '../../hooks';
 
 import css from '../../styles/pages/page.module.css';
 import grid from '../../styles/grid.module.css';
 
 const TutorialTemplate = ({ data, pageContext }) => {
   const { mdx } = data;
-  const [showSidebar, setShowSidebar] = useState(!!mdx.tableOfContents.items);
+  const [showSidebar, setShowSidebar] = useSidebar(
+    !!mdx.tableOfContents.items ? undefined : true
+  );
   const intl = useIntl();
   useHighlight();
 
