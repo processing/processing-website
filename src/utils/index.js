@@ -31,3 +31,10 @@ export const widont = (str) => {
     return lead + SPACE + word;
   });
 };
+
+export const linkParsing = (str) => {
+  if (typeof str !== 'string') {
+    return str;
+  }
+ return str.replace(/\[([^\]]*)\]\(([^)]*)\)/g, '<a href="$2">$1</a>');
+}
