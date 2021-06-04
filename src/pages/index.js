@@ -37,14 +37,23 @@ const IndexPage = ({ data }) => {
           <h1>{intl.formatMessage({ id: 'introTitle' })}</h1>
           <p>{intl.formatMessage({ id: 'introText' })}</p>
           <div className={css.buttons}>
-            <Button to={'/download'} size="large" className={css.button}>
+            <Button
+              to={'/download'}
+              variant="animate1"
+              size="large"
+              className={css.button}>
               {intl.formatMessage({ id: 'download' })}
             </Button>
-            <Button to={'/reference'} size="large" className={css.button}>
+            <Button
+              to={'/reference'}
+              variant="animate1"
+              size="large"
+              className={css.button}>
               {intl.formatMessage({ id: 'reference' })}
             </Button>
             <Button
               href={'https://processingfoundation.org/donate'}
+              variant="animate1"
               size="large"
               className={css.button}>
               {intl.formatMessage({ id: 'donate' })}
@@ -80,28 +89,30 @@ const IndexPage = ({ data }) => {
                 <p>
                   {intl.formatMessage({ id: 'cardGettingStartedDescription' })}
                 </p>
-                <Button to={'/tutorials/gettingstarted'} size="small">
+                <Button to={'/tutorials/gettingstarted'} variant="animate1">
                   {intl.formatMessage({ id: 'cardGettingStartedButton' })}
                 </Button>
               </Card>
               <Card className={css.card}>
                 <h4>{intl.formatMessage({ id: 'cardReference' })}</h4>
                 <p>{intl.formatMessage({ id: 'cardReferenceDescription' })}</p>
-                <Button to={'/reference'} size="small">
+                <Button to={'/reference'} variant="animate1">
                   {intl.formatMessage({ id: 'cardReferenceButton' })}
                 </Button>
               </Card>
               <Card className={css.card}>
                 <h4>{intl.formatMessage({ id: 'cardDownload' })}</h4>
                 <p>{intl.formatMessage({ id: 'cardDownloadDescription' })}</p>
-                <Button to={'/download'} size="small">
+                <Button to={'/download'} variant="animate1">
                   {intl.formatMessage({ id: 'cardDownloadButton' })}
                 </Button>
               </Card>
               <Card className={css.card}>
                 <h4>{intl.formatMessage({ id: 'cardForum' })}</h4>
                 <p>{intl.formatMessage({ id: 'cardForumDescription' })}</p>
-                <Button href={'https://discourse.processing.org/'} size="small">
+                <Button
+                  href={'https://discourse.processing.org/'}
+                  variant="animate1">
                   {intl.formatMessage({ id: 'cardForumButton' })}
                 </Button>
               </Card>
@@ -122,6 +133,7 @@ const IndexPage = ({ data }) => {
                 href={
                   'https://processingfoundation.org/advocacy/processing-community-day-2020'
                 }
+                variant="animate1"
                 size="large">
                 {intl.formatMessage({ id: 'buttonParticipate' })}
               </Button>
@@ -148,7 +160,10 @@ const IndexPage = ({ data }) => {
               </p>
             </div>
             <div className={css.contributeButton}>
-              <Button href={'https://github.com/processing'} size="large">
+              <Button
+                href={'https://github.com/processing'}
+                variant="animate1"
+                size="large">
                 {intl.formatMessage({ id: 'buttonContribute' })}
               </Button>
             </div>
@@ -237,7 +252,9 @@ const Examples = memo(({ heading, examples, locale }) => {
         </div>
       ))}
       <div className={classnames(grid.col, css.moreExamples)}>
-        <Button to={'/examples'}>More Examples</Button>
+        <Button to={'/examples'} variant="animate1">
+          More Examples
+        </Button>
       </div>
     </div>
   );

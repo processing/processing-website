@@ -31,7 +31,7 @@
 
 @media (--reduced) {
   .heading {
-    margin-top: var(--vertical-gutter);
+    margin-top: var(--vertical-margin-large);
     flex-basis: var(--col8);
   }
 

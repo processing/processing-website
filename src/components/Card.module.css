@@ -2,13 +2,13 @@
   background-color: white;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
   outline: none;
   padding: 36px 40px;
   font-size: var(--text-small);
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, border 0.2s ease;
+  position: relative;
+  z-index: 1;
 
   & h4 {
     font-size: var(--text-regular);
@@ -17,30 +17,5 @@
   & p {
     font-weight: 400;
     color: var(--darkgray);
-    cursor: pointer;
-  }
-}
-
-.root:focus,
-.root:hover {
-  background: var(--lightgray);
-}
-
-.root:hover {
-  color: var(--processing-blue-dark);
-  & h4 {
-    color: inherit;
-  }
-}
-
-.root:active {
-  border-color: var(--processing-blue-mid);
-  background-color: var(--processing-blue-mid);
-  color: white;
-  & h4 {
-    color: inherit;
-  }
-  & p {
-    color: inherit;
   }
 }

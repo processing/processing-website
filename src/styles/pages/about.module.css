@@ -13,16 +13,16 @@
   flex-basis: var(--col8);
   padding-left: var(--push1);
   padding-right: var(--push2);
-  margin-bottom: var(--vertical-gutter);
+  margin-bottom: var(--vertical-margin-large);
 
   & h2 {
     font-size: var(--text-large);
-    margin-top: var(--vertical-gutter);
+    margin-top: var(--vertical-margin-large);
     margin-bottom: 1rem;
   }
 
   & h3 {
-    margin-top: var(--vertical-gutter);
+    margin-top: var(--vertical-margin-large);
   }
 
   & ul {
@@ -89,7 +89,7 @@
 @media (--small) {
   .root {
     & > h1 {
-      padding-top: var(--vertical-gutter);
+      padding-top: var(--vertical-margin-large);
     }
     & > h3 {
       padding-right: 0;

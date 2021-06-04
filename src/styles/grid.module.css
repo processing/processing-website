@@ -44,38 +44,3 @@
   padding-left: 0;
   padding-right: 0;
 }
-
-/* .rightBleed {
-  padding-right: 0px;
-}
-
-.leftBleed {
-  padding-left: 0px;
-} */
-
-/* @media (--medium) {
-  .bleedMobile {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-  }
-}
-
-@media (--reduced) {
-  .rightBleed {
-    padding-right: var(--margin);
-  }
-
-  .leftBleed {
-    padding-left: var(--margin);
-  }
-}
-
-@media (--small) {
-  .rightBleed {
-    padding-right: var(--margin);
-  }
-
-  .leftBleed {
-    padding-left: var(--margin);
-  }
-} */

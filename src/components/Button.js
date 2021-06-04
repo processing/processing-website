@@ -10,15 +10,15 @@ export const Button = ({
   to,
   href,
   size,
-  color,
+  variant,
   target,
   onClick,
   children,
-  tabIndex,
+  tabIndex
 }) => {
   const classNames = classnames(css.root, className, {
     [css[size]]: size,
-    [css[color]]: color,
+    [css[variant]]: variant
   });
 
   return (
@@ -50,7 +50,7 @@ export const Button = ({
 export default Button;
 
 Button.defaultProps = {
-  onClick: () => {},
+  onClick: () => {}
 };
 
 Button.propTypes = {
@@ -59,5 +59,5 @@ Button.propTypes = {
   to: PropTypes.string,
   onClick: PropTypes.func,
   color: PropTypes.oneOf(['gray']),
-  size: PropTypes.oneOf(['large', 'small']),
+  size: PropTypes.oneOf(['large', 'small'])
 };

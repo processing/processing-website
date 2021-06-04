@@ -197,20 +197,17 @@
 
 @media (--reduced) {
   .root {
-    padding: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     align-items: flex-start;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: nowrap;
     max-height: 50px;
-    padding-left: var(--margin);
-    padding-right: var(--margin);
   }
 
   .show {
     height: auto;
-    padding-left: var(--margin);
-    padding-right: var(--margin);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
   }
 

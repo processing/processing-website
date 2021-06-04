@@ -1,11 +1,10 @@
 .root {
-  width: fit-content;
+  text-align: center;
   background-color: var(--processing-blue-dark);
   color: white;
-  padding: 6px 18px;
-  font-family: var(--font-mono);
+  padding: 5px 18px 6px 18px;
   font-size: var(--text-small);
-  border-radius: 50px;
+  font-family: var(--font-mono);
   outline: none;
   border: none;
   cursor: pointer;
@@ -17,13 +16,70 @@
 }
 
 .root:hover {
-  background: var(--processing-blue-mid);
   color: white;
 }
 
-/*  Colors  */
+/*  Variant: Animate1 & Animate2 */
 
-.root.gray {
+.animate1,
+.animate2 {
+  position: relative;
+}
+
+.animate1::before,
+.animate2::before,
+.animate2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s;
+  z-index: -1;
+  background-color: var(--processing-blue-light);
+  transform: translate(-3px, 3px);
+}
+
+.animate1:hover::before,
+.animate2:hover::before {
+  transform: translate(3px, -3px);
+  color: white;
+}
+
+.animate1.large::before,
+.animate2.large::before {
+  transform: translate(-5px, 5px);
+}
+
+.animate1.large:hover::before,
+.animate2.large:hover::before {
+  transform: translate(5px, -5px);
+}
+
+/*  Variant: Animate2  */
+
+.animate2::after {
+  transform: translate(3px, -3px);
+  background-color: var(--processing-blue-mid);
+}
+
+.animate2:hover::after {
+  transform: translate(-3px, 3px);
+  color: white;
+}
+
+.animate2.large::after {
+  transform: translate(5px, -5px);
+}
+
+.animate2.large:hover::after {
+  transform: translate(-5px, 5px);
+}
+
+/*  Variant: Gray  */
+
+.gray {
   background-color: var(--lightgray);
   color: black;
   &:hover {
@@ -32,11 +88,6 @@
 }
 
 /*  Sizes  */
-
-.small {
-  padding: 5px 18px 6px 18px;
-  font-size: var(--text-small);
-}
 
 .large {
   padding: var(--gutter) var(--gutter-double);

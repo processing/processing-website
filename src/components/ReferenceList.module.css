@@ -1,6 +1,6 @@
 .category {
   flex-basis: var(--col8);
-  margin-top: var(--vertical-gutter);
+  margin-top: var(--vertical-margin-large);
   font-size: var(--text-xlarge);
   text-transform: capitalize;
 }
