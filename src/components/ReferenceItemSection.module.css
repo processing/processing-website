@@ -50,7 +50,6 @@
 
   .columns .title {
     flex-basis: var(--col2);
-    padding-left: 0;
   }
 
   .columns .content {
@@ -59,7 +58,11 @@
 }
 
 @media (--small) {
-  .root {
-    flex-direction: column;
+  .columns .title {
+    flex-basis: var(--col8);
+  }
+
+  .columns .content {
+    flex-basis: var(--col8);
   }
 }

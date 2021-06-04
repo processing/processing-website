@@ -28,7 +28,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
   const isProcessing = libraryName === 'processing';
 
   const { width } = useWindowSize();
-  const [show, setShow] = useState(width > 960 ? true : false);
+  const [show, setShow] = useState(width > 960);
 
   const intl = useIntl();
   useHighlight();

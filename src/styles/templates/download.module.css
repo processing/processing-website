@@ -29,9 +29,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: var(--margin-half) 0;
+  margin: var(--vertical-margin-large) 0;
   background-color: var(--lightgray);
-  padding: var(--margin-half) 0;
+  padding: 20px 0;
 }
 
 .logo {
@@ -142,7 +142,7 @@
 .links {
   color: var(--processing-blue-dark);
   font-weight: 700;
-  margin-bottom: var(--margin-quarter);
+  margin: var(--vertical-margin-small) 0;
 
   & li {
     display: inline;
@@ -160,5 +160,9 @@
       width: 70px;
       height: 70px;
     }
+  }
+
+  .links li {
+    display: block;
   }
 }
