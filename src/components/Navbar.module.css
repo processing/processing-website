@@ -207,14 +207,7 @@
   }
 
   .show {
-    height: auto;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
-  }
-
-  .noshow {
-    height: auto;
-    padding-left: var(--margin);
-    padding-right: var(--margin);
   }
 
   .logo {

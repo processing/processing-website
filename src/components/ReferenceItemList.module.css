@@ -68,3 +68,7 @@
 .exampleList .image {
   flex-basis: calc(100% / 6 * 2);
 }
+
+.exampleList pre {
+  white-space: pre-wrap;
+}
