@@ -64,6 +64,7 @@
 .exampleList .code {
   flex-basis: calc(100% / 6 * 4);
   position: relative;
+  flex: 1;
 }
 
 .exampleList .image {
