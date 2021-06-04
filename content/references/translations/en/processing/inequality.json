@@ -2,7 +2,13 @@
   "name": "!= (inequality)",
   "brief": "Determines if one expression is not equivalent to another",
   "description": "Determines if one expression is not equivalent to another.\n",
-  "related": [],
+  "related": [
+    "greaterthan",
+    "lessthan",
+    "greaterthanorequalto",
+    "lessthanorequalto",
+    "equality"
+  ],
   "syntax": ["value1 != value2"],
   "returns": "",
   "type": "function",

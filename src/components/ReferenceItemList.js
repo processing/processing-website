@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import classnames from 'classnames';
+import { widont } from '../utils/index.js';
 
 import CopyButton from './CopyButton';
 
@@ -40,9 +41,9 @@ export const CodeList = memo(
 
           // Description
           const description = descriptionIsHtml ? (
-            <span dangerouslySetInnerHTML={{ __html: item.description }} />
+            <span dangerouslySetInnerHTML={{ __html: widont(item.description) }} />
           ) : (
-            <span>{item.description}</span>
+            <span>{widont(item.description)}</span>
           );
 
           return (

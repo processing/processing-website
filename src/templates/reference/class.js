@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import { useIntl } from 'react-intl';
+import { widont } from '../../utils/index.js';
 
 import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
@@ -69,7 +70,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
               <h3>{entry.name}</h3>
             </Section>
             <Section title={intl.formatMessage({ id: 'description' })}>
-              <p dangerouslySetInnerHTML={{ __html: entry.description }} />
+              <p dangerouslySetInnerHTML={{ __html: widont(entry.description) }} />
             </Section>
             {examples && (
               <Section

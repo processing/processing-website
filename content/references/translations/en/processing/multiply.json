@@ -2,7 +2,7 @@
   "name": "* (multiply)",
   "brief": "Multiplies the values of the two parameters",
   "description": "Multiplies the values of the two parameters. Multiplication is equivalent to a sequence of addition. For example 5 * 4 is equivalent to 5 + 5 + 5 + 5.\n",
-  "related": [],
+  "related": ["addition", "divide"],
   "syntax": ["value1 * value2"],
   "returns": "",
   "type": "function",

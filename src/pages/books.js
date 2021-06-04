@@ -80,6 +80,7 @@ export const query = graphql`
         extension: { eq: "mdx" }
         childMdx: { fields: { locale: { eq: "en" } } }
       }
+      sort: { order: ASC, fields: childrenMdx___frontmatter___title }
     ) {
       nodes {
         name
