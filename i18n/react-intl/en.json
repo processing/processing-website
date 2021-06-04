@@ -94,6 +94,7 @@
   "level": "Level",
   "name": "Name",
   "className": "Class Name",
+  "library": "Library",
   "class": "Class",
   "description": "Description",
   "constructors": "Constructors",
