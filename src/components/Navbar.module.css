@@ -48,6 +48,7 @@
 
 .menuToggle {
   display: none;
+  padding: 0;
 }
 
 .menu {
@@ -215,10 +216,6 @@
     height: 0px;
   }
 
-  .menuWrapper {
-    padding-bottom: var(--gutter);
-  }
-
   .menu {
     display: none;
     flex-basis: var(--col5);
@@ -260,7 +257,6 @@
 
   .menuToggle {
     display: block;
-    padding-left: var(--gutter-half);
   }
 
   .item {

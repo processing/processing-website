@@ -158,7 +158,7 @@ const RelatedExamples = memo(({ heading, examples }) => {
   return (
     <div>
       <h3>{heading}</h3>
-      <ul className={classnames(grid.grid, css.related)}>
+      <ul className={grid.grid}>
         {examples.slice(0, 6).map((example, key) => (
           <ExampleItem
             node={example}
