@@ -1,5 +1,5 @@
 .root {
-  width: fit-content;
+  text-align: center;
   background-color: var(--processing-blue-dark);
   color: white;
   padding: 5px 18px 6px 18px;
@@ -10,11 +10,25 @@
   cursor: pointer;
 }
 
-.animate {
+.root:focus {
+  background: var(--darkgray);
+  color: white;
+}
+
+.root:hover {
+  color: white;
+}
+
+/*  Variant: Animate1 & Animate2 */
+
+.animate1,
+.animate2 {
   position: relative;
 }
 
-.animate::before {
+.animate1::before,
+.animate2::before,
+.animate2::after {
   content: "";
   position: absolute;
   top: 0;
@@ -27,32 +41,45 @@
   transform: translate(-3px, 3px);
 }
 
-.animate:hover::before {
+.animate1:hover::before,
+.animate2:hover::before {
   transform: translate(3px, -3px);
   color: white;
 }
 
-.animate.large::before {
+.animate1.large::before,
+.animate2.large::before {
   transform: translate(-5px, 5px);
 }
 
-.animate.large:hover::before {
+.animate1.large:hover::before,
+.animate2.large:hover::before {
   transform: translate(5px, -5px);
 }
 
-.root:focus {
-  background: var(--darkgray);
+/*  Variant: Animate2  */
+
+.animate2::after {
+  transform: translate(3px, -3px);
+  background-color: var(--processing-blue-mid);
+}
+
+.animate2:hover::after {
+  transform: translate(-3px, 3px);
   color: white;
 }
 
-.root:hover {
-  /* background: var(--processing-blue-mid); */
-  color: white;
+.animate2.large::after {
+  transform: translate(5px, -5px);
 }
 
-/*  Colors  */
+.animate2.large:hover::after {
+  transform: translate(-5px, 5px);
+}
 
-.root.gray {
+/*  Variant: Gray  */
+
+.gray {
   background-color: var(--lightgray);
   color: black;
   &:hover {

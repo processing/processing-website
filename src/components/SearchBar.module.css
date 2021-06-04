@@ -47,7 +47,7 @@
 @media (--reduced) {
   .root {
     align-self: baseline;
-    flex-basis: var(--col12);
+    flex-basis: var(--col4);
   }
 
   .hint {

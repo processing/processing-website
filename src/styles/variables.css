@@ -80,9 +80,8 @@
 
 @media (--small) {
   :root {
-    --margin: 16px;
+    --margin: 10px;
     --gutter: 8px;
-    --vertical-gutter: 20px;
 
     --text-xsmall: 0.7rem;
     --text-small: 0.8rem;

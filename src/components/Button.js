@@ -10,17 +10,15 @@ export const Button = ({
   to,
   href,
   size,
-  color,
+  variant,
   target,
   onClick,
   children,
-  tabIndex,
-  animate
+  tabIndex
 }) => {
   const classNames = classnames(css.root, className, {
     [css[size]]: size,
-    [css[color]]: color,
-    [css.animate]: animate
+    [css[variant]]: variant
   });
 
   return (

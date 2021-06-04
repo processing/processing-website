@@ -6,6 +6,7 @@
   & h1 {
     margin-bottom: var(--margin-half);
     font-size: var(--text-xxxlarge);
+    line-height: 1.2em;
   }
 
   & p {
@@ -17,8 +18,8 @@
 .examples,
 .takePart,
 .external {
-  padding-bottom: var(--margin);
-  padding-top: var(--margin);
+  padding-bottom: var(--vertical-gutter);
+  padding-top: var(--vertical-gutter);
 }
 
 /* Add border bottom to correct elements */
@@ -114,8 +115,8 @@
 /* Getting Started */
 
 .gettingStartedMessage {
-  padding-bottom: var(--margin);
-  padding-top: var(--margin);
+  padding-bottom: var(--vertical-gutter);
+  padding-top: var(--vertical-gutter);
 }
 
 .cardsWrapper {
@@ -223,7 +224,7 @@
   }
 
   .cards {
-    padding-bottom: var(--margin);
+    padding-bottom: var(--vertical-gutter);
   }
 
   .gettingStartedMessage {
@@ -244,7 +245,7 @@
   }
 
   .contribute {
-    margin-top: var(--margin);
+    margin-top: var(--vertical-gutter);
   }
 }
 
@@ -267,8 +268,7 @@
 
 @media (--small) {
   .hero {
-    min-height: auto;
-    padding-right: var(--margin);
+    padding: var(--margin) 0;
     & p {
       padding-top: var(--vertical-gutter);
       font-size: var(--text-medium);
@@ -276,13 +276,14 @@
   }
 
   .buttons {
-    justify-content: center;
-    align-items: center;
+    display: block;
     margin-bottom: 0;
   }
 
   .button {
+    display: block;
     margin-bottom: var(--vertical-gutter);
+    margin-right: 0;
   }
 
   .examples {
