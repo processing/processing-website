@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
+import classnames from 'classnames';
 
 import Header from './Header';
 import Footer from './Footer';
@@ -22,7 +23,7 @@ import css from './Layout.module.css';
 
 export const LayoutContext = React.createContext();
 
-const Layout = ({ children, withSidebar }) => {
+const Layout = ({ children, withSidebar, mainClassName }) => {
   const [headerScrolled, setHeaderScrolled] = useState(false);
   const [currentHeading, setCurrentHeading] = useState('');
 
@@ -79,7 +80,7 @@ const Layout = ({ children, withSidebar }) => {
           siteTitle={data.site.siteMetadata.title}
           scrolled={headerScrolled}
         />
-        <main className={css.main}>
+        <main className={classnames(css.main, mainClassName)}>
           <MDXProvider components={shortcodes}>{children}</MDXProvider>
         </main>
         <Footer

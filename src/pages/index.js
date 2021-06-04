@@ -28,7 +28,7 @@ const IndexPage = ({ data }) => {
   const randomExamples = useRandomArray(featuredExamples, 4);
 
   return (
-    <Layout>
+    <Layout mainClassName={css.main}>
       <Helmet>
         <title>Welcome to Processing!</title>
       </Helmet>
