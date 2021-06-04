@@ -69,7 +69,7 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "dev": "gatsby develop",
+    "dev": "gatsby develop -H 0.0.0.0",
     "build": "gatsby build",
     "start": "gatsby serve",
     "clean": "gatsby clean",

@@ -57,7 +57,7 @@
 }
 
 .itemDescription {
-  flex-basis: calc(100% / 6 * 4.5);
+  flex-basis: calc(100% / 6 * 3.5);
   margin: 0;
 }
 

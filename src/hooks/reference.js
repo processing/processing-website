@@ -71,7 +71,7 @@ export const usePreparedList = (items, libraryName, nameIsPath, shouldLink) => {
       if (typeof items[i] === 'string') {
         prepared.push(stringToListObject(items[i]));
       }
-      if (typeof items[i] === 'object') {
+      if (typeof items[i] === 'object' && items[i] !== null) {
         prepared.push(objectToListObject(items[i]));
       }
     }

@@ -80,11 +80,11 @@
 @media (--small) {
   .text {
     & h1 {
-      padding-top: var(--vertical-gutter);
+      padding-top: var(--vertical-margin-large);
     }
 
     & h2 {
-      margin-top: var(--vertical-gutter);
+      margin-top: var(--vertical-margin-large);
     }
   }
 
@@ -94,7 +94,7 @@
 
   .card {
     flex-basis: var(--col8);
-    padding-top: var(--vertical-gutter);
-    padding-bottom: var(--vertical-gutter);
+    padding-top: var(--vertical-margin-large);
+    padding-bottom: var(--vertical-margin-large);
   }
 }

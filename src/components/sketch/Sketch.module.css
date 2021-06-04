@@ -6,6 +6,13 @@
   );
 }
 
+.editorBtn {
+  position: absolute;
+  display: block;
+  right: 0;
+  bottom: 0;
+}
+
 .wrapper {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -34,6 +41,8 @@
 
 .code {
   transition: transform 0.5s;
+  position: relative;
+  z-index: 10;
 }
 
 .code.codeVisible {
@@ -52,5 +61,20 @@
 
   .left {
     margin-bottom: var(--margin);
+  }
+}
+
+@media (--small) {
+  .splash {
+    margin-right: 0;
+  }
+
+  .left {
+    display: block;
+  }
+
+  .code,
+  .editorBtn {
+    display: none;
   }
 }

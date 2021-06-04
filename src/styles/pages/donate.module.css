@@ -25,7 +25,7 @@
 .content {
   flex-basis: var(--col8);
   padding-right: var(--push3);
-  margin-bottom: var(--vertical-gutter);
+  margin-bottom: var(--vertical-margin-large);
   font-family: "Vollkorn", serif;
   font-size: var(--text-medium);
   line-height: 1.6em;
@@ -34,7 +34,7 @@
 @media (--small) {
   .root {
     & > h1 {
-      padding-top: var(--vertical-gutter);
+      padding-top: var(--vertical-margin-large);
     }
     & > h3 {
       padding-right: 0;

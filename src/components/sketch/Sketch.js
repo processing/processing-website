@@ -3,7 +3,7 @@ import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 import SketchGraphic from './SketchGraphic';
 import SketchCode from './SketchCode';
-import CoolButton from './CoolButton';
+import Button from '../Button';
 
 import css from './Sketch.module.css';
 import grid from '../../styles/grid.module.css';
@@ -102,11 +102,15 @@ const Sketch = ({ children }) => {
         </div>
         <div className={classnames(grid.col, css.right)}>
           <SketchGraphic {...state} />
-          <CoolButton onClick={onCodeToggle}>
+          <Button
+            onClick={onCodeToggle}
+            size="large"
+            variant="animate2"
+            className={css.editorBtn}>
             {showCode
               ? intl.formatMessage({ id: 'closeEditor' })
               : intl.formatMessage({ id: 'openEditor' })}
-          </CoolButton>
+          </Button>
         </div>
       </div>
     </div>

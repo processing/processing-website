@@ -1,9 +1,12 @@
 .hero {
   padding: 60px 0;
+  position: relative;
+  z-index: 1;
 
   & h1 {
     margin-bottom: var(--margin-half);
     font-size: var(--text-xxxlarge);
+    line-height: 1.2em;
   }
 
   & p {
@@ -15,8 +18,8 @@
 .examples,
 .takePart,
 .external {
-  padding-bottom: var(--margin);
-  padding-top: var(--margin);
+  padding-bottom: var(--vertical-margin-large);
+  padding-top: var(--vertical-margin-large);
 }
 
 /* Add border bottom to correct elements */
@@ -24,7 +27,7 @@
 .gettingStarted,
 .takePart,
 .external {
-  border-bottom: 30px solid var(--lightgray);
+  border-bottom: var(--vertical-margin-large) solid var(--lightgray);
 }
 
 /* Shortcut for 4 columns */
@@ -112,8 +115,8 @@
 /* Getting Started */
 
 .gettingStartedMessage {
-  padding-bottom: var(--margin);
-  padding-top: var(--margin);
+  padding-bottom: var(--vertical-margin-large);
+  padding-top: var(--vertical-margin-large);
 }
 
 .cardsWrapper {
@@ -221,7 +224,7 @@
   }
 
   .cards {
-    padding-bottom: var(--margin);
+    padding-bottom: var(--vertical-margin-large);
   }
 
   .gettingStartedMessage {
@@ -238,11 +241,11 @@
 
   .participateButtton,
   .contributeButtton {
-    margin-bottom: var(--vertical-gutter);
+    margin-bottom: var(--vertical-margin-large);
   }
 
   .contribute {
-    margin-top: var(--margin);
+    margin-top: var(--vertical-margin-large);
   }
 }
 
@@ -257,26 +260,30 @@
   .example {
     flex-basis: var(--col4);
   }
+
+  .moreExamples {
+    text-align: center;
+  }
 }
 
 @media (--small) {
   .hero {
-    min-height: auto;
-    padding-right: var(--margin);
+    padding: var(--margin) 0;
     & p {
-      padding-top: var(--vertical-gutter);
+      padding-top: var(--vertical-margin-large);
       font-size: var(--text-medium);
     }
   }
 
   .buttons {
-    justify-content: center;
-    align-items: center;
+    display: block;
     margin-bottom: 0;
   }
 
   .button {
-    margin-bottom: var(--vertical-gutter);
+    display: block;
+    margin-bottom: var(--vertical-margin-large);
+    margin-right: 0;
   }
 
   .examples {
@@ -324,7 +331,7 @@
   }
 
   .externalLinks {
-    margin-bottom: var(--vertical-gutter);
+    margin-bottom: var(--vertical-margin-large);
 
     & ul {
       columns: 1;
@@ -332,6 +339,6 @@
   }
 
   .partnersContainer {
-    margin-bottom: var(--vertical-gutter);
+    margin-bottom: var(--vertical-margin-large);
   }
 }

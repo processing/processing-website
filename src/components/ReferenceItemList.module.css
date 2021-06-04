@@ -45,11 +45,12 @@
   font-weight: bold;
 }
 
-.codeList code.name {
+.codeList.parameters code.name {
   white-space: nowrap;
 }
 
 .codeList.parameters code.type {
+  word-break: keep-all;
   font-weight: normal;
   max-width: 600px;
 }

@@ -1,6 +1,6 @@
 .root {
   flex-basis: 100%;
-  margin-bottom: var(--vertical-gutter);
+  margin-bottom: var(--vertical-margin-large);
 }
 
 .title,

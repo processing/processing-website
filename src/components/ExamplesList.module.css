@@ -70,7 +70,7 @@
 
 @media (--small) {
   .category {
-    padding-top: var(--vertical-gutter);
+    padding-top: var(--vertical-margin-large);
   }
 
   .intro {

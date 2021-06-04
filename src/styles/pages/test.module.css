@@ -15,3 +15,14 @@
   background-color: rgba(255, 0, 0, 0.1);
   min-height: 200px;
 }
+
+.large {
+  background: rgba(0, 0, 0, 0.2);
+  margin-bottom: var(--vertical-margin-large);
+}
+
+.small {
+  height: 200px;
+  background: rgba(0, 0, 0, 0.1);
+  margin-bottom: var(--vertical-margin-large-small);
+}

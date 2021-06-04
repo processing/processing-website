@@ -15,7 +15,7 @@
 }
 
 .section {
-  margin-bottom: var(--vertical-gutter);
+  margin-bottom: var(--vertical-margin-large);
 }
 
 .placeholder {
