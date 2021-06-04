@@ -62,6 +62,7 @@
 @media (--small) {
   .columns .title {
     flex-basis: var(--col8);
+    margin-bottom: var(--vertical-margin-small);
   }
 
   .columns .content {

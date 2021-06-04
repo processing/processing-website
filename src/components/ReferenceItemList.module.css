@@ -2,6 +2,7 @@
 
 .codeList {
   display: table;
+  font-size: var(--text-regular);
 }
 
 .codeList .item {
@@ -57,7 +58,7 @@
 /*  Example list  */
 
 .exampleList .item {
-  margin-bottom: var(--margin-half);
+  margin-bottom: var(--vertical-margin-large);
 }
 
 .exampleList .code {
@@ -71,5 +72,6 @@
 }
 
 .exampleList pre {
+  margin: 0;
   white-space: pre-wrap;
 }
