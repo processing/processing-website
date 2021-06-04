@@ -2,7 +2,7 @@
   "name": ". (dot)",
   "brief": "Provides access to an object's methods and data",
   "description": "Provides access to an object's methods and data. An object is one instance of a class and may contain both methods (object functions) and data (object variables and constants), as specified in the class definition. The dot operator directs the program to the information encapsulated within an object.\n",
-  "related": [],
+  "related": ["Object"],
   "syntax": ["object.method()", "object.data"],
   "returns": "",
   "type": "function",

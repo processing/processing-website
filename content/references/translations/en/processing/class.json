@@ -2,7 +2,7 @@
   "name": "class",
   "brief": "\rKeyword used to indicate the declaration of a class",
   "description": "\rKeyword used to indicate the declaration of a class. A class is a composite of fields (data) and methods (functions that are a part of the class) which may be instantiated as objects. The first letter of a class name is usually uppercase to separate it from other kinds of variables. A related tutorial on <a href=\"https://docs.oracle.com/javase/tutorial/java/concepts/index.html\" target=\"_blank\">Object-Oriented Programming</a> is hosted on the Oracle website.\r\n",
-  "related": [],
+  "related": ["Object"],
   "syntax": ["class ClassName {\r", "  statements\r", "}\r"],
   "returns": "",
   "type": "function",

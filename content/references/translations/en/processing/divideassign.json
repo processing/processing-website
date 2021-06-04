@@ -2,7 +2,7 @@
   "name": "/= (divide assign)",
   "brief": "Combines division with assignment",
   "description": "Combines division with assignment. The expression <b>a /= b</b> is equivalent to <b>a = a / b</b>. \n",
-  "related": [],
+  "related": ["divide", "assign"],
   "syntax": ["value1 /= value2"],
   "returns": "",
   "type": "function",

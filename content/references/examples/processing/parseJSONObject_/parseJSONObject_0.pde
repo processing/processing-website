@@ -1,4 +1,4 @@
-String data = "{ &#92"id&#92": 0, &#92"species&#92": &#92"Panthera leo&#92", &#92"name&#92": &#92"Lion&#92"}";
+String data = "{ \"id\": 0, \"species\": \"Panthera leo\", \"name\": \"Lion\"}";
 
 void setup() {
   JSONObject json = parseJSONObject(data);

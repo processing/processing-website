@@ -2,7 +2,7 @@
   "name": "case",
   "brief": "Denotes the different names to be evaluated with the parameter in the <b>switch</b> structure",
   "description": "Denotes the different names to be evaluated with the parameter in the <b>switch</b> structure.\n",
-  "related": [],
+  "related": ["switch", "default", "break"],
   "syntax": ["case name: statements"],
   "returns": "",
   "type": "function",
