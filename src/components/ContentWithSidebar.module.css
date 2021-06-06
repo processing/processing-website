@@ -11,5 +11,6 @@
   .root.collapsed {
     flex-basis: var(--col8);
     margin-left: 0;
+    margin-top: 40px;
   }
 }
