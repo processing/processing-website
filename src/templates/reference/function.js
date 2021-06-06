@@ -66,12 +66,12 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
         />
         {entry ? (
           <Content collapsed={!showSidebar}>
-            {!isProcessing && (
+            {isProcessing ? null : (
               <Section title={intl.formatMessage({ id: 'library' })}>
                 <h4>{data.libName.frontmatter.title}</h4>
               </Section>
             )}
-            <Section title={intl.formatMessage({ id: 'name' })}>
+            <Section short title={intl.formatMessage({ id: 'name' })}>
               <h3>{entry.name}</h3>
             </Section>
             {entry?.classanchor && (
