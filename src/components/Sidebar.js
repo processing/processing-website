@@ -12,30 +12,30 @@ import css from './Sidebar.module.css';
 
 export const Sidebar = memo(({ children, title, show, setShow }) => {
   const { headerScrolled } = useContext(LayoutContext);
+
   return (
-    <div className={classnames(css.root, { [css.show]: show })}>
+    <div
+      className={classnames(css.root, {
+        [css.show]: show,
+        [css.headerScrolled]: headerScrolled
+      })}>
       <div
-        className={classnames(css.sidebarWrapper, {
-          [css.headerScrolled]: headerScrolled
-        })}>
-        <div
-          className={css.toggleButton}
-          onClick={() => {
-            if (setShow) setShow((s) => !s);
-          }}
-          onKeyDown={(e) => e.keyCode === 13 && setShow((s) => !s)}
-          role={'button'}
-          tabIndex={'0'}>
-          <span className={css.toggleLabel}>index</span>
-          {show ? '×' : '+'}
-        </div>
-        {show && (
-          <Fragment>
-            {title && <h2>{title}</h2>}
-            {children}
-          </Fragment>
-        )}
+        className={css.toggleButton}
+        onClick={() => {
+          if (setShow) setShow((s) => !s);
+        }}
+        onKeyDown={(e) => e.keyCode === 13 && setShow((s) => !s)}
+        role={'button'}
+        tabIndex={'0'}>
+        <span className={css.toggleLabel}>index</span>
+        {show ? '×' : '+'}
       </div>
+      {show && (
+        <Fragment>
+          {title && <h2 className={css.title}>{title}</h2>}
+          {children}
+        </Fragment>
+      )}
     </div>
   );
 });
@@ -65,11 +65,11 @@ export const SidebarTableOfContents = memo(
       <Sidebar title={title} show={show} setShow={setShow}>
         <div className={css.listWrapper}>
           <ul>
-            {items.map((item) => {
+            {items.map((item, index) => {
               const isCurrent = currentHeading === item.url.replace('#', '');
               return (
                 <li
-                  key={item.title}
+                  key={`item-${index}`}
                   className={classnames(css.tocItem, {
                     [css.active]: isCurrent
                   })}>

@@ -55,7 +55,7 @@
   }
 
   .columns .content {
-    flex-basis: var(--col5);
+    flex-basis: var(--col6);
   }
 }
 
@@ -67,5 +67,13 @@
 
   .columns .content {
     flex-basis: var(--col8);
+  }
+
+  .columns.short .title {
+    flex-basis: var(--col2);
+  }
+
+  .columns.short .content {
+    flex-basis: var(--col6);
   }
 }

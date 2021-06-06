@@ -1,5 +1,7 @@
 .root {
   flex-basis: var(--col6);
+  margin-left: var(--col2);
+  transition: margin-left 0.2s ease;
 }
 
 .root.collapsed {
