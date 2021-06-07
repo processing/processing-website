@@ -12,7 +12,7 @@
 .codeList code,
 .codeList span {
   display: table-cell;
-  padding-bottom: var(--margin-quarter);
+  padding-bottom: var(--vertical-margin-xsmall);
 }
 
 .codeList code {
