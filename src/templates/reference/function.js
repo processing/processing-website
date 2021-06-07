@@ -66,7 +66,12 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
         />
         {entry ? (
           <Content collapsed={!showSidebar}>
-            <Section title={intl.formatMessage({ id: 'name' })}>
+            {isProcessing ? null : (
+              <Section title={intl.formatMessage({ id: 'library' })}>
+                <h4>{data.libName.frontmatter.title}</h4>
+              </Section>
+            )}
+            <Section short title={intl.formatMessage({ id: 'name' })}>
               <h3>{entry.name}</h3>
             </Section>
             {entry?.classanchor && (
@@ -232,6 +237,11 @@ export const query = graphql`
             ...GatsbyImageSharpFluid
           }
         }
+      }
+    }
+    libName: mdx(frontmatter: { name: { eq: $libraryName } }) {
+      frontmatter {
+        title
       }
     }
   }
