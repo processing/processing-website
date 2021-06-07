@@ -16,8 +16,8 @@
 .donate {
   width: 100%;
   height: 550px;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: var(--vertical-margin-small);
+  margin-bottom: var(--vertical-margin-small);
   border: none;
   padding-left: var(--gutter);
 }

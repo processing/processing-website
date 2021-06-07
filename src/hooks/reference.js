@@ -37,7 +37,7 @@ export const usePreparedItems = (items, libraryName) => {
 };
 
 /**
-  Hook to prepare either a list of strings or object to show in ReferenceItemList
+  Hook to prepare either a list of strings or object to show in ContentList
   @param {Array} items Array of string or objects from JSON reference files
 **/
 export const usePreparedList = (items, libraryName, nameIsPath, shouldLink) => {

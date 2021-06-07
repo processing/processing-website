@@ -4,12 +4,12 @@ import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
 import Img from 'gatsby-image';
 
-import ToggleButton from './ToggleButton';
+import ToggleButton from '../ToggleButton';
 
-import { useTreeSort } from '../hooks';
+import { useTreeSort } from '../../hooks';
 
 import css from './ExamplesList.module.css';
-import grid from '../styles/grid.module.css';
+import grid from '../../styles/grid.module.css';
 
 const ExamplesList = ({ tree }) => {
   const { locale } = useLocalization();

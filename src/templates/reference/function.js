@@ -7,10 +7,10 @@ import { useIntl } from 'react-intl';
 import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
 import { SidebarTree } from '../../components/Sidebar';
-import Section from '../../components/ReferenceItemSection';
-import License from '../../components/ReferenceLicense';
-import { CodeList, ExampleList } from '../../components/ReferenceItemList';
-import { ExampleItem } from '../../components/ExamplesList';
+import Section from '../../components/reference/Section';
+import License from '../../components/reference/License';
+import { CodeList, ExampleList } from '../../components/reference/ContentList';
+import { ExampleItem } from '../../components/examples/ExamplesList';
 import { widont } from '../../utils/index.js';
 
 import { useTree, useHighlight, useSidebar } from '../../hooks';

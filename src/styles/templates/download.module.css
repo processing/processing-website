@@ -126,8 +126,6 @@
 }
 
 .assetLink {
-  white-space: nowrap;
-
   &::after {
     content: "/";
     color: black;

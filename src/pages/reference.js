@@ -7,7 +7,7 @@ import classnames from 'classnames';
 import CategoryNav from '../components/CategoryNav';
 import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
-import ReferenceList from '../components/ReferenceList';
+import ReferenceList from '../components/reference/ReferenceList';
 import FilterBar from '../components/FilterBar';
 
 import { useTree, useFilteredTree } from '../hooks';

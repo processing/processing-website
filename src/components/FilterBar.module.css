@@ -13,6 +13,7 @@
   }
 
   & input {
+    border-radius: 0;
     transition: border-color 0.2s;
     border: none;
     border-bottom: 1.5px solid var(--darkgray);

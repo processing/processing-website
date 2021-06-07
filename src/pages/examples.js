@@ -5,7 +5,7 @@ import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 
 import Donate from '../components/character/Donate';
-import ExamplesList from '../components/ExamplesList';
+import ExamplesList from '../components/examples/ExamplesList';
 import Layout from '../components/Layout';
 import FilterBar from '../components/FilterBar';
 
