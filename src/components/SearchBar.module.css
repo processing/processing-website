@@ -1,5 +1,5 @@
 .root {
-  flex-basis: var(--col1);
+  /* flex-basis: var(--col1); */
 }
 
 .input {
