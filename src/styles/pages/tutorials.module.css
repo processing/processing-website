@@ -16,14 +16,13 @@
 
 .list {
   flex-basis: var(--col8);
-  margin: var(--gutter) 0;
+  margin: var(--vertical-margin-small) 0;
   list-style: none;
 }
 
 .card {
   flex-basis: var(--col2);
-  padding-top: var(--gutter);
-  padding-bottom: var(--gutter);
+  margin-bottom: var(--vertical-margin-small);
   background-color: none;
   transition: background-color 0.2s ease;
   pointer-events: auto;
@@ -74,7 +73,9 @@
 }
 
 .level {
-  margin-top: var(--gutter-half);
+  margin-top: var(--vertical-margin-xsmall);
+  font-size: var(--text-small);
+  color: var(--processing-blue-dark);
 }
 
 @media (--small) {
@@ -94,7 +95,5 @@
 
   .card {
     flex-basis: var(--col8);
-    padding-top: var(--vertical-margin-large);
-    padding-bottom: var(--vertical-margin-large);
   }
 }
