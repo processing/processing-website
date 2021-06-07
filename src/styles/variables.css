@@ -9,12 +9,24 @@
   --font-serif: "Vollkorn", Garamond, Georgia, serif;
   --font-mono: "Space Mono", Menlo, monospace;
 
-  --processing-blue-light: #508bff;
-  --processing-blue-mid: #0251c8;
-  --processing-blue-dark: #1e2a67;
+  --processing-blue-light: #82afff;
+  --processing-blue-mid: #0564ff;
+  --processing-blue-deep: #1e32aa;
+  --processing-blue-dark: #1e2878;
+  /* --processing-blue-dark: #1e32aa; */
+
+  --topbar-background: #0a1428;
+
   --processing-blue-gradient: #508bff2e;
+
+  --p5-light: #fd9db9;
   --p5-mid: #ff4077;
-  --foundation-mid: #7446ac;
+  --p5-dark: #af1f42;
+
+  --foundation-light: #d4b2fe;
+  --foundation-mid: #9c4bff;
+  --foundation-dark: #5501a4;
+
   --lightgray: #f5f5f5;
   --gray: #dbdbdb;
   --darkgray: #898989;

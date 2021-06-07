@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 import { useLocalization, LocalizedLink as Link } from 'gatsby-theme-i18n';
 
 import { Button } from './Button';
 
-import css from './Selector.module.css';
+import css from './LanguageSelector.module.css';
 
-const Selector = () => {
+const LanguageSelector = () => {
   const { config, locale } = useLocalization();
   const [showLanguage, setShowLanguage] = useState(false);
 
@@ -16,7 +16,17 @@ const Selector = () => {
   const onClick = () => {
     setShowLanguage(!showLanguage);
   };
-
+  useEffect(() => {
+    const listener = (e) => {
+      setShowLanguage(false);
+    };
+    if (showLanguage) {
+      document.addEventListener('click', listener);
+    }
+    return () => {
+      document.removeEventListener('click', listener);
+    };
+  }, [showLanguage]);
   return (
     <div className={css.root}>
       <Button onClick={onClick} className={css.languageButton}>
@@ -24,7 +34,7 @@ const Selector = () => {
       </Button>
       <ul
         className={classnames(css.languagePicker, {
-          [css.show]: showLanguage,
+          [css.show]: showLanguage
         })}>
         {config.map((conf, key) => (
           <li key={key}>
@@ -41,4 +51,4 @@ const Selector = () => {
   );
 };
 
-export default Selector;
+export default LanguageSelector;
