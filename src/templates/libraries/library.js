@@ -7,7 +7,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { useIntl } from 'react-intl';
 
 import Layout from '../../components/Layout';
-import ReferenceList from '../../components/ReferenceList';
+import ReferenceList from '../../components/reference/ReferenceList';
 
 import { referencePath } from '../../utils/paths';
 import { useTree, useHighlight } from '../../hooks';

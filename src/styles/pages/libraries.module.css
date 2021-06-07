@@ -12,7 +12,7 @@
 }
 
 .pushDown {
-  margin-top: var(--margin);
+  margin-top: var(--vertical-margin-small);
 }
 
 .category {

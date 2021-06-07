@@ -57,8 +57,8 @@
 }
 
 .latestLabel {
-  flex: 0 0 100%;
-  margin-bottom: var(--gutter-half);
+  flex-basis: 100%;
+  margin-bottom: var(--vertical-margin-small);
 }
 
 .latestVersion {
@@ -126,8 +126,6 @@
 }
 
 .assetLink {
-  white-space: nowrap;
-
   &::after {
     content: "/";
     color: black;
@@ -164,5 +162,27 @@
 
   .links li {
     display: block;
+  }
+
+  .latestVersion {
+    flex-basis: 100%;
+  }
+
+  .table {
+    display: block;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > span {
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+
+    & > span:last-child {
+      flex-basis: 100%;
+    }
   }
 }

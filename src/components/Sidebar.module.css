@@ -1,62 +1,36 @@
 .root {
-  flex-flow: column;
-  flex-basis: var(--margin);
   left: 0;
   z-index: 700;
   overflow: hidden;
   height: 100%;
   white-space: nowrap;
 
-  & h2 {
-    font-size: var(--text-reduced);
-    padding-top: 20px;
-  }
-}
-
-.root.show {
-  flex-basis: var(--col2);
-}
-
-.root.show .sidebarWrapper {
-  padding-left: var(--margin);
-  padding-right: var(--gutter);
-  width: var(--col2);
-}
-
-.root .sidebarWrapper {
-  width: var(--margin);
-}
-
-.sidebarWrapper {
   display: flex;
   flex-direction: column;
   position: fixed;
   top: 150px;
   left: 0;
   height: calc(100vh - 150px);
-  overflow-y: scroll;
   transition: top 0.2s ease-in-out, width 0.4s ease;
   background: var(--lightgray);
-  overflow: auto;
-
-  & a {
-    padding-left: var(--gutter);
-    text-decoration: none;
-    font-size: var(--text-small);
-    line-height: 1.6rem;
-    font-family: var(--font-mono);
-    text-overflow: ellipsis;
-    color: var(--black);
-    display: block;
-    &:hover {
-      color: var(--processing-blue-mid);
-    }
-  }
+  width: var(--margin);
 }
 
-.sidebarWrapper.headerScrolled {
+.root.headerScrolled {
   top: 60px;
   height: calc(100vh - 60px);
+}
+
+.root.show {
+  flex-basis: var(--col2);
+  padding-left: var(--margin);
+  padding-right: var(--gutter);
+  width: var(--col2);
+}
+
+.title {
+  font-size: var(--text-reduced);
+  padding-top: 20px;
 }
 
 .toggleButton {
@@ -67,6 +41,9 @@
   font-weight: 700;
   font-size: var(--text-large);
   color: var(--darkgray);
+  & .toggleLabel {
+    display: none;
+  }
 }
 
 .listWrapper {
@@ -77,34 +54,51 @@
 
 @media (--reduced) {
   .root {
-    position: absolute;
-    left: auto;
-    right: 0;
-  }
-
-  .root .sidebarWrapper {
     top: 100px;
-    right: 0;
-    left: auto;
-    height: calc(100vh - 100px);
-    width: var(--margin-double);
+    height: 48px;
+    width: auto;
+    padding-left: calc(var(--margin) + var(--gutter));
+    padding-right: var(--gutter);
   }
-
-  .root.show .sidebarWrapper {
-    right: 0;
-    left: auto;
-    width: var(--col8);
+  .toggleButton {
+    position: relative;
+    top: 12px;
+    right: auto;
+    & .toggleLabel {
+      position: relative;
+      top: -2px;
+      padding-right: 3px;
+      font-size: var(--text-small);
+      text-transform: uppercase;
+      display: inline;
+    }
+  }
+  .root.headerScrolled {
+    top: 50px;
+    height: 48px;
+  }
+  .root.show {
+    width: 100%;
+    height: calc(100vh - 100px);
     padding-left: calc(var(--margin) + var(--gutter));
     padding-right: calc(var(--margin) + var(--gutter));
     padding-bottom: var(--vertical-margin-large);
-    & .sidebarWrapper {
-      max-width: auto;
-    }
   }
 
-  .sidebarWrapper.headerScrolled {
+  .root.show.headerScrolled {
     top: 50px;
     height: calc(100vh - 50px);
+  }
+
+  .root.show .sidebarWrapper {
+    max-width: auto;
+  }
+  .root.show .toggleButton {
+    position: absolute;
+    right: var(--gutter);
+    & .toggleLabel {
+      display: none;
+    }
   }
 }
 
@@ -124,37 +118,5 @@
     &:hover {
       color: inherit;
     }
-  }
-}
-
-@media (--small) {
-  .root {
-    right: 0;
-    left: auto;
-  }
-
-  .root .sidebarWrapper {
-    top: 100px;
-    right: 0;
-    left: auto;
-    height: calc(100vh - 100px);
-    width: var(--margin-double);
-  }
-
-  .root.show .sidebarWrapper {
-    right: 0;
-    left: auto;
-    width: var(--col8);
-    padding-left: calc(var(--margin) + var(--gutter));
-    padding-right: calc(var(--margin) + var(--gutter));
-    padding-bottom: var(--vertical-margin-large);
-    & .sidebarWrapper {
-      max-width: auto;
-    }
-  }
-
-  .sidebarWrapper.headerScrolled {
-    top: 50px;
-    height: calc(100vh - 50px);
   }
 }

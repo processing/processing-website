@@ -7,10 +7,10 @@ import { useIntl } from 'react-intl';
 import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
 import { SidebarTree } from '../../components/Sidebar';
-import Section from '../../components/ReferenceItemSection';
-import License from '../../components/ReferenceLicense';
-import { CodeList, ExampleList } from '../../components/ReferenceItemList';
-import { ExampleItem } from '../../components/ExamplesList';
+import Section from '../../components/reference/Section';
+import License from '../../components/reference/License';
+import { CodeList, ExampleList } from '../../components/reference/ContentList';
+import { ExampleItem } from '../../components/examples/ExamplesList';
 import { widont } from '../../utils/index.js';
 
 import { useTree, useHighlight, useSidebar } from '../../hooks';
@@ -66,12 +66,12 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
         />
         {entry ? (
           <Content collapsed={!showSidebar}>
-            {!isProcessing && (
+            {isProcessing ? null : (
               <Section title={intl.formatMessage({ id: 'library' })}>
                 <h4>{data.libName.frontmatter.title}</h4>
               </Section>
             )}
-            <Section title={intl.formatMessage({ id: 'name' })}>
+            <Section short title={intl.formatMessage({ id: 'name' })}>
               <h3>{entry.name}</h3>
             </Section>
             {entry?.classanchor && (

@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import * as css from './ReferenceLicense.module.css';
+import * as css from './License.module.css';
 
 const License = () => {
   return (

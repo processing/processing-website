@@ -3,7 +3,7 @@ import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import classnames from 'classnames';
 
 import css from './ReferenceList.module.css';
-import grid from '../styles/grid.module.css';
+import grid from '../../styles/grid.module.css';
 
 const ReferenceList = ({ tree, library }) => {
   return (

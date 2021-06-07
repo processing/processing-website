@@ -71,7 +71,7 @@
   color: var(--processing-blue-dark);
   font-size: var(--text-medium);
   font-weight: 700;
-
+  white-space: nowrap;
   & a:hover {
     color: var(--processing-blue-dark);
   }

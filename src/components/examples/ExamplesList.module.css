@@ -11,7 +11,7 @@
 .categoryName {
   display: flex;
   align-items: center;
-  margin-top: var(--margin-half);
+  margin-top: var(--vertical-margin-medium);
 
   & h2 {
     flex: 1;
@@ -25,7 +25,7 @@
 }
 
 .categoryDescription {
-  margin-bottom: var(--margin);
+  margin-bottom: var(--vertical-margin-large);
 }
 
 .subcategoryName {
@@ -38,7 +38,7 @@
 
 .cover {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: var(--vertical-margin-xsmall);
 }
 
 .item {
@@ -65,8 +65,13 @@
 }
 
 @media (--small) {
-  .category {
-    padding-top: var(--vertical-margin-large);
+  .categoryName {
+    display: block;
+
+    & .toggleButton {
+      text-align: left;
+      margin: var(--vertical-margin-small) 0;
+    }
   }
 
   .intro {

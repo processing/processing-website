@@ -11,7 +11,7 @@ import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
 import { SidebarTree } from '../../components/Sidebar';
 import Tabs from '../../components/Tabs';
-import { ExampleItem } from '../../components/ExamplesList';
+import { ExampleItem } from '../../components/examples/ExamplesList';
 
 import { referencePath } from '../../utils/paths';
 import { useTree, useSidebar } from '../../hooks';

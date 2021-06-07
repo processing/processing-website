@@ -1,15 +1,16 @@
 .hero {
-  padding: 60px 0;
+  padding: var(--vertical-margin-large) 0;
   position: relative;
   z-index: 1;
 
   & h1 {
-    margin-bottom: var(--margin-half);
+    margin-bottom: 0;
     font-size: var(--text-xxxlarge);
     line-height: 1.2em;
   }
 
   & p {
+    margin: var(--vertical-margin-small) 0;
     font-size: var(--text-large);
   }
 }
@@ -43,7 +44,7 @@
 .buttons {
   display: flex;
   flex-wrap: wrap;
-  margin: var(--margin) 0;
+  margin: var(--vertical-margin-large) 0;
 }
 
 .button {
@@ -61,7 +62,7 @@
   cursor: pointer;
 
   & h4 {
-    margin-top: var(--gutter-half);
+    margin-top: var(--vertical-margin-small);
     margin-bottom: 0px;
     color: var(--processing-blue-dark);
     transition: color 0.2s ease;
@@ -148,15 +149,16 @@
   align-content: space-around;
 }
 
+.participateButton,
+.contributeButton {
+  margin-top: var(--vertical-margin-small);
+  display: inline-flex;
+}
+
 .participateButton {
   display: inline-flex;
   flex: 1;
   align-items: flex-end;
-}
-
-.contributeButton {
-  margin-top: var(--gutter);
-  display: inline-flex;
 }
 
 .externalLinks {
@@ -250,6 +252,10 @@
 }
 
 @media (--reduced) {
+  .main {
+    padding-top: 0;
+  }
+
   .hero {
     min-height: auto;
     & h1 {
@@ -268,9 +274,8 @@
 
 @media (--small) {
   .hero {
-    padding: var(--margin) 0;
+    /* padding: var(--margin) 0; */
     & p {
-      padding-top: var(--vertical-margin-large);
       font-size: var(--text-medium);
     }
   }
