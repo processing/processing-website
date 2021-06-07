@@ -78,7 +78,7 @@
     --text-regular: 0.875rem;
     --text-medium: 1rem;
     --text-large: 1.2rem;
-    --text-xlarge: 1.3rem;
+    --text-xlarge: 1.5rem;
     --text-xxlarge: 2rem;
     --text-xxxlarge: 2.25rem;
   }
@@ -88,14 +88,5 @@
   :root {
     --margin: 10px;
     --gutter: 8px;
-
-    --text-xsmall: 0.7rem;
-    --text-small: 0.8rem;
-    --text-regular: 0.875rem;
-    --text-medium: 1rem;
-    --text-large: 1.2rem;
-    --text-xlarge: 1.3rem;
-    --text-xxlarge: 2rem;
-    --text-xxxlarge: 2.25rem;
   }
 }
