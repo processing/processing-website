@@ -76,7 +76,7 @@
 @media (--reduced) {
   .subcategoryTitle {
     flex-basis: var(--col8);
-    margin-bottom: var(--gutter);
+    margin-bottom: var(--vertical-margin-small);
 
     & .line {
       border-left: solid 12px var(--lightgray);
@@ -90,7 +90,7 @@
   .item {
     flex-wrap: wrap;
     border-left: none;
-    margin-bottom: var(--gutter-half);
+    margin-bottom: var(--vertical-margin-small);
   }
 }
 
@@ -101,13 +101,9 @@
     }
   }
 
-  .item {
-    margin-bottom: var(--gutter);
-  }
-
   .itemName {
     flex-basis: var(--col8);
-    margin-bottom: var(--gutter);
+    margin-bottom: var(--vertical-margin-xsmall);
   }
 
   .itemBrief {
