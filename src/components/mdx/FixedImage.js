@@ -12,6 +12,7 @@ const FixedImage = ({
   marginLeft,
   marginRight,
   style,
+  side
 }) => {
   const _style = {
     width,
@@ -23,7 +24,7 @@ const FixedImage = ({
 
   return (
     <div
-      className={classnames(css.root, { [css.inline]: inline })}
+      className={classnames(css.root, { [css.inline]: inline, [css.side]: side })}
       style={_style}>
       {children}
     </div>
