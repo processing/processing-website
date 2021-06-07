@@ -10,7 +10,9 @@
   font-weight: 700;
   color: var(--processing-blue-dark);
 }
-
+.contentWrapper {
+  flex-basis: var(--col5);
+}
 .content {
   & h2 {
     font-size: var(--text-large);

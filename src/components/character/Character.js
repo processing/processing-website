@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useMemo } from 'react';
+import classnames from 'classnames';
 
 import Eye from './Eye';
 
@@ -6,7 +7,7 @@ import css from './Character.module.css';
 
 import characters from './characters.json';
 
-const Character = ({ num }) => {
+const Character = ({ num, className }) => {
   const strokeWidth = 30;
   const [moving, setMoving] = useState(null);
 
@@ -35,10 +36,9 @@ const Character = ({ num }) => {
   };
 
   return (
-    <div className={css.root}>
+    <div className={classnames(css.root, { [className]: className })}>
       <svg
-        width={150}
-        height={150}
+        viewBox={'0 0 150 150'}
         onMouseEnter={registerEnter}
         onMouseLeave={registerLeave}>
         {shapes.map((shape, index) => {

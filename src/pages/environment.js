@@ -13,6 +13,7 @@ import { SidebarTableOfContents } from '../components/Sidebar';
 import { useHighlight, useSidebar } from '../hooks';
 
 import css from '../styles/pages/page.module.css';
+
 import grid from '../styles/grid.module.css';
 
 const Environment = ({ data }) => {
@@ -36,7 +37,7 @@ const Environment = ({ data }) => {
           show={showSidebar}
         />
         {mdx !== null ? (
-          <Content collapsed={!showSidebar}>
+          <Content collapsed={!showSidebar} className={css.contentWrapper}>
             <h1>{mdx.frontmatter.title}</h1>
             <div className={css.content}>
               <MDXRenderer>{mdx.body}</MDXRenderer>
