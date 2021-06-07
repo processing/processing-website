@@ -2,12 +2,12 @@ import React, { memo } from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import classnames from 'classnames';
-import { widont } from '../utils/index.js';
+import { widont } from '../../utils/index.js';
 
-import CopyButton from './CopyButton';
+import CopyButton from './../CopyButton';
 
-import css from './ReferenceItemList.module.css';
-import grid from '../styles/grid.module.css';
+import css from './ContentList.module.css';
+import grid from '../../styles/grid.module.css';
 
 export const CodeList = memo(
   ({ items, variant, nameIsHtml, descriptionIsHtml }) => {
@@ -41,7 +41,9 @@ export const CodeList = memo(
 
           // Description
           const description = descriptionIsHtml ? (
-            <span dangerouslySetInnerHTML={{ __html: widont(item.description) }} />
+            <span
+              dangerouslySetInnerHTML={{ __html: widont(item.description) }}
+            />
           ) : (
             <span>{widont(item.description)}</span>
           );
