@@ -58,7 +58,7 @@ export const items = [
   }
 ];
 
-const Navbar = ({ siteTitle, show }) => {
+const Navbar = ({ siteTitle, scrolled }) => {
   const location = useLocation();
   const intl = useIntl();
   const [showSubmenu, setShowSubmenu] = useState(null);
@@ -104,8 +104,7 @@ const Navbar = ({ siteTitle, show }) => {
     <div
       className={classnames(
         css.root,
-        { [css.show]: show },
-        { [css.noshow]: !show },
+        { [css.scrolled]: scrolled },
         { [css.expanded]: expanded }
       )}>
       <div className={classnames(grid.container, grid.grid, css.container)}>
@@ -116,13 +115,13 @@ const Navbar = ({ siteTitle, show }) => {
           </Link>
         </h1>
         <div className={classnames(grid.col, css.menuWrapper)}>
-          <button
+          <a
             className={css.menuToggle}
             aria-label="Main menu"
             aria-expanded={expanded}
             onClick={() => setExpanded(!expanded)}>
             {expanded ? <CloseIcon /> : <MenuIcon />}
-          </button>
+          </a>
           <ul
             className={classnames(css.menu, {
               [css.expanded]: expanded
@@ -145,9 +144,9 @@ const Navbar = ({ siteTitle, show }) => {
                     </Link>
                   )
                 ) : (
-                  <button onClick={() => onClick(item.name)}>
+                  <a onClick={() => onClick(item.name)}>
                     {intl.formatMessage({ id: item.name })}
-                  </button>
+                  </a>
                 )}
                 {item.children && (
                   <ul

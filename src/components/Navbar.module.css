@@ -1,20 +1,11 @@
 .root {
   transition: 0.15s ease-in-out;
-}
-
-.container {
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-}
-
-.show {
   height: 100px;
   padding-top: var(--gutter);
   padding-bottom: var(--gutter);
 }
 
-.noshow {
+.root.scrolled {
   height: 60px;
   padding-top: calc(var(--gutter) / 2);
   padding-bottom: calc(var(--gutter) / 2);
@@ -23,6 +14,16 @@
   & .logo {
     font-size: var(--text-large);
   }
+}
+
+.container {
+  align-items: flex-start;
+  justify-content: space-between;
+  height: calc(100% - 100px);
+}
+
+.root.scrolled .container {
+  height: calc(100% - 60px);
 }
 
 .logo {
@@ -72,16 +73,6 @@
   font-weight: 700;
 
   & a:hover {
-    color: var(--processing-blue-dark);
-  }
-
-  & button {
-    color: var(--processing-blue-dark);
-    font-weight: 700;
-    padding: 0px;
-  }
-
-  & button:hover {
     color: var(--processing-blue-dark);
   }
 }
@@ -160,6 +151,7 @@
   width: 100%;
   background-color: white;
   overflow: scroll;
+  padding-bottom: 20px;
 
   & > .item {
     display: block;
@@ -205,10 +197,11 @@
     justify-content: space-between;
     flex-wrap: nowrap;
     max-height: 50px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
   }
 
-  .show {
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  .root.scrolled {
+    box-shadow: none;
   }
 
   .logo {
@@ -225,7 +218,7 @@
     left: 0;
     padding-left: 36px;
     padding-bottom: var(--margin);
-    justify-content: flex-start;
+    justify-content: center;
     overflow-y: scroll;
     position: relative;
     z-index: -1;
@@ -233,17 +226,16 @@
     transition: opacity 0.1s ease-in-out;
 
     & > .item {
-      display: none;
-      border-left: none;
+      margin-left: 0;
+      padding-left: 1rem;
     }
 
     & > .item:hover {
-      border-left: none;
     }
 
     & > .subitem {
       display: none;
-      border-left: none;
+      padding-left: 10rem;
     }
 
     & > .subitem:hover {
@@ -261,9 +253,9 @@
 
   .item {
     display: block;
-    padding-left: 0px;
-    padding: var(--gutter) 0px;
-    border-left: none;
+    /* padding-left: 0px; */
+    /* padding: var(--gutter) 0px; */
+    /* border-left: none; */
     font-size: var(--text-xlarge);
   }
 

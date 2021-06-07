@@ -10,7 +10,7 @@ const Header = ({ siteTitle, scrolled }) => {
   return (
     <header className={css.root}>
       <Topbar show={!scrolled} />
-      <Navbar siteTitle={siteTitle} show={!scrolled} />
+      <Navbar siteTitle={siteTitle} scrolled={scrolled} />
     </header>
   );
 };
