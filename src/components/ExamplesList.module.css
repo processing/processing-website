@@ -65,6 +65,15 @@
 }
 
 @media (--small) {
+  .categoryName {
+    display: block;
+
+    & .toggleButton {
+      text-align: left;
+      margin: var(--vertical-margin-small) 0;
+    }
+  }
+
   .category {
     padding-top: var(--vertical-margin-large);
   }
