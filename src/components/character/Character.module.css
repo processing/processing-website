@@ -1,7 +1,9 @@
 .root {
   position: relative;
-
+  width: 150px;
+  margin: 0 auto;
   & svg {
+    max-width: 100%;
     position: relative;
   }
 }
