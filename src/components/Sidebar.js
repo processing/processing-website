@@ -27,7 +27,7 @@ export const Sidebar = memo(({ children, title, show, setShow }) => {
         onKeyDown={(e) => e.keyCode === 13 && setShow((s) => !s)}
         role={'button'}
         tabIndex={'0'}>
-        <span className={css.toggleLabel}>index</span>
+        {title ? <span className={css.toggleLabel}>{title}</span> : null}
         {show ? '×' : '+'}
       </div>
       {show && (

@@ -1,5 +1,5 @@
 .root {
-  flex-basis: var(--col1);
+  position: relative;
 }
 
 .input {
@@ -31,29 +31,31 @@
   flex-basis: var(--col6);
   justify-content: flex-end;
 }
-
-.hint {
+.submit {
   position: absolute;
-  margin-top: 30px;
-  font-size: var(--text-small);
-  color: var(--processing-blue-mid);
-}
-
-@media (--medium) {
-  .root {
-    flex-basis: var(--col2);
+  right: 16px;
+  padding: 0;
+  cursor: pointer;
+  border: 2px solid transparent;
+  &:focus {
+    outline: none;
+    border: 2px solid var(--processing-blue-light);
+    border-radius: 50%;
+  }
+  &:hover path {
+    stroke: var(--processing-blue-mid);
+  }
+  &:active path {
+    stroke: var(--processing-blue-dark);
   }
 }
+
+.searchIcon {
+  margin-top: -2px;
+}
+
 @media (--reduced) {
   .root {
     align-self: baseline;
-    flex-basis: var(--col4);
-  }
-
-  .hint {
-    position: absolute;
-    margin-top: 30px;
-    font-size: var(--text-small);
-    color: var(--processing-blue-mid);
   }
 }

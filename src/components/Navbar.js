@@ -58,7 +58,7 @@ export const items = [
   }
 ];
 
-const Navbar = ({ siteTitle, show }) => {
+const Navbar = ({ siteTitle, scrolled }) => {
   const location = useLocation();
   const intl = useIntl();
   const [showSubmenu, setShowSubmenu] = useState(null);
@@ -104,88 +104,88 @@ const Navbar = ({ siteTitle, show }) => {
     <div
       className={classnames(
         css.root,
-        { [css.show]: show },
-        { [css.noshow]: !show },
+        grid.container,
+        grid.grid,
+        { [css.scrolled]: scrolled },
         { [css.expanded]: expanded }
       )}>
-      <div className={classnames(grid.container, grid.grid, css.container)}>
-        <h1 className={classnames(grid.col, css.logo)}>
-          <Link to="/">
-            <LogoProcessing />
-            {siteTitle}
-          </Link>
-        </h1>
-        <div className={classnames(grid.col, css.menuWrapper)}>
-          <button
-            className={css.menuToggle}
-            aria-label="Main menu"
-            aria-expanded={expanded}
-            onClick={() => setExpanded(!expanded)}>
-            {expanded ? <CloseIcon /> : <MenuIcon />}
-          </button>
-          <ul
-            className={classnames(css.menu, {
-              [css.expanded]: expanded
-            })}>
-            {items.map((item, key) => (
-              <li
-                key={key}
-                className={classnames(css.item, {
-                  [css.hasSubmenu]: item.children,
-                  [css.active]: item.name === current
-                })}>
-                {item.href ? (
-                  item.href.startsWith('https') ? (
-                    <a href={item.href}>
-                      {intl.formatMessage({ id: item.name })}
-                    </a>
-                  ) : (
-                    <Link to={item.href}>
-                      {intl.formatMessage({ id: item.name })}
-                    </Link>
-                  )
-                ) : (
-                  <button onClick={() => onClick(item.name)}>
+      <h1 className={classnames(grid.col, css.logo)}>
+        <Link to="/">
+          <LogoProcessing />
+          {siteTitle}
+        </Link>
+      </h1>
+      <div className={classnames(css.menuWrapper)}>
+        <a
+          className={css.menuToggle}
+          aria-label="Main menu"
+          aria-expanded={expanded}
+          onClick={() => setExpanded(!expanded)}>
+          {expanded ? <CloseIcon /> : <MenuIcon />}
+        </a>
+        <ul
+          className={classnames(css.menu, {
+            [css.expanded]: expanded
+          })}>
+          {items.map((item, key) => (
+            <li
+              key={key}
+              className={classnames(css.item, {
+                [css.hasSubmenu]: item.children,
+                [css.active]: item.name === current
+              })}>
+              {item.href ? (
+                item.href.startsWith('https') ? (
+                  <a href={item.href}>
                     {intl.formatMessage({ id: item.name })}
-                  </button>
-                )}
-                {item.children && (
-                  <ul
-                    className={classnames(css.submenu, {
-                      [css.subMenuActive]: item.name === showSubmenu
-                    })}>
-                    {item.children.map((subitem, j) => (
-                      <li className={css.subitem} key={key + j}>
-                        {subitem.href ? (
-                          subitem.href.startsWith('https') ? (
-                            <a
-                              href={subitem.href}
-                              target="_blank"
-                              rel="noreferrer"
-                              tabIndex={item.name === showSubmenu ? 0 : -1}>
-                              {intl.formatMessage({ id: subitem.name })}
-                            </a>
-                          ) : (
-                            <Link
-                              to={subitem.href}
-                              language={locale}
-                              tabIndex={item.name === showSubmenu ? 0 : -1}>
-                              {intl.formatMessage({ id: subitem.name })}
-                            </Link>
-                          )
+                  </a>
+                ) : (
+                  <Link to={item.href}>
+                    {intl.formatMessage({ id: item.name })}
+                  </Link>
+                )
+              ) : (
+                <a onClick={() => onClick(item.name)}>
+                  {intl.formatMessage({ id: item.name })}
+                </a>
+              )}
+              {item.children && (
+                <ul
+                  className={classnames(css.submenu, {
+                    [css.subMenuActive]: item.name === showSubmenu
+                  })}>
+                  {item.children.map((subitem, j) => (
+                    <li className={css.subitem} key={key + j}>
+                      {subitem.href ? (
+                        subitem.href.startsWith('https') ? (
+                          <a
+                            href={subitem.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            tabIndex={item.name === showSubmenu ? 0 : -1}>
+                            {intl.formatMessage({ id: subitem.name })}
+                          </a>
                         ) : (
-                          intl.formatMessage({ id: subitem.name })
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <SearchBar />
+                          <Link
+                            to={subitem.href}
+                            language={locale}
+                            tabIndex={item.name === showSubmenu ? 0 : -1}>
+                            {intl.formatMessage({ id: subitem.name })}
+                          </Link>
+                        )
+                      ) : (
+                        intl.formatMessage({ id: subitem.name })
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
       </div>
+      <div className={css.spacer} />
+      <SearchBar className={css.searchBar} />
     </div>
   );
 };
