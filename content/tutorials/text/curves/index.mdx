@@ -28,7 +28,12 @@ angle for the arc. These angles, as with all other angles in Processing, are giv
 in radians. Remember that angles are measured clockwise, with zero degrees pointing
 east. Using the fact that `PI` radians equals 180&deg;, here are some example arcs.
 
+<FixedImage side width={210} height={132}>
+
 ![](./arc1.png)
+
+</FixedImage>
+
 
 ```
 void setup() {
@@ -67,7 +72,12 @@ curve(cpx1, cpy1, x1, y1, x2, y2, cpx2, cpy2);
 Here is an example that shows a `curve()`. The control
 points are shown in red and the curve points in blue.
 
+<FixedImage side width={118} height={126}>
+
 ![](./curve1.png)
+
+</FixedImage>
+
 
 ```
 void setup() {
@@ -98,7 +108,12 @@ In isolation, a single `curve()` is not particularly appealing. To draw a contin
 
 Here is a curve connecting the points (40, 40), (80, 60), (100, 100), (60, 120), and (50, 150). In common usage, people use the first point of the curve as the first control point and the last point of the curve as the last control point. 
 
+<FixedImage side width={119} height={140}>
+
 ![](./curvevertex1.png)
+
+</FixedImage>
+
 
 ```
 int[] coords = {
@@ -146,8 +161,13 @@ bezier(x1, y1, cpx1, cpy1, cpx2, cpy2, x2, y2);
 - **x2, y2** - Coordinates of the curve's ending point
 
 Here is a program that displays a B&eacute;zier curve and its control points.
-  
+
+<FixedImage side width={154} height={99}>
+
 ![](./bezier_with_points.png)
+
+</FixedImage>
+
 
 ```
 void setup() {
@@ -165,8 +185,12 @@ void setup() {
 ```
 
 While it is difficult to visualize how the control points affect a `curve()`, it is slightly easier to see how the control points affect B&eacute;zier curves. Imagine two poles and several rubber bands.  The poles connect the control points to the endpoints of the curve. A rubber band connects the tops of the poles.  Two more rubber bands connect the midpoints of the poles to the midpoint of the first rubber band. One more rubber band connects *their* midpoints. The center of that last rubber band is tied to the curve. This diagrams helps to explain:
-  
+
+<FixedImage center width={154} height={99}>
+
 ![](./bezier_with_lines.png)
+
+</FixedImage>
 
 ## Continuous B&eacute;zier Curves
 
@@ -198,8 +222,13 @@ void setup() {
 ```
 
 Here is a continuous B&eacute;zier curve, but it doesn't join smoothly. The diagram shows the control points, but only the relevant code for drawing the curve is here.
-  
+
+<FixedImage side width={136} height={136}>
+
 ![](./nonsmooth_bezier.png)
+
+</FixedImage>
+
 
 ```
 size(200, 200);
@@ -213,8 +242,13 @@ endShape();
 ```
 
 In order to make two curves A and B smoothly continuous, the last control point of A, the last point of A, and the first control point of B have to be on a straight line.  Here is an example that meets those conditions. The points that are in a line are shown in bold.
-  
+
+<FixedImage side width={132} height={132}>
+
 ![](./smooth_bezier.png)
+
+</FixedImage>
+
 
 ```
 size(200, 200);

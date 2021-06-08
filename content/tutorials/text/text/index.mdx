@@ -184,9 +184,13 @@ Let's look at two more useful Processing functions related to displaying text:
 
 [textAlign()](http://processing.org/reference/textAlign_.html)&mdash;specifies `RIGHT`, `LEFT` or `CENTER` alignment for text.
 
+[Example: Text Align](http://learningprocessing.com/examples/chp17/example-17-02-textalign)
+
+<FixedImage side width={302} height={168}>
+
 ![textAlign](./textalign.jpg)
 
-[Example: Text Align](http://learningprocessing.com/examples/chp17/example-17-02-textalign)
+</FixedImage>
 
 ```
 PFont f;
@@ -252,7 +256,11 @@ x = x - 3;
 
 Now comes more difficult part.  It was easy to test when a circle reached the left side of the screen.  We would simply ask: is x less than 0?  With text, however, since it is left-aligned, when x equals zero, it is still viewable on screen.   Instead, the text will be invisible when x is less than 0 minus the width of the text (See figure below).  When that is the case, we reset x back to the right-hand side of the window, i.e. width.
 
+<FixedImage center width={645} height={570}>
+
 ![textWidth](./textwidth.jpg)
+
+</FixedImage>
 
 ```
 // If x is less than the negative width, then it is completely off the screen
@@ -388,7 +396,11 @@ Calling the [text()](http://processing.org/reference/text_.html) function for ea
 
 The proper spacing can be achieved using the [textWidth()](http://processing.org/reference/textWidth_.html) function as demonstrated in the code below.  Note how this example achieves the proper spacing even with each character being a random size!
 
-![Charcter by character](./charbychar.jpg)
+<FixedImage side width={302} height={131}>
+
+![Character by character](./charbychar.jpg)
+
+</FixedImage>
 
 ```
 PFont f;
@@ -493,9 +505,13 @@ class Letter {
 
 The character by character method also allows us to display text along a curve.  Before we move on to letters, let's first look at how we would draw a series of boxes along a curve.  This example makes heavy use of [Trignometry](http://www.processing.org/learning/trig/).
 
+[Example: Boxes along a curve](http://learningprocessing.com/examples/chp17/example-17-07-boxesoncurve)
+
+<FixedImage side width={200} height={200}>
+
 ![Boxes along a curve](./boxes.jpg)
 
-[Example: Boxes along a curve](http://learningprocessing.com/examples/chp17/example-17-07-boxesoncurve)
+</FixedImage>
 
 ```
 PFont f;
@@ -550,9 +566,13 @@ void draw() {
 
 What we need to do is replace each box with a character from a String that fits inside the box.  And since characters all do not have the same width, instead of using a variable `w` that stays constant, each box will have a variable width along the curve according to the `textWidth()` function.
 
+[Example: Characters along a curve](http://www.learningprocessing.com/examples/chapter-17/example-17-8/)
+
+<FixedImage side width={200} height={200}>
+
 ![Characters along a curve](./textcurve.jpg)
 
-[Example: Characters along a curve](http://www.learningprocessing.com/examples/chapter-17/example-17-8/)
+</FixedImage>
 
 ```
 // The message to be displayed

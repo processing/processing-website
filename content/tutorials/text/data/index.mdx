@@ -44,7 +44,7 @@ Note that the substring begins at the specified *start index* (the first argumen
 
 In [Strings and Drawing Text](http://processing.org/learning/text/), we saw how strings can be joined together (referred to as "concatenation") using the "+" operator. Let's review with a example that uses concatenation to get user input from a keyboard.
 
-<FixedImage center width={650} height={244}>
+<FixedImage center width={333} height={222}>
 
 ![](./fig_18_01_user_input.png)
 
@@ -191,7 +191,7 @@ In order to create a text file, you can use any simple text editor. Windows Note
 		
 Once the text file is in place, Processing’s `loadStrings()` function is used to read the content of the file into a `String` array. The individual lines of text in the file each become an individual element in the array.
 
-<FixedImage center width={650} height={244}>
+<FixedImage center width={333} height={130}>
 
 ![](./fig_18_02_filetxt.png)
 
@@ -206,7 +206,7 @@ printArray(lines);
 
 To run the code, create a text file called “file.txt,” type a bunch of lines in that file, and place it in your sketch’s data directory.Text from a file can be used to generate a simple visualization. Take the following data file.
 
-<FixedImage center width={650} height={244}>
+<FixedImage center width={333} height={130}>
 
 ![](./fig_18_03_datatxt.png)
 
@@ -216,7 +216,7 @@ The results of visualizing this data are shown below.
 
 **Graphing Comma-Separated Numbers from a Text File**
 
-<FixedImage center width={650} height={244}>
+<FixedImage side width={200} height={200}>
 
 ![](./fig_18_04_bargraph.png)
 
@@ -250,7 +250,7 @@ Looking at how to parse a csv file with `split()` was a nice learning exercise. 
 
 A table consists of data arranged as a set of rows and columns, also called “tabular data.” If you've ever used a spreadsheet, this is tabular data. Processing's `loadTable()` function takes comma-separated (csv) or tab-separated (tsv) values and automatically places the contents into a `Table` object storing the data in columns and rows. This is a great deal more convenient than struggling to manually parse large data files with `split()`. It works as follows. Let's say you have a data file that looks like:
 
-<FixedImage center width={650} height={244}>
+<FixedImage center width={333} height={130}>
 
 ![](./fig_18_05_datacsv.png)
 
@@ -276,7 +276,7 @@ Table table = loadTable("data.csv", "header");
 
 Now that the table is loaded, I can show how you grab individual pieces of data or iterate over the entire table. Let's look at the data visualized as a grid.
 
-<FixedImage center width={650} height={244}>
+<FixedImage center width={645} height={222}>
 
 ![](./data_05_headers.jpg)
 
@@ -365,7 +365,7 @@ The following example puts all of the above code together. Notice how each row o
 	
 **Loading and Saving Tabular Data**
 
-<FixedImage center width={650} height={244}>
+<FixedImage center width={500} height={375}>
 
 ![](./fig_18_07_tablebubbles.png)
 
@@ -475,7 +475,7 @@ class Bubble {
 	
 Here, the distance between a given point and a circle's center is compared to that circle's radius as depicted:
 
-<FixedImage center width={650} height={244}>
+<FixedImage center width={406} height={210}>
 
 ![](./fig_18_08_rollover.png)
 
@@ -567,7 +567,7 @@ For grabbing data from the web, an XML (Extensible Markup Language) or JSON (Jav
 	
 An example of data only available as HTML is the [Internet Movie Database](http://imdb.com). IMDb contains information about movies sorted by year, genre, ratings, etc. For each movie, you can find the cast and crew list, a plot summary, running time, a movie poster image, the list goes on. However, IMDb has no API and does not provide its data as XML or JSON. Pulling the data into Processing therefore requires a bit of detective work. Let's look at the page for the *Shaun the Sheep Movie*
 
-<FixedImage center width={650} height={244}>
+<FixedImage center width={333} height={234}>
 
 ![](./fig_18_09_shaunsheep.png)
 
@@ -575,7 +575,7 @@ An example of data only available as HTML is the [Internet Movie Database](http:
 
 Looking in the HTML source from the above URL, I find a giant mess of markup.
 
-<FixedImage center width={650} height={244}>
+<FixedImage center width={333} height={233}>
 
 ![](./fig_18_10_shaunsheep_sourc.png)
 
@@ -622,7 +622,7 @@ The following code retrieves both the running time and movie poster iamge from I
 	
 **Parsing IMDb Manually**
 
-<FixedImage center width={650} height={244}>
+<FixedImage center width={333} height={388}>
 
 ![](./fig_18_11_parsing_imdb.png)
 
@@ -699,7 +699,7 @@ A text concordance is an alphabetical list of words that appear in a book or bod
 	
 As you learned earlier, an array is an ordered list of variables. Each element of the array is numbered and be accessed by its numeric index.
 
-<FixedImage center width={650} height={244}>
+<FixedImage center width={355} height={174}>
 
 ![](./fig_18_12_traditional_arra.png)
 
@@ -707,7 +707,7 @@ As you learned earlier, an array is an ordered list of variables. Each element o
 
 However, what if instead of numbering the elements of an array you could name them? This element is named “Sue,” this one “Bob,” this one “Jane,” and so on and so forth. In programming, this kind of data structure is often referred to as an *associative array, map,* or *dictionary.* It’s a collection of (key, value) pairs. Imagine you had a dictionary of people's ages. When you look up “Sue” (the key), the definition, or value, is her age, 24.
 
-<FixedImage center width={650} height={244}>
+<FixedImage center width={354} height={173}>
 
 ![](./fig_18_13_associative_arra.png)
 
@@ -756,7 +756,7 @@ The concordance now becomes a rather simple program to write. All I need to do i
 
 **Text Concordance Using IntDict**
 
-<FixedImage center width={650} height={244}>
+<FixedImage center width={333} height={394}>
 
 ![](./fig_18_14_concordance_viz.png)
 
@@ -831,7 +831,7 @@ If your data is available via a standardized format such as XML or JSON, the pro
 	  
 XML organizes information in a tree structure. Let’s imagine a list of students. Each student has an ID number, name, address, email, and telephone number. Each student’s address has a city, state, and zip code. An XML tree for this dataset might look like the following:
 
-<FixedImage center width={650} height={244}>
+<FixedImage center width={500} height={320}>
 
 ![](./data_06_xml.jpg)
 
@@ -892,7 +892,7 @@ Let's look at some data made available from a web service such as Yahoo Weather.
 
 The data is mapped in the tree stucture shown below:
 
-<FixedImage center width={650} height={244}>
+<FixedImage center width={500} height={214}>
 
 ![](./data_07_weatherxml.jpg)
 
@@ -971,7 +971,7 @@ Following is the above code put together in an example that retrieves weather da
 
 **Parsing Yahoo Weather XML**
 
-<FixedImage center width={650} height={244}>
+<FixedImage center width={200} height={129}>
 
 ![](./fig_18_17_weather.png)
 
@@ -1054,7 +1054,7 @@ I can use `getChildren()` to retrieve the array of `<bubble>` elements and make 
 
 **Using Processing's XML Class**
 
-<FixedImage center width={650} height={244}>
+<FixedImage center width={500} height={375}>
 
 ![](./fig_18_07_tablebubbles.png)
 
@@ -1427,7 +1427,7 @@ In the above example, I likely don't want to request the data sixty times per se
 
 **Threads**
 
-<FixedImage center width={650} height={244}>
+<FixedImage center width={200} height={78}>
 
 ![](./fig_18_19_thread.png)
 
