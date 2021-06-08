@@ -17,24 +17,25 @@ const initialState = {
   strokeCap: true,
   shapes: [
     {
-      line: true,
-      color: [2, 81, 200],
-      pos: [1, 2, 4, 1, 5, 2, 7, 5],
-      showHandlers: false,
-      showPoint: null,
-      dragging: null
-    },
-    {
-      color: [80, 139, 255],
-      pos: [1, 5, 4, 4, 2, 2, 4, 1],
+      color: [5, 100, 255],
+      pos: [4, 1, 7, 1, 7, 5, 4, 5],
       showHandlers: false,
       showPoint: null,
       dragging: null
     },
     {
       line: true,
-      color: [30, 42, 103],
-      pos: [6, 1, 7, 3, 6, 6, 4, 7],
+      color: [30, 50, 170],
+      pos: [1, 6, 1, 6, 4, 2, 4, 2],
+      showHandlers: false,
+      showPoint: null,
+      dragging: null
+    },
+    {
+      line: true,
+
+      color: [130, 175, 255],
+      pos: [1, 3, 1, 3, 2, 5, 2, 5],
       showHandlers: false,
       showPoint: null,
       dragging: null

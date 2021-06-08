@@ -5,8 +5,7 @@
   justify-content: space-between;
   width: 100%;
   padding: 0 16px;
-  background-color: var(--processing-blue-dark);
-  color: white;
+  background-color: var(--topbar-background);
 }
 
 .show {
@@ -36,31 +35,59 @@
   list-style: none;
 }
 
+.itemLink {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .item {
   display: flex;
   align-items: center;
   margin-right: 2rem;
   box-sizing: border-box;
   height: 100%;
+  color: var(--processing-blue-mid);
+  font-weight: 600;
 }
 
 .item:hover {
   border-bottom: solid 6px var(--processing-blue-mid);
   padding-top: 6px;
 }
-
-.foundation:hover {
-  border-color: var(--foundation-mid);
+.item a,
+.item a:hover {
+  color: inherit;
 }
-
-.p5:hover {
-  border-color: var(--p5-mid);
-}
+/*Styles for each logo */
 
 .logo {
   margin-right: 5px;
   width: 30px;
   height: auto;
+}
+
+.foundation {
+  color: var(--foundation-mid);
+}
+.foundation:hover {
+  border-color: var(--foundation-mid);
+}
+.p5 {
+  color: var(--p5-mid);
+}
+
+.p5:hover {
+  border-color: var(--p5-mid);
+}
+.processing {
+  color: var(--processing-blue-mid);
+  & .logo {
+    margin-top: 3px;
+  }
+}
+.processing:hover {
+  border-color: var(--processing-blue-mid);
 }
 
 @media (--reduced) {
@@ -80,6 +107,10 @@
 
   .item {
     margin-right: var(--gutter-double);
+  }
+
+  .item span {
+    display: none;
   }
 
   .logo {

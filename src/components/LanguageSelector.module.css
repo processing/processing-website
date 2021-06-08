@@ -1,7 +1,7 @@
 .root {
   display: block;
   margin-right: 16px;
-  background-color: var(--processing-blue-dark);
+  z-index: 200;
   cursor: pointer;
   color: white;
 }
@@ -11,13 +11,13 @@
   font-family: var(--font);
   font-size: var(--text-regular);
   border-radius: 0;
-  background-color: var(--processing-blue-dark);
-  border-top: solid 6px var(--processing-blue-dark);
-  border-bottom: solid 6px var(--processing-blue-dark);
+  background-color: transparent;
+  border-top: solid 6px transparent;
+  border-bottom: solid 6px transparent;
 }
 
 .languageButton:hover {
-  background-color: var(--processing-blue-dark);
+  background-color: transparent;
   border-bottom: solid 6px var(--processing-blue-mid);
 }
 
