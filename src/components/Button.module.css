@@ -11,7 +11,7 @@
 }
 
 .root:focus {
-  background: var(--darkgray);
+  background: var(--processing-blue-deep);
   color: white;
 }
 

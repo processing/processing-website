@@ -9,7 +9,7 @@
 }
 
 .show {
-  height: 50px;
+  height: 40px;
   transition: 0.15s ease-in-out;
   overflow: hidden;
 }
@@ -49,11 +49,12 @@
   height: 100%;
   color: var(--processing-blue-mid);
   font-weight: 600;
+  font-size: 0.85rem;
 }
 
 .item:hover {
-  border-bottom: solid 6px var(--processing-blue-mid);
-  padding-top: 6px;
+  border-bottom: solid 4px var(--processing-blue-deep);
+  padding-top: 4px;
 }
 .item a,
 .item a:hover {
@@ -63,7 +64,7 @@
 
 .logo {
   margin-right: 5px;
-  width: 30px;
+  width: 27px;
   height: auto;
 }
 
