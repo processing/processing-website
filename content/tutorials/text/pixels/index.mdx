@@ -99,7 +99,11 @@ background(dog);
 
 If `tint()` receives one argument, only the brightness of the image is affected.
 
+<FixedImage side width={200} height={200}>
+
 ![](./tint1.jpg)
+
+</FixedImage>
 
 ```
 // The image retains its original state.
@@ -107,17 +111,27 @@ tint(255);
 image(sunflower,0,0);
 ```
 
+<div style="clear: both">
+<FixedImage side width={200} height={200}>
+
 ![](./tint2.jpg)
+
+</FixedImage>
 
 ```
 // The image appears darker.
 tint(100);
 image(sunflower,0,0);
 ```
+</div>
 
 A second argument will change the image's alpha transparency.
 
+<FixedImage side width={200} height={200}>
+
 ![](./tint3.jpg)
+
+</FixedImage>
 
 ```
 // The image is at 50% opacity.
@@ -127,7 +141,11 @@ image(sunflower,0,0);
 
 Three arguments affect the brightness of the red, green, and blue components of each color.
 
+<FixedImage side width={200} height={200}>
+
 ![](./tint4.jpg)
+
+</FixedImage>
 
 ```
 // None of its red, most of its green, and all of its blue.
@@ -137,7 +155,11 @@ image(sunflower,0,0);
 
 Finally, adding a fourth argument to the method manipulates the alpha (same as with 2). Incidentally, the range of values for `tint()` can be specified with [colorMode()](https://processing.org/reference/colorMode_.html).
 
+<FixedImage side width={200} height={200}>
+
 ![](./tint5.jpg)
+
+</FixedImage>
 
 ```
 // The image is tinted red and transparent.
@@ -153,7 +175,12 @@ Nevertheless, from time to time, we do want to break out of our mundane shape dr
 
 We are familiar with the idea of each pixel on the screen having an X and Y position in a two dimensional window.  However, the array pixels has only one dimension, storing color values in linear sequence.
 
+
+<FixedImage center width={645} height={293}>
+
 ![](./pixelarray.jpg)
+
+</FixedImage>
 
 Take the following simple example. This program sets each pixel in a window to a random grayscale value.   The pixels array is just like an other array, the only difference is that we don't have to declare it since it is a Processing built-in variable.
 
@@ -189,7 +216,11 @@ In programming with pixels, we need to be able to think of every pixel as living
 2. We then know the pixel array has a total number of elements equaling WIDTH * HEIGHT.
 3. For any given X, Y point in the window, the location in our 1 dimensional pixel array is: <strong>LOCATION = X + Y*WIDTH</strong>
 
+<FixedImage center width={645} height={251}>
+
 ![](./pixelarray2d.jpg)
+
+</FixedImage>
 
 This may remind you of our [two dimensional arrays tutorial](http://www.processing.org/learning/2darray/).   In fact, we'll need to use the same nested for loop technique.   The difference is that, although we want to use for loops to think about the pixels in two dimensions, when we go to actually access the pixels, they live in a one dimensional array, and we have to apply the formula from the above illustration.
 
@@ -311,9 +342,13 @@ for (int x = 0; x < img.width; x++) {
 
 Since we are altering the image on a per pixel basis, all pixels need not be treated equally.  For example, we can alter the brightness of each pixel according to its distance from the mouse.
 
+[Example: Adjusting image brightness based on pixel location](http://learningprocessing.com/examples/chp15/example-15-09-FlashLight)
+
+<FixedImage side width={200} height={200}>
+
 ![](./flashlight.jpg)
 
-[Example: Adjusting image brightness based on pixel location](http://learningprocessing.com/examples/chp15/example-15-09-FlashLight)
+</FixedImage>
 
 ```
 for (int x = 0; x < img.width; x++) {
@@ -348,9 +383,13 @@ All of our image processing examples have read every pixel from a source image a
 
 A threshold filter displays each pixel of an image in only one of two states, black or white.    That state is set according to a particular threshold value.  If the pixel's brightness is greater than the threshold, we color the pixel white, less than, black.  In the code below, we use an arbitrary threshold of 100.
 
+[Example: Brightness Threshold](http://learningprocessing.com/examples/chp15/example-15-10-ThresholdDestinationImage)
+
+<FixedImage side width={200} height={200}>
+
 ![](./threshold.jpg)
 
-[Example: Brightness Threshold](http://learningprocessing.com/examples/chp15/example-15-10-ThresholdDestinationImage)
+</FixedImage>
 
 ```
 PImage source;       // Source image
@@ -430,9 +469,13 @@ pixels[loc] = color(diff);
 
 Here is the full algorithm:
 
+[Example: Pixel neighbor differences (edges)](http://learningprocessing.com/examples/chp15/example-15-12-PixelNeighborEdge)
+
+<FixedImage side width={200} height={200}>
+
 ![](./edges.jpg)
 
-[Example: Pixel neighbor differences (edges)](http://learningprocessing.com/examples/chp15/example-15-12-PixelNeighborEdge)
+</FixedImage>
 
 ```
 // Since we are looking at left neighbors
@@ -458,7 +501,11 @@ This example is a simple horizontal edge detection algorithm.  When pixels diffe
 
 In the previous example, we looked at two pixels to find edges.   More sophisticated algorithms, however, usually involve looking at many pixels at a time.  After all, each pixel has 8 immediate neighbors: top left, top, top right, right, bottom right, bottom, bottom left, left.
 
+<FixedImage center width={645} height={287}>
+
 ![](./neighbors.jpg)
+
+</FixedImage>
 
 These image processing algorithms are often referred to as a "spatial convolution."  The process uses a weighted average of an input pixel and its neighbors to calculate an output pixel.   In other words, that new pixel is a function of an area of pixels.   Neighboring areas of different sizes can be employed, such as a 3x3 matrix, 5x5, etc.
 
@@ -480,9 +527,13 @@ Blur:
 
 Following is an example that performs a convolution using a 2D array (see Chapter 13, p. XX for a review of 2D arrays) to store the pixel weights of a 3x3 matrix.   This example is probably the most advanced example we've encountered in this book so far since it involves so many elements (nested loops, 2D arrays, PImage pixels, and so on.)
 
+[Example: Sharpen with Convolution](http://learningprocessing.com/examples/chp15/example-15-13-Convolution)
+
+<FixedImage side width={200} height={200}>
+
 ![](./sharpen.jpg)
 
-[Example: Sharpen with Convolution](http://learningprocessing.com/examples/chp15/example-15-13-Convolution)
+</FixedImage>
 
 ```
 PImage img;
@@ -567,9 +618,13 @@ Following are two examples of algorithms for drawing processing shapes.  Instead
 
 In this first example, for every cycle through draw(), we fill one ellipse at a random location onscreen with a color taken from its corresponding location in the source image.  The result is a basic "pointillist-like" effect:
 
+[Example: "Pointillism"](http://learningprocessing.com/examples/chp15/example-15-14-Pointillism)
+
+<FixedImage side width={200} height={200}>
+
 ![](./pointillism.jpg)
 
-[Example: "Pointillism"](http://learningprocessing.com/examples/chp15/example-15-14-Pointillism)
+</FixedImage>
 
 ```
 PImage img;
@@ -603,9 +658,26 @@ void draw() {
 
 In this next example, we take the data from a two-dimensional image and using the 3D translation techniques described in chapter 14, render a rectangle for each pixel in three-dimensional space.  The z location is determined by the brightness of the color.  Brighter colors appear closer to the viewer and darker ones farther away.
 
+<div style="display: flex; justify-content: space-around">
+<FixedImage width={200} height={200}>
+
 ![](./explode1.jpg)
+
+</FixedImage>
+
+<FixedImage width={200} height={200}>
+
 ![](./explode2.jpg)
+
+</FixedImage>
+
+<FixedImage width={200} height={200}>
+
 ![](./explode3.jpg)
+
+</FixedImage>
+
+</div>
 
 [Example: 2D image mapped to 3D](http://learningprocessing.com/examples/chp15/example-15-15-explode3D)
 

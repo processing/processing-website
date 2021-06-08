@@ -69,7 +69,7 @@ PShape is a datatype for storing shapes.  These can be shapes that you build out
 
 Let's begin with one of the simplest cases for use of a PShape.  Here's a simple Processing draw() method that draws an rectangle following the mouse.
 
-<FixedImage center width={645} height={244}>
+<FixedImage side width={360} height={215}>
 
 ![](./pshape1.png)
 
@@ -156,7 +156,7 @@ void setup() {
 
 These methods can be called during draw() as well if you want to change the color of the shape dynamically.
 
-<FixedImage center width={645} height={244}>
+<FixedImage side width={360} height={215}>
 
 ![](./pshape2.png)
 
@@ -179,7 +179,7 @@ See Example "PrimitivePShape" (under File -> Examples -> Topics -> Create Shapes
 
 PShapes also can be configured with custom vertices.  You've probably done this before, without PShape, just using beginShape() and endShape().  For example, let's say you wanted to draw a star in Processing.  You might have some code as follows:
 
-<FixedImage center width={645} height={244}>
+<FixedImage side width={360} height={215}>
 
 ![](./pshape3.png)
 
@@ -292,7 +292,7 @@ void display() {
 
 and in draw(), you are iterating through an array of Star objects, displaying each one.
 
-<FixedImage center width={645} height={244}>
+<FixedImage side width={360} height={215}>
 
 ![](./pshape4.png)
 
@@ -392,7 +392,7 @@ void setup() {
 
 This is a very flexible approach.  For example if you had an array of PShape objects, you could create new Polygon objects each one with a random PShape.  Here is a simple implementation.
 
-<FixedImage center width={645} height={244}>
+<FixedImage side width={360} height={215}>
 
 ![](./pshape4a.png)
 
@@ -431,7 +431,7 @@ s.beginShape(QUAD_STRIP);
 
 If no mode is specified, the shape can be any irregular polygon as we saw in the previous star example.  A PShape can also be a path by not closing the shape.  Here is an example of a path that follows a sine wave as a PShape object.
 
-<FixedImage center width={645} height={244}>
+<FixedImage side width={360} height={215}>
 
 ![](./pshape5.png)
 
@@ -454,7 +454,7 @@ See Example "PathPShape" for the full implementation.
 
 PShapes also include the methods [beginContour()](http://processing.org/reference/PShape_beginContour_.html) and [endContour()](http://processing.org/reference/PShape_endContour_.html).  These methods allow you to cut a shape out of another and make shapes with holes in them.  Think of drawing the outline of a letter, like P (for Processing).  The outline of the P can be drawn as a series of vertices, but to get the counter shape knocked out of the middle of the P, you need begin/endContour and draw the path of the interior.  Here's a simple example that draws an interior square inside of an exterior one.
 
-<FixedImage center width={645} height={244}>
+<FixedImage side width={360} height={215}>
 
 ![](./pshape6.png)
 
@@ -501,7 +501,7 @@ shape(body);
 
 While of course this would work, it would be a great deal more convenient if you could group the head and body into one PShape.  With a PShape "GROUP", you can.
 
-<FixedImage center width={645} height={244}>
+<FixedImage side width={360} height={215}>
 
 ![](./pshape7.png)
 

@@ -43,7 +43,7 @@ int[][] myArray = {  {0, 1, 2, 3},
 
 We can use this type of data structure to encode information about an image. For example, the following grayscale image could be represented by the following array:
 
-<FixedImage width={650}>
+<FixedImage side width={200}>
 
 ![](./grid.jpg)
 
@@ -83,7 +83,7 @@ for (int i = 0; i < cols; i++) {
 
 For example, we might write a program using a two-dimensional array to draw a grayscale image.
 
-<FixedImage center width={650} >
+<FixedImage side width={200} >
 
 ![](./points.jpg)
 
@@ -115,7 +115,7 @@ for (int i = 0; i < cols; i++) {
 
 A two-dimensional array can also be used to store objects, which is especially convenient for programming sketches that involve some sort of "grid"  or "board."  The following example displays a grid of Cell objects stored in a two-dimensional array. Each cell is a rectangle whose brightness oscillates from 0-255 with a sine function.
 
-<FixedImage center width={650} >
+<FixedImage side width={200} >
 
 ![](./cells.jpg)
 

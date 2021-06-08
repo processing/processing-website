@@ -23,7 +23,11 @@ The proliferation of personal computers in the mid-1980s spawned a period of rap
 
 The `text()` function is used to draw letters, words, and paragraphs to the screen. In the simplest use, the first parameter can be a `String`, `char`, `int`, or `float`. The second and third parameters set the position of the text. By default, the second parameter defines the distance from the left edge of the window; the third parameter defines the distance from the text's baseline to the top of the window. The `textSize()` function defines the size the letters will draw in units of pixels. The number used to define the text size will not be the precise height of each letter, the difference depends on the design of each font. For instance, the statement `textSize(30);` won't necessarily draw a capital H at 30 pixels high. The `fill()` function controls the color and transparency of text. This function affects text the same way it affects shapes such as `rect()` and `ellipse()`, but text is not affected by `stroke()`.
 
+<FixedImage side width={100} height={100}>
+
 ![](./12_01.png)
+
+</FixedImage>
 
 ```
 fill(0);
@@ -34,7 +38,11 @@ text("FRA", 0, 100); // Write "FRA" at coordinate (0,100)
 
 ---
 
+<FixedImage side width={100} height={100}>
+
 ![](./12_02.png)
+
+</FixedImage>
 
 ```
 textSize(32); // Set text size to 32
@@ -46,7 +54,11 @@ text("DAY", 0, 100);
 
 ---
 
+<FixedImage side width={100} height={100}>
+
 ![](./12_03.png)
+
+</FixedImage>
 
 ```
 textSize(32);
@@ -60,7 +72,12 @@ text("PVG", 0, 100);
 
 ---
 
+<FixedImage side width={100} height={100}>
+
 ![](./12_04.png)
+
+</FixedImage>
+
 
 ```
 textSize(64);
@@ -74,7 +91,12 @@ text("8", 60, 80);
 
 Another version of `text()` draws the characters inside a rectangle. In this use, the second and third parameters define the position of the upper-left corner of the box and fourth and fifth parameters define the width and height of the box. If the length of the text exceeds the dimensions of the defined box, the text will not display.
 
+<FixedImage side width={100} height={100}>
+
 ![](./12_05.png)
+
+</FixedImage>
+
 
 ```
 String s = "Five hexing wizard bots jump quickly.";
@@ -84,7 +106,12 @@ text(s, 10, 10, 60, 80);
 
 ---
 
+<FixedImage side width={100} height={100}>
+
 ![](./12_06.png)
+
+</FixedImage>
+
 
 ```
 String s = "Five hexing wizard bots jump quickly.";
@@ -133,8 +160,11 @@ The `printArray()` function (p. 420) is used to write each font on a new line. T
 
 Before a font is used in a program, it must be converted and set as the current font. Processing has a unique data type called `PFont` to store font data. Make a new variable of the type `PFont` and use the `createFont()` function to convert the font. The first parameter to `createFont()` is the name of the font to convert and the second parameter defines the base size of the font. (Optional third and fourth parameters are defined in the Reference.) The `textFont()` function must then be used to set the current font. On our development computer, to work with Ziggurat Black, list option 571 above, the following code is run:
 
+<FixedImage side width={100} height={100}>
+
 ![](./12_08.png)
 
+</FixedImage>
 
 ```
 PFont zigBlack;
@@ -158,7 +188,11 @@ To make this program work on your computer, you will likely need to modify line 
 
 To ensure a font will load on all computers, regardless if the font is installed, add the file to the sketch's data folder. (Fonts in the data folder don't print in the console list as demonstrated in code 12-07.) Follow the instructions on page 10 to add a font to the data folder. When fonts inside the data folder are used, the complete file name, including the data type extension, needs to be written as the parameter to `createFont()`. The following example is similar to the prior example, but it uses an OpenType font inside the data folder. It uses Source Code Pro, an open source typeface that can be found online and downloaded through a web browser.
 
+<FixedImage side width={100} height={100}>
+
 ![](./12_09.png)
+
+</FixedImage>
 
 
 ```
@@ -181,7 +215,12 @@ void draw() {
 
 To use two fonts in one program, create two `PFont` variables and use the `textFont()` function to change the current font. Based on the prior two examples, the Ziggurat-Black font loads from its location on the local computer and Source Code Pro loads from the data folder.
 
+<FixedImage side width={100} height={100}>
+
 ![](./12_10.png)
+
+</FixedImage>
+
 
 ```
 PFont zigBlack, sourceLight;
@@ -212,7 +251,11 @@ To convert a font to the VLW format, select the &ldquo;Create Font&rdquo; option
 
 The following example uses the same font as the prior `createFont()` example. The only difference is the replacement of that function with `loadFont()`. To run these examples, first use the &ldquo;Create Font&rdquo; tool to turn a font into a VLW file. Change the name of the parameter to `loadFont()` to match the name of the VLW file created.
 
+<FixedImage side width={100} height={100}>
+
 ![](./12_11.png)
+
+</FixedImage>
 
 ```
 PFont zigBlack;
@@ -234,7 +277,12 @@ void draw() {
 
 When the font is drawn at a different size from the size at which it was created, it is scaled and therefore does not always look as crisp and smooth. For example, if a font is created at 12 pixels and is displayed at 96 pixels, it will appear blurry.
 
+<FixedImage side width={100} height={100}>
+
 ![](./12_12.png)
+
+</FixedImage>
+
 
 ```
 PFont zigBlack;
@@ -263,7 +311,11 @@ Processing includes functions to control the leading (the spacing between lines 
 
 The `textLeading()` function sets the spacing between lines of text. It has one parameter that defines this space in units of pixels.
 
+<FixedImage side width={100} height={100}>
+
 ![](./12_13.png)
+
+</FixedImage>
 
 ```
 String lines = "L1 L2 L3";
@@ -279,7 +331,12 @@ text(lines, 70, 15, 30, 100);
 
 Letters and words can be drawn from their center, left, and right edges. The `textAlign()` function sets the alignment for drawing text through its parameter, which can be `LEFT`, `CENTER`, or `RIGHT`. It sets the display characteristics of the letters in relation to the x-coordinate stated in the `text()` function.
 
+<FixedImage side width={100} height={100}>
+
 ![](./12_14.png)
+
+</FixedImage>
+
 
 ```
 fill(0);
@@ -297,7 +354,12 @@ The settings for `textSize()`, `textLeading()`, and `textAlign()` will be used f
 
 The `textWidth()` function calculates and returns the pixel width of any character or text string. This number is calculated from the current font and size as defined by the `textFont()` and `textSize()` functions. Because the letters of every font are a different size and letters within many fonts have different widths, this function is the only way to know how wide a string or character is when displayed on screen. For this reason, always use `textWidth()` to position elements relative to text, rather than hard-coding them into your program.
 
+<FixedImage side width={100} height={100}>
+
 ![](./12_15.png)
+
+</FixedImage>
+
 
 ```
 String s = "AEIOU";
@@ -317,9 +379,18 @@ rect(4, 78, tw, 5);
 
 Drawing letters to the screen becomes more engaging when used in combination with the keyboard. The `keyPressed()` event function introduced on page 97 can be used to record each letter as it is typed. The following two examples use this function to read and analyze input from the keyboard by using the `String` methods introduced in the Text chapter (p. 143). In both, the `String` variable letters starts empty. Each key typed is added to the end of the string. The first example displays the string as it grows as keys are pressed and removes letters from the end when backspace is pressed. The second example builds on the first—when the Return or Enter key is pressed, the program checks if the word &ldquo;gray&rdquo; or &ldquo;black&rdquo; was typed. If one of these words was input, the background changes to that value.
 
+<FixedImage side width={100} height={100}>
+
 ![](./12_16_1.png)
 
+</FixedImage>
+
+<FixedImage side width={100} height={100}>
+
 ![](./12_16_2.png)
+
+</FixedImage>
+
 
 ```
 String letters = "";
@@ -351,9 +422,18 @@ void keyPressed() {
 
 ---
 
+<FixedImage side width={100} height={100}>
+
 ![](./12_17_1.png)
 
+</FixedImage>
+
+<FixedImage side width={100} height={100}>
+
 ![](./12_17_2.png)
+
+</FixedImage>
+
 
 ```
 String letters = "";
@@ -393,9 +473,18 @@ Many artists and designers are fascinated with type and have created unique ways
 
 Typographic elements can be assigned behaviors that define a personality in relation to the mouse or keyboard. A word can express aggression by moving quickly toward the mouse, or moving away slowly can express timidity. The following examples demonstrate basic applications of this area. In the first, the word avoid stays away from the mouse because its position is set to the inverse of the cursor position. In the second, the word tickle jitters when the cursor hovers over its position.
 
+<FixedImage side width={100} height={100}>
+
 ![](./12_18_1.png)
 
+</FixedImage>
+
+<FixedImage side width={100} height={100}>
+
 ![](./12_18_2.png)
+
+</FixedImage>
+
 
 ```
 void setup() {
@@ -412,11 +501,24 @@ void draw() {
 
 ---
 
+<FixedImage side width={100} height={100}>
+
 ![](./12_19_1.png)
+
+</FixedImage>
+
+<FixedImage side width={100} height={100}>
 
 ![](./12_19_2.png)
 
+</FixedImage>
+
+<FixedImage side width={100} height={100}>
+
 ![](./12_19_3.png)
+
+</FixedImage>
+
 
 ```
 float x = 33;

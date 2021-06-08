@@ -24,9 +24,14 @@ The most basic building block for programming motion is the ***vector***. And so
 
 Before we get into vectors themselves, let's look at a beginner Processing example that demonstrates why it is in the first place we should care.  If you've read any of the introductory Processing textbooks or taken a class on programming with Processing (and hopefully you've done one of these things to help prepare you for this book), you probably, at one point or another, learned how to write a simple  bouncing ball sketch.  
 
+Example: Bouncing Ball with No Vectors
+
+<FixedImage side width={200} height={200}>
+
 ![](./bouncingball1.jpg)
 
-Example: Bouncing Ball with No Vectors
+</FixedImage>
+
 ```
 
 float x = 100;
@@ -319,9 +324,14 @@ and the function inside [**PVector**](http://processing.org/reference/PVector.ht
 
 Following is an example that demonstrates vector subtraction by taking the difference between two points -- the mouse location and the center of the window.
 
+Example: Vector subtraction
+
+<FixedImage side width={200} height={200}>
+
 ![](./vector_sub.jpg)
 
-Example: Vector subtraction
+</FixedImage>
+
 ```
 void setup() {
   size(200,200);
@@ -399,9 +409,15 @@ And implementing multiplication in code is as simple as:
 PVector u = new PVector(-3,7);
 u.mult(3); // This PVector is now three times the size and is equal to (-9,21).
 ```
-![](./vector_mult.jpg)
 
 Example: Vector multiplication
+
+<FixedImage side width={200} height={200}>
+
+![](./vector_mult.jpg)
+
+</FixedImage>
+
 ```
 void setup() {
   size(200,200);
@@ -475,9 +491,15 @@ float mag() {
   return sqrt(x*x + y*y);
 }
 ```
-![](./vector_mag.jpg)
 
 Example: Vector magnitude
+
+<FixedImage side width={200} height={200}>
+
+![](./vector_mag.jpg)
+
+</FixedImage>
+
 ```
 void setup() {
   size(200,200);
@@ -533,9 +555,15 @@ Of course, there's one small issue.  What if the magnitude of the vector is zero
    }
  }
 ```
-![](./vector_norm.jpg)
 
 Example: Normalizing a Vector
+
+<FixedImage side width={200} height={200}>
+
+![](./vector_norm.jpg)
+
+</FixedImage>
+
 ```
 void setup() {
   size(200,200);
@@ -655,9 +683,14 @@ and call the appropriate functions in draw():
 ```
 Here is the entire example for reference:
 
+Example: Motion 101 (velocity)
+
+<FixedImage side width={200} height={200}>
+
 ![](./vector_motion.jpg)
 
-Example: Motion 101 (velocity)
+</FixedImage>
+
 ```
 // Declare Mover object
 Mover mover;
@@ -783,9 +816,14 @@ What is the magnitude of velocity?  If it's less than 10, no worries, just leave
 
 Let's take a look at the changes to the Mover class now, complete with acceleration and limit().
 
+Example: Motion 101 (velocity and constant acceleration)
+
+<FixedImage side width={200} height={200}>
+
 ![](./vector_acc.jpg)
 
-Example: Motion 101 (velocity and constant acceleration)
+</FixedImage>
+
 ```
 class Mover {
 
@@ -818,9 +856,14 @@ class Mover {
 ```
 Ok, algorithm #2 -- &ldquo;a totally random acceleration.&rdquo;  In this case, instead of initializing acceleration in the object's constructor we want to pick a new acceleration each cycle, i.e. each time update() is called.
 
+Example: Motion 101 (velocity and random acceleration)
+
+<FixedImage side width={200} height={200}>
+
 ![](./vector_randacc.jpg)
 
-Example: Motion 101 (velocity and random acceleration)
+</FixedImage>
+
 ```
   void update() {
     
@@ -977,7 +1020,12 @@ To summarize, we have the following steps:
 4. Assign that vector to acceleration
 And here are those steps in the update() function itself:
 
+<FixedImage side width={200} height={200}>
+
 ![](./vector_mouse1.jpg)
+
+</FixedImage>
+
 ```
 void update() {
 
@@ -1012,9 +1060,14 @@ The object moving has no knowledge about trying to stop at a destination, it onl
 
 Let's take a look at what this example would look like with an array of Mover objects (rather than just one).
 
+Example: Accelerating towards mouse
+
+<FixedImage side width={200} height={200}>
+
 ![](./vector_mouse2.jpg)
 
-Example: Accelerating towards mouse
+</FixedImage>
+
 ```
 // Creating an array of objects.
 Mover[] movers = new Mover[20];

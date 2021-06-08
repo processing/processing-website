@@ -18,6 +18,7 @@
     font-size: var(--text-large);
     margin-top: var(--vertical-margin-large);
     margin-bottom: 1rem;
+    clear: right;
   }
 
   & h3 {
@@ -34,6 +35,7 @@
       font-family: inherit;
       margin-bottom: var(--vertical-margin-small);
       padding-left: 1em;
+      clear: right;
     }
 
     & a {
@@ -76,6 +78,7 @@
     font-family: "Vollkorn", serif;
     font-size: var(--text-medium);
     line-height: 1.6em;
+    clear: both;
 
     & a {
       color: var(--processing-blue-dark);

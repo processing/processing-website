@@ -48,7 +48,11 @@ int x9 = 39;
 
 Using what we know about drawing without arrays, ten variables are needed to store the data; each variable is used to draw a single rectangle. This is tedious:
 
+<FixedImage side width={100} height={100}>
+
 ![](./28_01.png)
+
+</FixedImage>
 
 ```
 int x0 = 50;
@@ -76,7 +80,11 @@ rect(0, 90, x9, 8);
 
 In contrast, the following example shows how to use an array within a program. The data for each bar is accessed in sequence with a for loop. The syntax and usage of arrays is discussed in more detail in the following pages.
 
+<FixedImage side width={100} height={100}>
+
 ![](./28_02.png)
+
+</FixedImage>
 
 ```
 int[] x = {
@@ -156,7 +164,11 @@ int[] data = { 19, 40, 75, 76, 90 }; // Declare, create, assign
 
 After an array is defined and assigned values, its data can be accessed and used within the code. An array element is accessed with the name of the array variable, followed by brackets around the element position to read.
 
+<FixedImage side width={100} height={100}>
+
 ![](./28_09.png)
+
+</FixedImage>
 
 ```
 int[] data = { 19, 40, 75, 76, 90 };
@@ -192,7 +204,12 @@ println(data3.length); // Prints "127" to the console
 
 Usually, a for loop is used to access array elements, especially with large arrays. The following example draws the same lines as code 28-09 but uses a for loop to iterate through every value in the array.
 
+<FixedImage side width={100} height={100}>
+
 ![](./28_12.png)
+
+</FixedImage>
+
 
 ```
 int[] data = { 19, 40, 75, 76, 90 };
@@ -204,7 +221,12 @@ for (int i = 0; i < data.length; i++) {
 
 A for loop can also be used to put data inside an array. For instance, it can calculate a series of numbers and then assign each value to an array element. The following example stores the values from the `sin()` function in an array within `setup()` and then displays these values as the stroke values for lines within `draw()`.
 
+<FixedImage side width={100} height={100}>
+
 ![](./28_13.png)
+
+</FixedImage>
+
 
 ```
 float[] sineWave;
@@ -232,11 +254,24 @@ void draw() {
 
 As one example of how arrays may be used, this section shows how to use arrays to store data from the mouse. The `pmouseX` and `pmouseY` variables store the cursor coordinates from the previous frame, but there is no built-in way to access the cursor values from earlier frames. At every frame, the `mouseX`, `mouseY`, `pmouseX`, and `pmouseY` variables are replaced with new numbers and their previous numbers are discarded. Creating an array is the easiest way to store the history of these values. In the following example, the most recent 100 values from `mouseY` are stored and displayed on screen as a line from the left to the right edge of the screen. At each frame, the values in the array are shifted to the right and the newest value is added to the beginning.
 
+<FixedImage side width={100} height={100}>
+
 ![](./28_15_1.png)
+
+</FixedImage>
+
+<FixedImage side width={100} height={100}>
 
 ![](./28_15_2.png)
 
+</FixedImage>
+
+<FixedImage side width={100} height={100}>
+
 ![](./28_15_3.png)
+
+</FixedImage>
+
 
 ```
 int[] y;
@@ -263,11 +298,24 @@ void draw() {
 
 Apply the same code simultaneously to the `mouseX` and `mouseY` values to store the position of the cursor. Displaying these values each frame creates a trail behind the cursor.
 
+<FixedImage side width={100} height={100}>
+
 ![](./28_16_1.png)
+
+</FixedImage>
+
+<FixedImage side width={100} height={100}>
 
 ![](./28_16_2.png)
 
+</FixedImage>
+
+<FixedImage side width={100} height={100}>
+
 ![](./28_16_3.png)
+
+</FixedImage>
+
 
 ```
 int num = 50;
@@ -455,11 +503,24 @@ Working with arrays of objects is technically similar to working with arrays of 
 
 These steps are translated into code in the following example. It uses the Ring class from page 371, so copy it over or retype it. This code creates a `rings[]` array to hold fifty `Ring` objects. Space in memory for the `rings[]` array is allocated in `setup()` and each `Ring` object is created. The first time a mouse button is pressed, the first `Ring` object is turned on and its `x` and `y` variables are assigned to the current values of the cursor. Each time a mouse button is pressed, a new `Ring` is turned on and displayed in the subsequent trip through `draw()`. When the final element in the array has been created, the program jumps back to the beginning of the array to assign new positions to earlier `Rings`.
 
+<FixedImage side width={100} height={100}>
+
 ![](./28_24_1.png)
+
+</FixedImage>
+
+<FixedImage side width={100} height={100}>
 
 ![](./28_24_2.png)
 
+</FixedImage>
+
+<FixedImage side width={100} height={100}>
+
 ![](./28_24_3.png)
+
+</FixedImage>
+
 
 ```
 Ring[] rings; // Declare the array
@@ -523,9 +584,18 @@ class Ring {
 
 The next example requires the `Spot` class from page 363. Unlike the prior example, variable values are generated within the `setup()` and are passed into each array elements through the object's constructor. Each element in the array starts with a unique set of x-coordinate, diameter, and speed values. Because the number of objects is dependent on the width of the display window, it is not possible to create the array until the program knows how wide it will be. Therefore, the array is declared outside of `setup()` to make it global (see p. 12), but it is created inside setup, after the width of the display window is defined.
 
+<FixedImage center width={700} height={100}>
+
 ![](./28_25_1.png)
 
+</FixedImage>
+
+<FixedImage center width={700} height={100}>
+
 ![](./28_25_2.png)
+
+</FixedImage>
+
 
 ```
 Spot[] spots; // Declare array
@@ -614,7 +684,12 @@ println(x[9][1]); // Prints "204"
 
 This sketch shows how it all fits together.
 
+<FixedImage side width={100} height={100}>
+
 ![](./28_27.png)
+
+</FixedImage>
+
 
 ```
 int[][] x = { {50, 0}, {61,204}, {83,51}, {69,102},

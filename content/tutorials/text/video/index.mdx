@@ -99,7 +99,12 @@ To summarize, I want to call the function `read()` whenever there is something t
 
 Again, anything you can do with a `PImage` (resize, tint, move, etc.) you can do with a `Capture` object. As long as you `read()` from that object, the video image will update as you manipulate it. See the following example:
 
+<FixedImage side width={333} height={214}>
+
 ![An image with a green tinted version of the video is scaled and rotated](./fig_16_02_tintvideo.png)
+
+</FixedImage>
+
 
 ```
 import processing.video.*;
@@ -127,7 +132,11 @@ void draw() {
 ```
 Note that a video image can be tinted just like a `PImage`. It can also be moved, rotated, and sized just like a `PImage`. Following is the [&ldquo; adjusting brightness &rdquo;](http://learningprocessing.com/examples/chp15/example-15-08-Brightness) example with a video image:
 
+<FixedImage side width={333} height={250}>
+
 ![An image with a light circle where you can see the video and everything else is black](./fig_16_03_flashlight.png)
+
+</FixedImage>
 
 ```
 // Step 1. Import the video library
@@ -295,7 +304,12 @@ I will begin with an example that captures a video at 80 × 60 pixels and render
 
 Let’s first write the program that displays the grid of rectangles. In the following example, the `videoScale` variable stores the ratio of the window’s pixel size to the grid’s size and for every column and row, a rectangle is drawn at an (x,y) location scaled and sized by `videoScale`.
 
+<FixedImage side width={333} height={250}>
+
 ![](./fig_16_04_blankgrid.png)
+
+</FixedImage>
+
 ```
 // Size of each cell in the grid, ratio of window size to video size
 int videoScale = 8; 
@@ -330,9 +344,14 @@ Knowing that I want to have squares eight pixels wide by eight pixels high, I ca
 
 I can now capture a video image that is 80 × 60. This is useful because capturing a 640 × 480 video from a camera can be slow compared to 80 × 60. I only want to capture the color information at the resolution required for the sketch.
 
+For every square at column `i` and row `j`, I look up the color at pixel `(i, j)` in the video image and color it accordingly. See the following example with the new parts in bold:
+
+<FixedImage side width={333} height={250}>
+
 ![](./fig_16_05_pixelated.png)
 
-For every square at column `i` and row `j`, I look up the color at pixel `(i, j)` in the video image and color it accordingly. See the following example with the new parts in bold:
+</FixedImage>
+
 ```
 import processing.video.*;
 
@@ -377,9 +396,14 @@ void draw() {
 ```
 As you can see, expanding the simple grid system to include colors from video only requires a few additions. I have to declare and initialize the `Capture` object, read from it, and pull colors from the pixel array.
 
+Less literal mappings of pixel colors to shapes in the grid can also be applied. In the following example, only the colors black and white are used. Squares are larger where brighter pixels in the video appear, and smaller for darker pixels.
+
+<FixedImage side width={333} height={250}>
+
 ![](./fig_16_06_mirror.png)
 
-Less literal mappings of pixel colors to shapes in the grid can also be applied. In the following example, only the colors black and white are used. Squares are larger where brighter pixels in the video appear, and smaller for darker pixels.
+</FixedImage>
+
 ```
 // Each pixel from the video source is drawn as
 // a rectangle with size based on brightness.
@@ -446,7 +470,12 @@ Say for Step 1, I write a program that scribbles a random line around the window
     - Draw a line from the old (x,y) to the new (x,y).
     - Save the new (x,y).
 
+<FixedImage side width={333} height={250}>
+
 ![](./fig_16_07_blank_scribble.png)
+
+</FixedImage>
+
 ```
 // Two global variables
 float x;
@@ -475,7 +504,12 @@ void draw() {
 ```
 Now that I have finished the pattern generating sketch, I can change `stroke()` to set a color according to the video image. Note again the new lines of code added in bold in the following code:
 
+<FixedImage side width={333} height={250}>
+
 ![](./fig_16_08_scribblermirror.png)
+
+</FixedImage>
+
 ```
 import processing.video.*;
 // Two global variables

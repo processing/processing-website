@@ -8,7 +8,6 @@ import classnames from 'classnames';
 import Header from './Header';
 import Footer from './Footer';
 
-import Column from './mdx/Column';
 import FixedImage from './mdx/FixedImage';
 import Intro from './mdx/Intro';
 import H2 from './mdx/H2';
@@ -57,7 +56,6 @@ const Layout = ({ children, withSidebar, mainClassName }) => {
 
   const shortcodes = useMemo(
     () => ({
-      Column,
       FixedImage,
       Intro,
       HighlightBlock,

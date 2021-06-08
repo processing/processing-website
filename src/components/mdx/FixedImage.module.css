@@ -21,6 +21,7 @@
   & figcaption {
     font-size: var(--text-xsmall);
   }
+
 }
 
 .root.inline {
@@ -28,4 +29,20 @@
   display: inline-block;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.side {
+  float: right;
+  margin-left: var(--gutter);
+  margin-top: 0;
+  right: 0;
+  clear: both;
+}
+
+@media (--reduced) {
+  .side {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

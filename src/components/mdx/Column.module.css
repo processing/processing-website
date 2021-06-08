@@ -1,7 +1,0 @@
-.root {
-  padding-right: var(--gutter);
-}
-
-.root > div {
-  margin-top: 0;
-}
