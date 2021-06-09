@@ -8,10 +8,10 @@ import css from './Character.module.css';
 import characters from './characters.json';
 
 const Character = ({ className }) => {
-  const newVersion = () => Math.floor(Math.random() * 3);
-  const [version, setVersion] = useState(newVersion);
+  const [version, setVersion] = useState(0);
 
   useEffect(() => {
+    const newVersion = () => Math.floor(Math.random() * 3);
     const timer = setInterval(() => {
       setVersion(newVersion);
     }, 20 * 1000);
