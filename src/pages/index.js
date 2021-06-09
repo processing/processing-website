@@ -38,21 +38,21 @@ const IndexPage = ({ data }) => {
           <p>{intl.formatMessage({ id: 'introText' })}</p>
           <div className={css.buttons}>
             <Button
-              to={'/download'}
+              to="/download"
               variant="animate1"
               size="large"
               className={css.button}>
               {intl.formatMessage({ id: 'download' })}
             </Button>
             <Button
-              to={'/reference'}
+              to="/reference"
               variant="animate1"
               size="large"
               className={css.button}>
               {intl.formatMessage({ id: 'reference' })}
             </Button>
             <Button
-              href={'https://processingfoundation.org/donate'}
+              to="/donate"
               variant="animate1"
               size="large"
               className={css.button}>
