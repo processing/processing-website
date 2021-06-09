@@ -14,7 +14,7 @@
 }
 
 .main {
-  top: 150px;
+  top: 145px;
   position: relative;
   flex: 1;
   padding-top: var(--vertical-margin-large);
@@ -23,6 +23,6 @@
 
 @media (--reduced) {
   .main {
-    top: 100px;
+    top: 95px;
   }
 }

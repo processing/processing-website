@@ -3,9 +3,6 @@
   height: 100px;
   padding-top: var(--gutter);
   padding-bottom: var(--gutter);
-  align-items: center;
-  flex-wrap: nowrap;
-  justify-content: space-between;
 }
 
 .root.scrolled {
@@ -14,7 +11,12 @@
   padding-bottom: calc(var(--gutter) / 2);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 }
-
+.container {
+  height: 100%;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
 .logo {
   flex-basis: var(--col1);
   white-space: nowrap;
