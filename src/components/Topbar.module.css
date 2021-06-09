@@ -30,13 +30,8 @@
 
 .menu {
   flex-basis: var(--col6);
-  position: relative;
   display: flex;
   align-items: center;
-  margin: 0;
-  height: 100%;
-  padding: 0;
-  list-style: none;
 }
 
 .itemLink {
