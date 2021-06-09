@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import classnames from 'classnames';
 
+import grid from '../styles/grid.module.css';
 import css from './Topbar.module.css';
 
 import LanguageSelector from './LanguageSelector';
@@ -38,17 +39,21 @@ const Topbar = ({ show }) => {
         { [css.show]: show },
         { [css.noshow]: !show }
       )}>
-      <ul className={css.menu}>
-        {items.map((item, key) => (
-          <li key={key} className={classnames(css.item, item.className)}>
-            <a className={css.itemLink} href={item.link}>
-              {item.logo}
-              <span>{item.name}</span>
-            </a>
-          </li>
-        ))}
-      </ul>
-      <LanguageSelector />
+      <div className={classnames(css.container, grid.container, grid.grid)}>
+        <ul className={classnames(css.menu, grid.col)}>
+          {items.map((item, key) => (
+            <li key={key} className={classnames(css.item, item.className)}>
+              <a className={css.itemLink} href={item.link}>
+                {item.logo}
+                <span>{item.name}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        {/* <LanguageSelector
+          className={classnames(css.languageSelector, grid.col)}
+        />*/}
+      </div>
     </div>
   );
 };

@@ -6,7 +6,7 @@ import { Button } from './Button';
 
 import css from './LanguageSelector.module.css';
 
-const LanguageSelector = () => {
+const LanguageSelector = ({ className }) => {
   const { config, locale } = useLocalization();
   const [showLanguage, setShowLanguage] = useState(false);
 
@@ -28,8 +28,11 @@ const LanguageSelector = () => {
     };
   }, [showLanguage]);
   return (
-    <div className={css.root}>
-      <Button onClick={onClick} className={css.languageButton}>
+    <div className={classnames(css.root, className)}>
+      <Button
+        onClick={onClick}
+        variant="transparent"
+        className={css.languageButton}>
         {config.filter((item) => item.code === locale)[0].localName}
       </Button>
       <ul

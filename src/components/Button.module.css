@@ -87,6 +87,23 @@
   }
 }
 
+/*  Variant: Transparent */
+
+.transparent {
+  background-color: transparent;
+  font-family: var(--font);
+  font-size: var(--text-regular);
+  color: var(--processing-blue-dark);
+  &:hover {
+    color: var(--processing-blue-mid);
+    background-color: var(--lightgray);
+  }
+  &:focus {
+    color: var(--processing-blue-dark);
+    background-color: var(--lightgray);
+  }
+}
+
 /*  Sizes  */
 
 .large {

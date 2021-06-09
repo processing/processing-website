@@ -4,13 +4,12 @@
   overflow: hidden;
   height: 100%;
   white-space: nowrap;
-
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 140px;
+  top: 145px;
   left: 0;
-  height: calc(100vh - 140px);
+  height: calc(100vh - 145px);
   transition: top 0.2s ease-in-out, width 0.4s ease;
   background: var(--lightgray);
   width: var(--margin);
@@ -54,7 +53,7 @@
 
 @media (--reduced) {
   .root {
-    top: 100px;
+    top: 95px;
     height: 48px;
     width: auto;
     padding-left: calc(var(--margin) + var(--gutter));

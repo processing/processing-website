@@ -115,7 +115,7 @@ const Navbar = ({ siteTitle, scrolled }) => {
           {siteTitle}
         </Link>
       </h1>
-      <div className={classnames(css.menuWrapper)}>
+      <div className={classnames(grid.col, css.menuWrapper)}>
         <button
           className={css.menuToggle}
           aria-label="Main menu"
