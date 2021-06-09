@@ -65,29 +65,34 @@
   display: inline-block;
   padding-left: 16px;
   margin-left: 8px;
-  border-left: solid 6px transparent;
+  border-left: solid 4px transparent;
   cursor: pointer;
   color: var(--processing-blue-dark);
   font-size: var(--text-medium);
-  font-weight: 700;
+  font-weight: 600;
   white-space: nowrap;
+  & button,
+  & a {
+    font-weight: inherit;
+    color: var(--processing-blue-dark);
+  }
   & a:hover {
     color: var(--processing-blue-dark);
   }
 }
 
 .item:hover {
-  border-left: solid 6px var(--processing-blue-dark);
+  border-left: solid 4px var(--processing-blue-dark);
 }
 
 .active {
-  border-left: solid 6px var(--processing-blue-dark);
+  border-left: solid 4px var(--processing-blue-dark);
 }
 
 .submenu {
   display: flex;
   position: absolute;
-  left: -6px;
+  left: -4px;
   top: 28px;
   z-index: 30;
   opacity: 0;
@@ -253,7 +258,7 @@
     padding-bottom: 0px;
   }
   .hasSubmenu:hover {
-    border-left: solid 6px var(--gray);
+    border-left: solid 4px var(--gray);
   }
 
   .submenu {
@@ -271,12 +276,12 @@
     padding-left: 36px;
     transition: padding-left 0.15s ease;
     display: block;
-    border-left: solid 6px transparent;
+    border-left: solid 4px transparent;
     font-size: var(--text-xlarge);
     padding-bottom: 6px;
     &:hover {
       padding-left: 44px;
-      border-left: solid 6px var(--processing-blue-dark);
+      border-left: solid 4px var(--processing-blue-dark);
     }
   }
 }

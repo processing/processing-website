@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useMemo } from 'react';
+import React, { Fragment, useState, useEffect, useMemo } from 'react';
 import classnames from 'classnames';
 
 import Eye from './Eye';
@@ -7,13 +7,25 @@ import css from './Character.module.css';
 
 import characters from './characters.json';
 
-const Character = ({ num, className }) => {
+const Character = ({ className }) => {
+  const [version, setVersion] = useState(0);
+
+  useEffect(() => {
+    const newVersion = () => Math.floor(Math.random() * 3);
+    const timer = setInterval(() => {
+      setVersion(newVersion);
+    }, 20 * 1000);
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
   const strokeWidth = 30;
   const [moving, setMoving] = useState(null);
 
-  const shapes = characters[num].shapes;
-  let eyes = characters[num].eyes;
-  const blink = characters[num].blink;
+  const shapes = characters[version].shapes;
+  const eyes = characters[version].eyes;
+  const blink = characters[version].blink;
 
   useMemo(() => {
     if (moving)

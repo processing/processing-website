@@ -1,4 +1,4 @@
-import React, { useState, useEffect, memo, useContext } from 'react';
+import React, { memo, useContext } from 'react';
 import classnames from 'classnames';
 
 import { LayoutContext } from '../Layout';
@@ -11,16 +11,6 @@ import css from './Donate.module.css';
 
 const Donate = () => {
   const { headerScrolled } = useContext(LayoutContext);
-  const newVersion = () => Math.floor(Math.random() * 3);
-  const [version, setVersion] = useState(newVersion);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setVersion(newVersion);
-    }, 20 * 1000);
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
 
   return (
     <div
@@ -32,7 +22,7 @@ const Donate = () => {
         <br />
         your help!
       </h3>
-      <Character num={version} className={css.character} />
+      <Character className={css.character} />
       <p className={css.text}>Help us continue with your generosity!</p>
       <Button to="/donate" className={css.donate}>
         Donate

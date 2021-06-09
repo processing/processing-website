@@ -116,13 +116,13 @@ const Navbar = ({ siteTitle, scrolled }) => {
         </Link>
       </h1>
       <div className={classnames(css.menuWrapper)}>
-        <a
+        <button
           className={css.menuToggle}
           aria-label="Main menu"
           aria-expanded={expanded}
           onClick={() => setExpanded(!expanded)}>
           {expanded ? <CloseIcon /> : <MenuIcon />}
-        </a>
+        </button>
         <ul
           className={classnames(css.menu, {
             [css.expanded]: expanded
@@ -145,9 +145,9 @@ const Navbar = ({ siteTitle, scrolled }) => {
                   </Link>
                 )
               ) : (
-                <a onClick={() => onClick(item.name)}>
+                <button onClick={() => onClick(item.name)}>
                   {intl.formatMessage({ id: item.name })}
-                </a>
+                </button>
               )}
               {item.children && (
                 <ul
