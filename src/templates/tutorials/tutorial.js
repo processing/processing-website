@@ -51,13 +51,13 @@ const TutorialTemplate = ({ data, pageContext }) => {
             </div>
           </Content>
         ) : (
-          <div>
+          <Content collapsed={!showSidebar}>
             {intl.formatMessage({ id: 'notTranslated' })}
             <Link to={pageContext.slug}>
               {' '}
               {intl.formatMessage({ id: 'englishPage' })}
             </Link>
-          </div>
+          </Content>
         )}
       </div>
     </Layout>
