@@ -5,9 +5,7 @@ import unique from 'array-unique';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 import { widont, linkParsing } from '../utils/index.js';
-
-import { LocalizedLink as Link } from 'gatsby-theme-i18n';
-import { useLocalization } from 'gatsby-theme-i18n';
+import { useLocalization, LocalizedLink as Link } from 'gatsby-theme-i18n';
 
 import CategoryNav from '../components/CategoryNav';
 import Donate from '../components/character/Donate';
@@ -130,7 +128,8 @@ const ContributionsList = memo(({ categories, libraries }) => {
                   className={classnames(grid.col, css.itemDescription)}
                   dangerouslySetInnerHTML={{
                     __html: linkParsing(widont(node.sentence))
-                  }}/>
+                  }}
+                />
               </li>
             );
           })}

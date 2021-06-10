@@ -2,9 +2,9 @@ import React, { Fragment, useContext, useState, memo } from 'react';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
 
-import FilterBar from './FilterBar';
 import SidebarTreeList from './SidebarTreeList';
 import { LayoutContext } from './Layout';
+import FilterBar from './FilterBar';
 
 import { useFilteredTree } from '../hooks';
 

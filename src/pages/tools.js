@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
-
 import { useLocalization } from 'gatsby-theme-i18n';
 
 import Donate from '../components/character/Donate';
