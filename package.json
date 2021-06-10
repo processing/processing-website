@@ -113,6 +113,28 @@
             }
           }
         ]
+      },
+      "production": {
+        "stack": "processing-website-production",
+        "bucket": "processing-website-production",
+        "fileParams": [
+          {
+            "match": [
+              "!**/*.(html|json)"
+            ],
+            "params": {
+              "CacheControl": "public, max-age=31536000, immutable"
+            }
+          },
+          {
+            "match": [
+              "**/*.(html|json)"
+            ],
+            "params": {
+              "CacheControl": "public, max-age=300"
+            }
+          }
+        ]
       }
     }
   }

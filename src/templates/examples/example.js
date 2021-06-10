@@ -26,15 +26,17 @@ import grid from '../../styles/grid.module.css';
 
 // This is to make sure that p5.Vector and other namespaced classes
 // work in the live sketch examples.
-window.p5 = p5;
+if (typeof window !== 'undefined') {
+  window.p5 = p5;
+}
 
 const ExampleTemplate = ({ data, pageContext }) => {
   const [showSidebar, setShowSidebar] = useSidebar();
   const intl = useIntl();
 
-  const { example, image, allExamples, relatedImages, liveSketch } = data;
-  const { title, description, author, featured } = example.childJson;
   const { name, related } = pageContext;
+  const { example, image, allExamples, relatedImages, liveSketch } = data;
+  const json = example?.childJson;
 
   const pdes = useOrderedPdes(name, data.pdes.nodes);
   const examples = usePreparedExamples(allExamples.nodes, relatedImages.nodes);
@@ -43,7 +45,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
 
   // Run live sketch
   useEffect(() => {
-    if (liveSketch) {
+    if (liveSketch && json) {
       let p5Instance;
       const tryToRunSketch = () => {
         if (window.runLiveSketch) {
@@ -62,12 +64,12 @@ const ExampleTemplate = ({ data, pageContext }) => {
         }
       };
     }
-  }, [liveSketch]);
+  }, [liveSketch, json]);
 
   return (
     <Layout hasSidebar>
       <Helmet>
-        {title && <title>{title}</title>}
+        {json?.title && <title>{json.title}</title>}
         {liveSketch && <script>{`${liveSketch.childRawCode.content}`}</script>}
       </Helmet>
       <div className={grid.grid}>
@@ -78,24 +80,24 @@ const ExampleTemplate = ({ data, pageContext }) => {
           show={showSidebar}
           useSerif
         />
-        {example.childJson ? (
+        {json ? (
           <Content collapsed={!showSidebar}>
-            <h1>{title}</h1>
-            {author && (
+            <h1>{json.title}</h1>
+            {json.author && (
               <h3>
-                {intl.formatMessage({ id: 'by' })} {author}
+                {intl.formatMessage({ id: 'by' })} {json.author}
               </h3>
             )}
             <div className={grid.grid}>
               <div className={classnames(grid.col, css.description)}>
                 <p
                   dangerouslySetInnerHTML={{
-                    __html: description
+                    __html: json.description
                   }}></p>
               </div>
-              {featured.length > 0 && (
+              {json.featured.length > 0 && (
                 <FeaturedFunctions
-                  featured={featured}
+                  featured={json.featured}
                   heading={intl.formatMessage({ id: 'featured' })}
                 />
               )}

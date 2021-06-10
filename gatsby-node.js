@@ -8,6 +8,21 @@ const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const { examplePath, referencePath } = require('./src/utils/paths');
 
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === 'build-html' || stage === 'develop-html') {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /p5\.min\.js/,
+            use: loaders.null()
+          }
+        ]
+      }
+    });
+  }
+};
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   await Promise.all([
     createReference(actions, graphql),

@@ -44,7 +44,9 @@ const initialState = {
 };
 
 const loadedState =
-  window.localStorage && window.localStorage.getItem('sketch');
+  typeof window !== 'undefined' &&
+  window.localStorage &&
+  window.localStorage.getItem('sketch');
 const parsedState = loadedState ? JSON.parse(loadedState) : initialState;
 
 const Sketch = ({ children }) => {
