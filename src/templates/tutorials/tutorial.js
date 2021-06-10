@@ -19,7 +19,7 @@ import grid from '../../styles/grid.module.css';
 const TutorialTemplate = ({ data, pageContext }) => {
   const { mdx } = data;
   const [showSidebar, setShowSidebar] = useSidebar(
-    !!mdx.tableOfContents.items ? undefined : true
+    !!mdx?.tableOfContents?.items ? undefined : true
   );
   const intl = useIntl();
   useHighlight();
@@ -27,10 +27,12 @@ const TutorialTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
       <Helmet>
-        <title>{mdx && mdx.frontmatter.title} / Tutorial</title>
+        {mdx?.frontmatter?.title && (
+          <title>{mdx.frontmatter.title} / Tutorial</title>
+        )}
       </Helmet>
       <div className={classnames(grid.grid, css.root)}>
-        {mdx.tableOfContents.items && (
+        {mdx?.tableOfContents?.items && (
           <SidebarTableOfContents
             items={mdx.tableOfContents.items}
             title={intl.formatMessage({ id: 'tableOfContents' })}
