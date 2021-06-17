@@ -50,9 +50,9 @@ const Topbar = ({ show }) => {
             </li>
           ))}
         </ul>
-        {/* <LanguageSelector
+        { <LanguageSelector
           className={classnames(css.languageSelector, grid.col)}
-        />*/}
+        />}
       </div>
     </div>
   );
