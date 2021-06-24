@@ -26,7 +26,7 @@ const Donate = () => {
               src="https://donorbox.org/widget.js"
               paypalexpress="true"></script>
             <iframe
-              title="Donate to Processing"
+              title={intl.formatMessage({ id: 'donatePaymentTitle' })}
               className={css.donate}
               allowpaymentrequest=""
               src="https://donorbox.org/embed/support-the-processing-foundation?hide_donation_meter=true"></iframe>
