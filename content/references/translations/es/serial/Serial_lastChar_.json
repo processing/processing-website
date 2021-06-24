@@ -1,0 +1,19 @@
+{
+  "brief": "Returns the last byte received as a char or -1 if there is none available",
+  "related": [],
+  "name": "lastChar()",
+  "description": "Returns the last byte received as a char or -1 if there is none available.",
+  "syntax": ["serial.lastChar()"],
+  "returns": "char",
+  "type": "method",
+  "category": "serial",
+  "subcategory": "",
+  "classanchor": "Serial",
+  "parameters": [
+    {
+      "name": "serial",
+      "description": " any variable of type Serial",
+      "type": ["Serial"]
+    }
+  ]
+}

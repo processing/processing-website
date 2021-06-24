@@ -1,0 +1,34 @@
+{
+  "brief": "Start the generator.",
+  "related": [],
+  "name": "play()",
+  "description": "Start the generator.",
+  "syntax": [
+    ".play()",
+    ".play(amp)",
+    ".play(amp, pos)",
+    ".play(amp, add, pos)"
+  ],
+  "returns": "void",
+  "type": "method",
+  "category": "noise",
+  "subcategory": "PinkNoise",
+  "classanchor": "PinkNoise",
+  "parameters": [
+    {
+      "name": "amp",
+      "description": "the amplitude of the noise as a value from 0.0 (complete silence) to 1.0 (full volume)",
+      "type": ["float"]
+    },
+    {
+      "name": "add",
+      "description": "offset the output of the noise by given value",
+      "type": ["float"]
+    },
+    {
+      "name": "pos",
+      "description": "pan the generator in stereo panorama. Allowed values are between -1.0 and 1.0.",
+      "type": ["float"]
+    }
+  ]
+}

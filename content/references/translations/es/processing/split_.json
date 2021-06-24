@@ -1,0 +1,23 @@
+{
+  "brief": "The <b>split()</b> function breaks a string into pieces using a\n           character or string as the divider",
+  "related": [],
+  "name": "split()",
+  "description": "The <b>split()</b> function breaks a String into pieces using a character\n or string as the delimiter. The <b>delim</b> parameter specifies the\n character or characters that mark the boundaries between each piece. A\n String[] array is returned that contains each of the pieces. <br />\n <br />\n If the result is a set of numbers, you can convert the String[] array to a\n float[] or int[] array using the datatype conversion functions <b>int()</b>\n and <b>float()</b>. (See the second example above.) <br />\n <br />\n The <b>splitTokens()</b> function works in a similar fashion, except that\n it splits using a range of characters instead of a specific character or\n sequence. <!-- <br />\n <br />\n This function uses regular expressions to determine how the <b>delim</b>\n parameter divides the <b>str</b> parameter. Therefore, if you use\n characters such parentheses and brackets that are used with regular\n expressions as a part of the <b>delim</b> parameter, you'll need to put two\n blackslashes (\\\\\\\\) in front of the character (see example above). You can\n read more about\n <a href=\"http://en.wikipedia.org/wiki/Regular_expression\">regular\n expressions</a> and\n <a href=\"http://en.wikipedia.org/wiki/Escape_character\">escape\n characters</a> on Wikipedia. -->",
+  "syntax": ["split(value, delim)"],
+  "returns": "String[]",
+  "type": "function",
+  "category": "data",
+  "subcategory": "string_functions",
+  "parameters": [
+    {
+      "name": "value",
+      "description": "the String to be split",
+      "type": ["String"]
+    },
+    {
+      "name": "delim",
+      "description": "the character or String used to separate the data",
+      "type": ["char", "String"]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "brief": "Changes the amplitude/volume of the input stream.",
+  "related": [],
+  "name": "amp()",
+  "description": "Changes the amplitude/volume of the input stream. Allowed values are between 0.0 and 1.0.",
+  "syntax": [".amp(amp)"],
+  "returns": "void",
+  "type": "method",
+  "category": "I/O",
+  "subcategory": "AudioIn",
+  "classanchor": "AudioIn",
+  "parameters": [
+    {
+      "name": "amp",
+      "description": "the amplitude of the input stream as a value from 0.0 (complete silence) to 1.0 (full volume)",
+      "type": ["float"]
+    }
+  ]
+}

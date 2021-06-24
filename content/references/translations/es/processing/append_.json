@@ -1,0 +1,23 @@
+{
+  "brief": "Expands an array by one element and adds data to the new position",
+  "related": ["shorten_", "expand_"],
+  "name": "append()",
+  "description": "Expands an array by one element and adds data to the new position. The\n datatype of the <b>element</b> parameter must be the same as the\n datatype of the array.\n <br/> <br/>\n When using an array of objects, the data returned from the function must\n be cast to the object array's data type. For example: <em>SomeClass[]\n items = (SomeClass[]) append(originalArray, element)</em>.",
+  "syntax": ["append(array, value)"],
+  "returns": "byte[], char[], int[], float[], String[], or Object",
+  "type": "function",
+  "category": "data",
+  "subcategory": "array_functions",
+  "parameters": [
+    {
+      "name": "array",
+      "description": "array to append",
+      "type": ["byte[]", "char[]", "int[]", "float[]", "String[]", "Object"]
+    },
+    {
+      "name": "value",
+      "description": "new data for the array",
+      "type": ["byte", "char", "int", "float", "String", "Object"]
+    }
+  ]
+}

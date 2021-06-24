@@ -1,0 +1,31 @@
+{
+  "name": "Array",
+  "brief": "An array is a list of data",
+  "description": "An array is a list of data. It is possible to have an array of any type of data. Each piece of data in an array is identified by an index number representing its position in the array. The first element in the array is <b>[0]</b>, the second element is <b>[1]</b>, and so on. Arrays are similar to objects, so they must be created with the keyword <b>new</b>.<br/>\n<br/>\nEach array has a variable <b>length</b>, which is an integer value for the total number of elements in the array. Note that since index numbering begins at zero (not 1), the last value in an array with a <b>length</b> of 5 should be referenced as <b>array[4]</b> (that is, the <b>length</b> minus 1), not <b>array[5]</b>, which would trigger an error.<br/>\n<br/>\nAnother common source of confusion is the difference between using <b>length</b> to get the size of an array and <b>length()</b> to get the size of a String. Notice the presence of parentheses when working with Strings. (<b>array.length</b> is a variable, while <b>String.length()</b> is a method specific to the String class.)\n",
+  "constructors": ["datatype[] var", "var[element] = value", "var.length"],
+  "classFields": [],
+  "methods": [],
+  "related": [],
+  "type": "class",
+  "classanchor": "Array",
+  "category": "Data",
+  "subcategory": "Composite",
+  "parameters": [
+    {
+      "name": "datatype",
+      "description": "any primitive or compound datatype, including user-defined classes",
+      "type": []
+    },
+    { "name": "var", "description": "any valid variable name", "type": [] },
+    {
+      "name": "element",
+      "description": "int: must not exceed the length of the array minus 1",
+      "type": []
+    },
+    {
+      "name": "value",
+      "description": "data to assign to the array element; must be the same datatype as the array",
+      "type": []
+    }
+  ]
+}

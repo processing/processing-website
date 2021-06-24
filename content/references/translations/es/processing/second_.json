@@ -1,0 +1,12 @@
+{
+  "brief": "Returns the current second as a value from 0 - 59",
+  "related": ["millis_", "minute_", "hour_", "day_", "month_", "year_"],
+  "name": "second()",
+  "description": "Processing communicates with the clock on your computer. The\n <b>second()</b> function returns the current second as a value from 0 - 59.",
+  "syntax": ["second()"],
+  "returns": "int",
+  "type": "function",
+  "category": "input",
+  "subcategory": "time_date",
+  "parameters": []
+}

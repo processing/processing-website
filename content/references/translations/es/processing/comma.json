@@ -1,0 +1,18 @@
+{
+  "name": ", (comma)",
+  "brief": "Separates parameters in function calls and elements during assignment",
+  "description": "Separates parameters in function calls and elements during assignment.\n",
+  "related": [],
+  "syntax": ["value1, ..., valueN"],
+  "returns": "",
+  "type": "function",
+  "category": "structure",
+  "subcategory": "",
+  "parameters": [
+    {
+      "name": "value1, ..., valueN",
+      "description": "any int, float, byte, boolean, color, char, String",
+      "type": []
+    }
+  ]
+}

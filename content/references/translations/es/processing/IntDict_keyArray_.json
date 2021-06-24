@@ -1,0 +1,13 @@
+{
+  "brief": "Return a copy of the internal keys array",
+  "related": [],
+  "name": "keyArray()",
+  "description": "Return a copy of the internal keys array.  In contrast to the <b>keys()</b> \n method, this array can be modified.",
+  "syntax": [".keyArray()", ".keyArray(outgoing)"],
+  "returns": "String[]",
+  "type": "method",
+  "category": "intdict",
+  "subcategory": "method",
+  "classanchor": "IntDict",
+  "parameters": []
+}

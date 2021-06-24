@@ -1,0 +1,13 @@
+{
+  "brief": "Calculate the magnitude of the vector",
+  "related": ["PVector_magSq_"],
+  "name": "mag()",
+  "description": "Calculates the magnitude (length) of the vector and returns the result\n as a float (this is simply the equation <em>sqrt(x*x + y*y + z*z)</em>.)",
+  "syntax": [".mag()"],
+  "returns": "float",
+  "type": "method",
+  "category": "pvector",
+  "subcategory": "method",
+  "classanchor": "PVector",
+  "parameters": []
+}

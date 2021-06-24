@@ -1,0 +1,19 @@
+{
+  "brief": "Cues the playhead to a fixed position in the soundfile.",
+  "related": [],
+  "name": "cue()",
+  "description": "Cues the playhead to a fixed position in the soundfile. Note that <b>cue()</b> only \n affects the playhead for future calls to <b>play()</b>, but not to <b>loop()</b>.",
+  "syntax": [".cue(time)"],
+  "returns": "void",
+  "type": "method",
+  "category": "sampling",
+  "subcategory": "SoundFile",
+  "classanchor": "SoundFile",
+  "parameters": [
+    {
+      "name": "time",
+      "description": "position in the soundfile that the next playback should start\n            from, in seconds.",
+      "type": ["float"]
+    }
+  ]
+}

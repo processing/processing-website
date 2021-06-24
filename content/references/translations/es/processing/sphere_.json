@@ -1,0 +1,18 @@
+{
+  "brief": "A sphere is a hollow ball made from tessellated triangles",
+  "related": ["sphereDetail_"],
+  "name": "sphere()",
+  "description": "A sphere is a hollow ball made from tessellated triangles.\n\n\n ",
+  "syntax": ["sphere(r)"],
+  "returns": "void",
+  "type": "function",
+  "category": "shape",
+  "subcategory": "3d_primitives",
+  "parameters": [
+    {
+      "name": "r",
+      "description": "the radius of the sphere",
+      "type": ["float"]
+    }
+  ]
+}

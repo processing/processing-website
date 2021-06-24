@@ -1,0 +1,13 @@
+{
+  "brief": "Returns the number of frames of the audiosample as an int.",
+  "related": [],
+  "name": "frames()",
+  "description": "Returns the number of frames of the audiosample as an int.",
+  "syntax": [".frames()"],
+  "returns": "int",
+  "type": "method",
+  "category": "sampling",
+  "subcategory": "AudioSample",
+  "classanchor": "AudioSample",
+  "parameters": []
+}

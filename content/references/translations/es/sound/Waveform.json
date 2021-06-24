@@ -1,0 +1,38 @@
+{
+  "brief": "This is a Waveform analyzer.",
+  "methods": [
+    {
+      "anchor": "Waveform_analyze_",
+      "name": "analyze()",
+      "desc": "Gets the content of the current audiobuffer from the input source."
+    },
+    {
+      "anchor": "Waveform_input_",
+      "name": "input()",
+      "desc": "Define the audio input for the analyzer."
+    }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "This is a Waveform analyzer. It returns the waveform of the \n of an audio stream the moment it is queried with the <b>analyze()</b>\n method.",
+  "type": "class",
+  "constructors": ["Waveform(parent, nsamples)"],
+  "related": [],
+  "name": "Waveform",
+  "classanchor": "sound/Waveform",
+  "category": "analysis",
+  "subcategory": "Waveform",
+  "parameters": [
+    {
+      "name": "parent",
+      "description": "typically use \"this\"",
+      "type": ["PApplet"]
+    },
+    {
+      "name": "nsamples",
+      "description": "number of waveform samples that you want to be able to read at once (a positive integer).",
+      "type": ["int"]
+    }
+  ]
+}

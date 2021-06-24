@@ -1,0 +1,19 @@
+{
+  "brief": "Changes the amplitude/volume of the player.",
+  "related": [],
+  "name": "amp()",
+  "description": "Change the amplitude/volume of the player. Values are between 0.0 and 1.0.",
+  "syntax": [".amp(amp)"],
+  "returns": "void",
+  "type": "method",
+  "category": "sampling",
+  "subcategory": "AudioSample",
+  "classanchor": "AudioSample",
+  "parameters": [
+    {
+      "name": "amp",
+      "description": "A float value between 0.0 (complete silence) and 1.0 (full volume)\n            controlling the amplitude/volume of this sound.",
+      "type": ["float"]
+    }
+  ]
+}

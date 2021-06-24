@@ -1,0 +1,21 @@
+{
+  "brief": "The system variable that always contains the vertical position\n of the mouse in the frame previous to the current frame",
+  "related": [
+    "mouseX",
+    "mouseY",
+    "pmouseX",
+    "mousePressed",
+    "mousePressed_",
+    "mouseReleased_",
+    "mouseClicked_",
+    "mouseMoved_",
+    "mouseDragged_",
+    "mouseButton",
+    "mouseWheel_"
+  ],
+  "name": "pmouseY",
+  "description": "The system variable <b>pmouseY</b> always contains the vertical position\n of the mouse in the frame previous to the current frame. More detailed\n information about how <b>pmouseY</b> is updated inside of <b>draw()</b>\n and mouse events is explained in the reference for <b>pmouseX</b>.",
+  "category": "input",
+  "subcategory": "mouse",
+  "type": "other"
+}

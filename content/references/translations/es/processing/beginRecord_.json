@@ -1,0 +1,19 @@
+{
+  "brief": "Opens a new file and all subsequent drawing functions are echoed\n           to this file as well as the display window",
+  "related": ["endRecord_"],
+  "name": "beginRecord()",
+  "description": "Opens a new file and all subsequent drawing functions are echoed to this\n file as well as the display window. The <b>beginRecord()</b> function\n requires two parameters, the first is the renderer and the second is the\n file name. This function is always used with <b>endRecord()</b> to stop the\n recording process and close the file. <br />\n <br />\n Note that <b>beginRecord()</b> will only pick up any settings that happen\n after it has been called. For instance, if you call <b>textFont()</b>\n before <b>beginRecord()</b>, then that font will not be set for the file\n that you're recording to. <br />\n <br />\n <b>beginRecord()</b> works only with the PDF and SVG renderers.",
+  "syntax": ["beginRecord(renderer, filename)"],
+  "returns": "PGraphics or void",
+  "type": "function",
+  "category": "output",
+  "subcategory": "files",
+  "parameters": [
+    { "name": "renderer", "description": "PDF or SVG", "type": ["String"] },
+    {
+      "name": "filename",
+      "description": "filename for output",
+      "type": ["String"]
+    }
+  ]
+}

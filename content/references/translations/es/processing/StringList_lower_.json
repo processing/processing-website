@@ -1,0 +1,13 @@
+{
+  "brief": "Make the entire list lower case",
+  "related": [],
+  "name": "lower()",
+  "description": "Make the entire list lower case.",
+  "syntax": [".lower()"],
+  "returns": "void",
+  "type": "method",
+  "category": "stringlist",
+  "subcategory": "method",
+  "classanchor": "StringList",
+  "parameters": []
+}

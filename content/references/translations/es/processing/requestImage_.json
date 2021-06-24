@@ -1,0 +1,23 @@
+{
+  "brief": "Loads images on a separate thread so that your sketch does not\n           freeze while images load during <b>setup()</b>",
+  "related": ["PImage", "loadImage_"],
+  "name": "requestImage()",
+  "description": "This function loads images on a separate thread so that your sketch doesn't\n freeze while images load during <b>setup()</b>. While the image is loading,\n its width and height will be 0. If an error occurs while loading the image,\n its width and height will be set to -1. You'll know when the image has\n loaded properly because its <b>width</b> and <b>height</b> will be greater\n than 0. Asynchronous image loading (particularly when downloading from a\n server) can dramatically improve performance.<br />\n <br />\n The <b>extension</b> parameter is used to determine the image type in cases\n where the image filename does not end with a proper extension. Specify the\n extension as the second parameter to <b>requestImage()</b>.",
+  "syntax": ["requestImage(filename)", "requestImage(filename, extension)"],
+  "returns": "PImage",
+  "type": "function",
+  "category": "image",
+  "subcategory": "loading_displaying",
+  "parameters": [
+    {
+      "name": "filename",
+      "description": "name of the file to load, can be .gif, .jpg, .tga, or a handful of\n          other image types depending on your platform",
+      "type": ["String"]
+    },
+    {
+      "name": "extension",
+      "description": "the type of image to load, for example \"png\", \"gif\", \"jpg\"",
+      "type": ["String"]
+    }
+  ]
+}

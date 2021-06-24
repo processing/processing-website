@@ -30,7 +30,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout mainClassName={css.main}>
       <Helmet>
-        <title>Welcome to Processing!</title>
+        <title>{intl.formatMessage({ id: 'welcome' })}</title>
       </Helmet>
       <Sketch>
         <div className={css.hero}>

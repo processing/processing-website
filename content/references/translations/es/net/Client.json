@@ -1,0 +1,98 @@
+{
+  "brief": "The client class is used to create client Objects which connect to a server to exchange data",
+  "methods": [
+    {
+      "anchor": "Client_stop_",
+      "name": "stop()",
+      "desc": "Disconnects from the server"
+    },
+    {
+      "anchor": "Client_active_",
+      "name": "active()",
+      "desc": "Returns <b>true</b> if this client is still active"
+    },
+    {
+      "anchor": "Client_ip_",
+      "name": "ip()",
+      "desc": "Returns the IP address of the machine as a <b>String</b>"
+    },
+    {
+      "anchor": "Client_available_",
+      "name": "available()",
+      "desc": "Returns the number of bytes in the buffer waiting to be read"
+    },
+    {
+      "anchor": "Client_clear_",
+      "name": "clear()",
+      "desc": "Clears the buffer"
+    },
+    {
+      "anchor": "Client_read_",
+      "name": "read()",
+      "desc": "Returns a value from the buffer"
+    },
+    {
+      "anchor": "Client_readChar_",
+      "name": "readChar()",
+      "desc": "Returns the next byte in the buffer as a char"
+    },
+    {
+      "anchor": "Client_readBytes_",
+      "name": "readBytes()",
+      "desc": "Reads a group of bytes from the buffer"
+    },
+    {
+      "anchor": "Client_readBytesUntil_",
+      "name": "readBytesUntil()",
+      "desc": "Reads from the buffer of bytes up to and including a particular character"
+    },
+    {
+      "anchor": "Client_readString_",
+      "name": "readString()",
+      "desc": "Returns the buffer as a <b>String</b>"
+    },
+    {
+      "anchor": "Client_readStringUntil_",
+      "name": "readStringUntil()",
+      "desc": "Returns the buffer as a <b>String</b> up to and including a particular character"
+    },
+    {
+      "anchor": "Client_write_",
+      "name": "write()",
+      "desc": "Writes <b>bytes</b>, <b>chars</b>, <b>ints</b>, <b>bytes[]</b>, <b>Strings</b>"
+    }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "A client connects to a server and sends data back and forth. If anything \n goes wrong with the connection, for example the host is not there or is \n listening on a different port, an exception is thrown.",
+  "type": "class",
+  "constructors": ["Client(parent, host, port)", "Client(parent, socket)"],
+  "related": ["LIB_net/clientEvent_"],
+  "name": "Client",
+  "classanchor": "net/Client",
+  "category": "client",
+  "subcategory": "",
+  "parameters": [
+    {
+      "name": "parent",
+      "description": "typically use \"this\"",
+      "type": ["PApplet"]
+    },
+    {
+      "name": "host",
+      "description": "address of the server",
+      "type": ["String"]
+    },
+    {
+      "name": "port",
+      "description": "port to read/write from on the server",
+      "type": ["int"]
+    },
+    {
+      "name": "socket",
+      "description": "any object of type Socket",
+      "type": ["Socket"]
+    }
+  ]
+}

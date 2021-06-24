@@ -1,0 +1,35 @@
+{
+  "brief": "Finds multiple rows that match the given expression",
+  "related": [
+    "Table_getRow_",
+    "Table_rows_",
+    "Table_findRow_",
+    "Table_findRows_",
+    "Table_matchRow_"
+  ],
+  "name": "matchRows()",
+  "description": "Finds the rows in the <b>Table</b> that match the regular expression provided,\n and returns references to those rows.  Returns an iterator, so <b>for</b>\n must be used to iterate through all the rows, as shown in the example above.\n The column to search may be specified by either its ID or title.",
+  "syntax": [".matchRows(regexp, column)", ".matchRows(regexp, columnName)"],
+  "returns": "Iterable",
+  "type": "method",
+  "category": "table",
+  "subcategory": "method",
+  "classanchor": "Table",
+  "parameters": [
+    {
+      "name": "regexp",
+      "description": "the regular expression to match",
+      "type": ["String"]
+    },
+    {
+      "name": "column",
+      "description": "ID number of the column to search",
+      "type": ["int"]
+    },
+    {
+      "name": "columnName",
+      "description": "title of the column to search",
+      "type": ["String"]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "brief": "Creates colors for storing in variables of the <b>color</b>\n           datatype",
+  "related": ["colorMode_"],
+  "name": "color()",
+  "description": "Creates colors for storing in variables of the <b>color</b> datatype. The\n parameters are interpreted as RGB or HSB values depending on the current\n <b>colorMode()</b>. The default mode is RGB values from 0 to 255 and,\n therefore, <b>color(255, 204, 0)</b> will return a bright yellow color (see\n the first example above).<br />\n <br />\n Note that if only one value is provided to <b>color()</b>, it will be\n interpreted as a grayscale value. Add a second value, and it will be used\n for alpha transparency. When three values are specified, they are\n interpreted as either RGB or HSB values. Adding a fourth value applies\n alpha transparency.<br />\n <br />\n Note that when using hexadecimal notation, it is not necessary to use\n <b>color()</b>, as in: <b>color c = #006699</b><br />\n <br />\n More about how colors are stored can be found in the reference for the\n <a href=\"color_datatype.html\">color</a> datatype.",
+  "syntax": [
+    "color(gray)",
+    "color(gray, alpha)",
+    "color(v1, v2, v3)",
+    "color(v1, v2, v3, alpha)"
+  ],
+  "returns": "int",
+  "type": "function",
+  "category": "color",
+  "subcategory": "creating_reading",
+  "parameters": [
+    {
+      "name": "gray",
+      "description": "number specifying value between white and black",
+      "type": ["int"]
+    },
+    {
+      "name": "alpha",
+      "description": "relative to current color range",
+      "type": ["int", "float"]
+    },
+    {
+      "name": "v1",
+      "description": "red or hue values relative to the current color range",
+      "type": ["int", "float"]
+    },
+    {
+      "name": "v2",
+      "description": "green or saturation values relative to the current color range",
+      "type": ["int", "float"]
+    },
+    {
+      "name": "v3",
+      "description": "blue or brightness values relative to the current color range",
+      "type": ["int", "float"]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "brief": "Return a value for the specified key",
+  "related": [],
+  "name": "get()",
+  "description": "Return a value for the specified key.",
+  "syntax": [".get(key)", ".get(key, alternate)"],
+  "returns": "String",
+  "type": "method",
+  "category": "stringdict",
+  "subcategory": "method",
+  "classanchor": "StringDict",
+  "parameters": []
+}

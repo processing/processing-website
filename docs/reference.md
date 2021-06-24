@@ -1,4 +1,4 @@
-# Reference
++# Reference
 
 The content for the reference lives inside the `/content/references` folder. This folder has two subfolders:
 

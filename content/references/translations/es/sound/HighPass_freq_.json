@@ -1,0 +1,19 @@
+{
+  "brief": "Set the cut off frequency for the filter.",
+  "related": [],
+  "name": "freq()",
+  "description": "Set the cut off frequency for the filter.",
+  "syntax": [".freq(freq)"],
+  "returns": "void",
+  "type": "method",
+  "category": "effects",
+  "subcategory": "HighPass",
+  "classanchor": "HighPass",
+  "parameters": [
+    {
+      "name": "freq",
+      "description": "the cutoff frequency in Hertz",
+      "type": ["float"]
+    }
+  ]
+}

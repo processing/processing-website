@@ -1,0 +1,13 @@
+{
+  "brief": "Divide a value",
+  "related": [],
+  "name": "div()",
+  "description": "Divide a value.",
+  "syntax": [".div(index, amount)"],
+  "returns": "void",
+  "type": "method",
+  "category": "intlist",
+  "subcategory": "method",
+  "classanchor": "IntList",
+  "parameters": []
+}

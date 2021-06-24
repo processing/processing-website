@@ -1,0 +1,13 @@
+{
+  "brief": "Returns the entire <b>JSONArray</b> as an array of <b>ints</b>",
+  "related": ["JSONArray_getStringArray_"],
+  "name": "getIntArray()",
+  "description": "Returns the entire <b>JSONArray</b> as an array of <b>ints</b>.  \n (All values in the array must be of the int type.)",
+  "syntax": [".getIntArray()"],
+  "returns": "int[]",
+  "type": "method",
+  "category": "jsonarray",
+  "subcategory": "method",
+  "classanchor": "JSONArray",
+  "parameters": []
+}

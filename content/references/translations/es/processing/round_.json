@@ -1,0 +1,14 @@
+{
+  "brief": "Calculates the integer closest to the <b>value</b> parameter",
+  "related": ["floor_", "ceil_"],
+  "name": "round()",
+  "description": "Calculates the integer closest to the <b>n</b> parameter. For example,\n <b>round(133.8)</b> returns the value 134.",
+  "syntax": ["round(n)"],
+  "returns": "int",
+  "type": "function",
+  "category": "math",
+  "subcategory": "calculation",
+  "parameters": [
+    { "name": "n", "description": "number to round", "type": ["float"] }
+  ]
+}

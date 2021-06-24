@@ -1,0 +1,49 @@
+{
+  "brief": "The underlying data of the audiosample can be read and written in several different.",
+  "related": [],
+  "name": "read()",
+  "description": "The underlying data of the audiosample can be read and written in several different ways:\n the method taking a single float array `data` gets the current sample data and write it \n into the given array. The array has to be able to store as many floats as there are frames \n in this sample.\n It is also possible to only read parts of the sample data using the method with four arguments, \n which allows you to specify the index of the first frame to read, the position in the array to \n write it to, as well as how many frames to copy over into the array in total.\n Finally, the method taking a single integer argument `index` returns the value of the single \n audio frame of the sample at this index as a float.",
+  "syntax": [
+    ".read(data)",
+    ".read(startFrame, data, startIndex, numFrames)",
+    ".read(frameIndex)",
+    ".read(frameIndex, channelIndex)"
+  ],
+  "returns": "void or float",
+  "type": "method",
+  "category": "sampling",
+  "subcategory": "AudioSample",
+  "classanchor": "AudioSample",
+  "parameters": [
+    {
+      "name": "data",
+      "description": "the target array that the read data is written to",
+      "type": ["float[]"]
+    },
+    {
+      "name": "startFrame",
+      "description": "the index of the first frame of the audiosample that should be\n            read",
+      "type": ["int"]
+    },
+    {
+      "name": "startIndex",
+      "description": "the position in the array where the first read frame should be\n            written to (typically 0)",
+      "type": ["int"]
+    },
+    {
+      "name": "numFrames",
+      "description": "the number of frames that should be read (can't be greater than\n            audiosample.channels() * data.length - startIndex)",
+      "type": ["int"]
+    },
+    {
+      "name": "frameIndex",
+      "description": "the index of the single frame of the audiosample that should be\n            read and returned. `frameIndex` has to be between 0 and\n            `sample.frames() * sample.channels() - 1` (inclusive)`.\n            For mono files, `read(frameIndex)` is identical to `read(frameIndex, 0)`.\n            For stereo files, unless you also specify a `channelIndex`,\n            `read(frameIndex)` will return the samples from both the left and\n            right channel in interleaved order. (See the Soundfile > StereoSample\n            example for a demonstration.)",
+      "type": ["int"]
+    },
+    {
+      "name": "channelIndex",
+      "description": "the channel from which to extract the frame value (0 for left,\n            1 for right). `read(frameIndex, channelIndex)` is the same as\n            calling `read(frameIndex * this.channels() + channelIndex)`.",
+      "type": ["int"]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "brief": "Starts a new contour",
+  "related": ["PShape_endContour_"],
+  "name": "beginContour()",
+  "description": "The <b>beginContour()</b> and <b>endContour()</b> methods make it \n possible to define shapes with other shapes cut out of them. For \n example, the inside of a letter 'O'. These two functions are always \n used together, you'll never use one without the other. Between them, \n define the geometry you want to create. As you'll see when you run \n the example above, the second smaller shape is cut out of the first \n larger shape.<br />\n <br />\n The exterior shape and the interior contour must <em>wind</em> in \n opposite directions. This means that if the points of the geometry \n for the exterior shape are described in a clockwise order, the points \n on the interior shape are defined in a counterclockwise order.",
+  "syntax": ["sh.beginContour()"],
+  "returns": "void",
+  "type": "method",
+  "category": "shape",
+  "subcategory": "vertex",
+  "classanchor": "PShape",
+  "parameters": [
+    {
+      "name": "sh",
+      "description": " any variable of type PShape",
+      "type": ["PShape"]
+    }
+  ]
+}

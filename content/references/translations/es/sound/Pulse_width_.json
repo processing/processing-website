@@ -1,0 +1,19 @@
+{
+  "brief": "Changes the pulse width of the pulse oscillator.",
+  "related": [],
+  "name": "width()",
+  "description": "Changes the pulse width of the pulse oscillator. Allowed values are between 0.0 and 1.0.",
+  "syntax": [".width(width)"],
+  "returns": "void",
+  "type": "method",
+  "category": "oscillators",
+  "subcategory": "Pulse",
+  "classanchor": "Pulse",
+  "parameters": [
+    {
+      "name": "width",
+      "description": "The relative pulse width of the oscillator as a float value\n            between 0.0 and 1.0 (exclusive)",
+      "type": ["float"]
+    }
+  ]
+}

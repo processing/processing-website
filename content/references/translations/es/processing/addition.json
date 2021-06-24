@@ -1,0 +1,23 @@
+{
+  "name": "+ (addition)",
+  "brief": "Adds two values or concatenates string values",
+  "description": "Adds two values or concatenates string values. As a mathematical operator, it calculates the sum of two values. As a string operator, it combines two strings into one and converts from primitive datatypes into the String datatype if necessary. \n",
+  "related": ["increment", "addassign", "minus"],
+  "syntax": ["value1 + value2"],
+  "returns": "",
+  "type": "function",
+  "category": "math",
+  "subcategory": "Operators",
+  "parameters": [
+    {
+      "name": "value1",
+      "description": "String, int, float, char, byte, boolean",
+      "type": []
+    },
+    {
+      "name": "value2",
+      "description": "String, int, float, char, byte, boolean",
+      "type": []
+    }
+  ]
+}

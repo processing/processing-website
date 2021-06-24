@@ -1,0 +1,19 @@
+{
+  "brief": "Gets the <b>float</b> value associated with a key",
+  "related": [
+    "JSONObject_getInt_",
+    "JSONObject_getString_",
+    "JSONObject_getBoolean_"
+  ],
+  "name": "getFloat()",
+  "description": "Gets the <b>float</b> value associated with the specified key",
+  "syntax": [".getFloat(key)", ".getFloat(key, defaultValue)"],
+  "returns": "float",
+  "type": "method",
+  "category": "jsonobject",
+  "subcategory": "method",
+  "classanchor": "JSONObject",
+  "parameters": [
+    { "name": "key", "description": "a key string", "type": ["String"] }
+  ]
+}
