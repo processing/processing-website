@@ -37,7 +37,7 @@ const Libraries = ({ data }) => {
   return (
     <Layout>
       <Helmet>
-        <title>Libraries</title>
+        <title>{intl.formatMessage({ id: 'LibrariesTitle' })}</title>
       </Helmet>
       <div className={classnames(grid.container, grid.grid)}>
         <Donate />
