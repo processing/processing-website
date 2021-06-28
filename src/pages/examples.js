@@ -56,7 +56,7 @@ export const query = graphql`
     examples: allFile(
       filter: {
         sourceInstanceName: { eq: "examples" }
-        fields: { lang: { eq: "en" } }
+        fields: { lang: { eq: "es" } }
         relativeDirectory: { regex: "/^((?!data).)*$/" }
       }
       sort: { order: ASC, fields: relativeDirectory }

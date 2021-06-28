@@ -1,9 +1,9 @@
 ---
 slug: '/tutorials/arrays'
-title: 'Arrays'
-author: 'Casey Reas and Ben Fry'
-intro: 'How to store and access data in array structures.'
-level: 'Intermediate'
+title: 'Arreglos'
+author: 'Casey Reas y Ben Fry'
+intro: 'Como almacenar y accesar datos en estructuras de arreglos.'
+level: 'Intermedio'
 coverImage: arrays.jpg
 ---
 
@@ -46,7 +46,7 @@ int x8 = 17;
 int x9 = 39;
 ```
 
-Using what we know about drawing without arrays, ten variables are needed to store the data; each variable is used to draw a single rectangle. This is tedious:
+Usando lo que sabemos acerca de dibujar sin usar arreglos, se necesitan diez variables para almacenar los datos.; each variable is used to draw a single rectangle. This is tedious:
 
 <FixedImage side width={100} height={100}>
 
@@ -98,7 +98,7 @@ for (int i = 0; i < x.length; i++) {
 }
 ```
 
-## Define an Array
+## Definir un Arreglo
 
 Arrays are declared similarly to other data types, but they are distinguished with brackets, [ and ]. When an array is declared, the type of data it stores must be specified. (Each array can store only one type of data.) After the array is declared, it must be created with the keyword new, just like working with objects. This additional step allocates space in the computer's memory to store the array's data. After the array is created, the values can be assigned. There are different ways to declare, create, and assign arrays. In the following examples that explain these differences, an array with five elements is created and filled with the values 19, 40, 75, 76, and 90. Note the different way each technique for creating and assigning elements of the array relates to `setup()`.
 
@@ -160,7 +160,7 @@ data[4] = 90;
 int[] data = { 19, 40, 75, 76, 90 }; // Declare, create, assign
 ```
 
-## Read Array Elements
+## Leer elementos de un Arreglo
 
 After an array is defined and assigned values, its data can be accessed and used within the code. An array element is accessed with the name of the array variable, followed by brackets around the element position to read.
 
@@ -250,7 +250,7 @@ void draw() {
 }
 ```
 
-## Record Data
+## Almacenar datos
 
 As one example of how arrays may be used, this section shows how to use arrays to store data from the mouse. The `pmouseX` and `pmouseY` variables store the cursor coordinates from the previous frame, but there is no built-in way to access the cursor values from earlier frames. At every frame, the `mouseX`, `mouseY`, `pmouseX`, and `pmouseY` variables are replaced with new numbers and their previous numbers are discarded. Creating an array is the easiest way to store the history of these values. In the following example, the most recent 100 values from `mouseY` are stored and displayed on screen as a line from the left to the right edge of the screen. At each frame, the values in the array are shifted to the right and the newest value is added to the beginning.
 
@@ -374,7 +374,7 @@ void draw() {
 }
 ```
 
-## Array Functions
+##  Funciones para Arreglos
 
 Processing provides a group of functions that assist in managing array data. Only four of these functions are introduced here, but more are explained in the Processing reference included with the software.
 
@@ -491,7 +491,7 @@ float[] halve(float[] d) {
 }
 ```
 
-## Array of Objects
+## Arreglo de Objects (Objetos)
 
 Working with arrays of objects is technically similar to working with arrays of other data types, but it opens the amazing possibility to create as many instances of a custom-designed class as desired. Like all arrays, an array of objects is distinguished from a single object with brackets, the [ and ] characters. However, because each array element is an object, each must be created with the keyword new before it can be used. The steps for working with an array of objects are:
 
@@ -659,7 +659,7 @@ for (Spot s : spots) {
 
 Each object in the array is in turn assigned to the variable `s`, so the first time through the loop, the code `s.move()` runs the `move()` method for the first element in the array, then the next time through the loop, `s.move()` runs the `move()` method for the second element in the array, etc. The two statements inside the block run for each element of the array until the end of the array. This way of accessing each element in an array of objects is used for the remainder of the book.
 
-## Two-dimensional Arrays
+## Arreglos Bi-dimensionales
 
 Data can also be stored and retrieved from arrays with more than one dimension. Using the example from the beginning of this chapter, the data points for the chart are put into a 2D array, where the second dimension adds a gray value:
 

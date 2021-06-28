@@ -232,6 +232,7 @@ const IndexPage = ({ data }) => {
 };
 
 const Examples = memo(({ heading, examples, locale }) => {
+  const intl = useIntl();
   return (
     <div className={classnames(grid.grid, css.examples)}>
       <h3 className={classnames(grid.col, css.examplesHeading)}>{heading}</h3>
@@ -253,7 +254,7 @@ const Examples = memo(({ heading, examples, locale }) => {
       ))}
       <div className={classnames(grid.col, css.moreExamples)}>
         <Button to={'/examples'} variant="animate1">
-          More Examples
+          {intl.formatMessage({ id: 'moreExamples' })}
         </Button>
       </div>
     </div>
