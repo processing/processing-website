@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { useIntl } from 'react-intl';
@@ -11,7 +11,7 @@ import Button from '../components/Button';
 import Card from '../components/Card';
 import Sketch from '../components/sketch/Sketch';
 
-import { useRandomArray } from '../hooks';
+import { shuffleArray } from '../utils';
 import { usePreparedExamples } from '../hooks/examples';
 
 import css from '../styles/pages/index.module.css';
@@ -20,12 +20,18 @@ import grid from '../styles/grid.module.css';
 const IndexPage = ({ data }) => {
   const intl = useIntl();
   const { locale } = useLocalization();
-
   const featuredExamples = usePreparedExamples(
     data.examples.nodes,
     data.exampleImages.nodes
   );
-  const randomExamples = useRandomArray(featuredExamples, 4);
+
+  // We only show the randomized example once the site is rendered on the
+  // client since otherwise the images will always be the ones picked by SSR
+  const [randomExamples, setRandomExamples] = useState([]);
+  useEffect(() => {
+    const shuffled = shuffleArray(featuredExamples.slice());
+    setRandomExamples(shuffled.length > 4 ? shuffled.slice(0, 4) : shuffled);
+  }, [featuredExamples]);
 
   return (
     <Layout mainClassName={css.main}>
