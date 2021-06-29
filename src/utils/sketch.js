@@ -1,7 +1,3 @@
-export function uid(prefix = 'comp') {
-  return prefix + '-' + Math.random().toString(36).substring(2, 16);
-}
-
 export const rgbToHex = (rgb) => {
   // padStart not supported on IE
   if (typeof rgb === 'string') return rgb;
