@@ -23,7 +23,7 @@ const Download = ({ data }) => {
       window.removeEventListener('focus', goToDonate);
       setTimeout(() => {
         navigate('/donate');
-      }, 2000);
+      }, 3000);
     };
     window.addEventListener('focus', goToDonate);
   };
@@ -119,7 +119,7 @@ const LatestRelease = memo(({ release, onAfterDownload }) => {
   );
 });
 
-const ReleasesList = memo(({ releases, title }) => {
+const ReleasesList = memo(({ releases, title, onAfterDownload }) => {
   return (
     <div className={css.releases}>
       <h3>{title}</h3>
@@ -131,7 +131,11 @@ const ReleasesList = memo(({ releases, title }) => {
             <span className={css.releaseAssets}>
               {release.assets.map((asset, i) => {
                 return (
-                  <a href={asset.url} className={css.assetLink} key={asset.url}>
+                  <a
+                    href={asset.url}
+                    onClick={onAfterDownload}
+                    className={css.assetLink}
+                    key={asset.url}>
                     {asset.os} {asset.bit}
                   </a>
                 );
