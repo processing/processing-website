@@ -117,7 +117,8 @@ const IndexPage = ({ data }) => {
                 <h4>{intl.formatMessage({ id: 'cardForum' })}</h4>
                 <p>{intl.formatMessage({ id: 'cardForumDescription' })}</p>
                 <Button
-                  href={'https://discourse.processing.org/'}
+                  target="_blank"
+                  href="https://discourse.processing.org/"
                   variant="animate1">
                   {intl.formatMessage({ id: 'cardForumButton' })}
                 </Button>
