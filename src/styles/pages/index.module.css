@@ -44,7 +44,7 @@
 .buttons {
   display: flex;
   flex-wrap: wrap;
-  margin: var(--vertical-margin-large) 0;
+  margin: var(--vertical-margin-large) 0 var(--vertical-margin-large) 5px;
 }
 
 .button {
