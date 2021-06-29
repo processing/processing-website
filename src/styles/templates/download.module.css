@@ -26,12 +26,14 @@
 
 .latestRelease {
   max-width: 800px;
+  width: calc(var(--col7) - var(--gutter));
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: var(--vertical-margin-large) 0;
   background-color: var(--lightgray);
-  padding: 20px 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .logo {
@@ -147,7 +149,11 @@
     margin-right: 25px;
   }
 }
-
+@media (--reduced) {
+  .latestRelease {
+    width: 100%;
+  }
+}
 @media (--small) {
   .logo {
     & h3 {
