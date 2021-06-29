@@ -46,6 +46,7 @@
 .menuToggle {
   display: none;
   padding: 0;
+  cursor: pointer;
 }
 .spacer {
   flex-grow: 4;
@@ -116,13 +117,16 @@
 .subitem {
   display: block;
   margin-right: 0.5rem;
-  padding: 3px 1rem;
 
   border-left: solid 4px transparent;
   color: var(--processing-blue-dark);
   font-size: var(--text-regular);
   font-weight: 700;
   word-break: keep-all;
+  & a {
+    display: block;
+    padding: 3px 1rem;
+  }
 }
 
 .subitem:hover {
@@ -250,11 +254,15 @@
   .menuToggle {
     display: block;
   }
+  .expanded .menuToggle {
+    margin-top: -40px;
+  }
 
   .item {
     display: block;
     font-size: var(--text-xlarge);
     margin-top: 8px;
+
     & > a {
       transition: padding-left 0.15s ease;
     }
@@ -278,6 +286,8 @@
     top: auto;
     max-height: none;
     padding: 0;
+    box-shadow: none;
+    border-bottom: none;
   }
 
   .subitem {
