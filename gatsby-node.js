@@ -37,27 +37,28 @@ exports.onCreateNode = ({ node, actions, getNode, loadNodeContent }) => {
 
   if (node.internal.mediaType === `application/json`) {
     const value = createFilePath({ node, getNode });
-    let dir = node.relativeDirectory.split('/');
-    let library = dir[1];
-    let name = dir[dir.length];
-
-    let nodename = node.name.split('.');
-    let lang = nodename[1] ? nodename[1] : 'en';
+    const dir = node.relativeDirectory.split('/');
+    const library = dir[1];
+    const nameSplit = node.name.split('.');
+    const name = nameSplit[0];
+    const lang = nameSplit[1] ? nameSplit[1] : 'en';
 
     createNodeField({
       name: `name`,
-      node,
-      value: node.name
+      value: name,
+      node
     });
+
     createNodeField({
       name: `lang`,
-      node,
-      value: lang
+      value: lang,
+      node
     });
+
     createNodeField({
       name: `lib`,
-      node,
-      value: library
+      value: library,
+      node
     });
   } else if (node.internal.mediaType === `text/x-processing`) {
     createNodeField({
@@ -283,7 +284,8 @@ const parseExampleFileInfo = (node) => {
   const slug = langCode + '/examples/' + name.toLowerCase() + '.html';
 
   // Split relative dir into needed info
-  const splitDir = node.relativeDirectory.split('/');
+  const relDir = node.relativeDirectory;
+  const splitDir = relDir.split('/');
   const category = splitDir[0];
   const subcategory = splitDir[1];
 
@@ -292,7 +294,8 @@ const parseExampleFileInfo = (node) => {
     slug,
     langCode,
     category,
-    subcategory
+    subcategory,
+    relDir
   };
 };
 
@@ -329,23 +332,19 @@ async function createExamples(actions, graphql) {
     throw result.errors;
   }
 
-  const jsonFiles = result.data.json.edges;
+  const examples = result.data.json.edges;
+  const parsedExamples = examples.map((example) =>
+    parseExampleFileInfo(example.node)
+  );
 
-  jsonFiles.forEach((jsonFile, index) => {
-    const {
-      name,
-      slug,
-      langCode,
-      category,
-      subcategory
-    } = parseExampleFileInfo(jsonFile.node);
+  parsedExamples.forEach((example, index) => {
+    const { name, slug, langCode, category, subcategory, relDir } = example;
 
     // Find related examples in the same sub category
     // We use the empty langCode to not generate duplicates
     // We pass the names of these to the template, so we don't need
     // to load and filter all images on the frontend.
-    const related = jsonFiles
-      .map((f) => parseExampleFileInfo(f.node))
+    const related = parsedExamples
       .filter((info) => {
         return (
           info.subcategory === subcategory &&
@@ -363,7 +362,7 @@ async function createExamples(actions, graphql) {
         name,
         subcategory,
         related,
-        relDir: jsonFile.node.relativeDirectory
+        relDir
       }
     });
   });

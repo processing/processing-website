@@ -75,7 +75,8 @@
     "clean": "gatsby clean",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
     "fetchReleases": "node scripts/fetchReleases.js",
-    "deploy": "static deploy"
+    "deploy": "static deploy",
+    "open": "static open"
   },
   "browserslist": "last 2 versions, >0.5%",
   "repository": {
