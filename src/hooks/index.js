@@ -236,20 +236,44 @@ export const useIntersect = (root, rootMargin, threshold = 0) => {
 };
 
 /**
-  Hook to handle sidebar functionality. Hides sidebar as default but shows
-  it when the page renders in the browser if the screen is wider than 960.
-  We cannot do this on initial render since that is done SSR where there
-  is not window width.
-**/
-export const useSidebar = (showDefault = false) => {
-  const [showSidebar, setShowSidebar] = useState(showDefault);
+  Hook to handle sidebar functionality.
+  - Hides sidebar as default but shows it when the page renders
+    in the browser if the screen is wider than 960.
+  - If state is set externally, persist with sessionStorage
 
+**/
+
+export const useSidebar = (showDefault) => {
+  // get initial value from sessionStorage
+  const initialShow =
+    typeof window !== 'undefined' &&
+    window.sessionStorage &&
+    window.sessionStorage.getItem('showSidebar') == null
+      ? null
+      : window.sessionStorage.getItem('showSidebar') === 'true';
+
+  const [showSidebar, setShowSidebar] = useState(showDefault ?? initialShow);
+
+  //  Only if initial value has not been set,
+  //  default to open if > 960, or closed if <= 960.
   useEffect(() => {
+    if (initialShow != null) return;
+
     const [winWidth] = getWin();
     if (winWidth > 960) {
       setShowSidebar(true);
     }
-  }, []);
+  }, [initialShow]);
 
-  return [showSidebar, setShowSidebar];
+  // Set initial value only if triggered externally
+  const externalSetShowSidebar = (value) => {
+    const valueToStore = value instanceof Function ? value(showSidebar) : value;
+    setShowSidebar(valueToStore);
+
+    if (window.sessionStorage) {
+      window.sessionStorage.setItem('showSidebar', valueToStore);
+    }
+  };
+
+  return [showSidebar, externalSetShowSidebar];
 };
