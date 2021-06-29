@@ -67,33 +67,36 @@
 .item {
   position: relative;
   display: inline-block;
-  padding-left: 12px;
-  margin-left: 11px;
   border-left: solid 4px transparent;
-  cursor: pointer;
   color: var(--processing-blue-dark);
   font-size: var(--text-medium);
   font-weight: 600;
   white-space: nowrap;
   & button,
   & a {
-    padding: 0;
+    padding: 0 0.85rem;
+
+    display: block;
     font-weight: inherit;
+    line-height: 1.5;
     color: var(--processing-blue-dark);
   }
   & a:hover {
-    color: var(--processing-blue-dark);
+    color: var(--processing-blue-mid);
   }
 }
 
 .item:hover {
-  border-left: solid 4px var(--processing-blue-dark);
+  z-index: 40;
+  border-left: solid 4px var(--processing-blue-mid);
 }
 
 .active {
   border-left: solid 4px var(--processing-blue-dark);
 }
-
+.item.hasSubmenu:hover {
+  border-left: solid 4px var(--processing-blue-dark);
+}
 .submenu {
   display: flex;
   position: absolute;
@@ -106,20 +109,16 @@
   padding-top: 16px;
   list-style: none;
   background-color: white;
-}
-
-.hasSubmenu:hover {
-  z-index: 40;
+  border-bottom: 1px solid var(--lightgray);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .subitem {
-  display: inline-block;
-  margin-right: 2rem;
-  padding-left: 0.6rem;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  cursor: pointer;
-  border-left: solid 4px var(--lightgray);
+  display: block;
+  margin-right: 0.5rem;
+  padding: 3px 1rem;
+
+  border-left: solid 4px transparent;
   color: var(--processing-blue-dark);
   font-size: var(--text-regular);
   font-weight: 700;
@@ -127,11 +126,11 @@
 }
 
 .subitem:hover {
-  border-left: solid 4px var(--processing-blue-dark);
-  color: var(--processing-blue-dark);
+  border-left: solid 4px var(--processing-blue-mid);
+  color: var(--processing-blue-mid);
 
   & a:hover {
-    color: var(--processing-blue-dark);
+    color: inherit;
   }
 }
 
