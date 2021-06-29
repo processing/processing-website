@@ -38,8 +38,6 @@ const ExampleTemplate = ({ data, pageContext }) => {
   const { example, image, allExamples, relatedImages, liveSketch } = data;
   const json = example?.childJson;
 
-  console.log(data);
-
   const pdes = useOrderedPdes(name, data.pdes.nodes);
   const examples = usePreparedExamples(allExamples.nodes, relatedImages.nodes);
   const tree = useTree(examples);
