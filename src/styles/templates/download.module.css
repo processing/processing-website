@@ -26,6 +26,7 @@
 
 .latestRelease {
   max-width: 800px;
+  width: calc(var(--col7) - var(--gutter));
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -147,7 +148,11 @@
     margin-right: 25px;
   }
 }
-
+@media (--reduced) {
+  .latestRelease {
+    width: 100%;
+  }
+}
 @media (--small) {
   .logo {
     & h3 {
