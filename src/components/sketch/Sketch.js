@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { memo, useState, useEffect, useCallback } from 'react';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 import SketchGraphic from './SketchGraphic';
@@ -43,18 +43,25 @@ const initialState = {
   ]
 };
 
-const loadedState =
-  typeof window !== 'undefined' &&
-  window.localStorage &&
-  window.localStorage.getItem('sketch');
-const parsedState = loadedState ? JSON.parse(loadedState) : initialState;
-
 const Sketch = ({ children }) => {
-  const [state, setState] = useState(parsedState);
+  const [state, setState] = useState(initialState);
   const [showCode, setShowCode] = useState(false);
   const intl = useIntl();
 
-  // Sync state to local storage
+  console.log('Render sketch');
+
+  // Load saved graphic from localstorage when component mounts in client
+  useEffect(() => {
+    if (window.localStorage) {
+      const savedState = window.localStorage.getItem('sketch');
+      if (savedState) {
+        console.log('Loaded state from localStorage', savedState);
+        setState(JSON.parse(savedState));
+      }
+    }
+  }, []);
+
+  // Save state back into localstorage when it changes
   useEffect(() => {
     if (window.localStorage) {
       window.localStorage.setItem('sketch', JSON.stringify(state));
@@ -120,4 +127,4 @@ const Sketch = ({ children }) => {
   );
 };
 
-export default Sketch;
+export default memo(Sketch);
