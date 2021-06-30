@@ -2,8 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import { LocalizedLink as Link } from 'gatsby-theme-i18n';
-import { useLocalization } from 'gatsby-theme-i18n';
+import { useLocalization, LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 

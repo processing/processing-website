@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { graphql } from 'gatsby';
-import { Link } from 'gatsby';
+import { graphql, Link } from 'gatsby';
+import { useLocalization } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 
@@ -10,6 +10,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
 import { SidebarTableOfContents } from '../../components/Sidebar';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 import { useHighlight, useSidebar } from '../../hooks';
 
@@ -21,6 +22,7 @@ const TutorialTemplate = ({ data, pageContext }) => {
   const [showSidebar, setShowSidebar] = useSidebar(
     !!mdx?.tableOfContents?.items ? undefined : true
   );
+  const { locale } = useLocalization();
   const intl = useIntl();
   useHighlight();
 
@@ -42,6 +44,17 @@ const TutorialTemplate = ({ data, pageContext }) => {
         )}
         {mdx !== null ? (
           <Content collapsed={!showSidebar}>
+            <Breadcrumbs
+              locale={locale}
+              trail={[
+                'Learn',
+                {
+                  slug: '/tutorials',
+                  label: intl.formatMessage({ id: 'tutorials' })
+                },
+                mdx.frontmatter.title
+              ]}
+            />
             <h1>{mdx.frontmatter.title}</h1>
             <p className={css.author}>{`${intl.formatMessage({ id: 'by' })} ${
               mdx.frontmatter.author

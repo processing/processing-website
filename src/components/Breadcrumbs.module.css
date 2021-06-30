@@ -1,0 +1,8 @@
+.root {
+  font-size: var(--text-small);
+}
+
+.sep {
+  display: inline-block;
+  margin: 0 8px;
+}
