@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 
-import CategoryNav from '../components/CategoryNav';
+import Shortcuts from '../components/Shortcuts';
 import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
 import ReferenceList from '../components/reference/ReferenceList';
@@ -44,7 +44,7 @@ const Reference = ({ data }) => {
             large
           />
         </div>
-        {!searchTerm && <CategoryNav categories={categories} />}
+        {!searchTerm && <Shortcuts categories={categories} />}
         <ReferenceList tree={filtered} />
       </div>
     </Layout>

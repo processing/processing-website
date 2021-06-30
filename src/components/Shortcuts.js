@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
 
-import css from './CategoryNav.module.css';
+import { slugify } from '../utils';
+
+import css from './Shortcuts.module.css';
 import grid from '../styles/grid.module.css';
 
-const CategoryNav = ({ categories }) => {
+const Shortcuts = ({ categories }) => {
   return (
     <div className={classnames(grid.col, grid.grid, css.root)}>
       <h4 className={classnames(grid.col, css.heading)}>Shortcuts</h4>
@@ -15,7 +17,7 @@ const CategoryNav = ({ categories }) => {
             className={classnames(grid.col, css.item)}
             key={`category-navitem-${key}`}>
             <div className={css.line} />
-            <Link className={css.itemLink} to={`#${category}`}>
+            <Link className={css.itemLink} to={`#${slugify(category)}`}>
               {category.replace(/_/g, ' ')}
             </Link>
           </li>
@@ -25,4 +27,4 @@ const CategoryNav = ({ categories }) => {
   );
 };
 
-export default CategoryNav;
+export default Shortcuts;

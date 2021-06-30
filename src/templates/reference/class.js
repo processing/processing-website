@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import { useIntl } from 'react-intl';
+import { useLocalization } from 'gatsby-theme-i18n';
 import { widont } from '../../utils/index.js';
 
 import Layout from '../../components/Layout';
@@ -12,13 +13,15 @@ import Section from '../../components/reference/Section';
 import License from '../../components/reference/License';
 import { CodeList, ExampleList } from '../../components/reference/ContentList';
 import { ExampleItem } from '../../components/examples/ExamplesList';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 import { useHighlight, useTree, useSidebar } from '../../hooks';
 import {
   usePreparedItems,
   usePreparedExamples,
   usePreparedList,
-  useInUseExamples
+  useInUseExamples,
+  useTrail
 } from '../../hooks/reference';
 import { referencePath } from '../../utils/paths';
 
@@ -29,6 +32,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
   const entry = data?.json?.childJson;
   const isProcessing = libraryName === 'processing';
   const [showSidebar, setShowSidebar] = useSidebar();
+  const { locale } = useLocalization();
   const intl = useIntl();
   useHighlight();
 
@@ -46,6 +50,8 @@ const ClassRefTemplate = ({ data, pageContext }) => {
     data.inUseImages
   );
 
+  const trail = useTrail(libraryName, entry?.category, entry?.subcategory);
+
   return (
     <Layout withSidebar>
       <Helmet>
@@ -62,11 +68,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
         />
         {entry ? (
           <Content collapsed={!showSidebar}>
-            {!isProcessing && (
-              <Section title={intl.formatMessage({ id: 'library' })}>
-                <h4>{data.libName.frontmatter.title}</h4>
-              </Section>
-            )}
+            <Breadcrumbs locale={locale} trail={trail} />
             <Section title={intl.formatMessage({ id: 'className' })}>
               <h3>{entry.name}</h3>
             </Section>
@@ -154,6 +156,8 @@ export const query = graphql`
         name
         description
         constructors
+        category
+        subcategory
         classFields {
           anchor
           name
