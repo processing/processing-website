@@ -255,9 +255,13 @@
   }
   .menuToggle {
     display: block;
+    transition: margin-top 0.15s ease-in-out;
   }
   .expanded .menuToggle {
     margin-top: -40px;
+  }
+  .expanded.scrolled .menuToggle {
+    margin-top: 0px;
   }
 
   .item {
