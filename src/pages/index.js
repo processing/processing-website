@@ -117,7 +117,8 @@ const IndexPage = ({ data }) => {
                 <h4>{intl.formatMessage({ id: 'cardForum' })}</h4>
                 <p>{intl.formatMessage({ id: 'cardForumDescription' })}</p>
                 <Button
-                  href={'https://discourse.processing.org/'}
+                  target="_blank"
+                  href="https://discourse.processing.org/"
                   variant="animate1">
                   {intl.formatMessage({ id: 'cardForumButton' })}
                 </Button>
@@ -183,28 +184,36 @@ const IndexPage = ({ data }) => {
             <h2>{intl.formatMessage({ id: 'externalLinks' })}</h2>
             <ul>
               <li>
-                <a href="https://www.creativeapplications.net/category/processing/">
+                <a
+                  target="_blank"
+                  href="https://www.creativeapplications.net/category/processing/">
                   Creative Applications
                 </a>
               </li>
               <li>
-                <a href="https://openprocessing.org/">OpenProcessing</a>
+                <a target="_blank" href="https://openprocessing.org/">
+                  OpenProcessing
+                </a>
               </li>
               <li>
-                <a href="https://fyprocessing.tumblr.com/">
+                <a target="_blank" href="https://fyprocessing.tumblr.com/">
                   For your Processing
                 </a>
               </li>
               <li>
-                <a href="https://www.reddit.com/r/processing/">
+                <a target="_blank" href="https://www.reddit.com/r/processing/">
                   Processing Subreddit
                 </a>
               </li>
               <li>
-                <a href="https://vimeo.com/groups/processing">Vimeo</a>
+                <a target="_blank" href="https://vimeo.com/groups/processing">
+                  Vimeo
+                </a>
               </li>
               <li>
-                <a href="http://sketchpad.cc/">Studio Sketchpad</a>
+                <a target="_blank" href="http://sketchpad.cc/">
+                  Studio Sketchpad
+                </a>
               </li>
             </ul>
           </div>
