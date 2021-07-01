@@ -163,6 +163,8 @@ export const useInUseExamples = (inUseExamples, images) => {
   Hook to prepare the trail used for the breadcumbs
   Processing: Documentation > Reference > [Category] > [Subcategory] (> [Class])
   Library: Documentation > Libraries > Core > [Library] > (> [Class])
+  TODO: We need to fix this issue in order to show the proper categories for class methods and fields:
+  https://github.com/processing/processing-website/issues/175
 **/
 export const useTrail = (libraryName, category, subcategory, classanchor) => {
   const intl = useIntl();

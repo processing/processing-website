@@ -49,10 +49,12 @@ const FieldRefTemplate = ({ data, pageContext }) => {
     data.inUseImages
   );
 
-  // TODO: We need to fix this issue in order to show the proper categories here:
-  // https://github.com/processing/processing-website/issues/175
-  // The breadcrumb should be Documentation > Reference > Image
-  const trail = []; //useTrail(libraryName, entry?.category, entry?.subcategory);
+  const trail = useTrail(
+    libraryName,
+    entry?.category,
+    entry?.subcategory,
+    entry?.classanchor
+  );
 
   const title = entry?.classanchor
     ? `${entry.classanchor}::${entry.name}`

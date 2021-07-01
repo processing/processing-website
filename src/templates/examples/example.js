@@ -12,6 +12,7 @@ import Content from '../../components/ContentWithSidebar';
 import { SidebarTree } from '../../components/Sidebar';
 import Tabs from '../../components/Tabs';
 import { ExampleItem } from '../../components/examples/ExamplesList';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 import { referencePath } from '../../utils/paths';
 import { useTree, useSidebar } from '../../hooks';
@@ -32,6 +33,7 @@ if (typeof window !== 'undefined') {
 
 const ExampleTemplate = ({ data, pageContext }) => {
   const [showSidebar, setShowSidebar] = useSidebar();
+  const { locale } = useLocalization();
   const intl = useIntl();
 
   const { name, related } = pageContext;
@@ -82,6 +84,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
         />
         {json ? (
           <Content collapsed={!showSidebar}>
+            <Breadcrumbs locale={locale} trail={['something', 'else']} />
             <h1>{json.title}</h1>
             {json.author && (
               <h3>
@@ -111,6 +114,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
             <RelatedExamples
               examples={relatedExamples}
               heading={intl.formatMessage({ id: 'relatedExamples' })}
+              locale={locale}
             />
             <p className={classnames(css.note)}>
               {intl.formatMessage({ id: 'exampleInfo' })}
@@ -154,8 +158,7 @@ const FeaturedFunctions = memo(({ heading, featured }) => {
   );
 });
 
-const RelatedExamples = memo(({ heading, examples }) => {
-  const { locale } = useLocalization();
+const RelatedExamples = memo(({ heading, examples, locale }) => {
   return (
     <div>
       <h3>{heading}</h3>
