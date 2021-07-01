@@ -1,9 +1,11 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 import SketchGraphic from './SketchGraphic';
 import SketchCode from './SketchCode';
 import Button from '../Button';
+
+import { localStorage } from '../../utils';
 
 import css from './Sketch.module.css';
 import grid from '../../styles/grid.module.css';
@@ -43,22 +45,29 @@ const initialState = {
   ]
 };
 
-const loadedState =
-  typeof window !== 'undefined' &&
-  window.localStorage &&
-  window.localStorage.getItem('sketch');
-const parsedState = loadedState ? JSON.parse(loadedState) : initialState;
+const getSketchState = () => {
+  const loadedState = localStorage?.getItem('sketch');
+  return loadedState ? JSON.parse(loadedState) : initialState;
+};
 
 const Sketch = ({ children }) => {
-  const [state, setState] = useState(parsedState);
+  const [state, setState] = useState(getSketchState());
   const [showCode, setShowCode] = useState(false);
   const intl = useIntl();
 
+  // force loading state on initial load
+  useEffect(() => {
+    console.log(localStorage);
+
+    console.log(getSketchState());
+    /* eslint-disable no-unused-expressions */
+    setState(getSketchState);
+  }, []);
+
   // Sync state to local storage
   useEffect(() => {
-    if (window.localStorage) {
-      window.localStorage.setItem('sketch', JSON.stringify(state));
-    }
+    /* eslint-disable no-unused-expressions */
+    localStorage?.setItem('sketch', JSON.stringify(state));
   }, [state]);
 
   // Change handler for a simple attribute in state

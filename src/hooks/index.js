@@ -8,7 +8,7 @@ import {
 } from 'react';
 import hljs from 'highlight.js/lib/core';
 import processing from 'highlight.js/lib/languages/processing';
-import { getWin } from '../utils';
+import { getWin, sessionStorage } from '../utils';
 
 hljs.registerLanguage('processing', processing);
 
@@ -243,36 +243,36 @@ export const useIntersect = (root, rootMargin, threshold = 0) => {
 
 **/
 
+const getInitialShowSidebar = (key) => {
+  if (sessionStorage) console.log('initialShow');
+  return sessionStorage?.getItem(key) == null
+    ? null
+    : sessionStorage?.getItem(key) === 'true';
+};
+
 export const useSidebar = (_key = '', showDefault) => {
-  // get initial value from sessionStorage
   const key = `showSidebar-${_key}`;
-  const sessionStorage = typeof window !== 'undefined' && window.sessionStorage;
 
-  const initialShow =
-    sessionStorage && sessionStorage.getItem(key) == null
-      ? null
-      : sessionStorage.getItem(key) === 'true';
-
-  const [showSidebar, setShowSidebar] = useState(showDefault ?? initialShow);
+  const [showSidebar, setShowSidebar] = useState(
+    showDefault ?? getInitialShowSidebar(key)
+  );
 
   //  Only if initial value has not been set,
   //  default to open if > 960, or closed if <= 960.
   useEffect(() => {
-    if (initialShow != null) return;
-
+    console.log('useEffect getWin', showSidebar, showSidebar ?? true);
     const [winWidth] = getWin();
     if (winWidth > 960) {
       setShowSidebar(showSidebar ?? true);
     } else {
       setShowSidebar(false);
     }
-  }, [initialShow]);
+  }, [showSidebar, key]);
 
   useEffect(() => {
-    if (sessionStorage) {
-      sessionStorage.setItem(key, showSidebar);
-    }
-  }, [showSidebar, sessionStorage, key]);
+    /* eslint-disable no-unused-expressions */
+    window?.sessionStorage?.setItem(key, showSidebar);
+  }, [showSidebar, key]);
 
   return [showSidebar, setShowSidebar];
 };

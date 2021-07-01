@@ -43,3 +43,9 @@ export const linkParsing = (str) => {
   }
   return str.replace(/\[([^\]]*)\]\(([^)]*)\)/g, '<a href="$2">$1</a>');
 };
+
+export const sessionStorage =
+  typeof window !== 'undefined' ? window.sessionStorage : null;
+
+export const localStorage =
+  typeof window !== 'undefined' ? window.localStorage : null;
