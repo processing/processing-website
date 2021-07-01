@@ -38,13 +38,19 @@ const Books = ({ data }) => {
                 </div>
                 <div className={classnames(grid.col, css.book)}>
                   <h3>{book.title}</h3>
-                  <p className={css.details}>{book.details}</p>
-                  <p className={css.author}>
-                    {intl.formatMessage({ id: 'by' })} {book.author}
+                  {book.author && (
+                    <p className={css.author}>
+                      {intl.formatMessage({ id: 'by' })} {book.author}
+                    </p>
+                  )}
+                  <p className={css.details}>
+                    {intl.formatMessage({ id: 'published' })} {book.published}.{' '}
+                    {book.details}{' '}
+                    {book.language && `Text in ${book.language}.`}
                   </p>
-                  {book.language && <p>{book.language}</p>}
+
                   {book.orderList && (
-                    <ul>
+                    <ul className={css.orderList}>
                       {book.orderList.map((order) => (
                         <li key={order.link}>
                           <a href={order.link} target="_blank" rel="noreferrer">
@@ -56,7 +62,7 @@ const Books = ({ data }) => {
                   )}
                   <details className={css.read}>
                     <summary>{intl.formatMessage({ id: 'readMore' })}</summary>
-                    <div>
+                    <div className={css.more}>
                       <MDXRenderer>{book.body}</MDXRenderer>
                     </div>
                   </details>
@@ -80,7 +86,7 @@ export const query = graphql`
         extension: { eq: "mdx" }
         childMdx: { fields: { locale: { eq: "en" } } }
       }
-      sort: { order: ASC, fields: childrenMdx___frontmatter___title }
+      sort: { order: DESC, fields: childrenMdx___frontmatter___published }
     ) {
       nodes {
         name
@@ -90,6 +96,7 @@ export const query = graphql`
             title
             author
             details
+            published
             order
             language
           }

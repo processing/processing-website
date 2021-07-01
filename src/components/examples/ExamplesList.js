@@ -6,6 +6,7 @@ import Img from 'gatsby-image';
 
 import ToggleButton from '../ToggleButton';
 
+import { slugify } from '../../utils';
 import { useTreeSort } from '../../hooks';
 
 import css from './ExamplesList.module.css';
@@ -27,7 +28,7 @@ const ExamplesList = ({ tree }) => {
       {Object.keys(sortedTree).map((category) => (
         <Fragment key={`category-${category}`}>
           <div className={css.categoryName}>
-            <h2>{category}</h2>
+            <h2 id={slugify(category)}>{category}</h2>
             <div className={css.toggleButton}>
               <ToggleButton
                 defaultLabel="A-Z"
@@ -46,7 +47,9 @@ const ExamplesList = ({ tree }) => {
           <div className={classnames(grid.grid, css.category)}>
             {Object.keys(sortedTree[category]).map((subcategory) => (
               <Fragment key={`subcategory-${subcategory}`}>
-                <h3 className={classnames(grid.col, css.subcategoryName)}>
+                <h3
+                  id={slugify(category, subcategory)}
+                  className={classnames(grid.col, css.subcategoryName)}>
                   {subcategory}
                 </h3>
                 <ul className={classnames(grid.col, grid.grid, css.examples)}>

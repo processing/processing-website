@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { graphql } from 'gatsby';
+import { navigate, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
@@ -18,6 +18,16 @@ const Download = ({ data }) => {
   const releases = usePreparedReleases(data.releases.nodes);
   const preReleases = usePreparedReleases(data.preReleases.nodes);
 
+  const onAfterDownload = () => {
+    const goToDonate = () => {
+      window.removeEventListener('focus', goToDonate);
+      setTimeout(() => {
+        navigate('/donate');
+      }, 3000);
+    };
+    window.addEventListener('focus', goToDonate);
+  };
+
   return (
     <Layout>
       <Helmet>
@@ -28,7 +38,10 @@ const Download = ({ data }) => {
           <Donate />
           <h1>Download</h1>
           <h3>{intl.formatMessage({ id: 'downloadIntro' })}</h3>
-          <LatestRelease release={releases[0]} />
+          <LatestRelease
+            release={releases[0]}
+            onAfterDownload={onAfterDownload}
+          />
           <ul className={css.links}>
             <li>
               <a href={'https://github.com/processing'}>GitHub</a>
@@ -57,6 +70,7 @@ const Download = ({ data }) => {
           <ReleasesList
             releases={releases}
             title={intl.formatMessage({ id: 'stable' })}
+            onAfterDownload={onAfterDownload}
           />
           <p
             dangerouslySetInnerHTML={{
@@ -64,6 +78,7 @@ const Download = ({ data }) => {
             }}
           />
           <ReleasesList
+            onAfterDownload={onAfterDownload}
             releases={preReleases}
             title={intl.formatMessage({ id: 'preReleases' })}
           />
@@ -77,7 +92,7 @@ const Download = ({ data }) => {
   );
 };
 
-const LatestRelease = memo(({ release }) => {
+const LatestRelease = memo(({ release, onAfterDownload }) => {
   return (
     <div className={css.latestRelease}>
       <div className={css.logo}>
@@ -91,7 +106,7 @@ const LatestRelease = memo(({ release }) => {
         </div>
         {release.assets.map((asset, i) => (
           <div key={asset.url} className={css.latestVersion}>
-            <a href={asset.url}>
+            <a href={asset.url} onClick={onAfterDownload}>
               <span className={css.latestVersionName}>{asset.os}</span>
               {asset.bit && (
                 <span className={css.latestVersionBit}>{asset.bit}</span>
@@ -104,7 +119,7 @@ const LatestRelease = memo(({ release }) => {
   );
 });
 
-const ReleasesList = memo(({ releases, title }) => {
+const ReleasesList = memo(({ releases, title, onAfterDownload }) => {
   return (
     <div className={css.releases}>
       <h3>{title}</h3>
@@ -116,7 +131,11 @@ const ReleasesList = memo(({ releases, title }) => {
             <span className={css.releaseAssets}>
               {release.assets.map((asset, i) => {
                 return (
-                  <a href={asset.url} className={css.assetLink} key={asset.url}>
+                  <a
+                    href={asset.url}
+                    onClick={onAfterDownload}
+                    className={css.assetLink}
+                    key={asset.url}>
                     {asset.os} {asset.bit}
                   </a>
                 );

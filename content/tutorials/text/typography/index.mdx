@@ -1,15 +1,15 @@
 ---
-slug: '/tutorials/typography'
-title: 'Typography'
-author: 'Casey Reas and Ben Fry'
-intro: 'Working with typefaces and text.'
-level: 'Beginner'
+slug: "/tutorials/typography"
+title: "Typography"
+author: "Casey Reas and Ben Fry"
+intro: "Working with typefaces and text."
+level: "Beginner"
 coverImage: typography.jpg
 ---
 
 <Note>
 
-This tutorial is the Typography chapter from [Processing: A Programming Handbook for Visual Designers and Artists, Second Edition](https://processing.org/handbook/), published by MIT Press. &copy; 2014 MIT Press. If you see any errors or have comments, please [let us know](https://github.com/processing/processing-docs/issues?state=open).
+This tutorial is the Typography chapter from [Processing: A Programming Handbook for Visual Designers and Artists, Second Edition](https://processing.org/handbook/), published by MIT Press. &copy; 2014 MIT Press. If you see any errors or have comments, please [let us know](https://github.com/processing/processing-website/issues?state=open).
 
 </Note>
 
@@ -78,7 +78,6 @@ text("PVG", 0, 100);
 
 </FixedImage>
 
-
 ```
 textSize(64);
 fill(0, 140); // Fill black with low opacity
@@ -97,7 +96,6 @@ Another version of `text()` draws the characters inside a rectangle. In this use
 
 </FixedImage>
 
-
 ```
 String s = "Five hexing wizard bots jump quickly.";
 fill(0);
@@ -111,7 +109,6 @@ text(s, 10, 10, 60, 80);
 ![](./12_06.png)
 
 </FixedImage>
-
 
 ```
 String s = "Five hexing wizard bots jump quickly.";
@@ -194,7 +191,6 @@ To ensure a font will load on all computers, regardless if the font is installed
 
 </FixedImage>
 
-
 ```
 PFont sourceLight;
 
@@ -220,7 +216,6 @@ To use two fonts in one program, create two `PFont` variables and use the `textF
 ![](./12_10.png)
 
 </FixedImage>
-
 
 ```
 PFont zigBlack, sourceLight;
@@ -283,7 +278,6 @@ When the font is drawn at a different size from the size at which it was created
 
 </FixedImage>
 
-
 ```
 PFont zigBlack;
 
@@ -337,7 +331,6 @@ Letters and words can be drawn from their center, left, and right edges. The `te
 
 </FixedImage>
 
-
 ```
 fill(0);
 textSize(12);
@@ -359,7 +352,6 @@ The `textWidth()` function calculates and returns the pixel width of any charact
 ![](./12_15.png)
 
 </FixedImage>
-
 
 ```
 String s = "AEIOU";
@@ -390,7 +382,6 @@ Drawing letters to the screen becomes more engaging when used in combination wit
 ![](./12_16_2.png)
 
 </FixedImage>
-
 
 ```
 String letters = "";
@@ -433,7 +424,6 @@ void keyPressed() {
 ![](./12_17_2.png)
 
 </FixedImage>
-
 
 ```
 String letters = "";
@@ -485,7 +475,6 @@ Typographic elements can be assigned behaviors that define a personality in rela
 
 </FixedImage>
 
-
 ```
 void setup() {
   size(100, 100);
@@ -519,7 +508,6 @@ void draw() {
 
 </FixedImage>
 
-
 ```
 float x = 33;
 float y = 60;
@@ -546,4 +534,4 @@ void draw() {
 
 ## Notes
 
-[^1]:Ellen Lupton, *Thinking with Type: A Critical Guide for Designers, Writers, Editors, &amp; Students* (Princeton Architectural Press, 2004), p. 29.
+[^1]: Ellen Lupton, _Thinking with Type: A Critical Guide for Designers, Writers, Editors, &amp; Students_ (Princeton Architectural Press, 2004), p. 29.

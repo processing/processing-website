@@ -32,7 +32,7 @@
   "contactEmail": "foundation@processing.org",
   "examples": "Examples",
   "gettingStarted": "Getting started",
-  "gettingStartedP1": "Download and open the ‘Processing' application. Select something from the Examples. Hit the Run button. Lather, rinse, repeat as necessary. More information on using Processing itself is can be found in the <a href='/reference'>environment</a> section of the reference. To learn the Processing language, we recommend you try a few of the built-in <a href='/examples'>examples</a>, and check out the <a href='/reference'>reference</a>. A group of diverse <a href='/reference'>books</a> have been written to help people with different goals and skill levels.",
+  "gettingStartedP1": "Download and open the ‘Processing' application. Select something from the Examples. Hit the Run button. Lather, rinse, repeat as necessary. More information on using Processing itself is can be found in the <a href='/reference'>environment</a> section of the reference. To learn the Processing language, we recommend you try a few of the built-in <a href='/examples'>examples</a>, and check out the <a href='/reference'>reference</a>. A group of diverse <a href='/books'>books</a> have been written to help people with different goals and skill levels.",
   "gettingStartedP2": "To learn the Processing language, we recommend you try a few of the built-in examples, and check out the <a href='/reference'>reference</a>. A group of diverse <a href='/books'>books</a> have been written to help people with different goals and skill levels. If you're stuck or want to talk about your work, head over to the forum section of the site to find open minds and helpful peers.",
   "gettingStartedP3": "For a more detailed overview, check the <a href='/tutorials/gettingstarted'>Getting Started</a> tutorial.",
   "participate": "Participate",
@@ -44,7 +44,7 @@
   "buttonContribute": "Processing on GitHub",
   "externalLinks": "See what others are making",
   "cardGettingStarted": "Getting Started Tutorial",
-  "cardGettingStartedButton": "Go to tutorial",
+  "cardGettingStartedButton": "Read tutorial",
   "cardGettingStartedDescription": "Don’t know where to get started? Read this tutorial, which will guide you through the basics of Processing",
   "cardDownload": "Get the software",
   "cardDownloadButton": "Download Processing",
@@ -84,6 +84,7 @@
   "librariesIntro": "Extend Processing beyond graphics and images into audio, video, and communication with other devices.",
   "librariesFilter": "Filter by keywords...",
   "contributions": "Contributions",
+  "contributionsIntro": "Contributed libraries are created by members of the Processing community. They are independently and generously created to share. They are all open source and include their own reference and examples.",
   "referencesFilter": "Filter by keywords...",
   "toolsIntro": "The following tools are included with the Processing software. Select the tool you want to use from the Tools menu of the Processing Environment. These tools are open source; the code is distributed with Processing.",
   "contributedTools": "Contributed tools must be downloaded individually. Select 'Add Tool...' from the Tools menu to select a Tool to download. Contributed tools are developed, documented, and maintained by members of the Processing community. For feedback and support, please post to the <a href='http://forum.processing.org/'>Forum</a>. For development discussions post to the <a href='http://forum.processing.org/library-and-tool-development'> Libraries and Tool Development </a> topic. Instructions for creating your own tool are on the <a href='https://github.com/processing/processing/wiki'> Processing GitHub </a> site.",
@@ -127,5 +128,7 @@
   "openEditor": "Open Editor",
   "closeEditor": "Close Editor",
   "donateIntro": "We need your help! Please support Processing by making a donation to the Processing Foundation. Your donation contributes to software development, education resources like code examples and tutorials, Fellowships, and community events.",
-  "donateOutro": "The Processing Foundation was established in 2012 after more than a decade of work with the Processing software. The Foundation’s mission is to promote software literacy within the visual arts, and visual literacy within technology-related fields — and to make these fields accessible to diverse communities. Our goal is to empower people of all interests and backgrounds to learn how to program and make creative work with code, especially those who might not otherwise have access to these tools and resources. You can read more about the history of Processing in the short essay <a href='https://medium.com/processing-foundation/a-modern-prometheus-59aed94abe85'>'A Modern Prometheus'</a>."
+  "donateOutro": "The Processing Foundation was established in 2012 after more than a decade of work with the Processing software. The Foundation’s mission is to promote software literacy within the visual arts, and visual literacy within technology-related fields — and to make these fields accessible to diverse communities. Our goal is to empower people of all interests and backgrounds to learn how to program and make creative work with code, especially those who might not otherwise have access to these tools and resources. You can read more about the history of Processing in the short essay <a href='https://medium.com/processing-foundation/a-modern-prometheus-59aed94abe85'>'A Modern Prometheus'</a>.",
+  "core": "Core",
+  "published": "Published"
 }

@@ -1,7 +1,38 @@
 import { titleCase as _titleCase } from 'title-case';
 
-// applies title case after replacing _ by spaces
+/**
+  Array for turning a date.getMonth() index into a date string
+**/
+export const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
+];
+
+/**
+  Turns a slug into a title
+  Example: this_is_something => This Is Something
+**/
 export const titleCase = (slug) => _titleCase(slug.replace(/_/g, ' '));
+
+/**
+  Turns a title into a slug
+  Example: This Is Something => this-is-something
+**/
+export const slugify = (...titles) =>
+  titles
+    .join('-')
+    .replace(/(\s|_)/g, '-')
+    .toLowerCase();
 
 export const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {

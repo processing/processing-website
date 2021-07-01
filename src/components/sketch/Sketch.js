@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { memo, useState, useEffect, useCallback } from 'react';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 import SketchGraphic from './SketchGraphic';
@@ -45,29 +45,29 @@ const initialState = {
   ]
 };
 
-const getSketchState = () => {
-  const loadedState = localStorage?.getItem('sketch');
-  return loadedState ? JSON.parse(loadedState) : initialState;
-};
-
 const Sketch = ({ children }) => {
-  const [state, setState] = useState(getSketchState());
+  const [state, setState] = useState(initialState);
   const [showCode, setShowCode] = useState(false);
   const intl = useIntl();
 
-  // force loading state on initial load
-  useEffect(() => {
-    console.log(localStorage);
+  console.log('Render sketch');
 
-    console.log(getSketchState());
-    /* eslint-disable no-unused-expressions */
-    setState(getSketchState);
+  // Load saved graphic from localstorage when component mounts in client
+  useEffect(() => {
+    if (window.localStorage) {
+      const savedState = window.localStorage.getItem('sketch');
+      if (savedState) {
+        console.log('Loaded state from localStorage', savedState);
+        setState(JSON.parse(savedState));
+      }
+    }
   }, []);
 
-  // Sync state to local storage
+  // Save state back into localstorage when it changes
   useEffect(() => {
-    /* eslint-disable no-unused-expressions */
-    localStorage?.setItem('sketch', JSON.stringify(state));
+    if (window.localStorage) {
+      window.localStorage.setItem('sketch', JSON.stringify(state));
+    }
   }, [state]);
 
   // Change handler for a simple attribute in state
@@ -129,4 +129,4 @@ const Sketch = ({ children }) => {
   );
 };
 
-export default Sketch;
+export default memo(Sketch);
