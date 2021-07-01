@@ -37,6 +37,11 @@
 
 .book {
   flex-basis: var(--col6);
+
+  & h3 {
+    line-height: 1.3em;
+    margin-bottom: var(--vertical-margin-xxsmall);
+  }
 }
 
 .details {
@@ -56,6 +61,20 @@
 
 .read {
   margin-top: var(--gutter);
+}
+
+.orderList {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.more {
+  margin-top: var(--vertical-margin-xsmall);
+  font-size: var(--text-small);
+  & ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
 }
 
 @media (--small) {
