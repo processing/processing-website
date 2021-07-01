@@ -76,7 +76,7 @@ const Tutorials = ({ data }) => {
             );
           })}
         </ul>
-        <div className={classnames(grid.col, css.text)}>
+        <div className={classnames(grid.col, css.text)} id="text-tutorials">
           <h2>{intl.formatMessage({ id: 'textTutorials' })}</h2>
           <h3>{intl.formatMessage({ id: 'textTutorialsIntro' })}</h3>
         </div>

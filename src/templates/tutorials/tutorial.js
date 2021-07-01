@@ -52,7 +52,10 @@ const TutorialTemplate = ({ data, pageContext }) => {
                   slug: '/tutorials',
                   label: intl.formatMessage({ id: 'tutorials' })
                 },
-                mdx.frontmatter.title
+                {
+                  slug: '/tutorials#text-tutorials',
+                  label: intl.formatMessage({ id: 'textTutorials' })
+                }
               ]}
             />
             <h1>{mdx.frontmatter.title}</h1>
