@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import { useIntl } from 'react-intl';
+import { useLocalization } from 'gatsby-theme-i18n';
 
 import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
@@ -11,14 +12,16 @@ import Section from '../../components/reference/Section';
 import License from '../../components/reference/License';
 import { CodeList, ExampleList } from '../../components/reference/ContentList';
 import { ExampleItem } from '../../components/examples/ExamplesList';
-import { widont } from '../../utils/index.js';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
+import { widont } from '../../utils/index.js';
 import { useTree, useHighlight, useSidebar } from '../../hooks';
 import {
   usePreparedItems,
   usePreparedExamples,
   usePreparedList,
-  useInUseExamples
+  useInUseExamples,
+  useTrail
 } from '../../hooks/reference';
 import { referencePath } from '../../utils/paths';
 
@@ -30,6 +33,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
   const isProcessing = libraryName === 'processing';
 
   const [showSidebar, setShowSidebar] = useSidebar();
+  const { locale } = useLocalization();
   const intl = useIntl();
   useHighlight();
 
@@ -45,12 +49,19 @@ const FieldRefTemplate = ({ data, pageContext }) => {
     data.inUseImages
   );
 
+  const trail = useTrail(
+    libraryName,
+    entry?.category,
+    entry?.subcategory,
+    entry?.classanchor
+  );
+
   const title = entry?.classanchor
     ? `${entry.classanchor}::${entry.name}`
     : name;
 
   return (
-    <Layout withSidebar>
+    <Layout withSidebar withBreadcrumbs>
       <Helmet>
         <title>
           {title} / {isProcessing ? 'Reference' : 'Libraries'}
@@ -65,11 +76,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
         />
         {entry ? (
           <Content collapsed={!showSidebar}>
-            {!isProcessing && (
-              <Section title={intl.formatMessage({ id: 'library' })}>
-                <h4>{data.libName.frontmatter.title}</h4>
-              </Section>
-            )}
+            <Breadcrumbs locale={locale} trail={trail} />
             <Section title={intl.formatMessage({ id: 'name' })}>
               <h3>{entry.name}</h3>
             </Section>
@@ -144,6 +151,8 @@ export const query = graphql`
         classanchor
         description
         syntax
+        category
+        subcategory
         parameters {
           name
           description

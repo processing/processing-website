@@ -22,7 +22,7 @@ import css from './Layout.module.css';
 
 export const LayoutContext = React.createContext();
 
-const Layout = ({ children, withSidebar, mainClassName }) => {
+const Layout = ({ children, withSidebar, withBreadcrumbs, mainClassName }) => {
   const [headerScrolled, setHeaderScrolled] = useState(false);
   const [currentHeading, setCurrentHeading] = useState('');
 
@@ -78,7 +78,10 @@ const Layout = ({ children, withSidebar, mainClassName }) => {
           siteTitle={data.site.siteMetadata.title}
           scrolled={headerScrolled}
         />
-        <main className={classnames(css.main, mainClassName)}>
+        <main
+          className={classnames(css.main, mainClassName, {
+            [css.withBreadcrumbs]: withBreadcrumbs
+          })}>
           <MDXProvider components={shortcodes}>{children}</MDXProvider>
         </main>
         <Footer

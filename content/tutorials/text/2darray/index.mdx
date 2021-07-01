@@ -1,19 +1,19 @@
 ---
-slug: '/tutorials/2darray'
-title: 'Two-Dimensional Arrays'
-author: 'Daniel Shiffman'
-intro: 'Store and acess data in a matrix using a two-dimensional array.'
-level: 'Intermediate'
+slug: "/tutorials/2darray"
+title: "Two-Dimensional Arrays"
+author: "Daniel Shiffman"
+intro: "Store and acess data in a matrix using a two-dimensional array."
+level: "Intermediate"
 coverImage: 2darray.jpg
 ---
 
 <Note>
 
-This tutorial is from the book [Learning Processing](https://processing.org/books/#shiffman) by Daniel Shiffman, published by Morgan Kaufmann, © 2008 Elsevier Inc. All rights reserved. If you see any errors or have comments, [please let us know](https://github.com/processing/processing-docs/issues?q=is%3Aopen).
+This tutorial is from the book [Learning Processing](https://processing.org/books/#shiffman) by Daniel Shiffman, published by Morgan Kaufmann, © 2008 Elsevier Inc. All rights reserved. If you see any errors or have comments, [please let us know](https://github.com/processing/processing-website/issues?q=is%3Aopen).
 
 </Note>
 
-An [array](http://www.processing.org/reference/Array.html) keeps track of multiple pieces of information in linear order, a one-dimensional list. However, the data associated with certain systems (a digital image, a board game, etc.) lives in two dimensions. To visualize this data, we need a multi-dimensional data structure, that is, a multi-dimensional array. A two-dimensional array is really nothing more than an array of arrays (a three-dimensional array is an array of arrays of arrays). Think of your dinner. You could have a one-dimensional list of everything you eat: 
+An [array](http://www.processing.org/reference/Array.html) keeps track of multiple pieces of information in linear order, a one-dimensional list. However, the data associated with certain systems (a digital image, a board game, etc.) lives in two dimensions. To visualize this data, we need a multi-dimensional data structure, that is, a multi-dimensional array. A two-dimensional array is really nothing more than an array of arrays (a three-dimensional array is an array of arrays of arrays). Think of your dinner. You could have a one-dimensional list of everything you eat:
 
 `(lettuce, tomatoes, steak, mashed potatoes, cake, ice cream)`
 
@@ -22,6 +22,7 @@ Or you could have a two-dimensional list of three courses, each containing two t
 `(lettuce, tomatoes) and (steak, mashed potatoes) and (cake, ice cream)`
 
 In the case of an array, our old-fashioned one-dimensional array looks like this:
+
 ```
 int[] myArray = {0,1,2,3};
 ```
@@ -56,7 +57,7 @@ int[][] myArray = {  {236, 189, 189,   0},
                      {236, 189, 189,  80}  };
 ```
 
-To walk through every element of a one-dimensional array, we use a  for  loop, that is:
+To walk through every element of a one-dimensional array, we use a for loop, that is:
 
 ```
 int[] myArray = new int[10];
@@ -72,7 +73,7 @@ int cols = 10;
 int rows = 10;
 int[][] myArray = new int[cols][rows];
 
-// Two nested loops allow us to visit every spot in a 2D array.   
+// Two nested loops allow us to visit every spot in a 2D array.
 // For every column I, visit every row J.
 for (int i = 0; i < cols; i++) {
   for (int j = 0; j < rows; j++) {
@@ -113,7 +114,7 @@ for (int i = 0; i < cols; i++) {
 }
 ```
 
-A two-dimensional array can also be used to store objects, which is especially convenient for programming sketches that involve some sort of "grid"  or "board."  The following example displays a grid of Cell objects stored in a two-dimensional array. Each cell is a rectangle whose brightness oscillates from 0-255 with a sine function.
+A two-dimensional array can also be used to store objects, which is especially convenient for programming sketches that involve some sort of "grid" or "board." The following example displays a grid of Cell objects stored in a two-dimensional array. Each cell is a rectangle whose brightness oscillates from 0-255 with a sine function.
 
 <FixedImage side width={200} >
 
@@ -142,8 +143,8 @@ void setup() {
 
 void draw() {
   background(0);
-  // The counter variables i and j are also the column and row numbers and 
-  // are used as arguments to the constructor for each object in the grid.  
+  // The counter variables i and j are also the column and row numbers and
+  // are used as arguments to the constructor for each object in the grid.
   for (int i = 0; i < cols; i++) {
     for (int j = 0; j < rows; j++) {
       // Oscillate and display each object
@@ -155,7 +156,7 @@ void draw() {
 
 // A Cell object
 class Cell {
-  // A cell object knows about its location in the grid 
+  // A cell object knows about its location in the grid
   // as well as its size with the variables x,y,w,h
   float x,y;   // x,y location
   float w,h;   // width and height
@@ -168,21 +169,18 @@ class Cell {
     w = tempW;
     h = tempH;
     angle = tempAngle;
-  } 
-  
+  }
+
   // Oscillation means increase angle
   void oscillate() {
-    angle += 0.02; 
+    angle += 0.02;
   }
 
   void display() {
     stroke(255);
     // Color calculated using sine wave
     fill(127+127*sin(angle));
-    rect(x,y,w,h); 
+    rect(x,y,w,h);
   }
 }
 ```
-
-
-

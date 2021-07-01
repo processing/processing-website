@@ -1,15 +1,15 @@
 ---
-slug: '/tutorials/interactivity'
-title: 'Interactivity'
-author: 'Casey Reas and Ben Fry'
-intro: 'Introduction to interactivity with the mouse and keyboard.'
-level: 'Beginner'
+slug: "/tutorials/interactivity"
+title: "Interactivity"
+author: "Casey Reas and Ben Fry"
+intro: "Introduction to interactivity with the mouse and keyboard."
+level: "Beginner"
 coverImage: interactivity.jpg
 ---
 
 <Note>
 
-This tutorial is the Interactivity chapter from [Processing: A Programming Handbook for Visual Designers and Artists, Second Edition](https://processing.org/handbook/), published by MIT Press. &copy; 2014 MIT Press. If you see any errors or have comments, please [let us know](https://github.com/processing/processing-docs/issues?state=open).
+This tutorial is the Interactivity chapter from [Processing: A Programming Handbook for Visual Designers and Artists, Second Edition](https://processing.org/handbook/), published by MIT Press. &copy; 2014 MIT Press. If you see any errors or have comments, please [let us know](https://github.com/processing/processing-website/issues?state=open).
 
 </Note>
 
@@ -65,7 +65,6 @@ void draw() {
 ![](./07_03_2.png)
 
 </FixedImage>
-
 
 ```
 void setup() {
@@ -163,7 +162,6 @@ Draw a line from the previous mouse position to the current position to show the
 
 </FixedImage>
 
-
 ```
 void setup() {
   size(100, 100);
@@ -189,7 +187,6 @@ Use the `mouseX` and `mouseY` variables with an if structure to allow the cursor
 ![](./07_08_2.png)
 
 </FixedImage>
-
 
 ```
 void setup() {
@@ -228,7 +225,6 @@ void draw() {
 
 </FixedImage>
 
-
 ```
 void setup() {
   size(100, 100);
@@ -261,7 +257,6 @@ Use the logical operator `&&` with an `if` structure to select a rectangular reg
 ![](./07_10_2.png)
 
 </FixedImage>
-
 
 ```
 void setup() {
@@ -302,7 +297,6 @@ This code asks, &ldquo;Is the cursor to the right of the left edge and is the cu
 
 </FixedImage>
 
-
 ```
 void setup() {
   size(100, 100);
@@ -340,7 +334,6 @@ Computer mice and other related input devices typically have between one and thr
 
 </FixedImage>
 
-
 ```
 void setup() {
   size(100, 100);
@@ -359,7 +352,6 @@ void draw() {
 
 ---
 
-
 <FixedImage side width={100}>
 
 ![](./07_13_1.png)
@@ -377,7 +369,6 @@ void draw() {
 ![](./07_13_3.png)
 
 </FixedImage>
-
 
 ```
 void setup() {
@@ -398,7 +389,6 @@ void draw() {
 
 ---
 
-
 <FixedImage side width={100}>
 
 ![](./07_14_1.png)
@@ -416,7 +406,6 @@ void draw() {
 ![](./07_14_3.png)
 
 </FixedImage>
-
 
 ```
 void setup() {
@@ -455,7 +444,6 @@ Processing registers the most recently pressed key and whether a key is currentl
 
 </FixedImage>
 
-
 ```
 void setup() {
   size(100, 100);
@@ -486,7 +474,6 @@ void draw() {
 
 </FixedImage>
 
-
 ```
 int x = 20;
 void setup() {
@@ -505,7 +492,6 @@ void draw() {
 
 The `key` variable stores a single alphanumeric character. Specifically, it holds the most recently pressed key. The key can be displayed on screen with the `text()` function (p. 150).
 
-
 <FixedImage side width={100}>
 
 ![](./07_17_1.png)
@@ -517,8 +503,6 @@ The `key` variable stores a single alphanumeric character. Specifically, it hold
 ![](./07_17_1.png)
 
 </FixedImage>
-
-
 
 ```
 void setup() {
@@ -534,7 +518,6 @@ void draw() {
 
 The `key` variable may be used to determine whether a specific key is pressed. The following example uses the expression `key=='A'` to test if the A key is pressed. The single quotes signify A as the data type `char` (p. 144). The expression `key=="A"` will cause an error because the double quotes signify the A as a `String`, and it's not possible to compare a `String` with a `char`. The logical AND symbol, the `&&` operator, is used to connect the expression with the `keyPressed` variable to ascertain that the key pressed is the uppercase A.
 
-
 <FixedImage side width={100}>
 
 ![](./07_18_1.png)
@@ -546,7 +529,6 @@ The `key` variable may be used to determine whether a specific key is pressed. T
 ![](./07_18_2.png)
 
 </FixedImage>
-
 
 ```
 void setup() {
@@ -573,7 +555,6 @@ if ((keyPressed == true) && ((key == 'a') || (key == 'A'))) {
 
 Because each character has a numeric value as defined by the ASCII table (p. 605), the value of the `key` variable can be used like any other number to control visual attributes such as the position and color of shape elements. For instance, the ASCII table defines the uppercase A as the number 65, and the digit 1 is defined as 49.
 
-
 <FixedImage side width={100}>
 
 ![](./07_19_1.png)
@@ -585,7 +566,6 @@ Because each character has a numeric value as defined by the ASCII table (p. 605
 ![](./07_19_2.png)
 
 </FixedImage>
-
 
 ```
 void setup() {
@@ -603,7 +583,6 @@ void draw() {
 
 ---
 
-
 <FixedImage side width={100}>
 
 ![](./07_20_1.png)
@@ -615,7 +594,6 @@ void draw() {
 ![](./07_20_2.png)
 
 </FixedImage>
-
 
 ```
 float angle = 0;
@@ -658,7 +636,6 @@ In addition to reading key values for numbers, letters, and symbols, Processing 
 ![](./07_21_3.png)
 
 </FixedImage>
-
 
 ```
 int y = 35;
@@ -710,7 +687,6 @@ The `mousePressed()` function works differently than the `mousePressed` variable
 
 </FixedImage>
 
-
 ```
 int gray = 0;
 
@@ -729,7 +705,6 @@ void mousePressed() {
 
 The following example is the same as the one above, but the gray variable is set in the `mouseReleased()` event function, which is called once every time a button is released. This difference can be seen only by running the program and clicking the mouse button. Keep the mouse button pressed for a long time and notice that the background value changes only when the button is released.
 
-
 <FixedImage side width={100}>
 
 ![](./07_23_1.png)
@@ -741,7 +716,6 @@ The following example is the same as the one above, but the gray variable is set
 ![](./07_23_2.png)
 
 </FixedImage>
-
 
 ```
 int gray = 0;
@@ -761,7 +735,6 @@ void mouseReleased() {
 
 It is generally not a good idea to draw inside an event function, but it can be done under certain conditions. Before drawing inside these functions, it's important to think about the flow of the program. In this example, squares are drawn inside `mousePressed()` and they remain on screen because there is no `background()` inside `draw()`. But if `background()` is used, visual elements drawn within one of the mouse event functions will appear on screen for only a single frame, or, by default, 1/60th of a second. In fact, you'll notice this example has nothing at all inside `draw()`, but it needs to be there to force Processing to keep listening for the events. If a `background()` function were run inside `draw()`, the rectangles would flash onto the screen and disappear.
 
-
 <FixedImage side width={100}>
 
 ![](./07_24_1.png)
@@ -773,7 +746,6 @@ It is generally not a good idea to draw inside an event function, but it can be 
 ![](./07_24_2.png)
 
 </FixedImage>
-
 
 ```
 void setup() {
@@ -790,7 +762,6 @@ void mousePressed() {
 ```
 
 The code inside the `mouseMoved()` and `mouseDragged()` event functions are run when there is a change in the mouse position. The code in the `mouseMoved()` block is run at the end of each frame when the mouse moves and no button is pressed. The code in the `mouseDragged()` block does the same when the mouse button is pressed. If the mouse stays in the same position from frame to frame, the code inside these functions does not run. In this example, the gray circle follows the mouse when the button is not pressed, and the black circle follows the mouse when a mouse button is pressed.
-
 
 <FixedImage side width={100}>
 
@@ -809,7 +780,6 @@ The code inside the `mouseMoved()` and `mouseDragged()` event functions are run 
 ![](./07_25_3.png)
 
 </FixedImage>
-
 
 ```
 int dragX, dragY, moveX, moveY;
@@ -847,7 +817,6 @@ Each key press is registered through the keyboard event functions `keyPressed()`
 
 Each time a key is pressed, the code inside the `keyPressed()` block is run once. Within this block, it's possible to test which key has been pressed and to use this value for any purpose. If a key is held down for an extended time, the code inside the `keyPressed()` block might run many times in a rapid succession because most operating systems will take over and repeatedly call the `keyPressed()` function. The amount of time it takes to start repeating and the rate of repetitions will be different from computer to computer, depending on the keyboard preference settings. In this example, the value of the boolean variable `drawT` is set from false to true when the T key is pressed; this causes the lines of code to render the rectangles in `draw()` to start running.
 
-
 <FixedImage side width={100}>
 
 ![](./07_26_1.png)
@@ -859,7 +828,6 @@ Each time a key is pressed, the code inside the `keyPressed()` block is run once
 ![](./07_26_2.png)
 
 </FixedImage>
-
 
 ```
 boolean drawT = false;
@@ -886,7 +854,6 @@ void keyPressed() {
 
 Each time a key is released, the code inside the`keyReleased()` block is run once. The following example builds on the previous code; each time the key is released the boolean variable `drawT` is set back to `false` to stop the shape from displaying within `draw()`.
 
-
 <FixedImage side width={100}>
 
 ![](./07_27-1.png)
@@ -904,7 +871,6 @@ Each time a key is released, the code inside the`keyReleased()` block is run onc
 ![](./07_27-3.png)
 
 </FixedImage>
-
 
 ```
 boolean drawT = false;

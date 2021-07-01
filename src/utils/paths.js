@@ -13,6 +13,7 @@ const examplePath = (name) => `/examples/${name.toLowerCase()}.html`;
 
 /**
   Returns the full path to a reference (processing or library) item
+  @param lang only used in Node. In React, this is controlled by the InternationalizedLink component
 **/
 const referencePath = (name, libraryName, lang) => {
   return !libraryName || libraryName === 'processing'
@@ -28,5 +29,5 @@ const pathToName = (name) => name.replace(/_$/g, '()').replace(/_/g, '::');
 module.exports = {
   examplePath,
   referencePath,
-  pathToName,
+  pathToName
 };
