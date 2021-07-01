@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { months } from '../utils';
 
 /**
   Hook to find turn a books GraphQL array into an array of objects
@@ -22,7 +23,12 @@ export const usePreparedBooks = (books, images) => {
         }
       }
 
+      const publishedDate = new Date(book.childMdx.frontmatter.published);
+
       const preparedBook = Object.assign({}, book.childMdx.frontmatter, {
+        published: `${
+          months[publishedDate.getMonth()]
+        } ${publishedDate.getFullYear()}`,
         body: book.childMdx.body,
         image
       });

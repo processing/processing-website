@@ -1,6 +1,24 @@
 import { titleCase as _titleCase } from 'title-case';
 
 /**
+  Array for turning a date.getMonth() index into a date string
+**/
+export const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
+];
+
+/**
   Turns a slug into a title
   Example: this_is_something => This Is Something
 **/

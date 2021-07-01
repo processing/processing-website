@@ -44,6 +44,7 @@ const Books = ({ data }) => {
                     </p>
                   )}
                   <p className={css.details}>
+                    {intl.formatMessage({ id: 'published' })} {book.published}.{' '}
                     {book.details}{' '}
                     {book.language && `Text in ${book.language}.`}
                   </p>
@@ -85,7 +86,7 @@ export const query = graphql`
         extension: { eq: "mdx" }
         childMdx: { fields: { locale: { eq: "en" } } }
       }
-      sort: { order: ASC, fields: childrenMdx___frontmatter___title }
+      sort: { order: DESC, fields: childrenMdx___frontmatter___published }
     ) {
       nodes {
         name
@@ -95,6 +96,7 @@ export const query = graphql`
             title
             author
             details
+            published
             order
             language
           }
