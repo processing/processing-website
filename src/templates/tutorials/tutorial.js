@@ -13,6 +13,7 @@ import { SidebarTableOfContents } from '../../components/Sidebar';
 import Breadcrumbs from '../../components/Breadcrumbs';
 
 import { useHighlight, useSidebar } from '../../hooks';
+import { useTrail } from '../../hooks/tutorials';
 
 import css from '../../styles/pages/page.module.css';
 import grid from '../../styles/grid.module.css';
@@ -25,6 +26,8 @@ const TutorialTemplate = ({ data, pageContext }) => {
   const { locale } = useLocalization();
   const intl = useIntl();
   useHighlight();
+
+  const trail = useTrail();
 
   return (
     <Layout withSidebar withBreadcrumbs>
@@ -44,20 +47,7 @@ const TutorialTemplate = ({ data, pageContext }) => {
         )}
         {mdx !== null ? (
           <Content collapsed={!showSidebar}>
-            <Breadcrumbs
-              locale={locale}
-              trail={[
-                'Learn',
-                {
-                  slug: '/tutorials',
-                  label: intl.formatMessage({ id: 'tutorials' })
-                },
-                {
-                  slug: '/tutorials#text-tutorials',
-                  label: intl.formatMessage({ id: 'textTutorials' })
-                }
-              ]}
-            />
+            <Breadcrumbs locale={locale} trail={trail} />
             <h1>{mdx.frontmatter.title}</h1>
             <p className={css.author}>{`${intl.formatMessage({ id: 'by' })} ${
               mdx.frontmatter.author
