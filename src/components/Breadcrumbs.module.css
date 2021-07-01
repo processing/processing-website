@@ -1,6 +1,6 @@
 .root {
   font-size: var(--text-small);
-  margin-bottom: var(--vertical-margin-small);
+  margin-bottom: var(--vertical-margin-medium);
 }
 
 .sep {

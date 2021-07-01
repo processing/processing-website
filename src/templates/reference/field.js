@@ -61,7 +61,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
     : name;
 
   return (
-    <Layout withSidebar>
+    <Layout withSidebar withBreadcrumbs>
       <Helmet>
         <title>
           {title} / {isProcessing ? 'Reference' : 'Libraries'}

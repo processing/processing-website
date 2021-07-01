@@ -27,7 +27,7 @@ const TutorialTemplate = ({ data, pageContext }) => {
   useHighlight();
 
   return (
-    <Layout>
+    <Layout withSidebar withBreadcrumbs>
       <Helmet>
         {mdx?.frontmatter?.title && (
           <title>{mdx.frontmatter.title} / Tutorial</title>

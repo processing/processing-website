@@ -60,7 +60,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
   );
 
   return (
-    <Layout withSidebar>
+    <Layout withSidebar withBreadcrumbs>
       <Helmet>
         <title>
           {entry?.name ?? ''}

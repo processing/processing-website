@@ -17,9 +17,11 @@ import Breadcrumbs from '../../components/Breadcrumbs';
 import { referencePath } from '../../utils/paths';
 import { useTree, useSidebar } from '../../hooks';
 import {
-  useOrderedPdes,
+  usePreparedExample,
   usePreparedExamples,
-  useRelatedExamples
+  useRelatedExamples,
+  useOrderedPdes,
+  useTrail
 } from '../../hooks/examples';
 
 import css from '../../styles/templates/examples/example.module.css';
@@ -37,17 +39,19 @@ const ExampleTemplate = ({ data, pageContext }) => {
   const intl = useIntl();
 
   const { name, related } = pageContext;
-  const { example, image, allExamples, relatedImages, liveSketch } = data;
-  const json = example?.childJson;
+  const { image, allExamples, relatedImages, liveSketch } = data;
 
+  const example = usePreparedExample(data.example);
   const pdes = useOrderedPdes(name, data.pdes.nodes);
   const examples = usePreparedExamples(allExamples.nodes, relatedImages.nodes);
   const tree = useTree(examples);
   const relatedExamples = useRelatedExamples(examples, related);
 
+  const trail = useTrail(example);
+
   // Run live sketch
   useEffect(() => {
-    if (liveSketch && json) {
+    if (liveSketch && example) {
       let p5Instance;
       const tryToRunSketch = () => {
         if (window.runLiveSketch) {
@@ -66,12 +70,12 @@ const ExampleTemplate = ({ data, pageContext }) => {
         }
       };
     }
-  }, [liveSketch, json]);
+  }, [liveSketch, example]);
 
   return (
-    <Layout hasSidebar>
+    <Layout withSidebar withBreadcrumbs>
       <Helmet>
-        {json?.title && <title>{json.title}</title>}
+        {example && <title>{example.title}</title>}
         {liveSketch && <script>{`${liveSketch.childRawCode.content}`}</script>}
       </Helmet>
       <div className={grid.grid}>
@@ -82,25 +86,25 @@ const ExampleTemplate = ({ data, pageContext }) => {
           show={showSidebar}
           useSerif
         />
-        {json ? (
+        {example ? (
           <Content collapsed={!showSidebar}>
-            <Breadcrumbs locale={locale} trail={['something', 'else']} />
-            <h1>{json.title}</h1>
-            {json.author && (
+            <Breadcrumbs locale={locale} trail={trail} />
+            <h1>{example.title}</h1>
+            {example.author && (
               <h3>
-                {intl.formatMessage({ id: 'by' })} {json.author}
+                {intl.formatMessage({ id: 'by' })} {example.author}
               </h3>
             )}
             <div className={grid.grid}>
               <div className={classnames(grid.col, css.description)}>
                 <p
                   dangerouslySetInnerHTML={{
-                    __html: json.description
+                    __html: example.description
                   }}></p>
               </div>
-              {json.featured.length > 0 && (
+              {example.featured.length > 0 && (
                 <FeaturedFunctions
-                  featured={json.featured}
+                  featured={example.featured}
                   heading={intl.formatMessage({ id: 'featured' })}
                 />
               )}
@@ -120,7 +124,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
               {intl.formatMessage({ id: 'exampleInfo' })}
               <a
                 href={
-                  'https://github.com/processing/processing-docs/issues?state=open'
+                  'https://github.com/processing/processing-website/issues?state=open'
                 }>
                 {intl.formatMessage({ id: 'letUsKnow' })}
               </a>
@@ -241,6 +245,7 @@ export const query = graphql`
         extension: { eq: "json" }
         relativeDirectory: { regex: "/^((?!data).)*$/" }
       }
+      sort: { order: ASC, fields: relativeDirectory }
     ) {
       nodes {
         name

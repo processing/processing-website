@@ -53,7 +53,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
   const trail = useTrail(libraryName, entry?.category, entry?.subcategory);
 
   return (
-    <Layout withSidebar>
+    <Layout withSidebar withBreadcrumbs>
       <Helmet>
         <title>
           {name} / {isProcessing ? 'Reference' : 'Libraries'}
