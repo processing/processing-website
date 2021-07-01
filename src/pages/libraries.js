@@ -48,6 +48,7 @@ const Libraries = ({ data }) => {
         <CoreList libraries={coreLibraries} locale={locale} intl={intl} />
         <div className={classnames(grid.col, css.text, css.pushDown)}>
           <h1>{intl.formatMessage({ id: 'contributions' })}</h1>
+          <h3>{intl.formatMessage({ id: 'contributionsIntro' })}</h3>
         </div>
         <div className={classnames(grid.col, css.filter)}>
           <FilterBar
