@@ -222,21 +222,39 @@ const IndexPage = ({ data }) => {
             <ul className={css.partners}>
               <li>
                 <div>
-                  <img src={data.fathom.childImageSharp.fluid.src} alt="" />
+                  <img
+                    src={data.fathom.childImageSharp.fluid.src}
+                    alt="Fathom logo"
+                  />
                 </div>
                 <p>Fathom</p>
               </li>
               <li>
                 <div>
-                  <img src={data.itp.childImageSharp.fluid.src} alt="" />
+                  <img
+                    src={data.itp.childImageSharp.fluid.src}
+                    alt="ITP NYU logo"
+                  />
                 </div>
                 <p>ITP NYU</p>
               </li>
               <li>
                 <div>
-                  <img src={data.ucla.childImageSharp.fluid.src} alt="" />
+                  <img
+                    src={data.ucla.childImageSharp.fluid.src}
+                    alt="UCLA Design Media Arts logo"
+                  />
                 </div>
                 <p>UCLA Design Media Arts</p>
+              </li>
+              <li>
+                <div>
+                  <img
+                    src={data.dsi.childImageSharp.fluid.src}
+                    alt="Design Systems International logo"
+                  />
+                </div>
+                <p>Design Systems International</p>
               </li>
             </ul>
           </div>
@@ -379,6 +397,13 @@ export const query = graphql`
       }
     }
     ucla: file(relativePath: { eq: "ucla.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 120, maxHeight: 120) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    dsi: file(relativePath: { eq: "designsystemsinternational.png" }) {
       childImageSharp {
         fluid(maxWidth: 120, maxHeight: 120) {
           ...GatsbyImageSharpFluid
