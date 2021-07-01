@@ -6,14 +6,6 @@
   }
 }
 
-.sectionIntro {
-  margin: 0;
-
-  & a {
-    text-decoration: underline;
-  }
-}
-
 .list {
   flex-basis: var(--col8);
   margin: var(--vertical-margin-small) 0;
@@ -87,10 +79,6 @@
     & h2 {
       margin-top: var(--vertical-margin-large);
     }
-  }
-
-  .sectionIntro {
-    padding-right: var(--gutter);
   }
 
   .card {

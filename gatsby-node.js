@@ -242,6 +242,7 @@ async function createTutorials(actions, graphql) {
       {
         allFile(filter: { sourceInstanceName: { eq: "tutorials" } }) {
           nodes {
+            relativeDirectory
             childMdx {
               frontmatter {
                 slug
@@ -257,17 +258,20 @@ async function createTutorials(actions, graphql) {
     throw tutorialResult.errors;
   }
 
-  const tutorialPages = tutorialResult.data.allFile.nodes;
+  const tutorials = tutorialResult.data.allFile.nodes;
 
-  tutorialPages.forEach((tutorialPage, index) => {
-    tutorialPage.childMdx &&
+  tutorials.forEach((tutorial, index) => {
+    const [tutorialType] = tutorial.relativeDirectory.split('/');
+
+    if (tutorial.childMdx && tutorialType === 'text') {
       createPage({
-        path: tutorialPage.childMdx.frontmatter.slug,
+        path: tutorial.childMdx.frontmatter.slug,
         component: tutorialTemplate,
         context: {
-          slug: tutorialPage.childMdx.frontmatter.slug
+          slug: tutorial.childMdx.frontmatter.slug
         }
       });
+    }
   });
 }
 
