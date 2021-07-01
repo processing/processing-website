@@ -243,18 +243,20 @@ export const useIntersect = (root, rootMargin, threshold = 0) => {
 
 **/
 
-const getInitialShowSidebar = (key) => {
-  if (sessionStorage) console.log('initialShow');
-  return sessionStorage?.getItem(key) == null
-    ? null
-    : sessionStorage?.getItem(key) === 'true';
-};
-
 export const useSidebar = (_key = '', showDefault) => {
   const key = `showSidebar-${_key}`;
 
+  const initialShowSidebar =
+    sessionStorage?.getItem(key) == null
+      ? null
+      : sessionStorage?.getItem(key) === 'true';
+  console.log(
+    'render',
+    showDefault ?? initialShowSidebar,
+    showDefault ?? initialShowSidebar
+  );
   const [showSidebar, setShowSidebar] = useState(
-    showDefault ?? getInitialShowSidebar(key)
+    showDefault ?? initialShowSidebar
   );
 
   //  Only if initial value has not been set,
@@ -263,15 +265,16 @@ export const useSidebar = (_key = '', showDefault) => {
     console.log('useEffect getWin', showSidebar, showSidebar ?? true);
     const [winWidth] = getWin();
     if (winWidth > 960) {
-      setShowSidebar(showSidebar ?? true);
+      setShowSidebar(showDefault ?? initialShowSidebar ?? true);
     } else {
       setShowSidebar(false);
     }
   }, [showSidebar, key]);
 
   useEffect(() => {
-    /* eslint-disable no-unused-expressions */
-    window?.sessionStorage?.setItem(key, showSidebar);
+    if (window.sessionStorage) {
+      window.sessionStorage.setItem(key, showSidebar);
+    }
   }, [showSidebar, key]);
 
   return [showSidebar, setShowSidebar];

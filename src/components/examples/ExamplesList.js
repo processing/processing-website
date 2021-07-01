@@ -71,10 +71,11 @@ const ExamplesList = ({ tree }) => {
 };
 
 export const ExampleItem = memo(({ node, locale, variant }) => {
+  if (!node.image) console.warn('image failed to load', node);
   return (
     <li className={classnames(grid.col, css.item, { [css[variant]]: variant })}>
       <Link to={node.path} language={locale}>
-        {node.image && (
+        {node.image && node.image.childImageSharp && (
           <Img className={css.cover} fluid={node.image.childImageSharp.fluid} />
         )}
         <h4>{node.name}</h4>

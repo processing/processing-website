@@ -32,6 +32,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
   const entry = data?.json?.childJson;
   const isProcessing = libraryName === 'processing';
   const [showSidebar, setShowSidebar] = useSidebar('reference');
+
   const { locale } = useLocalization();
   const intl = useIntl();
   useHighlight();
