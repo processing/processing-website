@@ -46,6 +46,7 @@
 .menuToggle {
   display: none;
   padding: 0;
+  cursor: pointer;
 }
 .spacer {
   flex-grow: 4;
@@ -53,6 +54,9 @@
 .searchBar {
   min-width: 225px;
   flex-grow: 1;
+}
+.menuWrapper {
+  flex-grow: 2;
 }
 .menu {
   display: flex;
@@ -67,71 +71,73 @@
 .item {
   position: relative;
   display: inline-block;
-  padding-left: 12px;
-  margin-left: 11px;
   border-left: solid 4px transparent;
-  cursor: pointer;
   color: var(--processing-blue-dark);
   font-size: var(--text-medium);
   font-weight: 600;
   white-space: nowrap;
   & button,
   & a {
-    padding: 0;
+    padding: 0 0.75rem;
+
+    display: block;
     font-weight: inherit;
+    line-height: 1.5;
     color: var(--processing-blue-dark);
   }
   & a:hover {
-    color: var(--processing-blue-dark);
+    color: var(--processing-blue-mid);
   }
 }
 
 .item:hover {
-  border-left: solid 4px var(--processing-blue-dark);
+  z-index: 40;
+  border-left: solid 4px var(--processing-blue-mid);
 }
 
 .active {
   border-left: solid 4px var(--processing-blue-dark);
 }
-
+.item.hasSubmenu:hover {
+  border-left: solid 4px var(--processing-blue-dark);
+}
 .submenu {
   display: flex;
   position: absolute;
   left: -4px;
-  top: 29px;
+  top: 27px;
   z-index: 30;
   opacity: 0;
   overflow: hidden;
   max-height: 0;
-  padding-top: 14px;
+  padding-top: 16px;
   list-style: none;
   background-color: white;
-}
-
-.hasSubmenu:hover {
-  z-index: 40;
+  border-bottom: 1px solid var(--lightgray);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .subitem {
-  display: inline-block;
-  margin-right: 2rem;
-  padding-left: 0.6rem;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  cursor: pointer;
-  border-left: solid 4px var(--lightgray);
+  display: block;
+  margin-right: 0.5rem;
+
+  border-left: solid 4px transparent;
   color: var(--processing-blue-dark);
   font-size: var(--text-regular);
   font-weight: 700;
   word-break: keep-all;
+  & a {
+    display: block;
+    padding: 3px 0.75rem;
+  }
 }
 
 .subitem:hover {
-  border-left: solid 4px var(--processing-blue-dark);
-  color: var(--processing-blue-dark);
+  border-left: solid 4px var(--processing-blue-mid);
+  color: var(--processing-blue-mid);
 
   & a:hover {
-    color: var(--processing-blue-dark);
+    color: inherit;
   }
 }
 
@@ -161,14 +167,13 @@
     font-size: 1.15rem;
   }
 
-  .item {
-    font-size: var(--text-regular);
-    padding-left: 6px;
-    margin-left: 6px;
-  }
-
+  .item,
   .subitem {
     font-size: var(--text-small);
+    & a,
+    & button {
+      padding: 0 0.55rem;
+    }
   }
 }
 
@@ -200,6 +205,7 @@
   .searchBar {
     flex-grow: 0;
   }
+
   .menu {
     display: none;
     flex-basis: var(--col5);
@@ -215,13 +221,12 @@
     z-index: -1;
     height: 0;
     transition: opacity 0.1s ease-in-out;
-
-    & > .item {
-      margin-left: 0;
-      padding-left: 1rem;
-    }
   }
 
+  .item {
+    margin-left: 0;
+    padding-left: 0.5rem;
+  }
   .menu.expanded {
     display: block;
     height: calc(100vh - 90px);
@@ -250,12 +255,20 @@
   }
   .menuToggle {
     display: block;
+    transition: margin-top 0.15s ease-in-out;
+  }
+  .expanded .menuToggle {
+    margin-top: -40px;
+  }
+  .expanded.scrolled .menuToggle {
+    margin-top: 0px;
   }
 
   .item {
     display: block;
     font-size: var(--text-xlarge);
     margin-top: 8px;
+
     & > a {
       transition: padding-left 0.15s ease;
     }
@@ -279,19 +292,21 @@
     top: auto;
     max-height: none;
     padding: 0;
+    box-shadow: none;
+    border-bottom: none;
   }
 
   .subitem {
-    margin-left: -16px;
-    padding-left: 36px;
+    margin-left: -8px;
+    padding-left: 24px;
     transition: padding-left 0.15s ease;
     display: block;
     border-left: solid 4px transparent;
-    font-size: var(--text-xlarge);
+    font-size: var(--text-large);
     padding-bottom: 6px;
     &:hover {
-      padding-left: 44px;
-      border-left: solid 4px var(--processing-blue-dark);
+      padding-left: 32px;
+      border-left: solid 4px var(--processing-blue-mid);
     }
   }
 }
