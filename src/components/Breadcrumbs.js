@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { useLocalization, LocalizedLink as Link } from 'gatsby-theme-i18n';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import classnames from 'classnames';
 
 import { titleCase } from '../utils';

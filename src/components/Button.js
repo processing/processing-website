@@ -32,6 +32,7 @@ export const Button = ({
           className={classNames}
           href={href}
           target={target}
+          rel={target === '_blank' ? 'noreferrer' : null}
           tabIndex={tabIndex ? tabIndex : 0}>
           {children}
         </a>

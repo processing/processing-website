@@ -7,6 +7,7 @@ import { useIntl } from 'react-intl';
 **/
 export const useTrail = (example) => {
   const intl = useIntl();
+
   return useMemo(() => {
     return [
       intl.formatMessage({ id: 'learn' }),
@@ -19,5 +20,5 @@ export const useTrail = (example) => {
         label: intl.formatMessage({ id: 'textTutorials' })
       }
     ];
-  }, []);
+  }, [intl]);
 };
