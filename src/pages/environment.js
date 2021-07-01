@@ -17,7 +17,7 @@ import css from '../styles/pages/page.module.css';
 import grid from '../styles/grid.module.css';
 
 const Environment = ({ data }) => {
-  const [showSidebar, setShowSidebar] = useSidebar();
+  const [showSidebar, setShowSidebar] = useSidebar('environment');
   const intl = useIntl();
   useHighlight();
 

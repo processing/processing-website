@@ -27,7 +27,7 @@ import grid from '../../styles/grid.module.css';
 const RefTemplate = ({ data, pageContext, ...props }) => {
   const { name, libraryName } = pageContext;
   const isProcessing = libraryName === 'processing';
-  const [showSidebar, setShowSidebar] = useSidebar();
+  const [showSidebar, setShowSidebar] = useSidebar('reference');
 
   const intl = useIntl();
   useHighlight();

@@ -243,14 +243,15 @@ export const useIntersect = (root, rootMargin, threshold = 0) => {
 
 **/
 
-export const useSidebar = (showDefault) => {
+export const useSidebar = (_key = '', showDefault) => {
   // get initial value from sessionStorage
+  const key = `showSidebar-${_key}`;
+  const sessionStorage = typeof window !== 'undefined' && window.sessionStorage;
+
   const initialShow =
-    typeof window !== 'undefined' &&
-    window.sessionStorage &&
-    window.sessionStorage.getItem('showSidebar') == null
+    sessionStorage && sessionStorage.getItem(key) == null
       ? null
-      : window.sessionStorage.getItem('showSidebar') === 'true';
+      : sessionStorage.getItem(key) === 'true';
 
   const [showSidebar, setShowSidebar] = useState(showDefault ?? initialShow);
 
@@ -261,19 +262,17 @@ export const useSidebar = (showDefault) => {
 
     const [winWidth] = getWin();
     if (winWidth > 960) {
-      setShowSidebar(true);
+      setShowSidebar(showSidebar ?? true);
+    } else {
+      setShowSidebar(false);
     }
   }, [initialShow]);
 
-  // Set initial value only if triggered externally
-  const externalSetShowSidebar = (value) => {
-    const valueToStore = value instanceof Function ? value(showSidebar) : value;
-    setShowSidebar(valueToStore);
-
-    if (window.sessionStorage) {
-      window.sessionStorage.setItem('showSidebar', valueToStore);
+  useEffect(() => {
+    if (sessionStorage) {
+      sessionStorage.setItem(key, showSidebar);
     }
-  };
+  }, [showSidebar, sessionStorage, key]);
 
-  return [showSidebar, externalSetShowSidebar];
+  return [showSidebar, setShowSidebar];
 };

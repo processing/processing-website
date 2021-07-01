@@ -31,7 +31,7 @@ if (typeof window !== 'undefined') {
 }
 
 const ExampleTemplate = ({ data, pageContext }) => {
-  const [showSidebar, setShowSidebar] = useSidebar();
+  const [showSidebar, setShowSidebar] = useSidebar('examples');
   const intl = useIntl();
 
   const { name, related } = pageContext;

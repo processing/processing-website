@@ -29,7 +29,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
   const { name, libraryName } = pageContext;
   const isProcessing = libraryName === 'processing';
 
-  const [showSidebar, setShowSidebar] = useSidebar();
+  const [showSidebar, setShowSidebar] = useSidebar('reference');
   const intl = useIntl();
   useHighlight();
 

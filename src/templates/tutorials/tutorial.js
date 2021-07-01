@@ -19,6 +19,7 @@ import grid from '../../styles/grid.module.css';
 const TutorialTemplate = ({ data, pageContext }) => {
   const { mdx } = data;
   const [showSidebar, setShowSidebar] = useSidebar(
+    'tutorials',
     !!mdx?.tableOfContents?.items ? undefined : true
   );
   const intl = useIntl();
