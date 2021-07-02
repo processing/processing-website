@@ -1,5 +1,4 @@
 import React, { memo, useContext } from 'react';
-import { navigate } from 'gatsby';
 import classnames from 'classnames';
 
 import { LayoutContext } from '../Layout';

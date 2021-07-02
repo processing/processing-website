@@ -16,12 +16,64 @@ import { usePreparedItems } from '../hooks/reference';
 import css from '../styles/pages/reference.module.css';
 import grid from '../styles/grid.module.css';
 
+const sortOrder = {
+  Structure: [],
+  Environment: [],
+  Data: [
+    '',
+    'Primitive',
+    'Composite',
+    'Conversion',
+    'String Functions',
+    'Array Functions'
+  ],
+  Control: [
+    '',
+    'Relational Operators',
+    'Iteration',
+    'Conditionals',
+    'Logical Operators'
+  ],
+  Shape: [
+    '',
+    '2D Primitives',
+    'Curves',
+    '3D Primitives',
+    'Attributes',
+    'Vertex',
+    'Loading & Displaying'
+  ],
+  Color: ['', 'Setting', 'Creating & Reading'],
+  Image: ['', 'Loading & Displaying', 'Textures', 'Pixels'],
+  Typography: ['', 'Loading & Displaying', 'Attributes', 'Metrics'],
+  Transform: [],
+  'Lights Camera': [
+    '',
+    'Lights',
+    'Camera',
+    'Coordinates',
+    'Material Properties'
+  ],
+  Rendering: ['', 'Shaders'],
+  Input: ['', 'Mouse', 'Keyboard', 'Files', 'Time & Date'],
+  Output: ['', 'Text Area', 'Image', 'Files'],
+  Math: [
+    '',
+    'Operators',
+    'Bitwise Operators',
+    'Calculation',
+    'Trigonometry',
+    'Random'
+  ],
+  Constants: []
+};
+
 const Reference = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const intl = useIntl();
 
   const items = usePreparedItems(data.items.nodes, 'processing');
-  const tree = useTree(items);
+  const tree = useTree(items, sortOrder);
   const filtered = useFilteredTree(tree, searchTerm);
   const categories = Object.keys(tree);
 
