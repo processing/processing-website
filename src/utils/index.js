@@ -93,3 +93,17 @@ export const sortObject = (obj, order) => {
   }
   return copy;
 };
+
+/**
+  Returns a copy of the array with the items sorted based on the values in the array provided and the key
+**/
+export const sortArray = (arr, order, key) => {
+  return arr.slice().sort((a, b) => {
+    let aidx = order.indexOf(a[key]);
+    let bidx = order.indexOf(b[key]);
+    // Ensure keys not in order are sorted last
+    if (aidx === -1) aidx = 9999;
+    if (bidx === -1) bidx = 9999;
+    return aidx - bidx;
+  });
+};
