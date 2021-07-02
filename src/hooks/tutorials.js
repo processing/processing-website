@@ -5,7 +5,7 @@ import { useIntl } from 'react-intl';
   Hook to prepare the trail used for the breadcumbs
   Example: Learn > Tutorials > Text Tutorials
 **/
-export const useTrail = (example) => {
+export const useTrail = () => {
   const intl = useIntl();
   return useMemo(() => {
     return [
@@ -19,5 +19,5 @@ export const useTrail = (example) => {
         label: intl.formatMessage({ id: 'textTutorials' })
       }
     ];
-  }, []);
+  }, [intl]);
 };

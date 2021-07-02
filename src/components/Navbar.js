@@ -135,7 +135,7 @@ const Navbar = ({ siteTitle, scrolled }) => {
                 })}>
                 {item.href ? (
                   item.href.startsWith('https') ? (
-                    <a target="_blank" href={item.href}>
+                    <a target="_blank" rel="noreferrer" href={item.href}>
                       {intl.formatMessage({ id: item.name })}
                     </a>
                   ) : (
