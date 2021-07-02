@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Link } from 'gatsby';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import Img from 'gatsby-image';
 import classnames from 'classnames';
 import { widont } from '../../utils/index.js';

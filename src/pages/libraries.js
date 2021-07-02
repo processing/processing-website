@@ -45,7 +45,7 @@ const Libraries = ({ data }) => {
           <h1>{intl.formatMessage({ id: 'libraries' })}</h1>
           <h3>{intl.formatMessage({ id: 'librariesIntro' })}</h3>
         </div>
-        <CoreList libraries={coreLibraries} locale={locale} intl={intl} />
+        <CoreList libraries={coreLibraries} intl={intl} />
         <div className={classnames(grid.col, css.text, css.pushDown)}>
           <h1>{intl.formatMessage({ id: 'contributions' })}</h1>
           <h3>{intl.formatMessage({ id: 'contributionsIntro' })}</h3>
@@ -66,7 +66,7 @@ const Libraries = ({ data }) => {
   );
 };
 
-const CoreList = memo(({ libraries, locale, intl }) => {
+const CoreList = memo(({ libraries, intl }) => {
   return (
     <>
       <h2 className={classnames(grid.col, css.category)} id="core">
@@ -77,9 +77,7 @@ const CoreList = memo(({ libraries, locale, intl }) => {
           return (
             <li key={key} className={classnames(grid.grid, css.item)}>
               <div className={classnames(grid.col, css.itemName)}>
-                <Link
-                  to={referencePath('index', node.frontmatter.name)}
-                  language={locale}>
+                <Link to={referencePath('index', node.frontmatter.name)}>
                   <h3>{node.frontmatter.title}</h3>
                 </Link>
               </div>

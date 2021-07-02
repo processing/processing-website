@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql, Link } from 'gatsby';
-import { useLocalization } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 
@@ -23,7 +22,6 @@ const TutorialTemplate = ({ data, pageContext }) => {
   const [showSidebar, setShowSidebar] = useSidebar(
     !!mdx?.tableOfContents?.items ? undefined : true
   );
-  const { locale } = useLocalization();
   const intl = useIntl();
   useHighlight();
 
@@ -47,7 +45,7 @@ const TutorialTemplate = ({ data, pageContext }) => {
         )}
         {mdx !== null ? (
           <Content collapsed={!showSidebar}>
-            <Breadcrumbs locale={locale} trail={trail} />
+            <Breadcrumbs trail={trail} />
             <h1>{mdx.frontmatter.title}</h1>
             <p className={css.author}>{`${intl.formatMessage({ id: 'by' })} ${
               mdx.frontmatter.author
