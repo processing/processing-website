@@ -14,7 +14,8 @@
 
 .card {
   flex-basis: var(--col2);
-  margin-bottom: var(--vertical-margin-small);
+  padding-top: var(--gutter);
+  padding-bottom: var(--gutter);
   background-color: none;
   transition: background-color 0.2s ease;
   pointer-events: auto;

@@ -37,7 +37,11 @@ const Tutorials = ({ data }) => {
             } = node.childMdx.frontmatter;
             return (
               <li key={k} className={classnames(grid.col, css.card)}>
-                <a href={link} language={locale}>
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noreferrer"
+                  language={locale}>
                   {coverImage && (
                     <div className={css.cover}>
                       <Img
