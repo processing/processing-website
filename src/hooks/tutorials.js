@@ -1,5 +1,25 @@
 import { useMemo } from 'react';
 import { useIntl } from 'react-intl';
+import { sortArray } from '../utils';
+
+/**
+  Hook to prepare the video and text examples
+**/
+export const usePreparedTutorials = (tutorials) => {
+  return useMemo(() => {
+    let prepared = [];
+
+    for (let i = 0; i < tutorials.length; i++) {
+      const { coverImage, ...rest } = tutorials[i].childMdx.frontmatter;
+      prepared.push({
+        ...rest,
+        image: coverImage.childImageSharp.fluid
+      });
+    }
+
+    return prepared;
+  }, [tutorials]);
+};
 
 /**
   Hook to prepare the trail used for the breadcumbs

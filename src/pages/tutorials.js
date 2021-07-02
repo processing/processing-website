@@ -8,12 +8,17 @@ import classnames from 'classnames';
 
 import Layout from '../components/Layout';
 
+import { usePreparedTutorials } from '../hooks/tutorials';
+
 import css from '../styles/pages/tutorials.module.css';
 import grid from '../styles/grid.module.css';
 
 const Tutorials = ({ data }) => {
   const { locale } = useLocalization();
   const intl = useIntl();
+
+  const videos = usePreparedTutorials(data.video.nodes);
+  const texts = usePreparedTutorials(data.text.nodes);
 
   return (
     <Layout>
@@ -27,39 +32,32 @@ const Tutorials = ({ data }) => {
           <h3>{intl.formatMessage({ id: 'videoTutorialsIntro' })}</h3>
         </div>
         <ul className={classnames(grid.col, grid.grid, css.list)}>
-          {data.video.nodes.map((node, k) => {
-            const {
-              link,
-              title,
-              author,
-              intro,
-              coverImage
-            } = node.childMdx.frontmatter;
+          {videos.map((tutorial, k) => {
             return (
               <li key={k} className={classnames(grid.col, css.card)}>
                 <a
-                  href={link}
+                  href={tutorial.link}
                   target="_blank"
                   rel="noreferrer"
                   language={locale}>
-                  {coverImage && (
+                  {tutorial.image && (
                     <div className={css.cover}>
                       <Img
-                        fluid={coverImage.childImageSharp.fluid}
+                        fluid={tutorial.image}
                         style={{ height: 100 }}
                         objectFit="contain"
                       />
                     </div>
                   )}
-                  <h4>{title}</h4>
+                  <h4>{tutorial.title}</h4>
                   <div>
                     <span className={css.author}>
                       {intl.formatMessage({ id: 'by' })}{' '}
                     </span>
-                    <span className={css.authorName}>{author}</span>
+                    <span className={css.authorName}>{tutorial.author}</span>
                   </div>
                 </a>
-                <span className={css.brief}>{intro}</span>
+                <span className={css.brief}>{tutorial.intro}</span>
               </li>
             );
           })}
@@ -69,37 +67,29 @@ const Tutorials = ({ data }) => {
           <h3>{intl.formatMessage({ id: 'textTutorialsIntro' })}</h3>
         </div>
         <ul className={classnames(grid.col, grid.grid, css.list)}>
-          {data.text.nodes.map((node, k) => {
-            const {
-              slug,
-              title,
-              author,
-              intro,
-              level,
-              coverImage
-            } = node.childMdx.frontmatter;
+          {texts.map((tutorial, k) => {
             return (
               <li key={k} className={classnames(grid.col, css.card)}>
-                <Link to={slug} language={locale}>
-                  {coverImage && (
+                <Link to={tutorial.slug} language={locale}>
+                  {tutorial.image && (
                     <div className={css.cover}>
                       <Img
-                        fluid={coverImage.childImageSharp.fluid}
+                        fluid={tutorial.image}
                         style={{ height: 100 }}
                         objectFit="contain"
                       />
                     </div>
                   )}
-                  <h4>{title}</h4>
+                  <h4>{tutorial.title}</h4>
                   <div>
                     <span className={css.author}>
                       {intl.formatMessage({ id: 'by' })}{' '}
                     </span>
-                    <span className={css.authorName}>{author}</span>
+                    <span className={css.authorName}>{tutorial.author}</span>
                   </div>
-                  <span className={css.brief}>{intro}</span>
+                  <span className={css.brief}>{tutorial.intro}</span>
                   <span className={css.level}>
-                    {intl.formatMessage({ id: 'level' })}: {level}
+                    {intl.formatMessage({ id: 'level' })}: {tutorial.level}
                   </span>
                 </Link>
               </li>
@@ -121,11 +111,13 @@ export const query = graphql`
         childMdx: { fields: { locale: { eq: "en" } } }
         relativeDirectory: { glob: "video/*" }
       }
+      sort: { order: ASC, fields: childrenMdx___frontmatter___order }
     ) {
       nodes {
         name
         childMdx {
           frontmatter {
+            order
             link
             title
             author
@@ -147,6 +139,7 @@ export const query = graphql`
         childMdx: { fields: { locale: { eq: "en" } } }
         relativeDirectory: { glob: "text/*" }
       }
+      sort: { order: ASC, fields: childrenMdx___frontmatter___order }
     ) {
       nodes {
         name
