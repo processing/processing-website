@@ -61,9 +61,11 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
     <Layout withSidebar withBreadcrumbs>
       <Helmet>
         <title>
-          {entry?.name ?? ''}
+          {data.en.childJson.name}
           {' / '}
-          {isProcessing ? 'Reference' : 'Libraries'}
+          {isProcessing
+            ? intl.formatMessage({ id: 'reference' })
+            : intl.formatMessage({ id: 'libraries' })}
         </title>
       </Helmet>
       <div className={grid.grid}>
@@ -175,6 +177,11 @@ export const query = graphql`
         related
         returns
         classanchor
+      }
+    }
+    en: file(fields: { name: { eq: $name }, lang: { eq: "en" } }) {
+      childJson {
+        name
       }
     }
     images: allFile(
