@@ -54,15 +54,18 @@ const FieldRefTemplate = ({ data, pageContext }) => {
     entry?.classanchor
   );
 
-  const title = entry?.classanchor
-    ? `${entry.classanchor}::${entry.name}`
-    : name;
+  const title = data.en.childJson.classanchor
+    ? `${data.en.childJson.classanchor}::${data.en.childJson.name}`
+    : data.en.childJson.name;
 
   return (
     <Layout withSidebar withBreadcrumbs>
       <Helmet>
         <title>
-          {title} / {isProcessing ? 'Reference' : 'Libraries'}
+          {title} /
+          {isProcessing
+            ? intl.formatMessage({ id: 'reference' })
+            : intl.formatMessage({ id: 'libraries' })}
         </title>
       </Helmet>
       <div className={grid.grid}>
@@ -140,10 +143,11 @@ export const query = graphql`
   query(
     $name: String!
     $relDir: String!
+    $locale: String!
     $inUseExamples: [String!]!
     $libraryName: String!
   ) {
-    json: file(fields: { name: { eq: $name } }) {
+    json: file(fields: { name: { eq: $name }, lang: { eq: $locale } }) {
       childJson {
         name
         classanchor
@@ -158,6 +162,12 @@ export const query = graphql`
         }
         related
         returns
+      }
+    }
+    en: file(fields: { name: { eq: $name }, lang: { eq: "en" } }) {
+      childJson {
+        name
+        classanchor
       }
     }
     images: allFile(
