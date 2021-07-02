@@ -167,7 +167,6 @@ const Navbar = ({ siteTitle, scrolled }) => {
                           ) : (
                             <Link
                               to={subitem.href}
-                              language={locale}
                               tabIndex={item.name === showSubmenu ? 0 : -1}>
                               {intl.formatMessage({ id: subitem.name })}
                             </Link>

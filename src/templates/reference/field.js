@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import { useIntl } from 'react-intl';
-import { useLocalization } from 'gatsby-theme-i18n';
 
 import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
@@ -33,7 +32,6 @@ const FieldRefTemplate = ({ data, pageContext }) => {
   const isProcessing = libraryName === 'processing';
 
   const [showSidebar, setShowSidebar] = useSidebar();
-  const { locale } = useLocalization();
   const intl = useIntl();
   useHighlight();
 
@@ -76,7 +74,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
         />
         {entry ? (
           <Content collapsed={!showSidebar}>
-            <Breadcrumbs locale={locale} trail={trail} />
+            <Breadcrumbs trail={trail} />
             <Section title={intl.formatMessage({ id: 'name' })}>
               <h3>{entry.name}</h3>
             </Section>

@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
-import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import Img from 'gatsby-image';
 
 import Layout from '../components/Layout';
@@ -19,7 +19,6 @@ import grid from '../styles/grid.module.css';
 
 const IndexPage = ({ data }) => {
   const intl = useIntl();
-  const { locale } = useLocalization();
   const featuredExamples = usePreparedExamples(
     data.examples.nodes,
     data.exampleImages.nodes
@@ -70,7 +69,6 @@ const IndexPage = ({ data }) => {
       <Examples
         examples={randomExamples}
         heading={intl.formatMessage({ id: 'examples' })}
-        locale={locale}
       />
       <div className={css.gettingStarted}>
         <div
@@ -278,13 +276,13 @@ const IndexPage = ({ data }) => {
   );
 };
 
-const Examples = memo(({ heading, examples, locale }) => {
+const Examples = memo(({ heading, examples }) => {
   return (
     <div className={classnames(grid.grid, css.examples)}>
       <h3 className={classnames(grid.col, css.examplesHeading)}>{heading}</h3>
       {examples.map((example, i) => (
         <div className={classnames(grid.col, css.example)} key={example.path}>
-          <Link to={example.path} language={locale}>
+          <Link to={example.path}>
             <div className={css.imgContainer}>
               {example.image && (
                 <Img

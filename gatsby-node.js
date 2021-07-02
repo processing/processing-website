@@ -154,7 +154,7 @@ async function createReference(actions, graphql) {
         path: refPath,
         component: refTemplate,
         context: {
-          name: refPage.node.name,
+          name,
           relDir,
           libraryName,
           inUseExamples: inUseExamples

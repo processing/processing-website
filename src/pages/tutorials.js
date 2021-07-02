@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import { useLocalization, LocalizedLink as Link } from 'gatsby-theme-i18n';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 
@@ -14,9 +14,7 @@ import css from '../styles/pages/tutorials.module.css';
 import grid from '../styles/grid.module.css';
 
 const Tutorials = ({ data }) => {
-  const { locale } = useLocalization();
   const intl = useIntl();
-
   const videos = usePreparedTutorials(data.video.nodes);
   const texts = usePreparedTutorials(data.text.nodes);
 
@@ -35,11 +33,7 @@ const Tutorials = ({ data }) => {
           {videos.map((tutorial, k) => {
             return (
               <li key={k} className={classnames(grid.col, css.card)}>
-                <a
-                  href={tutorial.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  language={locale}>
+                <a href={tutorial.link} target="_blank" rel="noreferrer">
                   {tutorial.image && (
                     <div className={css.cover}>
                       <Img
@@ -70,7 +64,7 @@ const Tutorials = ({ data }) => {
           {texts.map((tutorial, k) => {
             return (
               <li key={k} className={classnames(grid.col, css.card)}>
-                <Link to={tutorial.slug} language={locale}>
+                <Link to={tutorial.slug}>
                   {tutorial.image && (
                     <div className={css.cover}>
                       <Img

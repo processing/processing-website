@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 import { useIntl } from 'react-intl';
-import { sortArray } from '../utils';
 
 /**
   Hook to prepare the video and text examples

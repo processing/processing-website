@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import { useIntl } from 'react-intl';
-import { useLocalization } from 'gatsby-theme-i18n';
 import { widont } from '../../utils/index.js';
 
 import Layout from '../../components/Layout';
@@ -32,7 +31,6 @@ const ClassRefTemplate = ({ data, pageContext }) => {
   const entry = data?.json?.childJson;
   const isProcessing = libraryName === 'processing';
   const [showSidebar, setShowSidebar] = useSidebar();
-  const { locale } = useLocalization();
   const intl = useIntl();
   useHighlight();
 
@@ -68,7 +66,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
         />
         {entry ? (
           <Content collapsed={!showSidebar}>
-            <Breadcrumbs locale={locale} trail={trail} />
+            <Breadcrumbs trail={trail} />
             <Section title={intl.formatMessage({ id: 'className' })}>
               <h3>{entry.name}</h3>
             </Section>
