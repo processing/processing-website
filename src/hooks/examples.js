@@ -124,5 +124,5 @@ export const useTrail = (example) => {
     }
 
     return trail;
-  }, []);
+  }, [intl, example]);
 };
