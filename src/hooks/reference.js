@@ -1,5 +1,7 @@
 import { useMemo } from 'react';
-import { titleCase } from '../utils';
+import { useIntl } from 'react-intl';
+
+import { titleCase, slugify } from '../utils';
 import { referencePath, pathToName, examplePath } from '../utils/paths';
 
 /**
@@ -155,4 +157,63 @@ export const useInUseExamples = (inUseExamples, images) => {
     }
     return prepared;
   }, [inUseExamples, images]);
+};
+
+/**
+  Hook to prepare the trail used for the breadcumbs
+  Processing: Documentation > Reference > [Category] > [Subcategory] (> [Class])
+  Library: Documentation > Libraries > Core > [Library] > (> [Class])
+  TODO: We need to fix this issue in order to show the proper categories for class methods and fields:
+  https://github.com/processing/processing-website/issues/175
+**/
+export const useTrail = (libraryName, category, subcategory, classanchor) => {
+  const intl = useIntl();
+  return useMemo(() => {
+    const isProcessing = libraryName === 'processing';
+    const sectionTrail = isProcessing
+      ? {
+          slug: '/reference',
+          label: intl.formatMessage({ id: 'reference' })
+        }
+      : {
+          slug: '/libraries',
+          label: intl.formatMessage({ id: 'libraries' })
+        };
+
+    const trail = ['Documentation', sectionTrail];
+
+    if (isProcessing) {
+      if (category) {
+        trail.push({
+          slug: sectionTrail.slug + '#' + slugify(category),
+          label: category
+        });
+      }
+
+      if (subcategory) {
+        trail.push({
+          slug: sectionTrail.slug + '#' + slugify(category, subcategory),
+          label: subcategory
+        });
+      }
+    } else {
+      trail.push({
+        slug: sectionTrail.slug + '#core',
+        label: intl.formatMessage({ id: 'core' })
+      });
+      trail.push({
+        slug: referencePath('index', libraryName),
+        label: libraryName
+      });
+    }
+
+    if (classanchor) {
+      trail.push({
+        slug: referencePath(classanchor, libraryName),
+        label: classanchor
+      });
+    }
+
+    return trail;
+  }, [intl, libraryName, category, subcategory, classanchor]);
 };

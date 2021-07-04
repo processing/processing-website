@@ -146,6 +146,13 @@ async function createReference(actions, graphql) {
       })
       .map((e) => e.node.name);
 
+    const context = {
+      name,
+      relDir,
+      libraryName,
+      inUseExamples: inUseExamples
+    };
+
     if (
       refPage.node.childJson.type === 'function' ||
       refPage.node.childJson.type === 'method'
@@ -153,23 +160,13 @@ async function createReference(actions, graphql) {
       createPage({
         path: refPath,
         component: refTemplate,
-        context: {
-          name: refPage.node.name,
-          relDir,
-          libraryName,
-          inUseExamples: inUseExamples
-        }
+        context
       });
     } else if (refPage.node.childJson.type === 'class') {
       createPage({
         path: refPath,
         component: classRefTemplate,
-        context: {
-          name: refPage.node.name,
-          relDir,
-          libraryName,
-          inUseExamples: inUseExamples
-        }
+        context
       });
     } else if (
       refPage.node.childJson.type === 'field' ||
@@ -178,12 +175,7 @@ async function createReference(actions, graphql) {
       createPage({
         path: refPath,
         component: fieldRefTemplate,
-        context: {
-          name: refPage.node.name,
-          relDir,
-          libraryName,
-          inUseExamples: inUseExamples
-        }
+        context
       });
     }
   });
@@ -242,6 +234,7 @@ async function createTutorials(actions, graphql) {
       {
         allFile(filter: { sourceInstanceName: { eq: "tutorials" } }) {
           nodes {
+            relativeDirectory
             childMdx {
               frontmatter {
                 slug
@@ -257,17 +250,20 @@ async function createTutorials(actions, graphql) {
     throw tutorialResult.errors;
   }
 
-  const tutorialPages = tutorialResult.data.allFile.nodes;
+  const tutorials = tutorialResult.data.allFile.nodes;
 
-  tutorialPages.forEach((tutorialPage, index) => {
-    tutorialPage.childMdx &&
+  tutorials.forEach((tutorial, index) => {
+    const [tutorialType] = tutorial.relativeDirectory.split('/');
+
+    if (tutorial.childMdx && tutorialType === 'text') {
       createPage({
-        path: tutorialPage.childMdx.frontmatter.slug,
+        path: tutorial.childMdx.frontmatter.slug,
         component: tutorialTemplate,
         context: {
-          slug: tutorialPage.childMdx.frontmatter.slug
+          slug: tutorial.childMdx.frontmatter.slug
         }
       });
+    }
   });
 }
 

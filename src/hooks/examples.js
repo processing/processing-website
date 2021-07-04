@@ -1,5 +1,28 @@
 import { useMemo } from 'react';
+import { useIntl } from 'react-intl';
+import { slugify } from '../utils';
 import { examplePath } from '../utils/paths';
+
+/**
+  Hook to parse the GraphQL example into a useable object
+**/
+export const usePreparedExample = (example) => {
+  return useMemo(() => {
+    if (!example) {
+      return null;
+    }
+
+    const [category, subcategory] = example.relativeDirectory.split('/');
+    return {
+      title: example.childJson.title,
+      author: example.childJson.author,
+      description: example.childJson.description,
+      featured: example.childJson.featured,
+      category,
+      subcategory
+    };
+  }, [example]);
+};
 
 /**
   Hook to find the json and image for each related example
@@ -35,7 +58,7 @@ export const usePreparedExamples = (examples, images) => {
         category,
         subcategory,
         image,
-        search: `${example.name}`,
+        search: `${example.name}`
       });
     }
 
@@ -71,4 +94,35 @@ export const useOrderedPdes = (name, nodes) => {
     rest.unshift(main);
     return rest;
   }, [name, nodes]);
+};
+
+/**
+  Hook to prepare the trail used for the breadcumbs
+  Example: Learn > Examples > [Category] > [Subcategory]
+**/
+export const useTrail = (example) => {
+  const intl = useIntl();
+  return useMemo(() => {
+    const trail = [
+      intl.formatMessage({ id: 'learn' }),
+      { slug: '/examples', label: intl.formatMessage({ id: 'examples' }) }
+    ];
+
+    if (example) {
+      if (example.category) {
+        trail.push({
+          slug: `/examples#${slugify(example.category)}`,
+          label: example.category
+        });
+      }
+      if (example.subcategory) {
+        trail.push({
+          slug: `/examples#${slugify(example.category, example.subcategory)}`,
+          label: example.subcategory
+        });
+      }
+    }
+
+    return trail;
+  }, [intl, example]);
 };

@@ -1,19 +1,20 @@
 ---
-slug: '/tutorials/pshape'
-title: 'PShape'
-author: 'Daniel Shiffman'
-intro: 'How to use the PShape class in Processing.'
-level: 'Intermediate'
+slug: "/tutorials/pshape"
+title: "PShape"
+author: "Daniel Shiffman"
+intro: "How to use the PShape class in Processing."
+level: "Intermediate"
 coverImage: pshape.jpg
+order: "13"
 ---
 
 <Note>
 
-If you see any errors in this tutorial or have comments, [please let us know](https://github.com/processing/processing-docs/issues?q=is%3Aopen). This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+If you see any errors in this tutorial or have comments, [please let us know](https://github.com/processing/processing-website/issues?q=is%3Aopen). This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 </Note>
 
-*(The source code for this tutorial are in the Processing Examples. Select File -> Examples in the Processing IDE, then select Topics -> Create Shapes.)*
+_(The source code for this tutorial are in the Processing Examples. Select File -> Examples in the Processing IDE, then select Topics -> Create Shapes.)_
 
 One of the very first things you learn when programming with Processing is how to draw "primitive" shapes to the screen: rectangles, ellipses, lines, triangles, and more.
 
@@ -61,13 +62,13 @@ class MyWackyShape {
 }
 ```
 
-This is all well and good and will get you pretty far.  There's very little you can't draw just knowing the above.  However, there is another step.  A step that can, in some cases, improve the speed of your rendering as well as offer a more advanced organizational model for your code—[PShape](http://processing.org/reference/PShape.html).
+This is all well and good and will get you pretty far. There's very little you can't draw just knowing the above. However, there is another step. A step that can, in some cases, improve the speed of your rendering as well as offer a more advanced organizational model for your code—[PShape](http://processing.org/reference/PShape.html).
 
-PShape is a datatype for storing shapes.  These can be shapes that you build out of custom geometry or shapes that you load from an external file, such as an SVG.
+PShape is a datatype for storing shapes. These can be shapes that you build out of custom geometry or shapes that you load from an external file, such as an SVG.
 
 ## Primitive PShapes
 
-Let's begin with one of the simplest cases for use of a PShape.  Here's a simple Processing draw() method that draws an rectangle following the mouse.
+Let's begin with one of the simplest cases for use of a PShape. Here's a simple Processing draw() method that draws an rectangle following the mouse.
 
 <FixedImage side width={360} height={215}>
 
@@ -84,7 +85,7 @@ void draw() {
 }
 ```
 
-Pretty basic stuff.  If this was all the code we had, there's not necessarily a good reason for using a PShape instead, but we're going to push ahead and make a PShape rectangle anyway as a demonstration.  Our goal here is to have a variable that stores the color and dimensions of that variable, allowing our draw function to look like this.
+Pretty basic stuff. If this was all the code we had, there's not necessarily a good reason for using a PShape instead, but we're going to push ahead and make a PShape rectangle anyway as a demonstration. Our goal here is to have a variable that stores the color and dimensions of that variable, allowing our draw function to look like this.
 
 ```
 void draw() {
@@ -99,7 +100,7 @@ And what is this "rectangle"? It's a PShape.
 PShape rectangle;
 ```
 
-To initialize a PShape, use the [createShape()](http://processing.org/reference/createShape_.html) method. The first argument for createShape() is a constant, and this constant specifies the type of PShape you intend to make.  As we'll see throughout this tutorial there are a number of options: ELLIPSE, RECT, ARC, TRIANGLE, SPHERE, BOX, LINE, GROUP, and more.  Here we are making a primitive shape, a rectangle, so we use the constant "RECT."  The arguments that follow are the (x,y) location for the shape as well as its dimensions (width,height).  So now our setup() should look like:
+To initialize a PShape, use the [createShape()](http://processing.org/reference/createShape_.html) method. The first argument for createShape() is a constant, and this constant specifies the type of PShape you intend to make. As we'll see throughout this tutorial there are a number of options: ELLIPSE, RECT, ARC, TRIANGLE, SPHERE, BOX, LINE, GROUP, and more. Here we are making a primitive shape, a rectangle, so we use the constant "RECT." The arguments that follow are the (x,y) location for the shape as well as its dimensions (width,height). So now our setup() should look like:
 
 ```
 PShape rectangle;
@@ -110,7 +111,7 @@ void setup() {
 }
 ```
 
-There's a big problem though.  Yes, we want the rectangle to appear at the mouse location, but when a sketch first begins mouseX and mouseY are set to zero.  mouseX and mouseY don't come to life until we are looping through draw().  It's important to remember that when using PShape, what we're really doing is configuring the geometry relative to the origin (0,0).  It's generally then advantageous to then move that shape about the screen using transformations: translate(), rotate(), etc.  So now we have:
+There's a big problem though. Yes, we want the rectangle to appear at the mouse location, but when a sketch first begins mouseX and mouseY are set to zero. mouseX and mouseY don't come to life until we are looping through draw(). It's important to remember that when using PShape, what we're really doing is configuring the geometry relative to the origin (0,0). It's generally then advantageous to then move that shape about the screen using transformations: translate(), rotate(), etc. So now we have:
 
 ```
 PShape rectangle;
@@ -142,7 +143,7 @@ void draw() {
 }
 ```
 
-One of the nice things about the PShape object is that it can also store color information in addition to geometry.  Once a shape has been created in order to alter its fill or stroke, use the methods setFill(), setStroke(), setStrokeWeight(), etc.
+One of the nice things about the PShape object is that it can also store color information in addition to geometry. Once a shape has been created in order to alter its fill or stroke, use the methods setFill(), setStroke(), setStrokeWeight(), etc.
 
 ```
 void setup() {
@@ -171,13 +172,13 @@ void draw() {
 }
 ```
 
-It should be noted that unlike with fill() and stroke() you must pass a full color as an argument.  i.e. instead of saying "setFill(255,0,0)" for a red fill, you'll need to say "setFill(color(255,0,0))".  In addition, setFill() and setStroke() can take a boolean argument (e.g. setFill(false)) to turn the fill or stroke on or off for a given vertex as well as an integer (e.g. setFill(i,color(255,0,0))) to set the fill or stroke for a specific vertex.
+It should be noted that unlike with fill() and stroke() you must pass a full color as an argument. i.e. instead of saying "setFill(255,0,0)" for a red fill, you'll need to say "setFill(color(255,0,0))". In addition, setFill() and setStroke() can take a boolean argument (e.g. setFill(false)) to turn the fill or stroke on or off for a given vertex as well as an integer (e.g. setFill(i,color(255,0,0))) to set the fill or stroke for a specific vertex.
 
 See Example "PrimitivePShape" (under File -> Examples -> Topics -> Create Shapes) for an example that demonstrates all of the above code.
 
 ## Custom PShapes
 
-PShapes also can be configured with custom vertices.  You've probably done this before, without PShape, just using beginShape() and endShape().  For example, let's say you wanted to draw a star in Processing.  You might have some code as follows:
+PShapes also can be configured with custom vertices. You've probably done this before, without PShape, just using beginShape() and endShape(). For example, let's say you wanted to draw a star in Processing. You might have some code as follows:
 
 <FixedImage side width={360} height={215}>
 
@@ -233,7 +234,7 @@ void setup() {
 }
 ```
 
-Then all the vertices (and colors) can be specified by calling the functions on the new PShape object "star."  Note that setFill() and setStroke() are not required here, only if you choose to alter the colors after the shape has been initially created.
+Then all the vertices (and colors) can be specified by calling the functions on the new PShape object "star." Note that setFill() and setStroke() are not required here, only if you choose to alter the colors after the shape has been initially created.
 
 ```
 void setup() {
@@ -265,7 +266,7 @@ See Example "PolygonPShape" (under File -> Examples -> Topics -> Create Shapes) 
 
 ## Many PShapes
 
-As we mentioned earlier, one reason to use PShape is just to help you organize your geometry.  However, there's another reason.   Let's assume for a moment that you have a Star class, with a display() function that looks like so:
+As we mentioned earlier, one reason to use PShape is just to help you organize your geometry. However, there's another reason. Let's assume for a moment that you have a Star class, with a display() function that looks like so:
 
 ```
 void display() {
@@ -307,7 +308,7 @@ void draw() {
 }
 ```
 
-Try to draw around 500 stars and your sketch may run rather slowly, about 10 FPS.  This is because this style of drawing, often referred to as "immediate" mode, requires the renderer to compute the geometry each time through draw for each and every star.  But is this necessary?  After all, it's the same star over and over and over again.  Using a PShape allows Processing to essentially "memorize" the geometry of that star.  Drawing the memorized geometry (called a "Vertex Buffer Object" in lower-level OpenGL syntax) is called "retained" mode and is a great deal faster.  Those 500 stars render easily at 60 FPS using a PShape instead.  This can be achieved by including a PShape variable as part of the Star class.
+Try to draw around 500 stars and your sketch may run rather slowly, about 10 FPS. This is because this style of drawing, often referred to as "immediate" mode, requires the renderer to compute the geometry each time through draw for each and every star. But is this necessary? After all, it's the same star over and over and over again. Using a PShape allows Processing to essentially "memorize" the geometry of that star. Drawing the memorized geometry (called a "Vertex Buffer Object" in lower-level OpenGL syntax) is called "retained" mode and is a great deal faster. Those 500 stars render easily at 60 FPS using a PShape instead. This can be achieved by including a PShape variable as part of the Star class.
 
 ```
 class Star {
@@ -315,7 +316,7 @@ class Star {
   float x, y;
 ```
 
-That PShape then needs to be initialized in the constructor.  This can be done directly, right there in the class.
+That PShape then needs to be initialized in the constructor. This can be done directly, right there in the class.
 
 ```
   Star() {
@@ -341,7 +342,7 @@ That PShape then needs to be initialized in the constructor.  This can be done d
   }
 ```
 
-This method makes sense if each object itself has its own geometry, generated via an algorithm.  However, if each object is displaying the identical PShape, it likely makes more sense to pass in a reference to a PShape in the constructor itself.  Let's take a look at how this might work.  Let's say we create a generic class called "Polygon" which has a reference to a PShape (which is draws in a display method).
+This method makes sense if each object itself has its own geometry, generated via an algorithm. However, if each object is displaying the identical PShape, it likely makes more sense to pass in a reference to a PShape in the constructor itself. Let's take a look at how this might work. Let's say we create a generic class called "Polygon" which has a reference to a PShape (which is draws in a display method).
 
 ```
 class Polygon {
@@ -353,7 +354,7 @@ class Polygon {
 }
 ```
 
-In the previous example, the shape was created right there in the object's constructor.  Here we are going to demonstrate a different way to write the constructor where the shape is set via an argument.
+In the previous example, the shape was created right there in the object's constructor. Here we are going to demonstrate a different way to write the constructor where the shape is set via an argument.
 
 ```
   Polygon(PShape s_) {
@@ -361,7 +362,7 @@ In the previous example, the shape was created right there in the object's const
   }
 ```
 
-For this to work, however, a PShape must be passed into when the object is created.  Here is how this would look in the main tab with setup():
+For this to work, however, a PShape must be passed into when the object is created. Here is how this would look in the main tab with setup():
 
 ```
 Polygon poly;                   // An object of type Polygon
@@ -384,13 +385,13 @@ void setup() {
   star.vertex(-47, -15);
   star.vertex(-14, -20);
   star.endShape(CLOSE);
-  
+
   // Make the Polygon object by passing in the reference to the PShape
   poly = new Polygon(star);
 }
 ```
 
-This is a very flexible approach.  For example if you had an array of PShape objects, you could create new Polygon objects each one with a random PShape.  Here is a simple implementation.
+This is a very flexible approach. For example if you had an array of PShape objects, you could create new Polygon objects each one with a random PShape. Here is a simple implementation.
 
 <FixedImage side width={360} height={215}>
 
@@ -422,14 +423,14 @@ For the full examples, take a look at "PolygonPShapeOOP1", "PolygonPShapeOOP2", 
 
 ## More Custom PShapes
 
-PShapes support all the same types of shapes you can draw in immediate mode.  These include: POINTS, LINES, TRIANGLES, TRIANGLE_FAN, TRIANGLE_STRIP, QUADS, and QUAD_STRIP.  For example, if you want to create a quad strip, you would say:
+PShapes support all the same types of shapes you can draw in immediate mode. These include: POINTS, LINES, TRIANGLES, TRIANGLE_FAN, TRIANGLE_STRIP, QUADS, and QUAD_STRIP. For example, if you want to create a quad strip, you would say:
 
 ```
 PShape s = createShape();
 s.beginShape(QUAD_STRIP);
 ```
 
-If no mode is specified, the shape can be any irregular polygon as we saw in the previous star example.  A PShape can also be a path by not closing the shape.  Here is an example of a path that follows a sine wave as a PShape object.
+If no mode is specified, the shape can be any irregular polygon as we saw in the previous star example. A PShape can also be a path by not closing the shape. Here is an example of a path that follows a sine wave as a PShape object.
 
 <FixedImage side width={360} height={215}>
 
@@ -452,7 +453,7 @@ If no mode is specified, the shape can be any irregular polygon as we saw in the
 
 See Example "PathPShape" for the full implementation.
 
-PShapes also include the methods [beginContour()](http://processing.org/reference/PShape_beginContour_.html) and [endContour()](http://processing.org/reference/PShape_endContour_.html).  These methods allow you to cut a shape out of another and make shapes with holes in them.  Think of drawing the outline of a letter, like P (for Processing).  The outline of the P can be drawn as a series of vertices, but to get the counter shape knocked out of the middle of the P, you need begin/endContour and draw the path of the interior.  Here's a simple example that draws an interior square inside of an exterior one.
+PShapes also include the methods [beginContour()](http://processing.org/reference/PShape_beginContour_.html) and [endContour()](http://processing.org/reference/PShape_endContour_.html). These methods allow you to cut a shape out of another and make shapes with holes in them. Think of drawing the outline of a letter, like P (for Processing). The outline of the P can be drawn as a series of vertices, but to get the counter shape knocked out of the middle of the P, you need begin/endContour and draw the path of the interior. Here's a simple example that draws an interior square inside of an exterior one.
 
 <FixedImage side width={360} height={215}>
 
@@ -490,7 +491,7 @@ See Example "BeginEndContour" (under File -> Examples -> Topics -> Create Shapes
 
 ## PShape Groups
 
-Another convenience of PShape is the ability to group shapes.  For example, what if you wanted to create an alien creatures out of a set of circles, rectangles, and custom polygons.  If the head were a circle and the body a rectangle, you might think you need:
+Another convenience of PShape is the ability to group shapes. For example, what if you wanted to create an alien creatures out of a set of circles, rectangles, and custom polygons. If the head were a circle and the body a rectangle, you might think you need:
 
 ```
 PShape head = createShape(ELLIPSE,0,0,50,50);
@@ -499,7 +500,7 @@ shape(head);
 shape(body);
 ```
 
-While of course this would work, it would be a great deal more convenient if you could group the head and body into one PShape.  With a PShape "GROUP", you can.
+While of course this would work, it would be a great deal more convenient if you could group the head and body into one PShape. With a PShape "GROUP", you can.
 
 <FixedImage side width={360} height={215}>
 
@@ -526,11 +527,11 @@ shape(alien);
 
 For a full example that demonstrates a PShape that groups together a primitive shape, custom polygon, and path, see "GroupPShape" (under File -> Examples -> Topics -> Create Shapes).
 
-PShape groups allow you build a sophisticated hierarchy of shapes.  This in turn allows you to set the color and attributes of the child shapes by calling the corresponding method at the parent level. Similarly, by calling the transformation functions at a given level of the hierarchy, you only affect the shapes below.
+PShape groups allow you build a sophisticated hierarchy of shapes. This in turn allows you to set the color and attributes of the child shapes by calling the corresponding method at the parent level. Similarly, by calling the transformation functions at a given level of the hierarchy, you only affect the shapes below.
 
 ## Loading External Shapes
 
-PShapes also support loading shape files, such as an SVG (for 2D shapes) or OBJ (for 3D shapes).  This can be achieved with the [loadShape()](http://processing.org/reference/loadShape_.html) method.
+PShapes also support loading shape files, such as an SVG (for 2D shapes) or OBJ (for 3D shapes). This can be achieved with the [loadShape()](http://processing.org/reference/loadShape_.html) method.
 
 ```
 PShape svg;
@@ -550,7 +551,7 @@ void draw() {
 
 After about five minutes of working with PShape, the question inevitably arises: "What do I do if I want to wiggle all of my vertices?" PShape allows you to dynamically access and alter the vertices through the methods [getVertex()](http://processing.org/reference/PShape_getVertex_.html) and [setVertex()](http://processing.org/reference/PShape_setVertex_.html).
 
-To iterate over the vertices of a PShape, you can loop from 0 to the total number of vertices ([getVertexCount()](http://processing.org/reference/PShape_getVertexCount_.html)).  Assuming a PShape "s", this would look something like:
+To iterate over the vertices of a PShape, you can loop from 0 to the total number of vertices ([getVertexCount()](http://processing.org/reference/PShape_getVertexCount_.html)). Assuming a PShape "s", this would look something like:
 
 ```
 for (int i = 0; i < s.getVertexCount(); i++) {
@@ -580,12 +581,12 @@ For an example that wiggles a polygon's vertices using Perlin noise, see "Wiggle
 
 ## 3D and Textures
 
-This tutorial has focused on the basics of working with PShape objects in the context of 2D drawing.  However, all of the 3D functionality described in [the P3D tutorial](https://processing.org/tutorials/p3d/) is also available with PShape.  The main difference is that in 3D vertices are specified with an x, y, and z coordinate.  In addition, PShape objects can be textured automatically using the setTexture() function.  For complex shapes like a sphere, this makes things quite easy.
+This tutorial has focused on the basics of working with PShape objects in the context of 2D drawing. However, all of the 3D functionality described in [the P3D tutorial](https://processing.org/tutorials/p3d/) is also available with PShape. The main difference is that in 3D vertices are specified with an x, y, and z coordinate. In addition, PShape objects can be textured automatically using the setTexture() function. For complex shapes like a sphere, this makes things quite easy.
 
 ```
 PImage img;
 PShape globe;
-	
+
 void setup() {
   // Load an image
   img = loadImage("earth.jpg");

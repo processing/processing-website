@@ -6,9 +6,6 @@
  * the image. This example is currently not accurate in JavaScript mode.
  */
 
-// The next line is needed if running in JavaScript Mode with Processing.js
-/* @pjs preload="moon.jpg"; */
-
 function runLiveSketch(s) {
   var kernel = [
     [-1, -1, -1],
@@ -19,7 +16,7 @@ function runLiveSketch(s) {
   var img;
 
   s.preload = () => {
-    img = s.loadImage('moon.jpg'); // Load the original image
+    img = s.loadImage('/moon.jpg'); // Load the original image
   };
 
   s.setup = () => {

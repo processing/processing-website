@@ -21,6 +21,10 @@
   padding-bottom: var(--vertical-margin-large);
 }
 
+.withBreadcrumbs {
+  padding-top: var(--vertical-margin-xsmall);
+}
+
 @media (--reduced) {
   .main {
     top: 95px;

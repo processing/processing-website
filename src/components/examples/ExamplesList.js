@@ -1,18 +1,18 @@
 import React, { Fragment, memo, useState } from 'react';
 import classnames from 'classnames';
-import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
 import Img from 'gatsby-image';
 
 import ToggleButton from '../ToggleButton';
 
+import { slugify } from '../../utils';
 import { useTreeSort } from '../../hooks';
 
 import css from './ExamplesList.module.css';
 import grid from '../../styles/grid.module.css';
 
 const ExamplesList = ({ tree }) => {
-  const { locale } = useLocalization();
   const intl = useIntl();
   const [curated, setCurated] = useState(false);
 
@@ -27,7 +27,7 @@ const ExamplesList = ({ tree }) => {
       {Object.keys(sortedTree).map((category) => (
         <Fragment key={`category-${category}`}>
           <div className={css.categoryName}>
-            <h2>{category}</h2>
+            <h2 id={slugify(category)}>{category}</h2>
             <div className={css.toggleButton}>
               <ToggleButton
                 defaultLabel="A-Z"
@@ -46,16 +46,14 @@ const ExamplesList = ({ tree }) => {
           <div className={classnames(grid.grid, css.category)}>
             {Object.keys(sortedTree[category]).map((subcategory) => (
               <Fragment key={`subcategory-${subcategory}`}>
-                <h3 className={classnames(grid.col, css.subcategoryName)}>
+                <h3
+                  id={slugify(category, subcategory)}
+                  className={classnames(grid.col, css.subcategoryName)}>
                   {subcategory}
                 </h3>
                 <ul className={classnames(grid.col, grid.grid, css.examples)}>
                   {sortedTree[category][subcategory].map((item, key) => (
-                    <ExampleItem
-                      node={item}
-                      locale={locale}
-                      key={`item-${item.name}`}
-                    />
+                    <ExampleItem node={item} key={`item-${item.name}`} />
                   ))}
                 </ul>
               </Fragment>
@@ -67,10 +65,10 @@ const ExamplesList = ({ tree }) => {
   );
 };
 
-export const ExampleItem = memo(({ node, locale, variant }) => {
+export const ExampleItem = memo(({ node, variant }) => {
   return (
     <li className={classnames(grid.col, css.item, { [css[variant]]: variant })}>
-      <Link to={node.path} language={locale}>
+      <Link to={node.path}>
         {node.image && (
           <Img className={css.cover} fluid={node.image.childImageSharp.fluid} />
         )}

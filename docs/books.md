@@ -15,7 +15,7 @@ Then, create the `index.mdx` file in the folder with a structure like this:
 title: ''
 author: ''
 details: ''
-order: ""
+buy: ""
 language: ''
 ---
 

@@ -83,6 +83,6 @@
 @media (--small) {
   .root,
   .root.compact {
-    width: var(--col3);
+    width: var(--col2);
   }
 }

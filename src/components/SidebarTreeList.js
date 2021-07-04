@@ -1,7 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
-import { useLocalization } from 'gatsby-theme-i18n';
 
 import SidebarGroup from './SidebarGroup';
 
@@ -9,7 +8,6 @@ import grid from '../styles/grid.module.css';
 import css from './SidebarTreeList.module.css';
 
 const SidebarTreeList = ({ tree, useSerif }) => {
-  const { locale } = useLocalization();
   return (
     <div className={css.root}>
       {Object.keys(tree).map((category) => (
@@ -27,8 +25,7 @@ const SidebarTreeList = ({ tree, useSerif }) => {
                         className={classnames(grid.col1andhalf, {
                           [css.serif]: useSerif
                         })}
-                        to={item.path}
-                        language={locale}>
+                        to={item.path}>
                         {item.name}
                       </Link>
                     </li>

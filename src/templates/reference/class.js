@@ -12,13 +12,15 @@ import Section from '../../components/reference/Section';
 import License from '../../components/reference/License';
 import { CodeList, ExampleList } from '../../components/reference/ContentList';
 import { ExampleItem } from '../../components/examples/ExamplesList';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
 import { useHighlight, useTree, useSidebar } from '../../hooks';
 import {
   usePreparedItems,
   usePreparedExamples,
   usePreparedList,
-  useInUseExamples
+  useInUseExamples,
+  useTrail
 } from '../../hooks/reference';
 import { referencePath } from '../../utils/paths';
 
@@ -46,11 +48,17 @@ const ClassRefTemplate = ({ data, pageContext }) => {
     data.inUseImages
   );
 
+  const trail = useTrail(libraryName, entry?.category, entry?.subcategory);
+
   return (
-    <Layout withSidebar>
+    <Layout withSidebar withBreadcrumbs>
       <Helmet>
         <title>
-          {name} / {isProcessing ? 'Reference' : 'Libraries'}
+          {data.en.childJson.name}
+          {' / '}
+          {isProcessing
+            ? intl.formatMessage({ id: 'reference' })
+            : intl.formatMessage({ id: 'libraries' })}
         </title>
       </Helmet>
       <div className={grid.grid}>
@@ -62,11 +70,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
         />
         {entry ? (
           <Content collapsed={!showSidebar}>
-            {!isProcessing && (
-              <Section title={intl.formatMessage({ id: 'library' })}>
-                <h4>{data.libName.frontmatter.title}</h4>
-              </Section>
-            )}
+            <Breadcrumbs trail={trail} />
             <Section title={intl.formatMessage({ id: 'className' })}>
               <h3>{entry.name}</h3>
             </Section>
@@ -154,6 +158,8 @@ export const query = graphql`
         name
         description
         constructors
+        category
+        subcategory
         classFields {
           anchor
           name
@@ -169,6 +175,14 @@ export const query = graphql`
           name
           description
         }
+      }
+    }
+    en: file(
+      fields: { name: { eq: $name }, lang: { eq: "en" } }
+      sourceInstanceName: { eq: "json" }
+    ) {
+      childJson {
+        name
       }
     }
     images: allFile(

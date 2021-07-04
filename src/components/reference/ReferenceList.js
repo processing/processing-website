@@ -2,6 +2,8 @@ import React, { Fragment, memo } from 'react';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import classnames from 'classnames';
 
+import { slugify } from '../../utils';
+
 import css from './ReferenceList.module.css';
 import grid from '../../styles/grid.module.css';
 
@@ -10,7 +12,9 @@ const ReferenceList = ({ tree, library }) => {
     <>
       {Object.keys(tree).map((category) => (
         <Fragment key={`category-${category}`}>
-          <h2 className={classnames(grid.col, css.category)} id={category}>
+          <h2
+            className={classnames(grid.col, css.category)}
+            id={slugify(category)}>
             {category}
           </h2>
           {Object.keys(tree[category]).map((subcategory) => {
@@ -21,7 +25,9 @@ const ReferenceList = ({ tree, library }) => {
                   key={`subcategory-${subcategory}`}>
                   <div className={classnames(grid.col, css.subcategoryTitle)}>
                     {subcategory && <div className={css.line} />}
-                    {subcategory && <h3>{subcategory}</h3>}
+                    {subcategory && (
+                      <h3 id={slugify(category, subcategory)}>{subcategory}</h3>
+                    )}
                   </div>
                   <ul className={classnames(grid.col, css.subcategoryList)}>
                     {tree[category][subcategory].map((item) => (

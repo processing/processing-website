@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 /**
   Hook to merge the current language libraries JSON files with the english
   This only happens if the language has the library, otherwise it's hidden.
-  We might want to changes this.
+  We might want to change this.
   @param {Array} english Array of libraries for english
   @param {Array} currentLang Array of libraries for current language
 **/

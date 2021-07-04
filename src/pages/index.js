@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
-import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import Img from 'gatsby-image';
 
 import Layout from '../components/Layout';
@@ -117,7 +117,9 @@ const IndexPage = ({ data }) => {
                 <h4>{intl.formatMessage({ id: 'cardForum' })}</h4>
                 <p>{intl.formatMessage({ id: 'cardForumDescription' })}</p>
                 <Button
-                  href={'https://discourse.processing.org/'}
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://discourse.processing.org/"
                   variant="animate1">
                   {intl.formatMessage({ id: 'cardForumButton' })}
                 </Button>
@@ -183,28 +185,49 @@ const IndexPage = ({ data }) => {
             <h2>{intl.formatMessage({ id: 'externalLinks' })}</h2>
             <ul>
               <li>
-                <a href="https://www.creativeapplications.net/category/processing/">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://www.creativeapplications.net/category/processing/">
                   Creative Applications
                 </a>
               </li>
               <li>
-                <a href="https://openprocessing.org/">OpenProcessing</a>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://openprocessing.org/">
+                  OpenProcessing
+                </a>
               </li>
               <li>
-                <a href="https://fyprocessing.tumblr.com/">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://fyprocessing.tumblr.com/">
                   For your Processing
                 </a>
               </li>
               <li>
-                <a href="https://www.reddit.com/r/processing/">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://www.reddit.com/r/processing/">
                   Processing Subreddit
                 </a>
               </li>
               <li>
-                <a href="https://vimeo.com/groups/processing">Vimeo</a>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://vimeo.com/groups/processing">
+                  Vimeo
+                </a>
               </li>
               <li>
-                <a href="http://sketchpad.cc/">Studio Sketchpad</a>
+                <a target="_blank" rel="noreferrer" href="http://sketchpad.cc/">
+                  Studio Sketchpad
+                </a>
               </li>
             </ul>
           </div>
@@ -213,21 +236,39 @@ const IndexPage = ({ data }) => {
             <ul className={css.partners}>
               <li>
                 <div>
-                  <img src={data.fathom.childImageSharp.fluid.src} alt="" />
+                  <img
+                    src={data.fathom.childImageSharp.fluid.src}
+                    alt="Fathom logo"
+                  />
                 </div>
                 <p>Fathom</p>
               </li>
               <li>
                 <div>
-                  <img src={data.itp.childImageSharp.fluid.src} alt="" />
+                  <img
+                    src={data.itp.childImageSharp.fluid.src}
+                    alt="ITP NYU logo"
+                  />
                 </div>
                 <p>ITP NYU</p>
               </li>
               <li>
                 <div>
-                  <img src={data.ucla.childImageSharp.fluid.src} alt="" />
+                  <img
+                    src={data.ucla.childImageSharp.fluid.src}
+                    alt="UCLA Design Media Arts logo"
+                  />
                 </div>
                 <p>UCLA Design Media Arts</p>
+              </li>
+              <li>
+                <div>
+                  <img
+                    src={data.dsi.childImageSharp.fluid.src}
+                    alt="Design Systems International logo"
+                  />
+                </div>
+                <p>Design Systems International</p>
               </li>
             </ul>
           </div>
@@ -371,6 +412,13 @@ export const query = graphql`
       }
     }
     ucla: file(relativePath: { eq: "ucla.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 120, maxHeight: 120) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    dsi: file(relativePath: { eq: "designsystemsinternational.png" }) {
       childImageSharp {
         fluid(maxWidth: 120, maxHeight: 120) {
           ...GatsbyImageSharpFluid

@@ -11,14 +11,16 @@ import Section from '../../components/reference/Section';
 import License from '../../components/reference/License';
 import { CodeList, ExampleList } from '../../components/reference/ContentList';
 import { ExampleItem } from '../../components/examples/ExamplesList';
-import { widont } from '../../utils/index.js';
+import Breadcrumbs from '../../components/Breadcrumbs';
 
+import { widont } from '../../utils/index.js';
 import { useTree, useHighlight, useSidebar } from '../../hooks';
 import {
   usePreparedItems,
   usePreparedExamples,
   usePreparedList,
-  useInUseExamples
+  useInUseExamples,
+  useTrail
 } from '../../hooks/reference';
 import { referencePath } from '../../utils/paths';
 
@@ -48,13 +50,22 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
     data.inUseImages
   );
 
+  const trail = useTrail(
+    libraryName,
+    entry?.category,
+    entry?.subcategory,
+    entry?.classanchor
+  );
+
   return (
-    <Layout withSidebar>
+    <Layout withSidebar withBreadcrumbs>
       <Helmet>
         <title>
-          {entry?.name ?? ''}
+          {data.en.childJson.name}
           {' / '}
-          {isProcessing ? 'Reference' : 'Libraries'}
+          {isProcessing
+            ? intl.formatMessage({ id: 'reference' })
+            : intl.formatMessage({ id: 'libraries' })}
         </title>
       </Helmet>
       <div className={grid.grid}>
@@ -66,11 +77,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
         />
         {entry ? (
           <Content collapsed={!showSidebar}>
-            {isProcessing ? null : (
-              <Section title={intl.formatMessage({ id: 'library' })}>
-                <h4>{data.libName.frontmatter.title}</h4>
-              </Section>
-            )}
+            <Breadcrumbs trail={trail} />
             <Section short title={intl.formatMessage({ id: 'name' })}>
               <h3>{entry.name}</h3>
             </Section>
@@ -160,6 +167,8 @@ export const query = graphql`
         name
         description
         syntax
+        category
+        subcategory
         parameters {
           name
           description
@@ -168,6 +177,11 @@ export const query = graphql`
         related
         returns
         classanchor
+      }
+    }
+    en: file(fields: { name: { eq: $name }, lang: { eq: "en" } }) {
+      childJson {
+        name
       }
     }
     images: allFile(

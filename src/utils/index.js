@@ -1,7 +1,38 @@
 import { titleCase as _titleCase } from 'title-case';
 
-// applies title case after replacing _ by spaces
+/**
+  Array for turning a date.getMonth() index into a date string
+**/
+export const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
+];
+
+/**
+  Turns a slug into a title
+  Example: this_is_something => This Is Something
+**/
 export const titleCase = (slug) => _titleCase(slug.replace(/_/g, ' '));
+
+/**
+  Turns a title into a slug
+  Example: This Is Something => this-is-something
+**/
+export const slugify = (...titles) =>
+  titles
+    .join('-')
+    .replace(/(\s|_)/g, '-')
+    .toLowerCase();
 
 export const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
@@ -42,4 +73,37 @@ export const linkParsing = (str) => {
     return str;
   }
   return str.replace(/\[([^\]]*)\]\(([^)]*)\)/g, '<a href="$2">$1</a>');
+};
+
+/**
+  Returns a copy of the object with the keys sorted based on the array provided.
+**/
+export const sortObject = (obj, order) => {
+  const keys = Object.keys(obj).sort((a, b) => {
+    let aidx = order.indexOf(a);
+    let bidx = order.indexOf(b);
+    // Ensure keys not in order are sorted last
+    if (aidx === -1) aidx = 9999;
+    if (bidx === -1) bidx = 9999;
+    return aidx - bidx;
+  });
+  const copy = {};
+  for (let i = 0; i < keys.length; i++) {
+    copy[keys[i]] = obj[keys[i]];
+  }
+  return copy;
+};
+
+/**
+  Returns a copy of the array with the items sorted based on the values in the array provided and the key
+**/
+export const sortArray = (arr, order, key) => {
+  return arr.slice().sort((a, b) => {
+    let aidx = order.indexOf(a[key]);
+    let bidx = order.indexOf(b[key]);
+    // Ensure keys not in order are sorted last
+    if (aidx === -1) aidx = 9999;
+    if (bidx === -1) bidx = 9999;
+    return aidx - bidx;
+  });
 };

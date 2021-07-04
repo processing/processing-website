@@ -6,9 +6,6 @@
  * to blur the image.
  */
 
-// The next line is needed if running in JavaScript Mode with Processing.js
-/* @pjs preload="moon.jpg"; */
-
 function runLiveSketch(s) {
   var v = 1.0 / 9.0;
   var kernel = [
