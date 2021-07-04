@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
-import { LocalizedLink as Link } from 'gatsby-theme-i18n';
+import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
 import Img from 'gatsby-image';
 
 import Layout from '../components/Layout';
