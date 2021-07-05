@@ -255,14 +255,13 @@ export const useIntersect = (root, rootMargin, threshold = 0) => {
 
 export const useSidebar = (_key = '') => {
   const key = `showSidebar-${_key}`;
-
   const [showSidebar, setShowSidebar] = useState(true);
 
   // Show sidebar on mount, but only if the screen is wide enough
   // and it hasn't been hidden.
   useEffect(() => {
     const [winWidth] = getWin();
-    const isMobile = winWidth > 960;
+    const isMobile = winWidth < 960;
     const isHidden = sessionStorage && sessionStorage.getItem(key) === 'false';
     if (isMobile || isHidden) {
       setShowSidebar(false);
@@ -273,7 +272,6 @@ export const useSidebar = (_key = '') => {
   const setShowSidebarMemo = useCallback(
     (value) => {
       if (window.sessionStorage) {
-        console.log('SETTING SESSION TO', value);
         sessionStorage.setItem(key, value);
       }
       setShowSidebar(value);
