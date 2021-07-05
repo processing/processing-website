@@ -7,7 +7,7 @@
   "returns": "void",
   "type": "function",
   "category": "output",
-  "subcategory": "text_area",
+  "subcategory": "text area",
   "parameters": [
     {
       "name": "what",

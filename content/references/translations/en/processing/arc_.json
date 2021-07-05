@@ -10,7 +10,7 @@
   "returns": "void",
   "type": "function",
   "category": "shape",
-  "subcategory": "2d_primitives",
+  "subcategory": "2d primitives",
   "parameters": [
     {
       "name": "a",

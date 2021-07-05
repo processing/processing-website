@@ -3,7 +3,7 @@
   "related": ["Server"],
   "name": "clientEvent()",
   "description": "This function is called when a server sends a value to an existing <b>Client</b> object.",
-  "syntax": ["void clientEvent(client) {\r","  statements\r","}\r"],
+  "syntax": ["void clientEvent(client) {\r", "  statements\r", "}\r"],
   "returns": "",
   "type": "function",
   "category": "NetworkEvents",

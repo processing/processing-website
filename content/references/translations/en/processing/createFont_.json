@@ -11,7 +11,7 @@
   "returns": "PFont",
   "type": "function",
   "category": "typography",
-  "subcategory": "loading_displaying",
+  "subcategory": "loading & displaying",
   "parameters": [
     {
       "name": "name",

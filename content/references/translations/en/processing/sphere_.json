@@ -7,7 +7,7 @@
   "returns": "void",
   "type": "function",
   "category": "shape",
-  "subcategory": "3d_primitives",
+  "subcategory": "3d primitives",
   "parameters": [
     {
       "name": "r",
