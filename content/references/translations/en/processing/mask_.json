@@ -6,8 +6,8 @@
   "syntax": ["mask(img)"],
   "returns": "void",
   "type": "function",
-  "category": "pimage",
-  "subcategory": "method",
+  "category": "image",
+  "subcategory": "pixels",
   "parameters": [
     {
       "name": "img",

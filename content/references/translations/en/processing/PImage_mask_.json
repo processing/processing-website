@@ -6,8 +6,8 @@
   "syntax": ["pimg.mask(maskArray)", "pimg.mask(img)"],
   "returns": "void",
   "type": "method",
-  "category": "pimage",
-  "subcategory": "method",
+  "category": "image",
+  "subcategory": "pixels",
   "classanchor": "PImage",
   "parameters": [
     {
