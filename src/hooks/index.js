@@ -248,7 +248,7 @@ export const useIntersect = (root, rootMargin, threshold = 0) => {
 
 /**
   Hook to handle sidebar functionality.
-  - Hides sidebar as default but shows it when the page renders
+  - Shows sidebar as default but shows it when the page renders
     in the browser if the screen is wider than 960.
   - If state is set externally, persist with sessionStorage
 **/
@@ -256,7 +256,7 @@ export const useIntersect = (root, rootMargin, threshold = 0) => {
 export const useSidebar = (_key = '') => {
   const key = `showSidebar-${_key}`;
 
-  const [showSidebar, setShowSidebar] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(true);
 
   // Show sidebar on mount, but only if the screen is wide enough
   // and it hasn't been hidden.
@@ -267,7 +267,7 @@ export const useSidebar = (_key = '') => {
     if (isLargeEnough && !isHidden) {
       setShowSidebar(true);
     }
-  }, []);
+  }, [key]);
 
   // Make function that both updates the sidebar and saves to sessionStorage
   const setShowSidebarMemo = useCallback(
