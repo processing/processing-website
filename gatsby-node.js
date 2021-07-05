@@ -275,7 +275,7 @@ const parseExampleFileInfo = (node) => {
   // Split name into needed info.
   // Slug is lowercased to match old processing.org URL's
   const splitName = node.name.split('.');
-  const langCode = splitName.length > 1 ? splitName[1] + '/' : '';
+  const langCode = splitName.length > 1 ? '/' + splitName[1] : '';
   const name = splitName[0];
   const slug = langCode + '/examples/' + name.toLowerCase() + '.html';
 

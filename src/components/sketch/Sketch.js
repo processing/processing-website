@@ -44,11 +44,9 @@ const initialState = {
 };
 
 const Sketch = ({ children }) => {
-  const [state, setState] = useState(initialState);
+  const [state, setState] = useState(null);
   const [showCode, setShowCode] = useState(false);
   const intl = useIntl();
-
-  console.log('Render sketch');
 
   // Load saved graphic from localstorage when component mounts in client
   useEffect(() => {
@@ -57,6 +55,8 @@ const Sketch = ({ children }) => {
       if (savedState) {
         console.log('Loaded state from localStorage', savedState);
         setState(JSON.parse(savedState));
+      } else {
+        setState(initialState);
       }
     }
   }, []);
@@ -93,6 +93,10 @@ const Sketch = ({ children }) => {
   const onResetState = useCallback(() => {
     setState(initialState);
   }, []);
+
+  if (!state) {
+    return null;
+  }
 
   return (
     <div className={css.root}>
