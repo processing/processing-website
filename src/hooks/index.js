@@ -242,38 +242,32 @@ export const useIntersect = (root, rootMargin, threshold = 0) => {
   - If state is set externally, persist with sessionStorage
 
 **/
+const getShowSidebar = (key, showDefault) => {
+  let showSidebar;
+  const [winWidth] = getWin();
+  if (winWidth > 960) {
+    showSidebar =
+      showDefault ??
+      // get saved showSidebar from sessionStorage
+      (sessionStorage && sessionStorage.getItem(key) === 'true') ??
+      true;
+  } else {
+    showSidebar = false;
+  }
+  return showSidebar;
+};
 
 export const useSidebar = (_key = '', showDefault) => {
   const key = `showSidebar-${_key}`;
 
-  const initialShowSidebar =
-    sessionStorage?.getItem(key) == null
-      ? null
-      : sessionStorage?.getItem(key) === 'true';
-  console.log(
-    'render',
-    showDefault ?? initialShowSidebar,
-    showDefault ?? initialShowSidebar
-  );
   const [showSidebar, setShowSidebar] = useState(
-    showDefault ?? initialShowSidebar
+    getShowSidebar(key, showDefault)
   );
 
-  //  Only if initial value has not been set,
-  //  default to open if > 960, or closed if <= 960.
   useEffect(() => {
-    console.log('useEffect getWin', showSidebar, showSidebar ?? true);
-    const [winWidth] = getWin();
-    if (winWidth > 960) {
-      setShowSidebar(showDefault ?? initialShowSidebar ?? true);
-    } else {
-      setShowSidebar(false);
-    }
-  }, [showSidebar, key]);
-
-  useEffect(() => {
-    if (window.sessionStorage) {
-      window.sessionStorage.setItem(key, showSidebar);
+    if (sessionStorage) {
+      // save new state to sessionStorage
+      sessionStorage.setItem(key, showSidebar);
     }
   }, [showSidebar, key]);
 

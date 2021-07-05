@@ -47,7 +47,7 @@ const TutorialTemplate = ({ data, pageContext }) => {
           />
         )}
         {mdx !== null ? (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             <Breadcrumbs locale={locale} trail={trail} />
             <h1>{mdx.frontmatter.title}</h1>
             <p className={css.author}>{`${intl.formatMessage({ id: 'by' })} ${
@@ -58,7 +58,7 @@ const TutorialTemplate = ({ data, pageContext }) => {
             </div>
           </Content>
         ) : (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             {intl.formatMessage({ id: 'notTranslated' })}
             <Link to={pageContext.slug}>
               {' '}

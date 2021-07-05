@@ -87,7 +87,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
           useSerif
         />
         {example ? (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             <Breadcrumbs locale={locale} trail={trail} />
             <h1>{example.title}</h1>
             {example.author && (
@@ -132,7 +132,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
             </p>
           </Content>
         ) : (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             {intl.formatMessage({ id: 'notTranslated' })}
             <Link to={pageContext.slug}>
               {' '}

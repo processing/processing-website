@@ -68,7 +68,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
           show={showSidebar}
         />
         {entry ? (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             <Breadcrumbs locale={locale} trail={trail} />
             <Section title={intl.formatMessage({ id: 'className' })}>
               <h3>{entry.name}</h3>
@@ -126,7 +126,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
             <License />
           </Content>
         ) : (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             {intl.formatMessage({ id: 'notTranslated' })}
             <Link to={referencePath(name, libraryName)}>
               {' '}

@@ -37,14 +37,14 @@ const Environment = ({ data }) => {
           show={showSidebar}
         />
         {mdx !== null ? (
-          <Content collapsed={!showSidebar} className={css.contentWrapper}>
+          <Content sidebarOpen={showSidebar} className={css.contentWrapper}>
             <h1>{mdx.frontmatter.title}</h1>
             <div className={css.content}>
               <MDXRenderer>{mdx.body}</MDXRenderer>
             </div>
           </Content>
         ) : (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             {intl.formatMessage({ id: 'notTranslated' })}
             {intl.formatMessage({ id: 'englishPage' })}
           </Content>

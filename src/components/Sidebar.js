@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useState, memo } from 'react';
+import React, { Fragment, useContext, useState, useEffect, memo } from 'react';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
 
@@ -13,10 +13,21 @@ import css from './Sidebar.module.css';
 export const Sidebar = memo(({ children, title, show, setShow }) => {
   const { headerScrolled } = useContext(LayoutContext);
 
+  const [animate, setAnimate] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setAnimate(true);
+    }, 300);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
     <div
       className={classnames(css.root, {
         [css.show]: show,
+        [css.animate]: animate,
         [css.headerScrolled]: headerScrolled
       })}>
       <div
@@ -27,7 +38,7 @@ export const Sidebar = memo(({ children, title, show, setShow }) => {
         onKeyDown={(e) => e.keyCode === 13 && setShow((s) => !s)}
         role={'button'}
         tabIndex={'0'}>
-        {title ? <span className={css.toggleLabel}>{title}</span> : null}
+        {title && <span className={css.toggleLabel}>{title}</span>}
         {show ? '×' : '+'}
       </div>
       {show && (
