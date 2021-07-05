@@ -248,29 +248,41 @@ export const useIntersect = (root, rootMargin, threshold = 0) => {
 
 /**
   Hook to handle sidebar functionality.
-  - Shows sidebar as default but shows it when the page renders
+  - Set as null  as default but shows it when the page renders
     in the browser if the screen is wider than 960.
   - If state is set externally, persist with sessionStorage
 **/
 
+// this is only true on the first load
+let firstRun = true;
+
 export const useSidebar = (_key = '') => {
   const key = `showSidebar-${_key}`;
-  const [showSidebar, setShowSidebar] = useState(true);
 
-  // Show sidebar on mount, but only if the screen is wide enough
-  // and it hasn't been hidden.
-  useEffect(() => {
+  // check if the sidebar shouold be shown
+  // based on window width or user preference
+  // returns null if running on the server
+  // or for the very first time in the browser
+  const shouldShowSidebar = useCallback((key) => {
+    if (firstRun) {
+      firstRun = false;
+      return null;
+    }
     const [winWidth] = getWin();
     const isMobile = winWidth < 960;
     const isHidden = sessionStorage && sessionStorage.getItem(key) === 'false';
-    if (isMobile || isHidden) {
-      setShowSidebar(false);
-    }
-  }, [key]);
+    return !(isMobile || isHidden);
+  }, []);
+
+  const [showSidebar, setShowSidebar] = useState(shouldShowSidebar(key));
+
+  useEffect(() => {
+    setShowSidebar(shouldShowSidebar(key));
+  }, [key, shouldShowSidebar]);
 
   // Make function that both updates the sidebar and saves to sessionStorage
   const setShowSidebarMemo = useCallback(
-    (value) => {
+    (v) => {
       if (window.sessionStorage) {
         sessionStorage.setItem(key, value);
       }

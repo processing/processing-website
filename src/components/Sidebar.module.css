@@ -12,9 +12,6 @@
   height: calc(100vh - 145px);
   background: var(--lightgray);
   width: var(--margin);
-}
-
-.animate {
   transition: top 0.2s ease-in-out, width 0.4s ease;
 }
 

@@ -10,21 +10,12 @@ import grid from '../styles/grid.module.css';
 **/
 
 const Content = ({ children, sidebarOpen, className }) => {
-  const [animate, setAnimate] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setAnimate(true);
-    }, 300);
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
-
+  if (sidebarOpen == null)
+    return <div key="placeholder" className={css.root} />;
   return (
     <div
+      key="root"
       className={classnames(grid.col, css.root, className, {
-        [css.animate]: animate,
         [css.sidebarOpen]: sidebarOpen
       })}>
       {children}

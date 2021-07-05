@@ -10,31 +10,21 @@ import { useFilteredTree } from '../hooks';
 
 import css from './Sidebar.module.css';
 
-export const Sidebar = memo(({ children, title, show, setShow }) => {
+export const Sidebar = memo(({ children, title, show, setShow = () => {} }) => {
   const { headerScrolled } = useContext(LayoutContext);
 
-  const [animate, setAnimate] = useState(false);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setAnimate(true);
-    }, 300);
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
+  if (show == null) return <div key="placeholder" className={css.root} />;
 
   return (
     <div
+      key="root"
       className={classnames(css.root, {
         [css.show]: show,
-        [css.animate]: animate,
         [css.headerScrolled]: headerScrolled
       })}>
       <div
         className={css.toggleButton}
-        onClick={() => {
-          if (setShow) setShow(!show);
-        }}
+        onClick={() => setShow(!show)}
         onKeyDown={(e) => e.keyCode === 13 && setShow(!show)}
         role={'button'}
         tabIndex={'0'}>
