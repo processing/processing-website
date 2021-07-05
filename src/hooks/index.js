@@ -262,10 +262,10 @@ export const useSidebar = (_key = '') => {
   // and it hasn't been hidden.
   useEffect(() => {
     const [winWidth] = getWin();
-    const isLargeEnough = winWidth > 960;
+    const isMobile = winWidth > 960;
     const isHidden = sessionStorage && sessionStorage.getItem(key) === 'false';
-    if (isLargeEnough && !isHidden) {
-      setShowSidebar(true);
+    if (isMobile || isHidden) {
+      setShowSidebar(false);
     }
   }, [key]);
 
