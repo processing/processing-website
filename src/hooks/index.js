@@ -8,7 +8,7 @@ import {
 } from 'react';
 import hljs from 'highlight.js/lib/core';
 import processing from 'highlight.js/lib/languages/processing';
-import { getWin, sessionStorage } from '../utils';
+import { getWin, sessionStorage, sortObject } from '../utils';
 
 hljs.registerLanguage('processing', processing);
 
@@ -24,13 +24,14 @@ export const useHighlight = () => {
 };
 
 /**
-  Hook to turn an array of prepared examples into an object that represent
-  the tree of categories, subcategories, and items.
+  Hook to turn an array of prepared objects with category and subcategory into an
+  object that represent the tree of categories, subcategories, and items.
   @param {Array} items Array of items with `category` and `subcategory`
+  @param {Object} order An object indicating the sort order. Must be an object with string keys and array values
 **/
-export const useTree = (items) => {
+export const useTree = (items, order) => {
   return useMemo(() => {
-    const tree = {};
+    let tree = {};
 
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
@@ -46,8 +47,18 @@ export const useTree = (items) => {
       tree[item.category][item.subcategory].push(item);
     }
 
+    if (order) {
+      // Sort main categories
+      const keys = Object.keys(order);
+      tree = sortObject(tree, keys);
+      // Sort subcategories
+      for (let i = 0; i < keys.length; i++) {
+        tree[keys[i]] = sortObject(tree[keys[i]], order[keys[i]]);
+      }
+    }
+
     return tree;
-  }, [items]);
+  }, [items, order]);
 };
 
 /**

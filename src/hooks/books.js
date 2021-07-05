@@ -33,8 +33,8 @@ export const usePreparedBooks = (books, images) => {
         image
       });
 
-      if (preparedBook.order && preparedBook.order !== '') {
-        preparedBook.orderList = preparedBook.order.split(',').map((ord) => {
+      if (preparedBook.buy && preparedBook.buy !== '') {
+        preparedBook.buyList = preparedBook.buy.split(',').map((ord) => {
           const [label, link] = ord.split('-');
           return { label, link };
         });

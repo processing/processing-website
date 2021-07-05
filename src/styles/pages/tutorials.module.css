@@ -6,14 +6,6 @@
   }
 }
 
-.sectionIntro {
-  margin: 0;
-
-  & a {
-    text-decoration: underline;
-  }
-}
-
 .list {
   flex-basis: var(--col8);
   margin: var(--vertical-margin-small) 0;
@@ -22,7 +14,8 @@
 
 .card {
   flex-basis: var(--col2);
-  margin-bottom: var(--vertical-margin-small);
+  padding-top: var(--gutter);
+  padding-bottom: var(--gutter);
   background-color: none;
   transition: background-color 0.2s ease;
   pointer-events: auto;
@@ -87,10 +80,6 @@
     & h2 {
       margin-top: var(--vertical-margin-large);
     }
-  }
-
-  .sectionIntro {
-    padding-right: var(--gutter);
   }
 
   .card {

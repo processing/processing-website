@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import { useIntl } from 'react-intl';
-import { useLocalization } from 'gatsby-theme-i18n';
 import { widont } from '../../utils/index.js';
 
 import Layout from '../../components/Layout';
@@ -33,7 +32,6 @@ const ClassRefTemplate = ({ data, pageContext }) => {
   const isProcessing = libraryName === 'processing';
   const [showSidebar, setShowSidebar] = useSidebar('reference');
 
-  const { locale } = useLocalization();
   const intl = useIntl();
   useHighlight();
 
@@ -57,7 +55,11 @@ const ClassRefTemplate = ({ data, pageContext }) => {
     <Layout withSidebar withBreadcrumbs>
       <Helmet>
         <title>
-          {name} / {isProcessing ? 'Reference' : 'Libraries'}
+          {data.en.childJson.name}
+          {' / '}
+          {isProcessing
+            ? intl.formatMessage({ id: 'reference' })
+            : intl.formatMessage({ id: 'libraries' })}
         </title>
       </Helmet>
       <div className={grid.grid}>
@@ -69,7 +71,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
         />
         {entry ? (
           <Content sidebarOpen={showSidebar}>
-            <Breadcrumbs locale={locale} trail={trail} />
+            <Breadcrumbs trail={trail} />
             <Section title={intl.formatMessage({ id: 'className' })}>
               <h3>{entry.name}</h3>
             </Section>
@@ -174,6 +176,14 @@ export const query = graphql`
           name
           description
         }
+      }
+    }
+    en: file(
+      fields: { name: { eq: $name }, lang: { eq: "en" } }
+      sourceInstanceName: { eq: "json" }
+    ) {
+      childJson {
+        name
       }
     }
     images: allFile(

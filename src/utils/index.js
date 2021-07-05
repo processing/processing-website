@@ -76,8 +76,47 @@ export const linkParsing = (str) => {
   return str.replace(/\[([^\]]*)\]\(([^)]*)\)/g, '<a href="$2">$1</a>');
 };
 
+/**
+  Gets sessionStorage if available without failing in the server
+**/
 export const sessionStorage =
   typeof window !== 'undefined' ? window.sessionStorage : null;
 
+/**
+    Gets localStorage if available without failing in the server
+  **/
 export const localStorage =
   typeof window !== 'undefined' ? window.localStorage : null;
+
+/**
+  Returns a copy of the object with the keys sorted based on the array provided.
+**/
+export const sortObject = (obj, order) => {
+  const keys = Object.keys(obj).sort((a, b) => {
+    let aidx = order.indexOf(a);
+    let bidx = order.indexOf(b);
+    // Ensure keys not in order are sorted last
+    if (aidx === -1) aidx = 9999;
+    if (bidx === -1) bidx = 9999;
+    return aidx - bidx;
+  });
+  const copy = {};
+  for (let i = 0; i < keys.length; i++) {
+    copy[keys[i]] = obj[keys[i]];
+  }
+  return copy;
+};
+
+/**
+  Returns a copy of the array with the items sorted based on the values in the array provided and the key
+**/
+export const sortArray = (arr, order, key) => {
+  return arr.slice().sort((a, b) => {
+    let aidx = order.indexOf(a[key]);
+    let bidx = order.indexOf(b[key]);
+    // Ensure keys not in order are sorted last
+    if (aidx === -1) aidx = 9999;
+    if (bidx === -1) bidx = 9999;
+    return aidx - bidx;
+  });
+};

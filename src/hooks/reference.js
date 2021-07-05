@@ -215,5 +215,5 @@ export const useTrail = (libraryName, category, subcategory, classanchor) => {
     }
 
     return trail;
-  }, [intl, libraryName, classanchor, category, subcategory]);
+  }, [intl, libraryName, category, subcategory, classanchor]);
 };

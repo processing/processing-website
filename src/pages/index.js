@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
-import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import Img from 'gatsby-image';
 
 import Layout from '../components/Layout';
@@ -19,7 +19,6 @@ import grid from '../styles/grid.module.css';
 
 const IndexPage = ({ data }) => {
   const intl = useIntl();
-  const { locale } = useLocalization();
   const featuredExamples = usePreparedExamples(
     data.examples.nodes,
     data.exampleImages.nodes
@@ -70,7 +69,6 @@ const IndexPage = ({ data }) => {
       <Examples
         examples={randomExamples}
         heading={intl.formatMessage({ id: 'examples' })}
-        locale={locale}
       />
       <div className={css.gettingStarted}>
         <div
@@ -118,6 +116,7 @@ const IndexPage = ({ data }) => {
                 <p>{intl.formatMessage({ id: 'cardForumDescription' })}</p>
                 <Button
                   target="_blank"
+                  rel="noreferrer"
                   href="https://discourse.processing.org/"
                   variant="animate1">
                   {intl.formatMessage({ id: 'cardForumButton' })}
@@ -235,21 +234,39 @@ const IndexPage = ({ data }) => {
             <ul className={css.partners}>
               <li>
                 <div>
-                  <img src={data.fathom.childImageSharp.fluid.src} alt="" />
+                  <img
+                    src={data.fathom.childImageSharp.fluid.src}
+                    alt="Fathom logo"
+                  />
                 </div>
                 <p>Fathom</p>
               </li>
               <li>
                 <div>
-                  <img src={data.itp.childImageSharp.fluid.src} alt="" />
+                  <img
+                    src={data.itp.childImageSharp.fluid.src}
+                    alt="ITP NYU logo"
+                  />
                 </div>
                 <p>ITP NYU</p>
               </li>
               <li>
                 <div>
-                  <img src={data.ucla.childImageSharp.fluid.src} alt="" />
+                  <img
+                    src={data.ucla.childImageSharp.fluid.src}
+                    alt="UCLA Design Media Arts logo"
+                  />
                 </div>
                 <p>UCLA Design Media Arts</p>
+              </li>
+              <li>
+                <div>
+                  <img
+                    src={data.dsi.childImageSharp.fluid.src}
+                    alt="Design Systems International logo"
+                  />
+                </div>
+                <p>Design Systems International</p>
               </li>
             </ul>
           </div>
@@ -259,13 +276,13 @@ const IndexPage = ({ data }) => {
   );
 };
 
-const Examples = memo(({ heading, examples, locale }) => {
+const Examples = memo(({ heading, examples }) => {
   return (
     <div className={classnames(grid.grid, css.examples)}>
       <h3 className={classnames(grid.col, css.examplesHeading)}>{heading}</h3>
       {examples.map((example, i) => (
         <div className={classnames(grid.col, css.example)} key={example.path}>
-          <Link to={example.path} language={locale}>
+          <Link to={example.path}>
             <div className={css.imgContainer}>
               {example.image && (
                 <Img
@@ -392,6 +409,13 @@ export const query = graphql`
       }
     }
     ucla: file(relativePath: { eq: "ucla.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 120, maxHeight: 120) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    dsi: file(relativePath: { eq: "designsystemsinternational.png" }) {
       childImageSharp {
         fluid(maxWidth: 120, maxHeight: 120) {
           ...GatsbyImageSharpFluid

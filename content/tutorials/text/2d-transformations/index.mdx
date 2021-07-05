@@ -1,10 +1,11 @@
 ---
-slug: '/tutorials/transform2d'
-title: '2D Transformations'
-author: 'J David Eisenberg'
-intro: 'Learn how to translate, rotate, and scale shapes using 2D transformations.'
-level: 'Intermediate'
+slug: "/tutorials/transform2d"
+title: "2D Transformations"
+author: "J David Eisenberg"
+intro: "Learn how to translate, rotate, and scale shapes using 2D transformations."
+level: "Intermediate"
 coverImage: transform2d.jpg
+order: "12"
 ---
 
 <Note>
@@ -25,7 +26,7 @@ As you know, your Processing window works like a piece of graph paper. When you 
 
 </FixedImage>
 
-If you want to move the rectangle 60 units right and 80 units down, you can just change the coordinates by adding to the *x* and *y* starting point: `rect(20 + 60, 20 + 80, 40, 40)` and the rectangle will appear in a different place. (We put the arrow in there for dramatic effect.)
+If you want to move the rectangle 60 units right and 80 units down, you can just change the coordinates by adding to the _x_ and _y_ starting point: `rect(20 + 60, 20 + 80, 40, 40)` and the rectangle will appear in a different place. (We put the arrow in there for dramatic effect.)
 
 <FixedImage center width={230} height={230}>
 
@@ -33,7 +34,7 @@ If you want to move the rectangle 60 units right and 80 units down, you can just
 
 </FixedImage>
 
-But there is a more interesting way to do it: **move the graph paper instead**. If you move the graph paper 60 units right and 80 units down, you will get exactly the same visual result. Moving the coordinate system is called *translation*.
+But there is a more interesting way to do it: **move the graph paper instead**. If you move the graph paper 60 units right and 80 units down, you will get exactly the same visual result. Moving the coordinate system is called _translation_.
 
 <FixedImage center width={240} height={240}>
 
@@ -41,7 +42,7 @@ But there is a more interesting way to do it: **move the graph paper instead**. 
 
 </FixedImage>
 
-The important thing to notice in the preceding diagram is that, as far as the rectangle is concerned, it hasn't moved at all. Its upper left corner is still at (20,20). When you use transformations, the things you draw *never* change position; the coordinate system does.
+The important thing to notice in the preceding diagram is that, as far as the rectangle is concerned, it hasn't moved at all. Its upper left corner is still at (20,20). When you use transformations, the things you draw _never_ change position; the coordinate system does.
 
 Here is code that draws the rectangle in red by changing its coordinates, then draws it in blue by moving the grid. The rectangles are translucent so that you can see that they are (visually) at the same place. Only the method used to move them has changed. Copy and paste this code into Processing and give it a try.
 
@@ -55,11 +56,11 @@ void setup()
   // draw the original position in gray
   fill(192);
   rect(20, 20, 40, 40);
-  
+
   // draw a translucent red rectangle by changing the coordinates
   fill(255, 0, 0, 128);
   rect(20 + 60, 20 + 80, 40, 40);
-  
+
   // draw a translucent blue rectangle by translating the grid
   fill(0, 0, 255, 128);
   pushMatrix();
@@ -76,7 +77,7 @@ Yes, you could have done a `translate(-60, -80)` to move the grid back to its or
 
 ## What's the Advantage?
 
-You may be thinking that picking up the coordinate system and moving it is a lot more trouble than just adding to coordinates. For a simple example like the rectangle, you are correct. But let's take an example of where `translate()` can make life easier. Here is some code that draws a row of houses. It uses a loop that calls a function named `house()`, which takes the *x* and *y* location of the house's upper-left corner as its parameters.
+You may be thinking that picking up the coordinate system and moving it is a lot more trouble than just adding to coordinates. For a simple example like the rectangle, you are correct. But let's take an example of where `translate()` can make life easier. Here is some code that draws a row of houses. It uses a loop that calls a function named `house()`, which takes the _x_ and _y_ location of the house's upper-left corner as its parameters.
 
 <FixedImage center width={358} height={81}>
 
@@ -126,7 +127,7 @@ void house(int x, int y)
 
 ## Rotation
 
-In addition to moving the grid, you can also rotate it with the `rotate()` function. This function takes one argument, which is the number of *radians* that you want to rotate. In Processing, all the functions that have to do with rotation measure angles in radians rather than degrees.  When you talk about angles in degrees, you say that a full circle has 360&#xb0;. When you talk about angles in radians, you say that a full circle has 2&pi; radians. Here is a diagram of how Processing measures angles in degrees (black) and radians (red).
+In addition to moving the grid, you can also rotate it with the `rotate()` function. This function takes one argument, which is the number of _radians_ that you want to rotate. In Processing, all the functions that have to do with rotation measure angles in radians rather than degrees. When you talk about angles in degrees, you say that a full circle has 360&#xb0;. When you talk about angles in radians, you say that a full circle has 2&pi; radians. Here is a diagram of how Processing measures angles in degrees (black) and radians (red).
 
 <FixedImage center width={158} height={157}>
 
@@ -151,7 +152,7 @@ void setup()
   fill(192);
   noStroke();
   rect(40, 40, 40, 40);
-  
+
   pushMatrix();
   rotate(radians(45));
   fill(0);
@@ -200,14 +201,14 @@ void setup()
   fill(192);
   noStroke();
   rect(40, 40, 40, 40);
-  
+
   pushMatrix();
   // move the origin to the pivot point
-  translate(40, 40); 
-  
+  translate(40, 40);
+
   // then pivot the grid
   rotate(radians(45));
-  
+
   // and draw the square at the origin
   fill(0);
   rect(0, 0, 40, 40);
@@ -260,10 +261,10 @@ void setup()
 {
   size(200,200);
   background(255);
-  
+
   stroke(128);
   rect(20, 20, 40, 40);
-  
+
   stroke(0);
   pushMatrix();
   scale(2.0);
@@ -275,9 +276,9 @@ void setup()
 
 First, you can see that the square appears to have moved. It hasn't, of course. Its upper left corner is still at (20, 20) on the scaled-up grid, but that point is now twice as far away from the origin as it was in the original coordinate system. You can also see that the lines are thicker. That's no optical illusion-the lines really are twice as thick, because the coordinate system has been scaled to double its size.
 
->**Programming Challenge:** Scale up the black square, but keep its upper left corner in the same place as the gray square. Hint: use `translate()` to move the origin, then use `scale()`.
+> **Programming Challenge:** Scale up the black square, but keep its upper left corner in the same place as the gray square. Hint: use `translate()` to move the origin, then use `scale()`.
 
-There is no law saying that you have to scale the *x* and *y* dimensions equally. Try using `scale(3.0, 0.5)` to make the *x* dimension three times its normal size and the *y* dimension only half its normal size.
+There is no law saying that you have to scale the _x_ and _y_ dimensions equally. Try using `scale(3.0, 0.5)` to make the _x_ dimension three times its normal size and the _y_ dimension only half its normal size.
 
 ## Order Matters
 
@@ -297,7 +298,7 @@ void setup()
   smooth();
   line(0, 0, 200, 0); // draw axes
   line(0, 0, 0, 200);
-  
+
   pushMatrix();
   fill(255, 0, 0); // red square
   rotate(radians(30));
@@ -319,11 +320,11 @@ void setup()
 
 ## The Transformation Matrix
 
-Every time you do a rotation, translation, or scaling, the information required to do the transformation is accumulated into a table of numbers. This table, or *matrix* has only a few rows and columns, yet, through the miracle of mathematics, it contains all the information needed to do any series of transformations. And that's why the `pushMatrix()` and `popMatrix()` have that word in their name.
+Every time you do a rotation, translation, or scaling, the information required to do the transformation is accumulated into a table of numbers. This table, or _matrix_ has only a few rows and columns, yet, through the miracle of mathematics, it contains all the information needed to do any series of transformations. And that's why the `pushMatrix()` and `popMatrix()` have that word in their name.
 
 ## Push and Pop
 
-What about the *push* and *pop* part of the names? These come from a computer concept known as a *stack*, which works like a spring-loaded tray dispenser in a cafeteria. When someone returns a tray to the stack, its weight pushes the platform down. When someone needs a tray, he takes it from the top of the stack, and the remaining trays pop up a little bit.
+What about the _push_ and _pop_ part of the names? These come from a computer concept known as a _stack_, which works like a spring-loaded tray dispenser in a cafeteria. When someone returns a tray to the stack, its weight pushes the platform down. When someone needs a tray, he takes it from the top of the stack, and the remaining trays pop up a little bit.
 
 In a similar manner, `pushMatrix()` puts the current status of the coordinate system at the top of a memory area, and `popMatrix()` pulls that status back out. The preceding example used `pushMatrix()` and `popMatrix()` to make sure that the coordinate system was &ldquo;clean&rdquo; before each part of the drawing. In all of the other examples, the calls to those two functions weren't really necessary, but it doesn't hurt anything to save and restore the grid status.
 
@@ -331,7 +332,7 @@ Note: in Processing, the coordinate system is restored to its original state (or
 
 ## Three-dimensional Transforms
 
-If you are working in three dimensions, you can call the `translate()` function with three arguments for the *x*, *y*, and *z* distances. Similarly, you can call `scale()` with three arguments that tell how much you want the grid scaled in each of those dimensions.
+If you are working in three dimensions, you can call the `translate()` function with three arguments for the _x_, _y_, and _z_ distances. Similarly, you can call `scale()` with three arguments that tell how much you want the grid scaled in each of those dimensions.
 
 For rotation, call the `rotateX()`, `rotateY()`, or `rotateZ()` function to rotate around each of the axes. All three of these functions expect one argument: the number of radians to rotate.
 
@@ -339,7 +340,7 @@ For rotation, call the `rotateX()`, `rotateY()`, or `rotateZ()` function to rota
 
 Let's use these transformations to animate a blue robot waving its arms. Rather than try to write it all at once, we will do the work in stages. The first step is to draw the robot without any animation.
 
-The robot is modeled on [this drawing](http://www.openclipart.org/detail/5457), although it will not look as charming. First, we draw the robot so that its left and top side touch the *x* and *y* axes. That will allow us to use `translate()` to easily place the robot anywhere we want or to make multiple copies of the robot, as we did in the example of the houses.
+The robot is modeled on [this drawing](http://www.openclipart.org/detail/5457), although it will not look as charming. First, we draw the robot so that its left and top side touch the _x_ and _y_ axes. That will allow us to use `translate()` to easily place the robot anywhere we want or to make multiple copies of the robot, as we did in the example of the houses.
 
 When we refer to left and right in this drawing, we mean your left and right (the left and right side of your monitor), not the robot's left and right.
 
@@ -367,10 +368,10 @@ void drawRobot()
 
   rect(0, 32, 12, 37); // left arm
   rect(66, 32, 12, 37); // right arm
-  
+
   rect(22, 84, 16, 50); // left leg
   rect(40, 84, 16, 50); // right leg
-  
+
   fill(222, 222, 249);
   ellipse(30, 12, 12, 12); // left eye
   ellipse(47, 12, 12, 12); // right eye
@@ -399,7 +400,7 @@ void drawRobot()
   drawRightArm();
   rect(22, 84, 16, 50); // left leg
   rect(40, 84, 16, 50); // right leg
-  
+
   fill(222, 222, 249);
   ellipse(30, 12, 12, 12); // left eye
   ellipse(47, 12, 12, 12);  // right eye
@@ -473,7 +474,7 @@ void draw()
   translate(50, 50); // place robot so arms are always on screen
   drawRobot();
   armAngle += angleChange;
-  
+
   // if the arm has moved past its limit,
   // reverse direction and set within limits.
   if (armAngle > ANGLE_LIMIT || armAngle &lt; 0)
@@ -494,7 +495,7 @@ void drawRobot()
   drawRightArm();
   rect(22, 84, 16, 50); // left leg
   rect(40, 84, 16, 50); // right leg
-  
+
   fill(222, 222, 249);
   ellipse(30, 12, 12, 12); // left eye
   ellipse(47, 12, 12, 12);  // right eye
@@ -526,9 +527,9 @@ Instead of having the arms move on their own, we will modify the program so that
 
 Since the two arms move independently of one another, we need to have one variable for each arm's angle. It's easy to figure out which arm to track. If the mouse is at the left side of the robot's center, track the left arm; otherwise, track the right arm.
 
-The remaining problem is to figure out the angle of rotation. Given the pivot point position and the mouse position, how do you determine the angle of a line connecting those two points?  The answer comes from the `atan2()` function, which gives (in radians) the angle of a line from the origin to a given *y* and *x* coordinate. In constrast to most other functions, the *y* coordinate comes first. `atan2()` returns a value from -&pi; to &pi; radians, which is the equivalent of -180&deg; to 180&deg;.
+The remaining problem is to figure out the angle of rotation. Given the pivot point position and the mouse position, how do you determine the angle of a line connecting those two points? The answer comes from the `atan2()` function, which gives (in radians) the angle of a line from the origin to a given _y_ and _x_ coordinate. In constrast to most other functions, the _y_ coordinate comes first. `atan2()` returns a value from -&pi; to &pi; radians, which is the equivalent of -180&deg; to 180&deg;.
 
-But what about finding the angle of a line that doesn't start from the origin, such as the line from (10, 37) to (48, 59)? No problem; it's the same as the angle of a line from (0, 0) to (48-10, 59-37). In general, to find the angle of the line from (*x*<sub>0</sub>, *y*<sub>0</sub>) to (*x*<sub>1</sub>, *y*<sub>1</sub>), calculate
+But what about finding the angle of a line that doesn't start from the origin, such as the line from (10, 37) to (48, 59)? No problem; it's the same as the angle of a line from (0, 0) to (48-10, 59-37). In general, to find the angle of the line from (_x_<sub>0</sub>, _y_<sub>0</sub>) to (_x_<sub>1</sub>, _y_<sub>1</sub>), calculate
 
 ```
 atan2(*y*<sub>1</sub> - *y*<sub>0</sub>, *x*<sub>1</sub> - *x*<sub>0</sub>)
@@ -546,7 +547,7 @@ void setup()
 void draw()
 {
   float angle = atan2(mouseY - 100, mouseX - 100);
-  
+
   background(255);
   pushMatrix();
   translate(100, 100);
@@ -557,9 +558,9 @@ void draw()
 
 ```
 
-That works great. What happens if we draw the rectangle so it is taller than it is wide? Change the preceding code to read `rect(0, 0, 10, 50)`. How come it doesn't seem to follow the mouse any more? The answer is that the rectangle really *is* still following the mouse, but it's the short side of the rectangle that does the following. Our eyes are trained to want the long side to be tracked. Because the long side is at a 90 degree angle to the short side, you have to subtract 90&deg; (or &pi;/2 radians) to get the desired effect. Change the preceding code to read `rotate(angle - HALF_PI)` and try it again. Since Processing deals almost exclusively in radians, the language has defined the constants `PI` (180&deg;), `HALF_PI` (90&deg;), `QUARTER_PI` (45&deg;) and `TWO_PI` (360&deg;) for your convenience.
+That works great. What happens if we draw the rectangle so it is taller than it is wide? Change the preceding code to read `rect(0, 0, 10, 50)`. How come it doesn't seem to follow the mouse any more? The answer is that the rectangle really _is_ still following the mouse, but it's the short side of the rectangle that does the following. Our eyes are trained to want the long side to be tracked. Because the long side is at a 90 degree angle to the short side, you have to subtract 90&deg; (or &pi;/2 radians) to get the desired effect. Change the preceding code to read `rotate(angle - HALF_PI)` and try it again. Since Processing deals almost exclusively in radians, the language has defined the constants `PI` (180&deg;), `HALF_PI` (90&deg;), `QUARTER_PI` (45&deg;) and `TWO_PI` (360&deg;) for your convenience.
 
-At this point, we can write the final version of the arm-tracking program. We start off with definitions of constants and variables. The number 39 in the definition of `MIDPOINT_X` comes from the fact that the body of the robot starts at *x*-coordinate 14 and is 50 pixels wide, so 39 (14 + 25) is the horizontal midpoint of the robot's body.
+At this point, we can write the final version of the arm-tracking program. We start off with definitions of constants and variables. The number 39 in the definition of `MIDPOINT_X` comes from the fact that the body of the robot starts at _x_-coordinate 14 and is 50 pixels wide, so 39 (14 + 25) is the horizontal midpoint of the robot's body.
 
 ```
 /* Where upper left of robot appears on screen */
@@ -596,7 +597,7 @@ void draw()
    */
   float mX;
   float mY;
-  
+
   background(255);
   pushMatrix();
   translate(ROBOT_X, ROBOT_Y); // place robot so arms are always on screen
@@ -616,7 +617,7 @@ void draw()
    }
   }
   drawRobot();
-  
+
   popMatrix();
 }
 

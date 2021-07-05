@@ -1,10 +1,11 @@
 ---
-slug: '/tutorials/objects'
-title: 'Objects'
-author: 'Daniel Shiffman'
-intro: 'The basics of object-oriented programming.'
-level: 'Beginner'
+slug: "/tutorials/objects"
+title: "Objects"
+author: "Daniel Shiffman"
+intro: "The basics of object-oriented programming."
+level: "Beginner"
 coverImage: objects.jpg
+order: "05"
 ---
 
 <Note>
@@ -39,16 +40,15 @@ Let's map out the data and functions for a very simple human object:
 - Eat.
 - Ride some form of transportation.
 
-Now, before we get too much further, we need to embark on a brief metaphysical digression. The above structure is not a human being itself; it simply describes the idea, or the concept, behind a human being. It describes what it is to be human. To be human is to have height, hair, to sleep, to eat, and so on. This is a crucial distinction for programming objects. This human being template is known as a *class*. A *class* is different from an *object*. You are an object. I am an object. That guy on the subway is an object. Albert Einstein is an object. We are all people, real world *instances* of the idea of a human being.
+Now, before we get too much further, we need to embark on a brief metaphysical digression. The above structure is not a human being itself; it simply describes the idea, or the concept, behind a human being. It describes what it is to be human. To be human is to have height, hair, to sleep, to eat, and so on. This is a crucial distinction for programming objects. This human being template is known as a _class_. A _class_ is different from an _object_. You are an object. I am an object. That guy on the subway is an object. Albert Einstein is an object. We are all people, real world _instances_ of the idea of a human being.
 
-Think of a cookie cutter. A cookie cutter makes cookies, but it is not a cookie itself. The cookie cutter is the *class*, the cookies are the *objects*.
+Think of a cookie cutter. A cookie cutter makes cookies, but it is not a cookie itself. The cookie cutter is the _class_, the cookies are the _objects_.
 
 ## Using an Object
 
 Before we look at the actual writing of a class itself, let's briefly look at how using objects in our main program (i.e., `setup()` and `draw()`) makes the world a better place.
 
 Consider the pseudo-code for a simple sketch that moves a rectangle horizontally across the window (we'll think of this rectangle as a &ldquo;car&rdquo;).
-
 
 **Data (Global Variables)**
 
@@ -69,7 +69,7 @@ Consider the pseudo-code for a simple sketch that moves a rectangle horizontally
 - Display car at location with color.
 - Increment car's location by speed.
 
-To implement the above pseudo-code, we would define global variables at the top of the program, initialize them in `setup()`, and call functions to move and display the car in `draw()`.  Something like:
+To implement the above pseudo-code, we would define global variables at the top of the program, initialize them in `setup()`, and call functions to move and display the car in `draw()`. Something like:
 
 ```
 color c = color(0);
@@ -100,7 +100,7 @@ void display() {
 }
 ```
 
-Object-oriented programming allows us to take all of the variables and functions out of the main program and store them inside a car object. A car object will know about its data—*color*, *location*, *speed*.  The object will also know about the *stuff it can do*, the methods (functions inside an object)—the car can *drive* and it can be *displayed*.
+Object-oriented programming allows us to take all of the variables and functions out of the main program and store them inside a car object. A car object will know about its data—_color_, _location_, _speed_. The object will also know about the _stuff it can do_, the methods (functions inside an object)—the car can _drive_ and it can be _displayed_.
 
 Using object-oriented design, the pseudocode improves to look something like this:
 
@@ -154,9 +154,9 @@ Here is how we can take the elements from a simple non-object-oriented sketch an
 
 **Class Name**: The name is specified by &ldquo;class WhateverNameYouChoose&rdquo;. We then enclose all of the code for the class inside curly brackets after the name declaration. Class names are traditionally capitalized (to distinguish them from variable names, which traditionally are lowercase).
 
-**Data**: The data for a class is a collection of variables. These variables are often referred to as instance variables since each  instance of an object contains this set of variables.
+**Data**: The data for a class is a collection of variables. These variables are often referred to as instance variables since each instance of an object contains this set of variables.
 
-**Constructor**: The constructor is a special function inside of a class that creates the instance of the object itself. It is where you give the instructions on how to set up the object. It is just like Processing's `setup()` function, only here it is used to create an individual object within the sketch, whenever a new object is created from this class.  It always has the same name as the class and is called by invoking the new operator: `Car myCar = new Car();`.
+**Constructor**: The constructor is a special function inside of a class that creates the instance of the object itself. It is where you give the instructions on how to set up the object. It is just like Processing's `setup()` function, only here it is used to create an individual object within the sketch, whenever a new object is created from this class. It always has the same name as the class and is called by invoking the new operator: `Car myCar = new Car();`.
 
 **Functionality**: We can add functionality to our object by writing methods.
 
@@ -201,36 +201,36 @@ Let's look at the details behind the above three steps outlining how to use an o
 
 **Step 1. Declaring an object variable.**
 
-A variable is always declared by specifying a type and a name.  With a primitive data type, such as an integer, it looks like this:
+A variable is always declared by specifying a type and a name. With a primitive data type, such as an integer, it looks like this:
 
 ```
 // Variable Declaration
 int var;  // type name
 ```
 
-Primitive data types are singular pieces of information: an integer, a float, a character, etc. Declaring a variable that holds onto an object is quite similar. The difference is that here the type is the class name, something we will make up, in this case &ldquo;Car.&rdquo; Objects, incidentally, are not primitives and are considered  complex data types. (This is because they store multiple pieces of information: data and functionality. Primitives only store data.)
+Primitive data types are singular pieces of information: an integer, a float, a character, etc. Declaring a variable that holds onto an object is quite similar. The difference is that here the type is the class name, something we will make up, in this case &ldquo;Car.&rdquo; Objects, incidentally, are not primitives and are considered complex data types. (This is because they store multiple pieces of information: data and functionality. Primitives only store data.)
 
-**Step 2.  Initializing an object.**
+**Step 2. Initializing an object.**
 
-In order to initialize a variable (i.e., give it a starting value), we use an assignment operation—variable equals something.  With a primitive (such as integer), it looks like this:
+In order to initialize a variable (i.e., give it a starting value), we use an assignment operation—variable equals something. With a primitive (such as integer), it looks like this:
 
 ```
 // Variable Initialization
 var = 10;  // var equals 10
 ```
 
-Initializing an object is a bit more complex. Instead of simply assigning it a value, like with an integer or floating point number, we have to construct the object. An object is made with the ***new*** operator.
+Initializing an object is a bit more complex. Instead of simply assigning it a value, like with an integer or floating point number, we have to construct the object. An object is made with the **_new_** operator.
 
 ```
 // Object Initialization
 myCar = new Car(); // The new operator is used to make a new object.
 ```
 
-In the above example, &ldquo;myCar&rdquo; is the object variable name and &ldquo;=&rdquo; indicates we are setting it equal to something, that something being a new  instance of a Car object. What we are really doing here is initializing a Car object. When you initialize a primitive variable, such as an integer, you just set it equal to a number. But an object may contain multiple pieces of data. Recalling the Car class, we see that this line of code calls the *constructor*, a special function named **Car()** that initializes all of the object's variables and makes sure the Car object is ready to go.
+In the above example, &ldquo;myCar&rdquo; is the object variable name and &ldquo;=&rdquo; indicates we are setting it equal to something, that something being a new instance of a Car object. What we are really doing here is initializing a Car object. When you initialize a primitive variable, such as an integer, you just set it equal to a number. But an object may contain multiple pieces of data. Recalling the Car class, we see that this line of code calls the _constructor_, a special function named **Car()** that initializes all of the object's variables and makes sure the Car object is ready to go.
 
-One other thing: with the primitive integer &ldquo;var,&rdquo; if you had forgotten to initialize it (set it equal to 10), Processing  would have assigned it a default value—zero. An object (such as &ldquo;myCar&rdquo;), however, has no default value. If you forget to initialize an object,  Processing will give it the value *null*. *null* means nothing. Not zero. Not negative one. Utter nothingness. Emptiness. If you encounter an error in the message window that says &ldquo;NullPointerException&rdquo; (and this is a pretty common error), that error is most likely caused by having forgotten to initialize an object.
+One other thing: with the primitive integer &ldquo;var,&rdquo; if you had forgotten to initialize it (set it equal to 10), Processing would have assigned it a default value—zero. An object (such as &ldquo;myCar&rdquo;), however, has no default value. If you forget to initialize an object, Processing will give it the value _null_. _null_ means nothing. Not zero. Not negative one. Utter nothingness. Emptiness. If you encounter an error in the message window that says &ldquo;NullPointerException&rdquo; (and this is a pretty common error), that error is most likely caused by having forgotten to initialize an object.
 
-**Step 3.  Using an object.**
+**Step 3. Using an object.**
 
 Once we have successfully declared and initialized an object variable, we can use it. Using an object involves calling functions that are built into that object. A human object can eat; a car can drive; a dog can bark. Calling a function inside of an object is accomplished via dot syntax: variableName.objectFunction(Function Arguments);
 
@@ -260,15 +260,15 @@ Car myCar2 = new Car();
 
 This accomplishes our goal; the code will produce two car objects, one stored in the variable myCar1 and one in myCar2. However, if you study the Car class, you will notice that these two cars will be identical: each one will be colored white, start in the middle of the screen, and have a speed of 1. In English, the above reads:
 
-***Make a new car.***
+**_Make a new car._**
 
 We want to instead say:
 
-***Make a new red car, at location (0,10) with a speed of 1.***
+**_Make a new red car, at location (0,10) with a speed of 1._**
 
 So that we could also say:
 
-***Make a new blue car, at location (0,100) with a speed of 2.***
+**_Make a new blue car, at location (0,100) with a speed of 2._**
 
 We can do this by placing arguments inside of the constructor method.
 
@@ -297,9 +297,9 @@ Nevertheless, this is quite an important skill to learn, and, ultimately, is one
 
 </FixedImage>
 
-Arguments are local variables used inside the body of a function that get filled with values when the function is called. In the examples, they have *one purpose only*: to initialize the variables inside of an object. These are the variables that count—the car's actual color, the car's actual *x* location, and so on. The constructor's arguments are just *temporary*, and exist solely to pass a value from where the object is made into the object itself.
+Arguments are local variables used inside the body of a function that get filled with values when the function is called. In the examples, they have _one purpose only_: to initialize the variables inside of an object. These are the variables that count—the car's actual color, the car's actual _x_ location, and so on. The constructor's arguments are just _temporary_, and exist solely to pass a value from where the object is made into the object itself.
 
-This allows us to make a variety of objects using the same constructor. You might also just write the word *temp* in your argument names to remind you of what is going on (c vs. tempC). You will also see programmers use an underscore (c vs. c_) in many examples. You can name these whatever you want, of course. However, it is advisable to choose a name that makes sense to you, and also to stay consistent.
+This allows us to make a variety of objects using the same constructor. You might also just write the word _temp_ in your argument names to remind you of what is going on (c vs. tempC). You will also see programmers use an underscore (c vs. c\_) in many examples. You can name these whatever you want, of course. However, it is advisable to choose a name that makes sense to you, and also to stay consistent.
 
 We can now take a look at the same sketch with multiple object instances, each with unique properties.
 
@@ -360,9 +360,9 @@ class Car {
 
 Assuming this is your first experience with object-oriented programming, it's important to take it easy. The examples here just one class and make, at most, two or three objects from that class. Nevertheless, there are no actual limitations. A Processing sketch can include as many classes as you feel like writing.
 
-If you were programming the Space Invaders game, for example, you might create a *Spaceship* class, an *Enemy* class, and a *Bullet* class, using an object for each entity in your game.
+If you were programming the Space Invaders game, for example, you might create a _Spaceship_ class, an _Enemy_ class, and a _Bullet_ class, using an object for each entity in your game.
 
-In addition, although not  primitive, classes are data types, just like integers and floats. And since classes are made up of data, an object can therefore contain other objects! For example, let's assume you had just finished programming a *Fork* and *Spoon* class. Moving on to a *PlaceSetting* class, you would likely include variables for both a *Fork* object and a *Spoon* object inside that class itself. This is perfectly reasonable and quite common in object-oriented programming.
+In addition, although not primitive, classes are data types, just like integers and floats. And since classes are made up of data, an object can therefore contain other objects! For example, let's assume you had just finished programming a _Fork_ and _Spoon_ class. Moving on to a _PlaceSetting_ class, you would likely include variables for both a _Fork_ object and a _Spoon_ object inside that class itself. This is perfectly reasonable and quite common in object-oriented programming.
 
 ```
 class PlaceSetting  {
@@ -387,4 +387,4 @@ void hit(Bullet b)  {
 }
 ```
 
-When a primitive value (integer, float, etc.) is passed in a function, a copy is made. With objects, this is not the case, and the result is a bit more intuitive. If changes are made to an object after it is passed into a function, those changes will affect that object used anywhere else throughout the sketch. This is known as *pass by reference*  since, instead of a copy, a reference to the actual object itself is passed into the function.
+When a primitive value (integer, float, etc.) is passed in a function, a copy is made. With objects, this is not the case, and the result is a bit more intuitive. If changes are made to an object after it is passed into a function, those changes will affect that object used anywhere else throughout the sketch. This is known as _pass by reference_ since, instead of a copy, a reference to the actual object itself is passed into the function.

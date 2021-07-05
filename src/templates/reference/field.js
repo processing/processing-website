@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import { useIntl } from 'react-intl';
-import { useLocalization } from 'gatsby-theme-i18n';
 
 import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
@@ -33,7 +32,6 @@ const FieldRefTemplate = ({ data, pageContext }) => {
   const isProcessing = libraryName === 'processing';
 
   const [showSidebar, setShowSidebar] = useSidebar('reference');
-  const { locale } = useLocalization();
   const intl = useIntl();
   useHighlight();
 
@@ -56,15 +54,18 @@ const FieldRefTemplate = ({ data, pageContext }) => {
     entry?.classanchor
   );
 
-  const title = entry?.classanchor
-    ? `${entry.classanchor}::${entry.name}`
-    : name;
+  const title = data.en.childJson.classanchor
+    ? `${data.en.childJson.classanchor}::${data.en.childJson.name}`
+    : data.en.childJson.name;
 
   return (
     <Layout withSidebar withBreadcrumbs>
       <Helmet>
         <title>
-          {title} / {isProcessing ? 'Reference' : 'Libraries'}
+          {title} /
+          {isProcessing
+            ? intl.formatMessage({ id: 'reference' })
+            : intl.formatMessage({ id: 'libraries' })}
         </title>
       </Helmet>
       <div className={grid.grid}>
@@ -76,7 +77,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
         />
         {entry ? (
           <Content sidebarOpen={showSidebar}>
-            <Breadcrumbs locale={locale} trail={trail} />
+            <Breadcrumbs trail={trail} />
             <Section title={intl.formatMessage({ id: 'name' })}>
               <h3>{entry.name}</h3>
             </Section>
@@ -142,10 +143,11 @@ export const query = graphql`
   query(
     $name: String!
     $relDir: String!
+    $locale: String!
     $inUseExamples: [String!]!
     $libraryName: String!
   ) {
-    json: file(fields: { name: { eq: $name } }) {
+    json: file(fields: { name: { eq: $name }, lang: { eq: $locale } }) {
       childJson {
         name
         classanchor
@@ -160,6 +162,12 @@ export const query = graphql`
         }
         related
         returns
+      }
+    }
+    en: file(fields: { name: { eq: $name }, lang: { eq: "en" } }) {
+      childJson {
+        name
+        classanchor
       }
     }
     images: allFile(
