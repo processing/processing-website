@@ -38,7 +38,6 @@ const ClassRefTemplate = ({ data, pageContext }) => {
   const items = usePreparedItems(data.items.nodes, libraryName);
   const examples = usePreparedExamples(data.pdes.edges, data.images.edges);
   const tree = useTree(items);
-
   const constructors = usePreparedList(entry?.constructors, libraryName);
   const fields = usePreparedList(entry?.classFields, libraryName, false, true);
   const parameters = usePreparedList(entry?.parameters, libraryName);

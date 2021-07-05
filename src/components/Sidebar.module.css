@@ -13,9 +13,11 @@
   background: var(--lightgray);
   width: var(--margin);
 }
+
 .animate {
   transition: top 0.2s ease-in-out, width 0.4s ease;
 }
+
 .root.headerScrolled {
   top: 60px;
   height: calc(100vh - 60px);

@@ -251,36 +251,35 @@ export const useIntersect = (root, rootMargin, threshold = 0) => {
   - Hides sidebar as default but shows it when the page renders
     in the browser if the screen is wider than 960.
   - If state is set externally, persist with sessionStorage
-
 **/
-const getShowSidebar = (key, showDefault) => {
-  let showSidebar;
-  const [winWidth] = getWin();
-  if (winWidth > 960) {
-    showSidebar =
-      showDefault ??
-      // get saved showSidebar from sessionStorage
-      (sessionStorage && sessionStorage.getItem(key) === 'true') ??
-      true;
-  } else {
-    showSidebar = false;
-  }
-  return showSidebar;
-};
 
-export const useSidebar = (_key = '', showDefault) => {
+export const useSidebar = (_key = '') => {
   const key = `showSidebar-${_key}`;
 
-  const [showSidebar, setShowSidebar] = useState(
-    getShowSidebar(key, showDefault)
+  const [showSidebar, setShowSidebar] = useState(false);
+
+  // Show sidebar on mount, but only if the screen is wide enough
+  // and it hasn't been hidden.
+  useEffect(() => {
+    const [winWidth] = getWin();
+    const isLargeEnough = winWidth > 960;
+    const isHidden = sessionStorage && sessionStorage.getItem(key) === 'false';
+    if (isLargeEnough && !isHidden) {
+      setShowSidebar(true);
+    }
+  }, []);
+
+  // Make function that both updates the sidebar and saves to sessionStorage
+  const setShowSidebarMemo = useCallback(
+    (value) => {
+      if (window.sessionStorage) {
+        console.log('SETTING SESSION TO', value);
+        sessionStorage.setItem(key, value);
+      }
+      setShowSidebar(value);
+    },
+    [key, setShowSidebar]
   );
 
-  useEffect(() => {
-    if (sessionStorage) {
-      // save new state to sessionStorage
-      sessionStorage.setItem(key, showSidebar);
-    }
-  }, [showSidebar, key]);
-
-  return [showSidebar, setShowSidebar];
+  return [showSidebar, setShowSidebarMemo];
 };

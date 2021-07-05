@@ -33,9 +33,9 @@ export const Sidebar = memo(({ children, title, show, setShow }) => {
       <div
         className={css.toggleButton}
         onClick={() => {
-          if (setShow) setShow((s) => !s);
+          if (setShow) setShow(!show);
         }}
-        onKeyDown={(e) => e.keyCode === 13 && setShow((s) => !s)}
+        onKeyDown={(e) => e.keyCode === 13 && setShow(!show)}
         role={'button'}
         tabIndex={'0'}>
         {title && <span className={css.toggleLabel}>{title}</span>}
