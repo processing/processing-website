@@ -49,12 +49,12 @@ const Books = ({ data }) => {
                     {book.language && `Text in ${book.language}.`}
                   </p>
 
-                  {book.orderList && (
-                    <ul className={css.orderList}>
-                      {book.orderList.map((order) => (
-                        <li key={order.link}>
-                          <a href={order.link} target="_blank" rel="noreferrer">
-                            {order.label}
+                  {book.buyList && (
+                    <ul className={css.buyList}>
+                      {book.buyList.map((buy) => (
+                        <li key={buy.link}>
+                          <a href={buy.link} target="_blank" rel="noreferrer">
+                            {buy.label}
                           </a>
                         </li>
                       ))}
@@ -97,7 +97,7 @@ export const query = graphql`
             author
             details
             published
-            order
+            buy
             language
           }
           body

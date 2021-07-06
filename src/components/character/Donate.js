@@ -22,7 +22,7 @@ const Donate = () => {
         <br />
         your help!
       </h3>
-      <Character className={css.character} />
+      <Character className={css.character} href="/donate" />
       <p className={css.text}>Help us continue with your generosity!</p>
       <Button to="/donate" className={css.donate}>
         Donate

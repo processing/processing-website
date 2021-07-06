@@ -1,7 +1,7 @@
 import React, { memo, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
-import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 import Img from 'gatsby-image';
@@ -35,7 +35,6 @@ if (typeof window !== 'undefined') {
 
 const ExampleTemplate = ({ data, pageContext }) => {
   const [showSidebar, setShowSidebar] = useSidebar();
-  const { locale } = useLocalization();
   const intl = useIntl();
 
   const { name, related } = pageContext;
@@ -88,7 +87,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
         />
         {example ? (
           <Content collapsed={!showSidebar}>
-            <Breadcrumbs locale={locale} trail={trail} />
+            <Breadcrumbs trail={trail} />
             <h1>{example.title}</h1>
             {example.author && (
               <h3>
@@ -118,7 +117,6 @@ const ExampleTemplate = ({ data, pageContext }) => {
             <RelatedExamples
               examples={relatedExamples}
               heading={intl.formatMessage({ id: 'relatedExamples' })}
-              locale={locale}
             />
             <p className={classnames(css.note)}>
               {intl.formatMessage({ id: 'exampleInfo' })}
@@ -162,7 +160,7 @@ const FeaturedFunctions = memo(({ heading, featured }) => {
   );
 });
 
-const RelatedExamples = memo(({ heading, examples, locale }) => {
+const RelatedExamples = memo(({ heading, examples }) => {
   return (
     <div>
       <h3>{heading}</h3>
@@ -170,7 +168,6 @@ const RelatedExamples = memo(({ heading, examples, locale }) => {
         {examples.slice(0, 6).map((example, key) => (
           <ExampleItem
             node={example}
-            locale={locale}
             key={`example-${example.name}`}
             variant="related"
           />

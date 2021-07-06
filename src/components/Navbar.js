@@ -135,7 +135,7 @@ const Navbar = ({ siteTitle, scrolled }) => {
                 })}>
                 {item.href ? (
                   item.href.startsWith('https') ? (
-                    <a target="_blank" href={item.href}>
+                    <a target="_blank" rel="noreferrer" href={item.href}>
                       {intl.formatMessage({ id: item.name })}
                     </a>
                   ) : (
@@ -167,7 +167,6 @@ const Navbar = ({ siteTitle, scrolled }) => {
                           ) : (
                             <Link
                               to={subitem.href}
-                              language={locale}
                               tabIndex={item.name === showSubmenu ? 0 : -1}>
                               {intl.formatMessage({ id: subitem.name })}
                             </Link>

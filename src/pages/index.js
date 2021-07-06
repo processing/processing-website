@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
-import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import Img from 'gatsby-image';
 
 import Layout from '../components/Layout';
@@ -50,7 +50,6 @@ const partners = [
 
 const IndexPage = ({ data }) => {
   const intl = useIntl();
-  const { locale } = useLocalization();
   const featuredExamples = usePreparedExamples(
     data.examples.nodes,
     data.exampleImages.nodes
@@ -101,7 +100,6 @@ const IndexPage = ({ data }) => {
       <Examples
         examples={randomExamples}
         heading={intl.formatMessage({ id: 'examples' })}
-        locale={locale}
       />
       <div className={css.gettingStarted}>
         <div
@@ -149,6 +147,7 @@ const IndexPage = ({ data }) => {
                 <p>{intl.formatMessage({ id: 'cardForumDescription' })}</p>
                 <Button
                   target="_blank"
+                  rel="noreferrer"
                   href="https://discourse.processing.org/"
                   variant="animate1">
                   {intl.formatMessage({ id: 'cardForumButton' })}
@@ -217,32 +216,45 @@ const IndexPage = ({ data }) => {
               <li>
                 <a
                   target="_blank"
+                  rel="noreferrer"
                   href="https://www.creativeapplications.net/category/processing/">
                   Creative Applications
                 </a>
               </li>
               <li>
-                <a target="_blank" href="https://openprocessing.org/">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://openprocessing.org/">
                   OpenProcessing
                 </a>
               </li>
               <li>
-                <a target="_blank" href="https://fyprocessing.tumblr.com/">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://fyprocessing.tumblr.com/">
                   For your Processing
                 </a>
               </li>
               <li>
-                <a target="_blank" href="https://www.reddit.com/r/processing/">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://www.reddit.com/r/processing/">
                   Processing Subreddit
                 </a>
               </li>
               <li>
-                <a target="_blank" href="https://vimeo.com/groups/processing">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://vimeo.com/groups/processing">
                   Vimeo
                 </a>
               </li>
               <li>
-                <a target="_blank" href="http://sketchpad.cc/">
+                <a target="_blank" rel="noreferrer" href="http://sketchpad.cc/">
                   Studio Sketchpad
                 </a>
               </li>
@@ -280,13 +292,13 @@ const IndexPage = ({ data }) => {
   );
 };
 
-const Examples = memo(({ heading, examples, locale }) => {
+const Examples = memo(({ heading, examples }) => {
   return (
     <div className={classnames(grid.grid, css.examples)}>
       <h3 className={classnames(grid.col, css.examplesHeading)}>{heading}</h3>
       {examples.map((example, i) => (
         <div className={classnames(grid.col, css.example)} key={example.path}>
-          <Link to={example.path} language={locale}>
+          <Link to={example.path}>
             <div className={css.imgContainer}>
               {example.image && (
                 <Img

@@ -146,6 +146,13 @@ async function createReference(actions, graphql) {
       })
       .map((e) => e.node.name);
 
+    const context = {
+      name,
+      relDir,
+      libraryName,
+      inUseExamples: inUseExamples
+    };
+
     if (
       refPage.node.childJson.type === 'function' ||
       refPage.node.childJson.type === 'method'
@@ -153,23 +160,13 @@ async function createReference(actions, graphql) {
       createPage({
         path: refPath,
         component: refTemplate,
-        context: {
-          name: refPage.node.name,
-          relDir,
-          libraryName,
-          inUseExamples: inUseExamples
-        }
+        context
       });
     } else if (refPage.node.childJson.type === 'class') {
       createPage({
         path: refPath,
         component: classRefTemplate,
-        context: {
-          name: refPage.node.name,
-          relDir,
-          libraryName,
-          inUseExamples: inUseExamples
-        }
+        context
       });
     } else if (
       refPage.node.childJson.type === 'field' ||
@@ -178,12 +175,7 @@ async function createReference(actions, graphql) {
       createPage({
         path: refPath,
         component: fieldRefTemplate,
-        context: {
-          name: refPage.node.name,
-          relDir,
-          libraryName,
-          inUseExamples: inUseExamples
-        }
+        context
       });
     }
   });
