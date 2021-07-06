@@ -86,7 +86,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
           useSerif
         />
         {example ? (
-          <Content showSidebar={showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             <Breadcrumbs trail={trail} />
             <h1>{example.title}</h1>
             {example.author && (
