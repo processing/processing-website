@@ -6,7 +6,7 @@ import { truncate } from '../utils';
 
 export const HeadMatter = ({
   title,
-  description = '',
+  description,
   img,
   twitterType,
   ogType
@@ -23,7 +23,7 @@ export const HeadMatter = ({
 
   const location = useLocation();
   const shortDescription = truncate(
-    description.replace(/\s+/g, ' '),
+    description ? description.replace(/\s+/g, ' ') : '',
     200
   ).trim();
   const imgUrl = /^http/.test(img) ? img : data.site.siteMetadata.siteUrl + img;

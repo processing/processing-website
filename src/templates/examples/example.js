@@ -75,8 +75,8 @@ const ExampleTemplate = ({ data, pageContext }) => {
   return (
     <Layout withSidebar withBreadcrumbs>
       <HeadMatter
-        title={`${example.title} / ${intl.formatMessage({ id: 'examples' })}`}
-        description={example.description}
+        title={`${example?.title} / ${intl.formatMessage({ id: 'examples' })}`}
+        description={example?.description}
         img={image?.childImageSharp.fluid.src}
       />
       <Helmet>

@@ -63,11 +63,11 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
     <Layout withSidebar withBreadcrumbs>
       <HeadMatter
         title={
-          data.en.childJson.name + ' / ' + isProcessing
+          (entry?.name ?? data.en.childJson.name) + ' / ' + isProcessing
             ? intl.formatMessage({ id: 'reference' })
             : intl.formatMessage({ id: 'libraries' })
         }
-        description={entry.description}
+        description={entry?.description}
         img={data.images.edges[0]?.node.childImageSharp.fluid.src}
       />
 
