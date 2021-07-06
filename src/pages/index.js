@@ -279,7 +279,7 @@ const IndexPage = ({ data }) => {
                         <Img
                           className={css.img}
                           fluid={data[Logo].childImageSharp.fluid}
-                          alt="NYU ITP logo"
+                          alt={name}
                         />
                       ) : (
                         <Logo />

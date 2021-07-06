@@ -1,4 +1,6 @@
-<svg width="500" height="111" viewBox="0 0 500 111" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="500" height="111" viewBox="0 0 500 111" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" labelledBy="dsi-name">
+  <title id="dsi-name">Design Systems International</title>
+
 <g clip-path="url(#clip0)">
 <path d="M38.4098 0H0V55.5H38.4098V0Z" fill="#F1F1F1" stroke="#F1F1F1"/>
 <path d="M19.336 13.858V43.03H22.196V13.858H33.064V11.262H8.38V13.858H19.336Z" fill="black"/>
