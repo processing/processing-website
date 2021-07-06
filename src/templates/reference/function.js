@@ -82,7 +82,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           <Content sidebarOpen={showSidebar}>
             <Breadcrumbs trail={trail} />
             <Section short title={intl.formatMessage({ id: 'name' })}>
-              <h3>{entry.name} FUNC FUNC</h3>
+              <h3>{entry.name}</h3>
             </Section>
             {entry?.classanchor && (
               <Section title={intl.formatMessage({ id: 'class' })}>

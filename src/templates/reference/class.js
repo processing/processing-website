@@ -74,7 +74,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
           <Content sidebarOpen={showSidebar}>
             <Breadcrumbs trail={trail} />
             <Section title={intl.formatMessage({ id: 'className' })}>
-              <h3>{entry.name} CLASS</h3>
+              <h3>{entry.name}</h3>
             </Section>
             <Section title={intl.formatMessage({ id: 'description' })}>
               <p
