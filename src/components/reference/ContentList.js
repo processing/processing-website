@@ -13,7 +13,7 @@ export const CodeList = memo(
   ({ items, variant, nameIsHtml, descriptionIsHtml }) => {
     return (
       <ul className={classnames(css.codeList, css[variant])}>
-        {items.map((item) => {
+        {items.map((item, i) => {
           // Name
           if (item.name === '' || typeof item !== 'object') {
             return null;
@@ -49,7 +49,7 @@ export const CodeList = memo(
           );
 
           return (
-            <li key={`ril-${item.name}`} className={css.item}>
+            <li key={`ril-${item.name}-${i}`} className={css.item}>
               {name}
               {type}
               {description}
