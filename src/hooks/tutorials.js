@@ -26,6 +26,7 @@ export const usePreparedTutorials = (tutorials) => {
 **/
 export const useTrail = () => {
   const intl = useIntl();
+
   return useMemo(() => {
     return [
       intl.formatMessage({ id: 'learn' }),

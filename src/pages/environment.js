@@ -17,7 +17,7 @@ import css from '../styles/pages/page.module.css';
 import grid from '../styles/grid.module.css';
 
 const Environment = ({ data }) => {
-  const [showSidebar, setShowSidebar] = useSidebar();
+  const [showSidebar, setShowSidebar] = useSidebar('environment');
   const intl = useIntl();
   useHighlight();
 
@@ -37,14 +37,14 @@ const Environment = ({ data }) => {
           show={showSidebar}
         />
         {mdx !== null ? (
-          <Content collapsed={!showSidebar} className={css.contentWrapper}>
+          <Content sidebarOpen={showSidebar} className={css.contentWrapper}>
             <h1>{mdx.frontmatter.title}</h1>
             <div className={css.content}>
               <MDXRenderer>{mdx.body}</MDXRenderer>
             </div>
           </Content>
         ) : (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             {intl.formatMessage({ id: 'notTranslated' })}
             {intl.formatMessage({ id: 'englishPage' })}
           </Content>

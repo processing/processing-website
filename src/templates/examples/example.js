@@ -34,7 +34,7 @@ if (typeof window !== 'undefined') {
 }
 
 const ExampleTemplate = ({ data, pageContext }) => {
-  const [showSidebar, setShowSidebar] = useSidebar();
+  const [showSidebar, setShowSidebar] = useSidebar('examples');
   const intl = useIntl();
 
   const { name, related } = pageContext;
@@ -86,7 +86,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
           useSerif
         />
         {example ? (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             <Breadcrumbs trail={trail} />
             <h1>{example.title}</h1>
             {example.author && (
@@ -130,7 +130,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
             </p>
           </Content>
         ) : (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             {intl.formatMessage({ id: 'notTranslated' })}
             <Link to={pageContext.slug}>
               {' '}

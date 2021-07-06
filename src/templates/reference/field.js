@@ -31,7 +31,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
   const { name, libraryName } = pageContext;
   const isProcessing = libraryName === 'processing';
 
-  const [showSidebar, setShowSidebar] = useSidebar();
+  const [showSidebar, setShowSidebar] = useSidebar('reference');
   const intl = useIntl();
   useHighlight();
 
@@ -76,7 +76,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
           show={showSidebar}
         />
         {entry ? (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             <Breadcrumbs trail={trail} />
             <Section title={intl.formatMessage({ id: 'name' })}>
               <h3>{entry.name}</h3>
@@ -124,7 +124,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
             <License />
           </Content>
         ) : (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             {intl.formatMessage({ id: 'notTranslated' })}
             <Link to={referencePath(name, libraryName)}>
               {' '}

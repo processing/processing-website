@@ -29,7 +29,7 @@ import grid from '../../styles/grid.module.css';
 const RefTemplate = ({ data, pageContext, ...props }) => {
   const { name, libraryName } = pageContext;
   const isProcessing = libraryName === 'processing';
-  const [showSidebar, setShowSidebar] = useSidebar();
+  const [showSidebar, setShowSidebar] = useSidebar('reference');
 
   const intl = useIntl();
   useHighlight();
@@ -76,7 +76,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           show={showSidebar}
         />
         {entry ? (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             <Breadcrumbs trail={trail} />
             <Section short title={intl.formatMessage({ id: 'name' })}>
               <h3>{entry.name}</h3>
@@ -139,7 +139,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
             <License />
           </Content>
         ) : (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             {intl.formatMessage({ id: 'notTranslated' })}
             <Link to={referencePath(name, libraryName)}>
               {' '}

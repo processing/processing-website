@@ -8,7 +8,7 @@ import {
 } from 'react';
 import hljs from 'highlight.js/lib/core';
 import processing from 'highlight.js/lib/languages/processing';
-import { getWin, sortObject } from '../utils';
+import { getWin, sessionStorage, sortObject } from '../utils';
 
 hljs.registerLanguage('processing', processing);
 
@@ -247,20 +247,49 @@ export const useIntersect = (root, rootMargin, threshold = 0) => {
 };
 
 /**
-  Hook to handle sidebar functionality. Hides sidebar as default but shows
-  it when the page renders in the browser if the screen is wider than 960.
-  We cannot do this on initial render since that is done SSR where there
-  is not window width.
+  Hook to handle sidebar functionality.
+  - Set as null  as default but shows it when the page renders
+    in the browser if the screen is wider than 960.
+  - If state is set externally, persist with sessionStorage
 **/
-export const useSidebar = (showDefault = false) => {
-  const [showSidebar, setShowSidebar] = useState(showDefault);
 
-  useEffect(() => {
-    const [winWidth] = getWin();
-    if (winWidth > 960) {
-      setShowSidebar(true);
+// this is only true on the first load
+let firstRun = true;
+
+export const useSidebar = (_key = '') => {
+  const key = `showSidebar-${_key}`;
+
+  // check if the sidebar shouold be shown
+  // based on window width or user preference
+  // returns null if running on the server
+  // or for the very first time in the browser
+  const shouldShowSidebar = useCallback((key) => {
+    if (firstRun) {
+      firstRun = false;
+      return null;
     }
+    const [winWidth] = getWin();
+    const isMobile = winWidth < 960;
+    const isHidden = sessionStorage && sessionStorage.getItem(key) === 'false';
+    return !(isMobile || isHidden);
   }, []);
 
-  return [showSidebar, setShowSidebar];
+  const [showSidebar, setShowSidebar] = useState(shouldShowSidebar(key));
+
+  useEffect(() => {
+    setShowSidebar(shouldShowSidebar(key));
+  }, [key, shouldShowSidebar]);
+
+  // Make function that both updates the sidebar and saves to sessionStorage
+  const setShowSidebarMemo = useCallback(
+    (value) => {
+      if (window.sessionStorage) {
+        sessionStorage.setItem(key, value);
+      }
+      setShowSidebar(value);
+    },
+    [key, setShowSidebar]
+  );
+
+  return [showSidebar, setShowSidebarMemo];
 };

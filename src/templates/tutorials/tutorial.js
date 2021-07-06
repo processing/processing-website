@@ -19,9 +19,7 @@ import grid from '../../styles/grid.module.css';
 
 const TutorialTemplate = ({ data, pageContext }) => {
   const { mdx } = data;
-  const [showSidebar, setShowSidebar] = useSidebar(
-    !!mdx?.tableOfContents?.items ? undefined : true
-  );
+  const [showSidebar, setShowSidebar] = useSidebar('tutorials');
   const intl = useIntl();
   useHighlight();
 
@@ -44,7 +42,7 @@ const TutorialTemplate = ({ data, pageContext }) => {
           />
         )}
         {mdx !== null ? (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             <Breadcrumbs trail={trail} />
             <h1>{mdx.frontmatter.title}</h1>
             <p className={css.author}>{`${intl.formatMessage({ id: 'by' })} ${
@@ -55,7 +53,7 @@ const TutorialTemplate = ({ data, pageContext }) => {
             </div>
           </Content>
         ) : (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             {intl.formatMessage({ id: 'notTranslated' })}
             <Link to={pageContext.slug}>
               {' '}

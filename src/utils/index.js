@@ -48,6 +48,7 @@ export const map = (n, start1, stop1, start2, stop2) => {
 };
 
 export const getWin = () => {
+  if (typeof window == 'undefined') return [null, null];
   return [window.innerWidth, window.innerHeight];
 };
 
@@ -74,6 +75,18 @@ export const linkParsing = (str) => {
   }
   return str.replace(/\[([^\]]*)\]\(([^)]*)\)/g, '<a href="$2">$1</a>');
 };
+
+/**
+  Gets sessionStorage if available without failing in the server
+**/
+export const sessionStorage =
+  typeof window !== 'undefined' ? window.sessionStorage : null;
+
+/**
+    Gets localStorage if available without failing in the server
+  **/
+export const localStorage =
+  typeof window !== 'undefined' ? window.localStorage : null;
 
 /**
   Returns a copy of the object with the keys sorted based on the array provided.
