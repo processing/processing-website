@@ -7,7 +7,7 @@
   "returns": "boolean[], byte[], char[], int[], float[], String[], or Object",
   "type": "function",
   "category": "data",
-  "subcategory": "array_functions",
+  "subcategory": "array functions",
   "parameters": [
     {
       "name": "a",

@@ -3,7 +3,7 @@
   "related": ["Client", "Server"],
   "name": "disconnectEvent()",
   "description": "This function is called when a client disconnects.",
-  "syntax": ["void disconnectEvent(client) {\r","  statements\r", "}\r"],
+  "syntax": ["void disconnectEvent(client) {\r", "  statements\r", "}\r"],
   "returns": "",
   "type": "function",
   "category": "NetworkEvents",

@@ -7,7 +7,7 @@
   "returns": "byte[], char[], int[], float[], or String[]",
   "type": "function",
   "category": "data",
-  "subcategory": "array_functions",
+  "subcategory": "array functions",
   "parameters": [
     {
       "name": "list",

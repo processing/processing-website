@@ -7,6 +7,6 @@
   "returns": "int",
   "type": "function",
   "category": "input",
-  "subcategory": "time_date",
+  "subcategory": "time date",
   "parameters": []
 }

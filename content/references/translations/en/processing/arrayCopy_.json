@@ -11,7 +11,7 @@
   "returns": "void",
   "type": "function",
   "category": "data",
-  "subcategory": "array_functions",
+  "subcategory": "array functions",
   "parameters": [
     { "name": "src", "description": "the source array", "type": ["Object"] },
     {

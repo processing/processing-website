@@ -7,7 +7,7 @@
   "returns": "int",
   "type": "method",
   "category": "color",
-  "subcategory": "creating_reading",
+  "subcategory": "creating & reading",
   "classanchor": "PImage",
   "parameters": [
     {
