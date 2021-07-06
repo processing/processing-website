@@ -282,7 +282,7 @@ export const useSidebar = (_key = '') => {
 
   // Make function that both updates the sidebar and saves to sessionStorage
   const setShowSidebarMemo = useCallback(
-    (v) => {
+    (value) => {
       if (window.sessionStorage) {
         sessionStorage.setItem(key, value);
       }

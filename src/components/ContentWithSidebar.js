@@ -1,4 +1,4 @@
-import React, { memo, useState, useEffect } from 'react';
+import React, { memo } from 'react';
 import classnames from 'classnames';
 
 import css from './ContentWithSidebar.module.css';
@@ -10,8 +10,9 @@ import grid from '../styles/grid.module.css';
 **/
 
 const Content = ({ children, sidebarOpen, className }) => {
-  if (sidebarOpen == null)
+  if (sidebarOpen === null) {
     return <div key="placeholder" className={css.root} />;
+  }
   return (
     <div
       key="root"
