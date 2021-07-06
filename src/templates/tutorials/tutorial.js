@@ -28,9 +28,9 @@ const TutorialTemplate = ({ data, pageContext }) => {
   return (
     <Layout withSidebar withBreadcrumbs>
       <HeadMatter
-        title={mdx.frontmatter.title}
-        description={mdx.frontmatter.intro}
-        img={mdx.frontmatter.coverImage?.childImageSharp.fluid.src}
+        title={mdx?.frontmatter.title}
+        description={mdx?.frontmatter.intro}
+        img={mdx?.frontmatter.coverImage?.childImageSharp.fluid.src}
       />
 
       <div className={classnames(grid.grid, css.root)}>

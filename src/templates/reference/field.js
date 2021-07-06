@@ -59,8 +59,10 @@ const FieldRefTemplate = ({ data, pageContext }) => {
 
   const title =
     (data.en.childJson.classanchor
-      ? `${data.en.childJson.classanchor}::${data.en.childJson.name}`
-      : data.en.childJson.name) +
+      ? `${entry?.classanchor ?? data.en.childJson.classanchor}::${
+          entry?.name ?? data.en.childJson.name
+        }`
+      : entry?.name ?? data.en.childJson.name) +
     ' / ' +
     (isProcessing
       ? intl.formatMessage({ id: 'reference' })
@@ -70,7 +72,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
     <Layout withSidebar withBreadcrumbs>
       <HeadMatter
         title={title}
-        description={entry.description}
+        description={entry?.description}
         img={data.images.edges[0]?.node.childImageSharp.fluid.src}
       />
 

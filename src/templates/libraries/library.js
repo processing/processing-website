@@ -28,7 +28,7 @@ const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
         title={`${intl.formatMessage({
           id: libraryName
         })} / ${intl.formatMessage({ id: 'libraries' })}`}
-        description={data.mdx.frontmatter.description}
+        description={data.mdx?.frontmatter.description}
       />
       {data.mdx !== null ? (
         <div className={classnames(grid.grid, css.root)}>
