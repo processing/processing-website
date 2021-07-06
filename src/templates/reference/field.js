@@ -1,8 +1,9 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import { useIntl } from 'react-intl';
+
+import HeadMatter from '../../components/HeadMatter';
 
 import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
@@ -56,20 +57,23 @@ const FieldRefTemplate = ({ data, pageContext }) => {
     entry?.classanchor
   );
 
-  const title = data.en.childJson.classanchor
-    ? `${data.en.childJson.classanchor}::${data.en.childJson.name}`
-    : data.en.childJson.name;
+  const title =
+    (data.en.childJson.classanchor
+      ? `${data.en.childJson.classanchor}::${data.en.childJson.name}`
+      : data.en.childJson.name) +
+    ' / ' +
+    (isProcessing
+      ? intl.formatMessage({ id: 'reference' })
+      : intl.formatMessage({ id: 'libraries' }));
 
   return (
     <Layout withSidebar withBreadcrumbs>
-      <Helmet>
-        <title>
-          {title} /
-          {isProcessing
-            ? intl.formatMessage({ id: 'reference' })
-            : intl.formatMessage({ id: 'libraries' })}
-        </title>
-      </Helmet>
+      <HeadMatter
+        title={title}
+        description={entry.description}
+        img={data.images.edges[0]?.node.childImageSharp.fluid.src}
+      />
+
       <div className={grid.grid}>
         <SidebarTree
           title={intl.formatMessage({ id: 'reference' })}

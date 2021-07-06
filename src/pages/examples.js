@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 
-import Donate from '../components/character/Donate';
+import HeadMatter from '../components/HeadMatter';
 import Layout from '../components/Layout';
+import Donate from '../components/character/Donate';
 import FilterBar from '../components/FilterBar';
 import ExamplesList from '../components/examples/ExamplesList';
 
@@ -25,9 +25,10 @@ const Examples = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Examples</title>
-      </Helmet>
+      <HeadMatter
+        title={intl.formatMessage({ id: 'examples' })}
+        description={intl.formatMessage({ id: 'examplesIntro' })}
+      />
       <div className={classnames(grid.container, grid.grid)}>
         <Donate />
         <div className={classnames(grid.col, css.text)}>

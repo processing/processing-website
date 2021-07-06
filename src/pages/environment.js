@@ -1,10 +1,10 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { useIntl } from 'react-intl';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import classnames from 'classnames';
 
+import HeadMatter from '../components/HeadMatter';
 import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
 import Content from '../components/ContentWithSidebar';
@@ -25,9 +25,11 @@ const Environment = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Environment</title>
-      </Helmet>
+      <HeadMatter
+        title={intl.formatMessage({ id: 'environment' })}
+        description={mdx.frontmatter.description}
+      />
+
       <div className={classnames(grid.grid, css.root)}>
         <Donate />
         <SidebarTableOfContents
@@ -64,6 +66,7 @@ export const query = graphql`
       frontmatter {
         slug
         title
+        description
       }
       tableOfContents
     }

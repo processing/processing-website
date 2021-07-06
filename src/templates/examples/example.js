@@ -7,6 +7,7 @@ import { useIntl } from 'react-intl';
 import Img from 'gatsby-image';
 import p5 from 'p5';
 
+import HeadMatter from '../../components/HeadMatter';
 import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
 import { SidebarTree } from '../../components/Sidebar';
@@ -73,8 +74,12 @@ const ExampleTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout withSidebar withBreadcrumbs>
+      <HeadMatter
+        title={`${example.title} / ${intl.formatMessage({ id: 'examples' })}`}
+        description={example.description}
+        img={image?.childImageSharp.fluid.src}
+      />
       <Helmet>
-        {example && <title>{example.title}</title>}
         {liveSketch && <script>{`${liveSketch.childRawCode.content}`}</script>}
       </Helmet>
       <div className={grid.grid}>

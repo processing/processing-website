@@ -1,11 +1,11 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
+import HeadMatter from '../../components/HeadMatter';
 import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
 import { SidebarTableOfContents } from '../../components/Sidebar';
@@ -27,11 +27,12 @@ const TutorialTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout withSidebar withBreadcrumbs>
-      <Helmet>
-        {mdx?.frontmatter?.title && (
-          <title>{mdx.frontmatter.title} / Tutorial</title>
-        )}
-      </Helmet>
+      <HeadMatter
+        title={mdx.frontmatter.title}
+        description={mdx.frontmatter.intro}
+        img={mdx.frontmatter.coverImage?.childImageSharp.fluid.src}
+      />
+
       <div className={classnames(grid.grid, css.root)}>
         {mdx?.tableOfContents?.items && (
           <SidebarTableOfContents
@@ -80,6 +81,14 @@ export const query = graphql`
         slug
         author
         level
+        intro
+        coverImage {
+          childImageSharp {
+            fluid(maxWidth: 600) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
       tableOfContents
     }

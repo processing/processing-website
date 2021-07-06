@@ -1,10 +1,10 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
 import { graphql, Link } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { useIntl } from 'react-intl';
 
+import HeadMatter from '../components/HeadMatter';
 import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
 
@@ -16,9 +16,10 @@ const People = ({ data, pageContext }) => {
   const intl = useIntl();
   return (
     <Layout>
-      <Helmet>
-        <title>{intl.formatMessage({ id: 'people' })}</title>
-      </Helmet>
+      <HeadMatter
+        title={intl.formatMessage({ id: 'people' })}
+        description={intl.formatMessage({ id: 'peopleIntro' })}
+      />
       <div className={classnames(grid.grid, grid.container, css.root)}>
         {mdx ? (
           <>
