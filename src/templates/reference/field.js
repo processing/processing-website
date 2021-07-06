@@ -27,9 +27,11 @@ import { referencePath } from '../../utils/paths';
 import grid from '../../styles/grid.module.css';
 
 const FieldRefTemplate = ({ data, pageContext }) => {
-  const entry = data?.json?.childJson;
   const { name, libraryName } = pageContext;
   const isProcessing = libraryName === 'processing';
+
+  const parent = data?.parent?.childJson;
+  const entry = data?.json?.childJson;
 
   const [showSidebar, setShowSidebar] = useSidebar('reference');
   const intl = useIntl();
@@ -49,8 +51,8 @@ const FieldRefTemplate = ({ data, pageContext }) => {
 
   const trail = useTrail(
     libraryName,
-    entry?.category,
-    entry?.subcategory,
+    parent ? parent.category : entry?.category,
+    parent ? parent.subcategory : entry?.subcategory,
     entry?.classanchor
   );
 
@@ -146,6 +148,8 @@ export const query = graphql`
     $locale: String!
     $inUseExamples: [String!]!
     $libraryName: String!
+    $hasClassanchor: Boolean!
+    $classanchor: String
   ) {
     json: file(fields: { name: { eq: $name }, lang: { eq: $locale } }) {
       childJson {
@@ -168,6 +172,14 @@ export const query = graphql`
       childJson {
         name
         classanchor
+      }
+    }
+    parent: file(fields: { name: { eq: $classanchor }, lang: { eq: "en" } })
+      @include(if: $hasClassanchor) {
+      childJson {
+        name
+        category
+        subcategory
       }
     }
     images: allFile(
