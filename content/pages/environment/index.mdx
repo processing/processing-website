@@ -1,6 +1,8 @@
 ---
-slug: '/environment'
-title: 'Environment (IDE)'
+slug: "/environment"
+title: "Environment (IDE)"
+description: >
+  The Processing Environment includes a text editor, a compiler, and a display window. It enables the creation of software within a carefully designed set of constraints.
 ---
 
 <Intro>
@@ -31,14 +33,12 @@ The buttons on the toolbar can run and stop programs,
 
 <dl>
 <dt>
-  
-<FixedImage inline marginRight={30} width={40}>
 
+<FixedImage inline marginRight={30} width={40}>
 
 ![Play button](./play.png)
 
 </FixedImage>
-
 
 <b>Run</b>
 </dt>
@@ -47,17 +47,14 @@ The buttons on the toolbar can run and stop programs,
 
 <FixedImage inline marginRight={30} width={40}>
 
-
 ![Stop button](./stop.png)
 
 </FixedImage>
-
 
 <b>Stop</b>
 </dt>
 <dd>Terminates a running sketch.</dd>
 </dl>
-
 
 Additional commands are found within the six menus: File, Edit, Sketch, Debug, Tools, Help. The menus are context sensitive which means only those items relevant to the work currently being carried out are available.
 
@@ -467,7 +464,6 @@ The arrow button to the right of the tabs in the Processing Development Environm
 
 <HighlightBlock>
 
-
 _Advanced_
 
 When a program with multiple tabs is run, the code is grouped together and the classes in other tabs become inner classes. Because they're inner classes, they cannot have static variables. Simply place the "static" variable outside the class itself to do the same thing (it need not be explicitly named "static" once you list it in this manner). If you don't want code to be an inner class, you can also create a tab with a ".java" suffix, which means it will be interpreted as straight java code. It is also not possible to use static classes in separate tabs. If you do this, however, you'll need to pass the PApplet object to that object in that tab in order to get PApplet functions like `line()`, `loadStrings()` or `saveFrame()` to work.
@@ -491,7 +487,6 @@ Processing has different _programming modes_ to make it possible to deploy sketc
 This mode makes it possible to write short programs to draw to the screen, but also enables complex Java programs as well. It can be used simply by beginners, but it scales to professional Java software development. Sketches written in this mode can be exported as Java Applications to run on Linux, Mac OS X, and Windows operating systems.
 
 <HighlightBlock>
-
 
 _Advanced_
 

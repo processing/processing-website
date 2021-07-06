@@ -1,9 +1,10 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import { useIntl } from 'react-intl';
 import { widont } from '../../utils/index.js';
+
+import HeadMatter from '../../components/HeadMatter';
 
 import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
@@ -47,20 +48,21 @@ const ClassRefTemplate = ({ data, pageContext }) => {
     pageContext.inUseExamples,
     data.inUseImages
   );
-
+  console.log(data.images.edges);
   const trail = useTrail(libraryName, entry?.category, entry?.subcategory);
 
   return (
     <Layout withSidebar withBreadcrumbs>
-      <Helmet>
-        <title>
-          {data.en.childJson.name}
-          {' / '}
-          {isProcessing
+      <HeadMatter
+        title={
+          data.en.childJson.name + ' / ' + isProcessing
             ? intl.formatMessage({ id: 'reference' })
-            : intl.formatMessage({ id: 'libraries' })}
-        </title>
-      </Helmet>
+            : intl.formatMessage({ id: 'libraries' })
+        }
+        description={entry.description}
+        img={data.images.edges[0]?.node.childImageSharp.fluid.src}
+      />
+
       <div className={grid.grid}>
         <SidebarTree
           title={intl.formatMessage({ id: 'reference' })}
@@ -72,7 +74,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
           <Content sidebarOpen={showSidebar}>
             <Breadcrumbs trail={trail} />
             <Section title={intl.formatMessage({ id: 'className' })}>
-              <h3>{entry.name}</h3>
+              <h3>{entry.name} CLASS</h3>
             </Section>
             <Section title={intl.formatMessage({ id: 'description' })}>
               <p

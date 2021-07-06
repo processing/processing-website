@@ -1,11 +1,11 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { useIntl } from 'react-intl';
 
+import HeadMatter from '../components/HeadMatter';
 import Layout from '../components/Layout';
 
 import { usePreparedBooks } from '../hooks/books';
@@ -19,11 +19,12 @@ const Books = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Books</title>
-      </Helmet>
+      <HeadMatter
+        title={intl.formatMessage({ id: 'books' })}
+        description={intl.formatMessage({ id: 'booksIntro' })}
+      />
       <div className={classnames(grid.grid, grid.container, css.root)}>
-        <h1 className={grid.col}>Books</h1>
+        <h1 className={grid.col}>{intl.formatMessage({ id: 'books' })}</h1>
         <h3 className={grid.col}>{intl.formatMessage({ id: 'booksIntro' })}</h3>
         <ul className={classnames(grid.col, grid.grid, css.booksList)}>
           {books.map((book, i) => {

@@ -120,3 +120,40 @@ export const sortArray = (arr, order, key) => {
     return aidx - bidx;
   });
 };
+
+// taken from https://www.npmjs.com/package/truncate
+export const truncate = (string, maxLength) => {
+  const URL_REGEX = /(((ftp|https?):\/\/)[-\w@:%_+.~#?,&//=]+)|((mailto:)?[_.\w-]{1,300}@(.{1,300}\.)[a-zA-Z]{2,3})/g;
+
+  let content = '', // truncated text storage
+    matches = true,
+    remainingLength = maxLength,
+    result,
+    index;
+
+  if (!string || string.length === 0) {
+    return '';
+  }
+
+  matches = true;
+  while (matches) {
+    URL_REGEX.lastIndex = content.length;
+    matches = URL_REGEX.exec(string);
+
+    if (!matches || matches.index - content.length >= remainingLength) {
+      content += string.substring(content.length, maxLength);
+      break;
+    }
+
+    result = matches[0];
+    index = matches.index;
+    content += string.substring(content.length, index + result.length);
+    remainingLength -= index + result.length;
+
+    if (remainingLength <= 0) {
+      break;
+    }
+  }
+
+  return string.length === content.length ? content : content + '…';
+};

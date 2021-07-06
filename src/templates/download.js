@@ -1,8 +1,9 @@
 import React, { memo } from 'react';
 import { navigate, graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
+
+import HeadMatter from '../components/HeadMatter';
 
 import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
@@ -30,9 +31,11 @@ const Download = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Download</title>
-      </Helmet>
+      <HeadMatter
+        title={intl.formatMessage({ id: 'download' })}
+        description={intl.formatMessage({ id: 'downloadIntro' })}
+      />
+
       <div className={classnames(grid.container, grid.grid)}>
         <div className={classnames(grid.col, css.content)}>
           <Donate />

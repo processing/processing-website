@@ -1,11 +1,11 @@
 import React, { memo, useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import Img from 'gatsby-image';
 
+import HeadMatter from '../components/HeadMatter';
 import Layout from '../components/Layout';
 import Button from '../components/Button';
 import Card from '../components/Card';
@@ -65,9 +65,10 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout mainClassName={css.main}>
-      <Helmet>
-        <title>Welcome to Processing!</title>
-      </Helmet>
+      <HeadMatter
+        title={intl.formatMessage({ id: 'introTitle' })}
+        description={intl.formatMessage({ id: 'introText' })}
+      />
       <Sketch>
         <div className={css.hero}>
           <h1>{intl.formatMessage({ id: 'introTitle' })}</h1>

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
+
+import HeadMatter from '../components/HeadMatter';
 
 import Shortcuts from '../components/Shortcuts';
 import Donate from '../components/character/Donate';
@@ -79,12 +80,14 @@ const Reference = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Reference</title>
-      </Helmet>
+      <HeadMatter
+        title={intl.formatMessage({ id: 'reference' })}
+        description={intl.formatMessage({ id: 'cardReferenceDescription' })}
+      />
+
       <div className={classnames(grid.container, grid.grid)}>
         <h1 className={classnames(grid.col, css.heading)}>
-          {intl.formatMessage({ id: 'references' })}
+          {intl.formatMessage({ id: 'reference' })}
         </h1>
         <Donate />
         <div className={classnames(grid.col, css.filter)}>

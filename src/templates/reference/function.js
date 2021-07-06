@@ -1,8 +1,9 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import { useIntl } from 'react-intl';
+
+import HeadMatter from '../../components/HeadMatter';
 
 import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
@@ -60,15 +61,16 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
 
   return (
     <Layout withSidebar withBreadcrumbs>
-      <Helmet>
-        <title>
-          {data.en.childJson.name}
-          {' / '}
-          {isProcessing
+      <HeadMatter
+        title={
+          data.en.childJson.name + ' / ' + isProcessing
             ? intl.formatMessage({ id: 'reference' })
-            : intl.formatMessage({ id: 'libraries' })}
-        </title>
-      </Helmet>
+            : intl.formatMessage({ id: 'libraries' })
+        }
+        description={entry.description}
+        img={data.images.edges[0]?.node.childImageSharp.fluid.src}
+      />
+
       <div className={grid.grid}>
         <SidebarTree
           title={intl.formatMessage({ id: 'reference' })}
@@ -80,11 +82,11 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           <Content sidebarOpen={showSidebar}>
             <Breadcrumbs trail={trail} />
             <Section short title={intl.formatMessage({ id: 'name' })}>
-              <h3>{entry.name}</h3>
+              <h3>{entry.name} FUNC FUNC</h3>
             </Section>
             {entry?.classanchor && (
               <Section title={intl.formatMessage({ id: 'class' })}>
-                <h4>{entry.classanchor}</h4>
+                <h4>{entry.classanchor} </h4>
               </Section>
             )}
             <Section title={intl.formatMessage({ id: 'description' })}>

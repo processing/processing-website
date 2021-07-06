@@ -35,7 +35,7 @@
   padding: 4px 0;
   border-left: solid 3px var(--lightgray);
   list-style: none;
-
+  flex-wrap: nowrap;
   &:hover {
     background-color: var(--lightgray);
   }
@@ -52,6 +52,7 @@
   font-variant-ligatures: no-common-ligatures;
   text-decoration: none;
   color: var(--processing-blue-dark);
+  white-space: nowrap;
 }
 
 .itemBrief {

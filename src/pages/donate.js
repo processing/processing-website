@@ -1,8 +1,8 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 
+import HeadMatter from '../components/HeadMatter';
 import Layout from '../components/Layout';
 import Character from '../components/character/Character';
 
@@ -14,9 +14,10 @@ const Donate = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>{intl.formatMessage({ id: 'donate' })}</title>
-      </Helmet>
+      <HeadMatter
+        title={intl.formatMessage({ id: 'donate' })}
+        description={intl.formatMessage({ id: 'donateIntro' })}
+      />
       <div className={classnames(grid.grid, grid.container, css.root)}>
         <div className={classnames(grid.col, css.left)}>
           <h1>{intl.formatMessage({ id: 'donate' })}</h1>

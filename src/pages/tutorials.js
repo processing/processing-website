@@ -1,11 +1,11 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 
+import HeadMatter from '../components/HeadMatter';
 import Layout from '../components/Layout';
 
 import { usePreparedTutorials } from '../hooks/tutorials';
@@ -20,9 +20,11 @@ const Tutorials = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Tutorials</title>
-      </Helmet>
+      <HeadMatter
+        title={intl.formatMessage({ id: 'tutorials' })}
+        description={intl.formatMessage({ id: 'videoTutorialsIntro' })}
+      />
+
       <div className={classnames(grid.container, grid.grid, css.root)}>
         <div className={classnames(grid.col, css.text)}>
           <h1>{intl.formatMessage({ id: 'tutorials' })}</h1>
