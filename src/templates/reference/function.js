@@ -34,11 +34,12 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
   const intl = useIntl();
   useHighlight();
 
+  const parent = data?.parent?.childJson;
+  const entry = data?.json?.childJson;
+
   const items = usePreparedItems(data.items.nodes, libraryName);
   const examples = usePreparedExamples(data.pdes.edges, data.images.edges);
   const tree = useTree(items);
-
-  const entry = data?.json?.childJson;
 
   const inUse = usePreparedList(entry?.inUse, libraryName, true, true);
   const parameters = usePreparedList(entry?.parameters, libraryName);
@@ -52,8 +53,8 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
 
   const trail = useTrail(
     libraryName,
-    entry?.category,
-    entry?.subcategory,
+    parent ? parent.category : entry?.category,
+    parent ? parent.subcategory : entry?.subcategory,
     entry?.classanchor
   );
 
@@ -161,6 +162,7 @@ export const query = graphql`
     $locale: String!
     $inUseExamples: [String!]!
     $libraryName: String!
+    $classanchor: String
   ) {
     json: file(fields: { name: { eq: $name }, lang: { eq: $locale } }) {
       childJson {
@@ -182,6 +184,13 @@ export const query = graphql`
     en: file(fields: { name: { eq: $name }, lang: { eq: "en" } }) {
       childJson {
         name
+      }
+    }
+    parent: file(fields: { name: { eq: $classanchor }, lang: { eq: "en" } }) {
+      childJson {
+        name
+        category
+        subcategory
       }
     }
     images: allFile(

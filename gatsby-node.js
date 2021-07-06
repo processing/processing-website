@@ -87,6 +87,7 @@ async function createReference(actions, graphql) {
               relativeDirectory
               childJson {
                 type
+                classanchor
               }
             }
           }
@@ -133,6 +134,7 @@ async function createReference(actions, graphql) {
     const [lang, libraryName] = refPage.node.relativeDirectory.split('/');
     const refPath = referencePath(name, libraryName, lang);
     const relDir = libraryName + '/' + name;
+    const { type, classanchor } = refPage.node.childJson;
 
     const inUseExamples = inUse.data.allFile.edges
       .filter((n) => {
@@ -153,25 +155,24 @@ async function createReference(actions, graphql) {
       inUseExamples: inUseExamples
     };
 
-    if (
-      refPage.node.childJson.type === 'function' ||
-      refPage.node.childJson.type === 'method'
-    ) {
+    // Used to load category and subcategory from class parent for breadcrumbs
+    if (type === 'method' || type === 'field') {
+      context.classanchor = classanchor;
+    }
+
+    if (type === 'function' || type === 'method') {
       createPage({
         path: refPath,
         component: refTemplate,
         context
       });
-    } else if (refPage.node.childJson.type === 'class') {
+    } else if (type === 'class') {
       createPage({
         path: refPath,
         component: classRefTemplate,
         context
       });
-    } else if (
-      refPage.node.childJson.type === 'field' ||
-      refPage.node.childJson.type === 'other'
-    ) {
+    } else if (type === 'field' || type === 'other') {
       createPage({
         path: refPath,
         component: fieldRefTemplate,
