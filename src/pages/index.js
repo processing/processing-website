@@ -17,6 +17,37 @@ import { usePreparedExamples } from '../hooks/examples';
 import css from '../styles/pages/index.module.css';
 import grid from '../styles/grid.module.css';
 
+import DSILogo from '../images/partners/designsystemsinternational.svg';
+import DMALogo from '../images/partners/ucla-dma.svg';
+import FathomLogo from '../images/partners/fathom.svg';
+
+const partners = [
+  {
+    name: 'UCLA Design Media Arts',
+    url: 'http://dma.ucla.edu/',
+    width: '18%',
+    Logo: DMALogo
+  },
+  {
+    name: 'NYU ITP',
+    url: 'https://tisch.nyu.edu/',
+    width: '20%',
+    Logo: 'itp'
+  },
+  {
+    name: 'Fathom',
+    url: 'https://fathom.info/',
+    width: '29%',
+    Logo: FathomLogo
+  },
+  {
+    name: 'Design Systems International',
+    url: 'https://designsystems.international/',
+    width: '33%',
+    Logo: DSILogo
+  }
+];
+
 const IndexPage = ({ data }) => {
   const intl = useIntl();
   const featuredExamples = usePreparedExamples(
@@ -229,45 +260,33 @@ const IndexPage = ({ data }) => {
               </li>
             </ul>
           </div>
-          <div className={classnames(grid.col, css.partnersContainer)}>
+          <div className={classnames(grid.col, css.partners)}>
             <h2>{intl.formatMessage({ id: 'partners' })}</h2>
-            <ul className={css.partners}>
-              <li>
-                <div>
-                  <img
-                    src={data.fathom.childImageSharp.fluid.src}
-                    alt="Fathom logo"
-                  />
-                </div>
-                <p>Fathom</p>
-              </li>
-              <li>
-                <div>
-                  <img
-                    src={data.itp.childImageSharp.fluid.src}
-                    alt="ITP NYU logo"
-                  />
-                </div>
-                <p>ITP NYU</p>
-              </li>
-              <li>
-                <div>
-                  <img
-                    src={data.ucla.childImageSharp.fluid.src}
-                    alt="UCLA Design Media Arts logo"
-                  />
-                </div>
-                <p>UCLA Design Media Arts</p>
-              </li>
-              <li>
-                <div>
-                  <img
-                    src={data.dsi.childImageSharp.fluid.src}
-                    alt="Design Systems International logo"
-                  />
-                </div>
-                <p>Design Systems International</p>
-              </li>
+            <ul className={css.partnersList}>
+              {partners.map(({ name, url, width, Logo }, i) => {
+                return (
+                  <li
+                    key={`partner-${i}`}
+                    className={css.partner}
+                    style={{ flexBasis: width }}>
+                    <a
+                      className={css.logo}
+                      href={url}
+                      target="_blank"
+                      rel="noreferrer">
+                      {typeof Logo === 'string' ? (
+                        <Img
+                          className={css.img}
+                          fluid={data[Logo].childImageSharp.fluid}
+                          alt="NYU ITP logo"
+                        />
+                      ) : (
+                        <Logo />
+                      )}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
@@ -280,7 +299,7 @@ const Examples = memo(({ heading, examples }) => {
   return (
     <div className={classnames(grid.grid, css.examples)}>
       <h3 className={classnames(grid.col, css.examplesHeading)}>{heading}</h3>
-      {examples.map((example, i) => (
+      {examples.map((example) => (
         <div className={classnames(grid.col, css.example)} key={example.path}>
           <Link to={example.path}>
             <div className={css.imgContainer}>
@@ -394,30 +413,10 @@ export const query = graphql`
         }
       }
     }
-    fathom: file(relativePath: { eq: "fathom.png" }) {
+
+    itp: file(relativePath: { eq: "partners/nyu-itp.png" }) {
       childImageSharp {
-        fluid(maxWidth: 120, maxHeight: 120) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    itp: file(relativePath: { eq: "itp.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 150, maxHeight: 120) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    ucla: file(relativePath: { eq: "ucla.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 120, maxHeight: 120) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    dsi: file(relativePath: { eq: "designsystemsinternational.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 120, maxHeight: 120) {
+        fluid(maxWidth: 150, maxHeight: 150) {
           ...GatsbyImageSharpFluid
         }
       }
