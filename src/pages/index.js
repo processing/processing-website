@@ -37,13 +37,13 @@ const partners = [
   {
     name: 'Fathom',
     url: 'https://fathom.info/',
-    width: '28%',
+    width: '29%',
     Logo: FathomLogo
   },
   {
     name: 'Design Systems International',
     url: 'https://designsystems.international/',
-    width: '32%',
+    width: '33%',
     Logo: DSILogo
   }
 ];
@@ -265,12 +265,15 @@ const IndexPage = ({ data }) => {
             <ul className={css.partnersList}>
               {partners.map(({ name, url, width, Logo }, i) => {
                 return (
-                  <li className={css.partner} style={{ flexBasis: width }}>
+                  <li
+                    key={`partner-${i}`}
+                    className={css.partner}
+                    style={{ flexBasis: width }}>
                     <a
                       className={css.logo}
                       href={url}
                       target="_blank"
-                      rel="nofererrer">
+                      rel="noreferrer">
                       {typeof Logo === 'string' ? (
                         <Img
                           className={css.img}
@@ -296,7 +299,7 @@ const Examples = memo(({ heading, examples }) => {
   return (
     <div className={classnames(grid.grid, css.examples)}>
       <h3 className={classnames(grid.col, css.examplesHeading)}>{heading}</h3>
-      {examples.map((example, i) => (
+      {examples.map((example) => (
         <div className={classnames(grid.col, css.example)} key={example.path}>
           <Link to={example.path}>
             <div className={css.imgContainer}>
