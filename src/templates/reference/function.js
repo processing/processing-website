@@ -162,6 +162,7 @@ export const query = graphql`
     $locale: String!
     $inUseExamples: [String!]!
     $libraryName: String!
+    $hasClassanchor: Boolean!
     $classanchor: String
   ) {
     json: file(fields: { name: { eq: $name }, lang: { eq: $locale } }) {
@@ -186,7 +187,8 @@ export const query = graphql`
         name
       }
     }
-    parent: file(fields: { name: { eq: $classanchor }, lang: { eq: "en" } }) {
+    parent: file(fields: { name: { eq: $classanchor }, lang: { eq: "en" } })
+      @include(if: $hasClassanchor) {
       childJson {
         name
         category

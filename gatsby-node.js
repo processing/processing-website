@@ -152,11 +152,13 @@ async function createReference(actions, graphql) {
       name,
       relDir,
       libraryName,
-      inUseExamples: inUseExamples
+      inUseExamples: inUseExamples,
+      hasClassanchor: false
     };
 
     // Used to load category and subcategory from class parent for breadcrumbs
     if (type === 'method' || type === 'field') {
+      context.hasClassanchor = true;
       context.classanchor = classanchor;
     }
 
