@@ -2,3 +2,7 @@ node_modules
 public
 .DS_Store
 .cache
+
+package-lock.json
+
+yarn.lock
