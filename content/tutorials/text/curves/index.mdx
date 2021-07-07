@@ -1,11 +1,10 @@
 ---
-slug: "/tutorials/curves"
-title: "Curves"
-author: "J David Eisenberg"
-intro: "Learn how to draw arcs, spline curves, and bezier curves."
-level: "Intermediate"
-coverImage: curves.jpg
-order: "11"
+slug: '/tutorials/curves'
+title: 'Curves'
+author: 'J David Eisenberg'
+intro: 'Learn how to draw arcs, spline curves, and bezier curves.'
+level: 'Intermediate'
+coverImage: curves.png
 ---
 
 <Note>
@@ -29,9 +28,9 @@ angle for the arc. These angles, as with all other angles in Processing, are giv
 in radians. Remember that angles are measured clockwise, with zero degrees pointing
 east. Using the fact that `PI` radians equals 180&deg;, here are some example arcs.
 
-<FixedImage side width={210} height={132}>
+<FixedImage left width={210} >
 
-![](./arc1.png)
+![three small squares above a rectangle, all with arcs as described in the following code](./arc1.png)
 
 </FixedImage>
 
@@ -58,8 +57,8 @@ void setup() {
 
 ## Spline Curves
 
-Arcs are fine, but they're plain. The next function, `curve()`, lets you draw curves that aren't necessarily part of an arc. This function draws what is technically called a <dfn>Rom-Catmull Spline</dfn>. To draw the curve, you have to specify the (x, y) coordinates of the points where the curve starts and ends. You must also specify two <dfn>control points</dfn> which determine the direction and amount of curvature. A call to `curve()` uses these parameters:
-
+Arcs are fine, but they're plain. The next function, `curve()`, lets you draw curves that aren't necessarily part of an arc. This function draws what is technically called a *Rom-Catmull Spline*. To draw the curve, you have to specify the (x, y) coordinates of the points where the curve starts and ends. You must also specify two *control points* which determine the direction and amount of curvature. A call to `curve()` uses these parameters:
+  
 ```
 curve(cpx1, cpy1, x1, y1, x2, y2, cpx2, cpy2);
 ```
@@ -72,9 +71,9 @@ curve(cpx1, cpy1, x1, y1, x2, y2, cpx2, cpy2);
 Here is an example that shows a `curve()`. The control
 points are shown in red and the curve points in blue.
 
-<FixedImage side width={118} height={126}>
+<FixedImage left width={200} >
 
-![](./curve1.png)
+![short black arc with blue points at each end and two red dots beyond the ends and not connected](./curve1.png)
 
 </FixedImage>
 
@@ -107,9 +106,9 @@ In isolation, a single `curve()` is not particularly appealing. To draw a contin
 
 Here is a curve connecting the points (40, 40), (80, 60), (100, 100), (60, 120), and (50, 150). In common usage, people use the first point of the curve as the first control point and the last point of the curve as the last control point.
 
-<FixedImage side width={119} height={140}>
+<FixedImage left width={200} >
 
-![](./curvevertex1.png)
+![a curvy black line with red dots on the ends and three other red dots at key parts of the curve](./curvevertex1.png)
 
 </FixedImage>
 
@@ -145,9 +144,9 @@ void setup() {
 }
 ```
 
-## B&eacute;zier Curves
+## Bézier Curves
 
-Though better than arcs, spline curves don't seem to have those graceful, swooping curves that say &ldquo;art.&rdquo; For those, you need to draw B&eacute;zier curves with the `bezier()` function. As with spline curves, the `bezier()` function has eight parameters, but the order is different:
+Though better than arcs, spline curves don't seem to have those graceful, swooping curves that say &ldquo;art.&rdquo; For those, you need to draw Bézier curves with the `bezier()` function. As with spline curves, the `bezier()` function has eight parameters, but the order is different:
 
 ```
 bezier(x1, y1, cpx1, cpy1, cpx2, cpy2, x2, y2);
@@ -158,11 +157,11 @@ bezier(x1, y1, cpx1, cpy1, cpx2, cpy2, x2, y2);
 - **cpx2, cpy2** - Coordinates of the second control point
 - **x2, y2** - Coordinates of the curve's ending point
 
-Here is a program that displays a B&eacute;zier curve and its control points.
+Here is a program that displays a Bézier curve and its control points.
 
-<FixedImage side width={154} height={99}>
+<FixedImage left width={200} >
 
-![](./bezier_with_points.png)
+![an arc shaped like the top half of a drooping circle. two red dots above the curve to the left and right](./bezier_with_points.png)
 
 </FixedImage>
 
@@ -181,18 +180,18 @@ void setup() {
 }
 ```
 
-While it is difficult to visualize how the control points affect a `curve()`, it is slightly easier to see how the control points affect B&eacute;zier curves. Imagine two poles and several rubber bands. The poles connect the control points to the endpoints of the curve. A rubber band connects the tops of the poles. Two more rubber bands connect the midpoints of the poles to the midpoint of the first rubber band. One more rubber band connects _their_ midpoints. The center of that last rubber band is tied to the curve. This diagrams helps to explain:
+While it is difficult to visualize how the control points affect a `curve()`, it is slightly easier to see how the control points affect Bézier curves. Imagine two poles and several rubber bands.  The poles connect the control points to the endpoints of the curve. A rubber band connects the tops of the poles.  Two more rubber bands connect the midpoints of the poles to the midpoint of the first rubber band. One more rubber band connects *their* midpoints. The center of that last rubber band is tied to the curve. This diagrams helps to explain:
 
-<FixedImage center width={154} height={99}>
+<FixedImage left width={200} >
 
-![](./bezier_with_lines.png)
+![same image as the last, but with lines connecting the points on the arc and the control points as described](./bezier_with_lines.png)
 
 </FixedImage>
 
-## Continuous B&eacute;zier Curves
+## Continuous Bézier Curves
 
-Just as `curveVertex()` allows you to make continuous spline curves, `bezierVertex()` lets you make continuous B&eacute;zier curves. Again, you must be within a `beginShape()` / `endShape()` sequence. You must use `vertex(startX, startY)` to specify the starting point of the curve. Subsequent points are specified with a call to:
-
+Just as `curveVertex()` allows you to make continuous spline curves, `bezierVertex()` lets you make continuous Bézier curves. Again, you must be within a `beginShape()` / `endShape()` sequence. You must use `vertex(startX, startY)` to specify the starting point of the curve. Subsequent points are specified with a call to:
+  
 ```
 bezierVertex(cpx1, cpy1, cpx2, cpy2, x, y);
 ```
@@ -218,11 +217,11 @@ void setup() {
 }
 ```
 
-Here is a continuous B&eacute;zier curve, but it doesn't join smoothly. The diagram shows the control points, but only the relevant code for drawing the curve is here.
+Here is a continuous Bézier curve, but it doesn't join smoothly. The diagram shows the control points, but only the relevant code for drawing the curve is here.
 
-<FixedImage side width={136} height={136}>
+<FixedImage left width={200} >
 
-![](./nonsmooth_bezier.png)
+![thin black curve making a sort of reverse S shape with a kink in the middle. two red dots make the control points for the first vertex and two blue points for the second vertex. for each one control point is connected to an end of the curve and one to the midpoint](./nonsmooth_bezier.png)
 
 </FixedImage>
 
@@ -237,11 +236,11 @@ bezierVertex(50, 140, 75, 140, 120, 120);
 endShape();
 ```
 
-In order to make two curves A and B smoothly continuous, the last control point of A, the last point of A, and the first control point of B have to be on a straight line. Here is an example that meets those conditions. The points that are in a line are shown in bold.
+In order to make two curves A and B smoothly continuous, the last control point of A, the last point of A, and the first control point of B have to be on a straight line.  Here is an example that meets those conditions. The points that are in a line are shown in bold.
 
-<FixedImage side width={132} height={132}>
+<FixedImage left width={200} >
 
-![](./smooth_bezier.png)
+![thin black curve making a sort of reverse S shape with a smooth middle. two white dots for the control points at the ends. a red and blue dot form a straight line and are the control points for the middle](./smooth_bezier.png)
 
 </FixedImage>
 
@@ -259,4 +258,4 @@ endShape();
 
 - Use `arc()` when you need a segment of a circle or an ellipse. You can't make continuous arcs or use them as part of a shape.
 - Use `curve()` when you need a small curve between two points. Use `curveVertex()` to make a continuous series of curves as part of a shape.
-- Use `bezier()` when you need long, smooth curves. Use `bezierVertex()` to make a continuous series of B&eacute;zier curves as part of a shape.
+- Use `bezier()` when you need long, smooth curves. Use `bezierVertex()` to make a continuous series of Bézier curves as part of a shape. -->

@@ -1,11 +1,10 @@
 ---
-slug: "/tutorials/arrays"
-title: "Arrays"
-author: "Casey Reas and Ben Fry"
-intro: "How to store and access data in array structures."
-level: "Intermediate"
-coverImage: arrays.jpg
-order: "09"
+slug: '/tutorials/arrays'
+title: 'Arrays'
+author: 'Casey Reas and Ben Fry'
+intro: 'How to store and access data in array structures.'
+level: 'Intermediate'
+coverImage: arrays.png
 ---
 
 <Note>
@@ -16,9 +15,9 @@ This tutorial is the Arrays chapter from [Processing: A Programming Handbook for
 
 The term array refers to a structured grouping or an imposing number: &ldquo;The dinner buffet offers an array of choices,&rdquo; &ldquo;The city of Boston faces an array of problems.&rdquo; In computer programming, an array is a set of data elements stored under the same name. Arrays can be created to hold any type of data, and each element can be individually assigned and read. There can be arrays of numbers, characters, sentences, boolean values, and so on. Arrays might store vertex data for complex shapes, recent keystrokes from the keyboard, or data read from a file. For instance, an array can store five integers (1919, 1940, 1975, 1976, 1990), the years to date that the Cincinnati Reds won the World Series, rather than defining five separate variables. Let's call this array &ldquo;dates&rdquo; and store the values in sequence:
 
-<FixedImage center width={500} height={47}>
+<FixedImage left width={650} >
 
-![](./Dia-28-1.svg)
+![chart labeled dates with five different years, each overtop of square brackets containing an index number from 0 to 4](./Dia-28-1.svg)
 
 </FixedImage>
 
@@ -26,9 +25,9 @@ Array elements are numbered starting with zero, which may seem confusing at firs
 
 Arrays can make the task of programming much easier. While it's not necessary to use them, they can be valuable structures for managing data. Let's begin with a set of data points to construct a bar chart.
 
-<FixedImage center width={500} height={49}>
+<FixedImage left width={650}>
 
-![](./Dia-28-2.svg)
+![chart labeled x with ten different numbers, each overtop of square brackets containing an index number from 0 to 9](./Dia-28-2.svg)
 
 </FixedImage>
 
@@ -49,9 +48,9 @@ int x9 = 39;
 
 Using what we know about drawing without arrays, ten variables are needed to store the data; each variable is used to draw a single rectangle. This is tedious:
 
-<FixedImage side width={100} height={100}>
+<FixedImage left width={200}>
 
-![](./28_01.png)
+![light grey square with a series of ten thick black horizontal lines aligned left with a length set by the value of x](./28_01.png)
 
 </FixedImage>
 
@@ -81,9 +80,9 @@ rect(0, 90, x9, 8);
 
 In contrast, the following example shows how to use an array within a program. The data for each bar is accessed in sequence with a for loop. The syntax and usage of arrays is discussed in more detail in the following pages.
 
-<FixedImage side width={100} height={100}>
+<FixedImage left width={200}>
 
-![](./28_02.png)
+![same as the previous image](./28_02.png)
 
 </FixedImage>
 
@@ -165,9 +164,9 @@ int[] data = { 19, 40, 75, 76, 90 }; // Declare, create, assign
 
 After an array is defined and assigned values, its data can be accessed and used within the code. An array element is accessed with the name of the array variable, followed by brackets around the element position to read.
 
-<FixedImage side width={100} height={100}>
+<FixedImage left width={200}>
 
-![](./28_09.png)
+![light grey square with a series of five black vertical lines with the left to right or x position set by the value of data in the array](./28_09.png)
 
 </FixedImage>
 
@@ -191,7 +190,7 @@ println(data[2]); // Prints "75" to the console
 println(data[5]); // ERROR! The last element of the array is 4
 ```
 
-The length field stores the number of elements in an array. This field is stored within the array and is accessed with the dot operator (p. 363–379). The following example demonstrates how to utilize it.
+The length field stores the number of elements in an array. This field is stored within the array and is accessed with the dot operator. The following example demonstrates how to utilize it.
 
 ```
 int[] data1 = { 19, 40, 75, 76, 90 };
@@ -203,11 +202,11 @@ println(data2.length); // Prints "2" to the console
 println(data3.length); // Prints "127" to the console
 ```
 
-Usually, a for loop is used to access array elements, especially with large arrays. The following example draws the same lines as code 28-09 but uses a for loop to iterate through every value in the array.
+Usually, a for loop is used to access array elements, especially with large arrays. The following example draws the same lines as the previous code but uses a for loop to iterate through every value in the array.
 
-<FixedImage side width={100} height={100}>
+<FixedImage left width={200}>
 
-![](./28_12.png)
+![same as the previous image](./28_12.png)
 
 </FixedImage>
 
@@ -221,9 +220,9 @@ for (int i = 0; i < data.length; i++) {
 
 A for loop can also be used to put data inside an array. For instance, it can calculate a series of numbers and then assign each value to an array element. The following example stores the values from the `sin()` function in an array within `setup()` and then displays these values as the stroke values for lines within `draw()`.
 
-<FixedImage side width={100} height={100}>
+<FixedImage left width={200}>
 
-![](./28_13.png)
+![square image with vertical lines whose greyscale color changes with a smooth sine wave](./28_13.png)
 
 </FixedImage>
 
@@ -253,21 +252,21 @@ void draw() {
 
 As one example of how arrays may be used, this section shows how to use arrays to store data from the mouse. The `pmouseX` and `pmouseY` variables store the cursor coordinates from the previous frame, but there is no built-in way to access the cursor values from earlier frames. At every frame, the `mouseX`, `mouseY`, `pmouseX`, and `pmouseY` variables are replaced with new numbers and their previous numbers are discarded. Creating an array is the easiest way to store the history of these values. In the following example, the most recent 100 values from `mouseY` are stored and displayed on screen as a line from the left to the right edge of the screen. At each frame, the values in the array are shifted to the right and the newest value is added to the beginning.
 
-<FixedImage side width={100} height={100}>
+<FixedImage left width={200}>
 
-![](./28_15_1.png)
-
-</FixedImage>
-
-<FixedImage side width={100} height={100}>
-
-![](./28_15_2.png)
+![light grey square with a black line that graphs the y position of the mouse as up and down, over time running left to right](./28_15_1.png)
 
 </FixedImage>
 
-<FixedImage side width={100} height={100}>
+<FixedImage left width={200}>
 
-![](./28_15_3.png)
+![same as the previous image but with different y mouse position data](./28_15_2.png)
+
+</FixedImage>
+
+<FixedImage left width={200}>
+
+![same as the previous image but with different y mouse position data](./28_15_3.png)
 
 </FixedImage>
 
@@ -296,21 +295,21 @@ void draw() {
 
 Apply the same code simultaneously to the `mouseX` and `mouseY` values to store the position of the cursor. Displaying these values each frame creates a trail behind the cursor.
 
-<FixedImage side width={100} height={100}>
+<FixedImage left width={200}>
 
-![](./28_16_1.png)
-
-</FixedImage>
-
-<FixedImage side width={100} height={100}>
-
-![](./28_16_2.png)
+![black square with white semi-transparent circles creating a trail from the x and y position of the mouse. the older circles are larger and more faded](./28_16_1.png)
 
 </FixedImage>
 
-<FixedImage side width={100} height={100}>
+<FixedImage left width={200}>
 
-![](./28_16_3.png)
+![same as the previous image but with different x and y mouse position data](./28_16_2.png)
+
+</FixedImage>
+
+<FixedImage left width={200}>
+
+![same as the previous image but with different x and y mouse position data](./28_16_3.png)
 
 </FixedImage>
 
@@ -500,21 +499,21 @@ Working with arrays of objects is technically similar to working with arrays of 
 
 These steps are translated into code in the following example. It uses the Ring class from page 371, so copy it over or retype it. This code creates a `rings[]` array to hold fifty `Ring` objects. Space in memory for the `rings[]` array is allocated in `setup()` and each `Ring` object is created. The first time a mouse button is pressed, the first `Ring` object is turned on and its `x` and `y` variables are assigned to the current values of the cursor. Each time a mouse button is pressed, a new `Ring` is turned on and displayed in the subsequent trip through `draw()`. When the final element in the array has been created, the program jumps back to the beginning of the array to assign new positions to earlier `Rings`.
 
-<FixedImage side width={100} height={100}>
+<FixedImage left width={200}>
 
-![](./28_24_1.png)
-
-</FixedImage>
-
-<FixedImage side width={100} height={100}>
-
-![](./28_24_2.png)
+![black square with four semi-transparent white rings of different radii](./28_24_1.png)
 
 </FixedImage>
 
-<FixedImage side width={100} height={100}>
+<FixedImage left width={200}>
 
-![](./28_24_3.png)
+![same as previous image but rings have grown in size](./28_24_2.png)
+
+</FixedImage>
+
+<FixedImage left width={200}>
+
+![same as previous image but rings have grown in size, some beyond the edges of the square](./28_24_3.png)
 
 </FixedImage>
 
@@ -580,15 +579,15 @@ class Ring {
 
 The next example requires the `Spot` class from page 363. Unlike the prior example, variable values are generated within the `setup()` and are passed into each array elements through the object's constructor. Each element in the array starts with a unique set of x-coordinate, diameter, and speed values. Because the number of objects is dependent on the width of the display window, it is not possible to create the array until the program knows how wide it will be. Therefore, the array is declared outside of `setup()` to make it global (see p. 12), but it is created inside setup, after the width of the display window is defined.
 
-<FixedImage center width={700} height={100}>
+<FixedImage center width={650}>
 
-![](./28_25_1.png)
+![wide black rectangle with a series of white dots that are falling at different speeds and leaving trails behind that fade over time](./28_25_1.png)
 
 </FixedImage>
 
-<FixedImage center width={700} height={100}>
+<FixedImage center width={650}>
 
-![](./28_25_2.png)
+![same as previous image but taken at a later time to show the dots are bouncing off of the top and bottom of the rectangle](./28_25_2.png)
 
 </FixedImage>
 
@@ -658,9 +657,9 @@ Each object in the array is in turn assigned to the variable `s`, so the first t
 
 Data can also be stored and retrieved from arrays with more than one dimension. Using the example from the beginning of this chapter, the data points for the chart are put into a 2D array, where the second dimension adds a gray value:
 
-<FixedImage center width={500} height={70}>
+<FixedImage center width={650}>
 
-![](./Dia-28-3.svg)
+![chart with ten columns and 2 rows of random numbers from 0 to 204. along the left edge is labeled 0 and 1 in square brackets. along the bottom is 0 through 9 in square brackets](./Dia-28-3.svg)
 
 </FixedImage>
 
@@ -679,9 +678,9 @@ println(x[9][1]); // Prints "204"
 
 This sketch shows how it all fits together.
 
-<FixedImage side width={100} height={100}>
+<FixedImage left width={200}>
 
-![](./28_27.png)
+![light grey square with a series of bars aligned on the left side and of different lengths determined by the first dimension of the array. they are different shades of grey according to the second dimension of the array](./28_27.png)
 
 </FixedImage>
 

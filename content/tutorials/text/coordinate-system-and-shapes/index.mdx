@@ -1,11 +1,10 @@
 ---
-slug: "/tutorials/coordinatesystemandshapes"
-title: "Coordinate System and Shapes"
-author: "Daniel Shiffman"
-intro: "Drawing simple shapes and using the coordinate system."
-level: "Beginner"
-coverImage: basics.jpg
-order: "03"
+slug: '/tutorials/coordinatesystemandshapes'
+title: 'Coordinate System and Shapes'
+author: 'Daniel Shiffman'
+intro: 'Drawing simple shapes and using the coordinate system.'
+level: 'Beginner'
+coverImage: basics.png
 ---
 
 <Note>
@@ -20,9 +19,9 @@ know](https://github.com/processing/processing-website/issues?state=open).
 
 Before we begin programming with Processing, we must first channel our eighth grade selves, pull out a piece of graph paper, and draw a line. The shortest distance between two points is a good old fashioned line, and this is where we begin, with two points on that graph paper.
 
-<FixedImage center width={645} height={244}>
+<FixedImage center width={650} height={240}>
 
-![](./drawing-01.svg)
+![diagram described below](./drawing-01.svg)
 
 </FixedImage>
 
@@ -34,18 +33,18 @@ line(1,0,4,5);
 
 Even without having studied the syntax of writing code, the above statement should make a fair amount of sense. We are providing a _command_ (which we will refer to as a "function") for the machine to follow entitled "line." In addition, we are specifying some arguments for how that line should be drawn, from point A (1,0) to point B (4,5). If you think of that line of code as a sentence, the function is a verb and the arguments are the objects of the sentence. The code sentence also ends with a semicolon instead of a period.
 
-<FixedImage center width={645} height={85}>
+<FixedImage center width={650} height={85}>
 
-![](./drawing-02.svg)
+![diagrammed sentence with "draw a line" labeled as verb and the coordinates labeled as objects](./drawing-02.svg)
 
 </FixedImage>
 
 The key here is to realize that the computer screen is nothing more than a fancier piece of graph paper. Each pixel of the screen is a coordinate - two numbers, an "x" (horizontal) and a "y" (vertical) - that determines the location of a point in space. And it is our job to specify what shapes and colors should appear at these pixel coordinates.
 Nevertheless, there is a catch here. The graph paper from eighth grade ("Cartesian coordinate system") placed (0,0) in the center with the y-axis pointing up and the x-axis pointing to the right (in the positive direction, negative down and to the left). The coordinate system for pixels in a computer window, however, is reversed along the y-axis. (0,0) can be found at the top left with the positive direction to the right horizontally and down vertically.
 
-<FixedImage center width={645} height={244}>
+<FixedImage center width={650} height={240}>
 
-![](./drawing-03.svg)
+![two diagrams side by side, the left cartesian and labeled Eigth Grade and the right labeled computer. they are filled with yellow in the positive directions of the axis](./drawing-03.svg)
 
 </FixedImage>
 
@@ -55,9 +54,9 @@ The vast majority of the programming examples you'll see with Processing are vis
 in nature. These examples, at their core, involve drawing shapes and setting pixels.
 Let's begin by looking at four primitive shapes.
 
-<FixedImage center width={645} height={244}>
+<FixedImage center width={650} height={240}>
 
-![](./drawing-04.svg)
+![from left to right, an image of a point, a line, a rectangle, and an ellipse](./drawing-04.svg)
 
 </FixedImage>
 
@@ -65,25 +64,25 @@ For each shape, we will ask ourselves what information is required to specify th
 
 A [`point()`](http://www.processing.org/reference/point_.html) is the easiest of the shapes and a good place to start. To draw a point, we only need an x and y coordinate.
 
-<FixedImage center width={500} height={244}>
+<FixedImage center width={650} height={240}>
 
-![](./drawing-05.svg)
+![diagram showing a point 4 units from the left side and 5 units from the top](./drawing-05.svg)
 
 </FixedImage>
 
 A [`line()`](http://www.processing.org/reference/line_.html) isn't terribly difficult either and simply requires two points: (x1,y1) and (x2,y2):
 
-<FixedImage center width={500} height={244}>
+<FixedImage center width={650} height={240}>
 
-![](./drawing-06.svg)
+![diagram of a horizontal line from 1 to 5 on the x axis, 2 units down from the top on the y axis](./drawing-06.svg)
 
 </FixedImage>
 
 Once we arrive at drawing a [`rect()`](http://www.processing.org/reference/rect_.html), things become a bit more complicated. In Processing, a rectangle is specified by the coordinate for the top left corner of the rectangle, as well as its width and height.
 
-<FixedImage center width={595} height={244}>
+<FixedImage center width={650} height={240}>
 
-![](./drawing-07.svg)
+![diagram of a rectangle whose upper left corner is at 1,2 and width is 4 and height is 3. labeled rect(1,2,4,3)](./drawing-07.svg)
 
 </FixedImage>
 
@@ -91,7 +90,7 @@ A second way to draw a rectangle involves specifying the centerpoint, along with
 
 <FixedImage center width={635} height={244}>
 
-![](./drawing-08.svg)
+![diagram of a rectangle whose center is at 3,2 and a width of 4 and height of 2. labeled rectMode(CENTER) and rect(3,2,4,2)](./drawing-08.svg)
 
 </FixedImage>
 
