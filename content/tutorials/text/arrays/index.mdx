@@ -252,6 +252,8 @@ void draw() {
 
 As one example of how arrays may be used, this section shows how to use arrays to store data from the mouse. The `pmouseX` and `pmouseY` variables store the cursor coordinates from the previous frame, but there is no built-in way to access the cursor values from earlier frames. At every frame, the `mouseX`, `mouseY`, `pmouseX`, and `pmouseY` variables are replaced with new numbers and their previous numbers are discarded. Creating an array is the easiest way to store the history of these values. In the following example, the most recent 100 values from `mouseY` are stored and displayed on screen as a line from the left to the right edge of the screen. At each frame, the values in the array are shifted to the right and the newest value is added to the beginning.
 
+<Column float={"left"}>
+
 <FixedImage left width={200}>
 
 ![light grey square with a black line that graphs the y position of the mouse as up and down, over time running left to right](./28_15_1.png)
@@ -269,6 +271,8 @@ As one example of how arrays may be used, this section shows how to use arrays t
 ![same as the previous image but with different y mouse position data](./28_15_3.png)
 
 </FixedImage>
+
+</Column>
 
 ```
 int[] y;
@@ -295,23 +299,27 @@ void draw() {
 
 Apply the same code simultaneously to the `mouseX` and `mouseY` values to store the position of the cursor. Displaying these values each frame creates a trail behind the cursor.
 
-<FixedImage left width={200}>
+<Column float={"left"}>
+
+<FixedImage width={200}>
 
 ![black square with white semi-transparent circles creating a trail from the x and y position of the mouse. the older circles are larger and more faded](./28_16_1.png)
 
 </FixedImage>
 
-<FixedImage left width={200}>
+<FixedImage width={200}>
 
 ![same as the previous image but with different x and y mouse position data](./28_16_2.png)
 
 </FixedImage>
 
-<FixedImage left width={200}>
+<FixedImage width={200}>
 
 ![same as the previous image but with different x and y mouse position data](./28_16_3.png)
 
 </FixedImage>
+
+</Column>
 
 ```
 int num = 50;
