@@ -68,6 +68,34 @@ const sortOrder = {
   Constants: []
 };
 
+
+const sortOrderIntl = {
+  Structure: [],
+  Environment: [],
+  Data: [
+    '',
+    'String Functions',
+    'Array Functions'
+  ],
+  Control: [
+    '',
+    'Relational Operators',
+  ],
+  Shape: [
+    '',
+    '2D Primitives',
+    'Curves'
+  ],
+  Color: ['', 'Setting', 'Creating & Reading'],
+  Math: [
+    '',
+    'Operators',
+    'Random'
+  ],
+  Constants: []
+};
+
+
 const Reference = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const intl = useIntl();
@@ -76,11 +104,17 @@ const Reference = ({ data }) => {
   const tree = useTree(items, sortOrder);
   const filtered = useFilteredTree(tree, searchTerm);
   const categories = Object.keys(tree);
+  console.log("omar imprimiendo locale");
+  console.log(intl.locale);
+  console.log(categories.toString());
+  console.log("search term" + searchTerm.toString());
+  console.log("data " );
+  console.log( Object.keys(sortOrder));
 
   return (
     <Layout>
       <Helmet>
-        <title>Reference</title>
+        <title>{intl.formatMessage({ id: 'referenceTitle' })}</title>
       </Helmet>
       <div className={classnames(grid.container, grid.grid)}>
         <h1 className={classnames(grid.col, css.heading)}>
@@ -106,10 +140,10 @@ const Reference = ({ data }) => {
 export default Reference;
 
 export const query = graphql`
-  query {
+  query ($locale: String!){
     items: allFile(
       filter: {
-        fields: { lang: { eq: "en" }, lib: { eq: "processing" } }
+        fields: { lang: { eq: $locale  }, lib: { eq: "processing" } }
         childJson: { type: { nin: ["method", "field"] } }
       }
     ) {

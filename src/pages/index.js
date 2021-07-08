@@ -70,7 +70,6 @@ const IndexPage = ({ data }) => {
       <Examples
         examples={randomExamples}
         heading={intl.formatMessage({ id: 'examples' })}
-        locale={locale}
       />
       <div className={css.gettingStarted}>
         <div

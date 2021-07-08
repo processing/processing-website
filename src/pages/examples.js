@@ -52,11 +52,11 @@ const Examples = ({ data }) => {
 export default Examples;
 
 export const query = graphql`
-  query {
+  query($locale: String!) {
     examples: allFile(
       filter: {
         sourceInstanceName: { eq: "examples" }
-        fields: { lang: { eq: "es" } }
+        fields: { lang: { eq: $locale  } }
         relativeDirectory: { regex: "/^((?!data).)*$/" }
       }
       sort: { order: ASC, fields: relativeDirectory }
