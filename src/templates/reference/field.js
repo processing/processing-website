@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 import { useIntl } from 'react-intl';
 
 import HeadMatter from '../../components/HeadMatter';
@@ -25,7 +26,7 @@ import {
 } from '../../hooks/reference';
 import { referencePath } from '../../utils/paths';
 
-import grid from '../../styles/grid.module.css';
+import * as grid from '../../styles/grid.module.css';
 
 const FieldRefTemplate = ({ data, pageContext }) => {
   const { name, libraryName } = pageContext;
@@ -73,7 +74,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
       <HeadMatter
         title={title}
         description={entry?.description}
-        img={data.images.edges[0]?.node.childImageSharp.fluid.src}
+        img={getImage(data.images.edges[0]?.node)}
       />
 
       <div className={grid.grid}>
@@ -202,9 +203,7 @@ export const query = graphql`
           }
           extension
           childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 400)
           }
         }
       }
@@ -251,9 +250,7 @@ export const query = graphql`
         name
         relativeDirectory
         childImageSharp {
-          fluid(maxWidth: 200) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 400)
         }
       }
     }

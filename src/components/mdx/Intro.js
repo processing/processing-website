@@ -1,6 +1,6 @@
 import React from 'react';
 
-import css from './Intro.module.css';
+import * as css from './Intro.module.css';
 
 const Intro = ({ children }) => <div className={css.root}>{children}</div>;
 

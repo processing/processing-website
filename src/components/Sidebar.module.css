@@ -51,6 +51,10 @@
   overflow-y: auto;
 }
 
+.active a h4 {
+  color: var(--processing-blue-mid);
+}
+
 @media (--reduced) {
   .root {
     top: 95px;

@@ -4,8 +4,8 @@ import classnames from 'classnames';
 
 import { slugify } from '../utils';
 
-import css from './Shortcuts.module.css';
-import grid from '../styles/grid.module.css';
+import * as css from './Shortcuts.module.css';
+import * as grid from '../styles/grid.module.css';
 
 const Shortcuts = ({ categories }) => {
   return (

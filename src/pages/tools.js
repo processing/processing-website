@@ -8,8 +8,8 @@ import HeadMatter from '../components/HeadMatter';
 import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
 
-import css from '../styles/pages/libraries.module.css';
-import grid from '../styles/grid.module.css';
+import * as css from '../styles/pages/libraries.module.css';
+import * as grid from '../styles/grid.module.css';
 
 const Tools = ({ data }) => {
   const { locale } = useLocalization();

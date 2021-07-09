@@ -11,8 +11,8 @@ import LogoProcessing from '../images/logo-processing.svg';
 
 import { usePreparedReleases } from '../hooks/download';
 
-import css from '../styles/templates/download.module.css';
-import grid from '../styles/grid.module.css';
+import * as css from '../styles/templates/download.module.css';
+import * as grid from '../styles/grid.module.css';
 
 const Download = ({ data }) => {
   const intl = useIntl();
@@ -124,7 +124,7 @@ const LatestRelease = memo(({ release, onAfterDownload }) => {
 
 const ReleasesList = memo(({ releases, title, onAfterDownload }) => {
   return (
-    <div className={css.releases}>
+    <div>
       <h3>{title}</h3>
       <ul className={css.table}>
         {releases.map((release) => (

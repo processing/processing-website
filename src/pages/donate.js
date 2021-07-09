@@ -6,8 +6,8 @@ import HeadMatter from '../components/HeadMatter';
 import Layout from '../components/Layout';
 import Character from '../components/character/Character';
 
-import css from '../styles/pages/donate.module.css';
-import grid from '../styles/grid.module.css';
+import * as css from '../styles/pages/donate.module.css';
+import * as grid from '../styles/grid.module.css';
 
 const Donate = () => {
   const intl = useIntl();
@@ -22,7 +22,7 @@ const Donate = () => {
         <div className={classnames(grid.col, css.left)}>
           <h1>{intl.formatMessage({ id: 'donate' })}</h1>
           <h3>{intl.formatMessage({ id: 'donateIntro' })}</h3>
-          <div className={classnames(css.donateWrapper)}>
+          <div>
             <script
               src="https://donorbox.org/widget.js"
               paypalexpress="true"></script>

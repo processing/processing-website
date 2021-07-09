@@ -14,8 +14,8 @@ import FilterBar from '../components/FilterBar';
 import { useTree, useFilteredTree } from '../hooks';
 import { usePreparedItems } from '../hooks/reference';
 
-import css from '../styles/pages/reference.module.css';
-import grid from '../styles/grid.module.css';
+import * as css from '../styles/pages/reference.module.css';
+import * as grid from '../styles/grid.module.css';
 
 const sortOrder = {
   Structure: [],

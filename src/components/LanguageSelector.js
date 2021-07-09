@@ -4,7 +4,7 @@ import { useLocalization, LocalizedLink as Link } from 'gatsby-theme-i18n';
 
 import { Button } from './Button';
 
-import css from './LanguageSelector.module.css';
+import * as css from './LanguageSelector.module.css';
 
 const LanguageSelector = ({ className }) => {
   const { config, locale } = useLocalization();

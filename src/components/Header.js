@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Topbar from './Topbar';
 import Navbar from './Navbar';
 
-import css from './Header.module.css';
+import * as css from './Header.module.css';
 
 const Header = ({ siteTitle, scrolled }) => {
   return (

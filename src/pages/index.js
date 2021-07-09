@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 import HeadMatter from '../components/HeadMatter';
 import Layout from '../components/Layout';
@@ -14,8 +14,8 @@ import Sketch from '../components/sketch/Sketch';
 import { shuffleArray } from '../utils';
 import { usePreparedExamples } from '../hooks/examples';
 
-import css from '../styles/pages/index.module.css';
-import grid from '../styles/grid.module.css';
+import * as css from '../styles/pages/index.module.css';
+import * as grid from '../styles/grid.module.css';
 
 import DSILogo from '../images/partners/designsystemsinternational.svg';
 import DMALogo from '../images/partners/ucla-dma.svg';
@@ -103,12 +103,7 @@ const IndexPage = ({ data }) => {
         heading={intl.formatMessage({ id: 'examples' })}
       />
       <div className={css.gettingStarted}>
-        <div
-          className={classnames(
-            grid.grid,
-            grid.container,
-            css.gettingStartedInner
-          )}>
+        <div className={classnames(grid.grid, grid.container)}>
           <div className={classnames(grid.col, css.gettingStartedMessage)}>
             <h2>{intl.formatMessage({ id: 'gettingStarted' })}</h2>
             <div>
@@ -159,8 +154,7 @@ const IndexPage = ({ data }) => {
         </div>
       </div>
       <div className={css.takePart}>
-        <div
-          className={classnames(grid.grid, grid.container, css.takePartInner)}>
+        <div className={classnames(grid.grid, grid.container)}>
           <div className={classnames(grid.col, css.participate)}>
             <h2>{intl.formatMessage({ id: 'participate' })}</h2>
             <div>
@@ -209,8 +203,7 @@ const IndexPage = ({ data }) => {
         </div>
       </div>
       <div className={css.external}>
-        <div
-          className={classnames(grid.grid, grid.container, css.externalInner)}>
+        <div className={classnames(grid.grid, grid.container)}>
           <div className={classnames(grid.col, css.externalLinks)}>
             <h2>{intl.formatMessage({ id: 'externalLinks' })}</h2>
             <ul>
@@ -276,9 +269,8 @@ const IndexPage = ({ data }) => {
                       target="_blank"
                       rel="noreferrer">
                       {typeof Logo === 'string' ? (
-                        <Img
-                          className={css.img}
-                          fluid={data[Logo].childImageSharp.fluid}
+                        <GatsbyImage
+                          image={data[Logo].childImageSharp.gatsbyImageData}
                           alt={name}
                         />
                       ) : (
@@ -305,8 +297,9 @@ const Examples = memo(({ heading, examples }) => {
           <Link to={example.path}>
             <div className={css.imgContainer}>
               {example.image && (
-                <Img
-                  fluid={example.image.childImageSharp.fluid}
+                <GatsbyImage
+                  image={example.image.childImageSharp.gatsbyImageData}
+                  alt={`Code output of the ${example.name} code example`}
                   loading="eager"
                 />
               )}
@@ -375,51 +368,13 @@ export const query = graphql`
         name
         relativeDirectory
         childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid
-            base64
-            srcWebp
-            srcSetWebp
-            originalImg
-            originalName
-          }
+          gatsbyImageData(width: 800)
         }
       }
     }
-    news: file(relativePath: { eq: "news.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 1280, maxHeight: 508) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    conway: file(relativePath: { eq: "conway.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 400, maxHeight: 300) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    radial: file(relativePath: { eq: "radial.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 400, maxHeight: 300) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    flocking: file(relativePath: { eq: "flocking.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 400, maxHeight: 300) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-
     itp: file(relativePath: { eq: "partners/nyu-itp.png" }) {
       childImageSharp {
-        fluid(maxWidth: 150, maxHeight: 150) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(width: 150)
       }
     }
   }

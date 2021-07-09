@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import { titleCase } from '../utils';
 
-import css from './Breadcrumbs.module.css';
+import * as css from './Breadcrumbs.module.css';
 
 export const Breadcrumbs = ({ className, trail }) => {
   if (!trail || trail.length === 0) {

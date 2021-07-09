@@ -17,8 +17,8 @@ import { useFilteredArray } from '../hooks';
 import { usePreparedContributions } from '../hooks/libraries';
 import { referencePath } from '../utils/paths';
 
-import css from '../styles/pages/libraries.module.css';
-import grid from '../styles/grid.module.css';
+import * as css from '../styles/pages/libraries.module.css';
+import * as grid from '../styles/grid.module.css';
 
 const Libraries = ({ data }) => {
   const { locale } = useLocalization();

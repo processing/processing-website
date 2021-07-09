@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { useIntl } from 'react-intl';
+import { getImage } from 'gatsby-plugin-image';
 import classnames from 'classnames';
 
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -14,8 +15,8 @@ import Breadcrumbs from '../../components/Breadcrumbs';
 import { useHighlight, useSidebar } from '../../hooks';
 import { useTrail } from '../../hooks/tutorials';
 
-import css from '../../styles/pages/page.module.css';
-import grid from '../../styles/grid.module.css';
+import * as css from '../../styles/pages/page.module.css';
+import * as grid from '../../styles/grid.module.css';
 
 const TutorialTemplate = ({ data, pageContext }) => {
   const { mdx } = data;
@@ -30,7 +31,7 @@ const TutorialTemplate = ({ data, pageContext }) => {
       <HeadMatter
         title={mdx?.frontmatter.title}
         description={mdx?.frontmatter.intro}
-        img={mdx?.frontmatter.coverImage?.childImageSharp.fluid.src}
+        img={getImage(mdx?.frontmatter.coverImage)}
       />
 
       <div className={classnames(grid.grid, css.root)}>
@@ -84,9 +85,7 @@ export const query = graphql`
         intro
         coverImage {
           childImageSharp {
-            fluid(maxWidth: 600) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 600)
           }
         }
       }

@@ -6,8 +6,8 @@ import { LayoutContext } from '../Layout';
 import Character from './Character';
 import Button from '../Button';
 
-import grid from '../../styles/grid.module.css';
-import css from './Donate.module.css';
+import * as grid from '../../styles/grid.module.css';
+import * as css from './Donate.module.css';
 
 const Donate = () => {
   const { headerScrolled } = useContext(LayoutContext);

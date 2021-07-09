@@ -12,8 +12,8 @@ import ExamplesList from '../components/examples/ExamplesList';
 import { useTree, useFilteredTree } from '../hooks';
 import { usePreparedExamples } from '../hooks/examples';
 
-import css from '../styles/pages/examples.module.css';
-import grid from '../styles/grid.module.css';
+import * as css from '../styles/pages/examples.module.css';
+import * as grid from '../styles/grid.module.css';
 
 const Examples = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -84,9 +84,7 @@ export const query = graphql`
         name
         relativeDirectory
         childImageSharp {
-          fluid(maxWidth: 400) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 400)
         }
       }
     }

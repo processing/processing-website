@@ -12,7 +12,7 @@ export const usePreparedTutorials = (tutorials) => {
       const { coverImage, ...rest } = tutorials[i].childMdx.frontmatter;
       prepared.push({
         ...rest,
-        image: coverImage.childImageSharp.fluid
+        image: coverImage.childImageSharp.gatsbyImageData
       });
     }
 

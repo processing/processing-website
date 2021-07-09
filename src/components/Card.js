@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import css from './Card.module.css';
+import * as css from './Card.module.css';
 
 export const Card = ({ className, children }) => {
   return <div className={classnames(css.root, className)}>{children}</div>;

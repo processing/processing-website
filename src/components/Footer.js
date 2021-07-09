@@ -2,8 +2,8 @@ import React from 'react';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 
-import css from './Footer.module.css';
-import grid from '../styles/grid.module.css';
+import * as css from './Footer.module.css';
+import * as grid from '../styles/grid.module.css';
 
 const Footer = ({ withSidebar }) => {
   const intl = useIntl();

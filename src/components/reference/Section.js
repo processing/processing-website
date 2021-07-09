@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import classnames from 'classnames';
 
-import css from './Section.module.css';
-import grid from '../../styles/grid.module.css';
+import * as css from './Section.module.css';
+import * as grid from '../../styles/grid.module.css';
 
 const Section = ({ title, children, short, columns = true }) => {
   return (

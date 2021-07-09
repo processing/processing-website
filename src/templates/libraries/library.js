@@ -13,8 +13,8 @@ import { referencePath } from '../../utils/paths';
 import { useTree, useHighlight } from '../../hooks';
 import { usePreparedItems } from '../../hooks/reference';
 
-import css from '../../styles/templates/libraries/library.module.css';
-import grid from '../../styles/grid.module.css';
+import * as css from '../../styles/templates/libraries/library.module.css';
+import * as grid from '../../styles/grid.module.css';
 
 const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
   const intl = useIntl();

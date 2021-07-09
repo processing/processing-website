@@ -2,15 +2,15 @@ import React, { Fragment, memo, useState } from 'react';
 import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 import ToggleButton from '../ToggleButton';
 
 import { slugify } from '../../utils';
 import { useTreeSort } from '../../hooks';
 
-import css from './ExamplesList.module.css';
-import grid from '../../styles/grid.module.css';
+import * as css from './ExamplesList.module.css';
+import * as grid from '../../styles/grid.module.css';
 
 const ExamplesList = ({ tree }) => {
   const intl = useIntl();
@@ -70,7 +70,11 @@ export const ExampleItem = memo(({ node, variant }) => {
     <li className={classnames(grid.col, css.item, { [css[variant]]: variant })}>
       <Link to={node.path}>
         {node.image && (
-          <Img className={css.cover} fluid={node.image.childImageSharp.fluid} />
+          <GatsbyImage
+            className={css.cover}
+            image={node.image.childImageSharp.gatsbyImageData}
+            alt={node.name}
+          />
         )}
         <h4>{node.name}</h4>
       </Link>

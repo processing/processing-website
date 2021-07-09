@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import Draggable from './Draggable';
 import classnames from 'classnames';
-import css from './Shape.module.css';
+import * as css from './Shape.module.css';
 
 /**
   We pass the shapeIndex to the component in order to be able to memo the handler

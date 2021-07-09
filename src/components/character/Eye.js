@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import css from './Eye.module.css';
+import * as css from './Eye.module.css';
 
 const Eye = ({ eye, index, blink }) => {
   let position = [];
