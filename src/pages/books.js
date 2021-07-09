@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { useIntl } from 'react-intl';
 
@@ -32,7 +32,9 @@ const Books = ({ data }) => {
               <li key={`${book.title}-${i}`} className={css.listItem}>
                 <div className={classnames(grid.col, css.cover)}>
                   {book.image && (
-                    <Img fluid={book.image.childImageSharp.fluid} />
+                    <GatsbyImage
+                      image={book.image.childImageSharp.gatsbyImageData}
+                    />
                   )}
                 </div>
                 <div className={classnames(grid.col, css.book)}>
@@ -112,9 +114,7 @@ export const query = graphql`
       nodes {
         name
         childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 1200)
         }
       }
     }

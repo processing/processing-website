@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 import HeadMatter from '../components/HeadMatter';
 import Layout from '../components/Layout';
@@ -269,8 +269,8 @@ const IndexPage = ({ data }) => {
                       target="_blank"
                       rel="noreferrer">
                       {typeof Logo === 'string' ? (
-                        <Img
-                          fluid={data[Logo].childImageSharp.fluid}
+                        <GatsbyImage
+                          image={data[Logo].childImageSharp.gatsbyImageData}
                           alt={name}
                         />
                       ) : (
@@ -297,8 +297,9 @@ const Examples = memo(({ heading, examples }) => {
           <Link to={example.path}>
             <div className={css.imgContainer}>
               {example.image && (
-                <Img
-                  fluid={example.image.childImageSharp.fluid}
+                <GatsbyImage
+                  image={example.image.childImageSharp.gatsbyImageData}
+                  alt=""
                   loading="eager"
                 />
               )}
@@ -367,22 +368,13 @@ export const query = graphql`
         name
         relativeDirectory
         childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid
-            base64
-            srcWebp
-            srcSetWebp
-            originalImg
-            originalName
-          }
+          gatsbyImageData(width: 800)
         }
       }
     }
     itp: file(relativePath: { eq: "partners/nyu-itp.png" }) {
       childImageSharp {
-        fluid(maxWidth: 150, maxHeight: 150) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(width: 150)
       }
     }
   }

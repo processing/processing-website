@@ -84,9 +84,7 @@ export const query = graphql`
         intro
         coverImage {
           childImageSharp {
-            fluid(maxWidth: 600) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 600)
           }
         }
       }

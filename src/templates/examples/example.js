@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import p5 from 'p5';
 
 import HeadMatter from '../../components/HeadMatter';
@@ -115,7 +115,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
             </div>
             <div className={css.cover} id="example-cover">
               {!liveSketch && image && (
-                <Img fluid={image.childImageSharp.fluid} />
+                <GatsbyImage image={image.childImageSharp.gatsbyImageData} />
               )}
             </div>
             <Tabs pdes={pdes} />
@@ -225,9 +225,7 @@ export const query = graphql`
       name
       relativeDirectory
       childImageSharp {
-        fluid(maxWidth: 800) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(width: 800)
       }
     }
     liveSketch: file(
@@ -271,9 +269,7 @@ export const query = graphql`
         name
         relativeDirectory
         childImageSharp {
-          fluid(maxWidth: 200) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 200)
         }
       }
     }

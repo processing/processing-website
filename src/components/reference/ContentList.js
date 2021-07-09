@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import classnames from 'classnames';
 import { widont } from '../../utils/index.js';
 
@@ -72,7 +72,9 @@ export const ExampleList = memo(({ examples }) => {
             </div>
             {example.image && (
               <div className={classnames(grid.col, css.image)}>
-                <Img fluid={example.image.childImageSharp.fluid} />
+                <GatsbyImage
+                  image={example.image.childImageSharp.gatsbyImageData}
+                />
               </div>
             )}
           </li>

@@ -2,7 +2,7 @@ import React, { Fragment, memo, useState } from 'react';
 import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 import ToggleButton from '../ToggleButton';
 
@@ -70,7 +70,10 @@ export const ExampleItem = memo(({ node, variant }) => {
     <li className={classnames(grid.col, css.item, { [css[variant]]: variant })}>
       <Link to={node.path}>
         {node.image && (
-          <Img className={css.cover} fluid={node.image.childImageSharp.fluid} />
+          <GatsbyImage
+            className={css.cover}
+            image={node.image.childImageSharp.gatsbyImageData}
+          />
         )}
         <h4>{node.name}</h4>
       </Link>

@@ -4,6 +4,30 @@
   "description": "A website for the Processing programming language",
   "version": "0.1.0",
   "author": "Design Systems International <i@designsystems.international>",
+  "keywords": [
+    "gatsby",
+    "processing"
+  ],
+  "license": "0BSD",
+  "browserslist": "last 2 versions, >0.5%",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/designsystemsinternational/processing-website"
+  },
+  "bugs": {
+    "url": "https://github.com/designsystemsinternational/processing-website/issues"
+  },
+  "scripts": {
+    "dev": "gatsby develop -H 0.0.0.0 --verbose",
+    "build": "gatsby build",
+    "start": "gatsby serve",
+    "clean": "gatsby clean",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
+    "fetchReleases": "node scripts/fetchReleases.js",
+    "deploy": "static deploy",
+    "deployGithub": "gatsby clean && static deploy --env production --confirm",
+    "open": "static open"
+  },
   "dependencies": {
     "@mdx-js/mdx": "1.6.22",
     "@mdx-js/react": "1.6.22",
@@ -13,7 +37,7 @@
     "classnames": "^2.3.1",
     "copy-to-clipboard": "^3.3.1",
     "gatsby": "^3.9.0",
-    "gatsby-image": "^3.9.0",
+    "gatsby-plugin-image": "^1.9.0",
     "gatsby-plugin-intl": "^0.3.3",
     "gatsby-plugin-manifest": "^3.9.0",
     "gatsby-plugin-mdx": "2.9.0",
@@ -57,30 +81,6 @@
   "devDependencies": {
     "@designsystemsinternational/static": "^3.3.10",
     "prettier": "2.0.5"
-  },
-  "keywords": [
-    "gatsby",
-    "processing"
-  ],
-  "license": "0BSD",
-  "scripts": {
-    "dev": "gatsby develop -H 0.0.0.0",
-    "build": "gatsby build",
-    "start": "gatsby serve",
-    "clean": "gatsby clean",
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
-    "fetchReleases": "node scripts/fetchReleases.js",
-    "deploy": "static deploy",
-    "deployGithub": "gatsby clean && static deploy --env production --confirm",
-    "open": "static open"
-  },
-  "browserslist": "last 2 versions, >0.5%",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/designsystemsinternational/processing-website"
-  },
-  "bugs": {
-    "url": "https://github.com/designsystemsinternational/processing-website/issues"
   },
   "static": {
     "region": "us-east-1",

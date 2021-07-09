@@ -84,9 +84,7 @@ export const query = graphql`
         name
         relativeDirectory
         childImageSharp {
-          fluid(maxWidth: 400) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 400)
         }
       }
     }

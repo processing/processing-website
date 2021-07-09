@@ -201,9 +201,7 @@ export const query = graphql`
           }
           extension
           childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 400)
           }
         }
       }
@@ -250,9 +248,7 @@ export const query = graphql`
         name
         relativeDirectory
         childImageSharp {
-          fluid(maxWidth: 200) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 200)
         }
       }
     }

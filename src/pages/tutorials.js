@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
@@ -38,8 +38,8 @@ const Tutorials = ({ data }) => {
                 <a href={tutorial.link} target="_blank" rel="noreferrer">
                   {tutorial.image && (
                     <div className={css.cover}>
-                      <Img
-                        fluid={tutorial.image}
+                      <GatsbyImage
+                        image={tutorial.image}
                         style={{ height: 100 }}
                         objectFit="contain"
                       />
@@ -69,8 +69,8 @@ const Tutorials = ({ data }) => {
                 <Link to={tutorial.slug}>
                   {tutorial.image && (
                     <div className={css.cover}>
-                      <Img
-                        fluid={tutorial.image}
+                      <GatsbyImage
+                        image={tutorial.image}
                         style={{ height: 100 }}
                         objectFit="contain"
                       />
@@ -120,9 +120,7 @@ export const query = graphql`
             intro
             coverImage {
               childImageSharp {
-                fluid(maxWidth: 600) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(width: 600)
               }
             }
           }
@@ -148,9 +146,7 @@ export const query = graphql`
             level
             coverImage {
               childImageSharp {
-                fluid(maxWidth: 600) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(width: 600)
               }
             }
           }
