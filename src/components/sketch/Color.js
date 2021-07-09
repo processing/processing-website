@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import Draggable from './Draggable';
-import css from './Color.module.css';
+import * as css from './Color.module.css';
 import { rgbToHex, hexToRgb } from '../../utils/sketch';
 
 /**

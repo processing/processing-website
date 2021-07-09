@@ -10,8 +10,8 @@ import Layout from '../components/Layout';
 
 import { usePreparedBooks } from '../hooks/books';
 
-import css from '../styles/pages/books.module.css';
-import grid from '../styles/grid.module.css';
+import * as css from '../styles/pages/books.module.css';
+import * as grid from '../styles/grid.module.css';
 
 const Books = ({ data }) => {
   const intl = useIntl();
@@ -29,9 +29,7 @@ const Books = ({ data }) => {
         <ul className={classnames(grid.col, grid.grid, css.booksList)}>
           {books.map((book, i) => {
             return (
-              <li
-                key={`${book.title}-${i}`}
-                className={classnames(grid.nest, css.listItem)}>
+              <li key={`${book.title}-${i}`} className={css.listItem}>
                 <div className={classnames(grid.col, css.cover)}>
                   {book.image && (
                     <Img fluid={book.image.childImageSharp.fluid} />

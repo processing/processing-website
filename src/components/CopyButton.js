@@ -5,7 +5,7 @@ import CopyToClipboard from './CopyToClipboard';
 
 import CopyIcon from '../images/copy-icon.svg';
 
-import css from './CopyButton.module.css';
+import * as css from './CopyButton.module.css';
 
 const CopyButton = ({ text }) => {
   const [isCopied, setIsCopied] = useState(false);

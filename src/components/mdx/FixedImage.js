@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import css from './FixedImage.module.css';
+import * as css from './FixedImage.module.css';
 
 const FixedImage = ({
   children,

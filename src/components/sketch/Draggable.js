@@ -2,7 +2,7 @@ import React, { useState, useEffect, memo } from 'react';
 import { round } from '../../utils/sketch';
 import { map } from '../../utils';
 import classnames from 'classnames';
-import css from './Draggable.module.css';
+import * as css from './Draggable.module.css';
 
 const dragArea = 250;
 
@@ -102,9 +102,7 @@ const Draggable = ({
       role={'button'}
       aria-label={'change position'}
       tabIndex={tabIndex}
-      className={classnames(className, css.root, {
-        [css.dragging]: draggingInfo
-      })}
+      className={classnames(className, css.root)}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onMouseDown={registerMove}

@@ -10,8 +10,8 @@ import Layout from '../components/Layout';
 
 import { usePreparedTutorials } from '../hooks/tutorials';
 
-import css from '../styles/pages/tutorials.module.css';
-import grid from '../styles/grid.module.css';
+import * as css from '../styles/pages/tutorials.module.css';
+import * as grid from '../styles/grid.module.css';
 
 const Tutorials = ({ data }) => {
   const intl = useIntl();
@@ -25,7 +25,7 @@ const Tutorials = ({ data }) => {
         description={intl.formatMessage({ id: 'videoTutorialsIntro' })}
       />
 
-      <div className={classnames(grid.container, grid.grid, css.root)}>
+      <div className={classnames(grid.container, grid.grid)}>
         <div className={classnames(grid.col, css.text)}>
           <h1>{intl.formatMessage({ id: 'tutorials' })}</h1>
           <h2>{intl.formatMessage({ id: 'videoTutorials' })}</h2>

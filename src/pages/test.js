@@ -4,8 +4,8 @@ import classnames from 'classnames';
 
 import Layout from '../components/Layout';
 
-import css from '../styles/pages/test.module.css';
-import grid from '../styles/grid.module.css';
+import * as css from '../styles/pages/test.module.css';
+import * as grid from '../styles/grid.module.css';
 
 const Test = () => {
   return (

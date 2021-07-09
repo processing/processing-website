@@ -14,8 +14,8 @@ import Sketch from '../components/sketch/Sketch';
 import { shuffleArray } from '../utils';
 import { usePreparedExamples } from '../hooks/examples';
 
-import css from '../styles/pages/index.module.css';
-import grid from '../styles/grid.module.css';
+import * as css from '../styles/pages/index.module.css';
+import * as grid from '../styles/grid.module.css';
 
 import DSILogo from '../images/partners/designsystemsinternational.svg';
 import DMALogo from '../images/partners/ucla-dma.svg';
@@ -103,12 +103,7 @@ const IndexPage = ({ data }) => {
         heading={intl.formatMessage({ id: 'examples' })}
       />
       <div className={css.gettingStarted}>
-        <div
-          className={classnames(
-            grid.grid,
-            grid.container,
-            css.gettingStartedInner
-          )}>
+        <div className={classnames(grid.grid, grid.container)}>
           <div className={classnames(grid.col, css.gettingStartedMessage)}>
             <h2>{intl.formatMessage({ id: 'gettingStarted' })}</h2>
             <div>
@@ -159,8 +154,7 @@ const IndexPage = ({ data }) => {
         </div>
       </div>
       <div className={css.takePart}>
-        <div
-          className={classnames(grid.grid, grid.container, css.takePartInner)}>
+        <div className={classnames(grid.grid, grid.container)}>
           <div className={classnames(grid.col, css.participate)}>
             <h2>{intl.formatMessage({ id: 'participate' })}</h2>
             <div>
@@ -209,8 +203,7 @@ const IndexPage = ({ data }) => {
         </div>
       </div>
       <div className={css.external}>
-        <div
-          className={classnames(grid.grid, grid.container, css.externalInner)}>
+        <div className={classnames(grid.grid, grid.container)}>
           <div className={classnames(grid.col, css.externalLinks)}>
             <h2>{intl.formatMessage({ id: 'externalLinks' })}</h2>
             <ul>
@@ -277,7 +270,6 @@ const IndexPage = ({ data }) => {
                       rel="noreferrer">
                       {typeof Logo === 'string' ? (
                         <Img
-                          className={css.img}
                           fluid={data[Logo].childImageSharp.fluid}
                           alt={name}
                         />

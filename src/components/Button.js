@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Link } from 'gatsby';
 
-import css from './Button.module.css';
+import * as css from './Button.module.css';
 
 export const Button = ({
   className,

@@ -25,7 +25,7 @@ import {
 } from '../../hooks/reference';
 import { referencePath } from '../../utils/paths';
 
-import grid from '../../styles/grid.module.css';
+import * as grid from '../../styles/grid.module.css';
 
 const RefTemplate = ({ data, pageContext, ...props }) => {
   const { name, libraryName } = pageContext;

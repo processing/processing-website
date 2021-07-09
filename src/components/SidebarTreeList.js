@@ -4,8 +4,7 @@ import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 
 import SidebarGroup from './SidebarGroup';
 
-import grid from '../styles/grid.module.css';
-import css from './SidebarTreeList.module.css';
+import * as css from './SidebarTreeList.module.css';
 
 const SidebarTreeList = ({ tree, useSerif }) => {
   return (
@@ -22,7 +21,7 @@ const SidebarTreeList = ({ tree, useSerif }) => {
                   return (
                     <li key={key}>
                       <Link
-                        className={classnames(grid.col1andhalf, {
+                        className={classnames({
                           [css.serif]: useSerif
                         })}
                         to={item.path}>

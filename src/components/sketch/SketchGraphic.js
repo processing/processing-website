@@ -1,5 +1,5 @@
 import React, { Fragment, useMemo, memo } from 'react';
-import css from './SketchGraphic.module.css';
+import * as css from './SketchGraphic.module.css';
 
 const SketchGraphic = (props) => {
   const { showGrid, width, height, shapes, strokeWeight, strokeCap } = props;

@@ -5,8 +5,8 @@ import SketchGraphic from './SketchGraphic';
 import SketchCode from './SketchCode';
 import Button from '../Button';
 
-import css from './Sketch.module.css';
-import grid from '../../styles/grid.module.css';
+import * as css from './Sketch.module.css';
+import * as grid from '../../styles/grid.module.css';
 
 const initialState = {
   showGrid: true,

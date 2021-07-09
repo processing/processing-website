@@ -9,8 +9,8 @@ import ToggleButton from '../ToggleButton';
 import { slugify } from '../../utils';
 import { useTreeSort } from '../../hooks';
 
-import css from './ExamplesList.module.css';
-import grid from '../../styles/grid.module.css';
+import * as css from './ExamplesList.module.css';
+import * as grid from '../../styles/grid.module.css';
 
 const ExamplesList = ({ tree }) => {
   const intl = useIntl();

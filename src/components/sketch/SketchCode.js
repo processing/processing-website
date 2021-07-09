@@ -6,7 +6,7 @@ import Color from './Color';
 import Shape from './Shape';
 import Button from '../Button';
 
-import css from './SketchCode.module.css';
+import * as css from './SketchCode.module.css';
 
 const SketchCode = ({
   width,

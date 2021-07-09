@@ -5,7 +5,7 @@ import hljs from 'highlight.js/lib/core';
 import Button from './Button';
 import CopyButton from './CopyButton';
 
-import css from './Tabs.module.css';
+import * as css from './Tabs.module.css';
 
 const Tabs = ({ pdes, className }) => {
   const [active, setActive] = useState(pdes[0].name);

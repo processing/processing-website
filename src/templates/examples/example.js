@@ -25,8 +25,8 @@ import {
   useTrail
 } from '../../hooks/examples';
 
-import css from '../../styles/templates/examples/example.module.css';
-import grid from '../../styles/grid.module.css';
+import * as css from '../../styles/templates/examples/example.module.css';
+import * as grid from '../../styles/grid.module.css';
 
 // This is to make sure that p5.Vector and other namespaced classes
 // work in the live sketch examples.
@@ -118,7 +118,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
                 <Img fluid={image.childImageSharp.fluid} />
               )}
             </div>
-            <Tabs pdes={pdes} className={css.tabs} />
+            <Tabs pdes={pdes} />
             <RelatedExamples
               examples={relatedExamples}
               heading={intl.formatMessage({ id: 'relatedExamples' })}

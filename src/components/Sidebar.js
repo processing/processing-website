@@ -8,7 +8,7 @@ import FilterBar from './FilterBar';
 
 import { useFilteredTree } from '../hooks';
 
-import css from './Sidebar.module.css';
+import * as css from './Sidebar.module.css';
 
 export const Sidebar = memo(({ children, title, show, setShow = () => {} }) => {
   const { headerScrolled } = useContext(LayoutContext);

@@ -6,8 +6,8 @@ import { useIntl } from 'react-intl';
 
 import SearchBar from './SearchBar';
 
-import css from './Navbar.module.css';
-import grid from '../styles/grid.module.css';
+import * as css from './Navbar.module.css';
+import * as grid from '../styles/grid.module.css';
 
 import LogoProcessing from '../images/logo-processing.svg';
 import CloseIcon from '../images/close-icon.svg';
@@ -149,10 +149,7 @@ const Navbar = ({ siteTitle, scrolled }) => {
                   </button>
                 )}
                 {item.children && (
-                  <ul
-                    className={classnames(css.submenu, {
-                      [css.subMenuActive]: item.name === showSubmenu
-                    })}>
+                  <ul className={css.submenu}>
                     {item.children.map((subitem, j) => (
                       <li className={css.subitem} key={key + j}>
                         {subitem.href ? (

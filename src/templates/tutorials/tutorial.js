@@ -14,8 +14,8 @@ import Breadcrumbs from '../../components/Breadcrumbs';
 import { useHighlight, useSidebar } from '../../hooks';
 import { useTrail } from '../../hooks/tutorials';
 
-import css from '../../styles/pages/page.module.css';
-import grid from '../../styles/grid.module.css';
+import * as css from '../../styles/pages/page.module.css';
+import * as grid from '../../styles/grid.module.css';
 
 const TutorialTemplate = ({ data, pageContext }) => {
   const { mdx } = data;
