@@ -20,6 +20,15 @@ Please refer to the [guides](/docs/README.md).
 
 Please refer to the [guides](/docs/README.md).
 
+## Deploying the site
+
+The website is set up to deploy itself whenever a new GitHub release is created from the `master` branch:
+
+1. Go to [Releases](https://github.com/processing/processing-website/releases)
+2. Click "Create a new release"
+3. Choose a tag for this release. This value is not used for much, so you can just use `DD-MM-YYYY`
+4. Create the release. A GitHub action will run, which will build the website and upload to the S3 bucket.
+
 ## Links:
 
 1. [list of codes under 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)

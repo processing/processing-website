@@ -76,7 +76,7 @@
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
     "fetchReleases": "node scripts/fetchReleases.js",
     "deploy": "static deploy",
-    "deployGithub": "static deploy --env production --confirm",
+    "deployGithub": "gatsby clean && static deploy --env production --confirm",
     "open": "static open"
   },
   "browserslist": "last 2 versions, >0.5%",
