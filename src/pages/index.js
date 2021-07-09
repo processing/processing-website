@@ -378,35 +378,6 @@ export const query = graphql`
         }
       }
     }
-    news: file(relativePath: { eq: "news.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 1280, maxHeight: 508) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    conway: file(relativePath: { eq: "conway.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 400, maxHeight: 300) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    radial: file(relativePath: { eq: "radial.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 400, maxHeight: 300) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    flocking: file(relativePath: { eq: "flocking.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 400, maxHeight: 300) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-
     itp: file(relativePath: { eq: "partners/nyu-itp.png" }) {
       childImageSharp {
         fluid(maxWidth: 150, maxHeight: 150) {
