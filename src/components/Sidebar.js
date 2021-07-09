@@ -70,6 +70,7 @@ export const SidebarTableOfContents = memo(
           <ul>
             {items.map((item, index) => {
               const isCurrent = currentHeading === item.url.replace('#', '');
+
               return (
                 <li
                   key={`item-${index}`}
