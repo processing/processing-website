@@ -1,9 +1,0 @@
-{
-  "brief": "Confirms if a Processing program is \"focused\"",
-  "related": [],
-  "name": "focused",
-  "description": "Confirms if a Processing program is \"focused\", meaning that it is active\n and will accept input from mouse or keyboard. This variable is <b>true</b> if\n it is focused and <b>false</b> if not.",
-  "category": "environment",
-  "subcategory": "",
-  "type": "other"
-}

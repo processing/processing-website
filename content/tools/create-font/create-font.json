@@ -1,4 +1,0 @@
-{
-  "name": "Create Font",
-  "description": "Converts fonts into the Processing font format and adds to the current sketch. Opens a dialog box which give options for setting the font, its size, if it is anti-aliased, and if all characters should be generated."
-}
