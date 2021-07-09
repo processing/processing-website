@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 import { useIntl } from 'react-intl';
 
 import HeadMatter from '../../components/HeadMatter';
@@ -73,7 +74,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
       <HeadMatter
         title={title}
         description={entry?.description}
-        img={data.images.edges[0]?.node.childImageSharp.fluid.src}
+        img={getImage(data.images.edges[0]?.node)}
       />
 
       <div className={grid.grid}>
@@ -249,7 +250,7 @@ export const query = graphql`
         name
         relativeDirectory
         childImageSharp {
-          gatsbyImageData(width: 200)
+          gatsbyImageData(width: 400)
         }
       }
     }

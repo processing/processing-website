@@ -299,7 +299,7 @@ const Examples = memo(({ heading, examples }) => {
               {example.image && (
                 <GatsbyImage
                   image={example.image.childImageSharp.gatsbyImageData}
-                  alt=""
+                  alt={`Code output of the ${example.name} code example`}
                   loading="eager"
                 />
               )}

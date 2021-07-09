@@ -73,6 +73,7 @@ export const ExampleItem = memo(({ node, variant }) => {
           <GatsbyImage
             className={css.cover}
             image={node.image.childImageSharp.gatsbyImageData}
+            alt={node.name}
           />
         )}
         <h4>{node.name}</h4>

@@ -34,6 +34,7 @@ const Books = ({ data }) => {
                   {book.image && (
                     <GatsbyImage
                       image={book.image.childImageSharp.gatsbyImageData}
+                      alt={`Book cover for the book ${book.title}`}
                     />
                   )}
                 </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { useIntl } from 'react-intl';
+import { getImage } from 'gatsby-plugin-image';
 import classnames from 'classnames';
 
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -30,7 +31,7 @@ const TutorialTemplate = ({ data, pageContext }) => {
       <HeadMatter
         title={mdx?.frontmatter.title}
         description={mdx?.frontmatter.intro}
-        img={mdx?.frontmatter.coverImage?.childImageSharp.fluid.src}
+        img={getImage(mdx?.frontmatter.coverImage)}
       />
 
       <div className={classnames(grid.grid, css.root)}>

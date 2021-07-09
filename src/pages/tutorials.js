@@ -36,15 +36,7 @@ const Tutorials = ({ data }) => {
             return (
               <li key={k} className={classnames(grid.col, css.card)}>
                 <a href={tutorial.link} target="_blank" rel="noreferrer">
-                  {tutorial.image && (
-                    <div className={css.cover}>
-                      <GatsbyImage
-                        image={tutorial.image}
-                        style={{ height: 100 }}
-                        objectFit="contain"
-                      />
-                    </div>
-                  )}
+                  {tutorial.image && <Image tutorial={tutorial} />}
                   <h4>{tutorial.title}</h4>
                   <div>
                     <span className={css.author}>
@@ -67,15 +59,7 @@ const Tutorials = ({ data }) => {
             return (
               <li key={k} className={classnames(grid.col, css.card)}>
                 <Link to={tutorial.slug}>
-                  {tutorial.image && (
-                    <div className={css.cover}>
-                      <GatsbyImage
-                        image={tutorial.image}
-                        style={{ height: 100 }}
-                        objectFit="contain"
-                      />
-                    </div>
-                  )}
+                  {tutorial.image && <Image tutorial={tutorial} />}
                   <h4>{tutorial.title}</h4>
                   <div>
                     <span className={css.author}>
@@ -94,6 +78,19 @@ const Tutorials = ({ data }) => {
         </ul>
       </div>
     </Layout>
+  );
+};
+
+const Image = ({ tutorial }) => {
+  return (
+    <div className={css.cover}>
+      <GatsbyImage
+        className={css.image}
+        alt={`Image for the ${tutorial.title} tutorial`}
+        image={tutorial.image}
+        objectFit="cover"
+      />
+    </div>
   );
 };
 

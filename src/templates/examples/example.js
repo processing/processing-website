@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import p5 from 'p5';
 
 import HeadMatter from '../../components/HeadMatter';
@@ -77,7 +77,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
       <HeadMatter
         title={`${example?.title} / ${intl.formatMessage({ id: 'examples' })}`}
         description={example?.description}
-        img={image?.childImageSharp.fluid.src}
+        img={getImage(image)}
       />
       <Helmet>
         {liveSketch && <script>{`${liveSketch.childRawCode.content}`}</script>}
@@ -115,7 +115,10 @@ const ExampleTemplate = ({ data, pageContext }) => {
             </div>
             <div className={css.cover} id="example-cover">
               {!liveSketch && image && (
-                <GatsbyImage image={image.childImageSharp.gatsbyImageData} />
+                <GatsbyImage
+                  image={getImage(image)}
+                  alt={`Visual output for the code example`}
+                />
               )}
             </div>
             <Tabs pdes={pdes} />

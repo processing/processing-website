@@ -74,6 +74,7 @@ export const ExampleList = memo(({ examples }) => {
               <div className={classnames(grid.col, css.image)}>
                 <GatsbyImage
                   image={example.image.childImageSharp.gatsbyImageData}
+                  alt={`Image output for example ${i + 1}`}
                 />
               </div>
             )}
