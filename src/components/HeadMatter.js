@@ -26,7 +26,15 @@ export const HeadMatter = ({
     description ? description.replace(/\s+/g, ' ') : '',
     200
   ).trim();
-  const imgUrl = /^http/.test(img) ? img : data.site.siteMetadata.siteUrl + img;
+
+  let imgUrl;
+  if (img) {
+    const imgSrc = img.images.fallback.src;
+    imgUrl = /^http/.test(imgSrc)
+      ? imgSrc
+      : data.site.siteMetadata.siteUrl + imgSrc;
+  }
+
   const pageUrl = data.site.siteMetadata.siteUrl + location.pathname;
   return (
     <Helmet>
@@ -40,7 +48,7 @@ export const HeadMatter = ({
       <meta name="twitter:creator" content="@ProcessingOrg" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={shortDescription} />
-      {img && <meta name="twitter:image" content={imgUrl} />}
+      {imgUrl && <meta name="twitter:image" content={imgUrl} />}
 
       {/* Open Graph */}
       <meta property="og:url" content={pageUrl} />
