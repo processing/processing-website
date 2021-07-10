@@ -4,9 +4,10 @@ import { graphql } from 'gatsby';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import p5 from 'p5';
 
+import HeadMatter from '../../components/HeadMatter';
 import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
 import { SidebarTree } from '../../components/Sidebar';
@@ -24,8 +25,8 @@ import {
   useTrail
 } from '../../hooks/examples';
 
-import css from '../../styles/templates/examples/example.module.css';
-import grid from '../../styles/grid.module.css';
+import * as css from '../../styles/templates/examples/example.module.css';
+import * as grid from '../../styles/grid.module.css';
 
 // This is to make sure that p5.Vector and other namespaced classes
 // work in the live sketch examples.
@@ -34,7 +35,7 @@ if (typeof window !== 'undefined') {
 }
 
 const ExampleTemplate = ({ data, pageContext }) => {
-  const [showSidebar, setShowSidebar] = useSidebar();
+  const [showSidebar, setShowSidebar] = useSidebar('examples');
   const intl = useIntl();
 
   const { name, related } = pageContext;
@@ -73,8 +74,12 @@ const ExampleTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout withSidebar withBreadcrumbs>
+      <HeadMatter
+        title={`${example?.title} / ${intl.formatMessage({ id: 'examples' })}`}
+        description={example?.description}
+        img={getImage(image)}
+      />
       <Helmet>
-        {example && <title>{example.title}</title>}
         {liveSketch && <script>{`${liveSketch.childRawCode.content}`}</script>}
       </Helmet>
       <div className={grid.grid}>
@@ -86,7 +91,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
           useSerif
         />
         {example ? (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             <Breadcrumbs trail={trail} />
             <h1>{example.title}</h1>
             {example.author && (
@@ -110,10 +115,13 @@ const ExampleTemplate = ({ data, pageContext }) => {
             </div>
             <div className={css.cover} id="example-cover">
               {!liveSketch && image && (
-                <Img fluid={image.childImageSharp.fluid} />
+                <GatsbyImage
+                  image={getImage(image)}
+                  alt={`Visual output for the code example`}
+                />
               )}
             </div>
-            <Tabs pdes={pdes} className={css.tabs} />
+            <Tabs pdes={pdes} />
             <RelatedExamples
               examples={relatedExamples}
               heading={intl.formatMessage({ id: 'relatedExamples' })}
@@ -130,7 +138,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
             </p>
           </Content>
         ) : (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             {intl.formatMessage({ id: 'notTranslated' })}
             <Link to={pageContext.slug}>
               {' '}
@@ -220,9 +228,7 @@ export const query = graphql`
       name
       relativeDirectory
       childImageSharp {
-        fluid(maxWidth: 800) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(width: 800)
       }
     }
     liveSketch: file(
@@ -266,9 +272,7 @@ export const query = graphql`
         name
         relativeDirectory
         childImageSharp {
-          fluid(maxWidth: 200) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 200)
         }
       }
     }

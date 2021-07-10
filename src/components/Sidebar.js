@@ -8,26 +8,29 @@ import FilterBar from './FilterBar';
 
 import { useFilteredTree } from '../hooks';
 
-import css from './Sidebar.module.css';
+import * as css from './Sidebar.module.css';
 
-export const Sidebar = memo(({ children, title, show, setShow }) => {
+export const Sidebar = memo(({ children, title, show, setShow = () => {} }) => {
   const { headerScrolled } = useContext(LayoutContext);
+
+  if (show == null) {
+    return <div key="placeholder" className={css.root} />;
+  }
 
   return (
     <div
+      key="root"
       className={classnames(css.root, {
         [css.show]: show,
         [css.headerScrolled]: headerScrolled
       })}>
       <div
         className={css.toggleButton}
-        onClick={() => {
-          if (setShow) setShow((s) => !s);
-        }}
-        onKeyDown={(e) => e.keyCode === 13 && setShow((s) => !s)}
+        onClick={() => setShow(!show)}
+        onKeyDown={(e) => e.keyCode === 13 && setShow(!show)}
         role={'button'}
         tabIndex={'0'}>
-        {title ? <span className={css.toggleLabel}>{title}</span> : null}
+        {title && <span className={css.toggleLabel}>{title}</span>}
         {show ? '×' : '+'}
       </div>
       {show && (
@@ -67,6 +70,7 @@ export const SidebarTableOfContents = memo(
           <ul>
             {items.map((item, index) => {
               const isCurrent = currentHeading === item.url.replace('#', '');
+
               return (
                 <li
                   key={`item-${index}`}

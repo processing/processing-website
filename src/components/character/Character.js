@@ -5,7 +5,7 @@ import classnames from 'classnames';
 
 import Eye from './Eye';
 
-import css from './Character.module.css';
+import * as css from './Character.module.css';
 
 import characters from './characters.json';
 

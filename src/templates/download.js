@@ -1,8 +1,9 @@
 import React, { memo } from 'react';
 import { navigate, graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
+
+import HeadMatter from '../components/HeadMatter';
 
 import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
@@ -10,8 +11,8 @@ import LogoProcessing from '../images/logo-processing.svg';
 
 import { usePreparedReleases } from '../hooks/download';
 
-import css from '../styles/templates/download.module.css';
-import grid from '../styles/grid.module.css';
+import * as css from '../styles/templates/download.module.css';
+import * as grid from '../styles/grid.module.css';
 
 const Download = ({ data }) => {
   const intl = useIntl();
@@ -30,9 +31,11 @@ const Download = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Download</title>
-      </Helmet>
+      <HeadMatter
+        title={intl.formatMessage({ id: 'download' })}
+        description={intl.formatMessage({ id: 'downloadIntro' })}
+      />
+
       <div className={classnames(grid.container, grid.grid)}>
         <div className={classnames(grid.col, css.content)}>
           <Donate />
@@ -121,7 +124,7 @@ const LatestRelease = memo(({ release, onAfterDownload }) => {
 
 const ReleasesList = memo(({ releases, title, onAfterDownload }) => {
   return (
-    <div className={css.releases}>
+    <div>
       <h3>{title}</h3>
       <ul className={css.table}>
         {releases.map((release) => (

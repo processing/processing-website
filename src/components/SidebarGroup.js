@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import classnames from 'classnames';
 
-import css from './SidebarGroup.module.css';
+import * as css from './SidebarGroup.module.css';
 
 const SidebarGroup = ({ label, children, secondary }) => {
   const [expanded, setExpanded] = useState(true);

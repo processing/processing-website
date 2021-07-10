@@ -1,10 +1,10 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { useIntl } from 'react-intl';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import classnames from 'classnames';
 
+import HeadMatter from '../components/HeadMatter';
 import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
 import Content from '../components/ContentWithSidebar';
@@ -12,12 +12,12 @@ import { SidebarTableOfContents } from '../components/Sidebar';
 
 import { useHighlight, useSidebar } from '../hooks';
 
-import css from '../styles/pages/page.module.css';
+import * as css from '../styles/pages/page.module.css';
 
-import grid from '../styles/grid.module.css';
+import * as grid from '../styles/grid.module.css';
 
 const Environment = ({ data }) => {
-  const [showSidebar, setShowSidebar] = useSidebar();
+  const [showSidebar, setShowSidebar] = useSidebar('environment');
   const intl = useIntl();
   useHighlight();
 
@@ -25,9 +25,11 @@ const Environment = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Environment</title>
-      </Helmet>
+      <HeadMatter
+        title={intl.formatMessage({ id: 'environment' })}
+        description={mdx.frontmatter.description}
+      />
+
       <div className={classnames(grid.grid, css.root)}>
         <Donate />
         <SidebarTableOfContents
@@ -37,14 +39,14 @@ const Environment = ({ data }) => {
           show={showSidebar}
         />
         {mdx !== null ? (
-          <Content collapsed={!showSidebar} className={css.contentWrapper}>
+          <Content sidebarOpen={showSidebar} className={css.contentWrapper}>
             <h1>{mdx.frontmatter.title}</h1>
             <div className={css.content}>
               <MDXRenderer>{mdx.body}</MDXRenderer>
             </div>
           </Content>
         ) : (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             {intl.formatMessage({ id: 'notTranslated' })}
             {intl.formatMessage({ id: 'englishPage' })}
           </Content>
@@ -64,6 +66,7 @@ export const query = graphql`
       frontmatter {
         slug
         title
+        description
       }
       tableOfContents
     }

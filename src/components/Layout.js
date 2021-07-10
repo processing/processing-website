@@ -18,7 +18,7 @@ import '../styles/base.css';
 import '../styles/variables.css';
 import '../styles/fonts.css';
 
-import css from './Layout.module.css';
+import * as css from './Layout.module.css';
 
 export const LayoutContext = React.createContext();
 

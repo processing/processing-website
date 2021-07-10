@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
-import grid from '../styles/grid.module.css';
-import css from './SearchBar.module.css';
+import * as grid from '../styles/grid.module.css';
+import * as css from './SearchBar.module.css';
 
 import SearchIcon from '../images/search-icon.svg';
 

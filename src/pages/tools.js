@@ -1,15 +1,15 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
 import { useLocalization } from 'gatsby-theme-i18n';
 
+import HeadMatter from '../components/HeadMatter';
 import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
 
-import css from '../styles/pages/libraries.module.css';
-import grid from '../styles/grid.module.css';
+import * as css from '../styles/pages/libraries.module.css';
+import * as grid from '../styles/grid.module.css';
 
 const Tools = ({ data }) => {
   const { locale } = useLocalization();
@@ -30,9 +30,11 @@ const Tools = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Tools</title>
-      </Helmet>
+      <HeadMatter
+        title={intl.formatMessage({ id: 'tools' })}
+        description={intl.formatMessage({ id: 'toolsIntro' })}
+      />
+
       <div className={classnames(grid.container, grid.grid)}>
         <Donate />
         <div className={classnames(grid.col, css.text)}>

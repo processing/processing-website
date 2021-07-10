@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import css from './ToggleButton.module.css';
+import * as css from './ToggleButton.module.css';
 
 const ToggleButton = ({
   className,

@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import classnames from 'classnames';
 
-import grid from '../styles/grid.module.css';
-import css from './Topbar.module.css';
+import * as grid from '../styles/grid.module.css';
+import * as css from './Topbar.module.css';
 
 import LanguageSelector from './LanguageSelector';
 
@@ -50,9 +50,12 @@ const Topbar = ({ show }) => {
             </li>
           ))}
         </ul>
-        { <LanguageSelector
-          className={classnames(css.languageSelector, grid.col)}
-        />}
+        {/* disabled until we have a second language */}
+        {true || (
+          <LanguageSelector
+            className={classnames(css.languageSelector, grid.col)}
+          />
+        )}
       </div>
     </div>
   );

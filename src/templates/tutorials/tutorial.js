@@ -1,11 +1,12 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import { useIntl } from 'react-intl';
+import { getImage } from 'gatsby-plugin-image';
 import classnames from 'classnames';
 
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
+import HeadMatter from '../../components/HeadMatter';
 import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
 import { SidebarTableOfContents } from '../../components/Sidebar';
@@ -14,14 +15,12 @@ import Breadcrumbs from '../../components/Breadcrumbs';
 import { useHighlight, useSidebar } from '../../hooks';
 import { useTrail } from '../../hooks/tutorials';
 
-import css from '../../styles/pages/page.module.css';
-import grid from '../../styles/grid.module.css';
+import * as css from '../../styles/pages/page.module.css';
+import * as grid from '../../styles/grid.module.css';
 
 const TutorialTemplate = ({ data, pageContext }) => {
   const { mdx } = data;
-  const [showSidebar, setShowSidebar] = useSidebar(
-    !!mdx?.tableOfContents?.items ? undefined : true
-  );
+  const [showSidebar, setShowSidebar] = useSidebar('tutorials');
   const intl = useIntl();
   useHighlight();
 
@@ -29,11 +28,12 @@ const TutorialTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout withSidebar withBreadcrumbs>
-      <Helmet>
-        {mdx?.frontmatter?.title && (
-          <title>{mdx.frontmatter.title} / Tutorial</title>
-        )}
-      </Helmet>
+      <HeadMatter
+        title={mdx?.frontmatter.title}
+        description={mdx?.frontmatter.intro}
+        img={getImage(mdx?.frontmatter.coverImage)}
+      />
+
       <div className={classnames(grid.grid, css.root)}>
         {mdx?.tableOfContents?.items && (
           <SidebarTableOfContents
@@ -44,7 +44,7 @@ const TutorialTemplate = ({ data, pageContext }) => {
           />
         )}
         {mdx !== null ? (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             <Breadcrumbs trail={trail} />
             <h1>{mdx.frontmatter.title}</h1>
             <p className={css.author}>{`${intl.formatMessage({ id: 'by' })} ${
@@ -55,7 +55,7 @@ const TutorialTemplate = ({ data, pageContext }) => {
             </div>
           </Content>
         ) : (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             {intl.formatMessage({ id: 'notTranslated' })}
             <Link to={pageContext.slug}>
               {' '}
@@ -82,6 +82,12 @@ export const query = graphql`
         slug
         author
         level
+        intro
+        coverImage {
+          childImageSharp {
+            gatsbyImageData(width: 600)
+          }
+        }
       }
       tableOfContents
     }

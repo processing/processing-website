@@ -1,11 +1,11 @@
 import React, { memo, useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
+import HeadMatter from '../components/HeadMatter';
 import Layout from '../components/Layout';
 import Button from '../components/Button';
 import Card from '../components/Card';
@@ -14,8 +14,39 @@ import Sketch from '../components/sketch/Sketch';
 import { shuffleArray } from '../utils';
 import { usePreparedExamples } from '../hooks/examples';
 
-import css from '../styles/pages/index.module.css';
-import grid from '../styles/grid.module.css';
+import * as css from '../styles/pages/index.module.css';
+import * as grid from '../styles/grid.module.css';
+
+import DSILogo from '../images/partners/designsystemsinternational.svg';
+import DMALogo from '../images/partners/ucla-dma.svg';
+import FathomLogo from '../images/partners/fathom.svg';
+
+const partners = [
+  {
+    name: 'UCLA Design Media Arts',
+    url: 'http://dma.ucla.edu/',
+    width: '18%',
+    Logo: DMALogo
+  },
+  {
+    name: 'NYU ITP',
+    url: 'https://tisch.nyu.edu/',
+    width: '20%',
+    Logo: 'itp'
+  },
+  {
+    name: 'Fathom',
+    url: 'https://fathom.info/',
+    width: '29%',
+    Logo: FathomLogo
+  },
+  {
+    name: 'Design Systems International',
+    url: 'https://designsystems.international/',
+    width: '33%',
+    Logo: DSILogo
+  }
+];
 
 const IndexPage = ({ data }) => {
   const intl = useIntl();
@@ -35,9 +66,10 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout mainClassName={css.main}>
-      <Helmet>
-        <title>{intl.formatMessage({ id: 'welcome' })}</title>
-      </Helmet>
+      <HeadMatter
+        title={intl.formatMessage({ id: 'introTitle' })}
+        description={intl.formatMessage({ id: 'introText' })}
+      />
       <Sketch>
         <div className={css.hero}>
           <h1>{intl.formatMessage({ id: 'introTitle' })}</h1>
@@ -72,12 +104,7 @@ const IndexPage = ({ data }) => {
         heading={intl.formatMessage({ id: 'examples' })}
       />
       <div className={css.gettingStarted}>
-        <div
-          className={classnames(
-            grid.grid,
-            grid.container,
-            css.gettingStartedInner
-          )}>
+        <div className={classnames(grid.grid, grid.container)}>
           <div className={classnames(grid.col, css.gettingStartedMessage)}>
             <h2>{intl.formatMessage({ id: 'gettingStarted' })}</h2>
             <div>
@@ -128,8 +155,7 @@ const IndexPage = ({ data }) => {
         </div>
       </div>
       <div className={css.takePart}>
-        <div
-          className={classnames(grid.grid, grid.container, css.takePartInner)}>
+        <div className={classnames(grid.grid, grid.container)}>
           <div className={classnames(grid.col, css.participate)}>
             <h2>{intl.formatMessage({ id: 'participate' })}</h2>
             <div>
@@ -178,8 +204,7 @@ const IndexPage = ({ data }) => {
         </div>
       </div>
       <div className={css.external}>
-        <div
-          className={classnames(grid.grid, grid.container, css.externalInner)}>
+        <div className={classnames(grid.grid, grid.container)}>
           <div className={classnames(grid.col, css.externalLinks)}>
             <h2>{intl.formatMessage({ id: 'externalLinks' })}</h2>
             <ul>
@@ -230,45 +255,32 @@ const IndexPage = ({ data }) => {
               </li>
             </ul>
           </div>
-          <div className={classnames(grid.col, css.partnersContainer)}>
+          <div className={classnames(grid.col, css.partners)}>
             <h2>{intl.formatMessage({ id: 'partners' })}</h2>
-            <ul className={css.partners}>
-              <li>
-                <div>
-                  <img
-                    src={data.fathom.childImageSharp.fluid.src}
-                    alt="Fathom logo"
-                  />
-                </div>
-                <p>Fathom</p>
-              </li>
-              <li>
-                <div>
-                  <img
-                    src={data.itp.childImageSharp.fluid.src}
-                    alt="ITP NYU logo"
-                  />
-                </div>
-                <p>ITP NYU</p>
-              </li>
-              <li>
-                <div>
-                  <img
-                    src={data.ucla.childImageSharp.fluid.src}
-                    alt="UCLA Design Media Arts logo"
-                  />
-                </div>
-                <p>UCLA Design Media Arts</p>
-              </li>
-              <li>
-                <div>
-                  <img
-                    src={data.dsi.childImageSharp.fluid.src}
-                    alt="Design Systems International logo"
-                  />
-                </div>
-                <p>Design Systems International</p>
-              </li>
+            <ul className={css.partnersList}>
+              {partners.map(({ name, url, width, Logo }, i) => {
+                return (
+                  <li
+                    key={`partner-${i}`}
+                    className={css.partner}
+                    style={{ flexBasis: width }}>
+                    <a
+                      className={css.logo}
+                      href={url}
+                      target="_blank"
+                      rel="noreferrer">
+                      {typeof Logo === 'string' ? (
+                        <GatsbyImage
+                          image={data[Logo].childImageSharp.gatsbyImageData}
+                          alt={name}
+                        />
+                      ) : (
+                        <Logo />
+                      )}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
@@ -282,13 +294,14 @@ const Examples = memo(({ heading, examples, locale }) => {
   return (
     <div className={classnames(grid.grid, css.examples)}>
       <h3 className={classnames(grid.col, css.examplesHeading)}>{heading}</h3>
-      {examples.map((example, i) => (
+      {examples.map((example) => (
         <div className={classnames(grid.col, css.example)} key={example.path}>
-          <Link to={example.path} language={locale}>
+          <Link to={example.path}>
             <div className={css.imgContainer}>
               {example.image && (
-                <Img
-                  fluid={example.image.childImageSharp.fluid}
+                <GatsbyImage
+                  image={example.image.childImageSharp.gatsbyImageData}
+                  alt={`Code output of the ${example.name} code example`}
                   loading="eager"
                 />
               )}
@@ -357,71 +370,13 @@ export const query = graphql`
         name
         relativeDirectory
         childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid
-            base64
-            srcWebp
-            srcSetWebp
-            originalImg
-            originalName
-          }
+          gatsbyImageData(width: 800)
         }
       }
     }
-    news: file(relativePath: { eq: "news.png" }) {
+    itp: file(relativePath: { eq: "partners/nyu-itp.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1280, maxHeight: 508) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    conway: file(relativePath: { eq: "conway.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 400, maxHeight: 300) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    radial: file(relativePath: { eq: "radial.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 400, maxHeight: 300) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    flocking: file(relativePath: { eq: "flocking.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 400, maxHeight: 300) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    fathom: file(relativePath: { eq: "fathom.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 120, maxHeight: 120) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    itp: file(relativePath: { eq: "itp.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 150, maxHeight: 120) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    ucla: file(relativePath: { eq: "ucla.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 120, maxHeight: 120) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    dsi: file(relativePath: { eq: "designsystemsinternational.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 120, maxHeight: 120) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(width: 150)
       }
     }
   }

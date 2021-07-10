@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import classnames from 'classnames';
 
-import css from './FilterBar.module.css';
+import * as css from './FilterBar.module.css';
 
 const FilterBar = ({
   large,

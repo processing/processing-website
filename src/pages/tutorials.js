@@ -1,17 +1,17 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 
+import HeadMatter from '../components/HeadMatter';
 import Layout from '../components/Layout';
 
 import { usePreparedTutorials } from '../hooks/tutorials';
 
-import css from '../styles/pages/tutorials.module.css';
-import grid from '../styles/grid.module.css';
+import * as css from '../styles/pages/tutorials.module.css';
+import * as grid from '../styles/grid.module.css';
 
 const Tutorials = ({ data }) => {
   const intl = useIntl();
@@ -20,10 +20,12 @@ const Tutorials = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Tutorials</title>
-      </Helmet>
-      <div className={classnames(grid.container, grid.grid, css.root)}>
+      <HeadMatter
+        title={intl.formatMessage({ id: 'tutorials' })}
+        description={intl.formatMessage({ id: 'videoTutorialsIntro' })}
+      />
+
+      <div className={classnames(grid.container, grid.grid)}>
         <div className={classnames(grid.col, css.text)}>
           <h1>{intl.formatMessage({ id: 'tutorials' })}</h1>
           <h2>{intl.formatMessage({ id: 'videoTutorials' })}</h2>
@@ -34,15 +36,7 @@ const Tutorials = ({ data }) => {
             return (
               <li key={k} className={classnames(grid.col, css.card)}>
                 <a href={tutorial.link} target="_blank" rel="noreferrer">
-                  {tutorial.image && (
-                    <div className={css.cover}>
-                      <Img
-                        fluid={tutorial.image}
-                        style={{ height: 100 }}
-                        objectFit="contain"
-                      />
-                    </div>
-                  )}
+                  {tutorial.image && <Image tutorial={tutorial} />}
                   <h4>{tutorial.title}</h4>
                   <div>
                     <span className={css.author}>
@@ -65,15 +59,7 @@ const Tutorials = ({ data }) => {
             return (
               <li key={k} className={classnames(grid.col, css.card)}>
                 <Link to={tutorial.slug}>
-                  {tutorial.image && (
-                    <div className={css.cover}>
-                      <Img
-                        fluid={tutorial.image}
-                        style={{ height: 100 }}
-                        objectFit="contain"
-                      />
-                    </div>
-                  )}
+                  {tutorial.image && <Image tutorial={tutorial} />}
                   <h4>{tutorial.title}</h4>
                   <div>
                     <span className={css.author}>
@@ -92,6 +78,19 @@ const Tutorials = ({ data }) => {
         </ul>
       </div>
     </Layout>
+  );
+};
+
+const Image = ({ tutorial }) => {
+  return (
+    <div className={css.cover}>
+      <GatsbyImage
+        className={css.image}
+        alt={`Image for the ${tutorial.title} tutorial`}
+        image={tutorial.image}
+        objectFit="cover"
+      />
+    </div>
   );
 };
 
@@ -118,9 +117,7 @@ export const query = graphql`
             intro
             coverImage {
               childImageSharp {
-                fluid(maxWidth: 600) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(width: 600)
               }
             }
           }
@@ -146,9 +143,7 @@ export const query = graphql`
             level
             coverImage {
               childImageSharp {
-                fluid(maxWidth: 600) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(width: 600)
               }
             }
           }

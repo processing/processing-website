@@ -1,5 +1,5 @@
 import React, { Fragment, useState, memo } from 'react';
-import { Helmet } from 'react-helmet';
+
 import { graphql } from 'gatsby';
 import unique from 'array-unique';
 import classnames from 'classnames';
@@ -7,6 +7,7 @@ import { useIntl } from 'react-intl';
 import { widont, linkParsing } from '../utils/index.js';
 import { useLocalization, LocalizedLink as Link } from 'gatsby-theme-i18n';
 
+import HeadMatter from '../components/HeadMatter';
 import Shortcuts from '../components/Shortcuts';
 import Donate from '../components/character/Donate';
 import Layout from '../components/Layout';
@@ -16,8 +17,8 @@ import { useFilteredArray } from '../hooks';
 import { usePreparedContributions } from '../hooks/libraries';
 import { referencePath } from '../utils/paths';
 
-import css from '../styles/pages/libraries.module.css';
-import grid from '../styles/grid.module.css';
+import * as css from '../styles/pages/libraries.module.css';
+import * as grid from '../styles/grid.module.css';
 
 const Libraries = ({ data }) => {
   const { locale } = useLocalization();
@@ -36,9 +37,10 @@ const Libraries = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>{intl.formatMessage({ id: 'LibrariesTitle' })}</title>
-      </Helmet>
+      <HeadMatter
+        title={intl.formatMessage({ id: 'libraries' })}
+        description={intl.formatMessage({ id: 'librariesIntro' })}
+      />
       <div className={classnames(grid.container, grid.grid)}>
         <Donate />
         <div className={classnames(grid.col, css.text)}>

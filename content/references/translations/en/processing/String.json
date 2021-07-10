@@ -31,13 +31,13 @@
       "desc": "Returns the index value of the first occurrence of a substring within the input string"
     },
     {
-      "anchor": "String_charAt_",
-      "name": "charAt()",
+      "anchor": "String_equals_",
+      "name": "equals()",
       "desc": "Compares two strings to see if they are the same"
     },
     {
-      "anchor": "String_length_",
-      "name": "length()",
+      "anchor": "String_charAt_",
+      "name": "charAt()",
       "desc": "Returns the character at the specified index"
     }
   ],

@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 
-import Donate from '../components/character/Donate';
+import HeadMatter from '../components/HeadMatter';
 import Layout from '../components/Layout';
+import Donate from '../components/character/Donate';
 import FilterBar from '../components/FilterBar';
 import ExamplesList from '../components/examples/ExamplesList';
 
 import { useTree, useFilteredTree } from '../hooks';
 import { usePreparedExamples } from '../hooks/examples';
 
-import css from '../styles/pages/examples.module.css';
-import grid from '../styles/grid.module.css';
+import * as css from '../styles/pages/examples.module.css';
+import * as grid from '../styles/grid.module.css';
 
 const Examples = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -25,9 +25,10 @@ const Examples = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Examples</title>
-      </Helmet>
+      <HeadMatter
+        title={intl.formatMessage({ id: 'examples' })}
+        description={intl.formatMessage({ id: 'examplesIntro' })}
+      />
       <div className={classnames(grid.container, grid.grid)}>
         <Donate />
         <div className={classnames(grid.col, css.text)}>
@@ -83,9 +84,7 @@ export const query = graphql`
         name
         relativeDirectory
         childImageSharp {
-          fluid(maxWidth: 400) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 400)
         }
       }
     }

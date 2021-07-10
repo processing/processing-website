@@ -1,9 +1,3 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
-
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const { examplePath, referencePath } = require('./src/utils/paths');
@@ -87,6 +81,7 @@ async function createReference(actions, graphql) {
               relativeDirectory
               childJson {
                 type
+                classanchor
               }
             }
           }
@@ -133,6 +128,7 @@ async function createReference(actions, graphql) {
     const [lang, libraryName] = refPage.node.relativeDirectory.split('/');
     const refPath = referencePath(name, libraryName, lang);
     const relDir = libraryName + '/' + name;
+    const { type, classanchor } = refPage.node.childJson;
 
     const inUseExamples = inUse.data.allFile.edges
       .filter((n) => {
@@ -150,28 +146,29 @@ async function createReference(actions, graphql) {
       name,
       relDir,
       libraryName,
-      inUseExamples: inUseExamples
+      inUseExamples: inUseExamples,
+      hasClassanchor: false
     };
 
-    if (
-      refPage.node.childJson.type === 'function' ||
-      refPage.node.childJson.type === 'method'
-    ) {
+    // Used to load category and subcategory from class parent for breadcrumbs
+    if (type === 'method' || type === 'field') {
+      context.hasClassanchor = true;
+      context.classanchor = classanchor;
+    }
+
+    if (type === 'function' || type === 'method') {
       createPage({
         path: refPath,
         component: refTemplate,
         context
       });
-    } else if (refPage.node.childJson.type === 'class') {
+    } else if (type === 'class') {
       createPage({
         path: refPath,
         component: classRefTemplate,
         context
       });
-    } else if (
-      refPage.node.childJson.type === 'field' ||
-      refPage.node.childJson.type === 'other'
-    ) {
+    } else if (type === 'field' || type === 'other') {
       createPage({
         path: refPath,
         component: fieldRefTemplate,
@@ -275,7 +272,7 @@ const parseExampleFileInfo = (node) => {
   // Split name into needed info.
   // Slug is lowercased to match old processing.org URL's
   const splitName = node.name.split('.');
-  const langCode = splitName.length > 1 ? splitName[1] + '/' : '';
+  const langCode = splitName.length > 1 ? '/' + splitName[1] : '';
   const name = splitName[0];
   const slug = langCode + '/examples/' + name.toLowerCase() + '.html';
 

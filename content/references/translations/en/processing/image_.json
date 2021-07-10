@@ -14,7 +14,7 @@
   "returns": "void",
   "type": "function",
   "category": "image",
-  "subcategory": "loading_displaying",
+  "subcategory": "loading & displaying",
   "parameters": [
     {
       "name": "img",

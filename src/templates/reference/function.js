@@ -1,8 +1,10 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 import { useIntl } from 'react-intl';
+
+import HeadMatter from '../../components/HeadMatter';
 
 import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
@@ -24,21 +26,22 @@ import {
 } from '../../hooks/reference';
 import { referencePath } from '../../utils/paths';
 
-import grid from '../../styles/grid.module.css';
+import * as grid from '../../styles/grid.module.css';
 
 const RefTemplate = ({ data, pageContext, ...props }) => {
   const { name, libraryName } = pageContext;
   const isProcessing = libraryName === 'processing';
-  const [showSidebar, setShowSidebar] = useSidebar();
+  const [showSidebar, setShowSidebar] = useSidebar('reference');
 
   const intl = useIntl();
   useHighlight();
 
+  const parent = data?.parent?.childJson;
+  const entry = data?.json?.childJson;
+
   const items = usePreparedItems(data.items.nodes, libraryName);
   const examples = usePreparedExamples(data.pdes.edges, data.images.edges);
   const tree = useTree(items);
-
-  const entry = data?.json?.childJson;
 
   const inUse = usePreparedList(entry?.inUse, libraryName, true, true);
   const parameters = usePreparedList(entry?.parameters, libraryName);
@@ -52,22 +55,23 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
 
   const trail = useTrail(
     libraryName,
-    entry?.category,
-    entry?.subcategory,
+    parent ? parent.category : entry?.category,
+    parent ? parent.subcategory : entry?.subcategory,
     entry?.classanchor
   );
 
   return (
     <Layout withSidebar withBreadcrumbs>
-      <Helmet>
-        <title>
-          {data.en.childJson.name}
-          {' / '}
-          {isProcessing
+      <HeadMatter
+        title={
+          (entry?.name ?? data.en.childJson.name) + ' / ' + isProcessing
             ? intl.formatMessage({ id: 'reference' })
-            : intl.formatMessage({ id: 'libraries' })}
-        </title>
-      </Helmet>
+            : intl.formatMessage({ id: 'libraries' })
+        }
+        description={entry?.description}
+        img={getImage(data.images.edges[0]?.node)}
+      />
+
       <div className={grid.grid}>
         <SidebarTree
           title={intl.formatMessage({ id: 'reference' })}
@@ -76,14 +80,14 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
           show={showSidebar}
         />
         {entry ? (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             <Breadcrumbs trail={trail} />
             <Section short title={intl.formatMessage({ id: 'name' })}>
               <h3>{entry.name}</h3>
             </Section>
             {entry?.classanchor && (
               <Section title={intl.formatMessage({ id: 'class' })}>
-                <h4>{entry.classanchor}</h4>
+                <h4>{entry.classanchor} </h4>
               </Section>
             )}
             <Section title={intl.formatMessage({ id: 'description' })}>
@@ -139,7 +143,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
             <License />
           </Content>
         ) : (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             {intl.formatMessage({ id: 'notTranslated' })}
             <Link to={referencePath(name, libraryName)}>
               {' '}
@@ -161,6 +165,8 @@ export const query = graphql`
     $locale: String!
     $inUseExamples: [String!]!
     $libraryName: String!
+    $hasClassanchor: Boolean!
+    $classanchor: String
   ) {
     json: file(fields: { name: { eq: $name }, lang: { eq: $locale } }) {
       childJson {
@@ -184,6 +190,14 @@ export const query = graphql`
         name
       }
     }
+    parent: file(fields: { name: { eq: $classanchor }, lang: { eq: "en" } })
+      @include(if: $hasClassanchor) {
+      childJson {
+        name
+        category
+        subcategory
+      }
+    }
     images: allFile(
       filter: {
         relativeDirectory: { eq: $relDir }
@@ -198,9 +212,7 @@ export const query = graphql`
           }
           extension
           childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 400)
           }
         }
       }
@@ -247,9 +259,7 @@ export const query = graphql`
         name
         relativeDirectory
         childImageSharp {
-          fluid(maxWidth: 200) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 400)
         }
       }
     }

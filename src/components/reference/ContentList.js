@@ -1,31 +1,28 @@
 import React, { memo } from 'react';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import classnames from 'classnames';
 import { widont } from '../../utils/index.js';
 
 import CopyButton from './../CopyButton';
 
-import css from './ContentList.module.css';
-import grid from '../../styles/grid.module.css';
+import * as css from './ContentList.module.css';
+import * as grid from '../../styles/grid.module.css';
 
 export const CodeList = memo(
   ({ items, variant, nameIsHtml, descriptionIsHtml }) => {
     return (
       <ul className={classnames(css.codeList, css[variant])}>
-        {items.map((item) => {
+        {items.map((item, i) => {
           // Name
           if (item.name === '' || typeof item !== 'object') {
             return null;
           }
 
           let name = nameIsHtml ? (
-            <code
-              dangerouslySetInnerHTML={{ __html: item.name }}
-              className={css.name}
-            />
+            <code dangerouslySetInnerHTML={{ __html: item.name }} />
           ) : (
-            <code className={css.name}>{item.name}</code>
+            <code>{item.name}</code>
           );
 
           // Name as link
@@ -49,7 +46,7 @@ export const CodeList = memo(
           );
 
           return (
-            <li key={`ril-${item.name}`} className={css.item}>
+            <li key={`ril-${item.name}-${i}`} className={css.item}>
               {name}
               {type}
               {description}
@@ -75,7 +72,10 @@ export const ExampleList = memo(({ examples }) => {
             </div>
             {example.image && (
               <div className={classnames(grid.col, css.image)}>
-                <Img fluid={example.image.childImageSharp.fluid} />
+                <GatsbyImage
+                  image={example.image.childImageSharp.gatsbyImageData}
+                  alt={`Image output for example ${i + 1}`}
+                />
               </div>
             )}
           </li>

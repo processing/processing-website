@@ -1,17 +1,17 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { useIntl } from 'react-intl';
 
+import HeadMatter from '../components/HeadMatter';
 import Layout from '../components/Layout';
 
 import { usePreparedBooks } from '../hooks/books';
 
-import css from '../styles/pages/books.module.css';
-import grid from '../styles/grid.module.css';
+import * as css from '../styles/pages/books.module.css';
+import * as grid from '../styles/grid.module.css';
 
 const Books = ({ data }) => {
   const intl = useIntl();
@@ -19,21 +19,23 @@ const Books = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Books</title>
-      </Helmet>
+      <HeadMatter
+        title={intl.formatMessage({ id: 'books' })}
+        description={intl.formatMessage({ id: 'booksIntro' })}
+      />
       <div className={classnames(grid.grid, grid.container, css.root)}>
-        <h1 className={grid.col}>Books</h1>
+        <h1 className={grid.col}>{intl.formatMessage({ id: 'books' })}</h1>
         <h3 className={grid.col}>{intl.formatMessage({ id: 'booksIntro' })}</h3>
         <ul className={classnames(grid.col, grid.grid, css.booksList)}>
           {books.map((book, i) => {
             return (
-              <li
-                key={`${book.title}-${i}`}
-                className={classnames(grid.nest, css.listItem)}>
+              <li key={`${book.title}-${i}`} className={css.listItem}>
                 <div className={classnames(grid.col, css.cover)}>
                   {book.image && (
-                    <Img fluid={book.image.childImageSharp.fluid} />
+                    <GatsbyImage
+                      image={book.image.childImageSharp.gatsbyImageData}
+                      alt={`Book cover for the book ${book.title}`}
+                    />
                   )}
                 </div>
                 <div className={classnames(grid.col, css.book)}>
@@ -113,9 +115,7 @@ export const query = graphql`
       nodes {
         name
         childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 1200)
         }
       }
     }

@@ -12,7 +12,7 @@
   "returns": "int",
   "type": "function",
   "category": "color",
-  "subcategory": "creating_reading",
+  "subcategory": "creating & reading",
   "parameters": [
     {
       "name": "gray",

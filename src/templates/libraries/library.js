@@ -1,11 +1,11 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import classnames from 'classnames';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { useIntl } from 'react-intl';
 
+import HeadMatter from '../../components/HeadMatter';
 import Layout from '../../components/Layout';
 import ReferenceList from '../../components/reference/ReferenceList';
 
@@ -13,8 +13,8 @@ import { referencePath } from '../../utils/paths';
 import { useTree, useHighlight } from '../../hooks';
 import { usePreparedItems } from '../../hooks/reference';
 
-import css from '../../styles/templates/libraries/library.module.css';
-import grid from '../../styles/grid.module.css';
+import * as css from '../../styles/templates/libraries/library.module.css';
+import * as grid from '../../styles/grid.module.css';
 
 const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
   const intl = useIntl();
@@ -24,9 +24,12 @@ const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>{intl.formatMessage({ id: libraryName })} / Libraries</title>
-      </Helmet>
+      <HeadMatter
+        title={`${intl.formatMessage({
+          id: libraryName
+        })} / ${intl.formatMessage({ id: 'libraries' })}`}
+        description={data.mdx?.frontmatter.description}
+      />
       {data.mdx !== null ? (
         <div className={classnames(grid.grid, css.root)}>
           <div className={classnames(grid.col, css.content)}>
@@ -68,6 +71,9 @@ export const query = graphql`
       fields: { locale: { eq: $locale } }
       frontmatter: { name: { eq: $libraryName } }
     ) {
+      frontmatter {
+        description
+      }
       body
     }
   }

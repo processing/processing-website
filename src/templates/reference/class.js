@@ -1,9 +1,11 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 import { useIntl } from 'react-intl';
 import { widont } from '../../utils/index.js';
+
+import HeadMatter from '../../components/HeadMatter';
 
 import Layout from '../../components/Layout';
 import Content from '../../components/ContentWithSidebar';
@@ -24,20 +26,20 @@ import {
 } from '../../hooks/reference';
 import { referencePath } from '../../utils/paths';
 
-import grid from '../../styles/grid.module.css';
+import * as grid from '../../styles/grid.module.css';
 
 const ClassRefTemplate = ({ data, pageContext }) => {
   const { name, libraryName } = pageContext;
   const entry = data?.json?.childJson;
   const isProcessing = libraryName === 'processing';
-  const [showSidebar, setShowSidebar] = useSidebar();
+  const [showSidebar, setShowSidebar] = useSidebar('reference');
+
   const intl = useIntl();
   useHighlight();
 
   const items = usePreparedItems(data.items.nodes, libraryName);
   const examples = usePreparedExamples(data.pdes.edges, data.images.edges);
   const tree = useTree(items);
-
   const constructors = usePreparedList(entry?.constructors, libraryName);
   const fields = usePreparedList(entry?.classFields, libraryName, false, true);
   const parameters = usePreparedList(entry?.parameters, libraryName);
@@ -52,15 +54,16 @@ const ClassRefTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout withSidebar withBreadcrumbs>
-      <Helmet>
-        <title>
-          {data.en.childJson.name}
-          {' / '}
-          {isProcessing
+      <HeadMatter
+        title={
+          (entry?.name ?? data.en.childJson.name) + ' / ' + isProcessing
             ? intl.formatMessage({ id: 'reference' })
-            : intl.formatMessage({ id: 'libraries' })}
-        </title>
-      </Helmet>
+            : intl.formatMessage({ id: 'libraries' })
+        }
+        description={entry?.description}
+        img={getImage(data.images.edges[0]?.node)}
+      />
+
       <div className={grid.grid}>
         <SidebarTree
           title={intl.formatMessage({ id: 'reference' })}
@@ -69,7 +72,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
           show={showSidebar}
         />
         {entry ? (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             <Breadcrumbs trail={trail} />
             <Section title={intl.formatMessage({ id: 'className' })}>
               <h3>{entry.name}</h3>
@@ -127,7 +130,7 @@ const ClassRefTemplate = ({ data, pageContext }) => {
             <License />
           </Content>
         ) : (
-          <Content collapsed={!showSidebar}>
+          <Content sidebarOpen={showSidebar}>
             {intl.formatMessage({ id: 'notTranslated' })}
             <Link to={referencePath(name, libraryName)}>
               {' '}
@@ -199,9 +202,7 @@ export const query = graphql`
           }
           extension
           childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 400)
           }
         }
       }
@@ -248,9 +249,7 @@ export const query = graphql`
         name
         relativeDirectory
         childImageSharp {
-          fluid(maxWidth: 200) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 400)
         }
       }
     }

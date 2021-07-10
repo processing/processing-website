@@ -7,7 +7,7 @@
   "returns": "void",
   "type": "function",
   "category": "lights_camera",
-  "subcategory": "material_properties",
+  "subcategory": "material properties",
   "parameters": [
     {
       "name": "rgb",
