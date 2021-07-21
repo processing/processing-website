@@ -186,14 +186,14 @@ export const useTrail = (libraryName, category, subcategory, classanchor) => {
       if (category) {
         trail.push({
           slug: sectionTrail.slug + '#' + slugify(category),
-          label: category
+          label: intl.formatMessage({ id: 'category' })
         });
       }
 
       if (subcategory) {
         trail.push({
           slug: sectionTrail.slug + '#' + slugify(category, subcategory),
-          label: subcategory
+          label: intl.formatMessage({ id: 'subcategory' })
         });
       }
     } else {
@@ -203,7 +203,7 @@ export const useTrail = (libraryName, category, subcategory, classanchor) => {
       });
       trail.push({
         slug: referencePath('index', libraryName),
-        label: libraryName
+        label: intl.formatMessage({ id: 'libraryName' })
       });
     }
 

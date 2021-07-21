@@ -51,11 +51,11 @@ const Topbar = ({ show }) => {
           ))}
         </ul>
         {/* disabled until we have a second language */}
-        {true || (
+        {
           <LanguageSelector
             className={classnames(css.languageSelector, grid.col)}
           />
-        )}
+        }
       </div>
     </div>
   );

@@ -244,7 +244,7 @@ export const query = graphql`
     allExamples: allFile(
       filter: {
         sourceInstanceName: { eq: "examples" }
-        fields: { lang: { eq: "en" } }
+        fields: { lang: { eq: $locale } }
         extension: { eq: "json" }
         relativeDirectory: { regex: "/^((?!data).)*$/" }
       }
