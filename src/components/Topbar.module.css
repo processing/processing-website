@@ -41,8 +41,6 @@
 }
 
 .item {
-  display: flex;
-  align-items: center;
   margin-right: 2rem;
   box-sizing: border-box;
   height: 100%;
@@ -51,47 +49,43 @@
   font-size: 0.85rem;
 }
 
-.item:hover {
-  border-bottom: solid 4px var(--processing-blue-deep);
+.item a {
   padding-top: 4px;
+  display: flex;
+  height: calc(100% - 4px);
 }
 .item a,
 .item a:hover {
   color: inherit;
 }
+.itemBar {
+  opacity: 0;
+  border-bottom: solid 4px var(--processing-blue-deep);
+  display: block;
+  width: 100%;
+  height: 0;
+}
+.item:hover .itemBar {
+  opacity: 1;
+}
+
 /*Styles for each logo */
 
 .logo {
-  margin-right: 5px;
+  margin-right: 8px;
   width: 27px;
   height: auto;
 }
-
-.foundation {
-  color: var(--foundation-mid);
+.foundation .logo {
+  margin-top: 2px;
 }
 
-.foundation:hover {
-  border-color: var(--foundation-mid);
+.processing .logo {
+  margin-top: 4px;
 }
 
-.p5 {
-  color: var(--p5-mid);
-}
-
-.p5:hover {
-  border-color: var(--p5-mid);
-}
-
-.processing {
-  color: var(--processing-blue-mid);
-  & .logo {
-    margin-top: 3px;
-  }
-}
-
-.processing:hover {
-  border-color: var(--processing-blue-mid);
+.p5 .logo {
+  width: 25px;
 }
 
 .languageSelector {

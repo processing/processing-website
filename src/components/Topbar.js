@@ -7,27 +7,47 @@ import * as css from './Topbar.module.css';
 import LanguageSelector from './LanguageSelector';
 
 import LogoProcessing from '../images/logo-processing.svg';
-import LogoP5js from '../images/logo-p5js.svg';
-import LogoFoundation from '../images/logo-processingfoundation.svg';
+import LogoProcessingFoundation from '../images/logo-processing-foundation.svg';
+import LogoProcessingAndroid from '../images/logo-processing-android.svg';
+import LogoProcessingPython from '../images/logo-processing-python.svg';
+
+import LogoP5js from '../images/logo-p5js-original.svg';
 
 export const items = [
   {
     className: css.foundation,
     name: 'Processing Foundation',
     link: 'https://processingfoundation.org',
-    logo: <LogoFoundation className={css.logo} />
+    logo: <LogoProcessingFoundation className={css.logo} />,
+    color: '#9c4bff'
   },
   {
     name: 'Processing',
     className: css.processing,
     link: 'https://processing.org',
-    logo: <LogoProcessing className={css.logo} />
+    logo: <LogoProcessing className={css.logo} />,
+    color: '#0564ff'
   },
   {
     className: css.p5,
     name: 'p5.js',
     link: 'https://p5js.org/',
-    logo: <LogoP5js className={css.logo} />
+    logo: <LogoP5js className={css.logo} />,
+    color: '#ED225D'
+  },
+  {
+    className: css.android,
+    name: 'Processing Android',
+    link: 'https://android.processing.org/',
+    logo: <LogoProcessingAndroid className={css.logo} />,
+    color: '#146F43'
+  },
+  {
+    className: css.python,
+    name: 'Processing Python',
+    link: 'https://py.processing.org/',
+    logo: <LogoProcessingPython className={css.logo} />,
+    color: '#104B58'
   }
 ];
 
@@ -45,8 +65,12 @@ const Topbar = ({ show }) => {
             <li key={key} className={classnames(css.item, item.className)}>
               <a className={css.itemLink} href={item.link}>
                 {item.logo}
-                <span>{item.name}</span>
+                <span style={{ color: item.color }}>{item.name}</span>
               </a>
+              <span
+                className={css.itemBar}
+                style={{ borderBottomColor: item.color }}
+              />
             </li>
           ))}
         </ul>
