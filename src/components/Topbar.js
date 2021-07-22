@@ -16,7 +16,12 @@ import LogoP5js from '../images/logo-p5js-original.svg';
 export const items = [
   {
     className: css.foundation,
-    name: 'Processing Foundation',
+    name: (
+      <>
+        Processing
+        <br /> Foundation
+      </>
+    ),
     link: 'https://processingfoundation.org',
     logo: <LogoProcessingFoundation className={css.logo} />,
     color: '#9c4bff'
@@ -36,18 +41,26 @@ export const items = [
     color: '#ED225D'
   },
   {
-    className: css.android,
-    name: 'Processing Android',
+    name: (
+      <>
+        Processing
+        <br /> Android
+      </>
+    ),
     link: 'https://android.processing.org/',
     logo: <LogoProcessingAndroid className={css.logo} />,
-    color: '#146F43'
+    color: '#98C800'
   },
   {
-    className: css.python,
-    name: 'Processing Python',
+    name: (
+      <>
+        Processing
+        <br /> Python
+      </>
+    ),
     link: 'https://py.processing.org/',
     logo: <LogoProcessingPython className={css.logo} />,
-    color: '#104B58'
+    color: '#2D9E97'
   }
 ];
 
@@ -65,7 +78,9 @@ const Topbar = ({ show }) => {
             <li key={key} className={classnames(css.item, item.className)}>
               <a className={css.itemLink} href={item.link}>
                 {item.logo}
-                <span style={{ color: item.color }}>{item.name}</span>
+                <span className={css.name} style={{ color: item.color }}>
+                  {item.name}
+                </span>
               </a>
               <span
                 className={css.itemBar}

@@ -29,7 +29,6 @@
 }
 
 .menu {
-  flex-basis: var(--col6);
   display: flex;
   align-items: center;
 }
@@ -45,6 +44,7 @@
   box-sizing: border-box;
   height: 100%;
   color: var(--processing-blue-mid);
+  /* max-width: 140px; */
   font-weight: 600;
   font-size: 0.85rem;
 }
@@ -57,6 +57,9 @@
 .item a,
 .item a:hover {
   color: inherit;
+}
+.item .name {
+  line-height: 1;
 }
 .itemBar {
   opacity: 0;
@@ -73,9 +76,10 @@
 
 .logo {
   margin-right: 8px;
-  width: 27px;
+  width: 30px;
   height: auto;
 }
+
 .foundation .logo {
   margin-top: 2px;
 }
@@ -98,6 +102,9 @@
       font-size: var(--text-small);
     }
   }
+  .item .name {
+    display: none;
+  }
 }
 
 @media (--small) {
@@ -109,10 +116,6 @@
 
   .item {
     margin-right: var(--gutter-double);
-  }
-
-  .item span {
-    display: none;
   }
 
   .logo {
