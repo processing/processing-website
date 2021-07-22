@@ -44,9 +44,8 @@
   box-sizing: border-box;
   height: 100%;
   color: var(--processing-blue-mid);
-  /* max-width: 140px; */
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .item a {
