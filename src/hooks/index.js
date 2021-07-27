@@ -35,7 +35,7 @@ export const useTree = (items, order) => {
 
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
-
+      console.log(`Desde Hook index item ${item.category}`)
       if (!tree[item.category]) {
         tree[item.category] = {};
       }

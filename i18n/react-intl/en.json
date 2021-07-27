@@ -3,6 +3,7 @@
   "download": "Download",
   "documentation": "Documentation",
   "reference": "Reference",
+  "references": "References",
   "environment": "Environment",
   "libraries": "Libraries",
   "tools": "Tools",
@@ -140,5 +141,7 @@
   "donateButton": "Donate",
   "donateHelp": "Help us continue with your generosity!",
   "moreExamples": "More Examples",
-  "referenceTitle": "Reference"
+  "referenceTitle": "Reference",
+  "Topic Examples": "Topic Examples",
+"Fractals and L-Systems": "Fractals and L-Systems"
 }

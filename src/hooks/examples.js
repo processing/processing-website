@@ -109,20 +109,28 @@ export const useTrail = (example) => {
     ];
 
     if (example) {
+      console.log( `Hay ejemplo`);
       if (example.category) {
+        console.log( `categoria ${example.category.toString()}`);
+        const category = intl.formatMessage({ id: example.category });
+        console.log( `categoria INTL ${category}`);
         trail.push({
           slug: `/examples#${slugify(example.category)}`,
-          label: example.category
+          label: category
         });
       }
       if (example.subcategory) {
+
+        console.log( `subcategoria ${example.subcategory.toString()}`);
+        const subcategory = intl.formatMessage({ id: example.subcategory });
+        console.log( `subcategoria INTL ${subcategory}`);
         trail.push({
           slug: `/examples#${slugify(example.category, example.subcategory)}`,
-          label: example.subcategory
+          label: subcategory
         });
       }
     }
-
+    console.log( `trail construido: ${trail.toString()}`);
     return trail;
   }, [intl, example]);
 };
