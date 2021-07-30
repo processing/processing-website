@@ -23,6 +23,12 @@ import FathomLogo from '../images/partners/fathom.svg';
 
 const partners = [
   {
+    name: 'Fathom',
+    url: 'https://fathom.info/',
+    width: '29%',
+    Logo: FathomLogo
+  },
+  {
     name: 'UCLA Design Media Arts',
     url: 'http://dma.ucla.edu/',
     width: '18%',
@@ -33,12 +39,6 @@ const partners = [
     url: 'https://tisch.nyu.edu/',
     width: '20%',
     Logo: 'itp'
-  },
-  {
-    name: 'Fathom',
-    url: 'https://fathom.info/',
-    width: '29%',
-    Logo: FathomLogo
   },
   {
     name: 'Design Systems International',
