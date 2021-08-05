@@ -63,7 +63,7 @@
   "partners": "Socios",
   "tableOfContents": "Tabla de contenidos",
   "topicExamples": "Programas sobre animación, interacción, movimiento, simulación, y más...",
-  "basicExamples": "Programas about formas, datos, imagenes, colores, tipografia y más...",
+  "basicExamples": "Programas sobre formas, datos, imagenes, colores, tipografia y más...",
   "contactUs": "Contáctanos",
   "contactUsDescription": "Sientete libre de escribirnos!",
   "footer": "Processing es un proyecto abierto iniciado por <a href='https://benfry.com/''>Ben Fry</a> y <a href='http://reas.com/'>Casey Reas</a>. Es desarrollado por un equipo de voluntarios alrededor del mundo.",
@@ -143,5 +143,7 @@
   "moreExamples": "Más Ejemplos",
   "referenceTitle": "Referencia",
   "Topic Examples": "Ejemplos Tematicos",
-  "Fractals and L-Systems": "Fractales y Sistemas-L"
+  "Fractals and L-Systems": "Fractales y Sistemas-L",
+  "Basic Examples": "Ejemplos Basicos",
+  "Arrays": "Arreglos"
 }

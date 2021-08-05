@@ -48,6 +48,8 @@ export const usePreparedExamples = (examples, images) => {
         }
       }
 
+      console.log(`TODO Checkar examploe ewxample name ${example.name} examplepath ${examplePath(example.name)}`)
+
       const [category, subcategory] = example.relativeDirectory.split('/');
       prepared.push({
         slug: example.name,

@@ -9,6 +9,7 @@ import {
 import hljs from 'highlight.js/lib/core';
 import processing from 'highlight.js/lib/languages/processing';
 import { getWin, sessionStorage, sortObject } from '../utils';
+import { useIntl } from 'react-intl';
 
 hljs.registerLanguage('processing', processing);
 
@@ -30,21 +31,27 @@ export const useHighlight = () => {
   @param {Object} order An object indicating the sort order. Must be an object with string keys and array values
 **/
 export const useTree = (items, order) => {
+  const intl = useIntl();
   return useMemo(() => {
     let tree = {};
 
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
-      console.log(`Desde Hook index item ${item.category}`)
+      console.log(`Desde Hook index.js item ${item.category}`)
+      const category = intl.formatMessage({ id: item.category });
+      const subcategory = intl.formatMessage({ id: item.subcategory });
+/*
       if (!tree[item.category]) {
         tree[item.category] = {};
+      } */
+      if (!tree[category]) {
+        tree[category] = {};
+      }
+      if (!tree[category][subcategory]) {
+        tree[category][subcategory] = [];
       }
 
-      if (!tree[item.category][item.subcategory]) {
-        tree[item.category][item.subcategory] = [];
-      }
-
-      tree[item.category][item.subcategory].push(item);
+      tree[category][subcategory].push(item);
     }
 
     if (order) {
