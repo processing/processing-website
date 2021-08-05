@@ -53,7 +53,6 @@ const Sketch = ({ children }) => {
     if (window.localStorage) {
       const savedState = window.localStorage.getItem('sketch');
       if (savedState) {
-        console.log('Loaded state from localStorage', savedState);
         setState(JSON.parse(savedState));
       } else {
         setState(initialState);
