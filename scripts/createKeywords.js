@@ -9,42 +9,6 @@ const path = require('path');
 // - String
 // - All Data > Primitive
 
-// ENTRIES that are in current keywords.txt but not in the new one:
-// blendColor()
-// displayWidth
-// displayHeight
-// FloatDict.keys() - needs JavaDoc. It's not in the reference
-// IntDict.keys() - needs JavaDoc. It's not in the reference
-// Some constants were in there twice, both in the base and in the generated output: HALF_PI, PI, QUARTER_PI, TAU, TWO_PI
-// PVector.get()
-// StringDict.keys()
-
-// ENTRIES that are in the new one but not in the current
-// circle()
-// FloatDict.maxIndex()
-// FloatDict.minIndex()
-// mask()
-// PImage.blendColor()
-// pop()
-// push()
-// setLocation()
-// setResizable()
-// setTitle()
-// square()
-// Table.matchRowIterator()
-// Table.sort()
-// XML.getChildCount()
-// XML.parse()
-// XML.setLong()
-
-// OTHER changes
-// draw has been changed to draw_ on the righthand side
-// Gobal functions currently have _ at end, which they didn't in the original file: keyPressed, keyReleased, keyTyped, mouseClicked, mouseDragged, mouseMoved, mousePressed, mouseReleased, mouseWheel, settings, setup
-// pixelHeight was there twice. I removed it from the generated code
-// PVector was listed twice as FUNCTION1 in base and KEYWORD5 in generated output. I keps the latter.
-// PShader.set was `PShader	FUNCTION2	PShader_set_`. Changed to `set	FUNCTION2	PShader_set_`
-// PFont.list was listed as FUNCTION1. I changed it to be FUNCTION2 like the other class methods.
-
 const folder = path.join(
   __dirname,
   '..',
