@@ -49,8 +49,8 @@ const fetchReleases = async () => {
     `,
     {
       headers: {
-        authorization: `token ${process.env.GITHUB_TOKEN}`,
-      },
+        authorization: `token ${process.env.GITHUB_TOKEN}`
+      }
     }
   );
 
