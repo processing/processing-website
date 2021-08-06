@@ -25,7 +25,7 @@
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
     "fetchReleases": "node scripts/fetchReleases.js",
     "deploy": "static deploy",
-    "deployGithub": "gatsby clean && static deploy --env production --confirm",
+    "deployGithub": "gatsby clean && npm run fetchReleases && static deploy --env production --confirm",
     "open": "static open"
   },
   "dependencies": {
