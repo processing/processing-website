@@ -38,7 +38,7 @@ In order to draw something at a point in three dimensions the coordinates are sp
 
 <FixedImage center width={300} height={170}>
 
-![](./coordinatesystem.png)
+![2D and 3D diagram of Processing axis directions](./coordinatesystem.png)
 
 </FixedImage>
 
@@ -79,7 +79,7 @@ The third dimension also opens up the possibility of rotating around different a
 
 <FixedImage side width={100} height={100}>
 
-![](./rotateZ.png)
+![resulting sketch with a dark grey rectangle rotated 45 degrees on its center in a 2D plane](./rotateZ.png)
 
 </FixedImage>
 
@@ -100,7 +100,7 @@ We can also rotate around the x and y axes.
 
 <FixedImage side width={100} height={100}>
 
-![](./rotateX.png)
+![resulting sketch with a dark grey rectangle rotated 45 degrees on the horizontal, leaning away from the camera](./rotateX.png)
 
 </FixedImage>
 
@@ -108,24 +108,24 @@ We can also rotate around the x and y axes.
 rotateX(PI/8);
 ```
 
-<div style="clear:both;">
 <FixedImage side width={100} height={100}>
 
-![](./rotateY.png)
+![resulting sketch with a dark grey rectangle rotated 45 degrees on the vertical, with the left side closer to the camera than the right](./rotateY.png)
 
 </FixedImage>
+
+<br/>
+<br/>
 
 ```
 rotateY(PI/8);
 ```
 
-</div>
-
 As well as multiple axes at a time.
 
 <FixedImage side width={100} height={100}>
 
-![](./rotateXYZ.png)
+![resulting sketch with a dark grey rectangle rotated 45 degrees on all three axis](./rotateXYZ.png)
 
 </FixedImage>
 
@@ -145,7 +145,7 @@ The good news is that shapes in 3D work pretty much the same way. There are prim
 
 <FixedImage side width={320} height={180}>
 
-![](./primitives3D.png)
+![resulting sketch with a large wireframe sphere on the right and a smaller solid cube on the left](./primitives3D.png)
 
 </FixedImage>
 
@@ -178,7 +178,7 @@ Custom 3D shapes are drawn using [beginShape()](http://processing.org/reference/
 
 <FixedImage side width={302} height={180}>
 
-![](./pyramid3D.png)
+![resulting sketch with a white wireframe pyramid on a black background](./pyramid3D.png)
 
 </FixedImage>
 
@@ -220,7 +220,7 @@ With the P3D renderer, you can load and display images just like you do in 2D (s
 
 <FixedImage side width={302} height={180}>
 
-![](./texture1.png)
+![simple grey square on black background](./texture1.png)
 
 </FixedImage>
 
@@ -271,7 +271,7 @@ Once we have specified the texture itself, we have to then define the mapping of
 
 <FixedImage side width={300} height={179}>
 
-![](./texture2.png)
+![same a previous sketch but instead the square being grey, it is filled with a photo](./texture2.png)
 
 </FixedImage>
 
@@ -310,9 +310,9 @@ In P3D, you can also manipulate the lighting of the elements in your scene. Of c
 
 If you don't want to get into the details of setting custom lighting for a 3D scene you can use Processing's [lights()](http://processing.org/reference/lights_.html) function which sets default lighting. Take a look at the following example, where a sphere is lit with default lighting only when the mouse is pressed.
 
-<FixedImage side width={202} height={100}>
+<FixedImage side width={200} height={410}>
 
-![](./lights.png)
+![two versions of the sketch, one with no light so the sphere is a flat circle, and one with shading on the sphere suggesting it is being lit from the direction of the camera](./lights.png)
 
 </FixedImage>
 
@@ -331,6 +331,7 @@ void draw() {
   fill(255);
   sphere(50);
 }
+
 ```
 
 Note how the call to the lights() function is included in draw(). Just as with matrix transformations, the 3D scene is reset each time through draw() and therefore any lighting must be included in order to remain persistent.
@@ -341,7 +342,7 @@ In order to set custom lighting for your scene there are four different kinds of
 
 <FixedImage side width={100} height={100}>
 
-![](./ambientlights.png)
+![a solid blue circle, no shading](./ambientlights.png)
 
 </FixedImage>
 
@@ -353,7 +354,7 @@ ambientLight(0,0,255);
 
 <FixedImage side width={100} height={100}>
 
-![](./directionallight.png)
+![a shaded sphere with a green light shining from below](./directionallight.png)
 
 </FixedImage>
 
@@ -372,7 +373,7 @@ All together it looks like:
 
 <FixedImage side width={100} height={100}>
 
-![](./spotlight.png)
+![a shaded sphere with a red light shining from the lower right front corner](./spotlight.png)
 
 </FixedImage>
 
@@ -404,7 +405,7 @@ The other projection mode available in P3D is known as &ldquo;orthographic&rdquo
 
 <FixedImage center width={610} height={179}>
 
-![](./ortho.png)
+![two images, one showing a cube in perspective, and one a cube in orthographic](./ortho.png)
 
 </FixedImage>
 
@@ -453,7 +454,7 @@ Any of the arguments in the camera() function can be made into a variable to sim
 
 <FixedImage center width={610} height={179}>
 
-![](./eye.png)
+![tweo images showing a wireframe box and a small dot. the camera moves with the mouse and the dot and shows the sides of the box from other angles](./eye.png)
 
 </FixedImage>
 
@@ -476,7 +477,7 @@ If you move both the eye position and the scene's center according to the mouse,
 
 <FixedImage center width={610} height={179}>
 
-![](./pan.png)
+![similar to the above image but showing if the mouse is in the vertical middle, you can pan from one side of the object to the other](./pan.png)
 
 </FixedImage>
 
