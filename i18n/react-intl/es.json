@@ -102,8 +102,8 @@
   "constructors": "Constructores",
   "fields": "Campos",
   "methods": "Métodos",
-  "related": "Related",
-  "inUse": "In use",
+  "related": "Relacionado",
+  "inUse": "En uso",
   "notTranslated": "Esta página no esta traducida, por favor ve la",
   "englishPage": "página en Inglés",
   "featured": "Funciones destacadas",
@@ -131,7 +131,7 @@
   "donateOutro": "La Fundación Processing fue establecida en 2012 tras más de uan after more than a decade of work with the Processing software. The Foundation’s mission is to promote software literacy within the visual arts, and visual literacy within technology-related fields — and to make these fields accessible to diverse communities. Our goal is to empower people of all interests and backgrounds to learn how to program and make creative work with code, especially those who might not otherwise have access to these tools and resources. You can read more about the history of Processing in the short essay <a href='https://medium.com/processing-foundation/a-modern-prometheus-59aed94abe85'>'A Modern Prometheus'</a>.",
   "donatePaymentTitle":" Donar a Processing",
   "core": "Core",
-  "published": "Published",
+  "published": "Publicado",
   "welcome": "Bienvenido a Processing!",
   "pageNotFound": "Página no encontrada!",
   "librariesTitle": "Bibliotecas",
@@ -146,5 +146,5 @@
   "Fractals and L-Systems": "Fractales y Sistemas-L",
   "Basic Examples": "Ejemplos Basicos",
   "Arrays": "Arreglos",
-  "Array": "Arreglo"
+  "textIn": "Texto en"
 }

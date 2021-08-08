@@ -48,7 +48,7 @@ const Books = ({ data }) => {
                   <p className={css.details}>
                     {intl.formatMessage({ id: 'published' })} {book.published}.{' '}
                     {book.details}{' '}
-                    {book.language && `Text in ${book.language}.`}
+                    {book.language && `Text in{intl.formatMessage({ id: 'textIn' })} ${book.language}.`}
                   </p>
 
                   {book.buyList && (
