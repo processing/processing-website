@@ -4,7 +4,7 @@ title: "Electronics"
 author: "Hernando Berragán and Casey Reas"
 intro: "Control physical media with Processing, Arduino, and Wiring."
 level: "Intermediate"
-coverImage: electronics.jpg
+coverImage: electronics.png
 order: "18"
 ---
 
@@ -38,7 +38,7 @@ Electrical current flows in two ways: direct current (DC) and alternating curren
 
 <FixedImage center width={650} height={100}>
 
-![](<./39-1(ACDC).svg>)
+![graph showing the straight line of DC versus the positive and negative wave of AC](<./39-1(ACDC).svg>)
 
 </FixedImage>
 
@@ -54,7 +54,7 @@ A resistor limits (provides resistance to) the flow of electricity. Resistors ar
 
 <FixedImage center width={650} height={170}>
 
-![](./fg39-2.jpg)
+![image of resistors including potentiometers](./fg39-2.jpg)
 
 </FixedImage>
 
@@ -64,7 +64,7 @@ A capacitor stores electrons i.e. electrical charge; it gains charge when curren
 
 <FixedImage center width={650} height={170}>
 
-![](./fg39-4.jpg)
+![image of different forms of capacitors](./fg39-4.jpg)
 
 </FixedImage>
 
@@ -74,7 +74,7 @@ Current flows only in one direction through a diode. One side is called the cath
 
 <FixedImage center width={650} height={170}>
 
-![](./fg39-5.jpg)
+![image of types of diodes including LEDs](./fg39-5.jpg)
 
 </FixedImage>
 
@@ -84,7 +84,7 @@ A transistor can be used as an electrical switch or an amplifier. A bipolar tran
 
 <FixedImage center width={650} height={170}>
 
-![](./fg39-6.jpg)
+![image of different forms of transistors](./fg39-6.jpg)
 
 </FixedImage>
 
@@ -94,7 +94,7 @@ An electrical circuit is a configuration of components, typically designed to pr
 
 <FixedImage center width={650} height={170}>
 
-![](./fg39-7.jpg)
+![9-volt battery connected to a switch and an led making a basic circuit](./fg39-7.jpg)
 
 </FixedImage>
 
@@ -104,7 +104,7 @@ Circuits are usually represented with diagrams. A circuit diagram uses standardi
 
 <FixedImage center width={650} height={150}>
 
-![](./fg39-8.svg)
+![diagram of the circuit pictured above](./fg39-8.svg)
 
 </FixedImage>
 
@@ -112,7 +112,7 @@ Circuits are often prototyped on a &ldquo;breadboard,&rdquo; a rectangular piece
 
 <FixedImage center width={650} height={170}>
 
-![](./fg39-9.svg)
+![drawing of a breadboard showing the grid of holes](./fg39-9.svg)
 
 </FixedImage>
 
@@ -134,21 +134,21 @@ Small metal pins poking out from a microcontroller’s edges allow access to the
 
 Microcontrollers can be used to build projects directly, but they are often packaged with other components onto a printed circuit board (PCB) to make them easier to use for beginners and for rapid prototyping. We call these boards I/O boards (input/output boards) because they are used to get data in and out of a microcontroller. They are also called microcontroller modules. We’ve created three informal groups—bare microcontrollers, programmable I/O boards, and tethered I/O boards—to discuss different ways to utilize microcontrollers in a project.
 
-_Bare microcontrollers _
+#### Bare microcontrollers
 Working directly with a bare microcontroller is the most flexible but most difficult way to work. It also has the potential to be the least expensive way of building with electronics, but this economy can be offset by initial development costs and the extra time spent learning how to use it. Microchip PIC and Atmel AVR are two popular families of microcontrollers. Each has variations ranging from simple to elaborate that are appropriate for different types of projects. The memory, speed, and other features effect the cost, the number of pins, and the size of the package. Both families feature chips with between eight and 100 pins with prices ranging from under $1 to $20. PIC microcontrollers have been on the market for a longer time, and more example code, projects, and books are available for beginners. The AVR chips have a more modern architecture and a wider range of open-source programming tools. Microcontrollers are usually programmed in the C language or their assembly language, but it’s also possible to program them in other languages such as BASIC. If you are new to electronics and programming, we don’t recommend starting by working directly with PIC or AVR chips. In our experience, beginners have had more success with the options introduced below.
 
-_Programmable I/O boards_
+#### Programmable I/O boards
 A programmable I/O board is a microcontroller situated on a PCB with other components to make it easier to program, attach/detach components, and turn on and off. These boards typically have components to regulate power to protect the microcontroller and a USB or RS-232 serial port connector to make it easy to attach cables for communication. The small pins on the microcontroller are wired to larger pins called headers, which make it easy to insert and remove sensors and motors. Small wires embedded within the PCB connect pins to a corresponding header. Small reset switches make it easy to restart the power without having to physically detach the power supply or battery.
 
 Within the context of this book, the most relevant I/O boards are Wiring and Arduino. Both were created as tools for designers and artists to build prototypes and to learn about electronics. Both boards use the Wiring language to program their microcontrollers and use a development environment built from the Processing environment. In comparison to the Processing language, the Wiring language provides a similar level of control and ease of use within its domain. They share common language elements when possible, but Wiring has some functions specific to programming microcontrollers and omits the graphics programming functions within Processing. Like Processing programs, Wiring programs are translated into another language before they are run. When a program written with the Wiring language is compiled, it’s first translated into the C/C++ language and then compiled using a C/C++ compiler.
 
 <FixedImage center width={650} height={170}>
 
-![](./fg39-10.jpg)
+![photo of Arduino and Wiring I/O boards](./fg39-10.jpg)
 
 </FixedImage>
 
-_Tethered I/O boards_
+#### Tethered I/O boards
 A tethered I/O board is used to get sensor data into a computer and to control physical devices (motors, lights, etc.) without the need to program the board. A computer already has many input and output devices such as a monitor, mouse, and keyboard; and tethered I/O boards provide a way to communicate between more exotic input devices such as light sensors and video cameras, and output devices such as servomotors and lights. These boards are designed to be easy to use. They often do not require knowledge of electronics because sensors and motors can be plugged directly into the board and do not need to interface with other components. Messages are sent and received from the boards through software such as Processing, Max, Flash, and many programming languages. This ease of use often comes at a high price.
 
 ## Sensors
@@ -157,7 +157,7 @@ Physical phenomena are measured by electronic devices called sensors. Different 
 
 <FixedImage center width={650} height={110}>
 
-![](./fg39-11.svg)
+![graph of an analog signal, smoothly changing voltage over time](./fg39-11.svg)
 
 </FixedImage>
 
@@ -211,7 +211,7 @@ Actuators are devices that act on the physical world. Different types of actuato
 
 <FixedImage center width={650} height={120}>
 
-![](./fg39-12.svg)
+![graph showing a square wave 10% on to simulate .5 volts instead of 5 volts. a second graph shows a 80% square wave producing 4 volts](./fg39-12.svg)
 
 </FixedImage>
 
@@ -285,7 +285,7 @@ The examples that follow assume the I/O board is connected to your computer and 
 
 <FixedImage center width={650} height={240}>
 
-![](./fg39-13.svg)
+![circuit diagram showing 5 volts connecting to a switch. on the other side of the switch is digital pin 4 which also goes to ground via a 10k resistor](./fg39-13.svg)
 
 </FixedImage>
 
@@ -347,7 +347,7 @@ void draw() {
 
 <FixedImage center width={650} height={240}>
 
-![](./fg39-14.svg)
+![circuit diagram showing 5 volts connecting to an LED. On the other side of the LED is analog pin 0 which also goes to ground via a 1k resistor](./fg39-14.svg)
 
 </FixedImage>
 
@@ -405,7 +405,7 @@ void draw() {
 
 <FixedImage center width={650} height={240}>
 
-![](./fg39-15.svg)
+![circuit diagram showing digital pin 4 connected to an LED. the other side of the LED is connected to ground via 330 ohm resistor](./fg39-15.svg)
 
 </FixedImage>
 
@@ -474,14 +474,14 @@ boolean mouseOverRect() {        // Test if mouse is over square
 
 <FixedImage center width={650} height={310}>
 
-![](./fg39-16.svg)
+![circuit diagram showing how to wire a servo with the red wire connected to 5 volts, the black wire to ground, and the yellow wire connecting to digital pin 3 with PWM](./fg39-16.svg)
 
 </FixedImage>
 
 ```
 // Read data from the serial port and set the position of a servomotor
 // according to the value
-#include &lt;Servo.h&gt;
+#include Servo.h
 
 Servo myservo;                   // Create servo object to control a servo
 int servoPin = 3;                // Connect yellow servo wire to digital I/O pin 3 (must be PWM)
@@ -552,7 +552,7 @@ void draw() {
 
 <FixedImage center width={650} height={385}>
 
-![](./fg39-17.svg)
+![circuit diagram showing how to use a L293D motor driver chip. Digital pin 9 with PWM connects to En1, 5 volts connects to Vss and In1, connect the ground to the two middle pins on each side labeled GND, the motor connects to Out1 and Out2, and the voltage for the motor connectcs to Vs](./fg39-17.svg)
 
 </FixedImage>
 
@@ -560,8 +560,8 @@ void draw() {
 // Read data from the serial and turn a DC motor on or off according to the value
 
 char val;             // Data received from the serial port
-int motorpin = 0;     // Wiring: Connect L293D Pin En1 connected to Pin PWM 0
-// int motorpin = 9;  // Arduino: Connect L293D Pin En1 to Pin PWM 9
+//int motorpin = 0;     // Wiring: Connect L293D Pin En1 connected to Pin PWM 0
+int motorpin = 9;  // Arduino: Connect L293D Pin En1 to Pin PWM 9
 
 void setup() {
   Serial.begin(9600);                  // Start serial communication at 9600 bps

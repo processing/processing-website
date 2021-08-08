@@ -4,7 +4,7 @@ title: "Color"
 author: "Daniel Shiffman"
 intro: "An introduction to digital color."
 level: "Beginner"
-coverImage: color.jpg
+coverImage: color.png
 order: "04"
 ---
 
@@ -16,9 +16,9 @@ This tutorial is from the book [Learning Processing](https://processing.org/book
 
 In the digital world, when we want to talk about a color, precision is required. Saying &ldquo;Hey, can you make that circle bluish-green?&rdquo; will not do. Color, rather, is defined as a range of numbers. Let's start with the simplest case: black & white or grayscale. 0 means black, 255 means white. In between, every other number&mdash;50, 87, 162, 209, and so on&mdash;is a shade of gray ranging from black to white.
 
-<FixedImage center width={645} height={200}>
+<FixedImage center width={650}>
 
-![](./grayscale.svg)
+![chart with 6 squares, the left is black and the right is white and the rest are in between. labels for each square go from 0 for the black to 255 for the white](./grayscale.svg)
 
 </FixedImage>
 
@@ -44,9 +44,9 @@ Stroke or fill can be eliminated with the functions: [**noStroke()**](http://pro
 
 In addition, if we draw two shapes, Processing will always use the most recently specified stroke and fill, reading the code from top to bottom.
 
-<FixedImage center width={645} height={300}>
+<FixedImage center width={650}>
 
-![](./order.svg)
+![grey square on the right with a black diagonal line going from upper left to lower right and a white outline of a square near the middle. the left shows the code that draws the image on the right. the code has yellow highlights on the stroke commands and the noFill() command](./order.svg)
 
 </FixedImage>
 
@@ -54,25 +54,23 @@ In addition, if we draw two shapes, Processing will always use the most recently
 
 Remember finger painting? By mixing three &ldquo;primary&rdquo; colors, any color could be generated. Swirling all colors together resulted in a muddy brown. The more paint you added, the darker it got. Digital colors are also constructed by mixing three primary colors, but it works differently from paint. First, the primaries are diff erent: red, green, and blue (i.e., &ldquo;RGB&rdquo; color). And with color on the screen, you are mixing light, not paint, so the mixing rules are different as well.
 
-<FixedImage center width={645} height={247}>
+<FixedImage center width={650}>
 
-![](./rgb.jpg)
+![three overlapping circles, one green, one red, and one blue. depicting the combinations described below](./rgb.jpg)
 
 </FixedImage>
 
-- Red + Green = Yellow
-- Red + Blue = Purple
+- Red	+ Green = Yellow
+- Red	+ Blue 	= Purple
 - Green + Blue = Cyan (blue-green)
 - Red + Green + Blue = White
 - No colors = Black
 
 This assumes that the colors are all as bright as possible, but of course, you have a range of color available, so some red plus some green plus some blue equals gray, and a bit of red plus a bit of blue equals dark purple. While this may take some getting used to, the more you program and experiment with RGB color, the more it will become instinctive, much like swirling colors with your fi ngers. And of course you can't say &ldquo;Mix some red with a bit of blue,&rdquo; you have to provide an exact amount. As with grayscale, the individual color elements are expressed as ranges from 0 (none of that color) to 255 (as much as possible), and they are listed in the order R, G, and B. You will get the hang of RGB color mixing through experimentation, but next we will cover some code using some common colors.
 
-[Example: RGB color](http://learningprocessing.com/examples/chp01/example-01-03-rgbcolor)
+<FixedImage left width={100}>
 
-<FixedImage side width={102} height={102}>
-
-![](./example_1_3.jpg)
+![three small circles, one red, one dark red, and one pink](./example_1_3.png)
 
 </FixedImage>
 
@@ -95,9 +93,9 @@ ellipse(60,20,16,16);
 
 Processing also has a color selector to aid in choosing colors. Access this via Tools (from the menu bar) &rarr; Color Selector.
 
-<FixedImage center width={428} height={306}>
+<FixedImage center width={650}>
 
-![](./selector.jpg)
+![the color selector interfasce with a square for changing the saturation and brightness and a slider for hue. on the right side are number boxes for the hsb, rgb, or hex color values also copy and cancel buttons](./selector.png)
 
 </FixedImage>
 
@@ -109,11 +107,9 @@ It is important to realize that pixels are not literally transparent, this is si
 
 Alpha values also range from 0 to 255, with 0 being completely transparent (i.e., 0% opaque) and 255 completely opaque (i.e., 100% opaque).
 
-[Example: Alpha transparency](http://learningprocessing.com/examples/chp01/example-01-04-alpha)
+<FixedImage left width={200}>
 
-<FixedImage side width={200} height={200}>
-
-![](./example_1_4.jpg)
+![a square that is vertically split with blue on the left and black on the right. a series of four red horizontal bars span the entire square are more transparent towards the bottom](./example_1_4.png)
 
 </FixedImage>
 
@@ -163,9 +159,9 @@ Now we are saying &ldquo;Red values go from 0 to 100, green from 0 to 500, blue 
 
 Finally, while you will likely only need RGB color for all of your programming needs, you can also specify colors in the HSB (hue, saturation, and brightness) mode. Without getting into too much detail, HSB color works as follows:
 
-<FixedImage center width={250} height={200}>
+<FixedImage center width={500}>
 
-![](./hsb.png)
+![cylicdrical diagram missing a slice of about 25% where the circumference displays the hues, saturation decreases towards the center, and brightness decreases towards the bottom. the slice allows a view of the brightness affecting the different saturations](./hsb.png)
 
 </FixedImage>
 
