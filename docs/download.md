@@ -9,4 +9,4 @@ In order to not require an API token on GitHub in development, there is a separa
 1. Make sure that the release has been published on GitHub
 1. Run the script with a GitHub token: `$ GITHUB_TOKEN=SOMETOKENHERE npm run fetchReleases`
 1. Edit the [`selected.json`](/content/download/selected.json) file to include the new release tag
-1. Make a PR to the `master` branch.
+1. Make a PR to the `main` branch.
