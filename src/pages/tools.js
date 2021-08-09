@@ -129,7 +129,7 @@ export const query = graphql`
     english: allFile(
       filter: {
         sourceInstanceName: { eq: "contributions" }
-        fields: { lang: { eq: "en" } }
+        fields: { lang: { eq:  $locale} }
         childJson: { type: { eq: "tool" } }
       }
     ) {

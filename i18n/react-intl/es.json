@@ -84,7 +84,7 @@
   "librariesIntro": "Aumenta Processing más alla de los gráficos e imagenes con audio, video y comunicación con otros dispositivos.",
   "librariesFilter": "Filtrar por palabras clave...",
   "contributions": "Contribuciones",
-  "contributionsIntro": "Contributed libraries are created by members of the Processing community. They are independently and generously created to share. They are all open source and include their own reference and examples.",
+  "contributionsIntro": "Las bibliotecas contribuidas son creadas por miembros de la comunidad Processing+. They are independently and generously created to share. They are all open source and include their own reference and examples.",
   "referencesFilter": "Filtrar por palabras clave...",
   "toolsIntro": "Las siguientes herramientas son incluidas con el software Processing. Select the tool you want to use from the Tools menu of the Processing Environment. These tools are open source; the code is distributed with Processing.",
   "contributedTools": "Las herramientas contribuidas deben ser descargadas individualmente. Select 'Add Tool...' from the Tools menu to select a Tool to download. Contributed tools are developed, documented, and maintained by members of the Processing community. For feedback and support, please post to the <a href='http://forum.processing.org/'>Forum</a>. For development discussions post to the <a href='http://forum.processing.org/library-and-tool-development'> Libraries and Tool Development </a> topic. Instructions for creating your own tool are on the <a href='https://github.com/processing/processing/wiki'> Processing GitHub </a> site.",
