@@ -325,11 +325,6 @@ setLong	FUNCTION2
 length	KEYWORD2	String
 
 
-# Temporary additions 3 September 2012 as the reference is getting updated
-#end	FUNCTION1
-#addChild	FUNCTION1
-
-
 # Operators are without KEYWORDS
 
 +=		addassign
