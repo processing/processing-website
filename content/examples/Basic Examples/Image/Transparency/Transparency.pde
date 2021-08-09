@@ -1,3 +1,11 @@
+/**
+ * Transparency. 
+ * 
+ * Move the pointer left and right across the image to change
+ * its position. This program overlays one image over another 
+ * by modifying the alpha value of the image with the tint() function. 
+ */
+
 PImage img;
 float offset = 0;
 float easing = 0.05;

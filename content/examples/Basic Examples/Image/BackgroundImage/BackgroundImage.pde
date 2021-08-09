@@ -1,3 +1,11 @@
+/**
+ * Background Image. 
+ * 
+ * This example presents the fastest way to load a background image
+ * into Processing. To load an image as the background, it must be
+ * the same width and height as the program.
+ */
+
 PImage bg;
 int y;
 
