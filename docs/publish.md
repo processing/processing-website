@@ -5,5 +5,5 @@ The website is set up to automatically publish the a new version of itself whene
 ## How to publish the website
 
 1. Make your changes in a feature branch
-2. Make a pull request to `master` on GitHub
+2. Make a pull request to `main` on GitHub
 3. Once the pull request has been merged, create a new release in the `processing-website` repo
