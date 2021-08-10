@@ -92,11 +92,6 @@
       "desc": "Sets the content of an attribute as an <b>int</b>"
     },
     {
-      "anchor": "XML_setLong_",
-      "name": "setLong()",
-      "desc": "Sets the content of an element as an <b>int</b>"
-    },
-    {
       "anchor": "XML_getFloat_",
       "name": "getFloat()",
       "desc": "Gets the content of an attribute as a <b>float</b>"
