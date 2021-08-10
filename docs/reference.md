@@ -53,7 +53,7 @@ In each source file, look for the `@webref` tag in the block comments. If the ta
 
 When you finish adding all the information, run the following steps:
 
-1. Set up the environment and run the content script following [this instruction](https://github.com/processing/processing4/tree/master/doclet).
+1. Set up the environment and run the content script following [this instruction](https://github.com/processing/processing-doclet/blob/main/README.md).
 
 2. [Publish the website](/docs/publish.md)
 
