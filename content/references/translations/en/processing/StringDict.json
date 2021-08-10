@@ -12,6 +12,11 @@
       "desc": "Remove all entries"
     },
     {
+      "anchor": "StringDict_keys_",
+      "name": "keys()",
+      "desc": "Return the internal array being used to store the keys"
+    },
+    {
       "anchor": "StringDict_keyArray_",
       "name": "keyArray()",
       "desc": "Return a copy of the internal keys array"
