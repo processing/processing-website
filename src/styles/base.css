@@ -92,7 +92,7 @@ code,
 pre {
   font-family: var(--font-mono);
   font-size: var(--text-small);
-  font-variant-ligatures: no-common-ligatures;
+  font-variant-ligatures: none;
 }
 
 pre {

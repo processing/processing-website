@@ -7,7 +7,7 @@
     font-size: var(--text-small);
     line-height: 1.6rem;
     font-family: var(--font-mono);
-    font-variant-ligatures: no-common-ligatures;
+    font-variant-ligatures: none;
     text-decoration: none;
     color: var(--black);
 

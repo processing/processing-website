@@ -22,7 +22,7 @@
     background-color: var(--lightgray);
     font-size: var(--text-medium);
     color: inherit;
-    font-variant-ligatures: no-common-ligatures;
+    font-variant-ligatures: none;
   }
 
   & input:focus {

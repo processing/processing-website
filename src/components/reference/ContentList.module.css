@@ -37,7 +37,7 @@
   background-color: var(--lightgray);
   padding: 0.1em 0.3em;
   border-radius: 6px;
-  font-variant-ligatures: no-common-ligatures;
+  font-variant-ligatures: none;
 }
 
 .codeList code {
