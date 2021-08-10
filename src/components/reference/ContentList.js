@@ -67,7 +67,7 @@ export const ExampleList = memo(({ examples }) => {
             <div className={classnames(grid.col, css.code)}>
               <CopyButton text={example.code} />
               <pre>
-                <code>{example.code}</code>
+                <code dangerouslySetInnerHTML={{ __html: example.code }} />
               </pre>
             </div>
             {example.image && (
