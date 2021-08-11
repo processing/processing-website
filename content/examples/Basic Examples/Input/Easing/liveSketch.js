@@ -28,7 +28,7 @@ function runLiveSketch(s) {
       x += dx * easing;
     }
 
-    var targetY = mouseY;
+    var targetY = s.mouseY;
     var dy = targetY - y;
     if (s.abs(dy) > 1) {
       y += dy * easing;

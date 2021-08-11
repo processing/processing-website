@@ -1,11 +1,12 @@
 /**
- * Ignore Styles. 
- * Illustration by George Brower. 
+ * Disable Style 
+ * by George Brower.
  * 
  * Shapes are loaded with style information that tells them how
- * to draw (the color, stroke weight, etc.) The disableStyle() 
- * method of PShape turns off this information. The enableStyle()
- * method turns it back on.
+ * to draw (e.g. color, stroke weight). The disableStyle() 
+ * method of PShape turns off this information so functions like
+ * stroke() and fill() change the SVGs color. The enableStyle()
+ * method turns the file's original styles back on.
  */
 
 PShape bot;

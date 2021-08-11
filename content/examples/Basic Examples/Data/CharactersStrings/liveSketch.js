@@ -16,9 +16,6 @@
  * featured below.
  */
 
-// The next line is needed if running in JavaScript Mode with Processing.js
-/* @pjs font="Georgia.ttf"; */
-
 function runLiveSketch(s) {
   var letter = '';
   var words = 'Begin...';
@@ -26,7 +23,7 @@ function runLiveSketch(s) {
   s.setup = () => {
     s.createCanvas(640, 360);
     // Create the font
-    s.textFont('Georgia', 36);
+    s.textFont('Source Code Pro', 36);
   };
 
   s.draw = () => {

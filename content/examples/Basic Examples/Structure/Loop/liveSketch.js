@@ -1,11 +1,11 @@
 /**
  * Loop.
  *
- * The loop() function causes draw() to execute
- * continuously. If noLoop is called in setup()
- * the draw() is only executed once. In this example
+ * The loop() function causes draw() to run
+ * continuously. If noLoop() is called in setup()
+ * the draw() is only run once. In this example
  * click the mouse to execute loop(), which will
- * cause the draw() the execute continuously.
+ * cause the draw() the run continuously.
  */
 function runLiveSketch(s) {
   var y = 100;
@@ -20,10 +20,10 @@ function runLiveSketch(s) {
     y = s.height * 0.5;
   };
 
-  // The statements in draw() are run until the
-  // program is stopped. Each statement is run in
-  // sequence and after the last line is read, the first
-  // line is run again.
+  // The code in draw() is run until the program 
+  // is stopped. Each statement is executed in
+  // sequence and after the last line is read, 
+  // the first line is run again.
   s.draw = () => {
     s.background(0); // Set the background to black
     s.line(0, y, s.width, y);
@@ -34,7 +34,7 @@ function runLiveSketch(s) {
     }
   };
 
-  function mousePressed() {
+  s.mousePressed() {
     s.loop();
   }
 }

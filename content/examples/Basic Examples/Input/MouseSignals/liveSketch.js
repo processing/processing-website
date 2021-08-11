@@ -35,12 +35,12 @@ function runLiveSketch(s) {
       bvals[i - 1] = bvals[i];
     }
     // Add the new values to the end of the array
-    xvals[width - 1] = s.mouseX;
-    yvals[width - 1] = s.mouseY;
+    xvals[s.width - 1] = s.mouseX;
+    yvals[s.width - 1] = s.mouseY;
     if (s.mouseIsPressed) {
-      bvals[width - 1] = 0;
+      bvals[s.width - 1] = 0;
     } else {
-      bvals[width - 1] = 255;
+      bvals[s.width - 1] = 255;
     }
 
     s.fill(255);

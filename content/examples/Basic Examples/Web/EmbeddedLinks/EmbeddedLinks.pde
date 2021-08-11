@@ -1,7 +1,7 @@
 /**
  * Loading URLs. 
  * 
- * Click on the button to open a URL in a browser
+ * Click on the button to open a URL in a browser.
  */
 
 boolean overButton = false;
