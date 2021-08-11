@@ -16,7 +16,7 @@ function runLiveSketch(s) {
     s.background(0);
     s.noStroke();
 
-    s.textFont('Georgia', 24);
+    s.textFont('Source Code Pro', 24);
 
     var c; // Chars are used for storing alphanumeric symbols
     var f; // Floats are decimal numbers

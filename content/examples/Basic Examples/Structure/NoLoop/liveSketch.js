@@ -2,7 +2,7 @@
  * No Loop.
  *
  * The noLoop() function causes draw() to only
- * execute once. Without calling noLoop(), the
+ * run once. Without calling noLoop(), the
  * code inside draw() is run continually.
  */
 
@@ -19,10 +19,10 @@ function runLiveSketch(s) {
     y = s.height * 0.5;
   };
 
-  // The statements in draw() are executed until the
-  // program is stopped. Each statement is executed in
-  // sequence and after the last line is read, the first
-  // line is executed again.
+  // The code in draw() is run until the program 
+  // is stopped. Each statement is executed in
+  // sequence and after the last line is read, 
+  // the first line is run again.
   s.draw = () => {
     s.background(0); // Set the background to black
     y = y - 1;
