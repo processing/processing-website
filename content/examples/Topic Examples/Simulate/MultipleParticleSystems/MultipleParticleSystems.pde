@@ -6,8 +6,8 @@
  * at mouse position.
  *
  * Each burst is one instance of a particle system
- * with Particles and CrazyParticles (a subclass of Particle)
- * Note use of Inheritance and Polymorphism here.
+ * with Particles and CrazyParticles (a subclass of Particle). 
+ * Note use of Inheritance and Polymorphism.
  */
 
 ArrayList<ParticleSystem> systems;

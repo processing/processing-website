@@ -2,8 +2,9 @@
  * Vector 
  * by Daniel Shiffman.  
  * 
- * Demonstration some basic vector math: subtraction, normalization, scaling
- * Normalizing a vector sets its length to 1.
+ * Demonstration some basic vector math: subtraction, 
+ * normalization, scaling. Normalizing a vector sets 
+ * its length to 1.
  */
 
 void setup() {
@@ -15,9 +16,12 @@ void draw() {
   
   // A vector that points to the mouse location
   PVector mouse = new PVector(mouseX,mouseY);
+  
   // A vector that points to the center of the window
   PVector center = new PVector(width/2,height/2);
-  // Subtract center from mouse which results in a vector that points from center to mouse
+  
+  // Subtract center from mouse which results in a 
+  // vector that points from center to mouse
   mouse.sub(center);
   
   // Normalize the vector
