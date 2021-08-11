@@ -2,14 +2,9 @@
  * Forces (Gravity and Fluid Resistence) with Vectors 
  * by Daniel Shiffman.  
  * 
- * Demonstration of multiple force acting on bodies (Mover class)
- * Bodies experience gravity continuously
- * Bodies experience fluid resistance when in "water"
- *
- * For the basics of working with PVector, see
- * http://processing.org/learning/pvector/
- * as well as examples in Topics/Vectors/
- * 
+ * Demonstration of multiple forces acting on bodies. 
+ * Bodies experience gravity continuously and fluid 
+ * resistance when in "water".
  */
 
 // Five moving bodies

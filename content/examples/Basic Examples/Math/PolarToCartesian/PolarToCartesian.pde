@@ -1,10 +1,9 @@
 /**
- * PolarToCartesian
+ * Polar to Cartesian
  * by Daniel Shiffman.  
  * 
- * Convert a polar coordinate (r,theta) to cartesian (x,y):  
- * x = r * cos(theta)
- * y = r * sin(theta)
+ * Convert a polar coordinate (r,theta) to cartesian (x,y).
+ * The calculations are "x = r * cos(theta)" and "y = r * sin(theta)".  
  */
  
 float r;
@@ -41,7 +40,7 @@ void draw() {
   fill(200);
   ellipse(x, y, 32, 32);
   
-  // Apply acceleration and velocity to angle (r remains static in this example)
+  // Apply acceleration and velocity to angle 
   theta_vel += theta_acc;
   theta += theta_vel;
 

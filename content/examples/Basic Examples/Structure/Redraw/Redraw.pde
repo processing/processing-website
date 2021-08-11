@@ -17,10 +17,10 @@ void setup() {
   y = height * 0.5;
 }
 
-// The statements in draw() are executed until the 
-// program is stopped. Each statement is executed in 
-// sequence and after the last line is read, the first 
-// line is executed again.
+// The code in draw() is run until the program 
+// is stopped. Each statement is executed in
+// sequence and after the last line is read, 
+// the first line is run again.
 void draw() { 
   background(0);   // Set the background to black
   y = y - 4; 

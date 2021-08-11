@@ -15,11 +15,11 @@ int num = 9; // Display this many entries on each screen.
 int startingEntry = 0;  // Display from this entry number
 
 void setup() {
-  size(640, 360);
+  size(200, 200);
   fill(255);
   noLoop();
   
-  body = loadFont("SpaceMono-Regular-24.vlw");
+  body = loadFont("TheSans-Plain-12.vlw");
   textFont(body);
   
   lines = loadStrings("cars2.tsv");
