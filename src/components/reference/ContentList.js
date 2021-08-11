@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import classnames from 'classnames';
-import { widont } from '../../utils/index.js';
+import { widont, escapeHtml } from '../../utils';
 
 import CopyButton from './../CopyButton';
 
@@ -67,7 +67,9 @@ export const ExampleList = memo(({ examples }) => {
             <div className={classnames(grid.col, css.code)}>
               <CopyButton text={example.code} />
               <pre>
-                <code>{example.code}</code>
+                <code
+                  dangerouslySetInnerHTML={{ __html: escapeHtml(example.code) }}
+                />
               </pre>
             </div>
             {example.image && (

@@ -19,6 +19,12 @@ export const months = [
 ];
 
 /**
+  Turns < > & into their unicode equivalents
+**/
+export const escapeHtml = (str) =>
+  str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+/**
   Turns a slug into a title
   Example: this_is_something => This Is Something
 **/

@@ -1,20 +1,18 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import classnames from 'classnames';
-import hljs from 'highlight.js/lib/core';
 
 import Button from './Button';
 import CopyButton from './CopyButton';
+
+import { useHighlight } from '../hooks';
+import { escapeHtml } from '../utils';
 
 import * as css from './Tabs.module.css';
 
 const Tabs = ({ pdes, className }) => {
   const [active, setActive] = useState(pdes[0].name);
 
-  useEffect(() => {
-    document.querySelectorAll('pre').forEach((block) => {
-      hljs.highlightBlock(block);
-    });
-  }, [active]);
+  useHighlight();
 
   const onClick = (value) => {
     setActive(value);
@@ -27,7 +25,7 @@ const Tabs = ({ pdes, className }) => {
           <li key={key + 'tab'}>
             <Button
               className={classnames(css.tab, {
-                [css.active]: pde.name === active,
+                [css.active]: pde.name === active
               })}
               onClick={() => onClick(pde.name)}
               onKeyDown={() => onClick(pde.name)}>
@@ -36,19 +34,22 @@ const Tabs = ({ pdes, className }) => {
           </li>
         ))}
       </ul>
-      <div className={css.code}>
-        {pdes.map(
-          (pde, key) =>
-            pde.name === active && (
-              <Fragment key={key}>
-                <CopyButton text={pde.internal.content} />
-                <pre className={css.codeBlock} key={`code-${key}`}>
-                  {pde.internal.content}
-                </pre>
-              </Fragment>
-            )
-        )}
-      </div>
+      {pdes.map((pde, key) => (
+        <div
+          className={classnames(css.code, {
+            [css.activeCode]: pde.name === active
+          })}
+          key={key}>
+          <CopyButton text={pde.internal.content} />
+          <pre className={css.codeBlock}>
+            <code
+              dangerouslySetInnerHTML={{
+                __html: escapeHtml(pde.internal.content)
+              }}
+            />
+          </pre>
+        </div>
+      ))}
     </div>
   );
 };
