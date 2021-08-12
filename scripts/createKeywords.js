@@ -48,6 +48,13 @@ const globalFuncs = [
   in the Processing IDE.
 **/
 const createKeywords = () => {
+  if (!processingRepoExists()) {
+    console.error(
+      'To run this script, you must have the processing4 repo next to the processing-website repo on your computer.'
+    );
+    return;
+  }
+
   // Load the base keywords
   const [baseKeywords, baseContents] = parseKeywordsFile('keywords_base.txt');
 
@@ -81,37 +88,14 @@ const createKeywords = () => {
 
   const pad = (str, size) => (str ? str.padEnd(size, ' ') : str);
 
-  // COMPARE TO OLD VERSION
-  /*
-  const [currentKeywords] = parseKeywordsFile('keywords_old.txt');
-  const absIndex = currentKeywords.findIndex((k) => k[0] === 'abs');
-  const needToGenerate = currentKeywords.slice(absIndex);
-  console.log('Old', needToGenerate.length, 'New', keywords.length);
-
-  for (let i = 0; i < needToGenerate.length; i++) {
-    const a = needToGenerate[i];
-    const b = keywords[i];
-    const match = a[0] === b[0] && a[1] === b[1] && a[2] === b[2];
-
-    if (!match) {
-      console.log(
-        pad(match.toString(), 7),
-        pad(a[0], 25),
-        pad(b[0], 25),
-        pad(a[1], 10),
-        pad(b[1], 10),
-        pad(a[2], 25),
-        pad(b[2], 25)
-      );
-    }
-  }
-  */
-
   // Save to keywords.txt file
   const combined = baseContents + '\n\n' + generateKeywordsFile(keywords);
 
-  fs.writeFileSync(path.join(__dirname, 'keywords.txt'), combined);
-  console.log('keywords.txt file written to scripts folder');
+  fs.writeFileSync(
+    path.join(__dirname, '..', '..', 'processing4', 'java', 'keywords.txt'),
+    combined
+  );
+  console.log('keywords.txt file written to the processing4 repo!');
 };
 
 /**
@@ -245,6 +229,14 @@ const getToken = (entry) => {
     return 'KEYWORD2';
   }
   return 'FUNCTION1';
+};
+
+/**
+  Checks whether the processing4 repo is next to this repo
+**/
+const processingRepoExists = (keywords) => {
+  const siblings = fs.readdirSync(path.join(__dirname, '..', '..'));
+  return siblings.includes('processing4');
 };
 
 createKeywords();
