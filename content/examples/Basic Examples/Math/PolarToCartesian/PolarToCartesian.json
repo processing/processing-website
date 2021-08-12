@@ -4,6 +4,6 @@
   "author": "Daniel Shiffman",
   "level": "Intermediate",
   "order": "9",
-  "description": "Convert a polar coordinate (r,theta) to cartesian (x,y):  \n  x = r  cos(theta)\n  y = r  sin(theta)",
+  "description": "Convert a polar coordinate (r,theta) to cartesian (x,y). The calculations are x=r*cos(theta) and y=r*sin(theta).",
   "featured": ["cos_", "sin_"]
 }

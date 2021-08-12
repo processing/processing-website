@@ -31,7 +31,7 @@ function runLiveSketch(s) {
     s.line(0, y, s.width, y);
   };
 
-  s.mousePressed() {
+  s.mousePressed = () => {
     s.redraw();
   }
 }

@@ -7,9 +7,7 @@
  * Bodies experience fluid resistance when in "water"
  */
 
-// Liquid class 
 class Liquid {
-
 
   // Liquid is a rectangle
   float x, y, w, h;

@@ -1,9 +1,9 @@
 /**
- * Forces (Gravity and Fluid Resistence) with Vectors 
- * by Daniel Shiffman.  
- * 
- * Demonstration of multiple forces acting on bodies. 
- * Bodies experience gravity continuously and fluid 
+ * Forces (Gravity and Fluid Resistence) with Vectors
+ * by Daniel Shiffman.
+ *
+ * Demonstration of multiple forces acting on bodies.
+ * Bodies experience gravity continuously and fluid
  * resistance when in "water".
  */
 

@@ -3,7 +3,7 @@
  * by Daniel Shiffman.  
  * 
  * Convert a polar coordinate (r,theta) to cartesian (x,y).
- * The calculations are "x = r * cos(theta)" and "y = r * sin(theta)".  
+ * The calculations are x=r*cos(theta) and y=r*sin(theta).  
  */
  
 float r;
@@ -45,7 +45,3 @@ void draw() {
   theta += theta_vel;
 
 }
-
-
-
-

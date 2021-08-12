@@ -4,7 +4,7 @@
   "author": "Daniel Shiffman",
   "level": "Advanced",
   "order": "2",
-  "description": "Demonstration of multiple force acting on bodies (Mover class)\n  Bodies experience gravity continuously\n  Bodies experience fluid resistance when in \"water\"\n\n  For the basics of working with PVector, see\n  http://processing.org/learning/pvector/\n  as well as examples in Topics/Vectors/",
+  "description": "Demonstration of multiple forces acting on bodies. Bodies experience gravity continuously and fluid resistance when in simulated water.",
   "featured": [
     "class",
     "PVector",
