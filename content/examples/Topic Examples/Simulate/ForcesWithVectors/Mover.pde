@@ -7,7 +7,6 @@
  * Bodies experience fluid resistance when in "water"
  */
 
-
 class Mover {
 
   // position, velocity, and acceleration 
@@ -35,7 +34,6 @@ class Mover {
   }
 
   void update() {
-
     // Velocity changes according to acceleration
     velocity.add(acceleration);
     // position changes by velocity

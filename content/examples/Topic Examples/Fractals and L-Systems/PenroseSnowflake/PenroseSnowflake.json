@@ -3,7 +3,7 @@
   "title": "Penrose Snowflake",
   "level": "Advanced",
   "order": "3",
-  "author": "Geraldine Sarmiento (based on Patrick Dwyer's L-System class",
-  "description": "",
+  "author": "Geraldine Sarmiento",
+  "description": "This code was based on Patrick Dwyer's L-System class.",
   "featured": ["pushMatrix_", "popMatrix_", "translate_", "rotate_"]
 }

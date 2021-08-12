@@ -34,7 +34,7 @@ function runLiveSketch(s) {
     }
   };
 
-  s.mousePressed() {
+  s.mousePressed = () => {
     s.loop();
-  }
+  };
 }

@@ -3,12 +3,12 @@
  * 
  * If you don't direction state the order in which an 
  * expression is evaluated, it is decided by the operator 
- * precedence. For example, in the statement "4+2*8", the 
+ * precedence. For example, in the expression 4+2*8, the 
  * 2 will first be multiplied by 8 and then the result will 
  * be added to 4. This is because multiplication has a higher 
  * precedence than addition. To avoid ambiguity in reading 
  * the program, it is recommended to write the expression as 
- * "4+(2*8)". The order of evaluation can be controlled through 
+ * 4+(2*8). The order of evaluation can be controlled through 
  * adding parenthesis in the code. 
  */
  
@@ -53,5 +53,3 @@ for (int i = 0; i < width; i+= 2) {
     line(i, 151, i, height-1);
   } 
 }
-
-

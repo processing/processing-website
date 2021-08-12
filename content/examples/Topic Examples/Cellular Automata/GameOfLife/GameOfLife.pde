@@ -2,12 +2,11 @@
  * Game of Life
  * by Joan Soler-Adillon.
  *
- * Press SPACE BAR to pause and change the cell's values with the mouse. 
- * On pause, click to activate/deactivate cells. 
- * Press R to randomly reset the cells' grid. 
- * Press C to clear the cells' grid. 
- *
- * The original Game of Life was created by John Conway in 1970.
+ * Press SPACE BAR to pause and change the cell's values 
+ * with the mouse. On pause, click to activate/deactivate 
+ * cells. Press 'R' to randomly reset the cells' grid. 
+ * Press 'C' to clear the cells' grid. The original Game 
+ * of Life was created by John Conway in 1970.
  */
 
 // Size of cells
@@ -26,7 +25,8 @@ color dead = color(0);
 
 // Array of cells
 int[][] cells; 
-// Buffer to record the state of the cells and use this while changing the others in the interations
+// Buffer to record the state of the cells and use this 
+// while changing the others in the interations
 int[][] cellsBuffer; 
 
 // Pause
@@ -57,7 +57,8 @@ void setup() {
       cells[x][y] = int(state); // Save state of each cell
     }
   }
-  background(0); // Fill in black in case cells don't cover all the windows
+  // Fill in black in case cells don't cover all the windows
+  background(0); 
 }
 
 
@@ -110,8 +111,6 @@ void draw() {
     }
   }
 }
-
-
 
 void iteration() { // When the clock ticks
   // Save cells to buffer (so we opeate with one array keeping the other intact)
@@ -179,4 +178,3 @@ void keyPressed() {
     }
   }
 }
-

@@ -2,7 +2,7 @@
  * Vector 
  * by Daniel Shiffman.  
  * 
- * Demonstration some basic vector math: subtraction, 
+ * Demonstration of some basic vector math: subtraction, 
  * normalization, scaling. Normalizing a vector sets 
  * its length to 1.
  */

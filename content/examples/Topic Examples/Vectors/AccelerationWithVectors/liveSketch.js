@@ -39,7 +39,7 @@ function runLiveSketch(s) {
     this.update = function () {
       // Compute a vector that points from location to mouse
       var mouse = s.createVector(s.mouseX, s.mouseY);
-      var acceleration = p5.Vector.sub(s.mouse, this.location);
+      var acceleration = p5.Vector.sub(mouse, this.location);
       // Set magnitude of acceleration
       acceleration.setMag(0.2);
 
