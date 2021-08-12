@@ -1,6 +1,10 @@
-# THIS TEXT IS FROM keywords_base.txt IN THE PROCESSING-DOCS REPO:
-# https://github.com/processing/processing-docs/blob/master/generate/keywords_base.txt
-# MAKE CHANGES THERE: DO NOT EDIT THE keywords.txt FILE DIRECTLY.
+# WELCOME TO KEYWORDS.TXT, THE FILE THAT DETERMINES 
+# THE COLOR CODING AND REFERENCE LINKS WITHIN THE 
+# PROCESSING DEVELOPMENT ENVIRONMENT (PDE)
+
+# THE TEXT THAT FOLLOWS IS FROM keywords_base.txt 
+# IN THE PROCESSING-WEBSITE REPO. IF YOU WANT TO MAKE A CHANGE,
+# DO IT THERE, DO NOT EDIT THE keywords.txt FILE DIRECTLY.
 
 # For an explanation of these tags, see Token.java
 # trunk/processing/app/src/processing/app/syntax/Token.java
@@ -90,7 +94,6 @@ GRAY	LITERAL2	filter_
 GREEN_MASK	LITERAL2
 GROUP	LITERAL2
 HALF	LITERAL2
-HALF_PI	LITERAL2	HALF_PI
 HAND	LITERAL2	cursor_
 HARD_LIGHT	LITERAL2	blend_
 HINT_COUNT	LITERAL2
@@ -127,7 +130,6 @@ PDF	LITERAL2	size_
 P2D	LITERAL2	size_
 P3D	LITERAL2	size_
 PERSPECTIVE	LITERAL2
-PI	LITERAL2	PI
 PIE	LITERAL2
 PIXEL_CENTER	LITERAL2
 POINT	LITERAL2
@@ -139,7 +141,6 @@ PROJECT	LITERAL2	strokeCap_
 QUAD	LITERAL2	createShape_
 QUAD_STRIP	LITERAL2	beginShape_
 QUADS	LITERAL2	beginShape_
-QUARTER_PI	LITERAL2	QUARTER_PI
 RAD_TO_DEG	LITERAL2
 RADIUS	LITERAL2
 RADIANS	LITERAL2
@@ -166,7 +167,6 @@ SVG	LITERAL2
 SVIDEO	LITERAL2
 TAB	LITERAL2	keyCode
 TARGA	LITERAL2
-TAU	LITERAL2	TAU
 TEXT	LITERAL2	cursor_
 TFF	LITERAL2
 THIRD_PI	LITERAL2
@@ -179,7 +179,6 @@ TRIANGLES	LITERAL2	beginShape_
 TRIANGLE_STRIP	LITERAL2	beginShape_
 TUNER	LITERAL2
 TWO	LITERAL2
-TWO_PI	LITERAL2	TWO_PI
 UP	LITERAL2	keyCode
 WAIT	LITERAL2	cursor_
 WHITESPACE	LITERAL2
@@ -217,7 +216,7 @@ void	KEYWORD1	void
 volatile	KEYWORD1
 
 
-# Java keywords which can be followed by a parenthesis
+# Java keywords that can be followed by a parenthesis
 
 assert	KEYWORD6
 case	KEYWORD6	case
@@ -326,10 +325,6 @@ setLong	FUNCTION2
 length	KEYWORD2	String
 
 
-# Temporary additions 3 September 2012 as the reference is getting updated
-#end	FUNCTION1
-#addChild	FUNCTION1
-
 # Operators are without KEYWORDS
 
 +=		addassign
@@ -368,7 +363,9 @@ length	KEYWORD2	String
 ;		semicolon
 -=		subtractassign
 
-# Suppressed from Generate to avoid conflicts with variables inside methods
+
+# Suppressed from Generate to avoid conflicts with 
+# variables inside methods
 
 width	KEYWORD4	width_
 height	KEYWORD4	height_
@@ -376,16 +373,14 @@ height	KEYWORD4	height_
 ArrayList	FUNCTION1	ArrayList
 HashMap	FUNCTION1	HashMap
 
-# pixelHeight is not generating correctly: https://github.com/processing/processing-docs/issues/260
 
-pixelHeight	KEYWORD4	pixelHeight
-
-
-# THE TEXT ABOVE IS HAND-WRITTEN AND FOUND IN THE FILE "keywords_base.txt" in processing/processing-docs/generate
+# THE TEXT ABOVE IS HAND-WRITTEN AND FOUND IN THE FILE 
+# "keywords_base.txt" in processing/processing-website
 #
 # THE TEXT BELOW IS AUTO-GENERATED
 #
 # SO
+# PLEASE
 # DON'T
 # TOUCH
 # IT
