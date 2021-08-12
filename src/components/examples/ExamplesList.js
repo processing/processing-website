@@ -22,6 +22,8 @@ const ExamplesList = ({ tree }) => {
 
   const sortedTree = useTreeSort(tree, `order`, curated);
 
+  console.log(sortedTree);
+
   return (
     <div className={classnames(grid.col, css.root)}>
       {Object.keys(sortedTree).map((category) => (
@@ -39,7 +41,7 @@ const ExamplesList = ({ tree }) => {
             </div>
           </div>
           <p className={css.categoryDescription}>
-            {category === 'topic'
+            {category === 'Topic Examples'
               ? intl.formatMessage({ id: 'topicExamples' })
               : intl.formatMessage({ id: 'basicExamples' })}
           </p>
