@@ -1,5 +1,5 @@
 /**
- * Mouse Signals. 
+ * Mouse Signals 
  * 
  * Move and click the mouse to generate signals. 
  * The top row is the signal from "mouseX", 
@@ -18,8 +18,6 @@ void setup() {
   yvals = new int[width];
   bvals = new int[width];
 }
-
-int arrayindex = 0;
 
 void draw() {
   background(102);
