@@ -22,8 +22,6 @@ const ExamplesList = ({ tree }) => {
 
   const sortedTree = useTreeSort(tree, `order`, curated);
 
-  console.log(sortedTree);
-
   return (
     <div className={classnames(grid.col, css.root)}>
       {Object.keys(sortedTree).map((category) => (
