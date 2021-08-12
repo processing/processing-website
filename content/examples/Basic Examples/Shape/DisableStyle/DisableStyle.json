@@ -1,10 +1,10 @@
 {
   "name": "Disable Style",
-  "title": "Ignore Styles  Illustration",
+  "title": "Disable Style",
   "author": "George Brower",
   "level": "Intermediate",
   "order": "3",
-  "description": "Shapes are loaded with style information that tells them how\n  to draw (the color, stroke weight, etc.) The disableStyle() \n  method of PShape turns off this information. The enableStyle()\n  method turns it back on.",
+  "description": "Shapes are loaded with style information that tells them how to draw (e.g. color, stroke weight). The disableStyle() method of PShape turns off this information so functions like stroke() and fill() change the SVGs color. The enableStyle() method turns the file's original styles back on.",
   "featured": [
     "PShape_enableStyle_",
     "PShape_disableStyle_",

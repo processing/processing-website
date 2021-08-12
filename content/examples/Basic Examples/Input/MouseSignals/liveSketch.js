@@ -35,12 +35,12 @@ function runLiveSketch(s) {
       bvals[i - 1] = bvals[i];
     }
     // Add the new values to the end of the array
-    xvals[width - 1] = s.mouseX;
-    yvals[width - 1] = s.mouseY;
+    xvals[s.width - 1] = s.mouseX;
+    yvals[s.width - 1] = s.mouseY;
     if (s.mouseIsPressed) {
-      bvals[width - 1] = 0;
+      bvals[s.width - 1] = 0;
     } else {
-      bvals[width - 1] = 255;
+      bvals[s.width - 1] = 255;
     }
 
     s.fill(255);
@@ -49,7 +49,7 @@ function runLiveSketch(s) {
 
     for (var i = 1; i < s.width; i++) {
       s.stroke(255);
-      s.point(i, map(xvals[i], 0, s.width, 0, s.height / 3 - 1));
+      s.point(i, s.map(xvals[i], 0, s.width, 0, s.height / 3 - 1));
       s.stroke(0);
       s.point(i, s.height / 3 + yvals[i] / 3);
       s.stroke(255);

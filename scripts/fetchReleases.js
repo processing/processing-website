@@ -3,11 +3,10 @@ const fs = require('fs');
 const path = require('path');
 
 const fetchReleases = async () => {
-  // TODO: This is going to need to change once they have all releases in a single repo
-  const { releases, preReleases } = await graphql(
+  const { processing, processing4 } = await graphql(
     `
       query {
-        releases: repository(name: "processing", owner: "processing") {
+        processing: repository(name: "processing", owner: "processing") {
           releases(first: 100, orderBy: { field: NAME, direction: DESC }) {
             edges {
               node {
@@ -26,7 +25,7 @@ const fetchReleases = async () => {
             }
           }
         }
-        preReleases: repository(name: "processing4", owner: "processing") {
+        processing4: repository(name: "processing4", owner: "processing") {
           releases(first: 100, orderBy: { field: NAME, direction: DESC }) {
             edges {
               node {
@@ -49,13 +48,15 @@ const fetchReleases = async () => {
     `,
     {
       headers: {
-        authorization: `token ${process.env.GITHUB_TOKEN}`,
-      },
+        authorization: `token ${process.env.GITHUB_TOKEN}`
+      }
     }
   );
 
+  const releases = processing.releases.edges.concat(processing4.releases.edges);
+
   // Write releases to folder
-  releases.releases.edges.forEach((release) => {
+  releases.forEach((release) => {
     fs.writeFileSync(
       path.join(
         __dirname,
@@ -63,21 +64,6 @@ const fetchReleases = async () => {
         'content',
         'download',
         'releases',
-        `${release.node.tagName}.json`
-      ),
-      JSON.stringify(release.node, null, 2)
-    );
-  });
-
-  // Write prereleases to folder
-  preReleases.releases.edges.forEach((release) => {
-    fs.writeFileSync(
-      path.join(
-        __dirname,
-        '..',
-        'content',
-        'download',
-        'prereleases',
         `${release.node.tagName}.json`
       ),
       JSON.stringify(release.node, null, 2)

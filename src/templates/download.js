@@ -180,7 +180,7 @@ export const query = graphql`
     preReleases: allFile(
       filter: {
         sourceInstanceName: { eq: "download" }
-        relativeDirectory: { eq: "prereleases" }
+        relativeDirectory: { eq: "releases" }
         childJson: { tagName: { in: $selectedPreReleases } }
       }
       sort: { fields: childJson___name, order: DESC }

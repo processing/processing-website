@@ -49,7 +49,7 @@
   flex-basis: calc(100% / 5.5 * 1.5);
   font-family: var(--font-mono);
   font-size: var(--text-regular);
-  font-variant-ligatures: no-common-ligatures;
+  font-variant-ligatures: none;
   text-decoration: none;
   color: var(--processing-blue-dark);
   white-space: nowrap;
@@ -70,7 +70,7 @@
     background-color: var(--lightgray);
     padding: 0.1em 0.3em;
     border-radius: 6px;
-    font-variant-ligatures: no-common-ligatures;
+    font-variant-ligatures: none;
   }
 }
 

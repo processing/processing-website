@@ -2,7 +2,7 @@
   "brief": "Sets the cursor to a predefined symbol, an image, or makes it\n           visible if already hidden",
   "related": ["noCursor_"],
   "name": "cursor()",
-  "description": "Sets the cursor to a predefined symbol or an image, or makes it visible if\n already hidden. If you are trying to set an image as the cursor, the\n recommended size is 16x16 or 32x32 pixels. The values for parameters\n <b>x</b> and <b>y</b> must be less than the dimensions of the image. <br />\n <br />\n Setting or hiding the cursor does not generally work with \"Present\" mode\n (when running full-screen). <br />\n <br />\n With the P2D and P3D renderers, a generic set of cursors are used because\n the OpenGL renderer doesn't have access to the default cursor images for\n each platform\n (<a href=\"https://github.com/processing/processing/issues/3791\">Issue\n 3791</a>).\n\n ",
+  "description": "Sets the cursor to a predefined symbol or an image, or makes it visible if\n already hidden. If you are trying to set an image as the cursor, the\n recommended size is 16x16 or 32x32 pixels. The values for parameters\n <b>x</b> and <b>y</b> must be less than the dimensions of the image. <br />\n <br />\n Setting or hiding the cursor does not generally work with \"Present\" mode\n (when running full-screen). <br />\n <br />\n With the P2D and P3D renderers, a generic set of cursors are used because\n the OpenGL renderer doesn't have access to the default cursor images for\n each platform\n (<a href=\"https://github.com/processing/processing/issues/3791\">Issue\n 3791</a>).",
   "syntax": ["cursor(kind)", "cursor(img)", "cursor(img, x, y)", "cursor()"],
   "returns": "void",
   "type": "function",

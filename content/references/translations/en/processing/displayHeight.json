@@ -1,0 +1,9 @@
+{
+  "brief": "Variable that stores the height of the computer screen",
+  "related": ["displayWidth", "size_"],
+  "name": "displayHeight",
+  "description": "System variable that stores the height of the computer screen. For\n example, if the current screen resolution is 1920x1080,\n <b>displayWidth</b> is 1920 and <b>displayHeight</b> is 1080.",
+  "category": "environment",
+  "subcategory": "",
+  "type": "other"
+}

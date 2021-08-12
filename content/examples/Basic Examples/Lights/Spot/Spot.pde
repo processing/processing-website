@@ -1,8 +1,8 @@
 /**
- * Spot.
- *
- * Move the mouse the change the position
- * of a blue spot light.
+ * Spot. 
+ * 
+ * Move the mouse the change the position and concentation
+ * of a blue spot light. 
  */
 
 void setup() {
@@ -13,14 +13,14 @@ void setup() {
 }
 
 void draw() {
-  background(0);
-
+  background(0); 
+  
   // Light the bottom of the sphere
   directionalLight(51, 102, 126, 0, -1, 0);
-
+  
   // Orange light on the upper-right of the sphere
-  spotLight(204, 153, 0, 360, 160, 600, 0, 0, -1, PI/2, 600);
-
+  spotLight(204, 153, 0, 360, 160, 600, 0, 0, -1, PI/2, 600); 
+  
   // Moving spotlight that follows the mouse
   spotLight(102, 153, 204, 360, mouseY, 600, 0, 0, -1, PI/2, 600);
 

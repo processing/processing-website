@@ -25,6 +25,11 @@
 
 .code {
   position: relative;
+  display: none;
+}
+
+.activeCode {
+  display: block;
 }
 
 .codeBlock {

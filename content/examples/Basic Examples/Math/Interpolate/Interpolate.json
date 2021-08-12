@@ -4,6 +4,6 @@
   "author": "",
   "level": "Beginner",
   "order": "12",
-  "description": "Move the mouse across the screen and the symbol will follow.  \n  Between drawing each frame of the animation, the ellipse moves \n  part of the distance (0.05) from its current position toward \n  the cursor using the lerp() function\n\n  This is the same as the Easing under input only with lerp() instead.",
+  "description": "Move the mouse across the screen and the symbol will follow. Between drawing each frame of the animation, the ellipse moves part of the distance (0.05) from its current position toward the cursor using the lerp() function.",
   "featured": ["lerp_"]
 }
