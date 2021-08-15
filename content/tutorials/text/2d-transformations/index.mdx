@@ -20,25 +20,25 @@ Processing has built-in functions that make it easy for you to have objects in a
 
 As you know, your Processing window works like a piece of graph paper. When you want to draw something, you specify its coordinates on the graph. Here is a simple rectangle drawn with the code `rect(20, 20, 40, 40)`. The coordinate system (a fancy word for &ldquo;graph paper&rdquo;) is shown in gray.
 
-<FixedImage center width={230} height={230}>
+<FixedImage center width={650} height={400}>
 
-![Black rectangle on gray numbered grid](./original.png)
+![Black rectangle on gray numbered grid](./original.svg)
 
 </FixedImage>
 
 If you want to move the rectangle 60 units right and 80 units down, you can just change the coordinates by adding to the _x_ and _y_ starting point: `rect(20 + 60, 20 + 80, 40, 40)` and the rectangle will appear in a different place. (We put the arrow in there for dramatic effect.)
 
-<FixedImage center width={230} height={230}>
+<FixedImage center width={650} height={400}>
 
-![Black rectangle on gray numbered grid, moved](./new_coords.png)
+![Black rectangle on gray numbered grid, moved](./new_coords.svg)
 
 </FixedImage>
 
 But there is a more interesting way to do it: **move the graph paper instead**. If you move the graph paper 60 units right and 80 units down, you will get exactly the same visual result. Moving the coordinate system is called _translation_.
 
-<FixedImage center width={240} height={240}>
+<FixedImage center width={650} height={600}>
 
-![grid moved with arrow showing motion](./moved_grid.png)
+![grid moved with arrow showing motion](./moved_grid.svg)
 
 </FixedImage>
 
@@ -79,7 +79,7 @@ Yes, you could have done a `translate(-60, -80)` to move the grid back to its or
 
 You may be thinking that picking up the coordinate system and moving it is a lot more trouble than just adding to coordinates. For a simple example like the rectangle, you are correct. But let's take an example of where `translate()` can make life easier. Here is some code that draws a row of houses. It uses a loop that calls a function named `house()`, which takes the _x_ and _y_ location of the house's upper-left corner as its parameters.
 
-<FixedImage center width={358} height={81}>
+<FixedImage center width={400} height={100}>
 
 ![Row of stick-figure houses](./houses.png)
 
@@ -129,15 +129,15 @@ void house(int x, int y)
 
 In addition to moving the grid, you can also rotate it with the `rotate()` function. This function takes one argument, which is the number of _radians_ that you want to rotate. In Processing, all the functions that have to do with rotation measure angles in radians rather than degrees. When you talk about angles in degrees, you say that a full circle has 360&#xb0;. When you talk about angles in radians, you say that a full circle has 2&pi; radians. Here is a diagram of how Processing measures angles in degrees (black) and radians (red).
 
-<FixedImage center width={158} height={157}>
+<FixedImage center width={650} height={400}>
 
-![Degrees are measured clockwise with zero being at 3 o'clock](./degrees.png)
+![Degrees are measured clockwise with zero being at 3 o'clock](./degrees.svg)
 
 </FixedImage>
 
 Since most people think in degrees, Processing has a built-in `radians()` function which takes a number of degrees as its argument and converts it for you. It also has a `degrees()` function that converts radians to degrees. Given that background, let's try rotating a square clockwise 45 degrees.
 
-<FixedImage side width={120} height={120}>
+<FixedImage side width={200} height={200}>
 
 ![square has moved and rotated](./bad_rotate.png)
 
@@ -164,9 +164,9 @@ void setup()
 
 Hey, what happened? How come the square got moved and cut off? The answer is: the square did not move. The **grid** was rotated. Here is what really happened. As you can see, on the rotated coordinate system, the square still has its upper left corner at (40, 40).
 
-<FixedImage center width={275} height={250}>
+<FixedImage center width={650} height={500}>
 
-![shows grid rotated 45 degrees clockwise](./rotated_grid.png)
+![shows grid rotated 45 degrees clockwise](./rotated_grid.svg)
 
 </FixedImage>
 
@@ -178,15 +178,15 @@ The correct way to rotate the square is to:
 2. Rotate the grid &pi;/4 radians (45&#xb0;)
 3. Draw the square at the origin.
 
-<FixedImage center width={310} height={250}>
+<FixedImage center width={650} height={600}>
 
-![Grid translated, then rotated](./correct_rotate_grid.png)
+![Grid translated, then rotated](./correct_rotate_grid.svg)
 
 </FixedImage>
 
 And here is the code and its result, without the grid marks.
 
-<FixedImage side width={120} height={120}>
+<FixedImage side width={200} height={200}>
 
 ![result of properly rotating square](./good_rotate.png)
 
@@ -219,7 +219,7 @@ void setup()
 
 And here is a program that generates a wheel of colors by using rotation. The screenshot is reduced to save space.
 
-<FixedImage side width={87} height={86}>
+<FixedImage side width={200} height={200}>
 
 ![multiply rotated rectangle in different colors](./wheel.png)
 
@@ -250,7 +250,7 @@ void draw(){
 
 The final coordinate system transformation is scaling, which changes the size of the grid. Take a look at this example, which draws a square, then scales the grid to twice its normal size, and draws it again.
 
-<FixedImage side width={145} height={145}>
+<FixedImage side width={200} height={200}>
 
 ![gray square scaled up to double size](./scale1.png)
 
@@ -284,7 +284,7 @@ There is no law saying that you have to scale the _x_ and _y_ dimensions equally
 
 When you do multiple transformations, the order makes a difference. A rotation followed by a translate followed by a scale will not give the same results as a translate followed by a rotate by a scale. Here is some sample code and the results.
 
-<FixedImage side width={144} height={168}>
+<FixedImage side width={200} height={200}>
 
 ![result of different orders of rotate/translate/scale](./order.png)
 
@@ -344,7 +344,7 @@ The robot is modeled on [this drawing](http://www.openclipart.org/detail/5457), 
 
 When we refer to left and right in this drawing, we mean your left and right (the left and right side of your monitor), not the robot's left and right.
 
-<FixedImage side width={84} height={136}>
+<FixedImage side width={200} height={200}>
 
 ![blue robot, arms at sides](./whole_robot.png)
 
@@ -379,9 +379,9 @@ void drawRobot()
 
 ```
 
-<FixedImage center width={82} height={52}>
+<FixedImage center width={650} height={250}>
 
-![robot with red dots at shoulder joints](./pivot.png)
+![robot with red dots at shoulder joints](./pivot.svg)
 
 </FixedImage>
 
@@ -426,7 +426,7 @@ void drawRightArm()
 
 Now test to see if the arms rotate properly. Rather than attempt a full animation, we will just rotate the left side arm 135 degrees and the right side arm -45 degrees as a test. Here is the code that needs to be added, and the result. The left side arm is cut off because of the window boundaries, but we'll fix that in the final animation.
 
-<FixedImage side width={109} height={72}>
+<FixedImage side width={200} height={200}>
 
 ![robot with arms at angle](./rotate_test.png)
 
