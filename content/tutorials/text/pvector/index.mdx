@@ -18,7 +18,11 @@ The most basic building block for programming motion is the **_vector_**. And so
 
 **_A vector is a collection of values that describe relative position in space._**
 
+<FixedImage width={650} height={300}>
+
 ![](./definition.svg)
+
+</FixedImage>
 
 ## Vectors: You Complete Me
 
@@ -28,7 +32,7 @@ Example: Bouncing Ball with No Vectors
 
 <FixedImage side width={200} height={200}>
 
-![](./bouncingball1.jpg)
+![over a white background there are light grey paths showing where the grey ball has bounced over time](./bouncingball1.png)
 
 </FixedImage>
 
@@ -108,7 +112,11 @@ Technically speaking, the definition of a vector is the difference between two p
 
 Here are some vectors and possible translations:
 
-![](./steps.svg)
+<FixedImage width={650} height={700}>
+
+![digram showing a way to think of vectors. for example (3,5) is like walking 3 steps east and 5 steps north. the vector is the diagonal path from the start to the end](./steps.svg)
+
+</FixedImage>
 
 You've probably done this before when programming motion. For every frame of animation (i.e. single cycle through Processing's (http://processing.org/reference/draw_.html)draw()] loop), you instruct each object on the screen to move a certain number of pixels horizontally and a certain number of pixels (vertically).
 
@@ -118,7 +126,11 @@ For every frame:
 
 **_location = location + velocity_**
 
-![](./howtogetthere.svg)
+<FixedImage width={650} height={250}>
+
+![diagram showing an original location, a new location, and the diagonal vector showing the path. a right angled triangle shows horizontal and vertical steps involved in the math](./howtogetthere.svg)
+
+</FixedImage>
 
 If velocity is a vector (the difference between two points), what is location? Is it a vector too? Technically, one might argue that location is not a vector, it's not describing the change between two points, it's simply describing a singular point in space -- a location. And so conceptually, we think of a location as different: a single point rather than the difference between two points.
 
@@ -193,7 +205,11 @@ Scalar: x
 
 Let's say I have the following two vectors:
 
-![](./v.svg)
+<FixedImage width={650} height={150}>
+
+![diagram showing a vector labeled u that has a value of 5 in the x direction and 2 in the y direction. a second vector labeled v has a value of 3 in the x direction and 4 in the y direction.](./v.svg)
+
+</FixedImage>
 
 **u** = (5,2)
 **v** = (3,4)
@@ -216,7 +232,11 @@ and therefore:
 
 **w** = (8,6)
 
-![](./add.svg)
+<FixedImage width={650} height={230}>
+
+![diagram shows how the two diagonal vectors added end to end gives the same result as adding the two x values and the two y values](./add.svg)
+
+</FixedImage>
 
 Now that we understand how to add two vectors together, we can look at how addition is implemented in the [**PVector**](http://processing.org/reference/PVector.html) class itself. Let's write a function called [**_add()_**](http://processing.org/reference/PVector_add_.html) that takes as its argument another PVector object.
 
@@ -346,7 +366,11 @@ and the function inside [**PVector**](http://processing.org/reference/PVector.ht
   }
 ```
 
-![](./sub.svg)
+<FixedImage width={650} height={230}>
+
+![diagram shows how the two diagonal vectors added end to end, with one of them negative, gives the same result as subtracting the x value and the y value](./sub.svg)
+
+</FixedImage>
 
 Following is an example that demonstrates vector subtraction by taking the difference between two points -- the mouse location and the center of the window.
 
@@ -354,7 +378,7 @@ Example: Vector subtraction
 
 <FixedImage side width={200} height={200}>
 
-![](./vector_sub.jpg)
+![a black diagonal line on a white background](./vector_sub.png)
 
 </FixedImage>
 
@@ -421,7 +445,12 @@ n = 3
 
 **w** = (-9, 21)
 
-![](./mult.svg)
+<FixedImage width={650} height={500}>
+
+![diagram shows how putting three diagonal vectors added end to end, gives the same result as multiplying the x value and the y values individually](./mult.svg)
+
+</FixedImage>
+
 The function inside the PVector class therefore is written as:
 
 ```
@@ -443,7 +472,7 @@ Example: Vector multiplication
 
 <FixedImage side width={200} height={200}>
 
-![](./vector_mult.jpg)
+![a diagonal black line on a white background](./vector_mult.png)
 
 </FixedImage>
 
@@ -472,7 +501,11 @@ void draw() {
 
 Division is exactly the same as multiplication, only of course using divide instead of multiply.
 
-![](./div.svg)
+<FixedImage width={650} height={170}>
+
+![diagram showing how dividing the x and y values by 2 is the same as cutting the diagonal vector in half](./div.svg)
+
+</FixedImage>
 
 ```
   void div(float n) {
@@ -498,7 +531,11 @@ The distributive rule, 2 vectors, 1 scalar : (**u** +**v**)\*n = n**\*u** + n**\
 
 Multiplication and division, as we just saw, is a means by which the length of the vector can be changed without affecting direction. And so, perhaps you're wondering: &ldquo;Ok, so how do I know what the length of a vector is?&rdquo; I know the components (x and y), but I don't know how long (in pixels) that actual arrow is itself?!
 
-![](./mag.svg)
+<FixedImage width={650} height={170}>
+
+![diagram showing a right angle triangle where the vector v is the diagonal](./mag.svg)
+
+</FixedImage>
 
 The length or &ldquo;magnitude&rdquo; of a vector is often written as: ||**v**||
 
@@ -506,7 +543,11 @@ Understanding how to calculate the length (referred from here on out as magnitud
 
 Notice in the above diagram how when we draw a vector as an arrow and two components (x and y), we end up with a right triangle. The sides are the components and the hypotenuse is the arrow itself. We're very lucky to have this right triangle, because once upon a time, a Greek mathematician named Pythagoras developed a nice formula to describe the relationship between the sides and hypotenuse of a right triangle.
 
-![](./pythagorean.svg)
+<FixedImage width={650} height={170}>
+
+![diagram of the pythagorean theorem](./pythagorean.svg)
+
+</FixedImage>
 
 The Pythagorean theorem: a squared plus b squared equals c squared.
 
@@ -526,7 +567,7 @@ Example: Vector magnitude
 
 <FixedImage side width={200} height={200}>
 
-![](./vector_mag.jpg)
+![a thin diagonal line in the middle and a black rectangle in the upper left corner showing the length/magnitude of the thin line](./vector_mag.png)
 
 </FixedImage>
 
@@ -559,7 +600,11 @@ void draw() {
 
 Calculating the magnitude of a vector is only the beginning. The magnitude function opens the door to many possibilities, the first of which is **_normalization_**. Normalizing refers to the process of making something &ldquo;standard&rdquo; or, well, &ldquo;normal.&rdquo; In the case of vectors, let's assume for the moment that a standard vector has a length of one. To normalize a vector, therefore, is to take a vector of any length and, keeping it pointing in the same direction, change its length to one, turning it into what is referred to as a **_unit vector_**.
 
-![](./normalize1.svg)
+<FixedImage width={650} height={250}>
+
+![diagram visualizing the process of normalizing a vector as described above](./normalize1.svg)
+
+</FixedImage>
 
 Being able to quickly access the unit vector is useful since it describes a vector's direction without regard to length. For any given vector **u**, its unit vector (written as &#251;) is calculated as follows:
 
@@ -567,7 +612,11 @@ Being able to quickly access the unit vector is useful since it describes a vect
 
 In other words, to normalize a vector, simply divide each component by its magnitude. This makes pretty intuitive sense. Say a vector is of length 5. Well, 5 divided by 5 is 1. So looking at our right triangle, we then need to scale the hypotenuse down by dividing by 5. And so in that process the sides shrink, dividing by 5 as well.
 
-![](./normalize2.svg)
+<FixedImage width={650} height={160}>
+
+![diagram of how a classic 3 by 4 right angle triangle with a vector magnitude of 5 becomes 3/5ths by 4/5ths right angle triangle when the vecor is normalized to a magnitude of 1](./normalize2.svg)
+
+</FixedImage>
 
 In the (http://processing.org/reference/PVector.html)[**PVector**] class, we therefore write our normalization function as follows:
 
@@ -593,7 +642,7 @@ Example: Normalizing a Vector
 
 <FixedImage side width={200} height={200}>
 
-![](./vector_norm.jpg)
+![a thin black line on a white background](./vector_norm.png)
 
 </FixedImage>
 
@@ -741,7 +790,7 @@ Example: Motion 101 (velocity)
 
 <FixedImage side width={200} height={200}>
 
-![](./vector_motion.jpg)
+![light grey circle with a motion trail showing that it is moving downward and to the left](./vector_motion.png)
 
 </FixedImage>
 
@@ -889,7 +938,7 @@ Example: Motion 101 (velocity and constant acceleration)
 
 <FixedImage side width={200} height={200}>
 
-![](./vector_acc.jpg)
+![same as the last image but the circle seems to be moving faster over time](./vector_acc.png)
 
 </FixedImage>
 
@@ -930,7 +979,7 @@ Example: Motion 101 (velocity and random acceleration)
 
 <FixedImage side width={200} height={200}>
 
-![](./vector_randacc.jpg)
+![similar to the last two images but the motion path shows the circle has been randomly swerving around](./vector_randacc.png)
 
 </FixedImage>
 
@@ -1078,11 +1127,19 @@ With chaining the above can be written as:
 
 Ok, to finish out this tutorial, let's try something a bit more complex and a great deal more useful. Let's dynamically calculate an object's acceleration according to a rule, acceleration algorithm #4 -- &ldquo;the object accelerates towards the mouse.&rdquo;
 
-![](./mouseaccelerate1.svg)
+<FixedImage width={650} height={210}>
+
+![diagram showing a start point at the mover object and an end point at the mouse location. a vector between them is the acceleration](./mouseaccelerate1.svg)
+
+</FixedImage>
 
 Anytime we want to calculate a vector based on a rule/formula, we need to compute two things: **magnitude** and **direction**. Let's start with direction. We know the acceleration vector should point from the object's location towards the mouse location. Let's say the object is located at the point (x,y) and the mouse at (mouseX,mouseY).
 
-![](./mouseaccelerate2.svg)
+<FixedImage width={650} height={200}>
+
+![description of diagram below](./mouseaccelerate2.svg)
+
+</FixedImage>
 
 As illustrated in the above diagram, we see that we can get a vector (dx,dy) by subtracting the object's location from the mouse's location. After all, this is precisely where we started this chapter -- the definition of a vector is &ldquo;the difference between two points in space!&rdquo;
 
@@ -1118,7 +1175,7 @@ To summarize, we have the following steps:
 
 <FixedImage side width={200} height={200}>
 
-![](./vector_mouse1.jpg)
+![a grey circle with a motion trail showing it following the mouse](./vector_mouse1.png)
 
 </FixedImage>
 
@@ -1159,7 +1216,7 @@ Example: Accelerating towards mouse
 
 <FixedImage side width={200} height={200}>
 
-![](./vector_mouse2.jpg)
+![same as above but with 20 grey circles leaving motion paths](./vector_mouse2.png)
 
 </FixedImage>
 
