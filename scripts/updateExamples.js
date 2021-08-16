@@ -27,19 +27,31 @@ const updateExamples = async () => {
     (example) => !missingTo.includes(example)
   );
 
-  console.log('Examples from processing-examples that are not in the website:');
-  console.log('(These need to be manually added to the website)');
-  missingTo.map((example) => console.log(`- ${example.path}`));
-  console.log('');
-  console.log('Examples from the website that are not in processing-examples:');
-  console.log('(These should probably be deleted from the website)');
-  missingFrom.map((example) => console.log(`- ${example.path}`));
-  console.log('');
-  console.log(
-    'Examples that are in both repos and will be updated with the script:'
-  );
-  portExamples.map((example) => console.log(`- ${example.path}`));
-  console.log('');
+  if (missingTo.length > 0) {
+    console.log(
+      'Examples from processing-examples that are not in the website:'
+    );
+    console.log('(These need to be manually added to the website)');
+    missingTo.map((example) => console.log(`- ${example.path}`));
+    console.log('');
+  }
+
+  if (missingFrom.length > 0) {
+    console.log(
+      'Examples from the website that are not in processing-examples:'
+    );
+    console.log('(These should probably be deleted from the website)');
+    missingFrom.map((example) => console.log(`- ${example.path}`));
+    console.log('');
+  }
+
+  if (portExamples.length > 0) {
+    console.log(
+      'Examples that are in both repos and will be updated with the script:'
+    );
+    portExamples.map((example) => console.log(`- ${example.path}`));
+    console.log('');
+  }
 
   const answers = await inquirer.prompt([
     {
