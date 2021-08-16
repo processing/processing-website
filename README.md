@@ -58,6 +58,6 @@ The website is set up to deploy itself whenever a new GitHub release is created 
 The website repo has a script that generates the `keywords.txt` file into the `processing4` repo to use for syntax highlighting the PDE. Follow these steps in order to generate that file:
 
 1. Make sure you have this `processing-website` repo and the `processing4` repo next to each other on your computer
-2. Run `npm run createKeywords`
+2. Run `npm run updateKeywords`
 
 The `processing4` repo now has an updated `java/keywords.txt` file.

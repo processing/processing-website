@@ -1,0 +1,23 @@
+{
+  "name": "Live Brush",
+  "authors": [
+    "[Boy d'Hont](www.bdhont.net)"
+  ],
+  "url": "https://github.com/boydhont/LiveBrush",
+  "categories": [
+    "Utilities"
+  ],
+  "sentence": "A livecoding library that draws code brushes from external .java source code.",
+  "paragraph": "Based on the Groovy live script compiler.",
+  "id": "255",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://bdhont.net/LiveBrush.txt",
+      "download": "https://bdhont.net/LiveBrush.zip"
+    }
+  ]
+}

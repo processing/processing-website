@@ -1,0 +1,23 @@
+{
+  "name": "Deep Vision",
+  "categories": [
+    "Data"
+  ],
+  "authors": [
+    "[Florian Bruggisser](https://broox.ch)"
+  ],
+  "url": "https://github.com/cansik/deep-vision-processing",
+  "sentence": "Deep computer-vision algorithms for Processing",
+  "paragraph": "Run deep neural networks on images in Processing.",
+  "id": "267",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/cansik/deep-vision-processing/releases/download/contribution/deepvision.txt",
+      "download": "https://github.com/cansik/deep-vision-processing/releases/download/contribution/deepvision.zip"
+    }
+  ]
+}

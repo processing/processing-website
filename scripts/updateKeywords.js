@@ -47,7 +47,7 @@ const globalFuncs = [
   This script creates the keywords.txt file that is used to do syntax highligting
   in the Processing IDE.
 **/
-const createKeywords = () => {
+const updateKeywords = () => {
   if (!processingRepoExists()) {
     console.error(
       'To run this script, you must have the processing4 repo next to the processing-website repo on your computer.'
@@ -239,4 +239,4 @@ const processingRepoExists = (keywords) => {
   return siblings.includes('processing4');
 };
 
-createKeywords();
+updateKeywords();

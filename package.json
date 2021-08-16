@@ -24,7 +24,8 @@
     "clean": "gatsby clean",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
     "fetchReleases": "node scripts/fetchReleases.js",
-    "createKeywords": "node scripts/createKeywords.js",
+    "updateContributions": "node scripts/updateContributions.js",
+    "updateKeywords": "node scripts/updateKeywords.js",
     "deploy": "static deploy",
     "deployGithub": "gatsby clean && static deploy --env production --confirm",
     "open": "static open"
