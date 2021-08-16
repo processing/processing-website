@@ -22,7 +22,7 @@ This content is more static, such as page headings and the descriptions on the f
 
 ### Page content
 
-This content changes more often, and is often shown in list form. This includes most of the content on the website such as the individual items under reference, tutorials, tools, etc. Each content type has its own setup based on where the source lives. As an example, the reference is generated from the Processing source code and has its own way of translating those generated files. The following guides explain how to change the content on the website by section.
+This content includes most of the content on the website such as the individual items under reference, tutorials, tools, etc. Each content type has its own setup based on where the source lives. As an example, the reference is generated from the Processing source code and has its own way of translating those generated files. The following guides explain how to change the content on the website by section.
 
 - [Download](/docs/download.md)
 - Documentation

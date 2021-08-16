@@ -15,4 +15,10 @@ To edit a core library page:
 
 ## Contributions
 
-_TODO: Explain how to update contributions and run the content script_
+The contributions are copied via a script from the [`processing-contributions`](https://github.com/processing/processing-contributions) repo to the `/content/contributions` folder in this repo. This is what you need to run the script:
+
+1. Make sure that you have the `processing-contributions` repo next to this `processing-website` repo on your computer
+1. Pull the latest `master` from the `processing-contributions` repository
+1. From the root of this repo, run `npm run updateContributions`
+
+You should now have the updated contribution files in your repo ready to be committed. Please submit the changes as a PR to the `main` branch of `processing-website`.
