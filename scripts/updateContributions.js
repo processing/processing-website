@@ -11,8 +11,7 @@ const from = path.join(
 const to = path.join(__dirname, '..', 'content', 'contributions');
 
 /**
-  This script creates the keywords.txt file that is used to do syntax highligting
-  in the Processing IDE.
+  This script updates the contributions data
 **/
 const updateContributions = () => {
   if (!contributionsRepoExists()) {
