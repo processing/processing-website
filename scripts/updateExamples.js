@@ -45,7 +45,7 @@ const updateExamples = async () => {
     {
       type: 'confirm',
       name: 'confirm',
-      message: 'Do you wish to run the script?'
+      message: 'Do you wish to update the content stated above?'
     }
   ]);
 
