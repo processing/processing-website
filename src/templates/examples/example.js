@@ -130,7 +130,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
               {intl.formatMessage({ id: 'exampleInfo' })}
               <a
                 href={
-                  'https://github.com/processing/processing-website/issues?state=open'
+                  'https://github.com/processing/processing-examples/issues'
                 }>
                 {intl.formatMessage({ id: 'letUsKnow' })}
               </a>

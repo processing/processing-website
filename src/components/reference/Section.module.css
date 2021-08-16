@@ -22,7 +22,7 @@
 
 .content > h3 {
   font-size: var(--text-xlarge);
-  font-variant-ligatures: no-common-ligatures;
+  font-variant-ligatures: none;
   margin: 0;
 }
 
@@ -42,7 +42,7 @@
   background-color: var(--lightgray);
   padding: 0.1em 0.3em;
   border-radius: 6px;
-  font-variant-ligatures: no-common-ligatures;
+  font-variant-ligatures: none;
 }
 
 @media (--reduced) {

@@ -2,23 +2,22 @@
  * Hue. 
  * 
  * Hue is the color reflected from or transmitted through an object 
- * and is typically referred to as the name of the color (red, blue, yellow, etc.) 
- * Move the cursor vertically over each bar to alter its hue. 
+ * and is typically referred to as the name of the color such as 
+ * red, blue, or yellow. In this example, move the cursor vertically 
+ * over each bar to alter its hue. 
  */
  
 int barWidth = 20;
 int lastBar = -1;
 
-void setup() 
-{
+void setup() {
   size(640, 360);
   colorMode(HSB, height, height, height);  
   noStroke();
   background(0);
 }
 
-void draw() 
-{
+void draw() {
   int whichBar = mouseX / barWidth;
   if (whichBar != lastBar) {
     int barX = whichBar * barWidth;

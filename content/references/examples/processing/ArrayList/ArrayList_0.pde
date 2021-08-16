@@ -1,9 +1,9 @@
 // These are code fragments that show how to use an ArrayList.
 // They won't compile because they assume the existence of a Particle class.
 
-// Declaring the ArrayList, note the use of the syntax "&lt;Particle&gt;" to indicate
+// Declaring the ArrayList, note the use of the syntax "<Particle>" to indicate
 // our intention to fill this ArrayList with Particle objects
-ArrayList&lt;Particle&gt; particles = new ArrayList&lt;Particle&gt;();
+ArrayList<Particle> particles = new ArrayList<Particle>();
 
 // Objects can be added to an ArrayList with add()
 particles.add(new Particle());

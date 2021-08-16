@@ -12,7 +12,7 @@ void setup() {
   background(0);
 
   // Create the font from the .ttf file in the data folder
-  f = createFont("SpaceMono-Regular.ttf", 18);
+  f = createFont("SourceCodePro-Regular.ttf", 18);
   textFont(f);
 } 
 

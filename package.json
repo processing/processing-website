@@ -24,6 +24,7 @@
     "clean": "gatsby clean",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
     "fetchReleases": "node scripts/fetchReleases.js",
+    "createKeywords": "node scripts/createKeywords.js",
     "deploy": "static deploy",
     "deployGithub": "gatsby clean && static deploy --env production --confirm",
     "open": "static open"
@@ -57,7 +58,7 @@
     "gatsby-transformer-json": "^3.9.0",
     "gatsby-transformer-remark": "^4.6.0",
     "gatsby-transformer-sharp": "^3.9.0",
-    "highlight.js": "^11.1.0",
+    "highlight.js": "^11.2.0",
     "lodash": "4.17.21",
     "luxon": "^1.27.0",
     "p5": "^1.4.0",

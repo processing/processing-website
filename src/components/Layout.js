@@ -65,7 +65,15 @@ const Layout = ({ children, withSidebar, withBreadcrumbs, mainClassName }) => {
           {children}
         </H2>
       ),
-      img: (props) => <img {...props} alt=""></img>
+      img: (props) => <img {...props} alt=""></img>,
+      // Render escaped characters as code
+      code: ({ children }) => (
+        <code dangerouslySetInnerHTML={{ __html: children }} />
+      ),
+      // Render escaped characters as code
+      inlineCode: ({ children }) => (
+        <code dangerouslySetInnerHTML={{ __html: children }} />
+      )
     }),
     [setCurrentHeading]
   );

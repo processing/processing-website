@@ -10,7 +10,7 @@
 
 function runLiveSketch(s) {
   var a = 0.0;
-  var s = 0.0;
+  var b = 0.0;
 
   s.setup = () => {
     s.createCanvas(640, 360);
@@ -23,16 +23,16 @@ function runLiveSketch(s) {
     s.background(102);
 
     a = a + 0.04;
-    s = s.cos(a) * 2;
+    b = s.cos(a) * 2;
 
     s.translate(s.width / 2, s.height / 2);
-    s.scale(s);
+    s.scale(b);
     s.fill(51);
     s.rect(0, 0, 50, 50);
 
     s.translate(75, 0);
     s.fill(255);
-    s.scale(s);
+    s.scale(b);
     s.rect(0, 0, 50, 50);
   };
 }

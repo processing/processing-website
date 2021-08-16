@@ -3,7 +3,8 @@
   "constructors": [
     "PImage(width, height, format, factor)",
     "PImage(width, height, pixels, requiresCheckAlpha, parent)",
-    "PImage(width, height, pixels, requiresCheckAlpha, parent, format, factor)"
+    "PImage(width, height, pixels, requiresCheckAlpha, parent, format, factor)",
+    "PImage(img)"
   ],
   "related": ["loadImage_", "imageMode_", "createImage_"],
   "methods": [

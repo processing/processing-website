@@ -164,7 +164,7 @@ const IndexPage = ({ data }) => {
             <div className={css.participateButton}>
               <Button
                 href={
-                  'https://processingfoundation.org/advocacy/processing-community-day-2020'
+                  'https://processingfoundation.org/advocacy/pcd-2021'
                 }
                 variant="animate1"
                 size="large">
@@ -212,14 +212,6 @@ const IndexPage = ({ data }) => {
                 <a
                   target="_blank"
                   rel="noreferrer"
-                  href="https://www.creativeapplications.net/category/processing/">
-                  Creative Applications
-                </a>
-              </li>
-              <li>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
                   href="https://openprocessing.org/">
                   OpenProcessing
                 </a>
@@ -230,6 +222,14 @@ const IndexPage = ({ data }) => {
                   rel="noreferrer"
                   href="https://fyprocessing.tumblr.com/">
                   For your Processing
+                </a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://www.creativeapplications.net/category/processing/">
+                  Creative Applications
                 </a>
               </li>
               <li>

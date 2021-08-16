@@ -1,4 +1,5 @@
 const path = require(`path`);
+const fs = require('fs');
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const { examplePath, referencePath } = require('./src/utils/paths');
 
@@ -399,3 +400,17 @@ async function createDownload(actions, graphql) {
     }
   });
 }
+
+/**
+  Create the latest.txt file when the site builds.
+  This only happens on build, not on dev.
+**/
+exports.onPostBuild = () => {
+  const releases = require('./content/download/selected.json');
+  const latest = releases.selectedReleases[0];
+  const [name, number, version] = latest.split('-');
+  fs.writeFileSync(
+    path.join(__dirname, 'public', 'download', 'latest.txt'),
+    number
+  );
+};

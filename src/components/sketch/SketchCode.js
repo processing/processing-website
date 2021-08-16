@@ -169,7 +169,7 @@ const SketchCode = ({
           {`  `}
           <span className="hljs-loop">for</span>(
           <span className="hljs-datatype">int</span>{' '}
-          {`col = 0; col < 9; col++) {`})
+          {`col = 0; col < 9; col++) {`}
         </Line>
         <Line num={29}>
           {`    `}
@@ -181,7 +181,7 @@ const SketchCode = ({
           {`  `}
           <span className="hljs-loop">for</span>(
           <span className="hljs-datatype">int</span>{' '}
-          {`row = 0; row < 9; row++) {`})
+          {`row = 0; row < 9; row++) {`}
         </Line>
         <Line num={32}>
           {`    `}

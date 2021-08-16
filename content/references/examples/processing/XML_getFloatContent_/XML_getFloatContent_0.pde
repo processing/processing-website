@@ -1,12 +1,12 @@
 // The following short XML file called "positions.xml" is parsed
 // in the code below. It must be in the project's "data" folder.
 //
-// &lt;?xml version=&quot;1.0&quot;?&gt;
-// &lt;positions&gt;
-//   &lt;position id="0"&gt;128.111&lt;/position&gt;
-//   &lt;position id="1"&gt;256.222&lt;/position&gt;
-//   &lt;position id="2"&gt;512.333&lt;/position&gt;
-// &lt;/positions&gt;
+// <?xml version="1.0"?>
+// <positions>
+//   <position id="0">128.111</position>
+//   <position id="1">256.222</position>
+//   <position id="2">512.333</position>
+// </positions>
 
 XML xml;
 

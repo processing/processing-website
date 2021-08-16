@@ -15,12 +15,16 @@ hljs.registerLanguage('processing', processing);
 
 /**
   Performs syntax highlighting on all <pre><code> in the body
+  We added a 500ms delay in order for the first render to have been performed.
 **/
 export const useHighlight = () => {
   useEffect(() => {
-    document.body.querySelectorAll('pre code').forEach((block) => {
-      hljs.highlightBlock(block);
-    });
+    const timeout = setTimeout(() => {
+      document.body.querySelectorAll('pre code').forEach((el) => {
+        hljs.highlightElement(el);
+      });
+    }, 500);
+    return () => clearTimeout(timeout);
   }, []);
 };
 

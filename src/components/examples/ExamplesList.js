@@ -39,7 +39,7 @@ const ExamplesList = ({ tree }) => {
             </div>
           </div>
           <p className={css.categoryDescription}>
-            {category === 'topic'
+            {category === 'Topic Examples'
               ? intl.formatMessage({ id: 'topicExamples' })
               : intl.formatMessage({ id: 'basicExamples' })}
           </p>
