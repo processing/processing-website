@@ -27,7 +27,10 @@ function runLiveSketch(s) {
 
     // Load images asynchronously
     for (var i = 0; i < imgCount; i++) {
-      imageLoader('/livesketch/requestimage/PT_anim' + s.nf(i, 4) + '.png', i);
+      imageLoader(
+        '/livesketch-manual/sequence/PT_anim' + s.nf(i, 4) + '.png',
+        i
+      );
     }
   };
 
