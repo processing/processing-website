@@ -18,18 +18,18 @@ function runLiveSketch(s) {
   var images = [];
 
   s.preload = () => {
-    images[0] = s.loadImage('/sequential/PT_anim0000.png');
-    images[1] = s.loadImage('/sequential/PT_anim0001.png');
-    images[2] = s.loadImage('/sequential/PT_anim0002.png');
-    images[3] = s.loadImage('/sequential/PT_anim0003.png');
-    images[4] = s.loadImage('/sequential/PT_anim0004.png');
-    images[5] = s.loadImage('/sequential/PT_anim0005.png');
-    images[6] = s.loadImage('/sequential/PT_anim0006.png');
-    images[7] = s.loadImage('/sequential/PT_anim0007.png');
-    images[8] = s.loadImage('/sequential/PT_anim0008.png');
-    images[9] = s.loadImage('/sequential/PT_anim0009.png');
-    images[10] = s.loadImage('/sequential/PT_anim0010.png');
-    images[11] = s.loadImage('/sequential/PT_anim0011.png');
+    images[0] = s.loadImage('/livesketch/sequential/PT_anim0000.png');
+    images[1] = s.loadImage('/livesketch/sequential/PT_anim0001.png');
+    images[2] = s.loadImage('/livesketch/sequential/PT_anim0002.png');
+    images[3] = s.loadImage('/livesketch/sequential/PT_anim0003.png');
+    images[4] = s.loadImage('/livesketch/sequential/PT_anim0004.png');
+    images[5] = s.loadImage('/livesketch/sequential/PT_anim0005.png');
+    images[6] = s.loadImage('/livesketch/sequential/PT_anim0006.png');
+    images[7] = s.loadImage('/livesketch/sequential/PT_anim0007.png');
+    images[8] = s.loadImage('/livesketch/sequential/PT_anim0008.png');
+    images[9] = s.loadImage('/livesketch/sequential/PT_anim0009.png');
+    images[10] = s.loadImage('/livesketch/sequential/PT_anim0010.png');
+    images[11] = s.loadImage('/livesketch/sequential/PT_anim0011.png');
 
     // If you don't want to load each image separately
     // and you know how many frames you have, you

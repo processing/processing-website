@@ -26,7 +26,7 @@ function runLiveSketch(s) {
   s.preload = () => {
     // Load CSV file into a Table object
     // "header" option indicates the file has a header row
-    table = s.loadTable('/data.csv', 'header');
+    table = s.loadTable('/livesketch/loadsavetable/data.csv', 'header');
   };
 
   s.setup = () => {

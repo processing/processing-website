@@ -21,7 +21,7 @@ function runLiveSketch(s) {
   ];
 
   s.preload = () => {
-    img = s.loadImage('/moon-wide.jpg');
+    img = s.loadImage('/livesketch/convolution/moon-wide.jpg');
   };
 
   s.setup = () => {

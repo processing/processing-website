@@ -13,7 +13,7 @@ function runLiveSketch(s) {
   var img;
 
   s.preload = () => {
-    img = s.loadImage('/moon-wide.jpg');
+    img = s.loadImage('/livesketch/brightnesspixels/moon-wide.jpg');
   };
 
   s.setup = () => {

@@ -16,7 +16,7 @@ function runLiveSketch(s) {
 
   var img;
   s.preload = () => {
-    img = s.loadImage('/moon.jpg'); // Load the original image
+    img = s.loadImage('/livesketch/blur/moon.jpg'); // Load the original image
   };
 
   s.setup = () => {

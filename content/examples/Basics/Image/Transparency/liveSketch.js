@@ -15,7 +15,7 @@ function runLiveSketch(s) {
   var easing = 0.05;
 
   s.preload = () => {
-    img = s.loadImage('/moonwalk.jpg'); // Load an image into the program
+    img = s.loadImage('/livesketch/transparency/moonwalk.jpg'); // Load an image into the program
   };
 
   s.setup = () => {

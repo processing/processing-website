@@ -13,8 +13,8 @@ function runLiveSketch(s) {
 
   s.preload = () => {
     // Load images
-    img1 = s.loadImage('/seedTop.jpg');
-    img2 = s.loadImage('/seedBottom.jpg');
+    img1 = s.loadImage('/livesketch/scrollbar/seedTop.jpg');
+    img2 = s.loadImage('/livesketch/scrollbar/seedBottom.jpg');
   };
 
   s.setup = () => {

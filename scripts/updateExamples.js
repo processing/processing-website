@@ -2,9 +2,11 @@ const fs = require('fs-extra');
 const path = require('path');
 const glob = require('fast-glob');
 const inquirer = require('inquirer');
+const { exampleSlug } = require('../src/utils/paths');
 
 const from = path.join(__dirname, '..', '..', 'processing-examples');
 const to = path.join(__dirname, '..', 'content', 'examples');
+const staticFolder = path.join(__dirname, '..', 'static');
 
 /**
   This script updates the Processing code for the examples
@@ -73,31 +75,32 @@ const updateExamples = async () => {
     const pdes = glob.sync('*.pde', {
       cwd: path.join(from, example.dirname)
     });
+
     for (let i = 0; i < pdes.length; i++) {
       const pde = pdes[i];
-      console.log(
-        'copy',
-        path.join(from, example.dirname, pde),
-        path.join(to, example.dirname, pde)
-      );
       fs.copySync(
         path.join(from, example.dirname, pde),
         path.join(to, example.dirname, pde)
       );
     }
 
-    // fs.copySync(
-    //   path.join(from, example.dirname),
-    //   path.join(to, example.dirname),
-    //   {
-    //     filter: (src, dest) => {
-    //       console.log(src, path.extname(src));
-    //       return path.extname(src) === '.pde';
-    //     }
-    //   }
-    // );
+    // Copy all data files to the static/livesketch/SLUG folder
+    const dataFiles = glob.sync('data/**/*.*', {
+      cwd: path.join(from, example.dirname)
+    });
 
-    // Copy all data files to the static folder
+    for (let i = 0; i < dataFiles.length; i++) {
+      const dataFile = dataFiles[i];
+      fs.copySync(
+        path.join(from, example.dirname, dataFile),
+        path.join(
+          staticFolder,
+          'livesketch',
+          exampleSlug(example.name),
+          path.relative('data', dataFile)
+        )
+      );
+    }
   }
 
   console.log('Examples updated!');

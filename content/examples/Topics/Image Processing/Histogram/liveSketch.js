@@ -19,7 +19,7 @@ function runLiveSketch(s) {
   var img;
 
   s.preload = () => {
-    img = s.loadImage('/frontier.jpg');
+    img = s.loadImage('/livesketch/histogram/frontier.jpg');
   };
 
   s.setup = () => {

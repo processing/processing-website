@@ -17,7 +17,7 @@ function runLiveSketch(s) {
     // The background image must be the same size as the parameters
     // into the size() method. In this program, the size of the image
     // is 640 x 360 pixels.
-    bg = s.loadImage('/moonwalk.jpg');
+    bg = s.loadImage('/livesketch/backgroundimage/moonwalk.jpg');
   };
 
   s.setup = () => {

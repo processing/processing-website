@@ -14,8 +14,8 @@ function runLiveSketch(s) {
   var imgMask;
 
   s.preload = () => {
-    img = s.loadImage('/moonwalk.jpg');
-    imgMask = s.loadImage('/mask.png');
+    img = s.loadImage('/livesketch/alphamask/moonwalk.jpg');
+    imgMask = s.loadImage('/livesketch/alphamask/mask.png');
   };
 
   s.setup = () => {

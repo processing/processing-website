@@ -14,7 +14,7 @@ function runLiveSketch(s) {
   var startingEntry = 0; // Display from this entry number
 
   s.preload = () => {
-    lines = s.loadStrings('/cars2.tsv');
+    lines = s.loadStrings('/livesketch/loadfile2/cars2.tsv');
   };
 
   s.setup = () => {

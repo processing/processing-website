@@ -16,7 +16,7 @@ function runLiveSketch(s) {
   var signal = 0;
 
   s.preload = () => {
-    img = s.loadImage('/sea.jpg');
+    img = s.loadImage('/livesketch/pixelarray/sea.jpg');
   };
 
   s.setup = () => {

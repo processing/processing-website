@@ -15,7 +15,7 @@ function runLiveSketch(s) {
   var smallPoint, largePoint;
 
   s.preload = () => {
-    img = s.loadImage('/moonwalk.jpg');
+    img = s.loadImage('/livesketch/pointillism/moonwalk.jpg');
   };
 
   s.setup = () => {

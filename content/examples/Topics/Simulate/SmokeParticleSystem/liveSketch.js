@@ -6,15 +6,11 @@
  * is rendered as an alpha masked image.
  */
 
-// pjs preload must be used to preload media if the program is
-// running with Processing.js
-/* @pjs preload="texture.png"; */
-
 function runLiveSketch(s) {
   var ps;
 
   s.preload = () => {
-    img = s.loadImage('/texture.png');
+    img = s.loadImage('/livesketch/smokeparticlesystem/texture.png');
   };
 
   s.setup = () => {

@@ -17,8 +17,8 @@ function runLiveSketch(s) {
   var drag = 30.0;
 
   s.preload = () => {
-    animation1 = new Animation('/animatedsprite/PT_Shifty_', 38);
-    animation2 = new Animation('/animatedsprite/PT_Teddy_', 60);
+    animation1 = new Animation('/livesketch/animatedsprite/PT_Shifty_', 38);
+    animation2 = new Animation('/livesketch/animatedsprite/PT_Teddy_', 60);
   };
 
   s.setup = () => {

@@ -11,7 +11,7 @@ function runLiveSketch(s) {
   s.preload = () => {
     // The image file must be in the data folder of the current sketch
     // to load successfully
-    img = s.loadImage('/moonwalk.jpg');
+    img = s.loadImage('/livesketch/loaddisplayimage/moonwalk.jpg');
   };
 
   s.setup = () => {
