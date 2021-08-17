@@ -1,7 +1,7 @@
 /**
- * Brightness
- * by Daniel Shiffman. 
- * 
+ * Brightness Pixels
+ * by Daniel Shiffman.
+ *
  * This program adjusts the brightness of a part of the image by
  * calculating the distance of each pixel to the mouse.
  */
