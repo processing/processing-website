@@ -2,14 +2,13 @@
 
 The content for the examples lives in `/content/examples` split into 2 folders corresponding to the categories: `basic` and `topic`. Each example has a subfolder inside one of those folders. The subfolder contains all the files necessary to build the individual example page: a `.json` that has the content, `.pde` files containing the code and `.png` file for the image.
 
-The actual Processing code is copied from [`processing-examples`](https://github.com/processing/processing-examples) via a script and the rest of the content is updated directly in this repo. Here is a breakdown for `Baisc Examples > Image > AlphaMask` example:
+The actual Processing code is copied from [`processing-examples`](https://github.com/processing/processing-examples) via a script and the rest of the content is updated directly in this repo. Here is a breakdown for `Basic Examples > Image > AlphaMask` example:
 
 - `AlphaMask.json` - Edit in this repo
 - `AlphaMask.png` - Edit in this repo
 - `liveSketch.js` - Edit in this repo
 - `AlphaMask.pde` - Copied from `processing-examples` via script
-- `data/moonwalk.jpg` - Copied from `processing-examples` via script
-- `data/mask.jpg` - Copied from `processing-examples` via script
+- Besides this, all content inside `data` folders will be moved automatically to the `static` folder so the live sketches work on the website
 
 ## Updating via script
 

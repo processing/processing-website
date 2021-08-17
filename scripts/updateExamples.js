@@ -68,10 +68,36 @@ const updateExamples = async () => {
   // Loop through and move over all files within the examples
   for (let i = 0; i < portExamples.length; i++) {
     const example = portExamples[i];
-    fs.copySync(
-      path.join(from, example.dirname),
-      path.join(to, example.dirname)
-    );
+
+    // Copy all .pde files to the example folder
+    const pdes = glob.sync('*.pde', {
+      cwd: path.join(from, example.dirname)
+    });
+    for (let i = 0; i < pdes.length; i++) {
+      const pde = pdes[i];
+      console.log(
+        'copy',
+        path.join(from, example.dirname, pde),
+        path.join(to, example.dirname, pde)
+      );
+      fs.copySync(
+        path.join(from, example.dirname, pde),
+        path.join(to, example.dirname, pde)
+      );
+    }
+
+    // fs.copySync(
+    //   path.join(from, example.dirname),
+    //   path.join(to, example.dirname),
+    //   {
+    //     filter: (src, dest) => {
+    //       console.log(src, path.extname(src));
+    //       return path.extname(src) === '.pde';
+    //     }
+    //   }
+    // );
+
+    // Copy all data files to the static folder
   }
 
   console.log('Examples updated!');
