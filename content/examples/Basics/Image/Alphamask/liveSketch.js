@@ -6,16 +6,13 @@
  * together using the mask() method of PImage.
  */
 
-// The next line is needed if running in JavaScript Mode with Processing.js
-/* @pjs preload="moonwalk.jpg,mask.jpg"; */
-
 function runLiveSketch(s) {
   var img;
   var imgMask;
 
   s.preload = () => {
     img = s.loadImage('/livesketch/alphamask/moonwalk.jpg');
-    imgMask = s.loadImage('/livesketch/alphamask/mask.png');
+    imgMask = s.loadImage('/livesketch-manual/mask.png');
   };
 
   s.setup = () => {
