@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('fs-extra');
 const path = require('path');
 const glob = require('fast-glob');
 const inquirer = require('inquirer');
@@ -65,24 +65,14 @@ const updateExamples = async () => {
     return;
   }
 
-  // console.log('MISSING FROM');
-  // console.log(missingFrom.map((e) => e.path));
-
-  // console.log('MISSING TO');
-  // console.log(missingTo.map((e) => e.path));
-
-  // First make a log of
-  // -> These examples exist in the website but not in processing-examples
-  // -> These examples exist in the processing-examples repo but not in processing-website
-  // -> These examples exist in both places and will be updated
-
-  // Copy over all files from the contribs repo to the website
-  // const files = fs.readdirSync(from);
-  // for (const file of files) {
-  //   if (path.extname(file) === '.json') {
-  //     fs.copyFileSync(path.join(from, file), path.join(to, file));
-  //   }
-  // }
+  // Loop through and move over all files within the examples
+  for (let i = 0; i < portExamples.length; i++) {
+    const example = portExamples[i];
+    fs.copySync(
+      path.join(from, example.dirname),
+      path.join(to, example.dirname)
+    );
+  }
 
   console.log('Examples updated!');
 };
@@ -104,7 +94,8 @@ const findExamples = (folder) => {
         category: split[0],
         subcategory: split[1],
         path: file,
-        name: basename
+        name: basename,
+        dirname: path.dirname(file)
       });
     }
   });

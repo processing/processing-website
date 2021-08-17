@@ -84,6 +84,7 @@
   "devDependencies": {
     "@designsystemsinternational/static": "^3.3.10",
     "fast-glob": "^3.2.7",
+    "fs-extra": "^10.0.0",
     "inquirer": "^8.1.2",
     "prettier": "2.0.5"
   },
