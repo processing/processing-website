@@ -3,7 +3,7 @@
   "authors": [
     "Maximilian Ernestus"
   ],
-  "url": "http://erniejunior.github.io/VSync-for-Processing/",
+  "url": "http://ernestum.github.io/VSync-for-Processing/",
   "categories": [
     "I/O"
   ],
@@ -16,8 +16,8 @@
       "mode": "java",
       "minRevision": "0",
       "maxRevision": "0",
-      "props": "http://erniejunior.github.io/VSync-for-Processing/download/VSync.txt",
-      "download": "http://erniejunior.github.io/VSync-for-Processing/download/VSync.zip"
+      "props": "http://ernestum.github.io/VSync-for-Processing/download/VSync.txt",
+      "download": "http://ernestum.github.io/VSync-for-Processing/download/VSync.zip"
     }
   ]
 }

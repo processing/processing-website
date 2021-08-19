@@ -1,14 +1,14 @@
 {
   "name": "Spout for Processing",
   "authors": [
-    "[Lynn Jarvis](http://spout.zeal.co) and [Martin Froehlich](http://maybites.ch)"
+    "[Lynn Jarvis](https://spout.zeal.co) and [Martin Froehlich](http://maybites.ch)"
   ],
   "url": "https://github.com/leadedge/SpoutProcessing/wiki",
   "categories": [
     "Video & Vision"
   ],
   "sentence": "For openGL texture sharing between Microsoft Windows applications using the Spout framework.",
-  "paragraph": "Find out more about Spout [here](http://spout.zeal.co).",
+  "paragraph": "Find out more about Spout [here](https://spout.zeal.co).",
   "id": "186",
   "type": "library",
   "packages": [

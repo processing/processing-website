@@ -1,0 +1,24 @@
+{
+  "name": "ComposingForEveryone",
+  "categories": [
+    "Sound"
+  ],
+  "authors": [
+    "[Guido Kramann](http://www.kramann.info/cfe)"
+  ],
+  "url": "http://www.kramann.info/cfe",
+  "sentence": "ComposingForEveryone gives support for applications in sound generation, simple web-cam-image processing, numerical simulation and -- provided by examples -- especially for algorithmic real-time composition of music.",
+  "paragraph": "Special features are: 1) Support of multi channel sound on the PC (2.0, 4.0, 5.1, 7.1), 2) polyphonal sequencing of wav sounds and an integrated instrumental wav library, 3) for the most part this library shows the same behaviour on the PC as on Android devices. Among other things, the examples are intended to demonstrate the possibilities offered by a certain form of generative grammar, namely \"Arithmetic Operation Grammar\" (AOG). The subpackage processchains in this library conveys a concept for building process chains.",
+  "lastUpdated": "0",
+  "id": "254",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "http://www.kramann.info/ComposingForEveryone.txt",
+      "download": "http://www.kramann.info/ComposingForEveryone.zip"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "teilchen",
+  "authors": [
+    "[Dennis P Paul](https://dennisppaul.de/)"
+  ],
+  "url": "https://github.com/dennisppaul/teilchen",
+  "categories": [
+    "Simulation"
+  ],
+  "sentence": "teilchen a simple physics library based on particles, forces, constraints and behaviors.",
+  "paragraph": "it is also a collection of a variety of concepts useful for modeling with virtual physics and behaviors. nothing new, nothing fancy, except maybe for the combination of forces ( external forces ) and behavior ( internal forces ). it is also a [processing.org](http://processing.org \"Processing.org\")-style library. and teilchen is a german word and a synonym for Partikel which translates to the english particle. the library is hosted on github [teilchen](https://github.com/dennisppaul/teilchen).",
+  "id": "261",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "246",
+      "maxRevision": "0",
+      "props": "https://github.com/dennisppaul/teilchen/releases/latest/download/teilchen.txt",
+      "download": "https://github.com/dennisppaul/teilchen/releases/latest/download/teilchen.zip"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Augmenta for Processing",
+  "authors": [
+    "[Theoriz](https://www.theoriz.com/)"
+  ],
+  "url": "https://github.com/Theoriz/augmenta-for-processing",
+  "categories": [
+    "I/O"
+  ],
+  "sentence": "Allows you to use tracking data coming from [Augmenta](https://augmenta-tech.com/) systems.",
+  "paragraph": "Augmenta is a beaconless tracking technology for creative applications. Spaces or surfaces of any dimensions can be made interactive thanks to this solution. The technology has been designed for events as well as for permanent installations.",
+  "id": "269",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "http://augmenta-tech.com/libs/processing/Augmenta.txt",
+      "download": "http://augmenta-tech.com/libs/processing/Augmenta.zip"
+    }
+  ]
+}

@@ -7,9 +7,14 @@ const langPrefix = (lang) =>
   lang && lang !== '' && lang !== 'en' ? `/${lang}` : '';
 
 /**
+  Returns the slug of an example
+**/
+const exampleSlug = (name) => name.toLowerCase();
+
+/**
   Returns the full path to an example
 **/
-const examplePath = (name) => `/examples/${name.toLowerCase()}.html`;
+const examplePath = (name) => `/examples/${exampleSlug(name)}.html`;
 
 /**
   Returns the full path to a reference (processing or library) item
@@ -27,6 +32,7 @@ const referencePath = (name, libraryName, lang) => {
 const pathToName = (name) => name.replace(/_$/g, '()').replace(/_/g, '::');
 
 module.exports = {
+  exampleSlug,
   examplePath,
   referencePath,
   pathToName

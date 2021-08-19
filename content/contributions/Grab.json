@@ -1,0 +1,24 @@
+{
+  "name": "Grab",
+  "authors": [
+    "[Taka Iwai, Roy Tatum](http://transmedia.graphics/)"
+  ],
+  "url": "https://github.com/Transmedia-Gx/grab",
+  "categories": [
+    "I/O",
+    "Utilities"
+  ],
+  "sentence": "An easy-to-use PDF/jpeg exporter.",
+  "paragraph": "",
+  "id": "258",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/Transmedia-Gx/grab/releases/latest/download/Grab.txt",
+      "download": "https://github.com/Transmedia-Gx/grab/releases/latest/download/Grab.zip"
+    }
+  ]
+}
