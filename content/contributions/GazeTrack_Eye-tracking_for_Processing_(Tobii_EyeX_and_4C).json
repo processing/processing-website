@@ -1,0 +1,23 @@
+{
+  "name": "GazeTrack: Eye-tracking for Processing (Tobii EyeX and 4C)",
+  "authors": [
+    "[Augusto Esteves](http://web.tecnico.ulisboa.pt/augusto.esteves/)"
+  ],
+  "url": "http://web.tecnico.ulisboa.pt/augusto.esteves/GazeTrack/",
+  "categories": [
+    "Hardware"
+  ],
+  "sentence": "GazeTrack is library that supports basic gaze tracking using various Tobii eye-trackers.",
+  "paragraph": "The library was tested on Windows 10, using the Tobii EyeX and 4C eye-trackers. It should also work with any Tobii-enabled laptops.",
+  "id": "225",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "http://web.tecnico.ulisboa.pt/augusto.esteves/GazeTrack/GazeTrack.txt",
+      "download": "http://web.tecnico.ulisboa.pt/augusto.esteves/GazeTrack/GazeTrack.zip"
+    }
+  ]
+}

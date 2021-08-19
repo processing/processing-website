@@ -1,0 +1,23 @@
+{
+  "name": "SQuelized",
+  "authors": [
+    "[Samuel Alarco Cantos](https://samuelal.github.io/squelized.github.io/index.html)"
+  ],
+  "url": "https://samuelal.github.io/squelized.github.io/index.html",
+  "categories": [
+    "Data"
+  ],
+  "sentence": "A library to facilitate the connection between Processing and SQL databases.",
+  "paragraph": "",
+  "id": "262",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/SamuelAl/SQuelized-for-Processing/releases/latest/download/SQuelized.txt",
+      "download": "https://github.com/SamuelAl/SQuelized-for-Processing/releases/latest/download/SQuelized.zip"
+    }
+  ]
+}

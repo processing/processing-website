@@ -1,0 +1,23 @@
+{
+  "name": "DMX4Artists",
+  "authors": [
+    "[Jayson Haebich](http://www.jaysonh.com)"
+  ],
+  "url": "https://github.com/jaysonh/Dmx4Artists/",
+  "categories": [
+    "Hardware"
+  ],
+  "sentence": "Easy to use library for controlling dmx lights with an FTDI USB controller.",
+  "paragraph": "Easy to use library for controlling dmx lights with an FTDI USB controller.",
+  "id": "268",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "http://github.com/jaysonh/Dmx4Artists/releases/latest/download/Dmx4Artists.txt",
+      "download": "http://github.com/jaysonh/Dmx4Artists/releases/latest/download/Dmx4Artists.zip"
+    }
+  ]
+}

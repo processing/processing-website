@@ -24,7 +24,9 @@
     "clean": "gatsby clean",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
     "fetchReleases": "node scripts/fetchReleases.js",
-    "createKeywords": "node scripts/createKeywords.js",
+    "updateContributions": "node scripts/updateContributions.js",
+    "updateExamples": "node scripts/updateExamples.js",
+    "updateKeywords": "node scripts/updateKeywords.js",
     "deploy": "static deploy",
     "deployGithub": "gatsby clean && static deploy --env production --confirm",
     "open": "static open"
@@ -81,6 +83,9 @@
   },
   "devDependencies": {
     "@designsystemsinternational/static": "^3.3.10",
+    "fast-glob": "^3.2.7",
+    "fs-extra": "^10.0.0",
+    "inquirer": "^8.1.2",
     "prettier": "2.0.5"
   },
   "static": {

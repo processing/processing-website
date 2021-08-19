@@ -1,0 +1,23 @@
+{
+  "name": "wellen",
+  "authors": [
+    "[Dennis P Paul](https://dennisppaul.de/)"
+  ],
+  "url": "https://github.com/dennisppaul/wellen",
+  "categories": [
+    "Sound"
+  ],
+  "sentence": "wellen is a framework for exploring and teaching generative music making and algorithmic compositions.",
+  "paragraph": "it facilitates simple ways of playing musical notes, facilitates easy access to low-level digital signal processing (DSP) and supplies rhythm and timing as well as some *standard* muscial mechanics. the library acts as an adapter to various sound in- and outputs like MIDI, OSC, or digital/analog audio. the library is hosted on github [wellen](https://github.com/dennisppaul/wellen).",
+  "id": "264",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "246",
+      "maxRevision": "0",
+      "props": "https://github.com/dennisppaul/wellen/releases/latest/download/wellen.txt",
+      "download": "https://github.com/dennisppaul/wellen/releases/latest/download/wellen.zip"
+    }
+  ]
+}

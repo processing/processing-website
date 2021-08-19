@@ -1,0 +1,22 @@
+{
+  "name": "Pallav.Matrix",
+  "authors": [
+    "[Pallav dubey](https://github.com/pallav12/)"
+  ],
+  "url": "http://github.com/pallav12/matrixMath-for-processing",
+  "categories": [
+    "Math"
+  ],
+  "sentence": "Useful for critical matrix operations",
+  "id": "251",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/pallav12/matrixMath-for-processing/releases/download/latest/MatrixMath.txt",
+      "download": "https://github.com/pallav12/matrixMath-for-processing/releases/download/latest/MatrixMath.zip"
+    }
+  ]
+}

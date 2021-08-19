@@ -1,0 +1,24 @@
+{
+  "name": "Pd4P3",
+  "categories": [
+    "Sound"
+  ],
+  "authors": [
+    "Robert Esler"
+  ],
+  "url": "https://github.com/robertesler/Pd4P3",
+  "sentence": "A real-time audio synthesis library of Pure Data's signal objects for Processing 3.",
+  "paragraph": "",
+  "lastUpdated": "0",
+  "id": "271",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://www.robertesler.com/software/Pd4P3.txt",
+      "download": "https://www.robertesler.com/software/Pd4P3.zip"
+    }
+  ]
+}
