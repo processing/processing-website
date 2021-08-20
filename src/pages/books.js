@@ -30,9 +30,7 @@ const Books = ({ data }) => {
           {books.map((book, i) => {
             var langBook;
             if (book.language) {
-              console.log(book.language);
               langBook = intl.formatMessage({ id: book.language });
-              console.log(langBook);
             }
             return (
               <li key={`${book.title}-${i}`} className={css.listItem}>
@@ -87,12 +85,12 @@ const Books = ({ data }) => {
 export default Books;
 
 export const query = graphql`
-  query {
-    books: allFile(
+  query  ($locale: String!){
+      books: allFile(
       filter: {
         sourceInstanceName: { eq: "books" }
         extension: { eq: "mdx" }
-        childMdx: { fields: { locale: { eq: "en" } } }
+        childMdx: { fields: { locale: { eq: $locale } } }
       }
       sort: { order: DESC, fields: childrenMdx___frontmatter___published }
     ) {
