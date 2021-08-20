@@ -106,7 +106,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
                     __html: example.description
                   }}></p>
               </div>
-              {example.featured.length > 0 && (
+              {example.featured && example.featured.length > 0 && (
                 <FeaturedFunctions
                   featured={example.featured}
                   heading={intl.formatMessage({ id: 'featured' })}
