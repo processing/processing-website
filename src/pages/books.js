@@ -28,6 +28,12 @@ const Books = ({ data }) => {
         <h3 className={grid.col}>{intl.formatMessage({ id: 'booksIntro' })}</h3>
         <ul className={classnames(grid.col, grid.grid, css.booksList)}>
           {books.map((book, i) => {
+            var langBook;
+            if (book.language) {
+              console.log(book.language);
+              langBook = intl.formatMessage({ id: book.language });
+              console.log(langBook);
+            }
             return (
               <li key={`${book.title}-${i}`} className={css.listItem}>
                 <div className={classnames(grid.col, css.cover)}>
@@ -48,7 +54,7 @@ const Books = ({ data }) => {
                   <p className={css.details}>
                     {intl.formatMessage({ id: 'published' })} {book.published}.{' '}
                     {book.details}{' '}
-                    {book.language && `Text in{intl.formatMessage({ id: 'textIn' })} ${book.language}.`}
+                    { langBook &&  intl.formatMessage({ id: 'textIn' })}  {langBook}
                   </p>
 
                   {book.buyList && (
