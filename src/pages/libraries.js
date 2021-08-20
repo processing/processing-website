@@ -15,6 +15,7 @@ import FilterBar from '../components/FilterBar';
 
 import { useFilteredArray } from '../hooks';
 import { usePreparedContributions } from '../hooks/libraries';
+import { slugify } from '../utils';
 import { referencePath } from '../utils/paths';
 
 import * as css from '../styles/pages/libraries.module.css';
@@ -99,7 +100,7 @@ const ContributionsList = memo(({ categories, libraries }) => {
     const filtered = libraries.filter((c) => c.categories.includes(cat));
     return (
       <Fragment key={cat}>
-        <h2 className={classnames(grid.col, css.category)} id={cat}>
+        <h2 className={classnames(grid.col, css.category)} id={slugify(cat)}>
           {cat}
         </h2>
         <ul className={classnames(grid.col, css.list)}>
