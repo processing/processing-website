@@ -89,12 +89,9 @@ const Topbar = ({ show }) => {
             </li>
           ))}
         </ul>
-        {/* disabled until we have a second language */}
-        {
-          <LanguageSelector
-            className={classnames(css.languageSelector, grid.col)}
-          />
-        }
+        <LanguageSelector
+          className={classnames(css.languageSelector, grid.col)}
+        />
       </div>
     </div>
   );

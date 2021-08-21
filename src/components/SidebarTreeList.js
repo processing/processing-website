@@ -1,19 +1,31 @@
 import React from 'react';
 import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
+import { useIntl } from 'react-intl';
 
 import SidebarGroup from './SidebarGroup';
 
 import * as css from './SidebarTreeList.module.css';
 
 const SidebarTreeList = ({ tree, useSerif }) => {
+  const intl = useIntl();
   return (
     <div className={css.root}>
       {Object.keys(tree).map((category) => (
-        <SidebarGroup label={category} key={`label-category-${category}`}>
+        <SidebarGroup
+          label={intl.formatMessage({
+            id: `refCat${category.replace(/ /g, '')}`
+          })}
+          key={`label-category-${category}`}>
           {Object.keys(tree[category]).map((subcategory) => (
             <SidebarGroup
-              label={subcategory}
+              label={
+                subcategory
+                  ? intl.formatMessage({
+                      id: `refSubcat${subcategory.replace(/ /g, '')}`
+                    })
+                  : ''
+              }
               key={`label-subcategory-${subcategory}`}
               secondary>
               <ul>

@@ -1,5 +1,6 @@
 import React, { Fragment, memo } from 'react';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
+import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 
 import { slugify } from '../../utils';
@@ -8,6 +9,7 @@ import * as css from './ReferenceList.module.css';
 import * as grid from '../../styles/grid.module.css';
 
 const ReferenceList = ({ tree, library }) => {
+  const intl = useIntl();
   return (
     <>
       {Object.keys(tree).map((category) => (
@@ -15,7 +17,9 @@ const ReferenceList = ({ tree, library }) => {
           <h2
             className={classnames(grid.col, css.category)}
             id={slugify(category)}>
-            {category}
+            {intl.formatMessage({
+              id: `refCat${category.replace(/ /g, '')}`
+            })}
           </h2>
           {Object.keys(tree[category]).map((subcategory) => {
             return (
@@ -26,7 +30,11 @@ const ReferenceList = ({ tree, library }) => {
                   <div className={classnames(grid.col, css.subcategoryTitle)}>
                     {subcategory && <div className={css.line} />}
                     {subcategory && (
-                      <h3 id={slugify(category, subcategory)}>{subcategory}</h3>
+                      <h3 id={slugify(category, subcategory)}>
+                        {intl.formatMessage({
+                          id: `refSubcat${subcategory.replace(/ /g, '')}`
+                        })}
+                      </h3>
                     )}
                   </div>
                   <ul className={classnames(grid.col, css.subcategoryList)}>

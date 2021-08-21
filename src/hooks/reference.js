@@ -186,14 +186,22 @@ export const useTrail = (libraryName, category, subcategory, classanchor) => {
       if (category) {
         trail.push({
           slug: sectionTrail.slug + '#' + slugify(category),
-          label: intl.formatMessage({ id: 'category' })
+          label: intl.formatMessage({
+            id: `refCat${titleCase(category)
+              .replace(/_/g, ' ')
+              .replace(/ /g, '')}`
+          })
         });
       }
 
       if (subcategory) {
         trail.push({
           slug: sectionTrail.slug + '#' + slugify(category, subcategory),
-          label: intl.formatMessage({ id: 'subcategory' })
+          label: intl.formatMessage({
+            id: `refSubcat${titleCase(subcategory)
+              .replace(/_/g, ' ')
+              .replace(/ /g, '')}`
+          })
         });
       }
     } else {

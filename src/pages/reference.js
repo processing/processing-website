@@ -69,34 +69,6 @@ const sortOrder = {
   Constants: []
 };
 
-
-const sortOrderIntl = {
-  Structure: [],
-  Environment: [],
-  Data: [
-    '',
-    'String Functions',
-    'Array Functions'
-  ],
-  Control: [
-    '',
-    'Relational Operators',
-  ],
-  Shape: [
-    '',
-    '2D Primitives',
-    'Curves'
-  ],
-  Color: ['', 'Setting', 'Creating & Reading'],
-  Math: [
-    '',
-    'Operators',
-    'Random'
-  ],
-  Constants: []
-};
-
-
 const Reference = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const intl = useIntl();
@@ -105,12 +77,6 @@ const Reference = ({ data }) => {
   const tree = useTree(items, sortOrder);
   const filtered = useFilteredTree(tree, searchTerm);
   const categories = Object.keys(tree);
-  console.log("omar imprimiendo locale");
-  console.log(intl.locale);
-  console.log(categories.toString());
-  console.log("search term" + searchTerm.toString());
-  console.log("data " );
-  console.log( Object.keys(sortOrder));
 
   return (
     <Layout>
