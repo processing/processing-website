@@ -90,7 +90,8 @@ export const query = graphql`
       filter: {
         sourceInstanceName: { eq: "books" }
         extension: { eq: "mdx" }
-        childMdx: { fields: { locale: { eq: $locale } } }
+        childMdx: { fields: { locale: { eq: $locale
+        } } }
       }
       sort: { order: DESC, fields: childrenMdx___frontmatter___published }
     ) {
