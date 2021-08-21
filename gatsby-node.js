@@ -306,6 +306,7 @@ async function createExamples(actions, graphql) {
           filter: {
             sourceInstanceName: { eq: "examples" }
             extension: { eq: "json" }
+            relativeDirectory: { regex: "/^((?!data).)*$/" }
           }
         ) {
           edges {
