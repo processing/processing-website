@@ -109,10 +109,10 @@ const Reference = ({ data }) => {
 export default Reference;
 
 export const query = graphql`
-  query {
+  query($locale: String!) {
     items: allFile(
       filter: {
-        fields: { lang: { eq: "en" }, lib: { eq: "processing" } }
+        fields: { lang: { eq: $locale }, lib: { eq: "processing" } }
         childJson: { type: { nin: ["method", "field"] } }
       }
     ) {

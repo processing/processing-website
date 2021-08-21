@@ -1,4 +1,5 @@
 {
+  "brief": "DE test brief",
   "examples": "",
   "related": ["curveVertex_.html", "curveTightness_.html", "bezier_.html"],
   "usage": "",
