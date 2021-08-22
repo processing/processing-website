@@ -184,6 +184,7 @@ export const useTrail = (libraryName, category, subcategory, classanchor) => {
 
     if (isProcessing) {
       if (category) {
+        console.log(category)
         trail.push({
           slug: sectionTrail.slug + '#' + slugify(category),
           label: intl.formatMessage({
