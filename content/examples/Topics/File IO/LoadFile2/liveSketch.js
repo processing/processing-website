@@ -18,7 +18,7 @@ function runLiveSketch(s) {
   };
 
   s.setup = () => {
-    s.createCanvas(200, 200);
+    s.createCanvas(640, 360);
     s.fill(255);
     s.noLoop();
 

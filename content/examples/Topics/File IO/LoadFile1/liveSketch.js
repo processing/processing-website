@@ -14,7 +14,7 @@ function runLiveSketch(s) {
   };
 
   s.setup = () => {
-    s.createCanvas(200, 200);
+    s.createCanvas(640, 360);
     s.background(0);
     s.stroke(255);
     s.frameRate(12);
