@@ -4,80 +4,74 @@ title: 'Environment (IDE) GE'
 ---
 
 <Intro>
-  El Entorno Processing incluye un editor de texto, un compilador y una ventana de despliegue.  Permite la creacion de software dentro de un conjunto de restricciones cuidadosamente disenado.
+  El Entorno Processing incluye un editor de texto, un compilador y una ventana de despliegue.  Permite la creación de software dentro de un conjunto de restricciones cuidadosamente diseñado.
 </Intro>
 
 ### Vista General
 
-El Entorno de Desarrollo Processing (Processing Development Environment PDE)  facilita la escritura de programas de Processing. Programs are written in the Text Editor and started by pressing the Run button. In Processing, a computer program is called a _sketch_. Sketches are stored in the _Sketchbook_, which is a folder on your computer.
+El Entorno de Desarrollo Processing (Processing Development Environment PDE)  facilita la escritura de programas de Processing. Los programas son escritos en el Editor de Texto y ejecutados al presionar el botón de Ejecutar. En Processing, un programa de computadora es llamado un _sketch_. Los Sketches son almacenados en el _Sketchbook_, el cual es un directorio en tu computadora.
 
-Sketches can draw two- and three-dimensional graphics. The default renderer is for drawing two-dimensional graphics. The P3D renderer makes it possible to draw three-dimensional graphics, which includes controlling the camera, lighting, and materials. The P2D renderer is a fast, but less accurate renderer for drawing two-dimensional graphics. Both the P2D and P3D renderers are accelerated if your computer has an OpenGL compatible graphics card.
+Los Sketches pueden dibujar gráficos bi y tri-dimensionales. El renderer por default es para dibujar gráficos bidimensionales. El renderer P3D hace posible dibujar gráficos tridimensionales, he incluye como controlar la cámara, la iluminación y los materiales. El renderer P2D es un renderer más rápido pero menos preciso para dibujar gráficos gráficos bidimensionales. Ambos renderers, ( P2D y P3D) son acelerados si tu computadora cuenta con una tarjeta gráfica compatible con OpenGL.
 
-The capabilities of Processing are extended with _Libraries_ and _Tools_. Libraries make it possible for sketches to do things beyond the _core_ Processing code. There are hundreds of libraries contributed by the Processing community that can be added to your sketches to enable new things like playing sounds, doing computer vision, and working with advanced 3D geometry. Tools extend the PDE to help make creating sketches easier by providing interfaces for tasks like selecting colors.
+Las capacidades de Processing son incrementadas por las _Bibliotecas_ y _Herramientas_. Las bibliotecas hacen posible que los sketches hagan cosas más allá de lo posible con el código de Processing. Hay cientos de bibliotecas proporcionadas por la comunidad Processing que pueden ser agregadas a tus sketches para permitir nuevas funcionalidades como reproducir sonidos, hacer visión computacional o trabajar con geometría 3D avanzada. Las herramientas extienden al Entorno dede Desarrollo Processing y ayudan a crear sketches más facilmente al proveer interfaces para tareas como seleccionar colores.
 
-Processing has different _programming modes_ to make it possible to deploy sketches on different platforms and program in different ways. The Java mode is the default. Other programming modes may be downloaded by selecting "Add Mode..." from the menu in the upper-right corner of the PDE.
+Processing tiene diferentes _modos de programación_ para hacer posible la distribución de sketches en diferentes plataformas, programando en diferentes formas. El modo Java es el default, otros modos de programación pueden ser descargados al seleccionar "Añadir Modo..." desde el menu ubicado en la esquina superior derecha del Entorno de Desarrollo Processing.
 
 ### Entorno de Desarrollo Processing (PDE)
 
-The Processing Development Environment (PDE) consists of a simple text editor for writing code, a message area, a text console, tabs for managing files, a toolbar with buttons for common actions, and a series of menus. The menus options change from mode to mode. The default Java mode is documented here.
+El Entorno de Desarrollo Processing consiste de un editor de textos simple, un área de mensajes, una consola de texto, pestañas para administrar archivos, una barra de herramientas con botones para acciones comunes y una serie de menus. Las opciones de los menus cambian dependiendo del modo. El modo default en Java es documentado aquí.
 
 ![IDE Screenshot](./ide.png)
+Los programas escritos usando Processing son llamados sketches. Estos sketches son escritos en el editor de texto, el cual tiene funcionalidades como cortar y pegar texto, así como buscar y reemplazar.
+El área de mensajes da retroalimentación al guardar y exportar archivos, y también muestra errores. La consola despliega la salida de texto de los sketches de Processing, incluyendo mensajes de error completos y salida de texto de los sketches a tráves del uso de funciones `print()` y `println()`. (Nota que la consola funciona bien para mensajes ocasionales, pero no esta diseñada para salida en tiempo real y a alta velocidad)
 
-Programs written using Processing are called sketches. These sketches are written in the text editor. It has features for cutting/pasting and for searching/replacing text. The message area gives feedback while saving and exporting and also displays errors. The console displays text output by Processing sketches including complete error messages and text output from sketches with the `print()` and `println()` functions. (Note that the console works well for occasional messages, but is not intended for high-speed, real-time output.)
 
-The buttons on the toolbar can run and stop programs,
+Los botones en la barrade herramientas pueden ejecutar y detener programas,
 
 <dl>
 <dt>
 
-
-<FixedImage marginRight={30} float={'left'} minWidth={40}>
-
+<FixedImage inline marginRight={30} width={40}>
 
 ![Play button](./play.png)
 
 </FixedImage>
 
-
 <b>Ejecutar</b>
 </dt>
-<dd>Runs the sketch. In Java mode, it compiles the code and opens a new display window. </dd>
+  <dd>Ejecuta el setch. En modo Java, compila el código y abre una nueva ventana. </dd>
 <dt>
 
-
-<FixedImage marginRight={30} float={'left'} minWidth={40}>
-
+<FixedImage inline marginRight={30} width={40}>
 
 ![Stop button](./stop.png)
 
 </FixedImage>
 
-
 <b>Detener</b>
 </dt>
-<dd>Terminates a running sketch.</dd>
+  <dd>Termina de ejecutar el sketch.</dd>
 </dl>
 
+Comandos adicionales se encuentrar en los seis menus: Archivo, Editar, Sketch, Depuración, Herramientas, Ayuda. Estos menus son dependientes del contexto, lo que significa que sólo las entradas relevantes para el trabajo que se quiere hacer estan disponibles.
 
-Additional commands are found within the six menus: File, Edit, Sketch, Debug, Tools, Help. The menus are context sensitive which means only those items relevant to the work currently being carried out are available.
 
 #### Archivo
 
 <dl>
   <dt>Nuevo</dt>
   <dd>
-    Creates a new sketch in a new window, named as the current date is the
-    format `sketch_YYMMDDa`.
+    Crea un nuevo sketch en una nueva ventana, nombrada con la fecha actual de acuerdo al formato `sketch_AAMMDDa`.
   </dd>
-  <dt>Open...</dt>
-  <dd>Open a sketch in a new window.</dd>
-  <dt>Open Recent</dt>
-  <dd>Select a sketch to open from the list of recently closed sketches.</dd>
-  <dt>Sketchbook...</dt>
-  <dd>Open a new window to show the list of sketches in the sketchbook.</dd>
-  <dt>Examples...</dt>
-  <dd>Open a new window to show the list of the examples.</dd>
-  <dt>Close</dt>
+  <dt>Abrir...</dt>
+  <dd>Abrir un sketch en una nueva ventana.</dd>
+  <dt>Recientes </dt>
+  <dd>Selecciona un sketch para abrir desde una lista de sketchs recientemente cerrados.</dd>
+  <dt>Sketchbook</dt>
+  <dd>Abre una nueva ventana para mostrar una lista de los sketches presentes en el sketchbook.</dd>
+  <dt>Ejemplos...</dt>
+  <dd>Abre una nueva ventana para mostrar una lista de los ejemplos.</dd>
+  <dt>Cerrar</dt>
   <dd>
     Close the sketch in the frontmost window. If this is the last sketch that's
     open, you will be prompted whether you would like to quit. To avoid the
@@ -468,9 +462,9 @@ The arrow button to the right of the tabs in the Processing Development Environm
 <HighlightBlock>
 
 
-_Advanced_
+  _Advanced_
 
-When a program with multiple tabs is run, the code is grouped together and the classes in other tabs become inner classes. Because they're inner classes, they cannot have static variables. Simply place the "static" variable outside the class itself to do the same thing (it need not be explicitly named "static" once you list it in this manner). If you don't want code to be an inner class, you can also create a tab with a ".java" suffix, which means it will be interpreted as straight java code. It is also not possible to use static classes in separate tabs. If you do this, however, you'll need to pass the PApplet object to that object in that tab in order to get PApplet functions like `line()`, `loadStrings()` or `saveFrame()` to work.
+  When a program with multiple tabs is run, the code is grouped together and the classes in other tabs become inner classes. Because they're inner classes, they cannot have static variables. Simply place the "static" variable outside the class itself to do the same thing (it need not be explicitly named "static" once you list it in this manner). If you don't want code to be an inner class, you can also create a tab with a ".java" suffix, which means it will be interpreted as straight java code. It is also not possible to use static classes in separate tabs. If you do this, however, you'll need to pass the PApplet object to that object in that tab in order to get PApplet functions like `line()`, `loadStrings()` or `saveFrame()` to work.
 
 </HighlightBlock>
 
@@ -491,34 +485,34 @@ Processing has different _programming modes_ to make it possible to deploy sketc
 
 This mode makes it possible to write short programs to draw to the screen, but also enables complex Java programs as well. It can be used simply by beginners, but it scales to professional Java software development. Sketches written in this mode can be exported as Java Applications to run on Linux, Mac OS X, and Windows operating systems.
 
-<HighlightBlock>
+  <HighlightBlock>
 
 
-_Advanced_
+    _Advanced_
 
-Java files with the extension .java can be included with a Java mode sketch. They may be created directly in the PDE or copied into the sketch folder through the "Add File..." item in the Sketch menu or dragged into the text editor. It's possible to write any Java code in files with the .java extension. In fact, complete Java code can be written from inside the Processing Environment by subclassing PApplet like this:
+    Java files with the extension .java can be included with a Java mode sketch. They may be created directly in the PDE or copied into the sketch folder through the "Add File..." item in the Sketch menu or dragged into the text editor. It's possible to write any Java code in files with the .java extension. In fact, complete Java code can be written from inside the Processing Environment by subclassing PApplet like this:
 
-```
-public class MyDemo extends PApplet {
-```
+    ```
+    public class MyDemo extends PApplet {
+    ```
 
-This is for advanced developers only and is not really recommended. Using this technique means that any additional tabs will no longer be inner classes, meaning you'll have to do extra work to make them communicate properly with the host PApplet. It is not necessary to use this technique just to get features of the Java language. Advanced developers can also program with Processing in another Java Editor if higher-level code editing and tools are needed. <!--We've documented how to use [Processing in Eclipse](http://processing.org/learning/eclipse/) but core.jar can be used as a part of any Java project.--> Processing's core.jar can be used as a part of any Java project.
+  This is for advanced developers only and is not really recommended. Using this technique means that any additional tabs will no longer be inner classes, meaning you'll have to do extra work to make them communicate properly with the host PApplet. It is not necessary to use this technique just to get features of the Java language. Advanced developers can also program with Processing in another Java Editor if higher-level code editing and tools are needed. <!--We've documented how to use [Processing in Eclipse](http://processing.org/learning/eclipse/) but core.jar can be used as a part of any Java project.--> Processing's core.jar can be used as a part of any Java project.
 
-</HighlightBlock>
+  </HighlightBlock>
 
 
-### Agregar Bibliotecas, Herramientas y Modos
+  ### Agregar Bibliotecas, Herramientas y Modos
 
-Processing 3.0 includes a set of features to make it easier to install, update, and remove Libraries, Tools, Modes, and Examples.
+  Processing 3.0 includes a set of features to make it easier to install, update, and remove Libraries, Tools, Modes, and Examples.
 
-Add a contributed library by selecting "Add Library..." from the "Import Library..." submenu within the Sketch menu. This opens the Library Manager. Next, select a library and then click on Install to download it.
+  Add a contributed library by selecting "Add Library..." from the "Import Library..." submenu within the Sketch menu. This opens the Library Manager. Next, select a library and then click on Install to download it.
 
-Add a contributed tool by selecting "Add Tool..." from the Tools menu, then select a Tool to download from the Tool Manager.
+  Add a contributed tool by selecting "Add Tool..." from the Tools menu, then select a Tool to download from the Tool Manager.
 
-Add contributed modes by selecting "Add Mode..." from the Mode menu in the upper-right corner of the PDE, then select a Mode to install.
+  Add contributed modes by selecting "Add Mode..." from the Mode menu in the upper-right corner of the PDE, then select a Mode to install.
 
-Add contributed Examples by first opening the "Examples..." submenu from the File menu. Click on the Add Examples button to open the Examples Manager. Next, select an examples package and select Install to download.
+  Add contributed Examples by first opening the "Examples..." submenu from the File menu. Click on the Add Examples button to open the Examples Manager. Next, select an examples package and select Install to download.
 
-### Exportar
+  ### Exportar
 
-The [Export information and Tips](https://github.com/processing/processing/wiki/Export-Info-and-Tips") page on the Processing Wiki covers the details of exporting Applications from Java mode.
+  The [Export information and Tips](https://github.com/processing/processing/wiki/Export-Info-and-Tips") page on the Processing Wiki covers the details of exporting Applications from Java mode.
