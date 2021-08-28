@@ -41,7 +41,7 @@ export const useTree = (items, order) => {
 
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
-      console.log(`Desde Hook index.js item ${item.category}`)
+    // console.log(`Desde Hook index.js item  category ${item.category} sub ${item.subcategory}` )
       const category = intl.formatMessage({ id: item.category });
       const subcategory = intl.formatMessage({ id: item.subcategory });
 /*

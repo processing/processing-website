@@ -74,6 +74,7 @@ const Reference = ({ data }) => {
   const intl = useIntl();
 
   const items = usePreparedItems(data.items.nodes, 'processing');
+  //console.log(data.items.nodes)
   const tree = useTree(items, sortOrder);
   const filtered = useFilteredTree(tree, searchTerm);
   const categories = Object.keys(tree);
@@ -107,7 +108,6 @@ const Reference = ({ data }) => {
 };
 
 export default Reference;
-
 export const query = graphql`
   query ($locale: String!){
     items: allFile(

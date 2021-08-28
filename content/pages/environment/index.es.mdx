@@ -15,16 +15,15 @@ Los Sketches pueden dibujar gráficos bi y tri-dimensionales. El renderer por de
 
 Las capacidades de Processing son incrementadas por las _Bibliotecas_ y _Herramientas_. Las bibliotecas hacen posible que los sketches hagan cosas más allá de lo posible con el código de Processing. Hay cientos de bibliotecas proporcionadas por la comunidad Processing que pueden ser agregadas a tus sketches para permitir nuevas funcionalidades como reproducir sonidos, hacer visión computacional o trabajar con geometría 3D avanzada. Las herramientas extienden al Entorno dede Desarrollo Processing y ayudan a crear sketches más facilmente al proveer interfaces para tareas como seleccionar colores.
 
-Processing tiene diferentes _modos de programación_ para hacer posible la distribución de sketches en diferentes plataformas, programando en diferentes formas. El modo Java es el default, otros modos de programación pueden ser descargados al seleccionar "Añadir Modo..." desde el menu ubicado en la esquina superior derecha del Entorno de Desarrollo Processing.
+Processing tiene diferentes _modos de programación_ para hacer posible la distribución de sketches en diferentes plataformas, programando en diferentes formas. El modo Java es el default, otros modos de programación pueden ser descargados al seleccionar "Añadir Modo..." desde el menú ubicado en la esquina superior derecha del Entorno de Desarrollo Processing.
 
 ### Entorno de Desarrollo Processing (PDE)
 
-El Entorno de Desarrollo Processing consiste de un editor de textos simple, un área de mensajes, una consola de texto, pestañas para administrar archivos, una barra de herramientas con botones para acciones comunes y una serie de menus. Las opciones de los menus cambian dependiendo del modo. El modo default en Java es documentado aquí.
+El Entorno de Desarrollo Processing consiste de un editor de textos simple, un área de mensajes, una consola de texto, pestañas para administrar archivos, una barra de herramientas con botones para acciones comunes y una serie de menús. Las opciones de los menús cambian dependiendo del modo. El modo default en Java es documentado aquí.
 
 ![IDE Screenshot](./ide.png)
 Los programas escritos usando Processing son llamados sketches. Estos sketches son escritos en el editor de texto, el cual tiene funcionalidades como cortar y pegar texto, así como buscar y reemplazar.
 El área de mensajes da retroalimentación al guardar y exportar archivos, y también muestra errores. La consola despliega la salida de texto de los sketches de Processing, incluyendo mensajes de error completos y salida de texto de los sketches a tráves del uso de funciones `print()` y `println()`. (Nota que la consola funciona bien para mensajes ocasionales, pero no esta diseñada para salida en tiempo real y a alta velocidad)
-
 
 Los botones en la barrade herramientas pueden ejecutar y detener programas,
 
@@ -53,7 +52,7 @@ Los botones en la barrade herramientas pueden ejecutar y detener programas,
   <dd>Termina de ejecutar el sketch.</dd>
 </dl>
 
-Comandos adicionales se encuentrar en los seis menus: Archivo, Editar, Sketch, Depuración, Herramientas, Ayuda. Estos menus son dependientes del contexto, lo que significa que sólo las entradas relevantes para el trabajo que se quiere hacer estan disponibles.
+Comandos adicionales se encuentrar en los seis menús: Archivo, Editar, Sketch, Depuración, Herramientas, Ayuda. Estos menús son dependientes del contexto, lo que significa que sólo las entradas relevantes para el trabajo que se quiere hacer estan disponibles.
 
 
 #### Archivo
@@ -73,149 +72,121 @@ Comandos adicionales se encuentrar en los seis menus: Archivo, Editar, Sketch, D
   <dd>Abre una nueva ventana para mostrar una lista de los ejemplos.</dd>
   <dt>Cerrar</dt>
   <dd>
-    Close the sketch in the frontmost window. If this is the last sketch that's
-    open, you will be prompted whether you would like to quit. To avoid the
-    prompt, use Quit instead of Close when you want to exit the application.
+    Cierra el sketch en la ventana situada más al frente. En caso de que este sea el último sketch, se te preguntará si deseas salir. Para evitar este aviso, usa Salir en vez de Cerrar cuando quieras salir de la aplicación.
   </dd>
-  <dt>Save</dt>
-  <dd>Saves the open sketch in it's current state.</dd>
-  <dt>Save as...</dt>
+  <dt>Guardar</dt>
+  <dd>Guarda el skectch abierto en su estado actual.</dd>
+  <dt>Guardar como...</dt>
   <dd>
-    Saves the currently open sketch, with the option of giving it a different
-    name. Does not replace the previous version of the sketch.
+    Guarda el sketch abierto actualmente, con la opción de darle un nombre distinto. No reemplaza la versión previa del sketch.
   </dd>
-  <dt>Export</dt>
+  <dt>Exportar Aplicación</dt>
   <dd>
-    Exports a Java application as an executable file and opens the folder
-    containing the exported files.
+    Exporta una aplicación Java como un archivo ejecutable y abre el directorio que contiene los archivos exportados.
   </dd>
-  <dt>Page Setup</dt>
-  <dd>Define page settings for printing.</dd>
-  <dt>Print (Ctrl+P)</dt>
-  <dd>Prints the code inside the text editor.</dd>
-  <dt>Preferences</dt>
+  <dt>Configurar Página</dt>
+  <dd>Configura la página para impresión.</dd>
+  <dt>Imprimir (Ctrl+P)</dt>
+  <dd>Imprime el código localizado en el editor de texto.</dd>
+  <dt>Preferencias</dt>
   <dd>
-    Change some of the ways Processing works. (This item is located in the
-    Processing menu on Mac OS X.)
+    Cambia algunas cosas de como Processing trabaja. ( Esta entrada está localizada en el menú de Processing en Mac OS X.)
   </dd>
-  <dt>Quit</dt>
+  <dt>Salir</dt>
   <dd>
-    Exits the Processing Environment and closes all Processing windows. (This
-    item is located in the Processing menu on Mac OS X.)
+    Sale del Entorno de Programación Processing y cierra todas las ventanas de Processing. ( Esta entrada está localizada en el menú de Processing en Mac OS X.)
   </dd>
 </dl>
 
 #### Editar
 
 <dl>
-  <dt>Undo</dt>
+  <dt>Deshacer</dt>
   <dd>
-    Reverses the last command or the last entry typed. Cancel the Undo command
-    by choosing Edit » Redo.
+    Revierte el último comando o lo último que se escribió. Este comando se cancela al elegir Editar » Rehacer.
   </dd>
-  <dt>Redo</dt>
+  <dt>Rehacer</dt>
   <dd>
-    Reverses the action of the last Undo command. This option is only available
-    if there has already been an Undo action.
+    Revierte la acción del último comando Deshacer. Esta opción sólo esta disponible si ha existido una accion Deshacer.
   </dd>
-  <dt>Cut</dt>
+  <dt>Cortar</dt>
   <dd>
-    Removes and copies selected text to the clipboard (an off-screen text
-    buffer).
+    Remueve y copia el texto seleccionado al portapapeles ( un buffer de texto que no se despliega en pantalla).
   </dd>
-  <dt>Copy</dt>
-  <dd>Copies selected text to the clipboard.</dd>
-  <dt>Copy as HTML</dt>
+  <dt>Copiar</dt>
+  <dd>Copia el texto seleccionado en el portapapeles.</dd>
+  <dt>Copiar como HTML</dt>
   <dd>
-    Formats code as HTML in the same way it appears in the Processing
-    environment and copies it to the clipboard so it can be pasted somewhere
-    else.
+    Formatea el código en HTML de la misma manera en que aparece en el entorno Processing y lo copia en el portapapeles para que pueda ser pegado en otro lugar.
   </dd>
-  <dt>Paste</dt>
+  <dt>Pegar</dt>
   <dd>
-    Inserts the contents of the clipboard at the location of the cursor, and
-    replaces any selected text.
+    Inserta el contenido del portapapeles en la ubicación del cursos, y reemplaza cualquier texto seleccionado.
   </dd>
-  <dt>Select All</dt>
+  <dt>Seleccionar Todo</dt>
   <dd>
-    Selects all of the text in the file which is currently open in the text
-    editor.
+    Selecciona todo el texto del archivo que este actualmente abierto en el editor de texto.
   </dd>
-  <dt>Auto Format</dt>
+  <dt>Autoformato</dt>
   <dd>
-    Attempts to format the code into a more human-readable layout. Auto Format
-    was previously called _Beautify_.
+    Intenta formatear el código en una disposicion más accesible para los humanos. Anteriormente llamado _Beautify_.
   </dd>
-  <dt>Comment/Uncomment</dt>
+  <dt>Comentar/Descomentar</dt>
   <dd>
-    Comments the selected text. If the selected text is already commented, it
-    uncomments it.
+    Comenta el texto seleccionado. Si el texto seleccionado esta comentado, entonces lo descomenta.
   </dd>
-  <dt>Increase Indent</dt>
-  <dd>Indents the selected text two spaces.</dd>
-  <dt>Decrease Indent (Ctrl+[)</dt>
-  <dd>If the text is indented, removes two spaces from the indent.</dd>
-  <dt>Find...</dt>
+  <dt>Aumentar Identación(Ctrl+])</dt>
+  <dd>Identa el texto seleccionado dos espacios.</dd>
+  <dt>Reducir Identación(Ctrl+[)</dt>
+  <dd>Si el texto esta identado, remueve dos espacios de la identación.</dd>
+  <dt>Buscar...</dt>
   <dd>
-    Finds an occurence of a text string within the file open in the text editor
-    and gives the option to replace it with a different text.
+    Busca una ocurrencia de texto dentro del archivo abierto en el editor de texto y da la opción de reemplazarlo con un texto diferente.
   </dd>
-  <dt>Find Next</dt>
+  <dt>Buscar siguiente </dt>
   <dd>
-    Finds the next occurence of a text string within the file open in the text
-    editor.
+    Busca la siguiente ocurrencia de un texto dentro del archivo abierto en el editor de texto.
   </dd>
-  <dt>Find Previous</dt>
+  <dt>Buscar anterior</dt>
   <dd>
-    Finds the previous occurence of a text string within the file open in the
-    text editor.
+    Busca la ocurrencia anterior de un texto dentro del archivo abierto en el editor de texto.
   </dd>
-  <dt>Use Selection for Find</dt>
+  <dt>Usar selección para buscar</dt>
   <dd>
-    Sets the currently selected text as the item to find with Find Next and Find
-    Previous.
+    Usa el texto seleccionado actualmente como la entrada de texto a buscar en Buscar siguiente y Buscar anterior.
   </dd>
 </dl>
 
 #### Sketch
 
 <dl>
-  <dt>Run</dt>
+  <dt>Ejecutar</dt>
   <dd>
-    Runs the code (compiles the code, opens the display window, and runs the
-    sketch inside)
+    Ejecuta el código (compila el código, abre una ventana para desplegarlo, y ejecuta el skectch dentro de ella)
   </dd>
-  <dt>Present</dt>
+  <dt>Presentar</dt>
   <dd>
-    Runs the code in the center of the screen with a solid-color background.
-    Click the "stop" button in the lower left to exit the presentation or press
-    the Escape key. Change the background color in the Preferences.
+    Ejecuta el código en el centro de la pantalla con un fondo de color sólido. Da click en el boton "Detener" (localizado en la parte inferior izquierda) o presiona la tecla Escape para salir de la presentación.
+    Cambia el color de fondo en Preferencias.
   </dd>
   <dt>Tweak</dt>
   <dd>
-    Runs the code in a way where some color and variable values can be changed
-    while the code is running. The sketch needs to be saved before it can be run
-    as a sketch to Tweak.
+    Ejecuta el código de tal forma que algunos colores y valores de variables pueden ser modificados mientras el código corre. El sketch necesita ser guardado antes de que pueda ser ejecutado como un sketch en Tweak.
   </dd>
-  <dt>Stop</dt>
+  <dt>Detener</dt>
   <dd>
-    If the code is running, stops the execution. Programs written without using
-    the draw() function are stopped automatically after they draw.
+    Si el código esta corriendo, detiene la ejecución. Los programas escritos sin la función draw() son detenidos automáticamente despues de dibujar.
   </dd>
-  <dt>Import Library</dt>
+  <dt>Importar biblioteca</dt>
   <dd>
-    Adds the necessary import statements to the top of the current sketch. For
-    example, selecting Sketch » Import Library » pdf adds the statement "import
-    processing.pdf.\*;" to the top of the file. These import statements are
-    necessary for using Libraries. Select Add Libraries... to open the Library
-    Manager to browse and install new libraries.
+    Agrega los enunciados import necesarios al inicio del sketch actual. Por jemplo, al seleccionar Sketch » Importar biblioteca » pdf se agrega el enunciado  "import
+    processing.pdf.\*;" al inicio del archivo. Estos enunciados son necesarios para usar las bibliotecas. Selecciona Añadir bibliotecas ... para abrir el administrador de bibliotecas e instalar nuevas bibliotecas.
   </dd>
-  <dt>Show Sketch Folder</dt>
-  <dd>Opens the folder for the current sketch.</dd>
-  <dt>Add File...</dt>
+  <dt>Mostrar carpeta del sketch</dt>
+  <dd>Abre el directorio del sketch actual.</dd>
+  <dt>Añadir archivo...</dt>
   <dd>
-    Opens a file navigator window. Select an image, font, or other media files
-    to add it to the sketch's "data" folder.
+    Abre una ventana para navegar por los archivos. Selecciona una imagen, fuente u otros archivos de medios para agregarlo al directorio "data" del sketch.
   </dd>
 </dl>
 
@@ -224,31 +195,25 @@ Comandos adicionales se encuentrar en los seis menus: Archivo, Editar, Sketch, D
 <dl>
   <dt>Activar Depurador</dt>
   <dd>
-    Activates the debugger. Note that the Run button will change to Debug. New
-    Continue and Step buttons will appear, along with a separate window for
-    viewing variable values.
+    Activa el depurador. Nota que el boton Ejecutar cambiará a Depurar. Dos nuevos botones, Continuar y Saltar aparecerán, junto a otra ventana para ver el valor de las variables.
   </dd>
-  <dt>Continue</dt>
-  <dd>Advances the code until the next breakpoint.</dd>
-  <dt>Step</dt>
+  <dt>Continuar</dt>
+  <dd>Avanza por el código hasta el próximo punto de interrupción.</dd>
+  <dt>Saltar</dt>
   <dd>
-    Advances the code one line at a time. (Note that once the code reaches the
-    end of the current function call, the debugger will rever to "continue.")
+    Avanza por el código una línea a la vez. (Nota que una vez que el código alcance el final de la función llamada, el depurador pasará a "continuar".)
   </dd>
-  <dt>Step Into</dt>
+  <dt>Ingresar</dt>
   <dd>
-    Advances the debugger into the interior of a function call. This only works
-    for user-defined functions in the sketch.
+    Avanza al depurador dentro del interior de una llamada de función. Sólo sirve para funciones definidas por el usuario dentro del sketch.
   </dd>
-  <dt>Step Out</dt>
+  <dt>Salir</dt>
   <dd>
-    Advances the debugger outside of a function to the calling area. This only
-    works for user-defined functions in the sketch.
+    Saca al depurador de la llamada de función actual. Sólo sirve para funciones definidas por el usuario dentro del sketch.
   </dd>
-  <dt>Toggle Breakpoint</dt>
+  <dt>Activar/Desactivar punto de interrupción</dt>
   <dd>
-    Add or remove a breakpoint. When a breakpoint is added, the line number is
-    replaced with the symbol: `&lt;&gt;`.
+    Añade o quita un punto de interrupción. Cuando el punto de interrupcion es añadido el número de línea es reemplazado por el símbolo: `&lt;&gt;`.
   </dd>
 </dl>
 
