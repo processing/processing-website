@@ -9,20 +9,19 @@ coverImage: arrays.png
 
 <Note>
 
-Este tutorial es el capitulo de Arreglos de [Processing: A Programming Handbook for Visual Designers and Artists, Second Edition](https://processing.org/handbook/), published by MIT Press. &copy; 2014 MIT Press. If you see any errors or have comments, please [let us know](https://github.com/processing/processing-docs/issues?state=open).
+  Este tutorial es el capítulo de Arreglos de [Processing: A Programming Handbook for Visual Designers and Artists, Second Edition](https://processing.org/handbook/), editado por MIT Press. &copy; 2014 MIT Press. If you see any errors or have comments, please [let us know](https://github.com/processing/processing-website/issues?state=open).
 
 </Note>
 
-El termino arreglo
+El término arreglo se refiere a un agrupado estructurado. En programación, un arreglo es un conjunto de datos almacenados bajo el mismo nombre. Los arreglos pueden contener cualquier tipo de datos, y cada elemento puede ser individualmente asignado y leído. Puede haber arreglos de números, caracteres, enunciados, valores booleanos, etc. Los arreglos pueden contener datos de los vértices de figuras complejas, entradas de teclado, o datos leídos de un archivo. Por ejemplo, un arreglo puede almacenar cinco enteros (1919, 1940, 1975, 1976, 1990), los años en que los Cincinnati Reds ganaron la Serie Mundial, en lugar de cinco variables distintas. Llamemos a este arreglo  &ldquo;fechas&rdquo y guardemos los valores en secuencia:
 
-The term array refers to a structured grouping or an imposing number: &ldquo;The dinner buffet offers an array of choices,&rdquo; &ldquo;The city of Boston faces an array of problems.&rdquo; In computer programming, an array is a set of data elements stored under the same name. Arrays can be created to hold any type of data, and each element can be individually assigned and read. There can be arrays of numbers, characters, sentences, boolean values, and so on. Arrays might store vertex data for complex shapes, recent keystrokes from the keyboard, or data read from a file. For instance, an array can store five integers (1919, 1940, 1975, 1976, 1990), the years to date that the Cincinnati Reds won the World Series, rather than defining five separate variables. Let's call this array &ldquo;dates&rdquo; and store the values in sequence:
+<FixedImage left width={500} height={47}>
 
-<FixedImage center width={500} height={47}>
-
-![](./Dia-28-1.svg)
+![gráfico etiquetado fechas con cinco diferentes años, cada una encima de unos paréntesis cuadrados conteniendo un numero del 0 al 4](./Dia-28-1.svg)
 
 </FixedImage>
 
+Los elementos de un arreglo son numerados empezando de cero , lo cual puede ser confuso al principio pero es un detalle importante en muchos lenguajes de programación. El primer elemento está en la posición [0], el segundo en la [1], y así sucesivamente. La posición de cad elemento es determinada por el desplazamiento con respecto al inicio del arreglo. El primer elemento está en la posición  [0] porque no hay desplazamiento. El segundo elemento esta en la posición [1] porque existe un desplazamiento de un lugar con respecto al principio. La última posicion del arreglo es calculada al restar 1 de la longitud del arreglo. En este ejemplo, el último elemento está en la posición [4] porque
 Array elements are numbered starting with zero, which may seem confusing at first but is an important detail for many programming languages. The first element is at position [0], the second is at [1], and so on. The position of each element is determined by its offset from the start of the array. The first element is at position [0] because it has no offset; the second element is at position [1] because it is offset one place from the beginning. The last position in the array is calculated by subtracting 1 from the array length. In this example, the last element is at position [4] because there are five elements in the array.
 
 Arrays can make the task of programming much easier. While it's not necessary to use them, they can be valuable structures for managing data. Let's begin with a set of data points to construct a bar chart.

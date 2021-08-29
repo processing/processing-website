@@ -2,7 +2,7 @@ import React, { memo, useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
-import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 import HeadMatter from '../components/HeadMatter';
@@ -50,7 +50,7 @@ const partners = [
 
 const IndexPage = ({ data }) => {
   const intl = useIntl();
-  const { locale } = useLocalization();
+  // const { locale } = useLocalization();
   const featuredExamples = usePreparedExamples(
     data.examples.nodes,
     data.exampleImages.nodes

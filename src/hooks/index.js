@@ -36,7 +36,7 @@ export const useHighlight = () => {
 **/
 export const useTree = (items, order) => {
   const intl = useIntl();
-  return useMemo(() => {
+  return useMemo(( ) => {
     let tree = {};
 
     for (let i = 0; i < items.length; i++) {
