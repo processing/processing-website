@@ -30,7 +30,7 @@
   "contact": "Contacto",
   "contactText": "!Siéntete libre de escribirnos",
   "contactEmail": "foundation@processing.org",
-  "gettingStarted": "Empezando",
+  "gettingStarted": "Primeros Pasos",
   "gettingStartedP1": " Descarga y abre la aplicación ‘Processing'. Selecciona algún ejemplo de Ejemplos. Presiona el botón Correr. Lava, enguaja y repite tantas veces como sea necesario. Más información acerca del uso de Processing puede ser encontrada en la sección <a href='/reference'>entorno</a> de la referencia. Para aprender el lenguaje Processing, nosotros te recomendamos que intentes unos cuantos <a href='/examples'>ejemplos</a>, y que cheques la <a href='/reference'>referencia</a>. Un grupo variado de <a href='/reference'>libros</a> han sido escritos para ayudar a las personas de acuerdo a sus metas y habilidades.",
   "gettingStartedP2": "To learn the Processing language, we recommend you try a few of the built-in examples, and check out the <a href='/reference'>reference</a>. A group of diverse <a href='/books'>books</a> have been written to help people with different goals and skill levels. If you're stuck or want to talk about your work, head over to the forum section of the site to find open minds and helpful peers.",
   "gettingStartedP3": " Para una vista más detallada, checa el tutorial <a href='/tutorials/gettingstarted'>Empezando</a> .",
