@@ -24,7 +24,7 @@ El Entorno de Desarrollo Processing consiste de un editor de textos simple, un �
 
 ![IDE Screenshot](./ide.png)
 Los programas escritos usando Processing son llamados sketches. Estos sketches son escritos en el editor de texto, el cual tiene funcionalidades como cortar y pegar texto, así como buscar y reemplazar.
-El área de mensajes da retroalimentación al guardar y exportar archivos, y también muestra errores. La consola despliega la salida de texto de los sketches de Processing, incluyendo mensajes de error completos y salida de texto de los sketches a tráves del uso de funciones `print()` y `println()`. (Nota que la consola funciona bien para mensajes ocasionales, pero no esta diseñada para salida en tiempo real y a alta velocidad)
+El área de mensajes da retroalimentación al guardar y exportar archivos, y también muestra errores. La consola despliega la salida de texto de los sketches de Processing, incluyendo mensajes de error completos y salida de texto de los sketches a través del uso de funciones `print()` y `println()`. (Nota que la consola funciona bien para mensajes ocasionales, pero no esta diseñada para salida en tiempo real y a alta velocidad)
 
 Los botones en la barrade herramientas pueden ejecutar y detener programas,
 
@@ -224,8 +224,8 @@ Comandos adicionales se encuentrar en los seis menús: Archivo, Editar, Sketch, 
   <dt>Crear Fuente...</dt>
   <dd>
     Convierte fuentes al formato de fuentes de Processing (VLW) y las agrega al sketch actual. Abre una ventana de diálogo que da la opción para configurar la fuente, su tamaño, si se usara anti-aliasing,
-    y cuáles caracteres serán generados. La cantidad de memoria requerida por la fuente esta determinada por su tamaño y el número de caracteres seleccionado a tráves del menú "Caracteres...".
-    Las fuentes en Processing son texturas, así que fuentes más grandes requieren más espacio para datos. Las fuentes también pueden ser creadas en el código a tráves de la función createFont().
+    y cuáles caracteres serán generados. La cantidad de memoria requerida por la fuente esta determinada por su tamaño y el número de caracteres seleccionado a través del menú "Caracteres...".
+    Las fuentes en Processing son texturas, así que fuentes más grandes requieren más espacio para datos. Las fuentes también pueden ser creadas en el código a través de la función createFont().
   </dd>
   <dt>Selector de colores...</dt>
   <dd>
@@ -329,7 +329,7 @@ La lista completa de preferencias esta almacenada en el archivo "preferences.txt
   </dd>
   <dt>Comprobar actualizaciones al iniciar</dt>
   <dd>
-    Cuando esta marcado (comportamiento predeterminado), serás informado de nuevos lanzamientos de Processing en cuanto esten disponibles a tráves de una pequeña venana de texto que aparece en cuanto Processing inicia.
+    Cuando esta marcado (comportamiento predeterminado), serás informado de nuevos lanzamientos de Processing en cuanto esten disponibles a través de una pequeña venana de texto que aparece en cuanto Processing inicia.
   </dd>
   <dt>Ejecutar sketches en la pantalla</dt>
   <dd>Si más de un monitor esta presente, selecciona en que monitor quieres desplegar el sketch.</dd>
@@ -350,7 +350,7 @@ Processing tiene 4 renderers de pantalla incluidos. El renderer predeterminado e
 
 Con el lanzamiento de Processing 3.0. el renderer _FX2D_ se ha includo. Usalo para gráficos 2D rápidos en pantallas de grandes y de gran resolución. Este renderer es experimental pero es útil en ciertas condiciones.
 
-El renderer usado para cada sketch es especificado a tráves de la función `size()`. Si un renderer no esta definido explícitamente  en `size()`, usa el renderer predeterminado como se muestra en el siguiente programa:
+El renderer usado para cada sketch es especificado a través de la función `size()`. Si un renderer no esta definido explícitamente  en `size()`, usa el renderer predeterminado como se muestra en el siguiente programa:
 
 ```
 void setup() {
@@ -408,11 +408,11 @@ El botón de flecha, a la derecha de las pestañas en el Entorno de Desarrollo P
 
 ### Depurar
 
-El depurador Processing es una herramienta para diagnosticar problemas con un sketch. Habilítalo para pausar un sketch mientras se ejecuta y avanzar a tráves del código una línea a la vez. El depurador se habilita a tráves del Menú de Depuración, o al hacer click sobre el ícono de Depurador, la mariposa en la esquina superior derecha del entorno de desarrollo processing (PDE).
+El depurador Processing es una herramienta para diagnosticar problemas con un sketch. Habilítalo para pausar un sketch mientras se ejecuta y avanzar a través del código una línea a la vez. El depurador se habilita a través del Menú de Depuración, o al hacer click sobre el ícono de Depurador, la mariposa en la esquina superior derecha del entorno de desarrollo processing (PDE).
 
 Cuando el depurador está habilitado, el programa se ejecuta normalmente, pero se detiene en los puntos de interrupción. Para crear un punto de interrupción, dirige el cursor a la línea donde tu quieres que se pause el sketck y selecciona Depuración &gt; Activar punto de interrupción. El atajo de teclado es Command-B. Para remover el punto de interrupción, selecciona la misma opción d enuevo. Cuando un punto de interrupción es añadido el número de línea es reemplazado por el símbolo `&lt;&gt;`.
 
-Ejecutar el sketch en modo Depuración causa que el sketch se pause en algún punto de interrupción. Cuando el sketch está pausado los valores actuales de las variables son visibles en un panel separado. Tu puedes avanzar al siguiente punto de interrupción al seleccionar "Continuar" o avanzar línea por línea a tráves del código usando "Saltar". Saltar sólo funciona en el alcance de la función que se está ejecutando.
+Ejecutar el sketch en modo Depuración causa que el sketch se pause en algún punto de interrupción. Cuando el sketch está pausado los valores actuales de las variables son visibles en un panel separado. Tu puedes avanzar al siguiente punto de interrupción al seleccionar "Continuar" o avanzar línea por línea a través del código usando "Saltar". Saltar sólo funciona en el alcance de la función que se está ejecutando.
 ### Modos de Programación
 
 Processing tiene diferentes _modos de programación_ que hacen posible desplegar los sketches en diferentes plataformas y programar de diferentes maneras. El modo de programación predeterminado actual es el modo _Java_. Otros modos de programación como _Modo Android_  y _Python_ son añadidos al seleccionar "Agregar Modo..." desde el menú en la esquina superior derecha del entorno de desarrollo Processing (PDE).
