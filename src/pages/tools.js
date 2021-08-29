@@ -104,7 +104,7 @@ export default Tools;
 
 export const query = graphql`
   query($locale: String!) {
-    tools: allFile( filter: { sourceInstanceName: { eq: "tools" }
+    tools: allFile(filter: { sourceInstanceName: { eq: "tools" }
         fields: { lang: { eq: $locale } }}) {
       nodes {
         childJson {
@@ -130,7 +130,7 @@ export const query = graphql`
     english: allFile(
       filter: {
         sourceInstanceName: { eq: "contributions" }
-        fields: { lang: { eq:  $locale} }
+        fields: { lang: { eq: "en" } }
         childJson: { type: { eq: "tool" } }
       }
     ) {
