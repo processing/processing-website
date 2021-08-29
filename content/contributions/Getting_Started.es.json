@@ -1,0 +1,21 @@
+{
+  "name": "Primeros pasos",
+  "authors": [
+    "[Jae Hyun](http://www.github.com/jaewhyun)"
+  ],
+  "url": "http://www.github.com/jaewhyun/GettingStarted",
+  "categories": null,
+  "sentence": "Una Herramienta que provee una rápida introducción al Entorno de Desarrollo Processing (PDE) para usuarios nuevos o principiantes.",
+  "paragraph": "",
+  "id": "233",
+  "type": "tool",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "228",
+      "maxRevision": "0",
+      "props": "https://github.com/jaewhyun/GettingStarted/releases/download/latest/GettingStarted.txt",
+      "download": "https://github.com/jaewhyun/GettingStarted/releases/download/latest/GettingStarted.zip"
+    }
+  ]
+}
