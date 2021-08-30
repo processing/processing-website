@@ -201,5 +201,10 @@
   "refSubcatTrigonometry": "Trigonometría",
   "refSubcatRandom": "Aleatorio",
   "refCatConstants": "Constantes",
-  "Topics": "Temas"
+  "Topics": "Temas",
+  "Math": "Matemáticas",
+  "Calculo": "Cálculo",
+  "Structure": "Estructura",
+  "Basics": "Básicos",
+  "Control": "Control"
 }
