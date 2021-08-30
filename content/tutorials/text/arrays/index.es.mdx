@@ -21,10 +21,10 @@ El término arreglo se refiere a un agrupado estructurado. En programación, un 
 
 </FixedImage>
 
-Los elementos de un arreglo son numerados empezando de cero , lo cual puede ser confuso al principio pero es un detalle importante en muchos lenguajes de programación. El primer elemento está en la posición [0], el segundo en la [1], y así sucesivamente. La posición de cad elemento es determinada por el desplazamiento con respecto al inicio del arreglo. El primer elemento está en la posición  [0] porque no hay desplazamiento. El segundo elemento esta en la posición [1] porque existe un desplazamiento de un lugar con respecto al principio. La última posicion del arreglo es calculada al restar 1 de la longitud del arreglo. En este ejemplo, el último elemento está en la posición [4] porque
-Array elements are numbered starting with zero, which may seem confusing at first but is an important detail for many programming languages. The first element is at position [0], the second is at [1], and so on. The position of each element is determined by its offset from the start of the array. The first element is at position [0] because it has no offset; the second element is at position [1] because it is offset one place from the beginning. The last position in the array is calculated by subtracting 1 from the array length. In this example, the last element is at position [4] because there are five elements in the array.
+Los elementos de un arreglo son numerados empezando de cero, lo cual puede ser confuso al principio pero es un detalle importante en muchos lenguajes de programación. El primer elemento está en la posición [0], el segundo en la [1], y así sucesivamente. La posición de cad elemento es determinada por el desplazamiento con respecto al inicio del arreglo. El primer elemento está en la posición  [0] porque no hay desplazamiento. El segundo elemento esta en la posición [1] porque existe un desplazamiento de un lugar con respecto al principio. La última posicion del arreglo es calculada al restar 1 de la longitud del arreglo. En este ejemplo, el último elemento está en la posición [4] porque hay cinco elementos en el arreglo.
 
-Arrays can make the task of programming much easier. While it's not necessary to use them, they can be valuable structures for managing data. Let's begin with a set of data points to construct a bar chart.
+Los arreglos pueden hacer la labor de programar mucho más fácil. Mientras no es obligatorio su uso, ellos son estructuras valiosas para manejar datos. Empecemos con un conjunto de puntos de datos para construir una gráfica de barra.
+
 
 <FixedImage center width={500} height={49}>
 
@@ -32,7 +32,7 @@ Arrays can make the task of programming much easier. While it's not necessary to
 
 </FixedImage>
 
-The following examples to draw this chart demonstrates some of the benefits of using arrays, like avoiding the cumbersome chore of storing data points in individual variables. Because the chart has ten data points, inputting this data into a program requires either creating 10 variables or using one array. The code on the left demonstrates using separate variables. The code on the right shows how the data elements can be logically grouped together in an array.
+Los siguientes ejemplos para dibujar esta gráfica demuestran algunos de los beneficios de usar arreglos, como evitar la molesta tarea de almacenar cada dato como una variable individual. Dado que la gráfica tiene diez datos, introducir esto en un programa requiere ya sea crear 10 variables o usar un arreglo. El código de la izquierda demuestra el uso de variables separadas. El código de la derecha muestra como los datos pueden ser agrupados lógicamente en un arreglo.
 
 ```
 int x0 = 50;            int[] x = { 50, 61, 83, 69, 71,
@@ -47,9 +47,9 @@ int x8 = 17;
 int x9 = 39;
 ```
 
-Usando lo que sabemos acerca de dibujar sin usar arreglos, se necesitan diez variables para almacenar los datos.; each variable is used to draw a single rectangle. This is tedious:
+Usando lo que sabemos acerca de dibujar sin usar arreglos, se necesitan diez variables para almacenar los datos. Cada variable es usada para dibujar un simple rectángulo, lo cual es tedioso:
 
-<FixedImage side width={100} height={100}>
+<FixedImage left width={100} height={100}>
 
 ![](./28_01.png)
 
@@ -78,10 +78,9 @@ rect(0, 70, x7, 8);
 rect(0, 80, x8, 8);
 rect(0, 90, x9, 8);
 ```
+En contraste, el siguiente ejemplo muestra como usar un arreglo en un programa. Los datos de cada barra son accesados en secuencia con un ciclo for. La sintaxis y uso de los arreglos es discutido con más detalle en las siguientes páginas.
 
-In contrast, the following example shows how to use an array within a program. The data for each bar is accessed in sequence with a for loop. The syntax and usage of arrays is discussed in more detail in the following pages.
-
-<FixedImage side width={100} height={100}>
+<FixedImage left width={100} height={100}>
 
 ![](./28_02.png)
 
@@ -93,7 +92,7 @@ int[] x = {
 };
 
 fill(0);
-// Read one array element each time through the for loop
+//Lee un elemento del arreglo a la vez usando un ciclo for
 for (int i = 0; i < x.length; i++) {
   rect(0, i*10, x[i], 8);
 }
