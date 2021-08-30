@@ -9,7 +9,6 @@ import {
 import hljs from 'highlight.js/lib/core';
 import processing from 'highlight.js/lib/languages/processing';
 import { getWin, sessionStorage, sortObject } from '../utils';
-import { useIntl } from 'react-intl';
 
 hljs.registerLanguage('processing', processing);
 
@@ -35,30 +34,23 @@ export const useHighlight = () => {
   @param {Object} order An object indicating the sort order. Must be an object with string keys and array values
 **/
 export const useTree = (items, order) => {
-  const intl = useIntl();
-  return useMemo(( ) => {
+  return useMemo(() => {
     let tree = {};
 
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
-      console.log("original category " + item.category + " subcat " +item.subcategory);
-      const category = intl.formatMessage({ id: item.category });
-      const subcategory = intl.formatMessage({ id: item.subcategory });
-/*
+
       if (!tree[item.category]) {
         tree[item.category] = {};
-      } */
-      if (!tree[category]) {
-        tree[category] = {};
-      }
-      if (!tree[category][subcategory]) {
-        console.log("subcategory empty");
-        tree[category][subcategory] = [];
       }
 
-      tree[category][subcategory].push(item);
+      if (!tree[item.category][item.subcategory]) {
+        tree[item.category][item.subcategory] = [];
+      }
+      console.log(`category ${item.category} subcategory ${item.subcategory}`)
+      tree[item.category][item.subcategory].push(item);
     }
-
+/*
     if (order) {
       // Sort main categories
       const keys = Object.keys(order);
@@ -67,7 +59,7 @@ export const useTree = (items, order) => {
       for (let i = 0; i < keys.length; i++) {
         tree[keys[i]] = sortObject(tree[keys[i]], order[keys[i]]);
       }
-    }
+    }*/
 
     return tree;
   }, [items, order]);

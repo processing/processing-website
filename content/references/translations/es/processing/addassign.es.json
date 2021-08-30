@@ -1,0 +1,23 @@
+{
+  "name": "+= (asignar suma)",
+  "brief": "Combina una suma con una asignación",
+  "description": "Combina una suma con una asignación. La expresión <b>a += b</b> es equivalente a <b>a = a + b</b>. \n",
+  "related": ["assign", "addition", "subtractassign"],
+  "syntax": ["value1 += value2"],
+  "returns": "",
+  "type": "function",
+  "category": "math",
+  "subcategory": "Operators",
+  "parameters": [
+    {
+      "name": "value1",
+      "description": "int or float",
+      "type": []
+    },
+    {
+      "name": "value2",
+      "description": "any numerical value the same datatype as value1",
+      "type": []
+    }
+  ]
+}

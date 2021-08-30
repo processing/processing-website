@@ -6,9 +6,9 @@
   "description": "Calcula el valor absoluto (magnitud) de un número. El valor\n absoluto de un número siempre es positivo.",
   "syntax": ["abs(n)"],
   "returns": "float o int",
-  "type": "funcion",
+  "type": "function",
   "category": "math",
-  "subcategory": "calculo",
+  "subcategory": "calculation",
   "parameters": [
     {
       "name": "n",

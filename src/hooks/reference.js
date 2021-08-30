@@ -14,7 +14,8 @@ export const usePreparedItems = (items, libraryName) => {
     // names and removes underscores and adds title cases. Some of these should be fixed
     // in the JavaDoc comments instead.
     const prepared = [];
-
+    console.log("items  hook para biblio  "+ libraryName);
+    console.log(items)
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
       // Processing does not list methods or fields in reference list or sidebar. Libraries do.
@@ -22,10 +23,13 @@ export const usePreparedItems = (items, libraryName) => {
         libraryName !== 'processing' ||
         (item.childJson.type !== 'method' && item.childJson.type !== 'field')
       ) {
+        console.log("use prepared items push " + item.childJson.name);
+        let path = item.name.split(`.`)[0]
+        console.log("use prepared items push " + path);
         prepared.push(
           Object.assign({}, item.childJson, {
-            slug: item.name,
-            path: referencePath(item.name, libraryName),
+            slug: item.childJson.name,
+            path: referencePath(path, libraryName),
             category: titleCase(item.childJson.category),
             subcategory: titleCase(item.childJson.subcategory),
             search: `${item.childJson.name} ${item.childJson.brief ?? ''}`
