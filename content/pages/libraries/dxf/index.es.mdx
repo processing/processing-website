@@ -2,17 +2,16 @@
 name: 'dxf'
 title: 'DXF Export'
 library: 'true'
-description: 'Crear archivos DXF para guardar la geometria to save geometry for loading into other programs. It works with triangle-based graphics including polygons, boxes, and spheres.'
+description: 'Crea archivos DXF para guardar la geometría y poder cargarla en otros programas.Funciona con gráficas basadas en triángulos, incluyendo polígonos, cajas y esferas.'
 ---
 
 ## DXF Export
 
-The DXF library writes all triangle-based graphics (polygons, boxes, spheres, etc.) to a DXF file. It works with the beginRaw() and endRaw() functions. These functions will grab and save the shape data just before it is rendered to the screen. At this stage, your entire scene is nothing but a long list of lines and triangles. This means that a shape created with the sphere() function will be made up of hundreds of triangles, rather than a single object. The source code is available on the [Processing](https://github.com/processing/processing/tree/master/java/libraries/dxf) GitHub repository. Please report bugs [here](https://github.com/processing/processing/issues).
+La biblioteca DXF excribe todos los gráficos basados en triángulos ( polígonos, cajas, esferas) en un archivo DXF. Funciona con las funciones beginRaw() y endRaw(). Estas funciones recuperan y guardan los datos de la forma justo antes de que sea presentada en pantalla. A esta altura, la escena completa no es más que una larga lista de líneas y triángulos. Esto significa que la forma creada con la función sphere() estará compuesta de cientos de triángulos en lugar de un sólo objeto. El código fuente esta disponible en  el repositorio GitHub de [Processing](https://github.com/processing/processing/tree/master/java/libraries/dxf). Por favor reporta cualquier fallo [aquí](https://github.com/processing/processing/issues).
 
-Use an event function like a keyPressed() to trigger it, to avoid writing a file each time through draw(). By default, the file will be saved to the sketch's folder. Use Sketch > Show Sketch Folder to see it from the Processing Environment.
+Usa un evento sencillo como un keyPressed() para activarla, para evitar escribir a archivo cada vez que se usa draw(). Por default, el archivo será guardado en el directorio del Sketch. Para verlo desde el Entorno de Processing usa Sketch > Mostrar directorio del Sketch.
 
-This simple example shows how to use the library:
-
+Este ejemplo sencillo muestra como usar la Biblioteca:
 ```
 import processing.dxf.*;
 
