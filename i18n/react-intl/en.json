@@ -235,5 +235,7 @@
   "Shape": "Shape",
   "2d Primitives": "2d primitives",
   "Structure": "Structure",
-  "refSubcatForm": "Forms"
+  "refSubcatForm": "Forms",
+  "Compilation": "Compilation",
+  "Other": "Other"
 }

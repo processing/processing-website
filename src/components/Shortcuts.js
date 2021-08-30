@@ -21,7 +21,7 @@ const Shortcuts = ({ categories }) => {
             <div className={css.line} />
             <Link className={css.itemLink} to={`#${slugify(category)}`}>
               {intl.formatMessage({
-                id: `refCat${category.replace(/_/g, ' ').replace(/ /g, '')}`
+                id: `${category.replace(/_/g, ' ').replace(/ /g, '')}`
               })}
             </Link>
           </li>
