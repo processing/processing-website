@@ -52,6 +52,7 @@ export const useTree = (items, order) => {
         tree[category] = {};
       }
       if (!tree[category][subcategory]) {
+        console.log("subcategory empty");
         tree[category][subcategory] = [];
       }
 

@@ -222,5 +222,6 @@
   "Sound": "Sound",
   "Video & Vision": "Video & Vision",
   "Video&Vision": "Video & Visión",
-  "Hardware" : "Hardware"
+  "Hardware" : "Hardware",
+  "GPIO":"GPIO"
 }

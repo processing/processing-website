@@ -58,7 +58,7 @@
   "reporting": "reportar y rastrear bugs",
   "creating": "crear bibliotecas y herramientas",
   "announcement": "Día de la Comunidad Processing",
-  "announcementText": " La iniciativa del Día de la Comunidad Processing (PCD) esta evolucionando. Para el 2020, nosotros ofreceremos un programa de mentoreo para los organizadores alrededor del mundo que estén interesados en aprender de organizadores y mentores previos. La meta es ayuar a un diverso grupo de organizadores a lanzar el Día de la Comunidad Processing (PCD) en sus comunidades locales. Checa la página <a href='https://processingfoundation.org/advocacy/processing-community-day-2020'>PCD @ Worldwide</a> para conocer más acerca de cómo participar o desarrollar un evento en el 2020",
+  "announcementText": " La iniciativa del Día de la Comunidad Processing (PCD) esta evolucionando. Para el 2020, nosotros ofreceremos un programa de mentorías para los organizadores alrededor del mundo que estén interesados en aprender de organizadores y mentores previos. La meta es ayuar a un diverso grupo de organizadores a lanzar el Día de la Comunidad Processing (PCD) en sus comunidades locales. Checa la página <a href='https://processingfoundation.org/advocacy/processing-community-day-2020'>PCD @ Worldwide</a> para conocer más acerca de cómo participar o desarrollar un evento en el 2020",
   "partners": "Socios",
   "tableOfContents": "Tabla de contenidos",
   "topicExamples": "Programas sobre animación, interacción, movimiento, simulación, y más...",
@@ -222,5 +222,6 @@
   "Sound": "Sonido",
   "Video & Vision": "Video y Visión",
   "Video&Vision": "Video y Visión",
-  "Hardware" : "Hardware"
+  "Hardware" : "Hardware",
+  "GPIO":"GPIO"
 }
