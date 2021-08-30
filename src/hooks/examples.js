@@ -48,7 +48,6 @@ export const usePreparedExamples = (examples, images) => {
         }
       }
 
-      console.log(`TODO Checkar examploe ewxample name ${example.name} examplepath ${examplePath(example.name)}`)
 
       const [category, subcategory] = example.relativeDirectory.split('/');
       prepared.push({
@@ -111,11 +110,11 @@ export const useTrail = (example) => {
     ];
 
     if (example) {
-      console.log( `Hay ejemplo`);
+   //   console.log( `Hay ejemplo`);
       if (example.category) {
-        console.log( `categoria ${example.category.toString()}`);
+        console.log( `hook examples categoria ${example.category.toString()}`);
         const category = intl.formatMessage({ id: example.category });
-        console.log( `categoria INTL ${category}`);
+        console.log( `hook examples categoria INTL ${category}`);
         trail.push({
           slug: `/examples#${slugify(example.category)}`,
           label: category
@@ -132,7 +131,7 @@ export const useTrail = (example) => {
         });
       }
     }
-    console.log( `trail construido: ${trail.toString()}`);
+   // console.log( `trail construido: ${trail.toString()}`);
     return trail;
   }, [intl, example]);
 };
