@@ -198,9 +198,6 @@ export const query = graphql`
       edges {
         node {
           name
-          internal {
-            content
-          }
           extension
           childImageSharp {
             gatsbyImageData(width: 400)
@@ -209,15 +206,12 @@ export const query = graphql`
       }
     }
     pdes: allFile(
-      filter: {
-        relativeDirectory: { eq: $relDir }
-        extension: { regex: "/(pde)/" }
-      }
+      filter: { relativeDirectory: { eq: $relDir }, extension: { eq: "pde" } }
     ) {
       edges {
         node {
           name
-          internal {
+          childRawCode {
             content
           }
           extension

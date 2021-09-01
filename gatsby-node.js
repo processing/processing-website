@@ -18,22 +18,14 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   }
 };
 
-exports.createPages = async ({ actions, graphql, reporter }) => {
-  await Promise.all([
-    createReference(actions, graphql),
-    createExamples(actions, graphql),
-    createTutorials(actions, graphql),
-    createDownload(actions, graphql)
-  ]);
-};
-
 exports.onCreateNode = ({ node, actions, getNode, loadNodeContent }) => {
   const { createNodeField } = actions;
 
-  if (node.internal.mediaType === `application/json`) {
-    const value = createFilePath({ node, getNode });
-    const dir = node.relativeDirectory.split('/');
-    const library = dir[1];
+  // Handle locale naming convention in .json and .pde files
+  if (
+    node.internal.mediaType === `application/json` ||
+    node.internal.mediaType === `text/x-processing`
+  ) {
     const nameSplit = node.name.split('.');
     const name = nameSplit[0];
     const lang = nameSplit[1] ? nameSplit[1] : 'en';
@@ -49,19 +41,34 @@ exports.onCreateNode = ({ node, actions, getNode, loadNodeContent }) => {
       value: lang,
       node
     });
+  }
 
+  // Assign library to reference nodes
+  if (node.sourceInstanceName === 'reference') {
     createNodeField({
       name: `lib`,
-      value: library,
+      value: node.relativeDirectory.split('/')[1],
       node
     });
-  } else if (node.internal.mediaType === `text/x-processing`) {
-    createNodeField({
-      name: `name`,
-      node,
-      content: loadNodeContent(node)
-    });
   }
+
+  // Load content of .pde files into the node
+  // if (node.internal.mediaType === `text/x-processing`) {
+  //   createNodeField({
+  //     name: `name`,
+  //     node,
+  //     content: loadNodeContent(node)
+  //   });
+  // }
+};
+
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  await Promise.all([
+    createReference(actions, graphql),
+    createExamples(actions, graphql),
+    createTutorials(actions, graphql),
+    createDownload(actions, graphql)
+  ]);
 };
 
 async function createReference(actions, graphql) {
@@ -75,7 +82,7 @@ async function createReference(actions, graphql) {
   const result = await graphql(
     `
       {
-        allFile(filter: { sourceInstanceName: { eq: "json" } }) {
+        allFile(filter: { sourceInstanceName: { eq: "reference" } }) {
           edges {
             node {
               name

@@ -41,6 +41,8 @@ const ExampleTemplate = ({ data, pageContext }) => {
   const { name, related } = pageContext;
   const { image, allExamples, relatedImages, liveSketch } = data;
 
+  console.log(data.pdes.nodes);
+
   const example = usePreparedExample(data.example);
   const pdes = useOrderedPdes(name, data.pdes.nodes);
   const examples = usePreparedExamples(allExamples.nodes, relatedImages.nodes);
@@ -211,12 +213,12 @@ export const query = graphql`
       filter: {
         sourceInstanceName: { eq: "examples" }
         relativeDirectory: { eq: $relDir }
-        extension: { regex: "/(pde)/" }
+        extension: { eq: "pde" }
       }
     ) {
       nodes {
         name
-        internal {
+        childRawCode {
           content
         }
       }
