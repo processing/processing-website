@@ -266,54 +266,30 @@ async function createTutorials(actions, graphql) {
 /**
   Generate /examples pages
 **/
-
-const parseExampleFileInfo = (node) => {
-  // Split name into needed info.
-  // Slug is lowercased to match old processing.org URL's
-  const splitName = node.name.split('.');
-  const langCode = splitName.length > 1 ? '/' + splitName[1] : '';
-  const name = splitName[0];
-  const slug = langCode + '/examples/' + name.toLowerCase() + '.html';
-
-  // Split relative dir into needed info
-  const relDir = node.relativeDirectory;
-  const splitDir = relDir.split('/');
-  const category = splitDir[0];
-  const subcategory = splitDir[1];
-
-  return {
-    name,
-    slug,
-    langCode,
-    category,
-    subcategory,
-    relDir
-  };
-};
-
 async function createExamples(actions, graphql) {
   const exampleTemplate = path.resolve(`./src/templates/examples/example.js`);
 
   const { createPage } = actions;
 
-  // Load all JSON files within the examples folder
+  // Load example .json files
+  // Since the gatsby-theme-i18n automatically creates pages for each locale,
+  // we only load the english pages here. The template takes care of the rest.
   const result = await graphql(
     `
       {
         json: allFile(
           filter: {
             sourceInstanceName: { eq: "examples" }
+            fields: { lang: { eq: "en" } }
             extension: { eq: "json" }
             relativeDirectory: { regex: "/^((?!data).)*$/" }
           }
         ) {
-          edges {
-            node {
-              name
-              relativeDirectory
-              childJson {
-                type
-              }
+          nodes {
+            name
+            relativeDirectory
+            childJson {
+              type
             }
           }
         }
@@ -325,37 +301,43 @@ async function createExamples(actions, graphql) {
     throw result.errors;
   }
 
-  const examples = result.data.json.edges;
-  const parsedExamples = examples.map((example) =>
-    parseExampleFileInfo(example.node)
-  );
+  const examples = result.data.json.nodes;
+
+  // Extract the data needed to create the page
+  const parsedExamples = examples.map((node) => {
+    const splitDir = node.relativeDirectory.split('/');
+    return {
+      name: node.name,
+      slug: examplePath(node.name),
+      relDir: node.relativeDirectory,
+      category: splitDir[0],
+      subcategory: splitDir[1]
+    };
+  });
 
   parsedExamples.forEach((example, index) => {
-    const { name, slug, langCode, category, subcategory, relDir } = example;
-
     // Find related examples in the same sub category
-    // We use the empty langCode to not generate duplicates
     // We pass the names of these to the template, so we don't need
     // to load and filter all images on the frontend.
     const related = parsedExamples
       .filter((info) => {
         return (
-          info.subcategory === subcategory &&
-          info.name !== name &&
-          info.langCode === ''
+          info.subcategory === example.subcategory && info.name !== example.name
         );
       })
       .map((info) => info.name);
 
+    // Create the page. Again, this is only for the english pages, since
+    // the i18n theme will take care of generating the others.
     createPage({
-      path: slug,
+      path: example.slug,
       component: exampleTemplate,
       context: {
-        slug,
-        name,
-        subcategory,
-        related,
-        relDir
+        slug: example.slug,
+        name: example.name,
+        subcategory: example.subcategory,
+        relDir: example.relDir,
+        related
       }
     });
   });

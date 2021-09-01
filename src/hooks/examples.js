@@ -85,15 +85,47 @@ export const useRelatedExamples = (examples, related) => {
 
 /**
   Hook to sort a list of .pde files so the file with the same name
-  of the examples is first in the array.
+  of the examples is first in the array. This hooks expects both the
+  english and the translated pdes to be present in the nodes, and
+  will overwrite the english pde files with the locale pde files.
 **/
-export const useOrderedPdes = (name, nodes) => {
+export const usePdes = (name, nodes, locale) => {
   return useMemo(() => {
-    const main = nodes.find((pde) => pde.name === name);
-    const rest = nodes.filter((pde) => pde.name !== name);
-    rest.unshift(main);
-    return rest;
-  }, [name, nodes]);
+    // Find all the english files and add the main pde first
+    const pdes = [];
+    const localePdes = [];
+
+    for (let i = 0; i < nodes.length; i++) {
+      const pde = {
+        name: nodes[i].fields.name,
+        code: nodes[i].childRawCode.content,
+        lang: nodes[i].fields.lang
+      };
+      if (pde.lang === 'en') {
+        if (pde.name === name) {
+          pdes.unshift(pde);
+        } else {
+          pdes.push(pde);
+        }
+      } else {
+        localePdes.push(pde);
+      }
+    }
+
+    // overwrite the english files with the locale files
+    if (locale !== 'en') {
+      loop1: for (let i = 0; i < pdes.length; i++) {
+        for (let j = 0; j < localePdes.length; j++) {
+          if (pdes[i].name === localePdes[j].name) {
+            pdes[i] = localePdes[j];
+            continue loop1;
+          }
+        }
+      }
+    }
+
+    return pdes;
+  }, [name, nodes, locale]);
 };
 
 /**

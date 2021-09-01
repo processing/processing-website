@@ -1,7 +1,7 @@
 import React, { memo, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
-import { LocalizedLink as Link } from 'gatsby-theme-i18n';
+import { useLocalization, LocalizedLink as Link } from 'gatsby-theme-i18n';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
@@ -21,7 +21,7 @@ import {
   usePreparedExample,
   usePreparedExamples,
   useRelatedExamples,
-  useOrderedPdes,
+  usePdes,
   useTrail
 } from '../../hooks/examples';
 
@@ -37,12 +37,15 @@ if (typeof window !== 'undefined') {
 const ExampleTemplate = ({ data, pageContext }) => {
   const [showSidebar, setShowSidebar] = useSidebar('examples');
   const intl = useIntl();
+  const { locale } = useLocalization();
+
+  console.log(pageContext);
 
   const { name, related } = pageContext;
   const { image, allExamples, relatedImages, liveSketch } = data;
 
   const example = usePreparedExample(data.example);
-  const pdes = useOrderedPdes(name, data.pdes.nodes);
+  const pdes = usePdes(name, data.pdes.nodes, locale);
   const examples = usePreparedExamples(allExamples.nodes, relatedImages.nodes);
   const tree = useTree(examples);
   const relatedExamples = useRelatedExamples(examples, related);
@@ -211,12 +214,16 @@ export const query = graphql`
       filter: {
         sourceInstanceName: { eq: "examples" }
         relativeDirectory: { eq: $relDir }
+        fields: { lang: { in: ["en", $locale] } }
         extension: { eq: "pde" }
-        fields: { lang: { eq: $locale } }
       }
     ) {
       nodes {
         name
+        fields {
+          lang
+          name
+        }
         childRawCode {
           content
         }

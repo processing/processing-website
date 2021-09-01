@@ -263,7 +263,7 @@ let firstRun = true;
 export const useSidebar = (_key = '') => {
   const key = `showSidebar-${_key}`;
 
-  // check if the sidebar shouold be shown
+  // check if the sidebar should be shown
   // based on window width or user preference
   // returns null if running on the server
   // or for the very first time in the browser
