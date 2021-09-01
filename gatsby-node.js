@@ -142,7 +142,7 @@ async function createReference(actions, graphql) {
   refPages.forEach((refPage, index) => {
     const [name] = refPage.name.split('.');
     const [lang, libraryName] = refPage.relativeDirectory.split('/');
-    const refPath = referencePath(name, libraryName, lang);
+    const refPath = referencePath(name, libraryName);
     const relDir = libraryName + '/' + name;
     const { type, classanchor } = refPage.childJson;
 
