@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
+import { useLocalization } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
 
 import HeadMatter from '../../components/HeadMatter';
@@ -16,7 +17,7 @@ import { ExampleItem } from '../../components/examples/ExamplesList';
 import Breadcrumbs from '../../components/Breadcrumbs';
 
 import { widont } from '../../utils/index.js';
-import { useTree, useHighlight, useSidebar } from '../../hooks';
+import { useTree, useHighlight, useSidebar, usePdes } from '../../hooks';
 import {
   usePreparedItems,
   usePreparedExamples,
@@ -33,6 +34,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
   const isProcessing = libraryName === 'processing';
   const [showSidebar, setShowSidebar] = useSidebar('reference');
 
+  const { locale } = useLocalization();
   const intl = useIntl();
   useHighlight();
 
@@ -40,7 +42,9 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
   const entry = data?.json?.childJson;
 
   const items = usePreparedItems(data.items.nodes, libraryName);
-  const examples = usePreparedExamples(data.pdes.nodes, data.images.nodes);
+
+  const pdes = usePdes(data.pdes.nodes, locale);
+  const examples = usePreparedExamples(pdes, data.images.nodes);
   const tree = useTree(items);
 
   const inUse = usePreparedList(entry?.inUse, libraryName, true, true);
@@ -213,14 +217,22 @@ export const query = graphql`
       }
     }
     pdes: allFile(
-      filter: { relativeDirectory: { eq: $relDir }, extension: { eq: "pde" } }
+      filter: {
+        sourceInstanceName: { eq: "reference-examples" }
+        relativeDirectory: { eq: $relDir }
+        fields: { lang: { in: ["en", $locale] } }
+        extension: { eq: "pde" }
+      }
     ) {
       nodes {
         name
+        fields {
+          name
+          lang
+        }
         childRawCode {
           content
         }
-        extension
       }
     }
     items: allFile(

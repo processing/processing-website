@@ -297,3 +297,48 @@ export const useSidebar = (_key = '') => {
 
   return [showSidebar, setShowSidebarMemo];
 };
+
+/**
+  Hook to filter a list of .pde files by overwriting the english
+  pde files with the locale pde files. Optionally, you can pass in
+  a name of the PDE file you want to sort first. This hook expects both
+  the english and the translated pdes to be present in the nodes.
+**/
+export const usePdes = (nodes, locale, name) => {
+  return useMemo(() => {
+    // Find all the english files and add the main pde first
+    const pdes = [];
+    const localePdes = [];
+
+    for (let i = 0; i < nodes.length; i++) {
+      const pde = {
+        name: nodes[i].fields.name,
+        code: nodes[i].childRawCode.content,
+        lang: nodes[i].fields.lang
+      };
+      if (pde.lang === 'en') {
+        if (name && pde.name === name) {
+          pdes.unshift(pde);
+        } else {
+          pdes.push(pde);
+        }
+      } else {
+        localePdes.push(pde);
+      }
+    }
+
+    // overwrite the english files with the locale files
+    if (locale !== 'en') {
+      loop1: for (let i = 0; i < pdes.length; i++) {
+        for (let j = 0; j < localePdes.length; j++) {
+          if (pdes[i].name === localePdes[j].name) {
+            pdes[i] = localePdes[j];
+            continue loop1;
+          }
+        }
+      }
+    }
+
+    return pdes;
+  }, [name, nodes, locale]);
+};

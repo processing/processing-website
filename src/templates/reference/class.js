@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
+import { useLocalization } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
 import { widont } from '../../utils/index.js';
 
@@ -16,7 +17,7 @@ import { CodeList, ExampleList } from '../../components/reference/ContentList';
 import { ExampleItem } from '../../components/examples/ExamplesList';
 import Breadcrumbs from '../../components/Breadcrumbs';
 
-import { useHighlight, useTree, useSidebar } from '../../hooks';
+import { useHighlight, useTree, useSidebar, usePdes } from '../../hooks';
 import {
   usePreparedItems,
   usePreparedExamples,
@@ -34,11 +35,13 @@ const ClassRefTemplate = ({ data, pageContext }) => {
   const isProcessing = libraryName === 'processing';
   const [showSidebar, setShowSidebar] = useSidebar('reference');
 
+  const { locale } = useLocalization();
   const intl = useIntl();
   useHighlight();
 
   const items = usePreparedItems(data.items.nodes, libraryName);
-  const examples = usePreparedExamples(data.pdes.nodes, data.images.nodes);
+  const pdes = usePdes(data.pdes.nodes, locale);
+  const examples = usePreparedExamples(pdes, data.images.nodes);
   const tree = useTree(items);
   const constructors = usePreparedList(entry?.constructors, libraryName);
   const fields = usePreparedList(entry?.classFields, libraryName, false, true);
@@ -203,14 +206,22 @@ export const query = graphql`
       }
     }
     pdes: allFile(
-      filter: { relativeDirectory: { eq: $relDir }, extension: { eq: "pde" } }
+      filter: {
+        sourceInstanceName: { eq: "reference-examples" }
+        relativeDirectory: { eq: $relDir }
+        fields: { lang: { in: ["en", $locale] } }
+        extension: { eq: "pde" }
+      }
     ) {
       nodes {
         name
+        fields {
+          name
+          lang
+        }
         childRawCode {
           content
         }
-        extension
       }
     }
     items: allFile(

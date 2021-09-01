@@ -108,9 +108,8 @@ export const usePreparedExamples = (pdes, images) => {
     const prepared = [];
     for (let i = 0; i < pdes.length; i++) {
       const example = {
-        code: pdes[i].childRawCode.content
+        code: pdes[i].code
       };
-
       if (images) {
         for (let j = 0; j < images.length; j++) {
           if (images[j].name === pdes[i].name) {

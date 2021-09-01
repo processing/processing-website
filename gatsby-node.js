@@ -63,25 +63,42 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 };
 
 async function createReference(actions, graphql) {
-  const refTemplate = path.resolve(`./src/templates/reference/function.js`);
+  const functionTemplate = path.resolve(
+    `./src/templates/reference/function.js`
+  );
   const classRefTemplate = path.resolve(`./src/templates/reference/class.js`);
   const fieldRefTemplate = path.resolve(`./src/templates/reference/field.js`);
   const indexLibTemplate = path.resolve(`./src/templates/libraries/library.js`);
 
+  const refTemplates = {
+    function: functionTemplate,
+    method: functionTemplate,
+    class: classRefTemplate,
+    field: fieldRefTemplate,
+    other: fieldRefTemplate
+  };
+
   const { createPage } = actions;
 
+  // Load reference .json files
+  // Since the gatsby-theme-i18n automatically creates pages for each locale,
+  // we only load the english pages here. The template takes care of the rest.
   const result = await graphql(
     `
       {
-        allFile(filter: { sourceInstanceName: { eq: "reference" } }) {
-          edges {
-            node {
-              name
-              relativeDirectory
-              childJson {
-                type
-                classanchor
-              }
+        json: allFile(
+          filter: {
+            sourceInstanceName: { eq: "reference" }
+            extension: { eq: "json" }
+            fields: { lang: { eq: "en" } }
+          }
+        ) {
+          nodes {
+            name
+            relativeDirectory
+            childJson {
+              type
+              classanchor
             }
           }
         }
@@ -120,26 +137,26 @@ async function createReference(actions, graphql) {
   }
 
   // Create reference pages.
-  const refPages = result.data.allFile.edges;
+  const refPages = result.data.json.nodes;
 
   refPages.forEach((refPage, index) => {
-    const [name] = refPage.node.name.split('.');
-    const [lang, libraryName] = refPage.node.relativeDirectory.split('/');
+    const [name] = refPage.name.split('.');
+    const [lang, libraryName] = refPage.relativeDirectory.split('/');
     const refPath = referencePath(name, libraryName, lang);
     const relDir = libraryName + '/' + name;
-    const { type, classanchor } = refPage.node.childJson;
+    const { type, classanchor } = refPage.childJson;
 
     const inUseExamples = inUse.data.allFile.edges
       .filter((n) => {
         if (
-          n.node.childJson !== undefined &&
-          n.node.childJson !== null &&
-          n.node.childJson.featured !== null &&
-          n.node.childJson.featured.includes(refPage.node.name)
+          n.childJson !== undefined &&
+          n.childJson !== null &&
+          n.childJson.featured !== null &&
+          n.childJson.featured.includes(refPage.name)
         )
-          return n.node.name;
+          return n.name;
       })
-      .map((e) => e.node.name);
+      .map((e) => e.name);
 
     const context = {
       name,
@@ -155,24 +172,14 @@ async function createReference(actions, graphql) {
       context.classanchor = classanchor;
     }
 
-    if (type === 'function' || type === 'method') {
+    if (refTemplates[type]) {
       createPage({
         path: refPath,
-        component: refTemplate,
+        component: refTemplates[type],
         context
       });
-    } else if (type === 'class') {
-      createPage({
-        path: refPath,
-        component: classRefTemplate,
-        context
-      });
-    } else if (type === 'field' || type === 'other') {
-      createPage({
-        path: refPath,
-        component: fieldRefTemplate,
-        context
-      });
+    } else {
+      console.error('No template for reference type', type);
     }
   });
 

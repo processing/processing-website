@@ -16,12 +16,11 @@ import { ExampleItem } from '../../components/examples/ExamplesList';
 import Breadcrumbs from '../../components/Breadcrumbs';
 
 import { referencePath } from '../../utils/paths';
-import { useTree, useSidebar } from '../../hooks';
+import { useTree, useSidebar, usePdes } from '../../hooks';
 import {
   usePreparedExample,
   usePreparedExamples,
   useRelatedExamples,
-  usePdes,
   useTrail
 } from '../../hooks/examples';
 
@@ -43,7 +42,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
   const { image, allExamples, relatedImages, liveSketch } = data;
 
   const example = usePreparedExample(data.example);
-  const pdes = usePdes(name, data.pdes.nodes, locale);
+  const pdes = usePdes(data.pdes.nodes, locale, name);
   const examples = usePreparedExamples(allExamples.nodes, relatedImages.nodes);
   const tree = useTree(examples);
   const relatedExamples = useRelatedExamples(examples, related);
