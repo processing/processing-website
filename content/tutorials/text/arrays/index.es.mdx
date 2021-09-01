@@ -180,8 +180,7 @@ line(data[2], 0, data[2], 100);
 line(data[3], 0, data[3], 100);
 line(data[4], 0, data[4], 100);
 ```
-
-Remember, the first element in the array is in the 0 position. If you try to access a member of the array that lies outside the array boundaries, your program will terminate and give an ArrayIndexOutOfBoundsException.
+Recuerda, el primer elemento del arreglo está en la posición 0. Si intentas accesar a un miembro del arreglo que esta fuera de sus límites, tu programa terminará y lanzará una excepción ArrayIndexOutOfBoundsException.
 
 ```
 int[] data = { 19, 40, 75, 76, 90 };
@@ -191,7 +190,7 @@ println(data[2]); // Imprime "75" en la consola
 println(data[5]); // ERROR! El último elemento del arreglo es 4
 ```
 
-The length field stores the number of elements in an array. This field is stored within the array and is accessed with the dot operator (p. 363–379). The following example demonstrates how to utilize it.
+El campo length almacena el numero de elementos en un arreglo. Este campo es almacenado junto al arreglo y es accesador con el operador punto. (p. 363–379). El siguiente ejemplo muestra cómo utilizarlo.
 
 ```
 int[] data1 = { 19, 40, 75, 76, 90 };
@@ -202,8 +201,7 @@ println(data1.length); // Imprime "5" en la consola
 println(data2.length); // Imprime "2" en la consola
 println(data3.length); // Imprime "127" en la consola
 ```
-
-Usually, a for loop is used to access array elements, especially with large arrays. The following example draws the same lines as code 28-09 but uses a for loop to iterate through every value in the array.
+Usualmente, un ciclo for es usado para accesar los elementos de un arreglo, especialmente en arreglos muy grandes. El siguiente ejemplo muestra las mismas líneas vistas previamente pero usa un ciclo for para iterar a través de cada valor en el arreglo.
 
 <FixedImage side width={100} height={100}>
 
@@ -219,8 +217,7 @@ for (int i = 0; i < data.length; i++) {
     line(data[i], 0, data[i], 100);
 }
 ```
-
-A for loop can also be used to put data inside an array. For instance, it can calculate a series of numbers and then assign each value to an array element. The following example stores the values from the `sin()` function in an array within `setup()` and then displays these values as the stroke values for lines within `draw()`.
+Un ciclo for también puede ser usado para poner datos dentro de un arreglo. Por ejemplo, puede calcular una serie de números y asignar cada valor a un elemento del arreglo. El siguiente ejemplo almacena valores de la función `sin()` en un arreglo durante la función `setup()` y muestra estos valores como el valor del trazo para las líneas durante la función `draw()`.
 
 <FixedImage side width={100} height={100}>
 
@@ -253,7 +250,8 @@ void draw() {
 
 ## Almacenar datos
 
-As one example of how arrays may be used, this section shows how to use arrays to store data from the mouse. The `pmouseX` and `pmouseY` variables store the cursor coordinates from the previous frame, but there is no built-in way to access the cursor values from earlier frames. At every frame, the `mouseX`, `mouseY`, `pmouseX`, and `pmouseY` variables are replaced with new numbers and their previous numbers are discarded. Creating an array is the easiest way to store the history of these values. In the following example, the most recent 100 values from `mouseY` are stored and displayed on screen as a line from the left to the right edge of the screen. At each frame, the values in the array are shifted to the right and the newest value is added to the beginning.
+Un ejemplo de cómo pueden ser usados los arreglos, esta sección muestra el uso de arreglos para almacenar los datos del mouse. Las variables `pmouseX` y `pmouseY` almacenan las coordenadas del cursor en el cuadro previo, pero no hay una forma incluida para accesar los valores de cuadros previos. En cada cuadro, las variables `mouseX`, `mouseY`, `pmouseX` y `pmouseY` son reemplazadas con nuevos números y los previos descartados. Crear un arreglo es la forma más fácil de almacenar la historia de estos valores. En el siguiente ejemplo , los 100 valores más recientes de `mouseY` son almacenados y mostrados en pantalla como líneas de izquierda a derecha. En cada cuadro, los valores en el arreglo son recorridos a la derecha y el valor más reciente es agregado al principio.
+
 
 <FixedImage side width={100} height={100}>
 
@@ -283,14 +281,13 @@ void setup() {
 }
 
 void draw() {
-  background(204); // Read the array from the end to the
-  // beginning to avoid overwriting the data
+  background(204); //  Lee el arreglo de fin a principio para evitar sobreescribir los datos.
   for (int i = y.length-1; i > 0; i--) {
     y[i] = y[i-1];
   }
-  // Add new values to the beginning
+  // Agrega los nuevos valores al principio
   y[0] = mouseY;
-  // Display each pair of values as a line
+  // Despliega cada par de valores como una línea
   for (int i = 1; i < y.length; i++) {
     line(i, y[i], i-1, y[i-1]);
   }
@@ -346,7 +343,8 @@ void draw() {
 }
 ```
 
-The following example produces the same result as the previous one but uses a more efficient technique. Instead of shifting the array elements in each frame, the program writes the new data to the next available array position. The elements in the array remain in the same position once they are written, but they are read in a different order each frame. Reading begins at the location of the oldest data element and continues to the end of the array. At the end of the array, the `%` operator (p. 57) is used to wrap back to the beginning. This technique, commonly known as a ring buffer, is especially useful with larger arrays, to avoid unnecessary copying of data that can slow down a program.
+El siguiente ejemplo produce el mismo resultado que el ejemplo previo pero con una técnica más eficiente. En vez de recorrer los elementos del arreglo en cada cuadro, el programa escribe el nuevo dato en la próxima posición disponible. Los elementos en el arreglo permanecen en la misma posición, pero son leídos en un orden diferente cada cuadro. La lectura empieza en la posición del dato mas viejo y continua al final del arreglo. Al final del arreglo, el operador `%` (p. 57) es usado para regresar al inicio. Esta técnica, conocida comúnmente como un buffer de anillo, es especialmente útil en arreglos grandes para evitar copiar los datos y ralentizar el programa.
+
 
 ```
 int num = 50;
@@ -385,10 +383,10 @@ La función `append()` expande un arreglo por un elemento, agrega los datos en l
 String[] trees = { "ash", "oak" };
 
 append(trees, "maple"); // INCORRECTO! No cambia el arreglo
-printArray(trees); // Prints [0] "ash", [1] "oak"
+printArray(trees); // Imprime [0] "ash", [1] "oak"
 println();
 trees = append(trees, "maple"); // Agrega "maple" al final
-printArray(trees); // Prints [0] "ash", [1] "oak", [2] "maple"
+printArray(trees); // Imprime [0] "ash", [1] "oak", [2] "maple"
 println();
 // Agrega "beech" al final del arreglo de árboles, y crea un nuevo
 // arreglo para almacenar el cambio
@@ -399,110 +397,111 @@ String[] moretrees = append(trees, "beech");
 printArray(moretrees);
 ```
 
-The `shorten()` function decreases an array by one element by removing the last element and returns the shortened array:
+La función `shorten()` decrementa un arreglo en un elemento al remover el último elemento y regresa el arreglo acortado:
 
 ```
 String[] trees = { "lychee", "coconut", "fig" };
 
-trees = shorten(trees); // Remove the last element from the array
-printArray(trees); // Prints [0] "lychee", [1] "coconut"
+trees = shorten(trees); // Remueve el último elemento del arreglo.
+printArray(trees); // Imprime [0] "lychee", [1] "coconut"
 println();
-trees = shorten(trees); // Remove the last element from the array
-printArray(trees); // Prints [0] "lychee"
+trees = shorten(trees); // Remueve el último elemento del arreglo.
+printArray(trees); // Imprime [0] "lychee"
 ```
 
-The `expand()` function increases the size of an array. It can expand to a specific size, or if no size is specified, the array's length will be doubled. If an array needs to have many additional elements, it's faster to use `expand()` to double the size than to use `append()` to continually add one value at a time. The following example saves a new `mouseX` value to an array every frame. When the array becomes full, the size of the array is doubled and new `mouseX` values proceed to fill the enlarged array.
+La función `expand()` incrementa el tamaño de un arreglo. Puede expandirse a un tamaño específico, o sí el tamaño no es especificado, el arreglo doblará su tamaño. Si el arreglo necesita muchos elementos adicionales, es más rápido usar `expand()` para doblar su tamaño que usar `append()` para agregar continuamente un valor a la vez. El siguiente ejemplo guarda un nuevo valor de `mouseX` en un arreglo cada cuadro. Cuando el arreglo se llena, el tamaño del arreglo es doblado y nuevos valores de `mouseX` proceden a llenar el arreglo expandido.
 
 ```
-int[] x = new int[100]; // Array to store x-coordinates
-int count = 0; // Positions stored in array
+int[] x = new int[100]; // Arreglo para almacenar las coordenadas en x
+int count = 0; // Posiciónes guardadas
 void setup() {
   size(100, 100);
 }
 void draw() {
-  x[count] = mouseX; // Assign new x-coordinate to the array
+  x[count] = mouseX; // Asigna una nueva coordenada en x al arreglo
   count++; // Increment the counter
-  if (count == x.length) { // If the x array is full,
-    x = expand(x); // double the size of x
-    println(x.length); // Write the new size to the console
+  if (count == x.length) { // Si el arreglo esta lleno
+    x = expand(x); // dobla el tamaño de X
+    println(x.length); // Y escribe el nuevo tamaño en la consola
   }
 }
 ```
 
-Array values cannot be copied with the assignment operator because they are objects. The most common way to copy elements from one array to another is to use special functions or to copy each element individually within a for loop. The `arrayCopy()` function is the most efficient way to copy the entire contents of one array to another. The data is copied from the array used as the first parameter to the array used as the second parameter. Both arrays must be the same length for it to work in the configuration shown here.
+Los valores del arreglo no pueden ser copiados con el operador de asignación puesto que son objetos. La forma más común de copiar elementos de un arreglo a otro es usar funciones especiales o copiar cada elemento individualmente dentro de un ciclo for. La función `arrayCopy()` es la manera más eficiente de copiar el contenido completo de un arreglo en otro. Los datos son copiados del arreglo usado como primer parámetro al arreglo usado como segundo parámetro. Ambos arreglos deben tener la misma longitud para que la configuración mostrada aquí funcione.
+
 
 ```
 String[] north = { "OH", "IN", "MI" };
 String[] south = { "GA", "FL", "NC" };
 
-arrayCopy(north, south); // Copy from north array to south array
-printArray(south); // Prints [0] "OH", [1] "IN", [3] "MI"
+arrayCopy(north, south); // Copia de arreglo north a arreglo south
+printArray(south); // Imprime [0] "OH", [1] "IN", [3] "MI"
 println();
 
 String[] east = { "MA", "NY", "RI" };
-String[] west = new String[east.length]; // Create a new array
+String[] west = new String[east.length]; // Crea un nuevo arreglo
 
-arrayCopy(east, west); // Copy from east array to west array
-printArray(west); // Prints [0] "MA", [1] "NY", [2] "RI"
+arrayCopy(east, west); // Copia de arreglo east a arreglo west
+printArray(west); // Imprime [0] "MA", [1] "NY", [2] "RI"
 ```
 
-New functions can be written to perform operations on arrays, but arrays behave differently than data types such as `int` and `char`. As with objects, when an array is used as a parameter to a function, the address (location in memory) of the array is transferred into the function instead of the actual data. No new array is created, and changes made within the function affect the array used as the parameter.
+Nuevas funciones pueden ser escritas para hacer operaciones sobre los arreglos, pero los arreglos se comportan diferente que tipos de datos como `int` y `char`. Como con los objetos, cuando un arreglo es usado como parámetro de una función, la dirección de memoria es transferida dentro de la función en vez de los datos. No se crea un nuevo arreglo, y cambios creados dentro de la función afectan al arreglo usado como parámetro.
 
-In the following example, the `data[]` array is used as the parameter to `halve()`. The address of `data[]` is passed to the `d[]` array in the `halve()` function. Because the address of `d[]` and `data[]` is the same, they both point to the same data. Changes made to `d[]` on line 14 modify the value of `data[]` in the `setup()` block. The `draw()` function is not used because the calculation is made only once and nothing is drawn to the display window.
+En el siguiente ejemplo, el arreglo `data[]` es usado como parámetro de `halve()`. La dirección de `data[]` es pasada al arreglo `d[]` en la función `halve()`. Puesto que la dirección de `d[]` y `data[]` es la misma, ambos apuntan a los mismos datos. Cambios hechos a `d[]` en la línea 14 modifican el valor de `data[]` durante el bloque `setup()`. La función `draw()` no es usada porque los cálculos son realizados sólo una vez y nada es dibujado en la ventana de despliegue.
 
 ```
 float[] data = { 19.0, 40.0, 75.0, 76.0, 90.0 };
 
 void setup() {
   halve(data);
-  println(data[0]); // Prints "9.5"
-  println(data[1]); // Prints "20.0"
-  println(data[2]); // Prints "37.5"
-  println(data[3]); // Prints "38.0"
-  println(data[4]); // Prints "45.0"
+  println(data[0]); // Imprime "9.5"
+  println(data[1]); // Imprime "20.0"
+  println(data[2]); // Imprime "37.5"
+  println(data[3]); // Imprime "38.0"
+  println(data[4]); // Imprime "45.0"
 }
 void halve(float[] d) {
-  for (int i = 0; i < d.length; i++) { // For each array element,
-    d[i] = d[i] / 2.0; // divide the value by 2
+  for (int i = 0; i < d.length; i++) { // por cada elemento en el arreglo
+    d[i] = d[i] / 2.0; // divide el valor entre 2
   }
 }
 ```
 
-Changing array data within a function without modifying the original array requires some additional lines of code. In the following example, the array is passed into the function as a parameter, a new array is made, the values from the original array are copied in the new array, changes are made to the new array, and finally the modified array is returned.
+Cambiar los datos del arreglo dentro de una función sin modificar el arreglo original requiere algunas líneas de código adicionales. En el siguiente ejemplo, un arreglo es pasado a la función como parámetro, un nuevo arreglo es hecho, los valores del original son copiados en el nuevo arreglo, los cambios son hechos en el nuevo arreglo y finalmente el arreglo modificado es regresado.
 
 ```
 float[] data = { 19.0, 40.0, 75.0, 76.0, 90.0 };
 float[] halfData;
 void setup() {
-  halfData = halve(data); // Run the halve() function
-  println(data[0], halfData[0]); // Prints "19.0, 9.5"
-  println(data[1], halfData[1]); // Prints "40.0, 20.0"
-  println(data[2], halfData[2]); // Prints "75.0, 37.5"
-  println(data[3], halfData[3]); // Prints "76.0, 38.0"
-  println(data[4], halfData[4]); // Prints "90.0, 45.0"
+  halfData = halve(data); // Ejecuta la función halve() f
+  println(data[0], halfData[0]); // Imprime "19.0, 9.5"
+  println(data[1], halfData[1]); // Imprime "40.0, 20.0"
+  println(data[2], halfData[2]); // Imprime "75.0, 37.5"
+  println(data[3], halfData[3]); // Imprime "76.0, 38.0"
+  println(data[4], halfData[4]); // Imprime "90.0, 45.0"
 }
 
 float[] halve(float[] d) {
-  float[] numbers = new float[d.length]; // Create a new array
+  float[] numbers = new float[d.length]; // Crea un nuevo arreglo
   arrayCopy(d, numbers);
-  for (int i = 0; i < numbers.length; i++) { // For each element,
-    numbers[i] = numbers[i] / 2.0; // divide the value by 2
+  for (int i = 0; i < numbers.length; i++) { // Por cada elemento del arreglo
+    numbers[i] = numbers[i] / 2.0; // divide el valor entre 2
   }
-  return numbers; // Return the new array
+  return numbers; // Regresa el nuevo arreglo
 }
 ```
 
 ## Arreglo de Objects (Objetos)
 
-Working with arrays of objects is technically similar to working with arrays of other data types, but it opens the amazing possibility to create as many instances of a custom-designed class as desired. Like all arrays, an array of objects is distinguished from a single object with brackets, the [ and ] characters. However, because each array element is an object, each must be created with the keyword new before it can be used. The steps for working with an array of objects are:
+Trabajar con arreglos de objetos es técnicamente similar a trabajar con arreglos de otros tipos de datos, pero abre la maravillosa posibilidad de crear tantas instancias de una clase diseñada a la medida como se quiera. Como todos los arreglos, un arreglo de objetos se distingue como un solo objeto con paréntesis cuadrados [ y ] . Sin embargo, puesto que cada elemento del arreglo es un objeto, cada uno debe ser creado con la palabra reservada new antes de poder ser usado. Los pasos para trabajar con un arreglo de objetos son:
 
-1. Declare the array
+1. Declarar el arreglo
 
-2. Create the array
+2. Crear el arreglo
 
-3. Create each object in the array
+3. Crear cada objeto en el arreglo
 
-These steps are translated into code in the following example. It uses the Ring class from page 371, so copy it over or retype it. This code creates a `rings[]` array to hold fifty `Ring` objects. Space in memory for the `rings[]` array is allocated in `setup()` and each `Ring` object is created. The first time a mouse button is pressed, the first `Ring` object is turned on and its `x` and `y` variables are assigned to the current values of the cursor. Each time a mouse button is pressed, a new `Ring` is turned on and displayed in the subsequent trip through `draw()`. When the final element in the array has been created, the program jumps back to the beginning of the array to assign new positions to earlier `Rings`.
+Estos pasos son traducidos a código en el siguiente ejemplo. Usa la clase Ring de la página 371, así que copiala. Este código crea un arreglo `rings[]` para contener cincuenta  objetos `Ring` . El espacio en memoria para el arreglo `rings[]` es reservado en `setup()` y cada objeto `Ring` es creado. La primera vez que un botón de mouse es presionado, el primer objeto `Ring` es encendido y sus variables `x` y `y` son asignadas al valor actual del cursor. Cada vez que un botón de mouse es presionado, un nuevo `Ring` es encendido y desplegado en `draw()`. Cuando el elemento final del arreglo ha sido creado, el programa salta al inicio del arreglo para asignar nuevas posiciones a `Rings` previos.
 
 <FixedImage side width={100} height={100}>
 
@@ -524,14 +523,14 @@ These steps are translated into code in the following example. It uses the Ring 
 
 
 ```
-Ring[] rings; // Declare the array
+Ring[] rings; // Declarar el arreglo
 int numRings = 50;
 int currentRing = 0;
 void setup() {
   size(100, 100);
-  rings = new Ring[numRings]; // Create the array
+  rings = new Ring[numRings]; // Crear el arreglo
   for (int i = 0; i < rings.length; i++) {
-    rings[i] = new Ring(); // Create each object
+    rings[i] = new Ring(); // Crear cada objeto
   }
 }
 void draw() {
@@ -541,7 +540,7 @@ void draw() {
     rings[i].display();
   }
 }
-// Click to create a new Ring
+// Click para crear un nuevo Ring
 void mousePressed() {
   rings[currentRing].start(mouseX, mouseY);
   currentRing++;
@@ -550,9 +549,9 @@ void mousePressed() {
   }
 }
 class Ring {
-  float x, y;          // X-coordinate, y-coordinate
-  float diameter;      // Diameter of the ring
-  boolean on = false;  // Turns the display on and off
+  float x, y;          // Coordenada x, Coordenada y
+  float diameter;      // Diametro de la figura
+  boolean on = false;  // Enciende o apaga el despliegue en pantalla
 
   void start(float xpos, float ypos) {
     x = xpos;
@@ -582,12 +581,12 @@ class Ring {
   }
 }
 ```
-
-The next example requires the `Spot` class from page 363. Unlike the prior example, variable values are generated within the `setup()` and are passed into each array elements through the object's constructor. Each element in the array starts with a unique set of x-coordinate, diameter, and speed values. Because the number of objects is dependent on the width of the display window, it is not possible to create the array until the program knows how wide it will be. Therefore, the array is declared outside of `setup()` to make it global (see p. 12), but it is created inside setup, after the width of the display window is defined.
+El siguiente ejemplo requiere la clase `Spot` de la página 363. A diferencia del ejemplo previo, los valores de las variables son generados dentro del `setup()` y son pasados a cada elemento de los arreglos a través del constructor del objeto. Cada elemento en el arreglo empieza con un conjunto único de coordenada en x, diametro y velocidad. Puesto que el número de objetos es dependiente de el ancho de la ventana de despliegue en la pantalla, no es posible crear el arreglo hasta que el programa sepa que tan ancha será la pantalla. Por lo tanto, el arreglo es declarado afuera de `setup()` para hacerlo global (Ver p. 12), pero es creado adentro del `setup()`, después de que la ventana de despliegue es definida.
 
 <FixedImage center width={700} height={100}>
 
 ![](./28_25_1.png)
+
 
 </FixedImage>
 
@@ -599,16 +598,16 @@ The next example requires the `Spot` class from page 363. Unlike the prior examp
 
 
 ```
-Spot[] spots; // Declare array
+Spot[] spots; // Declarar arreglo
 void setup() {
   size(700, 100);
-  int numSpots = 70; // Number of objects
-  int dia = width/numSpots; // Calculate diameter
-  spots = new Spot[numSpots]; // Create array
+  int numSpots = 70; // Número de objetos
+  int dia = width/numSpots; // Calcular diametro
+  spots = new Spot[numSpots]; // Crear arreglo
   for (int i = 0; i < spots.length; i++) {
     float x = dia/2 + i*dia;
     float rate = random(0.1, 2.0);
-    // Create each object
+    // Crear cada objeto
     spots[i] = new Spot(x, 50, dia, rate);
   }
   noStroke();
@@ -618,15 +617,15 @@ void draw() {
   rect(0, 0, width, height);
   fill(255);
   for (int i=0; i < spots.length; i++) {
-    spots[i].move(); // Move each object
-    spots[i].display(); // Display each object
+    spots[i].move(); // Mover cada objeto
+    spots[i].display(); // Desplegar cada objeto
   }
 }
 class Spot {
-  float x, y;         // X-coordinate, y-coordinate
-  float diameter;     // Diameter of the circle
-  float speed;        // Distance moved each frame
-  int direction = 1;  // Direction of motion (1 is down, -1 is up)
+  float x, y;         // Coordenada x, coordenada y
+  float diameter;     // Diametro del circulo
+  float speed;        // Distancia que se mueve cada cuadro
+  int direction = 1;  // Dirección de movimiento(1 es abajo, -1 es arriba)
 
   // Constructor
   Spot(float xpos, float ypos, float dia, float sp) {
@@ -648,8 +647,7 @@ class Spot {
   }
 }
 ```
-
-Working with arrays of objects gives us the opportunity to access each object with a code structure called an enhanced for loop to simplify the code. Unlike the for loop used previously in this chapter, the enhanced loop automatically goes through each element in an array one by one without needing to define the start and stop conditions. An enhanced loop is structured by stating the data type of the array elements, a variable name to assign to each element of the array, and the name of the array. For instance, the for loop in code 28-25 is rewritten like this:
+Trabajar con arreglos nos da la oportunidad de acceder a cada objeto con una estructura de código llamada ciclo for mejorado que simplifica el código.  A diferencia del ciclo for usado previamente, el ciclo mejorado recorre cada elemento del arrego uno por uno sin necesidad de definir condiciones de inicio o fin. Un ciclo mejorado se estructura a través de declarar el tipo de datos de los elementos del arreglo, un nombre de variable a asignar a cada elemento del arreglo y el nombre del arreglo. Por ejemplo, el ciclo for del ejemplo anterior es reescrito de la siguiente forma:
 
 ```
 for (Spot s : spots) {
@@ -657,12 +655,11 @@ for (Spot s : spots) {
   s.display();
 }
 ```
+Cada objeto en el arreglo es asignado a la variable `s`, así que la primera vez a través del ciclo, el codigo `s.move()` ejecuta el método `move()` para el primer elemento del arreglo, y la siguiente vez dentro del ciclo `s.move()` lo hará para el segundo elemento, etc. Las dos declaraciones dentro del bloque se ejecutarán para cada elemento del arreglo hasta el fin del mismo. Esta forma de accesar cada elemento en un arreglo de objetos se usará en el libro.
 
-Each object in the array is in turn assigned to the variable `s`, so the first time through the loop, the code `s.move()` runs the `move()` method for the first element in the array, then the next time through the loop, `s.move()` runs the `move()` method for the second element in the array, etc. The two statements inside the block run for each element of the array until the end of the array. This way of accessing each element in an array of objects is used for the remainder of the book.
+## Arreglos Bidimensionales
 
-## Arreglos Bi-dimensionales
-
-Data can also be stored and retrieved from arrays with more than one dimension. Using the example from the beginning of this chapter, the data points for the chart are put into a 2D array, where the second dimension adds a gray value:
+Los datos también pueden ser almacenados y recuperados de arreglos con más de una dimensión. Usando el ejemplo del principio del tutorial, los puntos de datos para la gráfica son puestos en un arreglo 2D, donde la segunda dimensión agrega un valor de grises:
 
 <FixedImage center width={500} height={70}>
 
@@ -670,20 +667,21 @@ Data can also be stored and retrieved from arrays with more than one dimension. 
 
 </FixedImage>
 
-A 2D array is essentially a list of 1D arrays. It must first be declared, then created, and then the values can be assigned just as in a 1D array. The following syntax converts the diagram above into to code:
+Un arreglo 2D es esencialmente una lista de arreglos 1D. Primero tiene que ser declarado, después creado , y entonces los valores pueden ser asignados, igual que en un arreglo 1D. La siguiente sintaxis convierte el diagrama de arriba en código:
+
 
 ```
 int[][] x = { {50, 0}, {61,204}, {83,51}, {69,102}, {71, 0},
 {50,153}, {29, 0}, {31,51}, {17,102}, {39,204} };
 
-println(x[0][0]); // Prints "50"
-println(x[0][1]); // Prints "0"
-println(x[4][2]); // ERROR! This element is outside the array
-println(x[3][0]); // Prints "69"
-println(x[9][1]); // Prints "204"
+println(x[0][0]); // Imprime "50"
+println(x[0][1]); // Imprime "0"
+println(x[4][2]); // ERROR! Este elemento esta afuera del arreglo
+println(x[3][0]); // Imprime "69"
+println(x[9][1]); // Imprime "204"
 ```
 
-This sketch shows how it all fits together.
+Este sketch muestra como todo se ensambla.
 
 <FixedImage side width={100} height={100}>
 
@@ -708,4 +706,4 @@ void draw() {
 }
 ```
 
-It is possible to continue and make 3D and 4D arrays by extrapolating these techniques. However, multidimensional arrays can be confusing, and often it is a better idea to maintain multiple 1D or 2D arrays.
+Es posible continuar y hacer arreglos en 3D y 4D al extrapolar estas técnicas. Sin embargo, los arreglos multidimensionales pueden ser confusos, y generalmente es mejor idea mantener múltiples arreglos en 1D o 2D.
