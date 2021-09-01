@@ -3,7 +3,7 @@ import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 
-import { slugify } from '../../utils';
+import { slugify, toIntlId } from '../../utils';
 
 import * as css from './ReferenceList.module.css';
 import * as grid from '../../styles/grid.module.css';
@@ -18,7 +18,8 @@ const ReferenceList = ({ tree, library }) => {
             className={classnames(grid.col, css.category)}
             id={slugify(category)}>
             {intl.formatMessage({
-              id: `refCat${category.replace(/ /g, '')}`
+              id: `refCat${toIntlId(category)}`,
+              defaultMessage: category
             })}
           </h2>
           {Object.keys(tree[category]).map((subcategory) => {
@@ -32,7 +33,8 @@ const ReferenceList = ({ tree, library }) => {
                     {subcategory && (
                       <h3 id={slugify(category, subcategory)}>
                         {intl.formatMessage({
-                          id: `refSubcat${subcategory.replace(/ /g, '')}`
+                          id: `refSubcat${toIntlId(subcategory)}`,
+                          defaultMessage: subcategory
                         })}
                       </h3>
                     )}

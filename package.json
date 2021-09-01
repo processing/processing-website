@@ -82,7 +82,7 @@
     "title-case": "^3.0.3"
   },
   "devDependencies": {
-    "@designsystemsinternational/static": "^3.3.10",
+    "@designsystemsinternational/static": "^3.3.12",
     "fast-glob": "^3.2.7",
     "fs-extra": "^10.0.0",
     "inquirer": "^8.1.2",

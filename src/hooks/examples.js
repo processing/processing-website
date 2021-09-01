@@ -84,19 +84,6 @@ export const useRelatedExamples = (examples, related) => {
 };
 
 /**
-  Hook to sort a list of .pde files so the file with the same name
-  of the examples is first in the array.
-**/
-export const useOrderedPdes = (name, nodes) => {
-  return useMemo(() => {
-    const main = nodes.find((pde) => pde.name === name);
-    const rest = nodes.filter((pde) => pde.name !== name);
-    rest.unshift(main);
-    return rest;
-  }, [name, nodes]);
-};
-
-/**
   Hook to prepare the trail used for the breadcumbs
   Example: Learn > Examples > [Category] > [Subcategory]
 **/

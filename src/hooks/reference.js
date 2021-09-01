@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useIntl } from 'react-intl';
 
-import { titleCase, slugify } from '../utils';
+import { titleCase, slugify, toIntlId } from '../utils';
 import { referencePath, pathToName, examplePath } from '../utils/paths';
 
 /**
@@ -108,13 +108,12 @@ export const usePreparedExamples = (pdes, images) => {
     const prepared = [];
     for (let i = 0; i < pdes.length; i++) {
       const example = {
-        code: pdes[i].node.internal.content
+        code: pdes[i].code
       };
-
       if (images) {
         for (let j = 0; j < images.length; j++) {
-          if (images[j].node.name === pdes[i].node.name) {
-            example.image = images[j].node;
+          if (images[j].name === pdes[i].name) {
+            example.image = images[j];
             break;
           }
         }
@@ -187,9 +186,8 @@ export const useTrail = (libraryName, category, subcategory, classanchor) => {
         trail.push({
           slug: sectionTrail.slug + '#' + slugify(category),
           label: intl.formatMessage({
-            id: `refCat${titleCase(category)
-              .replace(/_/g, ' ')
-              .replace(/ /g, '')}`
+            id: `refCat${toIntlId(category)}`,
+            defaultMessage: category
           })
         });
       }
@@ -198,9 +196,8 @@ export const useTrail = (libraryName, category, subcategory, classanchor) => {
         trail.push({
           slug: sectionTrail.slug + '#' + slugify(category, subcategory),
           label: intl.formatMessage({
-            id: `refSubcat${titleCase(subcategory)
-              .replace(/_/g, ' ')
-              .replace(/ /g, '')}`
+            id: `refSubcat${toIntlId(subcategory)}`,
+            defaultMessage: subcategory
           })
         });
       }

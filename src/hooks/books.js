@@ -35,7 +35,8 @@ export const usePreparedBooks = (books, images) => {
 
       if (preparedBook.buy && preparedBook.buy !== '') {
         preparedBook.buyList = preparedBook.buy.split(',').map((ord) => {
-          const [label, link] = ord.split('-');
+           // split on first occurence of "-" as some links contain dashes
+          const [label, link] = ord.split(/-(.+)/);
           return { label, link };
         });
       }
