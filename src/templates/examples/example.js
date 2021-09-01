@@ -41,8 +41,6 @@ const ExampleTemplate = ({ data, pageContext }) => {
   const { name, related } = pageContext;
   const { image, allExamples, relatedImages, liveSketch } = data;
 
-  console.log(data.pdes.nodes);
-
   const example = usePreparedExample(data.example);
   const pdes = useOrderedPdes(name, data.pdes.nodes);
   const examples = usePreparedExamples(allExamples.nodes, relatedImages.nodes);

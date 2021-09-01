@@ -51,15 +51,6 @@ exports.onCreateNode = ({ node, actions, getNode, loadNodeContent }) => {
       node
     });
   }
-
-  // Load content of .pde files into the node
-  // if (node.internal.mediaType === `text/x-processing`) {
-  //   createNodeField({
-  //     name: `name`,
-  //     node,
-  //     content: loadNodeContent(node)
-  //   });
-  // }
 };
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
