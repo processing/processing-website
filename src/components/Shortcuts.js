@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
 
-import { slugify } from '../utils';
+import { slugify, toIntlId } from '../utils';
 
 import * as css from './Shortcuts.module.css';
 import * as grid from '../styles/grid.module.css';
@@ -21,7 +21,8 @@ const Shortcuts = ({ categories }) => {
             <div className={css.line} />
             <Link className={css.itemLink} to={`#${slugify(category)}`}>
               {intl.formatMessage({
-                id: `refCat${category.replace(/_/g, ' ').replace(/ /g, '')}`
+                id: `refCat${toIntlId(category)}`,
+                defaultMessage: category
               })}
             </Link>
           </li>

@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useIntl } from 'react-intl';
 
-import { titleCase, slugify } from '../utils';
+import { titleCase, slugify, toIntlId } from '../utils';
 import { referencePath, pathToName, examplePath } from '../utils/paths';
 
 /**
@@ -187,9 +187,8 @@ export const useTrail = (libraryName, category, subcategory, classanchor) => {
         trail.push({
           slug: sectionTrail.slug + '#' + slugify(category),
           label: intl.formatMessage({
-            id: `refCat${titleCase(category)
-              .replace(/_/g, ' ')
-              .replace(/ /g, '')}`
+            id: `refCat${toIntlId(category)}`,
+            defaultMessage: category
           })
         });
       }
@@ -198,9 +197,8 @@ export const useTrail = (libraryName, category, subcategory, classanchor) => {
         trail.push({
           slug: sectionTrail.slug + '#' + slugify(category, subcategory),
           label: intl.formatMessage({
-            id: `refSubcat${titleCase(subcategory)
-              .replace(/_/g, ' ')
-              .replace(/ /g, '')}`
+            id: `refSubcat${toIntlId(subcategory)}`,
+            defaultMessage: subcategory
           })
         });
       }

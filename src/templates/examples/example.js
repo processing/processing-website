@@ -212,6 +212,7 @@ export const query = graphql`
         sourceInstanceName: { eq: "examples" }
         relativeDirectory: { eq: $relDir }
         extension: { eq: "pde" }
+        fields: { lang: { eq: $locale } }
       }
     ) {
       nodes {
