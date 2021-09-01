@@ -100,75 +100,76 @@ for (int i = 0; i < x.length; i++) {
 
 ## Definir un Arreglo
 
-Arrays are declared similarly to other data types, but they are distinguished with brackets, [ and ]. When an array is declared, the type of data it stores must be specified. (Each array can store only one type of data.) After the array is declared, it must be created with the keyword new, just like working with objects. This additional step allocates space in the computer's memory to store the array's data. After the array is created, the values can be assigned. There are different ways to declare, create, and assign arrays. In the following examples that explain these differences, an array with five elements is created and filled with the values 19, 40, 75, 76, and 90. Note the different way each technique for creating and assigning elements of the array relates to `setup()`.
+Los arreglos son declarados de manera similar a otros tipos de datos, pero se distinguen por los paréntesis cuadrados [ y ]. Cuando un arreglo es declarado, el tipo de dato que almacena debe ser especificado (Cada arreglo sólo puede almacenar un tipo de dato). Una vez declarado, debe ser creado usando la palabra reservada new, igual que al trabajar con objetos. Este paso adicional reserva espacio en la memoria de la computadora para almacenar los datos del arreglo. Después de que el arreglo es creado, los valores pueden ser asignados. Hay diversas formas de declarar, crear y asignar arreglos. En los siguientes ejemplos explicaremos las diferencias. Un arreglo con cinco elementos es creado con valores 19, 40, 75, 76, and 90. Nota como las diferentes técnicas para crear y asignar elementos se relacionan con `setup()`.
 
 ```
-int[] data; // Declare
+int[] data; // Declarar
 
 void setup() {
   size(100, 100);
-  data = new int[5]; // Create
-  data[0] = 19; // Assign
+  data = new int[5]; // Crear
+  data[0] = 19; // Asignar
   data[1] = 40;
   data[2] = 75;
   data[3] = 76;
   data[4] = 90;
 }
 
-int[] data = new int[5]; // Declare, create
+int[] data = new int[5]; // Declarar, crear
 
 void setup() {
   size(100, 100);
-  data[0] = 19; // Assign
+  data[0] = 19; // Asignar
   data[1] = 40;
   data[2] = 75;
   data[3] = 76;
   data[4] = 90;
 }
 
-int[] data = { 19, 40, 75, 76, 90 }; // Declare, create, assign
+int[] data = { 19, 40, 75, 76, 90 }; // Declarar, crear, asignar
 
 void setup() {
   size(100, 100);
 }
 ```
 
-Although each of the three previous examples defines an array in a different way, they are all equivalent. They show the flexibility allowed in defining the array data. Sometimes, all the data a program will use is known at the start and can be assigned immediately. At other times, the data is generated while the code runs. Each sketch can be approached differently using these techniques.
+Aunque cada una de los tres ejemplos previos define un arreglo de diferente manera, todos son equivalentes. Ellos muestran la flexibilidad permitida en definir los datos de un arreglo. Algunas veces, todos los datos que un programa usará son conocidos al principio y pueden ser asignados inmediatamente. En otras ocasiones, los datos son generados mientras el código se ejecuta. Cada sketch debe ser priorizado de diferente manera usando estas técnicas.
 
-Arrays can also be used in programs that don't include a `setup()` and `draw()`, but the three steps to declare, create, and assign are needed. If arrays are not used with these functions, they can be created and assigned in the ways shown in the following examples.
+Los arreglos pueden también ser usados en programas que no incluyen `setup()` o `draw()`, pero los tres pasos de declarar, crear y asignar son necesarios. Si los arreglos no son usados con estas funciones, pueden ser creados y asignados en las formas mostradas en los siguientes ejemplos.
 
 ```
-int[] data; // Declare
+int[] data; // Declarar
 
-data = new int[5]; // Create
+data = new int[5]; // Crear
 
-data[0] = 19; // Assign
+data[0] = 19; // Asignar
 data[1] = 40;
 data[2] = 75;
 data[3] = 76;
 data[4] = 90;
 
-int[] data = new int[5]; // Declare, create
+int[] data = new int[5]; // Declarar, crear
 
-data[0] = 19; // Assign
+data[0] = 19; // Asignar
 
 data[1] = 40;
 data[2] = 75;
 data[3] = 76;
 data[4] = 90;
 
-int[] data = { 19, 40, 75, 76, 90 }; // Declare, create, assign
+int[] data = { 19, 40, 75, 76, 90 }; // Declarar, crear, asignar
 ```
 
 ## Leer elementos de un Arreglo
+Después de que un arreglo es definido y sus valores asignados, sus datos pueden ser accesados y usados dentro del código. Un elemento del arreglo es accesado con el nombre de la variable del arreglo, seguido por paréntesis cuadrados rodeando la posición del elemento a leer.
 
-After an array is defined and assigned values, its data can be accessed and used within the code. An array element is accessed with the name of the array variable, followed by brackets around the element position to read.
 
 <FixedImage side width={100} height={100}>
 
 ![](./28_09.png)
 
 </FixedImage>
+
 
 ```
 int[] data = { 19, 40, 75, 76, 90 };
@@ -185,9 +186,9 @@ Remember, the first element in the array is in the 0 position. If you try to acc
 ```
 int[] data = { 19, 40, 75, 76, 90 };
 
-println(data[0]); // Prints "19" to the console
-println(data[2]); // Prints "75" to the console
-println(data[5]); // ERROR! The last element of the array is 4
+println(data[0]); // Imprime "19" en la consola
+println(data[2]); // Imprime "75" en la consola
+println(data[5]); // ERROR! El último elemento del arreglo es 4
 ```
 
 The length field stores the number of elements in an array. This field is stored within the array and is accessed with the dot operator (p. 363–379). The following example demonstrates how to utilize it.
@@ -197,9 +198,9 @@ int[] data1 = { 19, 40, 75, 76, 90 };
 int[] data2 = { 19, 40 };
 int[] data3 = new int[127];
 
-println(data1.length); // Prints "5" to the console
-println(data2.length); // Prints "2" to the console
-println(data3.length); // Prints "127" to the console
+println(data1.length); // Imprime "5" en la consola
+println(data2.length); // Imprime "2" en la consola
+println(data3.length); // Imprime "127" en la consola
 ```
 
 Usually, a for loop is used to access array elements, especially with large arrays. The following example draws the same lines as code 28-09 but uses a for loop to iterate through every value in the array.
@@ -235,7 +236,7 @@ void setup() {
   size(100, 100);
   sineWave = new float[width];
   for (int i = 0; i < sineWave.length; i++) {
-    // Fill array with values from sin()
+    // Llena el arreglo con valores de sin() (seno)
     float r = map(i, 0, width, 0, TWO_PI);
     sineWave[i] = abs(sin(r));
   }
@@ -243,7 +244,7 @@ void setup() {
 
 void draw() {
   for (int i = 0; i < sineWave.length; i++) {
-    // Set stroke values to numbers read from array
+    //Define los valores de pintado de acuerdo a lo que lee del arreglo
     stroke(sineWave[i] * 255);
     line(i, 0, i, height);
   }
@@ -296,7 +297,7 @@ void draw() {
 }
 ```
 
-Apply the same code simultaneously to the `mouseX` and `mouseY` values to store the position of the cursor. Displaying these values each frame creates a trail behind the cursor.
+Aplica el mismo código simultáneamente a los valores `mouseX` y `mouseY` para almacenar la posición del cursor. Mostrar estos valores cada cuadro crea un rastro detrás del cursor.
 
 <FixedImage side width={100} height={100}>
 
@@ -330,15 +331,15 @@ void setup() {
 
 void draw() {
   background(0);
-  // Shift the values to the right
+  // Desplaza los valores a la derecha
   for (int i = num-1; i > 0; i--) {
     x[i] = x[i-1];
     y[i] = y[i-1];
   }
-  // Add the new values to the beginning of the array
+  //Agrega nuevos valores al inicio del arreglo
   x[0] = mouseX;
   y[0] = mouseY;
-  // Draw the circles
+  // Dibuja los circulos
   for (int i = 0; i < num; i++) {
     ellipse(x[i], y[i], i/2.0, i/2.0);
   }
@@ -363,10 +364,10 @@ void draw() {
   background(0);
   x[indexPosition] = mouseX;
   y[indexPosition] = mouseY;
-  // Cycle between 0 and the number of elements
+  // Alterna entre 0 y el número de elementos
   indexPosition = (indexPosition + 1) % num;
   for (int i = 0; i < num; i++) {
-    // Set the array position to read
+    // Fija la posición del arreglo a leer
     int pos = (indexPosition + i) % num;
     float radius = (num-i) / 2.0;
     ellipse(x[pos], y[pos], radius, radius);
@@ -376,25 +377,25 @@ void draw() {
 
 ##  Funciones para Arreglos
 
-Processing provides a group of functions that assist in managing array data. Only four of these functions are introduced here, but more are explained in the Processing reference included with the software.
+Processing provee un grupo de funciones que ayudan a manejar los datos en los arreglos. Solo cuatro de esas funciones son presentadas aquí, pero más son explicadas en la referencia de Processing incluida con el software.
 
-The `append()` function expands an array by one element, adds data to the new position, and returns the new array:
+La función `append()` expande un arreglo por un elemento, agrega los datos en la nueva posición, y regresa el nuevo arreglo.
 
 ```
 String[] trees = { "ash", "oak" };
 
-append(trees, "maple"); // INCORRECT! Does not change the array
+append(trees, "maple"); // INCORRECTO! No cambia el arreglo
 printArray(trees); // Prints [0] "ash", [1] "oak"
 println();
-trees = append(trees, "maple"); // Add "maple" to the end
+trees = append(trees, "maple"); // Agrega "maple" al final
 printArray(trees); // Prints [0] "ash", [1] "oak", [2] "maple"
 println();
-// Add "beech" to the end of the trees array, and creates a new
-// array to store the change
+// Agrega "beech" al final del arreglo de árboles, y crea un nuevo
+// arreglo para almacenar el cambio
 
 String[] moretrees = append(trees, "beech");
 
-// Prints [0] "ash", [1] "oak", [2] "maple", [3] "beech"
+// Imprime [0] "ash", [1] "oak", [2] "maple", [3] "beech"
 printArray(moretrees);
 ```
 
