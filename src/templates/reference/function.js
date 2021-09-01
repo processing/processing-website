@@ -39,10 +39,8 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
   const parent = data?.parent?.childJson;
   const entry = data?.json?.childJson;
 
-  console.log(data.pdes);
-
   const items = usePreparedItems(data.items.nodes, libraryName);
-  const examples = usePreparedExamples(data.pdes.edges, data.images.edges);
+  const examples = usePreparedExamples(data.pdes.nodes, data.images.nodes);
   const tree = useTree(items);
 
   const inUse = usePreparedList(entry?.inUse, libraryName, true, true);
@@ -71,7 +69,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
             : intl.formatMessage({ id: 'libraries' })
         }
         description={entry?.description}
-        img={getImage(data.images.edges[0]?.node)}
+        img={getImage(data.images.nodes[0])}
       />
 
       <div className={grid.grid}>
@@ -206,27 +204,23 @@ export const query = graphql`
         extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
       }
     ) {
-      edges {
-        node {
-          name
-          extension
-          childImageSharp {
-            gatsbyImageData(width: 400)
-          }
+      nodes {
+        name
+        extension
+        childImageSharp {
+          gatsbyImageData(width: 400)
         }
       }
     }
     pdes: allFile(
       filter: { relativeDirectory: { eq: $relDir }, extension: { eq: "pde" } }
     ) {
-      edges {
-        node {
-          name
-          childRawCode {
-            content
-          }
-          extension
+      nodes {
+        name
+        childRawCode {
+          content
         }
+        extension
       }
     }
     items: allFile(

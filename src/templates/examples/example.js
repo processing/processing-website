@@ -39,8 +39,6 @@ const ExampleTemplate = ({ data, pageContext }) => {
   const intl = useIntl();
   const { locale } = useLocalization();
 
-  console.log(pageContext);
-
   const { name, related } = pageContext;
   const { image, allExamples, relatedImages, liveSketch } = data;
 
