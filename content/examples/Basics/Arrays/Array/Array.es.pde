@@ -6,9 +6,9 @@
  * posición en el arreglo. Los arreglos son basados en cero, lo que
  * significa que el primer elemento del arreglo es [0], el segundo
  * elemento es [1], y así sucesivamente.
- * In this example, an array named "coswave" is created and
- * filled with the cosine values. This data is displayed three
- * separate ways on the screen.
+ * En este ejemplo, un arreglo llamado "coswave" es creado y
+ * llenado con valores de coseno. Estos datos son desplegados en 3
+ * distintas formas en la pantalla.
  */
 
 

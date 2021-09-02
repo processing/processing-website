@@ -89,11 +89,27 @@ export const useRelatedExamples = (examples, related) => {
   of the examples is first in the array.
 **/
 export const useOrderedPdes = (name, nodes) => {
+  const locale = useIntl().locale;
+  console.log(`locale actual ${locale}`)
   return useMemo(() => {
     const main = nodes.find((pde) => pde.name === name);
     const rest = nodes.filter((pde) => pde.name !== name);
+
     rest.unshift(main);
-    return rest;
+    let pdeinlocale =[]
+    if (locale!==`en`){
+       pdeinlocale = rest.filter ( (pde) => pde.name.includes(`.${locale}`)) ;
+    }else{//TODO check this logic
+      console.log("quitando los que tienen locale")
+      pdeinlocale = rest.filter ( (pde) => !pde.name.includes(`.`)) ;
+    }
+    console.log(`rest`)
+    console.log(rest)
+    console.log(`locale`)
+    console.log(pdeinlocale)
+
+    //return rest;
+    return pdeinlocale;
   }, [name, nodes]);
 };
 
@@ -112,9 +128,9 @@ export const useTrail = (example) => {
     if (example) {
    //   console.log( `Hay ejemplo`);
       if (example.category) {
-        console.log( `hook examples categoria ${example.category.toString()}`);
+      //  console.log( `hook examples categoria ${example.category.toString()}`);
         const category = intl.formatMessage({ id: example.category });
-        console.log( `hook examples categoria INTL ${category}`);
+       // console.log( `hook examples categoria INTL ${category}`);
         trail.push({
           slug: `/examples#${slugify(example.category)}`,
           label: category
@@ -122,9 +138,9 @@ export const useTrail = (example) => {
       }
       if (example.subcategory) {
 
-        console.log( `subcategoria ${example.subcategory.toString()}`);
+     //   console.log( `subcategoria ${example.subcategory.toString()}`);
         const subcategory = intl.formatMessage({ id: example.subcategory });
-        console.log( `subcategoria INTL ${subcategory}`);
+       // console.log( `subcategoria INTL ${subcategory}`);
         trail.push({
           slug: `/examples#${slugify(example.category, example.subcategory)}`,
           label: subcategory

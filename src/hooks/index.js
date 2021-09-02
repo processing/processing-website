@@ -47,7 +47,7 @@ export const useTree = (items, order) => {
       if (!tree[item.category][item.subcategory]) {
         tree[item.category][item.subcategory] = [];
       }
-      console.log(`category ${item.category} subcategory ${item.subcategory}`)
+      // console.log(`category ${item.category} subcategory ${item.subcategory}`)
       tree[item.category][item.subcategory].push(item);
     }
 /*
