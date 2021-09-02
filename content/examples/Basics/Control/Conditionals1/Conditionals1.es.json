@@ -1,9 +1,9 @@
 {
   "name": "Conditionals1",
-  "title": "Conditionals 1",
+  "title": "Condicionales 1",
   "author": "",
   "level": "Principiante",
   "order": "2",
-  "description": "Las condiciones son como preguntas. \n  They allow a program to decide to take one action if \n  the answer to a question is \"true\" or to do another action\n  if the answer to the question is \"false.\"<br /> \n  The questions asked within a program are always logical\n  or relational statements. For example, if the variable 'i' is \n  equal to zero then draw a line.",
+  "description": "Las condiciones son como preguntas. \n Ellas permiten al programa decidir una acción si \n la respuesta a una pregunta es \"true\" (verdadera) o realizar otra acción \n si la respuesta es \"false.\" (false) <br /> \n  Las preguntas hechas son siempre sentencias lógicas\n  o relacionales. Por ejemplo, si la variable 'i' es \n igual a cero entonces dibuja una línea.",
   "featured": ["if"]
 }
