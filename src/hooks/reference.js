@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useIntl } from 'react-intl';
 
-import { titleCase, slugify } from '../utils';
+import { titleCase, slugify, toIntlId } from '../utils';
 import { referencePath, pathToName, examplePath } from '../utils/paths';
 
 /**
@@ -112,13 +112,13 @@ export const usePreparedExamples = (pdes, images) => {
     const prepared = [];
     for (let i = 0; i < pdes.length; i++) {
       const example = {
-        code: pdes[i].node.internal.content
+        code: pdes[i].code
       };
 
       if (images) {
         for (let j = 0; j < images.length; j++) {
-          if (images[j].node.name === pdes[i].node.name) {
-            example.image = images[j].node;
+          if (images[j].name === pdes[i].name) {
+            example.image = images[j];
             break;
           }
         }

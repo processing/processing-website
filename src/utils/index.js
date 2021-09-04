@@ -40,6 +40,12 @@ export const slugify = (...titles) =>
     .replace(/(\s|_)/g, '-')
     .toLowerCase();
 
+/**
+  Used to convert a string to an id for intl
+  "Data Something" > "DataSomething"
+**/
+export const toIntlId = (str) => str.replace(/ /g, '');
+
 export const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -98,25 +104,21 @@ export const localStorage =
   Returns a copy of the object with the keys sorted based on the array provided.
 **/
 export const sortObject = (obj, order) => {
-  console.log("objeto a ordenar")
-  console.log(obj)
-  console.log("orden ")
-  console.log(order)
-  if( obj ) {
-    const keys = Object.keys(obj).sort((a, b) => {
-      let aidx = order.indexOf(a);
-      let bidx = order.indexOf(b);
-      // Ensure keys not in order are sorted last
-      if (aidx === -1) aidx = 9999;
-      if (bidx === -1) bidx = 9999;
-      return aidx - bidx;
-    });
-    const copy = {};
-    for (let i = 0; i < keys.length; i++) {
-      copy[keys[i]] = obj[keys[i]];
-    }
-    return copy;
+  const keys = obj
+    ? Object.keys(obj).sort((a, b) => {
+        let aidx = order.indexOf(a);
+        let bidx = order.indexOf(b);
+        // Ensure keys not in order are sorted last
+        if (aidx === -1) aidx = 9999;
+        if (bidx === -1) bidx = 9999;
+        return aidx - bidx;
+      })
+    : [];
+  const copy = {};
+  for (let i = 0; i < keys.length; i++) {
+    copy[keys[i]] = obj[keys[i]];
   }
+  return copy;
 };
 
 /**
