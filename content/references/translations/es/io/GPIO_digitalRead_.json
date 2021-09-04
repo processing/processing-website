@@ -1,0 +1,13 @@
+{
+  "brief": "Returns the value of an input pin",
+  "related": [],
+  "name": "digitalRead()",
+  "description": "Returns the value of an input pin, which is either GPIO.HIGH (1) \n  or GPIO.LOW (0)<br/>\n  <br/>\n  You need to set the pin to input by calling <a href=\"GPIO_pinMode_.html\">\n  pinMode()</a> before calling this function.",
+  "syntax": [".digitalRead(pin)"],
+  "returns": "int",
+  "type": "method",
+  "category": "GPIO",
+  "subcategory": "",
+  "classanchor": "GPIO",
+  "parameters": [{ "name": "pin", "description": "GPIO pin", "type": ["int"] }]
+}

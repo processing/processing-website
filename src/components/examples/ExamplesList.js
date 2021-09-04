@@ -31,7 +31,7 @@ const ExamplesList = ({ tree }) => {
             <div className={css.toggleButton}>
               <ToggleButton
                 defaultLabel="A-Z"
-                pressedLabel="By level"
+                pressedLabel="Por nivel level"
                 ariaLabel="Sort by level"
                 toggle={curated}
                 onToggle={handleToggle}
@@ -66,6 +66,10 @@ const ExamplesList = ({ tree }) => {
 };
 
 export const ExampleItem = memo(({ node, variant }) => {
+  const intl = useIntl();
+  const tradu = intl.formatMessage( {id:node.name});
+  console.log (`tradu ${ node.name } trad  ${tradu}`);
+
   return (
     <li className={classnames(grid.col, css.item, { [css[variant]]: variant })}>
       <Link to={node.path}>

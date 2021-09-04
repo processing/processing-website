@@ -50,7 +50,7 @@ export const useTree = (items, order) => {
       // console.log(`category ${item.category} subcategory ${item.subcategory}`)
       tree[item.category][item.subcategory].push(item);
     }
-/*
+
     if (order) {
       // Sort main categories
       const keys = Object.keys(order);
@@ -59,7 +59,7 @@ export const useTree = (items, order) => {
       for (let i = 0; i < keys.length; i++) {
         tree[keys[i]] = sortObject(tree[keys[i]], order[keys[i]]);
       }
-    }*/
+    }
 
     return tree;
   }, [items, order]);

@@ -12,7 +12,7 @@
   "parameters": [
     {
       "name": "n",
-      "description": "number to compute",
+      "description": "Número a calcular",
       "type": ["float", "int"]
     }
   ]

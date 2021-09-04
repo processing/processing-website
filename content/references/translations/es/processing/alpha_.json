@@ -1,13 +1,13 @@
 {
-  "brief": "Extrae el valor alfa de un color",
+  "brief": "Extracts the alpha value from a color",
   "related": ["red_", "green_", "blue_", "hue_", "saturation_", "brightness_"],
   "name": "alpha()",
-  "description": "Extrae el valor alfa  de un color.",
+  "description": "Extracts the alpha value from a color.",
   "syntax": ["alpha(rgb)"],
   "returns": "float",
   "type": "function",
   "category": "color",
-  "subcategory": "creating_reading",
+  "subcategory": "creating & reading",
   "parameters": [
     {
       "name": "rgb",

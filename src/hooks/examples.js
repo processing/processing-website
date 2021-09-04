@@ -128,9 +128,9 @@ export const useTrail = (example) => {
     if (example) {
    //   console.log( `Hay ejemplo`);
       if (example.category) {
-      //  console.log( `hook examples categoria ${example.category.toString()}`);
+        console.log( `hook examples categoria ${example.category.toString()}`);
         const category = intl.formatMessage({ id: example.category });
-       // console.log( `hook examples categoria INTL ${category}`);
+        console.log( `hook examples categoria INTL ${category}`);
         trail.push({
           slug: `/examples#${slugify(example.category)}`,
           label: category
@@ -138,9 +138,9 @@ export const useTrail = (example) => {
       }
       if (example.subcategory) {
 
-     //   console.log( `subcategoria ${example.subcategory.toString()}`);
+        console.log( `subcategoria ${example.subcategory.toString()}`);
         const subcategory = intl.formatMessage({ id: example.subcategory });
-       // console.log( `subcategoria INTL ${subcategory}`);
+       console.log( `subcategoria INTL ${subcategory}`);
         trail.push({
           slug: `/examples#${slugify(example.category, example.subcategory)}`,
           label: subcategory
