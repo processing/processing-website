@@ -224,5 +224,8 @@
   "Video & Vision": "Video & Vision",
   "Video&Vision": "Video & Visión",
   "Hardware" : "Hardware",
-  "GPIO":"GPIO"
+  "GPIO":"GPIO",
+  "Drawing": "Drawing",
+  "ARIASortByLevel": "Sort By Level",
+  "PressedSortByLevel":"Sort By Level"
 }

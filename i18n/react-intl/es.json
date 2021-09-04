@@ -204,7 +204,7 @@
   "Array Functions": "Funciones de Arreglos",
   "2d Primitives": "Primitivas 2d",
   "Structure": "Estructura",
-  "Form": "Forms",
+  "Form": "Formas",
   "Basics": "Básicos",
   "Compilation": "Compilación",
   "Other": "Otros",
@@ -225,5 +225,7 @@
   "Video&Vision": "Video y Visión",
   "Hardware" : "Hardware",
   "GPIO":"GPIO",
-  "Drawing": "Dibujo"
+  "Drawing": "Dibujo",
+  "ARIASortByLevel": "Ordenar por Nivel",
+  "PressedSortByLevel": "Ordenar por Nivel"
 }

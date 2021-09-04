@@ -142,7 +142,7 @@ export const useTrail = (example) => {
         const subcategory = intl.formatMessage({ id: example.subcategory });
        console.log( `subcategoria INTL ${subcategory}`);
         trail.push({
-          slug: `/examples#${slugify(example.category, example.subcategory)}`,
+          slug: `/examples#${slugify(example.category, subcategory)}`,
           label: subcategory
         });
       }
