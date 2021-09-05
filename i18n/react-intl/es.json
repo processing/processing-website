@@ -227,5 +227,6 @@
   "GPIO":"GPIO",
   "Drawing": "Dibujo",
   "ARIASortByLevel": "Ordenar por Nivel",
-  "PressedSortByLevel": "Ordenar por Nivel"
+  "PressedSortByLevel": "Ordenar por Nivel",
+  "Shortcuts": "Atajos"
 }
