@@ -2,6 +2,7 @@
 // as a parameter to size()
 size(400, 400, P3D);
 beginShape(POINTS);
+strokeWeight(5);
 vertex(120, 80, -200);
 vertex(340, 80, -200);
 vertex(340, 300, -200);
