@@ -1,0 +1,37 @@
+{
+  "brief": "This is a simple reverb effect.",
+  "methods": [
+    {
+      "anchor": "Reverb_damp_",
+      "name": "damp()",
+      "desc": "Changes the damping factor of the reverb effect."
+    },
+    {
+      "anchor": "Reverb_room_",
+      "name": "room()",
+      "desc": "Change the room size of the reverb effect."
+    },
+    {
+      "anchor": "Reverb_set_",
+      "name": "set()",
+      "desc": "Set multiple parameters of the reverb."
+    },
+    {
+      "anchor": "Reverb_wet_",
+      "name": "wet()",
+      "desc": "Change the wet/dry ratio of the reverb."
+    }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "This is a simple reverb effect.",
+  "type": "class",
+  "constructors": ["Reverb(parent)"],
+  "related": [],
+  "name": "Reverb",
+  "classanchor": "sound/Reverb",
+  "category": "effects",
+  "subcategory": "Reverb",
+  "parameters": []
+}

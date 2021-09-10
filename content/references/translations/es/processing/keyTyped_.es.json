@@ -1,0 +1,12 @@
+{
+  "brief": "Called once every time a key is pressed, but action keys such as\n           Ctrl, Shift, and Alt are ignored",
+  "related": ["keyPressed", "key", "keyCode", "keyReleased_"],
+  "name": "keyTyped()",
+  "description": "The <b>keyTyped()</b> function is called once every time a key is pressed,\n but action keys such as Ctrl, Shift, and Alt are ignored. <br />\n <br />\n Because of how operating systems handle key repeats, holding down a key may\n cause multiple calls to <b>keyTyped()</b>. The rate of repeat is set by the\n operating system, and may be configured differently on each computer.\n <br />\n <br />\n Mouse and keyboard events only work when a program has <b>draw()</b>.\n Without <b>draw()</b>, the code is only run once and then stops listening\n for events.",
+  "syntax": ["keyTyped()", "keyTyped(event)"],
+  "returns": "void",
+  "type": "function",
+  "category": "input",
+  "subcategory": "keyboard",
+  "parameters": []
+}

@@ -1,0 +1,29 @@
+{
+  "brief": "Adds a new child",
+  "related": ["PShape_getChild_"],
+  "name": "addChild()",
+  "description": "Adds a child PShape to a parent PShape that is defined as a GROUP. \n In the example, the three shapes <b>path</b>, <b>rectangle</b>, \n and <b>circle</b> are added to a parent PShape variable named \n <b>house</b> that is a GROUP.",
+  "syntax": ["sh.addChild(who)", "sh.addChild(who, idx)"],
+  "returns": "void",
+  "type": "method",
+  "category": "pshape",
+  "subcategory": "method",
+  "classanchor": "PShape",
+  "parameters": [
+    {
+      "name": "sh",
+      "description": " any variable of type PShape",
+      "type": ["PShape"]
+    },
+    {
+      "name": "who",
+      "description": "any variable of type PShape",
+      "type": ["PShape"]
+    },
+    {
+      "name": "idx",
+      "description": "the layer position in which to insert the new child",
+      "type": ["int"]
+    }
+  ]
+}

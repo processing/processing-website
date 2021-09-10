@@ -1,0 +1,19 @@
+{
+  "name": "&& (logical AND)",
+  "brief": "Compares two expressions and returns <b>true</b> only if both evaluate to <b>true</b>",
+  "description": "Compares two expressions and returns <b>true</b> only if both evaluate to <b>true</b>. Returns <b>false</b> if one or both evaluate to <b>false</b>. The following list shows all possible combinations:<br /><br /><tt>true &amp;&amp; false   // Evaluates false because the second is false <br />false &amp;&amp; true   // Evaluates false because the first is false <br />true &amp;&amp; true    // Evaluates true because both are true <br />false &amp;&amp; false  // Evaluates false because both are false</tt>\n",
+  "related": ["logicalOR", "logicalNOT", "if"],
+  "syntax": ["expression1 && expression2"],
+  "returns": "",
+  "type": "function",
+  "category": "Control",
+  "subcategory": "Logical Operators",
+  "parameters": [
+    {
+      "name": "expression1",
+      "description": "any valid expression",
+      "type": []
+    },
+    { "name": "expression2", "description": "any valid expression", "type": [] }
+  ]
+}

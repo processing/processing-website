@@ -1,0 +1,39 @@
+{
+  "brief": "Increases and decreases the size of a shape",
+  "related": ["PShape_rotate_", "PShape_translate_", "PShape_resetMatrix_"],
+  "name": "scale()",
+  "description": "Increases or decreases the size of a shape by expanding and contracting\n vertices. Shapes always scale from the relative origin of their bounding\n box. Scale values are specified as decimal percentages. For example, the\n method call <b>scale(2.0)</b> increases the dimension of a shape by\n 200%. Subsequent calls to the method multiply the effect. For example,\n calling <b>scale(2.0)</b> and then <b>scale(1.5)</b> is the same as\n <b>scale(3.0)</b>. This transformation is applied directly to the shape,\n it's not refreshed each time <b>draw()</b> is run.\n <br /><br />\n Using this method with the <b>z</b> parameter requires using the P3D\n parameter in combination with size.",
+  "syntax": ["sh.scale(s)", "sh.scale(x, y)", "sh.scale(x, y, z)"],
+  "returns": "void",
+  "type": "method",
+  "category": "pshape",
+  "subcategory": "method",
+  "classanchor": "PShape",
+  "parameters": [
+    {
+      "name": "sh",
+      "description": " any variable of type PShape",
+      "type": ["PShape"]
+    },
+    {
+      "name": "s",
+      "description": "percentate to scale the object",
+      "type": ["float"]
+    },
+    {
+      "name": "x",
+      "description": "percentage to scale the object in the x-axis",
+      "type": ["float"]
+    },
+    {
+      "name": "y",
+      "description": "percentage to scale the object in the y-axis",
+      "type": ["float"]
+    },
+    {
+      "name": "z",
+      "description": "percentage to scale the object in the z-axis",
+      "type": ["float"]
+    }
+  ]
+}

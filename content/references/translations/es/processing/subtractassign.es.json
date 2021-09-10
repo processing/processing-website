@@ -1,0 +1,15 @@
+{
+  "name": "-= (subtract assign)",
+  "brief": "Combines subtraction with assignment",
+  "description": "Combines subtraction with assignment. The expression <b>a -= b</b> is equivalent to <b>a = a - b</b>. \n",
+  "related": ["addassign", "minus"],
+  "syntax": ["value1 -= value2"],
+  "returns": "",
+  "type": "function",
+  "category": "math",
+  "subcategory": "Operators",
+  "parameters": [
+    { "name": "value1", "description": "int or float", "type": [] },
+    { "name": "value2", "description": "int or float", "type": [] }
+  ]
+}

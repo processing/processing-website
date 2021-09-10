@@ -1,0 +1,13 @@
+{
+  "brief": "Stop the oscillator.",
+  "related": [],
+  "name": "stop()",
+  "description": "Stop the oscillator.",
+  "syntax": [".stop()"],
+  "returns": "void",
+  "type": "method",
+  "category": "oscillators",
+  "subcategory": "SqrOsc",
+  "classanchor": "SqrOsc",
+  "parameters": []
+}

@@ -1,0 +1,27 @@
+{
+  "brief": "Opens a platform-specific file chooser dialog to select a file for output",
+  "related": [],
+  "name": "selectOutput()",
+  "description": "Opens a platform-specific file chooser dialog to select a file for output.\n After the selection is made, the selected File will be passed to the\n 'callback' function. If the dialog is closed or canceled, <b>null</b> will be sent\n to the function, so that the program is not waiting for additional input.\n The callback is necessary because of how threading works.",
+  "syntax": [
+    "selectOutput(prompt, callback)",
+    "selectOutput(prompt, callback, file)",
+    "selectOutput(prompt, callback, file, callbackObject)"
+  ],
+  "returns": "void",
+  "type": "function",
+  "category": "output",
+  "subcategory": "files",
+  "parameters": [
+    {
+      "name": "prompt",
+      "description": "message to the user",
+      "type": ["String"]
+    },
+    {
+      "name": "callback",
+      "description": "name of the method to be called when the selection is made",
+      "type": ["String"]
+    }
+  ]
+}

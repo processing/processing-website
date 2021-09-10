@@ -1,0 +1,18 @@
+{
+  "brief": "Sets the current font size",
+  "related": ["loadFont_", "text_", "textFont_"],
+  "name": "textSize()",
+  "description": "Sets the current font size. This size will be used in all subsequent\n calls to the <b>text()</b> function. Font size is measured in units of pixels.",
+  "syntax": ["textSize(size)"],
+  "returns": "void",
+  "type": "function",
+  "category": "typography",
+  "subcategory": "attributes",
+  "parameters": [
+    {
+      "name": "size",
+      "description": "the size of the letters in units of pixels",
+      "type": ["float"]
+    }
+  ]
+}

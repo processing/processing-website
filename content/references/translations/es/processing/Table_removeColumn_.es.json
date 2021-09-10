@@ -1,0 +1,24 @@
+{
+  "brief": "Removes a column from a table",
+  "related": ["Table_addColumn_"],
+  "name": "removeColumn()",
+  "description": "Use <b>removeColumn()</b> to remove an existing column from a <b>Table</b>\n object. The column to be removed may be identified by either its title (a\n <b>String</b>) or its index value (an <b>int</b>). <b>removeColumn(0)</b> would remove the\n first column, <b>removeColumn(1)</b> would remove the second column, and so\n on.",
+  "syntax": [".removeColumn(columnName)", ".removeColumn(column)"],
+  "returns": "void",
+  "type": "method",
+  "category": "table",
+  "subcategory": "method",
+  "classanchor": "Table",
+  "parameters": [
+    {
+      "name": "columnName",
+      "description": "the title of the column to be removed",
+      "type": ["String"]
+    },
+    {
+      "name": "column",
+      "description": "the index number of the column to be removed",
+      "type": ["int"]
+    }
+  ]
+}

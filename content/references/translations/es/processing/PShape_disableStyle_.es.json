@@ -1,0 +1,19 @@
+{
+  "brief": "Disables the shape's style data and uses Processing styles",
+  "related": ["PShape_enableStyle_"],
+  "name": "disableStyle()",
+  "description": "Disables the shape's style data and uses Processing's current styles.\n Styles include attributes such as colors, stroke weight, and stroke\n joints.\n\n  ",
+  "syntax": ["sh.disableStyle()"],
+  "returns": "void",
+  "type": "method",
+  "category": "pshape",
+  "subcategory": "method",
+  "classanchor": "PShape",
+  "parameters": [
+    {
+      "name": "sh",
+      "description": " any variable of type PShape",
+      "type": ["PShape"]
+    }
+  ]
+}

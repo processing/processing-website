@@ -1,0 +1,29 @@
+{
+  "name": "indexOf()",
+  "brief": "Returns the index value of the first occurrence of a substring within the input string",
+  "description": "Tests to see if a substring is embedded in a String, and returns the index position of the first occurrence of the substring defined in the <b>str</b> parameter. If the <b>str</b> substring is not found within the String, <b>-1</b> is returned.\n",
+  "related": [],
+  "syntax": ["str.indexOf(str)", "str.indexOf(str, fromIndex)"],
+  "returns": "int",
+  "type": "method",
+  "category": "string",
+  "subcategory": "method",
+  "classanchor": "String",
+  "parameters": [
+    {
+      "name": "str",
+      "description": "String: any variable of type String",
+      "type": []
+    },
+    {
+      "name": "str",
+      "description": "String: the substring to search",
+      "type": []
+    },
+    {
+      "name": "fromIndex",
+      "description": "int: the index from which to start the search",
+      "type": []
+    }
+  ]
+}

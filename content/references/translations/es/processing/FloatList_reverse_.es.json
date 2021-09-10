@@ -1,0 +1,13 @@
+{
+  "brief": "Reverse the order of the list",
+  "related": [],
+  "name": "reverse()",
+  "description": "Reverse the order of the list",
+  "syntax": [".reverse()"],
+  "returns": "void",
+  "type": "method",
+  "category": "floatlist",
+  "subcategory": "method",
+  "classanchor": "FloatList",
+  "parameters": []
+}

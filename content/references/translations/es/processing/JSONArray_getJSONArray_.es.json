@@ -1,0 +1,23 @@
+{
+  "brief": "Retrieves the <b>JSONArray</b> with the associated index value",
+  "related": [
+    "JSONArray_getJSONObject_",
+    "JSONArray_setJSONObject_",
+    "JSONArray_setJSONArray_"
+  ],
+  "name": "getJSONArray()",
+  "description": "Retrieves the <b>JSONArray</b> with the associated index value.",
+  "syntax": [".getJSONArray(index)", ".getJSONArray(index, defaultValue)"],
+  "returns": "JSONArray",
+  "type": "method",
+  "category": "jsonobject",
+  "subcategory": "method",
+  "classanchor": "JSONArray",
+  "parameters": [
+    {
+      "name": "index",
+      "description": "must be between 0 and length() - 1",
+      "type": ["int"]
+    }
+  ]
+}

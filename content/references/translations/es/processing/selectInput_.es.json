@@ -1,0 +1,27 @@
+{
+  "brief": "Open a platform-specific file chooser dialog to select a file for\n           input",
+  "related": [],
+  "name": "selectInput()",
+  "description": "Open a platform-specific file chooser dialog to select a file for input.\n After the selection is made, the selected File will be passed to the\n 'callback' function. If the dialog is closed or canceled, <b>null</b> will be sent\n to the function, so that the program is not waiting for additional input.\n The callback is necessary because of how threading works.\n\n ",
+  "syntax": [
+    "selectInput(prompt, callback)",
+    "selectInput(prompt, callback, file)",
+    "selectInput(prompt, callback, file, callbackObject)"
+  ],
+  "returns": "void",
+  "type": "function",
+  "category": "input",
+  "subcategory": "files",
+  "parameters": [
+    {
+      "name": "prompt",
+      "description": "message to the user",
+      "type": ["String"]
+    },
+    {
+      "name": "callback",
+      "description": "name of the method to be called when the selection is made",
+      "type": ["String"]
+    }
+  ]
+}

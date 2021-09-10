@@ -1,0 +1,25 @@
+{
+  "brief": "Returns a reference to the specified <b>TableRow</b>",
+  "related": [
+    "Table_rows_",
+    "Table_findRow_",
+    "Table_findRows_",
+    "Table_matchRow_",
+    "Table_matchRows_"
+  ],
+  "name": "getRow()",
+  "description": "Returns a reference to the specified <b>TableRow</b>.  The reference can then\n be used to get and set values of the selected row, as illustrated in the example above.",
+  "syntax": [".getRow(row)"],
+  "returns": "TableRow",
+  "type": "method",
+  "category": "table",
+  "subcategory": "method",
+  "classanchor": "Table",
+  "parameters": [
+    {
+      "name": "row",
+      "description": "ID number of the row to get",
+      "type": ["int"]
+    }
+  ]
+}

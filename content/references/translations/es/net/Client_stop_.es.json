@@ -1,0 +1,19 @@
+{
+  "brief": "Disconnects from the server",
+  "related": [],
+  "name": "stop()",
+  "description": "Disconnects from the server. Use to shut the connection when you're \n finished with the Client.",
+  "syntax": ["client.stop()"],
+  "returns": "void",
+  "type": "method",
+  "category": "client",
+  "subcategory": "",
+  "classanchor": "Client",
+  "parameters": [
+    {
+      "name": "client",
+      "description": " any variable of type Client",
+      "type": ["Client"]
+    }
+  ]
+}

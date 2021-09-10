@@ -1,0 +1,13 @@
+{
+  "brief": "Sorts the array, lowest to highest",
+  "related": [],
+  "name": "sort()",
+  "description": "Sorts the array, lowest to highest.",
+  "syntax": [".sort()"],
+  "returns": "void",
+  "type": "method",
+  "category": "intlist",
+  "subcategory": "method",
+  "classanchor": "IntList",
+  "parameters": []
+}

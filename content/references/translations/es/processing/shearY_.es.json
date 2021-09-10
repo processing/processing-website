@@ -1,0 +1,25 @@
+{
+  "brief": "Shears a shape around the y-axis the amount specified by the\n <b>angle</b> parameter",
+  "related": [
+    "popMatrix_",
+    "pushMatrix_",
+    "shearX_",
+    "scale_",
+    "translate_",
+    "radians_"
+  ],
+  "name": "shearY()",
+  "description": "Shears a shape around the y-axis the amount specified by the\n <b>angle</b> parameter. Angles should be specified in radians (values\n from 0 to PI*2) or converted to radians with the <b>radians()</b>\n function. Objects are always sheared around their relative position to\n the origin and positive numbers shear objects in a clockwise direction.\n Transformations apply to everything that happens after and subsequent\n calls to the function accumulates the effect. For example, calling\n <b>shearY(PI/2)</b> and then <b>shearY(PI/2)</b> is the same as\n <b>shearY(PI)</b>. If <b>shearY()</b> is called within the\n <b>draw()</b>, the transformation is reset when the loop begins again.\n <br/> <br/>\n Technically, <b>shearY()</b> multiplies the current transformation\n matrix by a rotation matrix. This function can be further controlled by\n the <b>pushMatrix()</b> and <b>popMatrix()</b> functions.",
+  "syntax": ["shearY(angle)"],
+  "returns": "void",
+  "type": "function",
+  "category": "transform",
+  "subcategory": "",
+  "parameters": [
+    {
+      "name": "angle",
+      "description": "angle of shear specified in radians",
+      "type": ["float"]
+    }
+  ]
+}

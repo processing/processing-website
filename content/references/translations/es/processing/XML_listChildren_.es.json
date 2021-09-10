@@ -1,0 +1,13 @@
+{
+  "brief": "Returns the names of all children as an array",
+  "related": [],
+  "name": "listChildren()",
+  "description": "Get the names of all of the element's children, and returns the names as an \n array of <b>Strings</b>. This is the same as looping through and calling <b>getName()</b> \n on each child element individually.",
+  "syntax": [".listChildren()"],
+  "returns": "String[]",
+  "type": "method",
+  "category": "xml",
+  "subcategory": "method",
+  "classanchor": "XML",
+  "parameters": []
+}

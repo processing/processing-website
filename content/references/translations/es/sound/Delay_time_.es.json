@@ -1,0 +1,19 @@
+{
+  "brief": "Changes the delay time of the effect.",
+  "related": [],
+  "name": "time()",
+  "description": "Changes the delay time of the effect.",
+  "syntax": [".time(delayTime)"],
+  "returns": "void",
+  "type": "method",
+  "category": "effects",
+  "subcategory": "Delay",
+  "classanchor": "Delay",
+  "parameters": [
+    {
+      "name": "delayTime",
+      "description": "Delay time in seconds.",
+      "type": ["float"]
+    }
+  ]
+}

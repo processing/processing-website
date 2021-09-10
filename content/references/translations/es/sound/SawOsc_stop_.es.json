@@ -1,0 +1,13 @@
+{
+  "brief": "Move the sound in a stereo panorama.",
+  "related": [],
+  "name": "stop()",
+  "description": "Stop the oscillator.",
+  "syntax": [".stop()"],
+  "returns": "void",
+  "type": "method",
+  "category": "oscillators",
+  "subcategory": "SawOsc",
+  "classanchor": "SawOsc",
+  "parameters": []
+}

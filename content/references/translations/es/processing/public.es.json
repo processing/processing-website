@@ -1,0 +1,12 @@
+{
+  "name": "public",
+  "brief": "Keyword used to provide other classes access the fields and methods within a class",
+  "description": "Keyword used to provide other classes access the fields and methods within a class. The <b>public</b> keyword is used before a field or method that you want to make available. In Processing, all fields and methods are public unless otherwise specified by the <b>private</b> keyword.<br />\n<br />\nThis keyword is an essential part of Java programming and is not usually used with Processing. Consult a Java language reference or tutorial for more information. \n",
+  "related": ["private"],
+  "syntax": [],
+  "returns": "",
+  "type": "function",
+  "category": "structure",
+  "subcategory": "",
+  "parameters": []
+}
