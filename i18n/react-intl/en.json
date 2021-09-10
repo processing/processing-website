@@ -228,5 +228,7 @@
   "Drawing": "Drawing",
   "ARIASortByLevel": "Sort By Level",
   "PressedSortByLevel":"Sort By Level",
-  "Shortcuts": "Shortcuts"
+  "Shortcuts": "Shortcuts",
+  "CCLicenseIntro": "This work is licensed under a ",
+  "CCLicense": " Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License"
 }

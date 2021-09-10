@@ -228,5 +228,7 @@
   "Drawing": "Dibujo",
   "ARIASortByLevel": "Ordenar por Nivel",
   "PressedSortByLevel": "Ordenar por Nivel",
-  "Shortcuts": "Atajos"
+  "Shortcuts": "Atajos",
+  "CCLicenseIntro": "Este trabajo esta licenciado bajo una ",
+  "CCLicense": "Licencia Internacional Creative Commons Attribution-NonCommercial-ShareAlike 4.0"
 }
