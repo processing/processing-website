@@ -67,8 +67,6 @@ const ExamplesList = ({ tree }) => {
 };
 
 export const ExampleItem = memo(({ node, variant }) => {
-  const intl = useIntl();
- // const tradu = intl.formatMessage( {id:node.name});
    console.log (`node ${ node.name } path ${ node.path}`);
 
   return (

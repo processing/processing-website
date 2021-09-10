@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
 import { useIntl } from 'react-intl';
-
-import { titleCase, slugify, toIntlId } from '../utils';
+import { titleCase, slugify} from '../utils';
 import { referencePath, pathToName, examplePath } from '../utils/paths';
 
 /**
