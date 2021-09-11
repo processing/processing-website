@@ -289,8 +289,9 @@ const IndexPage = ({ data }) => {
   );
 };
 
-const Examples = memo(({ heading, examples, locale }) => {
+const Examples = memo(({ heading, examples}) => {
   const intl = useIntl();
+  console.log(`Numero de ejemplos locale = ${ examples.length} `)
   return (
     <div className={classnames(grid.grid, css.examples)}>
       <h3 className={classnames(grid.col, css.examplesHeading)}>{heading}</h3>
@@ -324,7 +325,7 @@ export default IndexPage;
 
 export const query = graphql`
   query(
-    $featuredExamples: [String] = [
+  $featuredExamples: [String] = [
       "KeyboardFunctions"
       "RadialGradient"
       "Saturation"
@@ -342,7 +343,7 @@ export const query = graphql`
         name: { in: $featuredExamples }
         extension: { eq: "json" }
         sourceInstanceName: { eq: "examples" }
-        fields: { lang: { eq: "en" } }
+        fields: { lang: { eq: "en"} }
         dir: { regex: "/^((?!data).)*$/" }
       }
       sort: { order: ASC, fields: relativeDirectory }
