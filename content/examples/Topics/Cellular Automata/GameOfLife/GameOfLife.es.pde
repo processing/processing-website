@@ -39,12 +39,12 @@ void setup() {
   cells = new int[width/cellSize][height/cellSize];
   cellsBuffer = new int[width/cellSize][height/cellSize];
 
-  // El trazo pintara el fondo de la rejilla
+  // El trazo pintará el fondo de la rejilla
   stroke(48);
 
   noSmooth();
 
-  // Initialización de celdas.
+  // Inicialización de celdas.
   for (int x=0; x<width/cellSize; x++) {
     for (int y=0; y<height/cellSize; y++) {
       float state = random (100);
@@ -54,7 +54,7 @@ void setup() {
       else {
         state = 1;
       }
-      cells[x][y] = int(state); // Save state of each cell
+      cells[x][y] = int(state); // Guardar el estado de cada celda
     }
   }
   // Llenar de negro en el caso de que las celdas no cubran toda la pantalla
@@ -172,7 +172,7 @@ void keyPressed() {
   if (key=='c' || key == 'C') { // Clear all
     for (int x=0; x<width/cellSize; x++) {
       for (int y=0; y<height/cellSize; y++) {
-        cells[x][y] = 0; // Poner todo a o
+        cells[x][y] = 0; // Poner todo a 0
       }
     }
   }
