@@ -231,5 +231,10 @@
   "Shortcuts": "Shortcuts",
   "CCLicenseIntro": "This work is licensed under a ",
   "CCLicense": " Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License",
-  "Cellular Automata": "Cellular Automata"
+  "Cellular Automata": "Cellular Automata",
+  "Objects": "Objects",
+  "Bouncing Ball":"Bouncing Ball",
+  "Array": "Array",
+  "Array 2D": "Array 2D",
+  "Array Objects": "Array Objects"
 }

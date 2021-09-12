@@ -11,17 +11,17 @@ void setup() {
 }
 
 void draw() {
-  // Call the variableEllipse() method and send it the
-  // parameters for the current mouse position
-  // and the previous mouse position
+  // Llama al método variableEllipse() y le envía como los
+  // los parámetros la posición actual del mouse
+  // y la posición previa
   variableEllipse(mouseX, mouseY, pmouseX, pmouseY);
 }
 
 
-// The simple method variableEllipse() was created specifically
-// for this program. It calculates the speed of the mouse
-// and draws a small ellipse if the mouse is moving slowly
-// and draws a large ellipse if the mouse is moving quickly
+// Este método variableEllipse() fue creado específicamente
+// para este programa. Calcula la velocidad del mouse
+// y dibuja una elipse pequeña si el mouse se esta moviendo lento
+// o una elipse grande si el raton se esta moviendo rápido
 
 void variableEllipse(int x, int y, int px, int py) {
   float speed = abs(x-px) + abs(y-py);

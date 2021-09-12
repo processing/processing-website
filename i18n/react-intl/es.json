@@ -231,5 +231,10 @@
   "Shortcuts": "Atajos",
   "CCLicenseIntro": "Este trabajo esta licenciado bajo una ",
   "CCLicense": "Licencia Internacional Creative Commons Attribution-NonCommercial-ShareAlike 4.0",
-  "Cellular Automata": "Automatas Celulares"
+  "Cellular Automata": "Automatas Celulares",
+  "Objects": "Objetos",
+  "Bouncing Ball":"Pelota Rebotando",
+  "Array": "Arreglos",
+  "Array 2D": "Arreglos 2D",
+  "Array Objects": "Arreglos de Objetos"
 }
