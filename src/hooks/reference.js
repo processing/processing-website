@@ -27,7 +27,7 @@ export const usePreparedItems = (items, libraryName) => {
 
         let path = item.name.split(`.`)[0]
 
-        console.log(`useprep items name: ${ item.childJson.name}  path: ${path}   titlecase: ${titleCase(item.childJson.subcategory)} subcategory: ${item.childJson.subcategory}` );
+       // console.log(`useprep items name: ${ item.childJson.name}  path: ${path}   titlecase: ${titleCase(item.childJson.subcategory)} subcategory: ${item.childJson.subcategory}` );
        // subcategories.append(item.childJson.subcategory);
         prepared.push(
           Object.assign({}, item.childJson, {

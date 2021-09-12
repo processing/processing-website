@@ -7,7 +7,7 @@ import SidebarGroup from './SidebarGroup';
 import * as css from './SidebarTreeList.module.css';
 import { useIntl } from 'react-intl';
 
-const SidebarTreeList = ({ tree, useSerif }) => {
+const SidebarTreeList = ({ tree, useSerif , isReference}) => {
   const intl = useIntl();
   return (
     <div className={css.root}>
@@ -27,7 +27,8 @@ const SidebarTreeList = ({ tree, useSerif }) => {
                           [css.serif]: useSerif
                         })}
                         to={item.path}>
-                        {item.name}
+
+                        {isReference?item.name:intl.formatMessage({id:item.name})}
                       </Link>
                     </li>
                   );
