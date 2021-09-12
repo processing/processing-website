@@ -17,10 +17,10 @@ const Tools = ({ data }) => {
   const intl = useIntl();
 
   let contributions = [];
-  console.log("english nodes");
-console.log(english.nodes);
-console.log("current language nodes");
-console.log(currentLang.nodes);
+   //console.log("english nodes");
+//console.log(english.nodes);
+//console.log("current language nodes");
+//console.log(currentLang.nodes);
 
   english.nodes.forEach((en) => {
     currentLang.nodes.forEach((con) => {
