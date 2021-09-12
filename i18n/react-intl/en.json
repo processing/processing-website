@@ -290,5 +290,20 @@
   "Reach3": "Reach3",
   "Follow1": "Follow1",
   "Follow2": "Follow2",
-  "Follow3": "Follow3"
+  "Follow3": "Follow3",
+  "Sequential": "Sequential",
+  "Game Of Life": "Game Of Life",
+  "Load Save Table": "Load Save Table",
+  "Animated Sprite": "Animated Sprite",
+  "Int List Lottery": "Int List Lottery",
+  "Embedded Links": "Embedded Links",
+  "Web": "Web",
+  "Words": "Words",
+  "Text Rotation": "Text Rotation",
+  "Letters": "Letters",
+  "Advanced Data":  "Advanced Data",
+  "File IO": "File IO",
+  "Image Processing":  "Image Processing",
+  "Interaction": "Interaction",
+  "Bitwise Operators": "Bitwise Operators"
 }

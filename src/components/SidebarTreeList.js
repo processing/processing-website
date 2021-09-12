@@ -27,7 +27,7 @@ const SidebarTreeList = ({ tree, useSerif }) => {
                           [css.serif]: useSerif
                         })}
                         to={item.path}>
-                        {intl.formatMessage({ id: item.name })}
+                        {intl.formatMessage({id:item.name})}
                       </Link>
                     </li>
                   );

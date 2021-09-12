@@ -290,5 +290,20 @@
   "Reach3": "Alcanzar 2",
   "Follow1": "Seguir 1",
   "Follow2": "Seguir 2",
-  "Follow3": "Seguir 3"
+  "Follow3": "Seguir 3",
+  "Sequential": "Secuencial",
+  "Game Of Life": "Juego de la Vida",
+  "Load Save Table": "Cargar y Guardar Tabla",
+  "Animated Sprite": "Sprite Animado",
+  "Int List Lottery": "Lotería de Lista de Enteros",
+  "Embedded Links": "Ligas embebidas",
+  "Web": "Web",
+  "Words": "Palabras",
+  "Text Rotation": "Rotación de Texto",
+  "Letters": "Letras",
+  "Advanced Data":  "Datos Avanzados",
+  "File IO": "Entrada/Salida (IO) de Archivos",
+  "Image Processing":  "Procesamiento de Imágenes",
+  "Interaction": "Interacción",
+  "Bitwise Operators": "Operadores Bit a Bit"
 }
