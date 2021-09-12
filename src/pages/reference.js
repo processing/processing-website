@@ -77,7 +77,7 @@ const Reference = ({ data }) => {
   console.log("page references" )
   console.log( data.items.nodes)
   // const tree = useTree(items, sortOrder);
-  const tree = useTree(items);
+  const tree = useTree(items ,'');
   const filtered = useFilteredTree(tree, searchTerm);
   const categories = Object.keys(tree);
 

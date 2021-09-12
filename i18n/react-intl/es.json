@@ -305,5 +305,17 @@
   "File IO": "Entrada/Salida (IO) de Archivos",
   "Image Processing":  "Procesamiento de Imágenes",
   "Interaction": "Interacción",
-  "Bitwise Operators": "Operadores Bit a Bit"
+  "Bitwise Operators": "Operadores Bit a Bit",
+  "String Functions": "Funciones para Cadenas",
+  "Relational Operators":"Operadores Relacionales" ,
+  "Logical Operators": "Operadores Lógicos",
+  "2D Primitives": "Primitivas 2D",
+  "3D Primitives": "Primitivas 3D",
+  "3d Primitives": "Primitivas 3D",
+  "Time & Date":"Fecha & Hora" ,
+  "Text Area":"Área de Texto",
+  "Documentation":"Documentación",
+  "math": "Matemáticas",
+  "calculation": "Cálculos",
+  "Time Date":"Fecha & Hora"
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Link } from 'gatsby';
+//import { Link } from 'gatsby';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { getImage } from 'gatsby-plugin-image';
 import { useLocalization } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';

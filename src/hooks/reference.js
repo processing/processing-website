@@ -8,6 +8,7 @@ import { referencePath, pathToName, examplePath } from '../utils/paths';
   @param {Array} items GraphQL reference items
 **/
 export const usePreparedItems = (items, libraryName) => {
+
   return useMemo(() => {
     // This makes up for some weirdness in lowercase/uppercase category and subcategory
     // names and removes underscores and adds title cases. Some of these should be fixed
@@ -26,7 +27,7 @@ export const usePreparedItems = (items, libraryName) => {
 
         let path = item.name.split(`.`)[0]
 
-        console.log(`use prepared items push name: ${ item.childJson.name}  path: ${path}   category: ${item.childJson.category} subcategory: ${item.childJson.subcategory}` );
+        console.log(`useprep items name: ${ item.childJson.name}  path: ${path}   titlecase: ${titleCase(item.childJson.subcategory)} subcategory: ${item.childJson.subcategory}` );
        // subcategories.append(item.childJson.subcategory);
         prepared.push(
           Object.assign({}, item.childJson, {
@@ -34,8 +35,9 @@ export const usePreparedItems = (items, libraryName) => {
             path: referencePath(path, libraryName),
             category: titleCase(item.childJson.category),
             //category: 'categoria',
-            subcategory: 's',
-          //subcategory: titleCase(item.childJson.subcategory),
+             // subcategory: 's',
+            subcategory: item.childJson.subcategory?titleCase(item.childJson.subcategory):" ",
+         //  subcategory: titleCase(item.childJson.subcategory),
             search: `${item.childJson.name} ${item.childJson.brief ?? ''}`
           })
         );
@@ -188,20 +190,20 @@ export const useTrail = (libraryName, category, subcategory, classanchor) => {
           label: intl.formatMessage({ id: 'libraries' })
         };
 
-    const trail = ['Documentation', sectionTrail];
+    const trail = [ intl.formatMessage( {id:"Documentation" }), sectionTrail];
 
     if (isProcessing) {
       if (category) {
         trail.push({
           slug: sectionTrail.slug + '#' + slugify(category),
-          label: category
+          label: intl.formatMessage( {id:category })
         });
       }
 
       if (subcategory) {
         trail.push({
           slug: sectionTrail.slug + '#' + slugify(category, subcategory),
-          label: subcategory
+          label: intl.formatMessage( {id:subcategory })
         });
       }
     } else {
@@ -211,14 +213,16 @@ export const useTrail = (libraryName, category, subcategory, classanchor) => {
       });
       trail.push({
         slug: referencePath('index', libraryName),
-        label: libraryName
+        // label: libraryName
+        label: intl.formatMessage( {id:libraryName })
       });
     }
 
     if (classanchor) {
       trail.push({
         slug: referencePath(classanchor, libraryName),
-        label: classanchor
+        // label: classanchor
+        label: intl.formatMessage( {id:classanchor })
       });
     }
 

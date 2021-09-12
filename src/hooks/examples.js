@@ -90,7 +90,6 @@ export const useRelatedExamples = (examples, related) => {
 **/
 export const useOrderedPdes = (name, nodes) => {
   const locale = useIntl().locale;
-  console.log(`locale actual ${locale}`)
   return useMemo(() => {
     const main = nodes.find((pde) => pde.name === name);
     const rest = nodes.filter((pde) => pde.name !== name);
@@ -103,14 +102,14 @@ export const useOrderedPdes = (name, nodes) => {
       console.log("quitando los que tienen locale")
       pdeinlocale = rest.filter ( (pde) => !pde.name.includes(`.`)) ;
     }
-    console.log(`rest`)
-    console.log(rest)
-    console.log(`locale`)
-    console.log(pdeinlocale)
+  //  console.log(`rest`)
+  //  console.log(rest)
+  //  console.log(`locale`)
+  //  console.log(pdeinlocale)
 
     //return rest;
     return pdeinlocale;
-  }, [name, nodes]);
+  }, [locale, name, nodes]);
 };
 
 /**
