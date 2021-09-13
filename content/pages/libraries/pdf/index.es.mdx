@@ -188,9 +188,9 @@ void keyPressed() {
 
 ## Archivos PDF desde una Geometría 3D (Con Pantalla)
 
-To create vectors from 3D data, use the beginRaw() and endRaw() commands. These commands will grab the shape data just before it is rendered to the screen. At this stage, your entire scene is nothing but a long list of lines and triangles. This means that a shape created with sphere() method will be made up of hundreds of triangles, rather than a single object.
+Para crear vectores desde datos 3D, usa los métodos beginRaw() y endRaw(). Estos métodos obtendrán los datos de la figura justo antes de ser mostrados en pantalla. A esta altura, la escena completa no es nada más que una larga lista de líneas y triángulos. Esto significa que una figura creada con el método sphere() estará hecha de cientos de triángulos, y no de un sólo objeto.
 
-When using beginRaw() and endRaw(), it's possible to write to either a 2D or 3D renderer. For instance, beginRaw() with the PDF library will write the geometry as flattened triangles and lines.
+Cuando usas beginRaw() y endRaw(), es posible escribir tanto al renderer 2D como al 3D. Por ejemplo, beginRaw() con la biblioteca PDF escribirá la geometría como triángulos y líneas aplanadas.
 
 ```
 import processing.pdf.*;
@@ -219,7 +219,7 @@ void draw() {
   }
 }
 
-// Hit 'r' to record a single frame
+// Teclea 'r' para guardar un solo cuadro
 void keyPressed() {
   if (key == 'r') {
     record = true;
@@ -229,7 +229,7 @@ void keyPressed() {
 
 ## Usar createGraphics() para Crear un archivo PDF
 
-To write a PDF file using only the createGraphics() command, rather than as part of a sketch, it's necessary to call dispose() on the PGraphicsPDF object. This is the same as calling exit(), but it won't quit the sketch.
+Para escribir un archivo PDF usando solamente el comando createGraphics(), en vez de como parte de un sketch, es necesario llamar dispose() en el objeto PGraphicsPDF. Esto es lo mismo que llamar exit(), pero sin salir del sketch.
 
 ```
 import processing.pdf.*;
@@ -244,18 +244,18 @@ pdf.endDraw();
 
 ## Notas adicionales para el renderer PDF:
 
-If you want 3D data, use the DXF recording library instead.
+Si quieres datos 3D, usa la biblioteca de grabado DXF.
 
-- Using hint(ENABLE_DEPTH_SORT) can improve the appearance of 3D geometry drawn to 2D file formats.
-- Images don't look great, mostly because of the difference of expectations in how a PDF should look (scalable and high res) versus what happens when image data is written to it at 72 dpi.
-- Starting in release 0120, text is no longer treated as shape data by default, meaning that the font will need to be installed to view the PDF that's created. The upside is that the PDF will render better. - To force text to be treated as shape data, use textMode(SHAPE), immediately after size().
-- Another option for type, is to use createFont() with a TrueType font (some OpenType fonts also work). Any font that shows up in PFont.list() should work, or if not, adding a .ttf file to the data directory and calling createFont("fontname.ttf") will also work.
-- If loadFont() is used instead of createFont(), the text may show up bitmapped and ugly. In some cases, hint(ENABLE_NATIVE_FONTS) may improve the situation if the font is installed on the machine.
-- Starting a new page is a matter of calling nextPage() like so:
+- Usar hint(ENABLE_DEPTH_SORT) puede mejorar la apariencia de la geometría 3D dibujada en archivos con formato 2D.
+- Las imágenes no lucen muy bien, debido a la diferencia de expectativas en como un PDF debe lucir (escalable y de alta resolución) contra lo que pasa con los datos de la imagen, que es escrita a una resolución de 72 dpi.
+- A partir del lanzamiento 0120, el texto no es tratado como datos de figura por default, lo que significa que la fuente tendrá que ser instalada para ver el PDF creado. La parte positiva de esto es que el PDF se desplegara mejor. - Para forzar que el texto sea tratado como datos de la figura, usa textMode(SHAPE) inmediatamente después de size().
+- Otra opción para tipo es usar createFont() con una fuente TrueType (algunas fuentes OpenType también funcionan). Cualquier fuente que se muestre en PFont.list() debería funcionar, y si no, agregar un archivo .ttf al directorio data y llamar createFont("fontname.ttf") también funcionará.
+- Si loadFont() es usado en vez de createFont(), el texto pudiera aparecer pixelado y feo. En algunos casos hint(ENABLE_NATIVE_FONTS) puede mejorar la situación si la fuente está instalada en la máquina.
+- Para iniciar una nueva página hay que llamar a nextPage() así:
   ```
   PGraphicsPDF pdf = (PGraphicsPDF) g;
   pdf.nextPage();
   ```
-  (This example is also shown above)
+  (Este ejemplo también es mostrado arriba)
 
-- Again, exit() is really important when using PDF with size().
+- De nuevo, llamar a exit() es realmente importante cuando usas archivos PDF con size().
