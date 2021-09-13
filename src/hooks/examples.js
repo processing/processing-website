@@ -12,6 +12,8 @@ export const usePreparedExample = (example) => {
       return null;
     }
 
+    console.log(`example.childdjoson`);
+    console.log(example.childJson);
     const [category, subcategory] = example.relativeDirectory.split('/');
     return {
       title: example.childJson.title,

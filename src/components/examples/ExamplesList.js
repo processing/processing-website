@@ -67,7 +67,13 @@ const ExamplesList = ({ tree }) => {
 };
 
 export const ExampleItem = memo(({ node, variant }) => {
-   console.log (`node ${ node.name } path ${ node.path}`);
+/*
+  for (const [key, value] of Object.entries(node)) {
+    console.log(`${key}: ${value}`);
+  }
+*/
+  // console.log (`node keys ${ node.keys}`);
+  //console.log (`node ${ node.name } path ${ node}`);
 
   return (
     <li className={classnames(grid.col, css.item, { [css[variant]]: variant })}>
