@@ -317,5 +317,6 @@
   "Documentation":"Documentación",
   "math": "Matemáticas",
   "calculation": "Cálculos",
-  "Time Date":"Fecha & Hora"
+  "Time Date":"Fecha & Hora",
+  "ExamplesIn": "en Ejemplos: {subcat}"
 }

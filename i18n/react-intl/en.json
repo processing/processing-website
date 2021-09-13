@@ -316,5 +316,6 @@
   "Text Area":"Text Area",
   "math": "Math",
   "calculation": "Calculation",
-  "Time Date":"Time & Date"
+  "Time Date":"Time & Date",
+  "ExamplesIn": "in {subcat} examples"
 }

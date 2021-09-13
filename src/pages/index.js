@@ -307,8 +307,8 @@ const Examples = memo(({ heading, examples}) => {
                 />
               )}
             </div>
-            <h4>{example.name}</h4>
-            <p>in {example.subcategory} examples</p>
+            <h4> {intl.formatMessage( {id:example.name})}</h4>
+            <p> {intl.formatMessage( {id:"ExamplesIn"} , {subcat:intl.formatMessage( {id:example.subcategory})})}</p>
           </Link>
         </div>
       ))}
