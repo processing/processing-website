@@ -28,7 +28,7 @@ const SidebarTreeList = ({ tree, useSerif , isReference}) => {
                         })}
                         to={item.path}>
 
-                        {isReference?item.name:intl.formatMessage({id:item.name})}
+                        {isReference?item.name:item.name}
                       </Link>
                     </li>
                   );
