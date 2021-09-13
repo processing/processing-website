@@ -5,15 +5,14 @@ library: 'true'
 description: 'Crea archivos PDF. Estos archivos con gráficos en vector pueden ser escalados a cualquier tamaño e impresos en alta resolución.'
 ---
 
-## PDF Export
+## Exportar PDF
 
-The PDF library makes it possible to write PDF files directly from Processing. These vector graphics files can be scaled to any size and output at very high resolutions. The PDF library can flatten 3D data into a 2D vector file, but to export 3D data, use the DXF library. The source code is available on the [Processing](https://github.com/processing/processing/tree/master/java/libraries/pdf) GitHub repository. Please report bugs [here](https://github.com/processing/processing/issues).
+La biblioteca PDF hace posible escribir archivos PDF directamente desde Processing. Estos archivos con gráficos en vector pueden ser escalados a cualquier tamaño e impresos en alta resolución. La biblioteca PDF puede mandar datos 3D a un archivo vectorial 2D, pero para exportar datos 3D, use la biblioteca DXF. El código fuente está disponible en el repositorio Github de [Processing](https://github.com/processing/processing/tree/master/java/libraries/svg). Por favor reporte los errores [aquí](https://github.com/processing/processing/issues).
+La biblioteca es frecuentemente usada con la función size() del core de Processing, con una combinación de beginRecord() y endRecord(), o con beginRaw() y endRaw(). La función createGraphics() también puede ser útil. Mira los ejemplos de abajo para ver diferentes técnicas.
 
-This library is frequently used with the core Processing function size(), with a combination of beginRecord() and endRecord(), or with beginRaw() and endRaw(). The createGraphics() function can also be useful. See the examples below for different techniques.
+## Un Cuadro (Sin Pantalla)
 
-## Single Frame (No Screen Display)
-
-This example draws a single frame to a PDF file and quits. (Note that no display window will open; this helps when you're trying to create massive PDF images that are far larger than the screen size.)
+Este ejemplo dibuja un solo cuadro en un archivo PDF y sale. (Nota que no se abrirá ninguna pantalla de despliegue; esto ayuda cuando estas tratando de crear imágenes masivas de PDF que son más grandes que el tamaño de pantalla.)
 
 ```
 import processing.pdf.*;
@@ -23,18 +22,19 @@ void setup() {
 }
 
 void draw() {
-  // Draw something good here
+  // Dibuja algo
   line(0, 0, width/2, height);
 
-  // Exit the program
+  // Sal del programa
   println("Finished.");
   exit();
 }
 ```
 
-## Multiple Pages (No Screen Display)
 
-It's possible to write every frame as a new page in the PDF document. This example creates a 100 page document:
+## Multiples Páginas (Sin Pantalla)
+
+Es posible escribir cada cuadro como una nueva página en un documento PDF. Este ejemplo crea un documento de 100 páginas:
 
 ```
 import processing.pdf.*;
@@ -44,23 +44,23 @@ void setup() {
 }
 
 void draw() {
-  // Draw something good here
+  // Dibuja algo bueno
   line(0, 0, frameCount * 4, height);
 
   PGraphicsPDF pdf = (PGraphicsPDF) g;  // Get the renderer
 
-  // When finished drawing, quit and save the file
+  // Cuando termines, guarda el documento y sal
   if (frameCount == 100) {
     exit();
   } else {
-    pdf.nextPage();  // Tell it to go to the next page
+    pdf.nextPage();  // Dile que avance a la siguiente página
   }
 }
 ```
 
-## Single Frame (With Screen Display)
+## Un Cuadro (Con Pantalla)
 
-To draw to the screen while also saving a PDF, use the beginRecord() and endRecord() functions. This is slower, but is useful when you need to see what you're working on as it saves.
+Para dibujar a pantalla mientras guardas un PDF, usa las funciones beginRecord() y endRecord(). Esto es más lento, pero es útil cuando quieres ver en que estas trabajando mientras se graba.
 
 ```
 import processing.pdf.*;
@@ -72,16 +72,16 @@ void setup() {
 }
 
 void draw() {
-  // Draw something good here
+  // Dibuja algo bonito
   line(0, 0, width/2, height);
 
   endRecord();
 }
 ```
 
-## Single Frame from an Animation (With Screen Display)
+## Un Cuadro de una Animación (Con Pantalla)
 
-It's also possible to save one frame from a program with moving elements. Create a boolean variable to turn the PDF recording process on and off
+También es posible guardar un cuadro del programa con elementos móviles. Crea una variable booleana para encender y apagar el proceso de guardar el PDF
 
 ```
 import processing.pdf.*;
@@ -94,11 +94,11 @@ void setup() {
 
 void draw() {
   if (record) {
-    // Note that #### will be replaced with the frame number. Fancy!
+    // Nota que #### será reemplazado con el número de cuadro. ¡Elegante!
     beginRecord(PDF, "frame-####.pdf");
   }
 
-  // Draw something good here
+  // Dibuja algo bueno aquí
   background(255);
   line(mouseX, mouseY, width/2, height/2);
 
@@ -108,15 +108,14 @@ void draw() {
   }
 }
 
-// Use a keypress so thousands of files aren't created
-void mousePressed() {
+// Presiona una tecla para que miles de archivos no sean creadosvoid mousePressed() {
   record = true;
 }
 ```
 
-## Many Frames Into One File (With Screen Display)
+## Multiples Cuadros en Un Archivo (Con Pantalla)
 
-The following example records absolutely everything that happens while a sketch is running. Hitting the 'q' key will quit the sketch. The sketch calls exit(), which is necessary to make sure that the file is properly written when complete.
+El siguiente ejemplo guarda absolutamente todo lo que pasa mientras el sketch se esta ejecutando. Teclear la tecla 'q' quitará el sketch. El sketch llama al método exit(), lo cual es necesario para asegurarse de que el archivo es escrito apropiadamente cuando se complete la operación.
 
 ```
 import processing.pdf.*;
@@ -127,10 +126,10 @@ void setup() {
 }
 
 void draw() {
-  // Be sure not to call background, otherwise your file
-  // will just accumulate lots of mess, only to become invisible
+  // Asegurate de no llamar al background, de otra manera
+  // se acumulará muchos datos que harán tu cuadro invisible
 
-  // Draw something good here
+  // Dibuja algo bonito aquí
   line(mouseX, mouseY, width/2, height/2);
 }
 
@@ -142,7 +141,7 @@ void keyPressed() {
 }
 ```
 
-## Pausing While Recording (With Screen Display)
+## Pausar mientras se Graba (Con Pantalla)
 
 It's also possible to pause/resume recording along the way. The following example toggles recording on/off each time you hit the 'r' key. Pressing the 'q' key will quit the sketch.
 
@@ -158,10 +157,10 @@ void setup() {
 }
 
 void draw() {
-  // Be sure not to call background, otherwise your file
-  // will just accumulate lots of mess, only to become invisible
+// Asegurate de no llamar al background, de otra manera
+  // se acumulará muchos datos que harán tu cuadro invisible
 
-  // Draw something good here
+  // Dibuja algo bonito aquí
   if (mousePressed) {
     line(pmouseX, pmouseY, mouseX, mouseY);
   }
@@ -187,7 +186,7 @@ void keyPressed() {
 }
 ```
 
-## PDF Files from 3D Geometry (With Screen Display)
+## Archivos PDF desde una Geometría 3D (Con Pantalla)
 
 To create vectors from 3D data, use the beginRaw() and endRaw() commands. These commands will grab the shape data just before it is rendered to the screen. At this stage, your entire scene is nothing but a long list of lines and triangles. This means that a shape created with sphere() method will be made up of hundreds of triangles, rather than a single object.
 
@@ -207,7 +206,7 @@ void draw() {
     beginRaw(PDF, "output.pdf");
   }
 
-  // Do all your drawing here
+  // Dibuja aquí
   background(204);
   translate(width/2, height/2, -200);
   rotateZ(0.2);
@@ -228,7 +227,7 @@ void keyPressed() {
 }
 ```
 
-## Using createGraphics() to Create a PDF File
+## Usar createGraphics() para Crear un archivo PDF
 
 To write a PDF file using only the createGraphics() command, rather than as part of a sketch, it's necessary to call dispose() on the PGraphicsPDF object. This is the same as calling exit(), but it won't quit the sketch.
 
@@ -243,7 +242,7 @@ pdf.dispose();
 pdf.endDraw();
 ```
 
-## Additional notes for the PDF renderer:
+## Notas adicionales para el renderer PDF:
 
 If you want 3D data, use the DXF recording library instead.
 
