@@ -97,6 +97,10 @@ const CoreList = memo(({ libraries, intl }) => {
 
 const ContributionsList = memo(({ categories, libraries }) => {
   const intl = useIntl();
+
+
+
+
   return categories.map((cat) => {
     const filtered = libraries.filter((c) => c.categories.includes(cat));
     return (

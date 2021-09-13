@@ -1,0 +1,151 @@
+---
+name: 'svg'
+title: 'Exportar SVG'
+library: 'true'
+description: 'Crea archivos SVG.'
+---
+
+## Exportar SVG
+
+La biblioteca SVG hace posible escribir archivos SVG directamente desde Processing. Estos gráficos vectoriales pueden ser escalados a cualquier tamaño con una muy alta resolución. La biblioteca SVG puede mandar datos 3D a un archivo vectorial 2D, pero para exportar datos 3D, use la biblioteca DXF. El código fuente esta disponible en el repositorio Github de [Processing](https://github.com/processing/processing/tree/master/java/libraries/svg). Por favor reporte los errores [aquí](https://github.com/processing/processing/issues).
+
+Esta biblioteca puede ser usada con funciones de Processing como size() o createGraphics(). Vea los ejemplos abajo para diferentes técnicas.
+
+## Exportar SVG (Sin Pantalla)
+
+Este ejemplo dibuja un único cuadro en un archivo SVG y termina. (Nota que ninguna ventana de despliegue será abierta, esto ayuda cuando estás tratando de crear imágenes SVG masivas que son mucho más largas que la pantalla.)
+
+```
+import processing.svg.*;
+
+void setup() {
+  size(400, 400, SVG, "filename.svg");
+}
+
+void draw() {
+  // Draw something good here
+  line(0, 0, width/2, height);
+
+  // Exit the program
+  println("Finished.");
+  exit();
+}
+```
+
+## Exportar SVG (Con Pantalla)
+
+Para dibujar y guardar un SVG usa los métodos beginRecord() y endRecord(). De manera contraria al renderer de PDF, el renderer SVG sólo guardará el cuadro final de la secuencia. Esto es más lento, pero es útil cuando uno necesita ver en lo que uno está trabajando mientras se guarda.
+
+```
+import processing.svg.*;
+
+void setup() {
+  size(400, 400);
+  noLoop();
+  beginRecord(SVG, "filename.svg");
+}
+
+void draw() {
+  // Dibuja algo bueno aquí
+  line(0, 0, width/2, height);
+
+  endRecord();
+}
+```
+
+## Cuadro de una animación (Con Pantalla)
+
+También es posible guardar un cuadro de un programa con elementos que se mueven. Crea una variable booleana para activar y desactivar el proceso de grabado de SVG.
+
+```
+import processing.svg.*;
+
+boolean record;
+
+void setup() {
+  size(400, 400);
+}
+
+void draw() {
+  if (record) {
+    // Nota que #### será reemplazado con el número de cuadro. ¡Elegante!
+    beginRecord(SVG, "frame-####.svg");
+  }
+
+  // Dibuja algo bueno aquí
+  background(255);
+  line(mouseX, mouseY, width/2, height/2);
+
+  if (record) {
+    endRecord();
+	record = false;
+  }
+}
+
+// Presiona una tecla para que miles de archivos no sean creados
+void mousePressed() {
+  record = true;
+}
+```
+
+## Archivos SVG de Geometría 3D (Con Pantalla)
+
+Pra crear vectores a partir de datos 3D, usa los comandos beginRaw() y endRaw(). Estos comandos obtendrán la forma de los datos justo antes de ser rendereada en pantalla. A esta altura, la pantalla no es más que una larga lista de líneas y triángulos. Esto significa que una forma creada con el método sphere() estará formada por cientos de triángulos en vez de un solo objeto.
+Al usar beginRaw() y endRaw(), es posible escribir ya sea al renderer 2D o 3D. Por ejemplo, beginRaw() con la biblioteca SVG escribirá la geometría como triángulos y líneas.
+
+```
+import processing.svg.*;
+
+boolean record;
+
+void setup() {
+  size(500, 500, P3D);
+}
+
+void draw() {
+  if (record) {
+    beginRaw(SVG, "output.svg");
+  }
+
+  // Dibuja aquí
+  background(204);
+  translate(width/2, height/2, -200);
+  rotateZ(0.2);
+  rotateY(mouseX/500.0);
+  box(200);
+
+  if (record) {
+    endRaw();
+    record = false;
+  }
+}
+
+// Teclea 'r' para grabar un cuadro
+void keyPressed() {
+  if (key == 'r') {
+    record = true;
+  }
+}
+```
+
+## Usar createGraphics() para crear un archivo SVG
+
+Para escribir un archivo SVG usando sólo el comando createGraphics(), en lugar de como una parte del sketch, es necesario llamar dispose() en el objeto PGraphicsSVG. Esto es lo mismo que llamar exit(), pero no saldrá del sketch.
+
+```
+import processing.svg.*;
+
+PGraphics svg = createGraphics(300, 300, SVG, "output.svg");
+svg.beginDraw();
+svg.background(128, 0, 0);
+svg.line(50, 50, 250, 250);
+svg.dispose();
+svg.endDraw();
+```
+
+Notas adicionales para el renderer SVG:
+
+- Si quieres usar datos 3D, mejor usa la biblioteca de grabación DXF.
+- Usar hint(ENABLE_DEPTH_SORT) puede mejorar la apariencia de la geometría 3d dibujada en archivos en formatos 2D.
+- Muchos métodos, particularmente métodos basados en píxeles, no tienen sentido para renderers SVG. Esto incluyes: loadPixels, updatePixels, get, set, mask, filter, copy, blend, save, e image.
+- De nuevo, exit() es muy importante al usar SVG con size().
