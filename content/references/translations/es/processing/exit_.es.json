@@ -1,8 +1,8 @@
 {
-  "brief": "Quits/stops/exits the program",
+  "brief": "Para/sale del programa",
   "related": [],
   "name": "exit()",
-  "description": "Quits/stops/exits the program. Programs without a <b>draw()</b> function\n exit automatically after the last line has run, but programs with\n <b>draw()</b> run continuously until the program is manually stopped or\n <b>exit()</b> is run.<br />\n <br />\n Rather than terminating immediately, <b>exit()</b> will cause the sketch\n to exit after <b>draw()</b> has completed (or after <b>setup()</b>\n completes if called during the <b>setup()</b> function).<br />\n <br />\n For Java programmers, this is <em>not</em> the same as System.exit().\n Further, System.exit() should not be used because closing out an\n application while <b>draw()</b> is running may cause a crash\n (particularly with P3D).",
+  "description": "Para/sale del programa. Programas sin una función <b>draw()</b>\n salen automáticamente después de que la última línea se ha ejecutado, pero programas con\n <b>draw()</b> corren continuamente hasta que el programa es parado manualmente o un \n <b>exit()</b> es ejecutado.<br />\n <br />\n Mas que terminar inmediatamente, <b>exit()</b> causará la salida del sketch\n después de que <b>draw()</b> se haya completado (o después de que el <b>setup()</b>\n se complete si fue llamado durante una función <b>setup()</b> ).<br />\n <br />\n Para los programadores Java, esto <em>no</em> es lo mismo que System.exit().\n Más aun, System.exit() no debe ser usado porque cerrar una aplicación asi \n mientras <b>draw()</b> esta corriendo puede causar un crash\n (particularmente con P3D).",
   "syntax": ["exit()"],
   "returns": "void",
   "type": "function",

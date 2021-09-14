@@ -1,6 +1,6 @@
 {
-  "name": "= (assign)",
-  "brief": "Assigns a value to a variable",
+  "name": "= (asignar)",
+  "brief": "Asigna un valor a una variable",
   "description": "Assigns a value to a variable. The \"=\" sign does not mean \"equals\", but is used to place data within a variable. The \"=\" operator is formally called the assignment operator. There are many different types of variables (int, floats, strings, etc.) and the assignment operator can only assign values which are the same type as the variable it is assigning. For example, if the variable is of type <b>int</b>, the value must also be an <b>int</b>.\n",
   "related": ["addassign", "subtractassign"],
   "syntax": ["var = value"],

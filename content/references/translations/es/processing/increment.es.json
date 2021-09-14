@@ -1,7 +1,7 @@
 {
-  "name": "++ (increment)",
-  "brief": "Increases the value of an integer variable by 1",
-  "description": "Increases the value of an integer variable by 1. Equivalent to the operation <b>i = i + 1</b>. If the value of the variable <b>i</b> is five, then the expression <b>i++</b> increases the value of <b>i</b> to 6.\n",
+  "name": "++ (incremento)",
+  "brief": "Incrementa le valor de una variable entera en 1",
+  "description": "Incrementa le valor de una variable entera en 1. Es equivalente a la operación <b>i = i + 1</b>. Si el valor de la variable <b>i</b> es 5, entonces la expresión <b>i++</b> incrementa el valor de <b>i</b> a 6.\n",
   "related": ["addition", "addassign", "decrement"],
   "syntax": ["value++"],
   "returns": "",

@@ -11,12 +11,12 @@
   "parameters": [
     {
       "name": "value1",
-      "description": "int or float",
+      "description": "int o float",
       "type": []
     },
     {
       "name": "value2",
-      "description": "any numerical value the same datatype as value1",
+      "description": "cualquier valor numérico del mismo tipo que value1",
       "type": []
     }
   ]

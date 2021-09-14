@@ -1,7 +1,7 @@
 {
-  "name": ". (dot)",
-  "brief": "Provides access to an object's methods and data",
-  "description": "Provides access to an object's methods and data. An object is one instance of a class and may contain both methods (object functions) and data (object variables and constants), as specified in the class definition. The dot operator directs the program to the information encapsulated within an object.\n",
+  "name": ". (punto)",
+  "brief": "Provee acceso a los datos y métodos de un objeto",
+  "description": "Provee acceso a los datos y métodos de un objeto. Un objeto es una instancia de una clase y puede contener tanto métodos (funciones del objeto) como datos (variables y constantes del objeto), especificados en la definición de la clase. El operador punto dirige el programa a la información encapsulada dentro del objeto.\n",
   "related": ["Object"],
   "syntax": ["object.method()", "object.data"],
   "returns": "",
@@ -11,17 +11,17 @@
   "parameters": [
     {
       "name": "object",
-      "description": "the object to be accessed",
+      "description": "el objeto a ser accesado",
       "type": []
     },
     {
       "name": "method()",
-      "description": "a method encapsulated in the object",
+      "description": "un método encapsulado en el objeto",
       "type": []
     },
     {
       "name": "data",
-      "description": "a variable or constant encapsulated in the object",
+      "description": "una variable o constante encapsulada en el objeto",
       "type": []
     }
   ]

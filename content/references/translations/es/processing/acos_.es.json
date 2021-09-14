@@ -1,17 +1,17 @@
 {
-  "brief": "The inverse of <b>cos()</b>, returns the arc cosine of a value",
+  "brief": "El inverso de <b>cos()</b>, regresa el arco coseno de un valor",
   "related": ["cos_", "asin_", "atan_"],
   "name": "acos()",
-  "description": "The inverse of <b>cos()</b>, returns the arc cosine of a value. This\n function expects the values in the range of -1 to 1 and values are\n returned in the range <b>0</b> to <b>PI (3.1415927)</b>.",
-  "syntax": ["acos(value)"],
+  "description": "El inverso del <b>cos()</b>, regresa el arco coseno de un valor. Esta\n función espera valores en el rango -1 a 1 y los valores son\n regresados en el rango <b>0</b> a <b>PI (3.1415927)</b>.",
+  "syntax": ["acos(valor)"],
   "returns": "float",
   "type": "function",
   "category": "math",
   "subcategory": "trigonometry",
   "parameters": [
     {
-      "name": "value",
-      "description": "the value whose arc cosine is to be returned",
+      "name": "valor",
+      "description": "el valor cuyo arco coseno será devuelto",
       "type": ["float"]
     }
   ]

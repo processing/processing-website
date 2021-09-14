@@ -1,7 +1,7 @@
 {
-  "name": "+ (addition)",
-  "brief": "Adds two values or concatenates string values",
-  "description": "Adds two values or concatenates string values. As a mathematical operator, it calculates the sum of two values. As a string operator, it combines two strings into one and converts from primitive datatypes into the String datatype if necessary. \n",
+  "name": "+ (suma)",
+  "brief": "Suma dos valores numéricos o concatena dos cadenas (strings)",
+  "description": "Suma dos valores numéricos o concatena dos cadenas (strings). Como operador matemático calcula la suma de dos valores. Como operador sobre cadenas, combina dos cadenas en una nueva y convierte de tipos primitivos a tipo de datos String si es necesario. \n",
   "related": ["increment", "addassign", "minus"],
   "syntax": ["value1 + value2"],
   "returns": "",
