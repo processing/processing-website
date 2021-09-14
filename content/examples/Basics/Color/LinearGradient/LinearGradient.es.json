@@ -1,0 +1,9 @@
+{
+  "name": "Gradiente Lineal",
+  "title": "Gradiente Lineal Simple",
+  "author": "",
+  "level": "Intermedio",
+  "order": "5",
+  "description": "La función lerpColor() es útil para interpolar\n entre dos colores.",
+  "featured": ["lerpColor_", "color_datatype"]
+}
