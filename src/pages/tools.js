@@ -27,14 +27,11 @@ const Tools = ({ data }) => {
 
       if (locale === 'en') {
         if (en.name === con.name.split('.')[0]) {
-          console.log(" A eng n "+ en.name + " con n "+con.name);
-          console.log(en.childJson.sentence)
-          console.log(con.childJson.sentence)
+
           contributions.push({ ...en.childJson });
         }
       }else{
         if (en.name === con.name.split('.')[0]) {
-          console.log(" B eng n "+ en.name + " con n "+con.name);
           contributions.push({ ...en.childJson, ...con.childJson });
         }
       }
@@ -44,14 +41,7 @@ const Tools = ({ data }) => {
 
     });
   });
-  //contributions = currentLang.nodes;
-  //contributions = contributions.concat(currentLang.nodes)
 
-
-  console.log(contributions);
-  console.log("size english "+ Object.keys(english.nodes).length)
-  console.log("size current lang "+ Object.keys(currentLang.nodes).length)
-  console.log("size contrib "+ Object.keys(contributions).length)
   return (
     <Layout>
       <HeadMatter

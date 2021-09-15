@@ -18,7 +18,7 @@ const Tutorials = ({ data }) => {
   const videos = usePreparedTutorials(data.video.nodes);
   const texts = usePreparedTutorials(data.text.nodes);
 
-  console.log(`data`);
+  //console.log(`data`);
   return (
     <Layout>
       <HeadMatter

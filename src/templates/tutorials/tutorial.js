@@ -26,7 +26,6 @@ const TutorialTemplate = ({ data, pageContext }) => {
 
   const trail = useTrail();
 
-  console.log(`MDX obtenido ${mdx.frontmatter.title}`);
   return (
     <Layout withSidebar withBreadcrumbs>
       <HeadMatter

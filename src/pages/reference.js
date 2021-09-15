@@ -70,12 +70,11 @@ const sortOrder = {
 };
 
 const Reference = ({ data }) => {
-  console.log(data)
+
   const [searchTerm, setSearchTerm] = useState('');
   const intl = useIntl();
   const items = usePreparedItems(data.items.nodes, 'processing');
-  console.log("page references" )
-  console.log( data.items.nodes)
+
   // const tree = useTree(items, sortOrder);
   const tree = useTree(items ,'');
   const filtered = useFilteredTree(tree, searchTerm);
