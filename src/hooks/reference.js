@@ -14,12 +14,11 @@ export const usePreparedItems = (items, libraryName) => {
     // names and removes underscores and adds title cases. Some of these should be fixed
     // in the JavaDoc comments instead.
     const prepared = [];
-    // console.log("items  hook para biblio  "+ libraryName);
-    // console.log(items)
-    // let subcategories = []
+
+
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
-      // Processing does not list methods or fields in reference list or sidebar. Libraries do.
+
       if (
         libraryName !== 'processing' ||
         (item.childJson.type !== 'method' && item.childJson.type !== 'field')
@@ -27,23 +26,18 @@ export const usePreparedItems = (items, libraryName) => {
 
         let path = item.name.split(`.`)[0]
 
-       // console.log(`useprep items name: ${ item.childJson.name}  path: ${path}   titlecase: ${titleCase(item.childJson.subcategory)} subcategory: ${item.childJson.subcategory}` );
-       // subcategories.append(item.childJson.subcategory);
         prepared.push(
           Object.assign({}, item.childJson, {
             slug: item.childJson.name,
             path: referencePath(path, libraryName),
             category: titleCase(item.childJson.category),
-            //category: 'categoria',
-             // subcategory: 's',
             subcategory: item.childJson.subcategory?titleCase(item.childJson.subcategory):" ",
-         //  subcategory: titleCase(item.childJson.subcategory),
             search: `${item.childJson.name} ${item.childJson.brief ?? ''}`
           })
         );
       }
     }
-    //console.log(`Subcategorias ${subcategories.length}`)
+
     return prepared;
   }, [items, libraryName]);
 };

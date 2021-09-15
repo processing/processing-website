@@ -12,8 +12,6 @@ export const usePreparedExample = (example) => {
       return null;
     }
 
-    console.log(`example.childdjoson`);
-    console.log(example.childJson);
     const [category, subcategory] = example.relativeDirectory.split('/');
     return {
       title: example.childJson.title,
@@ -101,15 +99,9 @@ export const useOrderedPdes = (name, nodes) => {
     if (locale!==`en`){
        pdeinlocale = rest.filter ( (pde) => pde.name.includes(`.${locale}`)) ;
     }else{//TODO check this logic
-      console.log("quitando los que tienen locale")
       pdeinlocale = rest.filter ( (pde) => !pde.name.includes(`.`)) ;
     }
-  //  console.log(`rest`)
-  //  console.log(rest)
-  //  console.log(`locale`)
-  //  console.log(pdeinlocale)
 
-    //return rest;
     return pdeinlocale;
   }, [locale, name, nodes]);
 };
@@ -127,11 +119,9 @@ export const useTrail = (example) => {
     ];
 
     if (example) {
-   //   console.log( `Hay ejemplo`);
+
       if (example.category) {
-        console.log( `hook examples categoria ${example.category.toString()}`);
         const category = intl.formatMessage({ id: example.category });
-        console.log( `hook examples categoria INTL ${category}`);
         trail.push({
           slug: `/examples#${slugify(example.category)}`,
           label: category
@@ -139,16 +129,15 @@ export const useTrail = (example) => {
       }
       if (example.subcategory) {
 
-        console.log( `subcategoria ${example.subcategory.toString()}`);
         const subcategory = intl.formatMessage({ id: example.subcategory });
-       console.log( `subcategoria INTL ${subcategory}`);
+
         trail.push({
           slug: `/examples#${slugify(example.category, subcategory)}`,
           label: subcategory
         });
       }
     }
-   // console.log( `trail construido: ${trail.toString()}`);
+
     return trail;
   }, [intl, example]);
 };

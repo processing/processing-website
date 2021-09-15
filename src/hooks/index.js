@@ -47,7 +47,6 @@ export const useTree = (items, order) => {
       if (!tree[item.category][item.subcategory]) {
         tree[item.category][item.subcategory] = [];
       }
-  //     console.log(`category ${item.category} subcategory ${item.subcategory}`)
 
       tree[item.category][item.subcategory].push(item);
     }
@@ -165,7 +164,6 @@ export const useTreeSort = (tree, attr, sort) => {
             tree[category][subcategory][i];
         }
 
-        console.log( `use tree sort cat ${category} subcat ${subcategory}`);
         sortedTree[category][subcategory] = sorted;
       });
     });

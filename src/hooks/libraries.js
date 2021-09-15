@@ -11,11 +11,6 @@ export const usePreparedContributions = (english, currentLang, locale) => {
   return useMemo(() => {
     const contributions = [];
 
-    console.log("english nodes");
-    console.log(english.length);
-    console.log("current language nodes");
-    console.log(currentLang.length);
-
     for (let i = 0; i < english.length; i++) {
       const en = english[i];
       for (let j = 0; j < currentLang.length; j++) {
@@ -31,16 +26,12 @@ export const usePreparedContributions = (english, currentLang, locale) => {
 
             if (locale === 'en') {
               if (en.name === cur.name.split('.')[0]) {
-                console.log(" A eng n " + en.name + " con n " + cur.name);
-                console.log(en.childJson.sentence)
-                console.log(cur.childJson.sentence)
                 contributions.push({ ...en.childJson });
               }
             }
             else {
-                console.log(" locale " +locale + " english name: "+ en.name );
+
                 if (en.name === cur.name.split('.')[0]) {
-                  console.log(" B eng n " + en.name + " cur n " + cur.name);
                   contributions.push({ ...en.childJson, ...cur.childJson });
                 }
               }

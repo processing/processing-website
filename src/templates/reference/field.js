@@ -36,7 +36,6 @@ const FieldRefTemplate = ({ data, pageContext }) => {
 
   const parent = data?.parent?.childJson;
   const entry = data?.json?.childJson;
-
   const [showSidebar, setShowSidebar] = useSidebar('reference');
 
   const { locale } = useLocalization();
