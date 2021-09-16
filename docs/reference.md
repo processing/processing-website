@@ -80,4 +80,5 @@ If you want to add a translation, copy the `en` folder, rename it to the languag
 
 Translations of the `.pde` example files in the reference should be added next to the english version `.pde` files in `content/references/examples`.
 
+
 <sup>1</sup> [Language codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
