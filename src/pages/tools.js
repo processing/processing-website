@@ -17,10 +17,7 @@ const Tools = ({ data }) => {
   const intl = useIntl();
 
   let contributions = [];
-   //console.log("english nodes");
-//console.log(english.nodes);
-//console.log("current language nodes");
-//console.log(currentLang.nodes);
+
 
   english.nodes.forEach((en) => {
     currentLang.nodes.forEach((con) => {
@@ -35,9 +32,7 @@ const Tools = ({ data }) => {
           contributions.push({ ...en.childJson, ...con.childJson });
         }
       }
-        //  contributions.push(en.childJson);
-        // console.log('doble' +en.name +" " +con.name.split('.')[0])
-        //}
+
 
     });
   });

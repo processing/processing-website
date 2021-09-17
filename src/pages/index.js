@@ -291,7 +291,7 @@ const IndexPage = ({ data }) => {
 
 const Examples = memo(({ heading, examples}) => {
   const intl = useIntl();
-  console.log(`Numero de ejemplos locale = ${ examples.length} `)
+
   return (
     <div className={classnames(grid.grid, css.examples)}>
       <h3 className={classnames(grid.col, css.examplesHeading)}>{heading}</h3>
