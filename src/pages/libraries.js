@@ -128,7 +128,7 @@ const ContributionsList = memo(({ categories, libraries }) => {
                         )}
                       </a>
                     ) : (
-                      <span>{author}</span>
+                      <span key={key + 'span'}>{author}</span>
                     );
                   })}
                 </div>
