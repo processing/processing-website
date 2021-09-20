@@ -4,12 +4,12 @@ import { graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
 import { useLocalization } from 'gatsby-theme-i18n';
 
-import HeadMatter from '../components/HeadMatter';
-import Donate from '../components/character/Donate';
-import Layout from '../components/Layout';
+import HeadMatter from '../../components/HeadMatter';
+import Donate from '../../components/character/Donate';
+import Layout from '../../components/Layout';
 
-import * as css from '../styles/pages/libraries.module.css';
-import * as grid from '../styles/grid.module.css';
+import * as css from '../../styles/pages/libraries.module.css';
+import * as grid from '../../styles/grid.module.css';
 
 const Tools = ({ data }) => {
   const { locale } = useLocalization();
@@ -17,25 +17,19 @@ const Tools = ({ data }) => {
   const intl = useIntl();
 
   let contributions = [];
-
-
-  english.nodes.forEach((en) => {
-    currentLang.nodes.forEach((con) => {
-
-      if (locale === 'en') {
-        if (en.name === con.name.split('.')[0]) {
-
-          contributions.push({ ...en.childJson });
-        }
-      }else{
-        if (en.name === con.name.split('.')[0]) {
-          contributions.push({ ...en.childJson, ...con.childJson });
-        }
-      }
-
-
-    });
-  });
+  // english.nodes.forEach((en) => {
+  //   currentLang.nodes.forEach((con) => {
+  //     if (locale === 'en') {
+  //       if (en.name === con.name.split('.')[0]) {
+  //         contributions.push({ ...en.childJson });
+  //       }
+  //     } else {
+  //       if (en.name === con.name.split('.')[0]) {
+  //         contributions.push({ ...en.childJson, ...con.childJson });
+  //       }
+  //     }
+  //   });
+  // });
 
   return (
     <Layout>
@@ -113,8 +107,12 @@ export default Tools;
 
 export const query = graphql`
   query($locale: String!) {
-    tools: allFile(filter: { sourceInstanceName: { eq: "tools" }
-        fields: { lang: { eq: $locale } }}) {
+    tools: allFile(
+      filter: {
+        sourceInstanceName: { eq: "tools" }
+        fields: { lang: { eq: $locale } }
+      }
+    ) {
       nodes {
         childJson {
           name

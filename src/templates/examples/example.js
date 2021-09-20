@@ -249,7 +249,7 @@ export const query = graphql`
     allExamples: allFile(
       filter: {
         sourceInstanceName: { eq: "examples" }
-        fields: { lang: { eq: $locale} }
+        fields: { lang: { eq: $locale } }
         extension: { eq: "json" }
         relativeDirectory: { regex: "/^((?!data).)*$/" }
       }
@@ -259,6 +259,9 @@ export const query = graphql`
         name
         relativeDirectory
         relativePath
+        fields {
+          name
+        }
         childJson {
           name
           title

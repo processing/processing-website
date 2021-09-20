@@ -12,9 +12,11 @@ const Shortcuts = ({ categories }) => {
   const intl = useIntl();
   return (
     <div className={classnames(grid.col, grid.grid, css.root)}>
-      <h4 className={classnames(grid.col, css.heading)}>{intl.formatMessage({
-        id: `Shortcuts`
-      })}</h4>
+      <h4 className={classnames(grid.col, css.heading)}>
+        {intl.formatMessage({
+          id: `Shortcuts`
+        })}
+      </h4>
       <ul className={classnames(grid.col, grid.grid, css.list)}>
         {categories.map((category, key) => (
           <li
@@ -23,7 +25,7 @@ const Shortcuts = ({ categories }) => {
             <div className={css.line} />
             <Link className={css.itemLink} to={`#${slugify(category)}`}>
               {intl.formatMessage({
-                id: `${category.replace(/_/g, ' ').replace(/ /g, '')}`
+                id: toIntlId(category)
               })}
             </Link>
           </li>

@@ -21,14 +21,21 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
 exports.onCreateNode = ({ node, actions, getNode, loadNodeContent }) => {
   const { createNodeField } = actions;
 
+  console.log(node.name);
+
   // Handle locale naming convention in .json and .pde files
   if (
-    node.internal.mediaType === `application/json` ||
-    node.internal.mediaType === `text/x-processing`
+    node.internal.type === 'File' &&
+    (node.internal.mediaType === `application/json` ||
+      node.internal.mediaType === `text/x-processing`)
   ) {
     const nameSplit = node.name.split('.');
     const name = nameSplit[0];
     const lang = nameSplit[1] ? nameSplit[1] : 'en';
+
+    if (name === '$1_Unistroke_Recognizer') {
+      console.log(name, lang, node);
+    }
 
     createNodeField({
       name: `name`,
@@ -68,7 +75,9 @@ async function createReference(actions, graphql) {
   );
   const classRefTemplate = path.resolve(`./src/templates/reference/class.js`);
   const fieldRefTemplate = path.resolve(`./src/templates/reference/field.js`);
-  const indexLibTemplate = path.resolve(`./src/templates/libraries/library.js`);
+  const indexLibTemplate = path.resolve(
+    `./src/templates/reference/libraries/library.js`
+  );
 
   const refTemplates = {
     function: functionTemplate,
@@ -216,12 +225,12 @@ async function createReference(actions, graphql) {
 
   createPage({
     path: '/reference/libraries/',
-    component: path.resolve(`./src/pages/libraries.js`)
+    component: path.resolve(`./src/templates/reference/libraries/index.js`)
   });
 
   createPage({
     path: '/reference/tools/',
-    component: path.resolve(`./src/pages/tools.js`)
+    component: path.resolve(`./src/templates/reference/tools.js`)
   });
 }
 

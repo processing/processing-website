@@ -9,10 +9,9 @@ const langPrefix = (lang) =>
 /**
   Returns the slug of an example. Slug is lowercased to match old processing.org URL's
 **/
-const exampleSlug = (name) => { let n =name.toLowerCase();
-   // console.log("Name slug: " + n);
-   return n.split('.')[0]
-}
+const exampleSlug = (name) => {
+  return name.toLowerCase();
+};
 
 /**
   Returns the full path to an example

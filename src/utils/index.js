@@ -44,7 +44,7 @@ export const slugify = (...titles) =>
   Used to convert a string to an id for intl
   "Data Something" > "DataSomething"
 **/
-export const toIntlId = (str) => str.replace(/ /g, '');
+export const toIntlId = (str) => str.replace(/_/g, ' ').replace(/ /g, '');
 
 export const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {

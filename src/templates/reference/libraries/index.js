@@ -4,24 +4,23 @@ import { graphql } from 'gatsby';
 import unique from 'array-unique';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
-import { widont, linkParsing } from '../utils/index.js';
 import { useLocalization, LocalizedLink as Link } from 'gatsby-theme-i18n';
 
-import HeadMatter from '../components/HeadMatter';
-import Shortcuts from '../components/Shortcuts';
-import Donate from '../components/character/Donate';
-import Layout from '../components/Layout';
-import FilterBar from '../components/FilterBar';
+import HeadMatter from '../../../components/HeadMatter';
+import Shortcuts from '../../../components/Shortcuts';
+import Donate from '../../../components/character/Donate';
+import Layout from '../../../components/Layout';
+import FilterBar from '../../../components/FilterBar';
 
-import { useFilteredArray } from '../hooks';
-import { usePreparedContributions } from '../hooks/libraries';
-import { slugify } from '../utils';
-import { referencePath } from '../utils/paths';
+import { useFilteredArray } from '../../../hooks';
+import { usePreparedContributions } from '../../../hooks/libraries';
+import { slugify, widont, linkParsing } from '../../../utils';
+import { referencePath } from '../../../utils/paths';
 
-import * as css from '../styles/pages/libraries.module.css';
-import * as grid from '../styles/grid.module.css';
+import * as css from '../../../styles/pages/libraries.module.css';
+import * as grid from '../../../styles/grid.module.css';
 
-const Libraries = ({ data }) => {
+const Libraries = ({ data, pageContext }) => {
   const { locale } = useLocalization();
   const intl = useIntl();
   const { coreLibraries, currentLang, english } = data;
@@ -32,6 +31,9 @@ const Libraries = ({ data }) => {
     currentLang.nodes,
     locale
   );
+
+  console.log(english.nodes);
+  console.log(currentLang.nodes);
 
   const filtered = useFilteredArray(contributions, searchTerm);
   const categories = unique(filtered.flatMap((con) => con.categories));
@@ -97,9 +99,6 @@ const CoreList = memo(({ libraries, intl }) => {
 
 const ContributionsList = memo(({ categories, libraries }) => {
   const intl = useIntl();
-
-
-
 
   return categories.map((cat) => {
     const filtered = libraries.filter((c) => c.categories.includes(cat));

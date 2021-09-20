@@ -48,11 +48,10 @@ export const usePreparedExamples = (examples, images) => {
         }
       }
 
-
       const [category, subcategory] = example.relativeDirectory.split('/');
       prepared.push({
         slug: example.name,
-        path: examplePath(example.name),
+        path: examplePath(example.fields.name),
         name: example.childJson.name,
         order: example.childJson.order,
         level: example.childJson.level,
@@ -85,28 +84,6 @@ export const useRelatedExamples = (examples, related) => {
 };
 
 /**
-  Hook to sort a list of .pde files so the file with the same name
-  of the examples is first in the array.
-**/
-export const useOrderedPdes = (name, nodes) => {
-  const locale = useIntl().locale;
-  return useMemo(() => {
-    const main = nodes.find((pde) => pde.name === name);
-    const rest = nodes.filter((pde) => pde.name !== name);
-
-    rest.unshift(main);
-    let pdeinlocale =[]
-    if (locale!==`en`){
-       pdeinlocale = rest.filter ( (pde) => pde.name.includes(`.${locale}`)) ;
-    }else{//TODO check this logic
-      pdeinlocale = rest.filter ( (pde) => !pde.name.includes(`.`)) ;
-    }
-
-    return pdeinlocale;
-  }, [locale, name, nodes]);
-};
-
-/**
   Hook to prepare the trail used for the breadcumbs
   Example: Learn > Examples > [Category] > [Subcategory]
 **/
@@ -119,7 +96,6 @@ export const useTrail = (example) => {
     ];
 
     if (example) {
-
       if (example.category) {
         const category = intl.formatMessage({ id: example.category });
         trail.push({
@@ -128,7 +104,6 @@ export const useTrail = (example) => {
         });
       }
       if (example.subcategory) {
-
         const subcategory = intl.formatMessage({ id: example.subcategory });
 
         trail.push({

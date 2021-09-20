@@ -1,20 +1,18 @@
 import { useMemo } from 'react';
 import { useIntl } from 'react-intl';
-import { titleCase, slugify} from '../utils';
+import { titleCase, slugify } from '../utils';
 import { referencePath, pathToName, examplePath } from '../utils/paths';
 
 /**
   Hook to turn the reference items in an object that can be used in useTree
+  This makes up for some weirdness in lowercase/uppercase category and subcategory
+  names and removes underscores and adds title cases. Some of these should be fixed
+  in the JavaDoc comments instead.
   @param {Array} items GraphQL reference items
 **/
 export const usePreparedItems = (items, libraryName) => {
-
   return useMemo(() => {
-    // This makes up for some weirdness in lowercase/uppercase category and subcategory
-    // names and removes underscores and adds title cases. Some of these should be fixed
-    // in the JavaDoc comments instead.
     const prepared = [];
-
 
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
@@ -23,15 +21,16 @@ export const usePreparedItems = (items, libraryName) => {
         libraryName !== 'processing' ||
         (item.childJson.type !== 'method' && item.childJson.type !== 'field')
       ) {
-
-        let path = item.name.split(`.`)[0]
+        let path = item.name.split(`.`)[0];
 
         prepared.push(
           Object.assign({}, item.childJson, {
             slug: item.childJson.name,
             path: referencePath(path, libraryName),
             category: titleCase(item.childJson.category),
-            subcategory: item.childJson.subcategory?titleCase(item.childJson.subcategory):" ",
+            subcategory: item.childJson.subcategory
+              ? titleCase(item.childJson.subcategory)
+              : ' ',
             search: `${item.childJson.name} ${item.childJson.brief ?? ''}`
           })
         );
@@ -184,20 +183,20 @@ export const useTrail = (libraryName, category, subcategory, classanchor) => {
           label: intl.formatMessage({ id: 'libraries' })
         };
 
-    const trail = [ intl.formatMessage( {id:"Documentation" }), sectionTrail];
+    const trail = [intl.formatMessage({ id: 'Documentation' }), sectionTrail];
 
     if (isProcessing) {
       if (category) {
         trail.push({
           slug: sectionTrail.slug + '#' + slugify(category),
-          label: intl.formatMessage( {id:category })
+          label: intl.formatMessage({ id: category })
         });
       }
 
       if (subcategory) {
         trail.push({
           slug: sectionTrail.slug + '#' + slugify(category, subcategory),
-          label: intl.formatMessage( {id:subcategory })
+          label: intl.formatMessage({ id: subcategory })
         });
       }
     } else {
@@ -208,7 +207,7 @@ export const useTrail = (libraryName, category, subcategory, classanchor) => {
       trail.push({
         slug: referencePath('index', libraryName),
         // label: libraryName
-        label: intl.formatMessage( {id:libraryName })
+        label: intl.formatMessage({ id: libraryName })
       });
     }
 
@@ -216,7 +215,7 @@ export const useTrail = (libraryName, category, subcategory, classanchor) => {
       trail.push({
         slug: referencePath(classanchor, libraryName),
         // label: classanchor
-        label: intl.formatMessage( {id:classanchor })
+        label: intl.formatMessage({ id: classanchor })
       });
     }
 

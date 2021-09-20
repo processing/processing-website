@@ -5,16 +5,16 @@ import { Link } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { useIntl } from 'react-intl';
 
-import HeadMatter from '../../components/HeadMatter';
-import Layout from '../../components/Layout';
-import ReferenceList from '../../components/reference/ReferenceList';
+import HeadMatter from '../../../components/HeadMatter';
+import Layout from '../../../components/Layout';
+import ReferenceList from '../../../components/reference/ReferenceList';
 
-import { referencePath } from '../../utils/paths';
-import { useTree, useHighlight } from '../../hooks';
-import { usePreparedItems } from '../../hooks/reference';
+import { referencePath } from '../../../utils/paths';
+import { useTree, useHighlight } from '../../../hooks';
+import { usePreparedItems } from '../../../hooks/reference';
 
-import * as css from '../../styles/templates/libraries/library.module.css';
-import * as grid from '../../styles/grid.module.css';
+import * as css from '../../../styles/templates/libraries/library.module.css';
+import * as grid from '../../../styles/grid.module.css';
 
 const IndexLibraryTemplate = ({ data, pageContext: { libraryName } }) => {
   const intl = useIntl();

@@ -15,29 +15,33 @@ export const usePreparedContributions = (english, currentLang, locale) => {
       const en = english[i];
       for (let j = 0; j < currentLang.length; j++) {
         const cur = currentLang[j];
+        //
+        // if (en.name === fields.name) {
+        //   const copy = Object.assign({}, en.childJson, cur.childJson);
+        //   copy.search = `${copy.name} ${copy.authors} ${copy.sentence}`;
+        //   contributions.push(copy);
+        // }
 
-        const search = `${en.childJson.name} ${en.childJson.authors} ${en.childJson.sentence}`;
-        const copy = Object.assign({ search }, en.childJson);
-        /*if (en.name === cur.name.split('.')[0]) {
-          contributions.push(Object.assign(copy, cur.childJson));
-        } else if (locale !== 'en') {
-          contributions.push(copy);
-        }*/
+        // if (en.name === cur.name.split('.')[0]) {
+        //   contributions.push(Object.assign(copy, cur.childJson));
+        // } else if (locale !== 'en') {
+        //   contributions.push(copy);
+        // }
 
-            if (locale === 'en') {
-              if (en.name === cur.name.split('.')[0]) {
-                contributions.push({ ...en.childJson });
-              }
-            }
-            else {
+        // console.log(locale);
 
-                if (en.name === cur.name.split('.')[0]) {
-                  contributions.push({ ...en.childJson, ...cur.childJson });
-                }
-              }
-
+        // if (locale === 'en') {
+        //   if (en.name === cur.name.split('.')[0]) {
+        //     contributions.push({ ...en.childJson });
+        //   }
+        // } else {
+        //   if (en.name === cur.name.split('.')[0]) {
+        //     contributions.push({ ...en.childJson, ...cur.childJson });
+        //   }
+        // }
       }
     }
+
     return contributions;
   }, [english, currentLang, locale]);
 };

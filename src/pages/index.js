@@ -50,7 +50,6 @@ const partners = [
 
 const IndexPage = ({ data }) => {
   const intl = useIntl();
-  // const { locale } = useLocalization();
   const featuredExamples = usePreparedExamples(
     data.examples.nodes,
     data.exampleImages.nodes
@@ -163,9 +162,7 @@ const IndexPage = ({ data }) => {
             </div>
             <div className={css.participateButton}>
               <Button
-                href={
-                  'https://processingfoundation.org/advocacy/pcd-2021'
-                }
+                href={'https://processingfoundation.org/advocacy/pcd-2021'}
                 variant="animate1"
                 size="large">
                 {intl.formatMessage({ id: 'buttonParticipate' })}
@@ -289,7 +286,7 @@ const IndexPage = ({ data }) => {
   );
 };
 
-const Examples = memo(({ heading, examples}) => {
+const Examples = memo(({ heading, examples }) => {
   const intl = useIntl();
 
   return (
@@ -307,8 +304,14 @@ const Examples = memo(({ heading, examples}) => {
                 />
               )}
             </div>
-            <h4> {intl.formatMessage( {id:example.name})}</h4>
-            <p> {intl.formatMessage( {id:"ExamplesIn"} , {subcat:intl.formatMessage( {id:example.subcategory})})}</p>
+            <h4> {intl.formatMessage({ id: example.name })}</h4>
+            <p>
+              {' '}
+              {intl.formatMessage(
+                { id: 'ExamplesIn' },
+                { subcat: intl.formatMessage({ id: example.subcategory }) }
+              )}
+            </p>
           </Link>
         </div>
       ))}
@@ -325,7 +328,7 @@ export default IndexPage;
 
 export const query = graphql`
   query(
-  $featuredExamples: [String] = [
+    $featuredExamples: [String] = [
       "KeyboardFunctions"
       "RadialGradient"
       "Saturation"
@@ -343,7 +346,7 @@ export const query = graphql`
         name: { in: $featuredExamples }
         extension: { eq: "json" }
         sourceInstanceName: { eq: "examples" }
-        fields: { lang: { eq: "en"} }
+        fields: { lang: { eq: "en" } }
         dir: { regex: "/^((?!data).)*$/" }
       }
       sort: { order: ASC, fields: relativeDirectory }
@@ -352,6 +355,9 @@ export const query = graphql`
         id
         name
         relativeDirectory
+        fields {
+          name
+        }
         childJson {
           name
           title
