@@ -1,6 +1,6 @@
 ---
-slug: '/environment'
-title: 'Environment (IDE) GE'
+slug: "/environment"
+title: "Environment (IDE) GE"
 ---
 
 <Intro>
@@ -32,34 +32,27 @@ The buttons on the toolbar can run and stop programs,
 <dl>
 <dt>
 
-
 <FixedImage marginRight={30} float={'left'} minWidth={40}>
-
 
 ![Play button](./play.png)
 
 </FixedImage>
-
 
 <b>Run</b>
 </dt>
 <dd>Runs the sketch. In Java mode, it compiles the code and opens a new display window. </dd>
 <dt>
 
-
 <FixedImage marginRight={30} float={'left'} minWidth={40}>
-
 
 ![Stop button](./stop.png)
 
 </FixedImage>
 
-
 <b>Stop</b>
 </dt>
 <dd>Terminates a running sketch.</dd>
 </dl>
-
 
 Additional commands are found within the six menus: File, Edit, Sketch, Debug, Tools, Help. The menus are context sensitive which means only those items relevant to the work currently being carried out are available.
 
@@ -469,13 +462,11 @@ The arrow button to the right of the tabs in the Processing Development Environm
 
 <HighlightBlock>
 
-
 _Advanced_
 
 When a program with multiple tabs is run, the code is grouped together and the classes in other tabs become inner classes. Because they're inner classes, they cannot have static variables. Simply place the "static" variable outside the class itself to do the same thing (it need not be explicitly named "static" once you list it in this manner). If you don't want code to be an inner class, you can also create a tab with a ".java" suffix, which means it will be interpreted as straight java code. It is also not possible to use static classes in separate tabs. If you do this, however, you'll need to pass the PApplet object to that object in that tab in order to get PApplet functions like `line()`, `loadStrings()` or `saveFrame()` to work.
 
 </HighlightBlock>
-
 
 ### Debug
 
@@ -495,7 +486,6 @@ This mode makes it possible to write short programs to draw to the screen, but a
 
 <HighlightBlock>
 
-
 _Advanced_
 
 Java files with the extension .java can be included with a Java mode sketch. They may be created directly in the PDE or copied into the sketch folder through the "Add File..." item in the Sketch menu or dragged into the text editor. It's possible to write any Java code in files with the .java extension. In fact, complete Java code can be written from inside the Processing Environment by subclassing PApplet like this:
@@ -507,7 +497,6 @@ public class MyDemo extends PApplet {
 This is for advanced developers only and is not really recommended. Using this technique means that any additional tabs will no longer be inner classes, meaning you'll have to do extra work to make them communicate properly with the host PApplet. It is not necessary to use this technique just to get features of the Java language. Advanced developers can also program with Processing in another Java Editor if higher-level code editing and tools are needed. <!--We've documented how to use [Processing in Eclipse](http://processing.org/learning/eclipse/) but core.jar can be used as a part of any Java project.--> Processing's core.jar can be used as a part of any Java project.
 
 </HighlightBlock>
-
 
 ### Adding Libraries, Tools, and Modes
 
@@ -523,4 +512,4 @@ Add contributed Examples by first opening the "Examples..." submenu from the Fil
 
 ### Export
 
-The [Export information and Tips](https://github.com/processing/processing/wiki/Export-Info-and-Tips") page on the Processing Wiki covers the details of exporting Applications from Java mode.
+The [Export information and Tips](https://github.com/processing/processing/wiki/Export-Info-and-Tips) page on the Processing Wiki covers the details of exporting Applications from Java mode.
