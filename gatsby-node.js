@@ -21,7 +21,9 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
 exports.onCreateNode = ({ node, actions, getNode, loadNodeContent }) => {
   const { createNodeField } = actions;
 
-  console.log(node.name);
+  if (node.name && node.name.match('Unistroke')) {
+    console.log('NODE', node);
+  }
 
   // Handle locale naming convention in .json and .pde files
   if (
@@ -32,10 +34,6 @@ exports.onCreateNode = ({ node, actions, getNode, loadNodeContent }) => {
     const nameSplit = node.name.split('.');
     const name = nameSplit[0];
     const lang = nameSplit[1] ? nameSplit[1] : 'en';
-
-    if (name === '$1_Unistroke_Recognizer') {
-      console.log(name, lang, node);
-    }
 
     createNodeField({
       name: `name`,
