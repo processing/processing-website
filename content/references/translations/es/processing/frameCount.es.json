@@ -1,0 +1,9 @@
+{
+  "brief": "The system variable that contains the number of frames\n displayed since the program started",
+  "related": ["frameRate_", "frameRate"],
+  "name": "frameCount",
+  "description": "The system variable <b>frameCount</b> contains the number of frames\n displayed since the program started. Inside <b>setup()</b> the value is\n 0 and and after the first iteration of draw it is 1, etc.",
+  "category": "environment",
+  "subcategory": "",
+  "type": "other"
+}

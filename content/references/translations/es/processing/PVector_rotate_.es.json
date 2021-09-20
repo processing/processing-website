@@ -1,0 +1,19 @@
+{
+  "brief": "Rotate the vector by an angle (2D only)",
+  "related": [],
+  "name": "rotate()",
+  "description": "Rotate the vector by an angle (only 2D vectors), magnitude remains the same",
+  "syntax": [".rotate(theta)"],
+  "returns": "PVector",
+  "type": "method",
+  "category": "pvector",
+  "subcategory": "method",
+  "classanchor": "PVector",
+  "parameters": [
+    {
+      "name": "theta",
+      "description": "the angle of rotation",
+      "type": ["float"]
+    }
+  ]
+}

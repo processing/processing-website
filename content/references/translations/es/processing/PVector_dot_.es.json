@@ -1,0 +1,44 @@
+{
+  "brief": "Calculate the dot product of two vectors",
+  "related": [],
+  "name": "dot()",
+  "description": "Calculates the dot product of two vectors.",
+  "syntax": [".dot(v)", ".dot(x, y, z)", ".dot(v1, v2)"],
+  "returns": "float",
+  "type": "method",
+  "category": "pvector",
+  "subcategory": "method",
+  "classanchor": "PVector",
+  "parameters": [
+    {
+      "name": "v",
+      "description": "any variable of type PVector",
+      "type": ["PVector"]
+    },
+    {
+      "name": "x",
+      "description": "x component of the vector",
+      "type": ["float"]
+    },
+    {
+      "name": "y",
+      "description": "y component of the vector",
+      "type": ["float"]
+    },
+    {
+      "name": "z",
+      "description": "z component of the vector",
+      "type": ["float"]
+    },
+    {
+      "name": "v1",
+      "description": "any variable of type PVector",
+      "type": ["PVector"]
+    },
+    {
+      "name": "v2",
+      "description": "any variable of type PVector",
+      "type": ["PVector"]
+    }
+  ]
+}

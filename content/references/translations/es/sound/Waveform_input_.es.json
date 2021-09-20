@@ -1,0 +1,19 @@
+{
+  "brief": "Define the audio input for the analyzer.",
+  "related": [],
+  "name": "input()",
+  "description": "Define the audio input for the analyzer.",
+  "syntax": [".input(input)"],
+  "returns": "void",
+  "type": "method",
+  "category": "analysis",
+  "subcategory": "Waveform",
+  "classanchor": "Waveform",
+  "parameters": [
+    {
+      "name": "input",
+      "description": "the input sound source. Can be an oscillator, noise generator,\n            SoundFile or AudioIn.",
+      "type": ["SoundObject"]
+    }
+  ]
+}

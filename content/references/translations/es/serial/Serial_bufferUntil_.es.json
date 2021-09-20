@@ -1,0 +1,24 @@
+{
+  "brief": "Sets a specific byte to buffer until before calling <b>serialEvent()</b>",
+  "related": [],
+  "name": "bufferUntil()",
+  "description": "Sets a specific byte to buffer until before calling <b>serialEvent()</b>.",
+  "syntax": ["serial.bufferUntil(inByte)"],
+  "returns": "void",
+  "type": "method",
+  "category": "serial",
+  "subcategory": "",
+  "classanchor": "Serial",
+  "parameters": [
+    {
+      "name": "serial",
+      "description": " any variable of type Serial",
+      "type": ["Serial"]
+    },
+    {
+      "name": "inByte",
+      "description": "the value to buffer until",
+      "type": ["int"]
+    }
+  ]
+}

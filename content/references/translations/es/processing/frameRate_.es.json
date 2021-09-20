@@ -1,0 +1,26 @@
+{
+  "brief": "Specifies the number of frames to be displayed every second",
+  "related": [
+    "frameRate",
+    "frameCount",
+    "setup_",
+    "draw_",
+    "loop_",
+    "noLoop_",
+    "redraw_"
+  ],
+  "name": "frameRate()",
+  "description": "Specifies the number of frames to be displayed every second. For example,\n the function call <b>frameRate(30)</b> will attempt to refresh 30 times a\n second. If the processor is not fast enough to maintain the specified rate,\n the frame rate will not be achieved. Setting the frame rate within\n <b>setup()</b> is recommended. The default rate is 60 frames per second.",
+  "syntax": ["frameRate(fps)"],
+  "returns": "void",
+  "type": "function",
+  "category": "environment",
+  "subcategory": "",
+  "parameters": [
+    {
+      "name": "fps",
+      "description": "number of desired frames per second",
+      "type": ["float"]
+    }
+  ]
+}

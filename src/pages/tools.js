@@ -18,13 +18,22 @@ const Tools = ({ data }) => {
 
   let contributions = [];
 
+
   english.nodes.forEach((en) => {
     currentLang.nodes.forEach((con) => {
-      if (en.name === con.name.split('.')[0]) {
-        contributions.push({ ...en.childJson, ...con.childJson });
-      } else if (locale !== 'en') {
-        contributions.push(en.childJson);
+
+      if (locale === 'en') {
+        if (en.name === con.name.split('.')[0]) {
+
+          contributions.push({ ...en.childJson });
+        }
+      }else{
+        if (en.name === con.name.split('.')[0]) {
+          contributions.push({ ...en.childJson, ...con.childJson });
+        }
       }
+
+
     });
   });
 
@@ -104,7 +113,8 @@ export default Tools;
 
 export const query = graphql`
   query($locale: String!) {
-    tools: allFile(filter: { sourceInstanceName: { eq: "tools" } }) {
+    tools: allFile(filter: { sourceInstanceName: { eq: "tools" }
+        fields: { lang: { eq: $locale } }}) {
       nodes {
         childJson {
           name

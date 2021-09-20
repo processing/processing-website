@@ -1,0 +1,23 @@
+{
+  "brief": "Converts a <b>byte</b>, <b>char</b>, <b>int</b>, or <b>color</b> to a <b>String</b> containing the\n           equivalent hexadecimal notation",
+  "related": ["unhex_", "binary_", "unbinary_"],
+  "name": "hex()",
+  "description": "Converts an <b>int</b>, <b>byte</b>, <b>char</b>, or <b>color</b> to a\n <b>String</b> containing the equivalent hexadecimal notation. For example,\n the <b>color</b> value produced by <b>color(0, 102, 153)</b> will convert\n to the <b>String</b> value <b>\"FF006699\"</b>. This function can help make\n your geeky debugging sessions much happier.<br />\n <br />\n Note that the maximum number of digits is 8, because an <b>int</b> value\n can only represent up to 32 bits. Specifying more than 8 digits will not\n increase the length of the <b>String</b> further.",
+  "syntax": ["hex(value)", "hex(value, digits)"],
+  "returns": "String",
+  "type": "function",
+  "category": "data",
+  "subcategory": "conversion",
+  "parameters": [
+    {
+      "name": "value",
+      "description": "the value to convert",
+      "type": ["byte", "char", "int"]
+    },
+    {
+      "name": "digits",
+      "description": "the number of digits (maximum 8)",
+      "type": ["int"]
+    }
+  ]
+}

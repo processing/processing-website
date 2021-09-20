@@ -1,0 +1,13 @@
+{
+  "brief": "Get the length of the list",
+  "related": [],
+  "name": "size()",
+  "description": "Get the length of the list.",
+  "syntax": [".size()"],
+  "returns": "int",
+  "type": "method",
+  "category": "intlist",
+  "subcategory": "method",
+  "classanchor": "IntList",
+  "parameters": []
+}

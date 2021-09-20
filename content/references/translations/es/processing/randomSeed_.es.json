@@ -1,0 +1,14 @@
+{
+  "brief": "Sets the seed value for <b>random()</b>",
+  "related": ["random_", "noise_", "noiseSeed_"],
+  "name": "randomSeed()",
+  "description": "Sets the seed value for <b>random()</b>. By default, <b>random()</b>\n produces different results each time the program is run. Set the <b>seed</b>\n parameter to a constant to return the same pseudo-random numbers each time\n the software is run.",
+  "syntax": ["randomSeed(seed)"],
+  "returns": "void",
+  "type": "function",
+  "category": "math",
+  "subcategory": "random",
+  "parameters": [
+    { "name": "seed", "description": "seed value", "type": ["int"] }
+  ]
+}

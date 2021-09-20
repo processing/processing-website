@@ -1,0 +1,22 @@
+{
+  "brief": "This is a high pass filter.",
+  "methods": [
+    {
+      "anchor": "HighPass_freq_",
+      "name": "freq()",
+      "desc": "Set the cut off frequency for the filter."
+    }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "This is a high pass filter.",
+  "type": "class",
+  "constructors": ["HighPass(parent)"],
+  "related": [],
+  "name": "HighPass",
+  "classanchor": "sound/HighPass",
+  "category": "effects",
+  "subcategory": "HighPass",
+  "parameters": []
+}

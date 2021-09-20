@@ -1,7 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Link } from 'gatsby';
+//import { Link } from 'gatsby';
+import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 import { getImage } from 'gatsby-plugin-image';
+import { useLocalization } from 'gatsby-theme-i18n';
 import { useIntl } from 'react-intl';
 
 import HeadMatter from '../../components/HeadMatter';
@@ -16,7 +18,7 @@ import { ExampleItem } from '../../components/examples/ExamplesList';
 import Breadcrumbs from '../../components/Breadcrumbs';
 
 import { widont } from '../../utils/index.js';
-import { useTree, useHighlight, useSidebar } from '../../hooks';
+import { useTree, useHighlight, useSidebar, usePdes } from '../../hooks';
 import {
   usePreparedItems,
   usePreparedExamples,
@@ -34,13 +36,15 @@ const FieldRefTemplate = ({ data, pageContext }) => {
 
   const parent = data?.parent?.childJson;
   const entry = data?.json?.childJson;
-
   const [showSidebar, setShowSidebar] = useSidebar('reference');
+
+  const { locale } = useLocalization();
   const intl = useIntl();
   useHighlight();
 
   const items = usePreparedItems(data.items.nodes, libraryName);
-  const examples = usePreparedExamples(data.pdes.edges, data.images.edges);
+  const pdes = usePdes(data.pdes.nodes, locale);
+  const examples = usePreparedExamples(pdes, data.images.nodes);
   const tree = useTree(items);
 
   const parameters = usePreparedList(entry?.parameters, libraryName);
@@ -74,7 +78,7 @@ const FieldRefTemplate = ({ data, pageContext }) => {
       <HeadMatter
         title={title}
         description={entry?.description}
-        img={getImage(data.images.edges[0]?.node)}
+        img={getImage(data.images.nodes[0])}
       />
 
       <div className={grid.grid}>
@@ -195,32 +199,30 @@ export const query = graphql`
         extension: { regex: "/(jpg)|(jpeg)|(png)|(gif)/" }
       }
     ) {
-      edges {
-        node {
-          name
-          internal {
-            content
-          }
-          extension
-          childImageSharp {
-            gatsbyImageData(width: 400)
-          }
+      nodes {
+        name
+        extension
+        childImageSharp {
+          gatsbyImageData(width: 400)
         }
       }
     }
     pdes: allFile(
       filter: {
+        sourceInstanceName: { eq: "reference-examples" }
         relativeDirectory: { eq: $relDir }
-        extension: { regex: "/(pde)/" }
+        fields: { lang: { in: ["en", $locale] } }
+        extension: { eq: "pde" }
       }
     ) {
-      edges {
-        node {
+      nodes {
+        name
+        fields {
           name
-          internal {
-            content
-          }
-          extension
+          lang
+        }
+        childRawCode {
+          content
         }
       }
     }

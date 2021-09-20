@@ -1,0 +1,43 @@
+{
+  "brief": "Utility function for formatting numbers into strings",
+  "related": ["nf_", "nfp_", "nfc_"],
+  "name": "nfs()",
+  "description": "Utility function for formatting numbers into strings. Similar to\n <b>nf()</b> but leaves a blank space in front of positive numbers so\n they align with negative numbers in spite of the minus symbol. There are\n two versions, one for formatting floats and one for formatting ints. The\n values for the <b>digits</b>, <b>left</b>, and <b>right</b> parameters\n should always be positive integers.",
+  "syntax": [
+    "nfs(num, digits)",
+    "nfs(nums, digits)",
+    "nfs(nums, left, right)",
+    "nfs(num, left, right)"
+  ],
+  "returns": "String or String[]",
+  "type": "function",
+  "category": "data",
+  "subcategory": "string_functions",
+  "parameters": [
+    {
+      "name": "num",
+      "description": "the number to format",
+      "type": ["int", "float"]
+    },
+    {
+      "name": "digits",
+      "description": "number of digits to pad with zeroes",
+      "type": ["int"]
+    },
+    {
+      "name": "nums",
+      "description": "the numbers to format",
+      "type": ["int[]", "float[]"]
+    },
+    {
+      "name": "left",
+      "description": "the number of digits to the left of the decimal point",
+      "type": ["int"]
+    },
+    {
+      "name": "right",
+      "description": "the number of digits to the right of the decimal point",
+      "type": ["int"]
+    }
+  ]
+}

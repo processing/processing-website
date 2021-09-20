@@ -40,6 +40,12 @@ export const slugify = (...titles) =>
     .replace(/(\s|_)/g, '-')
     .toLowerCase();
 
+/**
+  Used to convert a string to an id for intl
+  "Data Something" > "DataSomething"
+**/
+export const toIntlId = (str) => str.replace(/ /g, '');
+
 export const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));

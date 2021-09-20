@@ -1,0 +1,28 @@
+{
+  "brief": "Converts the image to grayscale or black and white",
+  "related": [],
+  "name": "filter()",
+  "description": "Filters the image as defined by one of the following modes:<br />\n <br />\n THRESHOLD<br />\n Converts the image to black and white pixels depending if they are above or\n below the threshold defined by the level parameter. The parameter must be\n between 0.0 (black) and 1.0 (white). If no level is specified, 0.5 is\n used.<br />\n <br />\n GRAY<br />\n Converts any colors in the image to grayscale equivalents. No parameter is\n used.<br />\n <br />\n OPAQUE<br />\n Sets the alpha channel to entirely opaque. No parameter is used.<br />\n <br />\n INVERT<br />\n Sets each pixel to its inverse value. No parameter is used.<br />\n <br />\n POSTERIZE<br />\n Limits each channel of the image to the number of colors specified as the\n parameter. The parameter can be set to values between 2 and 255, but results\n are most noticeable in the lower ranges.<br />\n <br />\n BLUR<br />\n Executes a Gaussian blur with the level parameter specifying the extent of\n the blurring. If no parameter is used, the blur is equivalent to Gaussian\n blur of radius 1. Larger values increase the blur.<br />\n <br />\n ERODE<br />\n Reduces the light areas. No parameter is used.<br />\n <br />\n DILATE<br />\n Increases the light areas. No parameter is used.\n\n\n ",
+  "syntax": ["filter(shader)", "filter(kind)", "filter(kind, param)"],
+  "returns": "void",
+  "type": "function",
+  "category": "image",
+  "subcategory": "pixels",
+  "parameters": [
+    {
+      "name": "shader",
+      "description": "the fragment shader to apply",
+      "type": ["PShader"]
+    },
+    {
+      "name": "kind",
+      "description": "Either THRESHOLD, GRAY, OPAQUE, INVERT, POSTERIZE, BLUR, ERODE,\n              or DILATE",
+      "type": ["int"]
+    },
+    {
+      "name": "param",
+      "description": "unique for each, see above",
+      "type": ["float"]
+    }
+  ]
+}

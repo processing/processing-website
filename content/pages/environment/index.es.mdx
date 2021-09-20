@@ -1,0 +1,452 @@
+---
+slug: '/environment'
+title: 'Entorno'
+description: The Processing Environment includes a text editor, a compiler, and a display window. It enables the creation of software within a carefully designed set of constraints.
+---
+
+<Intro>
+  El Entorno Processing incluye un editor de texto, un compilador y una ventana de despliegue.  Permite la creación de software dentro de un conjunto de restricciones cuidadosamente diseñado.
+</Intro>
+
+### Vista General
+
+El Entorno de Desarrollo Processing (Processing Development Environment PDE)  facilita la escritura de programas de Processing. Los programas son escritos en el Editor de Texto y ejecutados al presionar el botón de Ejecutar. En Processing, un programa de computadora es llamado un _sketch_. Los Sketches son almacenados en el _Sketchbook_, el cual es un directorio en tu computadora.
+
+Los Sketches pueden dibujar gráficos bi y tri-dimensionales. El renderer por default es para dibujar gráficos bidimensionales. El renderer P3D hace posible dibujar gráficos tridimensionales, he incluye como controlar la cámara, la iluminación y los materiales. El renderer P2D es un renderer más rápido pero menos preciso para dibujar gráficos gráficos bidimensionales. Ambos renderers, ( P2D y P3D) son acelerados si tu computadora cuenta con una tarjeta gráfica compatible con OpenGL.
+
+Las capacidades de Processing son incrementadas por las _Bibliotecas_ y _Herramientas_. Las bibliotecas hacen posible que los sketches hagan cosas más allá de lo posible con el código de Processing. Hay cientos de bibliotecas proporcionadas por la comunidad Processing que pueden ser agregadas a tus sketches para permitir nuevas funcionalidades como reproducir sonidos, hacer visión computacional o trabajar con geometría 3D avanzada. Las herramientas extienden al Entorno dede Desarrollo Processing y ayudan a crear sketches más facilmente al proveer interfaces para tareas como seleccionar colores.
+
+Processing tiene diferentes _modos de programación_ para hacer posible la distribución de sketches en diferentes plataformas, programando en diferentes formas. El modo Java es el default, otros modos de programación pueden ser descargados al seleccionar "Añadir Modo..." desde el menú ubicado en la esquina superior derecha del Entorno de Desarrollo Processing.
+
+### Entorno de Desarrollo Processing (PDE)
+
+El Entorno de Desarrollo Processing consiste de un editor de textos simple, un área de mensajes, una consola de texto, pestañas para administrar archivos, una barra de herramientas con botones para acciones comunes y una serie de menús. Las opciones de los menús cambian dependiendo del modo. El modo default en Java es documentado aquí.
+
+![IDE Screenshot](./ide.png)
+Los programas escritos usando Processing son llamados sketches. Estos sketches son escritos en el editor de texto, el cual tiene funcionalidades como cortar y pegar texto, así como buscar y reemplazar.
+El área de mensajes da retroalimentación al guardar y exportar archivos, y también muestra errores. La consola despliega la salida de texto de los sketches de Processing, incluyendo mensajes de error completos y salida de texto de los sketches a través del uso de funciones `print()` y `println()`. (Nota que la consola funciona bien para mensajes ocasionales, pero no esta diseñada para salida en tiempo real y a alta velocidad)
+
+Los botones en la barrade herramientas pueden ejecutar y detener programas,
+
+<dl>
+<dt>
+
+<FixedImage inline marginRight={30} width={40}>
+
+![Play button](./play.png)
+
+</FixedImage>
+
+<b>Ejecutar</b>
+</dt>
+  <dd>Ejecuta el setch. En modo Java, compila el código y abre una nueva ventana. </dd>
+<dt>
+
+<FixedImage inline marginRight={30} width={40}>
+
+![Stop button](./stop.png)
+
+</FixedImage>
+
+<b>Detener</b>
+</dt>
+  <dd>Termina de ejecutar el sketch.</dd>
+</dl>
+
+Comandos adicionales se encuentrar en los seis menús: Archivo, Editar, Sketch, Depuración, Herramientas, Ayuda. Estos menús son dependientes del contexto, lo que significa que sólo las entradas relevantes para el trabajo que se quiere hacer estan disponibles.
+
+
+#### Archivo
+
+<dl>
+  <dt>Nuevo</dt>
+  <dd>
+    Crea un nuevo sketch en una nueva ventana, nombrada con la fecha actual de acuerdo al formato `sketch_AAMMDDa`.
+  </dd>
+  <dt>Abrir...</dt>
+  <dd>Abrir un sketch en una nueva ventana.</dd>
+  <dt>Recientes </dt>
+  <dd>Selecciona un sketch para abrir desde una lista de sketchs recientemente cerrados.</dd>
+  <dt>Sketchbook</dt>
+  <dd>Abre una nueva ventana para mostrar una lista de los sketches presentes en el sketchbook.</dd>
+  <dt>Ejemplos...</dt>
+  <dd>Abre una nueva ventana para mostrar una lista de los ejemplos.</dd>
+  <dt>Cerrar</dt>
+  <dd>
+    Cierra el sketch en la ventana situada más al frente. En caso de que este sea el último sketch, se te preguntará si deseas salir. Para evitar este aviso, usa Salir en vez de Cerrar cuando quieras salir de la aplicación.
+  </dd>
+  <dt>Guardar</dt>
+  <dd>Guarda el skectch abierto en su estado actual.</dd>
+  <dt>Guardar como...</dt>
+  <dd>
+    Guarda el sketch abierto actualmente, con la opción de darle un nombre distinto. No reemplaza la versión previa del sketch.
+  </dd>
+  <dt>Exportar Aplicación</dt>
+  <dd>
+    Exporta una aplicación Java como un archivo ejecutable y abre el directorio que contiene los archivos exportados.
+  </dd>
+  <dt>Configurar Página</dt>
+  <dd>Configura la página para impresión.</dd>
+  <dt>Imprimir (Ctrl+P)</dt>
+  <dd>Imprime el código localizado en el editor de texto.</dd>
+  <dt>Preferencias</dt>
+  <dd>
+    Cambia algunas cosas de como Processing trabaja. ( Esta entrada está localizada en el menú de Processing en Mac OS X.)
+  </dd>
+  <dt>Salir</dt>
+  <dd>
+    Sale del Entorno de Programación Processing y cierra todas las ventanas de Processing. ( Esta entrada está localizada en el menú de Processing en Mac OS X.)
+  </dd>
+</dl>
+
+#### Editar
+
+<dl>
+  <dt>Deshacer</dt>
+  <dd>
+    Revierte el último comando o lo último que se escribió. Este comando se cancela al elegir Editar » Rehacer.
+  </dd>
+  <dt>Rehacer</dt>
+  <dd>
+    Revierte la acción del último comando Deshacer. Esta opción sólo esta disponible si ha existido una accion Deshacer.
+  </dd>
+  <dt>Cortar</dt>
+  <dd>
+    Remueve y copia el texto seleccionado al portapapeles ( un buffer de texto que no se despliega en pantalla).
+  </dd>
+  <dt>Copiar</dt>
+  <dd>Copia el texto seleccionado en el portapapeles.</dd>
+  <dt>Copiar como HTML</dt>
+  <dd>
+    Formatea el código en HTML de la misma manera en que aparece en el entorno Processing y lo copia en el portapapeles para que pueda ser pegado en otro lugar.
+  </dd>
+  <dt>Pegar</dt>
+  <dd>
+    Inserta el contenido del portapapeles en la ubicación del cursos, y reemplaza cualquier texto seleccionado.
+  </dd>
+  <dt>Seleccionar Todo</dt>
+  <dd>
+    Selecciona todo el texto del archivo que este actualmente abierto en el editor de texto.
+  </dd>
+  <dt>Autoformato</dt>
+  <dd>
+    Intenta formatear el código en una disposicion más accesible para los humanos. Anteriormente llamado _Beautify_.
+  </dd>
+  <dt>Comentar/Descomentar</dt>
+  <dd>
+    Comenta el texto seleccionado. Si el texto seleccionado esta comentado, entonces lo descomenta.
+  </dd>
+  <dt>Aumentar Identación(Ctrl+])</dt>
+  <dd>Identa el texto seleccionado dos espacios.</dd>
+  <dt>Reducir Identación(Ctrl+[)</dt>
+  <dd>Si el texto esta identado, remueve dos espacios de la identación.</dd>
+  <dt>Buscar...</dt>
+  <dd>
+    Busca una ocurrencia de texto dentro del archivo abierto en el editor de texto y da la opción de reemplazarlo con un texto diferente.
+  </dd>
+  <dt>Buscar siguiente </dt>
+  <dd>
+    Busca la siguiente ocurrencia de un texto dentro del archivo abierto en el editor de texto.
+  </dd>
+  <dt>Buscar anterior</dt>
+  <dd>
+    Busca la ocurrencia anterior de un texto dentro del archivo abierto en el editor de texto.
+  </dd>
+  <dt>Usar selección para buscar</dt>
+  <dd>
+    Usa el texto seleccionado actualmente como la entrada de texto a buscar en Buscar siguiente y Buscar anterior.
+  </dd>
+</dl>
+
+#### Sketch
+
+<dl>
+  <dt>Ejecutar</dt>
+  <dd>
+    Ejecuta el código (compila el código, abre una ventana para desplegarlo, y ejecuta el skectch dentro de ella)
+  </dd>
+  <dt>Presentar</dt>
+  <dd>
+    Ejecuta el código en el centro de la pantalla con un fondo de color sólido. Da click en el boton "Detener" (localizado en la parte inferior izquierda) o presiona la tecla Escape para salir de la presentación.
+    Cambia el color de fondo en Preferencias.
+  </dd>
+  <dt>Tweak</dt>
+  <dd>
+    Ejecuta el código de tal forma que algunos colores y valores de variables pueden ser modificados mientras el código corre. El sketch necesita ser guardado antes de que pueda ser ejecutado como un sketch en Tweak.
+  </dd>
+  <dt>Detener</dt>
+  <dd>
+    Si el código esta corriendo, detiene la ejecución. Los programas escritos sin la función draw() son detenidos automáticamente despues de dibujar.
+  </dd>
+  <dt>Importar biblioteca</dt>
+  <dd>
+    Agrega las declaraciones import necesarias al inicio del sketch actual. Por jemplo, al seleccionar Sketch » Importar biblioteca » pdf se agrega la declaración "import
+    processing.pdf.\*;" al inicio del archivo. Estos enunciados son necesarios para usar las bibliotecas. Selecciona Añadir bibliotecas ... para abrir el administrador de bibliotecas e instalar nuevas bibliotecas.
+  </dd>
+  <dt>Mostrar carpeta del sketch</dt>
+  <dd>Abre el directorio del sketch actual.</dd>
+  <dt>Añadir archivo...</dt>
+  <dd>
+    Abre una ventana para navegar por los archivos. Selecciona una imagen, fuente u otros archivos de medios para agregarlo al directorio "data" del sketch.
+  </dd>
+</dl>
+
+#### Depurar
+
+<dl>
+  <dt>Activar Depurador</dt>
+  <dd>
+    Activa el depurador. Nota que el boton Ejecutar cambiará a Depurar. Dos nuevos botones, Continuar y Saltar aparecerán, junto a otra ventana para ver el valor de las variables.
+  </dd>
+  <dt>Continuar</dt>
+  <dd>Avanza por el código hasta el próximo punto de interrupción.</dd>
+  <dt>Saltar</dt>
+  <dd>
+    Avanza por el código una línea a la vez. (Nota que una vez que el código alcance el final de la función llamada, el depurador pasará a "continuar".)
+  </dd>
+  <dt>Ingresar</dt>
+  <dd>
+    Avanza al depurador dentro del interior de una llamada de función. Sólo sirve para funciones definidas por el usuario dentro del sketch.
+  </dd>
+  <dt>Salir</dt>
+  <dd>
+    Saca al depurador de la llamada de función actual. Sólo sirve para funciones definidas por el usuario dentro del sketch.
+  </dd>
+  <dt>Activar/Desactivar punto de interrupción</dt>
+  <dd>
+    Añade o quita un punto de interrupción. Cuando el punto de interrupción es añadido el número de línea es reemplazado por el símbolo: `&lt;&gt;`.
+  </dd>
+</dl>
+
+#### Herramientas
+
+<dl>
+  <dt>Crear Fuente...</dt>
+  <dd>
+    Convierte fuentes al formato de fuentes de Processing (VLW) y las agrega al sketch actual. Abre una ventana de diálogo que da la opción para configurar la fuente, su tamaño, si se usara anti-aliasing,
+    y cuáles caracteres serán generados. La cantidad de memoria requerida por la fuente esta determinada por su tamaño y el número de caracteres seleccionado a través del menú "Caracteres...".
+    Las fuentes en Processing son texturas, así que fuentes más grandes requieren más espacio para datos. Las fuentes también pueden ser creadas en el código a través de la función createFont().
+  </dd>
+  <dt>Selector de colores...</dt>
+  <dd>
+    Interfaz para seleccionar colores- Por cada color, los valores HSB, RBG y Hex son mostrados. El valor Hex puede ser copiado en el portapapeles con el botón Copiar.
+  </dd>
+  <dt>Archivar Sketch</dt>
+  <dd>
+    Archiva una copia del sketch actual en formato .zip. El archivo esta localizado en el mismo directorio que el sketch.
+  </dd>
+  <dt>Instalar "processing-java"</dt>
+  <dd>
+    Instala el programa processing-java para hacer posible construir y ejecutar sketches en modo Java desde la línea de comandos.
+  </dd>
+  <dt>Creador de Películas</dt>
+  <dd>
+    Crea una película QuickTime de una secuencia de imagenes. Las opciones incluyen definir el tamaño, frame rate y la compresión, así como un archivo de audio
+  </dd>
+  <dt>Añadir Herramienta...</dt>
+  <dd>Abre el administrador de Herramientas para navegar e instalar nuevas Herramientas.</dd>
+</dl>
+
+#### Ayuda
+
+<dl>
+  <dt>Entorno</dt>
+  <dd>
+    Abre la referencia del Entorno de Desarrollo Processing (esta página) en el navegador actual predeterminado.
+  </dd>
+  <dt>Referencia</dt>
+  <dd>
+    Abre la referencia en el navegador web predeterminado. Incluye referencias para el lenguage, el entorno de programación y las bibliotecas principales.
+  </dd>
+  <dt>Buscar en la referencia</dt>
+  <dd>
+    Selecciona un elemento del lenguaje Processing en el editor de texto y selecciona Buscar en la referencia para abrir esa página en el navegador web predeterminado.
+  </dd>
+  <dt>Referencia de Bibliotecas</dt>
+  <dd>Selecciona de la lista para abir la referencia de Bibliotecas compatibles.</dd>
+  <dt>Referencia de Herramientas</dt>
+  <dd>Selecciona de la lista para abir la referencia de Herramientas compatibles.</dd>
+  <dt>Primeros Pasos</dt>
+  <dd>Abre el tutorial online Primeros Pasos en el navegador predeterminado.</dd>
+  <dt>Resolución de Problemas</dt>
+  <dd>Abre la página online de Resolución de Problemas en el navegador predeterminado.</dd>
+  <dt>Preguntas Frecuentes</dt>
+  <dd>Abre la página de Preguntas Frecuentes en el navegador predeterminado.</dd>
+  <dt>The Processing Foundation</dt>
+  <dd>Abre el sitio web de la Fundación Processing en el navegador predeterminado.</dd>
+  <dt>Visitar Processing.org</dt>
+  <dd>Abre el sitio web de Processing en el navegador predeterminado.</dd>
+</dl>
+
+### Preferencias
+
+El Entorno de Desarrollo Processing es altamente configurable. Las preferencias más comunes pueden ser modificadas en la ventana Preferencias, localizada en el menú Archivo en Windows y Linux, y en el menú Processing en Mac OS X.
+La lista completa de preferencias esta almacenada en el archivo "preferences.txt". Este archivo puede ser abierto y editado únicamente cuando Processing no se está ejecutando. Puedes encontrar la ubicación del archivo en tu computadora al leer la esquina inferior izquierda de la ventana de Preferencias.
+
+<dl>
+  <dt>Ubicación del  Sketchbook </dt>
+  <dd>
+    Cualquier directorio puede ser usado como el Sketchbook. Introduce una nueva ubicación o selecciona "Buscar" para seleccionar el directorio que quieres usar.
+  </dd>
+  <dt>Lenguaje</dt>
+  <dd>
+    Selecciona el lenguaje para usar en los menús. Processing necesita ser reiniciado después de hacer una nueva selección.
+  </dd>
+  <dt>Fuente de la consola y el editor</dt>
+  <dd>
+    Selecciona una fuente diferente para user en el texto de la consola y el editor. Nota: la fuente seleccionada debe coincidir con el lenguaje usado en el editor de texto. Ve "Habilitar el ingreso de caracteres complejos.
+  </dd>
+  <dt>Tamaño de la letra del editor</dt>
+  <dd>Fija el tamaño de la fuente para el código en el editor de texto.</dd>
+  <dt>Tamaño de la letra de la consola</dt>
+  <dd>Fija el tamaño de la fuente para el código en la consola.</dd>
+  <dt>Color de fondo en modo Presentación</dt>
+  <dd>Define el color de fondo usado cuando el sketch es ejecutado en modo Presentación.</dd>
+  <dt>Usar texto suavizado en la ventana del editor</dt>
+  <dd>
+    De manera predeterminada, el texto en el editor no esta suavizado. Al marcar esta opción, el texto en el editor cambia a una fuente suavizada. Reinicia Processing después de hacer este cambio.
+  </dd>
+  <dt>Habilitar el ingreso de caracteres complejos</dt>
+  <dd>
+    Habilita al editor de texto para desplegar fuentes no latinas, por ejemplo el japonés. Processing necesita ser reiniciado tras hacer esta selección.
+  </dd>
+  <dt>Comprobar errores de forma continua</dt>
+  <dd>Enciende o apaga la funcionalidad para comprobar y reportar errores potenciales de código de manera continua.
+  </dd>
+  <dt>Autocompletado de código Ctrl-space</dt>
+  <dd>
+    Habilita o deshabilita el autocompletado de código. Presiona Ctrl-space para alternar entre habilitar o deshabilitar esta funcionalidad.
+  </dd>
+  <dt>Sugerir declaraciones de importación</dt>
+  <dd> Cuando esta marcado, Processing intentará sugerir bibliotecas para importar cuando el código de dicha biblioteca sea detectado.
+  </dd>
+  <dt>Aumentar memoria máxima disponible a </dt>
+  <dd>
+    Reserva más RAM a los sketches de Processing cuando se ejecutan. Los scketches que usan archivos de medios ( imágenes, audio, etc) a veces requieren más RAM. Aumenta la memoria RAM is un sketch está lanzado errores Out of Memory
+  </dd>
+  <dt>Eliminar directorio anterior al exportar</dt>
+  <dd>Cuando esta marcado (comportamiento predeterminado), Processing elimina el directorio de exportación completo antes de recrearlo y añadir los nuevos medios.
+  </dd>
+  <dt>Comprobar actualizaciones al iniciar</dt>
+  <dd>
+    Cuando esta marcado (comportamiento predeterminado), serás informado de nuevos lanzamientos de Processing en cuanto esten disponibles a través de una pequeña venana de texto que aparece en cuanto Processing inicia.
+  </dd>
+  <dt>Ejecutar sketches en la pantalla</dt>
+  <dd>Si más de un monitor esta presente, selecciona en que monitor quieres desplegar el sketch.</dd>
+</dl>
+
+### Sketches y Sketchbook
+
+Todos los proyectos de Processing son llamados sketches. Cada sketch tiene su propio directorio. El archivo principal de cada sketch tiene el mismo nombre que el directorio y está localizado adentro de dicho directorio. Por ejemplo, si el sketch es llamado "Sketch_123", el directorio para dicho sketcj será llamado "Sketch_123" y el archivo principal será "Sketch_123.pde". La extensión de archivo PDE es un acrónimo de Processing Development Environment ( Entorno de Desarrollo Processing).
+
+Los sketches de Processing pueden ser almacenados donde sea en tu computadora, pero de manera predeterminada son almacenados en el sketchbook, el cual estará en diferentes lugares en tu computadora dependiendo si usas PC, Mac o Linux, así como de las preferencias elegidas. Para localizar este directorio, selecciona la opción de "Preferencias" del menú Archivo (o del menú Processing en Mac) y mira ek valor de la ubicación del sketchbook.
+
+El directorio de un sketch algunas veces contiene otros directorios con archivos de medios y otros códigos. Cuando una fuente o imágen es añadida a un sketch al seleccionar el comando "Añadir archivo" desde el menú Sketch, un directorio "data" es creado. Los archivos también pueden ser añadidos a tu sketch de Processing al arrastrarlos dentro del editor de texto. Los archivos de imágen y sonido que son arrastrados dentro de la ventana de la aplicación son  automáticamente añadidos al directorio "data" del sketch actual. Todas las imágenes, fuentes, sonidos y otros archivos de datos utilizados por el sketch deben estar localizados en este directorio.
+
+### Renderers
+
+
+Processing tiene 4 renderers de pantalla incluidos. El renderer predeterminado es para dibujar formas bi-dimensionales. _P2D_ es un renderer más rápido pero menos exacto también para dibujar formas bi-dimensionales. _P3D_ es un renderer para geometría tri-dimensional, con él también se puyede controlar la cámara, luces y materiales. Los renderes P2D y P3D son acelerados si tu computadora cuenta con una tarjeta gráfica compatible con OpenGL. La función `smooth()` afecta el monto de antialiasing de cada renderer. Checa la referencia de `smooth()` para mayor información.
+
+Con el lanzamiento de Processing 3.0. el renderer _FX2D_ se ha includo. Usalo para gráficos 2D rápidos en pantallas de grandes y de gran resolución. Este renderer es experimental pero es útil en ciertas condiciones.
+
+El renderer usado para cada sketch es especificado a través de la función `size()`. Si un renderer no esta definido explícitamente  en `size()`, usa el renderer predeterminado como se muestra en el siguiente programa:
+
+```
+void setup() {
+  size(200, 200);
+}
+
+void draw() {
+  background(204);
+  line(width/2, height/2, mouseX, mouseY);
+}
+```
+
+Para cambiar el renderer, agrega un tercer parametro a size(). Por ejemplo
+
+
+```
+void setup () {
+  size(200, 200, P2D);
+}
+
+void  draw() {
+  background(204);
+  line(width/2, height/2, mouseX, mouseY);
+}
+```
+
+Un gran esfuerzo se ha realizado para hacer que el código de Processing  se comporte de manera similar en los diferentes renderers, pero actualmente existen algunas inconsistencias que son explicadas en la referencia.
+
+Para más información, ve la referencia de la entrada `size()`.
+
+### Coordenadas
+
+Processing usa el sistema de coordenadas Cartesiano, con origen en la esquina superior izquierda. Si tu sketch es de 320 píxeles de ancho y 240 píxeles de alto, la coordenada ( 0,0 ) es la esquina superior izquierda y la coordenada (320, 240) es la coordenada del píxel en la esquina inferior derecha. El último píxel visible esta en la esquina inferior derecha en la posición (319, 239) puesto que los píxeles son dibujados a la derecha y abajo de dicha coordenada.
+
+
+![image 4](./coordinates2D3D.png)
+Cuando se usa el sistema de coordenadas de tres dimensiones de P3D, la coordenada z es 0 en la superficie de la imágen, con valores negativos en z moviendose atrás en el espacio. Cuando se dibuja en 3D, la _cámara_ esta posicionada en el centro de la pantalla.
+
+
+### Pestañas, Múltiples Archivos, y Clases
+
+Puede ser inconveniente escribir programas largos en un sólo archivo. Cuando los sketches de Processing crecen a cientos o miles de líneas, partirlos en unidades modulares ayuda a administrar las diferentes partes. Processing administra los archivos en el Sketchbook, y cada archivo puede tener múltiples archivos que se administran desde las pestañas.
+El botón de flecha, a la derecha de las pestañas en el Entorno de Desarrollo Processing es usado para navegar estos archivos. Al hacer click sobre este boton se revelan opciónes para crear una nueva pestaña, renombrar o borrar la pestaña actual. Las pestañas son pensadas para usuarios avanzados, y por esta razón, el menú que contral las pestañas es menos prominente intencionalmente.
+
+<HighlightBlock>
+
+
+  _Avanzado_
+
+  Cuando un programa con multiples pestañas se ejecuta, el código es agrupado y las clases en otras pestañas se convierten en clases interiores. Por ser clases interiores, ellas no pueden tener variables estáticas. Simplemente coloca la variable estática afuera de la clase misma para lograr el mismo efecto. (No necesita ser llamado explicitamente estático una vez que se liste en esta manera). Si no deseas que el código sea una clase interior, también puedes crear una pestaña con el sufijo ".java", lo que significa que será interpretado como código java normal. Tampoco es posible usar clases estáticas en pestañas distintas. Si haces esto, sin embargo, tu necesitarás pasar el objeto PApplet al objeto de esa pestaña para poder usar funciones del PApplet como `line()`, `loadStrings()` o `saveFrame()`.
+
+
+</HighlightBlock>
+
+
+### Depurar
+
+El depurador Processing es una herramienta para diagnosticar problemas con un sketch. Habilítalo para pausar un sketch mientras se ejecuta y avanzar a través del código una línea a la vez. El depurador se habilita a través del Menú de Depuración, o al hacer click sobre el ícono de Depurador, la mariposa en la esquina superior derecha del entorno de desarrollo processing (PDE).
+
+Cuando el depurador está habilitado, el programa se ejecuta normalmente, pero se detiene en los puntos de interrupción. Para crear un punto de interrupción, dirige el cursor a la línea donde tu quieres que se pause el sketck y selecciona Depuración &gt; Activar punto de interrupción. El atajo de teclado es Command-B. Para remover el punto de interrupción, selecciona la misma opción d enuevo. Cuando un punto de interrupción es añadido el número de línea es reemplazado por el símbolo `&lt;&gt;`.
+
+Ejecutar el sketch en modo Depuración causa que el sketch se pause en algún punto de interrupción. Cuando el sketch está pausado los valores actuales de las variables son visibles en un panel separado. Tu puedes avanzar al siguiente punto de interrupción al seleccionar "Continuar" o avanzar línea por línea a través del código usando "Saltar". Saltar sólo funciona en el alcance de la función que se está ejecutando.
+### Modos de Programación
+
+Processing tiene diferentes _modos de programación_ que hacen posible desplegar los sketches en diferentes plataformas y programar de diferentes maneras. El modo de programación predeterminado actual es el modo _Java_. Otros modos de programación como _Modo Android_  y _Python_ son añadidos al seleccionar "Agregar Modo..." desde el menú en la esquina superior derecha del entorno de desarrollo Processing (PDE).
+#### Modo Java
+
+Este modo hace posible el escribir programas cortos para dibujar en pantalla, pero también permite programas complejos de Java. Puede ser usado por principiantes, pero escala a desarrollo de software profesional en Java. Los sketches escritos en este modo pueden ser exportados como aplicaciones de Java para correr en sistemas operativos Linux, Mac OS X y Windows.
+
+  <HighlightBlock>
+
+
+    _Avanzado_
+
+    Los archivos Java con la extensión .java se pueden incluir con un sketch en modo Java. Pueden crearse directamente en el PDE o copiarse en el sketchbook a través del elemento "Agregar archivo ..." en el menú Sketch o arrastrarse al editor de texto. Es posible escribir cualquier código Java en archivos con la extensión .java. De hecho, el código Java completo se puede escribir desde dentro del entorno Processing haciendo una extendiendo a la clase PApplet de esta manera:
+
+    ```
+    public class MyDemo extends PApplet {
+    ```
+
+Esto es solo para desarrolladores avanzados y realmente no se recomienda. El uso de esta técnica significa que las pestañas adicionales ya no serán clases internas, lo que significa que tendrá que hacer un trabajo adicional para que se comuniquen correctamente con el PApplet anfitrión. No es necesario utilizar esta técnica solo para obtener características del lenguaje Java. Los desarrolladores avanzados también pueden programar con Processing en otro editor de Java si se necesitan herramientas y edición de código de nivel superior. Processing's core .jar se puede utilizar como parte de cualquier proyecto Java.
+  </HighlightBlock>
+
+
+  ### Agregar Bibliotecas, Herramientas y Modos
+
+  Processing 3.0 incluye un conjunto de características que hacen fácil instalar, actualizar y remover Bibliotecas, Herramientas y Ejemplos.
+
+Añade una biblioteca contribuida al seleccionar "Agregar biblioteca" desde el submenú de "Importa biblioteca" dentro del menú Sketch. Esto abre el administrador de Bibliotecas. Después. selecciona una biblioteca y haz click en Instalar para descargarla.
+
+Añade una herramienta contribuida al seleccionar "Agregar herramienta" desde el menú de "Herramientas". Después. selecciona una herramienta y haz click en Instalar para descargarla.
+
+Añade un modo contribuido al seleccionar "Agregar modo" desde el menú de "Modo" en la esquina superior derecha del Entorno de Desarrollo Processing (PDE). Después. selecciona un modo y haz click en Instalar para descargarlo.
+
+
+  Añade un ejemplo contribuido al seleccionar el submenú de "Ejemplos" dentro del menú Archivo. Haz click en el botón de agregar ejemplos para abrir el administrador de ejemplos. Después selecciona un paquete de ejemplos y haz click en Instalar para descargarlo.
+  ### Exportar
+
+  La página [Información y tips para exportar](https://github.com/processing/processing/wiki/Export-Info-and-Tips") en el Wiki de Processing cubre los detalles de exportar aplicacones desde el modo Java.

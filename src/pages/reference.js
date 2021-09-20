@@ -70,11 +70,13 @@ const sortOrder = {
 };
 
 const Reference = ({ data }) => {
+
   const [searchTerm, setSearchTerm] = useState('');
   const intl = useIntl();
-
   const items = usePreparedItems(data.items.nodes, 'processing');
-  const tree = useTree(items, sortOrder);
+
+  // const tree = useTree(items, sortOrder);
+  const tree = useTree(items ,'');
   const filtered = useFilteredTree(tree, searchTerm);
   const categories = Object.keys(tree);
 
@@ -107,12 +109,11 @@ const Reference = ({ data }) => {
 };
 
 export default Reference;
-
 export const query = graphql`
-  query($locale: String!) {
+  query ($locale: String!){
     items: allFile(
       filter: {
-        fields: { lang: { eq: $locale }, lib: { eq: "processing" } }
+        fields: { lang: { eq: $locale  }, lib: { eq: "processing" } }
         childJson: { type: { nin: ["method", "field"] } }
       }
     ) {

@@ -1,0 +1,20 @@
+{
+  "brief": "Inserts a new key/int pair into the <b>JSONObject</b>",
+  "related": [
+    "JSONObject_setFloat_",
+    "JSONObject_setString_",
+    "JSONObject_setBoolean_"
+  ],
+  "name": "setInt()",
+  "description": "Inserts a new key/int pair into the <b>JSONObject</b> or, if a value with \n the specified key already exists, assigns a new value.",
+  "syntax": [".setInt(key, value)"],
+  "returns": "JSONObject",
+  "type": "method",
+  "category": "jsonobject",
+  "subcategory": "method",
+  "classanchor": "JSONObject",
+  "parameters": [
+    { "name": "key", "description": "a key string", "type": ["String"] },
+    { "name": "value", "description": "the value to assign", "type": ["int"] }
+  ]
+}

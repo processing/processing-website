@@ -1,15 +1,15 @@
 {
-  "brief": "La clase GPIO reads and writes from General Purpose I/O pins",
+  "brief": "La clase GPIO lee y escribe de pines I/O de propósito general",
   "methods": [
     {
       "anchor": "GPIO_attachInterrupt_",
       "name": "attachInterrupt()",
-      "desc": "Calls a function when the value of an input pin changes"
+      "desc": "Llama una función cuando el valor de la entrada de un pin cambia"
     },
     {
       "anchor": "GPIO_digitalRead_",
       "name": "digitalRead()",
-      "desc": "Returns the value of an input pin"
+      "desc": "Regresa el valor de un pin de entrada"
     },
     {
       "anchor": "GPIO_digitalWrite_",
@@ -55,7 +55,7 @@
   "csspath": "../../",
   "isLibrary": "true",
   "classFields": [],
-  "description": "The GPIO class reads and writes from General Purpose I/O pins",
+  "description": "La clase GPIO lee y escribe de pines I/O de propósito general",
   "type": "class",
   "constructors": ["GPIO()"],
   "related": [],

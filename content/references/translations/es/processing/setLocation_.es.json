@@ -1,0 +1,23 @@
+{
+  "name": "setLocation()",
+  "brief": "The <b>setLocation()</b> function defines the position of the Processing sketch in relation to the upper-left corner of the computer screen",
+  "description": "The <b>setLocation()</b> function defines the position of the Processing sketch in relation to the upper-left corner of the computer screen.\n<br /><br />\nThere are more features of PSurface documented in the <a href=\"http://processing.github.io/processing-javadocs/core/processing/core/PSurfaceNone.html\">Processing JavaDoc.</a> \n",
+  "related": [],
+  "syntax": ["surface.setLocation(x, y)"],
+  "returns": "void",
+  "type": "function",
+  "category": "structure",
+  "subcategory": "",
+  "parameters": [
+    {
+      "name": "x",
+      "description": "int: x-coordinate of the surface",
+      "type": []
+    },
+    {
+      "name": "y",
+      "description": "int: y-coordinate of the surface",
+      "type": []
+    }
+  ]
+}

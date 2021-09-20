@@ -1,0 +1,28 @@
+{
+  "name": "ArrayList",
+  "brief": "An <b>ArrayList</b> stores a variable number of objects",
+  "description": "An <b>ArrayList</b> stores a variable number of objects. This is similar to making an array of objects, but with an <b>ArrayList</b>, items can be easily added and removed from the ArrayList and it is resized dynamically. This can be very convenient, but it's slower than making an array of objects when using many elements.  Note that for resizable lists of integers, floats, and Strings, you can use the Processing classes IntList, FloatList, and StringList.<br />\n<br />\nAn ArrayList is a resizable-array implementation of the Java List interface. It has many methods used to control and search its contents. For example, the length of the <b>ArrayList</b> is returned by its <b>size()</b> method, which is an integer value for the total number of elements in the list. An element is added to an <b>ArrayList</b> with the <b>add()</b> method and is deleted with the <b>remove()</b> method. The <b>get()</b> method returns the element at the specified position in the list. (See the above example for context.)<br />\n<br />\nFor a list of the numerous <b>ArrayList</b> features, please read the <a href=\"https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html\">Java reference description</a>.\n",
+  "constructors": [
+    "ArrayList&lt;Type&gt;()",
+    "ArrayList&lt;Type&gt;(initialCapacity)"
+  ],
+  "classFields": [],
+  "methods": [],
+  "related": ["IntList", "FloatList", "StringList"],
+  "type": "class",
+  "classanchor": "ArrayList",
+  "category": "Data",
+  "subcategory": "Composite",
+  "parameters": [
+    {
+      "name": "Type",
+      "description": "Class Name: the data type for the objects to be placed in the ArrayList.",
+      "type": []
+    },
+    {
+      "name": "initialCapacity",
+      "description": "int: defines the initial capacity of the list; it's empty by default",
+      "type": []
+    }
+  ]
+}

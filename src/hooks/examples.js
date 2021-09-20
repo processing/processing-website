@@ -48,6 +48,7 @@ export const usePreparedExamples = (examples, images) => {
         }
       }
 
+
       const [category, subcategory] = example.relativeDirectory.split('/');
       prepared.push({
         slug: example.name,
@@ -88,12 +89,21 @@ export const useRelatedExamples = (examples, related) => {
   of the examples is first in the array.
 **/
 export const useOrderedPdes = (name, nodes) => {
+  const locale = useIntl().locale;
   return useMemo(() => {
     const main = nodes.find((pde) => pde.name === name);
     const rest = nodes.filter((pde) => pde.name !== name);
+
     rest.unshift(main);
-    return rest;
-  }, [name, nodes]);
+    let pdeinlocale =[]
+    if (locale!==`en`){
+       pdeinlocale = rest.filter ( (pde) => pde.name.includes(`.${locale}`)) ;
+    }else{//TODO check this logic
+      pdeinlocale = rest.filter ( (pde) => !pde.name.includes(`.`)) ;
+    }
+
+    return pdeinlocale;
+  }, [locale, name, nodes]);
 };
 
 /**
@@ -109,16 +119,21 @@ export const useTrail = (example) => {
     ];
 
     if (example) {
+
       if (example.category) {
+        const category = intl.formatMessage({ id: example.category });
         trail.push({
           slug: `/examples#${slugify(example.category)}`,
-          label: example.category
+          label: category
         });
       }
       if (example.subcategory) {
+
+        const subcategory = intl.formatMessage({ id: example.subcategory });
+
         trail.push({
-          slug: `/examples#${slugify(example.category, example.subcategory)}`,
-          label: example.subcategory
+          slug: `/examples#${slugify(example.category, subcategory)}`,
+          label: subcategory
         });
       }
     }

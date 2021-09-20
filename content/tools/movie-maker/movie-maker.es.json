@@ -1,0 +1,4 @@
+{
+  "name": "Crear Película",
+  "description": "Crea una película QuickTime a partir de una secuencia de imágenes. Las opciones incluyen el tamaño, cuadros por segundo, compresión, así como archivo de audio."
+}

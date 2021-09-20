@@ -1,0 +1,30 @@
+{
+  "brief": "Writes <b>bytes</b>, <b>chars</b>, <b>ints</b>, <b>bytes[]</b>, <b>Strings</b> to the serial port",
+  "related": [],
+  "name": "write()",
+  "description": "Writes <b>bytes</b>, <b>chars</b>, <b>ints</b>, <b>bytes[]</b>, <b>Strings</b> to the serial port\n \n ",
+  "syntax": ["serial.write(src)"],
+  "returns": "void",
+  "type": "method",
+  "category": "serial",
+  "subcategory": "",
+  "classanchor": "Serial",
+  "parameters": [
+    {
+      "name": "serial",
+      "description": " any variable of type Serial",
+      "type": ["Serial"]
+    },
+    {
+      "name": "src",
+      "description": "data to write",
+      "type": ["byte[]", "int", "String"]
+    },
+    {
+      "name": "src",
+      "description": "data to write",
+      "type": ["int", "String"]
+    },
+    { "name": "src", "description": "data to write", "type": ["String", "int"] }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "brief": "Ends the current transmissions",
+  "related": [],
+  "name": "endTransmission()",
+  "description": "Ends the current transmissions<br/>\n <br/>\n This executes any queued writes. <a href=\"I2C_read_.html\">Read()</a>\n implicitly ends the current transmission as well, hence calling\n <b>endTransmission()</b> afterwards is not necessary.",
+  "syntax": [".endTransmission()"],
+  "returns": "void",
+  "type": "method",
+  "category": "I2C",
+  "subcategory": "",
+  "classanchor": "I2C",
+  "parameters": []
+}

@@ -1,31 +1,21 @@
 import React from 'react';
 import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
-import { useIntl } from 'react-intl';
 
 import SidebarGroup from './SidebarGroup';
 
 import * as css from './SidebarTreeList.module.css';
+import { useIntl } from 'react-intl';
 
-const SidebarTreeList = ({ tree, useSerif }) => {
+const SidebarTreeList = ({ tree, useSerif , isReference}) => {
   const intl = useIntl();
   return (
     <div className={css.root}>
       {Object.keys(tree).map((category) => (
-        <SidebarGroup
-          label={intl.formatMessage({
-            id: `refCat${category.replace(/ /g, '')}`
-          })}
-          key={`label-category-${category}`}>
+        <SidebarGroup label=  {intl.formatMessage({ id: category })} key={`label-category-${category}`}>
           {Object.keys(tree[category]).map((subcategory) => (
             <SidebarGroup
-              label={
-                subcategory
-                  ? intl.formatMessage({
-                      id: `refSubcat${subcategory.replace(/ /g, '')}`
-                    })
-                  : ''
-              }
+              label=  {intl.formatMessage({ id: subcategory })}
               key={`label-subcategory-${subcategory}`}
               secondary>
               <ul>
@@ -37,7 +27,8 @@ const SidebarTreeList = ({ tree, useSerif }) => {
                           [css.serif]: useSerif
                         })}
                         to={item.path}>
-                        {item.name}
+
+                        {isReference?item.name:item.name}
                       </Link>
                     </li>
                   );

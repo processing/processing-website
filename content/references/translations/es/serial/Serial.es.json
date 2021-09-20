@@ -1,0 +1,130 @@
+{
+  "brief": "Class for sending and receiving data using the serial communication protocol",
+  "methods": [
+    {
+      "anchor": "Serial_available_",
+      "name": "available()",
+      "desc": "Returns the number of bytes available"
+    },
+    {
+      "anchor": "Serial_buffer_",
+      "name": "buffer()",
+      "desc": "Sets the number of bytes to buffer before calling <b>serialEvent()</b>"
+    },
+    {
+      "anchor": "Serial_bufferUntil_",
+      "name": "bufferUntil()",
+      "desc": "Sets a specific byte to buffer until before calling <b>serialEvent()</b>"
+    },
+    {
+      "anchor": "Serial_clear_",
+      "name": "clear()",
+      "desc": "Empty the buffer, removes all the data stored there"
+    },
+    {
+      "anchor": "Serial_last_",
+      "name": "last()",
+      "desc": "Returns last byte received or -1 if there is none available"
+    },
+    {
+      "anchor": "Serial_lastChar_",
+      "name": "lastChar()",
+      "desc": "Returns the last byte received as a char or -1 if there is none available"
+    },
+    {
+      "anchor": "Serial_list_",
+      "name": "list()",
+      "desc": "Gets a list of all available serial ports"
+    },
+    {
+      "anchor": "Serial_read_",
+      "name": "read()",
+      "desc": "Returns a number between 0 and 255 for the next byte that's waiting in the buffer"
+    },
+    {
+      "anchor": "Serial_readBytes_",
+      "name": "readBytes()",
+      "desc": "Reads a group of bytes from the buffer or <b>null</b> if there are none available"
+    },
+    {
+      "anchor": "Serial_readBytesUntil_",
+      "name": "readBytesUntil()",
+      "desc": "Reads from the port into a buffer of bytes up to and including a particular character"
+    },
+    {
+      "anchor": "Serial_readChar_",
+      "name": "readChar()",
+      "desc": "Returns the next byte in the buffer as a char"
+    },
+    {
+      "anchor": "Serial_readString_",
+      "name": "readString()",
+      "desc": "Returns all the data from the buffer as a <b>String</b> or <b>null</b> if there is nothing available"
+    },
+    {
+      "anchor": "Serial_readStringUntil_",
+      "name": "readStringUntil()",
+      "desc": "Combination of <b>readBytesUntil()</b> and <b>readString()</b>"
+    },
+    {
+      "anchor": "Serial_serialEvent_",
+      "name": "serialEvent()",
+      "desc": "Called when data is available"
+    },
+    {
+      "anchor": "Serial_stop_",
+      "name": "stop()",
+      "desc": "Stops data communication on this port"
+    },
+    {
+      "anchor": "Serial_write_",
+      "name": "write()",
+      "desc": "Writes <b>bytes</b>, <b>chars</b>, <b>ints</b>, <b>bytes[]</b>, <b>Strings</b> to the serial port"
+    }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "Class for sending and receiving data using the serial communication protocol.",
+  "type": "class",
+  "constructors": [
+    "Serial(parent)",
+    "Serial(parent, baudRate)",
+    "Serial(parent, portName)",
+    "Serial(parent, portName, baudRate)",
+    "Serial(parent, portName, baudRate, parity, dataBits, stopBits)"
+  ],
+  "related": ["LIB_serial/serialEvent_"],
+  "name": "Serial",
+  "classanchor": "serial/Serial",
+  "category": "serial",
+  "subcategory": "",
+  "parameters": [
+    {
+      "name": "parent",
+      "description": "typically use \"this\"",
+      "type": ["PApplet"]
+    },
+    {
+      "name": "baudRate",
+      "description": "9600 is the default",
+      "type": ["int"]
+    },
+    {
+      "name": "portName",
+      "description": "name of the port (COM1 is the default)",
+      "type": ["String"]
+    },
+    {
+      "name": "parity",
+      "description": "'N' for none, 'E' for even, 'O' for odd, 'M' for mark, 'S' for space ('N' is the default)",
+      "type": ["char"]
+    },
+    { "name": "dataBits", "description": "8 is the default", "type": ["int"] },
+    {
+      "name": "stopBits",
+      "description": "1.0, 1.5, or 2.0 (1.0 is the default)",
+      "type": ["float"]
+    }
+  ]
+}

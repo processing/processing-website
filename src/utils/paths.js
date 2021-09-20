@@ -7,14 +7,19 @@ const langPrefix = (lang) =>
   lang && lang !== '' && lang !== 'en' ? `/${lang}` : '';
 
 /**
-  Returns the slug of an example
+  Returns the slug of an example. Slug is lowercased to match old processing.org URL's
 **/
-const exampleSlug = (name) => name.toLowerCase();
+const exampleSlug = (name) => { let n =name.toLowerCase();
+   // console.log("Name slug: " + n);
+   return n.split('.')[0]
+}
 
 /**
   Returns the full path to an example
 **/
-const examplePath = (name) => `/examples/${exampleSlug(name)}.html`;
+const examplePath = (name) => {
+  return `/examples/${exampleSlug(name)}.html`;
+};
 
 /**
   Returns the full path to a reference (processing or library) item

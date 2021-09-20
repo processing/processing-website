@@ -1,0 +1,13 @@
+{
+  "brief": "Stops the Pink Noise generator.",
+  "related": [],
+  "name": "stop()",
+  "description": "Stops the Pink Noise generator.",
+  "syntax": [".stop()"],
+  "returns": "void",
+  "type": "method",
+  "category": "noise",
+  "subcategory": "PinkNoise",
+  "classanchor": "PinkNoise",
+  "parameters": []
+}

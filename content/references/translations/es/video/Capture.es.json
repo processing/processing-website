@@ -1,0 +1,59 @@
+{
+  "brief": "Datatype for storing and manipulating video frames from an \n attached capture device such as a camera.",
+  "methods": [
+    {
+      "anchor": "Capture_frameRate_",
+      "name": "frameRate()",
+      "desc": "Sets how often frames are read from the capture device."
+    },
+    {
+      "anchor": "Capture_available_",
+      "name": "available()",
+      "desc": "Returns \"true\" when a new frame from the device is available to read."
+    },
+    {
+      "anchor": "Capture_start_",
+      "name": "start()",
+      "desc": "Starts capturing frames from an attached device."
+    },
+    {
+      "anchor": "Capture_stop_",
+      "name": "stop()",
+      "desc": "Stops capturing frames from an attached device."
+    },
+    {
+      "anchor": "Capture_read_",
+      "name": "read()",
+      "desc": "Reads the current frame of the device."
+    }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "Datatype for storing and manipulating video frames from an attached \n capture device such as a camera. Use <b>Capture.list()</b> to show \n the names of any attached devices. Using the version of the constructor \n without <b>name</b> will attempt to use the last device used by a \n QuickTime program.",
+  "type": "class",
+  "constructors": [
+    "Capture(parent)",
+    "Capture(parent, device)",
+    "Capture(parent, width, height)",
+    "Capture(parent, width, height, fps)",
+    "Capture(parent, width, height, device)",
+    "Capture(parent, width, height, device, fps)"
+  ],
+  "related": [],
+  "name": "Capture",
+  "classanchor": "video/Capture",
+  "category": "capture",
+  "subcategory": "",
+  "parameters": [
+    {
+      "name": "parent",
+      "description": "PApplet, typically \"this\"",
+      "type": ["PApplet"]
+    },
+    { "name": "device", "description": "device name", "type": ["String"] },
+    { "name": "width", "description": "width in pixels", "type": ["int"] },
+    { "name": "height", "description": "height in pixels", "type": ["int"] },
+    { "name": "fps", "description": "frames per second", "type": ["float"] }
+  ]
+}

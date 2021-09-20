@@ -1,0 +1,32 @@
+{
+  "brief": "Finds multiple rows that match the given expression",
+  "related": [],
+  "name": "matchRowIterator()",
+  "description": "Finds multiple rows that match the given expression",
+  "syntax": [
+    ".matchRowIterator(value, column)",
+    ".matchRowIterator(value, columnName)"
+  ],
+  "returns": "Iterator",
+  "type": "method",
+  "category": "table",
+  "subcategory": "method",
+  "classanchor": "Table",
+  "parameters": [
+    {
+      "name": "value",
+      "description": "the regular expression to match",
+      "type": ["String"]
+    },
+    {
+      "name": "column",
+      "description": "ID number of the column to search",
+      "type": ["int"]
+    },
+    {
+      "name": "columnName",
+      "description": "title of the column to search",
+      "type": ["String"]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "brief": "Detatches a servo motor from a GPIO pin",
+  "related": [],
+  "name": "detach()",
+  "description": "Detatches a servo motor from a GPIO pin<br/>\n <br/>\n Calling this method will stop the servo from moving or trying to hold the\n current orientation.",
+  "syntax": [".detach()"],
+  "returns": "void",
+  "type": "method",
+  "category": "software_servo",
+  "subcategory": "",
+  "classanchor": "SoftwareServo",
+  "parameters": []
+}

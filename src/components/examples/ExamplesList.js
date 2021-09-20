@@ -23,15 +23,16 @@ const ExamplesList = ({ tree }) => {
   const sortedTree = useTreeSort(tree, `order`, curated);
 
   return (
+
     <div className={classnames(grid.col, css.root)}>
-      {Object.keys(sortedTree).map((category) => (
+      {Object.keys(sortedTree).map((category) =>
         <Fragment key={`category-${category}`}>
           <div className={css.categoryName}>
-            <h2 id={slugify(category)}>{category}</h2>
+            <h2 id={slugify(category)}>{intl.formatMessage({id:category})}</h2>
             <div className={css.toggleButton}>
               <ToggleButton
                 defaultLabel="A-Z"
-                pressedLabel="By level"
+                pressedLabel={intl.formatMessage({id:"PressedSortByLevel"})}
                 ariaLabel="Sort by level"
                 toggle={curated}
                 onToggle={handleToggle}
@@ -49,7 +50,7 @@ const ExamplesList = ({ tree }) => {
                 <h3
                   id={slugify(category, subcategory)}
                   className={classnames(grid.col, css.subcategoryName)}>
-                  {subcategory}
+                  {intl.formatMessage({id:subcategory})}
                 </h3>
                 <ul className={classnames(grid.col, grid.grid, css.examples)}>
                   {sortedTree[category][subcategory].map((item, key) => (
@@ -60,12 +61,20 @@ const ExamplesList = ({ tree }) => {
             ))}
           </div>
         </Fragment>
-      ))}
+      )}
     </div>
   );
 };
 
 export const ExampleItem = memo(({ node, variant }) => {
+/*
+  for (const [key, value] of Object.entries(node)) {
+    console.log(`${key}: ${value}`);
+  }
+*/
+  // console.log (`node keys ${ node.keys}`);
+  //console.log (`node ${ node.name } path ${ node}`);
+
   return (
     <li className={classnames(grid.col, css.item, { [css[variant]]: variant })}>
       <Link to={node.path}>

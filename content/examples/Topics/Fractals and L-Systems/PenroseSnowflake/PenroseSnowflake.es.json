@@ -1,0 +1,9 @@
+{
+  "name": "Penrose Snowflake",
+  "title": "Copo de Nieve Penrose",
+  "level": "Avanzado",
+  "order": "3",
+  "author": "Geraldine Sarmiento (basado en la clase de L-Sistemas de Patrick Dwyer)",
+  "description": "",
+  "featured": ["pushMatrix_", "popMatrix_", "translate_", "rotate_"]
+}

@@ -1,0 +1,34 @@
+{
+  "brief": "Evaluates the Bezier at point t for points a, b, c, d",
+  "related": ["bezier_", "bezierVertex_", "curvePoint_"],
+  "name": "bezierPoint()",
+  "description": "Evaluates the Bezier at point t for points a, b, c, d. The parameter t\n varies between 0 and 1, a and d are points on the curve, and b and c are\n the control points. This can be done once with the x coordinates and a\n second time with the y coordinates to get the location of a bezier curve\n at t.\n\n\n ",
+  "syntax": ["bezierPoint(a, b, c, d, t)"],
+  "returns": "float",
+  "type": "function",
+  "category": "shape",
+  "subcategory": "curves",
+  "parameters": [
+    {
+      "name": "a",
+      "description": "coordinate of first point on the curve",
+      "type": ["float"]
+    },
+    {
+      "name": "b",
+      "description": "coordinate of first control point",
+      "type": ["float"]
+    },
+    {
+      "name": "c",
+      "description": "coordinate of second control point",
+      "type": ["float"]
+    },
+    {
+      "name": "d",
+      "description": "coordinate of second point on the curve",
+      "type": ["float"]
+    },
+    { "name": "t", "description": "value between 0 and 1", "type": ["float"] }
+  ]
+}

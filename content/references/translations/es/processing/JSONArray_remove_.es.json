@@ -1,0 +1,19 @@
+{
+  "brief": "Removes the element from a <b>JSONArray</b> in the specified index position",
+  "related": ["JSONArray_size_", "JSONArray_append_"],
+  "name": "remove()",
+  "description": "Removes the element from a <b>JSONArray</b> in the specified index position. \n Returns either the value associated with the given index, or <b>null</b>, if there \n is no value.",
+  "syntax": [".remove(index)"],
+  "returns": "Object",
+  "type": "method",
+  "category": "jsonarray",
+  "subcategory": "method",
+  "classanchor": "JSONArray",
+  "parameters": [
+    {
+      "name": "index",
+      "description": "the index value of the element to be removed",
+      "type": ["int"]
+    }
+  ]
+}

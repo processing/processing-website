@@ -1,0 +1,64 @@
+{
+  "brief": "Represents a single row of data values, stored in columns, from a <b>Table<b>",
+  "methods": [
+    {
+      "anchor": "TableRow_getString_",
+      "name": "getString()",
+      "desc": "Get a <b>String</b> value from the specified column"
+    },
+    {
+      "anchor": "TableRow_getInt_",
+      "name": "getInt()",
+      "desc": "Get an <b>integer</b> value from the specified column"
+    },
+    {
+      "anchor": "TableRow_getFloat_",
+      "name": "getFloat()",
+      "desc": "Get a <b>float</b> value from the specified column"
+    },
+    {
+      "anchor": "TableRow_setString_",
+      "name": "setString()",
+      "desc": "Store a <b>String</b> value in the specified column"
+    },
+    {
+      "anchor": "TableRow_setInt_",
+      "name": "setInt()",
+      "desc": "Store an <b>integer</b> value in the specified column"
+    },
+    {
+      "anchor": "TableRow_setFloat_",
+      "name": "setFloat()",
+      "desc": "Store a <b>float</b> value in the specified column"
+    },
+    {
+      "anchor": "TableRow_getColumnCount_",
+      "name": "getColumnCount()",
+      "desc": "Get the column count"
+    },
+    {
+      "anchor": "TableRow_getColumnTitle_",
+      "name": "getColumnTitle()",
+      "desc": "Get the column title."
+    }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "A <b>TableRow</b> object represents a single row of data values, \n stored in columns, from a <b>Table</b>.<br />\n <br />\n Additional <b>TableRow</b> methods are documented in the \n <a href=\"http://processing.github.io/processing-javadocs/core/\">Processing Data Javadoc</a>.",
+  "type": "class",
+  "constructors": [],
+  "related": [
+    "Table",
+    "Table_addRow_",
+    "Table_removeRow_",
+    "Table_clearRows_",
+    "Table_getRow_",
+    "Table_rows_"
+  ],
+  "name": "TableRow",
+  "classanchor": "TableRow",
+  "category": "data",
+  "subcategory": "composite",
+  "parameters": []
+}

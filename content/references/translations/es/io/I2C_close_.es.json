@@ -1,0 +1,13 @@
+{
+  "brief": "Closes the I2C device",
+  "related": [],
+  "name": "close()",
+  "description": "Closes the I2C device<br/>\n </br>\n It is normally not necessary to explicitly close I2C interfaces, as they are\n closed automatically by the operating system when the sketch exits.</br>\n </br>\n Note: It is possible to have two or more object using the same interface at a\n time.",
+  "syntax": [".close()"],
+  "returns": "void",
+  "type": "method",
+  "category": "I2C",
+  "subcategory": "",
+  "classanchor": "I2C",
+  "parameters": []
+}

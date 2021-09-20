@@ -1,0 +1,12 @@
+{
+  "brief": "Disables drawing the stroke (outline)",
+  "related": ["stroke_", "fill_", "noFill_"],
+  "name": "noStroke()",
+  "description": "Disables drawing the stroke (outline). If both <b>noStroke()</b> and\n <b>noFill()</b> are called, nothing will be drawn to the screen.",
+  "syntax": ["noStroke()"],
+  "returns": "void",
+  "type": "function",
+  "category": "color",
+  "subcategory": "setting",
+  "parameters": []
+}

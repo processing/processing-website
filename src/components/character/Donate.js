@@ -1,6 +1,8 @@
 import React, { memo, useContext } from 'react';
 import classnames from 'classnames';
 
+import { useIntl } from 'react-intl';
+
 import { LayoutContext } from '../Layout';
 
 import Character from './Character';
@@ -11,21 +13,21 @@ import * as css from './Donate.module.css';
 
 const Donate = () => {
   const { headerScrolled } = useContext(LayoutContext);
-
+  const intl = useIntl();
   return (
     <div
       className={classnames(css.root, grid.col, {
         [css.compact]: headerScrolled
       })}>
       <h3 className={css.text}>
-        We need
+        {intl.formatMessage({ id: 'donateWeNeed' })}
         <br />
-        your help!
+        {intl.formatMessage({ id: 'donateYourHelp' })}
       </h3>
-      <Character className={css.character} href="/donate" />
-      <p className={css.text}>Help us continue with your generosity!</p>
+      <Character className={css.character} />
+      <p className={css.text}>{intl.formatMessage({ id: 'donateHelp' })}</p>
       <Button to="/donate" className={css.donate}>
-        Donate
+        {intl.formatMessage({ id: 'donateButton' })}
       </Button>
     </div>
   );

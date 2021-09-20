@@ -1,0 +1,19 @@
+{
+  "brief": "Returns a boolean value <b>true</b> if the image is set to be visible,\n           <b>false</b> if not",
+  "related": ["PShape_setVisible_"],
+  "name": "isVisible()",
+  "description": "Returns a boolean value <b>true</b> if the image is set to be visible, <b>false</b> if\n not. This value can be modified with the <b>setVisible()</b> method.<br />\n <br />\n The default visibility of a shape is usually controlled by whatever program\n created the SVG file. For instance, this parameter is controlled by showing\n or hiding the shape in the layers palette in Adobe Illustrator.",
+  "syntax": ["sh.isVisible()"],
+  "returns": "boolean",
+  "type": "method",
+  "category": "pshape",
+  "subcategory": "method",
+  "classanchor": "PShape",
+  "parameters": [
+    {
+      "name": "sh",
+      "description": " any variable of type PShape",
+      "type": ["PShape"]
+    }
+  ]
+}

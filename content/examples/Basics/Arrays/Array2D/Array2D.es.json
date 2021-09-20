@@ -1,0 +1,9 @@
+{
+  "name": "Arreglos 2D",
+  "title": "Arreglos 2D",
+  "author": "",
+  "level": "Intermedio",
+  "order": "1",
+  "description": "Demuestra la sintaxis para crear un arreglo bidimensional (2D).\n Valores en un arreglo bidimensional son accesados usando dos valores de índices.\n Los arreglos bidimensionales son útiles para almacenar imágenes. En este ejemplo cada punto \n  esta coloreado en relación a su distancia desde el centro de la imagen.",
+  "featured": ["Array", "dist_"]
+}
