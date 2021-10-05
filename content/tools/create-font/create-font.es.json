@@ -1,4 +1,0 @@
-{
-  "name": "Crear Fuente",
-  "description": "Convierte fuentes al formato de fuentes de Processing y las agrega al sketch actual. Abre un cuadro de dialogo el cual da opciones para definir la fuente, tamaño, si es suavizada y si todos los caracteres deberían ser generados."
-}

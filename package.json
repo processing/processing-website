@@ -21,101 +21,16 @@
     "dev": "gatsby develop -H 0.0.0.0",
     "build": "gatsby build",
     "start": "gatsby serve",
-    "clean": "gatsby clean",
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
-    "fetchReleases": "node scripts/fetchReleases.js",
-    "updateContributions": "node scripts/updateContributions.js",
-    "updateExamples": "node scripts/updateExamples.js",
-    "updateKeywords": "node scripts/updateKeywords.js",
-    "deploy": "static deploy",
-    "deployGithub": "gatsby clean && static deploy --env production --confirm",
-    "open": "static open"
+    "clean": "gatsby clean"
   },
   "dependencies": {
-    "@mdx-js/mdx": "1.6.22",
-    "@mdx-js/react": "1.6.22",
-    "@octokit/graphql": "^4.8.0",
-    "array-flat-polyfill": "^1.0.1",
-    "array-unique": "^0.3.2",
-    "classnames": "^2.3.1",
-    "copy-to-clipboard": "^3.3.1",
+    "@babel/core": "^7.15.5",
     "gatsby": "^3.14.0",
-    "gatsby-plugin-image": "^1.14.0",
-    "gatsby-plugin-intl": "^0.3.3",
-    "gatsby-plugin-manifest": "^3.14.0",
-    "gatsby-plugin-mdx": "2.14.0",
-    "gatsby-plugin-postcss": "^4.14.0",
-    "gatsby-plugin-react-helmet": "^4.14.0",
-    "gatsby-plugin-react-svg": "^3.0.1",
-    "gatsby-plugin-sharp": "3.14.0",
-    "gatsby-remark-copy-linked-files": "^4.11.0",
-    "gatsby-remark-images": "^5.11.0",
-    "gatsby-remark-images-anywhere": "^1.3.1",
-    "gatsby-remark-picture": "^1.0.1",
-    "gatsby-remark-static-images": "^1.2.1",
-    "gatsby-remark-unwrap-images": "^1.0.2",
     "gatsby-source-filesystem": "^3.14.0",
-    "gatsby-theme-i18n": "^2.0.0",
-    "gatsby-theme-i18n-react-intl": "^2.0.0",
     "gatsby-transformer-json": "^3.14.0",
-    "gatsby-transformer-remark": "^4.11.0",
-    "gatsby-transformer-sharp": "^3.14.0",
-    "highlight.js": "^11.2.0",
-    "lodash": "4.17.21",
-    "luxon": "^1.28.0",
-    "p5": "^1.4.0",
-    "postcss": "^8.3.6",
-    "postcss-calc": "^8.0.0",
-    "postcss-custom-media": "^8.0.0",
-    "postcss-custom-properties": "^11.0.0",
-    "postcss-import": "^14.0.2",
-    "postcss-nesting": "^8.0.1",
-    "postcss-normalize": "^10.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0",
-    "react-intl": "^5.20.10",
-    "react-router-dom": "^5.3.0",
-    "remark-slug": "^6.1.0",
-    "remark-unwrap-images": "^2.1.0",
-    "title-case": "^3.0.3"
-  },
-  "devDependencies": {
-    "@designsystemsinternational/static": "^3.3.12",
-    "fast-glob": "^3.2.7",
-    "fs-extra": "^10.0.0",
-    "inquirer": "^8.1.5",
-    "prettier": "2.0.5"
-  },
-  "static": {
-    "region": "us-east-1",
-    "buildDir": "public",
-    "shouldRunBuildCommand": true,
-    "buildCommand": "npm run build",
-    "environments": {
-      "production": {
-        "stack": "DOESNOTEXIST",
-        "bucket": "processing.org",
-        "fileParams": [
-          {
-            "match": [
-              "!**/*.(html|json)"
-            ],
-            "params": {
-              "CacheControl": "public, max-age=31536000, immutable"
-            }
-          },
-          {
-            "match": [
-              "**/*.(html|json)"
-            ],
-            "params": {
-              "CacheControl": "public, max-age=300"
-            }
-          }
-        ]
-      }
-    }
+    "react-router-dom": "^5.3.0"
   }
 }

@@ -1,9 +1,0 @@
-{
-  "name": "Milliseconds",
-  "title": "Milliseconds",
-  "author": "",
-  "level": "Beginner",
-  "order": "10",
-  "description": "A millisecond is 1/1000 of a second. \n  Processing keeps track of the number of milliseconds a program has run.\n  By modifying this number with the modulo(%) operator, \n  different patterns in time are created.",
-  "featured": ["millis_"]
-}

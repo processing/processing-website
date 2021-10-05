@@ -1,9 +1,0 @@
-.root {
-  font-size: var(--text-small);
-  margin-bottom: var(--vertical-margin-medium);
-}
-
-.sep {
-  display: inline-block;
-  margin: 0 8px;
-}

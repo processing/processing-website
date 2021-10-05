@@ -1,9 +1,0 @@
-{
-  "name": "Follow2",
-  "title": "Follow 2",
-  "author": "based on code from Keith Peters",
-  "level": "Intermediate",
-  "order": "2",
-  "description": "A two-segmented arm follows the cursor position. The relative\n  angle between the segments is calculated with atan2() and the\n  position calculated with sin() and cos().",
-  "featured": ["Array", "atan2_", "cos_", "sin_", "pushMatrix_", "popMatrix_"]
-}

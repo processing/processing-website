@@ -1,9 +1,0 @@
-{
-  "name": "Pentigree",
-  "title": "Pentigree L-System",
-  "author": "Geraldine Sarmiento",
-  "level": "Advanced",
-  "order": "4",
-  "description": "This code was based on Patrick Dwyer's L-System class.",
-  "featured": ["pushMatrix_", "popMatrix_", "translate_", "rotate_"]
-}

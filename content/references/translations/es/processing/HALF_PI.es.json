@@ -1,9 +1,0 @@
-{
-  "brief": "HALF_PI es una constante matemática con el valor\n           1.57079632679489661923",
-  "related": ["PI", "TWO_PI", "TAU", "QUARTER_PI"],
-  "name": "HALF_PI",
-  "description": "<b>HALF_PI</b> es una constante matemática con el valor 1.5707964. Es la\n mitad de la proporción de la circunferencia de un circulo y su diámetro. Es útil\n en combinación con las funciones trigonométricas <b>sin()</b> y\n <b>cos()</b>.",
-  "category": "constants",
-  "subcategory": "",
-  "type": "other"
-}

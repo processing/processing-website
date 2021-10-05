@@ -1,9 +1,0 @@
-{
-  "name": "Embedded Iteration",
-  "title": "Embedding Iteration",
-  "author": "",
-  "level": "Beginner",
-  "order": "1",
-  "description": "Embedding \"for\" structures allows repetition in two dimensions.",
-  "featured": ["for"]
-}

@@ -1,9 +1,0 @@
-{
-  "name": "Rotate Push Pop",
-  "title": "Rotate Push Pop",
-  "author": "",
-  "level": "Intermediate",
-  "order": "3",
-  "description": "The push() and pop() functions allow for more control over transformations.\n  The push function saves the current coordinate system to the stack \n  and pop() restores the prior coordinate system.",
-  "featured": ["pushMatrix_", "popMatrix_"]
-}

@@ -1,9 +1,0 @@
-{
-  "name": "Moving On Curves",
-  "title": "Moving On Curves",
-  "author": "",
-  "level": "Intermediate",
-  "order": "3",
-  "description": "In this example, the circles moves along the curve y = x^4.\n  Click the mouse to have it move to a new position.",
-  "featured": ["pow_", "ellipse_", "rect_"]
-}

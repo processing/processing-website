@@ -1,9 +1,0 @@
-{
-  "name": "Game Of Life",
-  "title": "A Processing implementation of Game of Life",
-  "author": "Joan Soler-Adillon",
-  "level": "Advanced",
-  "order": "1",
-  "description": "Press SPACE BAR to pause and change the cell's values with the mouse. On pause, click to activate/deactivate cells. Press 'R' to randomly reset the cells' grid. Press 'C' to clear the cells' grid. The original Game of Life was created by John Conway in 1970.",
-  "featured": ["Array", "random_", "map_", "constrain_", "keyPressed_"]
-}

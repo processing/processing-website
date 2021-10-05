@@ -1,9 +1,0 @@
-{
-  "name": "Noise 1D",
-  "title": "Noise 1D",
-  "author": "",
-  "level": "Beginner",
-  "order": "16",
-  "description": "Using 1D Perlin Noise to assign location.",
-  "featured": ["noise_"]
-}

@@ -1,9 +1,0 @@
-@import "../../styles/variables.css";
-
-.root {
-  display: inline-block;
-}
-
-.root:hover {
-  cursor: ew-resize;
-}

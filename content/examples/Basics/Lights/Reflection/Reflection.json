@@ -1,9 +1,0 @@
-{
-  "name": "Reflection",
-  "title": "Reflection",
-  "author": "Simon Greenwold",
-  "level": "Intermediate",
-  "order": "3",
-  "description": "Vary the specular reflection component of a material\n  with the horizontal position of the mouse.",
-  "featured": ["lightSpecular_", "specular_"]
-}

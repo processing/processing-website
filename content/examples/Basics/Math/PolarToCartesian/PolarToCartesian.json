@@ -1,9 +1,0 @@
-{
-  "name": "Polar To Cartesian",
-  "title": "PolarToCartesian",
-  "author": "Daniel Shiffman",
-  "level": "Intermediate",
-  "order": "9",
-  "description": "Convert a polar coordinate (r,theta) to cartesian (x,y). The calculations are x=r*cos(theta) and y=r*sin(theta).",
-  "featured": ["cos_", "sin_"]
-}

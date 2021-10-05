@@ -1,9 +1,0 @@
-{
-  "name": "Orthographic",
-  "title": "Perspective vs Ortho",
-  "author": "",
-  "level": "Intermediate",
-  "order": "2",
-  "description": "Move the mouse left to right to change the \"far\" \n  parameter for the perspective() and ortho() functions.\n  This parameter sets the maximum distance from the \n  origin away from the viewer and will clip the geometry.\n  Click a mouse button to switch between the perspective and\n  orthographic projections.",
-  "featured": ["ortho_", "perspective_"]
-}

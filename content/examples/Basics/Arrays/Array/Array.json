@@ -1,9 +1,0 @@
-{
-  "name": "Array",
-  "title": "Array",
-  "author": "",
-  "level": "Beginner",
-  "order": "0",
-  "description": "An array is a list of data. Each piece of data in an array \n  is identified by an index number representing its position in \n  the array. Arrays are zero based, which means that the first \n  element in the array is [0], the second element is [1], and so on. \n  In this example, an array named \"coswave\" is created and\n  filled with the cosine values. This data is displayed three \n  separate ways on the screen.",
-  "featured": ["Array", "cos_"]
-}

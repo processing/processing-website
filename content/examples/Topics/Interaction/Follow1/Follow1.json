@@ -1,9 +1,0 @@
-{
-  "name": "Follow1",
-  "title": "Follow 1",
-  "level": "Intermediate",
-  "order": "1",
-  "author": "based on code from Keith Peters",
-  "description": "A line segment is pushed and pulled by the cursor.",
-  "featured": ["atan2_", "cos_", "sin_", "pushMatrix_", "popMatrix_"]
-}

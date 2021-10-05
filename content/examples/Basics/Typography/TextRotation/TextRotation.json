@@ -1,9 +1,0 @@
-{
-  "name": "Text Rotation",
-  "title": "Text Rotation",
-  "author": "",
-  "level": "Intermediate",
-  "order": "2",
-  "description": "Draws letters to the screen and rotates them at different angles.",
-  "featured": ["rotate_", "text_"]
-}

@@ -1,9 +1,0 @@
-{
-  "name": "Variables",
-  "title": "Variables",
-  "author": "",
-  "level": "Beginner",
-  "order": "0",
-  "description": "Variables are used for storing values. In this example, change \n  the values of variables to affect the composition.",
-  "featured": ["int"]
-}

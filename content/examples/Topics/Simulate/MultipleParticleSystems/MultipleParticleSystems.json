@@ -1,9 +1,0 @@
-{
-  "name": "Multiple Particle Systems",
-  "title": "Multiple Particle Systems",
-  "author": "Daniel Shiffman",
-  "level": "Advanced",
-  "order": "1",
-  "description": "Click the mouse to generate a burst of particles at the mouse position. Each burst is one instance of a particle system with Particles and CrazyParticles (a subclass of Particle). Note use of Inheritance and Polymorphism.",
-  "featured": ["ArrayList", "class", "PVector"]
-}

@@ -1,9 +1,0 @@
-{
-  "name": "Map",
-  "title": "Map",
-  "author": "",
-  "level": "Beginner",
-  "order": "4",
-  "description": "Use the map() function to take any number and scale it to a new number \n  that is more useful for the project that you are working on. For example, use the\n  numbers from the mouse position to control the size or color of a shape. \n  In this example, the mouse’s x-coordinate (numbers between 0 and 360) are scaled to\n  new numbers to define the color and size of a circle.",
-  "featured": ["map_"]
-}

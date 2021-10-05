@@ -1,9 +1,0 @@
-{
-  "name": "Reach3",
-  "title": "Reach 3",
-  "author": "based on code from Keith Peters",
-  "level": "Intermediate",
-  "order": "5",
-  "description": "The arm follows the position of the ball by\n  calculating the angles with atan2().",
-  "featured": ["Array", "atan2_", "cos_", "sin_", "pushMatrix_", "popMatrix_"]
-}

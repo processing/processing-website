@@ -1,9 +1,0 @@
-{
-  "name": "Ortográfica",
-  "title": "Perspectiva vs Ortográfica",
-  "author": "",
-  "level": "Intermedio",
-  "order": "2",
-  "description": "Mueve el mouse de izquierda a derecha para cambiar el parámetro \"far\" \n  de las funciones perspective() y ortho().\n Este parámetro fija la distancia máxima desde el origen \n al espectador y cortará la geometría.\n Haz click en un botón del mouse para alternar entre proyecciones\n en perspectiva y ortográfica.",
-  "featured": ["ortho_", "perspective_"]
-}

@@ -1,9 +1,0 @@
-{
-  "name": "Redraw",
-  "title": "Redraw",
-  "author": "",
-  "level": "Beginner",
-  "order": "6",
-  "description": "The redraw() function makes draw() execute once.  \n  In this example, draw() is executed once every time \n  the mouse is clicked.",
-  "featured": ["redraw_", "noLoop_"]
-}

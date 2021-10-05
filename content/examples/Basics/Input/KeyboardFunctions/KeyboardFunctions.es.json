@@ -1,9 +1,0 @@
-{
-  "name": "Funciones de Teclado",
-  "title": "Funciones de Teclado",
-  "author": "Martin Gomez",
-  "level": "Intermedio",
-  "order": "9",
-  "description": "Haz click en la ventana para darle el foco y presiona teclas de letras para distintos colores. La función de teclado keyPressed() es llamada cada vez que una tecla es presionada. keyReleased() es otra función de teclado que es llamada cuando la tecla es liberada. Concepto original 'Color Typewriter' por John Maeda.",
-  "featured": ["keyPressed_"]
-}

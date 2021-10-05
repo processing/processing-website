@@ -1,9 +1,0 @@
-{
-  "name": "Star",
-  "title": "Star",
-  "author": "",
-  "level": "Intermediate",
-  "order": "4",
-  "description": "The star() function created for this example is capable of drawing a\n  wide range of different forms. Try placing different numbers into the \n  star() function calls within draw() to explore.",
-  "featured": ["beginShape_", "endShape_", "vertex_"]
-}

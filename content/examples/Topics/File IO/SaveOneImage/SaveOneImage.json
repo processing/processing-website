@@ -1,9 +1,0 @@
-{
-  "name": "Save One Image",
-  "title": "SaveOneImage",
-  "author": "",
-  "level": "Intermediate",
-  "order": "2",
-  "description": "The save() function allows you to save an image from the display window. In this example, the save() function is run when a mouse button is pressed. The image line.tif is saved to the same folder as the sketch's program file.",
-  "featured": []
-}

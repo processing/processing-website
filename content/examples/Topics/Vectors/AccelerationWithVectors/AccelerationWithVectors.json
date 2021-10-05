@@ -1,9 +1,0 @@
-{
-  "name": "Acceleration With Vectors",
-  "title": "Acceleration with Vectors",
-  "author": "Daniel Shiffman",
-  "level": "Advanced",
-  "order": "2",
-  "description": "Demonstration of the basics of motion with vector. A 'Mover' object stores location, velocity, and acceleration as vectors. The motion is controlled by affecting the acceleration (in this case towards the mouse).",
-  "featured": ["PVector", "PVector_add_", "PVector_limit_", "PVector_setMag_"]
-}

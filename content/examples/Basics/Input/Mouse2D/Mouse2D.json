@@ -1,9 +1,0 @@
-{
-  "name": "Mouse 2D",
-  "title": "Mouse 2D",
-  "author": "",
-  "level": "Beginner",
-  "order": "1",
-  "description": "Moving the mouse changes the position and size of each box.",
-  "featured": ["mouseX", "mouseY"]
-}

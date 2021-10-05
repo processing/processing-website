@@ -1,9 +1,0 @@
-{
-  "name": "Penrose Tile",
-  "title": "Penrose Tile L-System",
-  "author": "Geraldine Sarmiento",
-  "level": "Advanced",
-  "order": "3",
-  "description": "This code was based on Patrick Dwyer's L-System class.",
-  "featured": ["pushMatrix_", "popMatrix_", "translate_", "rotate_"]
-}

@@ -1,9 +1,0 @@
-{
-  "name": "Spot",
-  "title": "Spot",
-  "author": "",
-  "level": "Intermediate",
-  "order": "2",
-  "description": "Move the mouse to change the position of a blue spot light.",
-  "featured": ["spotLight_"]
-}

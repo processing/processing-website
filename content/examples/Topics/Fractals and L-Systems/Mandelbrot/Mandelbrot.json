@@ -1,9 +1,0 @@
-{
-  "name": "Mandelbrot",
-  "title": "The Mandelbrot Set",
-  "level": "Intermediate",
-  "order": "0",
-  "author": "Daniel Shiffman (slight modification by l8l)",
-  "description": "Simple rendering of the Mandelbrot set.",
-  "featured": ["loadPixels_", "updatePixels_", "pixels[]"]
-}

@@ -1,9 +1,0 @@
-{
-  "name": "Arreglo de Objetos",
-  "title": "Arreglo de Objetos",
-  "author": "",
-  "level": "Avanzado",
-  "order": "2",
-  "description": "Demuestra la sintaxis para crear un arreglo de objetos.",
-  "featured": ["Array", "Object"]
-}

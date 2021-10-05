@@ -1,9 +1,0 @@
-{
-  "name": "Pixel Array",
-  "title": "Pixel Array",
-  "author": "",
-  "level": "Intermediate",
-  "order": "0",
-  "description": "Click and drag the mouse up and down to control the signal and \n  press and hold any key to see the current pixel being read. \n  This program sequentially reads the color of every pixel of an image\n  and displays this color to fill the window.",
-  "featured": ["PImage_", "loadImage_", "constrain_", "set_"]
-}

@@ -1,9 +1,0 @@
-{
-  "name": "Mixture Grid",
-  "title": "Mixture Grid   modified from an example",
-  "author": "Simon Greenwold",
-  "level": "Intermediate",
-  "order": "5",
-  "description": "Display a 2D grid of boxes with three different kinds of lights.",
-  "featured": ["pointLight_", "directionalLight_", "spotLight_"]
-}
