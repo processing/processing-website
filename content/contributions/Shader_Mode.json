@@ -7,7 +7,6 @@
   "sentence": "Edit GLSL shaders in Processing",
   "paragraph": "Tool for opening and editing GLSL files inside the PDE",
   "imports": "processing.mode.java.JavaMode",
-  "id": "250",
   "type": "mode",
   "categories": null,
   "packages": [

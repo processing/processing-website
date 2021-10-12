@@ -9,7 +9,6 @@
   ],
   "sentence": "Write HPGL output from Processing sketches, suitable for sending to a pen-plotter.",
   "paragraph": "This library works in much the same way as PDF or DXF export - by wrapping your sketch code in beginRecord/endRecord, you can save your sketch as a .hpgl file.",
-  "id": "189",
   "type": "library",
   "packages": [
     {

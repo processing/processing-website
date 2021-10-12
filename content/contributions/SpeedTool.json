@@ -7,7 +7,6 @@
   "categories": null,
   "sentence": "Adding features for faster code editing to the PDE.",
   "paragraph": "Brackets and Quotes get closed automatically.",
-  "id": "112",
   "type": "tool",
   "packages": [
     {

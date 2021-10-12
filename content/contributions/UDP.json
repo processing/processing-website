@@ -9,7 +9,6 @@
   ],
   "sentence": "Enables simple UDP communication, as well as multicast support.",
   "paragraph": "",
-  "id": "073",
   "type": "library",
   "packages": [
     {

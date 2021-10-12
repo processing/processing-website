@@ -9,7 +9,6 @@
   ],
   "sentence": "Touch events for Raspberry Pi and other Linux-based computers.",
   "paragraph": "(Only works on Linux)",
-  "id": "171",
   "type": "library",
   "packages": [
     {

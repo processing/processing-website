@@ -9,7 +9,6 @@
   "url": "https://github.com/cansik/artnet4j",
   "sentence": "Framework for sending and receiving DMX data over the ArtNet protocol.",
   "paragraph": "Send and receive DMX data over the ArtNet protocol.",
-  "id": "230",
   "type": "library",
   "packages": [
     {

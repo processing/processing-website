@@ -9,7 +9,6 @@
   ],
   "sentence": "3D Shape creation and display made easy.",
   "paragraph": "Choose from a wide range of shapes including the sphere, box, cylinder, torus, helix, bezier shapes and various tubes. All of the shapes can be shown in wireframe, colour or textured with your own images. Many of library examples need the [PeasyCam](http://http://www.processing.org/reference/libraries/",
-  "id": "079",
   "type": "library",
   "packages": [
     {

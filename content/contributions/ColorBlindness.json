@@ -9,7 +9,6 @@
   ],
   "sentence": "Fast and easy to use utility for simulating color blindness or performing daltonization.",
   "paragraph": "Transforms colors so you can see what a color blind person would see when they look at your sketch.",
-  "id": "202",
   "type": "library",
   "packages": [
     {

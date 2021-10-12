@@ -9,7 +9,6 @@
   ],
   "sentence": "Computer vision with OpenCV.",
   "paragraph": "Based on the official OpenCV Java API. A nice Processing-style API for common tasks and access to the full power of the OpenCV API for the advanced stuff.",
-  "id": "132",
   "type": "library",
   "packages": [
     {

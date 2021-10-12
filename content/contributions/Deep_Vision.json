@@ -9,7 +9,6 @@
   "url": "https://github.com/cansik/deep-vision-processing",
   "sentence": "Deep computer-vision algorithms for Processing",
   "paragraph": "Run deep neural networks on images in Processing.",
-  "id": "267",
   "type": "library",
   "packages": [
     {

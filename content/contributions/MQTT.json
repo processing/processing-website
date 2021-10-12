@@ -9,7 +9,6 @@
   ],
   "sentence": "MQTT library for Processing based on the Eclipse Paho project.",
   "paragraph": "",
-  "id": "173",
   "type": "library",
   "packages": [
     {

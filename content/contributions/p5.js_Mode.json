@@ -8,7 +8,6 @@
   "sentence": "Adds a simple editor for p5.js code",
   "paragraph": "p5jsMode is a simple editor for p5.js",
   "imports": "processing.mode.java.JavaMode",
-  "id": "199",
   "type": "mode",
   "packages": [
     {

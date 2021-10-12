@@ -9,7 +9,6 @@
   ],
   "sentence": "Print on attached Thermal Receipt Printers",
   "paragraph": "Made for Linux-based Single Board Computers such as the Raspberry Pi",
-  "id": "209",
   "type": "library",
   "packages": [
     {

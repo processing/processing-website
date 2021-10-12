@@ -9,7 +9,6 @@
   ],
   "sentence": "A library and set of examples for 2D physics simulation wrapping some aspects of [JBox2D](http://www.jbox2d.org/), a Java implementation of [Box2D](http://box2d.org/).",
   "paragraph": "",
-  "id": "014",
   "type": "library",
   "packages": [
     {

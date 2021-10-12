@@ -9,7 +9,6 @@
   ],
   "sentence": "Allows Processing to export the drawings of a sketch in SVG format.",
   "paragraph": "It is used in a way similar to PGraphicsPDF, as a renderer / recorder. It uses the Apache Batik library.",
-  "id": "068",
   "type": "library",
   "packages": [
     {

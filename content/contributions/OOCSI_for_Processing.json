@@ -11,7 +11,6 @@
   ],
   "sentence": "Processing client library for the OOCSI design middleware and Data Foundry access.",
   "paragraph": "This library provides easy ways to connect a Processing sketch to an OOCSI server and communicate through this connection with other clients on many different platforms, such as Processing, Java, Android, Python, OSC, and HTML/JavaScript and Node.js via web sockets. Processing sketches can not only send and receive messages between specific clients, but also broadcast and subscribe to channels, which makes coordinating a large number of sketches or devices surprisingly simple and robust.",
-  "id": "084",
   "type": "library",
   "packages": [
     {

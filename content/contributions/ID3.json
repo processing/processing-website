@@ -9,7 +9,6 @@
   ],
   "sentence": "Extracts ID3 tags from Mp3 files.",
   "paragraph": "Allows you read the ID3v1.1 tags from MP3 files. If you want to know more about ID3 tags check the [id3.org](http://id3.org) page.",
-  "id": "027",
   "type": "library",
   "packages": [
     {

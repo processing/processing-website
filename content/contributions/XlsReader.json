@@ -9,7 +9,6 @@
   ],
   "sentence": "A library to read from XLS (Excel) files",
   "paragraph": "XlsReader allows to read from .xls files as if they were a database",
-  "id": "110",
   "type": "library",
   "packages": [
     {

@@ -9,7 +9,6 @@
   ],
   "sentence": "A livecoding library that draws code brushes from external .java source code.",
   "paragraph": "Based on the Groovy live script compiler.",
-  "id": "255",
   "type": "library",
   "packages": [
     {

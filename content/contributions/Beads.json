@@ -9,7 +9,6 @@
   ],
   "sentence": "A library for adding flexible realtime audio to Processing sketches.",
   "paragraph": "Beads offers powerful tools for performing realtime audio manipulation for music, sound installations and offline music generation, including a metronome, musical event messaging, varispeed sample playback and granular synthesis, and analysis tools. It is a little more involved than Minim.",
-  "id": "138",
   "type": "library",
   "packages": [
     {

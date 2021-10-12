@@ -1,7 +1,7 @@
 {
   "name": "Image processing algorithms",
   "authors": [
-    "[Nick 'Milchreis' M\u00fcller](http://github.com/milchreis)"
+    "[Nick 'Milchreis' Müller](http://github.com/milchreis)"
   ],
   "url": "http://github.com/milchreis/processing-imageprocessing",
   "categories": [
@@ -9,7 +9,6 @@
   ],
   "sentence": "Implementations of basic image processing algorithms for processing.",
   "paragraph": "Easy access for bluring or coloring images or video streams.",
-  "id": "227",
   "type": "library",
   "packages": [
     {

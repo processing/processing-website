@@ -9,7 +9,6 @@
   ],
   "sentence": "For openGL texture sharing between Microsoft Windows applications using the Spout framework.",
   "paragraph": "Find out more about Spout [here](https://spout.zeal.co).",
-  "id": "186",
   "type": "library",
   "packages": [
     {

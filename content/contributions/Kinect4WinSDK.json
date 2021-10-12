@@ -9,7 +9,6 @@
   ],
   "sentence": "A simple wrapper for the Microsoft Kinect for Windows SDK version 1.8.",
   "paragraph": "It works in the Windows environment only.",
-  "id": "149",
   "type": "library",
   "packages": [
     {

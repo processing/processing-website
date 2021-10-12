@@ -9,7 +9,6 @@
   ],
   "sentence": "Tools for drawing graphs in 2D and 3D.",
   "paragraph": "We have developped the library to create simple scientific simulations and data displays, as shown on our [projects page](http://www.gwoptics.org/processing/).",
-  "id": "021",
   "type": "library",
   "packages": [
     {

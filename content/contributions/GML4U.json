@@ -9,7 +9,6 @@
   ],
   "sentence": "A [Graffiti Markup Language](http://graffitimarkuplanguage.com/) library for Processing.",
   "paragraph": "GML is an open file format designed to store graffiti motion data.",
-  "id": "008",
   "type": "library",
   "packages": [
     {

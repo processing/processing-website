@@ -10,7 +10,6 @@
   ],
   "sentence": "Extends 2D geometry operations to facilitate generative geometry. Includes a TrueType font interpreter.",
   "paragraph": "This library exposes the shapes (such as vector drawings or typographies) in a more approchable way. Geomerative makes it easy to access the paths, the handles and the points, making it easy to develop generative typography and geometry pieces in Processing.",
-  "id": "038",
   "type": "library",
   "packages": [
     {

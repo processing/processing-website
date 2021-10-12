@@ -7,7 +7,6 @@
   "categories": null,
   "sentence": "Uploads and runs a sketch on a Raspberry Pi.",
   "paragraph": "This currently attempts to connect to a Raspberry Pi in the local network (hostname raspberrypi.local) with the default credentials. In development.",
-  "id": "191",
   "type": "tool",
   "packages": [
     {

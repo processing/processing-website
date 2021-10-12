@@ -10,7 +10,6 @@
   "sentence": "All examples from the \"Coding Art\" book published by Apress.",
   "paragraph": "The examples library contains all source code examples from the \"Coding Art\" book published by Apress. All examples are directly usable and identical to the source code provided in the book.",
   "lastUpdated": "0",
-  "id": "265",
   "type": "examples",
   "packages": [
     {

@@ -9,7 +9,6 @@
   ],
   "sentence": "Framework to interface with the SuperCollider synthesis engine.",
   "paragraph": "This library provides a simple approach to interfacing with the powerful [SuperCollider](http://supercollider.sourceforge.net) sound synthesis engine. It provides objects to encapsulate common functions such as creating and manipulating Synth, Buffer and Bus objects.",
-  "id": "035",
   "type": "library",
   "packages": [
     {

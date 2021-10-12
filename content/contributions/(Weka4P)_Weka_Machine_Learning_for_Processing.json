@@ -9,7 +9,6 @@
   ],
   "sentence": "Implementation of the Open Source Weka Machine Learning Java library for Processing 3.",
   "paragraph": "Train and load models to bring Machine Learning (for example: classification and regression) to your Processing projects.",
-  "id": "270",
   "type": "library",
   "packages": [
     {

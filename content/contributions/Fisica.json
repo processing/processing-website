@@ -9,7 +9,6 @@
   ],
   "sentence": "A wrapper for JBox2D, a 2D physics engine.",
   "paragraph": "It is simply a wrapper around [JBox2D](http://www.jbox2d.org/). It tries to make it much easier to create physical models by exposing an object oriented API similar to [PPhys2D](http://pphys2d.jmcouillard.com/) physics library for Processing.",
-  "id": "018",
   "type": "library",
   "packages": [
     {

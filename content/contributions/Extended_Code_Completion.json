@@ -7,7 +7,6 @@
   "categories": null,
   "sentence": "Extended code completion for statements like if, while and for etc.",
   "paragraph": "The principle of Extended Code Completion is based on the principle that you write something and then presses ctrl+space to expand it, e.g. write if and press ctrl+space and it will expand to if(){ }",
-  "id": "221",
   "type": "tool",
   "packages": [
     {

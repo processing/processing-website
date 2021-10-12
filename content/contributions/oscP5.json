@@ -9,7 +9,6 @@
   ],
   "sentence": "An Open Sound Control (OSC) implementation.",
   "paragraph": "The UDP, TCP, Multicast protocols are supported and can be used for client/server communication independently from OSC as well.",
-  "id": "072",
   "type": "library",
   "packages": [
     {

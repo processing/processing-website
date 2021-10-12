@@ -9,7 +9,6 @@
   ],
   "sentence": "This is a simple library to export surfaces from processing as OBJ files. It is used the same way the PDF library is used.",
   "paragraph": "",
-  "id": "091",
   "type": "library",
   "packages": [
     {

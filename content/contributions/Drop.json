@@ -9,7 +9,6 @@
   ],
   "sentence": "Drop is a processing library that lets you drag and drop objects such as files, images, bookmarks, or text into your processing sketch.",
   "paragraph": "Once dropped you can access the information of the object from a DropEvent that has been forwarded to the processing sketch.",
-  "id": "172",
   "type": "library",
   "packages": [
     {

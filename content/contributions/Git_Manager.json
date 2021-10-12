@@ -8,7 +8,6 @@
   "sentence": "A GUI Git Client for Processing",
   "paragraph": "A tool to act as a complete and convenient interface for users of various online git repository hosting services, and to integrate the awesomeness of version control with Processing.",
   "lastUpdated": "1443010051000",
-  "id": "160",
   "type": "tool",
   "packages": [
     {

@@ -9,7 +9,6 @@
   "url": "https://github.com/cansik/sweep-processing",
   "sentence": "Scanse Sweep LIDAR API for Processing",
   "paragraph": "Use the Scanse Sweep LIDAR together with Processing.",
-  "id": "218",
   "type": "library",
   "packages": [
     {

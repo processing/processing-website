@@ -9,7 +9,6 @@
   ],
   "sentence": "A really simplified wrapper for using Phidgets in Processing",
   "paragraph": "This library is meant for people with little or no experience in programming. Each device (e.g. sensor) is represented by a Channel object. Check the attached examples and see https://github.com/sgeigers/SimplePhidgets",
-  "id": "266",
   "type": "library",
   "packages": [
     {

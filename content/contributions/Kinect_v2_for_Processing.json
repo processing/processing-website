@@ -9,7 +9,6 @@
   ],
   "sentence": "Kinect v2 implementation using the Kinect Windows SDK.",
   "paragraph": "For Windows 10 and 8 with 64 bits.",
-  "id": "161",
   "type": "library",
   "packages": [
     {

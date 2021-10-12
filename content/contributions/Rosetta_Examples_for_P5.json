@@ -9,7 +9,6 @@
   "paragraph": "Rosetta Code is a programming chrestomathy site. The idea is to present solutions to the same task in as many different languages as possible, to demonstrate how languages are similar and different, and to aid a person with a grounding in one approach to a problem in learning another. This example set compiles the available RosettaCode.org tasks for Processing (Java, Python, and R modes).",
   "minVersion": "0",
   "maxVersion": "0",
-  "id": "249",
   "type": "examples",
   "packages": [
     {
