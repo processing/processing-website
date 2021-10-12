@@ -1,15 +1,10 @@
 {
   "name": "XlsReader",
-  "authors": [
-    "[Florian Jenett](http://www.bezier.de/)"
-  ],
+  "authors": ["[Florian Jenett](http://www.bezier.de/)"],
   "url": "https://github.com/fjenett/xlsreader-library-processing",
-  "categories": [
-    "Data"
-  ],
+  "categories": ["Data"],
   "sentence": "A library to read from XLS (Excel) files",
   "paragraph": "XlsReader allows to read from .xls files as if they were a database",
-  "id": "110",
   "type": "library",
   "packages": [
     {

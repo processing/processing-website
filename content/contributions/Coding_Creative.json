@@ -1,13 +1,10 @@
 {
   "name": "Coding Creative",
-  "authors": [
-    "[Giles Dring](https://dringtech.com/)"
-  ],
+  "authors": ["[Giles Dring](https://dringtech.com/)"],
   "url": "http://coding-creative.dringtech.com/",
   "categories": null,
   "sentence": "Example sketches for each lesson in the Coding Creative workshop.",
   "modes": "jycessing.mode.PythonMode",
-  "id": "243",
   "type": "examples",
   "packages": [
     {

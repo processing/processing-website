@@ -27,7 +27,12 @@ const updateContributions = () => {
   const files = fs.readdirSync(from);
   for (const file of files) {
     if (path.extname(file) === '.json') {
-      fs.copyFileSync(path.join(from, file), path.join(to, file));
+      const data = fs.readFileSync(path.join(from, file));
+      const json = JSON.parse(data);
+      delete json['id'];
+      fs.writeFileSync(path.join(to, file), JSON.stringify(json), (err) => {
+        if (err) return console.log(err);
+      });
     }
   }
 

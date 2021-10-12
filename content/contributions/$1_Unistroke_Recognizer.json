@@ -1,15 +1,10 @@
 {
   "name": "$1 Unistroke Recognizer",
-  "authors": [
-    "[Darius Morawiec](http://nok.onl)"
-  ],
+  "authors": ["[Darius Morawiec](http://nok.onl)"],
   "url": "https://github.com/nok/onedollar-unistroke-recognizer",
-  "categories": [
-    "Utilities"
-  ],
+  "categories": ["Utilities"],
   "sentence": "Implementation of the [$1 Gesture Recognizer](http://depts.washington.edu/aimgroup/proj/dollar/), a two-dimensional template based gesture recognition.",
   "paragraph": "",
-  "id": "069",
   "type": "library",
   "packages": [
     {

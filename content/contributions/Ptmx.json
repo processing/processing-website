@@ -1,15 +1,10 @@
 {
   "name": "Ptmx",
-  "authors": [
-    "[Caldas Lopes](http://softlab.pt)"
-  ],
+  "authors": ["[Caldas Lopes](http://softlab.pt)"],
   "url": "https://github.com/linux-man/ptmx",
-  "categories": [
-    "Other"
-  ],
+  "categories": ["Other"],
   "sentence": "Add Tiled maps to your sketch.",
   "paragraph": "",
-  "id": "185",
   "type": "library",
   "packages": [
     {

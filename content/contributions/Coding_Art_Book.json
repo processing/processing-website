@@ -4,13 +4,10 @@
     "[Yu Zhang](https://yuzhang.nl) and [Mathias Funk](https://mathias-funk.com)"
   ],
   "url": "https://codingart-book.com",
-  "categories": [
-    "Books"
-  ],
+  "categories": ["Books"],
   "sentence": "All examples from the \"Coding Art\" book published by Apress.",
   "paragraph": "The examples library contains all source code examples from the \"Coding Art\" book published by Apress. All examples are directly usable and identical to the source code provided in the book.",
   "lastUpdated": "0",
-  "id": "265",
   "type": "examples",
   "packages": [
     {

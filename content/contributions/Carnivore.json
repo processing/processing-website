@@ -1,16 +1,10 @@
 {
   "name": "Carnivore",
-  "authors": [
-    "[RSG](http://r-s-g.org)"
-  ],
+  "authors": ["[RSG](http://r-s-g.org)"],
   "url": "http://r-s-g.org/carnivore",
-  "categories": [
-    "Data",
-    "Simulation"
-  ],
+  "categories": ["Data", "Simulation"],
   "sentence": "Surveillance tool for data networks.",
   "paragraph": "",
-  "id": "040",
   "type": "library",
   "packages": [
     {

@@ -1,15 +1,10 @@
 {
   "name": "Picking",
-  "authors": [
-    "[Nicolas Clavaud](http://n.clavaud.free.fr/)"
-  ],
+  "authors": ["[Nicolas Clavaud](http://n.clavaud.free.fr/)"],
   "url": "http://n.clavaud.free.fr/processing/library/picking/",
-  "categories": [
-    "3D"
-  ],
+  "categories": ["3D"],
   "sentence": "Pick an object in a 3D scene easily.",
   "paragraph": "",
-  "id": "032",
   "type": "library",
   "packages": [
     {

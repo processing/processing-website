@@ -1,15 +1,10 @@
 {
   "name": "Simple Tweet",
-  "authors": [
-    "[Gottfried Haider](http://gottfriedhaider.com/)"
-  ],
+  "authors": ["[Gottfried Haider](http://gottfriedhaider.com/)"],
   "url": "https://github.com/gohai/processing-simpletweet",
-  "categories": [
-    "Data"
-  ],
+  "categories": ["Data"],
   "sentence": "Post images from Processing to Twitter",
   "paragraph": "Also shows other uses of the Twitter API",
-  "id": "208",
   "type": "library",
   "packages": [
     {

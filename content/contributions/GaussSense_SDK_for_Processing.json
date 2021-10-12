@@ -1,15 +1,10 @@
 {
   "name": "GaussSense SDK for Processing",
-  "authors": [
-    "[GaussToys Inc.](http://gausstoys.com)"
-  ],
+  "authors": ["[GaussToys Inc.](http://gausstoys.com)"],
   "url": "http://developers.gausstoys.com/processing/",
-  "categories": [
-    "Hardware"
-  ],
+  "categories": ["Hardware"],
   "sentence": "Library to use the [GaussSense](http://gausstoys.com/) in [Processing](https://processing.org).",
   "paragraph": "Mini/Basic/Advanced GaussSense are supported in this library.",
-  "id": "188",
   "type": "library",
   "packages": [
     {

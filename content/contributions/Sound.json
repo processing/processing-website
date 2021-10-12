@@ -1,16 +1,11 @@
 {
   "name": "Sound",
-  "categories": [
-    "Sound"
-  ],
-  "authors": [
-    "The Processing Foundation"
-  ],
+  "categories": ["Sound"],
+  "authors": ["The Processing Foundation"],
   "url": "https://processing.org/reference/libraries/sound/",
   "sentence": "Provides a simple way to work with audio.",
   "paragraph": "",
   "lastUpdated": "0",
-  "id": "153",
   "type": "library",
   "packages": [
     {

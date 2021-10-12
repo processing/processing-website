@@ -1,15 +1,10 @@
 {
   "name": "Nest",
-  "authors": [
-    "[Eric Socolofsky](http://transmote.com/)"
-  ],
+  "authors": ["[Eric Socolofsky](http://transmote.com/)"],
   "url": "http://transmote.com/nest/",
-  "categories": [
-    "Utilities"
-  ],
+  "categories": ["Utilities"],
   "sentence": "Scenegraph and mouse event handling system based loosely on ActionScript 3.0.",
   "paragraph": "In addition to the scenegraph, Nest also includes an event-based communication system (built on the Observer pattern as implemented by Java's Observer interface), and some minimal UI components.",
-  "id": "047",
   "type": "library",
   "packages": [
     {

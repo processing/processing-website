@@ -1,13 +1,10 @@
 {
   "name": "Android Mode",
-  "authors": [
-    "[The Processing Foundation](https://processingfoundation.org/)"
-  ],
+  "authors": ["[The Processing Foundation](https://processingfoundation.org/)"],
   "url": "http://android.processing.org",
   "sentence": "Create projects with Processing for Android devices",
   "paragraph": "This version of the Android Mode is for Processing 3.1+",
   "imports": "processing.mode.java.JavaMode",
-  "id": "101",
   "type": "mode",
   "categories": null,
   "packages": [

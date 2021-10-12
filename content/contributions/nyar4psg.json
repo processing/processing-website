@@ -1,15 +1,10 @@
 {
   "name": "nyar4psg",
-  "authors": [
-    "[R.Iizuka](http://nyatla.jp)"
-  ],
+  "authors": ["[R.Iizuka](http://nyatla.jp)"],
   "url": "https://github.com/nyatla/NyARToolkit-for-Processing/",
-  "categories": [
-    "Video & Vision"
-  ],
+  "categories": ["Video & Vision"],
   "sentence": "NyARToolkit for proce55ing(NyAR4psg) is front-end of NyARToolkit for Java. This library can easily make the AR application.",
   "paragraph": "This library requires a web camera to make AR view.",
-  "id": "223",
   "type": "library",
   "packages": [
     {

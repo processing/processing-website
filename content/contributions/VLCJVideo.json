@@ -1,15 +1,10 @@
 {
   "name": "VLCJVideo",
-  "authors": [
-    "[Caldas Lopes](http://softlab.pt)"
-  ],
+  "authors": ["[Caldas Lopes](http://softlab.pt)"],
   "url": "https://github.com/linux-man/VLCJVideo",
-  "categories": [
-    "Video & Vision"
-  ],
+  "categories": ["Video & Vision"],
   "sentence": "VLCJ binding for Processing.",
   "paragraph": "Requires VLC 3.x or later.",
-  "id": "236",
   "type": "library",
   "packages": [
     {

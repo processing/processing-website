@@ -1,16 +1,10 @@
 {
   "name": "Combinatorics",
-  "authors": [
-    "[Florian Jenett](http://www.bezier.de/)"
-  ],
+  "authors": ["[Florian Jenett](http://www.bezier.de/)"],
   "url": "https://github.com/fjenett/combinatorics",
-  "categories": [
-    "Math",
-    "Simulation"
-  ],
+  "categories": ["Math", "Simulation"],
   "sentence": "Generate combinations, variations and permutations",
   "paragraph": "This library provides an easy way to generate combinations, variations and permutations from a given set of values.",
-  "id": "055",
   "type": "library",
   "packages": [
     {

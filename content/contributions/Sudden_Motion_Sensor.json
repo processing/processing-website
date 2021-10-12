@@ -1,15 +1,10 @@
 {
   "name": "Sudden Motion Sensor",
-  "authors": [
-    "[Daniel Shiffman](http://www.shiffman.net)"
-  ],
+  "authors": ["[Daniel Shiffman](http://www.shiffman.net)"],
   "url": "http://www.shiffman.net/p5/sms/",
-  "categories": [
-    "Hardware"
-  ],
+  "categories": ["Hardware"],
   "sentence": "Interface to the Apple Sudden Motion Sensor in MacBooks.",
   "paragraph": "",
-  "id": "015",
   "type": "library",
   "packages": [
     {

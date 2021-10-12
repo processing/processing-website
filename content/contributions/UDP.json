@@ -1,15 +1,10 @@
 {
   "name": "UDP",
-  "authors": [
-    "[Stephane Cousot](http://ubaa.net/)"
-  ],
+  "authors": ["[Stephane Cousot](http://ubaa.net/)"],
   "url": "http://ubaa.net/shared/processing/udp/",
-  "categories": [
-    "Data"
-  ],
+  "categories": ["Data"],
   "sentence": "Enables simple UDP communication, as well as multicast support.",
   "paragraph": "",
-  "id": "073",
   "type": "library",
   "packages": [
     {

@@ -1,15 +1,10 @@
 {
   "name": "QRCode",
-  "authors": [
-    "[Daniel Shiffman](http://shiffman.net/)"
-  ],
+  "authors": ["[Daniel Shiffman](http://shiffman.net/)"],
   "url": "http://shiffman.net/p5/qrcode-processing/",
-  "categories": [
-    "Data"
-  ],
+  "categories": ["Data"],
   "sentence": "Reads QR Code images, a two-dimensional barcode format.",
   "paragraph": "",
-  "id": "012",
   "type": "library",
   "packages": [
     {

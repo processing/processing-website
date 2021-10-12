@@ -1,15 +1,10 @@
 {
   "name": "Signal Filter",
-  "authors": [
-    "[Raphael de Courville](https://vimeo.com/sableraf/)"
-  ],
+  "authors": ["[Raphael de Courville](https://vimeo.com/sableraf/)"],
   "url": "https://github.com/SableRaf/signalfilter",
-  "categories": [
-    "Data"
-  ],
+  "categories": ["Data"],
   "sentence": "Filter noisy and jittery signals.",
-  "paragraph": "OneEuroFilter for Processing based on the Java implementation by St\u017dphane Conversy.",
-  "id": "115",
+  "paragraph": "OneEuroFilter for Processing based on the Java implementation by StŽphane Conversy.",
   "type": "library",
   "packages": [
     {

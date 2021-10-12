@@ -1,15 +1,10 @@
 {
   "name": "Video Export",
-  "authors": [
-    "[Abe Pazos](http://hamoid.com)"
-  ],
+  "authors": ["[Abe Pazos](http://hamoid.com)"],
   "url": "https://funprogramming.org/VideoExport-for-Processing",
-  "categories": [
-    "I/O"
-  ],
+  "categories": ["I/O"],
   "sentence": "Simple video file exporter.",
   "paragraph": "Create movies you can share online.",
-  "id": "187",
   "type": "library",
   "packages": [
     {

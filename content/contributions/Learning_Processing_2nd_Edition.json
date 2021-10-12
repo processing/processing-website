@@ -1,17 +1,12 @@
 {
   "name": "Learning Processing 2nd Edition",
-  "categories": [
-    "Books"
-  ],
-  "authors": [
-    "[Daniel Shiffman](http://shiffman.net)"
-  ],
+  "categories": ["Books"],
+  "authors": ["[Daniel Shiffman](http://shiffman.net)"],
   "url": "http://learningprocessing.com",
   "sentence": "All examples from the second edition of Learning Processing.",
   "paragraph": "All examples from the second edition of Learning Processing: A Beginner's Guide to Programming Images, Animation, and Interaction.",
   "minVersion": "0",
   "maxVersion": "0",
-  "id": "163",
   "type": "examples",
   "packages": [
     {

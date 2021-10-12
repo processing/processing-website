@@ -1,15 +1,10 @@
 {
   "name": "NXTComm Processing",
-  "authors": [
-    "[Jorge C. S. Cardoso](http://jorgecardoso.eu)"
-  ],
+  "authors": ["[Jorge C. S. Cardoso](http://jorgecardoso.eu)"],
   "url": "http://jorgecardoso.eu/processing/NXTComm/",
-  "categories": [
-    "I/O"
-  ],
+  "categories": ["I/O"],
   "sentence": "The NXTComm Processing library allows you to control the Lego Mindstorms NXT robots.",
   "paragraph": "",
-  "id": "025",
   "type": "library",
   "packages": [
     {

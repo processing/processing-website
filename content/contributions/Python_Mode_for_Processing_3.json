@@ -1,12 +1,9 @@
 {
   "name": "Python Mode for Processing 3",
-  "authors": [
-    "[Jonathan Feinberg](http://MrFeinberg.com/)"
-  ],
+  "authors": ["[Jonathan Feinberg](http://MrFeinberg.com/)"],
   "url": "https://github.com/jdf/processing.py",
   "sentence": "Write Processing sketches in Python.",
   "paragraph": "",
-  "id": "169",
   "type": "mode",
   "categories": null,
   "packages": [

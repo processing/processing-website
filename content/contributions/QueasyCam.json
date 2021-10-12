@@ -1,15 +1,10 @@
 {
   "name": "QueasyCam",
-  "authors": [
-    "[Josh Castle](https://twitter.com/jrc03c)"
-  ],
+  "authors": ["[Josh Castle](https://twitter.com/jrc03c)"],
   "url": "https://github.com/jrc03c/queasycam",
-  "categories": [
-    "3D"
-  ],
+  "categories": ["3D"],
   "sentence": "A super-simple FPS camera for Processing.",
   "paragraph": "",
-  "id": "196",
   "type": "library",
   "packages": [
     {

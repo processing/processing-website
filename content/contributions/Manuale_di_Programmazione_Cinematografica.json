@@ -1,16 +1,11 @@
 {
   "name": "Manuale di Programmazione Cinematografica",
-  "authors": [
-    "[Daniele Olmisani](https://github.com/mad4j)"
-  ],
+  "authors": ["[Daniele Olmisani](https://github.com/mad4j)"],
   "url": "https://github.com/mad4j/book-mdpc",
-  "categories": [
-    "Books"
-  ],
+  "categories": ["Books"],
   "sentence": "All code snippets from \"Manuale di Programmazione Cinematografica\" book.",
   "paragraph": "",
   "modes": "",
-  "id": "205",
   "type": "examples",
   "packages": [
     {

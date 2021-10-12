@@ -1,15 +1,10 @@
 {
   "name": "Cassette",
-  "authors": [
-    "Shlomi Hod"
-  ],
+  "authors": ["Shlomi Hod"],
   "url": "https://github.com/shlomihod/cassette",
-  "categories": [
-    "Sound"
-  ],
+  "categories": ["Sound"],
   "sentence": "Implementation of Processing Sound APIs for Android.",
   "paragraph": "",
-  "id": "170",
   "type": "library",
   "packages": [
     {

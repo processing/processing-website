@@ -1,15 +1,10 @@
 {
   "name": "Steganos",
-  "authors": [
-    "[Peter Lager](http://www.lagers.org.uk)"
-  ],
+  "authors": ["[Peter Lager](http://www.lagers.org.uk)"],
   "url": "http://www.lagers.org.uk/steganos/index.html",
-  "categories": [
-    "Other"
-  ],
+  "categories": ["Other"],
   "sentence": "Steganography made simple.",
   "paragraph": "Hide image or text data (the burden) inside an image (the carrier). The burden can be encrypted with a password / pass-phrase for added security.",
-  "id": "157",
   "type": "library",
   "packages": [
     {

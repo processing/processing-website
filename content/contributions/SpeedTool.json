@@ -1,13 +1,10 @@
 {
   "name": "SpeedTool",
-  "authors": [
-    "[Lars Kaltenbach](http://larskaltenbach.de)"
-  ],
+  "authors": ["[Lars Kaltenbach](http://larskaltenbach.de)"],
   "url": "http://larskaltenbach.de/code/speedTool",
   "categories": null,
   "sentence": "Adding features for faster code editing to the PDE.",
   "paragraph": "Brackets and Quotes get closed automatically.",
-  "id": "112",
   "type": "tool",
   "packages": [
     {

@@ -1,16 +1,10 @@
 {
   "name": "Interfascia",
-  "authors": [
-    "[Brendan Berg](http://berg.industries/)"
-  ],
+  "authors": ["[Brendan Berg](http://berg.industries/)"],
   "url": "http://github.com/brendanberg/interfascia",
-  "categories": [
-    "GUI",
-    "Utilities"
-  ],
+  "categories": ["GUI", "Utilities"],
   "sentence": "Build simple yet gorgeous user interfaces.",
   "paragraph": "Interfascia is an event-based GUI toolkit that provides standard interface widgets like text fields, buttons, checkboxes, and sliders.",
-  "id": "180",
   "type": "library",
   "packages": [
     {

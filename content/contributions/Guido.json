@@ -1,15 +1,10 @@
 {
   "name": "Guido",
-  "authors": [
-    "[Florian Jenett](http://www.bezier.de/)"
-  ],
+  "authors": ["[Florian Jenett](http://www.bezier.de/)"],
   "url": "https://github.com/fjenett/Guido",
-  "categories": [
-    "GUI"
-  ],
+  "categories": ["GUI"],
   "sentence": "A simple cross mode GUI library",
   "paragraph": "Guido is a small GUI library that is compatible with both Java (standard) and JavaScript modes.",
-  "id": "054",
   "type": "library",
   "packages": [
     {

@@ -1,15 +1,10 @@
 {
   "name": "Image Sequence Player",
-  "authors": [
-    "[George Profenza](http://www.hirschandmann.com)"
-  ],
+  "authors": ["[George Profenza](http://www.hirschandmann.com)"],
   "url": "https://github.com/orgicus/image-sequence-player",
-  "categories": [
-    "I/O"
-  ],
+  "categories": ["I/O"],
   "sentence": "A simple library for loading, playing back and displaying image sequences",
   "paragraph": "",
-  "id": "247",
   "type": "library",
   "packages": [
     {

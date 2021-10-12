@@ -1,15 +1,10 @@
 {
   "name": "MQTT",
-  "authors": [
-    "[Joel Gaehwiler](https://github.com/256dpi)"
-  ],
+  "authors": ["[Joel Gaehwiler](https://github.com/256dpi)"],
   "url": "https://github.com/256dpi/processing-mqtt",
-  "categories": [
-    "I/O"
-  ],
+  "categories": ["I/O"],
   "sentence": "MQTT library for Processing based on the Eclipse Paho project.",
   "paragraph": "",
-  "id": "173",
   "type": "library",
   "packages": [
     {

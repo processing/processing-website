@@ -1,16 +1,10 @@
 {
   "name": "Green",
-  "authors": [
-    "[Zacchary Dempsey-Plante](https://ztdp.ca/)"
-  ],
+  "authors": ["[Zacchary Dempsey-Plante](https://ztdp.ca/)"],
   "url": "https://ztdp.ca/projects/school/Green",
-  "categories": [
-    "Animation",
-    "Other"
-  ],
+  "categories": ["Animation", "Other"],
   "sentence": "A gaming library that enables easy 2D game creation within Processing.",
   "paragraph": "Developed with a focus on ease-of-use and learning. Originally made to aid in teaching high school students, emulating and expanding upon the functionality of the [Greenfoot](https://www.greenfoot.org/) project.",
-  "id": "253",
   "type": "library",
   "packages": [
     {
