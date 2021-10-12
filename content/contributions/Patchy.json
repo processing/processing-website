@@ -1,8 +1,12 @@
 {
   "name": "Patchy",
-  "authors": ["[Jonathan Feinberg](http://mrfeinberg.com/)"],
+  "authors": [
+    "[Jonathan Feinberg](http://mrfeinberg.com/)"
+  ],
   "url": "http://mrfeinberg.com/patchy/",
-  "categories": ["3D"],
+  "categories": [
+    "3D"
+  ],
   "sentence": "Patchy provides an easy-to-use bicubic patch for 3D Processing sketches.",
   "type": "library",
   "packages": [

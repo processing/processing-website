@@ -1,8 +1,12 @@
 {
   "name": "Eye Tribe for Processing",
-  "authors": ["[Jorge C. S. Cardoso](http://jorgecardoso.eu)"],
+  "authors": [
+    "[Jorge C. S. Cardoso](http://jorgecardoso.eu)"
+  ],
   "url": "http://jorgecardoso.eu/processing/eyetribeprocessing",
-  "categories": ["Hardware"],
+  "categories": [
+    "Hardware"
+  ],
   "sentence": "A library to get eye gaze data from the [Eye Tribe](https://theeyetribe.com/) device.",
   "paragraph": "",
   "type": "library",

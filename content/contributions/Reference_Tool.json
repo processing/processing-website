@@ -1,6 +1,8 @@
 {
   "name": "Reference Tool",
-  "authors": ["[Jae Hyun](https://www.github.com/jaewhyun)"],
+  "authors": [
+    "[Jae Hyun](https://www.github.com/jaewhyun)"
+  ],
   "url": "https://www.github.com/ReferenceTool",
   "categories": null,
   "sentence": "A Tool that provides a built in reference for the Processing Development Environment.",

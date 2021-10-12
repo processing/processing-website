@@ -1,8 +1,12 @@
 {
   "name": "The MidiBus",
-  "authors": ["[Severin Smith](http://www.smallbutdigital.com/)"],
+  "authors": [
+    "[Severin Smith](http://www.smallbutdigital.com/)"
+  ],
   "url": "http://www.smallbutdigital.com/themidibus.php",
-  "categories": ["Sound"],
+  "categories": [
+    "Sound"
+  ],
   "sentence": "The MidiBus is a minimal MIDI library for Processing, no frills, no limitations.",
   "paragraph": "The MidiBus is a MIDI library for Processing. It provides a quick and simple way to access and interact with installed MIDI system resources. The MidiBus is aimed primarily at real time MIDI applications. The focus is on strong MIDI I/O capabilities and keeping frills to a minimum (e.g. no built in sequencer, file read/write, MIDI recording/playback).",
   "type": "library",

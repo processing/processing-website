@@ -1,6 +1,8 @@
 {
   "name": "Git Manager",
-  "authors": ["[Joel Moniz](http://joelmoniz.com)"],
+  "authors": [
+    "[Joel Moniz](http://joelmoniz.com)"
+  ],
   "url": "http://joelmoniz.com/git-manager",
   "categories": null,
   "sentence": "A GUI Git Client for Processing",

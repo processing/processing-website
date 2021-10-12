@@ -1,6 +1,8 @@
 {
   "name": "Art Station",
-  "authors": ["[Justin Wilder](https://github.com/jwilder4690)"],
+  "authors": [
+    "[Justin Wilder](https://github.com/jwilder4690)"
+  ],
   "url": "https://jwilder4690.github.io/tools/ArtStation/index.html",
   "categories": null,
   "sentence": "A drawing tool to aid developers",

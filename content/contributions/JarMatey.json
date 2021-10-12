@@ -1,6 +1,8 @@
 {
   "name": "JarMatey",
-  "authors": ["[Kevin Workman](http://StaticVoidGames.com)"],
+  "authors": [
+    "[Kevin Workman](http://StaticVoidGames.com)"
+  ],
   "url": "http://StaticVoidGames.com/JarMatey/",
   "categories": null,
   "sentence": "A utility that creates a self-extracting jar that runs on any platform.",

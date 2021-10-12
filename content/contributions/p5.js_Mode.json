@@ -1,7 +1,9 @@
 {
   "name": "p5.js Mode",
   "categories": null,
-  "authors": ["[Fathom Information Design](http://fathom.info/)"],
+  "authors": [
+    "[Fathom Information Design](http://fathom.info/)"
+  ],
   "url": "https://github.com/fathominfo/processing-p5js-mode",
   "sentence": "Adds a simple editor for p5.js code",
   "paragraph": "p5jsMode is a simple editor for p5.js",

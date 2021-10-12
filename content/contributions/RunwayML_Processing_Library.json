@@ -1,8 +1,13 @@
 {
   "name": "RunwayML Processing Library",
-  "authors": ["[George Profenza](http://sensori.al)"],
+  "authors": [
+    "[George Profenza](http://sensori.al)"
+  ],
   "url": "https://github.com/runwayml/processing-library",
-  "categories": ["Data", "Utilities"],
+  "categories": [
+    "Data",
+    "Utilities"
+  ],
   "sentence": "Easily send and receive data between RunwayML and your sketches.",
   "paragraph": "Please ensure RunwayML is running a model first. When using RunwayML on a different computer on the same network double check the IP address and port are correct and that any firewall grant communication between coomputers.",
   "type": "library",

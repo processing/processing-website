@@ -1,8 +1,12 @@
 {
   "name": "Andrew's Utilities (AULib)",
-  "authors": ["[Andrew Glassner](http://glassner.com)"],
+  "authors": [
+    "[Andrew Glassner](http://glassner.com)"
+  ],
   "url": "http://imaginary-institute.com/resources/AULibrary/AULib.php",
-  "categories": ["Utilities"],
+  "categories": [
+    "Utilities"
+  ],
   "sentence": "Motion blur, fields, easing, waves, uniformly-spaced curves, globs, and more!",
   "paragraph": "The library consists of: flip a fair coin, choose objects from a list, choose shuffled objects, animation conveniences, distance functions, easing functions, blending functions, repeating wave patterns, a camera for producing offline animation with motion blur, Bezier and CR curves that provide points at arclength distances on multi-segment curves, 2D field of floats, N-D field of floats (with support for color images), produce frames for a multi-step animation, and draw 2D globs.",
   "type": "library",

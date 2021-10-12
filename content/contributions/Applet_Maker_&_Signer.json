@@ -1,6 +1,8 @@
 {
   "name": "Applet Maker & Signer",
-  "authors": ["[Peter Lager](http://www.lagers.org.uk)"],
+  "authors": [
+    "[Peter Lager](http://www.lagers.org.uk)"
+  ],
   "url": "http://www.lagers.org.uk/appletutil/",
   "categories": null,
   "sentence": "Enables the creation of self-signed Java Applets",

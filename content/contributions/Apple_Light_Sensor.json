@@ -1,8 +1,12 @@
 {
   "name": "Apple Light Sensor",
-  "authors": ["[Martin Raedlinger](http://www.formatlos.de/)"],
+  "authors": [
+    "[Martin Raedlinger](http://www.formatlos.de/)"
+  ],
   "url": "http://projects.formatlos.de/ambientlightsensor/",
-  "categories": ["Hardware"],
+  "categories": [
+    "Hardware"
+  ],
   "sentence": "Interface to the Light Sensor in MacBook Pro computers.",
   "paragraph": "",
   "type": "library",

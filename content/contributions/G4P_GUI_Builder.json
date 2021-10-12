@@ -1,6 +1,8 @@
 {
   "name": "G4P GUI Builder",
-  "authors": ["[Peter Lager](http://www.lagers.org.uk)"],
+  "authors": [
+    "[Peter Lager](http://www.lagers.org.uk)"
+  ],
   "url": "http://www.lagers.org.uk/g4ptool/index.html",
   "categories": null,
   "sentence": "Graphic design tool for creating user interfaces with G4P.",

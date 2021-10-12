@@ -1,8 +1,12 @@
 {
   "name": "oscP5",
-  "authors": ["[Andreas Schlegel](http://www.sojamo.de/)"],
+  "authors": [
+    "[Andreas Schlegel](http://www.sojamo.de/)"
+  ],
   "url": "http://www.sojamo.de/libraries/oscp5",
-  "categories": ["Data"],
+  "categories": [
+    "Data"
+  ],
   "sentence": "An Open Sound Control (OSC) implementation.",
   "paragraph": "The UDP, TCP, Multicast protocols are supported and can be used for client/server communication independently from OSC as well.",
   "type": "library",

@@ -1,7 +1,11 @@
 {
   "name": "PixelPusher",
-  "categories": ["Hardware"],
-  "authors": ["[Jas Strong and Matt Stone](http://www.heroicrobotics.com/)"],
+  "categories": [
+    "Hardware"
+  ],
+  "authors": [
+    "[Jas Strong and Matt Stone](http://www.heroicrobotics.com/)"
+  ],
   "url": "http://www.heroicrobotics.com/",
   "sentence": "System for controlling an unlimited number of LEDs.",
   "paragraph": "A pure Java implementation of the PixelPusher protocol, a dynamically timed, infinitely scalable, plesiochronous system for running LED fabrics of any size, and with any organization.  The PixelPusher library is intended for controlling PixelPusher hardware, which you can buy from Heroic Robotics.",

@@ -1,6 +1,8 @@
 {
   "name": "Shape-Sketch",
-  "authors": ["[Joel Moniz](http://joelmoniz.com)"],
+  "authors": [
+    "[Joel Moniz](http://joelmoniz.com)"
+  ],
   "url": "https://github.com/joelmoniz/Shape-Sketch",
   "categories": null,
   "sentence": "Paint on a canvas; generate processing code. Easy peasy!",

@@ -1,8 +1,12 @@
 {
   "name": "Fontastic",
-  "authors": ["[Andreas Koller](http://andreaskoller.com)"],
+  "authors": [
+    "[Andreas Koller](http://andreaskoller.com)"
+  ],
   "url": "http://code.andreaskoller.com/libraries/fontastic",
-  "categories": ["Typography"],
+  "categories": [
+    "Typography"
+  ],
   "sentence": "A font file writer to create TTF and WOFF (Webfonts).",
   "paragraph": "",
   "type": "library",

@@ -1,8 +1,12 @@
 {
   "name": "Timing Utilities",
-  "authors": ["Lord of Galaxy"],
+  "authors": [
+    "Lord of Galaxy"
+  ],
   "url": "https://github.com/Lord-of-the-Galaxy/Timing-Utilities",
-  "categories": ["Utilities"],
+  "categories": [
+    "Utilities"
+  ],
   "sentence": "Library containing a number of useful classes for time-keeping in Processing",
   "paragraph": "Currently only has Stopwatch class.",
   "lastUpdated": "0",

@@ -1,6 +1,8 @@
 {
   "name": "Perceptual colorpicker",
-  "authors": ["[Olivier Vicario](https://www.perceptualcolor.org)"],
+  "authors": [
+    "[Olivier Vicario](https://www.perceptualcolor.org)"
+  ],
   "url": "https://www.perceptualcolor.org",
   "categories": null,
   "sentence": "Choose from 3 to 7 colors from CIE Lab or Lch with different graphic tools.",

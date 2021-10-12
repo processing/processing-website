@@ -1,7 +1,11 @@
 {
   "name": "ArtNet for Java and Processing",
-  "categories": ["Data"],
-  "authors": ["[Florian Bruggisser](https://bildspur.ch)"],
+  "categories": [
+    "Data"
+  ],
+  "authors": [
+    "[Florian Bruggisser](https://bildspur.ch)"
+  ],
   "url": "https://github.com/cansik/artnet4j",
   "sentence": "Framework for sending and receiving DMX data over the ArtNet protocol.",
   "paragraph": "Send and receive DMX data over the ArtNet protocol.",

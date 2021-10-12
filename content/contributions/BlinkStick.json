@@ -1,8 +1,12 @@
 {
   "name": "BlinkStick",
-  "authors": ["[Arvydas Juskevicius](http://www.blinkstick.com)"],
+  "authors": [
+    "[Arvydas Juskevicius](http://www.blinkstick.com)"
+  ],
   "url": "http://arvydas.github.io/blinkstick-processing/",
-  "categories": ["Hardware"],
+  "categories": [
+    "Hardware"
+  ],
   "sentence": "Interface BlinkStick - smart USB RGB LED.",
   "paragraph": "This library provides an ablity to control any number of BlinkStick devices from Processing.",
   "type": "library",

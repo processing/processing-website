@@ -1,8 +1,12 @@
 {
   "name": "Path Finder",
-  "authors": ["[Peter Lager](http://www.lagers.org.uk)"],
+  "authors": [
+    "[Peter Lager](http://www.lagers.org.uk)"
+  ],
   "url": "http://www.lagers.org.uk/pfind/index.html",
-  "categories": ["Other"],
+  "categories": [
+    "Other"
+  ],
   "sentence": "Find paths through 2D/3D navigation graphs.",
   "paragraph": "Define a graph in terms of nodes and edges. Then use BFS, DFS, Dijkstra or A* to find possible paths through the graph.",
   "type": "library",

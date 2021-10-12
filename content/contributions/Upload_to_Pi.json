@@ -1,6 +1,8 @@
 {
   "name": "Upload to Pi",
-  "authors": ["[Gottfried Haider](http://gottfriedhaider.com/)"],
+  "authors": [
+    "[Gottfried Haider](http://gottfriedhaider.com/)"
+  ],
   "url": "https://github.com/gohai/processing-uploadtopi",
   "categories": null,
   "sentence": "Uploads and runs a sketch on a Raspberry Pi.",

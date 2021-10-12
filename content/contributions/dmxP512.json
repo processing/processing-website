@@ -1,8 +1,12 @@
 {
   "name": "dmxP512",
-  "authors": ["Henri DAVID"],
+  "authors": [
+    "Henri DAVID"
+  ],
   "url": "http://motscousus.com/stuff/2011-01_dmxP512/",
-  "categories": ["Hardware"],
+  "categories": [
+    "Hardware"
+  ],
   "sentence": "DMX output for enttec DMX USB PRO and lanbox LCE.",
   "paragraph": "",
   "type": "library",

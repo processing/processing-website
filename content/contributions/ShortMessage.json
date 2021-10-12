@@ -1,8 +1,12 @@
 {
   "name": "ShortMessage",
-  "authors": ["[Hamzeen. H.](http://www.hamzeen.com)"],
+  "authors": [
+    "[Hamzeen. H.](http://www.hamzeen.com)"
+  ],
   "url": "http://hamzeen.github.io/smsP5",
-  "categories": ["Data"],
+  "categories": [
+    "Data"
+  ],
   "sentence": "A library to send/receive short messages (SMS) from Processing.",
   "paragraph": "This library wraps around SMSLib to provide a simple API for Processing users, examples included.",
   "type": "library",

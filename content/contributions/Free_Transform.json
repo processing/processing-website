@@ -1,8 +1,12 @@
 {
   "name": "Free Transform",
-  "authors": ["[Bartosh Polonski](http://bpolonski.com)"],
+  "authors": [
+    "[Bartosh Polonski](http://bpolonski.com)"
+  ],
   "url": "https://github.com/barelief/freeTransform-processing",
-  "categories": ["Utilities"],
+  "categories": [
+    "Utilities"
+  ],
   "sentence": "Transform textures interactively",
   "paragraph": "Drag, scale, rotate, warp, skew, add, remove, load images (PImage, PGraphics). All transformations are automatically saved and loaded after restarting the sketch.",
   "type": "library",

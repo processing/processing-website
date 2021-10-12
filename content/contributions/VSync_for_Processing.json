@@ -1,8 +1,12 @@
 {
   "name": "VSync for Processing",
-  "authors": ["Maximilian Ernestus"],
+  "authors": [
+    "Maximilian Ernestus"
+  ],
   "url": "http://ernestum.github.io/VSync-for-Processing/",
-  "categories": ["I/O"],
+  "categories": [
+    "I/O"
+  ],
   "sentence": "Will magically synchronize variables among Arduinos and your Processing sketch.",
   "paragraph": "Use serial or XBee to easily keep variables in sync between different devices.",
   "type": "library",

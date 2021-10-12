@@ -1,8 +1,12 @@
 {
   "name": "GR Infinidecimal Canvas",
-  "authors": ["[C. Sina Cetin](http://rect.dev)"],
+  "authors": [
+    "[C. Sina Cetin](http://rect.dev)"
+  ],
   "url": "http://rect.dev/infinidecimal",
-  "categories": ["Utilities"],
+  "categories": [
+    "Utilities"
+  ],
   "sentence": "A numeric canvas that stores the image as a number array to create visuals with arbitrary ranges.",
   "paragraph": "Infinidecimal maintains an array of numbers to represent the canvas. It uses \"intensity\" to represent color. This way, the color resolution and range is as high as the resolution and range of a floating-point number.",
   "type": "library",

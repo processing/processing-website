@@ -1,8 +1,12 @@
 {
   "name": "PeasyCam",
-  "authors": ["[Jonathan Feinberg](http://mrfeinberg.com/)"],
+  "authors": [
+    "[Jonathan Feinberg](http://mrfeinberg.com/)"
+  ],
   "url": "http://mrfeinberg.com/peasycam/",
-  "categories": ["3D"],
+  "categories": [
+    "3D"
+  ],
   "sentence": "A mouse driven camera-control library for 3D sketches.",
   "type": "library",
   "packages": [

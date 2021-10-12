@@ -1,8 +1,13 @@
 {
   "name": "Tramontana",
-  "authors": ["[Pierluigi Dalla Rosa](http://www.pierdr.com)"],
+  "authors": [
+    "[Pierluigi Dalla Rosa](http://www.pierdr.com)"
+  ],
   "url": "https://pierdr.github.io/Tramontana-for-Processing/",
-  "categories": ["I/O", "Utilities"],
+  "categories": [
+    "I/O",
+    "Utilities"
+  ],
   "sentence": "Tramontana - prototyping and creative kit for multi-device interactions and experiences.",
   "paragraph": "With Tramontana will be simple to architect coreographies and interactive spaces. Connected multiple devices to create mesmerizing multidevice and immersive experiences just from a sketch. You can download Tramontana for iOS at this link: https://itunes.apple.com/US/app/id1121069555?mt=8",
   "type": "library",

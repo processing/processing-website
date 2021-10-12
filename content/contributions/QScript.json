@@ -1,8 +1,12 @@
 {
   "name": "QScript",
-  "authors": ["[Peter Lager](http://www.lagers.org.uk)"],
+  "authors": [
+    "[Peter Lager](http://www.lagers.org.uk)"
+  ],
   "url": "http://www.lagers.org.uk/qscript",
-  "categories": ["Math"],
+  "categories": [
+    "Math"
+  ],
   "sentence": "Algorithm and Expression evaluator.",
   "paragraph": "Not only will it evaluate mathematical expressions, it can execute a simple algorithm created from multiple expressions. Simple selection and iteration statements can be used in the algorithm to control execution flow. The more advanced user can easily extend the evaluator by adding their own methods.",
   "type": "library",

@@ -4,7 +4,9 @@
     "[Karsten Schmidt](http://postspectacular.com/) (updated for P3 by Daniel Shiffman)"
   ],
   "url": "http://toxiclibs.org/",
-  "categories": ["Compilation"],
+  "categories": [
+    "Compilation"
+  ],
   "sentence": "toxiclibs is an independent, open source library collection for computational design tasks.",
   "paragraph": "toxiclibs is an independent, open source library collection for computational design tasks. The classes are purposefully kept fairly generic in order to maximize re-use in different contexts ranging from generative design, animation, interaction/interface design, data visualization to architecture and digital fabrication, use as teaching tool and more.",
   "type": "library",

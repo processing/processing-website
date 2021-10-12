@@ -1,6 +1,9 @@
 {
   "name": "handy",
-  "categories": ["Geometry", "GUI"],
+  "categories": [
+    "Geometry",
+    "GUI"
+  ],
   "authors": [
     "[Jo Wood](http://gicentre.net/) and [Aidan Slingsby](http://gicentre.net/)"
   ],

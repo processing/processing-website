@@ -4,7 +4,9 @@
     "[Damien Di Fede](http://code.compartmental.net/) and [Anderson Mills](http://konfuzo.net/)"
   ],
   "url": "http://code.compartmental.net/minim/",
-  "categories": ["Sound"],
+  "categories": [
+    "Sound"
+  ],
   "sentence": "An audio library that provides easy to use classes for playback, recording, analysis, and synthesis of sound.",
   "paragraph": "",
   "type": "library",

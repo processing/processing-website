@@ -1,6 +1,8 @@
 {
   "name": "Font Highlighting Editor",
-  "authors": ["[Rostyslav Zatserkovnyi](https://github.com/rzats)"],
+  "authors": [
+    "[Rostyslav Zatserkovnyi](https://github.com/rzats)"
+  ],
   "url": "https://github.com/rzats/font-highlighting-editor",
   "categories": null,
   "sentence": "A visual editor for Processing's font coloring settings.",

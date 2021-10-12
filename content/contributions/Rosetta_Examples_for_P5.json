@@ -1,6 +1,8 @@
 {
   "name": "Rosetta Examples for P5",
-  "authors": ["[Jeremy Douglass](http://jeremydouglass.com)"],
+  "authors": [
+    "[Jeremy Douglass](http://jeremydouglass.com)"
+  ],
   "url": "https://github.com/jeremydouglass/rosetta_examples_p5",
   "categories": null,
   "sentence": "Common coding tasks in Processing (Java, Python, and R modes) from the Rosetta Code chrestomathy website.",

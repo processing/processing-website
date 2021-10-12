@@ -4,7 +4,9 @@
     "[Ollie Bown](http://www.olliebown.com), [Benito Crawford](http://benitomedia.com), [Ben Porter](http://bp.io), [Angelo Fraietta], [Charlton Wong] and [Aengus Martin](http://www.am-process.org)"
   ],
   "url": "http://www.beadsproject.net/",
-  "categories": ["Sound"],
+  "categories": [
+    "Sound"
+  ],
   "sentence": "A library for adding flexible realtime audio to Processing sketches.",
   "paragraph": "Beads offers powerful tools for performing realtime audio manipulation for music, sound installations and offline music generation, including a metronome, musical event messaging, varispeed sample playback and granular synthesis, and analysis tools. It is a little more involved than Minim.",
   "type": "library",

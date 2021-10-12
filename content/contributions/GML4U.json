@@ -1,8 +1,12 @@
 {
   "name": "GML4U",
-  "authors": ["[Jerome Saint-Clair](http://www.saint-clair.net/)"],
+  "authors": [
+    "[Jerome Saint-Clair](http://www.saint-clair.net/)"
+  ],
   "url": "https://github.com/01010101/GML4U/wiki",
-  "categories": ["Data"],
+  "categories": [
+    "Data"
+  ],
   "sentence": "A [Graffiti Markup Language](http://graffitimarkuplanguage.com/) library for Processing.",
   "paragraph": "GML is an open file format designed to store graffiti motion data.",
   "type": "library",

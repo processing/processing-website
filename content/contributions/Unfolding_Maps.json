@@ -1,8 +1,12 @@
 {
   "name": "Unfolding Maps",
-  "authors": ["[Till Nagel](http://tillnagel.com/) and others"],
+  "authors": [
+    "[Till Nagel](http://tillnagel.com/) and others"
+  ],
   "url": "http://www.unfoldingmaps.org/",
-  "categories": ["Data"],
+  "categories": [
+    "Data"
+  ],
   "sentence": "Create interactive maps and geovisualizations.",
   "paragraph": "",
   "type": "library",

@@ -1,8 +1,12 @@
 {
   "name": "Ani",
-  "authors": ["[Benedikt Gross](http://benedikt-gross.de/)"],
+  "authors": [
+    "[Benedikt Gross](http://benedikt-gross.de/)"
+  ],
   "url": "http://benedikt-gross.de/libraries/Ani/",
-  "categories": ["Animation"],
+  "categories": [
+    "Animation"
+  ],
   "sentence": "A lightweight library for creating animations and transitions.",
   "paragraph": "",
   "type": "library",

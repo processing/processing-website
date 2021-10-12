@@ -4,7 +4,9 @@
     "[Samuel Alarco Cantos](https://samuelal.github.io/squelized.github.io/index.html)"
   ],
   "url": "https://samuelal.github.io/squelized.github.io/index.html",
-  "categories": ["Data"],
+  "categories": [
+    "Data"
+  ],
   "sentence": "A library to facilitate the connection between Processing and SQL databases.",
   "paragraph": "",
   "type": "library",

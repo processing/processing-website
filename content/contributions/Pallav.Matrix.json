@@ -1,8 +1,12 @@
 {
   "name": "Pallav.Matrix",
-  "authors": ["[Pallav dubey](https://github.com/pallav12/)"],
+  "authors": [
+    "[Pallav dubey](https://github.com/pallav12/)"
+  ],
   "url": "http://github.com/pallav12/matrixMath-for-processing",
-  "categories": ["Math"],
+  "categories": [
+    "Math"
+  ],
   "sentence": "Useful for critical matrix operations",
   "type": "library",
   "packages": [

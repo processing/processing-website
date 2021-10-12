@@ -1,8 +1,12 @@
 {
   "name": "Video",
-  "authors": ["The Processing Foundation"],
+  "authors": [
+    "The Processing Foundation"
+  ],
   "url": "http://processing.org/reference/libraries/video/index.html",
-  "categories": ["Video & Vision"],
+  "categories": [
+    "Video & Vision"
+  ],
   "sentence": "GStreamer-based video library for Processing.",
   "paragraph": "",
   "type": "library",

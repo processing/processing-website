@@ -1,8 +1,12 @@
 {
   "name": "grafica",
-  "authors": ["[Javier Gracia Carpio](http://jagracar.com)"],
+  "authors": [
+    "[Javier Gracia Carpio](http://jagracar.com)"
+  ],
   "url": "http://jagracar.com/grafica.php",
-  "categories": ["Math"],
+  "categories": [
+    "Math"
+  ],
   "sentence": "Create simple and configurable 2D plots with Processing.",
   "paragraph": "",
   "type": "library",

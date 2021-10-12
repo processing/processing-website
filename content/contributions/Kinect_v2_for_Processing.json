@@ -1,8 +1,12 @@
 {
   "name": "Kinect v2 for Processing",
-  "authors": ["[Thomas Sanchez Lengeling](http://codigogenerativo.com/)"],
+  "authors": [
+    "[Thomas Sanchez Lengeling](http://codigogenerativo.com/)"
+  ],
   "url": "http://codigogenerativo.com/kinectpv2/",
-  "categories": ["Video & Vision"],
+  "categories": [
+    "Video & Vision"
+  ],
   "sentence": "Kinect v2 implementation using the Kinect Windows SDK.",
   "paragraph": "For Windows 10 and 8 with 64 bits.",
   "type": "library",

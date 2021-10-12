@@ -1,8 +1,12 @@
 {
   "name": "spacebrewP5",
-  "authors": ["[Brett Renfer](http://www.robotconscience.com)"],
+  "authors": [
+    "[Brett Renfer](http://www.robotconscience.com)"
+  ],
   "url": "http://spacebrew.cc",
-  "categories": ["Utilities"],
+  "categories": [
+    "Utilities"
+  ],
   "sentence": "Spacebrew is a toolkit for prototyping interactive spaces.",
   "paragraph": "SpacebrewP5 allows you to connect your Sketches to Spacebrew. It wraps simple WebSocket client functionality, and allows for sending + receiving of messages through Spacebrew.",
   "type": "library",

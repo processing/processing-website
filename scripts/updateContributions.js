@@ -30,7 +30,7 @@ const updateContributions = () => {
       const data = fs.readFileSync(path.join(from, file));
       const json = JSON.parse(data);
       delete json['id'];
-      fs.writeFileSync(path.join(to, file), JSON.stringify(json), (err) => {
+      fs.writeFileSync(path.join(to, file), JSON.stringify(json, null, 2), (err) => {
         if (err) return console.log(err);
       });
     }

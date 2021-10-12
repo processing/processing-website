@@ -1,8 +1,12 @@
 {
   "name": "CountdownTimer",
-  "authors": ["[Dong Hyun Choi](http://dhchoi.com)"],
+  "authors": [
+    "[Dong Hyun Choi](http://dhchoi.com)"
+  ],
   "url": "https://github.com/dhchoi/processing-countdowntimer",
-  "categories": ["Utilities"],
+  "categories": [
+    "Utilities"
+  ],
   "sentence": "A countdown timer which triggers callback events for each user-defined tick interval during the timer's duration.",
   "paragraph": "The timer will trigger onTickEvents after each interval and finish with an onFinishEvent. Multiple timers can be created inside the program, in which case each timer will have its own unique id.",
   "type": "library",

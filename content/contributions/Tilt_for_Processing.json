@@ -1,7 +1,11 @@
 {
   "name": "Tilt for Processing",
-  "categories": ["Animation"],
-  "authors": ["[Nick Fox-Gieg](https://fox-gieg.com)"],
+  "categories": [
+    "Animation"
+  ],
+  "authors": [
+    "[Nick Fox-Gieg](https://fox-gieg.com)"
+  ],
   "url": "https://github.com/n1ckfg/tiltProcessing",
   "sentence": "Read Tilt Brush files in Processing.",
   "paragraph": "",

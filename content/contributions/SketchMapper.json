@@ -1,8 +1,12 @@
 {
   "name": "SketchMapper",
-  "authors": ["[J. Taylor OConnor](http://josephtaylor.github.io)"],
+  "authors": [
+    "[J. Taylor OConnor](http://josephtaylor.github.io)"
+  ],
   "url": "http://josephtaylor.github.io/sketch-mapper",
-  "categories": ["Utilities"],
+  "categories": [
+    "Utilities"
+  ],
   "sentence": "A GUI tool to map sketches onto surfaces.",
   "paragraph": "",
   "type": "library",

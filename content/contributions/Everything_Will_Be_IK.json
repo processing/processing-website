@@ -1,8 +1,14 @@
 {
   "name": "Everything Will Be IK",
-  "authors": ["[Eron Gjoni](https://github.com/EGjoni/)"],
+  "authors": [
+    "[Eron Gjoni](https://github.com/EGjoni/)"
+  ],
   "url": "https://github.com/EGjoni/Everything-Will-Be-IK-Processing",
-  "categories": ["3D", "Animation", "Simulation"],
+  "categories": [
+    "3D",
+    "Animation",
+    "Simulation"
+  ],
   "sentence": "A robust Inverse Kinematics Library for Processing.",
   "paragraph": "Features: Highly Stable, Orientation AND position based targets (6-DOF), Multiple end-effector support, Intermediary effector support, Dampening (stiffness control), Highly versatile 3-DOF constraints with arbitrarily shaped orientation regions.",
   "type": "library",
