@@ -117,22 +117,26 @@ const ContributionsList = memo(({ categories, libraries }) => {
                   <a href={node.url} target="_blank" rel="noreferrer">
                     <h3>{node.name}</h3>
                   </a>
-                  {node.authors.map((author, key) => (
-                    <a
-                      key={key + 'a'}
-                      href={author.slice(
-                        author.indexOf('(') + 1,
-                        author.indexOf(')')
-                      )}
-                      target="_blank"
-                      rel="noreferrer"
-                      className={css.contributionAuthor}>
-                      {author.slice(
-                        author.indexOf('[') + 1,
-                        author.indexOf(']')
-                      )}
-                    </a>
-                  ))}
+                  {node.authors.map((author, key) => {
+                    return author.indexOf('(') !== -1 ? (
+                      <a
+                        key={key + 'a'}
+                        href={author.slice(
+                          author.indexOf('(') + 1,
+                          author.indexOf(')')
+                        )}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={css.contributionAuthor}>
+                        {author.slice(
+                          author.indexOf('[') + 1,
+                          author.indexOf(']')
+                        )}
+                      </a>
+                    ) : (
+                      <span key={key + 'span'}>{author}</span>
+                    );
+                  })}
                 </div>
                 <p
                   className={classnames(grid.col, css.itemDescription)}

@@ -1,0 +1,27 @@
+{
+  "name": "Processing 4.0 beta 2",
+  "tagName": "processing-1277-4.0b2",
+  "publishedAt": "2021-10-05T03:11:37Z",
+  "releaseAssets": {
+    "edges": [
+      {
+        "node": {
+          "name": "processing-4.0b2-windows64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1277-4.0b2/processing-4.0b2-windows64.zip"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.0b2-macosx.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1277-4.0b2/processing-4.0b2-macosx.zip"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.0b2-linux64.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1277-4.0b2/processing-4.0b2-linux64.tgz"
+        }
+      }
+    ]
+  }
+}
