@@ -1,7 +1,7 @@
 {
   "name": "UiBooster",
   "authors": [
-    "[Nick 'Milchreis' M\u00fcller](http://github.com/milchreis)"
+    "[Nick 'Milchreis' Müller](http://github.com/milchreis)"
   ],
   "url": "http://github.com/milchreis/uibooster-for-processing",
   "categories": [
@@ -9,7 +9,6 @@
   ],
   "sentence": "Creates fast and easy GUI components for your sketch.",
   "paragraph": "With UiBooster you creates in a few lines of code dialog boxes, custom forms, alerts or notification which interact with your sketch. It's made for easy use and fast results.",
-  "id": "256",
   "type": "library",
   "packages": [
     {

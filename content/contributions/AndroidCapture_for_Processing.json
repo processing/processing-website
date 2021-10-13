@@ -9,7 +9,6 @@
   ],
   "sentence": "This lib tries to transfer data(Android Camera & Android Sensor) between Processing and Android.",
   "paragraph": "",
-  "id": "183",
   "type": "library",
   "packages": [
     {

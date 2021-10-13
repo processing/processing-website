@@ -11,7 +11,6 @@
   ],
   "sentence": "XYScope is a library for Processing to render graphics on a vector display (oscilloscope, laser) by converting them to audio.",
   "paragraph": "This includes most primitive shapes (point, line, rect, ellipse, vertex, ...) by converting those points to waveforms (oscillators with custom wavetables) and generating audio in real time using the Minim library. Vector graphics shine on a vector display and now you can view your generative works like never before! Tested on MacOS 10.9+ / Windows / Linux (RPi!).",
-  "id": "219",
   "type": "library",
   "packages": [
     {

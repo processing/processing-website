@@ -9,7 +9,6 @@
   ],
   "sentence": "VLCJ binding for Processing.",
   "paragraph": "Requires VLC 3.x or later.",
-  "id": "236",
   "type": "library",
   "packages": [
     {

@@ -9,7 +9,6 @@
   ],
   "sentence": "Unofficial Java library, which simplifies the use of the official [SoundCloud Java API wrapper](https://github.com/soundcloud/java-api-wrapper).",
   "paragraph": "",
-  "id": "089",
   "type": "library",
   "packages": [
     {

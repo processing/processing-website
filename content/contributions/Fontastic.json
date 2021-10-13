@@ -9,7 +9,6 @@
   ],
   "sentence": "A font file writer to create TTF and WOFF (Webfonts).",
   "paragraph": "",
-  "id": "088",
   "type": "library",
   "packages": [
     {

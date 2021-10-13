@@ -9,7 +9,6 @@
   ],
   "sentence": "Use joysticks, gamepads and other control devices in your sketch.",
   "paragraph": "Create sketches that use joysticks, gamepads etc. that can be easily configured to work on different platforms and with different control devices without having to change the source code.",
-  "id": "167",
   "type": "library",
   "packages": [
     {

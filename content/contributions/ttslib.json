@@ -8,7 +8,6 @@
     "Sound"
   ],
   "sentence": "ttslib makes your sketches speak with the help of freetts.",
-  "id": "092",
   "type": "library",
   "packages": [
     {

@@ -9,7 +9,6 @@
   ],
   "sentence": "toxiclibs is an independent, open source library collection for computational design tasks.",
   "paragraph": "toxiclibs is an independent, open source library collection for computational design tasks. The classes are purposefully kept fairly generic in order to maximize re-use in different contexts ranging from generative design, animation, interaction/interface design, data visualization to architecture and digital fabrication, use as teaching tool and more.",
-  "id": "200",
   "type": "library",
   "packages": [
     {

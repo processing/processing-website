@@ -9,7 +9,6 @@
   ],
   "sentence": "A simple cross mode GUI library",
   "paragraph": "Guido is a small GUI library that is compatible with both Java (standard) and JavaScript modes.",
-  "id": "054",
   "type": "library",
   "packages": [
     {

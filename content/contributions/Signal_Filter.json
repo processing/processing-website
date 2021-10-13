@@ -8,8 +8,7 @@
     "Data"
   ],
   "sentence": "Filter noisy and jittery signals.",
-  "paragraph": "OneEuroFilter for Processing based on the Java implementation by St\u017dphane Conversy.",
-  "id": "115",
+  "paragraph": "OneEuroFilter for Processing based on the Java implementation by StŽphane Conversy.",
   "type": "library",
   "packages": [
     {

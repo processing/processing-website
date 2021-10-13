@@ -9,7 +9,6 @@
   ],
   "sentence": "A collection of various functions belonging to the book GENERATIVE DESIGN (english), GENERATIVE GESTALTUNG (german) and DESIGN GENERATIF (french).",
   "paragraph": "It supplies classes and functions for 3d-surfaces, simple physics (nodes, springs, attractors), graphic tablets, ASE-export or asynchronous loading of xml, html and images.",
-  "id": "056",
   "type": "library",
   "packages": [
     {

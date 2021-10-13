@@ -10,7 +10,6 @@
   ],
   "sentence": "A squarify treemap layout generator.",
   "paragraph": "Squarify provides you with the coordinates of rectangles, as output by a Squarify Treemap Algorithm, for a single layer of data.",
-  "id": "241",
   "type": "library",
   "packages": [
     {

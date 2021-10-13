@@ -9,7 +9,6 @@
   ],
   "sentence": "Transform textures interactively",
   "paragraph": "Drag, scale, rotate, warp, skew, add, remove, load images (PImage, PGraphics). All transformations are automatically saved and loaded after restarting the sketch.",
-  "id": "192",
   "type": "library",
   "packages": [
     {

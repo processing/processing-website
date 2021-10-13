@@ -9,7 +9,6 @@
   ],
   "sentence": "Sprite control and animation for games and other graphic applications.",
   "paragraph": "Provides complete control over sprite image animation, sprite movement and collision detection. Examples can be seen [here](http://www.lagers.org.uk/s4p/applets/s4p_showcase)",
-  "id": "062",
   "type": "library",
   "packages": [
     {

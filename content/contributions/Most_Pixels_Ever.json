@@ -9,7 +9,6 @@
   ],
   "sentence": "Framework for spanning Processing sketches across multiple screens.",
   "paragraph": "Through server / client communication multiple sketches can be run on separate machines and synced.",
-  "id": "193",
   "type": "library",
   "packages": [
     {

@@ -9,7 +9,6 @@
   ],
   "sentence": "Easy to use library for controlling dmx lights with an FTDI USB controller.",
   "paragraph": "Easy to use library for controlling dmx lights with an FTDI USB controller.",
-  "id": "268",
   "type": "library",
   "packages": [
     {

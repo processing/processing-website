@@ -9,7 +9,6 @@
   ],
   "sentence": "Tablet is a library for using pen tablets from Processing.",
   "paragraph": "It provides simplified access to the pen's pressure, tilt, etc. It is based on <a href=\"https://sourceforge.net/projects/jpen/\">JPen</a>, the Java Pen Tablet Access Library.",
-  "id": "121",
   "type": "library",
   "packages": [
     {

@@ -8,7 +8,6 @@
     "3D"
   ],
   "sentence": "A mouse driven camera-control library for 3D sketches.",
-  "id": "017",
   "type": "library",
   "packages": [
     {

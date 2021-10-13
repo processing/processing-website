@@ -9,7 +9,6 @@
   ],
   "sentence": "A library to send/receive short messages (SMS) from Processing.",
   "paragraph": "This library wraps around SMSLib to provide a simple API for Processing users, examples included.",
-  "id": "103",
   "type": "library",
   "packages": [
     {

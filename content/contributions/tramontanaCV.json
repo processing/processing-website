@@ -10,7 +10,6 @@
   "sentence": "a toolkit for sensing people in spaces with phones.",
   "paragraph": "With tramontanaCV you will be able to harness the computing power of your phone to sense people (among other things) in space and broadcast the result to a Processing sketch..",
   "You can download the app here: https://itunes.apple.com/us/app/libreTSPSWP/id1276040950?mt": "8",
-  "id": "222",
   "type": "library",
   "packages": [
     {

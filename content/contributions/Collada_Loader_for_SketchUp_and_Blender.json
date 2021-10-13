@@ -9,7 +9,6 @@
   ],
   "sentence": "Importer for kmz and dae files created by 3D softwares SketchUp 8 or Blender 2.75a",
   "paragraph": "The library is tested with versions of Sketchup 8 and Blender 2.75a. It can run on default renderer (2D) or OpenGL (P2D,P3D). There exist also examples, a user documentation and technical specification.",
-  "id": "006",
   "type": "library",
   "packages": [
     {

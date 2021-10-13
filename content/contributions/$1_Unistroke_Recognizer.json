@@ -9,7 +9,6 @@
   ],
   "sentence": "Implementation of the [$1 Gesture Recognizer](http://depts.washington.edu/aimgroup/proj/dollar/), a two-dimensional template based gesture recognition.",
   "paragraph": "",
-  "id": "069",
   "type": "library",
   "packages": [
     {
