@@ -9,8 +9,8 @@ module.exports = {
     siteUrl: `https://processing.org/`
   },
   plugins: [
-    `gatsby-plugin-perf-budgets`,
-    `gatsby-plugin-webpack-bundle-analyser-v2`,
+    // `gatsby-plugin-perf-budgets`,
+    // `gatsby-plugin-webpack-bundle-analyser-v2`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-theme-i18n`,
