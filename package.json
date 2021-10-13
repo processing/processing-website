@@ -63,7 +63,6 @@
     "highlight.js": "^11.2.0",
     "lodash": "4.17.21",
     "luxon": "^1.27.0",
-    "p5": "^1.4.0",
     "postcss": "^8.3.5",
     "postcss-calc": "^8.0.0",
     "postcss-custom-media": "^8.0.0",
@@ -85,6 +84,8 @@
     "@designsystemsinternational/static": "^3.3.12",
     "fast-glob": "^3.2.7",
     "fs-extra": "^10.0.0",
+    "gatsby-plugin-perf-budgets": "0.0.18",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.25",
     "inquirer": "^8.1.2",
     "prettier": "2.0.5"
   },
