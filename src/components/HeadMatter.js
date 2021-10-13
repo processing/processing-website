@@ -1,5 +1,4 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { useLocation } from '@reach/router';
 import { truncate } from '../utils';
@@ -11,16 +10,6 @@ export const HeadMatter = ({
   twitterType,
   ogType
 }) => {
-  const data = useStaticQuery(graphql`
-    query HeaderQuery {
-      site {
-        siteMetadata {
-          siteUrl
-        }
-      }
-    }
-  `);
-
   const location = useLocation();
   const shortDescription = truncate(
     description ? description.replace(/\s+/g, ' ') : '',
@@ -30,12 +19,10 @@ export const HeadMatter = ({
   let imgUrl;
   if (img) {
     const imgSrc = img.images.fallback.src;
-    imgUrl = /^http/.test(imgSrc)
-      ? imgSrc
-      : data.site.siteMetadata.siteUrl + imgSrc;
+    imgUrl = /^http/.test(imgSrc) ? imgSrc : 'https://processing.org/' + imgSrc;
   }
 
-  const pageUrl = data.site.siteMetadata.siteUrl + location.pathname;
+  const pageUrl = 'https://processing.org/' + location.pathname;
   return (
     <Helmet>
       <title>{title}</title>

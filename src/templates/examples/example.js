@@ -5,7 +5,6 @@ import { useLocalization, LocalizedLink as Link } from 'gatsby-theme-i18n';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import p5 from 'p5';
 
 import HeadMatter from '../../components/HeadMatter';
 import Layout from '../../components/Layout';
@@ -26,12 +25,6 @@ import {
 
 import * as css from '../../styles/templates/examples/example.module.css';
 import * as grid from '../../styles/grid.module.css';
-
-// This is to make sure that p5.Vector and other namespaced classes
-// work in the live sketch examples.
-if (typeof window !== 'undefined') {
-  window.p5 = p5;
-}
 
 const ExampleTemplate = ({ data, pageContext }) => {
   const [showSidebar, setShowSidebar] = useSidebar('examples');
@@ -56,7 +49,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
       const tryToRunSketch = () => {
         if (window.runLiveSketch) {
           console.log('Live sketch: running');
-          p5Instance = new p5(window.runLiveSketch, 'example-cover');
+          p5Instance = new window.p5(window.runLiveSketch, 'example-cover');
         } else {
           console.log('Live sketch: Not ready');
           setTimeout(tryToRunSketch, 50);
@@ -80,6 +73,9 @@ const ExampleTemplate = ({ data, pageContext }) => {
         img={getImage(image)}
       />
       <Helmet>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"
+          crossorigin="anonymous"></script>
         {liveSketch && <script>{`${liveSketch.childRawCode.content}`}</script>}
       </Helmet>
       <div className={grid.grid}>

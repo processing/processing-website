@@ -11,12 +11,11 @@ module.exports = {
     PRESERVE_FILE_DOWNLOAD_CACHE: false
   },
   siteMetadata: {
-    title: `Processing`,
-    description: `Welcome to the Processing website`,
-    author: `@processing`,
     siteUrl: `https://processing.org/`
   },
   plugins: [
+    // `gatsby-plugin-perf-budgets`,
+    // `gatsby-plugin-webpack-bundle-analyser-v2`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-theme-i18n`,
