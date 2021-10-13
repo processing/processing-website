@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-import { DateTime } from 'luxon';
 
 const getOS = (name) => {
   if (name.includes('windows') || name.includes('.exe')) return 'Windows';
@@ -32,9 +31,11 @@ export const usePreparedReleases = (releases) => {
       const item = {
         name: release.name,
         version: release.name.replace('Processing', '').trim(),
-        publishedAt: DateTime.fromISO(release.publishedAt).toLocaleString(
-          DateTime.DATE_FULL
-        ),
+        publishedAt: new Date(release.publishedAt).toLocaleString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        }),
         assets: []
       };
 

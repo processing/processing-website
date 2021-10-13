@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import classnames from 'classnames';
 
@@ -25,16 +24,6 @@ export const LayoutContext = React.createContext();
 const Layout = ({ children, withSidebar, withBreadcrumbs, mainClassName }) => {
   const [headerScrolled, setHeaderScrolled] = useState(false);
   const [currentHeading, setCurrentHeading] = useState('');
-
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -82,20 +71,14 @@ const Layout = ({ children, withSidebar, withBreadcrumbs, mainClassName }) => {
     <div className={css.root}>
       <LayoutContext.Provider value={{ headerScrolled, currentHeading }}>
         <Helmet titleTemplate="%s / Processing.org" />
-        <Header
-          siteTitle={data.site.siteMetadata.title}
-          scrolled={headerScrolled}
-        />
+        <Header siteTitle="Processing" scrolled={headerScrolled} />
         <main
           className={classnames(css.main, mainClassName, {
             [css.withBreadcrumbs]: withBreadcrumbs
           })}>
           <MDXProvider components={shortcodes}>{children}</MDXProvider>
         </main>
-        <Footer
-          siteTitle={data.site.siteMetadata.title}
-          withSidebar={withSidebar}
-        />
+        <Footer siteTitle="Processing" withSidebar={withSidebar} />
       </LayoutContext.Provider>
     </div>
   );
