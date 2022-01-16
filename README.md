@@ -38,7 +38,7 @@ This content includes most of the content on the website such as the individual 
 - [About](/docs/markdown-pages.md)
 - Donate (External link)
 
-When translating the content to a new language you need to edit the [`i18n/config.json`](/i18n/config.json) file and add you language information. Then follow the instructions for each Content list (same links as above).
+When translating the content to a new language you need to edit the [`i18n/config.json`](/i18n/config.json) file and add your language information. Then follow the instructions for each Content list (same links as above).
 
 ## Writing code
 
