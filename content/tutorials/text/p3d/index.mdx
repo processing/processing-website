@@ -438,7 +438,7 @@ void draw()  {
 
 ## Camera
 
-When looking at a 3D scene in a Processing window, we can think of our view of the scene as a camera. Zoom in closer to the objects and we can imagine a camera zooming in. Rotate around the scene and the camera rotates. Of course, there is no actual camera, this is just a convenient device to help us understand how to traverse a 3D scene. Simulating a camera can be done through clever transformations at the beginning of draw() by using translate(), rotate(), and scale() to manipulate our view of the scene. Nevertheless, for convenience there is also a [camera()](http://processing.org/reference/camera_.html) function whose purpose is also to simulate a camera. The function defines a camera as having an &ldquo;eye position&rdquo;, i.e. the camera location, a scene &ldquo;center&rdquo; which tells the camera which way to point, and an upward axis which aligns the camera vertically.The default camera position is essentially right between your eyes: a location out in front of the window aligned straight up and pointing towards the screen. Here are the numbers for the default position.
+When looking at a 3D scene in a Processing window, we can think of our view of the scene as a camera. Zoom in closer to the objects and we can imagine a camera zooming in. Rotate around the scene and the camera rotates. Of course, there is no actual camera, this is just a convenient device to help us understand how to traverse a 3D scene. Simulating a camera can be done through clever transformations at the beginning of draw() by using translate(), rotate(), and scale() to manipulate our view of the scene. Nevertheless, for convenience there is also a [camera()](http://processing.org/reference/camera_.html) function whose purpose is also to simulate a camera. The function defines a camera as having an &ldquo;eye position&rdquo;, i.e. the camera location, a scene &ldquo;center&rdquo; which tells the camera which way to point, and an upward axis which aligns the camera vertically. The default camera position is essentially right between your eyes: a location out in front of the window aligned straight up and pointing towards the screen. Here are the numbers for the default position.
 
 - Eye position: **_width/2, height/2, (height/2) / tan(PI/6)_**
 - Scene center: **_width/2, height/2, 0_**
@@ -488,7 +488,7 @@ void setup() {
 
 void draw() {
   background(0);
-  camera(mouseX>, height/2, (height/2) / tan(PI/6), mouseX, height/2, 0, 0, 1, 0);
+  camera(mouseX, height/2, (height/2) / tan(PI/6), mouseX, height/2, 0, 0, 1, 0);
   translate(width/2, height/2, -100);
   stroke(255);
   noFill();
