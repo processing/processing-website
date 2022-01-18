@@ -98,34 +98,7 @@ module.exports = {
       resolve: 'gatsby-plugin-mdx',
       options: {
         plugins: [],
-        remarkPlugins: [
-          require('remark-slug'),
-          require('remark-unwrap-images')
-        ],
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-images-anywhere`,
-            options: {
-              createMarkup: ({
-                src,
-                srcSet,
-                sizes,
-                aspectRatio,
-                alt,
-                base64,
-                presentationWidth
-              }) =>
-                `<picture style="position: relative; overflow: hidden; display: inline-block; padding-bottom: ${
-                  (1 / aspectRatio) * 100
-                }%; width: 100%; height: 0;"><source src="${src}" srcSet="${srcSet}" /><img src="${src}" srcSet="${srcSet}" alt="${alt}" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center center;"/></picture>`,
-              maxWidth: 1200,
-              showCaptions: true
-            }
-          },
-          {
-            resolve: `gatsby-remark-copy-linked-files`
-          }
-        ]
+        remarkPlugins: [require('remark-slug'), require('remark-unwrap-images')]
       }
     },
     {
@@ -171,8 +144,6 @@ module.exports = {
       }
     },
     `gatsby-plugin-image`,
-    `gatsby-remark-images`,
-    `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -192,6 +163,24 @@ module.exports = {
         rule: {
           include: path.resolve(__dirname, 'src/images')
         }
+      }
+    },
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+              withWebp: true,
+              showCaptions: true,
+              quality: 100,
+              ignoreFileExtensions: []
+            }
+          }
+        ]
       }
     }
   ]
