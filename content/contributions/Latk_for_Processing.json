@@ -1,0 +1,23 @@
+{
+  "name": "Latk for Processing",
+  "categories": [
+    "Animation"
+  ],
+  "authors": [
+    "[Nick Fox-Gieg](https://fox-gieg.com)"
+  ],
+  "url": "https://github.com/LightningArtist/latkProcessing",
+  "sentence": "Read Latk, Tilt Brush, and Quill files in Processing.",
+  "paragraph": "",
+  "lastUpdated": "0",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "266",
+      "maxRevision": "0",
+      "props": "https://fox-gieg.com/patches/processing/libraries/latkProcessing/latkProcessing.txt",
+      "download": "https://fox-gieg.com/patches/processing/libraries/latkProcessing/latkProcessing.zip"
+    }
+  ]
+}
