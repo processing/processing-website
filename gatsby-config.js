@@ -98,7 +98,20 @@ module.exports = {
       resolve: 'gatsby-plugin-mdx',
       options: {
         plugins: [],
-        remarkPlugins: [require('remark-slug'), require('remark-unwrap-images')]
+        remarkPlugins: [
+          require('remark-slug'),
+          require('remark-unwrap-images')
+        ],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1035,
+              sizeByPixelDensity: true
+            }
+          },
+          `gatsby-remark-copy-linked-files`
+        ]
       }
     },
     {
@@ -165,23 +178,6 @@ module.exports = {
         }
       }
     },
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1200,
-              withWebp: true,
-              showCaptions: true,
-              quality: 100,
-              ignoreFileExtensions: []
-            }
-          }
-        ]
-      }
-    }
+    `gatsby-plugin-sharp`
   ]
 };
