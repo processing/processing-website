@@ -24,12 +24,6 @@
       },
       {
         "node": {
-          "name": "processing-4.0b4-macos-aarch64.zip",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1279-4.0b4/processing-4.0b4-macos-aarch64.zip"
-        }
-      },
-      {
-        "node": {
           "name": "processing-4.0b4-macos-x64.zip",
           "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1279-4.0b4/processing-4.0b4-macos-x64.zip"
         }
