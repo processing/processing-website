@@ -2,8 +2,9 @@ import { useMemo } from 'react';
 
 const getOS = (name) => {
   if (name.includes('windows') || name.includes('.exe')) return 'Windows';
+  else if (name.includes('arm')) return 'Linux ARM';
   else if (name.includes('linux')) return 'Linux';
-  else if (name.includes('mac')) return 'Mac OS X';
+  else if (name.includes('mac')) return 'Mac';
   else return 'Unknown';
 };
 
