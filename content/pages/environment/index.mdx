@@ -414,9 +414,7 @@ A sketch folder sometimes contains other folders for media files and other code.
 
 ## Renderers
 
-Processing has four built-in screen renderers. The default renderer is for drawing two-dimensional shapes. _P2D_ is a faster, but less accurate renderer for drawing two-dimensional shapes. _P3D_ is for three-dimensional geometry; it can also control the camera, lighting, and materials. The P2D and P3D renderers are accelerated if your computer has an OpenGL compatible graphics card. The `smooth()` function affects the amount of antialiasing for each renderer. Check the reference for `smooth()` for more information.
-
-With the release of Processing 3.0, the _FX2D_ renderer is included. Use it for fast 2D graphics on large and high resolution displays for more speed than the default renderer. This renderer is still experimental, but it useful for certain conditions.
+Processing has three built-in screen renderers. The default renderer is for drawing two-dimensional shapes. _P2D_ is a faster, but less accurate renderer for drawing two-dimensional shapes. _P3D_ is for three-dimensional geometry; it can also control the camera, lighting, and materials. The P2D and P3D renderers are accelerated if your computer has an OpenGL compatible graphics card. The `smooth()` function affects the amount of antialiasing for each renderer. Check the reference for `smooth()` for more information.
 
 The renderer used for each sketch is specified through the `size()` function. If a renderer is not explicitly defined in `size()`, it uses the default renderer as shown in the following program:
 
@@ -444,13 +442,13 @@ void  draw() {
 }
 ```
 
-A large effort has been made to make Processing code behave similarly across the different renderers, but there are currently some inconsistencies that are explained in the reference.
+A large effort has been made to make Processing code behave similarly across the different renderers, but there are currently some inconsistencies that are explained in the reference. For more information, see the `size()` reference entry.
 
-For more information, see the `size()` reference entry.
+With the release of Processing 4.0, the _FX2D_ renderer is no longer included. Use it for fast 2D graphics on large and high resolution displays for more speed than the default renderer. This renderer is still experimental, but it useful for certain conditions. It can be downloaded as a Library.
 
 ## Coordinates
 
-Processing uses a Cartesian coordinate system with the origin in the upper-left corner. If your sketch is 320 pixels wide and 240 pixels high, coordinate (0, 0) is the upper-left pixel and coordinate (320, 240) is in the lower-right. The last visible pixel in the lower-right corner of the screen is at position(319, 239) because pixels are drawn to the right and below the coordinate.
+Processing uses a coordinate system with the origin in the upper-left corner. If your sketch is 320 pixels wide and 240 pixels high, coordinate (0, 0) is the upper-left pixel and coordinate (320, 240) is in the lower-right. The last visible pixel in the lower-right corner of the screen is at position(319, 239) because pixels are drawn to the right and below the coordinate.
 
 ![image 4](./coordinates2D3D.png)
 
@@ -478,31 +476,71 @@ When the Debugger is enabled, the program runs as normal, but stops at "breakpoi
 
 Running the sketch in Debug mode causes the sketch to pause at any breakpoints. When paused, current variable values are visible in a separate pane. You can advance to the next breakpoint by selecting "Continue" or advance line by line through the code with "Step". Stepping only works within the scope of the current function being run.
 
-## Programming Modes
+## Programming Styles
 
-Processing has different _programming modes_ to make it possible to deploy sketches on different platforms and program in different ways. The current default programming mode is _Java_ mode. Other programming modes such as _Android Mode_ and _Python_ are added by selecting "Add Mode..." from the menu in the upper-right corner of the PDE.
+Processing allows people to create sketches at two levels of complexity that we call "static" and "active" sketches. People new to programming often begin with static sketches to learn about coordinates, variables, and other basics before moving to active sketches.
 
-### Java Mode
+Static sketches don't include animation or interaction to focus on the early fundamentals of programming. Short lines of code have a direct representation on the screen. The following example draws a yellow rectangle on the screen:
 
-This mode makes it possible to write short programs to draw to the screen, but also enables complex Java programs as well. It can be used simply by beginners, but it scales to professional Java software development. Sketches written in this mode can be exported as Java Applications to run on Linux, Mac OS X, and Windows operating systems.
+```
+size(200, 200);
+background(255);
+noStroke();
+fill(255, 204, 0);
+rect(30, 20, 50, 50);
+```
 
-<HighlightBlock>
+Active sketches include a `setup()` structure that is run once when the sketch begins and a `draw()` structure which by default continually loops through the code inside. This additional structure allows writing custom functions and classes and using keyboard and mouse events.
 
-_Advanced_
+The next example draws four circles on the screen and utilizes a custom function called `twoCircles()`. The `twoCircles()` function is not a part of the Processing language, but was written for this example. The code in `draw()` only runs once because `noLoop()` is called in `setup()`.</p>
 
-Java files with the extension .java can be included with a Java mode sketch. They may be created directly in the PDE or copied into the sketch folder through the "Add File..." item in the Sketch menu or dragged into the text editor. It's possible to write any Java code in files with the .java extension. In fact, complete Java code can be written from inside the Processing Environment by subclassing PApplet like this:
+```
+void setup() {
+  size(200, 200);
+  background(255);
+  noLoop();
+}
+void draw() {
+  twoCircles(40, 80);
+  twoCircles(90, 70);
+}
+void twoCircles(int x, int y) {
+  noStroke();
+  fill(0, 102, 153, 204);
+  ellipse(x, y, 50, 50);
+  ellipse(x+20, y+20, 60, 60);
+}
+```
+
+This example draws rectangles that follow the mouse position (stored in the system variables `mouseX` and `mouseY`). The `draw()` block runs forever until the sketch is stopped, thus creating the potential for motion and interaction.
+
+```
+void setup() {
+  size(200, 200);
+  rectMode(CENTER);
+  noStroke();
+  fill(0, 102, 153, 204);
+}
+void draw() {
+  background(255);
+  rect(width-mouseX, height-mouseY, 50, 50);
+  rect(mouseX, mouseY, 50, 50);
+}
+```
+
+### Java Code in the Processing Environment
+
+Java files with the extension .java can be included with a sketch. They may be created directly in the PDE or copied into the sketch folder through the "Add File..." item in the Sketch menu or dragged into the text editor. It's possible to write any Java code in files with the .java extension. In fact, complete Java code can be written from inside the Processing Environment by subclassing PApplet like this:
 
 ```
 public class MyDemo extends PApplet {
 ```
 
-This is for advanced developers only and is not really recommended. Using this technique means that any additional tabs will no longer be inner classes, meaning you'll have to do extra work to make them communicate properly with the host PApplet. It is not necessary to use this technique just to get features of the Java language. Advanced developers can also program with Processing in another Java Editor if higher-level code editing and tools are needed. <!--We've documented how to use [Processing in Eclipse](http://processing.org/learning/eclipse/) but core.jar can be used as a part of any Java project.--> Processing's core.jar can be used as a part of any Java project.
-
-</HighlightBlock>
+Using this technique means that any additional tabs will no longer be inner classes, meaning you'll have to do extra work to make them communicate properly with the host PApplet. It is not necessary to use this technique just to get features of the Java language. Advanced developers can also program with Processing in another Java Editor if higher-level code editing and tools are needed. Processing's core.jar can be used as a part of any Java project.
 
 ## Adding Libraries, Tools, and Modes
 
-Processing 3.0 includes a set of features to make it easier to install, update, and remove Libraries, Tools, Modes, and Examples.
+Processing 4.0 includes a set of features to make it easier to install, update, and remove Libraries, Tools, Modes, and Examples.
 
 Add a contributed library by selecting "Add Library..." from the "Import Library..." submenu within the Sketch menu. This opens the Library Manager. Next, select a library and then click on Install to download it.
 
