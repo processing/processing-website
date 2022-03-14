@@ -69,7 +69,6 @@ const Download = ({ data }) => {
               </a>
             </li>
           </ul>
-          <p>{intl.formatMessage({ id: 'downloadChanges' })}</p>
           <ReleasesList
             releases={releases}
             title={intl.formatMessage({ id: 'stable' })}
