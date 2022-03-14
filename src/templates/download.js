@@ -47,7 +47,7 @@ const Download = ({ data }) => {
           />
           <ul className={css.links}>
             <li>
-              <a href={'ttps://github.com/processing/processing4/'}>GitHub</a>
+              <a href={'https://github.com/processing/processing4/'}>GitHub</a>
             </li>
             <li>
               <a
