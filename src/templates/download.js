@@ -46,13 +46,13 @@ const Download = ({ data }) => {
             onAfterDownload={onAfterDownload}
           />
           <ul className={css.links}>
-            <li>
-              <a href={'https://github.com/processing'}>GitHub</a>
-            </li>
+            <!--<li>
+              <a href={'ttps://github.com/processing/processing4/'}>GitHub</a>
+            </li>-->
             <li>
               <a
                 href={
-                  'https://github.com/processing/processing/issues?q=is%3Aopen'
+                  'https://github.com/processing/processing4/issues?q=is%3Aopen'
                 }>
                 {intl.formatMessage({ id: 'report' })}
               </a>
@@ -63,7 +63,7 @@ const Download = ({ data }) => {
             <li>
               <a
                 href={
-                  'https://github.com/processing/processing/wiki/Supported-Platforms'
+                  'https://github.com/processing/processing4/wiki/Supported-Platforms'
                 }>
                 {intl.formatMessage({ id: 'supported' })}
               </a>
