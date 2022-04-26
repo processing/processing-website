@@ -2,17 +2,16 @@ import { useMemo } from 'react';
 
 const getOS = (name) => {
   if (name.includes('windows') || name.includes('.exe')) return 'Windows';
-  else if (name.includes('arm')) return 'Linux ARM';
   else if (name.includes('linux')) return 'Linux';
-  else if (name.includes('mac')) return 'Mac';
+  else if (name.includes('macos')) return 'MacOS';
   else return 'Unknown';
 };
 
 const getBit = (name) => {
-  if (name.includes('32')) return '32-bit';
-  else if (name.includes('64')) return '64-bit';
-  else if (name.includes('armv6hf')) return 'ARMv6hf';
-  else if (name.includes('.exe')) return 'exe';
+  if (name.includes('x64')) return '(Intel 64-bit)';
+  else if (name.includes('macos-aarch64')) return '(Apple Silicon)';
+  else if (name.includes('linux-arm32')) return 'Raspberry Pi 32-bit';
+  else if (name.includes('linux-arm64')) return 'Raspberry Pi 64-bit';
   else return null;
 };
 
