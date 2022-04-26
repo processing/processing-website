@@ -10,8 +10,8 @@ const getOS = (name) => {
 const getBit = (name) => {
   if (name.includes('x64')) return '(Intel 64-bit)';
   else if (name.includes('macos-aarch64')) return '(Apple Silicon)';
-  else if (name.includes('linux-arm32')) return 'Raspberry Pi 32-bit';
-  else if (name.includes('linux-arm64')) return 'Raspberry Pi 64-bit';
+  else if (name.includes('linux-arm32')) return '(Raspberry Pi 32-bit)';
+  else if (name.includes('linux-arm64')) return '(Raspberry Pi 64-bit)';
   else return null;
 };
 
