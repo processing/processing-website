@@ -30,6 +30,7 @@
   flex-direction: row;
   flex-basis: var(--col6);
   justify-content: flex-end;
+  align-items: center;
 }
 .submit {
   position: absolute;
@@ -48,10 +49,6 @@
   &:active path {
     stroke: var(--processing-blue-dark);
   }
-}
-
-.searchIcon {
-  margin-top: -2px;
 }
 
 @media (--reduced) {
