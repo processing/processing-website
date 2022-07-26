@@ -46,7 +46,7 @@ When translating the content to a new language you need to edit the [`i18n/confi
 
 ## Deploying the site
 
-The website is set up to deploy itself whenever a new GitHub release is created from the `master` branch:
+The website is set up to deploy itself whenever a new GitHub release is created from the `main` branch:
 
 1. Go to [Releases](https://github.com/processing/processing-website/releases)
 2. Click "Create a new release"
