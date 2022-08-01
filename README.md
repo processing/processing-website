@@ -44,6 +44,7 @@ When translating the content to a new language you need to edit the [`i18n/confi
 
 - [Writing CSS](/docs/css.md)
 
+
 ## Deploying the site
 
 The website is set up to deploy itself whenever a new GitHub release is created from the `main` branch:
@@ -61,3 +62,9 @@ The website repo has a script that generates the `keywords.txt` file into the `p
 2. Run `npm run updateKeywords`
 
 The `processing4` repo now has an updated `java/keywords.txt` file.
+
+## Building the site
+
+If you need to manually build the site, you can do it by running `npm run build` from the project source. This command is that runs behind the scenes when deploying a release. 
+
+It will build from the source and produce the static website in a folder `public`. Once built, the site can run in any static file server.
