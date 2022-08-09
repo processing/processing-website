@@ -1,0 +1,45 @@
+{
+  "name": "Processing 4.0.1",
+  "tagName": "processing-1286-4.0.1",
+  "publishedAt": "2022-08-09T19:50:39Z",
+  "releaseAssets": {
+    "edges": [
+      {
+        "node": {
+          "name": "processing-4.0.1-macos-x64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1286-4.0.1/processing-4.0.1-macos-x64.zip"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.0.1-linux-x64.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1286-4.0.1/processing-4.0.1-linux-x64.tgz"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.0.1-macos-aarch64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1286-4.0.1/processing-4.0.1-macos-aarch64.zip"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.0.1-linux-arm32.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1286-4.0.1/processing-4.0.1-linux-arm32.tgz"
+        }
+      },
+       {
+        "node": {
+          "name": "processing-4.0.1-windows-x64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1286-4.0.1/processing-4.0.1-windows-x64.zip"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.0.1-linux-arm64.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1286-4.0.1/processing-4.0.1-linux-arm64.tgz"
+        }
+      }
+    ]
+  }
+}
