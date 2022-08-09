@@ -58,12 +58,12 @@ const Download = ({ data }) => {
               </a>
             </li>
             <li>
-              <a href={'https://github.com/processing/processing/wiki'}>Wiki</a>
+              <a href={'https://github.com/processing/processing4/wiki'}>Wiki</a>
             </li>{' '}
             <li>
               <a
                 href={
-                  'https://github.com/processing/processing4/wiki/Supported-Platforms'
+                  'https://github.com/processing/processing4/wiki/Troubleshooting'
                 }>
                 {intl.formatMessage({ id: 'supported' })}
               </a>
