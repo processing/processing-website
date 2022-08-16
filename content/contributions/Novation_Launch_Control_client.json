@@ -1,0 +1,22 @@
+{
+  "name": "Novation Launch Control client",
+  "authors": [
+    "[Half Scheidl](https://github.com/haschdl), [Jonathan Newman](https://github.com/poetoflight)"
+  ],
+  "url": "https://github.com/haschdl/pLaunchController",
+  "categories": [
+    "I/O"
+  ],
+  "sentence": "Control your sketches using the knobs, pads and slider from MIDI controllers such as Novation &reg; Launch Control&reg;.",
+  "paragraph": "Once connected to your computer, use the MIDI controller to control your sketch by \\",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "228",
+      "maxRevision": "0",
+      "props": "https://github.com/haschdl/pLaunchController/releases/download/latest/pLaunchControl.txt",
+      "download": "https://github.com/haschdl/pLaunchController/releases/download/latest/pLaunchControl.zip"
+    }
+  ]
+}

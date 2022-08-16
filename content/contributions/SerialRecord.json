@@ -1,0 +1,24 @@
+{
+  "name": "SerialRecord",
+  "categories": [
+    "Data",
+    "I/O"
+  ],
+  "authors": [
+    "[Oliver Steele](steele@osteele.com)"
+  ],
+  "url": "https://osteele.github.io/Processing_SerialRecord/",
+  "sentence": "The SerialRecord library for Processing sends and receive records, containing multiple integers, over the serial port.",
+  "paragraph": "It is intended for novice programmers: it is designed to be easy to use, to detect when it is used incorrectly, and to detect and report when it receives invalid data. It also has an option to display the data sent to the and received from the serial port on the canvas.",
+  "lastUpdated": "0",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0264",
+      "maxRevision": "0",
+      "props": "http://assets.osteele.com.s3.amazonaws.com/processing/SerialRecord.txt",
+      "download": "http://assets.osteele.com.s3.amazonaws.com/processing/SerialRecord.zip"
+    }
+  ]
+}

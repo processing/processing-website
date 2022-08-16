@@ -8,7 +8,7 @@
     "Animation",
     "Other"
   ],
-  "sentence": "A gaming library that enables easy 2D game creation within Processing.",
+  "sentence": "Easy, simple 2D game creation within Processing.",
   "paragraph": "Developed with a focus on ease-of-use and learning. Originally made to aid in teaching high school students, emulating and expanding upon the functionality of the [Greenfoot](https://www.greenfoot.org/) project.",
   "type": "library",
   "packages": [

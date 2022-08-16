@@ -1,5 +1,5 @@
 {
-  "name": "Video",
+  "name": "Video Library for Processing 3",
   "authors": [
     "The Processing Foundation"
   ],
@@ -14,9 +14,9 @@
     {
       "mode": "java",
       "minRevision": "228",
-      "maxRevision": "0",
-      "props": "https://github.com/processing/processing-video/releases/download/latest/video.txt",
-      "download": "https://github.com/processing/processing-video/releases/download/latest/video.zip"
+      "maxRevision": "270",
+      "props": "https://github.com/processing/processing-video/releases/download/latest-processing3/video.txt",
+      "download": "https://github.com/processing/processing-video/releases/download/latest-processing3/video.zip"
     }
   ]
 }

@@ -12,7 +12,7 @@
   "packages": [
     {
       "mode": "java",
-      "minRevision": "252",
+      "minRevision": "1280",
       "maxRevision": "0",
       "props": "https://github.com/fathominfo/processing-p5js-mode/releases/download/latest/p5jsMode.txt",
       "download": "https://github.com/fathominfo/processing-p5js-mode/releases/download/latest/p5jsMode.zip"

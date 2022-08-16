@@ -1,0 +1,22 @@
+{
+  "name": "Video Library for Processing 4",
+  "authors": [
+    "The Processing Foundation"
+  ],
+  "url": "http://processing.org/reference/libraries/video/index.html",
+  "categories": [
+    "Video & Vision"
+  ],
+  "sentence": "GStreamer-based video library for Processing.",
+  "paragraph": "",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "1281",
+      "maxRevision": "0",
+      "props": "https://github.com/processing/processing-video/releases/download/latest/video.txt",
+      "download": "https://github.com/processing/processing-video/releases/download/latest/video.zip"
+    }
+  ]
+}

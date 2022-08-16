@@ -1,19 +1,19 @@
 {
-  "name": "Android Mode",
+  "name": "Android Mode for Processing 4",
   "authors": [
     "[The Processing Foundation](https://processingfoundation.org/)"
   ],
   "url": "http://android.processing.org",
-  "sentence": "Create projects with Processing for Android devices",
-  "paragraph": "This version of the Android Mode is for Processing 3.1+",
+  "sentence": "This mode lets you use Processing to create Android apps",
+  "paragraph": "",
   "imports": "processing.mode.java.JavaMode",
   "type": "mode",
   "categories": null,
   "packages": [
     {
       "mode": "java",
-      "minRevision": "249",
-      "maxRevision": "1269",
+      "minRevision": "1283",
+      "maxRevision": "0",
       "props": "https://github.com/processing/processing-android/releases/download/latest/AndroidMode.txt",
       "download": "https://github.com/processing/processing-android/releases/download/latest/AndroidMode.zip"
     }
