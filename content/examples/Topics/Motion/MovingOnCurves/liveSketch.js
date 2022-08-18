@@ -41,8 +41,8 @@ function runLiveSketch(s) {
     pct = 0.0;
     beginX = x;
     beginY = y;
-    endX = mouseX;
-    endY = mouseY;
+    endX = s.mouseX;
+    endY = s.mouseY;
     distX = endX - beginX;
     distY = endY - beginY;
   };
