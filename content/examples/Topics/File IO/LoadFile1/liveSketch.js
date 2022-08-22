@@ -14,7 +14,7 @@ function runLiveSketch(s) {
   };
 
   s.setup = () => {
-    s.createCanvas(200, 200);
+    s.createCanvas(640, 360);
     s.background(0);
     s.stroke(255);
     s.frameRate(12);
@@ -24,8 +24,8 @@ function runLiveSketch(s) {
     if (index < lines.length) {
       var pieces = s.split(lines[index], '\t');
       if (pieces.length == 2) {
-        var x = s.int(pieces[0]) * 2;
-        var y = s.int(pieces[1]) * 2;
+        var x = s.int(pieces[0]) * 6.4;
+        var y = s.int(pieces[1]) * 3.6;
         s.point(x, y);
       }
       // Go to the next line for the next run through draw()

@@ -18,11 +18,12 @@ function runLiveSketch(s) {
   };
 
   s.setup = () => {
-    s.createCanvas(200, 200);
+    s.createCanvas(640, 360);
     s.fill(255);
     s.noLoop();
 
     s.textFont('TheSans');
+    s.textSize(20);
 
     records = new Array(lines.length);
     for (var i = 0; i < lines.length; i++) {
