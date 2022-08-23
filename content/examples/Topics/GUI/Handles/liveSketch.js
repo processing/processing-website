@@ -6,6 +6,12 @@
 function runLiveSketch(s) {
   var handles;
 
+  /*Stores if a mouse button has just been pressed
+  while no other mouse button was being held pressed.
+  Set it back to false at the end of the draw function.
+  */
+  let firstMousePress = false
+
   s.setup = () => {
     s.createCanvas(640, 360);
     var num = s.height / 15;
@@ -32,7 +38,22 @@ function runLiveSketch(s) {
 
     s.fill(0);
     s.rect(0, 0, s.width / 2, s.height);
+    
+    
+    //Once you have processed it, set it back to false
+    //no matter whether the button is still held pressed.
+    if(firstMousePress == true){
+      firstMousePress = false;
+    }
   };
+
+  s.mousePressed = () => {
+    //Check if the mouse button has been pressed while
+    //no other mouse button was held pressed.
+    if(firstMousePress == false){
+      firstMousePress = true;
+    }
+  }
 
   s.mouseReleased = () => {
     for (var i = 0; i < handles.length; i++) {
@@ -89,7 +110,7 @@ function runLiveSketch(s) {
     };
 
     this.pressEvent = function () {
-      if ((this.over && s.mouseIsPressed) || this.locked) {
+      if ((this.over && firstMousePress) || this.locked) {
         this.press = true;
         this.locked = true;
       } else {
