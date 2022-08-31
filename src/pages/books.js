@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { useIntl } from 'react-intl';
+import { slugify } from '../utils';
 
 import HeadMatter from '../components/HeadMatter';
 import Layout from '../components/Layout';
@@ -39,7 +40,7 @@ const Books = ({ data }) => {
                   )}
                 </div>
                 <div className={classnames(grid.col, css.book)}>
-                  <h3>{book.title}</h3>
+                  <h3 id={slugify(book.title)}>{book.title}</h3>
                   {book.author && (
                     <p className={css.author}>
                       {intl.formatMessage({ id: 'by' })} {book.author}
