@@ -1,0 +1,22 @@
+{
+  "name": "JavaFX",
+  "authors": [
+    "The Processing Foundation"
+  ],
+  "url": "https://github.com/processing/processing4-javafx",
+  "categories": [
+    "Other"
+  ],
+  "sentence": "The FX2D renderer for Processing 4",
+  "paragraph": "Since Processing 4.0 beta 4, the FX2D renderer is available as a separate library.",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "1280",
+      "maxRevision": "0",
+      "props": "https://github.com/processing/processing4-javafx/releases/download/latest/processing4-javafx.txt",
+      "download": "https://github.com/processing/processing4-javafx/releases/download/latest/processing4-javafx.zip"
+    }
+  ]
+}

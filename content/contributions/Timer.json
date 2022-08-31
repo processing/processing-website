@@ -1,0 +1,22 @@
+{
+  "name": "Timer",
+  "authors": [
+    "[Guilherme Silveira](https://guilhermesilveira.org/)"
+  ],
+  "url": "https://github.com/guilhermesilveira/timer",
+  "categories": [
+    "Utilities"
+  ],
+  "sentence": "A library to invoke your functions in fixed time intervals.",
+  "paragraph": "Created for Processing 4.",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "1283",
+      "maxRevision": "0",
+      "props": "https://github.com/guilhermesilveira/timer/releases/download/latest/Timer.txt",
+      "download": "https://github.com/guilhermesilveira/timer/releases/download/latest/Timer.zip"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Oklab for Processing",
+  "authors": [
+    "[Yash Gupta](https://refuse.ink/)"
+  ],
+  "url": "https://github.com/yashbutno/Oklab-for-Processing",
+  "categories": [
+    "Utilities"
+  ],
+  "sentence": "Perceptually-accurate and human-friendly color picking using the Oklab color space.",
+  "paragraph": "This library includes a small collection of functions to help you pick colors with perceptual accuracy using Bjorn Ottosson's Oklab color space. This works in contrast to generating colors using RGB or HSB values, in which similar difference in input values don't represent similar difference in color output.",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/yashbutno/Oklab-for-Processing/releases/download/latest/OklabForProcessing.txt",
+      "download": "https://github.com/yashbutno/Oklab-for-Processing/releases/download/latest/OklabForProcessing.zip"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Nurbs",
+  "authors": [
+    "[Arnoud van der Leer](https://github.com/arnoudvanderleer)"
+  ],
+  "url": "https://arnoudvanderleer.github.io/processing-nurbs/",
+  "categories": [
+    "Geometry"
+  ],
+  "sentence": "An implementation of Non-uniform Rational B-Splines for Processing",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://arnoudvanderleer.github.io/processing-nurbs/download/Nurbs.txt",
+      "download": "https://arnoudvanderleer.github.io/processing-nurbs/download/Nurbs.zip"
+    }
+  ]
+}

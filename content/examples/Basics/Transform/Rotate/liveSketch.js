@@ -9,10 +9,10 @@
  * is identical to the statement scale(PI/2).
  */
 
-var angle = 0;
-var jitter = 0;
-
 function runLiveSketch(s) {
+  var angle = 0;
+  var jitter = 0;
+  
   s.setup = () => {
     s.createCanvas(640, 360);
     s.noStroke();

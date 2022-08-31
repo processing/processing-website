@@ -1,0 +1,45 @@
+{
+  "name": "Processing 4.0",
+  "tagName": "processing-1285-4.0",
+  "publishedAt": "2022-08-09T12:24:02Z",
+  "releaseAssets": {
+    "edges": [
+      {
+        "node": {
+          "name": "processing-4.0-linux-arm64.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1285-4.0/processing-4.0-linux-arm64.tgz"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.0-linux-x64.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1285-4.0/processing-4.0-linux-x64.tgz"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.0-macos-aarch64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1285-4.0/processing-4.0-macos-aarch64.zip"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.0-macos-x64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1285-4.0/processing-4.0-macos-x64.zip"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.0-windows-x64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1285-4.0/processing-4.0-windows-x64.zip"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.0-linux-arm32.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1285-4.0/processing-4.0-linux-arm32.tgz"
+        }
+      }
+    ]
+  }
+}

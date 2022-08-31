@@ -44,7 +44,7 @@ const SearchBar = ({ className }) => {
           })}
         />
         <button className={css.submit} onClick={search}>
-          <SearchIcon height={30} width={30} className={css.searchIcon} />
+          <SearchIcon height={30} width={30} />
         </button>
       </div>
     </div>

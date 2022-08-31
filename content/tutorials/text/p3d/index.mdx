@@ -170,7 +170,7 @@ sphere(280);
 popMatrix();
 ```
 
-See also: [Primitives3D](http://processing.org/learning/basics/primitives3d.html)
+See also: [Primitives3D](http://processing.org/examples/primitives3d.html)
 
 In the above example, note that the functions box() and sphere() each only take one argument: size. These 3D shapes cannot be positioned via arguments, rather you should use the translate() and rotate() methods described previously.
 
@@ -212,7 +212,7 @@ endShape();
 
 ```
 
-Note above how it's often simpler to specify vertex locations using a standardized unit of measure (i.e. 1 pixel) and relative to a point of origin (0,0,0). The size and position of the shape is then set using matrix transformations: translate(), rotate(), and scale(). For some examples of more sophisticated custom shapes built in 3D, take a look at these examples: [RGB Cube](http://processing.org/learning/topics/rgbcube.html), [Vertices](http://processing.org/learning/topics/vertices.html), [Toroid](http://processing.org/learning/topics/toroid.html), [Isocahedra](http://processing.org/learning/topics/icosahedra.html).
+Note above how it's often simpler to specify vertex locations using a standardized unit of measure (i.e. 1 pixel) and relative to a point of origin (0,0,0). The size and position of the shape is then set using matrix transformations: translate(), rotate(), and scale(). For some examples of more sophisticated custom shapes built in 3D, take a look at these examples: [RGB Cube](http://github.com/processing/processing-examples/blob/main/Topics/Geometry/RGBCube/RGBCube.pde), [Vertices](http://github.com/processing/processing-examples/blob/main/Topics/Geometry/Vertices/Vertices.pde), [Toroid](http://github.com/processing/processing-examples/blob/main/Topics/Geometry/Toroid/Toroid.pde), [Isocahedra](http://github.com/processing/processing-examples/blob/main/Topics/Geometry/Icosahedra).
 
 ## Textures
 
@@ -267,7 +267,7 @@ void draw() {
 
 Once we have specified the texture itself, we have to then define the mapping of the image to the shape itself. This is a simple problem when the shape is rectangular (four corners of a shape map to four corners of an image), but grows more complex when you have many more vertices in a shape (such as in the globe example above). To define the mapping, two more arguments (usually referred to as **_u_** and **_v_** are added to each call to vertex(). By default, the coordinates used for **_u_** and **_v_** are specified in relation to the image's size in pixels, but this relation can be changed with [textureMode()](http://processing.org/reference/textureMode_.html). In addition, when textures are in use, the fill color is ignored. Instead, use [tint()](http://processing.org/reference/tint_.html) to specify the color of the texture as it is applied to the shape.
 
-[Example: Texture Quad](http://processing.org/learning/topics/texturequad.html)
+[Example: Texture Quad](http://github.com/processing/processing-docs/tree/master/content/examples/Topics/Textures/TextureQuad/TextureQuad.pde)
 
 <FixedImage side width={300} height={179}>
 
@@ -289,9 +289,9 @@ void draw() {
 }
 ```
 
-If the above seems like a trivial example, that's because it is. After all, if we're just going to texture a square, we can just draw the image using image(). Nevertheless, understanding the above process opens up a world of possibilities as we can now apply image textures to arbitrary 2D and 3D shapes. For some examples of more sophisticated mappings, check out [Texture Triangle](http://processing.org/learning/topics/texturetriangle.html), [Texture Cylinder](http://processing.org/learning/topics/texturecylinder.html), [Texture Cube](http://processing.org/learning/topics/texturecube.html), and [Textured Sphere](https://processing.org/examples/texturesphere.html).
+If the above seems like a trivial example, that's because it is. After all, if we're just going to texture a square, we can just draw the image using image(). Nevertheless, understanding the above process opens up a world of possibilities as we can now apply image textures to arbitrary 2D and 3D shapes. For some examples of more sophisticated mappings, check out [Texture Triangle](http://github.com/processing/processing-docs/tree/master/content/examples/Topics/Textures/TextureTriangle/TextureTriangle.pde), [Texture Cylinder](http://github.com/processing/processing-docs/tree/master/content/examples/Topics/Textures/TextureCylinder/TextureCylinder.pde), [Texture Cube](http://github.com/processing/processing-docs/tree/master/content/examples/Topics/Textures/TextureCube/TextureCube.pde), and [Textured Sphere](http://github.com/processing/processing-docs/tree/master/content/examples/Topics/Textures/TextureSphere/TextureSphere.pde).
 
-As mentioned in the ()PShape tutorial], you can also texture `PShape` objects with the `setTexture()` function. PShape's `setTexture()` automatically textures the shape without having to specify uv coordinates and is useful for simple scenarios like texturing a sphere (where doing it with `beginShape()` and `endShape()` would be extraordinarily complex (as seen in [Textured Sphere](https://processing.org/examples/texturesphere.html)). The following code demonstrates how easy it is to texture with `PShape`.
+As mentioned in the [PShape tutorial](https://processing.org/tutorials/pshape), you can also texture `PShape` objects with the `setTexture()` function. PShape's `setTexture()` automatically textures the shape without having to specify uv coordinates and is useful for simple scenarios like texturing a sphere (where doing it with `beginShape()` and `endShape()` would be extraordinarily complex (as seen in [Textured Sphere](http://github.com/processing/processing-docs/tree/master/content/examples/Topics/Textures/TextureSphere/TextureSphere.pde)). The following code demonstrates how easy it is to texture with `PShape`.
 
 ```
 PImage img;
@@ -438,7 +438,7 @@ void draw()  {
 
 ## Camera
 
-When looking at a 3D scene in a Processing window, we can think of our view of the scene as a camera. Zoom in closer to the objects and we can imagine a camera zooming in. Rotate around the scene and the camera rotates. Of course, there is no actual camera, this is just a convenient device to help us understand how to traverse a 3D scene. Simulating a camera can be done through clever transformations at the beginning of draw() by using translate(), rotate(), and scale() to manipulate our view of the scene. Nevertheless, for convenience there is also a [camera()](http://processing.org/reference/camera_.html) function whose purpose is also to simulate a camera. The function defines a camera as having an &ldquo;eye position&rdquo;, i.e. the camera location, a scene &ldquo;center&rdquo; which tells the camera which way to point, and an upward axis which aligns the camera vertically.The default camera position is essentially right between your eyes: a location out in front of the window aligned straight up and pointing towards the screen. Here are the numbers for the default position.
+When looking at a 3D scene in a Processing window, we can think of our view of the scene as a camera. Zoom in closer to the objects and we can imagine a camera zooming in. Rotate around the scene and the camera rotates. Of course, there is no actual camera, this is just a convenient device to help us understand how to traverse a 3D scene. Simulating a camera can be done through clever transformations at the beginning of draw() by using translate(), rotate(), and scale() to manipulate our view of the scene. Nevertheless, for convenience there is also a [camera()](http://processing.org/reference/camera_.html) function whose purpose is also to simulate a camera. The function defines a camera as having an &ldquo;eye position&rdquo;, i.e. the camera location, a scene &ldquo;center&rdquo; which tells the camera which way to point, and an upward axis which aligns the camera vertically. The default camera position is essentially right between your eyes: a location out in front of the window aligned straight up and pointing towards the screen. Here are the numbers for the default position.
 
 - Eye position: **_width/2, height/2, (height/2) / tan(PI/6)_**
 - Scene center: **_width/2, height/2, 0_**
@@ -488,7 +488,7 @@ void setup() {
 
 void draw() {
   background(0);
-  camera(mouseX>, height/2, (height/2) / tan(PI/6), mouseX, height/2, 0, 0, 1, 0);
+  camera(mouseX, height/2, (height/2) / tan(PI/6), mouseX, height/2, 0, 0, 1, 0);
   translate(width/2, height/2, -100);
   stroke(255);
   noFill();

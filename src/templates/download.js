@@ -47,29 +47,28 @@ const Download = ({ data }) => {
           />
           <ul className={css.links}>
             <li>
-              <a href={'https://github.com/processing'}>GitHub</a>
+              <a href={'https://github.com/processing/processing4/'}>GitHub</a>
             </li>
             <li>
               <a
                 href={
-                  'https://github.com/processing/processing/issues?q=is%3Aopen'
+                  'https://github.com/processing/processing4/issues?q=is%3Aopen'
                 }>
                 {intl.formatMessage({ id: 'report' })}
               </a>
             </li>
             <li>
-              <a href={'https://github.com/processing/processing/wiki'}>Wiki</a>
+              <a href={'https://github.com/processing/processing4/wiki'}>Wiki</a>
             </li>{' '}
             <li>
               <a
                 href={
-                  'https://github.com/processing/processing/wiki/Supported-Platforms'
+                  'https://github.com/processing/processing4/wiki/Troubleshooting'
                 }>
                 {intl.formatMessage({ id: 'supported' })}
               </a>
             </li>
           </ul>
-          <p>{intl.formatMessage({ id: 'downloadChanges' })}</p>
           <ReleasesList
             releases={releases}
             title={intl.formatMessage({ id: 'stable' })}
@@ -124,30 +123,32 @@ const LatestRelease = memo(({ release, onAfterDownload }) => {
 
 const ReleasesList = memo(({ releases, title, onAfterDownload }) => {
   return (
-    <div>
-      <h3>{title}</h3>
-      <ul className={css.table}>
-        {releases.map((release) => (
-          <li className={css.row} key={release.name}>
-            <span className={css.releaseName}>{release.version}</span>
-            <span className={css.releaseDate}>({release.publishedAt})</span>
-            <span className={css.releaseAssets}>
-              {release.assets.map((asset, i) => {
-                return (
-                  <a
-                    href={asset.url}
-                    onClick={onAfterDownload}
-                    className={css.assetLink}
-                    key={asset.url}>
-                    {asset.os} {asset.bit}
-                  </a>
-                );
-              })}
-            </span>
-          </li>
-        ))}
-      </ul>
-    </div>
+    releases.length > 0 && (
+      <div>
+        <h3>{title}</h3>
+        <ul className={css.table}>
+          {releases.map((release) => (
+            <li className={css.row} key={release.name}>
+              <span className={css.releaseName}>{release.version}</span>
+              <span className={css.releaseDate}>({release.publishedAt})</span>
+              <span className={css.releaseAssets}>
+                {release.assets.map((asset, i) => {
+                  return (
+                    <a
+                      href={asset.url}
+                      onClick={onAfterDownload}
+                      className={css.assetLink}
+                      key={asset.url}>
+                      {asset.os} {asset.bit}
+                    </a>
+                  );
+                })}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
   );
 });
 

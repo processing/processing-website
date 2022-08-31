@@ -9,7 +9,7 @@ String[] lines;
 int index = 0;
 
 void setup() {
-  size(200, 200);
+  size(640, 360);
   background(0);
   stroke(255);
   frameRate(12);
@@ -20,8 +20,8 @@ void draw() {
   if (index < lines.length) {
     String[] pieces = split(lines[index], '\t');
     if (pieces.length == 2) {
-      int x = int(pieces[0]) * 2;
-      int y = int(pieces[1]) * 2;
+      int x = int(pieces[0]) * 6.4;
+      int y = int(pieces[1]) * 3.6;
       point(x, y);
     }
     // Go to the next line for the next run through draw()

@@ -1,0 +1,22 @@
+{
+  "name": "Tramontana Processing Library",
+  "authors": [
+    "[Pierluigi Dalla Rosa, Enrico Gueli](http://www.pierdr.com, https://www.instagram.com/ris8_allo_zen0/)"
+  ],
+  "url": "https://tramontana.xyz",
+  "categories": [
+    "Utilities"
+  ],
+  "sentence": "Tramontana - prototyping and creative kit for multi-device interactions and experiences.",
+  "paragraph": "With Tramontana you can access the inputs and outputs of one or more smartphones (or other devices) to easily and quickly prototype interactive spaces, connected products or whatever you can think of. What used to involve complex tasks like networking, native app development, etc. can now be created with a single sketch on your computer.",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0250",
+      "maxRevision": "0",
+      "props": "https://tramontanaixd.github.io/processing-library/Tramontana.txt",
+      "download": "https://tramontanaixd.github.io/processing-library/Tramontana.zip"
+    }
+  ]
+}

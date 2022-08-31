@@ -1,0 +1,22 @@
+{
+  "name": "IgnoCodeLib",
+  "authors": [
+    "[Paul Hertz](http://paulhertz.net/)"
+  ],
+  "url": "http://paulhertz.net/ignocodelib/index.html",
+  "categories": [
+    "I/O"
+  ],
+  "sentence": "Hierarchical display list for graphics and text with export to Adobe Illustrator 7.0 file format.",
+  "paragraph": "Supports display and output of complex objects composed of lines and cubic Bezier curves, simple text, RGB and CMYK color, and geometric transforms.",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "http://paulhertz.net/ignocodelib/download/IgnoCodeLib.txt",
+      "download": "http://paulhertz.net/ignocodelib/download/IgnoCodeLib.zip"
+    }
+  ]
+}

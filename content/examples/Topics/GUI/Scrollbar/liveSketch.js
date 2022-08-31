@@ -11,6 +11,12 @@ function runLiveSketch(s) {
   var hs1, hs2; // Two scrollbars
   var img1, img2; // Two images to load
 
+  /*Stores if a mouse button has just been pressed
+  while no other mouse button was being held pressed.
+  Set it back to false at the end of the draw function.
+  */
+  let firstMousePress = false
+
   s.preload = () => {
     // Load images
     img1 = s.loadImage('/livesketch/scrollbar/seedTop.jpg');
@@ -47,7 +53,21 @@ function runLiveSketch(s) {
 
     s.stroke(0);
     s.line(0, s.height / 2, s.width, s.height / 2);
+    
+    //Once you have processed it, set it back to false
+    //no matter whether the button is still held pressed.
+    if(firstMousePress == true){
+      firstMousePress = false;
+    }
   };
+  
+  s.mousePressed = () => {
+    //Check if the mouse button has been pressed while
+    //no other mouse button was held pressed.
+    if(firstMousePress == false){
+      firstMousePress = true;
+    }
+  }
 
   function HScrollbar(xp, yp, sw, sh, l) {
     this.swidth = sw; // width and height of bar
@@ -70,7 +90,7 @@ function runLiveSketch(s) {
       } else {
         this.over = false;
       }
-      if (s.mouseIsPressed && this.over) {
+      if (firstMousePress && this.over) {
         this.locked = true;
       }
       if (!s.mouseIsPressed) {

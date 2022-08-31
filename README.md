@@ -38,18 +38,19 @@ This content includes most of the content on the website such as the individual 
 - [About](/docs/markdown-pages.md)
 - Donate (External link)
 
-When translating the content to a new language you need to edit the [`i18n/config.json`](/i18n/config.json) file and add you language information. Then follow the instructions for each Content list (same links as above).
+When translating the content to a new language you need to edit the [`i18n/config.json`](/i18n/config.json) file and add your language information. Then follow the instructions for each Content list (same links as above).
 
 ## Writing code
 
 - [Writing CSS](/docs/css.md)
 
+
 ## Deploying the site
 
-The website is set up to deploy itself whenever a new GitHub release is created from the `master` branch:
+The website is set up to deploy itself whenever a new GitHub release is created from the `main` branch:
 
 1. Go to [Releases](https://github.com/processing/processing-website/releases)
-2. Click "Create a new release"
+2. Click "Draft a new release"
 3. Choose a tag for this release. This value is not used for much, so you can just use `DD-MM-YYYY`
 4. Create the release. A GitHub action will run, which will build the website and upload to the S3 bucket.
 
@@ -61,3 +62,9 @@ The website repo has a script that generates the `keywords.txt` file into the `p
 2. Run `npm run updateKeywords`
 
 The `processing4` repo now has an updated `java/keywords.txt` file.
+
+## Building the site
+
+If you need to manually build the site, you can do it by running `npm run build` from the project source. This command is that runs behind the scenes when deploying a release. 
+
+It will build from the source and produce the static website in a folder `public`. Once built, the site can run in any static file server.

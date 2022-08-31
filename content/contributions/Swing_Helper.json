@@ -1,0 +1,22 @@
+{
+  "name": "Swing Helper",
+  "categories": [
+    "GUI"
+  ],
+  "authors": [
+    "Michael Lukas"
+  ],
+  "url": "https://github.com/NumericPrime/SwingHelperProcessing",
+  "sentence": "Allows using swing GUI components in Processing windows and includes utility for swing in general",
+  "paragraph": "Adding swing components to processing is hard this library makes this process easier by adding a few classes and annotations that allow to merge a processing content with swing components. The library adds 3 classes to do that in various ways and allow including custom ways with just a few lines of code. The library also includes utility to format buttons by e.g. edit their color or strap methods onto them along with a few other QOL functions.",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/NumericPrime/SwingHelperProcessing/releases/latest/download/SwingHelperLib.txt",
+      "download": "https://github.com/NumericPrime/SwingHelperProcessing/releases/latest/download/SwingHelperLib.zip"
+    }
+  ]
+}
