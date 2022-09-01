@@ -41,12 +41,15 @@ module.exports = {
           require('postcss-normalize'),
           require('postcss-nesting'),
           require('postcss-custom-properties')({
-            importFrom: './src/styles/variables.css'
+            importFrom: './src/styles/variables.css',
+            // Do this to prevent warnings in the console output.
+            disableDeprecationNotice: true
           }),
           require('postcss-calc')(),
           require('postcss-custom-media')({
             importFrom: './src/styles/variables.css'
-          })
+          }),
+          require('postcss-reporter')
         ]
       }
     },
