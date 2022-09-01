@@ -15,10 +15,13 @@ const LanguageSelector = ({ className }) => {
 
   // Node and the browser differs in the pathname as node has a trailing slash
   // This streamlines the pathname to not have a trailing slash.
-  const realPath =
+  const cleanPath =
     pathname[pathname.length - 1] === '/' ? pathname.slice(0, -1) : pathname;
 
-  const path = locale === 'en' ? realPath : realPath.replace(`${locale}/`, '');
+  let path = locale === 'en' ? cleanPath : cleanPath.replace(`/${locale}`, '');
+  if (path === '') {
+    path = '/';
+  }
 
   const onToggle = () => {
     setOpen(!open);
