@@ -193,6 +193,7 @@ export const query = graphql`
     example: file(
       fields: { name: { eq: $name }, lang: { eq: $locale } }
       sourceInstanceName: { eq: "examples" }
+      extension: { eq: "json" }
     ) {
       relativeDirectory
       childJson {
