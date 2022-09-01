@@ -36,6 +36,10 @@ const LanguageSelector = ({ className }) => {
     };
   }, [open]);
 
+  if (config.length === 1) {
+    return null;
+  }
+
   return (
     <div className={classnames(css.root, className)}>
       <Button

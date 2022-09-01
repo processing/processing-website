@@ -21,10 +21,6 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
 exports.onCreateNode = ({ node, actions, getNode, loadNodeContent }) => {
   const { createNodeField } = actions;
 
-  if (node.name && node.name.match('Unistroke')) {
-    console.log('NODE', node);
-  }
-
   // Handle locale naming convention in .json and .pde files
   if (
     node.internal.type === 'File' &&

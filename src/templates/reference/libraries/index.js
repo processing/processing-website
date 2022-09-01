@@ -12,13 +12,17 @@ import Donate from '../../../components/character/Donate';
 import Layout from '../../../components/Layout';
 import FilterBar from '../../../components/FilterBar';
 
-import { useFilteredArray } from '../../../hooks';
-import { usePreparedContributions } from '../../../hooks/libraries';
+import {
+  useFilteredArray,
+  useTranslationsWithEnglishBase
+} from '../../../hooks';
 import { slugify, widont, linkParsing } from '../../../utils';
 import { referencePath } from '../../../utils/paths';
 
 import * as css from '../../../styles/pages/libraries.module.css';
 import * as grid from '../../../styles/grid.module.css';
+
+const searchKeys = ['name', 'authors', 'sentence'];
 
 const Libraries = ({ data, pageContext }) => {
   const { locale } = useLocalization();
@@ -26,17 +30,15 @@ const Libraries = ({ data, pageContext }) => {
   const { coreLibraries, currentLang, english } = data;
   const [searchTerm, setSearchTerm] = useState('');
 
-  const contributions = usePreparedContributions(
+  const contributions = useTranslationsWithEnglishBase(
+    locale,
     english.nodes,
-    currentLang.nodes,
-    locale
+    currentLang.nodes
   );
 
-  console.log(english.nodes);
-  console.log(currentLang.nodes);
-
-  const filtered = useFilteredArray(contributions, searchTerm);
+  const filtered = useFilteredArray(contributions, searchTerm, searchKeys);
   const categories = unique(filtered.flatMap((con) => con.categories));
+  categories.sort();
 
   return (
     <Layout>

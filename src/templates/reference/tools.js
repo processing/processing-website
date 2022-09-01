@@ -8,6 +8,8 @@ import HeadMatter from '../../components/HeadMatter';
 import Donate from '../../components/character/Donate';
 import Layout from '../../components/Layout';
 
+import { useTranslationsWithEnglishBase } from '../../hooks';
+
 import * as css from '../../styles/pages/libraries.module.css';
 import * as grid from '../../styles/grid.module.css';
 
@@ -16,20 +18,11 @@ const Tools = ({ data }) => {
   const { tools, currentLang, english } = data;
   const intl = useIntl();
 
-  let contributions = [];
-  // english.nodes.forEach((en) => {
-  //   currentLang.nodes.forEach((con) => {
-  //     if (locale === 'en') {
-  //       if (en.name === con.name.split('.')[0]) {
-  //         contributions.push({ ...en.childJson });
-  //       }
-  //     } else {
-  //       if (en.name === con.name.split('.')[0]) {
-  //         contributions.push({ ...en.childJson, ...con.childJson });
-  //       }
-  //     }
-  //   });
-  // });
+  const contributions = useTranslationsWithEnglishBase(
+    locale,
+    english.nodes,
+    currentLang.nodes
+  );
 
   return (
     <Layout>
