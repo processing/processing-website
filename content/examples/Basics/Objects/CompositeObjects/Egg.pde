@@ -3,18 +3,21 @@ class Egg {
   float tilt; // Left and right angle offset
   float angle; // Used to define the tilt
   float scalar; // Height of the egg
+  float range;
 
   // Constructor
-  Egg(float xpos, float ypos, float t, float s) {
+  Egg(float xpos, float ypos, float r, float s) {
     x = xpos;
     y = ypos;
-    tilt = t;
+    tilt = 0;
     scalar = s / 100.0;
+    range = r;
   }
 
   void wobble() {
-    tilt = cos(angle) / 8;
+    tilt = cos(angle) / range;
     angle += 0.1;
+    //print (angle + "-");
   }
 
   void display() {

@@ -1,19 +1,21 @@
 /**
- * Scrollbar. 
- * 
- * Move the scrollbars left and right to change the positions of the images. 
+ * Scrollbar.
+ *
+ * Move the scrollbars left and right to change the positions of the images.
  */
 
+//True if a mouse button was pressed while no other button was.
+boolean firstMousePress = false;
 HScrollbar hs1, hs2;  // Two scrollbars
 PImage img1, img2;  // Two images to load
 
 void setup() {
   size(640, 360);
   noStroke();
-  
+
   hs1 = new HScrollbar(0, height/2-8, width, 16, 16);
   hs2 = new HScrollbar(0, height/2+8, width, 16, 16);
-  
+
   // Load images
   img1 = loadImage("seedTop.jpg");
   img2 = loadImage("seedBottom.jpg");
@@ -21,28 +23,38 @@ void setup() {
 
 void draw() {
   background(255);
-  
+
   // Get the position of the img1 scrollbar
-  // and convert to a value to display the img1 image 
+  // and convert to a value to display the img1 image
   float img1Pos = hs1.getPos()-width/2;
   fill(255);
   image(img1, width/2-img1.width/2 + img1Pos*1.5, 0);
-  
+
   // Get the position of the img2 scrollbar
   // and convert to a value to display the img2 image
   float img2Pos = hs2.getPos()-width/2;
   fill(255);
   image(img2, width/2-img2.width/2 + img2Pos*1.5, height/2);
- 
+
   hs1.update();
   hs2.update();
   hs1.display();
   hs2.display();
-  
+
   stroke(0);
   line(0, height/2, width, height/2);
+
+  //After it has been used in the sketch, set it back to false
+  if (firstMousePress) {
+    firstMousePress = false;
+  }
 }
 
+void mousePressed() {
+  if (!firstMousePress) {
+    firstMousePress = true;
+  }
+}
 
 class HScrollbar {
   int swidth, sheight;    // width and height of bar
@@ -74,7 +86,7 @@ class HScrollbar {
     } else {
       over = false;
     }
-    if (mousePressed && over) {
+    if (firstMousePress && over) {
       locked = true;
     }
     if (!mousePressed) {
@@ -94,7 +106,7 @@ class HScrollbar {
 
   boolean overEvent() {
     if (mouseX > xpos && mouseX < xpos+swidth &&
-       mouseY > ypos && mouseY < ypos+sheight) {
+      mouseY > ypos && mouseY < ypos+sheight) {
       return true;
     } else {
       return false;
