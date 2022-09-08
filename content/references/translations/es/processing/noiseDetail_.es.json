@@ -1,0 +1,23 @@
+{
+  "brief": "Adjusts the character and level of detail produced by the Perlin\n           noise function",
+  "related": ["noise_", "noiseDetail_"],
+  "name": "noiseDetail()",
+  "description": "Adjusts the character and level of detail produced by the Perlin noise\n function. Similar to harmonics in physics, noise is computed over several\n octaves. Lower octaves contribute more to the output signal and as such\n define the overall intensity of the noise, whereas higher octaves create\n finer-grained details in the noise sequence.<br />\n <br />\n By default, noise is computed over 4 octaves with each octave contributing\n exactly half than its predecessor, starting at 50% strength for the first\n octave. This falloff amount can be changed by adding an additional function\n parameter. For example, a falloff factor of 0.75 means each octave will now\n have 75% impact (25% less) of the previous lower octave. While any number\n between 0.0 and 1.0 is valid, note that values greater than 0.5 may result\n in <b>noise()</b> returning values greater than 1.0.<br />\n <br />\n By changing these parameters, the signal created by the <b>noise()</b>\n function can be adapted to fit very specific needs and characteristics.",
+  "syntax": ["noiseDetail(lod)", "noiseDetail(lod, falloff)"],
+  "returns": "void",
+  "type": "function",
+  "category": "math",
+  "subcategory": "random",
+  "parameters": [
+    {
+      "name": "lod",
+      "description": "number of octaves to be used by the noise",
+      "type": ["int"]
+    },
+    {
+      "name": "falloff",
+      "description": "falloff factor for each octave",
+      "type": ["float"]
+    }
+  ]
+}

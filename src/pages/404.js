@@ -10,7 +10,7 @@ const NotFoundPage = () => {
   return (
     <Layout>
       <Helmet>
-        <title>{intl.formatMessage({ id: 'notFound' })}</title>
+        <title>{intl.formatMessage({ id: 'pageNotFound' })}</title>
       </Helmet>
       <h1>{intl.formatMessage({ id: 'notFound' })}</h1>
       <p>{intl.formatMessage({ id: 'notFoundText' })}</p>

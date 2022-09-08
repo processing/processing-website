@@ -1,0 +1,24 @@
+{
+  "brief": "Writes data to all connected clients",
+  "related": [],
+  "name": "write()",
+  "description": "Writes a value to all the connected clients. It sends bytes out from the \n Server object.",
+  "syntax": ["server.write(data)"],
+  "returns": "void",
+  "type": "method",
+  "category": "server",
+  "subcategory": "",
+  "classanchor": "Server",
+  "parameters": [
+    {
+      "name": "server",
+      "description": "  \tany variable of type Server",
+      "type": ["Server"]
+    },
+    {
+      "name": "data",
+      "description": "data to write",
+      "type": ["int", "byte[]", "String"]
+    }
+  ]
+}

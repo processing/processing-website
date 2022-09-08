@@ -1,0 +1,47 @@
+{
+  "brief": "Sets an orthographic projection and defines a parallel clipping\n           volume",
+  "related": [],
+  "name": "ortho()",
+  "description": "Sets an orthographic projection and defines a parallel clipping volume. All\n objects with the same dimension appear the same size, regardless of whether\n they are near or far from the camera. The parameters to this function specify\n the clipping volume where left and right are the minimum and maximum x\n values, top and bottom are the minimum and maximum y values, and near and far\n are the minimum and maximum z values. If no parameters are given, the default\n is used: <b>ortho(-width/2, width/2, -height/2, height/2)</b>.",
+  "syntax": [
+    "ortho()",
+    "ortho(left, right, bottom, top)",
+    "ortho(left, right, bottom, top, near, far)"
+  ],
+  "returns": "void",
+  "type": "function",
+  "category": "lights_camera",
+  "subcategory": "camera",
+  "parameters": [
+    {
+      "name": "left",
+      "description": "left plane of the clipping volume",
+      "type": ["float"]
+    },
+    {
+      "name": "right",
+      "description": "right plane of the clipping volume",
+      "type": ["float"]
+    },
+    {
+      "name": "bottom",
+      "description": "bottom plane of the clipping volume",
+      "type": ["float"]
+    },
+    {
+      "name": "top",
+      "description": "top plane of the clipping volume",
+      "type": ["float"]
+    },
+    {
+      "name": "near",
+      "description": "maximum distance from the origin to the viewer",
+      "type": ["float"]
+    },
+    {
+      "name": "far",
+      "description": "maximum distance from the origin away from the viewer",
+      "type": ["float"]
+    }
+  ]
+}

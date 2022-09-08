@@ -1,0 +1,32 @@
+{
+  "brief": "This is a band pass filter.",
+  "methods": [
+    {
+      "anchor": "BandPass_bw_",
+      "name": "bw()",
+      "desc": "Set the bandwidth for the filter."
+    },
+    {
+      "anchor": "BandPass_freq_",
+      "name": "freq()",
+      "desc": "Set the cutoff frequency for the filter."
+    },
+    {
+      "anchor": "BandPass_set_",
+      "name": "set()",
+      "desc": "Sets frequency and bandwidth of the filter with one method."
+    }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "This is a band pass filter.",
+  "type": "class",
+  "constructors": ["BandPass(parent)"],
+  "related": [],
+  "name": "BandPass",
+  "classanchor": "sound/BandPass",
+  "category": "effects",
+  "subcategory": "BandPass",
+  "parameters": []
+}

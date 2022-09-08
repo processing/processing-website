@@ -1,0 +1,13 @@
+{
+  "brief": "Returns the underlying sample rate of the audiosample.",
+  "related": [],
+  "name": "sampleRate()",
+  "description": "Returns the underlying sample rate of the audiosample.",
+  "syntax": [".sampleRate()"],
+  "returns": "int",
+  "type": "method",
+  "category": "sampling",
+  "subcategory": "AudioSample",
+  "classanchor": "AudioSample",
+  "parameters": []
+}

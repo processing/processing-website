@@ -1,0 +1,14 @@
+---
+name: 'serial'
+title: 'Serial'
+library: 'true'
+description: 'Envío de datos entre Processing y hardware externo a través del puerto de comunicación serial (RS-232).'
+---
+
+## Serial
+La biblioteca Serial lee y escribe datos desde y hacía dispositivos externos un byte a la vez. Esto permite a dos computadoras enviar y recibir datos. Esta biblioteca tiene la flexibilidad para comunicarse con dispositivos microcontroladores y usarlos como entrada o salida de programas Processing. El puerto serial es un puerto de entrada-salida de nueve pines que existe en muchas computadoras personales y puede ser emulado a través del puerto USB.
+
+Los problemas relacionados con la biblioteca Serial en diversas plataformas estan documentados en el wiki de Processing. El código fuente esta disponible en el repositorio GitHub de Processing.
+
+Al enviar datos a la consola, ya sea via print() o println(), nota que la consola es relativamente lenta. Ella no soporta salida en tiempo real, a alta velocidad ( por ejemplo a 60 cuadros por segundo). Para monitoreo en tiempo real de valores seriales, renderea esos valores en la ventana Processing durante el método draw().
+

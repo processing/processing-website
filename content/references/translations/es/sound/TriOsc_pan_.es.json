@@ -1,0 +1,19 @@
+{
+  "brief": "Move the sound in a stereo panorama.",
+  "related": [],
+  "name": "pan()",
+  "description": "Move the sound in a stereo panorama. -1.0 pans to the left channel and 1.0 to the right channel.",
+  "syntax": [".pan(pos)"],
+  "returns": "void",
+  "type": "method",
+  "category": "oscillators",
+  "subcategory": "TriOsc",
+  "classanchor": "TriOsc",
+  "parameters": [
+    {
+      "name": "pos",
+      "description": "The panoramic position of this sound unit as a float from -1.0\n            (left) to 1.0 (right).",
+      "type": ["float"]
+    }
+  ]
+}

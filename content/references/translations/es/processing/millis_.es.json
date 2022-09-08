@@ -1,0 +1,12 @@
+{
+  "brief": "Returns the number of milliseconds (thousandths of a second) since\n starting an applet",
+  "related": ["second_", "minute_", "hour_", "day_", "month_", "year_"],
+  "name": "millis()",
+  "description": "Returns the number of milliseconds (thousandths of a second) since\n starting an applet. This information is often used for timing animation\n sequences.\n\n\n ",
+  "syntax": ["millis()"],
+  "returns": "int",
+  "type": "function",
+  "category": "input",
+  "subcategory": "time date",
+  "parameters": []
+}

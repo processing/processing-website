@@ -1,0 +1,13 @@
+{
+  "brief": "Divide a value",
+  "related": [],
+  "name": "div()",
+  "description": "Divide a value.",
+  "syntax": [".div(key, amount)"],
+  "returns": "void",
+  "type": "method",
+  "category": "intdict",
+  "subcategory": "method",
+  "classanchor": "IntDict",
+  "parameters": []
+}

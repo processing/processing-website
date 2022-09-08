@@ -1,0 +1,13 @@
+{
+  "brief": "Set the entry at a particular index",
+  "related": [],
+  "name": "set()",
+  "description": "Set the entry at a particular index.",
+  "syntax": [".set(index, what)"],
+  "returns": "void",
+  "type": "method",
+  "category": "floatlist",
+  "subcategory": "method",
+  "classanchor": "FloatList",
+  "parameters": []
+}

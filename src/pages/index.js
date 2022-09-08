@@ -162,9 +162,7 @@ const IndexPage = ({ data }) => {
             </div>
             <div className={css.participateButton}>
               <Button
-                href={
-                  'https://processingfoundation.org/advocacy/pcd-2021'
-                }
+                href={'https://processingfoundation.org/advocacy/pcd-2021'}
                 variant="animate1"
                 size="large">
                 {intl.formatMessage({ id: 'buttonParticipate' })}
@@ -289,6 +287,8 @@ const IndexPage = ({ data }) => {
 };
 
 const Examples = memo(({ heading, examples }) => {
+  const intl = useIntl();
+
   return (
     <div className={classnames(grid.grid, css.examples)}>
       <h3 className={classnames(grid.col, css.examplesHeading)}>{heading}</h3>
@@ -304,14 +304,20 @@ const Examples = memo(({ heading, examples }) => {
                 />
               )}
             </div>
-            <h4>{example.name}</h4>
-            <p>in {example.subcategory} examples</p>
+            <h4> {intl.formatMessage({ id: example.name })}</h4>
+            <p>
+              {' '}
+              {intl.formatMessage(
+                { id: 'ExamplesIn' },
+                { subcat: intl.formatMessage({ id: example.subcategory }) }
+              )}
+            </p>
           </Link>
         </div>
       ))}
       <div className={classnames(grid.col, css.moreExamples)}>
         <Button to={'/examples'} variant="animate1">
-          More Examples
+          {intl.formatMessage({ id: 'moreExamples' })}
         </Button>
       </div>
     </div>
@@ -349,6 +355,9 @@ export const query = graphql`
         id
         name
         relativeDirectory
+        fields {
+          name
+        }
         childJson {
           name
           title

@@ -1,0 +1,19 @@
+{
+  "brief": "The .add() method is useful for modulating other audio signals.",
+  "related": [],
+  "name": "add()",
+  "description": "The .add() method is useful for modulating other audio signals.",
+  "syntax": [".add(add)"],
+  "returns": "void",
+  "type": "method",
+  "category": "I/O",
+  "subcategory": "AudioIn",
+  "classanchor": "AudioIn",
+  "parameters": [
+    {
+      "name": "add",
+      "description": "offset the output of the audio input by the given value",
+      "type": ["float"]
+    }
+  ]
+}

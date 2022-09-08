@@ -70,8 +70,9 @@ export const useTree = (items, order) => {
   such as those used in reference and examples.
   @param {Array} array The array of items
   @param {string} searchTerm The search term string entered by the user
+  @param {string[]} searchKeys Array of strings with keys to search
 **/
-export const useFilteredArray = (array, searchTerm, searchKey = 'search') => {
+export const useFilteredArray = (array, searchTerm, searchKeys = []) => {
   return useMemo(() => {
     if (!searchTerm || searchTerm === '') {
       return array;
@@ -81,18 +82,25 @@ export const useFilteredArray = (array, searchTerm, searchKey = 'search') => {
     const terms = searchTerm.split(' ');
 
     loop1: for (let i = 0; i < array.length; i++) {
+      const item = array[i];
       for (let j = 0; j < terms.length; j++) {
-        if (
-          !array[i][searchKey].toLowerCase().includes(terms[j].toLowerCase())
-        ) {
-          continue loop1;
+        const term = terms[j];
+        for (let k = 0; k < searchKeys.length; k++) {
+          const key = searchKeys[k];
+          if (
+            item[key] &&
+            typeof item[key].toString === 'function' &&
+            item[key].toString().toLowerCase().includes(term.toLowerCase())
+          ) {
+            filtered.push(item);
+            continue loop1;
+          }
         }
       }
-      filtered.push(array[i]);
     }
 
     return filtered;
-  }, [array, searchTerm, searchKey]);
+  }, [array, searchTerm, searchKeys]);
 };
 
 /**
@@ -163,6 +171,7 @@ export const useTreeSort = (tree, attr, sort) => {
           sorted[tree[category][subcategory][i][attr]] =
             tree[category][subcategory][i];
         }
+
         sortedTree[category][subcategory] = sorted;
       });
     });
@@ -263,7 +272,7 @@ let firstRun = true;
 export const useSidebar = (_key = '') => {
   const key = `showSidebar-${_key}`;
 
-  // check if the sidebar shouold be shown
+  // check if the sidebar should be shown
   // based on window width or user preference
   // returns null if running on the server
   // or for the very first time in the browser
@@ -296,4 +305,117 @@ export const useSidebar = (_key = '') => {
   );
 
   return [showSidebar, setShowSidebarMemo];
+};
+
+/**
+  Hook to filter a list of .pde files by overwriting the english
+  pde files with the locale pde files. Optionally, you can pass in
+  a name of the PDE file you want to sort first. This hook expects both
+  the english and the translated pdes to be present in the nodes.
+**/
+export const usePdes = (nodes, locale, name) => {
+  return useMemo(() => {
+    // Find all the english files and add the main pde first
+    const pdes = [];
+    const localePdes = [];
+
+    for (let i = 0; i < nodes.length; i++) {
+      const pde = {
+        name: nodes[i].fields.name,
+        code: nodes[i].childRawCode.content,
+        lang: nodes[i].fields.lang
+      };
+      if (pde.lang === 'en') {
+        if (name && pde.name === name) {
+          pdes.unshift(pde);
+        } else {
+          pdes.push(pde);
+        }
+      } else {
+        localePdes.push(pde);
+      }
+    }
+
+    // overwrite the english files with the locale files
+    if (locale !== 'en') {
+      loop1: for (let i = 0; i < pdes.length; i++) {
+        for (let j = 0; j < localePdes.length; j++) {
+          if (pdes[i].name === localePdes[j].name) {
+            pdes[i] = localePdes[j];
+            continue loop1;
+          }
+        }
+      }
+    }
+
+    return pdes;
+  }, [name, nodes, locale]);
+};
+
+/**
+  A hook that takes two arrays of nodes with name and childJson fields
+  and merges the childJson based on the language. The merge strategy is:
+  - Select all the translation items
+  - Merge the english content into each of the translation items
+  The result is that if an item is not translated, it's not in the result.
+**/
+export const useTranslations = (locale, english, translation) => {
+  return useMemo(() => {
+    // Otherwise, merge away!
+    const merged = [];
+    for (let i = 0; i < translation.length; i++) {
+      let englishItem = null;
+      for (let j = 0; j < english.length; j++) {
+        if (translation[i].name === english[j].name) {
+          englishItem = english[j];
+        }
+      }
+      if (locale !== 'en' && englishItem !== null) {
+        merged.push({
+          ...englishItem.childJson,
+          ...translation[i].childJson
+        });
+      } else {
+        merged.push(translation[i].childJson);
+      }
+    }
+
+    return merged;
+  }, [locale, english, translation]);
+};
+
+/**
+  A hook that takes two arrays of nodes with name and childJson fields
+  and merges the childJson based on the language. The merge strategy is:
+  - Select all the english items
+  - Merge the translated content into each of the english items
+  The result is that if an item still exists in the english version even if not translated.
+**/
+export const useTranslationsWithEnglishBase = (
+  locale,
+  english,
+  translation
+) => {
+  return useMemo(() => {
+    const merged = [];
+
+    for (let i = 0; i < english.length; i++) {
+      let translatedItem = null;
+      for (let j = 0; j < translation.length; j++) {
+        if (english[i].name === translation[j].name) {
+          translatedItem = translation[j];
+        }
+      }
+      if (locale !== 'en' && translatedItem != null) {
+        merged.push({
+          ...english[i].childJson,
+          ...translatedItem.childJson
+        });
+      } else {
+        merged.push(english[i].childJson);
+      }
+    }
+
+    return merged;
+  }, [locale, english, translation]);
 };

@@ -1,0 +1,19 @@
+{
+  "brief": "Returns the next client in line with a new message",
+  "related": [],
+  "name": "available()",
+  "description": "Returns the next client in line with a new message.",
+  "syntax": ["server.available()"],
+  "returns": "Client",
+  "type": "method",
+  "category": "server",
+  "subcategory": "",
+  "classanchor": "Server",
+  "parameters": [
+    {
+      "name": "server",
+      "description": "  \tany variable of type Server",
+      "type": ["Server"]
+    }
+  ]
+}

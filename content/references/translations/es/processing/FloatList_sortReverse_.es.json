@@ -1,0 +1,13 @@
+{
+  "brief": "A sort in reverse",
+  "related": [],
+  "name": "sortReverse()",
+  "description": "A sort in reverse. It's equivalent to running <b>sort()</b> and then \n <b>reverse()</b>, but is more efficient than running each separately.",
+  "syntax": [".sortReverse()"],
+  "returns": "void",
+  "type": "method",
+  "category": "floatlist",
+  "subcategory": "method",
+  "classanchor": "FloatList",
+  "parameters": []
+}

@@ -1,0 +1,13 @@
+{
+  "brief": "Check if a key is a part of the data structure",
+  "related": [],
+  "name": "hasKey()",
+  "description": "Check if a key is a part of the data structure",
+  "syntax": [".hasKey(key)"],
+  "returns": "boolean",
+  "type": "method",
+  "category": "stringdict",
+  "subcategory": "method",
+  "classanchor": "StringDict",
+  "parameters": []
+}

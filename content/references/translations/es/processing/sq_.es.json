@@ -1,0 +1,14 @@
+{
+  "brief": "Squares a number (multiplies a number by itself)",
+  "related": ["sqrt_"],
+  "name": "sq()",
+  "description": "Squares a number (multiplies a number by itself). The result is always a\n positive number, as multiplying two negative numbers always yields a\n positive result. For example, <b>-1 * -1 = 1.</b>",
+  "syntax": ["sq(n)"],
+  "returns": "float",
+  "type": "function",
+  "category": "math",
+  "subcategory": "calculation",
+  "parameters": [
+    { "name": "n", "description": "number to square", "type": ["float"] }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "brief": "Create a new array and copy each of the values into it",
+  "related": [],
+  "name": "valueArray()",
+  "description": "The version of this method without a parameter creates a new array and copies\n each of the values into it. The version with the <b>int[]</b> parameters\n fills an already-allocated array with the values (more efficient than\n creating a new array each time). If 'array' is null, or not the same size as\n the number of values, a new array will be allocated and returned.",
+  "syntax": [".valueArray()", ".valueArray(array)"],
+  "returns": "int[]",
+  "type": "method",
+  "category": "intdict",
+  "subcategory": "method",
+  "classanchor": "IntDict",
+  "parameters": [
+    {
+      "name": "array",
+      "description": "values to copy into the array",
+      "type": ["int[]"]
+    }
+  ]
+}

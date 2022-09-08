@@ -1,0 +1,18 @@
+{
+  "brief": "Attempts to open an application or file using your platform's\n           launcher",
+  "related": [],
+  "name": "launch()",
+  "description": "Attempts to open an application or file using your platform's launcher. The\n <b>filename</b> parameter is a String specifying the file name and\n location. The location parameter must be a full path name, or the name of\n an executable in the system's PATH. In most cases, using a full path is the\n best option, rather than relying on the system PATH. Be sure to make the\n file executable before attempting to open it (chmod +x).<br />\n <br />\n This function (roughly) emulates what happens when you double-click an\n application or document in the macOS Finder, the Windows Explorer, or your\n favorite Linux file manager. If you're trying to run command line functions\n directly, use the <b>exec()</b> function instead (see below).<br />\n <br />\n This function behaves differently on each platform. On Windows, the\n parameters are sent to the Windows shell via \"cmd /c\". On Mac OS X, the\n \"open\" command is used (type \"man open\" in Terminal.app for documentation).\n On Linux, it first tries gnome-open, then kde-open, but if neither are\n available, it sends the command to the shell and prays that something\n useful happens.<br />\n <br />\n For users familiar with Java, this is not the same as Runtime.exec(),\n because the launcher command is prepended. Instead, the\n <b>exec(String[])</b> function is a shortcut for\n Runtime.getRuntime.exec(String[]). The <b>exec()</b> function is documented\n in the\n <a href=\"http://processing.github.io/processing-javadocs/core/\">JavaDoc</a>\n in the <b>PApplet</b> class.",
+  "syntax": ["launch(args)"],
+  "returns": "Process",
+  "type": "function",
+  "category": "input",
+  "subcategory": "files",
+  "parameters": [
+    {
+      "name": "args",
+      "description": "arguments to the launcher, eg. a filename.",
+      "type": ["String[]"]
+    }
+  ]
+}

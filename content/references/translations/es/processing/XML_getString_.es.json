@@ -1,0 +1,13 @@
+{
+  "brief": "Gets the content of an attribute as a <b>String</b>",
+  "related": [],
+  "name": "getString()",
+  "description": "Returns an attribute value of the element as a <b>String</b>. If the <b>defaultValue</b> \n parameter is specified and the attribute doesn't exist, then <b>defaultValue</b> \n is returned. If no <b>defaultValue</b> is specified and the attribute doesn't \n exist, <b>null</b> is returned.",
+  "syntax": [".getString(name)", ".getString(name, defaultValue)"],
+  "returns": "String",
+  "type": "method",
+  "category": "xml",
+  "subcategory": "method",
+  "classanchor": "XML",
+  "parameters": []
+}

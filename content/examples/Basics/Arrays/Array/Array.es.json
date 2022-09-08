@@ -1,0 +1,9 @@
+{
+  "name": "Arreglo",
+  "title": "Arreglo",
+  "author": "",
+  "level": "Beginner",
+  "order": "0",
+  "description": "Un arreglo es una lista de datos. Cada uno de los datos en un arreglo \n  es identificado por un numero de índice representando su posición en \n el arreglo. Los arreglos empiezan desde el índice 0, lo  que significa que el primer \n  elemento en el arreglo es [0], es segundo elemento es [1], y asi subsecuentemente . \n  En este ejemplo, un arreglo llamado \"coswave\" es creado y \n llenado con valores de coseno. Estos datos son desplegados en 3 \n distintas formas en la pantalla.",
+  "featured": ["Array", "cos_"]
+}

@@ -1,0 +1,12 @@
+{
+  "brief": "Draws all geometry and fonts with jagged (aliased)\n edges and images with hard edges between the pixels\n when enlarged rather than interpolating pixels",
+  "related": [],
+  "name": "noSmooth()",
+  "description": "Draws all geometry and fonts with jagged (aliased)\n edges and images with hard edges between the pixels\n when enlarged rather than interpolating pixels. Note\n that <b>smooth()</b> is active by default, so it is necessary\n to call <b>noSmooth()<b> to disable smoothing of geometry,\n fonts, and images. Since the release of Processing 3.0,\n the <b>noSmooth()</b> function can only be run once for each\n sketch, either at the top of a sketch without a <b>setup()</b>,\n or after the <b>size()</b> function when used in a sketch with\n <b>setup()</b>. See the examples above for both scenarios.",
+  "syntax": ["noSmooth()"],
+  "returns": "void",
+  "type": "function",
+  "category": "environment",
+  "subcategory": "",
+  "parameters": []
+}

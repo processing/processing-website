@@ -1,0 +1,19 @@
+{
+  "brief": "Returns the child element with the specified index value or path",
+  "related": [],
+  "name": "getChild()",
+  "description": "Returns the first of the element's children that matches the <b>name</b> \n parameter.  The name or path is a series of elements and sub-elements, \n separated by slashes.",
+  "syntax": [".getChild(index)", ".getChild(name)"],
+  "returns": "XML",
+  "type": "method",
+  "category": "xml",
+  "subcategory": "method",
+  "classanchor": "XML",
+  "parameters": [
+    {
+      "name": "name",
+      "description": "element name or path/to/element",
+      "type": ["String"]
+    }
+  ]
+}

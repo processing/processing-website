@@ -1,0 +1,42 @@
+---
+name: 'dxf'
+title: 'Exportar DXF'
+library: 'true'
+description: 'Crea archivos DXF para guardar la geometría y poder cargarla en otros programas.Funciona con gráficas basadas en triángulos, incluyendo polígonos, cajas y esferas.'
+---
+
+## Exportar DXF
+
+La biblioteca DXF escribe todos los gráficos basados en triángulos (polígonos, cajas, esferas) en un archivo DXF. Funciona con las funciones beginRaw() y endRaw(). Estas funciones recuperan y guardan los datos de la forma justo antes de que sea presentada en pantalla. A esta altura, la escena completa no es más que una larga lista de líneas y triángulos. Esto significa que la forma creada con la función sphere() estará compuesta de cientos de triángulos en lugar de un sólo objeto. El código fuente está disponible en el repositorio GitHub de [Processing](https://github.com/processing/processing/tree/master/java/libraries/dxf). Por favor reporta cualquier fallo [aquí](https://github.com/processing/processing/issues).
+
+Usa un evento sencillo como un keyPressed() para activarla, para evitar escribir a archivo cada vez que se usa draw(). Por default, el archivo será guardado en el directorio del Sketch. Para verlo desde el Entorno de Processing usa Sketch > Mostrar directorio del Sketch.
+
+Este ejemplo sencillo muestra como usar la Biblioteca:
+```
+import processing.dxf.*;
+
+boolean record;
+
+void setup() {
+  size(500, 500, P3D);
+}
+
+void draw() {
+  if (record) {
+    beginRaw(DXF, "output.dxf");
+  }
+
+  // Haz todo el dibujado aquí
+  if (record) {
+    endRaw();
+    record = false;
+  }
+}
+
+void keyPressed() {
+  // Teclea 'r' para no hacer un millon de archivos
+  if (key == 'r') {
+  	record = true;
+  }
+}
+```

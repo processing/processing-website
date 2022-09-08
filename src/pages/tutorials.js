@@ -95,13 +95,12 @@ const Image = ({ tutorial }) => {
 };
 
 export default Tutorials;
-
 export const query = graphql`
-  query {
+  query($locale: String!) {
     video: allFile(
       filter: {
         sourceInstanceName: { eq: "tutorials" }
-        childMdx: { fields: { locale: { eq: "en" } } }
+        childMdx: { fields: { locale: { eq: $locale } } }
         relativeDirectory: { glob: "video/*" }
       }
       sort: { order: ASC, fields: childrenMdx___frontmatter___order }
@@ -127,7 +126,7 @@ export const query = graphql`
     text: allFile(
       filter: {
         sourceInstanceName: { eq: "tutorials" }
-        childMdx: { fields: { locale: { eq: "en" } } }
+        childMdx: { fields: { locale: { eq: $locale } } }
         relativeDirectory: { glob: "text/*" }
       }
       sort: { order: ASC, fields: childrenMdx___frontmatter___order }

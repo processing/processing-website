@@ -1,0 +1,9 @@
+{
+  "name": "Condicionales 1",
+  "title": "Condicionales 1-original",
+  "author": "",
+  "level": "Principiante",
+  "order": "2",
+  "description": "Las condiciones son como preguntas. \n Ellas permiten al programa decidir una acción si \n la respuesta a una pregunta es \"true\" (verdadera) o realizar otra acción \n si la respuesta es \"false.\" (false) <br /> \n  Las preguntas hechas son siempre sentencias lógicas\n  o relacionales. Por ejemplo, si la variable 'i' es \n igual a cero entonces dibuja una línea.",
+  "featured": ["if"]
+}

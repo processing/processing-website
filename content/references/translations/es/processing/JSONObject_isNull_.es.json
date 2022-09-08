@@ -1,0 +1,15 @@
+{
+  "brief": "Determines if the value associated with the key is <b>null</b>, that is has \n no defined value (<b>false</b>) or if it has a value (<b>true</b>)",
+  "related": [],
+  "name": "isNull()",
+  "description": "Determines if the value associated with the key is <b>null</b>, that is has \n no defined value (<b>false</b>) or if it has a value (<b>true</b>).",
+  "syntax": [".isNull(key)"],
+  "returns": "boolean",
+  "type": "method",
+  "category": "",
+  "subcategory": "",
+  "classanchor": "JSONObject",
+  "parameters": [
+    { "name": "key", "description": "A key string.", "type": ["String"] }
+  ]
+}

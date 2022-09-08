@@ -1,0 +1,12 @@
+{
+  "brief": "Para/sale del programa",
+  "related": [],
+  "name": "exit()",
+  "description": "Para/sale del programa. Programas sin una función <b>draw()</b>\n salen automáticamente después de que la última línea se ha ejecutado, pero programas con\n <b>draw()</b> corren continuamente hasta que el programa es parado manualmente o un \n <b>exit()</b> es ejecutado.<br />\n <br />\n Mas que terminar inmediatamente, <b>exit()</b> causará la salida del sketch\n después de que <b>draw()</b> se haya completado (o después de que el <b>setup()</b>\n se complete si fue llamado durante una función <b>setup()</b> ).<br />\n <br />\n Para los programadores Java, esto <em>no</em> es lo mismo que System.exit().\n Más aun, System.exit() no debe ser usado porque cerrar una aplicación asi \n mientras <b>draw()</b> esta corriendo puede causar un crash\n (particularmente con P3D).",
+  "syntax": ["exit()"],
+  "returns": "void",
+  "type": "function",
+  "category": "structure",
+  "subcategory": "",
+  "parameters": []
+}

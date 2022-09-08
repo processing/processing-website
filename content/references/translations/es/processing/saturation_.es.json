@@ -1,0 +1,18 @@
+{
+  "brief": "Extracts the saturation value from a color",
+  "related": ["red_", "green_", "blue_", "alpha_", "hue_", "brightness_"],
+  "name": "saturation()",
+  "description": "Extracts the saturation value from a color.",
+  "syntax": ["saturation(rgb)"],
+  "returns": "float",
+  "type": "function",
+  "category": "color",
+  "subcategory": "creating & reading",
+  "parameters": [
+    {
+      "name": "rgb",
+      "description": "any value of the color datatype",
+      "type": ["int"]
+    }
+  ]
+}
