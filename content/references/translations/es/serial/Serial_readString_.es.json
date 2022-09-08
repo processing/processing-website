@@ -1,0 +1,19 @@
+{
+  "brief": "Returns all the data from the buffer as a <b>String</b> or <b>null</b> if there is nothing available",
+  "related": [],
+  "name": "readString()",
+  "description": "Returns all the data from the buffer as a <b>String</b> or <b>null</b> if there is nothing available. \n This method assumes the incoming characters are ASCII. If you want to transfer Unicode data, \n first convert the String to a byte stream in the representation of your choice (i.e. UTF8 or \n two-byte Unicode data), and send it as a byte array.",
+  "syntax": ["serial.readString()"],
+  "returns": "String",
+  "type": "method",
+  "category": "serial",
+  "subcategory": "",
+  "classanchor": "Serial",
+  "parameters": [
+    {
+      "name": "serial",
+      "description": " any variable of type Serial",
+      "type": ["Serial"]
+    }
+  ]
+}

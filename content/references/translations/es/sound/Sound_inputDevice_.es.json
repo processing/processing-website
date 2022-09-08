@@ -1,0 +1,19 @@
+{
+  "brief": "Choose the device (sound card) which should be used for grabbing audio input using AudioIn.",
+  "related": [],
+  "name": "inputDevice()",
+  "description": "Choose the device (sound card) which should be used for grabbing audio input\n using AudioIn.  Note that this setting affects the choice of sound card, which \n is not necessarily the same as the number of the input channel. If your sound \n card has more than one input channel, you can specify which channel to use in\n the constructor of the AudioIn class.",
+  "syntax": [".inputDevice(deviceId)"],
+  "returns": "void",
+  "type": "method",
+  "category": "configuration",
+  "subcategory": "Sound",
+  "classanchor": "Sound",
+  "parameters": [
+    {
+      "name": "deviceId",
+      "description": "the device id obtained from Sound.list()",
+      "type": ["int"]
+    }
+  ]
+}

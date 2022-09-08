@@ -1,0 +1,23 @@
+{
+  "brief": "Sorts an array of numbers from smallest to largest and puts an\n           array of words in alphabetical order",
+  "related": ["reverse_"],
+  "name": "sort()",
+  "description": "Sorts an array of numbers from smallest to largest, or puts an array of\n words in alphabetical order. The original array is not modified; a\n re-ordered array is returned. The <b>count</b> parameter states the number\n of elements to sort. For example, if there are 12 elements in an array and\n <b>count</b> is set to 5, only the first 5 elements in the array will be\n sorted. <!--As of release 0126, the alphabetical ordering is case\n insensitive.-->",
+  "syntax": ["sort(list)", "sort(list, count)"],
+  "returns": "byte[], char[], int[], float[], or String[]",
+  "type": "function",
+  "category": "data",
+  "subcategory": "array functions",
+  "parameters": [
+    {
+      "name": "list",
+      "description": "array to sort",
+      "type": ["byte[]", "char[]", "int[]", "float[]", "String[]"]
+    },
+    {
+      "name": "count",
+      "description": "number of elements to sort, starting from 0",
+      "type": ["int"]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Patrones",
+  "title": "Patrones",
+  "author": "",
+  "level": "Intermedio",
+  "order": "2",
+  "description": "Mueve el cursor sobre la imagen para dibujar por software \n  respondiendo a la velocidad del mouse.",
+  "featured": ["abs_", "stroke_", "ellipse_"]
+}

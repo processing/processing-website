@@ -1,7 +1,7 @@
 import React, { memo, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
-import { LocalizedLink as Link } from 'gatsby-theme-i18n';
+import { useLocalization, LocalizedLink as Link } from 'gatsby-theme-i18n';
 import classnames from 'classnames';
 import { useIntl } from 'react-intl';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
@@ -15,12 +15,11 @@ import { ExampleItem } from '../../components/examples/ExamplesList';
 import Breadcrumbs from '../../components/Breadcrumbs';
 
 import { referencePath } from '../../utils/paths';
-import { useTree, useSidebar } from '../../hooks';
+import { useTree, useSidebar, usePdes } from '../../hooks';
 import {
   usePreparedExample,
   usePreparedExamples,
   useRelatedExamples,
-  useOrderedPdes,
   useTrail
 } from '../../hooks/examples';
 
@@ -30,12 +29,13 @@ import * as grid from '../../styles/grid.module.css';
 const ExampleTemplate = ({ data, pageContext }) => {
   const [showSidebar, setShowSidebar] = useSidebar('examples');
   const intl = useIntl();
+  const { locale } = useLocalization();
 
   const { name, related } = pageContext;
   const { image, allExamples, relatedImages, liveSketch } = data;
 
   const example = usePreparedExample(data.example);
-  const pdes = useOrderedPdes(name, data.pdes.nodes);
+  const pdes = usePdes(data.pdes.nodes, locale, name);
   const examples = usePreparedExamples(allExamples.nodes, relatedImages.nodes);
   const tree = useTree(examples);
   const relatedExamples = useRelatedExamples(examples, related);
@@ -193,6 +193,7 @@ export const query = graphql`
     example: file(
       fields: { name: { eq: $name }, lang: { eq: $locale } }
       sourceInstanceName: { eq: "examples" }
+      extension: { eq: "json" }
     ) {
       relativeDirectory
       childJson {
@@ -207,12 +208,17 @@ export const query = graphql`
       filter: {
         sourceInstanceName: { eq: "examples" }
         relativeDirectory: { eq: $relDir }
-        extension: { regex: "/(pde)/" }
+        fields: { lang: { in: ["en", $locale] } }
+        extension: { eq: "pde" }
       }
     ) {
       nodes {
         name
-        internal {
+        fields {
+          lang
+          name
+        }
+        childRawCode {
           content
         }
       }
@@ -240,7 +246,7 @@ export const query = graphql`
     allExamples: allFile(
       filter: {
         sourceInstanceName: { eq: "examples" }
-        fields: { lang: { eq: "en" } }
+        fields: { lang: { eq: $locale } }
         extension: { eq: "json" }
         relativeDirectory: { regex: "/^((?!data).)*$/" }
       }
@@ -250,6 +256,9 @@ export const query = graphql`
         name
         relativeDirectory
         relativePath
+        fields {
+          name
+        }
         childJson {
           name
           title

@@ -1,0 +1,9 @@
+{
+  "brief": "Es un alias para <b>TWO_PI</b>",
+  "related": ["PI", "TWO_PI", "HALF_PI", "QUARTER_PI"],
+  "name": "TAU",
+  "description": "<b>TAU</b>  es una constante matemática con el valor 6.2831855.Es la\n constante relacionando la circunferencia de un circulo con su radio.\n Es útil en combinación con funciones trigonométricas como <b>sin()</b> y\n <b>cos()</b>.",
+  "category": "constants",
+  "subcategory": "",
+  "type": "other"
+}

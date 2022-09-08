@@ -1,0 +1,4 @@
+{
+  "name": "Archivar Sketch",
+  "description": "Archiva una copia del sketch actual en formato .zip. El archivo es colocado en el mismo directorio que el sketch."
+}

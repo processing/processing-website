@@ -5,6 +5,11 @@ require('dotenv').config({
 const path = require('path');
 
 module.exports = {
+  flags: {
+    DEV_SSR: true,
+    FAST_DEV: false,
+    PRESERVE_FILE_DOWNLOAD_CACHE: false
+  },
   siteMetadata: {
     siteUrl: `https://processing.org/`
   },
@@ -36,19 +41,16 @@ module.exports = {
           require('postcss-normalize'),
           require('postcss-nesting'),
           require('postcss-custom-properties')({
-            importFrom: './src/styles/variables.css'
+            importFrom: './src/styles/variables.css',
+            // Do this to prevent warnings in the console output.
+            disableDeprecationNotice: true
           }),
           require('postcss-calc')(),
           require('postcss-custom-media')({
             importFrom: './src/styles/variables.css'
-          })
+          }),
+          require('postcss-reporter')
         ]
-      }
-    },
-    {
-      resolve: `gatsby-transformer-json`,
-      options: {
-        typeName: `json`
       }
     },
     {
@@ -68,14 +70,14 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'json',
+        name: 'reference',
         path: path.resolve(__dirname, 'content/references/translations')
       }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'in-examples',
+        name: 'reference-examples',
         path: path.resolve(__dirname, 'content/references/examples')
       }
     },
@@ -91,32 +93,6 @@ module.exports = {
       options: {
         name: 'examples',
         path: path.resolve(__dirname, 'content/examples')
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-mdx',
-      options: {
-        plugins: [],
-        remarkPlugins: [
-          require('remark-slug'),
-          require('remark-unwrap-images')
-        ],
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1200
-            }
-          },
-          `gatsby-remark-copy-linked-files`
-        ]
-      }
-    },
-    {
-      resolve: `gatsby-transformer-code`,
-      options: {
-        name: `examples`,
-        extensions: ['js']
       }
     },
     {
@@ -152,6 +128,45 @@ module.exports = {
       options: {
         name: `download`,
         path: path.resolve(__dirname, 'content/download')
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        plugins: [],
+        remarkPlugins: [
+          require('remark-slug'),
+          require('remark-unwrap-images')
+        ],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200
+            }
+          },
+          `gatsby-remark-copy-linked-files`
+        ]
+      }
+    },
+    {
+      resolve: `gatsby-transformer-json`,
+      options: {
+        typeName: `json`
+      }
+    },
+    {
+      resolve: `gatsby-transformer-code`,
+      options: {
+        name: 'reference-examples',
+        extensions: ['pde']
+      }
+    },
+    {
+      resolve: `gatsby-transformer-code`,
+      options: {
+        name: 'examples',
+        extensions: ['js', 'pde']
       }
     },
     `gatsby-plugin-image`,

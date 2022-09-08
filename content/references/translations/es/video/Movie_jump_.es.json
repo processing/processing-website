@@ -1,0 +1,19 @@
+{
+  "brief": "Jumps to a specific location within a movie.",
+  "related": [],
+  "name": "jump()",
+  "description": "Jumps to a specific location within a movie. The parameter <b>where</b>\n is in terms of seconds. For example, if the movie is 12.2 seconds long,\n calling <b>jump(6.1)</b> would go to the middle of the movie.",
+  "syntax": [".jump(where)"],
+  "returns": "void",
+  "type": "method",
+  "category": "movie",
+  "subcategory": "",
+  "classanchor": "Movie",
+  "parameters": [
+    {
+      "name": "where",
+      "description": "position to jump to specified in seconds",
+      "type": ["float"]
+    }
+  ]
+}

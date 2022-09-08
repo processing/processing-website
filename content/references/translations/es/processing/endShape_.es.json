@@ -1,0 +1,18 @@
+{
+  "brief": "the companion to <b>beginShape()</b> and may only be called after <b>beginShape()</b>",
+  "related": ["PShape", "beginShape_"],
+  "name": "endShape()",
+  "description": "The <b>endShape()</b> function is the companion to <b>beginShape()</b>\n and may only be called after <b>beginShape()</b>. When <b>endshape()</b>\n is called, all of image data defined since the previous call to\n <b>beginShape()</b> is written into the image buffer. The constant CLOSE\n as the value for the MODE parameter to close the shape (to connect the\n beginning and the end).",
+  "syntax": ["endShape()", "endShape(mode)"],
+  "returns": "void",
+  "type": "function",
+  "category": "shape",
+  "subcategory": "vertex",
+  "parameters": [
+    {
+      "name": "mode",
+      "description": "use CLOSE to close the shape",
+      "type": ["int"]
+    }
+  ]
+}

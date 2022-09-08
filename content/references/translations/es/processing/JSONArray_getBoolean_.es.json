@@ -1,0 +1,33 @@
+{
+  "brief": "Gets the boolean value associated with the specified index",
+  "related": [
+    "JSONArray_getInt_",
+    "JSONArray_getFloat_",
+    "JSONArray_getString_"
+  ],
+  "name": "getBoolean()",
+  "description": "Gets the boolean value associated with the specified index.",
+  "syntax": [".getBoolean(index)", ".getBoolean(index, defaultValue)"],
+  "returns": "boolean",
+  "type": "method",
+  "category": "jsonarray",
+  "subcategory": "method",
+  "classanchor": "JSONArray",
+  "parameters": [
+    {
+      "name": "index",
+      "description": "must be between 0 and length() - 1",
+      "type": ["int"]
+    },
+    {
+      "name": "index",
+      "description": "The index must be between 0 and length() - 1.",
+      "type": ["int"]
+    },
+    {
+      "name": "defaultValue",
+      "description": "A boolean default.",
+      "type": ["boolean"]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "brief": "Store an <b>integer</b> value in the specified column",
+  "related": ["TableRow_setFloat_", "TableRow_setString_"],
+  "name": "setInt()",
+  "description": "Stores an <b>integer</b> value in the <b>TableRow</b>'s specified column. The column \n may be specified by either its ID or title.",
+  "syntax": [".setInt(column, value)", ".setInt(columnName, value)"],
+  "returns": "void",
+  "type": "method",
+  "category": "tablerow",
+  "subcategory": "method",
+  "classanchor": "TableRow",
+  "parameters": [
+    {
+      "name": "column",
+      "description": "ID number of the target column",
+      "type": ["int"]
+    },
+    { "name": "value", "description": "value to assign", "type": ["int"] },
+    {
+      "name": "columnName",
+      "description": "title of the target column",
+      "type": ["String"]
+    }
+  ]
+}

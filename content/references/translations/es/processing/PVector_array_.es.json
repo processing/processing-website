@@ -1,0 +1,13 @@
+{
+  "brief": "Return a representation of the vector as a float array",
+  "related": [],
+  "name": "array()",
+  "description": "Return a representation of this vector as a float array. This is only for\n temporary use. If used in any other fashion, the contents should be copied by\n using the <b>copy()</b> method to copy into your own array.",
+  "syntax": [".array()"],
+  "returns": "float[]",
+  "type": "method",
+  "category": "pvector",
+  "subcategory": "method",
+  "classanchor": "PVector",
+  "parameters": []
+}

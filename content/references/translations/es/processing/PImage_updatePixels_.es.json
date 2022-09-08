@@ -1,0 +1,31 @@
+{
+  "brief": "Updates the image with the data in its <b>pixels[]</b> array",
+  "related": [],
+  "name": "updatePixels()",
+  "description": "Updates the display window with the data in the <b>pixels[]</b> array. Use in\n conjunction with <b>loadPixels()</b>. If you're only reading pixels from the\n array, there's no need to call <b>updatePixels()</b> &mdash; updating is only\n necessary to apply changes.\n\n ",
+  "syntax": ["pimg.updatePixels()", "pimg.updatePixels(x, y, w, h)"],
+  "returns": "void",
+  "type": "method",
+  "category": "pimage",
+  "subcategory": "pixels",
+  "classanchor": "PImage",
+  "parameters": [
+    {
+      "name": "pimg",
+      "description": " any object of type PImage",
+      "type": ["PImage"]
+    },
+    {
+      "name": "x",
+      "description": "x-coordinate of the upper-left corner",
+      "type": ["int"]
+    },
+    {
+      "name": "y",
+      "description": "y-coordinate of the upper-left corner",
+      "type": ["int"]
+    },
+    { "name": "w", "description": "width", "type": ["int"] },
+    { "name": "h", "description": "height", "type": ["int"] }
+  ]
+}

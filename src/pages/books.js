@@ -29,6 +29,10 @@ const Books = ({ data }) => {
         <h3 className={grid.col}>{intl.formatMessage({ id: 'booksIntro' })}</h3>
         <ul className={classnames(grid.col, grid.grid, css.booksList)}>
           {books.map((book, i) => {
+            let langBook;
+            if (book.language) {
+              langBook = intl.formatMessage({ id: book.language });
+            }
             return (
               <li key={`${book.title}-${i}`} className={css.listItem}>
                 <div className={classnames(grid.col, css.cover)}>
@@ -49,7 +53,8 @@ const Books = ({ data }) => {
                   <p className={css.details}>
                     {intl.formatMessage({ id: 'published' })} {book.published}.{' '}
                     {book.details}{' '}
-                    {book.language && `Text in ${book.language}.`}
+                    {langBook && intl.formatMessage({ id: 'textIn' })}{' '}
+                    {langBook}
                   </p>
 
                   {book.buyList && (
@@ -82,12 +87,12 @@ const Books = ({ data }) => {
 export default Books;
 
 export const query = graphql`
-  query {
+  query($locale: String!) {
     books: allFile(
       filter: {
         sourceInstanceName: { eq: "books" }
         extension: { eq: "mdx" }
-        childMdx: { fields: { locale: { eq: "en" } } }
+        childMdx: { fields: { locale: { eq: $locale } } }
       }
       sort: { order: DESC, fields: childrenMdx___frontmatter___published }
     ) {

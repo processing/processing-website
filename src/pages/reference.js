@@ -17,64 +17,65 @@ import { usePreparedItems } from '../hooks/reference';
 import * as css from '../styles/pages/reference.module.css';
 import * as grid from '../styles/grid.module.css';
 
-const sortOrder = {
-  Structure: [],
-  Environment: [],
-  Data: [
-    '',
-    'Primitive',
-    'Composite',
-    'Conversion',
-    'String Functions',
-    'Array Functions'
-  ],
-  Control: [
-    '',
-    'Relational Operators',
-    'Iteration',
-    'Conditionals',
-    'Logical Operators'
-  ],
-  Shape: [
-    '',
-    '2D Primitives',
-    'Curves',
-    '3D Primitives',
-    'Attributes',
-    'Vertex',
-    'Loading & Displaying'
-  ],
-  Color: ['', 'Setting', 'Creating & Reading'],
-  Image: ['', 'Loading & Displaying', 'Textures', 'Pixels'],
-  Typography: ['', 'Loading & Displaying', 'Attributes', 'Metrics'],
-  Transform: [],
-  'Lights Camera': [
-    '',
-    'Lights',
-    'Camera',
-    'Coordinates',
-    'Material Properties'
-  ],
-  Rendering: ['', 'Shaders'],
-  Input: ['', 'Mouse', 'Keyboard', 'Files', 'Time & Date'],
-  Output: ['', 'Text Area', 'Image', 'Files'],
-  Math: [
-    '',
-    'Operators',
-    'Bitwise Operators',
-    'Calculation',
-    'Trigonometry',
-    'Random'
-  ],
-  Constants: []
-};
+// const sortOrder = {
+//   Structure: [],
+//   Environment: [],
+//   Data: [
+//     '',
+//     'Primitive',
+//     'Composite',
+//     'Conversion',
+//     'String Functions',
+//     'Array Functions'
+//   ],
+//   Control: [
+//     '',
+//     'Relational Operators',
+//     'Iteration',
+//     'Conditionals',
+//     'Logical Operators'
+//   ],
+//   Shape: [
+//     '',
+//     '2D Primitives',
+//     'Curves',
+//     '3D Primitives',
+//     'Attributes',
+//     'Vertex',
+//     'Loading & Displaying'
+//   ],
+//   Color: ['', 'Setting', 'Creating & Reading'],
+//   Image: ['', 'Loading & Displaying', 'Textures', 'Pixels'],
+//   Typography: ['', 'Loading & Displaying', 'Attributes', 'Metrics'],
+//   Transform: [],
+//   'Lights Camera': [
+//     '',
+//     'Lights',
+//     'Camera',
+//     'Coordinates',
+//     'Material Properties'
+//   ],
+//   Rendering: ['', 'Shaders'],
+//   Input: ['', 'Mouse', 'Keyboard', 'Files', 'Time & Date'],
+//   Output: ['', 'Text Area', 'Image', 'Files'],
+//   Math: [
+//     '',
+//     'Operators',
+//     'Bitwise Operators',
+//     'Calculation',
+//     'Trigonometry',
+//     'Random'
+//   ],
+//   Constants: []
+// };
 
 const Reference = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const intl = useIntl();
-
   const items = usePreparedItems(data.items.nodes, 'processing');
-  const tree = useTree(items, sortOrder);
+
+  // const tree = useTree(items, sortOrder);
+  const tree = useTree(items, '');
   const filtered = useFilteredTree(tree, searchTerm);
   const categories = Object.keys(tree);
 
@@ -107,12 +108,11 @@ const Reference = ({ data }) => {
 };
 
 export default Reference;
-
 export const query = graphql`
-  query {
+  query($locale: String!) {
     items: allFile(
       filter: {
-        fields: { lang: { eq: "en" }, lib: { eq: "processing" } }
+        fields: { lang: { eq: $locale }, lib: { eq: "processing" } }
         childJson: { type: { nin: ["method", "field"] } }
       }
     ) {

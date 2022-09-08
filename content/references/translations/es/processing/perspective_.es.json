@@ -1,0 +1,33 @@
+{
+  "brief": "Sets a perspective projection applying foreshortening, making distant\n objects appear smaller than closer ones",
+  "related": [],
+  "name": "perspective()",
+  "description": "Sets a perspective projection applying foreshortening, making distant\n objects appear smaller than closer ones. The parameters define a viewing\n volume with the shape of truncated pyramid. Objects near to the front of\n the volume appear their actual size, while farther objects appear\n smaller. This projection simulates the perspective of the world more\n accurately than orthographic projection. The version of perspective\n without parameters sets the default perspective and the version with\n four parameters allows the programmer to set the area precisely. The\n default values are: <b>perspective(PI/3.0, width/height, cameraZ/10.0,\n cameraZ*10.0)</b> where cameraZ is <b>((height/2.0) / tan(PI*60.0/360.0))</b>",
+  "syntax": ["perspective()", "perspective(fovy, aspect, zNear, zFar)"],
+  "returns": "void",
+  "type": "function",
+  "category": "lights_camera",
+  "subcategory": "camera",
+  "parameters": [
+    {
+      "name": "fovy",
+      "description": "field-of-view angle (in radians) for vertical direction",
+      "type": ["float"]
+    },
+    {
+      "name": "aspect",
+      "description": "ratio of width to height",
+      "type": ["float"]
+    },
+    {
+      "name": "zNear",
+      "description": "z-position of nearest clipping plane",
+      "type": ["float"]
+    },
+    {
+      "name": "zFar",
+      "description": "z-position of farthest clipping plane",
+      "type": ["float"]
+    }
+  ]
+}

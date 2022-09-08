@@ -1,0 +1,13 @@
+{
+  "brief": "Sets the content of an element",
+  "related": [],
+  "name": "setContent()",
+  "description": "Sets the element's content, which is specified as a <b>String</b>.",
+  "syntax": [".setContent(text)"],
+  "returns": "void",
+  "type": "method",
+  "category": "xml",
+  "subcategory": "method",
+  "classanchor": "XML",
+  "parameters": []
+}

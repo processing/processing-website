@@ -1,0 +1,53 @@
+{
+  "brief": "This is a pink noise generator.",
+  "methods": [
+    {
+      "anchor": "PinkNoise_play_",
+      "name": "play()",
+      "desc": "Start the generator."
+    },
+    {
+      "anchor": "PinkNoise_set_",
+      "name": "set()",
+      "desc": "Sets amplitude, add and pan position with one method."
+    },
+    {
+      "anchor": "PinkNoise_amp_",
+      "name": "amp()",
+      "desc": "Change the amplitude/volume of this sound."
+    },
+    {
+      "anchor": "PinkNoise_add_",
+      "name": "add()",
+      "desc": "Offset the output of this generator by a fixed value."
+    },
+    {
+      "anchor": "PinkNoise_pan_",
+      "name": "pan()",
+      "desc": "Pan the generator in a stereo panorama."
+    },
+    {
+      "anchor": "PinkNoise_stop_",
+      "name": "stop()",
+      "desc": "Stops the Pink Noise generator."
+    }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "This is a pink noise generator. Pink Noise has a decrease of 3dB per octave.",
+  "type": "class",
+  "constructors": ["PinkNoise(parent)"],
+  "related": [],
+  "name": "PinkNoise",
+  "classanchor": "sound/PinkNoise",
+  "category": "noise",
+  "subcategory": "PinkNoise",
+  "parameters": [
+    {
+      "name": "parent",
+      "description": "typically use \"this\"",
+      "type": ["PApplet"]
+    }
+  ]
+}

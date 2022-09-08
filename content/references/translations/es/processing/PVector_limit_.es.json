@@ -1,0 +1,19 @@
+{
+  "brief": "Limit the magnitude of the vector",
+  "related": [],
+  "name": "limit()",
+  "description": "Limit the magnitude of this vector to the value used for the <b>max</b> parameter.",
+  "syntax": [".limit(max)"],
+  "returns": "PVector",
+  "type": "method",
+  "category": "pvector",
+  "subcategory": "method",
+  "classanchor": "PVector",
+  "parameters": [
+    {
+      "name": "max",
+      "description": "the maximum magnitude for the vector",
+      "type": ["float"]
+    }
+  ]
+}

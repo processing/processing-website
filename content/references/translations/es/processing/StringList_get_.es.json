@@ -1,0 +1,13 @@
+{
+  "brief": "Get an entry at a particular index",
+  "related": [],
+  "name": "get()",
+  "description": "Get an entry at a particular index.",
+  "syntax": [".get(index)"],
+  "returns": "String",
+  "type": "method",
+  "category": "stringlist",
+  "subcategory": "method",
+  "classanchor": "StringList",
+  "parameters": []
+}

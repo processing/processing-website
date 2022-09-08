@@ -1,0 +1,9 @@
+{
+  "brief": "QUARTER_PI  es una constante matemática con el valor 0.7853982",
+  "related": ["PI", "TWO_PI", "TAU", "HALF_PI"],
+  "name": "QUARTER_PI",
+  "description": "<b>QUARTER_PI</b>  es una constante matemática con el valor 0.7853982. Es\n un cuarto de la proporción entre la circunferencia de un circulo y su diamétro.\nEs útil en combinación con las funciones trigonométricas\n <b>sin()</b> y <b>cos()</b>.",
+  "category": "constants",
+  "subcategory": "",
+  "type": "other"
+}

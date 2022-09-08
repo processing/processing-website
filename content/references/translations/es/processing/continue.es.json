@@ -1,0 +1,11 @@
+{
+  "name": "continue",
+  "brief": "When run inside of a <b>for</b> or <b>while</b>, it skips the remainder of the block and starts the next iteration",
+  "description": "When run inside of a <b>for</b> or <b>while</b>, it skips the remainder of the block and starts the next iteration.\n",
+  "related": ["for", "while"],
+  "syntax": ["continue"],
+  "returns": "",
+  "type": "function",
+  "category": "Control",
+  "subcategory": "Conditionals"
+}

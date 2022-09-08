@@ -1,0 +1,28 @@
+{
+  "name": ". (punto)",
+  "brief": "Provee acceso a los datos y métodos de un objeto",
+  "description": "Provee acceso a los datos y métodos de un objeto. Un objeto es una instancia de una clase y puede contener tanto métodos (funciones del objeto) como datos (variables y constantes del objeto), especificados en la definición de la clase. El operador punto dirige el programa a la información encapsulada dentro del objeto.\n",
+  "related": ["Object"],
+  "syntax": ["object.method()", "object.data"],
+  "returns": "",
+  "type": "function",
+  "category": "structure",
+  "subcategory": "",
+  "parameters": [
+    {
+      "name": "object",
+      "description": "el objeto a ser accesado",
+      "type": []
+    },
+    {
+      "name": "method()",
+      "description": "un método encapsulado en el objeto",
+      "type": []
+    },
+    {
+      "name": "data",
+      "description": "una variable o constante encapsulada en el objeto",
+      "type": []
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "brief": "Remove a key/value pair",
+  "related": [],
+  "name": "remove()",
+  "description": "Remove a key/value pair",
+  "syntax": [".remove(key)"],
+  "returns": "String",
+  "type": "method",
+  "category": "stringdict",
+  "subcategory": "method",
+  "classanchor": "StringDict",
+  "parameters": []
+}

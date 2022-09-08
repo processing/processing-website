@@ -1,0 +1,33 @@
+{
+  "brief": "This is a volume analyzer.",
+  "methods": [
+    {
+      "anchor": "Amplitude_analyze_",
+      "name": "analyze()",
+      "desc": "Queries a value from the analyzer and returns a float between 0. and 1."
+    },
+    {
+      "anchor": "Amplitude_input_",
+      "name": "input()",
+      "desc": "Define the audio input for the analyzer."
+    }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "This is a volume analyzer. It calculates the root mean square of the\n amplitude of each audio block and returns that value.",
+  "type": "class",
+  "constructors": ["Amplitude(parent)"],
+  "related": [],
+  "name": "Amplitude",
+  "classanchor": "sound/Amplitude",
+  "category": "analysis",
+  "subcategory": "amplitude",
+  "parameters": [
+    {
+      "name": "parent",
+      "description": "typically use \"this\"",
+      "type": ["PApplet"]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "brief": "Returns the total number of rows in a <b>Table</b>",
+  "related": ["Table_getColumnCount_"],
+  "name": "getRowCount()",
+  "description": "Returns the total number of rows in a <b>Table</b>.",
+  "syntax": [".getRowCount()"],
+  "returns": "int",
+  "type": "method",
+  "category": "table",
+  "subcategory": "method",
+  "classanchor": "Table",
+  "parameters": []
+}

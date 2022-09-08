@@ -1,0 +1,37 @@
+{
+  "brief": "Writes the contents of a <b>JSONArray</b> object to a file",
+  "related": [
+    "JSONObject",
+    "JSONArray",
+    "loadJSONObject_",
+    "loadJSONArray_",
+    "saveJSONObject_"
+  ],
+  "name": "saveJSONArray()",
+  "description": "Writes the contents of a <b>JSONArray</b> object to a file. By default,\n this file is saved to the sketch's folder. This folder is opened by\n selecting \"Show Sketch Folder\" from the \"Sketch\" menu.<br />\n <br />\n Alternatively, the file can be saved to any location on the computer by\n using an absolute path (something that starts with / on Unix and Linux, or\n a drive letter on Windows).<br />\n <br />\n All files loaded and saved by the Processing API use UTF-8 encoding.",
+  "syntax": [
+    "saveJSONArray(json, filename)",
+    "saveJSONArray(json, filename, options)"
+  ],
+  "returns": "boolean",
+  "type": "function",
+  "category": "output",
+  "subcategory": "files",
+  "parameters": [
+    {
+      "name": "json",
+      "description": "the JSONArray to save",
+      "type": ["JSONArray"]
+    },
+    {
+      "name": "filename",
+      "description": "the name of the file to save to",
+      "type": ["String"]
+    },
+    {
+      "name": "options",
+      "description": "\"compact\" and \"indent=N\", replace N with the number of spaces",
+      "type": ["String"]
+    }
+  ]
+}

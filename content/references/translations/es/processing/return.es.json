@@ -1,0 +1,29 @@
+{
+  "name": "return",
+  "brief": "Keyword used to indicate the value to return from a function",
+  "description": "Keyword used to indicate the value to return from a function. The value being returned must be the same datatype as defined in the function declaration. Functions declared with <b>void</b> can't return values and shouldn't include a return value.<br />\n<br />\nThe keyword <b>return</b> may also be used to break out of a function, thus not allowing the program to  the remaining statements. (See the third example above.)\n",
+  "related": [],
+  "syntax": ["type function {", "  statements", "  return value", "}"],
+  "returns": "",
+  "type": "function",
+  "category": "structure",
+  "subcategory": "",
+  "parameters": [
+    {
+      "name": "type",
+      "description": "boolean, byte, char, int, float, String, boolean[], byte[], char[], int[], float[], or String[]",
+      "type": []
+    },
+    {
+      "name": "function",
+      "description": "the function that is being defined",
+      "type": []
+    },
+    { "name": "statements", "description": "any valid statements", "type": [] },
+    {
+      "name": "value",
+      "description": "must be the same datatype as the \"type\" parameter",
+      "type": []
+    }
+  ]
+}

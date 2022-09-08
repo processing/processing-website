@@ -1,0 +1,49 @@
+{
+  "brief": "Set the components of the vector",
+  "related": [],
+  "name": "set()",
+  "description": "Sets the x, y, and z component of the vector using two or three separate\n variables, the data from a <b>PVector</b>, or the values from a float array.",
+  "syntax": [".set(x, y, z)", ".set(x, y)", ".set(v)", ".set(source)"],
+  "returns": "PVector",
+  "type": "method",
+  "category": "pvector",
+  "subcategory": "method",
+  "classanchor": "PVector",
+  "parameters": [
+    {
+      "name": "x",
+      "description": "the x component of the vector",
+      "type": ["float"]
+    },
+    {
+      "name": "y",
+      "description": "the y component of the vector",
+      "type": ["float"]
+    },
+    {
+      "name": "z",
+      "description": "the z component of the vector",
+      "type": ["float"]
+    },
+    {
+      "name": "x",
+      "description": "the x component of the vector",
+      "type": ["float"]
+    },
+    {
+      "name": "y",
+      "description": "the y component of the vector",
+      "type": ["float"]
+    },
+    {
+      "name": "v",
+      "description": "any variable of type PVector",
+      "type": ["PVector"]
+    },
+    {
+      "name": "source",
+      "description": "array to copy from",
+      "type": ["float[]"]
+    }
+  ]
+}

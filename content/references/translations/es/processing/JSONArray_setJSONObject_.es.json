@@ -1,0 +1,28 @@
+{
+  "brief": "Sets the value of the <b>JSONObject</b> with the index value",
+  "related": [
+    "JSONArray_setJSONArray_",
+    "JSONArray_getJSONObject_",
+    "JSONArray_getJSONArray_"
+  ],
+  "name": "setJSONObject()",
+  "description": "Sets the value of the <b>JSONObject</b> with the index value.",
+  "syntax": [".setJSONObject(index, value)"],
+  "returns": "JSONArray",
+  "type": "method",
+  "category": "jsonarray",
+  "subcategory": "method",
+  "classanchor": "JSONArray",
+  "parameters": [
+    {
+      "name": "index",
+      "description": "the index value to target",
+      "type": ["int"]
+    },
+    {
+      "name": "value",
+      "description": "the value to assign",
+      "type": ["JSONObject"]
+    }
+  ]
+}

@@ -18,22 +18,15 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   }
 };
 
-exports.createPages = async ({ actions, graphql, reporter }) => {
-  await Promise.all([
-    createReference(actions, graphql),
-    createExamples(actions, graphql),
-    createTutorials(actions, graphql),
-    createDownload(actions, graphql)
-  ]);
-};
-
 exports.onCreateNode = ({ node, actions, getNode, loadNodeContent }) => {
   const { createNodeField } = actions;
 
-  if (node.internal.mediaType === `application/json`) {
-    const value = createFilePath({ node, getNode });
-    const dir = node.relativeDirectory.split('/');
-    const library = dir[1];
+  // Handle locale naming convention in .json and .pde files
+  if (
+    node.internal.type === 'File' &&
+    (node.internal.mediaType === `application/json` ||
+      node.internal.mediaType === `text/x-processing`)
+  ) {
     const nameSplit = node.name.split('.');
     const name = nameSplit[0];
     const lang = nameSplit[1] ? nameSplit[1] : 'en';
@@ -49,41 +42,66 @@ exports.onCreateNode = ({ node, actions, getNode, loadNodeContent }) => {
       value: lang,
       node
     });
+  }
 
+  // Assign library to reference nodes
+  if (node.sourceInstanceName === 'reference') {
     createNodeField({
       name: `lib`,
-      value: library,
+      value: node.relativeDirectory.split('/')[1],
       node
-    });
-  } else if (node.internal.mediaType === `text/x-processing`) {
-    createNodeField({
-      name: `name`,
-      node,
-      content: loadNodeContent(node)
     });
   }
 };
 
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  await Promise.all([
+    createReference(actions, graphql),
+    createExamples(actions, graphql),
+    createTutorials(actions, graphql),
+    createDownload(actions, graphql)
+  ]);
+};
+
 async function createReference(actions, graphql) {
-  const refTemplate = path.resolve(`./src/templates/reference/function.js`);
+  const functionTemplate = path.resolve(
+    `./src/templates/reference/function.js`
+  );
   const classRefTemplate = path.resolve(`./src/templates/reference/class.js`);
   const fieldRefTemplate = path.resolve(`./src/templates/reference/field.js`);
-  const indexLibTemplate = path.resolve(`./src/templates/libraries/library.js`);
+  const indexLibTemplate = path.resolve(
+    `./src/templates/reference/libraries/library.js`
+  );
+
+  const refTemplates = {
+    function: functionTemplate,
+    method: functionTemplate,
+    class: classRefTemplate,
+    field: fieldRefTemplate,
+    other: fieldRefTemplate
+  };
 
   const { createPage } = actions;
 
+  // Load reference .json files
+  // Since the gatsby-theme-i18n automatically creates pages for each locale,
+  // we only load the english pages here. The template takes care of the rest.
   const result = await graphql(
     `
       {
-        allFile(filter: { sourceInstanceName: { eq: "json" } }) {
-          edges {
-            node {
-              name
-              relativeDirectory
-              childJson {
-                type
-                classanchor
-              }
+        json: allFile(
+          filter: {
+            sourceInstanceName: { eq: "reference" }
+            extension: { eq: "json" }
+            fields: { lang: { eq: "en" } }
+          }
+        ) {
+          nodes {
+            name
+            relativeDirectory
+            childJson {
+              type
+              classanchor
             }
           }
         }
@@ -122,26 +140,26 @@ async function createReference(actions, graphql) {
   }
 
   // Create reference pages.
-  const refPages = result.data.allFile.edges;
+  const refPages = result.data.json.nodes;
 
   refPages.forEach((refPage, index) => {
-    const [name] = refPage.node.name.split('.');
-    const [lang, libraryName] = refPage.node.relativeDirectory.split('/');
-    const refPath = referencePath(name, libraryName, lang);
+    const [name] = refPage.name.split('.');
+    const [lang, libraryName] = refPage.relativeDirectory.split('/');
+    const refPath = referencePath(name, libraryName);
     const relDir = libraryName + '/' + name;
-    const { type, classanchor } = refPage.node.childJson;
+    const { type, classanchor } = refPage.childJson;
 
     const inUseExamples = inUse.data.allFile.edges
       .filter((n) => {
         if (
-          n.node.childJson !== undefined &&
-          n.node.childJson !== null &&
-          n.node.childJson.featured !== null &&
-          n.node.childJson.featured.includes(refPage.node.name)
+          n.childJson !== undefined &&
+          n.childJson !== null &&
+          n.childJson.featured !== null &&
+          n.childJson.featured.includes(refPage.name)
         )
-          return n.node.name;
+          return n.name;
       })
-      .map((e) => e.node.name);
+      .map((e) => e.name);
 
     const context = {
       name,
@@ -157,24 +175,14 @@ async function createReference(actions, graphql) {
       context.classanchor = classanchor;
     }
 
-    if (type === 'function' || type === 'method') {
+    if (refTemplates[type]) {
       createPage({
         path: refPath,
-        component: refTemplate,
+        component: refTemplates[type],
         context
       });
-    } else if (type === 'class') {
-      createPage({
-        path: refPath,
-        component: classRefTemplate,
-        context
-      });
-    } else if (type === 'field' || type === 'other') {
-      createPage({
-        path: refPath,
-        component: fieldRefTemplate,
-        context
-      });
+    } else {
+      console.error('No template for reference type', type);
     }
   });
 
@@ -211,12 +219,12 @@ async function createReference(actions, graphql) {
 
   createPage({
     path: '/reference/libraries/',
-    component: path.resolve(`./src/pages/libraries.js`)
+    component: path.resolve(`./src/templates/reference/libraries/index.js`)
   });
 
   createPage({
     path: '/reference/tools/',
-    component: path.resolve(`./src/pages/tools.js`)
+    component: path.resolve(`./src/templates/reference/tools.js`)
   });
 }
 
@@ -268,54 +276,30 @@ async function createTutorials(actions, graphql) {
 /**
   Generate /examples pages
 **/
-
-const parseExampleFileInfo = (node) => {
-  // Split name into needed info.
-  // Slug is lowercased to match old processing.org URL's
-  const splitName = node.name.split('.');
-  const langCode = splitName.length > 1 ? '/' + splitName[1] : '';
-  const name = splitName[0];
-  const slug = langCode + '/examples/' + name.toLowerCase() + '.html';
-
-  // Split relative dir into needed info
-  const relDir = node.relativeDirectory;
-  const splitDir = relDir.split('/');
-  const category = splitDir[0];
-  const subcategory = splitDir[1];
-
-  return {
-    name,
-    slug,
-    langCode,
-    category,
-    subcategory,
-    relDir
-  };
-};
-
 async function createExamples(actions, graphql) {
   const exampleTemplate = path.resolve(`./src/templates/examples/example.js`);
 
   const { createPage } = actions;
 
-  // Load all JSON files within the examples folder
+  // Load example .json files
+  // Since the gatsby-theme-i18n automatically creates pages for each locale,
+  // we only load the english pages here. The template takes care of the rest.
   const result = await graphql(
     `
       {
         json: allFile(
           filter: {
             sourceInstanceName: { eq: "examples" }
+            fields: { lang: { eq: "en" } }
             extension: { eq: "json" }
             relativeDirectory: { regex: "/^((?!data).)*$/" }
           }
         ) {
-          edges {
-            node {
-              name
-              relativeDirectory
-              childJson {
-                type
-              }
+          nodes {
+            name
+            relativeDirectory
+            childJson {
+              type
             }
           }
         }
@@ -327,37 +311,43 @@ async function createExamples(actions, graphql) {
     throw result.errors;
   }
 
-  const examples = result.data.json.edges;
-  const parsedExamples = examples.map((example) =>
-    parseExampleFileInfo(example.node)
-  );
+  const examples = result.data.json.nodes;
+
+  // Extract the data needed to create the page
+  const parsedExamples = examples.map((node) => {
+    const splitDir = node.relativeDirectory.split('/');
+    return {
+      name: node.name,
+      slug: examplePath(node.name),
+      relDir: node.relativeDirectory,
+      category: splitDir[0],
+      subcategory: splitDir[1]
+    };
+  });
 
   parsedExamples.forEach((example, index) => {
-    const { name, slug, langCode, category, subcategory, relDir } = example;
-
     // Find related examples in the same sub category
-    // We use the empty langCode to not generate duplicates
     // We pass the names of these to the template, so we don't need
     // to load and filter all images on the frontend.
     const related = parsedExamples
       .filter((info) => {
         return (
-          info.subcategory === subcategory &&
-          info.name !== name &&
-          info.langCode === ''
+          info.subcategory === example.subcategory && info.name !== example.name
         );
       })
       .map((info) => info.name);
 
+    // Create the page. Again, this is only for the english pages, since
+    // the i18n theme will take care of generating the others.
     createPage({
-      path: slug,
+      path: example.slug,
       component: exampleTemplate,
       context: {
-        slug,
-        name,
-        subcategory,
-        related,
-        relDir
+        slug: example.slug,
+        name: example.name,
+        subcategory: example.subcategory,
+        relDir: example.relDir,
+        related
       }
     });
   });

@@ -1,0 +1,24 @@
+{
+  "brief": "Inserts a new key/String pair into the <b>JSONObject</b>",
+  "related": [
+    "JSONObject_setInt_",
+    "JSONObject_setFloat_",
+    "JSONObject_setBoolean_"
+  ],
+  "name": "setString()",
+  "description": "Inserts a new key/String pair into the <b>JSONObject</b> or, if a value with \n the specified key already exists, assigns a new value.",
+  "syntax": [".setString(key, value)"],
+  "returns": "JSONObject",
+  "type": "method",
+  "category": "jsonobject",
+  "subcategory": "method",
+  "classanchor": "JSONObject",
+  "parameters": [
+    { "name": "key", "description": "a key string", "type": ["String"] },
+    {
+      "name": "value",
+      "description": "the value to assign",
+      "type": ["String"]
+    }
+  ]
+}

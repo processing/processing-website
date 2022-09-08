@@ -1,0 +1,24 @@
+{
+  "name": "?: (conditional)",
+  "brief": "A shortcut for writing an <b>if</b> and <b>else</b> structure",
+  "description": "A shortcut for writing an <b>if</b> and <b>else</b> structure. The conditional operator, <b>?:</b> is sometimes called the ternary operator, an operator that takes three arguments. If the <b>test</b> evaluates to <b>true</b>, <b>expression1</b> is evaluated and returned. If the <b>condition</b> evaluates to <b>false</b>, <b>expression2</b> is evaluated and returned.\n<br /><br />\nThe following conditional expression: <br />\n<pre>result = test ? expression1 : expression2</pre><br />\nis equivalent to this structure: <br />\n<pre>if (test) {<br />\n  result = expression1 <br />\n} else { <br />\n  result = expression2 <br />\n}</pre>\n",
+  "related": ["if", "else"],
+  "syntax": ["test ? expression1 : expression2"],
+  "returns": "Variable, dependent on the datatype of the expressions",
+  "type": "function",
+  "category": "Control",
+  "subcategory": "Conditionals",
+  "parameters": [
+    {
+      "name": "test",
+      "description": "any valid expression which evaluates to true or false",
+      "type": []
+    },
+    {
+      "name": "expression1",
+      "description": "any valid expression",
+      "type": []
+    },
+    { "name": "expression2", "description": "any valid expression", "type": [] }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "brief": "Gives ownership of a pin back to the operating system",
+  "related": [],
+  "name": "releasePin()",
+  "description": "Gives ownership of a pin back to the operating system<br/>\n  <br/>\n  Without calling this function, the pin will remain in the current \n  state even after the sketch has been closed.",
+  "syntax": [".releasePin(pin)"],
+  "returns": "void",
+  "type": "method",
+  "category": "GPIO",
+  "subcategory": "",
+  "classanchor": "GPIO",
+  "parameters": [{ "name": "pin", "description": "GPIO pin", "type": ["int"] }]
+}

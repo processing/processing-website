@@ -1,0 +1,13 @@
+{
+  "brief": "Make the entire list upper case",
+  "related": [],
+  "name": "upper()",
+  "description": "Make the entire list upper case.",
+  "syntax": [".upper()"],
+  "returns": "void",
+  "type": "method",
+  "category": "stringlist",
+  "subcategory": "method",
+  "classanchor": "StringList",
+  "parameters": []
+}
