@@ -1,0 +1,9 @@
+{
+  "name": "El Juego de la Vida",
+  "title": "Una implementación en Processing del Juego de la Vida",
+  "author": "Joan Soler-Adillon",
+  "level": "Avanzado",
+  "order": "1",
+  "description": "Presiona la barra espaciadora para pausar y cambiar los valores de las celdas con el ratón. Cuando esta pausado, haz click para activar/desactivar una celda. Presiona 'R' para reiniciar aleatoriamente la cuadrilla de celdas. Presiona 'C' para limpiar todas las celdas. El Juego de la Vida fue creado originalmente por John Conway en 1970.",
+  "featured": ["Array", "random_", "map_", "constrain_", "keyPressed_"]
+}

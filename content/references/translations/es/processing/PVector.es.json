@@ -1,0 +1,145 @@
+{
+  "brief": "A class to describe a two or three dimensional vector",
+  "constructors": ["PVector()", "PVector(x, y, z)", "PVector(x, y)"],
+  "related": [],
+  "methods": [
+    {
+      "anchor": "PVector_set_",
+      "name": "set()",
+      "desc": "Set the components of the vector"
+    },
+    {
+      "anchor": "PVector_random2D_",
+      "name": "random2D()",
+      "desc": "Make a new 2D unit vector with a random direction"
+    },
+    {
+      "anchor": "PVector_random3D_",
+      "name": "random3D()",
+      "desc": "Make a new 3D unit vector with a random direction"
+    },
+    {
+      "anchor": "PVector_fromAngle_",
+      "name": "fromAngle()",
+      "desc": "Make a new 2D unit vector from an angle"
+    },
+    {
+      "anchor": "PVector_copy_",
+      "name": "copy()",
+      "desc": "Get a copy of the vector"
+    },
+    {
+      "anchor": "PVector_mag_",
+      "name": "mag()",
+      "desc": "Calculate the magnitude of the vector"
+    },
+    {
+      "anchor": "PVector_magSq_",
+      "name": "magSq()",
+      "desc": "Calculate the magnitude of the vector, squared"
+    },
+    {
+      "anchor": "PVector_add_",
+      "name": "add()",
+      "desc": "Adds x, y, and z components to a vector, one vector to another, or\n           two independent vectors"
+    },
+    {
+      "anchor": "PVector_sub_",
+      "name": "sub()",
+      "desc": "Subtract x, y, and z components from a vector, one vector from\n           another, or two independent vectors"
+    },
+    {
+      "anchor": "PVector_mult_",
+      "name": "mult()",
+      "desc": "Multiply a vector by a scalar"
+    },
+    {
+      "anchor": "PVector_div_",
+      "name": "div()",
+      "desc": "Divide a vector by a scalar"
+    },
+    {
+      "anchor": "PVector_dist_",
+      "name": "dist()",
+      "desc": "Calculate the distance between two points"
+    },
+    {
+      "anchor": "PVector_dot_",
+      "name": "dot()",
+      "desc": "Calculate the dot product of two vectors"
+    },
+    {
+      "anchor": "PVector_cross_",
+      "name": "cross()",
+      "desc": "Calculate and return the cross product"
+    },
+    {
+      "anchor": "PVector_normalize_",
+      "name": "normalize()",
+      "desc": "Normalize the vector to a length of 1"
+    },
+    {
+      "anchor": "PVector_limit_",
+      "name": "limit()",
+      "desc": "Limit the magnitude of the vector"
+    },
+    {
+      "anchor": "PVector_setMag_",
+      "name": "setMag()",
+      "desc": "Set the magnitude of the vector"
+    },
+    {
+      "anchor": "PVector_heading_",
+      "name": "heading()",
+      "desc": "Calculate the angle of rotation for this vector"
+    },
+    {
+      "anchor": "PVector_rotate_",
+      "name": "rotate()",
+      "desc": "Rotate the vector by an angle (2D only)"
+    },
+    {
+      "anchor": "PVector_lerp_",
+      "name": "lerp()",
+      "desc": "Linear interpolate the vector to another vector"
+    },
+    {
+      "anchor": "PVector_angleBetween_",
+      "name": "angleBetween()",
+      "desc": "Calculate and return the angle between two vectors"
+    },
+    {
+      "anchor": "PVector_array_",
+      "name": "array()",
+      "desc": "Return a representation of the vector as a float array"
+    }
+  ],
+  "name": "PVector",
+  "classFields": [
+    {
+      "anchor": "PVector_x",
+      "name": "x",
+      "desc": "The x component of the vector"
+    },
+    {
+      "anchor": "PVector_y",
+      "name": "y",
+      "desc": "The y component of the vector"
+    },
+    {
+      "anchor": "PVector_z",
+      "name": "z",
+      "desc": "The z component of the vector"
+    }
+  ],
+  "description": "A class to describe a two or three dimensional vector, specifically a\n Euclidean (also known as geometric) vector. A vector is an entity that has\n both magnitude and direction. The datatype, however, stores the components of\n the vector (x,y for 2D, and x,y,z for 3D). The magnitude and direction can be\n accessed via the methods <b>mag()</b> and <b>heading()</b>.<br />\n <br />\n In many of the Processing examples, you will see <b>PVector</b> used to\n describe a position, velocity, or acceleration. For example, if you consider\n a rectangle moving across the screen, at any given instant it has a position\n (a vector that points from the origin to its location), a velocity (the rate\n at which the object's position changes per time unit, expressed as a vector),\n and acceleration (the rate at which the object's velocity changes per time\n unit, expressed as a vector). Since vectors represent groupings of values, we\n cannot simply use traditional addition/multiplication/etc. Instead, we'll\n need to do some \"vector\" math, which is made easy by the methods inside the\n <b>PVector</b> class.\n\n ",
+  "type": "class",
+  "classanchor": "PVector",
+  "category": "math",
+  "subcategory": "",
+  "parameters": [
+    { "name": "x", "description": "the x coordinate.", "type": ["float"] },
+    { "name": "y", "description": "the y coordinate.", "type": ["float"] },
+    { "name": "z", "description": "the z coordinate.", "type": ["float"] }
+  ]
+}

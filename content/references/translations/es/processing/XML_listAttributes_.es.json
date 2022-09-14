@@ -1,0 +1,13 @@
+{
+  "brief": "Returns a list of names of all attributes as an array",
+  "related": [],
+  "name": "listAttributes()",
+  "description": "Gets all of the specified element's attributes, and returns them as an array of <b>Strings</b>.",
+  "syntax": [".listAttributes()"],
+  "returns": "String[]",
+  "type": "method",
+  "category": "xml",
+  "subcategory": "method",
+  "classanchor": "XML",
+  "parameters": []
+}

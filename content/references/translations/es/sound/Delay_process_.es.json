@@ -1,0 +1,32 @@
+{
+  "brief": "Start the delay effect.",
+  "related": [],
+  "name": "process()",
+  "description": "Start the delay effect.",
+  "syntax": [
+    ".process(input, maxDelayTime, delayTime)",
+    ".process(input, maxDelayTime)"
+  ],
+  "returns": "void",
+  "type": "method",
+  "category": "effects",
+  "subcategory": "Delay",
+  "classanchor": "Delay",
+  "parameters": [
+    {
+      "name": "input",
+      "description": "Input audio source",
+      "type": ["SoundObject"]
+    },
+    {
+      "name": "maxDelayTime",
+      "description": "Maximum delay time in seconds.",
+      "type": ["float"]
+    },
+    {
+      "name": "delayTime",
+      "description": "Delay time to use when starting to process, in seconds.",
+      "type": ["float"]
+    }
+  ]
+}

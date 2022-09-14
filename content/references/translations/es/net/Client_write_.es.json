@@ -1,0 +1,24 @@
+{
+  "brief": "Writes <b>bytes</b>, <b>chars</b>, <b>ints</b>, <b>bytes[]</b>, <b>Strings</b>",
+  "related": [],
+  "name": "write()",
+  "description": "Writes data to a server specified when constructing the client, or writes \n data to the specific client obtained from the Server <b>available()</b> \n method.",
+  "syntax": ["client.write(data)"],
+  "returns": "void",
+  "type": "method",
+  "category": "client",
+  "subcategory": "",
+  "classanchor": "Client",
+  "parameters": [
+    {
+      "name": "client",
+      "description": " any variable of type Client",
+      "type": ["Client"]
+    },
+    {
+      "name": "data",
+      "description": "data to write",
+      "type": ["int", "byte[]", "String"]
+    }
+  ]
+}

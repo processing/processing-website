@@ -32,7 +32,7 @@ const Examples = ({ data }) => {
       <div className={classnames(grid.container, grid.grid)}>
         <Donate />
         <div className={classnames(grid.col, css.text)}>
-          <h1>Examples</h1>
+          <h1>{intl.formatMessage({ id: 'examplesTitle' })}</h1>
           <h3>{intl.formatMessage({ id: 'examplesIntro' })}</h3>
         </div>
         <div className={classnames(grid.col, css.filter)}>
@@ -53,11 +53,12 @@ const Examples = ({ data }) => {
 export default Examples;
 
 export const query = graphql`
-  query {
+  query($locale: String!) {
     examples: allFile(
       filter: {
         sourceInstanceName: { eq: "examples" }
-        fields: { lang: { eq: "en" } }
+        extension: { eq: "json" }
+        fields: { lang: { eq: $locale } }
         relativeDirectory: { regex: "/^((?!data).)*$/" }
       }
       sort: { order: ASC, fields: relativeDirectory }
@@ -65,6 +66,9 @@ export const query = graphql`
       nodes {
         name
         relativeDirectory
+        fields {
+          name
+        }
         childJson {
           name
           title

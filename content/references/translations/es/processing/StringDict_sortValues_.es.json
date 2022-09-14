@@ -1,0 +1,13 @@
+{
+  "brief": "Sort by values in descending order",
+  "related": [],
+  "name": "sortValues()",
+  "description": "Sort by values in descending order.",
+  "syntax": [".sortValues()"],
+  "returns": "void",
+  "type": "method",
+  "category": "stringdict",
+  "subcategory": "method",
+  "classanchor": "StringDict",
+  "parameters": []
+}

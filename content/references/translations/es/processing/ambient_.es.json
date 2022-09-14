@@ -1,0 +1,38 @@
+{
+  "brief": "Sets the ambient reflectance for shapes drawn to the screen",
+  "related": ["emissive_", "specular_", "shininess_"],
+  "name": "ambient()",
+  "description": "Sets the ambient reflectance for shapes drawn to the screen. This is\n combined with the ambient light component of environment. The color\n components set through the parameters define the reflectance. For\n example in the default color mode, setting v1=255, v2=126, v3=0, would\n cause all the red light to reflect and half of the green light to\n reflect. Used in combination with <b>emissive()</b>, <b>specular()</b>,\n and <b>shininess()</b> in setting the material properties of shapes.",
+  "syntax": ["ambient(rgb)", "ambient(gray)", "ambient(v1, v2, v3)"],
+  "returns": "void",
+  "type": "function",
+  "category": "lights_camera",
+  "subcategory": "material properties",
+  "parameters": [
+    {
+      "name": "rgb",
+      "description": "any value of the color datatype",
+      "type": ["int"]
+    },
+    {
+      "name": "gray",
+      "description": "number specifying value between white and black",
+      "type": ["float"]
+    },
+    {
+      "name": "v1",
+      "description": "red or hue value (depending on current color mode)",
+      "type": ["float"]
+    },
+    {
+      "name": "v2",
+      "description": "green or saturation value (depending on current color mode)",
+      "type": ["float"]
+    },
+    {
+      "name": "v3",
+      "description": "blue or brightness value (depending on current color mode)",
+      "type": ["float"]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "brief": "Gets the String value associated with an index",
+  "related": [
+    "JSONArray_getInt_",
+    "JSONArray_getFloat_",
+    "JSONArray_getBoolean_"
+  ],
+  "name": "getString()",
+  "description": "Gets the <b>String</b> value associated with the specified index.",
+  "syntax": [".getString(index)", ".getString(index, defaultValue)"],
+  "returns": "String",
+  "type": "method",
+  "category": "jsonarray",
+  "subcategory": "method",
+  "classanchor": "JSONArray",
+  "parameters": [
+    {
+      "name": "index",
+      "description": "must be between 0 and length() - 1",
+      "type": ["int"]
+    },
+    {
+      "name": "index",
+      "description": "The index must be between 0 and length() - 1.",
+      "type": ["int"]
+    },
+    {
+      "name": "defaultValue",
+      "description": "The default value.",
+      "type": ["String"]
+    }
+  ]
+}

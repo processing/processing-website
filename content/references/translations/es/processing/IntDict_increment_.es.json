@@ -1,0 +1,13 @@
+{
+  "brief": "Increase the value of a specific key value by 1",
+  "related": [],
+  "name": "increment()",
+  "description": "Increase the value of a specific key value by 1",
+  "syntax": [".increment(key)", ".increment(dict)"],
+  "returns": "void",
+  "type": "method",
+  "category": "intdict",
+  "subcategory": "method",
+  "classanchor": "IntDict",
+  "parameters": []
+}

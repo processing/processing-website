@@ -1,0 +1,43 @@
+{
+  "brief": "Draws a line (a direct path between two points) to the screen",
+  "related": ["strokeWeight_", "strokeJoin_", "strokeCap_", "beginShape_"],
+  "name": "line()",
+  "description": "Draws a line (a direct path between two points) to the screen. The\n version of <b>line()</b> with four parameters draws the line in 2D.  To\n color a line, use the <b>stroke()</b> function. A line cannot be filled,\n therefore the <b>fill()</b> function will not affect the color of a\n line. 2D lines are drawn with a width of one pixel by default, but this\n can be changed with the <b>strokeWeight()</b> function. The version with\n six parameters allows the line to be placed anywhere within XYZ space.\n Drawing this shape in 3D with the <b>z</b> parameter requires the P3D\n parameter in combination with <b>size()</b> as shown in the above example.",
+  "syntax": ["line(x1, y1, x2, y2)", "line(x1, y1, z1, x2, y2, z2)"],
+  "returns": "void",
+  "type": "function",
+  "category": "shape",
+  "subcategory": "2d primitives",
+  "parameters": [
+    {
+      "name": "x1",
+      "description": "x-coordinate of the first point",
+      "type": ["float"]
+    },
+    {
+      "name": "y1",
+      "description": "y-coordinate of the first point",
+      "type": ["float"]
+    },
+    {
+      "name": "x2",
+      "description": "x-coordinate of the second point",
+      "type": ["float"]
+    },
+    {
+      "name": "y2",
+      "description": "y-coordinate of the second point",
+      "type": ["float"]
+    },
+    {
+      "name": "z1",
+      "description": "z-coordinate of the first point",
+      "type": ["float"]
+    },
+    {
+      "name": "z2",
+      "description": "z-coordinate of the second point",
+      "type": ["float"]
+    }
+  ]
+}

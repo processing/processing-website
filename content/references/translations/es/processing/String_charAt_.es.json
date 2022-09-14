@@ -1,0 +1,24 @@
+{
+  "name": "charAt()",
+  "brief": "Returns the character at the specified index",
+  "description": "Returns the character at the specified index. An index ranges from 0 to the length of the string minus 1. The first character of the sequence is at index 0, the next at index 1, etc. \n",
+  "related": [],
+  "syntax": ["str.charAt(index)"],
+  "returns": "char",
+  "type": "method",
+  "category": "string",
+  "subcategory": "method",
+  "classanchor": "String",
+  "parameters": [
+    {
+      "name": "str",
+      "description": "String: any variable of type String",
+      "type": []
+    },
+    {
+      "name": "index",
+      "description": "int: the index of the character",
+      "type": []
+    }
+  ]
+}

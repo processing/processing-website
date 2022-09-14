@@ -1,0 +1,13 @@
+{
+  "brief": "Lists all available LED devices",
+  "related": [],
+  "name": "list()",
+  "description": "Lists all available LED devices",
+  "syntax": [".list()"],
+  "returns": "String[]",
+  "type": "method",
+  "category": "LED",
+  "subcategory": "",
+  "classanchor": "LED",
+  "parameters": []
+}

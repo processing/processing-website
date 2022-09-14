@@ -1,0 +1,19 @@
+{
+  "brief": "Set the frequency of the oscillator in Hz.",
+  "related": [],
+  "name": "freq()",
+  "description": "Set the frequency of the oscillator in Hz.",
+  "syntax": [".freq(freq)"],
+  "returns": "void",
+  "type": "method",
+  "category": "oscillators",
+  "subcategory": "TriOsc",
+  "classanchor": "TriOsc",
+  "parameters": [
+    {
+      "name": "freq",
+      "description": "A floating point value of the oscillator in Hz.",
+      "type": ["float"]
+    }
+  ]
+}

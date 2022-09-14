@@ -1,0 +1,38 @@
+{
+  "brief": "Re-maps a number from one range to another",
+  "related": ["norm_", "lerp_"],
+  "name": "map()",
+  "description": "Re-maps a number from one range to another.<br />\n <br />\n In the first example above, the number 25 is converted from a value in the\n range of 0 to 100 into a value that ranges from the left edge of the window\n (0) to the right edge (width).<br />\n <br />\n As shown in the second example, numbers outside of the range are not\n clamped to the minimum and maximum parameters values, because out-of-range\n values are often intentional and useful.",
+  "syntax": ["map(value, start1, stop1, start2, stop2)"],
+  "returns": "float",
+  "type": "function",
+  "category": "math",
+  "subcategory": "calculation",
+  "parameters": [
+    {
+      "name": "value",
+      "description": "the incoming value to be converted",
+      "type": ["float"]
+    },
+    {
+      "name": "start1",
+      "description": "lower bound of the value's current range",
+      "type": ["float"]
+    },
+    {
+      "name": "stop1",
+      "description": "upper bound of the value's current range",
+      "type": ["float"]
+    },
+    {
+      "name": "start2",
+      "description": "lower bound of the value's target range",
+      "type": ["float"]
+    },
+    {
+      "name": "stop2",
+      "description": "upper bound of the value's target range",
+      "type": ["float"]
+    }
+  ]
+}

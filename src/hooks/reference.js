@@ -1,33 +1,36 @@
 import { useMemo } from 'react';
 import { useIntl } from 'react-intl';
-
 import { titleCase, slugify } from '../utils';
 import { referencePath, pathToName, examplePath } from '../utils/paths';
 
 /**
   Hook to turn the reference items in an object that can be used in useTree
+  This makes up for some weirdness in lowercase/uppercase category and subcategory
+  names and removes underscores and adds title cases. Some of these should be fixed
+  in the JavaDoc comments instead.
   @param {Array} items GraphQL reference items
 **/
 export const usePreparedItems = (items, libraryName) => {
   return useMemo(() => {
-    // This makes up for some weirdness in lowercase/uppercase category and subcategory
-    // names and removes underscores and adds title cases. Some of these should be fixed
-    // in the JavaDoc comments instead.
     const prepared = [];
 
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
-      // Processing does not list methods or fields in reference list or sidebar. Libraries do.
+
       if (
         libraryName !== 'processing' ||
         (item.childJson.type !== 'method' && item.childJson.type !== 'field')
       ) {
+        let path = item.name.split(`.`)[0];
+
         prepared.push(
           Object.assign({}, item.childJson, {
-            slug: item.name,
-            path: referencePath(item.name, libraryName),
+            slug: item.childJson.name,
+            path: referencePath(path, libraryName),
             category: titleCase(item.childJson.category),
-            subcategory: titleCase(item.childJson.subcategory),
+            subcategory: item.childJson.subcategory
+              ? titleCase(item.childJson.subcategory)
+              : ' ',
             search: `${item.childJson.name} ${item.childJson.brief ?? ''}`
           })
         );
@@ -108,13 +111,13 @@ export const usePreparedExamples = (pdes, images) => {
     const prepared = [];
     for (let i = 0; i < pdes.length; i++) {
       const example = {
-        code: pdes[i].node.internal.content
+        code: pdes[i].code
       };
 
       if (images) {
         for (let j = 0; j < images.length; j++) {
-          if (images[j].node.name === pdes[i].node.name) {
-            example.image = images[j].node;
+          if (images[j].name === pdes[i].name) {
+            example.image = images[j];
             break;
           }
         }
@@ -180,20 +183,20 @@ export const useTrail = (libraryName, category, subcategory, classanchor) => {
           label: intl.formatMessage({ id: 'libraries' })
         };
 
-    const trail = ['Documentation', sectionTrail];
+    const trail = [intl.formatMessage({ id: 'Documentation' }), sectionTrail];
 
     if (isProcessing) {
       if (category) {
         trail.push({
           slug: sectionTrail.slug + '#' + slugify(category),
-          label: category
+          label: intl.formatMessage({ id: category })
         });
       }
 
       if (subcategory) {
         trail.push({
           slug: sectionTrail.slug + '#' + slugify(category, subcategory),
-          label: subcategory
+          label: intl.formatMessage({ id: subcategory })
         });
       }
     } else {
@@ -203,14 +206,16 @@ export const useTrail = (libraryName, category, subcategory, classanchor) => {
       });
       trail.push({
         slug: referencePath('index', libraryName),
-        label: libraryName
+        // label: libraryName
+        label: intl.formatMessage({ id: libraryName })
       });
     }
 
     if (classanchor) {
       trail.push({
         slug: referencePath(classanchor, libraryName),
-        label: classanchor
+        // label: classanchor
+        label: intl.formatMessage({ id: classanchor })
       });
     }
 

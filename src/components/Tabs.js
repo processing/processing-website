@@ -40,11 +40,11 @@ const Tabs = ({ pdes, className }) => {
             [css.activeCode]: pde.name === active
           })}
           key={key}>
-          <CopyButton text={pde.internal.content} />
+          <CopyButton text={pde.code} />
           <pre className={css.codeBlock}>
             <code
               dangerouslySetInnerHTML={{
-                __html: escapeHtml(pde.internal.content)
+                __html: escapeHtml(pde.code)
               }}
             />
           </pre>
