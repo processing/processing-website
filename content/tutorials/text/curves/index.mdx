@@ -98,8 +98,15 @@ void setup() {
 
 How do the control points affect the way the curve looks? Take a deep breath, because this is somewhat complicated.
 
-- The tangent to the curve at the start point is parallel to the line between control point one and the end of the curve. These are the lines shown in green in the diagram at the left.
-- The tangent to the curve at the end point is parallel to the line between the start point and control point 2. These are the lines shown in purple in the diagram at the left.
+<FixedImage left width={200} >
+
+![A black curve with a purple and green vertices at either end from which lines of the same color go to the control points. The green point has a purple tangent and the purple point a green tangent.](./curve_with_tangent.png)
+
+</FixedImage>
+
+- The tangent to the curve at the start point is parallel to the line between control point one and the end of the curve. These are the lines shown in green in the diagram above.
+- The tangent to the curve at the end point is parallel to the line between the start point and control point 2. These are the lines shown in purple in the diagram above.
+
 
 ## Continuous Spline Curves
 
