@@ -159,10 +159,11 @@ const IndexPage = ({ data }) => {
             <h2>{intl.formatMessage({ id: 'participate' })}</h2>
             <div>
               <p>{intl.formatMessage({ id: 'participateP1' })}</p>
+              <p>{intl.formatMessage({ id: 'participateP2' })}</p>
             </div>
             <div className={css.participateButton}>
               <Button
-                href={'https://processingfoundation.org/advocacy/pcd-2021'}
+                href={'https://medium.com/@ProcessingOrg/3a1f8b8a7aed'}
                 variant="animate1"
                 size="large">
                 {intl.formatMessage({ id: 'buttonParticipate' })}
