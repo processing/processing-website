@@ -1,0 +1,9 @@
+.root {
+  display: block;
+  text-align: center;
+  background-color: var(--processing-blue-gradient);
+  padding: var(--margin-quarter);
+  font-size: var(--text-small);
+  color: var(--processing-blue-dark);
+  margin-top: -2px;
+}
