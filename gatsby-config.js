@@ -56,6 +56,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `sitewide`,
+        path: path.resolve(__dirname, 'content/sitewide')
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `images`,
         path: path.resolve(__dirname, 'src/images')
       }

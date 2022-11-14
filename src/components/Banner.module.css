@@ -1,0 +1,23 @@
+.root {
+  text-align: center;
+  background-color: var(--processing-blue-deep);
+  color: white;
+  font-size: var(--text-normal);
+  margin-top: -2px;
+  display: flex;
+}
+
+.link {
+  display: block;
+  padding: var(--margin-quarter);
+  flex: 1;
+}
+
+.close {
+  flex: 0 0 60px;
+  cursor: pointer;
+  background: none;
+  color: white;
+  border: none;
+  font-size: var(--text-large);
+}
