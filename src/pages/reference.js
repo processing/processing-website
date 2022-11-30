@@ -85,7 +85,6 @@ const Reference = ({ data }) => {
         title={intl.formatMessage({ id: 'reference' })}
         description={intl.formatMessage({ id: 'cardReferenceDescription' })}
       />
-
       <div className={classnames(grid.container, grid.grid)}>
         <h1 className={classnames(grid.col, css.heading)}>
           {intl.formatMessage({ id: 'reference' })}

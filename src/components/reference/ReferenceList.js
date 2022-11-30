@@ -16,7 +16,7 @@ const ReferenceList = ({ tree, library }) => {
           <h2
             className={classnames(grid.col, css.category)}
             id={slugify(category)}>
-            {intl.formatMessage({id:category})}
+            {intl.formatMessage({ id: category })}
           </h2>
           {Object.keys(tree[category]).map((subcategory) => {
             return (
@@ -27,7 +27,10 @@ const ReferenceList = ({ tree, library }) => {
                   <div className={classnames(grid.col, css.subcategoryTitle)}>
                     {subcategory && <div className={css.line} />}
                     {subcategory && (
-                      <h3 id={slugify(category, subcategory)}> {intl.formatMessage({id:subcategory})}</h3>
+                      <h3 id={slugify(category, subcategory)}>
+                        {' '}
+                        {intl.formatMessage({ id: subcategory })}
+                      </h3>
                     )}
                   </div>
                   <ul className={classnames(grid.col, css.subcategoryList)}>
