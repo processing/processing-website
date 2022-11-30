@@ -52,7 +52,7 @@ The website is set up to deploy itself whenever a new GitHub release is created 
 1. Go to [Releases](https://github.com/processing/processing-website/releases)
 2. Click "Draft a new release"
 3. Choose a tag for this release. This value is not used for much, so you can just use `DD-MM-YYYY`
-4. Create the release. A GitHub action will run, which will build the website and upload to the S3 bucket.
+4. Create the release. [A GitHub action will run](https://github.com/processing/processing-website/actions), which will build the website and upload to the S3 bucket (this may take up to 10-15 minutes).
 
 ## `keywords.txt`
 
