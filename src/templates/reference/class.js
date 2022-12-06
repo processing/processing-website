@@ -55,14 +55,17 @@ const ClassRefTemplate = ({ data, pageContext }) => {
 
   const trail = useTrail(libraryName, entry?.category, entry?.subcategory);
 
+  const title =
+    (entry?.name ?? data.en.childJson.name) +
+    ' / ' +
+    (isProcessing
+      ? intl.formatMessage({ id: 'reference' })
+      : intl.formatMessage({ id: 'libraries' }));
+
   return (
     <Layout withSidebar withBreadcrumbs>
       <HeadMatter
-        title={
-          (entry?.name ?? data.en.childJson.name) + ' / ' + isProcessing
-            ? intl.formatMessage({ id: 'reference' })
-            : intl.formatMessage({ id: 'libraries' })
-        }
+        title={title}
         description={entry?.description}
         img={getImage(data.images.nodes[0])}
       />
