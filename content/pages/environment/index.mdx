@@ -82,21 +82,21 @@ Additional commands are found within the six menus: File, Edit, Sketch, Debug, T
   </dd>
   <dt>Save</dt>
   <dd>Saves the open sketch in it's current state.</dd>
-  <dt>Save as...</dt>
+  <dt>Save As...</dt>
   <dd>
     Saves the currently open sketch, with the option of giving it a different
     name. Does not replace the previous version of the sketch.
   </dd>
-  <dt>Export</dt>
+  <dt>Export Application...</dt>
   <dd>
     Exports a Java application as an executable file and opens the folder
     containing the exported files.
   </dd>
   <dt>Page Setup</dt>
   <dd>Define page settings for printing.</dd>
-  <dt>Print (Ctrl+P)</dt>
+  <dt>Print...</dt>
   <dd>Prints the code inside the text editor.</dd>
-  <dt>Preferences</dt>
+  <dt>Preferences...</dt>
   <dd>
     Change some of the ways Processing works. (This item is located in the
     Processing menu on Mac OS X.)
@@ -205,7 +205,7 @@ Additional commands are found within the six menus: File, Edit, Sketch, Debug, T
     If the code is running, stops the execution. Programs written without using
     the draw() function are stopped automatically after they draw.
   </dd>
-  <dt>Import Library</dt>
+  <dt>Import Library...</dt>
   <dd>
     Adds the necessary import statements to the top of the current sketch. For
     example, selecting Sketch » Import Library » pdf adds the statement "import
@@ -258,6 +258,17 @@ Additional commands are found within the six menus: File, Edit, Sketch, Debug, T
 ### Tools
 
 <dl>
+  <dt>Archive Sketch</dt>
+  <dd>
+    Archives a copy of the current sketch in .zip format. The archive is placed
+    in the same folder as the sketch.
+  </dd>
+  <dt>Color Selector...</dt>
+  <dd>
+    Interface for selecting colors. For each color, the HSB, RBG, and Hex values
+    are shown. The Hex value can be copied into the clipboard with the Copy
+    button.
+  </dd>
   <dt>Create Font...</dt>
   <dd>
     Converts fonts into the Processing font format (VLW) and adds to the current
@@ -268,34 +279,31 @@ Additional commands are found within the six menus: File, Edit, Sketch, Debug, T
     menu; Processing fonts are textures, so larger fonts require more image
     data. Fonts can also be created in the code with the createFont() function.
   </dd>
-  <dt>Color Selector...</dt>
+  <dt>Theme Selector</dt>
   <dd>
-    Interface for selecting colors. For each color, the HSB, RBG, and Hex values
-    are shown. The Hex value can be copied into the clipboard with the Copy
-    button.
-  </dd>
-  <dt>Archive Sketch</dt>
-  <dd>
-    Archives a copy of the current sketch in .zip format. The archive is placed
-    in the same folder as the sketch.
-  </dd>
-  <dt>Install "processing-java"</dt>
-  <dd>
-    Installs the processing-java program to make it possible to build and run
-    Java mode sketches from the command line.
+    Interface for selecting themes for Processing, with options to read about 
+    how to create your own themes as well as save them to sketchbook for editing.
   </dd>
   <dt>Movie Maker</dt>
   <dd>
     Creates a QuickTime movie from a sequence of images. Options include setting
     the size, frame rate, and compression, as well as an audio file.
   </dd>
-  <dt>Add Tool...</dt>
-  <dd>Opens the Tool Manager to browse and install new Tools.</dd>
+  <dt>Manage Tools...</dt>
+  <dd>Opens the Contribution Manager</dd>
 </dl>
 
 ### Help
 
 <dl>
+  <dt>About Processing</dt>
+  <dd>
+    Opens information about Processing 4
+  </dd>
+  <dt>Welcome to Processing</dt>
+  <dd>
+    Opens a dialog box containing information that helps a new user get started with Processing
+  </dd>
   <dt>Environment</dt>
   <dd>
     Opens the reference for the Processing Development Environment (this page)
@@ -310,6 +318,10 @@ Additional commands are found within the six menus: File, Edit, Sketch, Debug, T
   <dd>
     Select an element of the Processing language in the text editor and select
     Find in Reference to open that page in the default web browser.
+  </dd>
+  <dt>Download Offline Reference</dt>
+  <dd>
+    Downloads the Processing Offline Reference
   </dd>
   <dt>Libraries Reference</dt>
   <dd>Select from the list to open the reference for compatiable Libraries.</dd>
