@@ -7,25 +7,29 @@
       {
         "node": {
           "name": "processing-1.5.1-windows.zip",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-1.5.1/processing-1.5.1-windows.zip"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-1.5.1/processing-1.5.1-windows.zip",
+          "size": 89941206
         }
       },
       {
         "node": {
           "name": "processing-1.5.1-windows-expert.zip",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-1.5.1/processing-1.5.1-windows-expert.zip"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-1.5.1/processing-1.5.1-windows-expert.zip",
+          "size": 48482241
         }
       },
       {
         "node": {
           "name": "processing-1.5.1-macosx.zip",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-1.5.1/processing-1.5.1-macosx.zip"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-1.5.1/processing-1.5.1-macosx.zip",
+          "size": 50518643
         }
       },
       {
         "node": {
           "name": "processing-1.5.1-linux.tgz",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-1.5.1/processing-1.5.1-linux.tgz"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-1.5.1/processing-1.5.1-linux.tgz",
+          "size": 91230153
         }
       }
     ]

@@ -7,25 +7,29 @@
       {
         "node": {
           "name": "processing-3.5-macosx.zip",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0266-3.5/processing-3.5-macosx.zip"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0266-3.5/processing-3.5-macosx.zip",
+          "size": 129893496
         }
       },
       {
         "node": {
           "name": "processing-3.5-windows64.zip",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0266-3.5/processing-3.5-windows64.zip"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0266-3.5/processing-3.5-windows64.zip",
+          "size": 132809014
         }
       },
       {
         "node": {
           "name": "processing-3.5-linux64.tgz",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0266-3.5/processing-3.5-linux64.tgz"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0266-3.5/processing-3.5-linux64.tgz",
+          "size": 138125893
         }
       },
       {
         "node": {
           "name": "processing-3.5-linux32.tgz",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0266-3.5/processing-3.5-linux32.tgz"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0266-3.5/processing-3.5-linux32.tgz",
+          "size": 141375648
         }
       }
     ]

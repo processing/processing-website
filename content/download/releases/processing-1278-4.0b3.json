@@ -7,19 +7,22 @@
       {
         "node": {
           "name": "processing-4.0b3-linux64.tgz",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1278-4.0b3/processing-4.0b3-linux64.tgz"
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1278-4.0b3/processing-4.0b3-linux64.tgz",
+          "size": 498958112
         }
       },
       {
         "node": {
           "name": "processing-4.0b3-windows64.zip",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1278-4.0b3/processing-4.0b3-windows64.zip"
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1278-4.0b3/processing-4.0b3-windows64.zip",
+          "size": 493232119
         }
       },
       {
         "node": {
           "name": "processing-4.0b3-macosx.zip",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1278-4.0b3/processing-4.0b3-macosx.zip"
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1278-4.0b3/processing-4.0b3-macosx.zip",
+          "size": 493803525
         }
       }
     ]

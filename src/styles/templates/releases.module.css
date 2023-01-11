@@ -1,0 +1,148 @@
+.content {
+  padding-left: calc(var(--margin) + var(--gutter));
+
+  & p,
+  & > h1 {
+    max-width: 700px;
+  }
+
+  & h1 {
+    letter-spacing: 0.02em;
+  }
+}
+
+.releaseSection + .releaseSection {
+  margin-bottom: var(--gutter);
+}
+
+.releaseListContainer {
+  padding: var(--margin) 0;
+  background: linear-gradient(90deg, #FFFFFF 0%, #E9F0FF 80%);
+
+  
+  & p {
+    font-weight: 500;
+  }
+
+  & > p, & > ul {
+    margin-bottom: var(--margin);
+  }
+}
+
+.release {
+  background-color: #E9F0FF;
+  padding: var(--gutter) var(--gutter-double);
+
+  & > span {
+    display: table-cell;
+    padding-bottom: 6px;
+  }
+
+  & a {
+    color: var(--processing-blue-mid);
+  }
+}
+
+.release + .release {
+  margin-top: var(--gutter);
+}
+
+.releaseHeader {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--gutter-half);
+}
+
+.releaseName,
+.releaseDate {
+  font-size: var(--text-regular);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--processing-blue-dark);
+}
+
+.releaseName {
+  font-weight: 700;
+}
+
+.releaseAssets {
+  font-size: var(--text-regular);
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--processing-blue-dark);
+  padding-top: var(--gutter);
+  padding-left: var(--gutter-half);
+  fill: var(--processing-blue-dark);
+
+  & li::before {
+    content: "·";
+    font-weight: 700;
+    padding: 0 var(--gutter-half);
+    vertical-align: baseline;
+  }
+}
+
+a.assetLink {
+  color: var(--processing-blue-dark);
+}
+
+.openIcon {
+  position: relative;
+  display: inline-block;
+  width: 12px;
+  height: 16px;
+  background: var(--processing-blue-dark);
+
+  &::before, &::after {
+    content: '';
+    display: inline-block;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: white;
+  } 
+
+  &::before {
+    width: 8px;
+    height: 2px;
+  } 
+
+  &::after {
+    height: 8px;
+    width: 2px;
+  } 
+}
+
+.openIcon.open::after {
+  display: none;
+}
+
+@media (--reduced) {
+  .releaseListContainer {
+    & > p, & > ul {
+      margin-bottom: var(--margin-double);
+    }
+  }
+}
+@media (--small) {
+  .releaseListContainer {  
+    & > p, & > ul {
+      margin-bottom: var(--margin-double);
+    }
+  }
+
+  .release + .release {
+    margin-top: var(--gutter-double);
+  }
+  
+  .releaseName {
+    margin-left: var(--gutter);
+  }
+
+  .releaseAssets li {
+    margin: var(--margin) 0;
+  }
+}

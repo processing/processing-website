@@ -7,37 +7,43 @@
       {
         "node": {
           "name": "processing-4.0b7-linux-x64.tgz",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1282-4.0b7/processing-4.0b7-linux-x64.tgz"
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1282-4.0b7/processing-4.0b7-linux-x64.tgz",
+          "size": 234909381
         }
       },
       {
         "node": {
           "name": "processing-4.0b7-macos-aarch64.zip",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1282-4.0b7/processing-4.0b7-macos-aarch64.zip"
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1282-4.0b7/processing-4.0b7-macos-aarch64.zip",
+          "size": 220175209
         }
       },
       {
         "node": {
           "name": "processing-4.0b7-macos-x64.zip",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1282-4.0b7/processing-4.0b7-macos-x64.zip"
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1282-4.0b7/processing-4.0b7-macos-x64.zip",
+          "size": 229992470
         }
       },
       {
         "node": {
           "name": "processing-4.0b7-windows-x64.zip",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1282-4.0b7/processing-4.0b7-windows-x64.zip"
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1282-4.0b7/processing-4.0b7-windows-x64.zip",
+          "size": 229027053
         }
       },
       {
         "node": {
           "name": "processing-4.0b7-linux-arm32.tgz",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1282-4.0b7/processing-4.0b7-linux-arm32.tgz"
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1282-4.0b7/processing-4.0b7-linux-arm32.tgz",
+          "size": 232045598
         }
       },
       {
         "node": {
           "name": "processing-4.0b7-linux-arm64.tgz",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1282-4.0b7/processing-4.0b7-linux-arm64.tgz"
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1282-4.0b7/processing-4.0b7-linux-arm64.tgz",
+          "size": 231878759
         }
       }
     ]

@@ -7,37 +7,43 @@
       {
         "node": {
           "name": "processing-4.0-linux-arm64.tgz",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1285-4.0/processing-4.0-linux-arm64.tgz"
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1285-4.0/processing-4.0-linux-arm64.tgz",
+          "size": 225525766
         }
       },
       {
         "node": {
           "name": "processing-4.0-linux-x64.tgz",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1285-4.0/processing-4.0-linux-x64.tgz"
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1285-4.0/processing-4.0-linux-x64.tgz",
+          "size": 227804786
         }
       },
       {
         "node": {
           "name": "processing-4.0-macos-aarch64.zip",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1285-4.0/processing-4.0-macos-aarch64.zip"
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1285-4.0/processing-4.0-macos-aarch64.zip",
+          "size": 203876284
         }
       },
       {
         "node": {
           "name": "processing-4.0-macos-x64.zip",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1285-4.0/processing-4.0-macos-x64.zip"
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1285-4.0/processing-4.0-macos-x64.zip",
+          "size": 221965034
         }
       },
       {
         "node": {
           "name": "processing-4.0-windows-x64.zip",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1285-4.0/processing-4.0-windows-x64.zip"
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1285-4.0/processing-4.0-windows-x64.zip",
+          "size": 222445226
         }
       },
       {
         "node": {
           "name": "processing-4.0-linux-arm32.tgz",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1285-4.0/processing-4.0-linux-arm32.tgz"
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1285-4.0/processing-4.0-linux-arm32.tgz",
+          "size": 214529805
         }
       }
     ]

@@ -18,6 +18,7 @@ const fetchReleases = async () => {
                     node {
                       name
                       downloadUrl
+                      size
                     }
                   }
                 }
@@ -37,6 +38,7 @@ const fetchReleases = async () => {
                     node {
                       name
                       downloadUrl
+                      size
                     }
                   }
                 }

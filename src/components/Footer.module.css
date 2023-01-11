@@ -54,6 +54,10 @@
   margin-top: var(--margin-quarter);
   font-size: var(--text-xsmall);
   white-space: pre-wrap;
+
+  & a {
+    color: white;
+  }
 }
 
 @media (--small) {

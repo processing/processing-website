@@ -7,37 +7,43 @@
       {
         "node": {
           "name": "processing-4.0b4-linux-arm32.tgz",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1279-4.0b4/processing-4.0b4-linux-arm32.tgz"
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1279-4.0b4/processing-4.0b4-linux-arm32.tgz",
+          "size": 233087044
         }
       },
       {
         "node": {
           "name": "processing-4.0b4-linux-arm64.tgz",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1279-4.0b4/processing-4.0b4-linux-arm64.tgz"
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1279-4.0b4/processing-4.0b4-linux-arm64.tgz",
+          "size": 232844009
         }
       },
       {
         "node": {
           "name": "processing-4.0b4-linux-x64.tgz",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1279-4.0b4/processing-4.0b4-linux-x64.tgz"
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1279-4.0b4/processing-4.0b4-linux-x64.tgz",
+          "size": 236159874
         }
       },
       {
         "node": {
           "name": "processing-4.0b4-macos-aarch64.zip",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1279-4.0b4/processing-4.0b4-macos-aarch64.zip"
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1279-4.0b4/processing-4.0b4-macos-aarch64.zip",
+          "size": 221088009
         }
       },
       {
         "node": {
           "name": "processing-4.0b4-macos-x64.zip",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1279-4.0b4/processing-4.0b4-macos-x64.zip"
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1279-4.0b4/processing-4.0b4-macos-x64.zip",
+          "size": 230894290
         }
       },
       {
         "node": {
           "name": "processing-4.0b4-windows-x64.zip",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1279-4.0b4/processing-4.0b4-windows-x64.zip"
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1279-4.0b4/processing-4.0b4-windows-x64.zip",
+          "size": 230269129
         }
       }
     ]

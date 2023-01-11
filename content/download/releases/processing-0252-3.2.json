@@ -7,43 +7,50 @@
       {
         "node": {
           "name": "processing-3.2-windows64.zip",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0252-3.2/processing-3.2-windows64.zip"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0252-3.2/processing-3.2-windows64.zip",
+          "size": 120762627
         }
       },
       {
         "node": {
           "name": "processing-3.2-windows32.zip",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0252-3.2/processing-3.2-windows32.zip"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0252-3.2/processing-3.2-windows32.zip",
+          "size": 117280457
         }
       },
       {
         "node": {
           "name": "processing-3.2-macosx.zip",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0252-3.2/processing-3.2-macosx.zip"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0252-3.2/processing-3.2-macosx.zip",
+          "size": 116505216
         }
       },
       {
         "node": {
           "name": "processing-3.2-linux64.tgz",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0252-3.2/processing-3.2-linux64.tgz"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0252-3.2/processing-3.2-linux64.tgz",
+          "size": 122550248
         }
       },
       {
         "node": {
           "name": "processing-3.2-linux32.tgz",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0252-3.2/processing-3.2-linux32.tgz"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0252-3.2/processing-3.2-linux32.tgz",
+          "size": 124760526
         }
       },
       {
         "node": {
           "name": "processing-3.2-linux-armv6hf.tgz",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0252-3.2/processing-3.2-linux-armv6hf.tgz"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0252-3.2/processing-3.2-linux-armv6hf.tgz",
+          "size": 95015507
         }
       },
       {
         "node": {
           "name": "processing-3.2-linux-raspbian.zip",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0252-3.2/processing-3.2-linux-raspbian.zip"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0252-3.2/processing-3.2-linux-raspbian.zip",
+          "size": 1567480220
         }
       }
     ]

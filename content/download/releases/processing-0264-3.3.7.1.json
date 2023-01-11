@@ -7,13 +7,15 @@
       {
         "node": {
           "name": "processing-3.3.7.1-linux-armv6hf.tgz",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0264-3.3.7.1/processing-3.3.7.1-linux-armv6hf.tgz"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0264-3.3.7.1/processing-3.3.7.1-linux-armv6hf.tgz",
+          "size": 100179776
         }
       },
       {
         "node": {
           "name": "processing-3.3.7.1-linux-raspbian.zip",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0264-3.3.7.1/processing-3.3.7.1-linux-raspbian.zip"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0264-3.3.7.1/processing-3.3.7.1-linux-raspbian.zip",
+          "size": 1957236342
         }
       }
     ]
