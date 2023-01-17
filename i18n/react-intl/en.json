@@ -1,6 +1,6 @@
 {
   "home": "Home",
-  "downloadTitle": "Create with code",
+  "downloadTitle": "Create with code, everywhere",
   "documentation": "Documentation",
   "reference": "Reference",
   "references": "References",
@@ -71,7 +71,7 @@
   "peopleIntro": "Processing is a community effort led by a small group of volunteers.",
   "booksIntro": "Processing books cover topics from programming basics to visualization. Browse this page to find the right books for you.",
   "readMore": "Read more",
-  "downloadIntro": "With its vibrant community and endless resources, Processing is the perfect free and open-source tool for artists, designers, educators, and anyone looking to explore the creative side of coding. Download Processing and start creating today!",
+  "downloadIntro": "Processing is open source and is available for macOS, Windows, and Linux. Projects created with Processing are also cross-platform, and can be used on macOS, Windows, Android, Raspberry Pi, and many other Linux platforms.",
   "olderVersions": "Looking for older versions?",
   "githubEarlierReleases": "Head over to GitHub for <a href='https://github.com/processing/processing4/releases'>earlier releases of Processing 4</a>.",
   "downloadChanges": "The <a href='https://github.com/processing/processing4/blob/main/build/shared/revisions.md'>list of revisions</a> covers the differences between releases in detail.",
