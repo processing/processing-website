@@ -1,0 +1,51 @@
+{
+  "name": "Processing 4.1.2",
+  "tagName": "processing-1290-4.1.2",
+  "publishedAt": "2023-01-16T21:26:16Z",
+  "releaseAssets": {
+    "edges": [
+      {
+        "node": {
+          "name": "processing-4.1.2-linux-arm32.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1290-4.1.2/processing-4.1.2-linux-arm32.tgz",
+          "size": 216420845
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.1.2-linux-arm64.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1290-4.1.2/processing-4.1.2-linux-arm64.tgz",
+          "size": 224289625
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.1.2-linux-x64.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1290-4.1.2/processing-4.1.2-linux-x64.tgz",
+          "size": 229626005
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.1.2-macos-aarch64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1290-4.1.2/processing-4.1.2-macos-aarch64.zip",
+          "size": 205660516
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.1.2-macos-x64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1290-4.1.2/processing-4.1.2-macos-x64.zip",
+          "size": 223796416
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.1.2-windows-x64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1290-4.1.2/processing-4.1.2-windows-x64.zip",
+          "size": 224095560
+        }
+      }
+    ]
+  }
+}
