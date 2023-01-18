@@ -6,8 +6,14 @@
     "edges": [
       {
         "node": {
-          "name": "processing-4.1.1-macos-x64.zip",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1289-4.1.1/processing-4.1.1-macos-x64.zip"
+          "name": "processing-4.1.1-linux-arm32.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1289-4.1.1/processing-4.1.1-linux-arm32.tgz"
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.1.1-linux-arm64.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1289-4.1.1/processing-4.1.1-linux-arm64.tgz"
         }
       },
       {
@@ -24,20 +30,14 @@
       },
       {
         "node": {
-          "name": "processing-4.1.1-linux-arm32.tgz",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1289-4.1.1/processing-4.1.1-linux-arm32.tgz"
+          "name": "processing-4.1.1-macos-x64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1289-4.1.1/processing-4.1.1-macos-x64.zip"
         }
       },
       {
         "node": {
           "name": "processing-4.1.1-windows-x64.zip",
           "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1289-4.1.1/processing-4.1.1-windows-x64.zip"
-        }
-      },
-      {
-        "node": {
-          "name": "processing-4.1.1-linux-arm64.tgz",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1289-4.1.1/processing-4.1.1-linux-arm64.tgz"
         }
       }
     ]
