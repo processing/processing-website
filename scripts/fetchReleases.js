@@ -1,8 +1,9 @@
+const readline = require('readline');
 const { graphql } = require('@octokit/graphql');
 const fs = require('fs');
 const path = require('path');
 
-const fetchReleases = async () => {
+const fetchReleases = async (githubToken) => {
   const { processing, processing4 } = await graphql(
     `
       query {
@@ -50,7 +51,7 @@ const fetchReleases = async () => {
     `,
     {
       headers: {
-        authorization: `token ${process.env.GITHUB_TOKEN}`
+        authorization: `token ${githubToken}`
       }
     }
   );
@@ -73,10 +74,14 @@ const fetchReleases = async () => {
   });
 };
 
-// only fetch if ENV has GITHUB_TOKEN
-if (process.env.GITHUB_TOKEN) {
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+rl.question('Please enter your GitHub token: ', (token) => {
+  rl.close();
+
   console.log('Fetching releases from github.com');
-  fetchReleases();
-} else {
-  console.log('No GitHub token found. Bypassing fetch of releases');
-}
+  fetchReleases(token);
+});
