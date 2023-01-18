@@ -6,8 +6,11 @@ In order to not require an API token on GitHub in development, there is a separa
 
 ## How to show a new release on the download page
 
-1. Make sure `npm` is up to date
+1. Make sure `npm` is up to date. (Check Node.js version with `node -v` and make sure it corresponds to the version in [`/.github/workflows/deploy.yml`](https://github.com/processing/processing-website/blob/main/.github/workflows/deploy.yml). For example, if the version specified in the deploy.yml file is `node-version: 16.x` then `v16.17.0` would be a match.)
 1. Make sure that the release has been published on GitHub
-1. Run the script with a GitHub token: `$ GITHUB_TOKEN=SOMETOKENHERE npm run fetchReleases`
-1. Edit the [`selected.json`](/content/download/selected.json) file to include the new release tag
-1. Make a PR to the `main` branch.
+1. Create a [GitHub access token](https://github.com/settings/tokens)
+1. Create a git branch to hold your changes
+1. Run the script with: `npm run fetchReleases`
+1. Enter your GitHub access token when prompted
+1. Edit the [`/content/download/selected.json`](/content/download/selected.json) file to include the new release tag
+1. Make a pull request to the `main` branch
