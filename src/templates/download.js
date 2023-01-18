@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from 'react';
+import React, { memo } from 'react';
 import { navigate, graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
@@ -120,17 +120,7 @@ const Download = ({ data }) => {
 const DownloadSection = memo(({ release, onAfterDownload }) => {
   const intl = useIntl();
 
-  const releasesObject = useMemo(() => {
-    const assetsObject = { Windows: [], MacOS: [], Linux: [] };
-    for (let asset of release.assets) {
-      if (asset.os in assetsObject) {
-        assetsObject[asset.os].push(asset);
-      }
-    }
-    return assetsObject;
-  }, [release]);
-
-  const [selected] = useMachineOS(releasesObject);
+  const [selected] = useMachineOS(release.assetsByOs);
 
   return (
     <div className={css.downloadSection}>
@@ -157,21 +147,21 @@ const DownloadSection = memo(({ release, onAfterDownload }) => {
         <OSSection
           logoComponent={<LogoWindows />}
           osName="Windows"
-          assets={releasesObject.Windows}
+          assets={release.assetsByOs.Windows}
           selected={selected}
           onAfterDownload={onAfterDownload}
         />
         <OSSection
           logoComponent={<LogoMac />}
           osName="MacOS"
-          assets={releasesObject.MacOS}
+          assets={release.assetsByOs.MacOS}
           selected={selected}
           onAfterDownload={onAfterDownload}
         />
         <OSSection
           logoComponent={<LogoLinux />}
           osName="Linux"
-          assets={releasesObject.Linux}
+          assets={release.assetsByOs.Linux}
           selected={selected}
           onAfterDownload={onAfterDownload}
         />

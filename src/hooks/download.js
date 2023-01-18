@@ -51,7 +51,8 @@ export const usePreparedReleases = (releases) => {
           month: 'long',
           day: 'numeric'
         }),
-        assets: []
+        assets: [],
+        assetsByOs: { Windows: [], MacOS: [], Linux: [] }
       };
 
       // Prepare release assets
@@ -63,6 +64,20 @@ export const usePreparedReleases = (releases) => {
           bit: getBit(asset.name),
           url: asset.downloadUrl,
           size: formatBytes(asset.size)
+        });
+      }
+
+      for (let asset of item.assets) {
+        if (asset.os in item.assetsByOs) {
+          item.assetsByOs[asset.os].push(asset);
+        }
+      }
+      for (let os in item.assetsByOs) {
+        item.assetsByOs[os].sort((a, b) => {
+          if (a.bit === b.bit) return 0;
+          if (a.bit != null && a.bit.includes('Intel')) return -1;
+          if (b.bit != null && b.bit.includes('Intel')) return 1;
+          return 0;
         });
       }
 
@@ -87,13 +102,13 @@ export const useMachineOS = (releases) => {
     [setSelected]
   );
 
-  const selectOS = (os) => {
-    const osReleases = releases[os];
-    const lastAsset = osReleases[osReleases.length - 1];
-    selectAsset(lastAsset);
-  };
-
   useEffect(() => {
+    const selectOS = (os) => {
+      const osReleases = releases[os];
+      const firstAsset = osReleases[0];
+      selectAsset(firstAsset);
+    };
+
     const { userAgent } = navigator;
     if (userAgent.search('Windows') !== -1) {
       selectOS('Windows');
@@ -104,7 +119,7 @@ export const useMachineOS = (releases) => {
     } else {
       selectOS('Windows');
     }
-  }, []);
+  }, [releases, selectAsset]);
 
   return [selected, selectAsset];
 };
