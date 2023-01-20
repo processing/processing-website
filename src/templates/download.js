@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect, useRef, useState } from 'react';
 import { navigate, graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
@@ -10,6 +10,9 @@ import Layout from '../components/Layout';
 import LogoWindows from '../images/logo-windows.svg';
 import LogoMac from '../images/logo-macos.svg';
 import LogoLinux from '../images/logo-linux.svg';
+import LogoRaspberry from '../images/logo-raspberry.svg';
+
+import InfoIcon from '../images/info-icon.svg';
 
 // https://www.svgrepo.com/svg/436169/pencil-tool-pen
 import CreateIcon from '../images/create-icon.svg';
@@ -53,7 +56,12 @@ const Download = ({ data }) => {
         </div>
       </div>
 
-      <DownloadSection
+      <MainDownloadSection
+        release={releases[0]}
+        onAfterDownload={onAfterDownload}
+      />
+
+      <OSSectionContainer
         release={releases[0]}
         onAfterDownload={onAfterDownload}
       />
@@ -117,98 +125,178 @@ const Download = ({ data }) => {
   );
 };
 
-const DownloadSection = memo(({ release, onAfterDownload }) => {
+const MainDownloadSection = memo(({ release, onAfterDownload }) => {
   const intl = useIntl();
-
-  const [selected] = useMachineOS(release.assetsByOs);
+  const detectedAsset = useMachineOS(release.assetsByOs, release.publishedAt);
 
   return (
-    <div className={css.downloadSection}>
-      <a
-        className={css.bigDownloadButton}
-        href={selected.os !== '' ? selected.asset.url : ''}
-        onClick={onAfterDownload}>
-        <span>
-          {intl.formatMessage({ id: 'download' })} Processing {release.version}{' '}
-        </span>
-        {selected.asset && (
-          <span className={css.osBit}>
-            {selected.asset.os}
-            {selected.asset.bit && (
-              <>
-                {' •'} {selected.asset.bit}
-              </>
-            )}
+    <div className={classnames(grid.container, grid.grid)}>
+      <div className={classnames(grid.col, css.mainDownloadButtonContainer)}>
+        <a
+          className={css.mainDownloadButton}
+          href={detectedAsset.os !== '' ? detectedAsset.asset.url : ''}
+          onClick={onAfterDownload}>
+          <span>
+            {intl.formatMessage({ id: 'download' })} Processing{' '}
+            {release.version}{' '}
           </span>
-        )}
-      </a>
+        </a>
 
+        {detectedAsset.asset && (
+          <div className={css.osDetails}>
+            <p className={css.osBit}>
+              {detectedAsset.asset.os}
+              {detectedAsset.asset.bit && (
+                <>
+                  {' •'} {detectedAsset.asset.bit}
+                </>
+              )}
+              {detectedAsset.asset.size && (
+                <>
+                  {' •'} {detectedAsset.asset.size}
+                </>
+              )}
+              {' •'}
+            </p>
+            <InfoTooltip
+              asset={detectedAsset.asset}
+              date={release.publishedAt}
+              className={css.downloadDetailsTooltip}
+            />
+          </div>
+        )}
+        {detectedAsset.asset && detectedAsset.asset.name.includes('macos-x64') && (
+          <div>
+            <p>{intl.formatMessage({ id: 'macOsIntelWarning' })}</p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+});
+
+const InfoTooltip = ({ asset, date, className, zIndex }) => {
+  const intl = useIntl();
+  const [open, setOpen] = useState(false);
+  const tooltipRef = useRef();
+
+  useEffect(() => {
+    if (open) {
+      const clickCallback = (e) => {
+        if (tooltipRef.current == null) return;
+        if (tooltipRef.current.contains(e.target)) return;
+        if (
+          !e.target.contains(tooltipRef.current) ||
+          (e.target.contains(tooltipRef.current) &&
+            e.target !== tooltipRef.current)
+        )
+          setOpen(false);
+      };
+      document.addEventListener('click', clickCallback);
+      return () => document.removeEventListener('click', clickCallback);
+    }
+  }, [open]);
+
+  return (
+    <div
+      className={classnames(css.infoTooltipContainer, className, {
+        [css.open]: open
+      })}
+      style={{ zIndex: zIndex }}>
+      <button onClick={() => setOpen((o) => !o)}>
+        <InfoIcon />
+      </button>
+
+      {open && (
+        <div className={css.tooltip} ref={tooltipRef}>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: asset.tooltipMessage
+            }}
+          />
+
+          <p className={css.tooltipDate}>
+            {intl.formatMessage({ id: 'publishedOn' })} {date}
+          </p>
+        </div>
+      )}
+    </div>
+  );
+};
+
+const osAndComponents = [
+  { osName: 'Windows', logoComponent: <LogoWindows /> },
+  { osName: 'macOS', logoComponent: <LogoMac /> },
+  { osName: 'Linux', logoComponent: <LogoLinux /> },
+  { osName: 'Raspberry Pi', logoComponent: <LogoRaspberry /> }
+];
+
+const OSSectionContainer = memo(({ release, onAfterDownload }) => {
+  const intl = useIntl();
+  const [selectedOs, setSelectedOs] = useState('');
+
+  return (
+    <div className={css.osSectionContainer}>
+      <p>{intl.formatMessage({ id: 'otherVersions' })}</p>
       <div className={css.osSectionList}>
-        <OSSection
-          logoComponent={<LogoWindows />}
-          osName="Windows"
-          assets={release.assetsByOs.Windows}
-          selected={selected}
-          onAfterDownload={onAfterDownload}
-        />
-        <OSSection
-          logoComponent={<LogoMac />}
-          osName="MacOS"
-          assets={release.assetsByOs.MacOS}
-          selected={selected}
-          onAfterDownload={onAfterDownload}
-        />
-        <OSSection
-          logoComponent={<LogoLinux />}
-          osName="Linux"
-          assets={release.assetsByOs.Linux}
-          selected={selected}
-          onAfterDownload={onAfterDownload}
-        />
+        {osAndComponents.map((os, index) => (
+          <OSSection
+            key={index}
+            logoComponent={os.logoComponent}
+            osName={os.osName}
+            assets={release.assetsByOs[os.osName]}
+            date={release.publishedAt}
+            isSelected={selectedOs === os.osName}
+            onSelect={() =>
+              setSelectedOs((s) => (s !== os.osName ? os.osName : ''))
+            }
+            onAfterDownload={onAfterDownload}
+          />
+        ))}
       </div>
     </div>
   );
 });
 
 const OSSection = memo(
-  ({ logoComponent, osName, assets, selected, onAfterDownload }) => {
-    const isSelected = selected.os === osName;
-    const selectedBit = selected.asset?.bit;
-
+  ({
+    logoComponent,
+    osName,
+    assets,
+    date,
+    isSelected,
+    onSelect,
+    onAfterDownload
+  }) => {
     return (
       <div
         className={classnames(css.osSection, {
           [css.selectedOsSection]: isSelected
         })}>
-        <div className={css.osLogoContainer}>
+        <button className={css.osButton} onClick={() => onSelect()}>
           {logoComponent}
           <h2>{osName}</h2>
-        </div>
-
-        <ul className={css.assetList}>
-          {assets.map((asset, index) => (
-            <li key={index}>
-              <a
-                className={classnames(css.asset, {
-                  [css.selectedAsset]: asset.bit === selectedBit
-                })}
-                href={asset.url}
-                onClick={onAfterDownload}>
-                {asset.os}
-                {asset.bit && (
-                  <>
-                    {' •'} {asset.bit}
-                  </>
-                )}
-                {asset.size && (
-                  <>
-                    {' •'} {asset.size}
-                  </>
-                )}
-              </a>
-            </li>
-          ))}
-        </ul>
+        </button>
+        {isSelected && (
+          <ul className={css.assetList}>
+            {assets.map((asset, index) => (
+              <li key={index} className={css.assetContainer}>
+                <a
+                  className={css.asset}
+                  href={asset.url}
+                  onClick={onAfterDownload}>
+                  {asset.bit && <>{asset.bit}</>}
+                </a>
+                <InfoTooltip
+                  asset={asset}
+                  date={date}
+                  className={css.assetTooltip}
+                  zIndex={assets.length - index}
+                />
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     );
   }

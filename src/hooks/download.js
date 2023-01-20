@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useIntl } from 'react-intl';
 
 const getOS = (name) => {
   if (name.includes('windows') || name.includes('.exe')) return 'Windows';
+  else if (name.includes('linux-arm')) return 'Raspberry Pi';
   else if (name.includes('linux')) return 'Linux';
-  else if (name.includes('macos')) return 'MacOS';
+  else if (name.includes('macos')) return 'macOS';
   else return 'Unknown';
 };
 
@@ -12,8 +14,21 @@ const getBit = (name) => {
   else if (name.includes('windows64')) return '64-bit';
   else if (name.includes('windows32')) return '32-bit';
   else if (name.includes('macos-aarch64')) return 'Apple Silicon';
-  else if (name.includes('linux-arm32')) return 'Raspberry Pi 32-bit';
-  else if (name.includes('linux-arm64')) return 'Raspberry Pi 64-bit';
+  else if (name.includes('linux-arm32')) return '32-bit';
+  else if (name.includes('linux-arm64')) return '64-bit';
+  else return null;
+};
+
+const getTooltip = (name, intProvider) => {
+  if (name.includes('windows')) return intProvider('windowsIntelAssetTooltip');
+  else if (name.includes('macos-aarch64'))
+    return intProvider('macOsSiliconAssetTooltip');
+  else if (name.includes('macos')) return intProvider('macOsIntelAssetTooltip');
+  else if (name.includes('linux-arm32'))
+    return intProvider('raspberryPi32AssetTooltip');
+  else if (name.includes('linux-arm64'))
+    return intProvider('raspberryPi64AssetTooltip');
+  else if (name.includes('linux')) return intProvider('linuxIntelAssetTooltip');
   else return null;
 };
 
@@ -36,6 +51,8 @@ function formatBytes(bytes, decimals = 0) {
   @param {Array} releases Array of releases JSON files
 **/
 export const usePreparedReleases = (releases) => {
+  const intl = useIntl();
+
   return useMemo(() => {
     const prepared = [];
 
@@ -52,7 +69,7 @@ export const usePreparedReleases = (releases) => {
           day: 'numeric'
         }),
         assets: [],
-        assetsByOs: { Windows: [], MacOS: [], Linux: [] }
+        assetsByOs: { Windows: [], macOS: [], Linux: [], 'Raspberry Pi': [] }
       };
 
       // Prepare release assets
@@ -63,7 +80,10 @@ export const usePreparedReleases = (releases) => {
           os: getOS(asset.name),
           bit: getBit(asset.name),
           url: asset.downloadUrl,
-          size: formatBytes(asset.size)
+          size: formatBytes(asset.size),
+          tooltipMessage: getTooltip(asset.name, (id) =>
+            intl.formatMessage({ id })
+          )
         });
       }
 
@@ -85,7 +105,7 @@ export const usePreparedReleases = (releases) => {
     }
 
     return prepared;
-  }, [releases]);
+  }, [intl, releases]);
 };
 
 /**
@@ -93,13 +113,16 @@ export const usePreparedReleases = (releases) => {
   Will default to Windows if fails to detect other.
 **/
 export const useMachineOS = (releases) => {
-  const [selected, setSelected] = useState({ os: '', asset: null });
+  const [detected, setDetected] = useState({
+    os: '',
+    asset: null
+  });
 
   const selectAsset = useCallback(
     (asset) => {
-      setSelected({ os: asset.os, asset });
+      setDetected({ os: asset.os, asset });
     },
-    [setSelected]
+    [setDetected]
   );
 
   useEffect(() => {
@@ -113,7 +136,7 @@ export const useMachineOS = (releases) => {
     if (userAgent.search('Windows') !== -1) {
       selectOS('Windows');
     } else if (userAgent.search('Mac') !== -1) {
-      selectOS('MacOS');
+      selectOS('macOS');
     } else if (userAgent.search('X11') !== -1) {
       selectOS('Linux');
     } else {
@@ -121,5 +144,5 @@ export const useMachineOS = (releases) => {
     }
   }, [releases, selectAsset]);
 
-  return [selected, selectAsset];
+  return detected;
 };

@@ -12,21 +12,21 @@
   }
 }
 
-.downloadSection {
-  position: relative;
-  background-color: var(--download-background);
-  margin-top: var(--margin-double);
+.mainDownloadButtonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: var(--col8);
+
+  margin: var(--vertical-margin-medium) 0;
 }
 
-a.bigDownloadButton {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-
+a.mainDownloadButton {
   background-color: var(--processing-blue);
   color: white;
   border-radius: 40px;
-  padding: var(--gutter) var(--margin) var(--gutter-half) var(--margin) ;
+  margin-bottom:  var(--vertical-margin-xsmall);
+  padding: var(--gutter) var(--margin);
 
   display: flex;
   flex-direction: column;
@@ -51,24 +51,54 @@ a.bigDownloadButton {
     line-height: 1.2;
     text-align: center;
   }
+}
 
-  & span.osBit {
-    font-size: var(--text-xsmall);
+.mainDownloadButtonContainer > div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+
+  & > p {
+    font-size: var(--text-large);
     line-height: 1.5;
     font-weight: 500;
+    color: var(--download-inactive);
+    margin-bottom: 0;
+  }
+}
+
+.osBit {
+  margin-right: 5px;
+}
+
+.osSectionContainer {
+  background-color: var(--download-background);
+  padding: 0 calc(2 * var(--margin-double));
+  padding-bottom: calc(2 * var(--vertical-margin-large));
+
+  & > p {
+    font-size: var(--text-large);
+    line-height: 1.5;
+    font-weight: 700;
+    color: var(--download-inactive);
+    text-align: center;
+    padding: var(--vertical-margin-large) 0;
+    margin: 0;
   }
 }
 
 .osSectionList {
   display: flex;
   justify-content: center;
-  gap: var(--margin);
-
-  padding: calc(2 * var(--vertical-margin-large)) 0;
+  gap: var(--gutter-double);
 }
 
 .osSection {
   color: var(--download-inactive);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
 
   & h2 {
     margin: var(--vertical-margin-small) 0 0 0;
@@ -80,34 +110,45 @@ a.bigDownloadButton {
   }
 }
 
-.osLogoContainer {
+.osButton {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 
-  padding: var(--vertical-margin-medium) var(--margin-double);
+  padding: var(--vertical-margin-medium) 0;
   margin-bottom: var(--gutter);
   border-radius: 5px;
+  cursor: pointer;
 
   & svg {
     height: 100px;
+    color: var(--download-inactive);
   }
 }
 
-.selectedOsSection, .osSection:hover,
-.selectedOsSection h2, .osSection:hover h2 {
+.selectedOsSection, .selectedOsSection h2 {
   color: var(--processing-blue);
 }
 
 .assetList {
   border-radius: 5px;
+  width: 100%;
 
   & li + li {
     margin-top: var(--gutter);
   }
 
   & a.asset {
-    display: block;
+    background-color: var(--processing-blue);
+    color: white;
+    border-radius: 40px;
+    width: 100%;
+    padding: var(--gutter-half) 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     font-family: var(--font);
     font-size: var(--text-xsmall);
@@ -115,27 +156,36 @@ a.bigDownloadButton {
     font-weight: 500;
     text-align: center;
 
-    border: 1px solid var(--download-inactive);
-    color: var(--download-inactive);
-    border-radius: 20px;
-    width: 100%;
-    padding: var(--gutter-half) 0;
-
     cursor: pointer;
+
+    &:hover {
+      color: white;
+      background-color: var(--processing-blue-light);
+    }
+    &:active {
+      color: white;
+      background-color: var(--processing-blue-dark);
+    }
+    &:focus {
+      color: white;
+      background-color: var(--processing-blue-mid);
+    }
   }
 }
 
-.selectedOsSection .osLogoContainer,
-.osSection:hover .osLogoContainer {
+.assetContainer {
+  position: relative;
+}
+
+.selectedOsSection .osButton,
+.osButton:hover {
   background-color: var(--download-background-active);
 }
 
-.selectedOsSection svg, 
-.osSection:hover svg {
+.selectedOsSection svg {
   color: var(--processing-blue);
 }
 
-.selectedOsSection a.selectedAsset,
 .osSection a:hover {
   color: var(--processing-blue);
 
@@ -159,6 +209,89 @@ a.bigDownloadButton {
     margin: 0;
   }
 }
+
+.infoTooltipContainer {
+  display: inline-block;
+  position: relative;
+  /* z-index: 1; */
+  
+  & > button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 16px;
+    vertical-align: baseline;
+    cursor: pointer;
+  }
+
+  & svg {
+    height: 1em;
+  }
+
+  &.open button, &:hover button {
+    background-color: var(--processing-blue);
+  }
+
+  &.open svg, &:hover svg {
+    color: white;
+  }
+
+  & .tooltip {
+    position: absolute;
+    top: 2em;
+    left: 0;
+    width: 350px;
+    transform: translateX(calc(-50% + 0.5em));
+    display: block;
+    background-color: var(--processing-blue);
+    color: white;
+    padding: var(--gutter-double) var(--gutter-half);
+    border-radius: 5px;
+    text-align: center;
+  }
+}
+
+.tooltip p {
+  text-align: center;
+  font-size: var(--text-regular);
+  font-weight: 500;
+  color: white;
+  margin-bottom: 0;
+}
+
+.tooltip a {
+  color: white;
+  text-decoration: underline;
+  &:hover , &:active{
+    color: white;
+  }
+}
+
+.tooltip p + p {
+  margin-top: 1em;
+}
+
+.tooltip p.tooltipDate {
+  font-size: var(--text-xsmall);
+  color: var(--download-background);
+}
+
+.downloadDetailsTooltip svg {
+  color: var(--download-inactive);
+}
+
+.assetTooltip {
+  position: absolute;
+  top: 50%;
+  right: -2em;
+  transform: translateY(-50%);
+
+  & svg {
+    color: var(--processing-blue);
+  }
+} 
 
 .bottomLinks {
   display: flex;
@@ -221,7 +354,7 @@ a.bigDownloadButton {
 }
 
 @media (--reduced) {
-  a.bigDownloadButton {
+  a.mainDownloadButton {
     width: 80%;
   }
 
@@ -241,7 +374,7 @@ a.bigDownloadButton {
     justify-content: center;
   }
 
-  .osLogoContainer {
+  .osButton {
     justify-content: center;
 
     width: 300px;
@@ -286,7 +419,7 @@ a.bigDownloadButton {
 
 @media (--small) {
 
-  a.bigDownloadButton {
+  a.mainDownloadButton {
     width: 90%;
 
     & span {
@@ -307,7 +440,7 @@ a.bigDownloadButton {
     align-items: center;
   }
   
-  .osLogoContainer {
+  .osButton {
     width: 120px;
     margin-bottom: var(--gutter-double);
 
