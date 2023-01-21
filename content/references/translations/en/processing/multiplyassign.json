@@ -3,15 +3,15 @@
   "brief": "Combines multiplication with assignment",
   "description": "Combines multiplication with assignment. The expression <b>a *= b</b> is equivalent to <b>a = a * b</b>. \n",
   "related": ["multiply", "assign"],
-  "syntax": ["value1 *= value2"],
+  "syntax": ["var *= value"],
   "returns": "",
   "type": "function",
   "category": "math",
   "subcategory": "Operators",
   "parameters": [
-    { "name": "value1", "description": "int or float", "type": [] },
+    { "name": "var", "description": "int or float", "type": [] },
     {
-      "name": "value2",
+      "name": "value",
       "description": "any numerical value the same datatype as value1",
       "type": []
     }
