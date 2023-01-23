@@ -79,7 +79,7 @@
   "raspberryPi32AssetTooltip": "Esta es la única plataforma de 32-bit compatible con Processing 4.",
   "raspberryPi64AssetTooltip": "Aún no muchas personas usan 64-bit con sus dispositivos RPi, pero hay avances en progreso.",
   "publishedOn": "Publicado en",
-  "macOsIntelWarning": "¿Usas macOS con CPU M1 o M2? Descarga entonces la versión de Apple Silicon abajo.",
+  "macOsIntelWarning": "¿Usas macOS con CPU M1 o M2? Descarga entonces la versión <a href='{0}'>Apple Silicon</a>.",
   "otherVersions": "¿Necesitas otra versión?",
   "olderVersions": "¿Buscas versiones anteriores?",
   "githubEarlierReleases": "En GitHub encontrarás <a href='https://github.com/processing/processing4/releases'>versiones anteriores de Processing 4</a>.",

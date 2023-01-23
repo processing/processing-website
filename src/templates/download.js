@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useRef, useState } from 'react';
+import React, { memo, useEffect, useMemo, useRef, useState } from 'react';
 import { navigate, graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
@@ -129,6 +129,13 @@ const MainDownloadSection = memo(({ release, onAfterDownload }) => {
   const intl = useIntl();
   const detectedAsset = useMachineOS(release.assetsByOs, release.publishedAt);
 
+  const appleSiliconAsset = useMemo(() => {
+    for (let asset of release.assets) {
+      if (asset.bit === 'Apple Silicon') return asset;
+    }
+    return null;
+  }, [release]);
+
   return (
     <div className={classnames(grid.container, grid.grid)}>
       <div className={classnames(grid.col, css.mainDownloadButtonContainer)}>
@@ -143,7 +150,7 @@ const MainDownloadSection = memo(({ release, onAfterDownload }) => {
         </a>
 
         {detectedAsset.asset && (
-          <div className={css.osDetails}>
+          <div>
             <p className={css.osBit}>
               {detectedAsset.asset.os}
               {detectedAsset.asset.bit && (
@@ -165,11 +172,19 @@ const MainDownloadSection = memo(({ release, onAfterDownload }) => {
             />
           </div>
         )}
-        {detectedAsset.asset && detectedAsset.asset.name.includes('macos-x64') && (
-          <div>
-            <p>{intl.formatMessage({ id: 'macOsIntelWarning' })}</p>
-          </div>
-        )}
+        {detectedAsset.asset &&
+          detectedAsset.asset.name.includes('macos-x64') &&
+          appleSiliconAsset && (
+            <div>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: intl
+                    .formatMessage({ id: 'macOsIntelWarning' })
+                    .replace('{0}', appleSiliconAsset.url)
+                }}
+              />
+            </div>
+          )}
       </div>
     </div>
   );

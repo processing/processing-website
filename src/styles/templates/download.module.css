@@ -18,7 +18,7 @@
   align-items: center;
   flex-basis: var(--col8);
 
-  margin: var(--vertical-margin-medium) 0;
+  margin: var(--vertical-margin-large) 0;
 }
 
 a.mainDownloadButton {
@@ -61,7 +61,7 @@ a.mainDownloadButton {
   & > p {
     font-size: var(--text-large);
     line-height: 1.5;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--download-inactive);
     margin-bottom: 0;
   }
@@ -213,7 +213,6 @@ a.mainDownloadButton {
 .infoTooltipContainer {
   display: inline-block;
   position: relative;
-  /* z-index: 1; */
   
   & > button {
     display: inline-flex;
