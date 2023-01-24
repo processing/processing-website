@@ -3,20 +3,20 @@
   "brief": "Combines addition with assignment",
   "description": "Combines addition with assignment. The expression <b>a += b</b> is equivalent to <b>a = a + b</b>. \n",
   "related": ["assign", "addition", "subtractassign"],
-  "syntax": ["value1 += value2"],
+  "syntax": ["var += value"],
   "returns": "",
   "type": "function",
   "category": "math",
   "subcategory": "Operators",
   "parameters": [
     {
-      "name": "value1",
+      "name": "var",
       "description": "int or float",
       "type": []
     },
     {
-      "name": "value2",
-      "description": "any numerical value the same datatype as value1",
+      "name": "value",
+      "description": "any numerical value the same datatype as var",
       "type": []
     }
   ]
