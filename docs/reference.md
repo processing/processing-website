@@ -25,9 +25,11 @@ Libraries DFX Export, PDF Export and SVG Export don't have individual references
 
 ## Adding content to the english reference
 
-You should never edit the `/content/references/translations/en` folder, since it is generated directly from JavaDoc comments in the `processing`, `sound` and `video` repo. Instead, make the changes in those repos as explained below.
+The `content/references/translations/en` folder contains two kinds of json files:
+* Processing API documentation: these files are generated from the processing4 repo using the [Doclet script](https://github.com/processing/processing-doclet/blob/main/README.md) as explained below.
+* Java documentation: This includes keywords that are NOT part of the Processing API but good to include as a reference for learners. The `+=` or `/=` operators and some Java keywords like `void` or `static` fall into that category for example. The corresponding json files must be edited manually within the `processing-website` repo.
 
-In each source file, look for the `@webref` tag in the block comments. If the tag is there it means that the reference below the comment needs to be on the website so the block comment should be changed to fit the new structure.
+In each source file, look for the `@webref` tag in the block comments. This tag means that the block will be picked up by the Doclet script and converted into a json file to be included on the website.
 
 ```
 /*
@@ -41,25 +43,23 @@ In each source file, look for the `@webref` tag in the block comments. If the ta
 */
 ```
 
-**Description:** this should be the main description of the reference. The description might already be there however it might not be correct (the newest version) so you need to copy it from the XML files located [here](https://github.com/processing/processing-docs/tree/master/content/api_en) under the `<description>` tag.
+**Description:** this should be the main description of the reference. Note: if necessary you can look up the previous reference in the archived XML files located [here](https://github.com/processing/processing-docs/tree/master/content/api_en) under the `<description>` tag.
 
-**Advanced description:** this is the advanced description that doesn't go on the webpage but in the in the expanded Java documentation. The advance description starts with an html heading (e.g. `<h3>Advanced:</h3>`). Not every reference contains this part, it case it is there you do not need to change it in any way, just leave it as it is. Advanced description always goes below the Description.
+**Advanced description:** this is the advanced description that doesn't go on the webpage but in the in the expanded Java documentation. The advanced description starts with an html heading (e.g. `<h3>Advanced:</h3>`). Advanced description always goes below the Description, though not every reference has an advanced description. 
 
-**@webref:** tag that implies the reference goes on the website. It is followed by category and subcategory, if they exist, in the format category:subcategory. The category and subcategory are also in the XML files [here](https://github.com/processing/processing-docs/tree/master/content/api_en) under the <category> and <subcategory> tag. If they don't exist you do not have to add anything.
+**@webref:** tag that implies the reference goes on the website. It is followed by category and subcategory, if they exist, in the format category:subcategory. The category and subcategory are also in the XML files [here](https://github.com/processing/processing-docs/tree/master/content/api_en) under the <category> and <subcategory> tag.
 
 **@webBrief:** this is the short version of description, just one sentence which is usually the first sentence of the Description. If the first sentence is too long or doesn't explain the reference, you can change it for a summary of the whole description.
 
 **...:** everything else that was already in the comment should stay there below the @webBrief tag
 
-When you finish adding all the information, run the following steps:
+When you are done with your edits to the JavaDoc, commit your changes and follow these steps:
 
-1. Set up the environment and run the content script following [this instruction](https://github.com/processing/processing-doclet/blob/main/README.md).
+1. Set up the environment and run the content script following [these instructions](https://github.com/processing/processing-doclet/blob/main/README.md).
 
 2. [Publish the website](/docs/publish.md)
 
-If you are adding content to the reference that does not live in the `processing` source code (such as some Java functions and `=;<>` symbols), do the following steps.
-
-_TODO_
+Reminder: If you are adding content to the reference that does not live in the `processing` source code (such as Java keywords and operators), you must manually edit the corresponding json files in `content/references/translations/en`.
 
 ## Adding examples and examples images for references
 
