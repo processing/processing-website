@@ -163,7 +163,7 @@ const MainDownloadSection = memo(({ release, onAfterDownload }) => {
                   {' •'} {detectedAsset.asset.size}
                 </>
               )}
-              {' •'}
+              <span className={css.preTooltipDot}>{' •'}</span>
             </p>
             <InfoTooltip
               asset={detectedAsset.asset}
@@ -190,14 +190,14 @@ const MainDownloadSection = memo(({ release, onAfterDownload }) => {
   );
 });
 
-const InfoTooltip = ({ asset, date, className, zIndex }) => {
+const InfoTooltip = ({ asset, date, className, zIndex, translateX }) => {
   const intl = useIntl();
   const [open, setOpen] = useState(false);
   const tooltipRef = useRef();
 
   useEffect(() => {
     if (open) {
-      const clickCallback = (e) => {
+      const outsideInteraction = (e) => {
         if (tooltipRef.current == null) return;
         if (tooltipRef.current.contains(e.target)) return;
         if (
@@ -207,8 +207,10 @@ const InfoTooltip = ({ asset, date, className, zIndex }) => {
         )
           setOpen(false);
       };
-      document.addEventListener('click', clickCallback);
-      return () => document.removeEventListener('click', clickCallback);
+      document.addEventListener('click', outsideInteraction);
+      return () => {
+        document.removeEventListener('click', outsideInteraction);
+      };
     }
   }, [open]);
 
@@ -292,9 +294,10 @@ const OSSection = memo(
           {logoComponent}
           <h2>{osName}</h2>
         </button>
-        {isSelected && (
-          <ul className={css.assetList}>
-            {assets.map((asset, index) => (
+
+        <ul className={css.assetList}>
+          {isSelected &&
+            assets.map((asset, index) => (
               <li key={index} className={css.assetContainer}>
                 <a
                   className={css.asset}
@@ -310,8 +313,7 @@ const OSSection = memo(
                 />
               </li>
             ))}
-          </ul>
-        )}
+        </ul>
       </div>
     );
   }

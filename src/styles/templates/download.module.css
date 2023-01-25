@@ -56,7 +56,7 @@ a.mainDownloadButton {
 .mainDownloadButtonContainer > div {
   display: flex;
   align-items: center;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 
   & > p {
     font-size: var(--text-large);
@@ -64,6 +64,11 @@ a.mainDownloadButton {
     font-weight: 700;
     color: var(--download-inactive);
     margin-bottom: 0;
+  }
+
+  & > p > a {
+    text-decoration: underline;
+    color: var(--download-inactive);
   }
 }
 
@@ -73,7 +78,7 @@ a.mainDownloadButton {
 
 .osSectionContainer {
   background-color: var(--download-background);
-  padding: 0 calc(2 * var(--margin-double));
+  padding: 0 calc(2.5 * var(--margin-double));
   padding-bottom: calc(2 * var(--vertical-margin-large));
 
   & > p {
@@ -226,7 +231,9 @@ a.mainDownloadButton {
   }
 
   & svg {
-    height: 1em;
+    flex: none;
+    height: var(--text-medium);
+    width: var(--text-medium);
   }
 
   &.open button, &:hover button {
@@ -352,20 +359,26 @@ a.mainDownloadButton {
   }
 }
 
+@media (--medium) {
+  .osSectionContainer {
+    padding: 0 calc(var(--margin-double));
+    padding-bottom: calc(2 * var(--vertical-margin-large));
+  }
+}
+
 @media (--reduced) {
   a.mainDownloadButton {
     width: 80%;
   }
 
-  .downloadSection {
-    margin-top: calc(3 * var(--vertical-margin-large));
+  .osSectionContainer  > p {
+    padding-top: calc(2 * var(--vertical-margin-large));
   }
 
   .osSectionList {
     flex-direction: column;
     gap: var(--margin-double);  
-
-    padding: calc(4 * var(--vertical-margin-large)) calc(var(--margin) + var(--gutter));
+    padding: calc(2 * var(--vertical-margin-large)) calc(var(--margin) + var(--gutter));
   }
 
   .osSection {
@@ -373,11 +386,13 @@ a.mainDownloadButton {
     justify-content: center;
   }
 
+  .assetList {
+    margin-top: calc(2.5 * var(--gutter));
+  }
+
   .osButton {
     justify-content: center;
-
     width: 300px;
-    margin-right: var(--gutter-double);
     margin-bottom: 0;
 
     & svg {
@@ -390,7 +405,8 @@ a.mainDownloadButton {
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: stretch;
+    max-width: 300px;
 
     & li + li {
       margin-top: calc(1.5 * var(--gutter));
@@ -400,6 +416,7 @@ a.mainDownloadButton {
       padding: var(--gutter-half)  var(--gutter);
     }
   }
+  
 
   .bottomLinks {
     flex-direction: column;
@@ -426,6 +443,10 @@ a.mainDownloadButton {
     }
   }
 
+  .mainDownloadButtonContainer > div > p {
+    font-size: var(--text-medium);
+  }
+
   .osSectionList {
     gap: calc(2 * var(--margin-double));
 
@@ -440,12 +461,21 @@ a.mainDownloadButton {
   }
   
   .osButton {
-    width: 120px;
+    width: 200px;
     margin-bottom: var(--gutter-double);
+    padding: var(--vertical-margin-large) 0;
 
     & svg {
-      height: 40px;
+      height: 60px;
     }
+  }
+
+  .infoTooltipContainer, .preTooltipDot {
+    display: none;
+  }
+
+  .assetList {
+    max-width: 200px;
   }
 
   .assetList a.asset {
