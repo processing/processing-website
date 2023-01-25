@@ -29,7 +29,7 @@ The `content/references/translations/en` folder contains two kinds of json files
 * Processing API documentation: these files are generated from the processing4 repo using the [Doclet script](https://github.com/processing/processing-doclet/blob/main/README.md) as explained below.
 * Java documentation: This includes keywords that are NOT part of the Processing API but good to include as a reference for learners. The `+=` or `/=` operators and some Java keywords like `void` or `static` fall into that category for example. The corresponding json files must be edited manually within the `processing-website` repo.
 
-In each source file, look for the `@webref` tag in the block comments. This tag means that the block will be picked up by the Doclet script and converted into a json file to be included on the website.
+In each source file, look for the `@webref` tag in the block comments. This tag means that the block will be picked up by the Doclet script and converted into a json file to be included on the website. Note: [GitHub search only works for files smaller than 384 KB](https://docs.github.com/en/search-github/searching-on-github/searching-code#considerations-for-code-search) which means [PApplet.java](https://github.com/processing/processing4/blob/main/core/src/processing/core/PApplet.java) is NOT searchable using GitHub's code search feature.
 
 ```
 /*
