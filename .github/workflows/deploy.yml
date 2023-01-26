@@ -1,9 +1,21 @@
 name: Deploy Production
 
 on:
-  release:
-    types: [released]
-
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'The version of the website used for the GitHub release'
+        type: string
+        required: true
+      description:
+        description: 'The description of changes used in the GitHub release changelog'
+        type: string
+        required: true
+      make_release:
+        description: 'Make a GitHub release with a referenze.zip after uploading the website'
+        type: boolean
+        required: true
+        default: true
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,3 +33,13 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Make reference.zip
+        run: npm run zip
+      - name: Create release
+        uses: softprops/action-gh-release@v1
+        if: ${{ inputs.make_release }}
+        with:
+          files: reference.zip
+          body: ${{ inputs.description }}
+          name: 'Website ${{ inputs.version }}'
+          tag_name: ${{ inputs.version }}

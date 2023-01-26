@@ -29,7 +29,8 @@
     "updateKeywords": "node scripts/updateKeywords.js",
     "deploy": "static deploy",
     "deployGithub": "gatsby clean && static deploy --env production --confirm",
-    "open": "static open"
+    "open": "static open",
+    "zip": "cd public; zip -r ../reference.zip *"
   },
   "dependencies": {
     "@mdx-js/mdx": "1.6.22",
