@@ -44,15 +44,16 @@ When translating the content to a new language you need to edit the [`i18n/confi
 
 - [Writing CSS](/docs/css.md)
 
-
 ## Deploying the site
 
-The website is set up to deploy itself whenever a new GitHub release is created from the `main` branch:
+The website is set up to deploy itself whenever the "Deploy Website" GitHub action is run. This triggers a new deploy from the `main` branch where the website is built, uploaded, and a new GitHub Release is created with a `reference.zip` file containing the contents of the website for loading in the IDE.
 
-1. Go to [Releases](https://github.com/processing/processing-website/releases)
-2. Click "Draft a new release"
-3. Choose a tag for this release. This value is not used for much, so you can just use `DD-MM-YYYY`
-4. Create the release. [A GitHub action will run](https://github.com/processing/processing-website/actions), which will build the website and upload to the S3 bucket (this may take up to 10-15 minutes).
+1. Go to [Actions](https://github.com/processing/processing-website/actions)
+2. Click "Deploy Website" in the left sidebar
+3. Click "Run workflow" on the right
+4. Fill in the details and click the green "Run workflow" button.
+
+Note that it's possible to deploy the website with or without making a GitHub release. For this, toggle the checkbox under "Run workflow".
 
 ## `keywords.txt`
 
@@ -66,6 +67,6 @@ The `processing4` repo now has an updated `java/keywords.txt` file.
 
 ## Building the site
 
-If you need to manually build the site, you can do it by running `npm run build` from the project source. This command is that runs behind the scenes when deploying a release. 
+If you need to manually build the site, you can do it by running `npm run build` from the project source. This command is that runs behind the scenes when deploying a release.
 
 It will build from the source and produce the static website in a folder `public`. Once built, the site can run in any static file server.
