@@ -15,7 +15,7 @@ description: >
 
 The Processing Development Environment (PDE) makes it easy to write Processing programs. Programs are written in the Text Editor and started by pressing the Run button. In Processing, a computer program is called a _sketch_. Sketches are stored in the _Sketchbook_, which is a folder on your computer.
 
-Sketches can draw two- and three-dimensional graphics. The default renderer is for drawing two-dimensional graphics. The P3D renderer makes it possible to draw three-dimensional graphics, which includes controlling the camera, lighting, and materials. The P2D renderer is a fast, but less accurate renderer for drawing two-dimensional graphics. Both the P2D and P3D renderers are accelerated if your computer has an OpenGL compatible graphics card.
+Sketches can draw two- and three-dimensional graphics. The default renderer is for drawing two-dimensional graphics. The P3D renderer makes it possible to draw three-dimensional graphics, which include controlling the camera, lighting, and materials. The P2D renderer is a fast, but less accurate renderer for drawing two-dimensional graphics. Both the P2D and P3D renderers are accelerated if your computer has an OpenGL compatible graphics card.
 
 The capabilities of Processing are extended with _Libraries_ and _Tools_. Libraries make it possible for sketches to do things beyond the _core_ Processing code. There are hundreds of libraries contributed by the Processing community that can be added to your sketches to enable new things like playing sounds, doing computer vision, and working with advanced 3D geometry. Tools extend the PDE to help make creating sketches easier by providing interfaces for tasks like selecting colors.
 
@@ -23,11 +23,11 @@ Processing has different _programming modes_ to make it possible to deploy sketc
 
 ## Processing Development Environment (PDE)
 
-The Processing Development Environment (PDE) consists of a simple text editor for writing code, a message area, a text console, tabs for managing files, a toolbar with buttons for common actions, and a series of menus. The menus options change from mode to mode. The default Java mode is documented here.
+The Processing Development Environment (PDE) consists of a simple text editor for writing code, a message area, a text console, tabs for managing files, a toolbar with buttons for common actions, and a series of menus. The menu options change from mode to mode. The default Java mode is documented here.
 
 ![IDE Screenshot](./ide.png)
 
-Programs written using Processing are called sketches. These sketches are written in the text editor. It has features for cutting/pasting and for searching/replacing text. The message area gives feedback while saving and exporting and also displays errors. The console displays text output by Processing sketches including complete error messages and text output from sketches with the `print()` and `println()` functions. (Note that the console works well for occasional messages, but is not intended for high-speed, real-time output.)
+Programs written using Processing are called sketches. These sketches are written in the text editor. It has features for cutting/pasting and searching/replacing text. The message area gives feedback while saving and exporting and also displays errors. The console displays text output by Processing sketches including complete error messages and text output from sketches with the `print()` and `println()` functions. (Note that the console works well for occasional messages, but is not intended for high-speed, real-time output.)
 
 The buttons on the toolbar can run and stop programs,
 
@@ -56,14 +56,14 @@ The buttons on the toolbar can run and stop programs,
 <dd>Terminates a running sketch.</dd>
 </dl>
 
-Additional commands are found within the six menus: File, Edit, Sketch, Debug, Tools, Help. The menus are context sensitive which means only those items relevant to the work currently being carried out are available.
+Additional commands are found within the six menus: File, Edit, Sketch, Debug, Tools, Help. The menus are context-sensitive which means only those items relevant to the work currently being carried out are available.
 
 ### File
 
 <dl>
   <dt>New</dt>
   <dd>
-    Creates a new sketch in a new window, named as the current date is the
+    Creates a new sketch in a new window, named as the current date in the
     format `sketch_YYMMDDa`.
   </dd>
   <dt>Open...</dt>
@@ -73,7 +73,7 @@ Additional commands are found within the six menus: File, Edit, Sketch, Debug, T
   <dt>Sketchbook...</dt>
   <dd>Open a new window to show the list of sketches in the sketchbook.</dd>
   <dt>Examples...</dt>
-  <dd>Open a new window to show the list of the examples.</dd>
+  <dd>Open a new window to show a list of examples.</dd>
   <dt>Close</dt>
   <dd>
     Close the sketch in the frontmost window. If this is the last sketch that's
@@ -81,7 +81,7 @@ Additional commands are found within the six menus: File, Edit, Sketch, Debug, T
     prompt, use Quit instead of Close when you want to exit the application.
   </dd>
   <dt>Save</dt>
-  <dd>Saves the open sketch in it's current state.</dd>
+  <dd>Saves the open sketch in its current state.</dd>
   <dt>Save As...</dt>
   <dd>
     Saves the currently open sketch, with the option of giving it a different
@@ -155,22 +155,22 @@ Additional commands are found within the six menus: File, Edit, Sketch, Debug, T
     uncomments it.
   </dd>
   <dt>Increase Indent</dt>
-  <dd>Indents the selected text two spaces.</dd>
+  <dd>Indents the selected text by two spaces.</dd>
   <dt>Decrease Indent (Ctrl+[)</dt>
   <dd>If the text is indented, removes two spaces from the indent.</dd>
   <dt>Find...</dt>
   <dd>
-    Finds an occurence of a text string within the file open in the text editor
+    Finds an occurrence of a text string within the file open in the text editor
     and gives the option to replace it with a different text.
   </dd>
   <dt>Find Next</dt>
   <dd>
-    Finds the next occurence of a text string within the file open in the text
+    Finds the next occurrence of a text string within the file open in the text
     editor.
   </dd>
   <dt>Find Previous</dt>
   <dd>
-    Finds the previous occurence of a text string within the file open in the
+    Finds the previous occurrence of a text string within the file open in the
     text editor.
   </dd>
   <dt>Use Selection for Find</dt>
@@ -282,7 +282,7 @@ Additional commands are found within the six menus: File, Edit, Sketch, Debug, T
   <dt>Theme Selector</dt>
   <dd>
     Interface for selecting themes for Processing, with options to read about 
-    how to create your own themes as well as save them to sketchbook for editing.
+    how to create your own themes as well as save them to a sketchbook for editing.
   </dd>
   <dt>Movie Maker</dt>
   <dd>
@@ -341,7 +341,7 @@ Additional commands are found within the six menus: File, Edit, Sketch, Debug, T
 
 ## Preferences
 
-The Processing Development Environment (PDE) is highly configurable. The most common preferences can be modified in the Preferences window, located in the File menu on Windows and Linux and in the Processing menu on Mac Os X. The full list of preferences are stored in the "preferences.txt" file. This file can be opened and edited directly only when Processing is not running. You can find the location of this file on your computer by reading the bottom-left corner of the Preferences window.
+The Processing Development Environment (PDE) is highly configurable. The most common preferences can be modified in the Preferences window, located in the File menu on Windows and Linux and the Processing menu on Mac Os X. The full list of preferences is stored in the "preferences.txt" file. This file can be opened and edited directly only when Processing is not running. You can find the location of this file on your computer by reading the bottom-left corner of the Preferences window.
 
 <dl>
   <dt>Sketchbook location</dt>
@@ -420,7 +420,7 @@ The Processing Development Environment (PDE) is highly configurable. The most co
 
 All Processing projects are called sketches. Each sketch has its own folder. The main file for each sketch has the same name as the folder and is found inside. For example, if the sketch is named "Sketch_123", the folder for the sketch will be called "Sketch_123" and the main file will be called "Sketch_123.pde". The PDE file extension is an acronym for the Processing Development Environment
 
-Processing sketches can be stored anywhere on your computer, but by default they are stored in the sketchbook, which will be in different places on your computer or network depending if you use PC, Mac, or Linux and how the preferences are set. To locate this folder, select the "Preferences" option from the File menu (or from the "Processing" menu on the Mac) and look for the"Sketchbook location."
+Processing sketches can be stored anywhere on your computer, but by default, they are stored in the sketchbook, which will be in different places on your computer or network depending if you use PC, Mac, or Linux and how the preferences are set. To locate this folder, select the "Preferences" option from the File menu (or from the "Processing" menu on the Mac) and look for the"Sketchbook location."
 
 A sketch folder sometimes contains other folders for media files and other code. When a font or image is added to a sketch by selecting "Add File..." from the Sketch menu, a "data" folder is created. Files may also be added to your Processing sketch by dragging them into the text editor. Image and sound files dragged into the application window will automatically be added to the current sketch's "data" folder. All images, fonts, sounds, and other data files loaded in the sketch must be in this folder.
 
@@ -476,7 +476,7 @@ The arrow button to the right of the tabs in the Processing Development Environm
 
 _Advanced_
 
-When a program with multiple tabs is run, the code is grouped together and the classes in other tabs become inner classes. Because they're inner classes, they cannot have static variables. Simply place the "static" variable outside the class itself to do the same thing (it need not be explicitly named "static" once you list it in this manner). If you don't want code to be an inner class, you can also create a tab with a ".java" suffix, which means it will be interpreted as straight java code. It is also not possible to use static classes in separate tabs. If you do this, however, you'll need to pass the PApplet object to that object in that tab in order to get PApplet functions like `line()`, `loadStrings()` or `saveFrame()` to work.
+When a program with multiple tabs is run, the code is grouped together and the classes in other tabs become inner classes. Because they're inner classes, they cannot have static variables. Simply place the "static" variable outside the class itself to do the same thing (it need not be explicitly named "static" once you list it in this manner). If you don't want code to be an inner class, you can also create a tab with a ".java" suffix, which means it will be interpreted as straight java code. It is also not possible to use static classes in separate tabs. If you do this, however, you'll need to pass the PApplet object to that object in that tab in order to get PApplet functions like `line()`, `loadStrings()`, or `saveFrame()` to work.
 
 </HighlightBlock>
 
