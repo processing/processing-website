@@ -145,7 +145,8 @@ const MainDownloadSection = memo(({ release, onAfterDownload }) => {
           onClick={onAfterDownload}>
           <span>
             {intl.formatMessage({ id: 'download' })} Processing{' '}
-            {release.version}{' '}
+            {release.version} {intl.formatMessage({ id: 'for' })}{' '}
+            {detectedAsset.os}
           </span>
         </a>
 
@@ -197,6 +198,15 @@ const InfoTooltip = ({ asset, date, className, zIndex, translateX }) => {
 
   useEffect(() => {
     if (open) {
+      const dropdownRect = tooltipRef.current.getBoundingClientRect();
+      const dropdownRightX = dropdownRect.x + dropdownRect.width;
+      if (dropdownRightX > window.innerWidth) {
+        console.log('hey');
+        tooltipRef.current.style.left = 'auto';
+        tooltipRef.current.style.right = '0';
+        tooltipRef.current.style.transform = 'none';
+      }
+
       const outsideInteraction = (e) => {
         if (tooltipRef.current == null) return;
         if (tooltipRef.current.contains(e.target)) return;
