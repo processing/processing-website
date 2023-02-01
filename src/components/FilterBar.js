@@ -30,6 +30,7 @@ const FilterBar = ({
           value={searchTerm}
           onChange={onChange}
           onKeyPress={onKeyPress}
+          spellCheck={false}
         />
         {searchTerm && (
           <button className={css.clearButton} onClick={onClick} type="button">
