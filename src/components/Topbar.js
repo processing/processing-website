@@ -24,6 +24,7 @@ export const items = [
     ),
     link: 'https://processingfoundation.org',
     logo: <LogoProcessingFoundation className={css.logo} />,
+    title: "Go To Processing Foundation Website",
     color: '#9c4bff'
   },
   {
@@ -31,6 +32,7 @@ export const items = [
     className: css.processing,
     link: 'https://processing.org',
     logo: <LogoProcessing className={css.logo} />,
+    title: "Go To Processing Website",
     color: '#0564ff'
   },
   {
@@ -38,6 +40,7 @@ export const items = [
     name: 'p5.js',
     link: 'https://p5js.org/',
     logo: <LogoP5js className={css.logo} />,
+    title: "Go To p5.js Website",
     color: '#ED225D'
   },
   {
@@ -49,6 +52,7 @@ export const items = [
     ),
     link: 'https://android.processing.org/',
     logo: <LogoProcessingAndroid className={css.logo} />,
+    title: "Go To Processing Android Website",
     color: '#98C800'
   },
   {
@@ -60,6 +64,7 @@ export const items = [
     ),
     link: 'https://py.processing.org/',
     logo: <LogoProcessingPython className={css.logo} />,
+    title: "Go To Processing Python Website",
     color: '#2D9E97'
   }
 ];
@@ -76,7 +81,7 @@ const Topbar = ({ show }) => {
         <ul className={classnames(css.menu, grid.col)}>
           {items.map((item, key) => (
             <li key={key} className={classnames(css.item, item.className)}>
-              <a className={css.itemLink} href={item.link}>
+              <a className={css.itemLink} href={item.link} title={item.title}>
                 {item.logo}
                 <span className={css.name} style={{ color: item.color }}>
                   {item.name}
