@@ -43,7 +43,10 @@ const SearchBar = ({ className }) => {
             id: focused ? 'searchWithGoogle' : 'search'
           })}
         />
-        <button className={css.submit} onClick={search}>
+        <button
+          className={css.submit}
+          onClick={search}
+          aria-label={`Submit search`}>
           <SearchIcon height={30} width={30} />
         </button>
       </div>
