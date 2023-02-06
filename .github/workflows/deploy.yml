@@ -37,7 +37,7 @@ jobs:
         run: npm run zip
       - name: Set Tag Name
         run: |
-          echo ::set-env name=TAG_NAME::$(date '+%Y-%m-%d-%H%M')
+          echo ::set-env name=TAG_NAME::$(date '+%Y-%m-%d-%H%M%S')
       - name: Create release
         uses: softprops/action-gh-release@v1
         if: ${{ inputs.make_release }}
