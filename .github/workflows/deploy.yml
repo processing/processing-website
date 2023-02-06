@@ -3,12 +3,12 @@ name: Deploy Website
 on:
   workflow_dispatch:
     inputs:
-      version:
-        description: 'The version of the website used for the GitHub release'
+      title:
+        description: 'The name of the GitHub release'
         type: string
         required: true
       description:
-        description: 'The description of changes used in the GitHub release changelog'
+        description: 'The description used in the GitHub release (typically a changelog)'
         type: string
         required: true
       make_release:
@@ -44,5 +44,5 @@ jobs:
         with:
           files: reference.zip
           body: ${{ inputs.description }}
-          name: 'Website ${{ inputs.version }}'
+          name: ${{ inputs.title }}
           tag_name: ${{ env.TAG_NAME }}
