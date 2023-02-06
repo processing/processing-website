@@ -35,6 +35,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Make reference.zip
         run: npm run zip
+      - name: Set Tag Name
+        run: |
+          echo ::set-env name=TAG_NAME::$(date '+%Y-%m-%d-%H%M')
       - name: Create release
         uses: softprops/action-gh-release@v1
         if: ${{ inputs.make_release }}
@@ -42,4 +45,4 @@ jobs:
           files: reference.zip
           body: ${{ inputs.description }}
           name: 'Website ${{ inputs.version }}'
-          tag_name: ${{ inputs.version }}
+          tag_name: ${{ env.TAG_NAME }}
