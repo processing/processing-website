@@ -12,7 +12,7 @@ on:
         type: string
         required: true
       make_release:
-        description: 'Make a GitHub release with a referenze.zip after uploading the website'
+        description: 'Make a GitHub release with a reference.zip after uploading the website'
         type: boolean
         required: true
         default: true
