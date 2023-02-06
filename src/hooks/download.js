@@ -1,21 +1,49 @@
-import { useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useIntl } from 'react-intl';
 
 const getOS = (name) => {
   if (name.includes('windows') || name.includes('.exe')) return 'Windows';
+  else if (name.includes('linux-arm')) return 'Raspberry Pi';
   else if (name.includes('linux')) return 'Linux';
-  else if (name.includes('macos')) return 'MacOS';
+  else if (name.includes('macos')) return 'macOS';
   else return 'Unknown';
 };
 
 const getBit = (name) => {
-  if (name.includes('x64')) return '(Intel 64-bit)';
-  else if (name.includes('windows64')) return '(64-bit)';
-  else if (name.includes('windows32')) return '(32-bit)';
-  else if (name.includes('macos-aarch64')) return '(Apple Silicon)';
-  else if (name.includes('linux-arm32')) return '(Raspberry Pi 32-bit)';
-  else if (name.includes('linux-arm64')) return '(Raspberry Pi 64-bit)';
+  if (name.includes('x64')) return 'Intel 64-bit';
+  else if (name.includes('windows64')) return '64-bit';
+  else if (name.includes('windows32')) return '32-bit';
+  else if (name.includes('macos-aarch64')) return 'Apple Silicon';
+  else if (name.includes('linux-arm32')) return '32-bit';
+  else if (name.includes('linux-arm64')) return '64-bit';
   else return null;
 };
+
+const getTooltip = (name, intProvider) => {
+  if (name.includes('windows')) return intProvider('windowsIntelAssetTooltip');
+  else if (name.includes('macos-aarch64'))
+    return intProvider('macOsSiliconAssetTooltip');
+  else if (name.includes('macos')) return intProvider('macOsIntelAssetTooltip');
+  else if (name.includes('linux-arm32'))
+    return intProvider('raspberryPi32AssetTooltip');
+  else if (name.includes('linux-arm64'))
+    return intProvider('raspberryPi64AssetTooltip');
+  else if (name.includes('linux')) return intProvider('linuxIntelAssetTooltip');
+  else return null;
+};
+
+// Adapted from https://stackoverflow.com/q/15900485
+function formatBytes(bytes, decimals = 0) {
+  if (!+bytes) return '0 Bytes';
+
+  const k = 1024;
+  const dm = decimals < 0 ? 0 : decimals;
+  const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+  return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
+}
 
 /**
   Hook to find turn a releases GraphQL array into an array of objects
@@ -23,6 +51,8 @@ const getBit = (name) => {
   @param {Array} releases Array of releases JSON files
 **/
 export const usePreparedReleases = (releases) => {
+  const intl = useIntl();
+
   return useMemo(() => {
     const prepared = [];
 
@@ -38,7 +68,8 @@ export const usePreparedReleases = (releases) => {
           month: 'long',
           day: 'numeric'
         }),
-        assets: []
+        assets: [],
+        assetsByOs: { Windows: [], macOS: [], Linux: [], 'Raspberry Pi': [] }
       };
 
       // Prepare release assets
@@ -48,7 +79,25 @@ export const usePreparedReleases = (releases) => {
           name: asset.name,
           os: getOS(asset.name),
           bit: getBit(asset.name),
-          url: asset.downloadUrl
+          url: asset.downloadUrl,
+          size: formatBytes(asset.size),
+          tooltipMessage: getTooltip(asset.name, (id) =>
+            intl.formatMessage({ id })
+          )
+        });
+      }
+
+      for (let asset of item.assets) {
+        if (asset.os in item.assetsByOs) {
+          item.assetsByOs[asset.os].push(asset);
+        }
+      }
+      for (let os in item.assetsByOs) {
+        item.assetsByOs[os].sort((a, b) => {
+          if (a.bit === b.bit) return 0;
+          if (a.bit != null && a.bit.includes('Intel')) return -1;
+          if (b.bit != null && b.bit.includes('Intel')) return 1;
+          return 0;
         });
       }
 
@@ -56,5 +105,44 @@ export const usePreparedReleases = (releases) => {
     }
 
     return prepared;
-  }, [releases]);
+  }, [intl, releases]);
+};
+
+/**
+  Hook to detect the OS where the site is mounted. 
+  Will default to Windows if fails to detect other.
+**/
+export const useMachineOS = (releases) => {
+  const [detected, setDetected] = useState({
+    os: '',
+    asset: null
+  });
+
+  const selectAsset = useCallback(
+    (asset) => {
+      setDetected({ os: asset.os, asset });
+    },
+    [setDetected]
+  );
+
+  useEffect(() => {
+    const selectOS = (os) => {
+      const osReleases = releases[os];
+      const firstAsset = osReleases[0];
+      selectAsset(firstAsset);
+    };
+
+    const { userAgent } = navigator;
+    if (userAgent.search('Windows') !== -1) {
+      selectOS('Windows');
+    } else if (userAgent.search('Mac') !== -1) {
+      selectOS('macOS');
+    } else if (userAgent.search('X11') !== -1) {
+      selectOS('Linux');
+    } else {
+      selectOS('Windows');
+    }
+  }, [releases, selectAsset]);
+
+  return detected;
 };

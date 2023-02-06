@@ -19,6 +19,7 @@ const fetchReleases = async (githubToken) => {
                     node {
                       name
                       downloadUrl
+                      size
                     }
                   }
                 }
@@ -38,6 +39,7 @@ const fetchReleases = async (githubToken) => {
                     node {
                       name
                       downloadUrl
+                      size
                     }
                   }
                 }

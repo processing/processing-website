@@ -7,31 +7,36 @@
       {
         "node": {
           "name": "processing-3.0a4-windows64.zip",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0231-3.0a4/processing-3.0a4-windows64.zip"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0231-3.0a4/processing-3.0a4-windows64.zip",
+          "size": 110056177
         }
       },
       {
         "node": {
           "name": "processing-3.0a4-macosx.zip",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0231-3.0a4/processing-3.0a4-macosx.zip"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0231-3.0a4/processing-3.0a4-macosx.zip",
+          "size": 113128952
         }
       },
       {
         "node": {
           "name": "processing-3.0a4-linux64.tgz",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0231-3.0a4/processing-3.0a4-linux64.tgz"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0231-3.0a4/processing-3.0a4-linux64.tgz",
+          "size": 107431449
         }
       },
       {
         "node": {
           "name": "processing-3.0a4-linux32.tgz",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0231-3.0a4/processing-3.0a4-linux32.tgz"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0231-3.0a4/processing-3.0a4-linux32.tgz",
+          "size": 109132510
         }
       },
       {
         "node": {
           "name": "processing-3.0a4-windows32.zip",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0231-3.0a4/processing-3.0a4-windows32.zip"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0231-3.0a4/processing-3.0a4-windows32.zip",
+          "size": 109213007
         }
       }
     ]

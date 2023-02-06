@@ -7,49 +7,57 @@
       {
         "node": {
           "name": "processing-3.3.5-windows32.zip",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0262-3.3.5/processing-3.3.5-windows32.zip"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0262-3.3.5/processing-3.3.5-windows32.zip",
+          "size": 117656995
         }
       },
       {
         "node": {
           "name": "processing-3.3.5-linux64.tgz",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0262-3.3.5/processing-3.3.5-linux64.tgz"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0262-3.3.5/processing-3.3.5-linux64.tgz",
+          "size": 126094700
         }
       },
       {
         "node": {
           "name": "processing-3.3.5-macosx.zip",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0262-3.3.5/processing-3.3.5-macosx.zip"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0262-3.3.5/processing-3.3.5-macosx.zip",
+          "size": 114176581
         }
       },
       {
         "node": {
           "name": "processing-3.3.5-windows64.zip",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0262-3.3.5/processing-3.3.5-windows64.zip"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0262-3.3.5/processing-3.3.5-windows64.zip",
+          "size": 121661762
         }
       },
       {
         "node": {
           "name": "processing-3.3.5-linux32.tgz",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0262-3.3.5/processing-3.3.5-linux32.tgz"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0262-3.3.5/processing-3.3.5-linux32.tgz",
+          "size": 128840111
         }
       },
       {
         "node": {
           "name": "processing-3.3.5-linux-armv6hf.tar.gz",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0262-3.3.5/processing-3.3.5-linux-armv6hf.tar.gz"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0262-3.3.5/processing-3.3.5-linux-armv6hf.tar.gz",
+          "size": 94154911
         }
       },
       {
         "node": {
           "name": "processing-3.3.5-linux-raspbian.zip",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0262-3.3.5/processing-3.3.5-linux-raspbian.zip"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0262-3.3.5/processing-3.3.5-linux-raspbian.zip",
+          "size": 1934879423
         }
       },
       {
         "node": {
           "name": "processing-3.3.5-linux-armv6hf.tgz",
-          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0262-3.3.5/processing-3.3.5-linux-armv6hf.tgz"
+          "downloadUrl": "https://github.com/processing/processing/releases/download/processing-0262-3.3.5/processing-3.3.5-linux-armv6hf.tgz",
+          "size": 94154911
         }
       }
     ]

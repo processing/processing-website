@@ -13,6 +13,7 @@
   --processing-blue-mid: #0564ff;
   --processing-blue-deep: #1e32aa;
   --processing-blue-dark: #0f195a;
+  --processing-blue: #0251c8;
 
   --topbar-background: #02163e;
 
@@ -31,6 +32,10 @@
   --darkgray: #898989;
   --darkergray: #727070;
   --black: #0d0d0d;
+
+  --download-background: #F2F6FF;
+  --download-inactive: #8890B3;
+  --download-background-active: rgba(80, 139, 255, 0.08);
 
   --text-xsmall: 0.8rem;
   --text-small: 0.875rem;
