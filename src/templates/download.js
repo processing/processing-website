@@ -44,7 +44,7 @@ const Download = ({ data }) => {
   return (
     <Layout>
       <HeadMatter
-        title={intl.formatMessage({ id: 'downloadTitle' })}
+        title={intl.formatMessage({ id: 'downloadTitleMeta' })}
         description={intl.formatMessage({ id: 'downloadIntro' })}
       />
 
