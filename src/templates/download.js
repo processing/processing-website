@@ -44,7 +44,7 @@ const Download = ({ data }) => {
   return (
     <Layout>
       <HeadMatter
-        title={intl.formatMessage({ id: 'downloadTitle' })}
+        title={intl.formatMessage({ id: 'downloadTitleMeta' })}
         description={intl.formatMessage({ id: 'downloadIntro' })}
       />
 
@@ -201,7 +201,6 @@ const InfoTooltip = ({ asset, date, className, zIndex, translateX }) => {
       const dropdownRect = tooltipRef.current.getBoundingClientRect();
       const dropdownRightX = dropdownRect.x + dropdownRect.width;
       if (dropdownRightX > window.innerWidth) {
-        console.log('hey');
         tooltipRef.current.style.left = 'auto';
         tooltipRef.current.style.right = '0';
         tooltipRef.current.style.transform = 'none';
