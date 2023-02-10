@@ -79,9 +79,12 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-rl.question('Please enter your GitHub token: ', (token) => {
-  rl.close();
+rl.question(
+  'Please enter your GitHub token (get it from https://github.com/settings/tokens): ',
+  (token) => {
+    rl.close();
 
-  console.log('Fetching releases from github.com');
-  fetchReleases(token);
-});
+    console.log('Fetching releases from github.com');
+    fetchReleases(token);
+  }
+);
