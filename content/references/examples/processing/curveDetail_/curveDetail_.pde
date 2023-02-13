@@ -3,6 +3,7 @@ void setup(){
 }
 
 void draw(){
+  background(204);
   curveDetail(1);
   drawCurves(-60);
   stroke(126);
