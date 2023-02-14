@@ -1,8 +1,9 @@
 void setup(){
-  size(400,400);
+  size(400,400,P2D);
 }
 
-void draw() {
+void draw(){
+  background(204);
   curveDetail(1);
   drawCurves(-60);
   stroke(126);
@@ -11,6 +12,7 @@ void draw() {
   stroke(255);
   curveDetail(4);
   drawCurves(60);
+  noLoop();
 }
 
 void drawCurves(float y) {
