@@ -1,0 +1,51 @@
+{
+  "name": "Processing 4.2",
+  "tagName": "processing-1292-4.2",
+  "publishedAt": "2023-02-20T10:45:31Z",
+  "releaseAssets": {
+    "edges": [
+      {
+        "node": {
+          "name": "processing-4.2-linux-x64.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1292-4.2/processing-4.2-linux-x64.tgz",
+          "size": 229659252
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.2-macos-aarch64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1292-4.2/processing-4.2-macos-aarch64.zip",
+          "size": 205702404
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.2-macos-x64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1292-4.2/processing-4.2-macos-x64.zip",
+          "size": 223849300
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.2-windows-x64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1292-4.2/processing-4.2-windows-x64.zip",
+          "size": 224232824
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.2-linux-arm64.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1292-4.2/processing-4.2-linux-arm64.tgz",
+          "size": 224355690
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.2-linux-arm32.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1292-4.2/processing-4.2-linux-arm32.tgz",
+          "size": 216474304
+        }
+      }
+    ]
+  }
+}
