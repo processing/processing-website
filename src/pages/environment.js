@@ -42,8 +42,8 @@ const Environment = ({ data }) => {
           <Content sidebarOpen={showSidebar} className={css.contentWrapper}>
             <h1>{mdx.frontmatter.title}</h1>
             <div className={css.content}>
-              <MDXRenderer>{mdx.body}</MDXRenderer>
             </div>
+              <div className={css.environmentBody}><MDXRenderer>{mdx.body}</MDXRenderer></div>
           </Content>
         ) : (
           <Content sidebarOpen={showSidebar}>
