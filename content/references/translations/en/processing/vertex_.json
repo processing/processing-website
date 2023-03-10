@@ -9,13 +9,13 @@
     "texture_"
   ],
   "name": "vertex()",
-  "description": "All shapes are constructed by connecting a series of vertices.\n <b>vertex()</b> is used to specify the vertex coordinates for points, lines,\n triangles, quads, and polygons. It is used exclusively within the\n <b>beginShape()</b> and <b>endShape()</b> functions. <br />\n <br />\n Drawing a vertex in 3D using the <b>z</b> parameter requires the P3D\n parameter in combination with size, as shown in the above example. <br />\n <br />\n This function is also used to map a texture onto geometry. The\n <b>texture()</b> function declares the texture to apply to the geometry and\n the <b>xTexture</b> and <b>yTexture</b> coordinates set define the mapping of this texture\n to the form. By default, the coordinates used for <b>xTexture</b> and <b>yTexture</b> are\n specified in relation to the image's size in pixels, but this relation can be\n changed with <b>textureMode()</b>.",
+  "description": "All shapes are constructed by connecting a series of vertices.\n <b>vertex()</b> is used to specify the vertex coordinates for points, lines,\n triangles, quads, and polygons. It is used exclusively within the\n <b>beginShape()</b> and <b>endShape()</b> functions. <br />\n <br />\n Drawing a vertex in 3D using the <b>z</b> parameter requires the P3D\n parameter in combination with size, as shown in the above example. <br />\n <br />\n This function is also used to map a texture onto geometry. The\n <b>texture()</b> function declares the texture to apply to the geometry and\n the <b>s</b> and <b>t</b> coordinates set define the mapping of this texture\n to the form. By default, the coordinates used for <b>s</b> and <b>t</b> are\n specified in relation to the image's size in pixels, but this relation can be\n changed with <b>textureMode()</b>.",
   "syntax": [
     "vertex(x, y)",
     "vertex(x, y, z)",
     "vertex(point)",
-    "vertex(x, y, xTexture, yTexture)",
-    "vertex(x, y, z, xTexture, yTexture)"
+    "vertex(x, y, s, t)",
+    "vertex(x, y, z, s, t)"
   ],
   "returns": "void",
   "type": "function",
@@ -24,7 +24,7 @@
   "parameters": [
     {
       "name": "point",
-      "description": "vertex parameters, as a float array of length VERTEX_FIELD_COUNT",
+      "description": "vertex parameters, as a float array of length VERTEX_FIELD_COUNT (the number of dimensions). Cannot be used to apply textures.",
       "type": ["float[]"]
     },
     {
@@ -43,12 +43,12 @@
       "type": ["float"]
     },
     {
-      "name": "xTexture",
+      "name": "s",
       "description": "horizontal coordinate for the texture mapping",
       "type": ["float"]
     },
     {
-      "name": "yTexture",
+      "name": "t",
       "description": "vertical coordinate for the texture mapping",
       "type": ["float"]
     }
