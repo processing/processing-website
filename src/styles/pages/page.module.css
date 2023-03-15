@@ -160,3 +160,9 @@
     }
   }
 }
+
+.environmentBody{
+  font-family: "Vollkorn", serif;
+  line-height: 1.6em;
+  font-size: var(--text-medium);
+}
