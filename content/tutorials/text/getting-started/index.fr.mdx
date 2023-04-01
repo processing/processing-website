@@ -38,19 +38,19 @@ Avec un peu de chance, la fenêtre principale de Processing sera maintenant visi
 
 ## Votre premier programme
 
-Vous exécutez maintenant l'environnement de développement Processing (ou PDE). Il n'y a pas grand-chose à cela ; la grande zone est l'éditeur de texte et il y a une rangée de boutons en haut ; c'est la barre d'outils. Sous l'éditeur se trouve la zone de message, et en dessous se trouve la console. La zone de message est utilisée pour les messages d'une ligne, et la console est utilisée pour les détails techniques.
+Vous exécutez maintenant l'environnement de développement Processing (ou PDE). Il est assez simple ; la grande zone est l'éditeur de texte et il y a une rangée de boutons en haut ; c'est la barre d'outils. Sous l'éditeur se trouve la zone de message, et en dessous se trouve la console. La zone de message est utilisée pour les messages d'une ligne, et la console est utilisée pour les détails plus techniques.
 
 Dans l'éditeur, tapez ceci :
 
 `ellipse(50, 50, 80, 80);`
 
-Cette ligne de code signifie "dessinez une ellipse, avec le centre à 50 pixels à droite et 50 pixels en bas du haut, avec une largeur et une hauteur de 80 pixels". Cliquez sur le bouton Exécuter (bouton en forme de triangle dans la barre d'outils).
+Cette ligne de code signifie "dessiner une ellipse dont le centre est situé à 50 pixels de la gauche et à 50 pixels du haut de la fenêtre, avec une largeur et une hauteur de 80 pixels". Cliquez sur le bouton Exécuter (le bouton triangulaire dans la barre d'outils).
 
 Si vous avez tout tapé correctement, vous verrez un cercle à l'écran. Si vous n'avez pas tapé correctement, la zone de message deviendra rouge et se plaindra d'une erreur. Si cela se produit, assurez-vous d'avoir copié le code d'exemple exactement : les chiffres doivent être entre parenthèses et avoir des virgules entre eux, et la ligne doit se terminer par un point-virgule.
 
 L'une des choses les plus difficiles lorsque l'on commence à programmer est qu'il faut être très précis sur la syntaxe. Le logiciel Processing n'est pas toujours assez intelligent pour savoir ce que vous voulez dire et peut être très pointilleux sur la ponctuation. Vous vous y habituerez avec un peu de pratique.
 
-Ensuite, nous passerons à un croquis un peu plus excitant. Supprimez le texte de la dernière exemple et essayez ceci :
+Ensuite, nous passerons à un croquis un peu plus excitant. Supprimez le texte du dernier exemple et essayez ceci :
 
 void setup() {
   size(480, 120);
@@ -65,11 +65,11 @@ void draw() {
   ellipse(mouseX, mouseY, 80, 80);
 }
 
-Ce programme crée une fenêtre qui mesure 480 pixels de large sur 120 pixels de haut, puis commence à dessiner des cercles blancs à la position de la souris. Lorsqu'un bouton de souris est enfoncé, la couleur du cercle passe au noir. Nous expliquerons plus en détail les éléments de ce programme plus tard. Pour l'instant, exécutez le code, déplacez la souris et cliquez pour voir ce qu'il fait. Pendant que le croquis est en cours d'exécution, le bouton Exécuter changera de couleur. Vous pouvez cliquer sur l'icône carrée "stop" pour arrêter le croquis.
+Ce programme crée une fenêtre qui mesure 480 pixels de large sur 120 pixels de haut, puis commence à dessiner des cercles blancs à la position de la souris. Lorsque l'on appuie sur un bouton de la souris, le cercle devient noir. Nous expliquerons plus en détail les éléments de ce programme ultérieurement. Pour l'instant, exécutez le code, déplacez la souris et cliquez pour voir ce que cela donne. Pendant que le programme s'exécute, le bouton Exécuter change de couleur. Vous pouvez cliquer sur l'icône carrée "stop" pour arrêter le programme.
 
 ## Afficher
 
-Si vous ne voulez pas utiliser les boutons, vous pouvez toujours utiliser le menu Croquis, qui révèle le raccourci Ctrl-R (ou Cmd-R sur Mac) pour Exécuter. L'option Présentation efface le reste de l'écran lorsque le programme est exécuté pour présenter le croquis tout seul. Vous pouvez également utiliser Présentation depuis la barre d'outils en maintenant la touche Shift enfoncée tout en cliquant sur le bouton Exécuter.
+Si vous ne voulez pas utiliser les boutons, vous pouvez toujours utiliser le menu Croquis, qui révèle le raccourci Ctrl-R (ou Cmd-R sur Mac) pour "Run" (Exécuter en Anglais). L'option Présentation efface le reste de l'écran lorsque le programme est exécuté pour présenter le croquis seul. Vous pouvez également utiliser Présentation depuis la barre d'outils en maintenant la touche Shift enfoncée tout en cliquant sur le bouton Exécuter.
 
 <FixedImage width={204}>
 
@@ -79,9 +79,9 @@ Si vous ne voulez pas utiliser les boutons, vous pouvez toujours utiliser le men
 
 ## Enregistrer et Nouveau
 
-La commande suivante qui est importante est Enregistrer. Vous pouvez la trouver dans le menu Fichier. Par défaut, vos programmes sont enregistrés dans le "sketchbook", qui est un dossier qui rassemble vos programmes pour un accès facile. Sélectionnez l'option Sketchbook dans le menu Fichier pour afficher la liste de tous les croquis de votre sketchbook.
+Une autre commande importante est Enregistrer. Vous pouvez la trouver dans le menu Fichier. Par défaut, vos programmes sont enregistrés dans le "sketchbook", qui est un dossier qui rassemble vos programmes pour un accès facile. Sélectionnez l'option Sketchbook dans le menu Fichier pour afficher la liste de tous les croquis de votre sketchbook.
 
-Il est toujours une bonne idée d'enregistrer vos croquis souvent. Au fur et à mesure que vous essayez différentes choses, enregistrez avec des noms différents, afin de pouvoir toujours revenir à une version antérieure. Cela est particulièrement utile lorsque - non, lorsque - quelque chose se casse. Vous pouvez également voir où se trouve le croquis sur votre ordinateur avec la commande Afficher le dossier de croquis dans le menu Croquis.
+Il est toujours une bonne idée de sauvegarder souvent vos croquis. Au fur et à mesure de vos essais, sauvegardez sous des noms différents afin de pouvoir toujours revenir à une version antérieure. Cela est particulièrement utile si - non, quand - votre programme plante. Vous pouvez également voir où se trouve le croquis sur votre ordinateur grâce à la commande Afficher le dossier de l'esquisse dans le menu Esquisse.
 
 Vous pouvez créer un nouveau croquis en sélectionnant l'option Nouveau dans le menu Fichier. Cela créera un nouveau croquis dans sa propre fenêtre.
 
@@ -89,13 +89,13 @@ Vous pouvez créer un nouveau croquis en sélectionnant l'option Nouveau dans le
 
 Les croquis Processing sont faits pour être partagés. L'option Exporter l'application dans le menu Fichier regroupera votre code dans un seul dossier. Exporter l'application crée une application pour votre choix de Mac, Windows et/ou Linux. C'est une façon facile de créer des versions autonomes et à double clic de vos projets qui peuvent fonctionner en plein écran ou dans une fenêtre.
 
-Les dossiers d'application sont effacés et recréés chaque fois que vous utilisez la commande Exporter l'application, alors assurez-vous de déplacer le dossier ailleurs si vous ne voulez pas qu'il soit effacé avec la prochaine exportation.
+Les dossiers d'application sont effacés et recréés chaque fois que vous utilisez la commande Exporter l'application, alors assurez-vous de déplacer le dossier ailleurs si vous ne voulez pas qu'il soit effacé par la prochaine exportation.
 
 ## Exemples et Référence
 
-Apprendre à programmer implique d'explorer beaucoup de code : le faire fonctionner, le modifier, le casser et l'améliorer jusqu'à ce que vous l'ayez remodelé en quelque chose de nouveau. Avec cela à l'esprit, le téléchargement du logiciel Processing comprend des dizaines d'exemples qui démontrent différentes fonctionnalités du logiciel.
+Apprendre à programmer implique d'explorer une quantité importante de code : l'exécuter, le modifier, le casser et l'améliorer jusqu'à ce que vous l'ayez remodelé en quelque chose de nouveau. C'est dans cette optique que le téléchargement du logiciel Processing comprend des dizaines d'exemples qui démontrent les différentes fonctionnalités du logiciel.
 
-Pour ouvrir un exemple, sélectionnez Exemples dans le menu Fichier et double-cliquez sur le nom de l'exemple pour l'ouvrir. Les exemples sont regroupés par catégories en fonction de leur fonction, comme Forme, Mouvement et Image. Trouvez un sujet intéressant dans la liste et essayez un exemple.
+Pour ouvrir un exemple, sélectionnez Exemples dans le menu Fichier et double-cliquez sur le nom de l'exemple pour l'ouvrir. Les exemples sont regroupés dans des catégories basées sur leur fonction, telles que Forme, Mouvement et Image. Trouvez un sujet intéressant dans la liste et essayez un exemple.
 
 Lorsque vous regardez le code dans l'éditeur, vous verrez que des fonctions comme `ellipse()` et `fill()` ont une couleur différente du reste du texte. Si vous voyez une fonction avec laquelle vous n'êtes pas familier, sélectionnez le texte, puis cliquez sur "Rechercher dans la référence" dans le menu Aide. Vous pouvez également faire un clic droit sur le texte (ou Ctrl-clic sur un Mac) et choisir "Rechercher dans la référence" dans le menu qui apparaît. Cela ouvrira un navigateur web et affichera la référence pour cette fonction. De plus, vous pouvez consulter la documentation complète du logiciel en sélectionnant Référence dans le menu Aide.
 
