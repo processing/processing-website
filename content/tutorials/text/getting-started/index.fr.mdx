@@ -1,64 +1,57 @@
 ---
 slug: "/tutorials/gettingstarted"
-title: "Getting Started"
-author: "Casey Reas and Ben Fry"
-intro: "Welcome to Processing! This introduction covers the basics of writing Processing code."
-level: "Beginner"
+title: "Pour commencer"
+author: "Casey Reas et Ben Fry"
+intro: "Bienvenue dans Processing ! Cette introduction couvre les bases de l'écriture du code Processing."
+level: "Débutant"
 coverImage: gettingstarted.png
 order: "01"
 ---
 
 <Note>
 
-This tutorial was adapted from the book, [Getting Started with Processing](/books/#make:-getting-started-with-processing,-second-edition), by Casey Reas and Ben Fry, Maker Media 2015. If you see any errors or have comments, please [let us know](https://github.com/processing/processing-website/issues).
+Ce tutoriel a été adapté du livre [Getting Started with Processing](/books/#make:-getting-started-with-processing,-second-edition), de Casey Reas et Ben Fry, Maker Media 2015. Si vous remarquez des erreurs ou avez des commentaires, n'hésitez pas à [nous en informer](https://github.com/processing/processing-website/issues).
 
 </Note>
 
-## Getting started
+## Pour commencer
 
-Welcome to Processing! Start by visiting [https://processing.org/download](https://processing.org/download) and selecting the Mac, Windows, or Linux version, depending on what machine you have. Installation on each machine is straightforward:
+Bienvenue dans Processing ! Commencez par visiter [https://processing.org/download](https://processing.org/download) et sélectionnez la version Mac, Windows ou Linux en fonction de votre machine. L'installation sur chaque machine est simple :
 
-- On Windows, you'll have a .zip file. Double-click it, and drag the folder inside to a location on your hard disk. It could be Program Files or simply the desktop, but the important thing is for the processing folder to be pulled out of that .zip file. Then double-click processing.exe to start.
-- The Mac OS X version is also a .zip file. Double-click it and drag the Processing icon to the Applications folder. If you're using someone else's machine and can't modify the Applications folder, just drag the application to the desktop. Then double-click the Processing icon to start.
-- The Linux version is a .tar.gz file, which should be familiar to most Linux users. Download the file to your home directory, then open a terminal window, and type:
+- Sur Windows, vous aurez un fichier .zip. Double-cliquez dessus et faites glisser le dossier à l'intérieur vers un emplacement sur votre disque dur. Il peut s'agir de Program Files ou simplement du bureau, mais l'important est que le dossier processing soit extrait de ce fichier .zip. Ensuite, double-cliquez sur processing.exe pour démarrer.
+- La version Mac OS X est également un fichier .zip. Double-cliquez dessus et faites glisser l'icône Processing dans le dossier Applications. Si vous utilisez la machine de quelqu'un d'autre et que vous ne pouvez pas modifier le dossier Applications, faites simplement glisser l'application sur le bureau. Ensuite, double-cliquez sur l'icône Processing pour démarrer.
+- La version Linux est un fichier .tar.gz, qui devrait être familier à la plupart des utilisateurs de Linux. Téléchargez le fichier dans votre répertoire personnel, puis ouvrez une fenêtre de terminal et tapez :
 
   `tar xvfz processing-xxxx.tgz`
 
-  (Replace `xxxx` with the rest of the file's name, which is the version number.) This will create a folder named `processing-2.0` or something similar. Then change to that directory:
+  (Remplacez `xxxx` par le reste du nom du fichier, qui est le numéro de version.) Cela créera un dossier nommé `processing-2.0` ou quelque chose de similaire. Ensuite, changez de répertoire :
 
   `cd processing-xxxx`
 
-  and run it:
+  et exécutez-le :
 
   `./processing`
 
-With any luck, the main Processing window will now be visible. Everyone's setup is different, so if the program didn't start, or you're otherwise stuck, visit the [troubleshooting](https://github.com/processing/processing4/wiki/Troubleshooting) page for possible solutions.
+Avec un peu de chance, la fenêtre principale de Processing sera maintenant visible. La configuration de chacun est différente, donc si le programme ne démarre pas, ou si vous êtes bloqué, visitez la page de [dépannage](https://github.com/processing/processing4/wiki/Troubleshooting) pour trouver des solutions possibles.
 
-![The Processing Development Environment.](./Fig_02_01.png)
+![L'environnement de développement Processing.](./Fig_02_01.png)
 
-## Your First Program
+## Votre premier programme
 
-You're now running the Processing Development Environment (or PDE). There's not much to it; the large area is the Text Editor, and there's a row of buttons across the top; this is the toolbar. Below the editor is the Message Area, and below that is the Console. The Message Area is used for one line messages, and the Console is used for more technical details.
+Vous exécutez maintenant l'environnement de développement Processing (ou PDE). Il n'y a pas grand-chose à cela ; la grande zone est l'éditeur de texte et il y a une rangée de boutons en haut ; c'est la barre d'outils. Sous l'éditeur se trouve la zone de message, et en dessous se trouve la console. La zone de message est utilisée pour les messages d'une ligne, et la console est utilisée pour les détails techniques.
 
-In the editor, type the following:
+Dans l'éditeur, tapez ceci :
 
 `ellipse(50, 50, 80, 80);`
 
-This line of code means "draw an ellipse, with the center 50 pixels over from the left and 50 pixels down from the top, with a width and height of 80 pixels." Click the Run button the (triangle button in the Toolbar).
+Cette ligne de code signifie "dessinez une ellipse, avec le centre à 50 pixels à droite et 50 pixels en bas du haut, avec une largeur et une hauteur de 80 pixels". Cliquez sur le bouton Exécuter (bouton en forme de triangle dans la barre d'outils).
 
-If you've typed everything correctly, you'll see a circle on your screen. If you didn't type it correctly, the Message Area will turn red and complain about an error. If this happens, make sure that you've copied the example code exactly: the numbers should be contained within parentheses and have commas between each of them, and the line should end with a semicolon.
+Si vous avez tout tapé correctement, vous verrez un cercle à l'écran. Si vous n'avez pas tapé correctement, la zone de message deviendra rouge et se plaindra d'une erreur. Si cela se produit, assurez-vous d'avoir copié le code d'exemple exactement : les chiffres doivent être entre parenthèses et avoir des virgules entre eux, et la ligne doit se terminer par un point-virgule.
 
-One of the most difficult things about getting started with programming is that you have to be very specific about the syntax. The Processing software isn't always smart enough to know what you mean, and can be quite fussy about the placement of punctuation. You'll get used to it with a little practice.
+L'une des choses les plus difficiles lorsque l'on commence à programmer est qu'il faut être très précis sur la syntaxe. Le logiciel Processing n'est pas toujours assez intelligent pour savoir ce que vous voulez dire et peut être très pointilleux sur la ponctuation. Vous vous y habituerez avec un peu de pratique.
 
-Next, we'll skip ahead to a sketch that's a little more exciting. Delete the text from the last example, and try this:
+Ensuite, nous passerons à un croquis un peu plus excitant. Supprimez le texte de la dernière exemple et essayez ceci :
 
-<FixedImage width={480} center>
-
-![Screenshot of the sketch output.](./Ex_02_02.png)
-
-</FixedImage>
-
-```
 void setup() {
   size(480, 120);
 }
@@ -71,42 +64,41 @@ void draw() {
   }
   ellipse(mouseX, mouseY, 80, 80);
 }
-```
 
-This program creates a window that is 480 pixels wide and 120 pixels high, and then starts drawing white circles at the position of the mouse. When a mouse button is pressed, the circle color changes to black. We'll explain more about the elements of this program in detail later. For now, run the code, move the mouse, and click to see what it does. While the sketch is running, the Run button will change color. You can click the square “stop” icon to halt the sketch.
+Ce programme crée une fenêtre qui mesure 480 pixels de large sur 120 pixels de haut, puis commence à dessiner des cercles blancs à la position de la souris. Lorsqu'un bouton de souris est enfoncé, la couleur du cercle passe au noir. Nous expliquerons plus en détail les éléments de ce programme plus tard. Pour l'instant, exécutez le code, déplacez la souris et cliquez pour voir ce qu'il fait. Pendant que le croquis est en cours d'exécution, le bouton Exécuter changera de couleur. Vous pouvez cliquer sur l'icône carrée "stop" pour arrêter le croquis.
 
-## Show
+## Afficher
 
-If you don’t want to use the buttons, you can always use the Sketch menu, which reveals the shortcut Ctrl-R (or Cmd-R on the Mac) for Run. The Present option clears the rest of the screen when the program is run to present the sketch all by itself. You can also use Present from the Toolbar by holding down the Shift key as you click the Run button.
+Si vous ne voulez pas utiliser les boutons, vous pouvez toujours utiliser le menu Croquis, qui révèle le raccourci Ctrl-R (ou Cmd-R sur Mac) pour Exécuter. L'option Présentation efface le reste de l'écran lorsque le programme est exécuté pour présenter le croquis tout seul. Vous pouvez également utiliser Présentation depuis la barre d'outils en maintenant la touche Shift enfoncée tout en cliquant sur le bouton Exécuter.
 
 <FixedImage width={204}>
 
-![Sketch menu structure.](./Menu-SketchPresent.png)
+![Structure du menu Croquis.](./Menu-SketchPresent.png)
 
 </FixedImage>
 
-## Save and New
+## Enregistrer et Nouveau
 
-The next command that’s important is Save. You can find it under the File menu. By default, your programs are saved to the "sketchbook," which is a folder that collects your programs for easy access. Select the Sketchbook option in the File menu to bring up a list of all the sketches in your sketchbook.
+La commande suivante qui est importante est Enregistrer. Vous pouvez la trouver dans le menu Fichier. Par défaut, vos programmes sont enregistrés dans le "sketchbook", qui est un dossier qui rassemble vos programmes pour un accès facile. Sélectionnez l'option Sketchbook dans le menu Fichier pour afficher la liste de tous les croquis de votre sketchbook.
 
-It’s always a good idea to save your sketches often. As you try different things, keep saving with different names, so that you can always go back to an earlier version. This is especially helpful if—no, when—something breaks. You can also see where the sketch is located on your computer with the Show Sketch Folder command under the Sketch menu.
+Il est toujours une bonne idée d'enregistrer vos croquis souvent. Au fur et à mesure que vous essayez différentes choses, enregistrez avec des noms différents, afin de pouvoir toujours revenir à une version antérieure. Cela est particulièrement utile lorsque - non, lorsque - quelque chose se casse. Vous pouvez également voir où se trouve le croquis sur votre ordinateur avec la commande Afficher le dossier de croquis dans le menu Croquis.
 
-You can create a new sketch by selecting the New option from the File menu. This will create a new sketch in its own window
+Vous pouvez créer un nouveau croquis en sélectionnant l'option Nouveau dans le menu Fichier. Cela créera un nouveau croquis dans sa propre fenêtre.
 
-## Share
+## Partager
 
-Processing sketches are made to be shared. The Export Application option in the File menu will bundle your code into a single folder. Export Application creates an application for your choice of Mac, Windows, and/or Linux. This is an easy way to make self-contained, double-clickable versions of your projects that can run full screen or in a window.
+Les croquis Processing sont faits pour être partagés. L'option Exporter l'application dans le menu Fichier regroupera votre code dans un seul dossier. Exporter l'application crée une application pour votre choix de Mac, Windows et/ou Linux. C'est une façon facile de créer des versions autonomes et à double clic de vos projets qui peuvent fonctionner en plein écran ou dans une fenêtre.
 
-The application folders are erased and re-created each time you use the Export Application command, so be sure to move the folder elsewhere if you do not want it to be erased with the next export.
+Les dossiers d'application sont effacés et recréés chaque fois que vous utilisez la commande Exporter l'application, alors assurez-vous de déplacer le dossier ailleurs si vous ne voulez pas qu'il soit effacé avec la prochaine exportation.
 
-## Examples and Reference
+## Exemples et Référence
 
-Learning how to program involves exploring lots of code: running, altering, breaking, and enhancing it until you have reshaped it into something new. With this in mind, the Processing software download includes dozens of examples that demonstrate different features of the software.
+Apprendre à programmer implique d'explorer beaucoup de code : le faire fonctionner, le modifier, le casser et l'améliorer jusqu'à ce que vous l'ayez remodelé en quelque chose de nouveau. Avec cela à l'esprit, le téléchargement du logiciel Processing comprend des dizaines d'exemples qui démontrent différentes fonctionnalités du logiciel.
 
-To open an example, select Examples from the File menu and double-click an example's name to open it. The examples are grouped into categories based on their function, such as Form, Motion, and Image. Find an interesting topic in the list and try an example.
+Pour ouvrir un exemple, sélectionnez Exemples dans le menu Fichier et double-cliquez sur le nom de l'exemple pour l'ouvrir. Les exemples sont regroupés par catégories en fonction de leur fonction, comme Forme, Mouvement et Image. Trouvez un sujet intéressant dans la liste et essayez un exemple.
 
-When looking at code in the editor, you'll see that functions like `ellipse()` and `fill()` have a different color from the rest of the text. If you see a function that you’re unfamiliar with, select the text, and then click "Find in Reference" from the Help menu. You can also right-click the text (or Ctrl-click on a Mac) and choose "Find in Reference" from the menu that appears. This will open a web browser and show the reference for that function. In addition, you can view the full documentation for the software by selecting Reference from the Help menu.
+Lorsque vous regardez le code dans l'éditeur, vous verrez que des fonctions comme `ellipse()` et `fill()` ont une couleur différente du reste du texte. Si vous voyez une fonction avec laquelle vous n'êtes pas familier, sélectionnez le texte, puis cliquez sur "Rechercher dans la référence" dans le menu Aide. Vous pouvez également faire un clic droit sur le texte (ou Ctrl-clic sur un Mac) et choisir "Rechercher dans la référence" dans le menu qui apparaît. Cela ouvrira un navigateur web et affichera la référence pour cette fonction. De plus, vous pouvez consulter la documentation complète du logiciel en sélectionnant Référence dans le menu Aide.
 
-The Processing [Reference](/reference) explains every code element with a description and examples. The Reference programs are much shorter (usually four or five lines) and easier to follow than the longer code found in the Examples folder. We recommend keeping the Reference open while you’re programming. It can be navigated by topic or alphabetically; sometimes it’s fastest to do a text search within your browser window.
+La [Référence](/reference) Processing explique chaque élément de code avec une description et des exemples. Les programmes de référence sont beaucoup plus courts (généralement quatre ou cinq lignes) et plus faciles à suivre que le code plus long que l'on trouve dans le dossier Exemples. Nous recommandons de garder la Référence ouverte pendant que vous programmez. Elle peut être naviguée par sujet ou par ordre alphabétique ; parfois, il est plus rapide de faire une recherche de texte dans la fenêtre de votre navigateur.
 
-The Reference was written with the beginner in mind; we hope that we’ve made it clear and understandable. We’re grateful to the many people who’ve spotted errors over the years and reported them. If you think you can improve a reference entry or you find a mistake on this website, please [let us know](https://github.com/processing/processing-website/issues).
+La Référence a été écrite en pensant aux débutants ; nous espérons l'avoir rendue claire et compréhensible. Nous sommes reconnaissants aux nombreuses personnes qui ont repéré des erreurs au fil des ans et les ont signalées. Si vous pensez pouvoir améliorer une entrée de la référence ou si vous trouvez une erreur sur ce site web, veuillez [nous en informer](https://github.com/processing/processing-website/issues).
