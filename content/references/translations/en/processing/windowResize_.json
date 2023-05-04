@@ -1,0 +1,23 @@
+{
+  "brief": "The <b>windowResize()</b> function defines the size of the sketch window",
+  "related": [],
+  "name": "windowResize()",
+  "description": "The <b>windowWidth()</b> function defines the width of the sketch window",
+  "syntax": ["windowResize(newWidth, newHeight)"],
+  "returns": "void",
+  "type": "function",
+  "category": "environment",
+  "subcategory": "",
+  "parameters": [
+    {
+      "name": "newWidth",
+      "description": "width of the window",
+      "type": ["int"]
+    },
+    {
+      "name": "newHeight",
+      "description": "height of the window",
+      "type": ["int"]
+    }
+  ]
+}

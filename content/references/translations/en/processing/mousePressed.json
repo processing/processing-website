@@ -14,7 +14,7 @@
     "mouseWheel_"
   ],
   "name": "mousePressed",
-  "description": "The <b>mousePressed()</b> function is called once after every time a\n mouse button is pressed. The <b>mouseButton</b> variable (see the\n related reference entry) can be used to determine which button has\n been pressed.\n <br /><br />\n Mouse and keyboard events only work when a program has <b>draw()</b>.\n Without <b>draw()</b>, the code is only run once and then stops\n listening for events.",
+  "description": "The <b>mousePressed</b> variable stores whether a mouse button has been pressed.\n The <b>mouseButton</b> variable (see the related reference entry) can be used to\n determine which button has been pressed.\n <br/><br/>\n Mouse and keyboard events only work when a program has <b>draw()</b>.\n Without <b>draw()</b>, the code is only run once and then stops\n listening for events.",
   "category": "input",
   "subcategory": "mouse",
   "type": "other"

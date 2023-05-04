@@ -11,8 +11,8 @@
   ],
   "returns": "void",
   "type": "method",
-  "category": "oscillators",
-  "subcategory": "SawOsc",
+  "category": "sawosc",
+  "subcategory": "",
   "classanchor": "SawOsc",
   "parameters": [
     {

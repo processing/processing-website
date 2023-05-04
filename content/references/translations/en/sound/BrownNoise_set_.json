@@ -6,8 +6,8 @@
   "syntax": [".set(amp, add, pos)"],
   "returns": "void",
   "type": "method",
-  "category": "noise",
-  "subcategory": "BrownNoise",
+  "category": "brownnoise",
+  "subcategory": "",
   "classanchor": "BrownNoise",
   "parameters": [
     {

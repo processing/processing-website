@@ -6,8 +6,8 @@
   "syntax": [".inputDevice(deviceId)"],
   "returns": "void",
   "type": "method",
-  "category": "configuration",
-  "subcategory": "Sound",
+  "category": "sound",
+  "subcategory": "",
   "classanchor": "Sound",
   "parameters": [
     {

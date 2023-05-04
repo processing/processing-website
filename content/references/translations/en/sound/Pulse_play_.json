@@ -11,8 +11,8 @@
   ],
   "returns": "void",
   "type": "method",
-  "category": "oscillators",
-  "subcategory": "Pulse",
+  "category": "pulse",
+  "subcategory": "",
   "classanchor": "Pulse",
   "parameters": [
     {

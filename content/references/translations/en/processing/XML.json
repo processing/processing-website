@@ -135,7 +135,7 @@
   "csspath": "../../",
   "isLibrary": "true",
   "classFields": [],
-  "description": "<b>XML</b> is a representation of an <b>XML</b> object, able to parse <b>XML</b> code. Use\n <b>loadXML()</b> to load external XML files and create <b>XML</b>\n objects.<br />\n <br />\n Only files encoded as UTF-8 (or plain ASCII) are parsed properly; the\n encoding parameter inside <b>XML</b> files is ignored.",
+  "description": "<b>XML</b> is a representation of an <b>XML</b> object, able to parse <b>XML</b> code. Use\n <b>loadXML()</b> to load external XML files and create <b>XML</b>\n objects.<br/>\n <br/>\n Only files encoded as UTF-8 (or plain ASCII) are parsed properly; the\n encoding parameter inside <b>XML</b> files is ignored.",
   "type": "class",
   "constructors": ["XML(name)"],
   "related": ["loadXML_", "parseXML_", "saveXML_"],

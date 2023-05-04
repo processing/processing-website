@@ -47,7 +47,7 @@
   "name": "TriOsc",
   "classanchor": "sound/TriOsc",
   "category": "oscillators",
-  "subcategory": "TriOsc",
+  "subcategory": "",
   "parameters": [
     {
       "name": "parent",

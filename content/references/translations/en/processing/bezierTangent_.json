@@ -1,8 +1,8 @@
 {
-  "brief": "Calculates the tangent of a point on a Bezier curve",
+  "brief": "Calculates the tangent of a point on a Bézier curve",
   "related": ["bezier_", "bezierVertex_", "curvePoint_"],
   "name": "bezierTangent()",
-  "description": "Calculates the tangent of a point on a Bezier curve. There is a good\n definition of <a href=\"http://en.wikipedia.org/wiki/Tangent\"\n target=\"new\"><em>tangent</em> on Wikipedia</a>.\n\n\n ",
+  "description": "Calculates the tangent of a point on a Bézier curve. There is a good\n definition of <a href=\"http://en.wikipedia.org/wiki/Tangent\" target=\"new\"><em>tangent</em> on Wikipedia</a>.\n\n ",
   "syntax": ["bezierTangent(a, b, c, d, t)"],
   "returns": "float",
   "type": "function",

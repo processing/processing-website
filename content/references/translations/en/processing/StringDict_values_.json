@@ -4,7 +4,7 @@
   "name": "values()",
   "description": "Return the internal array being used to store the values",
   "syntax": [".values()"],
-  "returns": "Iterable",
+  "returns": "Iterable&lt;String&gt;",
   "type": "method",
   "category": "stringdict",
   "subcategory": "method",

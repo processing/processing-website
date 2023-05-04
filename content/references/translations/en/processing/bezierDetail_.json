@@ -1,8 +1,8 @@
 {
-  "brief": "Sets the resolution at which Beziers display",
+  "brief": "Sets the resolution at which Bézier curves display",
   "related": ["curve_", "curveVertex_", "curveTightness_"],
   "name": "bezierDetail()",
-  "description": "Sets the resolution at which Beziers display. The default value is 20. This\n function is only useful when using the <b>P3D</b> or <b>P2D</b> renderer; the default\n <b>JAVA2D</b> renderer does not use this information.",
+  "description": "Sets the resolution at which Bézier curves display. The default value is 20.\n This function is only useful when using the <b>P2D</b> or <b>P3D</b> renderer;\n the default (JAVA2D) renderer does not use this information.",
   "syntax": ["bezierDetail(detail)"],
   "returns": "void",
   "type": "function",

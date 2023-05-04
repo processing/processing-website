@@ -16,7 +16,11 @@
       "description": " Cualquier tipo de dato primitivo o compuesto, incluyendo clases definidas por el usuario",
       "type": []
     },
-    { "name": "var", "description": "cualquier nombre de variable válido", "type": [] },
+    {
+      "name": "var",
+      "description": "cualquier nombre de variable válido",
+      "type": []
+    },
     {
       "name": "element",
       "description": "int: no debe exceder la longitud del arreglo (length) menos 1",

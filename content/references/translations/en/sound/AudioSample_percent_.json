@@ -6,8 +6,8 @@
   "syntax": [".percent()"],
   "returns": "float",
   "type": "method",
-  "category": "sampling",
-  "subcategory": "AudioSample",
+  "category": "sound",
+  "subcategory": "",
   "classanchor": "AudioSample",
   "parameters": []
 }

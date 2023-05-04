@@ -2,7 +2,7 @@
   "brief": "Sets a variable within the shader",
   "related": [],
   "name": "set()",
-  "description": "Sets the uniform variables inside the shader to modify the effect while the \n program is running.",
+  "description": "Sets the uniform variables inside the shader to modify the effect while the\n program is running.",
   "syntax": [
     ".set(name, x)",
     ".set(name, x, y)",

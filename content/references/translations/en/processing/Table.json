@@ -125,7 +125,7 @@
   "csspath": "../../",
   "isLibrary": "true",
   "classFields": [],
-  "description": "<b>Table</b> objects store data with multiple rows and columns, much like in\n a traditional spreadsheet. Tables can be generated from scratch, dynamically,\n or using data from an existing file. Tables can also be output and saved to\n disk, as in the example above.<br />\n <br />\n Additional <b>Table</b> methods are documented in the <a href=\n \"http://processing.github.io/processing-javadocs/core/processing/data/Table.html\">Processing\n Table Javadoc</a>.\n\n ",
+  "description": "<b>Table</b> objects store data with multiple rows and columns, much like in\n a traditional spreadsheet. Tables can be generated from scratch, dynamically,\n or using data from an existing file. Tables can also be output and saved to\n disk, as in the example above.<br/>\n <br/>\n Additional <b>Table</b> methods are documented in the <a href=\"http://processing.github.io/processing-javadocs/core/processing/data/Table.html\">Processing\n Table Javadoc</a>.\n\n ",
   "type": "class",
   "constructors": ["Table()", "Table(rows)"],
   "related": ["loadTable_", "saveTable_", "TableRow"],

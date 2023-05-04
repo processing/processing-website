@@ -1,0 +1,23 @@
+{
+  "brief": "The <b>windowMove()</b> function defines the position of the Processing\n           sketch in relation to the upper-left corner of the computer screen",
+  "related": [],
+  "name": "windowMove()",
+  "description": "The <b>windowMove()</b> function defines the position of the Processing\n sketch in relation to the upper-left corner of the computer screen.",
+  "syntax": ["windowMove(x, y)"],
+  "returns": "void",
+  "type": "function",
+  "category": "environment",
+  "subcategory": "",
+  "parameters": [
+    {
+      "name": "x",
+      "description": "x-coordinate of the window",
+      "type": ["int"]
+    },
+    {
+      "name": "y",
+      "description": "y-coordinate of the window",
+      "type": ["int"]
+    }
+  ]
+}

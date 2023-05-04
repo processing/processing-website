@@ -14,7 +14,7 @@
     "mouseWheel_"
   ],
   "name": "mouseReleased()",
-  "description": "The <b>mouseReleased()</b> function is called every time a mouse button is\n released. <br />\n <br />\n Mouse and keyboard events only work when a program has <b>draw()</b>.\n Without <b>draw()</b>, the code is only run once and then stops listening\n for events.",
+  "description": "The <b>mouseReleased()</b> function is called every time a mouse button is\n released. <br/>\n <br/>\n Mouse and keyboard events only work when a program has <b>draw()</b>.\n Without <b>draw()</b>, the code is only run once and then stops listening\n for events.",
   "syntax": ["mouseReleased()", "mouseReleased(event)"],
   "returns": "void",
   "type": "function",

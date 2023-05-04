@@ -2,7 +2,7 @@
   "brief": "Calculates the tangent of a point on a curve",
   "related": ["curve_", "curveVertex_", "curvePoint_", "bezierTangent_"],
   "name": "curveTangent()",
-  "description": "Calculates the tangent of a point on a curve. There's a good definition\n of <em><a href=\"http://en.wikipedia.org/wiki/Tangent\"\n target=\"new\">tangent</em> on Wikipedia</a>.\n\n\n ",
+  "description": "Calculates the tangent of a point on a curve. There's a good definition\n of <em><a href=\"http://en.wikipedia.org/wiki/Tangent\" target=\"new\">tangent</em> on Wikipedia</a>.\n\n ",
   "syntax": ["curveTangent(a, b, c, d, t)"],
   "returns": "float",
   "type": "function",

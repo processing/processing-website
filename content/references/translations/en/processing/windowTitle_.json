@@ -1,0 +1,14 @@
+{
+  "brief": "The <b>windowTitle()</b> function defines the title to appear at the top of the sketch window",
+  "related": [],
+  "name": "windowTitle()",
+  "description": "The <b>windowTitle()</b> function defines the title to appear at the top of the sketch window",
+  "syntax": ["windowTitle(title)"],
+  "returns": "void",
+  "type": "function",
+  "category": "environment",
+  "subcategory": "",
+  "parameters": [
+    { "name": "title", "description": "name of the window", "type": ["String"] }
+  ]
+}

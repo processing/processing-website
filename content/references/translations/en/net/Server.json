@@ -1,5 +1,5 @@
 {
-  "brief": "The server class is used to create server objects which send \n and receives data to and from its associated clients (other programs connected to it)",
+  "brief": "The server class is used to create server objects which send\n and receives data to and from its associated clients (other programs connected to it)",
   "methods": [
     {
       "anchor": "Server_disconnect_",
@@ -30,7 +30,7 @@
   "csspath": "../../",
   "isLibrary": "true",
   "classFields": [],
-  "description": "A server sends and receives data to and from its associated clients \n (other programs connected to it). When a server is started, it begins \n listening for connections on the port specified by the <b>port</b> \n parameter. Computers have many ports for transferring data and some are \n commonly used so be sure to not select one of these. For example, web \n servers usually use port 80 and POP mail uses port 110.",
+  "description": "A server sends and receives data to and from its associated clients\n (other programs connected to it). When a server is started, it begins\n listening for connections on the port specified by the <b>port</b>\n parameter. Computers have many ports for transferring data and some are\n commonly used so be sure to not select one of these. For example, web\n servers usually use port 80 and POP mail uses port 110.",
   "type": "class",
   "constructors": ["Server(parent, port)", "Server(parent, port, host)"],
   "related": [],

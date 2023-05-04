@@ -10,6 +10,10 @@
   "subcategory": "Operators",
   "parameters": [
     { "name": "var", "description": "int or float", "type": [] },
-    { "name": "value", "description": "any numerical value the same datatype as var", "type": [] }
+    {
+      "name": "value",
+      "description": "any numerical value the same datatype as var",
+      "type": []
+    }
   ]
 }

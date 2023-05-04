@@ -1,0 +1,18 @@
+{
+  "brief": "Define whether the sketch window can be resized while it's running",
+  "related": [],
+  "name": "windowResizable()",
+  "description": "By default, Processing sketches can't be resized. When\n <b>surface.setResizable(true)</b> is used within a sketch,\n the window can be resized while it's running.",
+  "syntax": ["windowResizable(resizable)"],
+  "returns": "void",
+  "type": "function",
+  "category": "environment",
+  "subcategory": "",
+  "parameters": [
+    {
+      "name": "resizable",
+      "description": "true to make the window resizable",
+      "type": ["boolean"]
+    }
+  ]
+}

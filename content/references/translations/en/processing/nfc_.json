@@ -2,7 +2,7 @@
   "brief": "Utility function for formatting numbers into strings and placing\n           appropriate commas to mark units of 1000",
   "related": ["nf_", "nfp_", "nfs_"],
   "name": "nfc()",
-  "description": "Utility function for formatting numbers into strings and placing\n appropriate commas to mark units of 1000. There are four versions: one for\n formatting ints, one for formatting an array of ints, one for formatting\n floats, and one for formatting an array of floats.<br />\n <br />\n The value for the <b>right</b> parameter should always be a positive\n integer.<br />\n <br />\n For a non-US locale, this will insert periods instead of commas,\n or whatever is appropriate for that region.",
+  "description": "Utility function for formatting numbers into strings and placing\n appropriate commas to mark units of 1000. There are four versions: one for\n formatting ints, one for formatting an array of ints, one for formatting\n floats, and one for formatting an array of floats.<br/>\n <br/>\n The value for the <b>right</b> parameter should always be a positive\n integer.<br/>\n <br/>\n For a non-US locale, this will insert periods instead of commas,\n or whatever is appropriate for that region.",
   "syntax": ["nfc(nums)", "nfc(num)", "nfc(nums, right)", "nfc(num, right)"],
   "returns": "String[]",
   "type": "function",

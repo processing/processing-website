@@ -4,7 +4,7 @@
   "name": "keys()",
   "description": "Return the internal array being used to store the keys.",
   "syntax": [".keys()"],
-  "returns": "Iterable",
+  "returns": "Iterable&lt;String&gt;",
   "type": "method",
   "category": "intdict",
   "subcategory": "method",

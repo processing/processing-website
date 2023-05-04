@@ -2,7 +2,7 @@
   "brief": "Disconnects from the server",
   "related": [],
   "name": "stop()",
-  "description": "Disconnects from the server. Use to shut the connection when you're \n finished with the Client.",
+  "description": "Disconnects from the server. Use to shut the connection when you're\n finished with the Client.",
   "syntax": ["client.stop()"],
   "returns": "void",
   "type": "method",

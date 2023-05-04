@@ -1,0 +1,15 @@
+{
+  "brief": "Scale the sketch as if it fit a specific width and height",
+  "related": [],
+  "name": "windowRatio()",
+  "description": "Scale the sketch as if it fit this specific width and height.\n This will also scale the <b>mouseX</b> and <b>mouseY</b> variables (as well as\n <b>pmouseX</b> and <b>pmouseY</b>). Note that it will not have an effect on\n MouseEvent objects (i.e. <b>event.getX()</b> and <b>event.getY()</b>) because\n their exact behavior may interact strangely with other libraries.",
+  "syntax": ["windowRatio(wide, high)"],
+  "returns": "void",
+  "type": "function",
+  "category": "environment",
+  "subcategory": "",
+  "parameters": [
+    { "name": "wide", "description": "width of the sketch", "type": ["int"] },
+    { "name": "high", "description": "height of the sketch", "type": ["int"] }
+  ]
+}
