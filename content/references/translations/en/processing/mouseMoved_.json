@@ -14,7 +14,7 @@
     "mouseWheel_"
   ],
   "name": "mouseMoved()",
-  "description": "The <b>mouseMoved()</b> function is called every time the mouse moves and a\n mouse button is not pressed. (If a button <i>is</i> being pressed,\n <b>mouseDragged()</b> is called instead.) <br />\n <br />\n Mouse and keyboard events only work when a program has <b>draw()</b>.\n Without <b>draw()</b>, the code is only run once and then stops listening\n for events.",
+  "description": "The <b>mouseMoved()</b> function is called every time the mouse moves and a\n mouse button is not pressed. (If a button <i>is</i> being pressed,\n <b>mouseDragged()</b> is called instead.) <br/>\n <br/>\n Mouse and keyboard events only work when a program has <b>draw()</b>.\n Without <b>draw()</b>, the code is only run once and then stops listening\n for events.",
   "syntax": ["mouseMoved()", "mouseMoved(event)"],
   "returns": "void",
   "type": "function",

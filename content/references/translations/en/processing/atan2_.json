@@ -2,7 +2,7 @@
   "brief": "Calculates the angle (in radians) from a specified point to the\n coordinate origin as measured from the positive x-axis",
   "related": ["tan_"],
   "name": "atan2()",
-  "description": "Calculates the angle (in radians) from a specified point to the\n coordinate origin as measured from the positive x-axis. Values are\n returned as a <b>float</b> in the range from <b>PI</b> to <b>-PI</b>.\n The <b>atan2()</b> function is most often used for orienting geometry to\n the position of the cursor.  Note: The y-coordinate of the point is the\n first parameter and the x-coordinate is the second due the the structure\n of calculating the tangent.",
+  "description": "Calculates the angle (in radians) from a specified point to the\n coordinate origin as measured from the positive x-axis. Values are\n returned as a <b>float</b> in the range from <b>PI</b> to <b>-PI</b>.\n The <b>atan2()</b> function is most often used for orienting geometry to\n the position of the cursor.  Note: The y-coordinate of the point is the\n first parameter and the x-coordinate is the second due the structure\n of calculating the tangent.",
   "syntax": ["atan2(y, x)"],
   "returns": "float",
   "type": "function",

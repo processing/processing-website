@@ -1,5 +1,5 @@
 {
-  "lang":  "es" ,
+  "lang": "es",
   "name": "[] (acceso de arreglos)",
   "brief": "El operador para acceso de arreglos es usado para especificar una ubicación dentro de un arreglo",
   "description": "El operador para acceso de arreglos es usado para especificar una ubicación dentro de un arreglo. El dato en esta ubicación puede ser definido con la sintaxis <b>array[element] = value</b> and read with the syntax <b>value = array[element]</b> como se muestra en el ejemplo anterior.\n",
@@ -15,7 +15,11 @@
       "description": " Cualquier tipo de dato primitivo o compuesto, incluyendo clases definidas por el usuario",
       "type": []
     },
-    { "name": "array", "description": "cualquier nombre de variable válido", "type": [] },
+    {
+      "name": "array",
+      "description": "cualquier nombre de variable válido",
+      "type": []
+    },
     {
       "name": "element",
       "description": "int: no debe exceder la longitud del arreglo (length) menos 1",

@@ -11,8 +11,8 @@
   ],
   "returns": "void",
   "type": "method",
-  "category": "noise",
-  "subcategory": "WhiteNoise",
+  "category": "whitenoise",
+  "subcategory": "",
   "classanchor": "WhiteNoise",
   "parameters": [
     {

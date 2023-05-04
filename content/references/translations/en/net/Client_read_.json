@@ -2,7 +2,7 @@
   "brief": "Returns a value from the buffer",
   "related": [],
   "name": "read()",
-  "description": "Returns a number between 0 and 255 for the next byte that's waiting in \n the buffer. Returns -1 if there is no byte, although this should be \n avoided by first cheacking <b>available()</b> to see if any data is available.",
+  "description": "Returns a number between 0 and 255 for the next byte that's waiting in\n the buffer. Returns -1 if there is no byte, although this should be\n avoided by first checking <b>available()</b> to see if any data is available.",
   "syntax": ["client.read()"],
   "returns": "int",
   "type": "method",

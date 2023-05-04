@@ -6,8 +6,8 @@
   "syntax": [".channels()"],
   "returns": "int",
   "type": "method",
-  "category": "sampling",
-  "subcategory": "SoundFile",
+  "category": "soundfile",
+  "subcategory": "",
   "classanchor": "SoundFile",
   "parameters": []
 }

@@ -6,8 +6,8 @@
   "syntax": [".freq(freq)"],
   "returns": "void",
   "type": "method",
-  "category": "oscillators",
-  "subcategory": "SinOsc",
+  "category": "sinosc",
+  "subcategory": "",
   "classanchor": "SinOsc",
   "parameters": [
     {

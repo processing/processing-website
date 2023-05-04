@@ -2,7 +2,7 @@
   "brief": "Copies the entire image",
   "related": ["PGraphics_alpha_", "PImage_blend_"],
   "name": "copy()",
-  "description": "Copies a region of pixels from one image into another. If the source and\n destination regions aren't the same size, it will automatically resize\n source pixels to fit the specified target region. No alpha information\n is used in the process, however if the source image has an alpha channel\n set, it will be copied as well.\n <br /><br />\n As of release 0149, this function ignores <b>imageMode()</b>.",
+  "description": "Copies a region of pixels from one image into another. If the source and\n destination regions aren't the same size, it will automatically resize\n source pixels to fit the specified target region. No alpha information\n is used in the process, however if the source image has an alpha channel\n set, it will be copied as well.\n <br/><br/>\n As of release 0149, this function ignores <b>imageMode()</b>.",
   "syntax": [
     "pimg.copy()",
     "pimg.copy(sx, sy, sw, sh, dx, dy, dw, dh)",

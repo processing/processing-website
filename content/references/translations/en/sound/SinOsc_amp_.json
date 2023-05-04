@@ -6,8 +6,8 @@
   "syntax": [".amp(amp)"],
   "returns": "void",
   "type": "method",
-  "category": "oscillators",
-  "subcategory": "SinOsc",
+  "category": "sinosc",
+  "subcategory": "",
   "classanchor": "SinOsc",
   "parameters": [
     {

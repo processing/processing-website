@@ -82,7 +82,7 @@
   "name": "SoundFile",
   "classanchor": "sound/SoundFile",
   "category": "sampling",
-  "subcategory": "SoundFile",
+  "subcategory": "",
   "parameters": [
     {
       "name": "parent",

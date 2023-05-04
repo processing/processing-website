@@ -2,7 +2,7 @@
   "brief": "Returns the buffer as a <b>String</b> up to and including a particular character",
   "related": [],
   "name": "readStringUntil()",
-  "description": "Combination of <b>readBytesUntil()</b> and <b>readString()</b>. Returns \n <b>null</b> if it doesn't find what you're looking for.\n \n ",
+  "description": "Combination of <b>readBytesUntil()</b> and <b>readString()</b>. Returns\n <b>null</b> if it doesn't find what you're looking for.\n\n ",
   "syntax": ["client.readStringUntil(interesting)"],
   "returns": "String",
   "type": "method",

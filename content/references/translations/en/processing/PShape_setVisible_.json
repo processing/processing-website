@@ -2,7 +2,7 @@
   "brief": "Sets the shape to be visible or invisible",
   "related": ["PShape_isVisible_"],
   "name": "setVisible()",
-  "description": "Sets the shape to be visible or invisible. This is determined by the value of\n the <b>visible</b> parameter.<br />\n <br />\n The default visibility of a shape is usually controlled by whatever program\n created the SVG file. For instance, this parameter is controlled by showing\n or hiding the shape in the layers palette in Adobe Illustrator.",
+  "description": "Sets the shape to be visible or invisible. This is determined by the value of\n the <b>visible</b> parameter.<br/>\n <br/>\n The default visibility of a shape is usually controlled by whatever program\n created the SVG file. For instance, this parameter is controlled by showing\n or hiding the shape in the layers palette in Adobe Illustrator.",
   "syntax": ["sh.setVisible(visible)"],
   "returns": "void",
   "type": "method",

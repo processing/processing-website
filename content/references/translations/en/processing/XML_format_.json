@@ -2,7 +2,7 @@
   "brief": "Formats <b>XML</b> data as a <b>String</b>",
   "related": ["XML_toString_"],
   "name": "format()",
-  "description": "Takes an <b>XML</b> object and converts it to a <b>String</b>, formatting its content as\n specified with the <b>indent</b> parameter.<br />\n <br />\n If indent is set to -1, then the String is returned with no line breaks, no\n indentation, and no <b>XML</b> declaration.<br />\n <br />\n If indent is set to 0 or greater, then the <b>String</b> is returned with line\n breaks, and the specified number of spaces as indent values. Meaning, there\n will be no indentation if 0 is specified, or each indent will be replaced\n with the corresponding number of spaces: 1, 2, 3, and so on.",
+  "description": "Takes an <b>XML</b> object and converts it to a <b>String</b>, formatting its content as\n specified with the <b>indent</b> parameter.<br/>\n <br/>\n If indent is set to -1, then the String is returned with no line breaks, no\n indentation, and no <b>XML</b> declaration.<br/>\n <br/>\n If indent is set to 0 or greater, then the <b>String</b> is returned with line\n breaks, and the specified number of spaces as indent values. Meaning, there\n will be no indentation if 0 is specified, or each indent will be replaced\n with the corresponding number of spaces: 1, 2, 3, and so on.",
   "syntax": [".format(indent)"],
   "returns": "String",
   "type": "method",

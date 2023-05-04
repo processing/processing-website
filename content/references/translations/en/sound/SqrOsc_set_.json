@@ -6,8 +6,8 @@
   "syntax": [".set(freq, amp, add, pos)"],
   "returns": "void",
   "type": "method",
-  "category": "oscillators",
-  "subcategory": "SqrOsc",
+  "category": "sqrosc",
+  "subcategory": "",
   "classanchor": "SqrOsc",
   "parameters": [
     {

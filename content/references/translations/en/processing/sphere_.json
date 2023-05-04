@@ -2,7 +2,7 @@
   "brief": "A sphere is a hollow ball made from tessellated triangles",
   "related": ["sphereDetail_"],
   "name": "sphere()",
-  "description": "A sphere is a hollow ball made from tessellated triangles.\n\n\n ",
+  "description": "A sphere is a hollow ball made from tessellated triangles.\n\n ",
   "syntax": ["sphere(r)"],
   "returns": "void",
   "type": "function",

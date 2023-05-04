@@ -6,8 +6,8 @@
   "syntax": [".pause()"],
   "returns": "void",
   "type": "method",
-  "category": "sampling",
-  "subcategory": "AudioSample",
+  "category": "audiosample",
+  "subcategory": "",
   "classanchor": "AudioSample",
   "parameters": []
 }

@@ -6,8 +6,8 @@
   "syntax": [".set(freq, bw)"],
   "returns": "void",
   "type": "method",
-  "category": "effects",
-  "subcategory": "BandPass",
+  "category": "bandpass",
+  "subcategory": "",
   "classanchor": "BandPass",
   "parameters": [
     { "name": "freq", "description": "Set the frequency", "type": ["float"] },

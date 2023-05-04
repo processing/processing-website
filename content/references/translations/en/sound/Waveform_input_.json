@@ -6,8 +6,8 @@
   "syntax": [".input(input)"],
   "returns": "void",
   "type": "method",
-  "category": "analysis",
-  "subcategory": "Waveform",
+  "category": "waveform",
+  "subcategory": "",
   "classanchor": "Waveform",
   "parameters": [
     {

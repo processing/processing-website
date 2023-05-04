@@ -6,8 +6,8 @@
   "syntax": [".time(delayTime)"],
   "returns": "void",
   "type": "method",
-  "category": "effects",
-  "subcategory": "Delay",
+  "category": "delay",
+  "subcategory": "",
   "classanchor": "Delay",
   "parameters": [
     {

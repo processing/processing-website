@@ -17,6 +17,6 @@
   "name": "LowPass",
   "classanchor": "sound/LowPass",
   "category": "effects",
-  "subcategory": "LowPass",
+  "subcategory": "",
   "parameters": []
 }

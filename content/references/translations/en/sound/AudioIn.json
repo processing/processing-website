@@ -27,7 +27,7 @@
   "name": "AudioIn",
   "classanchor": "sound/AudioIn",
   "category": "I/O",
-  "subcategory": "AudioIn",
+  "subcategory": "",
   "parameters": [
     {
       "name": "parent",

@@ -2,7 +2,7 @@
   "brief": "A box is an extruded <b>rectangle</b>",
   "related": ["sphere_"],
   "name": "box()",
-  "description": "A box is an extruded <b>rectangle</b>. A box with equal dimension on all sides\n is a cube.",
+  "description": "A box is an extruded <b>rectangle</b>. A box with equal dimension\n on all sides is a cube.",
   "syntax": ["box(size)", "box(w, h, d)"],
   "returns": "void",
   "type": "function",

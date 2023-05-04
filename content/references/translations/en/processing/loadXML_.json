@@ -9,7 +9,7 @@
     "loadTable_"
   ],
   "name": "loadXML()",
-  "description": "Reads the contents of a file or URL and creates an XML\n object with its values. If a file is specified, it must\n be located in the sketch's \"data\" folder. The filename\n parameter can also be a URL to a file found online.<br /><br />\n All files loaded and saved by the Processing API use\n UTF-8 encoding. If you need to load an XML file that's\n not in UTF-8 format, see the <a href=\"http://processing.github.io/processing-javadocs/core/processing/data/XML.html\">\n developer's reference</a> for the XML object.",
+  "description": "Reads the contents of a file or URL and creates an XML\n object with its values. If a file is specified, it must\n be located in the sketch's \"data\" folder. The filename\n parameter can also be a URL to a file found online.<br/><br/>\n All files loaded and saved by the Processing API use\n UTF-8 encoding. If you need to load an XML file that's\n not in UTF-8 format, see the <a href=\"http://processing.github.io/processing-javadocs/core/processing/data/XML.html\">\n developer's reference</a> for the XML object.",
   "syntax": ["loadXML(filename)"],
   "returns": "XML",
   "type": "function",

@@ -47,7 +47,7 @@
   "name": "SinOsc",
   "classanchor": "sound/SinOsc",
   "category": "oscillators",
-  "subcategory": "SinOsc",
+  "subcategory": "",
   "parameters": [
     {
       "name": "parent",

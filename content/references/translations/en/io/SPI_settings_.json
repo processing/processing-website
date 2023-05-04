@@ -22,7 +22,7 @@
     },
     {
       "name": "mode",
-      "description": "<a href=\n                  \"https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus#Clock_polarity_and_phase\">SPI.MODE0\n                  to SPI.MODE3</a>",
+      "description": "<a href=\"https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus#Clock_polarity_and_phase\">,SPI.MODE0\n                  to SPI.MODE3,</a>",
       "type": ["int"]
     }
   ]

@@ -7,7 +7,7 @@
     ".matchRowIterator(value, column)",
     ".matchRowIterator(value, columnName)"
   ],
-  "returns": "Iterator",
+  "returns": "Iterator&lt;TableRow&gt;",
   "type": "method",
   "category": "table",
   "subcategory": "method",

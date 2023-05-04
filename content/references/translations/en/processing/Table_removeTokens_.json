@@ -2,7 +2,7 @@
   "brief": "Removes characters from the table",
   "related": ["Table_trim_"],
   "name": "removeTokens()",
-  "description": "Removes any of the specified characters (or \"tokens\"). The example above\n removes all commas, dollar signs, and spaces from the table.<br />\n <br />\n If no column is specified, then the values in all columns and rows are\n processed. A specific column may be referenced by either its ID or title.",
+  "description": "Removes any of the specified characters (or \"tokens\"). The example above\n removes all commas, dollar signs, and spaces from the table.<br/>\n <br/>\n If no column is specified, then the values in all columns and rows are\n processed. A specific column may be referenced by either its ID or title.",
   "syntax": [
     ".removeTokens(tokens)",
     ".removeTokens(tokens, column)",

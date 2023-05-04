@@ -11,8 +11,8 @@
   ],
   "returns": "void",
   "type": "method",
-  "category": "oscillators",
-  "subcategory": "SqrOsc",
+  "category": "sqrosc",
+  "subcategory": "",
   "classanchor": "SqrOsc",
   "parameters": [
     {

@@ -2,7 +2,7 @@
   "brief": "Gets a list of all available serial ports",
   "related": [],
   "name": "list()",
-  "description": "Gets a list of all available serial ports. Use <b>println()</b> to write the \n information to the text window.",
+  "description": "Gets a list of all available serial ports. Use <b>println()</b> to write the\n information to the text window.",
   "syntax": ["serial.list()"],
   "returns": "String[]",
   "type": "method",

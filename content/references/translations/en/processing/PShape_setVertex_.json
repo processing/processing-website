@@ -2,7 +2,7 @@
   "brief": "Sets the vertex at the index position",
   "related": ["PShape_getVertex_", "PShape_getVertexCount_"],
   "name": "setVertex()",
-  "description": "The <b>setVertex()</b> method defines the coordinates of the vertex point \n located at the position defined by the <b>index</b> parameter. This method \n works when shapes are created as shown in the example above, but won't work \n properly when a shape is defined explicitly (e.g. <b>createShape(RECT, 20, 20, 80, 80)</b>.",
+  "description": "The <b>setVertex()</b> method defines the coordinates of the vertex point\n located at the position defined by the <b>index</b> parameter. This method\n works when shapes are created as shown in the example above, but won't work\n properly when a shape is defined explicitly (e.g. <b>createShape(RECT, 20, 20, 80, 80)</b>.",
   "syntax": [
     "sh.setVertex(index, x, y)",
     "sh.setVertex(index, x, y, z)",

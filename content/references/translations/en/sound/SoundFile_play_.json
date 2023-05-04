@@ -13,8 +13,8 @@
   ],
   "returns": "void",
   "type": "method",
-  "category": "sampling",
-  "subcategory": "SoundFile",
+  "category": "soundfile",
+  "subcategory": "",
   "classanchor": "SoundFile",
   "parameters": [
     {

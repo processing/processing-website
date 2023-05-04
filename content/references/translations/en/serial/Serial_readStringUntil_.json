@@ -2,7 +2,7 @@
   "brief": "Combination of <b>readBytesUntil()</b> and <b>readString()</b>",
   "related": [],
   "name": "readStringUntil()",
-  "description": "Combination of <b>readBytesUntil()</b> and <b>readString()</b>. Returns <b>null</b> \n if it doesn't find what you're looking for.",
+  "description": "Combination of <b>readBytesUntil()</b> and <b>readString()</b>. Returns <b>null</b>\n if it doesn't find what you're looking for.",
   "syntax": ["serial.readStringUntil(inByte)"],
   "returns": "String",
   "type": "method",
