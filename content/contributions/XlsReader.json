@@ -13,7 +13,7 @@
   "packages": [
     {
       "mode": "java",
-      "minRevision": "0",
+      "minRevision": "218",
       "maxRevision": "228",
       "props": "https://raw.github.com/fjenett/xlsreader-library-processing/latest/release/XlsReader.txt",
       "download": "https://raw.github.com/fjenett/xlsreader-library-processing/latest/release/XlsReader.zip"

@@ -1,0 +1,22 @@
+{
+  "name": "Lunar",
+  "authors": [
+    "[Boy d'Hont](www.bdhont.net)"
+  ],
+  "url": "https://github.com/boydhont/lunar",
+  "categories": [
+    "3D"
+  ],
+  "sentence": "Parametric design library for the minimalist, inspired on existing node-based plug-ins for CAD software. Holds algorithms for easy generation and adaptation of polygon meshes, vectors and list patterns.",
+  "paragraph": "Lunar is meant for architects, designers and artists that don't want to learn multiple, complex, libraries to visualize their three-dimensional concepts. Lunar has all the building blocks for fast sketching in three dimensions.",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "http://www.bdhont.net/lunar.txt",
+      "download": "http://www.bdhont.net/lunar.zip"
+    }
+  ]
+}

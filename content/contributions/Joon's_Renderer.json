@@ -1,0 +1,23 @@
+{
+  "name": "Joon's Renderer",
+  "categories": [
+    "3D"
+  ],
+  "authors": [
+    "[Joon Hyub Lee](https://sketch.kaist.ac.kr/people/joonhyublee)"
+  ],
+  "url": "https://github.com/joonhyublee/joons-renderer",
+  "sentence": "Sunflow raytracing for Processing.",
+  "paragraph": "",
+  "lastUpdated": "0",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "266",
+      "maxRevision": "0",
+      "props": "https://fox-gieg.com/patches/processing/libraries/joons/joons.txt",
+      "download": "https://fox-gieg.com/patches/processing/libraries/joons/joons.zip"
+    }
+  ]
+}
