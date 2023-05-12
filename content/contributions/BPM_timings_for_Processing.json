@@ -1,0 +1,24 @@
+{
+  "name": "BPM timings for Processing",
+  "authors": [
+    "[Vincent Sijben](https://github.com/vincentsijben)"
+  ],
+  "url": "https://github.com/vincentsijben/bpm-timings-for-processing",
+  "categories": [
+    "Math",
+    "Sound",
+    "Utilities"
+  ],
+  "sentence": "A collection of functions to animate visuals based on timings.",
+  "paragraph": "",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "270",
+      "maxRevision": "0",
+      "props": "https://github.com/vincentsijben/bpm-timings-for-processing/releases/download/latest/BPM.txt",
+      "download": "https://github.com/vincentsijben/bpm-timings-for-processing/releases/download/latest/BPM.zip"
+    }
+  ]
+}
