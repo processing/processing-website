@@ -41,6 +41,7 @@
     "classnames": "^2.3.1",
     "copy-to-clipboard": "^3.3.2",
     "gatsby": "^4.22.0",
+    "gatsby-plugin-fathom": "^2.1.1",
     "gatsby-plugin-image": "^2.22.0",
     "gatsby-plugin-manifest": "^4.22.0",
     "gatsby-plugin-mdx": "2.14.2",
