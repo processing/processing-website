@@ -203,8 +203,6 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-fathom',
       options: {
-        // Your custom domain, defaults to `cdn.usefathom.com`
-        trackingUrl: 'processing.org',
         // Unique site id
         siteId: 'DKYMXLKT'
       }
