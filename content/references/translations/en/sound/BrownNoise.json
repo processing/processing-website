@@ -1,6 +1,11 @@
 {
-  "brief": "This is a brown noise generator.",
+  "brief": "Brown noise (also called red noise) has higher energy at lower frequencies.",
   "methods": [
+    {
+      "anchor": "BrownNoise_amp_",
+      "name": "amp()",
+      "desc": "Changes the amplitude/volume of the noise generator."
+    },
     {
       "anchor": "BrownNoise_play_",
       "name": "play()",
@@ -10,11 +15,6 @@
       "anchor": "BrownNoise_set_",
       "name": "set()",
       "desc": "Sets amplitude, add and pan position with one method."
-    },
-    {
-      "anchor": "BrownNoise_amp_",
-      "name": "amp()",
-      "desc": "Changes the amplitude/volume of the noise generator."
     },
     {
       "anchor": "BrownNoise_add_",
@@ -35,14 +35,14 @@
   "csspath": "../../",
   "isLibrary": "true",
   "classFields": [],
-  "description": "This is a brown noise generator. Brown noise has a decrease of 6db per octave.",
+  "description": "Brown noise (also called red noise) has higher energy at lower frequencies. Its power density\n decreases 6dB per octave.\n \n Please be aware that, because most of its power resides in the bass frequencies, the subjective\n loudness of brown noise relative to other sounds can vary dramatically depending on how well\n your sound system can reproduce low frequency sounds!",
   "type": "class",
   "constructors": ["BrownNoise(parent)"],
   "related": [],
   "name": "BrownNoise",
   "classanchor": "sound/BrownNoise",
   "category": "noise",
-  "subcategory": "BrownNoise",
+  "subcategory": "",
   "parameters": [
     {
       "name": "parent",

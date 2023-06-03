@@ -17,6 +17,6 @@
   "name": "HighPass",
   "classanchor": "sound/HighPass",
   "category": "effects",
-  "subcategory": "HighPass",
+  "subcategory": "",
   "parameters": []
 }

@@ -14,7 +14,7 @@
     "mouseWheel_"
   ],
   "name": "mouseClicked()",
-  "description": "The <b>mouseClicked()</b> function is called <i>after</i> a mouse button\n has been pressed and then released. <br />\n <br />\n Mouse and keyboard events only work when a program has <b>draw()</b>.\n Without <b>draw()</b>, the code is only run once and then stops listening\n for events.\n\n ",
+  "description": "The <b>mouseClicked()</b> function is called <i>after</i> a mouse button\n has been pressed and then released. <br/>\n <br/>\n Mouse and keyboard events only work when a program has <b>draw()</b>.\n Without <b>draw()</b>, the code is only run once and then stops listening\n for events.\n\n ",
   "syntax": ["mouseClicked()", "mouseClicked(event)"],
   "returns": "void",
   "type": "function",

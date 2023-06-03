@@ -1,0 +1,22 @@
+{
+  "name": "Creative Machine",
+  "categories": [
+    "Data"
+  ],
+  "authors": [
+    "[Jeongin Lee](https://github.com/jjeongin)"
+  ],
+  "url": "https://jjeongin.github.io/creative-machine",
+  "sentence": "A Machine Learning library for Processing.",
+  "paragraph": "Run different machine learning models in Processing.",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/jjeongin/creative-machine/releases/download/latest/creative_machine.txt",
+      "download": "https://github.com/jjeongin/creative-machine/releases/download/latest/creative_machine.zip"
+    }
+  ]
+}

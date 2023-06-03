@@ -6,8 +6,8 @@
   "syntax": [".amp(amp)"],
   "returns": "void",
   "type": "method",
-  "category": "oscillators",
-  "subcategory": "TriOsc",
+  "category": "triosc",
+  "subcategory": "",
   "classanchor": "TriOsc",
   "parameters": [
     {

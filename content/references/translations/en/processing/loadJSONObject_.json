@@ -8,7 +8,7 @@
     "saveJSONArray_"
   ],
   "name": "loadJSONObject()",
-  "description": "Loads a JSON from the data folder or a URL, and returns a\n <b>JSONObject</b>.<br />\n <br />\n All files loaded and saved by the Processing API use UTF-8 encoding.",
+  "description": "Loads a JSON from the data folder or a URL, and returns a\n <b>JSONObject</b>.<br/>\n <br/>\n All files loaded and saved by the Processing API use UTF-8 encoding.",
   "syntax": ["loadJSONObject(filename)"],
   "returns": "JSONObject",
   "type": "function",

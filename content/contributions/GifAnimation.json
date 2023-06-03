@@ -1,21 +1,22 @@
 {
   "name": "GifAnimation",
   "authors": [
-    "[Patrick Meister (extrapixel)](http://www.extrapixel.ch)"
+    "[Patrick Meister, Jerome Saint-Clair](http://www.extrapixel.ch)"
   ],
-  "url": "http://extrapixel.github.io/gif-animation/",
+  "url": "https://github.com/extrapixel/gif-animation",
   "categories": [
     "I/O"
   ],
-  "sentence": "Play, import and export gif animations. Render to GIF!",
+  "sentence": "A library to play and export GIF animations.",
+  "paragraph": "Processing v3.x port by [Jerome Saint-Clair (01010101)](http://saint-clair.net/). GIFEncoder & GIFDecoder classes by Kevin Weiner.",
   "type": "library",
   "packages": [
     {
       "mode": "java",
-      "minRevision": "0",
-      "maxRevision": "228",
-      "props": "http://www.extrapixel.ch/processing/gifAnimation/gifAnimation.txt",
-      "download": "http://www.extrapixel.ch/processing/gifAnimation/gifAnimation.zip"
+      "minRevision": "0246",
+      "maxRevision": "0",
+      "props": "https://fox-gieg.com/patches/processing/libraries/gifAnimation/gifAnimation.txt",
+      "download": "https://fox-gieg.com/patches/processing/libraries/gifAnimation/gifAnimation.zip"
     }
   ]
 }

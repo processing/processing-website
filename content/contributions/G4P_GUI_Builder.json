@@ -11,7 +11,7 @@
   "packages": [
     {
       "mode": "java",
-      "minRevision": "246",
+      "minRevision": "0246",
       "maxRevision": "0",
       "props": "http://www.lagers.org.uk/processing3/guibuilder/G4PTool.txt",
       "download": "http://www.lagers.org.uk/processing3/guibuilder/G4PTool.zip"

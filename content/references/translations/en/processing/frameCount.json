@@ -2,7 +2,7 @@
   "brief": "The system variable that contains the number of frames\n displayed since the program started",
   "related": ["frameRate_", "frameRate"],
   "name": "frameCount",
-  "description": "The system variable <b>frameCount</b> contains the number of frames\n displayed since the program started. Inside <b>setup()</b> the value is\n 0 and and after the first iteration of draw it is 1, etc.",
+  "description": "The system variable <b>frameCount</b> contains the number o\n frames displayed since the program started. Inside <b>setup()</b>\n the value is 0 and during the first iteration of draw it is 1, etc.",
   "category": "environment",
   "subcategory": "",
   "type": "other"

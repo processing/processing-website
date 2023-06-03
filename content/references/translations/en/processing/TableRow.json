@@ -45,7 +45,7 @@
   "csspath": "../../",
   "isLibrary": "true",
   "classFields": [],
-  "description": "A <b>TableRow</b> object represents a single row of data values, \n stored in columns, from a <b>Table</b>.<br />\n <br />\n Additional <b>TableRow</b> methods are documented in the \n <a href=\"http://processing.github.io/processing-javadocs/core/\">Processing Data Javadoc</a>.",
+  "description": "A <b>TableRow</b> object represents a single row of data values, \n stored in columns, from a <b>Table</b>.<br/>\n <br/>\n Additional <b>TableRow</b> methods are documented in the \n <a href=\"http://processing.github.io/processing-javadocs/core/\">Processing Data Javadoc</a>.",
   "type": "class",
   "constructors": [],
   "related": [

@@ -2,6 +2,7 @@ import React, { memo, useEffect, useMemo, useRef, useState } from 'react';
 import { navigate, graphql } from 'gatsby';
 import { useIntl } from 'react-intl';
 import classnames from 'classnames';
+import { useGoal } from 'gatsby-plugin-fathom';
 
 import HeadMatter from '../components/HeadMatter';
 
@@ -31,7 +32,33 @@ const Download = ({ data }) => {
   const intl = useIntl();
   const releases = usePreparedReleases(data.releases.nodes);
 
-  const onAfterDownload = () => {
+  // gatsby-plugin-fathom requires us to use hooks
+  const trackWindows = useGoal('CIMDWXJV');
+  const trackMacIntel = useGoal('VQUBVEQR');
+  const trackMacSilicon = useGoal('IWSPGL5F');
+  const trackLinux = useGoal('HHYWFK7G');
+  const trackPi32 = useGoal('ZKSBBVWD');
+  const trackPi64 = useGoal('TXVODVYO');
+
+  const onAfterDownload = (asset) => {
+    if (asset) {
+      if (asset.os === 'Windows') {
+        trackWindows(0);
+      } else if (asset.os === 'macOS' && asset.bit === 'Intel 64-bit') {
+        trackMacIntel(0);
+      } else if (asset.os === 'macOS' && asset.bit === 'Apple Silicon') {
+        trackMacSilicon(0);
+      } else if (asset.os === 'Linux') {
+        trackLinux(0);
+      } else if (asset.os === 'Raspberry Pi' && asset.bit === '32-bit') {
+        trackPi32(0);
+      } else if (asset.os === 'Raspberry Pi' && asset.bit === '64-bit') {
+        trackPi64(0);
+      } else {
+        console.error(`Untracked asset: ${asset}`);
+      }
+    }
+
     const goToDonate = () => {
       window.removeEventListener('focus', goToDonate);
       setTimeout(() => {
@@ -142,7 +169,7 @@ const MainDownloadSection = memo(({ release, onAfterDownload }) => {
         <a
           className={css.mainDownloadButton}
           href={detectedAsset.os !== '' ? detectedAsset.asset.url : ''}
-          onClick={onAfterDownload}>
+          onClick={() => onAfterDownload(detectedAsset.asset)}>
           <span>
             {intl.formatMessage({ id: 'download' })} Processing{' '}
             {release.version} {intl.formatMessage({ id: 'for' })}{' '}
@@ -311,7 +338,7 @@ const OSSection = memo(
                 <a
                   className={css.asset}
                   href={asset.url}
-                  onClick={onAfterDownload}>
+                  onClick={() => onAfterDownload(asset)}>
                   {asset.bit && <>{asset.bit}</>}
                 </a>
                 <InfoTooltip

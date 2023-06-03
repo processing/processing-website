@@ -52,7 +52,7 @@
   "name": "Pulse",
   "classanchor": "sound/Pulse",
   "category": "oscillators",
-  "subcategory": "Pulse",
+  "subcategory": "",
   "parameters": [
     {
       "name": "parent",

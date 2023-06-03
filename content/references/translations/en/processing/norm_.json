@@ -2,7 +2,7 @@
   "brief": "Normalizes a number from another range into a value between 0 and\n           1",
   "related": ["map_", "lerp_"],
   "name": "norm()",
-  "description": "Normalizes a number from another range into a value between 0 and 1.\n Identical to <b>map(value, low, high, 0, 1)</b>.<br />\n <br />\n Numbers outside of the range are not clamped to 0 and 1, because\n out-of-range values are often intentional and useful. (See the second\n example above.)",
+  "description": "Normalizes a number from another range into a value between 0 and 1.\n Identical to <b>map(value, low, high, 0, 1)</b>.<br/>\n <br/>\n Numbers outside the range are not clamped to 0 and 1, because\n out-of-range values are often intentional and useful. (See the second\n example above.)",
   "syntax": ["norm(value, start, stop)"],
   "returns": "float",
   "type": "function",

@@ -6,8 +6,8 @@
   "syntax": [".sampleRate()", ".sampleRate(sampleRate)"],
   "returns": "int",
   "type": "method",
-  "category": "configuration",
-  "subcategory": "Sound",
+  "category": "sound",
+  "subcategory": "",
   "classanchor": "Sound",
   "parameters": [
     {

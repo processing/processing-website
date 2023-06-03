@@ -7,7 +7,7 @@
     "saveJSONArray_"
   ],
   "name": "loadJSONArray()",
-  "description": "Loads an array of JSON objects from the data folder or a URL, and returns a\n <b>JSONArray</b>. Per standard JSON syntax, the array must be enclosed in a\n pair of hard brackets <b>[]</b>, and each object within the array must be\n separated by a comma.<br />\n <br />\n All files loaded and saved by the Processing API use UTF-8 encoding.",
+  "description": "Loads an array of JSON objects from the data folder or a URL, and returns a\n <b>JSONArray</b>. Per standard JSON syntax, the array must be enclosed in a\n pair of hard brackets <b>[]</b>, and each object within the array must be\n separated by a comma.<br/>\n <br/>\n All files loaded and saved by the Processing API use UTF-8 encoding.",
   "syntax": ["loadJSONArray(filename)", "loadJSONArray(file)"],
   "returns": "JSONArray",
   "type": "function",

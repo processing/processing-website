@@ -38,6 +38,7 @@
     "Capture(parent, width, height)",
     "Capture(parent, width, height, fps)",
     "Capture(parent, width, height, device)",
+    "Capture(parent, device, fps)",
     "Capture(parent, width, height, device, fps)"
   ],
   "related": [],

@@ -11,8 +11,8 @@
   ],
   "returns": "void",
   "type": "method",
-  "category": "noise",
-  "subcategory": "BrownNoise",
+  "category": "brownnoise",
+  "subcategory": "",
   "classanchor": "BrownNoise",
   "parameters": [
     {

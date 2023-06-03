@@ -1,8 +1,8 @@
 {
-  "brief": "Returns the current minute as a value from 0 - 59",
+  "brief": "Returns the current minute as a value from 0 to 59",
   "related": ["millis_", "second_", "hour_", "day_", "month_", "year_"],
   "name": "minute()",
-  "description": "Processing communicates with the clock on your computer. The\n <b>minute()</b> function returns the current minute as a value from 0 - 59.",
+  "description": "Processing communicates with the clock on your computer. The\n <b>minute()</b> function returns the current minute as a value from 0 to 59.",
   "syntax": ["minute()"],
   "returns": "int",
   "type": "function",

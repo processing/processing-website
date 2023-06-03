@@ -8,7 +8,7 @@
     "I/O"
   ],
   "sentence": "Control your sketches using the knobs, pads and slider from MIDI controllers such as Novation &reg; Launch Control&reg;.",
-  "paragraph": "Once connected to your computer, use the MIDI controller to control your sketch by \\",
+  "paragraph": "Once connected to your computer, use the MIDI controller to control your sketch by adjusting the values of variables. This is library is not created by or supported by Novation.",
   "type": "library",
   "packages": [
     {

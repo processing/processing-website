@@ -199,6 +199,13 @@ module.exports = {
           include: path.resolve(__dirname, 'src/images')
         }
       }
+    },
+    {
+      resolve: 'gatsby-plugin-fathom',
+      options: {
+        // Unique site id
+        siteId: 'DKYMXLKT'
+      }
     }
   ]
 };

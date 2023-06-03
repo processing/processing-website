@@ -6,8 +6,8 @@
   "syntax": [".set(room, damp, wet)"],
   "returns": "void",
   "type": "method",
-  "category": "effects",
-  "subcategory": "Reverb",
+  "category": "reverb",
+  "subcategory": "",
   "classanchor": "Reverb",
   "parameters": [
     {

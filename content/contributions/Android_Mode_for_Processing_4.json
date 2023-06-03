@@ -3,7 +3,7 @@
   "authors": [
     "[The Processing Foundation](https://processingfoundation.org/)"
   ],
-  "url": "http://android.processing.org",
+  "url": "https://android.processing.org",
   "sentence": "This mode lets you use Processing to create Android apps",
   "paragraph": "",
   "imports": "processing.mode.java.JavaMode",

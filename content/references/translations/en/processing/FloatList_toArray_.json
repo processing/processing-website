@@ -1,0 +1,13 @@
+{
+  "brief": "Create a new array with a copy of all the values",
+  "related": [],
+  "name": "toArray()",
+  "description": "Create a new array with a copy of all the values.",
+  "syntax": [".toArray()", ".toArray(array)"],
+  "returns": "float[]",
+  "type": "method",
+  "category": "floatlist",
+  "subcategory": "method",
+  "classanchor": "FloatList",
+  "parameters": []
+}

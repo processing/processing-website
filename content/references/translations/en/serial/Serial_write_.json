@@ -2,7 +2,7 @@
   "brief": "Writes <b>bytes</b>, <b>chars</b>, <b>ints</b>, <b>bytes[]</b>, <b>Strings</b> to the serial port",
   "related": [],
   "name": "write()",
-  "description": "Writes <b>bytes</b>, <b>chars</b>, <b>ints</b>, <b>bytes[]</b>, <b>Strings</b> to the serial port\n \n ",
+  "description": "Writes <b>bytes</b>, <b>chars</b>, <b>ints</b>, <b>bytes[]</b>, <b>Strings</b> to the serial port\n\n ",
   "syntax": ["serial.write(src)"],
   "returns": "void",
   "type": "method",
