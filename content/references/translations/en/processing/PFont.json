@@ -1,7 +1,7 @@
 {
   "brief": "Grayscale bitmap font class used by Processing",
   "constructors": [],
-  "related": ["loadFont_", "createFont_", "PGraphics_textFont_"],
+  "related": ["loadFont_", "createFont_", "textFont_"],
   "methods": [
     {
       "anchor": "PFont_list_",
