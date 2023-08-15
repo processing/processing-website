@@ -16,7 +16,6 @@ void mousePressed() {
   float rate = 3;
   float pos = 0.5;
   float amp = 0.5;
-  float add = 0;
-  file.set(rate, pos, amp, add);
+  file.set(rate, pos, amp);
 }
 
