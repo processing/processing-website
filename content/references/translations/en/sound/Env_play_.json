@@ -8,7 +8,7 @@
   ],
   "returns": "void",
   "type": "method",
-  "category": "env",
+  "category": "Envelopes",
   "subcategory": "",
   "classanchor": "Env",
   "parameters": [

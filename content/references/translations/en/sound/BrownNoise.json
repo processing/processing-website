@@ -4,32 +4,27 @@
     {
       "anchor": "BrownNoise_amp_",
       "name": "amp()",
-      "desc": "Changes the amplitude/volume of the noise generator."
-    },
-    {
-      "anchor": "BrownNoise_play_",
-      "name": "play()",
-      "desc": "Start the generator."
-    },
-    {
-      "anchor": "BrownNoise_set_",
-      "name": "set()",
-      "desc": "Sets amplitude, add and pan position with one method."
-    },
-    {
-      "anchor": "BrownNoise_add_",
-      "name": "add()",
-      "desc": "Offset the output of this generator by a fixed value."
+      "desc": "Change the amplitude/volume of this sound."
     },
     {
       "anchor": "BrownNoise_pan_",
       "name": "pan()",
-      "desc": "Pan the generator in a stereo panorama."
+      "desc": "Move the sound in a stereo panorama."
+    },
+    {
+      "anchor": "BrownNoise_play_",
+      "name": "play()",
+      "desc": "Starts the noise"
+    },
+    {
+      "anchor": "BrownNoise_set_",
+      "name": "set()",
+      "desc": "Set the amplitude and panoramic position with one method."
     },
     {
       "anchor": "BrownNoise_stop_",
       "name": "stop()",
-      "desc": "Stops the Brown Noise generator."
+      "desc": "Stop the noise from playing back"
     }
   ],
   "csspath": "../../",
@@ -37,17 +32,21 @@
   "classFields": [],
   "description": "Brown noise (also called red noise) has higher energy at lower frequencies. Its power density\n decreases 6dB per octave.\n \n Please be aware that, because most of its power resides in the bass frequencies, the subjective\n loudness of brown noise relative to other sounds can vary dramatically depending on how well\n your sound system can reproduce low frequency sounds!",
   "type": "class",
-  "constructors": ["BrownNoise(parent)"],
+  "constructors": [
+    "BrownNoise(parent)"
+  ],
   "related": [],
   "name": "BrownNoise",
   "classanchor": "sound/BrownNoise",
-  "category": "noise",
-  "subcategory": "",
+  "category": "Noise",
+  "subcategory": "BrownNoise",
   "parameters": [
     {
       "name": "parent",
       "description": "typically use \"this\"",
-      "type": ["PApplet"]
+      "type": [
+        "PApplet"
+      ]
     }
   ]
 }

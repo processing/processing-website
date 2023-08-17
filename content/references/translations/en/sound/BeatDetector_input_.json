@@ -7,12 +7,12 @@
   "returns": "void",
   "type": "method",
   "category": "Analysis",
-  "subcategory": "Amplitude",
-  "classanchor": "Amplitude",
+  "subcategory": "BeatDetector",
+  "classanchor": "BeatDetector",
   "parameters": [
     {
       "name": "input",
-      "description": "the input sound source. Can be an oscillator, noise generator,\n            SoundFile or AudioIn.",
+      "description": "The input sound source",
       "type": ["SoundObject"]
     }
   ]

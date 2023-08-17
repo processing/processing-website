@@ -6,8 +6,8 @@
   "syntax": [".freq(freq)"],
   "returns": "void",
   "type": "method",
-  "category": "lowpass",
-  "subcategory": "",
+  "category": "Effects",
+  "subcategory": "LowPass",
   "classanchor": "LowPass",
   "parameters": [
     {

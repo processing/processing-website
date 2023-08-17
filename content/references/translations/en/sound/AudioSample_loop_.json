@@ -2,7 +2,7 @@
   "brief": "Starts the playback of the audiosample.",
   "related": [],
   "name": "loop()",
-  "description": "Starts the playback of the audiosample. Only plays to the end of the audiosample \n once. If <b>cue()</b> or <b>pause()</b> were called previously, playback will resume from the cued position.",
+  "description": "Starts playback which will loop at the end of the audiosample.",
   "syntax": [
     ".loop()",
     ".loop(rate)",
@@ -12,8 +12,8 @@
   ],
   "returns": "void",
   "type": "method",
-  "category": "audiosample",
-  "subcategory": "",
+  "category": "Sampling",
+  "subcategory": "AudioSample",
   "classanchor": "AudioSample",
   "parameters": [
     {
@@ -29,11 +29,6 @@
     {
       "name": "amp",
       "description": "the desired playback amplitude of the audiosample as a value from\n            0.0 (complete silence) to 1.0 (full volume)",
-      "type": ["float"]
-    },
-    {
-      "name": "add",
-      "description": "offset the output of the generator by the given value",
       "type": ["float"]
     }
   ]

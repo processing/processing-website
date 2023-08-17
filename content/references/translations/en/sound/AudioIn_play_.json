@@ -11,18 +11,13 @@
   ],
   "returns": "void",
   "type": "method",
-  "category": "audioin",
-  "subcategory": "",
+  "category": "I/O",
+  "subcategory": "AudioIn",
   "classanchor": "AudioIn",
   "parameters": [
     {
       "name": "amp",
       "description": "the volume to grab the input at as a value from 0.0 (complete\n            silence) to 1.0 (full volume)",
-      "type": ["float"]
-    },
-    {
-      "name": "add",
-      "description": "offset the audio input by the given value",
       "type": ["float"]
     },
     {

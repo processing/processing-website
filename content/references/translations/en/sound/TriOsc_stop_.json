@@ -1,13 +1,13 @@
 {
-  "brief": "Stop the oscillator.",
+  "brief": "Stop the oscillator from playing back",
   "related": [],
   "name": "stop()",
-  "description": "Stop the oscillator.",
+  "description": "Stop the oscillator from playing back",
   "syntax": [".stop()"],
   "returns": "void",
   "type": "method",
-  "category": "triosc",
-  "subcategory": "",
+  "category": "Oscillators",
+  "subcategory": "TriOsc",
   "classanchor": "TriOsc",
   "parameters": []
 }

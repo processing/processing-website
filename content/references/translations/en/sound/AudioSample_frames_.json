@@ -6,8 +6,8 @@
   "syntax": [".frames()"],
   "returns": "int",
   "type": "method",
-  "category": "audiosample",
-  "subcategory": "",
+  "category": "Sampling",
+  "subcategory": "AudioSample",
   "classanchor": "AudioSample",
   "parameters": []
 }

@@ -1,12 +1,12 @@
 {
-  "brief": "Stops the Filter.",
+  "brief": "Stop the effect.",
   "related": [],
   "name": "stop()",
-  "description": "Stops the Filter.",
+  "description": "Stop the effect.",
   "syntax": [".stop()"],
   "returns": "void",
   "type": "method",
-  "category": "effects",
+  "category": "Effects",
   "subcategory": "HighPass",
   "classanchor": "HighPass",
   "parameters": []

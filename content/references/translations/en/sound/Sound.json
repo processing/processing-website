@@ -39,8 +39,8 @@
   "related": [],
   "name": "Sound",
   "classanchor": "sound/Sound",
-  "category": "configuration",
-  "subcategory": "",
+  "category": "Configuration",
+  "subcategory": "Sound",
   "parameters": [
     {
       "name": "parent",

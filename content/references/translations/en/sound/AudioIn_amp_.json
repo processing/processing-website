@@ -1,8 +1,8 @@
 {
-  "brief": "Changes the amplitude/volume of the input stream.",
+  "brief": "Change the amplitude/volume of this sound.",
   "related": [],
   "name": "amp()",
-  "description": "Changes the amplitude/volume of the input stream. Allowed values are between 0.0 and 1.0.",
+  "description": "Change the amplitude/volume of this sound.",
   "syntax": [".amp(amp)"],
   "returns": "void",
   "type": "method",
@@ -12,7 +12,7 @@
   "parameters": [
     {
       "name": "amp",
-      "description": "the amplitude of the input stream as a value from 0.0 (complete silence) to 1.0 (full volume)",
+      "description": "A float value between 0.0 (complete silence) and 1.0 (full volume)\n            controlling the amplitude/volume of this sound.",
       "type": ["float"]
     }
   ]
