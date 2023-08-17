@@ -6,8 +6,8 @@
   "syntax": [".analyze()"],
   "returns": "float",
   "type": "method",
-  "category": "amplitude",
-  "subcategory": "",
+  "category": "Analysis",
+  "subcategory": "Amplitude",
   "classanchor": "Amplitude",
   "parameters": []
 }

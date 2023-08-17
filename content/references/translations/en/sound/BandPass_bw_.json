@@ -6,8 +6,8 @@
   "syntax": [".bw(bw)"],
   "returns": "void",
   "type": "method",
-  "category": "bandpass",
-  "subcategory": "",
+  "category": "Effects",
+  "subcategory": "BandPass",
   "classanchor": "BandPass",
   "parameters": []
 }

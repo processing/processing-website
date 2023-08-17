@@ -6,8 +6,8 @@
   "syntax": [".room(room)"],
   "returns": "void",
   "type": "method",
-  "category": "reverb",
-  "subcategory": "",
+  "category": "Effects",
+  "subcategory": "Reverb",
   "classanchor": "Reverb",
   "parameters": [
     {

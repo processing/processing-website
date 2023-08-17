@@ -2,7 +2,7 @@
   "brief": "Starts the oscillator",
   "related": [],
   "name": "play()",
-  "description": "Starts the oscillator.",
+  "description": "Starts the oscillator",
   "syntax": [
     ".play()",
     ".play(freq, amp)",
@@ -11,8 +11,8 @@
   ],
   "returns": "void",
   "type": "method",
-  "category": "pulse",
-  "subcategory": "",
+  "category": "Oscillators",
+  "subcategory": "Pulse",
   "classanchor": "Pulse",
   "parameters": [
     {
@@ -23,11 +23,6 @@
     {
       "name": "amp",
       "description": "The amplitude of the oscillator as a value between 0.0 and 1.0.",
-      "type": ["float"]
-    },
-    {
-      "name": "add",
-      "description": "Offset the output of the oscillator by given value",
       "type": ["float"]
     },
     {

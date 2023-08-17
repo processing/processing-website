@@ -3,11 +3,11 @@
   "related": [],
   "name": "set()",
   "description": "Set multiple parameters at once",
-  "syntax": [".set(freq, width, amp, add, pos)", ".set(freq, amp, add, pos)"],
+  "syntax": [".set(freq, width, amp, add, pos)"],
   "returns": "void",
   "type": "method",
-  "category": "pulse",
-  "subcategory": "",
+  "category": "Oscillators",
+  "subcategory": "Pulse",
   "classanchor": "Pulse",
   "parameters": [
     {

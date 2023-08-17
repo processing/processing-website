@@ -1,8 +1,8 @@
 {
-  "brief": "Starts the oscillator.",
+  "brief": "Starts the oscillator",
   "related": [],
   "name": "play()",
-  "description": "Starts the oscillator.",
+  "description": "Starts the oscillator",
   "syntax": [
     ".play()",
     ".play(freq, amp)",
@@ -11,8 +11,8 @@
   ],
   "returns": "void",
   "type": "method",
-  "category": "sinosc",
-  "subcategory": "",
+  "category": "Oscillators",
+  "subcategory": "SinOsc",
   "classanchor": "SinOsc",
   "parameters": [
     {
@@ -26,13 +26,8 @@
       "type": ["float"]
     },
     {
-      "name": "add",
-      "description": "Offset the output of the oscillator by given value",
-      "type": ["float"]
-    },
-    {
       "name": "pos",
-      "description": "The panoramic position of the oscillator as a float from -1.0 to\n            1.0.",
+      "description": "The panoramic position of the oscillator as a float from -1.0 to 1.0.",
       "type": ["float"]
     }
   ]

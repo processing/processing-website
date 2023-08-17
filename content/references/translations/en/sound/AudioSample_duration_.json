@@ -6,8 +6,8 @@
   "syntax": [".duration()"],
   "returns": "float",
   "type": "method",
-  "category": "audiosample",
-  "subcategory": "",
+  "category": "Sampling",
+  "subcategory": "AudioSample",
   "classanchor": "AudioSample",
   "parameters": []
 }

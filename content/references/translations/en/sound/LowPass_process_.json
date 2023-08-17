@@ -7,8 +7,8 @@
   "returns": "void",
   "type": "method",
   "category": "Effects",
-  "subcategory": "HighPass",
-  "classanchor": "HighPass",
+  "subcategory": "LowPass",
+  "classanchor": "LowPass",
   "parameters": [
     {
       "name": "input",

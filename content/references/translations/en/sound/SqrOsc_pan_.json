@@ -6,8 +6,8 @@
   "syntax": [".pan(pos)"],
   "returns": "void",
   "type": "method",
-  "category": "sqrosc",
-  "subcategory": "",
+  "category": "Oscillators",
+  "subcategory": "SqrOsc",
   "classanchor": "SqrOsc",
   "parameters": [
     {

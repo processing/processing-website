@@ -6,8 +6,8 @@
   "syntax": [".isBeat()"],
   "returns": "boolean",
   "type": "method",
-  "category": "beatdetector",
-  "subcategory": "",
+  "category": "Analysis",
+  "subcategory": "BeatDetector",
   "classanchor": "BeatDetector",
   "parameters": []
 }

@@ -6,8 +6,8 @@
   "syntax": [".freq(freq)"],
   "returns": "void",
   "type": "method",
-  "category": "triosc",
-  "subcategory": "",
+  "category": "Oscillators",
+  "subcategory": "TriOsc",
   "classanchor": "TriOsc",
   "parameters": [
     {

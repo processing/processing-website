@@ -1,13 +1,13 @@
 {
-  "brief": "Stops the Sine Oscillator generator.",
+  "brief": "Stop the oscillator from playing back",
   "related": [],
   "name": "stop()",
-  "description": "Stops the Sine Oscillator generator.",
+  "description": "Stop the oscillator from playing back",
   "syntax": [".stop()"],
   "returns": "void",
   "type": "method",
-  "category": "pulse",
-  "subcategory": "",
+  "category": "Oscillators",
+  "subcategory": "Pulse",
   "classanchor": "Pulse",
   "parameters": []
 }
