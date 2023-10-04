@@ -126,7 +126,7 @@ const performPdezFilesUpdate = async (examples) => {
  **/
 const generatePdezContent = (example) => {
   // Modify this function to generate .pdez content based on your requirements
-  // You can use example's properties to customize the content
+  // Use example's properties to customize the content
   return `
     {
       "name": "${example.name}",
