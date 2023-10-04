@@ -93,6 +93,7 @@
 .item:hover {
   z-index: 40;
   border-left: solid 4px var(--processing-blue-mid);
+  transition: opacity 0.4s ease-in-out;
 }
 
 .active {
@@ -115,6 +116,7 @@
   background-color: white;
   border-bottom: 1px solid var(--lightgray);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease-in-out;
 }
 
 .subitem {
@@ -143,7 +145,8 @@
 
 .item:hover .submenu {
   opacity: 1;
-  max-height: 400px;
+  transition: all 0.3s ease-in-out;
+  max-height: 500px;
 }
 
 @media (--medium) {
