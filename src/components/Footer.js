@@ -15,7 +15,7 @@ const Footer = ({ withSidebar }) => {
       <div className={classnames(grid.col, css.contactWrapper)}>
         <h3>{intl.formatMessage({ id: 'contactUs' })}</h3>
         <p>{intl.formatMessage({ id: 'contactUsDescription' })}</p>
-        <a href="mailto:foundation@processing.org">foundation@processing.org</a>
+        <a href="mailto:foundation@processingfoundation.org">foundation@processingfoundation.org</a>
       </div>
       <div className={classnames(grid.col, css.socialmediaWrapper)}>
         <ul>
