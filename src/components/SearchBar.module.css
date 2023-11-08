@@ -23,6 +23,7 @@
 .input::placeholder {
   color: var(--darkgray);
   opacity: 1;
+  padding-top: 7px;
 }
 
 .searchBar {
