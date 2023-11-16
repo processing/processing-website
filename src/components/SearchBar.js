@@ -23,7 +23,7 @@ const SearchBar = ({ className }) => {
     if (searchTerm) {
       window.open(
         'https://www.google.com/search?as_sitesearch=processing.org&as_q=' +
-        searchTerm,
+          searchTerm,
         '_blank'
       );
     }
