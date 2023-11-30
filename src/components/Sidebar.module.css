@@ -49,6 +49,9 @@
   flex-grow: 1;
   position: relative;
   overflow-y: auto;
+  & ul li h4 {
+    text-wrap: pretty;
+  }
 }
 
 .active a h4 {
