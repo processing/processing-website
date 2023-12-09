@@ -93,6 +93,10 @@
 .item:hover {
   z-index: 40;
   border-left: solid 4px var(--processing-blue-mid);
+  color: var(--processing-blue-mid) ;
+}
+button:hover{
+  color: var(--processing-blue-mid) ;
 }
 
 .active {
