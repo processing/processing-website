@@ -72,7 +72,7 @@
   position: relative;
   display: inline-block;
   border-left: solid 4px transparent;
-  color: var(--processing-blue-dark);
+  color: var(--processing-blue-mid);
   font-size: var(--text-medium);
   font-weight: 600;
   white-space: nowrap;
