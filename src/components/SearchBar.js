@@ -40,7 +40,7 @@ const SearchBar = ({ className }) => {
           onBlur={() => setFocused(false)}
           onKeyDown={onKeyDown}
           placeholder={intl.formatMessage({
-            id: focused ? 'searchWithGoogle' : 'search'
+            id: 'searchWithGoogle'
           })}
         />
         <button
