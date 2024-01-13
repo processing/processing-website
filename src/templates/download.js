@@ -289,7 +289,7 @@ const OSSectionContainer = memo(({ release, onAfterDownload }) => {
   const [selectedOs, setSelectedOs] = useState('');
 
   return (
-    <div className={css.osSectionContainer}>
+    <div id = "version" className={css.osSectionContainer}>
       <p>{intl.formatMessage({ id: 'otherVersions' })}</p>
       <div className={css.osSectionList}>
         {osAndComponents.map((os, index) => (
@@ -357,13 +357,14 @@ const OSSection = memo(
 
 const Link = memo(({ href, icon, title, description }) => (
   <li>
-    <a href={href}>
+    <a id = "more" href={href}>
       {icon}
       {title}
     </a>
     <p>{description}</p>
   </li>
 ));
+ 
 
 export const query = graphql`
   query($selectedReleases: [String!]!) {

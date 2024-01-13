@@ -22,7 +22,11 @@ export const items = [
   },
   {
     name: 'download',
-    href: '/download'
+    children: [
+      { name: 'Linux', href: '/download' },
+      { name: 'version', href: '/download/#version' },
+      { name: 'more', href: '/download/#more' }
+    ]
   },
   {
     name: 'documentation',
