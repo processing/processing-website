@@ -1,38 +1,18 @@
-import processing.sound.*;
+// Create two triangle waves with deconstructive frequencies.
+triA = new TriOsc(this);
+triA.freq(220);
+triB = new TriOsc(this);
+triB.freq(410);
 
-SawOsc saw;
-AllPass allPass;
+// Make an Allpass
+allPass = new AllPass(this);
+// Give Allpass a high gain to process yucky transience. 
+allPass.gain(0.995);
 
-void setup() {
-  size(512,360);
-  background(255);
-  
-  // Create a sawtooth wave and an AllPass filter
-  saw = new SawOsc(this);
-  saw.freq(200);
-  allPass = new AllPass(this);
-  
-  // Start the saw wave and push it through the allpass
-  saw.play();
-  allPass.process(saw);
-}
-
-void draw() {
-  background(0);
-  
-  // Set the drive of the allPass with the mouse
-  float g = map(mouseX, 0, width, 0., 1);
-  allPass.gain(g);
-  
-  // Draw some visuals for intuition
-  float a = 50;
-  strokeWeight(4);
-  for (float i = 0; i < width; i = i + 3) {
-    // Draw a wave
-    stroke(255, 0, 0);
-    point(i, sin(i) * a + width/2);
-    // Draw that wave again after being driven by g
-    stroke(0, 255, 0);
-    point(i + g * TWO_PI, a * sin(i) + width/2);
-  }
-}
+// Start both triangle waves together. 
+// This will create a lot of unbridled bright sounds. 
+triA.play();
+triB.play();
+// Processing the sound through this high gained Allpass will warm it up! 
+allPass.process(triA);
+allPass.process(triB);
