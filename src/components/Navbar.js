@@ -13,8 +13,6 @@ import LogoProcessing from '../images/logo-processing.svg';
 import CloseIcon from '../images/close-icon.svg';
 import MenuIcon from '../images/menu-icon.svg';
 
-//the name values are used to get the value from the intl files
-//it is not the name that is displayed
 export const items = [
   {
     name: 'home',
@@ -33,6 +31,7 @@ export const items = [
       { name: 'tools', href: '/reference/tools' }
     ]
   },
+    
   {
     name: 'learn',
     children: [
@@ -45,6 +44,7 @@ export const items = [
     name: 'teach',
     href: 'https://processingfoundation.org/education'
   },
+  
   {
     name: 'about',
     children: [
@@ -52,6 +52,7 @@ export const items = [
       { name: 'people', href: '/people' }
     ]
   },
+  
   {
     name: 'donate',
     href: '/donate'
@@ -129,7 +130,7 @@ const Navbar = ({ siteTitle, scrolled }) => {
             {items.map((item, key) => (
               <li
                 key={key}
-                className={classnames(css.item, {
+                className={classnames(css.item,css.navitem, {
                   [css.hasSubmenu]: item.children,
                   [css.active]: item.name === current
                 })}>
