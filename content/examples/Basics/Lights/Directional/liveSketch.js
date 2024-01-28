@@ -1,3 +1,9 @@
+function describe() {
+  const description = "There are two dark spheres side by side, the cursor works like a light source, when mouse moves the direction of light changes and reveals some part of spheres."
+
+  return description;
+}
+
 function runLiveSketch(s) {
   
   s.setup = () => {
