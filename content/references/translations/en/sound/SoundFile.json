@@ -65,11 +65,6 @@
       "anchor": "SoundFile_rate_",
       "name": "rate()",
       "desc": "Set the playback rate of the soundfile."
-    },
-    {
-      "anchor": "SoundFile_stop_",
-      "name": "stop()",
-      "desc": "Stops the playback."
     }
   ],
   "csspath": "../../",
@@ -81,7 +76,7 @@
   "related": [],
   "name": "SoundFile",
   "classanchor": "sound/SoundFile",
-  "category": "sampling",
+  "category": "Sampling",
   "subcategory": "SoundFile",
   "parameters": [
     {

@@ -7,6 +7,11 @@
       "desc": "Changes the damping factor of the reverb effect."
     },
     {
+      "anchor": "Reverb_process_",
+      "name": "process()",
+      "desc": "Start the effect."
+    },
+    {
       "anchor": "Reverb_room_",
       "name": "room()",
       "desc": "Change the room size of the reverb effect."
@@ -15,6 +20,11 @@
       "anchor": "Reverb_set_",
       "name": "set()",
       "desc": "Set multiple parameters of the reverb."
+    },
+    {
+      "anchor": "Reverb_stop_",
+      "name": "stop()",
+      "desc": "Stop the effect."
     },
     {
       "anchor": "Reverb_wet_",
@@ -27,11 +37,13 @@
   "classFields": [],
   "description": "This is a simple reverb effect.",
   "type": "class",
-  "constructors": ["Reverb(parent)"],
+  "constructors": [
+    "Reverb(parent)"
+  ],
   "related": [],
   "name": "Reverb",
   "classanchor": "sound/Reverb",
-  "category": "effects",
+  "category": "Effects",
   "subcategory": "Reverb",
   "parameters": []
 }

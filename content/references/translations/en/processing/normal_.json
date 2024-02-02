@@ -2,7 +2,7 @@
   "brief": "Sets the current normal vector",
   "related": ["beginShape_", "endShape_", "lights_"],
   "name": "normal()",
-  "description": "Sets the current normal vector. Used for drawing three dimensional shapes and\n surfaces, <b>normal()</b> specifies a vector perpendicular to a shape's\n surface which, in turn, determines how lighting affects it. Processing\n attempts to automatically assign normals to shapes, but since that's\n imperfect, this is a better option when you want more control. This function\n is identical to <b>glNormal3f()</b> in OpenGL.",
+  "description": "Sets the current normal vector. Used for drawing three-dimensional\n shapes and surfaces, <b>normal()</b> specifies a vector perpendicular\n to a shape's surface which, in turn, determines how lighting affects it.\n Processing attempts to automatically assign normals to shapes, but since\n that's imperfect, this is a better option when you want more control.\n This function is identical to <b>glNormal3f()</b> in OpenGL.",
   "syntax": ["normal(nx, ny, nz)"],
   "returns": "void",
   "type": "function",

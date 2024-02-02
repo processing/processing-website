@@ -26,7 +26,7 @@
     },
     {
       "name": "zFar",
-      "description": "z-position of farthest clipping plane",
+      "description": "z-position of the farthest clipping plane",
       "type": ["float"]
     }
   ]

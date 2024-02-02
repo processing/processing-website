@@ -6,7 +6,7 @@
   "syntax": [".resize(frames)", ".resize(frames, stereo)"],
   "returns": "void",
   "type": "method",
-  "category": "sampling",
+  "category": "Sampling",
   "subcategory": "AudioSample",
   "classanchor": "AudioSample",
   "parameters": [

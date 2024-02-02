@@ -7,6 +7,11 @@
       "desc": "Calculates the current frequency spectrum and returns it as an array with as many elements as frequency bands."
     },
     {
+      "anchor": "FFT_analyzeSample_",
+      "name": "analyzeSample()",
+      "desc": "Calculates the frequency spectrum of the given sample, returning an array of magnitudes."
+    },
+    {
       "anchor": "FFT_input_",
       "name": "input()",
       "desc": "Define the audio input for the analyzer."
@@ -17,22 +22,29 @@
   "classFields": [],
   "description": "This is a Fast Fourier Transform (FFT) analyzer. It calculates the normalized\n power spectrum of an audio stream the moment it is queried with the analyze()\n method.",
   "type": "class",
-  "constructors": ["FFT(parent)", "FFT(parent, bands)"],
+  "constructors": [
+    "FFT(parent)",
+    "FFT(parent, bands)"
+  ],
   "related": [],
   "name": "FFT",
   "classanchor": "sound/FFT",
-  "category": "analysis",
+  "category": "Analysis",
   "subcategory": "FFT",
   "parameters": [
     {
       "name": "parent",
       "description": "typically use \"this\"",
-      "type": ["PApplet"]
+      "type": [
+        "PApplet"
+      ]
     },
     {
       "name": "bands",
       "description": "number of frequency bands for the FFT as an integer (default 512).\n            This parameter needs to be a power of 2 (e.g. 16, 32, 64, 128,\n            ...).",
-      "type": ["int"]
+      "type": [
+        "int"
+      ]
     }
   ]
 }

@@ -6,7 +6,7 @@
   "syntax": [".wet(wet)"],
   "returns": "void",
   "type": "method",
-  "category": "effects",
+  "category": "Effects",
   "subcategory": "Reverb",
   "classanchor": "Reverb",
   "parameters": [

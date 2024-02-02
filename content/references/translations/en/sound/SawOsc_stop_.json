@@ -1,12 +1,12 @@
 {
-  "brief": "Move the sound in a stereo panorama.",
+  "brief": "Stop the oscillator from playing back",
   "related": [],
   "name": "stop()",
-  "description": "Stop the oscillator.",
+  "description": "Stop the oscillator from playing back",
   "syntax": [".stop()"],
   "returns": "void",
   "type": "method",
-  "category": "oscillators",
+  "category": "Oscillators",
   "subcategory": "SawOsc",
   "classanchor": "SawOsc",
   "parameters": []

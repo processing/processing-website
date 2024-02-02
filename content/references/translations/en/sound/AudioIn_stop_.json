@@ -1,8 +1,8 @@
 {
-  "brief": "Stops the Input Stream.",
+  "brief": "Stop capturing sound from this audio input.",
   "related": [],
   "name": "stop()",
-  "description": "Stops the Input Stream.",
+  "description": "Stop capturing sound from this audio input.",
   "syntax": [".stop()"],
   "returns": "void",
   "type": "method",

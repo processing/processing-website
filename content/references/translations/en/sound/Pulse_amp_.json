@@ -1,12 +1,12 @@
 {
-  "brief": "Changes the amplitude/volume of the pulse oscillator.",
+  "brief": "Change the amplitude/volume of this sound.",
   "related": [],
   "name": "amp()",
-  "description": "Changes the amplitude/volume of the pulse oscillator. Allowed values are between 0.0 and 1.0.",
+  "description": "Change the amplitude/volume of this sound.",
   "syntax": [".amp(amp)"],
   "returns": "void",
   "type": "method",
-  "category": "oscillators",
+  "category": "Oscillators",
   "subcategory": "Pulse",
   "classanchor": "Pulse",
   "parameters": [

@@ -1,8 +1,8 @@
 {
-  "brief": "Adds a spot light",
+  "brief": "Adds a spotlight",
   "related": ["lights_", "directionalLight_", "pointLight_", "ambientLight_"],
   "name": "spotLight()",
-  "description": "Adds a spot light. Lights need to be included in the <b>draw()</b> to remain\n persistent in a looping program. Placing them in the <b>setup()</b> of a\n looping program will cause them to only have an effect the first time through\n the loop. The <b>v1</b>, <b>v2</b>, and <b>v3</b> parameters are interpreted\n as either RGB or HSB values, depending on the current color mode. The\n <b>x</b>, <b>y</b>, and <b>z</b> parameters specify the position of the light\n and <b>nx</b>, <b>ny</b>, <b>nz</b> specify the direction of light. The\n <b>angle</b> parameter affects angle of the spotlight cone, while\n <b>concentration</b> sets the bias of light focusing toward the center of\n that cone.",
+  "description": "Adds a spotlight. Lights need to be included in the <b>draw()</b> to remain\n persistent in a looping program. Placing them in the <b>setup()</b> of a\n looping program will cause them to only have an effect the first time through\n the loop. The <b>v1</b>, <b>v2</b>, and <b>v3</b> parameters are interpreted\n as either RGB or HSB values, depending on the current color mode. The\n <b>x</b>, <b>y</b>, and <b>z</b> parameters specify the position of the light\n and <b>nx</b>, <b>ny</b>, <b>nz</b> specify the direction of light. The\n <b>angle</b> parameter affects angle of the spotlight cone, while\n <b>concentration</b> sets the bias of light focusing toward the center of\n that cone.",
   "syntax": [
     "spotLight(v1, v2, v3, x, y, z, nx, ny, nz, angle, concentration)"
   ],
@@ -43,17 +43,17 @@
     },
     {
       "name": "nx",
-      "description": "direction along the x axis",
+      "description": "direction along the x-axis",
       "type": ["float"]
     },
     {
       "name": "ny",
-      "description": "direction along the y axis",
+      "description": "direction along the y-axis",
       "type": ["float"]
     },
     {
       "name": "nz",
-      "description": "direction along the z axis",
+      "description": "direction along the z-axis",
       "type": ["float"]
     },
     {

@@ -6,7 +6,7 @@
   "syntax": [".set(freq, bw)"],
   "returns": "void",
   "type": "method",
-  "category": "effects",
+  "category": "Effects",
   "subcategory": "BandPass",
   "classanchor": "BandPass",
   "parameters": [

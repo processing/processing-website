@@ -2,11 +2,11 @@
   "brief": "Returns whether or not the current moment of audio contains a beat or not.",
   "related": [],
   "name": "isBeat()",
-  "description": "Returns whether or not the current moment of audio contains a beat or not.\n A \"beat\" is defined as a spike in the energy of the audio signal \u2014 it may\n or may not coincide exactly with a musical beat.",
+  "description": "Returns whether or not the current moment of audio contains a beat or not.\n A \"beat\" is defined as a spike in the energy of the audio signal \\u2014 it may\n or may not coincide exactly with a musical beat.",
   "syntax": [".isBeat()"],
   "returns": "boolean",
   "type": "method",
-  "category": "analysis",
+  "category": "Analysis",
   "subcategory": "BeatDetector",
   "classanchor": "BeatDetector",
   "parameters": []

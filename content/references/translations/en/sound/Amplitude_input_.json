@@ -6,8 +6,8 @@
   "syntax": [".input(input)"],
   "returns": "void",
   "type": "method",
-  "category": "analysis",
-  "subcategory": "amplitude",
+  "category": "Analysis",
+  "subcategory": "Amplitude",
   "classanchor": "Amplitude",
   "parameters": [
     {

@@ -1,0 +1,13 @@
+{
+  "brief": "Stop the effect.",
+  "related": [],
+  "name": "stop()",
+  "description": "Stop the effect.",
+  "syntax": [".stop()"],
+  "returns": "void",
+  "type": "method",
+  "category": "Effects",
+  "subcategory": "LowPass",
+  "classanchor": "LowPass",
+  "parameters": []
+}

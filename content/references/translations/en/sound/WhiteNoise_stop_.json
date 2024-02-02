@@ -1,12 +1,12 @@
 {
-  "brief": "Stop the generator.",
+  "brief": "Stop the noise from playing back",
   "related": [],
   "name": "stop()",
-  "description": "Stop the generator.",
+  "description": "Stop the noise from playing back",
   "syntax": [".stop()"],
   "returns": "void",
   "type": "method",
-  "category": "noise",
+  "category": "Noise",
   "subcategory": "WhiteNoise",
   "classanchor": "WhiteNoise",
   "parameters": []

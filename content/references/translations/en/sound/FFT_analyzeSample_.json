@@ -1,0 +1,24 @@
+{
+  "brief": "Calculates the frequency spectrum of the given sample, returning an array of magnitudes.",
+  "related": [],
+  "name": "analyzeSample()",
+  "description": "Calculates the frequency spectrum of the given sample and returns an array of magnitudes, one\n for each frequency band.\n\n This version is intended to be used in non-real time processing, particularly when you are\n creating an animation in non-real time and want to get the FFT for a particular chunk of an audio sample.\n\n For stereo samples, you can call this function once for each channel, so you can display the left and right\n fft values separately.",
+  "syntax": [".analyzeSample(sample, numBands)"],
+  "returns": "float[]",
+  "type": "method",
+  "category": "Analysis",
+  "subcategory": "FFT",
+  "classanchor": "FFT",
+  "parameters": [
+    {
+      "name": "sample",
+      "description": "an array with sound samples",
+      "type": ["float[]"]
+    },
+    {
+      "name": "numBands",
+      "description": "the number of fft bands requested. Must be a power of 2 (one of 2, 4, 8, 16 etc.)",
+      "type": ["int"]
+    }
+  ]
+}

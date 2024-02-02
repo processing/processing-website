@@ -1,18 +1,18 @@
 {
-  "brief": "Start the filter.",
+  "brief": "Start the effect.",
   "related": [],
   "name": "process()",
-  "description": "Start the filter.",
+  "description": "Start the effect.",
   "syntax": [".process(input)"],
   "returns": "void",
   "type": "method",
-  "category": "effects",
+  "category": "Effects",
   "subcategory": "Reverb",
   "classanchor": "Reverb",
   "parameters": [
     {
       "name": "input",
-      "description": "Input audio source",
+      "description": "Input sound source",
       "type": ["SoundObject"]
     }
   ]

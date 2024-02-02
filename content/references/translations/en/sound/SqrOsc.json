@@ -2,14 +2,9 @@
   "brief": "This is a simple Square Wave Oscillator.",
   "methods": [
     {
-      "anchor": "SqrOsc_play_",
-      "name": "play()",
-      "desc": "Starts the oscillator."
-    },
-    {
-      "anchor": "SqrOsc_set_",
-      "name": "set()",
-      "desc": "Set multiple parameters at once."
+      "anchor": "SqrOsc_amp_",
+      "name": "amp()",
+      "desc": "Change the amplitude/volume of this sound."
     },
     {
       "anchor": "SqrOsc_freq_",
@@ -17,24 +12,24 @@
       "desc": "Set the frequency of the oscillator in Hz."
     },
     {
-      "anchor": "SqrOsc_amp_",
-      "name": "amp()",
-      "desc": "Change the amplitude/volume of of the square oscillator."
-    },
-    {
-      "anchor": "SqrOsc_add_",
-      "name": "add()",
-      "desc": "Offset the output of this generator by given value."
-    },
-    {
       "anchor": "SqrOsc_pan_",
       "name": "pan()",
       "desc": "Move the sound in a stereo panorama."
     },
     {
+      "anchor": "SqrOsc_play_",
+      "name": "play()",
+      "desc": "Starts the oscillator"
+    },
+    {
+      "anchor": "SqrOsc_set_",
+      "name": "set()",
+      "desc": "Set multiple parameters at once"
+    },
+    {
       "anchor": "SqrOsc_stop_",
       "name": "stop()",
-      "desc": "Stop the oscillator."
+      "desc": "Stop the oscillator from playing back"
     }
   ],
   "csspath": "../../",
@@ -42,17 +37,21 @@
   "classFields": [],
   "description": "This is a simple Square Wave Oscillator.",
   "type": "class",
-  "constructors": ["SqrOsc(parent)"],
+  "constructors": [
+    "SqrOsc(parent)"
+  ],
   "related": [],
   "name": "SqrOsc",
   "classanchor": "sound/SqrOsc",
-  "category": "oscillators",
+  "category": "Oscillators",
   "subcategory": "SqrOsc",
   "parameters": [
     {
       "name": "parent",
       "description": "typically use \"this\"",
-      "type": ["PApplet"]
+      "type": [
+        "PApplet"
+      ]
     }
   ]
 }

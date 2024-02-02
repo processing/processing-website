@@ -84,7 +84,7 @@
     {
       "anchor": "AudioSample_stop_",
       "name": "stop()",
-      "desc": "Stops the playback."
+      "desc": "Stops the playback, and sets the cue back to the start of the sample."
     },
     {
       "anchor": "AudioSample_position_",
@@ -135,7 +135,7 @@
   "related": [],
   "name": "AudioSample",
   "classanchor": "sound/AudioSample",
-  "category": "sampling",
+  "category": "Sampling",
   "subcategory": "AudioSample",
   "parameters": [
     {

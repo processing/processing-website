@@ -176,15 +176,15 @@ const IndexPage = ({ data }) => {
               <p>{intl.formatMessage({ id: 'contributeP1' })}</p>
               <p>
                 {intl.formatMessage({ id: 'contributeP2' })}
-                <a href="https://github.com/processing/processing/wiki/Build-Instructions">
+                <a href="https://github.com/processing/processing4/blob/main/build/README.md" target='_blank' rel='noreferrer'> 
                   {intl.formatMessage({ id: 'building' })}
                 </a>
                 ,{' '}
-                <a href="https://github.com/processing/processing/wiki/Report-Bugs">
+                <a href="https://github.com/processing/processing/wiki/Report-Bugs" target='_blank' rel='noreferrer'>
                   {intl.formatMessage({ id: 'reporting' })}
                 </a>
-                , {intl.formatMessage({ id: 'reporting' })}{' '}
-                <a href="https://github.com/processing/processing/wiki">
+                , {' '}
+                <a href="https://github.com/processing/processing4/wiki" target='_blank' rel='noreferrer'>
                   {intl.formatMessage({ id: 'creating' })}
                 </a>
                 .
@@ -193,6 +193,8 @@ const IndexPage = ({ data }) => {
             <div className={css.contributeButton}>
               <Button
                 href={'https://github.com/processing'}
+                target='_blank' 
+                rel='noreferrer'
                 variant="animate1"
                 size="large">
                 {intl.formatMessage({ id: 'buttonContribute' })}

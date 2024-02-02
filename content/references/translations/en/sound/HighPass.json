@@ -5,6 +5,16 @@
       "anchor": "HighPass_freq_",
       "name": "freq()",
       "desc": "Set the cut off frequency for the filter."
+    },
+    {
+      "anchor": "HighPass_process_",
+      "name": "process()",
+      "desc": "Start applying this highpass filter to an input signal."
+    },
+    {
+      "anchor": "HighPass_stop_",
+      "name": "stop()",
+      "desc": "Stop the effect."
     }
   ],
   "csspath": "../../",
@@ -12,11 +22,13 @@
   "classFields": [],
   "description": "This is a high pass filter.",
   "type": "class",
-  "constructors": ["HighPass(parent)"],
+  "constructors": [
+    "HighPass(parent)"
+  ],
   "related": [],
   "name": "HighPass",
   "classanchor": "sound/HighPass",
-  "category": "effects",
+  "category": "Effects",
   "subcategory": "HighPass",
   "parameters": []
 }

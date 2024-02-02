@@ -1,0 +1,20 @@
+{
+  "name": "JavaDoc",
+  "authors": [
+    "[Henning Kiel](https://github.com/hkiel)"
+  ],
+  "url": "https://github.com/hkiel/JavaDoc",
+  "categories": null,
+  "sentence": "Generate JavaDoc for sketch.",
+  "paragraph": "",
+  "type": "tool",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/hkiel/JavaDoc/releases/latest/download/JavaDoc.txt",
+      "download": "https://github.com/hkiel/JavaDoc/releases/latest/download/JavaDoc.zip"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "LazyGui",
+  "url": "https://github.com/KrabCode/LazyGui",
+  "categories": [
+    "GUI"
+  ],
+  "authors": [
+    "[Jakub Rak](https://github.com/KrabCode)"
+  ],
+  "sentence": "Feature rich, visually minimalist GUI for a smooth tinkering experience.",
+  "paragraph": "Make more complex scenes and animations faster by not mentioning any control elements or folders in setup(). Only ask for their values in draw() at unique string paths and let the GUI take care of the windows and control elements. Features a json save system with autosave on program exit, copy/paste, undo/redo, these control elements: [slider, 2D plot, color picker, gradient picker, button, toggle, text input, radio], and much more... Developed on Windows, but should work on Mac and Linux too.",
+  "imports": "com.krab.lazy",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/KrabCode/LazyGui/releases/download/latest/LazyGui.txt",
+      "download": "https://github.com/KrabCode/LazyGui/releases/download/latest/LazyGui.zip"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
   "brief": "Returns the next byte in the buffer as a char",
   "related": [],
   "name": "readChar()",
-  "description": "Returns the next byte in the buffer as a char. Returns <b>-1</b> or <b>0xffff</b> \n if nothing is there.",
+  "description": "Returns the next byte in the buffer as a char. Returns <b>-1</b> or <b>0xffff</b>\n if nothing is there.",
   "syntax": ["serial.readChar()"],
   "returns": "char",
   "type": "method",

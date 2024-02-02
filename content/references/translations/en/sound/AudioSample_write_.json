@@ -10,7 +10,7 @@
   ],
   "returns": "void",
   "type": "method",
-  "category": "sampling",
+  "category": "Sampling",
   "subcategory": "AudioSample",
   "classanchor": "AudioSample",
   "parameters": [

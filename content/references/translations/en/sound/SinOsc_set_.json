@@ -1,12 +1,12 @@
 {
-  "brief": "Set multiple parameters at once.",
+  "brief": "Set multiple parameters at once",
   "related": [],
   "name": "set()",
-  "description": "Set multiple parameters at once.",
-  "syntax": [".set(freq, amp, add, pos)"],
+  "description": "Set multiple parameters at once",
+  "syntax": [".set(freq, amp, pos)"],
   "returns": "void",
   "type": "method",
-  "category": "oscillators",
+  "category": "Oscillators",
   "subcategory": "SinOsc",
   "classanchor": "SinOsc",
   "parameters": [
@@ -21,13 +21,8 @@
       "type": ["float"]
     },
     {
-      "name": "add",
-      "description": "Offset the output of the oscillator by given value",
-      "type": ["float"]
-    },
-    {
       "name": "pos",
-      "description": "The panoramic position of the oscillator as a float from -1.0 to\n            1.0.",
+      "description": "The panoramic position of the oscillator as a float from -1.0 to 1.0.",
       "type": ["float"]
     }
   ]

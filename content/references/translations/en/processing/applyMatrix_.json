@@ -1,5 +1,5 @@
 {
-  "brief": "Multiplies the current matrix by the one specified through the\n parameters",
+  "brief": "Multiplies the current matrix by the one specified in the\n parameter",
   "related": ["pushMatrix_", "popMatrix_", "resetMatrix_", "printMatrix_"],
   "name": "applyMatrix()",
   "description": "Multiplies the current matrix by the one specified through the\n parameters. This is very slow because it will try to calculate the\n inverse of the transform, so avoid it whenever possible. The equivalent\n function in OpenGL is <b>glMultMatrix()</b>.",

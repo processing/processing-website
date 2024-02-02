@@ -6,7 +6,7 @@
   "syntax": [".list()"],
   "returns": "String[]",
   "type": "method",
-  "category": "configuration",
+  "category": "Configuration",
   "subcategory": "Sound",
   "classanchor": "Sound",
   "parameters": []

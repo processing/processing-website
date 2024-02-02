@@ -1,19 +1,20 @@
 {
-  "brief": "Start the filter.",
+  "brief": "Start applying this highpass filter to an input signal.",
   "related": [],
   "name": "process()",
-  "description": "Start the filter.",
-  "syntax": [".process(input)"],
+  "description": "Start applying this highpass filter to an input signal.",
+  "syntax": [".process(input, freq)"],
   "returns": "void",
   "type": "method",
-  "category": "effects",
+  "category": "Effects",
   "subcategory": "HighPass",
   "classanchor": "HighPass",
   "parameters": [
     {
       "name": "input",
-      "description": "Input audio source",
+      "description": "the sound source to apply the filter to",
       "type": ["SoundObject"]
-    }
+    },
+    { "name": "freq", "description": "cutoff frequency", "type": ["float"] }
   ]
 }

@@ -2,7 +2,7 @@
   "brief": "Ends a contour",
   "related": ["PShape_beginContour_"],
   "name": "endContour()",
-  "description": "The <b>beginContour()</b> and <b>endContour()</b> methods make \n it possible to define shapes with other shapes cut out of them. \n For example, the inside of a letter 'O'. These two functions are \n always used together, you'll never use one without the other. \n Between them, define the geometry you want to create. As you'll \n see when you run the example above, the second smaller shape is \n cut out of the first larger shape.<br />\n <br />\n The exterior shape and the interior contour must <em>wind</em> \n in opposite directions. This means that if the points of the \n geometry for the exterior shape are described in a clockwise order, \n the points on the interior shape are defined in a counterclockwise order.",
+  "description": "The <b>beginContour()</b> and <b>endContour()</b> methods make\n it possible to define shapes with other shapes cut out of them.\n For example, the inside of a letter 'O'. These two functions are\n always used together, you'll never use one without the other.\n Between them, define the geometry you want to create. As you'll\n see when you run the example above, the second smaller shape is\n cut out of the first larger shape.<br/>\n <br/>\n The exterior shape and the interior contour must <em>wind</em>\n in opposite directions. This means that if the points of the\n geometry for the exterior shape are described in a clockwise order,\n the points on the interior shape are defined in a counterclockwise order.",
   "syntax": ["sh.endContour()"],
   "returns": "void",
   "type": "method",

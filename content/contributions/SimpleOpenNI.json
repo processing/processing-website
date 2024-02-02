@@ -1,0 +1,22 @@
+{
+  "name": "SimpleOpenNI",
+  "authors": [
+    "[Max Rheiner & Antonio Vega](http://code.google.com/p/simple-openni/)"
+  ],
+  "url": "https://github.com/totovr/SimpleOpenNI",
+  "categories": [
+    "3D"
+  ],
+  "sentence": "A simple wrapper for OpenNI (Kinect-Library).",
+  "paragraph": "",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "266",
+      "maxRevision": "0",
+      "props": "https://fox-gieg.com/patches/processing/libraries/SimpleOpenNI/SimpleOpenNI.txt",
+      "download": "https://fox-gieg.com/patches/processing/libraries/SimpleOpenNI/SimpleOpenNI.zip"
+    }
+  ]
+}

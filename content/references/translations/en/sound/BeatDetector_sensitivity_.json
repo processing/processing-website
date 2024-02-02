@@ -6,7 +6,7 @@
   "syntax": [".sensitivity(sensitivity)", ".sensitivity()"],
   "returns": "int or void",
   "type": "method",
-  "category": "analysis",
+  "category": "Analysis",
   "subcategory": "BeatDetector",
   "classanchor": "BeatDetector",
   "parameters": [

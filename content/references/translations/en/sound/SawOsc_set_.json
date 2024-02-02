@@ -1,12 +1,12 @@
 {
-  "brief": "Set multiple parameters at once.",
+  "brief": "Set multiple parameters at once",
   "related": [],
   "name": "set()",
-  "description": "Set multiple parameters at once.",
-  "syntax": [".set(freq, amp, add, pos)"],
+  "description": "Set multiple parameters at once",
+  "syntax": [".set(freq, amp, pos)"],
   "returns": "void",
   "type": "method",
-  "category": "oscillators",
+  "category": "Oscillators",
   "subcategory": "SawOsc",
   "classanchor": "SawOsc",
   "parameters": [
@@ -18,11 +18,6 @@
     {
       "name": "amp",
       "description": "The amplitude of the oscillator as a value between 0.0 and 1.0.",
-      "type": ["float"]
-    },
-    {
-      "name": "add",
-      "description": "Offset the output of the oscillator by given value",
       "type": ["float"]
     },
     {

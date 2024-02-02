@@ -12,9 +12,19 @@
       "desc": "Set the cutoff frequency for the filter."
     },
     {
+      "anchor": "BandPass_process_",
+      "name": "process()",
+      "desc": "Start applying this bandpass filter to an input signal."
+    },
+    {
       "anchor": "BandPass_set_",
       "name": "set()",
       "desc": "Sets frequency and bandwidth of the filter with one method."
+    },
+    {
+      "anchor": "BandPass_stop_",
+      "name": "stop()",
+      "desc": "Stop the effect."
     }
   ],
   "csspath": "../../",
@@ -22,11 +32,13 @@
   "classFields": [],
   "description": "This is a band pass filter.",
   "type": "class",
-  "constructors": ["BandPass(parent)"],
+  "constructors": [
+    "BandPass(parent)"
+  ],
   "related": [],
   "name": "BandPass",
   "classanchor": "sound/BandPass",
-  "category": "effects",
+  "category": "Effects",
   "subcategory": "BandPass",
   "parameters": []
 }

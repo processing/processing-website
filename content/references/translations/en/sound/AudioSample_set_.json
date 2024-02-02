@@ -3,10 +3,10 @@
   "related": [],
   "name": "set()",
   "description": "Set multiple parameters at once.",
-  "syntax": [".set(rate, pos, amp, add)"],
+  "syntax": [".set(rate, pos, amp)", ".set(rate, pos, amp, add)"],
   "returns": "void",
   "type": "method",
-  "category": "sampling",
+  "category": "Sampling",
   "subcategory": "AudioSample",
   "classanchor": "AudioSample",
   "parameters": [
@@ -23,11 +23,6 @@
     {
       "name": "amp",
       "description": "the desired playback amplitude of the audiosample as a value from\n            0.0 (complete silence) to 1.0 (full volume)",
-      "type": ["float"]
-    },
-    {
-      "name": "add",
-      "description": "offset the output of the generator by the given value",
       "type": ["float"]
     }
   ]

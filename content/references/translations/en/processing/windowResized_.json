@@ -1,0 +1,12 @@
+{
+  "brief": "Called every time the sketch window is resized",
+  "related": [],
+  "name": "windowResized()",
+  "description": "Called every time the sketch window is resized.",
+  "syntax": ["windowResized()"],
+  "returns": "void",
+  "type": "function",
+  "category": "environment",
+  "subcategory": "",
+  "parameters": []
+}

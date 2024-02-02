@@ -1,12 +1,12 @@
 {
-  "brief": "Pan the oscillator in a stereo panorama.",
+  "brief": "Move the sound in a stereo panorama.",
   "related": [],
   "name": "pan()",
-  "description": "Pan the oscillator in a stereo panorama. -1.0 pans to the left channel and 1.0 to the right channel.",
+  "description": "Move the sound in a stereo panorama.",
   "syntax": [".pan(pos)"],
   "returns": "void",
   "type": "method",
-  "category": "oscillators",
+  "category": "Oscillators",
   "subcategory": "Pulse",
   "classanchor": "Pulse",
   "parameters": [

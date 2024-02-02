@@ -14,7 +14,7 @@
     "mouseButton"
   ],
   "name": "mouseWheel()",
-  "description": "The code within the <b>mouseWheel()</b> event function\n is run when the mouse wheel is moved. (Some mice don't\n have wheels and this function is only applicable with\n mice that have a wheel.) The <b>getCount()</b> function\n used within <b>mouseWheel()</b> returns positive values\n when the mouse wheel is rotated down (toward the user),\n and negative values for the other direction (up or away\n from the user). On OS X with \"natural\" scrolling enabled,\n the values are opposite.\n <br /><br />\n Mouse and keyboard events only work when a program has\n <b>draw()</b>. Without <b>draw()</b>, the code is only\n run once and then stops listening for events.",
+  "description": "The code within the <b>mouseWheel()</b> event function\n is run when the mouse wheel is moved. (Some mice don't\n have wheels and this function is only applicable with\n mice that have a wheel.) The <b>getCount()</b> function\n used within <b>mouseWheel()</b> returns positive values\n when the mouse wheel is rotated down (toward the user),\n and negative values for the other direction (up or away\n from the user). On OS X with \"natural\" scrolling enabled,\n the values are opposite.\n <br/><br/>\n Mouse and keyboard events only work when a program has\n <b>draw()</b>. Without <b>draw()</b>, the code is only\n run once and then stops listening for events.",
   "syntax": ["mouseWheel(event)"],
   "returns": "void",
   "type": "function",

@@ -6,7 +6,7 @@
   "syntax": [".width(width)"],
   "returns": "void",
   "type": "method",
-  "category": "oscillators",
+  "category": "Oscillators",
   "subcategory": "Pulse",
   "classanchor": "Pulse",
   "parameters": [

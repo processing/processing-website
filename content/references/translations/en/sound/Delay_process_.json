@@ -9,7 +9,7 @@
   ],
   "returns": "void",
   "type": "method",
-  "category": "effects",
+  "category": "Effects",
   "subcategory": "Delay",
   "classanchor": "Delay",
   "parameters": [

@@ -6,7 +6,7 @@
   "syntax": [".position()"],
   "returns": "float",
   "type": "method",
-  "category": "sampling",
+  "category": "Sampling",
   "subcategory": "AudioSample",
   "classanchor": "AudioSample",
   "parameters": []

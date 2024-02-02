@@ -1,12 +1,12 @@
 {
   "brief": "Stop the playback of the sample, but cue it to the current position.",
-  "related": [],
+  "related": ["sound/AudioSample_cue_"],
   "name": "pause()",
   "description": "Stop the playback of the sample, but cue it to the current position. \n The next call to <b>play()</b> will continue playing where it left off.",
   "syntax": [".pause()"],
   "returns": "void",
   "type": "method",
-  "category": "sampling",
+  "category": "Sampling",
   "subcategory": "AudioSample",
   "classanchor": "AudioSample",
   "parameters": []

@@ -1,0 +1,19 @@
+{
+  "brief": "Define the audio input for the analyzer.",
+  "related": [],
+  "name": "input()",
+  "description": "Define the audio input for the analyzer.",
+  "syntax": [".input(input)"],
+  "returns": "void",
+  "type": "method",
+  "category": "Analysis",
+  "subcategory": "BeatDetector",
+  "classanchor": "BeatDetector",
+  "parameters": [
+    {
+      "name": "input",
+      "description": "The input sound source",
+      "type": ["SoundObject"]
+    }
+  ]
+}

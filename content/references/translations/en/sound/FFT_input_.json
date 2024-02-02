@@ -6,13 +6,13 @@
   "syntax": [".input(input)"],
   "returns": "void",
   "type": "method",
-  "category": "analysis",
+  "category": "Analysis",
   "subcategory": "FFT",
   "classanchor": "FFT",
   "parameters": [
     {
       "name": "input",
-      "description": "the input sound source. Can be an oscillator, noise generator,\n            SoundFile or AudioIn.",
+      "description": "The input sound source",
       "type": ["SoundObject"]
     }
   ]
