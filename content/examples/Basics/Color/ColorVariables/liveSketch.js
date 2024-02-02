@@ -21,6 +21,10 @@ function runLiveSketch(s) {
     //color middle = #CC9900;
     //color outside = #993300;
 
+    s.describe(
+      'There are two sets of squares. The first set contains three squares of varying sizes stacked together. The color of the smallest square is orange, the color of the middle square is gold, and the color of the biggest square is brown.  On the right of the first set is the second set, which is similar to the first. The only difference here is the color of the squares; the smallest square is gold, the middle square is brown, and the biggest square is orange.'
+    );
+
     s.push();
     s.translate(80, 80);
     s.fill(outside);

@@ -10,9 +10,6 @@
 
 
 void setup() {
-  
-describe('there are two dark spheres side by side ,the cursor works like a light source ,when mouse moves the direction of light changes and reveals some part of spheres.')
-
   size(640, 360, P3D);
   noStroke();
   fill(204);
