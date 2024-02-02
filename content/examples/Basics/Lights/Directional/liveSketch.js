@@ -3,6 +3,9 @@ function runLiveSketch(s) {
     s.createCanvas(640, 360, s.WEBGL);
     s.noStroke();
     s.fill(204);
+    s.describe(
+      'there are two dark spheres side by side, the cursor works like a light source, when mouse moves the direction of light changes and reveals some part of spheres.'
+    );
   };
 
   s.draw = () => {
@@ -15,8 +18,6 @@ function runLiveSketch(s) {
     s.sphere(80);
     s.translate(200, 0, 0);
     s.sphere(80);
-    describe(
-      'there are two dark spheres side by side, the cursor works like a light source, when mouse moves the direction of light changes and reveals some part of spheres.'
-    );
+   
   };
 }
