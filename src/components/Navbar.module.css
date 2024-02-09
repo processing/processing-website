@@ -94,6 +94,10 @@
   z-index: 40;
   border-left: solid 4px var(--processing-blue-mid);
 }
+.highlight:hover{
+  color: var(--processing-blue-mid);
+  cursor: pointer;  
+}
 
 .active {
   border-left: solid 4px var(--processing-blue-dark);
