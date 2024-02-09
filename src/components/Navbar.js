@@ -144,7 +144,7 @@ const Navbar = ({ siteTitle, scrolled }) => {
                     </Link>
                   )
                 ) : (
-                  <button onClick={() => onClick(item.name)}>
+                  <button className={classnames(css.highlight)} onClick={() => onClick(item.name)}>
                     {intl.formatMessage({ id: item.name })}
                   </button>
                 )}
