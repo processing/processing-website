@@ -1,8 +1,8 @@
 {
-  "brief": "Set the cut off frequency for the filter.",
+  "brief": "Sets the cutoff frequency for the filter.",
   "related": [],
   "name": "freq()",
-  "description": "Set the cut off frequency for the filter.",
+  "description": "Sets the cutoff frequency for the filter.",
   "syntax": [".freq(freq)"],
   "returns": "void",
   "type": "method",

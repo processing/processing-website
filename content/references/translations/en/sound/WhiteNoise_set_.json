@@ -3,7 +3,7 @@
   "related": [],
   "name": "set()",
   "description": "Set the amplitude and panoramic position with one method.",
-  "syntax": [".set(amp, pos)"],
+  "syntax": [".set(amp, pos)", ".set(amp, add, pos)"],
   "returns": "void",
   "type": "method",
   "category": "Noise",

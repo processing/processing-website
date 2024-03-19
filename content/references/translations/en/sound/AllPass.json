@@ -1,0 +1,34 @@
+{
+  "brief": "Outputs all input frequencies at the same amplitude but changes \n their phase relationship.",
+  "methods": [
+    {
+      "anchor": "AllPass_gain_",
+      "name": "gain()",
+      "desc": "Sets the gain for the filter."
+    },
+    {
+      "anchor": "AllPass_process_",
+      "name": "process()",
+      "desc": "Start the effect."
+    },
+    {
+      "anchor": "AllPass_stop_",
+      "name": "stop()",
+      "desc": "Stop the effect."
+    }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "This is an all pass filter. For signals processed, all frequencies hold the \n same amplitude but have their phase relationship modified using a delayline \n of one sample,<br/>\n <br/>\n <code>y(k) = -z * x(k) + x(k - 1) + z * y(k - 1)</code><br/>\n <br/>\n where <code>y</code> is the output, <code>x</code> is the input, \n <code>z</code> is the gain coefficient, and <code>k</code> is the signal.",
+  "type": "class",
+  "constructors": [
+    "AllPass(parent)"
+  ],
+  "related": [],
+  "name": "AllPass",
+  "classanchor": "sound/AllPass",
+  "category": "Effects",
+  "subcategory": "AllPass",
+  "parameters": []
+}

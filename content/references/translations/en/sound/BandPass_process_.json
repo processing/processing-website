@@ -3,7 +3,7 @@
   "related": [],
   "name": "process()",
   "description": "Start applying this bandpass filter to an input signal.",
-  "syntax": [".process(input, freq)", ".process(input, freq, bw)"],
+  "syntax": [".process(input, freq, bw)"],
   "returns": "void",
   "type": "method",
   "category": "Effects",
@@ -12,14 +12,18 @@
   "parameters": [
     {
       "name": "input",
-      "description": "the sound source to apply the filter to",
+      "description": "the sound source to filter",
       "type": ["SoundObject"]
     },
     {
       "name": "freq",
-      "description": "Cutoff frequency between 0 and 20000",
+      "description": "the center frequency in Hertz",
       "type": ["float"]
     },
-    { "name": "bw", "description": "Set the bandwidth", "type": ["float"] }
+    {
+      "name": "bw",
+      "description": "the filter bandwidth in Hertz",
+      "type": ["float"]
+    }
   ]
 }

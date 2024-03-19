@@ -10,7 +10,15 @@
   "subcategory": "BandPass",
   "classanchor": "BandPass",
   "parameters": [
-    { "name": "freq", "description": "Set the frequency", "type": ["float"] },
-    { "name": "bw", "description": "Set the bandwidth", "type": ["float"] }
+    {
+      "name": "freq",
+      "description": "the center frequency in Hertz",
+      "type": ["float"]
+    },
+    {
+      "name": "bw",
+      "description": "the filter bandwidth in Hertz",
+      "type": ["float"]
+    }
   ]
 }

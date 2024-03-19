@@ -45,5 +45,13 @@
   "classanchor": "sound/Reverb",
   "category": "Effects",
   "subcategory": "Reverb",
-  "parameters": []
+  "parameters": [
+    {
+      "name": "parent",
+      "description": "PApplet: typically use \"this\"",
+      "type": [
+        "PApplet"
+      ]
+    }
+  ]
 }

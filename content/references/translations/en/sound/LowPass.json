@@ -4,12 +4,22 @@
     {
       "anchor": "LowPass_freq_",
       "name": "freq()",
-      "desc": "Set the cut off frequency for the filter."
+      "desc": "Sets the cutoff frequency for the filter."
     },
     {
       "anchor": "LowPass_process_",
       "name": "process()",
-      "desc": "Start applying this highpass filter to an input signal."
+      "desc": "Starts applying this filter to an input signal."
+    },
+    {
+      "anchor": "LowPass_res_",
+      "name": "res()",
+      "desc": "Sets the resonance (or 'Q factor') of this filter. Increasing Q increases \n the resonance of the filter at its cutoff frequency. Defaults to 1."
+    },
+    {
+      "anchor": "LowPass_set_",
+      "name": "set()",
+      "desc": "Sets frequency and bandwidth of the filter with one method."
     },
     {
       "anchor": "LowPass_stop_",

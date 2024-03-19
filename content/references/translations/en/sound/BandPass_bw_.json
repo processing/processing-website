@@ -1,13 +1,19 @@
 {
-  "brief": "Set the bandwidth for the filter.",
+  "brief": "Sets the bandwidth for the filter.",
   "related": [],
   "name": "bw()",
-  "description": "Set the bandwidth for the filter.",
+  "description": "Sets the bandwidth of this BandPass filter.",
   "syntax": [".bw(bw)"],
   "returns": "void",
   "type": "method",
   "category": "Effects",
   "subcategory": "BandPass",
   "classanchor": "BandPass",
-  "parameters": []
+  "parameters": [
+    {
+      "name": "bw",
+      "description": "the filter bandwidth in Hertz",
+      "type": ["float"]
+    }
+  ]
 }

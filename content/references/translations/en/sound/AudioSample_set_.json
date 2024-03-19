@@ -3,7 +3,7 @@
   "related": [],
   "name": "set()",
   "description": "Set multiple parameters at once.",
-  "syntax": [".set(rate, pos, amp)", ".set(rate, pos, amp, add)"],
+  "syntax": [".set(rate, pos, amp)"],
   "returns": "void",
   "type": "method",
   "category": "Sampling",

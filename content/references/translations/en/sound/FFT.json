@@ -4,12 +4,12 @@
     {
       "anchor": "FFT_analyze_",
       "name": "analyze()",
-      "desc": "Calculates the current frequency spectrum and returns it as an array with as many elements as frequency bands."
+      "desc": "Calculates the current frequency spectrum of the audio input \n signal."
     },
     {
       "anchor": "FFT_analyzeSample_",
       "name": "analyzeSample()",
-      "desc": "Calculates the frequency spectrum of the given sample, returning an array of magnitudes."
+      "desc": "Calculates the frequency spectrum of a given audio sample."
     },
     {
       "anchor": "FFT_input_",
@@ -41,7 +41,7 @@
     },
     {
       "name": "bands",
-      "description": "number of frequency bands for the FFT as an integer (default 512).\n            This parameter needs to be a power of 2 (e.g. 16, 32, 64, 128,\n            ...).",
+      "description": "number of frequency bands for the FFT. This parameter needs to \n            be a power of 2 (e.g. 16, 32, 64, 128, ...). The default is 512.",
       "type": [
         "int"
       ]

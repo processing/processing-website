@@ -2,13 +2,12 @@
   "brief": "Starts the playback of the audiosample.",
   "related": [],
   "name": "loop()",
-  "description": "Starts playback which will loop at the end of the audiosample.",
+  "description": "Starts the playback of the audiosample. Only plays to the end of the audiosample \n once. If <b>cue()</b> or <b>pause()</b> were called previously, playback will resume from the cued position.",
   "syntax": [
     ".loop()",
     ".loop(rate)",
     ".loop(rate, amp)",
-    ".loop(rate, pos, amp)",
-    ".loop(rate, pos, amp, add)"
+    ".loop(rate, pos, amp)"
   ],
   "returns": "void",
   "type": "method",

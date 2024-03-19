@@ -1,0 +1,19 @@
+{
+  "brief": "Start the effect.",
+  "related": [],
+  "name": "process()",
+  "description": "Start the effect.",
+  "syntax": [".process(input)"],
+  "returns": "void",
+  "type": "method",
+  "category": "Effects",
+  "subcategory": "AllPass",
+  "classanchor": "AllPass",
+  "parameters": [
+    {
+      "name": "input",
+      "description": "Input sound source",
+      "type": ["SoundObject"]
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 {
   "brief": "Choose the device (sound card) which the Sound library's audio output should be sent to.",
-  "related": [],
+  "related": ["sound/Sound_list_"],
   "name": "outputDevice()",
   "description": "Choose the device (sound card) which the Sound library's audio output should\n be sent to. The output device should support stereo output (2 channels).",
-  "syntax": [".outputDevice(deviceId)"],
-  "returns": "void",
+  "syntax": [".outputDevice(deviceId)", ".outputDevice(deviceName)"],
+  "returns": "int",
   "type": "method",
   "category": "Configuration",
   "subcategory": "Sound",
@@ -12,7 +12,7 @@
   "parameters": [
     {
       "name": "deviceId",
-      "description": "the device id obtained from list()",
+      "description": "the device id obtained from Sound.list()",
       "type": ["int"]
     }
   ]

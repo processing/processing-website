@@ -1,9 +1,12 @@
 {
-  "brief": "Calculates the frequency spectrum of the given sample, returning an array of magnitudes.",
+  "brief": "Calculates the frequency spectrum of a given audio sample.",
   "related": [],
   "name": "analyzeSample()",
-  "description": "Calculates the frequency spectrum of the given sample and returns an array of magnitudes, one\n for each frequency band.\n\n This version is intended to be used in non-real time processing, particularly when you are\n creating an animation in non-real time and want to get the FFT for a particular chunk of an audio sample.\n\n For stereo samples, you can call this function once for each channel, so you can display the left and right\n fft values separately.",
-  "syntax": [".analyzeSample(sample, numBands)"],
+  "description": "Calculates the frequency spectrum of a given audio sample and returns an \n array of magnitudes, one for each frequency band. The frequency associated \n with each band of the spectrum is <code>frequency = binIndex * sampleRate / \n (2*numBands)</code>.<br>\n This version is intended to be used in non-real time processing, particularly when you are\n creating an animation in non-real time and want to get the FFT for a particular chunk of an audio sample.\n\n For stereo samples, you can call this function once for each channel, so you can display the left and right\n fft values separately.<br>\n\n The values of the resulting array show the amplitudes of pure tone \n components contained in the signal. If the signal is a sine with an \n amplitude of 1, the spectrum will have an absolute value of 1 (0 dB) at the \n frequency of the sine. For complex real-world signals the spectrum values \n will be much lower and usually don't exceed 0.05.",
+  "syntax": [
+    ".analyzeSample(sample, target)",
+    ".analyzeSample(sample, numBands)"
+  ],
   "returns": "float[]",
   "type": "method",
   "category": "Analysis",
@@ -12,13 +15,13 @@
   "parameters": [
     {
       "name": "sample",
-      "description": "an array with sound samples",
+      "description": "an array of numbers that describe the waveform to be analyzed",
       "type": ["float[]"]
     },
     {
-      "name": "numBands",
-      "description": "the number of fft bands requested. Must be a power of 2 (one of 2, 4, 8, 16 etc.)",
-      "type": ["int"]
+      "name": "target",
+      "description": "array that the computed spectrum will be written to. The FFT \n will compute as many frequency bands as the length of this array, which \n must be a power of 2 (2, 4, 8, 16 etc.)",
+      "type": ["float[]"]
     }
   ]
 }

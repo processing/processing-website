@@ -28,6 +28,11 @@
       "type": ["float"]
     },
     {
+      "name": "sustainLevel",
+      "description": "Sustain level value as a float. (as fraction of the input amplitude)",
+      "type": ["float"]
+    },
+    {
       "name": "releaseTime",
       "description": "Release time value as a float.",
       "type": ["float"]

@@ -1,8 +1,8 @@
 {
-  "brief": "Set the cutoff frequency for the filter.",
+  "brief": "Sets the center frequency of the filter.",
   "related": [],
   "name": "freq()",
-  "description": "Set the cutoff frequency for the filter.",
+  "description": "Sets the center frequency of the filter.",
   "syntax": [".freq(freq)"],
   "returns": "void",
   "type": "method",
@@ -12,7 +12,7 @@
   "parameters": [
     {
       "name": "freq",
-      "description": "Cutoff frequency between 0 and 20000",
+      "description": "the center frequency in Hertz",
       "type": ["float"]
     }
   ]

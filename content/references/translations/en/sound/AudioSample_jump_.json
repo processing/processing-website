@@ -1,8 +1,8 @@
 {
-  "brief": "Jump to a specific position in the audiosample while continuing to play (or starting to play if it wasn't playing already).",
+  "brief": "Jumps to a specific position in the audio sample.",
   "related": ["sound/AudioSample_cue_", "sound/AudioSample_play_"],
   "name": "jump()",
-  "description": "Jump to a specific position in the audiosample while continuing to play (or starting to play if it wasn't playing already).",
+  "description": "Jump to a specific position in the audiosample while continuing to play (or \n starting to play if it wasn't playing already).",
   "syntax": [".jump(time)"],
   "returns": "void",
   "type": "method",
@@ -12,7 +12,7 @@
   "parameters": [
     {
       "name": "time",
-      "description": "position to jump to, in seconds.",
+      "description": "position to jump to, in seconds",
       "type": ["float"]
     }
   ]

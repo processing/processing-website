@@ -1,0 +1,19 @@
+{
+  "brief": "Detect the fundamental frequency of the input sound signal.",
+  "related": [],
+  "name": "analyze()",
+  "description": "Returns an estimate of the current pitch (or 'fundamental frequency') of \n the input sound signal, in Hertz. If the confidence in the current \n measurement does not exceed the minimum confidence, this method returns 0.",
+  "syntax": [".analyze()", ".analyze(minimumConfidence)", ".analyze(target)"],
+  "returns": "float",
+  "type": "method",
+  "category": "Analysis",
+  "subcategory": "PitchDetector",
+  "classanchor": "PitchDetector",
+  "parameters": [
+    {
+      "name": "minimumConfidence",
+      "description": "the minimum confidence level required for \n frequency measurements, between 0 (accept all measurements, no matter how \n unreliable) to 1 (only accept perfect measurements). If omitted, uses the \n confidence level specified when this PitchDetector was created.",
+      "type": ["float"]
+    }
+  ]
+}
