@@ -3,7 +3,7 @@
   "related": [],
   "name": "process()",
   "description": "Start applying this bandpass filter to an input signal.",
-  "syntax": [".process(input, freq, bw)"],
+  "syntax": ["bandpass.process(input, freq, bw)"],
   "returns": "void",
   "type": "method",
   "category": "Effects",

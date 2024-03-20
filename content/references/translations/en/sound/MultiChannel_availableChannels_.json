@@ -3,7 +3,10 @@
   "related": ["sound/Sound_outputDevice_"],
   "name": "availableChannels()",
   "description": "Gets the number of output channels available on an output device",
-  "syntax": [".availableChannels(deviceId)", ".availableChannels()"],
+  "syntax": [
+    "MultiChannel.availableChannels(deviceId)",
+    "MultiChannel.availableChannels()"
+  ],
   "returns": "int",
   "type": "method",
   "category": "I/O",

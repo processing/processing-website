@@ -3,7 +3,7 @@
   "related": ["sound/AudioSample_cue_", "sound/AudioSample_play_"],
   "name": "jump()",
   "description": "Jump to a specific position in the audiosample while continuing to play (or \n starting to play if it wasn't playing already).",
-  "syntax": [".jump(time)"],
+  "syntax": ["audiosample.jump(time)"],
   "returns": "void",
   "type": "method",
   "category": "Sampling",

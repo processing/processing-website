@@ -3,7 +3,7 @@
   "related": [],
   "name": "gain()",
   "description": "Sets the gain for the filter in the range 0.0 - 1.0, where larger values \n increase phase displacement.",
-  "syntax": [".gain(g)"],
+  "syntax": ["allpass.gain(g)"],
   "returns": "void",
   "type": "method",
   "category": "Effects",

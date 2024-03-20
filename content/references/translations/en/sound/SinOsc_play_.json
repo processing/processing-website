@@ -3,7 +3,11 @@
   "related": [],
   "name": "play()",
   "description": "Starts the oscillator",
-  "syntax": [".play()", ".play(freq, amp)", ".play(freq, amp, add, pos)"],
+  "syntax": [
+    "oscillator.play()",
+    "oscillator.play(freq, amp)",
+    "oscillator.play(freq, amp, add, pos)"
+  ],
   "returns": "void",
   "type": "method",
   "category": "Oscillators",

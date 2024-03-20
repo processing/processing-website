@@ -3,7 +3,7 @@
   "related": [],
   "name": "res()",
   "description": "Sets a fixed Q factor for this filter. If you want to specify a fixed \n bandwidth for this bandpass filter (in Hertz) that is maintained even as \n the center frequency of the filter changes, use <code>bw(float)</code> \n instead.",
-  "syntax": [".res(q)"],
+  "syntax": ["bandpass.res(q)"],
   "returns": "void",
   "type": "method",
   "category": "Effects",

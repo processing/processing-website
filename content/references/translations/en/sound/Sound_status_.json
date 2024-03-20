@@ -3,7 +3,7 @@
   "related": [],
   "name": "status()",
   "description": "Prints information about the sound library's current memory and CPU usage \n to the console.",
-  "syntax": [".status()"],
+  "syntax": ["Sound.status()"],
   "returns": "void",
   "type": "method",
   "category": "Configuration",

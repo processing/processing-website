@@ -3,7 +3,7 @@
   "related": [],
   "name": "bw()",
   "description": "Sets the bandwidth of this BandPass filter.",
-  "syntax": [".bw(bw)"],
+  "syntax": ["bandpass.bw(bw)"],
   "returns": "void",
   "type": "method",
   "category": "Effects",

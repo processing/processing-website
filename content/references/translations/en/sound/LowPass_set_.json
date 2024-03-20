@@ -3,7 +3,7 @@
   "related": [],
   "name": "set()",
   "description": "Sets frequency and bandwidth of the filter with one method.",
-  "syntax": [".set(freq, q)"],
+  "syntax": ["filter.set(freq, q)"],
   "returns": "void",
   "type": "method",
   "category": "Effects",

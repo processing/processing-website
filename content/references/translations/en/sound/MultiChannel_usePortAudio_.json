@@ -3,7 +3,7 @@
   "related": ["sound/Sound_list_"],
   "name": "usePortAudio()",
   "description": "Force using PortAudio instead of JavaSound.\n\n Support for 24 bit audio interfaces on Windows requires using the native\n PortAudio bindings instead of the default JavaSound one. The Sound library \n will automatically check for and load PortAudio when it is necessary to do \n so. However, when <code>Sound.list()</code> is called before selecting an \n output device, it might show an incorrect number of channels for \n multi-channel interfaces. By explicitly loading PortAudio ahead of time you \n can ensure that <code>Sound.list()</code> will show accurate channel \n numbers from the start.\n\n Returns <code>true</code> if PortAudio was successfully loaded.",
-  "syntax": [".usePortAudio()"],
+  "syntax": ["MultiChannel.usePortAudio()"],
   "returns": "boolean",
   "type": "method",
   "category": "I/O",

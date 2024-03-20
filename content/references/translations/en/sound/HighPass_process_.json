@@ -3,7 +3,7 @@
   "related": [],
   "name": "process()",
   "description": "Starts applying this filter to an input signal.",
-  "syntax": [".process(input, freq)", ".process(input, freq, q)"],
+  "syntax": ["filter.process(input, freq)", "filter.process(input, freq, q)"],
   "returns": "void",
   "type": "method",
   "category": "Effects",

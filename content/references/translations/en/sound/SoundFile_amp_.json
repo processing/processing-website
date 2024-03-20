@@ -3,7 +3,7 @@
   "related": [],
   "name": "amp()",
   "description": "Change the amplitude/volume of this audiosample.",
-  "syntax": [".amp(amp)"],
+  "syntax": ["soundfile.amp(amp)"],
   "returns": "void",
   "type": "method",
   "category": "Sampling",

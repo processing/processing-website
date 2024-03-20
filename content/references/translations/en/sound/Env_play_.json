@@ -4,7 +4,7 @@
   "name": "play()",
   "description": "Triggers the envelope.",
   "syntax": [
-    ".play(input, attackTime, sustainTime, sustainLevel, releaseTime)"
+    "env.play(input, attackTime, sustainTime, sustainLevel, releaseTime)"
   ],
   "returns": "void",
   "type": "method",

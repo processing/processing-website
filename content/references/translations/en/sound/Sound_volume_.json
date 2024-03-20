@@ -3,7 +3,7 @@
   "related": [],
   "name": "volume()",
   "description": "Set the overall output volume of the Processing sound library.",
-  "syntax": [".volume(volume)"],
+  "syntax": ["Sound.volume(volume)"],
   "returns": "void",
   "type": "method",
   "category": "Configuration",

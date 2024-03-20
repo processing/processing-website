@@ -3,7 +3,7 @@
   "related": [],
   "name": "damp()",
   "description": "Changes the damping factor of the reverb effect.",
-  "syntax": [".damp(damp)"],
+  "syntax": ["reverb.damp(damp)"],
   "returns": "void",
   "type": "method",
   "category": "Effects",

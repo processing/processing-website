@@ -3,7 +3,7 @@
   "related": [],
   "name": "freq()",
   "description": "Sets the frequency of the oscillator.",
-  "syntax": [".freq(freq)", ".freq(modulator)"],
+  "syntax": ["oscillator.freq(freq)", "oscillator.freq(modulator)"],
   "returns": "void",
   "type": "method",
   "category": "Oscillators",

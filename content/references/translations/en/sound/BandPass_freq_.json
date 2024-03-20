@@ -3,7 +3,7 @@
   "related": [],
   "name": "freq()",
   "description": "Sets the center frequency of the filter.",
-  "syntax": [".freq(freq)"],
+  "syntax": ["bandpass.freq(freq)"],
   "returns": "void",
   "type": "method",
   "category": "Effects",

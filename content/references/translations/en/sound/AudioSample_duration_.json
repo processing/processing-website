@@ -3,7 +3,7 @@
   "related": [],
   "name": "duration()",
   "description": "Returns the duration of the audiosample in seconds.",
-  "syntax": [".duration()"],
+  "syntax": ["audiosample.duration()"],
   "returns": "float",
   "type": "method",
   "category": "Sampling",

@@ -3,7 +3,7 @@
   "related": [],
   "name": "isBeat()",
   "description": "Returns <code>true</code> if the current moment of the audio signal \n contains a beat, <code>false</code> otherwise.<br/>\n A \"beat\" is defined as a spike in the energy of the audio signal - it may\n or may not coincide exactly with a musical beat.",
-  "syntax": [".isBeat()"],
+  "syntax": ["beatdetector.isBeat()"],
   "returns": "boolean",
   "type": "method",
   "category": "Analysis",

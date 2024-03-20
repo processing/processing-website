@@ -3,7 +3,11 @@
   "related": [],
   "name": "analyze()",
   "description": "Returns an estimate of the current pitch (or 'fundamental frequency') of \n the input sound signal, in Hertz. If the confidence in the current \n measurement does not exceed the minimum confidence, this method returns 0.",
-  "syntax": [".analyze()", ".analyze(minimumConfidence)", ".analyze(target)"],
+  "syntax": [
+    "pitchdetector.analyze()",
+    "pitchdetector.analyze(minimumConfidence)",
+    "pitchdetector.analyze(target)"
+  ],
   "returns": "float",
   "type": "method",
   "category": "Analysis",

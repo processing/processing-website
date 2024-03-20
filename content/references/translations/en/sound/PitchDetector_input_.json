@@ -3,7 +3,7 @@
   "related": [],
   "name": "input()",
   "description": "Define the audio input for the analyzer.",
-  "syntax": [".input(input)"],
+  "syntax": ["analyzer.input(input)"],
   "returns": "void",
   "type": "method",
   "category": "Analysis",
