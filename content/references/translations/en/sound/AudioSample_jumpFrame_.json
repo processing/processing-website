@@ -3,7 +3,7 @@
   "related": ["sound/AudioSample_cue_", "sound/AudioSample_play_"],
   "name": "jumpFrame()",
   "description": "Jump to a specific position in the audiosample without interrupting playback.",
-  "syntax": [".jumpFrame(frameNumber)"],
+  "syntax": ["audiosample.jumpFrame(frameNumber)"],
   "returns": "void",
   "type": "method",
   "category": "Sampling",

@@ -3,7 +3,7 @@
   "related": [],
   "name": "pan()",
   "description": "Move the sound in a stereo panorama.",
-  "syntax": [".pan(pos)"],
+  "syntax": ["soundobject.pan(pos)"],
   "returns": "void",
   "type": "method",
   "category": "I/O",

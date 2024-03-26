@@ -3,7 +3,7 @@
   "related": [],
   "name": "set()",
   "description": "Set multiple parameters at once",
-  "syntax": [".set(freq, amp, pos)"],
+  "syntax": ["oscillator.set(freq, amp, pos)"],
   "returns": "void",
   "type": "method",
   "category": "Oscillators",

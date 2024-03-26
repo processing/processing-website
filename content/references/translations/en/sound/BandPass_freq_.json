@@ -1,9 +1,9 @@
 {
-  "brief": "Set the cutoff frequency for the filter.",
+  "brief": "Sets the center frequency of the filter.",
   "related": [],
   "name": "freq()",
-  "description": "Set the cutoff frequency for the filter.",
-  "syntax": [".freq(freq)"],
+  "description": "Sets the center frequency of the filter.",
+  "syntax": ["bandpass.freq(freq)"],
   "returns": "void",
   "type": "method",
   "category": "Effects",
@@ -12,7 +12,7 @@
   "parameters": [
     {
       "name": "freq",
-      "description": "Cutoff frequency between 0 and 20000",
+      "description": "the center frequency in Hertz",
       "type": ["float"]
     }
   ]

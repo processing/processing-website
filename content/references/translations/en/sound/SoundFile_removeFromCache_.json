@@ -3,7 +3,7 @@
   "related": [],
   "name": "removeFromCache()",
   "description": "Remove this SoundFile's decoded audio sample from the cache, allowing\n it to be garbage collected once there are no more references to this\n SoundFile.",
-  "syntax": [".removeFromCache()"],
+  "syntax": ["soundfile.removeFromCache()"],
   "returns": "boolean",
   "type": "method",
   "category": "Sampling",

@@ -3,7 +3,7 @@
   "related": [],
   "name": "rate()",
   "description": "Set the playback rate of the soundfile. 1 is the original speed. 0.5 is half speed \n and one octave down. 2 is double the speed and one octave up.",
-  "syntax": [".rate(rate)"],
+  "syntax": ["soundfile.rate(rate)"],
   "returns": "void",
   "type": "method",
   "category": "Sampling",

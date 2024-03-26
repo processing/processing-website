@@ -4,10 +4,9 @@
   "name": "play()",
   "description": "Starts the oscillator",
   "syntax": [
-    ".play()",
-    ".play(freq, amp)",
-    ".play(freq, amp, add)",
-    ".play(freq, amp, add, pos)"
+    "oscillator.play()",
+    "oscillator.play(freq, amp)",
+    "oscillator.play(freq, amp, add, pos)"
   ],
   "returns": "void",
   "type": "method",

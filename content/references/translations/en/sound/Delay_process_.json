@@ -4,8 +4,8 @@
   "name": "process()",
   "description": "Start the delay effect.",
   "syntax": [
-    ".process(input, maxDelayTime, delayTime)",
-    ".process(input, maxDelayTime)"
+    "delay.process(input, maxDelayTime, delayTime)",
+    "delay.process(input, maxDelayTime)"
   ],
   "returns": "void",
   "type": "method",

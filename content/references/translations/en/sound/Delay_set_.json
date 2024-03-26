@@ -3,7 +3,7 @@
   "related": [],
   "name": "set()",
   "description": "Set delay time and feedback values at once.",
-  "syntax": [".set(delayTime, feedback)"],
+  "syntax": ["delay.set(delayTime, feedback)"],
   "returns": "void",
   "type": "method",
   "category": "Effects",

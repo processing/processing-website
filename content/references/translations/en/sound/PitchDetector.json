@@ -1,0 +1,45 @@
+{
+  "brief": "Detects the fundamental frequency of a sound signal",
+  "methods": [
+    {
+      "anchor": "PitchDetector_analyze_",
+      "name": "analyze()",
+      "desc": "Detect the fundamental frequency of the input sound signal."
+    },
+    {
+      "anchor": "PitchDetector_input_",
+      "name": "input()",
+      "desc": "Define the audio input for the analyzer."
+    }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "Detects the pitch (also known as the 'fundamental frequency') of a sound \n signal. For complex signals this is not a trivial task, so the analyzer only \n returns a frequency measurement (measured in Hertz) when its measurement \n exceeds a 'confidence level' that can be specified by the user.",
+  "type": "class",
+  "constructors": [
+    "PitchDetector(parent, minimumConfidence)",
+    "PitchDetector(parent)"
+  ],
+  "related": [],
+  "name": "PitchDetector",
+  "classanchor": "sound/PitchDetector",
+  "category": "Analysis",
+  "subcategory": "PitchDetector",
+  "parameters": [
+    {
+      "name": "parent",
+      "description": "typically \"this\"",
+      "type": [
+        "PApplet"
+      ]
+    },
+    {
+      "name": "minimumConfidence",
+      "description": "the minimum confidence level required for \n frequency measurements, between 0 (accept all measurements, no matter how \n unreliable) to 1 (only accept perfect measurements). Defaults to 0.8.",
+      "type": [
+        "float"
+      ]
+    }
+  ]
+}

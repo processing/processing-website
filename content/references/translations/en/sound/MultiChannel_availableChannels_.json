@@ -1,0 +1,22 @@
+{
+  "brief": "Gets the number of output channels available on an output device",
+  "related": ["sound/Sound_outputDevice_"],
+  "name": "availableChannels()",
+  "description": "Gets the number of output channels available on an output device",
+  "syntax": [
+    "MultiChannel.availableChannels(deviceId)",
+    "MultiChannel.availableChannels()"
+  ],
+  "returns": "int",
+  "type": "method",
+  "category": "I/O",
+  "subcategory": "MultiChannel",
+  "classanchor": "MultiChannel",
+  "parameters": [
+    {
+      "name": "deviceId",
+      "description": "if none is given, gets information about the current device.",
+      "type": ["int"]
+    }
+  ]
+}

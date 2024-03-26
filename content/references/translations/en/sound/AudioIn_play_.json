@@ -4,10 +4,10 @@
   "name": "play()",
   "description": "Start capturing the input stream and route it to the audio output",
   "syntax": [
-    ".play()",
-    ".play(amp)",
-    ".play(amp, add)",
-    ".play(amp, add, pos)"
+    "audioin.play()",
+    "audioin.play(amp)",
+    "audioin.play(amp, add)",
+    "audioin.play(amp, add, pos)"
   ],
   "returns": "void",
   "type": "method",

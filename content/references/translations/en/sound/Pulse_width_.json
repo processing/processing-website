@@ -3,7 +3,7 @@
   "related": [],
   "name": "width()",
   "description": "Changes the pulse width of the pulse oscillator. Allowed values are between 0.0 and 1.0.",
-  "syntax": [".width(width)"],
+  "syntax": ["pulse.width(width)"],
   "returns": "void",
   "type": "method",
   "category": "Oscillators",

@@ -3,7 +3,7 @@
   "related": [],
   "name": "channels()",
   "description": "Returns the number of channels of the soundfile as an int (1 for mono, 2 for stereo).",
-  "syntax": [".channels()"],
+  "syntax": ["soundfile.channels()"],
   "returns": "int",
   "type": "method",
   "category": "Sampling",

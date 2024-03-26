@@ -3,7 +3,7 @@
   "related": [],
   "name": "stop()",
   "description": "Stop the noise from playing back",
-  "syntax": [".stop()"],
+  "syntax": ["noise.stop()"],
   "returns": "void",
   "type": "method",
   "category": "Noise",

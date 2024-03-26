@@ -1,9 +1,9 @@
 {
-  "brief": "Start applying this highpass filter to an input signal.",
+  "brief": "Starts applying this filter to an input signal.",
   "related": [],
   "name": "process()",
-  "description": "Start applying this highpass filter to an input signal.",
-  "syntax": [".process(input, freq)"],
+  "description": "Starts applying this filter to an input signal.",
+  "syntax": ["filter.process(input, freq)", "filter.process(input, freq, q)"],
   "returns": "void",
   "type": "method",
   "category": "Effects",
@@ -12,9 +12,18 @@
   "parameters": [
     {
       "name": "input",
-      "description": "the sound source to apply the filter to",
+      "description": "the sound source to filter",
       "type": ["SoundObject"]
     },
-    { "name": "freq", "description": "cutoff frequency", "type": ["float"] }
+    {
+      "name": "freq",
+      "description": "the cutoff frequency in Hertz",
+      "type": ["float"]
+    },
+    {
+      "name": "q",
+      "description": "the resonance (or 'Q factor'), a value between 0.1 and 10",
+      "type": ["float"]
+    }
   ]
 }

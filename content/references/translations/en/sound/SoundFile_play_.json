@@ -4,12 +4,12 @@
   "name": "play()",
   "description": "Starts the playback of the soundfile. Only plays to the end of the\n audiosample once. If <b>cue()</b> or <b>pause()</b> were called previously, playback \n will resume from the cued position.",
   "syntax": [
-    ".play()",
-    ".play(rate)",
-    ".play(rate, amp)",
-    ".play(rate, pos, amp)",
-    ".play(rate, pos, amp, add)",
-    ".play(rate, pos, amp, add, cue)"
+    "soundfile.play()",
+    "soundfile.play(rate)",
+    "soundfile.play(rate, amp)",
+    "soundfile.play(rate, pos, amp)",
+    "soundfile.play(rate, pos, amp, add)",
+    "soundfile.play(rate, pos, amp, add, cue)"
   ],
   "returns": "void",
   "type": "method",

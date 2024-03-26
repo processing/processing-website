@@ -3,7 +3,7 @@
   "related": [],
   "name": "amp()",
   "description": "Change the amplitude/volume of the player. Values are between 0.0 and 1.0.",
-  "syntax": [".amp(amp)"],
+  "syntax": ["audiosample.amp(amp)"],
   "returns": "void",
   "type": "method",
   "category": "Sampling",

@@ -3,7 +3,7 @@
   "related": [],
   "name": "sampleRate()",
   "description": "Get or set the internal sample rate of the synthesis engine.",
-  "syntax": [".sampleRate()", ".sampleRate(sampleRate)"],
+  "syntax": ["Sound.sampleRate()", "Sound.sampleRate(sampleRate)"],
   "returns": "int",
   "type": "method",
   "category": "Configuration",
