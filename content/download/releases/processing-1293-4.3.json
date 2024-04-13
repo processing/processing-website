@@ -7,42 +7,42 @@
       {
         "node": {
           "name": "processing-4.3-linux-arm32.tgz",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1293-4.3/processing-4.3-linux-arm32.tgz",
+          "downloadUrl": "https://github.com/SableRaf/processing4-releases-backup/raw/main/releases/1293/processing-4.3-linux-arm32.tgz?download=",
           "size": 216978502
         }
       },
       {
         "node": {
           "name": "processing-4.3-linux-arm64.tgz",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1293-4.3/processing-4.3-linux-arm64.tgz",
+          "downloadUrl": "https://github.com/SableRaf/processing4-releases-backup/raw/main/releases/1293/processing-4.3-linux-arm64.tgz?download=",
           "size": 224913289
         }
       },
       {
         "node": {
           "name": "processing-4.3-linux-x64.tgz",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1293-4.3/processing-4.3-linux-x64.tgz",
+          "downloadUrl": "https://github.com/SableRaf/processing4-releases-backup/raw/main/releases/1293/processing-4.3-linux-x64.tgz?download=",
           "size": 230272890
         }
       },
       {
         "node": {
           "name": "processing-4.3-macos-aarch64.zip",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1293-4.3/processing-4.3-macos-aarch64.zip",
+          "downloadUrl": "https://github.com/SableRaf/processing4-releases-backup/raw/main/releases/1293/processing-4.3-macos-aarch64.zip?download=",
           "size": 206501239
         }
       },
       {
         "node": {
           "name": "processing-4.3-macos-x64.zip",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1293-4.3/processing-4.3-macos-x64.zip",
+          "downloadUrl": "https://github.com/SableRaf/processing4-releases-backup/raw/main/releases/1293/processing-4.3-macos-x64.zip?download=",
           "size": 224688525
         }
       },
       {
         "node": {
           "name": "processing-4.3-windows-x64.zip",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1293-4.3/processing-4.3-windows-x64.zip",
+          "downloadUrl": "https://github.com/SableRaf/processing4-releases-backup/raw/main/releases/1293/processing-4.3-windows-x64.zip?download=",
           "size": 224561090
         }
       }
