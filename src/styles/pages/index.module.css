@@ -171,6 +171,10 @@
 
     & li a {
       color: var(--processing-blue-mid);
+
+      &:hover {
+        color: var(--processing-blue-light);
+      }
     }
   }
 }
