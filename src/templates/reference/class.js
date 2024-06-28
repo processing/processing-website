@@ -183,6 +183,7 @@ export const query = graphql`
         parameters {
           name
           description
+          type
         }
       }
     }
