@@ -138,6 +138,10 @@
 .card:active {
   border-color: var(--processing-blue-mid);
   background: var(--processing-blue-mid);
+
+   & p{
+    color: white;
+  }
 }
 
 /*  Participate */
