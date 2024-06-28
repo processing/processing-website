@@ -8,6 +8,7 @@
  * scatters in all directions. 
  */
 
+
 void setup() {
   size(640, 360, P3D);
   noStroke();
