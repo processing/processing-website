@@ -77,3 +77,13 @@ It will build from the source and produce the static website in a folder `public
 We proudly host an active and vibrant community on our [Processing Discourse Forum](https://discourse.processing.org/). Here you can find engaging discussions, ask questions, share your projects, and interact with like-minded Processing enthusiasts of all experience levels.
 
 [![Discourse Users](https://img.shields.io/discourse/users?server=https%3A%2F%2Fdiscourse.processing.org)](https://discourse.processing.org/)
+
+## Licenses
+
+The content and the code of the Processing website are separately licensed.
+
+- The *content*, including the reference and examples, is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0). 
+- The *code* that structures the website is licensed under the GNU General Public License version 2 (GPL v2).
+- *Gatsby*, the framework used for this website, is licensed under the Zero-Clause BSD License (ZeroBSD). See the separate Gatsby license file.
+
+For licensing information about the Processing core library and software, see https://github.com/processing/processing4/blob/main/LICENSE.md
