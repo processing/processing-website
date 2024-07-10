@@ -7,7 +7,7 @@
 :root {
   --font: "Space Grotesk", Helvetica, Arial, sans-serif;
   --font-serif: "Vollkorn", Garamond, Georgia, serif;
-  --font-mono: "Space Mono", Menlo, monospace;
+  --font-mono: "JetBrains Mono", Menlo, monospace;
 
   --processing-blue-light: #82afff;
   --processing-blue-mid: #0564ff;
