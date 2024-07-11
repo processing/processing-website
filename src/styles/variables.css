@@ -8,7 +8,7 @@
   --font: "Space Grotesk", Helvetica, Arial, sans-serif;
   --font-serif: "Vollkorn", Garamond, Georgia, serif;
   --font-mono: "JetBrains Mono", Menlo, monospace;
-  --font-mono-settings: normal !important;
+  --font-mono-settings: normal;
 
   --processing-blue-light: #82afff;
   --processing-blue-mid: #0564ff;
