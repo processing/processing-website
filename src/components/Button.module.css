@@ -5,6 +5,7 @@
   padding: 5px 18px 6px 18px;
   font-size: var(--text-small);
   font-family: var(--font-mono);
+  font-feature-settings: var(--font-mono-settings);
   outline: none;
   border: none;
   cursor: pointer;

@@ -91,6 +91,7 @@ p {
 code,
 pre {
   font-family: var(--font-mono);
+  font-feature-settings: var(--font-mono-settings);
   font-size: var(--text-small);
   font-variant-ligatures: none;
 }

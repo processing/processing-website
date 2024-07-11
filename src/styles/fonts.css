@@ -70,7 +70,6 @@
   font-weight: 400;
   font-weight: normal;
   font-style: normal;
-  font-variant-ligatures: none;
   src: url("./fonts/JetBrains Mono/webfonts/JetBrainsMono-Regular.woff2") format("woff2"),
     url("./fonts/JetBrains Mono/ttf/JetBrainsMonoNL-Regular.ttf") format("ttf");
 }
@@ -80,7 +79,6 @@
   font-weight: 400;
   font-weight: normal;
   font-style: italic;
-  font-variant-ligatures: none;
   src: url("./fonts/JetBrains Mono/webfonts/JetBrainsMono-Italic.woff2") format("woff2"),
     url("./fonts/JetBrains Mono/ttf/JetBrainsMonoNL-Italic.ttf") format("ttf");
 }
@@ -90,7 +88,6 @@
   font-weight: 700;
   font-weight: bold;
   font-style: normal;
-  font-variant-ligatures: none;
   src: url("./fonts/JetBrains Mono/webfonts/JetBrainsMono-Bold.woff2") format("woff2"),
     url("./fonts/JetBrains Mono/ttf/JetBrainsMonoNL-Bold.ttf") format("ttf");
 }
@@ -100,7 +97,6 @@
   font-weight: 700;
   font-weight: bold;
   font-style: italic;
-  font-variant-ligatures: none;
   src: url("./fonts/JetBrains Mono/webfonts/JetBrainsMono-BoldItalic.woff2") format("woff2"),
     url("./fonts/JetBrains Mono/ttf/JetBrainsMonoNL-BoldItalic.ttf") format("ttf");
 }
