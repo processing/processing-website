@@ -12,6 +12,10 @@
 }
 .contentWrapper {
   flex-basis: var(--col5);
+
+  @media (--small) {
+    flex-basis: auto;
+  }
 }
 .content {
   & h2 {
