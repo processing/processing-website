@@ -3,7 +3,7 @@
   "related": [],
   "name": "analyze()",
   "description": "Queries a value from the analyzer and returns a float between 0. and 1.",
-  "syntax": [".analyze()"],
+  "syntax": ["amplitude.analyze()"],
   "returns": "float",
   "type": "method",
   "category": "Analysis",

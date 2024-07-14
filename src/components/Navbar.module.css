@@ -141,7 +141,9 @@
   }
 }
 
-.item:hover .submenu {
+.item:hover .submenu,
+.item:focus-visible .submenu,
+.submenu:focus-within {
   opacity: 1;
   max-height: 400px;
 }

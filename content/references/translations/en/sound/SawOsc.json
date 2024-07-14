@@ -9,7 +9,7 @@
     {
       "anchor": "SawOsc_freq_",
       "name": "freq()",
-      "desc": "Set the frequency of the oscillator in Hz."
+      "desc": "Sets the frequency of the oscillator."
     },
     {
       "anchor": "SawOsc_pan_",

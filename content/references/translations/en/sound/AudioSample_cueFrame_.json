@@ -3,7 +3,7 @@
   "related": [],
   "name": "cueFrame()",
   "description": "Cues the playhead to a fixed position in the audiosample.",
-  "syntax": [".cueFrame(frameNumber)"],
+  "syntax": ["audiosample.cueFrame(frameNumber)"],
   "returns": "void",
   "type": "method",
   "category": "Sampling",

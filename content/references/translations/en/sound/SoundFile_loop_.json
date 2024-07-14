@@ -4,11 +4,11 @@
   "name": "loop()",
   "description": "Starts playback which will loop at the end of the soundfile.",
   "syntax": [
-    ".loop()",
-    ".loop(rate)",
-    ".loop(rate, amp)",
-    ".loop(rate, pos, amp)",
-    ".loop(rate, pos, amp, add)"
+    "soundfile.loop()",
+    "soundfile.loop(rate)",
+    "soundfile.loop(rate, amp)",
+    "soundfile.loop(rate, pos, amp)",
+    "soundfile.loop(rate, pos, amp, add)"
   ],
   "returns": "void",
   "type": "method",

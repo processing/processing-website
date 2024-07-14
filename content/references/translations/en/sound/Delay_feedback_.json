@@ -3,7 +3,7 @@
   "related": [],
   "name": "feedback()",
   "description": "Change the feedback of the delay effect.",
-  "syntax": [".feedback(feedback)"],
+  "syntax": ["delay.feedback(feedback)"],
   "returns": "void",
   "type": "method",
   "category": "Effects",

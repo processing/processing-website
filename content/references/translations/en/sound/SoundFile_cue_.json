@@ -3,7 +3,7 @@
   "related": [],
   "name": "cue()",
   "description": "Cues the playhead to a fixed position in the soundfile. Note that <b>cue()</b> only \n affects the playhead for future calls to <b>play()</b>, but not to <b>loop()</b>.",
-  "syntax": [".cue(time)"],
+  "syntax": ["soundfile.cue(time)"],
   "returns": "void",
   "type": "method",
   "category": "Sampling",

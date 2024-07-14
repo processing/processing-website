@@ -1,0 +1,19 @@
+{
+  "brief": "Sets the resonance (or 'Q factor') of this filter.",
+  "related": [],
+  "name": "res()",
+  "description": "Sets the resonance (or 'Q factor') of this filter. Increasing Q increases \n the resonance of the filter at its cutoff frequency. Defaults to 1.",
+  "syntax": ["filter.res(q)"],
+  "returns": "void",
+  "type": "method",
+  "category": "Effects",
+  "subcategory": "LowPass",
+  "classanchor": "LowPass",
+  "parameters": [
+    {
+      "name": "q",
+      "description": "the desired Q factor, a value between 0.1 and 10",
+      "type": ["float"]
+    }
+  ]
+}

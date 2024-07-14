@@ -3,7 +3,7 @@
   "related": [],
   "name": "time()",
   "description": "Changes the delay time of the effect.",
-  "syntax": [".time(delayTime)"],
+  "syntax": ["delay.time(delayTime)"],
   "returns": "void",
   "type": "method",
   "category": "Effects",

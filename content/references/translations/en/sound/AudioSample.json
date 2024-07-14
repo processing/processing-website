@@ -34,7 +34,7 @@
     {
       "anchor": "AudioSample_jump_",
       "name": "jump()",
-      "desc": "Jump to a specific position in the audiosample while continuing to play (or starting to play if it wasn't playing already)."
+      "desc": "Jumps to a specific position in the audio sample."
     },
     {
       "anchor": "AudioSample_jumpFrame_",
@@ -84,7 +84,7 @@
     {
       "anchor": "AudioSample_stop_",
       "name": "stop()",
-      "desc": "Stops the playback, and sets the cue back to the start of the sample."
+      "desc": "Stops the playback."
     },
     {
       "anchor": "AudioSample_position_",
@@ -120,7 +120,7 @@
   "csspath": "../../",
   "isLibrary": "true",
   "classFields": [],
-  "description": "This class allows you low-level access to an audio buffer to create, access,\n manipulate and play back sound samples.\n \n If you want to pre-load your audio sample with an audio file from disk you\n can do so using the SoundFile subclass.",
+  "description": "This class allows you low-level access to an audio buffer to create, access,\n manipulate and play back sound samples.\n \n If you want to pre-load your audio sample with an audio file from disk you\n can do so using the {@link SoundFile} subclass.",
   "type": "class",
   "constructors": [
     "AudioSample(parent, frames)",
@@ -150,18 +150,13 @@
     },
     {
       "name": "stereo",
-      "description": "whether to treat the audiosample as 2-channel (stereo) or not\n            (default: false)",
+      "description": "whether to treat the audiosample as 2-channel (stereo) or not\n            (default: ,<code>,false,</code>,)",
       "type": ["boolean"]
     },
     {
       "name": "frameRate",
       "description": "the underlying frame rate of the sample (default: 44100)",
       "type": ["int"]
-    },
-    {
-      "name": "data",
-      "description": "an array of float values to be used as this audiosample's sound\n            data. The audiosample will consequently have as many frames as the\n            length of the given array.",
-      "type": ["float[]"]
     }
   ]
 }

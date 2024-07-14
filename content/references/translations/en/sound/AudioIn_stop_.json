@@ -3,7 +3,7 @@
   "related": [],
   "name": "stop()",
   "description": "Stop capturing sound from this audio input.",
-  "syntax": [".stop()"],
+  "syntax": ["audioin.stop()"],
   "returns": "void",
   "type": "method",
   "category": "I/O",

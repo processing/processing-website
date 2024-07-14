@@ -3,7 +3,7 @@
   "related": [],
   "name": "sampleRate()",
   "description": "Returns the underlying sample rate of the audiosample.",
-  "syntax": [".sampleRate()"],
+  "syntax": ["audiosample.sampleRate()"],
   "returns": "int",
   "type": "method",
   "category": "Sampling",

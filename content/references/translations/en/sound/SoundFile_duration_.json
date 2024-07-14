@@ -3,7 +3,7 @@
   "related": [],
   "name": "duration()",
   "description": "Returns the duration of the soundfile in seconds.",
-  "syntax": [".duration()"],
+  "syntax": ["soundfile.duration()"],
   "returns": "float",
   "type": "method",
   "category": "Sampling",

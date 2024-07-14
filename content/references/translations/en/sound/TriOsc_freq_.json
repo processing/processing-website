@@ -1,9 +1,9 @@
 {
-  "brief": "Set the frequency of the oscillator in Hz.",
+  "brief": "Sets the frequency of the oscillator.",
   "related": [],
   "name": "freq()",
-  "description": "Set the frequency of the oscillator in Hz.",
-  "syntax": [".freq(freq)"],
+  "description": "Sets the frequency of the oscillator.",
+  "syntax": ["oscillator.freq(freq)", "oscillator.freq(modulator)"],
   "returns": "void",
   "type": "method",
   "category": "Oscillators",
@@ -12,7 +12,7 @@
   "parameters": [
     {
       "name": "freq",
-      "description": "A floating point value of the oscillator in Hz.",
+      "description": "the desired oscillator frequency in Hertz",
       "type": ["float"]
     }
   ]

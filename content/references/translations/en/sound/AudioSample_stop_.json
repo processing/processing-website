@@ -1,9 +1,9 @@
 {
-  "brief": "Stops the playback, and sets the cue back to the start of the sample.",
+  "brief": "Stops the playback.",
   "related": [],
   "name": "stop()",
-  "description": "Stops the playback, and sets the cue back to the start of the sample.",
-  "syntax": [".stop()"],
+  "description": "Stops the playback.",
+  "syntax": ["audiosample.stop()"],
   "returns": "void",
   "type": "method",
   "category": "Sampling",

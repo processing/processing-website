@@ -3,7 +3,7 @@
   "related": [],
   "name": "set()",
   "description": "Set amplitude and pan position with one method.",
-  "syntax": [".set(amp, pos)", ".set(amp, add, pos)"],
+  "syntax": ["audioin.set(amp, pos)", "audioin.set(amp, add, pos)"],
   "returns": "void",
   "type": "method",
   "category": "I/O",

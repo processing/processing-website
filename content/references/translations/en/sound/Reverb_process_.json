@@ -3,7 +3,7 @@
   "related": [],
   "name": "process()",
   "description": "Start the effect.",
-  "syntax": [".process(input)"],
+  "syntax": ["effect.process(input)"],
   "returns": "void",
   "type": "method",
   "category": "Effects",

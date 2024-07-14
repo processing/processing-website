@@ -1,6 +1,6 @@
 .root {
   width: 100%;
-  position: fixed;
+  position: sticky;
   top: 0;
   z-index: 800;
   background-color: white;

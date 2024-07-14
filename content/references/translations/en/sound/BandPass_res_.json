@@ -1,0 +1,19 @@
+{
+  "brief": "Sets the resonance (or 'Q factor') of this filter.",
+  "related": [],
+  "name": "res()",
+  "description": "Sets a fixed Q factor for this filter. If you want to specify a fixed \n bandwidth for this bandpass filter (in Hertz) that is maintained even as \n the center frequency of the filter changes, use <code>bw(float)</code> \n instead.",
+  "syntax": ["bandpass.res(q)"],
+  "returns": "void",
+  "type": "method",
+  "category": "Effects",
+  "subcategory": "BandPass",
+  "classanchor": "BandPass",
+  "parameters": [
+    {
+      "name": "q",
+      "description": "the desired Q factor, a value between 0.1 and 10",
+      "type": ["float"]
+    }
+  ]
+}
