@@ -1,5 +1,5 @@
 {
-  "brief": "This is a Waveform analyzer.",
+  "brief": "Inspects the underlying soundwave of an audio signal.",
   "methods": [
     {
       "anchor": "Waveform_analyze_",
@@ -15,7 +15,7 @@
   "csspath": "../../",
   "isLibrary": "true",
   "classFields": [],
-  "description": "This is a Waveform analyzer. It returns the waveform of an \n audio stream the moment it is queried with the <b>analyze()</b>\n method.",
+  "description": "This is a Waveform analyzer. It returns the waveform of an \n audio stream the moment it is queried with the <b>analyze()</b>\n method.<br/>\n Note that by default all sound generators (including microphone capture from\n <code>AudioIn</code>) have an amplitude of 1, which means that the values of \n their waveform will be numbers in the range <code>[-0.5, 0.5]</code>.",
   "type": "class",
   "constructors": [
     "Waveform(parent, nsamples)"

@@ -3,7 +3,7 @@
   "related": [],
   "name": "position()",
   "description": "Get current sound file playback position in seconds.\n \n Note that, if this audio sample was at some point played back in parallel\n (triggered by another call to play() before the original playback had finished),\n the position returned by this function can be of any of the concurrent playbacks,\n not necessarily the last one that was triggered.",
-  "syntax": [".position()"],
+  "syntax": ["audiosample.position()"],
   "returns": "float",
   "type": "method",
   "category": "Sampling",

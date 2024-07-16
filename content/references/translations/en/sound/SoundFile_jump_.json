@@ -3,7 +3,7 @@
   "related": [],
   "name": "jump()",
   "description": "Jump to a specific position in the soundfile while continuing to play \n (or starting to play if it wasn't playing already).",
-  "syntax": [".jump(time)"],
+  "syntax": ["soundfile.jump(time)"],
   "returns": "void",
   "type": "method",
   "category": "Sampling",

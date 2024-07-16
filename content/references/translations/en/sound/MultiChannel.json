@@ -1,0 +1,32 @@
+{
+  "brief": "Controls the routing of sounds on multi-channel devices",
+  "methods": [
+    {
+      "anchor": "MultiChannel_activeChannel_",
+      "name": "activeChannel()",
+      "desc": "Controls which output channel sounds will be played back to.\n\n After selecting a new output channel, all sounds that start `play()`ing \n will be sent to that channel."
+    },
+    {
+      "anchor": "MultiChannel_availableChannels_",
+      "name": "availableChannels()",
+      "desc": "Gets the number of output channels available on an output device"
+    },
+    {
+      "anchor": "MultiChannel_usePortAudio_",
+      "name": "usePortAudio()",
+      "desc": "Force using PortAudio instead of JavaSound."
+    }
+  ],
+  "csspath": "../../",
+  "isLibrary": "true",
+  "classFields": [],
+  "description": "Controls the routing of sounds on multi-channel devices",
+  "type": "class",
+  "constructors": ["MultiChannel()"],
+  "related": [],
+  "name": "MultiChannel",
+  "classanchor": "sound/MultiChannel",
+  "category": "I/O",
+  "subcategory": "MultiChannel",
+  "parameters": []
+}

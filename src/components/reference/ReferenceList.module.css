@@ -48,6 +48,7 @@
 .itemName {
   flex-basis: calc(100% / 5.5 * 1.5);
   font-family: var(--font-mono);
+  font-feature-settings: var(--font-mono-settings);
   font-size: var(--text-regular);
   font-variant-ligatures: none;
   text-decoration: none;
@@ -66,6 +67,7 @@
     font-weight: normal;
     font-style: normal;
     font-family: var(--font-mono);
+    font-feature-settings: var(--font-mono-settings);
     font-size: 85%;
     background-color: var(--lightgray);
     padding: 0.1em 0.3em;

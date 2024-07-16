@@ -1,0 +1,24 @@
+{
+  "brief": "Sets frequency and bandwidth of the filter with one method.",
+  "related": [],
+  "name": "set()",
+  "description": "Sets frequency and bandwidth of the filter with one method.",
+  "syntax": ["filter.set(freq, q)"],
+  "returns": "void",
+  "type": "method",
+  "category": "Effects",
+  "subcategory": "HighPass",
+  "classanchor": "HighPass",
+  "parameters": [
+    {
+      "name": "freq",
+      "description": "the cutoff frequency in Hertz",
+      "type": ["float"]
+    },
+    {
+      "name": "q",
+      "description": "the resonance (or 'Q factor'), a value between 0.1 and 10",
+      "type": ["float"]
+    }
+  ]
+}

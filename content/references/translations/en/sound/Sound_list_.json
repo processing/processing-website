@@ -1,13 +1,19 @@
 {
-  "brief": "Print and return information on available audio devices and their number of input/output channels.",
+  "brief": "Shows information about available audio devices",
   "related": [],
   "name": "list()",
   "description": "Print and return information on available audio devices and their number of\n input/output channels.\n Under normal circumstances you will not want to call <b>Sound.list()</b> in \n your actual sketch code, but only for testing to figure out which sound cards \n are available on a new system and how to select them. However, if the order \n of devices on your system is prone to fluctuate from reboot to reboot, you \n can also use the device name array returned by the function to automate device \n selection by name in your own code.",
-  "syntax": [".list()"],
+  "syntax": ["Sound.list(filter)", "Sound.list()", "Sound.list(printAll)"],
   "returns": "String[]",
   "type": "method",
   "category": "Configuration",
   "subcategory": "Sound",
   "classanchor": "Sound",
-  "parameters": []
+  "parameters": [
+    {
+      "name": "filter",
+      "description": "only list audio devices whose device name contains this \n string",
+      "type": ["String"]
+    }
+  ]
 }

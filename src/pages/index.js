@@ -20,6 +20,7 @@ import * as grid from '../styles/grid.module.css';
 import DSILogo from '../images/partners/designsystemsinternational.svg';
 import DMALogo from '../images/partners/ucla-dma.svg';
 import FathomLogo from '../images/partners/fathom.svg';
+import NetlifyLogo from '../images/partners/netlify.svg';
 
 const partners = [
   {
@@ -45,6 +46,12 @@ const partners = [
     url: 'https://designsystems.international/',
     width: '33%',
     Logo: DSILogo
+  },
+  {
+    name: 'Netlify',
+    url: 'https://www.netlify.com/',
+    width: '20%',
+    Logo: NetlifyLogo
   }
 ];
 

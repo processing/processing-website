@@ -3,7 +3,10 @@
   "related": [],
   "name": "sensitivity()",
   "description": "Sets the sensitivity of the beat detector.",
-  "syntax": [".sensitivity(sensitivity)", ".sensitivity()"],
+  "syntax": [
+    "beatdetector.sensitivity(sensitivity)",
+    "beatdetector.sensitivity()"
+  ],
   "returns": "int or void",
   "type": "method",
   "category": "Analysis",

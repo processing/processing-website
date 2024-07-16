@@ -12,6 +12,10 @@
 }
 .contentWrapper {
   flex-basis: var(--col5);
+
+  @media (--small) {
+    flex-basis: auto;
+  }
 }
 .content {
   & h2 {
@@ -96,6 +100,7 @@
 
   & pre {
     font-family: var(--font-mono);
+    font-feature-settings: var(--font-mono-settings);
     font-size: var(--text-regular);
     font-style: normal;
   }

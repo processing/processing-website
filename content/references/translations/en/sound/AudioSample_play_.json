@@ -4,12 +4,11 @@
   "name": "play()",
   "description": "Starts the playback of the audiosample. Only plays to the end of the audiosample \n once. If <b>cue()</b> or <b>pause()</b> were called previously, playback will resume from the cued position.",
   "syntax": [
-    ".play()",
-    ".play(rate)",
-    ".play(rate, amp)",
-    ".play(rate, pos, amp)",
-    ".play(rate, pos, amp, add)",
-    ".play(rate, pos, amp, add, cue)"
+    "audiosample.play()",
+    "audiosample.play(rate)",
+    "audiosample.play(rate, amp)",
+    "audiosample.play(rate, pos, amp)",
+    "audiosample.play(rate, pos, amp, cue)"
   ],
   "returns": "void",
   "type": "method",
@@ -30,11 +29,6 @@
     {
       "name": "amp",
       "description": "the desired playback amplitude of the audiosample as a value from\n            0.0 (complete silence) to 1.0 (full volume)",
-      "type": ["float"]
-    },
-    {
-      "name": "add",
-      "description": "offset the output of the generator by the given value",
       "type": ["float"]
     },
     {

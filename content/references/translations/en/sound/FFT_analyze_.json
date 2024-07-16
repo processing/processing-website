@@ -1,9 +1,9 @@
 {
-  "brief": "Calculates the current frequency spectrum and returns it as an array with as many elements as frequency bands.",
+  "brief": "Calculates the current frequency spectrum of the audio input \n signal.",
   "related": [],
   "name": "analyze()",
-  "description": "Calculates the current frequency spectrum from the input source and returns\n it as an array with as many elements as frequency bands.",
-  "syntax": [".analyze()", ".analyze(value)"],
+  "description": "Calculates the current frequency spectrum of the input signal.\n Returns an array with as many elements as this FFT analyzer's number of \n frequency bands. The frequency associated with each band of the spectrum is\n <code>frequency = binIndex * sampleRate / (2*numBands)</code>.<br>\n\n The values of the resulting array show the amplitudes of pure tone \n components contained in the signal. If the signal is a sine with an \n amplitude of 1, the spectrum will have an absolute value of 1 (0 dB) at the \n frequency of the sine. For complex real-world signals the spectrum values \n will be much lower and usually don't exceed 0.05.",
+  "syntax": ["fft.analyze()", "fft.analyze(target)"],
   "returns": "float[]",
   "type": "method",
   "category": "Analysis",
@@ -11,8 +11,8 @@
   "classanchor": "FFT",
   "parameters": [
     {
-      "name": "value",
-      "description": "an array with as many elements as this FFT analyzer's number of\n            frequency bands",
+      "name": "target",
+      "description": "if provided, writes the frequency spectrum into the given array.\n            The array needs to have as many elements as this FFT analyzer's \n            number of frequency bands.",
       "type": ["float[]"]
     }
   ]

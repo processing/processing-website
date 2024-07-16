@@ -3,7 +3,7 @@
   "related": [],
   "name": "amp()",
   "description": "Change the amplitude/volume of this sound.",
-  "syntax": [".amp(amp)"],
+  "syntax": ["soundobject.amp(amp)"],
   "returns": "void",
   "type": "method",
   "category": "I/O",

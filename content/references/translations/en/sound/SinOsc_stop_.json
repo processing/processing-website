@@ -3,7 +3,7 @@
   "related": [],
   "name": "stop()",
   "description": "Stop the oscillator from playing back",
-  "syntax": [".stop()"],
+  "syntax": ["oscillator.stop()"],
   "returns": "void",
   "type": "method",
   "category": "Oscillators",

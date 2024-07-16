@@ -3,7 +3,11 @@
   "related": [],
   "name": "play()",
   "description": "Starts the noise",
-  "syntax": [".play(amp)", ".play(amp, pos)", ".play(amp, add, pos)"],
+  "syntax": [
+    "noise.play(amp)",
+    "noise.play(amp, pos)",
+    "noise.play(amp, add, pos)"
+  ],
   "returns": "void",
   "type": "method",
   "category": "Noise",

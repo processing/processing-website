@@ -4,17 +4,22 @@
     {
       "anchor": "BandPass_bw_",
       "name": "bw()",
-      "desc": "Set the bandwidth for the filter."
+      "desc": "Sets the bandwidth for the filter."
     },
     {
       "anchor": "BandPass_freq_",
       "name": "freq()",
-      "desc": "Set the cutoff frequency for the filter."
+      "desc": "Sets the center frequency of the filter."
     },
     {
       "anchor": "BandPass_process_",
       "name": "process()",
       "desc": "Start applying this bandpass filter to an input signal."
+    },
+    {
+      "anchor": "BandPass_res_",
+      "name": "res()",
+      "desc": "Sets the resonance (or 'Q factor') of this filter."
     },
     {
       "anchor": "BandPass_set_",

@@ -73,6 +73,7 @@
   display: flex;
   flex-direction: row;
   align-items: baseline;
+  cursor: pointer;
 
   & .button {
     color: var(--processing-blue-dark);

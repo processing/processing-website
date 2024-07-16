@@ -4,10 +4,10 @@
   "name": "read()",
   "description": "The underlying data of the audiosample can be read and written in several different ways:\n the method taking a single float array `data` gets the current sample data and write it \n into the given array. The array has to be able to store as many floats as there are frames \n in this sample.\n It is also possible to only read parts of the sample data using the method with four arguments, \n which allows you to specify the index of the first frame to read, the position in the array to \n write it to, as well as how many frames to copy over into the array in total.\n Finally, the method taking a single integer argument `index` returns the value of the single \n audio frame of the sample at this index as a float.",
   "syntax": [
-    ".read(data)",
-    ".read(startFrame, data, startIndex, numFrames)",
-    ".read(frameIndex)",
-    ".read(frameIndex, channelIndex)"
+    "audiosample.read(data)",
+    "audiosample.read(startFrame, data, startIndex, numFrames)",
+    "audiosample.read(frameIndex)",
+    "audiosample.read(frameIndex, channelIndex)"
   ],
   "returns": "void or float",
   "type": "method",

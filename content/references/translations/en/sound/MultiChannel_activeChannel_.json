@@ -1,0 +1,22 @@
+{
+  "brief": "Controls which output channel sounds will be played back to.\n\n After selecting a new output channel, all sounds that start `play()`ing \n will be sent to that channel.",
+  "related": ["sound/MultiChannel_availableChannels_"],
+  "name": "activeChannel()",
+  "description": "Controls which output channel sounds will be played back to.\n\n After selecting a new output channel, all sounds that start `play()`ing \n will be sent to that channel.",
+  "syntax": [
+    "MultiChannel.activeChannel(channel)",
+    "MultiChannel.activeChannel()"
+  ],
+  "returns": "int",
+  "type": "method",
+  "category": "I/O",
+  "subcategory": "MultiChannel",
+  "classanchor": "MultiChannel",
+  "parameters": [
+    {
+      "name": "channel",
+      "description": "the channel number to send sounds to",
+      "type": ["int"]
+    }
+  ]
+}

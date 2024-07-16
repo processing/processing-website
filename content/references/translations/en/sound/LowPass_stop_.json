@@ -3,7 +3,7 @@
   "related": [],
   "name": "stop()",
   "description": "Stop the effect.",
-  "syntax": [".stop()"],
+  "syntax": ["effect.stop()"],
   "returns": "void",
   "type": "method",
   "category": "Effects",

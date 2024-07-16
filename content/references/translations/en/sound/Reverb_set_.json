@@ -3,7 +3,7 @@
   "related": [],
   "name": "set()",
   "description": "Set multiple parameters of the reverb. Parameters have to be in the right order.",
-  "syntax": [".set(room, damp, wet)"],
+  "syntax": ["reverb.set(room, damp, wet)"],
   "returns": "void",
   "type": "method",
   "category": "Effects",

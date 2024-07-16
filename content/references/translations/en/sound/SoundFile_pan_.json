@@ -3,7 +3,7 @@
   "related": [],
   "name": "pan()",
   "description": "Move the sound in a stereo panorama.-1.0 pans to the left channel and 1.0 to the \n right channel. Note that panning is only supported for mono (1 channel) soundfiles.",
-  "syntax": [".pan(pos)"],
+  "syntax": ["soundfile.pan(pos)"],
   "returns": "void",
   "type": "method",
   "category": "Sampling",

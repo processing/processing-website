@@ -30,6 +30,7 @@
 .title {
   font-size: var(--text-reduced);
   padding-top: 20px;
+  text-wrap: pretty;
 }
 
 .toggleButton {
@@ -49,6 +50,9 @@
   flex-grow: 1;
   position: relative;
   overflow-y: auto;
+  & ul li h4 {
+    text-wrap: pretty;
+  }
 }
 
 .active a h4 {

@@ -3,7 +3,10 @@
   "related": [],
   "name": "playFor()",
   "description": "Starts the playback of the audiosample for the specified duration or to the\n end of the audiosample, whichever comes first.",
-  "syntax": [".playFor(duration)", ".playFor(duration, cue)"],
+  "syntax": [
+    "audiosample.playFor(duration)",
+    "audiosample.playFor(duration, cue)"
+  ],
   "returns": "void",
   "type": "method",
   "category": "Sampling",

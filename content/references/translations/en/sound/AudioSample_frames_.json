@@ -3,7 +3,7 @@
   "related": [],
   "name": "frames()",
   "description": "Returns the number of frames of the audiosample as an int.",
-  "syntax": [".frames()"],
+  "syntax": ["audiosample.frames()"],
   "returns": "int",
   "type": "method",
   "category": "Sampling",

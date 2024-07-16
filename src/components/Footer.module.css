@@ -1,6 +1,5 @@
 .root {
   position: relative;
-  top: 150px;
   z-index: 600;
   width: 100%;
   padding-top: var(--margin);
@@ -27,10 +26,12 @@
 .contactWrapper {
   flex-basis: var(--col2);
   font-size: var(--text-small);
+
   & p {
     margin-bottom: 0;
     font-size: inherit;
   }
+
   & a {
     font-size: inherit;
   }
@@ -39,7 +40,7 @@
 .socialmediaWrapper {
   flex-basis: var(--col6);
 
-  & > ul {
+  &>ul {
     display: flex;
     font-size: inherit;
 

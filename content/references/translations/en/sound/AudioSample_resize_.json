@@ -3,7 +3,10 @@
   "related": [],
   "name": "resize()",
   "description": "Resizes the underlying buffer of the audiosample to the given number of frames. \n Calling this method allocates a completely new buffer, so any ongoing playback \n will be stopped and all data currently stored in the sample will be lost.",
-  "syntax": [".resize(frames)", ".resize(frames, stereo)"],
+  "syntax": [
+    "audiosample.resize(frames)",
+    "audiosample.resize(frames, stereo)"
+  ],
   "returns": "void",
   "type": "method",
   "category": "Sampling",
