@@ -15,6 +15,9 @@ function runLiveSketch(s) {
     s.createCanvas(640, 360);
     s.colorMode(s.HSB, s.width, s.height, 100);
     s.noStroke();
+    s.describe(
+      'There is a canvas with a series of vertical bars. As the mouse moves over each bar, the saturation of the color changes. The bar is determined by the x-coordinate of the mouse and the saturation of the bar is determined by the y-coordinate of the mouse. As the move mouse up in the bar, the saturation increases. As the mouse moves down in the bar, the saturation decreases.'
+    );
   };
 
   s.draw = () => {
