@@ -76,16 +76,18 @@
   font-size: var(--text-medium);
   font-weight: 600;
   white-space: nowrap;
+
   & button,
   & a {
     padding: 0 0.75rem;
-
     display: block;
     font-weight: inherit;
     line-height: 1.5;
     color: var(--processing-blue-dark);
   }
-  & a:hover {
+
+  & a:hover,
+  & button:hover {
     color: var(--processing-blue-mid);
   }
 }
@@ -98,9 +100,12 @@
 .active {
   border-left: solid 4px var(--processing-blue-dark);
 }
+
 .item.hasSubmenu:hover {
-  border-left: solid 4px var(--processing-blue-dark);
+  border-left: solid 4px var(--processing-blue-mid);
 }
+
+
 .submenu {
   display: flex;
   position: absolute;
