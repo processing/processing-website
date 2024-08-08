@@ -91,4 +91,5 @@ For licensing information about the Processing core library and software, see ht
 ## Thanks
 
 ![image](https://github.com/user-attachments/assets/da687f3b-f839-4036-8d14-453b354ca40c)
+
 Thanks to [Netlify](https://www.netlify.com/) for providing hosting, automation, and deploy previews!
