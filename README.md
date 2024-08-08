@@ -87,3 +87,8 @@ The content and the code of the Processing website are separately licensed.
 - **Gatsby**, the framework used for this website, is licensed under the Zero-Clause BSD License (ZeroBSD).
 
 For licensing information about the Processing core library and software, see https://github.com/processing/processing4/blob/main/LICENSE.md
+
+## Thanks
+
+![image](https://github.com/user-attachments/assets/da687f3b-f839-4036-8d14-453b354ca40c)
+Thanks to [Netlify](https://www.netlify.com/) for providing hosting, automation, and deploy previews!
