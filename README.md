@@ -88,7 +88,27 @@ The content and the code of the Processing website are separately licensed.
 
 For licensing information about the Processing core library and software, see https://github.com/processing/processing4/blob/main/LICENSE.md
 
-## Thanks
+## Thanks!
+
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/4f4d55f1-6bb1-4657-a448-bac125e50a79">
+
+[Design Systems International](https://designsystems.international/) designed and built the current website and the new Processing family of logos through a year of dedicated volunteer work. 
+
+A remarkable group of volunteers converted all of the content from the prior Processing website to the new formats. A hearty round of applause for:
+
+- Tetsu Kondo
+- Mark Webster
+- Lionel Radisson
+- Chris Coleman
+- Justin Gitlin
+- Seenahm Suriyasat
+- Shobhit Sharma
+- Karan Dudeja
+- Mark Hancock
+- Peter Jacobson
+- Oğuzhan Göregen
+- Bryan Ma
+- Ashley James Brown
 
 ![image](https://github.com/user-attachments/assets/da687f3b-f839-4036-8d14-453b354ca40c)
 
