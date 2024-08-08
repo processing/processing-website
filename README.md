@@ -82,8 +82,8 @@ We proudly host an active and vibrant community on our [Processing Discourse For
 
 The content and the code of the Processing website are separately licensed.
 
-- The **content**, including the reference and examples, is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License ([CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)).
-- The **code** that structures the website is licensed under the GNU General Public License version 2 ([GPL v2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)). This applies to the website code written by our team and contributors from the Processing community.
+- The **content**, including the reference and examples, is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License ([CC-BY-NC-SA-4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)).
+- The **code** that structures the website is licensed under the GNU General Public License version 2 ([GPL-2.0](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)). This applies to the website code written by our team and contributors from the Processing community.
 - **Gatsby**, the framework used for this website, is licensed under the Zero-Clause BSD License ([0BSD](https://opensource.org/license/0BSD)).
 
 For licensing information about the Processing core library and software, see https://github.com/processing/processing4/blob/main/LICENSE.md
