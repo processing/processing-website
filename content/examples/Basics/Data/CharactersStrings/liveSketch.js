@@ -19,17 +19,19 @@
 function runLiveSketch(s) {
   var letter = '';
   var words = 'Begin...';
+  var lineHeight = 36; 
+  var bottomPadding = 5;
 
   s.setup = () => {
     s.createCanvas(640, 360);
-    // Create the font
     s.textFont('Source Code Pro', 36);
+    s.textWrap(s.CHAR); 
   };
 
   s.draw = () => {
     s.background(0); // Set background to black
 
-    // Draw the letter to the center of the screen
+    // Draw the letter and status text
     s.textSize(14);
     s.fill(255);
     s.noStroke();
@@ -37,16 +39,28 @@ function runLiveSketch(s) {
     s.text('Current key: ' + letter, 50, 70);
     s.text('The String is ' + words.length + ' characters long', 50, 90);
 
+    // Calculate the number of lines of text
     s.textSize(36);
-    s.text(words, 50, 120, 540, 300);
+    let textWidth = 540; 
+    let textHeight = s.textAscent() + s.textDescent();
+
+    // Calculate the number of lines needed for the text
+    let numLines = s.ceil(s.textWidth(words) / textWidth);
+    let contentHeight = numLines * textHeight + 120 + bottomPadding; 
+
+    // Resize canvas if the content height exceeds the current canvas height
+    if (contentHeight > s.height) {
+      s.resizeCanvas(640, contentHeight);
+    }
+    s.text(words, 50, 120, textWidth, s.height);
   };
 
   s.keyPressed = () => {
-    // The variable "key" always contains the value
-    // of the most recent key pressed.
+    
     if ((s.key >= 'A' && s.key <= 'z') || s.key == ' ') {
       letter = s.key;
       words = words + s.key;
     }
   };
 }
+
