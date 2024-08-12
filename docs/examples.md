@@ -7,7 +7,11 @@ The source files for these featured examples are located in `/content/examples`.
 1. Files specific to the website (like the thumbnail, or the metadata). These files \*should* be edited in this repository.
 1. Files automatically copied from the [`processing-examples`](https://github.com/processing/processing-examples) repo. These files should \*not* be edited in this repository. 
 
-For instance, the files for `Basic Examples > Image > BackgroundImage` are located at `/content/examples/Basics/Image/BackgroundImage/`. This folder contains the following files:
+For instance, the files for `Basic Examples > Image > BackgroundImage` are located at:
+
+`/content/examples/Basics/Image/BackgroundImage/`
+
+That folder contains the following files:
 
 | File Path                | Description                                                       | Edit here  |
 |--------------------------|-------------------------------------------------------------------|------------|
