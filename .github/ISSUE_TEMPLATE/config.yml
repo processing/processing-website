@@ -10,5 +10,5 @@ contact_links:
     url: https://discourse.processing.org/
     about: Have other questions about using Processing? Ask them here!
   - name: 🌸 p5.js Issues
-    url: https://github.com/processing/p5.js-sound/issues
+    url: https://github.com/processing/p5.js/issues
     about: Report issues with p5.js here.
