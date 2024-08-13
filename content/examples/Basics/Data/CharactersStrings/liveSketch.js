@@ -19,13 +19,11 @@
 function runLiveSketch(s) {
   var letter = '';
   var words = 'Begin...';
-  var lineHeight = 36; 
-  var bottomPadding = 5;
 
   s.setup = () => {
     s.createCanvas(640, 360);
     s.textFont('Source Code Pro', 36);
-    s.textWrap(s.CHAR); 
+    s.textWrap(s.CHAR);  // Added text wrap modification
   };
 
   s.draw = () => {
@@ -39,28 +37,15 @@ function runLiveSketch(s) {
     s.text('Current key: ' + letter, 50, 70);
     s.text('The String is ' + words.length + ' characters long', 50, 90);
 
-    // Calculate the number of lines of text
     s.textSize(36);
-    let textWidth = 540; 
-    let textHeight = s.textAscent() + s.textDescent();
-
-    // Calculate the number of lines needed for the text
-    let numLines = s.ceil(s.textWidth(words) / textWidth);
-    let contentHeight = numLines * textHeight + 120 + bottomPadding; 
-
-    // Resize canvas if the content height exceeds the current canvas height
-    if (contentHeight > s.height) {
-      s.resizeCanvas(640, contentHeight);
-    }
-    s.text(words, 50, 120, textWidth, s.height);
+    s.text(words, 50, 120, 540, 300);
   };
 
   s.keyPressed = () => {
-    
     if ((s.key >= 'A' && s.key <= 'z') || s.key == ' ') {
       letter = s.key;
       words = words + s.key;
     }
   };
+ 
 }
-
