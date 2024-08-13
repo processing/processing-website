@@ -48,15 +48,6 @@ When translating the content to a new language you need to edit the [`i18n/confi
 
 Since 2024, this repository is deployed and built automatically on Netlify.
 
-~~The website is set up to deploy itself whenever the "Deploy Website" GitHub action is run. This triggers a new deploy from the `main` branch where the website is built, uploaded, and a new GitHub Release is created with a `reference.zip` file containing the contents of the website for loading in the IDE.~~
-
-~~1. Go to [Actions](https://github.com/processing/processing-website/actions)~~
-~~2. Click "Deploy Website" in the left sidebar~~
-~~3. Click "Run workflow" on the right~~
-~~4. Fill in the details and click the green "Run workflow" button.~~
-
-~~Note that it's possible to deploy the website with or without making a GitHub release. For this, toggle the checkbox under "Run workflow".~~
-
 ## `keywords.txt`
 
 The website repo has a script that generates the `keywords.txt` file into the `processing4` repo to use for syntax highlighting the PDE. Follow these steps in order to generate that file:
