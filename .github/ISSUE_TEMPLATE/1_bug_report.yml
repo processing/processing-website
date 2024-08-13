@@ -11,7 +11,6 @@ body:
       - Accessibility
       - Books
       - Download
-      - Enhancement
       - Examples
       - Homepage
       - Libraries
@@ -75,7 +74,7 @@ body:
 - type: input
   attributes:
     label: Smartphone details
-    description: "Please complete the following information if applicable.\n\n - Device: [e.g. iPhone6]\n - OS: [e.g. iOS8.1]\n - Browser [e.g. stock browser, safari]\n - Version [e.g. 22]"
+    description: "If the issue is specific to mobile, please specify the device you are using (e.g. FairPhone 5, iPhone 14 Pro, Pixel 6a)"
   validations:
     required: false
 - type: textarea
