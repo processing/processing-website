@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🅿️ Processing 4 Issues
+    url: https://github.com/processing/processing4/issues
+    about: Report issues with Processing 4 here.
+  - name: 📚 Examples Issues
+    url: https://github.com/processing/processing-examples/issues
+    about: Report issues with the official Processing examples here.
+  - name: 💬 Forum
+    url: https://discourse.processing.org/
+    about: Have other questions about using Processing? Ask them here!
+  - name: 🌸 p5.js Issues
+    url: https://github.com/processing/p5.js-sound/issues
+    about: Report issues with p5.js here.
