@@ -1,0 +1,70 @@
+name: 📝 Content Corrections
+description: Use this template to report typos, content errors, or factual inaccuracies on the processing.org website.
+body:
+- type: dropdown
+  id: error_type
+  attributes:
+    label: Select the type of content error.
+    description: Choose the most appropriate type of content issue you are reporting.
+    multiple: false
+    options:
+      - Typo
+      - Grammatical Error
+      - Factual Mistake
+      - Wrong image
+      - Other content error (please specify)
+  validations:
+    required: true
+- type: dropdown
+  id: labels
+  attributes:
+    label: Section
+    description: On which part of the website does the error appear?
+    multiple: true
+    options:
+      - Books
+      - Download
+      - Examples
+      - Homepage
+      - Libraries
+      - Reference
+      - Tutorials
+      - Other (specify if possible)
+- type: textarea
+  attributes:
+    label: Location of the error
+    description: Include the URL or title of the page where the error occurs.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Describe the error
+    description: Provide a clear and detailed description of the error.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Suggested correction
+    description: If possible, suggest a correction or clarify how the content should be amended.
+  validations:
+    required: false
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Language
+    description: Specify the language of the content where the error was found.
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: Screenshots or references
+    description: If necessary, add screenshots or references to help clarify the issue.
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: Additional context
+    description: Add any other context or information that could assist in resolving this issue.
+  validations:
+    required: false
