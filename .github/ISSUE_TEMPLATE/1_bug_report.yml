@@ -21,7 +21,7 @@ body:
       - Other (specify if possible)
   validations:
     required: false
-- type: input
+- type: textarea
   attributes:
     label: Describe the bug
     description: A clear and concise description of what the bug is.
@@ -34,7 +34,7 @@ body:
     value: "### Steps:\n\n1.\n\n2.\n\n3.\n\n### Snippet:\n\n```js\n\n// Paste your code here :)\n\n```\n"
   validations:
     required: true
-- type: input
+- type: textarea
   attributes:
     label: Expected behavior
     description: A clear and concise description of what you expected to happen.
@@ -44,6 +44,20 @@ body:
   attributes:
     label: Screenshots
     description: If applicable, add a screenshot or screen capture to help explain your problem.
+  validations:
+    required: false
+- type: dropdown
+  id: Browser
+  attributes:
+    label: Browser
+    description: In which browser(s) have you observed this issue?
+    multiple: true
+    options:
+      - Firefox
+      - Chrome
+      - Safari
+      - Microsoft Edge
+      - Other (please specify)
   validations:
     required: false
 - type: input
