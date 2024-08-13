@@ -1,6 +1,6 @@
 ---
-name: Bug report
-about: Create a report to help us improve
+name: 🐛 Found a Bug
+about: This template is for reporting broken or incorrect behaviour on the processing.org website. (If you have questions about your own code, please visit our forum at discourse.processing.org instead)
 title: ''
 labels: ''
 assignees: ''
