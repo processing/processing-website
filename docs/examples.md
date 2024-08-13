@@ -77,7 +77,7 @@ This is a new feature of the example pages so you should choose no more than 6 f
 Each example has an image or animation that comes from P5.js code. The cover should be exported as a `.png` from the original p5.js code from [here](https://github.com/processing/processing-docs/tree/master/content/examples_p5) to a size of `1280px720` (keeping the same proportions than the original sketch). If the example doesn't have a p5.js file, then the upscaling has to be done from the `.pde` files from [here](https://github.com/processing/processing-docs/tree/master/content/examples). The naming of the image it's the same than the content file.
 
 ## Live Sketch
-Most examples include a `livesketch.js` file implemented in p5.js, designed to replicate the original Processing sketch's behavior as closely as possible. This file is not automatically generated but must be authored and updated by a contributor. It allows the example to run in a browser.
+Most examples include a `livesketch.js` file implemented in p5.js, designed to replicate the original Processing sketch's behavior as closely as possible. It allows the example to run in a browser. This file is not automatically generated but must be authored and updated by a contributor.
 
 ### Structure of a Live Sketch
 
