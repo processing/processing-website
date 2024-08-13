@@ -62,8 +62,8 @@ body:
   attributes:
     label: Smartphone details
     description: "Please complete the following information if applicable.\n\n - Device: [e.g. iPhone6]\n - OS: [e.g. iOS8.1]\n - Browser [e.g. stock browser, safari]\n - Version [e.g. 22]"
-      validations:
-        required: false
+  validations:
+    required: false
 - type: textarea
   attributes:
     label: Additional context
