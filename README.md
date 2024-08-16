@@ -10,6 +10,8 @@ We welcome contributions from the community to help improve the site!
 
 By contributing to this repository you agree to follow our community guidelines. Before getting started, please read our [Code of Conduct](https://github.com/processing/processing-website/blob/main/CODE-OF-CONDUCT.md). 
 
+If this is your first time contributing on GitHub, check out this [guide for first contributions](https://github.com/firstcontributions/first-contributions).
+
 To contribute to the Processing website, you'll need to identify an issue, fork this repo, set up the project on your local machine, make and test your changes, and then submit a pull request. 
 
 If you're already familiar with the steps above, you can skip to [Editing content](#editing-content). Otherwise, keep reading.
