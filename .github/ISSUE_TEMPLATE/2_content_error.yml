@@ -1,5 +1,5 @@
 name: 📝 Content Corrections
-description: Use this template to report typos, content errors, or factual inaccuracies on the processing.org website.
+description: Report typos, content errors, or factual inaccuracies on the processing.org website.
 body:
 - type: dropdown
   id: error_type
