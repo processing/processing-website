@@ -1,6 +1,6 @@
 # Download
 
-In order to specify which releases that should be featured on the website, edit the [`content/download/selected.json`](/content/download/selected.json) file. This file has a list of all featured releases and pre-releases indicated by the `tagName` of the release on GitHub.
+In order to specify which releases should be featured on the website, edit the [`content/download/selected.json`](/content/download/selected.json) file. This file has a list of all featured releases and pre-releases indicated by the `tagName` of the release on GitHub.
 
 In order to not require an API token on GitHub in development, there is a separate script in [`scripts/fetchReleases.js`](/scripts/fetchReleases.js) that can be run to fetch the releases from GitHub. This script needs to be run before you update the `selected.json` file.
 
