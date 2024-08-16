@@ -36,6 +36,10 @@
   flex-basis: var(--col7);
 }
 
+.examples li:hover{
+  opacity: 0.8;
+}
+
 .cover {
   width: 100%;
   margin-bottom: var(--vertical-margin-xsmall);
