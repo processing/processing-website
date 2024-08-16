@@ -1,6 +1,8 @@
 # Processing Website
 
-This repo holds the code for the [processing.org](https://processing.org) website. The website is built with [Gatsby](https://www.gatsbyjs.com/). 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e1d72dc4-ad96-4b12-bc25-4ec2aa532ad7/deploy-status)](https://app.netlify.com/sites/java-processing-faf822/deploys)
+
+This repo holds the code for the [processing.org](https://processing.org) website. The website is built with [Gatsby](https://www.gatsbyjs.com/) and hosted on [Netlify](https://www.netlify.com/).
 
 We welcome contributions from the community to help improve the site!
 
