@@ -10,7 +10,7 @@ We welcome contributions from the community to help improve the site!
 
 To contribute to the Processing website, you'll need to set up the project on your local machine, make and test your changes, and then submit a pull request.
 
-Before getting started, please read our [Code of Conduct](https://github.com/processing/processing-website/blob/main/CODE-OF-CONDUCT.md). By contributing to this repository you agree to follow these guidelines.
+By contributing to this repository you agree to follow our community guidelines. Before getting started, please read our [Code of Conduct](https://github.com/processing/processing-website/blob/main/CODE-OF-CONDUCT.md). 
 
 ### Step 1. Pick an Issue (or create one)
 
