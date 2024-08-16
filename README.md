@@ -29,13 +29,15 @@ Make sure to [install Node.js](https://nodejs.org/en/download/package-manager) (
 1. Run `npm install` to install the necessary dependencies.
 2. Run `npm run dev` to start the development server.
 3. Once the build process is complete, open [localhost:8000](http://localhost:8000) in your browser to view the site.
-4. Make your changes to the code. Saving your files will automatically trigger a rebuild and update the local site.
+4. Make your changes to the code.
+5. Saving your files will automatically trigger a rebuild and update the local site.
 
-### Step 4. Submit Your Changes
+### Step 4. Test Your Changes Locally
 
-Make sure your changes are working locally and that you made only the changes necessary to solve the issue. This will improve your chances of your PR getting merged.
+1. Make sure your changes are working locally and that they fixed the issue.
+2. Make sure you only made the changes necessary to solve the issue. This will improve your chances of your PR getting merged.
 
-Once you’ve made and tested your changes locally, you can submit them for review.
+### Step 5. Submit Your Changes
 
 1. Commit your changes with a descriptive message.
 2. Push the changes to your forked repository on GitHub.
