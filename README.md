@@ -1,6 +1,8 @@
 # Processing Website
 
-This repo holds the code for the [processing.org](https://processing.org) website. The website is built with [Gatsby](https://www.gatsbyjs.com/). We welcome contributions from the community to help improve the site.
+This repo holds the code for the [processing.org](https://processing.org) website. The website is built with [Gatsby](https://www.gatsbyjs.com/). 
+
+We welcome contributions from the community to help improve the site!
 
 ## How To Contribute
 
