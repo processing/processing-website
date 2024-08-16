@@ -18,15 +18,13 @@ Look at the [issues page](https://github.com/processing/processing-website/issue
 
 ### Step 2. Fork the Repository
 
-Before you begin, you’ll need to create a copy of this repository in your GitHub account.
-
-1. Click the "Fork" button in the top-right corner and follow the instructions.
+1. Click the "Fork" button in the top-right corner and follow the instructions to create a copy of this repository in your GitHub account.
 2. Clone the forked repository to your local machine.
 3. Navigate to the project folder using the command line, or open the project in your editor of choice and open the built-in terminal.
 
 ### Step 3. Set up Your Local Environment
 
-Before you start, make sure to [install Node.js](https://nodejs.org/en/download/package-manager) (`v12` or higher) if it is not already installed.
+Make sure to [install Node.js](https://nodejs.org/en/download/package-manager) (`v12` or higher) if it is not already installed.
 
 1. Run `npm install` to install the necessary dependencies.
 2. Run `npm run dev` to start the development server.
