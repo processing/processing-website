@@ -1,14 +1,14 @@
 {
   "name": "Coding Art Book",
   "authors": [
-    "[Yu Zhang](https://yuzhang.nl) and [Mathias Funk](https://mathias-funk.com)"
+    "[Mathias Funk](https://mathias-funk.com) and [Yu Zhang](https://yuzhang.nl)"
   ],
   "url": "https://codingart-book.com",
   "categories": [
     "Books"
   ],
-  "sentence": "All examples from the \"Coding Art\" book published by Apress.",
-  "paragraph": "The examples library contains all source code examples from the \"Coding Art\" book published by Apress. All examples are directly usable and identical to the source code provided in the book.",
+  "sentence": "All examples from the \"Coding Art\" book, second edition, published by Apress.",
+  "paragraph": "The examples library contains all source code examples from the \"Coding Art\" book, second edition, published by Apress. All Processing examples are directly usable and identical to the source code provided in the book. The p5.js examples need to be hosted to work, see book for instructions.",
   "lastUpdated": "0",
   "type": "examples",
   "packages": [

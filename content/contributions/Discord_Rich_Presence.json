@@ -1,0 +1,21 @@
+{
+  "name": "Discord Rich Presence",
+  "categories": null,
+  "authors": [
+    "[Torben Haase](https://letorbi.com)"
+  ],
+  "url": "https://github.com/letorbi/discord-rich-presence-for-processing",
+  "sentence": "Shows that you are using Processing in your Discord status.",
+  "paragraph": "Show the world that you are using Processing! The Discord Rich Presence tool checks regularly what you are working on and updates your Discord rich presence status accordingly. Currently it shows that you are \"playing\" Processing and what mode (Java, p5.js etc.) you are using.",
+  "lastUpdated": "0",
+  "type": "tool",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "400",
+      "maxRevision": "0",
+      "props": "https://github.com/letorbi/discord-rich-presence-for-processing/releases/latest/download/DiscordRichPresence.txt",
+      "download": "https://github.com/letorbi/discord-rich-presence-for-processing/releases/latest/download/DiscordRichPresence.zip"
+    }
+  ]
+}

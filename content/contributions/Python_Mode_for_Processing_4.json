@@ -13,8 +13,8 @@
       "mode": "java",
       "minRevision": "1279",
       "maxRevision": "0",
-      "props": "https://py.processing.org/4/PythonMode.txt",
-      "download": "https://py.processing.org/4/PythonMode.zip"
+      "props": "https://contribs.processing.org/pythonmode/4/PythonMode.txt",
+      "download": "https://contribs.processing.org/pythonmode/4/PythonMode.zip"
     }
   ]
 }

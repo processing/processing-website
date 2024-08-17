@@ -1,5 +1,5 @@
 {
-  "name": "BPM timings for Processing",
+  "name": "BPM timings",
   "authors": [
     "[Vincent Sijben](https://github.com/vincentsijben)"
   ],
@@ -17,8 +17,8 @@
       "mode": "java",
       "minRevision": "270",
       "maxRevision": "0",
-      "props": "https://github.com/vincentsijben/bpm-timings-for-processing/releases/download/latest/BPM.txt",
-      "download": "https://github.com/vincentsijben/bpm-timings-for-processing/releases/download/latest/BPM.zip"
+      "props": "https://github.com/vincentsijben/bpm-timings-for-processing/releases/download/latest/BPM_timings.txt",
+      "download": "https://github.com/vincentsijben/bpm-timings-for-processing/releases/download/latest/BPM_timings.zip"
     }
   ]
 }
