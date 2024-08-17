@@ -1,0 +1,22 @@
+{
+  "name": "FIP",
+  "authors": [
+    "[Darragh Nolan](https://github.com/prontopablo/FIP)"
+  ],
+  "url": "https://prontopablo.github.io/FIP/",
+  "categories": [
+    "Video & Vision"
+  ],
+  "sentence": "Fast Image Processing. Filters, post-processing and more.",
+  "paragraph": "FIP allows you to add effects such as cartoon filters, pixelation, and dithering using just three lines of code. The accompanying reference website provides all you need to get started!",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/prontopablo/FIP/releases/download/latest/FIP.txt",
+      "download": "https://github.com/prontopablo/FIP/releases/download/latest/FIP.zip"
+    }
+  ]
+}

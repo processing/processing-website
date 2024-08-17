@@ -5,10 +5,10 @@
     "GUI"
   ],
   "authors": [
-    "[Jakub Rak](https://github.com/KrabCode)"
+    "[Jakub 'Krab' Rak](https://github.com/KrabCode)"
   ],
   "sentence": "Feature rich, visually minimalist GUI for a smooth tinkering experience.",
-  "paragraph": "Make more complex scenes and animations faster by not mentioning any control elements or folders in setup(). Only ask for their values in draw() at unique string paths and let the GUI take care of the windows and control elements. Features a json save system with autosave on program exit, copy/paste, undo/redo, these control elements: [slider, 2D plot, color picker, gradient picker, button, toggle, text input, radio], and much more... Developed on Windows, but should work on Mac and Linux too.",
+  "paragraph": "Make more complex scenes and animations faster by not mentioning any control elements or folders in setup(). Only ask for their values in draw() at unique string paths and let the GUI take care of the windows and control elements. Features a json save system with autosave on program exit, copy/paste, undo/redo, these control elements: [slider, 2D plot, color picker, gradient picker, button, toggle, text input, radio], and much more... Works on Windows, Mac and Linux.",
   "imports": "com.krab.lazy",
   "type": "library",
   "packages": [

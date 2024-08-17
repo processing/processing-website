@@ -1,0 +1,19 @@
+{
+  "name": "Basins of Attraction (Newton's Fractals)",
+  "authors": [
+    "[Saptarshi Dey](http://github.com/DarkMortal)"
+  ],
+  "url": "https://github.com/DarkMortal/Newton_Fractal",
+  "categories": null,
+  "sentence": "A set of sketches demonstrating the recursive nature of Newton's Fractals.",
+  "type": "examples",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://raw.githubusercontent.com/DarkMortal/Newton_Fractal/main/Newton_Fractals.txt",
+      "download": "https://raw.githubusercontent.com/DarkMortal/Newton_Fractal/main/Newton_Fractals.zip"
+    }
+  ]
+}

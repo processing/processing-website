@@ -15,8 +15,8 @@
       "mode": "java",
       "minRevision": "0",
       "maxRevision": "0",
-      "props": "http://www.looksgood.de/libraries/Ani/Ani-latest.txt",
-      "download": "http://www.looksgood.de/libraries/Ani/Ani-latest.zip"
+      "props": "https://dev.benedikt-gross.de/libraries/Ani/Ani-latest.txt",
+      "download": "https://dev.benedikt-gross.de/libraries/Ani/Ani-latest.zip"
     }
   ]
 }

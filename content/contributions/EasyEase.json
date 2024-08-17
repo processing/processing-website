@@ -1,0 +1,22 @@
+{
+  "name": "EasyEase",
+  "authors": [
+    "[Fred Egidi](https://github.com/fredegd)"
+  ],
+  "url": "https://fredegd.github.io/EasyEase",
+  "categories": [
+    "Animation"
+  ],
+  "sentence": "Easing Function and non linear distribution utilities for Processing",
+  "paragraph": "EasyEase convert and bend linear motion into the most common easing curves",
+  "type": "library",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/fredegd/EasyEase/releases/download/latest/EasyEase.txt",
+      "download": "https://github.com/fredegd/EasyEase/releases/download/latest/EasyEase.zip"
+    }
+  ]
+}

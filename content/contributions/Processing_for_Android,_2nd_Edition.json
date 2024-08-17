@@ -1,0 +1,23 @@
+{
+  "name": "Processing for Android, 2nd Edition",
+  "categories": [
+    "Books"
+  ],
+  "authors": [
+    "[Andres Colubri](https://andrescolubri.net/)"
+  ],
+  "url": "https://andrescolubri.net/processing-for-android-book/",
+  "sentence": "Code examples of the book \"Processing for Android: Create Mobile, Sensor-Aware, and XR Applications Using Processing\" (Apress, 2023).",
+  "paragraph": "",
+  "lastUpdated": "0",
+  "type": "examples",
+  "packages": [
+    {
+      "mode": "java",
+      "minRevision": "0",
+      "maxRevision": "0",
+      "props": "https://github.com/Apress/Processing-for-Android-Second-Edition/releases/download/latest/processing-for-android-examples.txt",
+      "download": "https://github.com/Apress/Processing-for-Android-Second-Edition/releases/download/latest/processing-for-android-examples.zip"
+    }
+  ]
+}
