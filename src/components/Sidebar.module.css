@@ -111,6 +111,7 @@
 
 .tocItem {
   position: relative;
+  margin-bottom: 0.5rem;
 
   & a {
     font-family: var(--font);
