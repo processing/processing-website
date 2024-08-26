@@ -110,20 +110,39 @@
 }
 
 .tocItem {
+  position: relative;
+
   & a {
     font-family: var(--font);
-    text-overflow: ellipsis;
     color: var(--processing-blue-dark);
+    border-left: 4px solid transparent;
+    display: flex;
+    align-items: center;
+    padding: 3px 0.75rem;
+    position: relative;
+    transition: color 0.3s, border-left-color 0.3s;
+
     &:hover {
       color: var(--processing-blue-mid);
+      border-left-color: var(--processing-blue-mid);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      height: calc(100% - 20%);
+      width: 4px;
+      background-color: transparent;
+      transition: background-color 0.3s;
+      transform: translateY(-50%);
     }
   }
 
   & h4 {
     font-size: var(--text-regular);
     color: inherit;
-    &:hover {
-      color: inherit;
-    }
+    margin: 0;
   }
 }
