@@ -115,6 +115,7 @@
 
   & a {
     font-family: var(--font);
+    text-overflow: ellipsis;
     color: var(--processing-blue-dark);
     border-left: 4px solid transparent;
     display: flex;
@@ -124,7 +125,6 @@
     transition: color 0.3s, border-left-color 0.3s;
 
     &:hover {
-      color: var(--processing-blue-mid);
       border-left-color: var(--processing-blue-mid);
     }
 
