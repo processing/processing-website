@@ -20,6 +20,13 @@
 
   margin: var(--vertical-margin-large) 0;
 }
+.mainDownloadButtonContainer>div>p.appleSiliconWarning {
+  color: black;
+  a{
+    color: var(--processing-blue);
+  }
+}
+
 
 a.mainDownloadButton {
   background-color: var(--processing-blue);
@@ -448,6 +455,7 @@ a.mainDownloadButton {
   .mainDownloadButtonContainer > div > p {
     font-size: var(--text-medium);
   }
+
 
   .osSectionList {
     gap: calc(2 * var(--margin-double));

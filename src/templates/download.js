@@ -205,6 +205,7 @@ const MainDownloadSection = memo(({ release, onAfterDownload }) => {
           appleSiliconAsset && (
             <div>
               <p
+                className={css.appleSiliconWarning}
                 dangerouslySetInnerHTML={{
                   __html: intl
                     .formatMessage({ id: 'macOsIntelWarning' })
