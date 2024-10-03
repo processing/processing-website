@@ -38,6 +38,7 @@
     "@octokit/graphql": "^5.0.1",
     "array-flat-polyfill": "^1.0.1",
     "array-unique": "^0.3.2",
+    "axios": "^1.7.7",
     "classnames": "^2.3.1",
     "copy-to-clipboard": "^3.3.2",
     "gatsby": "^4.22.0",
@@ -57,7 +58,9 @@
     "gatsby-transformer-json": "^4.22.0",
     "gatsby-transformer-remark": "^5.22.0",
     "gatsby-transformer-sharp": "^4.22.0",
+    "glob": "^11.0.0",
     "highlight.js": "^11.6.0",
+    "minimist": "^1.2.8",
     "postcss": "^8.4.16",
     "postcss-calc": "^8.2.4",
     "postcss-custom-media": "^8.0.2",
@@ -73,12 +76,13 @@
     "react-intl": "^5.25.1",
     "remark-slug": "^6.1.0",
     "remark-unwrap-images": "^2.1.0",
-    "title-case": "^3.0.3"
+    "title-case": "^3.0.3",
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
     "@designsystemsinternational/static": "^4.2.0",
     "fast-glob": "^3.2.7",
-    "fs-extra": "^10.0.0",
+    "fs-extra": "^10.1.0",
     "gatsby-plugin-perf-budgets": "0.0.18",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.25",
     "inquirer": "^8.1.5",
