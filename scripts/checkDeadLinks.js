@@ -13,8 +13,9 @@ const glob = require('glob');
  * @returns {string[]} - Array of extracted links.
  */
 function extractLinks(content) {
-    const regex = /https?:\/\/[^\s,")]+/g;
-    return content.match(regex) || [];
+    const regex = /https?:\/\/[^\s,")>\\]+/g;
+    const rawLinks = content.match(regex) || [];
+    return rawLinks.map(link => link.replace(/[\\"]+$/, '')); // Remove trailing backslashes and quotes
 }
 
 /**
