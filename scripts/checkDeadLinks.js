@@ -50,13 +50,28 @@ async function checkLink(link) {
 }
 
 /**
+ * Append dead link information to the JSON file.
+ * @param {object} deadLink - The dead link object to append.
+ */
+async function appendDeadLinkToFile(deadLink) {
+    const outputPath = path.resolve('dead_links.json');
+    try {
+        const data = await fs.readJson(outputPath).catch(() => []);
+        data.push(deadLink);
+        await fs.writeJson(outputPath, data, { spaces: 4 });
+    } catch (error) {
+        console.error(`❌ Failed to append dead link to JSON: ${error.message}`);
+    }
+}
+
+/**
  * Process a single file to extract and check links.
  * @param {string} filePath - The path to the file.
  * @param {string[]} excludePatterns - Patterns to exclude from link checking.
  * @param {object[]} deadLinks - Array to collect dead link information.
  * @param {object} counters - Counters to keep track of total and dead links.
  */
-async function processFile(filePath, excludePatterns, deadLinks, counters) {
+async function processFile(filePath, excludePatterns, counters) {
     try {
         const content = await fs.readFile(filePath, 'utf-8');
         const links = extractLinks(content);
@@ -78,13 +93,14 @@ async function processFile(filePath, excludePatterns, deadLinks, counters) {
             if (result.error) {
                 const errorDescription = getErrorDescription(result.status_code);
                 console.log(`🔴 [${result.status_code || 'N/A'}] ${link} in file: ${relativeFilePath}`);
-                deadLinks.push({
+                const deadLink = {
                     link: result.link,
                     status_code: result.status_code,
                     file: relativeFilePath,
                     error: result.error,
                     error_description: errorDescription
-                });
+                };
+                await appendDeadLinkToFile(deadLink);
                 counters.deadLinks += 1;
             } else {
                 console.log(`✅ [OK] ${link} in file: ${relativeFilePath}`);
@@ -112,12 +128,9 @@ function getErrorDescription(statusCode) {
         504: 'Gateway Timeout - The server was acting as a gateway or proxy and did not receive a response in time.',
         405: 'Method Not Allowed - The method specified in the Request-Line is not allowed for the resource.',
         429: 'Too Many Requests - The user has sent too many requests in a given amount of time.',
-        503: 'Service Unavailable - The server is currently unavailable (overloaded or down).',
-        504: 'Gateway Timeout - The server, while acting as a gateway or proxy, did not receive a timely response from an upstream server it needed to access in order to complete the request.',
         505: 'HTTP Version Not Supported - The server does not support, or refuses to support, the major version of HTTP that was used in the request message.',
         511: 'Network Authentication Required - The client needs to authenticate to gain network access.',
-        599: 'Network Connect Timeout Error - Can be cause by a network issue or a server-side issue.',
-        // Add more descriptions as needed
+        599: 'Network Connect Timeout Error - Can be caused by a network issue or a server-side issue.',
     };
 
     return descriptions[statusCode] || 'Unknown error, look up status code for details';
@@ -162,11 +175,13 @@ async function main() {
     const excludeFiles = new Set(argv['exclude-files'].map(file => path.resolve(file)));
     const excludePatterns = argv['exclude'];
 
-    let deadLinks = [];
     let counters = {
         totalLinks: 0,
         deadLinks: 0
     };
+
+    // Initialize/clear dead_links.json file
+    await fs.writeJson(path.resolve('dead_links.json'), []);
 
     // Define file patterns to search
     const filePatterns = ['**/*.mdx', '**/*.json', '**/*.md'];
@@ -185,26 +200,14 @@ async function main() {
                     continue;
                 }
 
-                await processFile(file, excludePatterns, deadLinks, counters);
+                await processFile(file, excludePatterns, counters);
             }
         }
     }
 
-    // Write dead links to JSON file
-    if (deadLinks.length > 0) {
-        const outputPath = path.resolve('dead_links.json');
-        try {
-            await fs.writeJson(outputPath, deadLinks, { spaces: 4 });
-            console.log(`\n🔗 Dead links have been written to ${outputPath}`);
-        } catch (error) {
-            console.error(`❌ Failed to write dead links to JSON: ${error.message}`);
-        }
-    } else {
-        console.log('\n🎉 No dead links found.');
-    }
-
     // Print summary
     console.log(`\n🔍 Summary: Total links checked: ${counters.totalLinks}, Dead links found: ${counters.deadLinks}`);
+    console.log('\n✅ Scan completed successfully.');
 }
 
 main();
