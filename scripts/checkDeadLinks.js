@@ -69,7 +69,6 @@ async function appendDeadLinkToFile(deadLink) {
  * Process a single file to extract and check links.
  * @param {string} filePath - The path to the file.
  * @param {string[]} excludePatterns - Patterns to exclude from link checking.
- * @param {object[]} deadLinks - Array to collect dead link information.
  * @param {object} counters - Counters to keep track of total and dead links.
  */
 async function processFile(filePath, excludePatterns, counters) {
