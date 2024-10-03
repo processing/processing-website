@@ -207,7 +207,7 @@ async function main() {
 
     // Print summary
     console.log(`\n🔍 Summary: Total links checked: ${counters.totalLinks}, Dead links found: ${counters.deadLinks}`);
-    console.log('\n✅ Scan completed successfully.');
+    console.log('\n✨ Scan completed successfully.');
 }
 
 main();
