@@ -73,22 +73,54 @@ async function processFile(filePath, excludePatterns, deadLinks, counters) {
             counters.totalLinks += 1;
             const result = await checkLink(link);
 
+            const relativeFilePath = path.relative(process.cwd(), filePath);
+
             if (result.error) {
-                console.log(`🔴 Dead link found: ${link} (Status code: ${result.status_code || 'N/A'}) in file: ${filePath}`);
+                const errorDescription = getErrorDescription(result.status_code);
+                console.log(`🔴 [${result.status_code || 'N/A'}] ${link} in file: ${relativeFilePath}`);
                 deadLinks.push({
                     link: result.link,
                     status_code: result.status_code,
-                    file: filePath,
-                    error: result.error
+                    file: relativeFilePath,
+                    error: result.error,
+                    error_description: errorDescription
                 });
                 counters.deadLinks += 1;
             } else {
-                console.log(`✅ Working link: ${link} in file: ${filePath}`);
+                console.log(`✅ [OK] ${link} in file: ${relativeFilePath}`);
             }
         }
     } catch (error) {
         console.error(`❌ Error processing file ${filePath}: ${error.message}`);
     }
+}
+
+/**
+ * Get the description of the HTTP status code.
+ * @param {number} statusCode - The HTTP status code.
+ * @returns {string} - The description of the status code.
+ */
+function getErrorDescription(statusCode) {
+    const descriptions = {
+        400: 'Bad Request - The server could not understand the request.',
+        401: 'Unauthorized - Authentication is required and has failed or has not been provided.',
+        403: 'Forbidden - The server understood the request, but refuses to authorize it.',
+        404: 'Not Found - The server cannot find the requested resource.',
+        500: 'Internal Server Error - The server has encountered a situation it doesn\'t know how to handle.',
+        502: 'Bad Gateway - The server was acting as a gateway or proxy and received an invalid response.',
+        503: 'Service Unavailable - The server is not ready to handle the request.',
+        504: 'Gateway Timeout - The server was acting as a gateway or proxy and did not receive a response in time.',
+        405: 'Method Not Allowed - The method specified in the Request-Line is not allowed for the resource.',
+        429: 'Too Many Requests - The user has sent too many requests in a given amount of time.',
+        503: 'Service Unavailable - The server is currently unavailable (overloaded or down).',
+        504: 'Gateway Timeout - The server, while acting as a gateway or proxy, did not receive a timely response from an upstream server it needed to access in order to complete the request.',
+        505: 'HTTP Version Not Supported - The server does not support, or refuses to support, the major version of HTTP that was used in the request message.',
+        511: 'Network Authentication Required - The client needs to authenticate to gain network access.',
+        599: 'Network Connect Timeout Error - Can be cause by a network issue or a server-side issue.',
+        // Add more descriptions as needed
+    };
+
+    return descriptions[statusCode] || 'Unknown error, look up status code for details';
 }
 
 /**
