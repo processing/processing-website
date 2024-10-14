@@ -30,7 +30,7 @@
 .title {
   font-size: var(--text-reduced);
   padding-top: 20px;
-  text-wrap: pretty;
+  overflow-wrap: break-word; 
 }
 
 .toggleButton {
