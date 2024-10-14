@@ -112,7 +112,6 @@
 
 .tocItem {
   margin-bottom: 1rem;
-  padding-left: calc(var(--gutter) + 0.5rem); 
 
   & a {
     font-family: var(--font);
