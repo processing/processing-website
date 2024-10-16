@@ -30,7 +30,7 @@
 .title {
   font-size: var(--text-reduced);
   padding-top: 20px;
-  text-wrap: pretty;
+  overflow-wrap: break-word; 
 }
 
 .toggleButton {
@@ -50,6 +50,7 @@
   flex-grow: 1;
   position: relative;
   overflow-y: auto;
+  padding-top: 1rem; 
   & ul li h4 {
     text-wrap: pretty;
   }
@@ -110,20 +111,28 @@
 }
 
 .tocItem {
+  margin-bottom: 1rem;
+
   & a {
     font-family: var(--font);
     text-overflow: ellipsis;
     color: var(--processing-blue-dark);
+    border-left: 4px solid transparent;
+    display: flex;
+    align-items: center;
+    padding: 3px 0.75rem;
+    transition: color 0.3s, border-left-color 0.3s;
+
     &:hover {
       color: var(--processing-blue-mid);
+      border-left-color: var(--processing-blue-mid);
     }
+
   }
 
   & h4 {
     font-size: var(--text-regular);
     color: inherit;
-    &:hover {
-      color: inherit;
-    }
+    margin: 0;
   }
 }
