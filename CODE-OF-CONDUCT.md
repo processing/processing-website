@@ -57,4 +57,4 @@ Sometimes, participants violating the Code of Conduct are unaware that their beh
 
 ## Attribution
 
-This Code of Conduct is adapted from the [Contributor Covenant version 2.1](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1]); the [p5.js Code of Conduct](https://github.com/processing/p5.js/blob/main/CODE_OF_CONDUCT.md); and the [ml5.js Code of Conduct](https://github.com/ml5js/Code-of-Conduct). The first version of this CoC was built by Roopa Vadusevan at OSACC 2024.
+This Code of Conduct is adapted from the [Contributor Covenant version 2.1](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1]); the [p5.js Code of Conduct](https://github.com/processing/p5.js/blob/main/CODE_OF_CONDUCT.md); and the [ml5.js Code of Conduct](https://github.com/ml5js/Code-of-Conduct). The first version of this CoC was built by Roopa Vasudevan at OSACC 2024.
