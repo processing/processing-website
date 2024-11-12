@@ -22,6 +22,8 @@ export const HeadMatter = ({
     imgUrl = /^http/.test(imgSrc) ? imgSrc : 'https://processing.org/' + imgSrc;
   }
 
+  imgUrl = imgUrl || '/img/banner.png';
+
   const pageUrl = 'https://processing.org/' + location.pathname;
   return (
     <Helmet>
