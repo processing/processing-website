@@ -94,6 +94,8 @@ const Download = ({ data }) => {
         setSelectedRelease={setSelectedRelease}
       />
 
+      {selectedRelease.version === "4.3.1" && <a href='https://github.com/processing/processing4-carbon-aug-19/wiki/Announcing-Processing-4.3.1-(release-candidate)' style={{ textAlign: "center", display: "block", paddingTop: "var(--gutter)", textDecoration: "underline" }}> Read the announcement</a>}
+
       <MainDownloadSection
         release={selectedRelease}
         onAfterDownload={onAfterDownload}
