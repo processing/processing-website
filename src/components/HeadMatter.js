@@ -45,7 +45,7 @@ export const HeadMatter = ({
       <meta property="og:type" content={ogType || 'website'} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={shortDescription} />
-      {img && <meta property="og:image" content={imgUrl} />}
+      {imgUrl && <meta property="og:image" content={imgUrl} />}
     </Helmet>
   );
 };
