@@ -22,6 +22,8 @@ export const HeadMatter = ({
     imgUrl = /^http/.test(imgSrc) ? imgSrc : 'https://processing.org/' + imgSrc;
   }
 
+  imgUrl = imgUrl || '/img/banner.png';
+
   const pageUrl = 'https://processing.org/' + location.pathname;
   return (
     <Helmet>
@@ -43,7 +45,7 @@ export const HeadMatter = ({
       <meta property="og:type" content={ogType || 'website'} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={shortDescription} />
-      {img && <meta property="og:image" content={imgUrl} />}
+      {imgUrl && <meta property="og:image" content={imgUrl} />}
     </Helmet>
   );
 };
