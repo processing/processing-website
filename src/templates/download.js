@@ -190,12 +190,7 @@ const MainDownloadSection = memo(({ release, onAfterDownload }) => {
   const intl = useIntl();
   const detectedAsset = useMachineOS(release.assetsByOs, release.publishedAt);
 
-  const appleSiliconAsset = useMemo(() => {
-    for (let asset of release.assets) {
-      if (asset.bit === 'Apple Silicon') return asset;
-    }
-    return null;
-  }, [release]);
+  const appleSiliconAsset = useMemo(() => release.assets.find(asset => asset.os === "macOS" && asset.bit === "Intel 64-bit"), [release]);
 
   return (
     <div className={classnames(grid.container, grid.grid)}>
@@ -234,20 +229,18 @@ const MainDownloadSection = memo(({ release, onAfterDownload }) => {
             />
           </div>
         )}
-        {detectedAsset.asset &&
-          detectedAsset.asset.name.includes('macos-x64') &&
-          appleSiliconAsset && (
-            <div>
-              <p
-                className={css.appleSiliconWarning}
-                dangerouslySetInnerHTML={{
-                  __html: intl
-                    .formatMessage({ id: 'macOsIntelWarning' })
-                    .replace('{0}', appleSiliconAsset.url)
-                }}
-              />
-            </div>
-          )}
+        {appleSiliconAsset && (
+          <div>
+            <p
+              className={css.appleSiliconWarning}
+              dangerouslySetInnerHTML={{
+                __html: intl
+                  .formatMessage({ id: 'macOsIntelWarning' })
+                  .replace('{0}', appleSiliconAsset.url)
+              }}
+            />
+          </div>
+        )}
       </div>
     </div>
   );

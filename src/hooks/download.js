@@ -95,8 +95,8 @@ export const usePreparedReleases = (releases) => {
       for (let os in item.assetsByOs) {
         item.assetsByOs[os].sort((a, b) => {
           if (a.bit === b.bit) return 0;
-          if (a.bit != null && a.bit.includes('Intel')) return -1;
-          if (b.bit != null && b.bit.includes('Intel')) return 1;
+          if (a.bit != null && a.bit.includes('Intel')) return 1;
+          if (b.bit != null && b.bit.includes('Intel')) return -1;
           return 0;
         });
       }

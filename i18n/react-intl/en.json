@@ -83,7 +83,7 @@
   "raspberryPi32AssetTooltip": "Latest version of Raspberry Pi OS is recommended.",
   "raspberryPi64AssetTooltip": "Latest version of Raspberry Pi OS is recommended. The 64-bit release Raspberry Pi OS is newer, so if you have issues, try the 32-bit version.",
   "publishedOn": "Published on",
-  "macOsIntelWarning": "Got an M1 or above? Download the <a href='{0}'>Apple Silicon</a> version instead.",
+  "macOsIntelWarning": "Got a mac with an Intel Processor? Download the <a href='{0}'>Intel version</a> instead.",
   "otherVersions": "Need another version?",
   "olderVersions": "Looking for older versions?",
   "githubEarlierReleases": "Head over to GitHub for <a href='https://github.com/processing/processing4/releases'>earlier releases of Processing 4</a>.",
