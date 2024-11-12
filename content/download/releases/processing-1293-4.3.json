@@ -2,48 +2,48 @@
   "name": "Processing 4.3",
   "tagName": "processing-1293-4.3",
   "isPrerelease": false,
-  "publishedAt": "2024-08-19T06:45:07Z",
+  "publishedAt": "2024-11-12T10:27:12Z",
   "releaseAssets": {
     "edges": [
       {
         "node": {
           "name": "processing-4.3-windows-x64.zip",
-          "downloadUrl": "https://github.com/processing/processing4-carbon-aug-19/releases/download/processing-1293-4.3/processing-4.3-windows-x64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1293-4.3/processing-4.3-windows-x64.zip",
           "size": 224561090
         }
       },
       {
         "node": {
           "name": "processing-4.3-macos-aarch64.zip",
-          "downloadUrl": "https://github.com/processing/processing4-carbon-aug-19/releases/download/processing-1293-4.3/processing-4.3-macos-aarch64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1293-4.3/processing-4.3-macos-aarch64.zip",
           "size": 206501239
         }
       },
       {
         "node": {
           "name": "processing-4.3-linux-x64.tgz",
-          "downloadUrl": "https://github.com/processing/processing4-carbon-aug-19/releases/download/processing-1293-4.3/processing-4.3-linux-x64.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1293-4.3/processing-4.3-linux-x64.tgz",
           "size": 230272890
         }
       },
       {
         "node": {
           "name": "processing-4.3-linux-arm64.tgz",
-          "downloadUrl": "https://github.com/processing/processing4-carbon-aug-19/releases/download/processing-1293-4.3/processing-4.3-linux-arm64.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1293-4.3/processing-4.3-linux-arm64.tgz",
           "size": 224913289
         }
       },
       {
         "node": {
           "name": "processing-4.3-linux-arm32.tgz",
-          "downloadUrl": "https://github.com/processing/processing4-carbon-aug-19/releases/download/processing-1293-4.3/processing-4.3-linux-arm32.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1293-4.3/processing-4.3-linux-arm32.tgz",
           "size": 216978502
         }
       },
       {
         "node": {
           "name": "processing-4.3-macos-x64.zip",
-          "downloadUrl": "https://github.com/processing/processing4-carbon-aug-19/releases/download/processing-1293-4.3/processing-4.3-macos-x64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1293-4.3/processing-4.3-macos-x64.zip",
           "size": 224688525
         }
       }
