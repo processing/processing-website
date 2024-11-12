@@ -1,0 +1,52 @@
+{
+  "name": "Processing 4.3.1",
+  "tagName": "processing-1294-4.3.1",
+  "isPrerelease": true,
+  "publishedAt": "2024-11-11T22:37:31Z",
+  "releaseAssets": {
+    "edges": [
+      {
+        "node": {
+          "name": "processing-4.3.1-linux-arm64.tgz",
+          "downloadUrl": "https://github.com/processing/processing4-carbon-aug-19/releases/download/processing-1294-4.3.1/processing-4.3.1-linux-arm64.tgz",
+          "size": 247245540
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.3.1-linux-x64.tgz",
+          "downloadUrl": "https://github.com/processing/processing4-carbon-aug-19/releases/download/processing-1294-4.3.1/processing-4.3.1-linux-x64.tgz",
+          "size": 224532058
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.3.1-macos-aarch64.zip",
+          "downloadUrl": "https://github.com/processing/processing4-carbon-aug-19/releases/download/processing-1294-4.3.1/processing-4.3.1-macos-aarch64.zip",
+          "size": 199760075
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.3.1-windows-x64.zip",
+          "downloadUrl": "https://github.com/processing/processing4-carbon-aug-19/releases/download/processing-1294-4.3.1/processing-4.3.1-windows-x64.zip",
+          "size": 218599692
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.3.1-linux-arm32.tgz",
+          "downloadUrl": "https://github.com/processing/processing4-carbon-aug-19/releases/download/processing-1294-4.3.1/processing-4.3.1-linux-arm32.tgz",
+          "size": 211237999
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.3.1-macos-x64.zip",
+          "downloadUrl": "https://github.com/processing/processing4-carbon-aug-19/releases/download/processing-1294-4.3.1/processing-4.3.1-macos-x64.zip",
+          "size": 217948933
+        }
+      }
+    ]
+  }
+}

@@ -27,12 +27,13 @@ const fetchReleases = async (githubToken) => {
             }
           }
         }
-        processing4: repository(name: "processing4", owner: "processing") {
+        processing4: repository(name: "processing4-carbon-aug-19", owner: "processing") {
           releases(first: 100, orderBy: { field: NAME, direction: DESC }) {
             edges {
               node {
                 name
                 tagName
+                isPrerelease
                 publishedAt
                 releaseAssets(first: 10) {
                   edges {
@@ -73,6 +74,8 @@ const fetchReleases = async (githubToken) => {
     );
   });
 };
+
+// TODO: Allow for Environment Variable input
 
 const rl = readline.createInterface({
   input: process.stdin,

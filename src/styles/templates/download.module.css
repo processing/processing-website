@@ -18,7 +18,7 @@
   align-items: center;
   flex-basis: var(--col8);
 
-  margin: var(--vertical-margin-large) 0;
+  margin: var(--vertical-margin-medium) 0;
 }
 .mainDownloadButtonContainer>div>p.appleSiliconWarning {
   color: black;
@@ -27,6 +27,31 @@
   }
 }
 
+.preReleaseSwitchContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: var(--col8);
+  gap: var(--gutter);
+}
+
+.preReleaseSwitch{
+  background-color: var(--processing-blue-dark);
+  border-radius: 40px;
+  padding: 0;
+  & button{
+    padding: var(--gutter-half) var(--gutter);
+    border-radius: 40px;
+    color: white;
+    border: transparent solid 5px;
+    transition: all 0.2s;
+  }
+  & button.selected{
+    background-color: white;
+    border: var(--processing-blue-dark) solid 5px;
+    color: black;
+  }
+}
 
 a.mainDownloadButton {
   background-color: var(--processing-blue);

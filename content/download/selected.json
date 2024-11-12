@@ -4,5 +4,7 @@
     "processing-0270-3.5.4",
     "processing-0227-2.2.1"
   ],
-  "selectedPreReleases": [""]
+  "selectedPreReleases": [
+    "processing-1294-4.3.1"
+  ]
 }

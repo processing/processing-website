@@ -31,6 +31,9 @@ import * as grid from '../styles/grid.module.css';
 const Download = ({ data }) => {
   const intl = useIntl();
   const releases = usePreparedReleases(data.releases.nodes);
+  const prereleases = usePreparedReleases(data.prereleases.nodes);
+
+  const [selectedRelease, setSelectedRelease] = useState(releases[0]);
 
   // gatsby-plugin-fathom requires us to use hooks
   const trackWindows = useGoal('CIMDWXJV');
@@ -68,6 +71,7 @@ const Download = ({ data }) => {
     window.addEventListener('focus', goToDonate);
   };
 
+
   return (
     <Layout>
       <HeadMatter
@@ -83,13 +87,20 @@ const Download = ({ data }) => {
         </div>
       </div>
 
+      <PreReleaseSwitch
+        releases={releases}
+        prereleases={prereleases}
+        selectedRelease={selectedRelease}
+        setSelectedRelease={setSelectedRelease}
+      />
+
       <MainDownloadSection
-        release={releases[0]}
+        release={selectedRelease}
         onAfterDownload={onAfterDownload}
       />
 
       <OSSectionContainer
-        release={releases[0]}
+        release={selectedRelease}
         onAfterDownload={onAfterDownload}
       />
 
@@ -151,6 +162,29 @@ const Download = ({ data }) => {
     </Layout>
   );
 };
+
+const PreReleaseSwitch = memo(({ releases, prereleases, selectedRelease, setSelectedRelease }) => {
+  const intl = useIntl();
+
+  return (
+    <>
+      {
+        prereleases.length > 0 && (
+          <div className={classnames(grid.container, grid.grid, css.preReleaseSwitchContainer)}>
+            <div className={classnames(grid.col, css.preReleaseSwitch)}>
+              <button className={selectedRelease === releases[0] ? css.selected : ""} onClick={() => setSelectedRelease(releases[0])}>
+                {intl.formatMessage({ id: 'main' })} ({releases[0].version})
+              </button>
+              <button className={selectedRelease === prereleases[0] ? css.selected : ""} onClick={() => setSelectedRelease(prereleases[0])}>
+                {intl.formatMessage({ id: 'beta' })} ({prereleases[0].version})
+              </button>
+            </div>
+          </div>
+        )
+      }
+    </>
+  )
+});
 
 const MainDownloadSection = memo(({ release, onAfterDownload }) => {
   const intl = useIntl();
@@ -367,7 +401,7 @@ const Link = memo(({ href, icon, title, description }) => (
 ));
 
 export const query = graphql`
-  query($selectedReleases: [String!]!) {
+  query($selectedReleases: [String!]!, $selectedPreReleases: [String!]!) {
     releases: allFile(
       filter: {
         sourceInstanceName: { eq: "download" }
@@ -381,6 +415,33 @@ export const query = graphql`
           name
           tagName
           publishedAt
+          isPrerelease
+          releaseAssets {
+            edges {
+              node {
+                name
+                downloadUrl
+                size
+              }
+            }
+          }
+        }
+      }
+    }
+    prereleases: allFile(
+      filter: {
+        sourceInstanceName: { eq: "download" }
+        relativeDirectory: { eq: "releases" }
+        childJson: { tagName: { in: $selectedPreReleases } }
+      }
+      sort: { fields: childJson___name, order: DESC }
+    ) {
+      nodes {
+        childJson {
+          name
+          tagName
+          publishedAt
+          isPrerelease
           releaseAssets {
             edges {
               node {

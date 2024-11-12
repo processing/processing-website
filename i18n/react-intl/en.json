@@ -1,6 +1,8 @@
 {
   "home": "Home",
   "download": "Download",
+  "main": "Stable",
+  "beta": "Beta",
   "documentation": "Documentation",
   "reference": "Reference",
   "references": "References",
