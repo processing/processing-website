@@ -20,16 +20,22 @@ const Footer = ({ withSidebar }) => {
       <div className={classnames(grid.col, css.socialmediaWrapper)}>
         <ul>
           <li>
-            <a href={'https://twitter.com/ProcessingOrg'} target="_blank" rel="noreferrer">Twitter</a>
+            <a href={'http://github.com/processing/'} target="_blank" rel="noreferrer">GitHub</a>
+          </li>
+          <li>
+            <a href={'https://mastodon.social/@processing/'} target="_blank" rel="noreferrer">Mastodon</a>
+          </li>
+          <li>
+            <a href={'https://www.instagram.com/processing_core/'} target="_blank" rel="noreferrer">Instagram</a>
+          </li>
+          <li>
+            <a href={'https://www.facebook.com/profile.php?id=61567491443061/'} target="_blank" rel="noreferrer">Facebook</a>
+          </li>
+          <li>
+            <a href={'https://twitter.com/ProcessingCore'} target="_blank" rel="noreferrer">Twitter/X</a>
           </li>
           <li>
             <a href={'https://medium.com/@ProcessingOrg'} target="_blank" rel="noreferrer">Medium</a>
-          </li>
-          <li>
-            <a href={'https://www.instagram.com/processingorg/'} target="_blank" rel="noreferrer">Instagram</a>
-          </li>
-          <li>
-            <a href={'http://github.com/processing/'} target="_blank" rel="noreferrer">GitHub</a>
           </li>
         </ul>
         <p
