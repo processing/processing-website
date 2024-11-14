@@ -20,7 +20,7 @@ const Footer = ({ withSidebar }) => {
       <div className={classnames(grid.col, css.socialmediaWrapper)}>
         <ul>
           <li>
-            <a href={'http://github.com/processing/processing4/'} target="_blank" rel="noreferrer">GitHub</a>
+            <a href={'http://github.com/processing/'} target="_blank" rel="noreferrer">GitHub</a>
           </li>
           <li>
             <a href={'https://mastodon.social/@processing/'} target="_blank" rel="noreferrer">Mastodon</a>
