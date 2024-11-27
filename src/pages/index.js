@@ -21,6 +21,7 @@ import DSILogo from '../images/partners/designsystemsinternational.svg';
 import DMALogo from '../images/partners/ucla-dma.svg';
 import FathomLogo from '../images/partners/fathom.svg';
 import NetlifyLogo from '../images/partners/netlify.svg';
+import UptimeRobotLogo from '../images/partners/uptimerobot.svg';
 
 const partners = [
   {
@@ -52,6 +53,12 @@ const partners = [
     url: 'https://www.netlify.com/',
     width: '20%',
     Logo: NetlifyLogo
+  },
+  {
+    name: 'Uptime Robot',
+    url: 'https://uptimerobot.com/',
+    width: '18%',
+    Logo: UptimeRobotLogo
   }
 ];
 
