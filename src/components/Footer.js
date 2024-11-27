@@ -23,6 +23,9 @@ const Footer = ({ withSidebar }) => {
             <a href={'http://github.com/processing/'} target="_blank" rel="noreferrer">GitHub</a>
           </li>
           <li>
+            <a href={'https://bsky.app/profile/processing.org'} target="_blank" rel="noreferrer">Bluesky</a>
+          </li>
+          <li>
             <a href={'https://mastodon.social/@processing/'} target="_blank" rel="noreferrer">Mastodon</a>
           </li>
           <li>
@@ -30,9 +33,6 @@ const Footer = ({ withSidebar }) => {
           </li>
           <li>
             <a href={'https://www.facebook.com/profile.php?id=61567491443061/'} target="_blank" rel="noreferrer">Facebook</a>
-          </li>
-          <li>
-            <a href={'https://twitter.com/ProcessingCore'} target="_blank" rel="noreferrer">Twitter/X</a>
           </li>
           <li>
             <a href={'https://medium.com/@ProcessingOrg'} target="_blank" rel="noreferrer">Medium</a>
