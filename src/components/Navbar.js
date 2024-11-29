@@ -49,7 +49,8 @@ export const items = [
     name: 'about',
     children: [
       { name: 'overview', href: '/overview' },
-      { name: 'people', href: '/people' }
+      { name: 'people', href: '/people' },
+      { name: 'privacy', href: '/privacy' }
     ]
   },
   {
