@@ -1,3 +1,9 @@
+body{
+  --donate-banner-dark: #182998;
+  --donate-banner-background: url('../../static/img/wallpaper.png')
+}
+
+
 .root {
   display: flex;
   flex-direction: column;
