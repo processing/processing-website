@@ -69,6 +69,9 @@ const Layout = ({ children, withSidebar, withBreadcrumbs, mainClassName }) => {
 
   return (
     <div className={css.root}>
+      <div id="processing-banner" />
+      <link rel="stylesheet" href="https://foundation-donate-banner.netlify.app/static/css/main.css" />
+      <script src="https://foundation-donate-banner.netlify.app/static/js/main.js" ></script>
       <LayoutContext.Provider value={{ headerScrolled, currentHeading }}>
         <Helmet titleTemplate="%s / Processing.org" />
         <Header siteTitle="Processing" scrolled={headerScrolled} />

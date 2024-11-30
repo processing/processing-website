@@ -23,3 +23,9 @@
 .withBreadcrumbs {
   padding-top: var(--vertical-margin-xsmall);
 }
+
+/* Foundation donate banner custom properties */
+body{
+  --donate-banner-dark: #182998;
+  --donate-banner-background: var(--donate-processing-background)
+}
