@@ -1,6 +1,6 @@
 body{
   --donate-banner-dark: #182998;
-  --donate-banner-background: url('../../static/img/wallpaper.png')
+  --donate-banner-background: url('/img/wallpaper.png')
 }
 
 
