@@ -28,6 +28,9 @@ import { useMachineOS, usePreparedReleases } from '../hooks/download';
 import * as css from '../styles/templates/download.module.css';
 import * as grid from '../styles/grid.module.css';
 
+// Set to false to hide the Donate character
+const showDonate = false;
+
 const Download = ({ data }) => {
   const intl = useIntl();
   const releases = usePreparedReleases(data.releases.nodes);
@@ -81,7 +84,7 @@ const Download = ({ data }) => {
 
       <div className={classnames(grid.container, grid.grid)}>
         <div className={classnames(grid.col, css.headerContent)}>
-          <Donate />
+          {showDonate && <Donate />}
           <h1>{intl.formatMessage({ id: 'downloadTitle' })}</h1>
           <p>{intl.formatMessage({ id: 'downloadIntro' })}</p>
         </div>
