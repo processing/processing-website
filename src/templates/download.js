@@ -195,7 +195,7 @@ const MainDownloadSection = memo(({ release, onAfterDownload }) => {
   const intl = useIntl();
   const detectedAsset = useMachineOS(release.assetsByOs, release.publishedAt);
 
-  const appleSiliconAsset = useMemo(() => release.assets.find(asset => detectedAsset.os === "macOS" && asset.os === "macOS" && asset.bit === "Intel 64-bit"), [release]);
+  const appleSiliconAsset = useMemo(() => release.assets.find(asset => detectedAsset.os === "macOS" && asset.os === "macOS" && asset.bit === "Intel 64-bit"), [release, detectedAsset]);
 
   return (
     <div className={classnames(grid.container, grid.grid)}>
