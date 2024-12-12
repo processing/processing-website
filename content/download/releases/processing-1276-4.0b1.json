@@ -1,30 +1,9 @@
 {
   "name": "Processing 4.0 beta 1",
   "tagName": "processing-1276-4.0b1",
-  "publishedAt": "2021-08-09T11:27:08Z",
+  "isPrerelease": false,
+  "publishedAt": "2024-08-19T06:43:42Z",
   "releaseAssets": {
-    "edges": [
-      {
-        "node": {
-          "name": "processing-4.0b1-macosx.zip",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1276-4.0b1/processing-4.0b1-macosx.zip",
-          "size": 341637227
-        }
-      },
-      {
-        "node": {
-          "name": "processing-4.0b1-windows64.zip",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1276-4.0b1/processing-4.0b1-windows64.zip",
-          "size": 353850243
-        }
-      },
-      {
-        "node": {
-          "name": "processing-4.0b1-linux64.tgz",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1276-4.0b1/processing-4.0b1-linux64.tgz",
-          "size": 349755794
-        }
-      }
-    ]
+    "edges": []
   }
 }

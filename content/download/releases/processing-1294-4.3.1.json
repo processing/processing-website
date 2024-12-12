@@ -1,17 +1,10 @@
 {
   "name": "Processing 4.3.1",
   "tagName": "processing-1294-4.3.1",
-  "isPrerelease": true,
+  "isPrerelease": false,
   "publishedAt": "2024-11-12T14:38:51Z",
   "releaseAssets": {
     "edges": [
-      {
-        "node": {
-          "name": "processing-4.3.1-linux-arm64.tgz",
-          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1294-4.3.1/processing-4.3.1-linux-arm64.tgz",
-          "size": 252961764
-        }
-      },
       {
         "node": {
           "name": "processing-4.3.1-linux-x64.tgz",
@@ -45,6 +38,13 @@
           "name": "processing-4.3.1-macos-x64.zip",
           "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1294-4.3.1/processing-4.3.1-macos-x64.zip",
           "size": 224010374
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.3.1-linux-arm64.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1294-4.3.1/processing-4.3.1-linux-arm64.tgz",
+          "size": 217843538
         }
       }
     ]
