@@ -75,7 +75,11 @@ const fetchReleases = async (githubToken) => {
   });
 };
 
-// TODO: Allow for Environment Variable input
+if (process.env.GITHUB_TOKEN) {
+  console.log('Fetching releases from github.com');
+  fetchReleases(process.env.GITHUB_TOKEN);
+  return;
+}
 
 const rl = readline.createInterface({
   input: process.stdin,
