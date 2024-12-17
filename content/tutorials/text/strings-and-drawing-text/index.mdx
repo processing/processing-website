@@ -63,13 +63,23 @@ println(message.length());
 We can also change a String to all uppercase using the [toUpperCase()](http://processing.org/reference/String_toUpperCase_.html) method ([toLowerCase()](http://processing.org/reference/String_toLowerCase_.html) is also available).
 
 ```
-message = message.toUpperCase();
-println(message);
+String uppercase = message.toUpperCase();
+println(uppercase);
 ```
 
-You might notice something a bit odd here. Why didn't we simply say `message.toUpperCase()` and then print `message` variable? Instead, we set the variable `message` to be the result of `message.toUpperCase()`.
+You might notice something a bit odd here. Why didn't we simply say `message.toUpperCase()` and then print `message` variable? Instead, we assigned the result of `message.toUpperCase()` to a new variable with a different name&mdash;`uppercase`.
 
-This is because a String is a special kind of object. It is immutable. An immutable object is one whose data can never be changed. Once we create a String, it stays the same for life. Anytime we want to change the String, we have to create a new one. So in the case of converting to uppercase, the method `toUpperCase()` cannot modify the original String in `message`&mdash;it only returns a copy of the String object with all caps. We can however use the existing variable `message` to store the new String object.
+This is because a String is a special kind of object. It is immutable. An immutable object is one whose data can never be changed. Once we create a String, it stays the same for life. Anytime we want to change the String, we have to assign it to a variable.
+
+So in the case of converting to uppercase, the method `toUpperCase()` cannot modify the original String in message. It only returns a *new copy* of the String object with all caps.
+
+Note that it is possible to use the existing variable `message` to store this new String:
+
+```
+message = message.toUpperCase();
+```
+
+You might be thinking, "Wait, didn’t you just say Strings are immutable?" Yes, that’s true. The code above doesn’t change the original String. Instead, it updates the `message` variable to point to the new String object created by `toUpperCase()`. Without this reassignment (using the `=` operator), the original `message` would remain unchanged.
 
 Finally, let's look at [equals()](http://processing.org/reference/String_equals_.html). Now, Strings can be compared with the `==` operator as follows:
 
