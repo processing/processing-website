@@ -1,16 +1,16 @@
 {
   "name": "WootingKeyboard",
   "authors": [
-    "[Shinhoo Park @ KAIST Interactive Media Lab](http://kiml.org/WootingKeyboard)"
+    "Shinhoo Park @ KAIST Interactive Media Lab"
   ],
-  "url": "http://kiml.org/WootingKeyboard",
+  "url": "https://github.com/Shinhoo/Wooting-Keyboard-Library/",
   "categories": [
     "Data",
     "I/O",
     "Utilities"
   ],
-  "sentence": "This library can be used to analyze the raw data of the [Wooting keyboard](https://www.wooting.nl/).",
-  "paragraph": "The library will trigger onReadEvents when receive raw data from [Wooting keyboard](https://www.wooting.nl/). This data can be parsed into data of type String or HashMap through parseLog and parseData functions.",
+  "sentence": "This library can be used to analyze the raw data of the [Wooting keyboard](https://wooting.io/).",
+  "paragraph": "The library will trigger onReadEvents when receive raw data from [Wooting keyboard](https://wooting.io/). This data can be parsed into data of type String or HashMap through parseLog and parseData functions.",
   "type": "library",
   "packages": [
     {

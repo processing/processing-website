@@ -1,13 +1,13 @@
 {
   "name": "SoundCloud",
   "authors": [
-    "[Darius Morawiec](http://nok.onl)"
+    "Darius Morawiec"
   ],
   "url": "https://github.com/nok/soundcloud-processing",
   "categories": [
     "Data"
   ],
-  "sentence": "Unofficial Java library, which simplifies the use of the official [SoundCloud Java API wrapper](https://github.com/soundcloud/java-api-wrapper).",
+  "sentence": "Unofficial Java library, which simplifies the use of the official SoundCloud Java API wrapper.",
   "paragraph": "",
   "type": "library",
   "packages": [
