@@ -1,14 +1,14 @@
 {
   "name": "Myo for Processing",
   "authors": [
-    "[Darius Morawiec](http://nok.onl)"
+    "Darius Morawiec"
   ],
   "url": "https://github.com/nok/myo-processing",
   "categories": [
     "Hardware"
   ],
-  "sentence": "Library to use the [Myo](https://www.thalmic.com) in [Processing](http://processing.org/).",
-  "paragraph": "The [Myo](https://www.thalmic.com) armband lets you use the electrical activity in your muscles to wirelessly control your computer, phone, and other favorite digital technologies. With the wave of your hand, it will transform how you interact with your digital world.",
+  "sentence": "Library to use the Myo in [Processing](http://processing.org/).",
+  "paragraph": "The Myo armband lets you use the electrical activity in your muscles to wirelessly control your computer, phone, and other favorite digital technologies. With the wave of your hand, it will transform how you interact with your digital world.",
   "type": "library",
   "packages": [
     {

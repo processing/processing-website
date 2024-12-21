@@ -4,7 +4,7 @@
     "3D"
   ],
   "authors": [
-    "[Max Farrell](https://arcane.info/)"
+    "Max Farrell"
   ],
   "url": "http://maxlfarrell.gitlab.io/extruder",
   "sentence": "A 3d library to create extrusions",

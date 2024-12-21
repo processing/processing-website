@@ -22,4 +22,4 @@ language: ''
 description
 ```
 
-Fill in the empty `''` and change 'description' with the appropriate information for the book that you can find [here](https://github.com/processing/processing-docs/blob/master/content/static/books.html) or [here](http://processing-website-user-testing.s3-website-us-east-1.amazonaws.com/books).
+Fill in the empty `''` and change 'description' with the appropriate information for the book that you can find [here](https://github.com/processing/processing-docs/blob/master/content/static/books.html).

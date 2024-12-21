@@ -1,9 +1,9 @@
 {
   "name": "JarMatey",
   "authors": [
-    "[Kevin Workman](http://StaticVoidGames.com)"
+    "[Kevin Workman](https://happycoding.io/)"
   ],
-  "url": "http://StaticVoidGames.com/JarMatey/",
+  "url": "",
   "categories": null,
   "sentence": "A utility that creates a self-extracting jar that runs on any platform.",
   "paragraph": "This is a workaround for Processing only exporting applications.",

@@ -1,7 +1,7 @@
 {
   "name": "Shader Mode",
   "authors": [
-    "[Izza Tariq](https://www.izzatariq.com/)"
+    "Izza Tariq"
   ],
   "url": "https://github.com/Izza11/shader-mode",
   "sentence": "Edit GLSL shaders in Processing",
