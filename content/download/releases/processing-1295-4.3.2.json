@@ -1,7 +1,7 @@
 {
   "name": "Processing 4.3.2",
   "tagName": "processing-1295-4.3.2",
-  "isPrerelease": true,
+  "isPrerelease": false,
   "publishedAt": "2024-12-12T16:24:59Z",
   "releaseAssets": {
     "edges": [
