@@ -8,7 +8,7 @@ PImage img;
 
 void setup() {
   size(640, 360);
-  img = loadImage("https://processingfoundation.org/content/1-home/processing-web.png");
+  img = loadImage("https://processing.org/img/processing-web.png");
   noLoop();
 }
 
