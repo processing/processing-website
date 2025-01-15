@@ -12,7 +12,7 @@ function runLiveSketch(s) {
 
   s.setup = () => {
     s.createCanvas(640, 360);
-    img = s.createImg('https://processing.org/img/processing-web.png', loaded);
+    img = loadImage("https://processing.org/img/processing-web.png");
   };
 
   function loaded() {
