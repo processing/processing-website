@@ -39,6 +39,13 @@
           "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1296-4.3.3/processing-4.3.3-macos-x64.zip",
           "size": 224027253
         }
+      },
+      {
+        "node": {
+          "name": "processing-4.3.3-macos-aarch64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1296-4.3.3/processing-4.3.3-macos-aarch64.zip",
+          "size": 205839676
+        }
       }
     ]
   }
