@@ -1,4 +1,4 @@
-name: Update Procesing Releases
+name: Update Processing Releases
 
 on:
   workflow_dispatch:
