@@ -8,7 +8,7 @@ import * as css from './CopyButton.module.css';
 const OpenWithButton = ({ text }) => {
     return (
         <a
-            href={`pde://sketch/base64/${Buffer.from(text).toString('base64')}`}
+            href={`pde://sketch/base64/${stringToBase64(text)}`}
             type="button"
             className={classnames(css.root)}
         >
@@ -18,3 +18,10 @@ const OpenWithButton = ({ text }) => {
 }
 
 export default OpenWithButton;
+
+function stringToBase64(str) {
+    if (typeof Buffer !== 'undefined') {
+        return Buffer.from(str).toString('base64');
+    }
+    return btoa(str);
+}
