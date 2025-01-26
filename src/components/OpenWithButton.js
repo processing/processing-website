@@ -10,7 +10,6 @@ const OpenWithButton = ({ text }) => {
         <a
             href={`pde://sketch/base64/${btoa(text)}`}
             type="button"
-            onClick={openWithProcessing}
             className={classnames(css.root)}
         >
             <ProcessingIcon /> {'Open With Processing'}
