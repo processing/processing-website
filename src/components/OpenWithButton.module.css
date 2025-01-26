@@ -10,10 +10,6 @@
   & svg {
     height: 12px;
     width: auto;
-    fill: inherit;
-    & path {
-      fill: inherit;
-    }
   }
 }
 
@@ -25,14 +21,4 @@
 .root:active {
   color: var(--processing-blue-mid);
   fill: var(--processing-blue-mid);
-}
-
-.copied {
-  color: var(--processing-blue-light);
-  fill: var(--processing-blue-light);
-}
-
-.copied:hover {
-  color: var(--processing-blue-light);
-  fill: var(--processing-blue-light);
 }

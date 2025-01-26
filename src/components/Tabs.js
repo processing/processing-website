@@ -3,6 +3,7 @@ import classnames from 'classnames';
 
 import Button from './Button';
 import CopyButton from './CopyButton';
+import OpenWithButton from './OpenWithButton';
 
 import { useHighlight } from '../hooks';
 import { escapeHtml } from '../utils';
@@ -40,7 +41,10 @@ const Tabs = ({ pdes, className }) => {
             [css.activeCode]: pde.name === active
           })}
           key={key}>
-          <CopyButton text={pde.code} />
+          <div className={css.actions}>
+            <CopyButton text={pde.code} />
+            <OpenWithButton text={pde.code} />
+          </div>
           <pre className={css.codeBlock}>
             <code
               dangerouslySetInnerHTML={{
