@@ -32,7 +32,7 @@ const Footer = ({ withSidebar }) => {
             <a href={'https://www.instagram.com/processing_core/'} target="_blank" rel="noreferrer">Instagram</a>
           </li>
           <li>
-            <a href={'https://www.facebook.com/page.processing/'} target="_blank" rel="noreferrer">Facebook</a>
+            <a href={'https://www.facebook.com/people/Processing-Core/61567491443061/'} target="_blank" rel="noreferrer">Facebook</a>
           </li>
           <li>
             <a href={'https://medium.com/@ProcessingOrg'} target="_blank" rel="noreferrer">Medium</a>
