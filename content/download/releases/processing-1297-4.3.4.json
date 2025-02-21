@@ -1,0 +1,52 @@
+{
+  "name": "Processing 4.3.4",
+  "tagName": "processing-1297-4.3.4",
+  "isPrerelease": true,
+  "publishedAt": "2025-02-21T09:15:06Z",
+  "releaseAssets": {
+    "edges": [
+      {
+        "node": {
+          "name": "processing-4.3.4-linux-x64.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1297-4.3.4/processing-4.3.4-linux-x64.tgz",
+          "size": 230339742
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.3.4-linux-arm64.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1297-4.3.4/processing-4.3.4-linux-arm64.tgz",
+          "size": 217906161
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.3.4-windows-x64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1297-4.3.4/processing-4.3.4-windows-x64.zip",
+          "size": 224647909
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.3.4-macos-aarch64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1297-4.3.4/processing-4.3.4-macos-aarch64.zip",
+          "size": 205888289
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.3.4-linux-arm32.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1297-4.3.4/processing-4.3.4-linux-arm32.tgz",
+          "size": 217032669
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.3.4-macos-x64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1297-4.3.4/processing-4.3.4-macos-x64.zip",
+          "size": 224079603
+        }
+      }
+    ]
+  }
+}
