@@ -1,8 +1,8 @@
 {
   "brief": "Draws a point, a coordinate in space at the dimension of one pixel",
-  "related": ["stroke_"],
+  "related": ["stroke_", "strokeWeight_"],
   "name": "point()",
-  "description": "Draws a point, a coordinate in space at the dimension of one pixel. The first\n parameter is the horizontal value for the point, the second value is the\n vertical value for the point, and the optional third value is the depth\n value. Drawing this shape in 3D with the <b>z</b> parameter requires the P3D\n parameter in combination with <b>size()</b> as shown in the above example.\n <br/>\n <br/>\n Use <b>stroke()</b> to set the color of a <b>point()</b>. <br/>\n <br/>\n Point appears round with the default <b>strokeCap(ROUND)</b> and square with\n <b>strokeCap(PROJECT)</b>. Points are invisible with <b>strokeCap(SQUARE)</b>\n (no cap). <br/>\n <br/>\n Using point() with strokeWeight(1) or smaller may draw nothing to the screen,\n depending on the graphics settings of the computer. Workarounds include\n setting the pixel using <b>set()</s> or drawing the point using either\n <b>circle()</b> or <b>square()</b>.",
+  "description": "Draws a point, a coordinate in space at the dimension of one pixel. The first\n parameter is the horizontal value for the point, the second value is the\n vertical value for the point, and the optional third value is the depth\n value. Drawing this shape in 3D with the <b>z</b> parameter requires the P3D\n parameter in combination with <b>size()</b> as shown in the above example.\n <br/>\n <br/>\n Use <b>stroke()</b> to set the color of a <b>point()</b>. <br/>\n <br/>\n Point appears round with the default <b>strokeCap(ROUND)</b> and square with\n <b>strokeCap(PROJECT)</b>. Points are invisible with <b>strokeCap(SQUARE)</b>\n (no cap). <br/>\n <br/>\n Using point() with <b>strokeWeight(1)</b> or smaller may draw nothing to the screen,\n depending on the graphics settings of the computer. Workarounds include\n setting the pixel using <b>set()</s> or drawing the point using either\n <b>circle()</b> or <b>square()</b>.",
   "syntax": ["point(x, y)", "point(x, y, z)"],
   "returns": "void",
   "type": "function",
