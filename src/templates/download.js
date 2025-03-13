@@ -313,8 +313,9 @@ const InfoTooltip = ({ asset, date, className, zIndex, translateX }) => {
 const osAndComponents = [
   { osName: 'Windows', logoComponent: <LogoWindows /> },
   { osName: 'macOS', logoComponent: <LogoMac /> },
+  { osName: "Linux & Raspbery  Pi", logoComponent: <div className='flex'><LogoLinux /><LogoRaspberry /> </div> },
   { osName: 'Linux', logoComponent: <LogoLinux /> },
-  { osName: 'Raspberry Pi', logoComponent: <LogoRaspberry /> }
+  { osName: 'Raspberry Pi', logoComponent: <LogoRaspberry /> },
 ];
 
 const OSSectionContainer = memo(({ release, onAfterDownload }) => {
@@ -354,6 +355,7 @@ const OSSection = memo(
     onSelect,
     onAfterDownload
   }) => {
+    if (assets === undefined || assets?.length === 0) return null;
     return (
       <div
         className={classnames(css.osSection, {

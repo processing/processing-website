@@ -1,0 +1,87 @@
+{
+  "name": "Processing 4.4.33",
+  "tagName": "processing-1333-4.4.33",
+  "isPrerelease": false,
+  "publishedAt": "2025-03-13T11:14:50Z",
+  "releaseAssets": {
+    "edges": [
+      {
+        "node": {
+          "name": "processing-4.4.33-reference.zip",
+          "downloadUrl": "https://github.com/Stefterv/processing4/releases/download/processing-1333-4.4.33/processing-4.4.33-reference.zip",
+          "size": 70945187
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.33-windows-x64-portable.zip",
+          "downloadUrl": "https://github.com/Stefterv/processing4/releases/download/processing-1333-4.4.33/processing-4.4.33-windows-x64-portable.zip",
+          "size": 388689830
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.33-linux-x64-portable.zip",
+          "downloadUrl": "https://github.com/Stefterv/processing4/releases/download/processing-1333-4.4.33/processing-4.4.33-linux-x64-portable.zip",
+          "size": 405103682
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.33-windows-x64.msi",
+          "downloadUrl": "https://github.com/Stefterv/processing4/releases/download/processing-1333-4.4.33/processing-4.4.33-windows-x64.msi",
+          "size": 350846861
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.33-linux-x64.snap",
+          "downloadUrl": "https://github.com/Stefterv/processing4/releases/download/processing-1333-4.4.33/processing-4.4.33-linux-x64.snap",
+          "size": 445075456
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.33-linux-aarch64-portable.zip",
+          "downloadUrl": "https://github.com/Stefterv/processing4/releases/download/processing-1333-4.4.33/processing-4.4.33-linux-aarch64-portable.zip",
+          "size": 399185400
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.33-linux-aarch64.snap",
+          "downloadUrl": "https://github.com/Stefterv/processing4/releases/download/processing-1333-4.4.33/processing-4.4.33-linux-aarch64.snap",
+          "size": 432328704
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.33-macos-aarch64-portable.zip",
+          "downloadUrl": "https://github.com/Stefterv/processing4/releases/download/processing-1333-4.4.33/processing-4.4.33-macos-aarch64-portable.zip",
+          "size": 400453622
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.33-macos-aarch64.dmg",
+          "downloadUrl": "https://github.com/Stefterv/processing4/releases/download/processing-1333-4.4.33/processing-4.4.33-macos-aarch64.dmg",
+          "size": 400303597
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.33-macos-x64-portable.zip",
+          "downloadUrl": "https://github.com/Stefterv/processing4/releases/download/processing-1333-4.4.33/processing-4.4.33-macos-x64-portable.zip",
+          "size": 396170888
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.33-macos-x64.dmg",
+          "downloadUrl": "https://github.com/Stefterv/processing4/releases/download/processing-1333-4.4.33/processing-4.4.33-macos-x64.dmg",
+          "size": 395961400
+        }
+      }
+    ]
+  }
+}
