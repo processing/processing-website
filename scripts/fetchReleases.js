@@ -3,18 +3,22 @@ const { graphql } = require('@octokit/graphql');
 const fs = require('fs');
 const path = require('path');
 
+const owner = process.env.GITHUB_OWNER || 'processing';
+const repo = process.env.GITHUB_REPO || 'processing';
+const repo4 = process.env.GITHUB_REPO4 || 'processing4';
+
 const fetchReleases = async (githubToken) => {
   const { processing, processing4 } = await graphql(
     `
       query {
-        processing: repository(name: "processing", owner: "processing") {
+        processing: repository(name: "${repo}", owner: "${owner}") {
           releases(first: 100, orderBy: { field: NAME, direction: DESC }) {
             edges {
               node {
                 name
                 tagName
                 publishedAt
-                releaseAssets(first: 10) {
+                releaseAssets(first: 20) {
                   edges {
                     node {
                       name
@@ -27,7 +31,7 @@ const fetchReleases = async (githubToken) => {
             }
           }
         }
-        processing4: repository(name: "processing4", owner: "processing") {
+        processing4: repository(name: "${repo4}", owner: "${owner}") {
           releases(first: 100, orderBy: { field: NAME, direction: DESC }) {
             edges {
               node {
@@ -35,7 +39,7 @@ const fetchReleases = async (githubToken) => {
                 tagName
                 isPrerelease
                 publishedAt
-                releaseAssets(first: 10) {
+                releaseAssets(first: 20) {
                   edges {
                     node {
                       name
