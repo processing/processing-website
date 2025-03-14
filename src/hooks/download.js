@@ -3,7 +3,6 @@ import { useIntl } from 'react-intl';
 
 const getOS = (name) => {
   if (name.includes('windows') || name.includes('.exe')) return 'Windows';
-  if (name.includes(".snap")) return "Linux & Raspbery Pi";
   else if (name.includes('linux-arm')) return 'Raspberry Pi';
   else if (name.includes('linux-aarch64')) return 'Raspberry Pi';
   else if (name.includes('linux')) return 'Linux';
