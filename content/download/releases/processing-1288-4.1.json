@@ -4,6 +4,49 @@
   "isPrerelease": false,
   "publishedAt": "2024-08-19T06:44:42Z",
   "releaseAssets": {
-    "edges": []
+    "edges": [
+      {
+        "node": {
+          "name": "processing-4.1-linux-arm32.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1288-4.1/processing-4.1-linux-arm32.tgz",
+          "size": 216184184
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.1-linux-arm64.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1288-4.1/processing-4.1-linux-arm64.tgz",
+          "size": 227144387
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.1-linux-x64.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1288-4.1/processing-4.1-linux-x64.tgz",
+          "size": 229395885
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.1-macos-aarch64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1288-4.1/processing-4.1-macos-aarch64.zip",
+          "size": 205434817
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.1-macos-x64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1288-4.1/processing-4.1-macos-x64.zip",
+          "size": 223570612
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.1-windows-x64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1288-4.1/processing-4.1-windows-x64.zip",
+          "size": 223863540
+        }
+      }
+    ]
   }
 }

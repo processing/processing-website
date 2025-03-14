@@ -4,6 +4,28 @@
   "isPrerelease": false,
   "publishedAt": "2024-08-19T06:43:32Z",
   "releaseAssets": {
-    "edges": []
+    "edges": [
+      {
+        "node": {
+          "name": "processing-4.0a5-linux64.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1274-4.0a5/processing-4.0a5-linux64.tgz",
+          "size": 366839366
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.0a5-macosx.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1274-4.0a5/processing-4.0a5-macosx.zip",
+          "size": 364901904
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.0a5-windows64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1274-4.0a5/processing-4.0a5-windows64.zip",
+          "size": 375019014
+        }
+      }
+    ]
   }
 }

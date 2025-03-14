@@ -313,7 +313,7 @@ const InfoTooltip = ({ asset, date, className, zIndex, translateX }) => {
 const osAndComponents = [
   { osName: 'Windows', logoComponent: <LogoWindows /> },
   { osName: 'macOS', logoComponent: <LogoMac /> },
-  { osName: "Linux & Raspbery  Pi", logoComponent: <div className='flex'><LogoLinux /><LogoRaspberry /> </div> },
+  { osName: "Linux & Raspbery Pi", logoComponent: <div className='flex'><LogoLinux /><LogoRaspberry /> </div> },
   { osName: 'Linux', logoComponent: <LogoLinux /> },
   { osName: 'Raspberry Pi', logoComponent: <LogoRaspberry /> },
 ];

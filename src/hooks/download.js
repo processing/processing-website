@@ -3,7 +3,7 @@ import { useIntl } from 'react-intl';
 
 const getOS = (name) => {
   if (name.includes('windows') || name.includes('.exe')) return 'Windows';
-  if (name.includes(".snap")) return "Linux & Raspbery  Pi";
+  if (name.includes(".snap")) return "Linux & Raspbery Pi";
   else if (name.includes('linux-arm')) return 'Raspberry Pi';
   else if (name.includes('linux-aarch64')) return 'Raspberry Pi';
   else if (name.includes('linux')) return 'Linux';
@@ -72,7 +72,7 @@ export const usePreparedReleases = (releases) => {
           day: 'numeric'
         }),
         assets: [],
-        assetsByOs: { Windows: [], macOS: [], Linux: [], 'Raspberry Pi': [], "Linux & Raspbery  Pi": [] }
+        assetsByOs: { Windows: [], macOS: [], Linux: [], 'Raspberry Pi': [], "Linux & Raspbery Pi": [] }
       };
 
       // Prepare release assets
@@ -82,7 +82,7 @@ export const usePreparedReleases = (releases) => {
         if (asset.name.includes(".snap")) {
           asset.downloadUrl = process.env.SNAPSTORE_URL ?? "https://snapcraft.io/processing";
           if (asset.name.includes("aarch64")) {
-            asset.downloadUrl += "/raspbian"
+            asset.downloadUrl = "https://snapcraft.io/install/processing/raspbian"
           }
         }
         item.assets.push({
