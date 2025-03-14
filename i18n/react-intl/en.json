@@ -79,7 +79,7 @@
   "downloadTitleMeta": "Download Processing",
   "downloadIntro": "Processing is open source and is available for macOS, Windows, and Linux. Projects created with Processing are also cross-platform, and can be used on macOS, Windows, Android, Raspberry Pi, and many other Linux platforms.",
   "windowsIntelAssetTooltip": "Compatible with Windows 10 and 11.",
-  "macOsIntelAssetTooltip": "Compatible with macOS 10.15.7 (Catalina) and above.",
+  "macOsIntelAssetTooltip": "Compatible with Intel processors (Before 2020).",
   "macOsSiliconAssetTooltip": "Compatible with M1 and later processors.",
   "linuxIntelAssetTooltip": "Tested and supported on Ubuntu, but will work with most major distributions.",
   "raspberryPi32AssetTooltip": "Latest version of Raspberry Pi OS is recommended.",
