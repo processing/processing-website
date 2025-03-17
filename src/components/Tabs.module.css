@@ -37,3 +37,8 @@
   padding-bottom: var(--gutter-double);
   white-space: break-spaces;
 }
+
+.actions{
+  position: absolute;
+  right: var(--gutter);
+}
