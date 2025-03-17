@@ -6,6 +6,7 @@
   color: var(--darkgray);
   cursor: pointer;
   fill: var(--darkgray);
+  position: relative;
 
   & svg {
     height: 12px;
@@ -21,4 +22,32 @@
 .root:active {
   color: var(--processing-blue-mid);
   fill: var(--processing-blue-mid);
+}
+
+.instructions {
+  bottom: 100%;
+  margin-bottom: 10px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  min-width: 16em;
+  background-color: #555;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 8px 10px 10px 25px;
+  transition: opacity 0.3s;
+  a {
+    color: var(--processing-blue-mid);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
 }

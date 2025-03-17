@@ -43,7 +43,7 @@ const Tabs = ({ pdes, className }) => {
           key={key}>
           <div className={css.actions}>
             <CopyButton text={pde.code} />
-            <OpenWithButton text={pde.code} />
+            <OpenWithButton pdes={pdes} />
           </div>
           <pre className={css.codeBlock}>
             <code
