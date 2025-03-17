@@ -42,8 +42,8 @@ export const items = [
     ]
   },
   {
-    name: 'teach',
-    href: 'https://processingfoundation.org/education'
+    name: 'forum',
+    href: 'https://discourse.processing.org'
   },
   {
     name: 'about',

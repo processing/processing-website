@@ -23,7 +23,7 @@
     "start": "gatsby serve",
     "clean": "gatsby clean",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
-    "fetchReleases": "node scripts/fetchReleases.js",
+    "fetchReleases": "touch .env && node --env-file=.env scripts/fetchReleases.js",
     "updateContributions": "node scripts/updateContributions.js",
     "updateExamples": "node scripts/updateExamples.js",
     "updateKeywords": "node scripts/updateKeywords.js",

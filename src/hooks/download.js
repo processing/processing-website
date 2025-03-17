@@ -4,18 +4,20 @@ import { useIntl } from 'react-intl';
 const getOS = (name) => {
   if (name.includes('windows') || name.includes('.exe')) return 'Windows';
   else if (name.includes('linux-arm')) return 'Raspberry Pi';
+  else if (name.includes('linux-aarch64')) return 'Raspberry Pi';
   else if (name.includes('linux')) return 'Linux';
   else if (name.includes('macos')) return 'macOS';
   else return 'Unknown';
 };
 
 const getBit = (name) => {
-  if (name.includes('x64')) return 'Intel 64-bit';
+  if (name.includes('x64')) return 'Intel';
   else if (name.includes('windows64')) return '64-bit';
   else if (name.includes('windows32')) return '32-bit';
   else if (name.includes('macos-aarch64')) return 'Apple Silicon';
   else if (name.includes('linux-arm32')) return '32-bit';
   else if (name.includes('linux-arm64')) return '64-bit';
+  else if (name.includes('linux-aarch64')) return 'Arm';
   else return null;
 };
 
@@ -69,12 +71,19 @@ export const usePreparedReleases = (releases) => {
           day: 'numeric'
         }),
         assets: [],
-        assetsByOs: { Windows: [], macOS: [], Linux: [], 'Raspberry Pi': [] }
+        assetsByOs: { Windows: [], macOS: [], Linux: [], 'Raspberry Pi': [], "Linux & Raspbery Pi": [] }
       };
 
       // Prepare release assets
       for (let j = 0; j < release.releaseAssets.edges.length; j++) {
         const asset = release.releaseAssets.edges[j].node;
+        if (asset.name.includes('portable')) continue;
+        if (asset.name.includes(".snap")) {
+          asset.downloadUrl = process.env.SNAPSTORE_URL ?? "https://snapcraft.io/processing";
+          if (asset.name.includes("aarch64")) {
+            asset.downloadUrl = "https://snapcraft.io/install/processing/raspbian"
+          }
+        }
         item.assets.push({
           name: asset.name,
           os: getOS(asset.name),

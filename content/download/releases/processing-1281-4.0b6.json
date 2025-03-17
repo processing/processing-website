@@ -4,6 +4,49 @@
   "isPrerelease": false,
   "publishedAt": "2024-08-19T06:44:07Z",
   "releaseAssets": {
-    "edges": []
+    "edges": [
+      {
+        "node": {
+          "name": "processing-4.0b6-linux-arm32.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1281-4.0b6/processing-4.0b6-linux-arm32.tgz",
+          "size": 232076307
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.0b6-linux-arm64.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1281-4.0b6/processing-4.0b6-linux-arm64.tgz",
+          "size": 231869242
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.0b6-linux-x64.tgz",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1281-4.0b6/processing-4.0b6-linux-x64.tgz",
+          "size": 234908227
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.0b6-macos-aarch64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1281-4.0b6/processing-4.0b6-macos-aarch64.zip",
+          "size": 220173525
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.0b6-macos-x64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1281-4.0b6/processing-4.0b6-macos-x64.zip",
+          "size": 229991135
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.0b6-windows-x64.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1281-4.0b6/processing-4.0b6-windows-x64.zip",
+          "size": 229025090
+        }
+      }
+    ]
   }
 }
