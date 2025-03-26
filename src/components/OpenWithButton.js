@@ -14,6 +14,17 @@ const OpenWithButton = ({ pdes }) => {
     }
     const [showInstructions, setShowInstructions] = useState(false)
 
+    React.useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (showInstructions && !event.target.closest(`.${css.root}`)) {
+                setShowInstructions(false);
+            }
+        };
+
+        document.addEventListener('click', handleClickOutside);
+        return () => document.removeEventListener('click', handleClickOutside);
+    }, [showInstructions]);
+
     return (
         <a
             href={sketchURL}
@@ -24,9 +35,9 @@ const OpenWithButton = ({ pdes }) => {
             <ProcessingIcon /> {'Open With Processing'}
             {showInstructions && (
                 <div className={classnames(css.instructions)}>
-                    <p>If this did not open Processing, make sure you have it installed and opened at least once.</p>
-                    <p>Currently only versions of Processing later than 4.4 are supported</p>
-                    <a href="https://www.processing.org/download/" target="_black">Download Processing</a>
+                    <h1>Opening Processing<span className={css.ellipsis}></span></h1>
+                    <p>If nothing happens, <a href="https://www.processing.org/download/" target="_black" className={css.downloadLink}>Download Processing</a> version 4.4.1 or later and try again.</p>
+                    <p className={classnames(css.tooltipFootnote)}>Make sure Processing is installed and was opened at least once.</p>
                 </div>
             )}
         </a>

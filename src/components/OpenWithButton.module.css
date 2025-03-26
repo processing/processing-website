@@ -26,28 +26,66 @@
 
 .instructions {
   bottom: 100%;
-  margin-bottom: 10px;
-  left: 50%;
+  margin-bottom: 16px;
+  left: auto;
+  right: 0;
   position: absolute;
-  transform: translateX(-50%);
-  min-width: 16em;
+  transform: none;
+  min-width: 24em;
+  max-width: 24em;
+  width: fit-content;
   background-color: #555;
   color: #fff;
   text-align: left;
   border-radius: 6px;
-  padding: 8px 10px 10px 25px;
+  padding: 16px 10px 10px 25px;
   transition: opacity 0.3s;
+  pointer-events: auto;
   a {
     color: var(--processing-blue-mid);
+  }
+  h1 {
+    color: #fff;
+    font-size: 2em;
+    margin: 0 0 0.3em 0;
+    font-weight: 500;
   }
   &::before {
     content: "";
     position: absolute;
     top: 100%;
-    left: 50%;
+    left: auto;
+    right: 20px;
     margin-left: -10px;
     border-width: 10px;
     border-style: solid;
     border-color: #555 transparent transparent transparent;
   }
+}
+
+.tooltipFootnote {
+  color: var(--gray);
+  font-size: 0.9em;
+}
+
+.downloadLink {
+  color: var(--processing-blue-light) !important;
+  text-decoration: underline;
+}
+
+.downloadLink:hover {
+  color: white !important;
+}
+
+@keyframes ellipsis {
+    10%  { content: "    "; }
+    25%  { content: " .  "; }
+    50% { content: " .. "; }
+    75% { content: " ..."; }
+}
+
+.ellipsis::after {
+    display: inline-block;
+    animation: ellipsis 1.5s infinite;
+    content: " ...";
 }
