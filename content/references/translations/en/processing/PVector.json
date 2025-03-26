@@ -94,6 +94,11 @@
       "desc": "Calculate the angle of rotation for this vector"
     },
     {
+      "anchor": "PVector_setHeading_",
+      "name": "setHeading()",
+      "desc": "Set the direction for this vector"
+    },
+    {
       "anchor": "PVector_rotate_",
       "name": "rotate()",
       "desc": "Rotate the vector by an angle (2D only)"
