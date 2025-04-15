@@ -76,6 +76,7 @@ const updateExamples = async () => {
       cwd: path.join(from, example.dirname)
     });
 
+
     for (let i = 0; i < pdes.length; i++) {
       const pde = pdes[i];
       fs.copySync(
@@ -91,6 +92,10 @@ const updateExamples = async () => {
 
     for (let i = 0; i < dataFiles.length; i++) {
       const dataFile = dataFiles[i];
+      fs.copySync(
+        path.join(from, example.dirname, dataFile),
+        path.join(to, example.dirname, dataFile)
+      )
       fs.copySync(
         path.join(from, example.dirname, dataFile),
         path.join(

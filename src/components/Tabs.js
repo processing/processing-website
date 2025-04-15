@@ -10,7 +10,7 @@ import { escapeHtml } from '../utils';
 
 import * as css from './Tabs.module.css';
 
-const Tabs = ({ pdes, className }) => {
+const Tabs = ({ pdes, className, dataFiles }) => {
   const [active, setActive] = useState(pdes[0].name);
 
   useHighlight();
@@ -43,7 +43,7 @@ const Tabs = ({ pdes, className }) => {
           key={key}>
           <div className={css.actions}>
             <CopyButton text={pde.code} />
-            <OpenWithButton pdes={pdes} />
+            <OpenWithButton pdes={pdes} dataFiles={dataFiles} />
           </div>
           <pre className={css.codeBlock}>
             <code
