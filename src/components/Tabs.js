@@ -3,13 +3,14 @@ import classnames from 'classnames';
 
 import Button from './Button';
 import CopyButton from './CopyButton';
+import OpenWithButton from './OpenWithButton';
 
 import { useHighlight } from '../hooks';
 import { escapeHtml } from '../utils';
 
 import * as css from './Tabs.module.css';
 
-const Tabs = ({ pdes, className }) => {
+const Tabs = ({ pdes, className, dataFiles }) => {
   const [active, setActive] = useState(pdes[0].name);
 
   useHighlight();
@@ -40,7 +41,10 @@ const Tabs = ({ pdes, className }) => {
             [css.activeCode]: pde.name === active
           })}
           key={key}>
-          <CopyButton text={pde.code} />
+          <div className={css.actions}>
+            <CopyButton text={pde.code} />
+            <OpenWithButton pdes={pdes} dataFiles={dataFiles} />
+          </div>
           <pre className={css.codeBlock}>
             <code
               dangerouslySetInnerHTML={{

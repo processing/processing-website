@@ -22,9 +22,11 @@ import {
   useRelatedExamples,
   useTrail
 } from '../../hooks/examples';
+import { useExampleDataFiles } from '../../hooks/examples/data';
 
 import * as css from '../../styles/templates/examples/example.module.css';
 import * as grid from '../../styles/grid.module.css';
+
 
 const ExampleTemplate = ({ data, pageContext }) => {
   const [showSidebar, setShowSidebar] = useSidebar('examples');
@@ -35,6 +37,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
   const { image, allExamples, relatedImages, liveSketch } = data;
 
   const example = usePreparedExample(data.example);
+  const dataFiles = useExampleDataFiles(name)
   const pdes = usePdes(data.pdes.nodes, locale, name);
   const examples = usePreparedExamples(allExamples.nodes, relatedImages.nodes);
   const tree = useTree(examples);
@@ -117,7 +120,7 @@ const ExampleTemplate = ({ data, pageContext }) => {
                 />
               )}
             </div>
-            <Tabs pdes={pdes} />
+            <Tabs pdes={pdes} dataFiles={dataFiles} />
             <RelatedExamples
               examples={relatedExamples}
               heading={intl.formatMessage({ id: 'relatedExamples' })}

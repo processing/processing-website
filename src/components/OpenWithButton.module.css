@@ -1,0 +1,94 @@
+.root {
+  height: 32px;
+  padding: 6px 12px;
+  font-size: var(--text-small);
+  font-weight: bold;
+  color: var(--darkgray);
+  cursor: pointer;
+  fill: var(--darkgray);
+  position: relative;
+
+  & svg {
+    height: 12px;
+    width: auto;
+  }
+}
+
+.root:hover {
+  color: var(--darkergray);
+  fill: var(--darkergray);
+}
+
+.root:active {
+  color: var(--processing-blue-mid);
+  fill: var(--processing-blue-mid);
+}
+
+.instructions {
+  bottom: 100%;
+  margin-bottom: 16px;
+  left: auto;
+  right: 0;
+  position: absolute;
+  transform: none;
+  min-width: 24em;
+  max-width: 24em;
+  width: fit-content;
+  background-color: #555;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 16px 10px 10px 25px;
+  transition: opacity 0.3s;
+  pointer-events: auto;
+  a {
+    color: var(--processing-blue-light);
+    text-decoration: underline;
+    &:hover {
+      color: white;
+    }
+  }
+  h1 {
+    color: #fff;
+    font-size: 2em;
+    margin: 0 0 0.3em 0;
+    font-weight: 500;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: auto;
+    right: 20px;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+}
+
+.tooltipFootnote {
+  color: var(--gray);
+  font-size: 0.9em;
+}
+
+@keyframes ellipsis {
+  10% {
+    content: "    ";
+  }
+  25% {
+    content: " .  ";
+  }
+  50% {
+    content: " .. ";
+  }
+  75% {
+    content: " ...";
+  }
+}
+
+.ellipsis::after {
+  display: inline-block;
+  animation: ellipsis 1.5s infinite;
+  content: " ...";
+}
