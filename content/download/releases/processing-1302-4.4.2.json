@@ -1,0 +1,87 @@
+{
+  "name": "Processing 4.4.2",
+  "tagName": "processing-1302-4.4.2",
+  "isPrerelease": true,
+  "publishedAt": "2025-04-15T10:16:32Z",
+  "releaseAssets": {
+    "edges": [
+      {
+        "node": {
+          "name": "processing-4.4.2-reference.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1302-4.4.2/processing-4.4.2-reference.zip",
+          "size": 107739918
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.2-linux-x64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1302-4.4.2/processing-4.4.2-linux-x64-portable.zip",
+          "size": 407247504
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.2-linux-x64.snap",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1302-4.4.2/processing-4.4.2-linux-x64.snap",
+          "size": 454819840
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.2-linux-aarch64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1302-4.4.2/processing-4.4.2-linux-aarch64-portable.zip",
+          "size": 401273616
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.2-linux-aarch64.snap",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1302-4.4.2/processing-4.4.2-linux-aarch64.snap",
+          "size": 441339904
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.2-macos-aarch64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1302-4.4.2/processing-4.4.2-macos-aarch64-portable.zip",
+          "size": 403147883
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.2-macos-aarch64.dmg",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1302-4.4.2/processing-4.4.2-macos-aarch64.dmg",
+          "size": 404639277
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.2-windows-x64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1302-4.4.2/processing-4.4.2-windows-x64-portable.zip",
+          "size": 390373274
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.2-windows-x64.msi",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1302-4.4.2/processing-4.4.2-windows-x64.msi",
+          "size": 352661504
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.2-macos-x64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1302-4.4.2/processing-4.4.2-macos-x64-portable.zip",
+          "size": 399040010
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.2-macos-x64.dmg",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1302-4.4.2/processing-4.4.2-macos-x64.dmg",
+          "size": 400439373
+        }
+      }
+    ]
+  }
+}
