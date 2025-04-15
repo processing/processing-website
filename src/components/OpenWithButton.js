@@ -41,7 +41,7 @@ const OpenWithButton = ({ pdes, dataFiles }) => {
             className={classnames(css.root)}
             onClick={() => setShowInstructions(true)}
         >
-            <ProcessingIcon /> {'Open With Processing'}
+            <ProcessingIcon /> {'Open In Processing'}
             {showInstructions && (
                 <div className={classnames(css.instructions)}>
                     <h1>Opening Processing<span className={css.ellipsis}></span></h1>
