@@ -42,7 +42,11 @@
   transition: opacity 0.3s;
   pointer-events: auto;
   a {
-    color: var(--processing-blue-mid);
+    color: var(--processing-blue-light);
+    text-decoration: underline;
+    &:hover {
+      color: white;
+    }
   }
   h1 {
     color: #fff;
@@ -68,24 +72,23 @@
   font-size: 0.9em;
 }
 
-.downloadLink {
-  color: var(--processing-blue-light) !important;
-  text-decoration: underline;
-}
-
-.downloadLink:hover {
-  color: white !important;
-}
-
 @keyframes ellipsis {
-    10%  { content: "    "; }
-    25%  { content: " .  "; }
-    50% { content: " .. "; }
-    75% { content: " ..."; }
+  10% {
+    content: "    ";
+  }
+  25% {
+    content: " .  ";
+  }
+  50% {
+    content: " .. ";
+  }
+  75% {
+    content: " ...";
+  }
 }
 
 .ellipsis::after {
-    display: inline-block;
-    animation: ellipsis 1.5s infinite;
-    content: " ...";
+  display: inline-block;
+  animation: ellipsis 1.5s infinite;
+  content: " ...";
 }
