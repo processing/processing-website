@@ -11,14 +11,17 @@
     "mouseMoved_",
     "mouseDragged_",
     "mouseButton",
-    "mouseWheel_"
+    "mouseWheel_",
+    "MouseEvent"
   ],
   "name": "mousePressed()",
-  "description": "The <b>mousePressed()</b> function is called once after every time a mouse\n button is pressed. The <b>mouseButton</b> variable (see the related\n reference entry) can be used to determine which button has been pressed.\n <br/>\n <br/>\n Mouse and keyboard events only work when a program has <b>draw()</b>.\n Without <b>draw()</b>, the code is only run once and then stops listening\n for events.\n\n ",
+  "description": "The <b>mousePressed()</b> function is called once after every time a mouse button is pressed. The <b>mouseButton</b> variable (see the related reference entry) can be used to determine which button has been pressed.<br/><br/>This function can be called with or without a <b>MouseEvent</b> parameter. When called with the parameter, you get access to additional information about the mouse event, including the exact coordinates, which button was pressed, and any modifier keys (Shift, Ctrl, Alt, Meta) that were held down. For most simple interactions, the global variables (<b>mouseX</b>, <b>mouseY</b>, <b>mouseButton</b>) provide sufficient information.<br/><br/>Mouse and keyboard events only work when a program has <b>draw()</b>. Without <b>draw()</b>, the code is only run once and then stops listening for events.",
   "syntax": ["mousePressed()", "mousePressed(event)"],
   "returns": "void",
   "type": "function",
   "category": "input",
   "subcategory": "mouse",
-  "parameters": []
+  "parameters": [
+    { "name": "event", "description": "the MouseEvent", "type": ["MouseEvent"] }
+  ]
 }

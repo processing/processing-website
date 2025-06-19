@@ -1,0 +1,61 @@
+{
+  "brief": "Una clase para manejar eventos del teclado",
+  "related": [
+    "key",
+    "keyCode",
+    "keyPressed",
+    "keyPressed_",
+    "keyReleased_",
+    "keyTyped_",
+    "MouseEvent"
+  ],
+  "name": "KeyEvent",
+  "description": "Un objeto <b>KeyEvent</b> contiene información sobre un evento del teclado que ha ocurrido. Este objeto se pasa automáticamente a las funciones de eventos del teclado (<b>keyPressed()</b>, <b>keyReleased()</b>, y <b>keyTyped()</b>) cuando se llaman con un parámetro de evento.<br/><br/>El objeto KeyEvent proporciona información adicional más allá de lo que está disponible en las variables globales del teclado (<b>key</b> y <b>keyCode</b>). Para la mayoría de las interacciones básicas del teclado, usar las variables globales es suficiente y más conveniente. Sin embargo, el objeto KeyEvent es útil cuando necesitas información más detallada sobre el evento del teclado, como teclas modificadoras que se mantuvieron presionadas o los códigos de tecla sin procesar.<br/><br/>Para programadores de Java: Esta es la interfaz de Processing a la clase KeyEvent de Java. Puedes acceder al KeyEvent subyacente de Java usando <b>event.getNative()</b>. Las constantes de tecla (como <b>UP</b>, <b>DOWN</b>) son versiones simplificadas de las constantes KeyEvent de Java (como <b>KeyEvent.VK_UP</b>, <b>KeyEvent.VK_DOWN</b>).",
+  "syntax": ["KeyEvent event"],
+  "returns": "KeyEvent",
+  "type": "class",
+  "category": "input",
+  "subcategory": "keyboard",
+  "methods": [
+    {
+      "anchor": "getKey",
+      "name": "getKey()",
+      "desc": "Devuelve el carácter que fue tecleado (igual que la variable global 'key')"
+    },
+    {
+      "anchor": "getKeyCode",
+      "name": "getKeyCode()",
+      "desc": "Devuelve el código de tecla para teclas especiales (igual que la variable global 'keyCode')"
+    },
+    {
+      "anchor": "isShiftDown",
+      "name": "isShiftDown()",
+      "desc": "Devuelve true si la tecla Shift estaba presionada durante el evento"
+    },
+    {
+      "anchor": "isControlDown",
+      "name": "isControlDown()",
+      "desc": "Devuelve true si la tecla Control estaba presionada durante el evento"
+    },
+    {
+      "anchor": "isAltDown",
+      "name": "isAltDown()",
+      "desc": "Devuelve true si la tecla Alt estaba presionada durante el evento"
+    },
+    {
+      "anchor": "isMetaDown",
+      "name": "isMetaDown()",
+      "desc": "Devuelve true si la tecla Meta/Cmd estaba presionada durante el evento"
+    },
+    {
+      "anchor": "isAutoRepeat",
+      "name": "isAutoRepeat()",
+      "desc": "Devuelve true si este evento fue generado por auto-repetición de tecla"
+    },
+    {
+      "anchor": "getNative",
+      "name": "getNative()",
+      "desc": "Devuelve el objeto KeyEvent subyacente de Java"
+    }
+  ]
+}

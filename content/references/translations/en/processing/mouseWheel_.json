@@ -1,6 +1,5 @@
 {
-  "brief": "The code within the <b>mouseWheel()</b> event function\n is run when the mouse wheel is moved",
-  "related": [
+  "brief": "The code within the <b>mouseWheel()</b> event function\n is run when the mouse wheel is moved",  "related": [
     "mouseX",
     "mouseY",
     "pmouseX",
@@ -11,10 +10,11 @@
     "mouseClicked_",
     "mouseMoved_",
     "mouseDragged_",
-    "mouseButton"
+    "mouseButton",
+    "MouseEvent"
   ],
   "name": "mouseWheel()",
-  "description": "The code within the <b>mouseWheel()</b> event function\n is run when the mouse wheel is moved. (Some mice don't\n have wheels and this function is only applicable with\n mice that have a wheel.) The <b>getCount()</b> function\n used within <b>mouseWheel()</b> returns positive values\n when the mouse wheel is rotated down (toward the user),\n and negative values for the other direction (up or away\n from the user). On OS X with \"natural\" scrolling enabled,\n the values are opposite.\n <br/><br/>\n Mouse and keyboard events only work when a program has\n <b>draw()</b>. Without <b>draw()</b>, the code is only\n run once and then stops listening for events.",
+  "description": "The code within the <b>mouseWheel()</b> event function is run when the mouse wheel is moved. (Some mice don't have wheels and this function is only applicable with mice that have a wheel.) The <b>getCount()</b> function used within <b>mouseWheel()</b> returns positive values when the mouse wheel is rotated down (toward the user), and negative values for the other direction (up or away from the user). On OS X with \"natural\" scrolling enabled, the values are opposite.<br/><br/>The <b>mouseWheel()</b> function requires a <b>MouseEvent</b> parameter to access the scroll wheel count and other event details. Unlike other mouse functions that can work without the event parameter, <b>mouseWheel()</b> specifically needs the event to get the wheel count via <b>event.getCount()</b>. The event also provides access to the exact mouse coordinates and any modifier keys that were held down during the scroll.<br/><br/>Mouse and keyboard events only work when a program has <b>draw()</b>. Without <b>draw()</b>, the code is only run once and then stops listening for events.",
   "syntax": ["mouseWheel(event)"],
   "returns": "void",
   "type": "function",
