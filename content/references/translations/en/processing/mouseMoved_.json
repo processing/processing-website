@@ -1,5 +1,5 @@
 {
-  "brief": "Called every time the mouse moves and a mouse button is not\n           pressed",
+  "brief": "Called every time the mouse moves and a mouse button is not pressed",
   "related": [
     "mouseX",
     "mouseY",
@@ -11,14 +11,17 @@
     "mouseClicked_",
     "mouseDragged_",
     "mouseButton",
-    "mouseWheel_"
+    "mouseWheel_",
+    "MouseEvent"
   ],
   "name": "mouseMoved()",
-  "description": "The <b>mouseMoved()</b> function is called every time the mouse moves and a\n mouse button is not pressed. (If a button <i>is</i> being pressed,\n <b>mouseDragged()</b> is called instead.) <br/>\n <br/>\n Mouse and keyboard events only work when a program has <b>draw()</b>.\n Without <b>draw()</b>, the code is only run once and then stops listening\n for events.",
+  "description": "The <b>mouseMoved()</b> function is called every time the mouse moves and a mouse button is not pressed. (If a button <i>is</i> being pressed, <b>mouseDragged()</b> is called instead.)<br/><br/>This function can be called with or without a <b>MouseEvent</b> parameter. When called with the parameter, you get access to additional information about the mouse event, including the exact coordinates and any modifier keys that were held down.<br/><br/>Mouse and keyboard events only work when a program has <b>draw()</b>. Without <b>draw()</b>, the code is only run once and then stops listening for events.",
   "syntax": ["mouseMoved()", "mouseMoved(event)"],
   "returns": "void",
   "type": "function",
   "category": "input",
   "subcategory": "mouse",
-  "parameters": []
+  "parameters": [
+    { "name": "event", "description": "the MouseEvent", "type": ["MouseEvent"] }
+  ]
 }

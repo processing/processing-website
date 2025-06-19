@@ -1,0 +1,67 @@
+{
+  "brief": "Una clase para manejar eventos del ratón",
+  "related": [
+    "mouseX",
+    "mouseY",
+    "pmouseX",
+    "pmouseY",
+    "mousePressed",
+    "mousePressed_",
+    "mouseReleased_",
+    "mouseClicked_",
+    "mouseMoved_",
+    "mouseDragged_",
+    "mouseButton",
+    "mouseWheel_",
+    "KeyEvent"
+  ],
+  "name": "MouseEvent",
+  "description": "Un objeto <b>MouseEvent</b> contiene información sobre un evento del ratón que ha ocurrido. Este objeto se pasa automáticamente a las funciones de eventos del ratón (<b>mousePressed()</b>, <b>mouseReleased()</b>, <b>mouseClicked()</b>, <b>mouseMoved()</b>, <b>mouseDragged()</b>, y <b>mouseWheel()</b>) cuando se llaman con un parámetro de evento.<br/><br/>El objeto MouseEvent proporciona información adicional más allá de lo que está disponible en las variables globales del ratón (<b>mouseX</b>, <b>mouseY</b>, <b>mouseButton</b>, etc.). Para la mayoría de las interacciones básicas del ratón, usar las variables globales es suficiente y más conveniente. Sin embargo, el objeto MouseEvent es útil cuando necesitas información más detallada sobre el evento del ratón, como el botón exacto que fue presionado, teclas modificadoras que se mantuvieron presionadas, o el conteo de la rueda de desplazamiento.<br/><br/>Ten en cuenta que las coordenadas del evento de <b>getX()</b> y <b>getY()</b> no son afectadas por la configuración <b>windowRatio()</b>, a diferencia de las variables globales <b>mouseX</b> y <b>mouseY</b>.",
+  "syntax": ["MouseEvent event"],
+  "returns": "MouseEvent",
+  "type": "class",
+  "category": "input",
+  "subcategory": "mouse",
+  "methods": [
+    {
+      "anchor": "getX",
+      "name": "getX()",
+      "desc": "Devuelve la coordenada horizontal del evento del ratón"
+    },
+    {
+      "anchor": "getY",
+      "name": "getY()",
+      "desc": "Devuelve la coordenada vertical del evento del ratón"
+    },
+    {
+      "anchor": "getButton",
+      "name": "getButton()",
+      "desc": "Devuelve qué botón del ratón fue presionado (LEFT, RIGHT, CENTER)"
+    },
+    {
+      "anchor": "getCount",
+      "name": "getCount()",
+      "desc": "Devuelve el número de clics de la rueda del ratón (para eventos mouseWheel)"
+    },
+    {
+      "anchor": "isShiftDown",
+      "name": "isShiftDown()",
+      "desc": "Devuelve true si la tecla Shift estaba presionada durante el evento"
+    },
+    {
+      "anchor": "isControlDown",
+      "name": "isControlDown()",
+      "desc": "Devuelve true si la tecla Control estaba presionada durante el evento"
+    },
+    {
+      "anchor": "isAltDown",
+      "name": "isAltDown()",
+      "desc": "Devuelve true si la tecla Alt estaba presionada durante el evento"
+    },
+    {
+      "anchor": "isMetaDown",
+      "name": "isMetaDown()",
+      "desc": "Devuelve true si la tecla Meta/Cmd estaba presionada durante el evento"
+    }
+  ]
+}
