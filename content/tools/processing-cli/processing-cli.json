@@ -1,0 +1,4 @@
+{
+  "name": "Processing CLI",
+  "description": "Processing from the command line. (Run `./Processing --help` on the Processing executable within the application bundle)"
+}
