@@ -77,6 +77,7 @@ In the above example, we have a very simple world -- a blank canvas with a circu
 
 - LOCATION: x and y
 - SPEED: xspeed and yspeed
+
   In a more advanced sketch, we could imagine this ball and world having many more properties:
 - ACCELERATION: xacceleration and yacceleration
 - TARGET LOCATION: xtarget and ytarget
@@ -118,7 +119,7 @@ Here are some vectors and possible translations:
 
 </FixedImage>
 
-You've probably done this before when programming motion. For every frame of animation (i.e. single cycle through Processing's (http://processing.org/reference/draw_.html)draw()] loop), you instruct each object on the screen to move a certain number of pixels horizontally and a certain number of pixels (vertically).
+You've probably done this before when programming motion. For every frame of animation (i.e. single cycle through Processing's [draw()](http://processing.org/reference/draw_.html) loop), you instruct each object on the screen to move a certain number of pixels horizontally and a certain number of pixels (vertically).
 
 For a Processing programmer, we can now understand a vector as the instructions for moving a shape from point A to point B, an object's &ldquo;pixel velocity&rdquo; so to speak.
 
@@ -421,7 +422,7 @@ The fancy terminology and symbols aside, this is really quite a simple concept. 
 
 </HighlightBlock>
 
-Moving onto multiplication, we have to think a little bit differently. When we talk about multiplying a vector what we usually mean is **_scaling_** a vector. Maybe we want a vector to be twice its size or one-third its size, etc. In this case, we are saying &ldquo;Multiply a vector by 2&rdquo; or &ldquo;Multiply a vector by 1/3&rquo;. Note we are multiplying a vector by a scalar, a single number, not another vector.
+Moving onto multiplication, we have to think a little bit differently. When we talk about multiplying a vector what we usually mean is **_scaling_** a vector. Maybe we want a vector to be twice its size or one-third its size, etc. In this case, we are saying &ldquo;Multiply a vector by 2&rdquo; or &ldquo;Multiply a vector by 1/3&rdquo;. Note we are multiplying a vector by a scalar, a single number, not another vector.
 
 To scale a vector by a single number, we multiply each component (x and y) by that number.
 
@@ -522,7 +523,9 @@ u.div(2);
 As with addition, basic algebraic rules of multiplication and division apply to vectors.
 
 The associative rule: (n\*m)**\*v** = n\*(m**\*v**)
+
 The distributive rule, 2 scalars, 1 vector: (n + m)**\*v** = n**\*v** + m**\*v**
+
 The distributive rule, 2 vectors, 1 scalar : (**u** +**v**)\*n = n**\*u** + n**\*v**
 
 </HighlightBlock>
