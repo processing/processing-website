@@ -2,12 +2,18 @@
   "brief": "Calculate the angle of rotation for this vector",
   "related": [],
   "name": "heading()",
-  "description": "Calculate the angle of rotation for this vector (only 2D vectors)",
-  "syntax": [".heading()"],
+  "description": "Calculate the vector's direction, that is, the angle this vector makes\n with the positive X axis (only 2D vectors)",
+  "syntax": ["myPVector.heading()"],
   "returns": "float",
   "type": "method",
   "category": "pvector",
   "subcategory": "method",
   "classanchor": "PVector",
-  "parameters": []
+  "parameters": [
+    {
+      "name": "myPVector",
+      "description": "your PVector object",
+      "type": ["PVector"]
+    }
+  ]
 }
