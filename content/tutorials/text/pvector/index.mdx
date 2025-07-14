@@ -73,11 +73,13 @@ void draw() {
 }
 ```
 
-In the above example, we have a very simple world -- a blank canvas with a circular shape (&ldquo;ball&rdquo;) traveling around. This &ldquo;ball&rdquo; has some properties.
+In the above example, we have a very simple world — a blank canvas with a circular shape (&ldquo;ball&rdquo;) traveling around. This &ldquo;ball&rdquo; has some properties.
 
 - LOCATION: x and y
 - SPEED: xspeed and yspeed
-  In a more advanced sketch, we could imagine this ball and world having many more properties:
+
+In a more advanced sketch, we could imagine this ball and world having many more properties:
+
 - ACCELERATION: xacceleration and yacceleration
 - TARGET LOCATION: xtarget and ytarget
 - WIND: xwind and ywind
@@ -104,7 +106,7 @@ Vector speed;
 
 Vectors aren't going to allow us to do anything new. Using vectors won't suddenly make your Processing sketches magically simulate physics, however, they will simplify your code and provide a set of functions for common mathematical operations that happen over and over and over again while programming motion.
 
-As an introduction to vectors, we're going to live in 2 dimensions for quite some time (at least until we get through the first several chapters.) All of these examples can be fairly easily extended to three dimensions (and the class we will use -- [**PVector**](http://processing.org/reference/PVector.html) -- allows for three dimensions.) However, for the time being, it's easier to start with just two.
+As an introduction to vectors, we're going to live in 2 dimensions for quite some time (at least until we get through the first several chapters.) All of these examples can be fairly easily extended to three dimensions (and the class we will use — [**PVector**](http://processing.org/reference/PVector.html) — allows for three dimensions.) However, for the time being, it's easier to start with just two.
 
 ## Vectors: What are they to us, the Processing programmer?
 
@@ -118,7 +120,7 @@ Here are some vectors and possible translations:
 
 </FixedImage>
 
-You've probably done this before when programming motion. For every frame of animation (i.e. single cycle through Processing's (http://processing.org/reference/draw_.html)draw()] loop), you instruct each object on the screen to move a certain number of pixels horizontally and a certain number of pixels (vertically).
+You've probably done this before when programming motion. For every frame of animation (i.e. single cycle through Processing's [**draw()**](http://processing.org/reference/draw_.html) loop), you instruct each object on the screen to move a certain number of pixels horizontally and a certain number of pixels (vertically).
 
 For a Processing programmer, we can now understand a vector as the instructions for moving a shape from point A to point B, an object's &ldquo;pixel velocity&rdquo; so to speak.
 
@@ -132,7 +134,7 @@ For every frame:
 
 </FixedImage>
 
-If velocity is a vector (the difference between two points), what is location? Is it a vector too? Technically, one might argue that location is not a vector, it's not describing the change between two points, it's simply describing a singular point in space -- a location. And so conceptually, we think of a location as different: a single point rather than the difference between two points.
+If velocity is a vector (the difference between two points), what is location? Is it a vector too? Technically, one might argue that location is not a vector, it's not describing the change between two points, it's simply describing a singular point in space — a location. And so conceptually, we think of a location as different: a single point rather than the difference between two points.
 
 Nevertheless, another way to describe a location is as the path taken from the origin to reach that location. Hence, a location can be represented as the vector giving the difference between location and origin. Therefore, if we were to write code to describe a vector object, instead of creating separate Point and Vector classes, we can use a single class which is more convenient.
 
@@ -143,7 +145,7 @@ location --> x,y
 velocity --> xspeed,yspeed
 ```
 
-Notice how we are storing the same data for both -- two floating point numbers, an x and a y. If we were to write a vector class ourselves, we'd start with something rather basic:
+Notice how we are storing the same data for both — two floating point numbers, an x and a y. If we were to write a vector class ourselves, we'd start with something rather basic:
 
 ```
 class PVector {
@@ -177,7 +179,7 @@ PVector location = new PVector(100,100);
 PVector velocity = new PVector(1,3.3);
 ```
 
-Now that we have two vector objects (&ldquo;location&rdquo; and &ldquo;velocity&rdquo;), we're ready to implement the algorithm for motion -- location = location + velocity. In the bouncing ball example, without vectors, we had:
+Now that we have two vector objects (&ldquo;location&rdquo; and &ldquo;velocity&rdquo;), we're ready to implement the algorithm for motion — location = location + velocity. In the bouncing ball example, without vectors, we had:
 
 ```
   // Add the current speed to the location.
@@ -192,7 +194,7 @@ In an ideal world, we would just be able to rewrite the above to be:
   location = location + velocity;
 ```
 
-However, in Processing, the addition operator '+' is reserved for primitive values (integers, floats, etc.) only. Processing doesn't know how to add two **PVector**](http://processing.org/reference/PVector.html) objects together any more than it knows how to add two PFont objects or PImage objects. Fortunately for us, the [**PVector**](http://processing.org/reference/PVector.html) class is implemented with functions for common mathematical operations.
+However, in Processing, the addition operator '+' is reserved for primitive values (integers, floats, etc.) only. Processing doesn't know how to add two [**PVector**](http://processing.org/reference/PVector.html) objects together any more than it knows how to add two PFont objects or PImage objects. Fortunately for us, the [**PVector**](http://processing.org/reference/PVector.html) class is implemented with functions for common mathematical operations.
 
 ## Vectors: Addition
 
@@ -268,7 +270,7 @@ Now that we see how add is written inside of [**PVector**](http://processing.org
   location.add(velocity);
 ```
 
-And here we are, ready to successfully complete our first goal -- rewrite the entire bouncing ball example using [**PVector**](http://processing.org/reference/PVector.html).
+And here we are, ready to successfully complete our first goal — rewrite the entire bouncing ball example using [**PVector**](http://processing.org/reference/PVector.html).
 
 Example: Bouncing Ball with PVector!
 
@@ -311,7 +313,7 @@ void draw() {
 
 Now, you might feel somewhat disappointed. After all, this may initially appear to have made the code more complicated than the original version. While this is a perfectly reasonable and valid critique, it's important to understand that we haven't fully realized the power of programming with vectors just yet. Looking at a simple bouncing ball and only implementing vector addition is just the first step. As we move forward into looking at more a complex world of multiple objects and multiple forces (we'll cover forces in the next chapter), the benefits of [**PVector**](http://processing.org/reference/PVector.html) will become more apparent.
 
-We should, however, make note of an important aspect of the above transition to programming with vectors. Even though we are using [**PVector**](http://processing.org/reference/PVector.html) objects to describe two values -- the x and y of location and the x and y of velocity -- we still often need to refer to the x and y components of each [**PVector**](http://processing.org/reference/PVector.html) individually. When we go to draw an object in Processing there's no means for us to say:
+We should, however, make note of an important aspect of the above transition to programming with vectors. Even though we are using [**PVector**](http://processing.org/reference/PVector.html) objects to describe two values — the x and y of location and the x and y of velocity — we still often need to refer to the x and y components of each [**PVector**](http://processing.org/reference/PVector.html) individually. When we go to draw an object in Processing there's no means for us to say:
 
 ```
 ellipse(location,16,16);
@@ -372,7 +374,7 @@ and the function inside [**PVector**](http://processing.org/reference/PVector.ht
 
 </FixedImage>
 
-Following is an example that demonstrates vector subtraction by taking the difference between two points -- the mouse location and the center of the window.
+Following is an example that demonstrates vector subtraction by taking the difference between two points — the mouse location and the center of the window.
 
 Example: Vector subtraction
 
@@ -421,7 +423,7 @@ The fancy terminology and symbols aside, this is really quite a simple concept. 
 
 </HighlightBlock>
 
-Moving onto multiplication, we have to think a little bit differently. When we talk about multiplying a vector what we usually mean is **_scaling_** a vector. Maybe we want a vector to be twice its size or one-third its size, etc. In this case, we are saying &ldquo;Multiply a vector by 2&rdquo; or &ldquo;Multiply a vector by 1/3&rquo;. Note we are multiplying a vector by a scalar, a single number, not another vector.
+Moving onto multiplication, we have to think a little bit differently. When we talk about multiplying a vector what we usually mean is **_scaling_** a vector. Maybe we want a vector to be twice its size or one-third its size, etc. In this case, we are saying &ldquo;Multiply a vector by 2&rdquo; or &ldquo;Multiply a vector by 1/3&rdquo;. Note we are multiplying a vector by a scalar, a single number, not another vector.
 
 To scale a vector by a single number, we multiply each component (x and y) by that number.
 
@@ -522,7 +524,9 @@ u.div(2);
 As with addition, basic algebraic rules of multiplication and division apply to vectors.
 
 The associative rule: (n\*m)**\*v** = n\*(m**\*v**)
+
 The distributive rule, 2 scalars, 1 vector: (n + m)**\*v** = n**\*v** + m**\*v**
+
 The distributive rule, 2 vectors, 1 scalar : (**u** +**v**)\*n = n**\*u** + n**\*v**
 
 </HighlightBlock>
@@ -694,7 +698,7 @@ This is Motion 101.
 - Draw object at location
   In the bouncing ball example, all of this code happened in Processing's main tab, within [**_setup()_**](http://processing.org/reference/setup_.html) and [**_draw()_**](http://processing.org/reference/draw_.html). What we want to do now is move towards encapsulating all of the logic for motion inside of a [**_class_**](http://processing.org/reference/class.html), this way we can create a foundation for programming moving objects in Processing. We'll take a quick moment to review the basics of object-oriented programming in this context now, but this book will otherwise assume knowledge of working with objects (which will be necessary for just about every example from this point forward). However, if you need a further refresher, I encourage you to check out the [OOP tutorial](http://processing.org/tutorials/objects/).
 
-The driving principle behind object-oriented programming is the bringing together of data and functionality. Take the prototypical OOP example: a car. A car has data -- color, size, speed, etc. A car has functionality -- drive(), turn(), stop(), etc. A car [**_class_**](http://processing.org/reference/class.html) brings all that stuff together in a template from which car instances, i.e. [**_objects_**](http://processing.org/reference/Object.html), are made. The benefit is nicely organized code that makes sense when you read it.
+The driving principle behind object-oriented programming is the bringing together of data and functionality. Take the prototypical OOP example: a car. A car has data — color, size, speed, etc. A car has functionality — drive(), turn(), stop(), etc. A car [**_class_**](http://processing.org/reference/class.html) brings all that stuff together in a template from which car instances, i.e. [**_objects_**](http://processing.org/reference/Object.html), are made. The benefit is nicely organized code that makes sense when you read it.
 
 ```
 Car c = new Car(red,big,fast);
@@ -858,7 +862,7 @@ class Mover {
 }
 ```
 
-Ok, at this point, we should feel comfortable with two things -- (1) What is a [**PVector**](http://processing.org/reference/PVector.html)? and (2) How do we use PVectors inside of an object to keep track of its location and movement? This is an excellent first step and deserves an mild round of applause. For standing ovations and screaming fans, however, we need to make one more, somewhat larger, step forward. After all, watching the Motion 101 example is fairly boring -- the circle never speeds up, never slows down, and never turns. For more interesting motion, for motion that appears in the real world around us, we need to add one more PVector to our class -- acceleration.
+Ok, at this point, we should feel comfortable with two things — (1) What is a [**PVector**](http://processing.org/reference/PVector.html)? and (2) How do we use PVectors inside of an object to keep track of its location and movement? This is an excellent first step and deserves an mild round of applause. For standing ovations and screaming fans, however, we need to make one more, somewhat larger, step forward. After all, watching the Motion 101 example is fairly boring — the circle never speeds up, never slows down, and never turns. For more interesting motion, for motion that appears in the real world around us, we need to add one more PVector to our class — acceleration.
 
 The strict definition of acceleration that we are using here is: **the rate of change of velocity**. Let's think about that definition for a moment. Is this a new concept? Not really. Velocity is defined as: **the rate of change of location**. In essence, we are developing a &ldquo;trickle down&rdquo; effect. Acceleration affects velocity which in turn affects location (for some brief foreshadowing, this point will become even more crucial in the next chapter when we see how forces affect acceleration which affects velocity which affects location.) In code, this reads like this:
 
@@ -867,7 +871,7 @@ The strict definition of acceleration that we are using here is: **the rate of c
   location.add(velocity);
 ```
 
-As an exercise, from this point forward, let's make a rule for ourselves. Let's write every example in the rest of this book without ever touching the value of velocity and location (except to initialize them). In other words, our goal now for programming motion is as follows -- come up with an algorithm for how we calculate acceleration and let the trickle down effect work its magic. And so we need to come up with some ways to calculate acceleration:
+As an exercise, from this point forward, let's make a rule for ourselves. Let's write every example in the rest of this book without ever touching the value of velocity and location (except to initialize them). In other words, our goal now for programming motion is as follows — come up with an algorithm for how we calculate acceleration and let the trickle down effect work its magic. And so we need to come up with some ways to calculate acceleration:
 
 ACCELERATION ALGORITHMS!
 
@@ -921,7 +925,7 @@ This means that when the sketch starts, the object is at rest. We don't have to 
   }
 ```
 
-Are you thinking -- &ldquo;Gosh, those values seem awfully small!&rdquo; Yes, that's right, they are quite tiny. It's important to realize that our acceleration values (measured in pixels) accumulate into the velocity over time, about thirty times per second depending on our sketch's frame rate. And so to keep the magnitude of the velocity vector within a reasonable range, our acceleration values should remain quite small. We can also help this cause by incorporating the PVector function [limit()](http://processing.org/reference/PVector_limit_.html).
+Are you thinking — &ldquo;Gosh, those values seem awfully small!&rdquo; Yes, that's right, they are quite tiny. It's important to realize that our acceleration values (measured in pixels) accumulate into the velocity over time, about thirty times per second depending on our sketch's frame rate. And so to keep the magnitude of the velocity vector within a reasonable range, our acceleration values should remain quite small. We can also help this cause by incorporating the PVector function [limit()](http://processing.org/reference/PVector_limit_.html).
 
 ```
 // The limit() function constrains the magnitude of a vector.
@@ -973,7 +977,7 @@ class Mover {
 }
 ```
 
-Ok, algorithm #2 -- &ldquo;a totally random acceleration.&rdquo; In this case, instead of initializing acceleration in the object's constructor we want to pick a new acceleration each cycle, i.e. each time update() is called.
+Ok, algorithm #2 — &ldquo;a totally random acceleration.&rdquo; In this case, instead of initializing acceleration in the object's constructor we want to pick a new acceleration each cycle, i.e. each time update() is called.
 
 Example: Motion 101 (velocity and random acceleration)
 
@@ -1125,7 +1129,7 @@ With chaining the above can be written as:
 
 ## Vectors: Interactivity
 
-Ok, to finish out this tutorial, let's try something a bit more complex and a great deal more useful. Let's dynamically calculate an object's acceleration according to a rule, acceleration algorithm #4 -- &ldquo;the object accelerates towards the mouse.&rdquo;
+Ok, to finish out this tutorial, let's try something a bit more complex and a great deal more useful. Let's dynamically calculate an object's acceleration according to a rule, acceleration algorithm #4 — &ldquo;the object accelerates towards the mouse.&rdquo;
 
 <FixedImage width={650} height={210}>
 
@@ -1141,7 +1145,7 @@ Anytime we want to calculate a vector based on a rule/formula, we need to comput
 
 </FixedImage>
 
-As illustrated in the above diagram, we see that we can get a vector (dx,dy) by subtracting the object's location from the mouse's location. After all, this is precisely where we started this chapter -- the definition of a vector is &ldquo;the difference between two points in space!&rdquo;
+As illustrated in the above diagram, we see that we can get a vector (dx,dy) by subtracting the object's location from the mouse's location. After all, this is precisely where we started this chapter — the definition of a vector is &ldquo;the difference between two points in space!&rdquo;
 
 dx = mouseX - x
 dy = mouseY - y
