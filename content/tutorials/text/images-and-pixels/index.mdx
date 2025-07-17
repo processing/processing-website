@@ -206,8 +206,8 @@ updatePixels();
 
 First, we should point out something important in the above example. Whenever you are accessing the pixels of a Processing window, you must alert Processing to this activity. This is accomplished with two functions:
 
-- [loadPixels()](http://processing.org/reference/loadPixels_.html) This function is called before you access the pixel array, saying "load the pixels, I would like to speak with them!"
-- [updatePixels()](http://processing.org/reference/updatePixels.html) This function is called after you finish with the pixel array saying "Go ahead and update the pixels, I'm all done!"
+- [loadPixels()](https://processing.org/reference/loadPixels_.html) This function is called before you access the pixel array, saying "load the pixels, I would like to speak with them!"
+- [updatePixels()](https://processing.org/reference/updatePixels_.html) This function is called after you finish with the pixel array saying "Go ahead and update the pixels, I'm all done!"
 
 In the above example, because the colors are set randomly, we didn't have to worry about where the pixels are onscreen as we access them, since we are simply setting all the pixels with no regard to their relative location. However, in many image processing applications, the XY location of the pixels themselves is crucial information. A simple example of this might be, set every even column of pixels to white and every odd to black. How could you do this with a one dimensional pixel array? How do you know what column or row any given pixel is in?
 
@@ -223,7 +223,7 @@ In programming with pixels, we need to be able to think of every pixel as living
 
 </FixedImage>
 
-This may remind you of our [two dimensional arrays tutorial](http://www.processing.org/learning/2darray/). In fact, we'll need to use the same nested for loop technique. The difference is that, although we want to use for loops to think about the pixels in two dimensions, when we go to actually access the pixels, they live in a one dimensional array, and we have to apply the formula from the above illustration.
+This may remind you of our [two dimensional arrays tutorial](https://processing.org/tutorials/2darray). In fact, we'll need to use the same nested for loop technique. The difference is that, although we want to use for loops to think about the pixels in two dimensions, when we go to actually access the pixels, they live in a one dimensional array, and we have to apply the formula from the above illustration.
 
 Let's look at how it is done.
 
