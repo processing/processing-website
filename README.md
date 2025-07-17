@@ -12,13 +12,16 @@ By contributing to this repository you agree to follow our community guidelines.
 
 If this is your first time contributing on GitHub, check out this [guide for first contributions](https://github.com/firstcontributions/first-contributions).
 
-To contribute to the Processing website, you'll need to identify an issue, fork this repo, set up the project on your local machine, make and test your changes, and then submit a pull request. 
+To contribute to the Processing website, you'll need to identify an issue, get assigned, fork this repo, set up the project on your local machine, make and test your changes, and then submit a pull request. 
 
-If you're already familiar with the steps above, you can skip to [Editing content](#editing-content). Otherwise, keep reading.
+### Step 1. Get assigned to an issue
 
-### Step 1. Pick an Issue (or create one)
+Look at the [issues page](https://github.com/processing/processing-website/issues) for existing issues you can help with. Issues [labelled Good First Issue or Help Wanted](https://github.com/processing/processing-website/issues?q=is%3Aissue+is%3Aopen+label%3A%22Help+Wanted%22%2C%22Good+First+Issue%22+) are a good place to start. Or if you noticed an issue with the processing.org website and it hasn't been reported yet, you can [open a new issue](https://github.com/processing/processing-website/issues/new/choose).
 
-Look at the [issues page](https://github.com/processing/processing-website/issues) for existing issues you can help with. Issues [labelled Good First Issue or Help Wanted](https://github.com/processing/processing-website/issues?q=is%3Aissue+is%3Aopen+label%3A%22Help+Wanted%22%2C%22Good+First+Issue%22+) are a good place to start. If you noticed an issue with the processing.org website and it hasn't been reported yet, please [open a new issue](https://github.com/processing/processing-website/issues/new/choose).
+Once you've found an issue you'd like to work on, leave a comment asking to be assigned. 
+
+> [!NOTE]
+> If this is your first contribution to our repositories, please include a brief explanation of how you plan to approach the issue. This helps us understand your thinking and gives us an opportunity to discuss the implementation. Note that **we do not auto-assign issues**, so comments that only say "please assign" without further context may be overlooked.
 
 ### Step 2. Fork the Repository
 
@@ -41,7 +44,10 @@ Make sure to [install Node.js](https://nodejs.org/en/download/package-manager) (
 1. Make sure your changes are working locally and that they fixed the issue.
 2. Make sure you only made the changes necessary to solve the issue. This will improve your chances of your PR getting merged.
 
-### Step 5. Submit Your Changes
+### Step 5. Submit A Pull Request
+
+> [!IMPORTANT]
+> Before submitting a pull request, please [ask to be assigned](#step-1-get-assigned-to-an-issue) to the corresponding issue. If someone else is already assigned or has shared that they’re working on it, we ask that you wait or choose another issue. This helps us avoid duplicated efforts and respect each other's time. PRs submitted without assignment may be closed without a review.
 
 1. Commit your changes with a descriptive message.
 2. Push the changes to your forked repository on GitHub.
