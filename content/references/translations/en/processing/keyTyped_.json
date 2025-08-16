@@ -1,12 +1,14 @@
 {
-  "brief": "Called once every time a key is pressed, but action keys such as\n           Ctrl, Shift, and Alt are ignored",
-  "related": ["keyPressed", "key", "keyCode", "keyReleased_"],
+  "brief": "Called once every time a key is pressed, but action keys such as Ctrl, Shift, and Alt are ignored",
+  "related": ["keyPressed", "key", "keyCode", "keyReleased_", "keyPressed_", "KeyEvent"],
   "name": "keyTyped()",
-  "description": "The <b>keyTyped()</b> function is called once every time a key is pressed,\n but action keys such as Ctrl, Shift, and Alt are ignored. <br/>\n <br/>\n Because of how operating systems handle key repeats, holding down a key may\n cause multiple calls to <b>keyTyped()</b>. The rate of repeat is set by the\n operating system, and may be configured differently on each computer.\n <br/>\n <br/>\n Mouse and keyboard events only work when a program has <b>draw()</b>.\n Without <b>draw()</b>, the code is only run once and then stops listening\n for events.",
+  "description": "The <b>keyTyped()</b> function is called once every time a key is pressed, but action keys such as Ctrl, Shift, and Alt are ignored.<br/><br/>This function can be called with or without a <b>KeyEvent</b> parameter. When called with the parameter, you get access to additional information about the keyboard event, including modifier keys that were held down.<br/><br/>Because of how operating systems handle key repeats, holding down a key may cause multiple calls to <b>keyTyped()</b>. The rate of repeat is set by the operating system, and may be configured differently on each computer.<br/><br/>Mouse and keyboard events only work when a program has <b>draw()</b>. Without <b>draw()</b>, the code is only run once and then stops listening for events.",
   "syntax": ["keyTyped()", "keyTyped(event)"],
   "returns": "void",
   "type": "function",
   "category": "input",
   "subcategory": "keyboard",
-  "parameters": []
+  "parameters": [
+    { "name": "event", "description": "the KeyEvent", "type": ["KeyEvent"] }
+  ]
 }
