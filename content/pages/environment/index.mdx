@@ -569,8 +569,21 @@ The [Export information and Tips](https://github.com/processing/processing/wiki/
 ## Command Line Interface (CLI) 
 
 Run sketches from the terminal using Processing's Command Line Interface (CLI).    
-To view a list of available commands, open a terminal and run:
+
+*Windows (PowerShell)*
 ```
+processing.exe --help
+```
+
+*Linux*
+```
+processing --help
+```
+
+*macOS*
+```
+cd /Applications/Processing.app/Contents/MacOS
 ./Processing --help
 ```
-Run this command from the directory containing the Processing executable. For example, on macOS, the executable is usually located at /Applications/Processing.app/Contents/MacOS/Processing.
+
+_**Note:** On macOS, the executable lives inside the `.app` bundle, so that's why there is a command to navigate to it's folder first. On Windows and Linux, Processing is typically added to your PATH by default, so no navigation is needed. _
