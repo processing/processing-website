@@ -1,0 +1,87 @@
+{
+  "name": "Processing 4.4.7",
+  "tagName": "processing-1307-4.4.7",
+  "isPrerelease": true,
+  "publishedAt": "2025-09-04T14:21:04Z",
+  "releaseAssets": {
+    "edges": [
+      {
+        "node": {
+          "name": "processing-4.4.7-windows-x64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1307-4.4.7/processing-4.4.7-windows-x64-portable.zip",
+          "size": 421358891
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.7-windows-x64.msi",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1307-4.4.7/processing-4.4.7-windows-x64.msi",
+          "size": 383184896
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.7-reference.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1307-4.4.7/processing-4.4.7-reference.zip",
+          "size": 107773105
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.7-linux-aarch64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1307-4.4.7/processing-4.4.7-linux-aarch64-portable.zip",
+          "size": 434217481
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.7-linux-aarch64.snap",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1307-4.4.7/processing-4.4.7-linux-aarch64.snap",
+          "size": 431775744
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.7-linux-x64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1307-4.4.7/processing-4.4.7-linux-x64-portable.zip",
+          "size": 440313416
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.7-linux-x64.snap",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1307-4.4.7/processing-4.4.7-linux-x64.snap",
+          "size": 444526592
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.7-macos-aarch64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1307-4.4.7/processing-4.4.7-macos-aarch64-portable.zip",
+          "size": 427938616
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.7-macos-aarch64.dmg",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1307-4.4.7/processing-4.4.7-macos-aarch64.dmg",
+          "size": 429642328
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.7-macos-x64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1307-4.4.7/processing-4.4.7-macos-x64-portable.zip",
+          "size": 439359174
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.7-macos-x64.dmg",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1307-4.4.7/processing-4.4.7-macos-x64.dmg",
+          "size": 440966116
+        }
+      }
+    ]
+  }
+}
