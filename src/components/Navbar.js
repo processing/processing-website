@@ -31,7 +31,7 @@ export const items = [
       { name: 'environment', href: '/environment' },
       { name: 'libraries', href: '/reference/libraries' },
       { name: 'tools', href: '/reference/tools' },
-      { name: 'wiki', href: 'https://github.com/processing/processing4/wiki' }
+      { name: 'wiki', href: 'https://wiki.processing.org' }
     ]
   },
   {
