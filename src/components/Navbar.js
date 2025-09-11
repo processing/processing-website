@@ -30,7 +30,8 @@ export const items = [
       { name: 'reference', href: '/reference' },
       { name: 'environment', href: '/environment' },
       { name: 'libraries', href: '/reference/libraries' },
-      { name: 'tools', href: '/reference/tools' }
+      { name: 'tools', href: '/reference/tools' },
+      { name: 'wiki', href: 'https://github.com/processing/processing4/wiki' }
     ]
   },
   {
