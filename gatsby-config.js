@@ -6,9 +6,11 @@ const path = require('path');
 
 module.exports = {
   flags: {
-    DEV_SSR: true,
-    FAST_DEV: false,
-    PRESERVE_FILE_DOWNLOAD_CACHE: false
+    DEV_SSR: false,
+    FAST_DEV: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: false,
+    PARALLEL_SOURCING: true,
+    DETECT_NODE_MUTATIONS: true
   },
   siteMetadata: {
     siteUrl: `https://processing.org/`
@@ -16,6 +18,7 @@ module.exports = {
   plugins: [
     // `gatsby-plugin-perf-budgets`,
     // `gatsby-plugin-webpack-bundle-analyser-v2`,
+    `gatsby-alias-imports`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-theme-i18n`,
