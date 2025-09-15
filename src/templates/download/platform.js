@@ -13,6 +13,7 @@ import Donate from 'components/Donate';
 import DownloadButton from 'components/download/Download';
 import PreviousReleases from 'components/download/PreviousReleases';
 import { VersionProvider } from 'components/download/Version';
+import WhatsNew from 'components/download/WhatsNew';
 
 export default function PlatformDownloadPage({ pageContext }) {
     const { platform, version } = pageContext;
@@ -31,7 +32,7 @@ export default function PlatformDownloadPage({ pageContext }) {
                         <h1>Install Processing {versionText} For {platform.frontmatter.platform}</h1>
                     </div>
                     <div>
-                        <MDXProvider components={{ Donate, DownloadButton, PreviousReleases }}>
+                        <MDXProvider components={{ Donate, DownloadButton, PreviousReleases, WhatsNew }}>
                             <MDXRenderer>{platform.body}</MDXRenderer>
                         </MDXProvider>
                     </div>

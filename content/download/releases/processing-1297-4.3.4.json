@@ -48,5 +48,6 @@
         }
       }
     ]
-  }
+  },
+  "description": "<!-- Release notes generated using configuration in .github/release.yml at main -->\r\n\r\n### What's Changed 🎊\r\n* Updated dependency locations to somewhere more stable 🤞 by @Stefterv in https://github.com/processing/processing4/pull/933\r\n* Fix #825 - Showing wrong errors' line numbers for .java files by @e1dem in https://github.com/processing/processing4/pull/937\r\n* Disable sketch folder deletion by @Stefterv in https://github.com/processing/processing4/pull/943\r\n\r\n## New Contributors\r\n* @e1dem made their first contribution in https://github.com/processing/processing4/pull/937\r\n\r\n**Full Changelog**: https://github.com/processing/processing4/compare/processing-1296-4.3.3...processing-1297-4.3.4"
 }

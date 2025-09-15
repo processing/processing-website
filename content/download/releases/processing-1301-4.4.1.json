@@ -83,5 +83,6 @@
         }
       }
     ]
-  }
+  },
+  "description": "### What's Changed 🎊\r\n\r\nThe 4.4.0 release contained a few regressions and bugs. This release fixes those. \r\n\r\nWe are also adding specific app icon designs for Linux and Windows so Processing looks stylish and at home on every platform 💅\r\n\r\n#### Enhancements\r\n* Revised App icons by @Stefterv in https://github.com/processing/processing4/pull/974\r\n\r\n#### Bug Fixes\r\n* Fix Beta Translation by @Stefterv in https://github.com/processing/processing4/pull/975\r\n* Padding fix for Windows & Linux by @Stefterv in https://github.com/processing/processing4/pull/976\r\n* Fixed a situation where larger base64 sketches didn't decode properly by @Stefterv in https://github.com/processing/processing4/pull/982\r\n* An assortment of Fixes by @Stefterv in https://github.com/processing/processing4/pull/993\r\n\r\n#### Documentation\r\n* Clarify language in BUILD.md by @SableRaf in https://github.com/processing/processing4/pull/989\r\n\r\n**Full Changelog**: https://github.com/processing/processing4/compare/processing-1300-4.4.0...processing-1301-4.4.1"
 }

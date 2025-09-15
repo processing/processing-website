@@ -61,5 +61,6 @@
         }
       }
     ]
-  }
+  },
+  "description": "```\r\nPROCESSING 3.3.2 (REV 0259) - 25 April 2017\r\n\r\nBroke a few eggs with that last omelette, and left a little eggshell behind.\r\nThis version takes care of a handful of revisions.\r\n\r\n[ bug fixes, mostly for regressions in 3.3.1 ]\r\n\r\n+ ArrayIndexOutOfBoundsException when using tint() or loadFont()\r\n  https://github.com/processing/processing/issues/5028\r\n  https://github.com/processing/processing/pull/5029\r\n  \r\n+ createInput() wasn't returning null for files that were not found\r\n  https://github.com/processing/processing/issues/5026\r\n\r\n+ Assigning Pixels Vertically Flipped in P2D\r\n  https://github.com/processing/processing/issues/5013\r\n\r\n\r\n[ useful updates, that hopefully aren't regressions ]\r\n\r\n+ Improve loadBytes() performance \r\n  https://github.com/processing/processing/pull/5027\r\n\r\n+ Add (far) more efficient file loading for loadBytes(File)\r\n\r\n+ Add loadBytes(URL) variant that uses content length header for array size\r\n\r\n+ keyPressed is false if one key is released while multiple keys are pressed\r\n  https://github.com/processing/processing/issues/4993\r\n```"
 }

@@ -19,5 +19,6 @@
         }
       }
     ]
-  }
+  },
+  "description": "This is another special release for ARM only. It fixes a couple of issues that some of you found in 3.3.7.1.\r\n\r\n* Fix P2D/P3D on Raspberry Pi using the \"legacy\" driver\r\n* IO: Fix pinMode() retry logic\r\n* IO: Make I2C errors more descriptive\r\n* Java got updated to 8u181"
 }

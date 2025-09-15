@@ -27,6 +27,7 @@ const fetchReleases = async (githubToken) => {
                     }
                   }
                 }
+                description
               }
             }
           }
@@ -48,6 +49,7 @@ const fetchReleases = async (githubToken) => {
                     }
                   }
                 }
+                description
               }
             }
           }
