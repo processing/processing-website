@@ -9,7 +9,7 @@ module.exports = {
     DEV_SSR: false,
     FAST_DEV: true,
     PRESERVE_FILE_DOWNLOAD_CACHE: false,
-    PARALLEL_SOURCING: true,
+    PARALLEL_SOURCING: false,
     DETECT_NODE_MUTATIONS: true
   },
   siteMetadata: {
