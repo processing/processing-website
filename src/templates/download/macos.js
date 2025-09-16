@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import Donate from "components/Donate";
-import DownloadButton from "components/download/Download";
 import MacOSDMG from "components/download/instructions/MacOSDMG";
 import MacOSZip from "components/download/instructions/MacOSZip";
 import PreviousReleases from "components/download/PreviousReleases";

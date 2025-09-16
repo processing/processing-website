@@ -10,7 +10,7 @@ export default function MacOSDMG() {
                 <li>Download Processing (dmg)
                     <div>
                         <DownloadButton format="dmg" arch="aarch64">Apple Silicon</DownloadButton>
-                        <DownloadButton format="dmg">Intel</DownloadButton>
+                        <DownloadButton format="dmg" arch="x64">Intel</DownloadButton>
                     </div>
                 </li>
                 <li>

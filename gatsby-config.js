@@ -6,11 +6,9 @@ const path = require('path');
 
 module.exports = {
   flags: {
-    DEV_SSR: false,
-    FAST_DEV: true,
-    PRESERVE_FILE_DOWNLOAD_CACHE: false,
-    PARALLEL_SOURCING: false,
-    DETECT_NODE_MUTATIONS: true
+    DEV_SSR: true,
+    FAST_DEV: false,
+    PRESERVE_FILE_DOWNLOAD_CACHE: false
   },
   siteMetadata: {
     siteUrl: `https://processing.org/`
