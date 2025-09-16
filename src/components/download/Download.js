@@ -2,23 +2,24 @@ import React from "react";
 import { useVersionOrLatest } from "./Version";
 import Button from "components/Button";
 import { usePlatform } from "./Platform";
+import { useAssets, useReleases } from "./Releases";
 
-export default function DownloadButton({ version: versionOverride, platform: platformOverride, arch = "x64", children }) {
-    let version = useVersionOrLatest();
-    if (versionOverride) {
-        version = versionOverride;
-    }
-    let platform = usePlatform().frontmatter.platform;
-    if (platformOverride) {
-        platform = platformOverride;
-    }
+export default function DownloadButton({ arch, format = "zip", children }) {
+    const version = useVersionOrLatest();
+    const platform = usePlatform();
 
+    const assets = useAssets();
+
+    const downloadUrl = assets
+        .filter(asset => !arch || asset.name.includes(arch))
+        .find(asset => asset.name.includes(format))
+        ?.downloadUrl;
 
 
     return (
-        <Button>
+        <Button href={downloadUrl} variant="primary" size="lg" download>
             {children || <>
-                Download {version} for {platform} ({arch})
+                Download {version} for {platform.title} ({arch})
             </>}
         </Button>
     )
