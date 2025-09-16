@@ -1,0 +1,9 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-basis: var(--col8);
+}
+.active{
+    font-weight: bold;
+}

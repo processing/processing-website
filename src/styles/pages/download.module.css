@@ -1,0 +1,35 @@
+.cta{
+    flex-basis: var(--col4);
+}
+.screenshot{
+    flex-basis: var(--col4);
+}
+.title{
+    font-weight: black;
+}
+.software{
+    color: var(--processing-blue-light);
+}
+.otherPlatforms{
+    margin-top: var(--margin);
+    padding: var(--gutter);
+    font-size: var(--text-small);
+    background: var(--lightgray);
+}
+.otherPlatforms ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: var(--margin);
+    flex-wrap: wrap;
+}
+.otherPlatforms a{
+    display: flex;
+    gap: var(--gutter);
+}
+.icon{
+    width: 1.5em;
+    height: 1.5em;
+;
+}

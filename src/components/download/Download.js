@@ -8,6 +8,8 @@ export default function DownloadButton({ arch, format = "zip", children }) {
     const version = useVersionOrLatest();
     const platform = usePlatform();
 
+    // TODO: Report the download to analytics
+
     const assets = useAssets();
 
     const downloadUrl = assets
