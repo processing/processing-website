@@ -1,0 +1,5 @@
+.downloads{
+    margin: var(--gutter) 0;
+    display: flex;
+    gap: var(--gutter);
+}

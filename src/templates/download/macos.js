@@ -27,12 +27,16 @@ export default function MacOSDownloadPage() {
     return (
         <>
             <div style={{ flexBasis: 'var(--col4)' }} className={classNames(grid.col)}>
+                <h3>Instructions</h3>
                 <InstructionComponent />
-                {containsMultiple && <a onClick={() => setPreferPortable(!preferPortable)}>Switch!</a>}
+                {containsMultiple && <a style={{ color: 'var(--darkgray)' }} onClick={() => setPreferPortable(!preferPortable)}>Looking for the portable version?</a>}
             </div>
             <Donate />
             <WhatsNew />
             <PreviousReleases />
+            <div id="faq-architecture" style={{ flexBasis: 'var(--col8)' }} className={classNames(grid.col)}>
+                explain....
+            </div>
         </>
     );
 }

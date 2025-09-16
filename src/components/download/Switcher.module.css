@@ -1,9 +1,21 @@
 .container{
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: var(--gutter);
     flex-basis: var(--col8);
+    background: var(--lightgray);
+    padding: var(--gutter);
+    svg{
+        width: 1.5em;
+        height: 1.5em;
+    }
+    li{
+        display: flex;
+        gap: var(--gutter);
+        padding: var(--gutter);
+    }
 }
 .active{
-    font-weight: bold;
+    background: var(--processing-blue-dark);
+    color: var(--lightgray);
 }

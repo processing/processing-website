@@ -1,0 +1,6 @@
+.title{
+    flex-basis: var(--col8);
+}
+.container{
+    /* gap: var(--gutter); */
+}

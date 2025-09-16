@@ -6,7 +6,7 @@ import * as styles from "./instructions.module.css";
 import Share from "../Share";
 
 
-export default function MacOSZip() {
+export default function LinuxZip() {
     const assets = useAssets();
 
     return (

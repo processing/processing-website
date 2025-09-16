@@ -11,6 +11,7 @@ import LinuxDownloadPage from './linux';
 import WindowsDownloadPage from './windows';
 import MacOSDownloadPage from './macos';
 import RaspberryPIDownloadPage from './raspi';
+import * as styles from 'styles/templates/platform.module.css';
 
 export default function PlatformDownloadPage({ pageContext }) {
     const { platform, version } = pageContext;
@@ -34,12 +35,12 @@ export default function PlatformDownloadPage({ pageContext }) {
                         description={"Download Processing, the open source programming environment for artists, designers, and educators."}
                     />
                     <div className={classnames(grid.grid, grid.container)}>
-                        <div style={{ flexBasis: 'var(--col8)' }} className={classnames(grid.col)}>
+                        <div className={classnames(grid.col, styles.title)}>
                             <h1>Install Processing {versionText} for {platform.title}</h1>
                         </div>
                         <Switcher />
                     </div>
-                    <div className={classnames(grid.grid, grid.container)}>
+                    <div className={classnames(grid.grid, grid.container, styles.container)}>
                         <PlatformComponent />
                     </div>
                 </Layout>

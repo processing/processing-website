@@ -6,7 +6,7 @@ import * as styles from "./instructions.module.css";
 import Share from "../Share";
 
 
-export default function MacOSZip() {
+export default function LinuxSnap() {
     const assets = useAssets();
 
     return (
@@ -14,13 +14,13 @@ export default function MacOSZip() {
             <li>Download Processing
                 {assets.length > 1 &&
                     <div className={classNames(styles.downloads)}>
-                        <DownloadButton arch="aarch64">Apple Silicon</DownloadButton>
-                        <DownloadButton arch="x64">Intel</DownloadButton>
+                        <DownloadButton arch="aarch64">ARM</DownloadButton>
+                        <DownloadButton arch="x64">x64</DownloadButton>
                     </div>
                 }
                 {assets.length == 1 &&
                     <div className={classNames(styles.downloads)}>
-                        <DownloadButton>Intel Only</DownloadButton>
+                        <DownloadButton>x64</DownloadButton>
                     </div>
                 }
             </li>
