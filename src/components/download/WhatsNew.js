@@ -1,32 +1,35 @@
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
-import { useVersion } from "./Version";
+import { useVersionOrLatest } from "./Version";
+import classNames from "classnames";
+import * as grid from 'styles/grid.module.css';
 
-export default function WhatsNew() {
-    // TODO Set up version fallback
-    const version = useVersion();
-
-    const descriptions = useStaticQuery(graphql`
-        query FindDescriptions {
-  allFile(filter: {childJson: {tagName: {glob: "*"}}}) {
-    edges {
-      node {
-        childrenJson {
-          tagName
-          description
+const query = graphql`
+      query FindDescriptions {
+        allFile(filter: {childJson: {tagName: {glob: "*"}}}) {
+          edges {
+            node {
+              childrenJson {
+                tagName
+                description
+              }
+            }
+          }
         }
       }
-    }
-  }
-}
-`)
-    const description = descriptions.allFile.edges.find(edge => edge.node.childrenJson[0].tagName.includes(version))?.node.childrenJson[0].description;
+    `
+
+export default function WhatsNew() {
+  const version = useVersionOrLatest();
+
+  const descriptions = useStaticQuery(query)
+  const description = descriptions.allFile.edges.find(edge => edge.node.childrenJson[0].tagName.includes(version))?.node.childrenJson[0].description;
 
 
-    return (
-        <details>
-            <summary>What's New?</summary>
-            <pre>{description}</pre>
-        </details>
-    );
+  return (
+    <details style={{ flexBasis: 'var(--col8)' }} className={classNames(grid.col)}>
+      <summary>What's New?</summary>
+      <pre>{description}</pre>
+    </details>
+  );
 }

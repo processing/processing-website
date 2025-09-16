@@ -1,10 +1,10 @@
 import React from "react";
-import { useVersion } from "./Version";
+import { useVersionOrLatest } from "./Version";
 import Button from "components/Button";
 import { usePlatform } from "./Platform";
 
 export default function DownloadButton({ version: versionOverride, platform: platformOverride, arch = "x64", children }) {
-    let version = useVersion();
+    let version = useVersionOrLatest();
     if (versionOverride) {
         version = versionOverride;
     }

@@ -2,6 +2,8 @@ import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import * as semver from "semver";
 import { usePlatform } from "./Platform";
+import classNames from "classnames";
+import * as grid from 'styles/grid.module.css';
 
 
 
@@ -41,7 +43,7 @@ export default function PreviousReleases() {
 
 
     return (
-        <details>
+        <details style={{ flexBasis: 'var(--col8)' }} className={classNames(grid.col)}>
             <summary>Looking for older versions?</summary>
             {versions.map((v, i) => (
                 <details key={i}>
@@ -49,7 +51,7 @@ export default function PreviousReleases() {
                     <ul>
                         {v.map((ver, j) => (
                             <li key={j}>
-                                <a href={`/download/${platform.frontmatter.slug}/${ver}`}>Processing {ver}</a>
+                                <a href={`/download/${platform.name}/${ver}`}>Processing {ver}</a>
                             </li>)
                         )}
                     </ul>

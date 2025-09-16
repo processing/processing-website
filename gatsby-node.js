@@ -361,23 +361,31 @@ async function createPlatformDownloadPages(actions, graphql) {
   const { createPage } = actions;
 
   const platformQuery = await graphql(
-    `query{
-      allMdx(filter: { frontmatter: { slug: { glob: "*" } } }) {
-        nodes {
-          frontmatter {
-            slug
-            platform
+    `query FindPlatforms {
+        allFile(
+          filter: {sourceInstanceName: {eq: "download"}, relativeDirectory: {eq: "platforms"}}
+        ) {
+          edges {
+            node {
+              name
+              childJson {
+                title
+                userAgent
+                sort
+              }
+            }
           }
-          body
         }
-      }
-    }`
+      }`
   );
 
   if (platformQuery.errors) {
     throw platformQuery.errors;
   }
-  const platforms = platformQuery.data.allMdx.nodes;
+  const platforms = platformQuery.data.allFile.edges.map(e => {
+    const { childJson, ...rest } = e.node;
+    return { ...childJson, ...rest };
+  });
 
   // TODO: Move to reuseable function
   const versionsQuery = await graphql(
@@ -411,7 +419,7 @@ async function createPlatformDownloadPages(actions, graphql) {
 
   platforms.forEach((platform) => {
     createPage({
-      path: `/download/${platform.frontmatter.slug}`,
+      path: `/download/${platform.name}`,
       component: platformTemplate,
       context: {
         platform
@@ -419,7 +427,7 @@ async function createPlatformDownloadPages(actions, graphql) {
     });
     versions.forEach(version => {
       createPage({
-        path: `/download/${platform.frontmatter.slug}/${version[1]}`,
+        path: `/download/${platform.name}/${version[1]}`,
         component: platformTemplate,
         context: {
           platform,
