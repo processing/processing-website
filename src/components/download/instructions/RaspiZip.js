@@ -1,21 +1,24 @@
 import React from "react";
 import DownloadButton from "../Download";
-import { useAssets } from "../Releases";
+import Share from "../Share";
 import classNames from "classnames";
 import { downloads } from "./instructions.module.css";
 import * as styles from "./instructions.module.css";
-import Share from "../Share";
+import { useAssets } from "../Releases";
 
-export default function WindowsZip() {
+export default function RaspiZip() {
+
+    const assets = useAssets();
+
     return (
         <ol className={classNames(styles.instructions)}>
             <li>Download Processing
                 <div className={classNames(downloads)}>
-                    <DownloadButton id="CIMDWXJV">Windows Zip</DownloadButton>
+                    <DownloadButton id="TXVODVYO">Windows Installer</DownloadButton>
                 </div>
             </li>
-            <li>Extract the contents of the zip file</li>
-            <li>Run processing.exe</li>
+            <li>Open the .msi file</li>
+            <li>Run the installer</li>
             <Share />
         </ol>
     )

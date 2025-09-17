@@ -15,8 +15,8 @@ export default function MacOSDMG() {
                 <div className={classNames(styles.downloads)}>
                     <DownloadButton format="dmg" id="IWSPGL5F" arch="aarch64">Apple Silicon</DownloadButton>
                     <DownloadButton format="dmg" id="VQUBVEQR" arch="x64">Intel</DownloadButton>
+                    <Architecture />
                 </div>
-                <Architecture />
             </li>
             <li>
                 Open the .dmg file

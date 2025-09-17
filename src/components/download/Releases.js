@@ -38,5 +38,5 @@ export function useAssets() {
   const releases = useReleases();
   const release = releases.find(release => release.tagName.includes(version));
 
-  return release.releaseAssets.edges.map(edge => edge.node).filter(asset => asset.name.includes(platform.name));
+  return release.releaseAssets.edges.map(edge => edge.node).filter(asset => asset.name.includes(platform.assets ?? platform.name));
 }

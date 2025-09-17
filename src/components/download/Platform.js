@@ -24,6 +24,7 @@ export function usePlatforms() {
                                 title
                                 userAgent
                                 sort
+                                assets
                             }
                         }
                     }

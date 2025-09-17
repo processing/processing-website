@@ -3,6 +3,7 @@ import Donate from "components/Donate";
 import { ArchitectureInfo } from "components/download/Architecture";
 import MacOSDMG from "components/download/instructions/MacOSDMG";
 import MacOSZip from "components/download/instructions/MacOSZip";
+import PortableIndicator, { PortableContext } from "components/download/Portable";
 import PreviousReleases from "components/download/PreviousReleases";
 import { useAssets } from "components/download/Releases";
 import WhatsNew from "components/download/WhatsNew";
@@ -11,13 +12,9 @@ import * as grid from 'styles/grid.module.css';
 import * as styles from 'styles/templates/platform.module.css';
 
 export default function MacOSDownloadPage() {
-    const [preferPortable, setPreferPortable] = React.useState(false);
+    const { preferPortable } = React.useContext(PortableContext);
 
     const assets = useAssets();
-
-    const containsMultipleDistributions = assets
-        .filter(asset => asset.name.includes('x64'))
-        .length > 1;
 
     let InstructionComponent = MacOSZip;
     if (assets.find(asset => asset.name.endsWith('.dmg'))) {
@@ -32,8 +29,7 @@ export default function MacOSDownloadPage() {
             <div className={classNames(grid.col, styles.instructions)}>
                 <h3>Instructions</h3>
                 <InstructionComponent />
-                {/* TODO: Move to reusable component */}
-                {containsMultipleDistributions && <a style={{ color: 'var(--darkgray)' }} onClick={() => setPreferPortable(!preferPortable)}>Looking for the portable version?</a>}
+                <PortableIndicator />
             </div>
             <Donate />
             <WhatsNew />

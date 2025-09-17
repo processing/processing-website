@@ -387,7 +387,6 @@ async function createPlatformDownloadPages(actions, graphql) {
     return { ...childJson, ...rest };
   });
 
-  // TODO: Move to reuseable function
   const versionsQuery = await graphql(
     `query FindReleases {
         allFile(
@@ -396,8 +395,6 @@ async function createPlatformDownloadPages(actions, graphql) {
           edges {
             node {
               childJson {
-                name
-                isPrerelease
                 tagName
               }
             }
@@ -422,7 +419,7 @@ async function createPlatformDownloadPages(actions, graphql) {
       path: `/download/${platform.name}`,
       component: platformTemplate,
       context: {
-        platform
+        platform: platform.name
       }
     });
     versions.forEach(version => {
@@ -430,7 +427,7 @@ async function createPlatformDownloadPages(actions, graphql) {
         path: `/download/${platform.name}/${version.options.raw}`,
         component: platformTemplate,
         context: {
-          platform,
+          platform: platform.name,
           version: version.options.raw
         }
       });
