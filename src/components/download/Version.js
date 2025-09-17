@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import * as semver from 'semver';
 
-export const VersionContext = React.createContext('1.0.0');
+export const VersionContext = React.createContext();
 
 export const VersionProvider = VersionContext.Provider;
 
@@ -30,11 +30,12 @@ export function useVersionOrLatest() {
     }
 
     const releases = versions.allFile.edges
+        .filter(e => e.node.childJson.isPrerelease === false)
         .map(e => e.node.childJson.tagName.replace(/^processing-(\d+-)?/, ''))
-        .map(e => [semver.coerce(e, { includePrerelease: true }), e])
+        .map(e => semver.coerce(e, { includePrerelease: true, raw: e }))
         .reverse()
-        .sort((a, b) => semver.compare(b[0], a[0]))
+        .sort((a, b) => semver.compare(b, a))
         ;
 
-    return releases[0][1];
+    return releases[0].options.raw;
 }

@@ -35,7 +35,7 @@ export default function MacOSDownloadPage() {
             <WhatsNew />
             <PreviousReleases />
             <div id="faq-architecture" style={{ flexBasis: 'var(--col8)' }} className={classNames(grid.col)}>
-                explain....
+                Put an FAQ entry about the different architectures here.
             </div>
         </>
     );

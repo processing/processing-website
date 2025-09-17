@@ -45,7 +45,7 @@ export default function PreviousReleases() {
 
     return (
         <div style={{ flexBasis: 'var(--col8)', background: "var(--lightgray);", paddingBlock: 20 }}>
-            <h4 style={{ paddingInline: 40 }}>Looking for older versions of Processing?</h4>
+            <h4 style={{ paddingInline: 40 }}>Looking for other versions of Processing?</h4>
             <details className={classNames(grid.col)}>
                 <summary style={{ paddingInline: 20 }}>Show</summary>
                 <div style={{ display: "flex", flexDirection: "row", gap: 20, paddingBlock: 10 }}>

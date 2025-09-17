@@ -412,9 +412,9 @@ async function createPlatformDownloadPages(actions, graphql) {
 
   const versions = versionsQuery.data.allFile.edges
     .map(e => e.node.childJson.tagName.replace(/^processing-(\d+-)?/, ''))
-    .map(e => [semver.coerce(e, { includePrerelease: true }), e])
+    .map(e => semver.coerce(e, { includePrerelease: true, raw: e }))
     .reverse()
-    .sort((a, b) => semver.compare(b[0], a[0]))
+    .sort((a, b) => semver.compare(b, a))
     ;
 
   platforms.forEach((platform) => {
@@ -427,11 +427,11 @@ async function createPlatformDownloadPages(actions, graphql) {
     });
     versions.forEach(version => {
       createPage({
-        path: `/download/${platform.name}/${version[1]}`,
+        path: `/download/${platform.name}/${version.options.raw}`,
         component: platformTemplate,
         context: {
           platform,
-          version
+          version: version.options.raw
         }
       });
     });
