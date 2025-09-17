@@ -14,7 +14,7 @@ export default function RaspiZip() {
         <ol className={classNames(styles.instructions)}>
             <li>Download Processing
                 <div className={classNames(downloads)}>
-                    <DownloadButton id="TXVODVYO">Windows Installer</DownloadButton>
+                    <DownloadButton id="TXVODVYO">Raspberry PI</DownloadButton>
                 </div>
             </li>
             <li>Open the .msi file</li>
