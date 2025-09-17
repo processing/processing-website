@@ -27,9 +27,11 @@ export default function WhatsNew() {
 
 
   return (
-    <details style={{ flexBasis: 'var(--col8)' }} className={classNames(grid.col)}>
-      <summary>What's New?</summary>
-      <pre>{description}</pre>
-    </details>
+    <div style={{ flexBasis: 'var(--col8)' }} className={classNames(grid.col)}>
+      <details>
+        <summary><h3 style={{ display: "inline-block" }}>What's New?</h3></summary>
+        <div style={{ whiteSpace: "pre-wrap", background: "var(--lightgray)", padding: "var(--gutter-double)" }}>{description}</div>
+      </details>
+    </div>
   );
 }

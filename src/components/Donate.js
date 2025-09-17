@@ -5,7 +5,7 @@ import * as css from 'styles/pages/donate.module.css';
 
 export default function Donate() {
     return (
-        <div style={{ flexBasis: 'var(--col4)', minHeight: 400, padding: "var(--gutter)" }} className={classNames(grid.col)}>
+        <div style={{ flexBasis: 'var(--col4)', minHeight: 400, padding: "var(--gutter)", filter: "blur(12.5px)" }} className={classNames(grid.col)}>
             Processing reached over 1 million people last year. If just 1% gave $5 a month, we’d raise $600,000 to support development. Your donation helps make Processing happen 💙
             <script
                 src="https://donorbox.org/widget.js"

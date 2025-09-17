@@ -5,7 +5,7 @@ import HeadMatter from 'components/HeadMatter';
 import Layout from 'components/Layout';
 import * as grid from 'styles/grid.module.css';
 import { PlatformProvider } from 'components/download/Platform';
-import { useVersionOrLatest, VersionProvider } from 'components/download/Version';
+import { VersionProvider } from 'components/download/Version';
 import Switcher from 'components/download/Switcher';
 import LinuxDownloadPage from './linux';
 import WindowsDownloadPage from './windows';

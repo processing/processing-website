@@ -2,8 +2,10 @@
     flex-basis: var(--col8);
 }
 .container{
-    /* gap: var(--gutter); */
 }
 .software{
     color: var(--processing-blue);
+}
+.instructions{
+    flex-basis: var(--col4);
 }

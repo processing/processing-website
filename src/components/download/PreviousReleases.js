@@ -44,13 +44,13 @@ export default function PreviousReleases() {
 
 
     return (
-        <div style={{ flexBasis: 'var(--col8)', background: "var(--lightgray);", paddingBlock: 20 }}>
-            <h4 style={{ paddingInline: 40 }}>Looking for other versions of Processing?</h4>
-            <details className={classNames(grid.col)}>
-                <summary style={{ paddingInline: 20 }}>Show</summary>
-                <div style={{ display: "flex", flexDirection: "row", gap: 20, paddingBlock: 10 }}>
+        <div style={{ flexBasis: 'var(--col8)' }} className={classNames(grid.col)}>
+
+            <details>
+                <summary><h3 style={{ display: "inline-block" }}>Looking for other versions of Processing?</h3></summary>
+                <div style={{ display: "flex", flexDirection: "row", gap: "var(--gutter-double)", paddingBlock: 10 }}>
                     {versionByMajor.map((versions, i) => (
-                        <div key={i} style={{ paddingInline: 40, }}>
+                        <div key={i}>
                             <h4>Processing {versions[0].major}</h4>
                             <Button href={`/download/${platform.name}/${versions[0].options.raw}`}>Processing {versions[0].options.raw}</Button>
                             <details style={{ marginTop: 20 }}>

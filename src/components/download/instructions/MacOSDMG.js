@@ -4,17 +4,19 @@ import Share from "../Share";
 import classNames from "classnames";
 import * as styles from "./instructions.module.css";
 import { StaticImage } from "gatsby-plugin-image";
+import Architecture from "../Architecture";
 
 
 export default function MacOSDMG() {
     return (
-        <ol>
-            <li>Download Processing
+        <ol className={classNames(styles.instructions)}>
+            <li>
+                Download Processing
                 <div className={classNames(styles.downloads)}>
                     <DownloadButton format="dmg" id="IWSPGL5F" arch="aarch64">Apple Silicon</DownloadButton>
                     <DownloadButton format="dmg" id="VQUBVEQR" arch="x64">Intel</DownloadButton>
                 </div>
-                <a href="#faq-architecture" style={{ color: "var(--darkgray)" }}>Which version do I need?</a>
+                <Architecture />
             </li>
             <li>
                 Open the .dmg file

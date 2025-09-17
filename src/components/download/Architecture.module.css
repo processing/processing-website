@@ -1,0 +1,7 @@
+.architecture{
+    color: var(--darkgray);
+    font-size: var(--text-small);
+}
+.explainer{
+    flex-basis: var(--col8);
+}
