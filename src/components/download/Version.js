@@ -9,6 +9,17 @@ export const VersionProvider = VersionContext.Provider;
 export const useVersion = () => React.useContext(VersionContext);
 
 export function useVersionOrLatest() {
+
+
+    const version = useVersion();
+    const latest = useLatestVersion();
+    if (version) {
+        return version
+    }
+    return latest;
+}
+
+export function useLatestVersion() {
     const versions = useStaticQuery(graphql`
         query {
             allFile(filter: {sourceInstanceName: {eq: "download"}, relativeDirectory: {eq: "releases"}}) {
@@ -23,11 +34,6 @@ export function useVersionOrLatest() {
                 }
             }
         }`);
-
-    const version = useVersion();
-    if (version) {
-        return version
-    }
 
     const releases = versions.allFile.edges
         .filter(e => e.node.childJson.isPrerelease === false)

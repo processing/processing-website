@@ -28,7 +28,7 @@ export default function WindowsDownloadPage() {
         <>
             <div style={{ flexBasis: 'var(--col4)' }} className={classNames(grid.col)}>
                 <InstructionComponent />
-                {containsMultiple && <a onClick={() => setPreferPortable(!preferPortable)}>Switch!</a>}
+                {containsMultiple && <a onClick={() => setPreferPortable(!preferPortable)}>Prefer the portable version?</a>}
             </div>
             <Donate />
             <WhatsNew />

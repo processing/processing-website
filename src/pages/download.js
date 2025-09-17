@@ -11,7 +11,7 @@ import Donate from 'components/Donate';
 
 export default function DownloadPage() {
     const { selected, rest } = useGuessedPlatform();
-
+    // TODO: Start preloading selected platform download
 
     return (
         <Layout>
@@ -30,10 +30,12 @@ export default function DownloadPage() {
                             <h4>Also available for</h4>
                             <ul>
                                 {rest.map(node => (
-                                    <a href={`/download/${node.name}/`} key={node.name}>
-                                        <PlatformIcon platform={node} className={classnames(styles.icon)} />
-                                        <li><h4>{node.title}</h4></li>
-                                    </a>
+                                    <li key={node.name}>
+                                        <a href={`/download/${node.name}/`} >
+                                            <PlatformIcon platform={node} className={classnames(styles.icon)} />
+                                            {node.title}
+                                        </a>
+                                    </li>
                                 ))}
                             </ul>
                         </div>
@@ -44,12 +46,6 @@ export default function DownloadPage() {
                     {selected?.name == "linux" && <StaticImage src={`../images/download-linux.png`} alt="The Processing Desktop Editor on linux" />}
                     {selected?.name == "windows" && <StaticImage src={`../images/download-windows.png`} alt="The Processing Desktop Editor on windows" />}
                 </div>}
-
-            </div>
-            <div className={classnames(grid.grid, grid.container)}>
-                <div className={classnames(grid.col)}>
-                    <Donate />
-                </div>
             </div>
         </Layout>
     )

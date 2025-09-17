@@ -1,0 +1,14 @@
+.alert{
+    font-weight: bold;
+    background: var(--processing-blue);
+    color: white;
+    padding-block: var(--gutter);
+    margin-top: calc(var(--vertical-margin-large) * -1);
+    margin-bottom: var(--vertical-margin-large);
+}
+.content{
+    display: flex;
+    gap: var(--gutter);
+    padding-inline: var(--gutter);
+    align-items: center;
+}

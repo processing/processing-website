@@ -1,9 +1,13 @@
 .container{
+    margin-top: calc(var(--vertical-margin-large) * -1);
+    background: var(--lightgray);
+    margin-bottom: var(--vertical-margin-large);
+}
+.bar{
     display: flex;
     flex-direction: row;
     gap: var(--gutter);
     flex-basis: var(--col8);
-    background: var(--lightgray);
     padding: var(--gutter);
     svg{
         width: 1.5em;
@@ -13,9 +17,12 @@
         display: flex;
         gap: var(--gutter);
         padding: var(--gutter);
+        color: var(--processing-blue-dark);
+        font-weight: bold;
+        font-size: var(--text-medium);
     }
 }
-.active{
+li.active{
     background: var(--processing-blue-dark);
     color: var(--lightgray);
 }

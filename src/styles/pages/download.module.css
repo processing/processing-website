@@ -5,14 +5,17 @@
     flex-basis: var(--col4);
 }
 .title{
-    font-weight: black;
+    font-weight: bold;
+    line-height: 1.2;
+    padding-bottom: var(--gutter);
 }
 .software{
-    color: var(--processing-blue-light);
+    color: var(--processing-blue);
 }
 .otherPlatforms{
     margin-top: var(--margin);
-    padding: var(--gutter);
+    padding: var(--gutter-double);
+    padding-block-start: var(--gutter);
     font-size: var(--text-small);
     background: var(--lightgray);
 }
@@ -27,9 +30,9 @@
 .otherPlatforms a{
     display: flex;
     gap: var(--gutter);
+    font-size: var(--text-medium);
 }
 .icon{
     width: 1.5em;
     height: 1.5em;
-;
 }

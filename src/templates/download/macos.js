@@ -29,6 +29,7 @@ export default function MacOSDownloadPage() {
             <div style={{ flexBasis: 'var(--col4)' }} className={classNames(grid.col)}>
                 <h3>Instructions</h3>
                 <InstructionComponent />
+                {/* TODO: Move to reusable component */}
                 {containsMultiple && <a style={{ color: 'var(--darkgray)' }} onClick={() => setPreferPortable(!preferPortable)}>Looking for the portable version?</a>}
             </div>
             <Donate />
