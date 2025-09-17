@@ -1,0 +1,105 @@
+.action{
+    background: var(--doante-banner-white);
+    gap: var(--gutter);
+    display: flex;
+    flex-direction: column;
+    flex: 0.8;
+}
+.intervalSelect{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gutter-half);
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: var(--gutter-half);
+    background: var(--lightgray);
+    padding: var(--gutter-half);
+    max-width: 18em;
+}
+
+.interval{
+    padding: calc(var(--vertical-margin-xsmall) / 1.5) var(--gutter);
+    font-size: var(--text-medium);
+    cursor: pointer;
+    text-align: center;
+
+    transition: all 0.3s;
+    color: var(--donate-banner-black);
+
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 6px;
+
+    text-wrap: nowrap;
+
+    &.active{
+        background: var(--processing-blue-dark);
+        color: white;
+    }
+}
+
+.amountSelect{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--gutter-half);
+    
+}
+
+.amount{
+    padding: var(--vertical-margin-xsmall) var(--gutter);
+    font-size: var(--text-medium);
+    cursor: pointer;
+    text-align: center;
+    
+    border: 1px solid var(--gray);
+    outline: 2px solid transparent;
+    transition: all 0.3s;
+    &.active{
+        background: var(--lightgray);
+    }
+    &:hover{
+        border: 1px solid var(--gray);
+        background: var(--lightgray);
+    }
+}
+.customamount{
+    grid-column: 2 / 4;
+    font-size: var(--text-medium);
+    font-family: var(--font);
+}
+.active{
+    outline-color: var(--donate-banner-slate-500);
+    border-color: transparent;
+}
+a.donate, .donatemobile{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: var(--gutter);
+    font-size: var(--text-medium);
+    cursor: pointer;
+    /* background: var(--donate-banner-dark); */
+    background-color: var(--processing-blue);
+    color: white !important;
+    a &{
+        color: white;
+    }
+    &:hover{
+        color: white;
+        box-shadow: 0 0 4px 0 var(--donate-banner-dark);
+    }
+    @media screen and (max-width: 500px){
+        width: 100%;
+    }
+}
+
+.star{
+    background: var(--gray);
+    width: 0.8em;
+    height: 0.8em;
+    background-size: contain;
+    display: inline-block;
+    clip-path: polygon(52.049% 1.745%, 52.049% 1.745%, 52.602% 1.778%, 53.141% 1.877%, 53.661% 2.037%, 54.158% 2.257%, 54.629% 2.534%, 55.069% 2.864%, 55.472% 3.244%, 55.837% 3.673%, 56.157% 4.147%, 56.428% 4.663%, 68.673% 31.291%, 96.064% 35.562%, 96.064% 35.562%, 96.604% 35.68%, 97.123% 35.861%, 97.615% 36.1%, 98.077% 36.394%, 98.505% 36.74%, 98.896% 37.134%, 99.244% 37.573%, 99.547% 38.053%, 99.8% 38.57%, 100% 39.122%, 100% 39.122%, 100.142% 39.696%, 100.222% 40.276%, 100.241% 40.856%, 100.2% 41.431%, 100.1% 41.997%, 99.943% 42.547%, 99.731% 43.076%, 99.463% 43.58%, 99.143% 44.053%, 98.77% 44.489%, 78.953% 65.22%, 83.63% 94.479%, 83.63% 94.479%, 83.692% 95.067%, 83.692% 95.652%, 83.632% 96.227%, 83.513% 96.789%, 83.338% 97.333%, 83.109% 97.853%, 82.827% 98.344%, 82.495% 98.801%, 82.113% 99.22%, 81.685% 99.595%, 81.685% 99.595%, 81.221% 99.915%, 80.732% 100.173%, 80.225% 100.371%, 79.703% 100.507%, 79.172% 100.58%, 78.637% 100.591%, 78.102% 100.539%, 77.573% 100.424%, 77.055% 100.244%, 76.552% 100%, 52.049% 86.18%, 27.547% 100%, 27.547% 100%, 27.044% 100.246%, 26.525% 100.427%, 25.996% 100.544%, 25.462% 100.597%, 24.927% 100.586%, 24.396% 100.513%, 23.874% 100.378%, 23.367% 100.18%, 22.878% 99.922%, 22.414% 99.602%, 22.414% 99.602%, 21.986% 99.227%, 21.604% 98.808%, 21.272% 98.351%, 20.99% 97.86%, 20.76% 97.34%, 20.585% 96.796%, 20.467% 96.234%, 20.407% 95.659%, 20.406% 95.074%, 20.468% 94.486%, 25.153% 65.213%, 5.322% 44.489%, 5.322% 44.489%, 4.948% 44.053%, 4.626% 43.579%, 4.357% 43.075%, 4.144% 42.545%, 3.987% 41.994%, 3.887% 41.428%, 3.845% 40.853%, 3.864% 40.273%, 3.944% 39.694%, 4.086% 39.122%, 4.086% 39.122%, 4.286% 38.568%, 4.539% 38.049%, 4.842% 37.568%, 5.191% 37.129%, 5.581% 36.734%, 6.01% 36.388%, 6.473% 36.093%, 6.967% 35.854%, 7.486% 35.673%, 8.029% 35.555%, 35.42% 31.291%, 47.671% 4.663%, 47.671% 4.663%, 47.942% 4.147%, 48.262% 3.673%, 48.626% 3.244%, 49.03% 2.864%, 49.47% 2.534%, 49.94% 2.257%, 50.438% 2.037%, 50.958% 1.877%, 51.497% 1.778%, 52.049% 1.745%);
+}
