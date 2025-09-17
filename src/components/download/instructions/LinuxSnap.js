@@ -14,13 +14,13 @@ export default function LinuxSnap() {
             <li>Download Processing
                 {assets.length > 1 &&
                     <div className={classNames(styles.downloads)}>
-                        <DownloadButton arch="aarch64">ARM</DownloadButton>
-                        <DownloadButton arch="x64">x64</DownloadButton>
+                        <DownloadButton id="TXVODVYO" arch="aarch64">ARM</DownloadButton>
+                        <DownloadButton id="HHYWFK7G" arch="x64">x64</DownloadButton>
                     </div>
                 }
                 {assets.length == 1 &&
                     <div className={classNames(styles.downloads)}>
-                        <DownloadButton>x64</DownloadButton>
+                        <DownloadButton id="HHYWFK7G">x64</DownloadButton>
                     </div>
                 }
             </li>

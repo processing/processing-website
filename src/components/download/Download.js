@@ -3,12 +3,13 @@ import { useVersionOrLatest } from "./Version";
 import Button from "components/Button";
 import { usePlatform } from "./Platform";
 import { useAssets } from "./Releases";
+import { useGoal } from "gatsby-plugin-fathom";
 
-export default function DownloadButton({ arch, format = "zip", children }) {
+export default function DownloadButton({ arch, format = "zip", id, children }) {
     const version = useVersionOrLatest();
     const platform = usePlatform();
 
-    // TODO: Report the download to analytics
+    const submitEvent = useGoal(id)
 
     const assets = useAssets();
 
@@ -19,10 +20,12 @@ export default function DownloadButton({ arch, format = "zip", children }) {
 
 
     return (
-        <Button href={downloadUrl} variant="animate1" size="large" download>
-            {children || <>
-                Download {version} for {platform.title} ({arch})
-            </>}
-        </Button>
+        <div onClick={() => submitEvent()} >
+            <Button href={downloadUrl} variant="animate1" size="large" download>
+                {children || <>
+                    Download {version} for {platform.title} ({arch})
+                </>}
+            </Button>
+        </div>
     )
 }

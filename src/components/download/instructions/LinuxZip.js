@@ -14,13 +14,13 @@ export default function LinuxZip() {
             <li>Download Processing
                 {assets.length > 1 &&
                     <div className={classNames(styles.downloads)}>
-                        <DownloadButton arch="aarch64">Apple Silicon</DownloadButton>
-                        <DownloadButton arch="x64">Intel</DownloadButton>
+                        <DownloadButton id="TXVODVYO" arch="aarch64">Apple Silicon</DownloadButton>
+                        <DownloadButton id="HHYWFK7G" arch="x64">Intel</DownloadButton>
                     </div>
                 }
                 {assets.length == 1 &&
                     <div className={classNames(styles.downloads)}>
-                        <DownloadButton>Intel Only</DownloadButton>
+                        <DownloadButton id="HHYWFK7G">Intel Only</DownloadButton>
                     </div>
                 }
             </li>

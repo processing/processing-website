@@ -11,8 +11,8 @@ export default function MacOSDMG() {
         <ol>
             <li>Download Processing
                 <div className={classNames(styles.downloads)}>
-                    <DownloadButton format="dmg" arch="aarch64">Apple Silicon</DownloadButton>
-                    <DownloadButton format="dmg" arch="x64">Intel</DownloadButton>
+                    <DownloadButton format="dmg" id="IWSPGL5F" arch="aarch64">Apple Silicon</DownloadButton>
+                    <DownloadButton format="dmg" id="VQUBVEQR" arch="x64">Intel</DownloadButton>
                 </div>
                 <a href="#faq-architecture" style={{ color: "var(--darkgray)" }}>Which version do I need?</a>
             </li>

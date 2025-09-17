@@ -12,7 +12,7 @@ export default function WindowsZip() {
         <ol>
             <li>Download Processing (zip)
                 <div className={classNames(downloads)}>
-                    <DownloadButton>Download</DownloadButton>
+                    <DownloadButton id="CIMDWXJV">Download</DownloadButton>
                 </div>
             </li>
         </ol>

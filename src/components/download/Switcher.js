@@ -15,10 +15,12 @@ export default function Switcher() {
 
         <ul className={classNames(grid.col, styles.container)}>
             {platforms.map(node => (
-                <li key={node.name} className={node.name === current.name ? classNames(styles.active) : undefined}>
-                    <PlatformIcon platform={node} />
-                    <a href={`/download/${node.name}/${version}`}>{node.title}</a>
-                </li>
+                <a href={`/download/${node.name}/${version}`} key={node.name}>
+                    <li className={node.name === current.name ? classNames(styles.active) : undefined}>
+                        <PlatformIcon platform={node} />
+                        {node.title}
+                    </li>
+                </a>
             ))}
         </ul>
     )
