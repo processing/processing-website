@@ -28,14 +28,12 @@ export default function WhatsNew() {
 
 
   return (
-    <div style={{ flexBasis: 'var(--col8)' }} className={classNames(grid.col)}>
-      <details>
-        <summary><h3 style={{ display: "inline-block" }}>What's New?</h3></summary>
-        <div style={{ whiteSpace: "pre-wrap", background: "var(--lightgray)", padding: "var(--gutter-double)" }}>
-          <h2>{notes.frontmatter.title}</h2>
-          <MDXRenderer>{notes.body}</MDXRenderer>
-        </div>
-      </details>
+    <div style={{ flexBasis: 'var(--col5)', alignSelf: "stretch", position: "relative", padding: "var(--gutter)", background: "white" }} className={classNames(grid.col)}>
+      <h3 style={{ display: "inline-block", }}>What's New?</h3>
+      <div style={{ position: "absolute", inset: 0, marginTop: "2em", overflow: "auto", padding: "var(--gutter)" }}>
+        <h2>{notes.frontmatter.title}</h2>
+        <MDXRenderer>{notes.body}</MDXRenderer>
+      </div>
     </div>
   );
 }

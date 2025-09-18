@@ -35,42 +35,56 @@ export default function MacOSDownloadPage() {
 
     return (
         <>
-            <div className={classNames(grid.col, styles.instructions)}>
-                <h3>Instructions</h3>
-                <InstructionComponent />
-                <PortableIndicator />
+            <div className={classNames(grid.grid, grid.container)}>
+                <div className={classNames(grid.col, styles.instructions)}>
+                    <h3>Instructions</h3>
+                    <InstructionComponent />
+                    <PortableIndicator />
+                </div>
+                <Donate />
             </div>
-            <Donate />
-            <WhatsNew />
-            <PreviousReleases />
-            <ArchitectureInfo />
+            <div style={{ backgroundColor: 'var(--lightgray);', paddingBlock: "var(--gutter-double)" }}>
+                <div className={classNames(grid.grid, grid.container)}>
+                    <WhatsNew />
+                    <PreviousReleases />
+                </div>
+            </div>
+            <div style={{ backgroundColor: 'var(--lightgray);', paddingBlock: "var(--gutter-double)" }}>
+                <div style={{ padding: "var(--gutter)" }}>
+                    <div className={classNames(grid.grid, grid.container)}>
+                        <div style={{ background: "white" }}>
+                            <ArchitectureInfo />
+                        </div>
+                    </div>
+                </div>
+            </div>
             <ul className={classNames(grid.col, css.bottomLinks)} style={{ flexBasis: 'var(--col8)' }}>
                 <Link
-                title={""}
-                description={""}
-                href="https://hello.processing.org/"
-                icon={<CreateIcon />}
+                    title={""}
+                    description={""}
+                    href="https://hello.processing.org/"
+                    icon={<CreateIcon />}
                 />
 
                 <Link
-                title={""}
-                description={""}
-                href="https://processing.org/tutorials"
-                icon={<LearnIcon />}
+                    title={""}
+                    description={""}
+                    href="https://processing.org/tutorials"
+                    icon={<LearnIcon />}
                 />
 
                 <Link
-                title={""}
-                description={""}
-                href="https://discourse.processing.org/"
-                icon={<CommunityIcon />}
+                    title={""}
+                    description={""}
+                    href="https://discourse.processing.org/"
+                    icon={<CommunityIcon />}
                 />
 
                 <Link
-                title={""}
-                description={""}
-                href="https://github.com/processing/processing4"
-                icon={<GitHubIcon />}
+                    title={""}
+                    description={""}
+                    href="https://github.com/processing/processing4"
+                    icon={<GitHubIcon />}
                 />
             </ul>
         </>

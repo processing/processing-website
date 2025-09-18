@@ -17,7 +17,12 @@
     padding: var(--gutter-double);
     padding-block-start: var(--gutter);
     font-size: var(--text-small);
-    background: var(--lightgray);
+    background: var(--download-background);
+    color: var(--processing-blue);
+}
+.otherPlatforms h4{
+    color: var(--processing-blue);
+
 }
 .otherPlatforms ul{
     list-style: none;
@@ -31,6 +36,7 @@
     display: flex;
     gap: var(--gutter);
     font-size: var(--text-medium);
+
 }
 .icon{
     width: 1.5em;

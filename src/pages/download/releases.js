@@ -25,11 +25,11 @@ export default function ReleasesPage() {
                     <div style={{ display: "flex", flexDirection: 'row', gap: '2em' }}>
                         {versionByMajor.map((versions, i) => (
                             <div key={i} style={{ marginBottom: '1em' }}>
-                                <a href={`/download/${versions[0].options.raw}`}><h3>Processing {versions[0].major}</h3></a>
+                                <h3>Processing {versions[0].major}</h3>
                                 <ul>
                                     {versions.map(v => (
                                         <li key={v.options.raw}>
-                                            <a href={`/download/${v.options.raw}`}>Processing {v.options.raw}</a>
+                                            <Link to={`/download/windows/${v.options.raw}`}>Processing {v.options.raw}</Link>
                                         </li>
                                     ))}
                                 </ul>

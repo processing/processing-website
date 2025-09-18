@@ -16,24 +16,20 @@ export default function PreviousReleases() {
 
     // First version of each major is the LTS version plus 4.3.4
     const ltsVersions = versionByMajor.flatMap(versions => [versions[0], versions.find(v => v.raw === '4.3.4')]).filter(Boolean);
-    
+
 
     return (
-        <div style={{ flexBasis: 'var(--col8)' }} className={classNames(grid.col)}>
-            <details>
-                <summary><h3 style={{ display: "inline-block" }}>Looking for other versions of Processing?</h3></summary>
-                <details open>
-                    <summary><h4 style={{ display: "inline-block" }}>Stable Releases</h4></summary>
-                    <div>
-                        {ltsVersions.map((versions, i) => (
-                            <div key={i} style={{ marginBottom: '1em' }}>
-                                <Button href={`/download/${platform.name}/${versions.options.raw}`}>Processing {versions.major} ({versions.options.raw})</Button>
-                            </div>
-                        ))}
-                    </div>
-                </details>
-                <Link to="/download/releases">See all previous releases</Link>
-            </details>
+        <div style={{ flexBasis: 'var(--col3)' }} className={classNames(grid.col)}>
+            <div style={{ background: "white", padding: "var(--gutter)" }}>
+                <h3 style={{ display: "inline-block" }}>Looking for other versions of Processing?</h3>
+                <h4 style={{ display: "inline-block" }}>Stable Releases</h4>
+                <div style={{ display: "flex", flexDirection: 'row', flexWrap: "wrap", gap: "var(--gutter)", }}>
+                    {ltsVersions.map((versions, i) => (
+                        <Button key={i} href={`/download/${platform.name}/${versions.options.raw}`}>Processing {versions.major} ({versions.options.raw})</Button>
+                    ))}
+                    <Link to="/download/releases">See all previous releases</Link>
+                </div>
+            </div>
         </div>
     )
 }

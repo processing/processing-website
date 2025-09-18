@@ -46,9 +46,7 @@ export default function PlatformDownloadPage({ pageContext }) {
                                 <h1>Download <span className={classnames(styles.software)}>Processing</span> {versionText} for {platform.title}</h1>
                             </div>
                         </div>
-                        <div className={classnames(grid.grid, grid.container, styles.container)}>
-                            <PlatformComponent />
-                        </div>
+                        <PlatformComponent />
                     </Layout>
                 </PortableContext.Provider>
             </VersionProvider>
