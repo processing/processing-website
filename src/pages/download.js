@@ -7,6 +7,7 @@ import * as styles from 'styles/pages/download.module.css';
 import { StaticImage } from "gatsby-plugin-image"
 import Button from 'components/Button';
 import { PlatformIcon, useGuessedPlatform } from 'components/download/Platform';
+import { Link } from 'gatsby';
 
 export default function DownloadPage() {
     const { selected, rest } = useGuessedPlatform();
@@ -22,7 +23,7 @@ export default function DownloadPage() {
                 <div className={classnames(grid.col, styles.cta)}>
                     <h1 className={classnames(styles.title)}>Download <span className={classnames(styles.software)}>Processing</span>,<br /> your friendly creative coding sketchbook.</h1>
                     <div>
-                        <Button variant="animate1" size="large" href={`/download/${selected?.name}`}>
+                        <Button variant="animate1" size="large" to={`/download/${selected?.name}`}>
                             Download for {selected?.title} <PlatformIcon className={classnames(styles.icon)} platform={selected} />
                         </Button>
                         <div className={classnames(styles.otherPlatforms)}>
@@ -30,10 +31,10 @@ export default function DownloadPage() {
                             <ul>
                                 {rest.map(node => (
                                     <li key={node.name}>
-                                        <a href={`/download/${node.name}/`} >
+                                        <Link to={`/download/${node.name}/`} >
                                             <PlatformIcon platform={node} className={classnames(styles.icon)} />
                                             {node.title}
-                                        </a>
+                                        </Link>
                                     </li>
                                 ))}
                             </ul>

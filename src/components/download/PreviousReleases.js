@@ -1,16 +1,45 @@
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 import React, { version } from "react"
-import * as semver from "semver";
+
 import { usePlatform } from "./Platform";
 import classNames from "classnames";
 import * as grid from 'styles/grid.module.css';
 import Button from "components/Button";
 
+import * as semver from "semver";
+
 
 
 export default function PreviousReleases() {
     const platform = usePlatform();
+    const versionByMajor = useReleasesByMajor();
 
+    // First version of each major is the LTS version plus 4.3.4
+    const ltsVersions = versionByMajor.flatMap(versions => [versions[0], versions.find(v => v.raw === '4.3.4')]).filter(Boolean);
+    
+
+    return (
+        <div style={{ flexBasis: 'var(--col8)' }} className={classNames(grid.col)}>
+            <details>
+                <summary><h3 style={{ display: "inline-block" }}>Looking for other versions of Processing?</h3></summary>
+                <details open>
+                    <summary><h4 style={{ display: "inline-block" }}>Stable Releases</h4></summary>
+                    <div>
+                        {ltsVersions.map((versions, i) => (
+                            <div key={i} style={{ marginBottom: '1em' }}>
+                                <Button href={`/download/${platform.name}/${versions.options.raw}`}>Processing {versions.major} ({versions.options.raw})</Button>
+                            </div>
+                        ))}
+                    </div>
+                </details>
+                <Link to="/download/releases">See all previous releases</Link>
+            </details>
+        </div>
+    )
+}
+
+
+export function useReleasesByMajor() {
     const releases = useStaticQuery(graphql`
     query FindReleases {
         allFile(filter: {sourceInstanceName: {eq: "download"}, relativeDirectory: {eq: "releases"}}) {
@@ -25,6 +54,8 @@ export default function PreviousReleases() {
         }
     }
 `)
+
+
     const versionByMajor = releases.allFile.edges
         .filter(e => e.node.childJson.isPrerelease !== true)
         .map(e => e.node.childJson.tagName.replace(/^processing-(\d+-)?/, ''))
@@ -40,39 +71,5 @@ export default function PreviousReleases() {
         }, [])
         .reverse()
         ;
-
-
-
-    return (
-        <div style={{ flexBasis: 'var(--col8)' }} className={classNames(grid.col)}>
-            <details>
-                <summary><h3 style={{ display: "inline-block" }}>Looking for other versions of Processing?</h3></summary>
-                <details open>
-                    <summary><h4 style={{ display: "inline-block" }}>Stable Releases</h4></summary>
-                    <div>
-                        {versionByMajor.map((versions, i) => (
-                            <div key={i} style={{ marginBottom: '1em' }}>
-                                <Button href={`/download/${platform.name}/${versions[0].options.raw}`}>Processing {versions[0].major} ({versions[0].options.raw})</Button>
-                            </div>
-                        ))}
-                    </div>
-                </details>
-                <details>
-                    <summary><h3 style={{ display: "inline-block" }}>All releases</h3></summary>
-                    <div>
-                        {versionByMajor.map((versions, i) => (
-                            <div key={i} style={{ marginBottom: '1em' }}>
-                                <h4>Processing {versions[0].major}</h4>
-                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5em' }}>
-                                    {versions.map((v, j) => (
-                                        <Button key={j} href={`/download/${platform.name}/${v.options.raw}`}>{v.options.raw}</Button>
-                                    ))}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </details>
-            </details>
-        </div>
-    )
+    return versionByMajor;
 }

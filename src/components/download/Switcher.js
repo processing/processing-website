@@ -4,6 +4,7 @@ import classNames from "classnames";
 import * as grid from 'styles/grid.module.css';
 import * as styles from './Switcher.module.css';
 import { useVersion } from "./Version";
+import { Link } from "gatsby";
 
 export default function Switcher() {
     const platforms = usePlatforms();
@@ -16,12 +17,12 @@ export default function Switcher() {
             <ul className={classNames(grid.col, styles.bar)}>
                 {platforms.map(node => (
                     // TODO: Convert to button and add extra variants to the button + hover states
-                    <a href={`/download/${node.name}/${version}`} key={node.name}>
+                    <Link to={`/download/${node.name}/${version}`} key={node.name}>
                         <li className={node.name === current.name ? classNames(styles.active) : undefined}>
                             <PlatformIcon platform={node} />
                             {node.title}
                         </li>
-                    </a>
+                    </Link>
                 ))}
             </ul>
         </div>
