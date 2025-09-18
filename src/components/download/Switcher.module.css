@@ -1,6 +1,6 @@
 .container{
     margin-top: calc(var(--vertical-margin-large) * -1);
-    background: var(--lightgray);
+    background: var(--download-background);
     margin-bottom: var(--vertical-margin-large);
 }
 .bar{
@@ -17,12 +17,12 @@
         display: flex;
         gap: var(--gutter);
         padding: var(--gutter);
-        color: var(--processing-blue-dark);
+        color: var(--download-inactive);
         font-weight: bold;
         font-size: var(--text-medium);
     }
 }
 li.active{
-    background: var(--processing-blue-dark);
-    color: var(--lightgray);
+    background: var(--download-background-active);
+    color: var(--processing-blue);
 }
