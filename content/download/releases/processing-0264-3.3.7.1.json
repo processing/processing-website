@@ -1,6 +1,7 @@
 {
   "name": "Processing 3.3.7.1",
   "tagName": "processing-0264-3.3.7.1",
+  "isPrerelease": false,
   "publishedAt": "2018-07-01T18:30:23Z",
   "releaseAssets": {
     "edges": [

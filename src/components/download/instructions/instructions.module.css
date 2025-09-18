@@ -9,4 +9,23 @@
     display: flex;
     flex-direction: column;
     gap: var(--gutter);
+    list-style: none;
+    counter-reset: instructions;
+    &>li{
+        counter-increment: instructions;
+    }
+    &>li::before{
+        content: counter(instructions);
+        display: inline-flex;
+        padding: var(--gutter-half);
+        background: var(--processing-blue);
+        margin-inline-end: .75em;
+        border-radius: 100%;
+        color: white;
+        width: 2.5em;
+        align-items: center;
+        justify-content: center;
+        height: 2.5em;
+        aspect-ratio: 1 / 1;
+    }
 }

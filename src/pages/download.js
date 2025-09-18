@@ -7,7 +7,6 @@ import * as styles from 'styles/pages/download.module.css';
 import { StaticImage } from "gatsby-plugin-image"
 import Button from 'components/Button';
 import { PlatformIcon, useGuessedPlatform } from 'components/download/Platform';
-import Donate from 'components/Donate';
 
 export default function DownloadPage() {
     const { selected, rest } = useGuessedPlatform();

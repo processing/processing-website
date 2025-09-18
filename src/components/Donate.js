@@ -47,7 +47,7 @@ export default function Donate() {
 
 
     return (
-        <div style={{ flexBasis: 'var(--col4)', minHeight: 400 }} className={classNames(grid.col)}>
+        <div style={{ flexBasis: 'var(--col3)', minHeight: 400 }} className={classNames(grid.col)}>
             <h2>Donate</h2>
             <p>
                 Processing reached over 1 million people last year. If just 1% gave $5 a month, we’d raise $600,000 to support development. Your donation helps make Processing happen 💙

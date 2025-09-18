@@ -1,6 +1,7 @@
 {
   "name": "Processing 3.5.4",
   "tagName": "processing-0270-3.5.4",
+  "isPrerelease": false,
   "publishedAt": "2020-01-17T17:32:04Z",
   "releaseAssets": {
     "edges": [

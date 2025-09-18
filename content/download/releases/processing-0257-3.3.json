@@ -1,6 +1,7 @@
 {
   "name": "Processing 3.3",
   "tagName": "processing-0257-3.3",
+  "isPrerelease": false,
   "publishedAt": "2017-02-12T17:52:45Z",
   "releaseAssets": {
     "edges": [

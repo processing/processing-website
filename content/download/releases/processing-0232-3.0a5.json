@@ -1,6 +1,7 @@
 {
   "name": "Processing 3.0a5",
   "tagName": "processing-0232-3.0a5",
+  "isPrerelease": true,
   "publishedAt": "2014-11-16T19:07:52Z",
   "releaseAssets": {
     "edges": [

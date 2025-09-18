@@ -1,0 +1,172 @@
+---
+title: Processing 3.5.1
+date: 2019-01-21T14:32:59Z
+prerelease: false
+tagName: processing-0267-3.5.1
+release: true
+---
+```
+PROCESSING 3.5.1 (REV 0267) - 21 January 2019
+
+Should have known better than to try to fix a bug connnected to
+something as fundamental as the size() command. This release just
+fixes one major regression in 3.5.
+
+(There are major changes between 3.4 and 3.5, so the release notes are below)
+
+
+[ oops, sorry ]
+
++ size() command not working properly
+  https://github.com/processing/processing/issues/5759
+
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+
+PROCESSING 3.5 (REV 0266) - 20 January 2019
+
+Hello from the flight back from Processing Community Day 2019 in LA!
+How about a new release? Lots of bug fixes and updates for you.
+
+We're rolling the minor version from 3.4 to 3.5 because of the additions
+to the API and a minor (breaking) change to remove() in the Dict classes.
+
+
+[ api changes and additions ]
+
++ Added circle() and square() methods.
+
++ Added push() and pop() for parity with p5.js
+
++ Non-US keyboards have trouble with a couple of shortcuts,
+  so their implementation has been moved to the language files.
+  Please help us update the defaults for your language. More here:
+  https://github.com/processing/processing/wiki/Localization#shortcuts-and-key-bindings
+  https://github.com/processing/processing/issues/2199
+  https://github.com/processing/processing/issues/3538
+
++ Make JSONObject.quote() (both versions) public
+
++ Change behavior of the remove() method in IntDict, FloatDict, etc.
+  It now returns the value removed, for consistency with the other
+  remove functions (and most usefulness). In some cases, was returning
+  the index, which isn't as useful. If remove() is called on a value that
+  does not exist, an runtime exception will be thrown because there's no
+  sensible way to indicate that nothing was removed. This is also more
+  consistent with removeIndex() throwing and exception when the specified
+  index is not available.
+
+
+[ contributed fixes ]
+
++ Extended SVG support for fonts and text
+  https://github.com/processing/processing/pull/4168
+
++ Updated Russian translation, now can choose Russian in preferences
+  https://github.com/processing/processing/pull/5619
+
++ Turkish translation updates
+  https://github.com/processing/processing/pull/5636
+
++ Examples dialog was causing high CPU load
+  https://github.com/processing/processing/issues/5246
+  https://github.com/processing/processing/pull/5654
+
++ Show a warning when a font isn't what the user expected
+  https://github.com/processing/processing/issues/5481
+  https://github.com/processing/processing/pull/5605
+
++ Add a button to hide the console
+  https://github.com/processing/processing/pull/5115
+
++ Fix NullPointerException in Contribution Manager when installing
+  https://github.com/processing/processing/issues/5524
+  https://github.com/processing/processing/pull/5742
+
++ Improvements to appdata.xml for Linux
+  https://github.com/processing/processing/pull/5604
+
++ Fix javaPlatform variable for newer JDK versions
+  https://github.com/processing/processing/pull/5626
+
++ Fix blend mode not being set correctly
+  https://github.com/processing/processing/issues/5645
+  https://github.com/processing/processing/pull/5647
+
++ Profile GL3bc is not available on X11GraphicsDevice
+  https://github.com/processing/processing/issues/5476
+  https://github.com/processing/processing/pull/5652
+
+
+[ jakub fixes ]
+
++ Prevent "could not find sketch size" message from freezing the app
+  https://github.com/processing/processing/issues/4893
+  https://github.com/processing/processing/pull/5708
+  https://github.com/processing/processing/issues/5030 (duplicate)
+
++ Prevent sketch exceptions from being hidden by a warning
+  https://github.com/processing/processing/pull/5486
+  https://github.com/processing/processing/issues/5412
+
++ size(0, 0) just freezes instead of showing an error
+  https://github.com/processing/processing/issues/5233 (duplicate)
+
++ Fix freeze when restarting sketch with variables in size
+  https://github.com/processing/processing/pull/5708
+
++ Make sure Ctrl+Left Mouse on MacOS is consistent
+  https://github.com/processing/processing/issues/5672
+  https://github.com/processing/processing/pull/5674
+
++ Stop frame rate counter from exaggerating
+  https://github.com/processing/processing/pull/5697
+
++ Fix vertex buffer initialized with wrong number of components
+  https://github.com/processing/processing/pull/5698
+
++ Recreate FBOs when offscreen PGraphicsOpenGL is resized
+  https://github.com/processing/processing/pull/5699
+
+
+[ andres with the updates ]
+
++ Silence TIS/TSM warning message with P2D/P3D/OPENGL since macOS 10.13.4
+  https://github.com/processing/processing/issues/5462
+
++ Improve matrix performance in P2D/P3D
+  https://github.com/processing/processing/issues/5685
+
++ Initializing textures loads the pixels array, even if not needed aferwards
+  https://github.com/processing/processing/issues/5748
+
++ Improve startup time by skipping the Android SDK folder when listing sketches
+  https://github.com/processing/processing/issues/5707
+
++ PShape.attrib() and PShape.setAttrib() are not working
+  https://github.com/processing/processing/issues/5560
+
+
+[ still more bug fixes and improvements ]
+
++ Improve startup time when user-specified fonts are not used.
+  The default font will be faster, using ttf/otf is fine.
+  Only load font list when createFont("The Font Name") is used,
+  or PFont.list() is called.
+
++ "Sketch disappeared" infinite pop up dialogs
+  https://github.com/processing/processing/pull/4808
+  https://github.com/processing/processing/issues/4805
+
++ If settings() present but pixelDensity() is in setup(), no error message
+  https://github.com/processing/processing/issues/4703
+
++ Fix several out of date links in the Help menu
+  https://github.com/processing/processing/issues/5729
+
++ Update the About screen to 2019
+
++ Update to Java 8u192, then to 8u202
+```
+      

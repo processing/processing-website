@@ -1,6 +1,7 @@
 {
   "name": "Processing 3.0 beta 2",
   "tagName": "processing-0240-3.0b2",
+  "isPrerelease": false,
   "publishedAt": "2015-08-09T20:32:30Z",
   "releaseAssets": {
     "edges": [

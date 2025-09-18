@@ -1,0 +1,34 @@
+---
+title: Processing 3.5.2
+date: 2019-01-23T00:39:57Z
+prerelease: false
+tagName: processing-0268-3.5.2
+release: true
+---
+```
+PROCESSING 3.5.2 (REV 0268) - 22 January 2019
+
+Fixed a pair of nasty regressions, and adding a couple key shortcuts
+to the preferences file.
+
+Also: please help us localize the menu shortcuts that have been causing
+trouble on non-US keyboards. See the Localization wiki for more details:
+https://github.com/processing/processing/wiki/Localization#shortcuts-and-key-bindings
+
+
+[ more regressions! ]
+
++ Some Linux/Windows menu shortcuts were mapped to META instead of CTRL
+  https://github.com/processing/processing/issues/5763
+
++ Ctrl-click on Mac OS X result in all subsequent clicks reported as right-click
+  https://github.com/processing/processing/issues/5765
+  https://github.com/processing/processing/pull/5766
+
+
+[ and a new feature! ]
+
++ The nine menu shortcuts that can be localized can now also be overridden
+  by users in preferences.txt. Information is on the Localization page.
+```
+      

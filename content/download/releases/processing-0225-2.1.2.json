@@ -1,6 +1,7 @@
 {
   "name": "Processing 2.1.2",
   "tagName": "processing-0225-2.1.2",
+  "isPrerelease": false,
   "publishedAt": "2014-08-21T15:31:19Z",
   "releaseAssets": {
     "edges": [
