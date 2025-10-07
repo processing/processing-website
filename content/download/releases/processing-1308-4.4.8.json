@@ -1,0 +1,87 @@
+{
+  "name": "Processing 4.4.8",
+  "tagName": "processing-1308-4.4.8",
+  "isPrerelease": true,
+  "publishedAt": "2025-10-07T00:54:57Z",
+  "releaseAssets": {
+    "edges": [
+      {
+        "node": {
+          "name": "processing-4.4.8-reference.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1308-4.4.8/processing-4.4.8-reference.zip",
+          "size": 107783194
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.8-linux-aarch64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1308-4.4.8/processing-4.4.8-linux-aarch64-portable.zip",
+          "size": 445524998
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.8-linux-aarch64.snap",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1308-4.4.8/processing-4.4.8-linux-aarch64.snap",
+          "size": 435384320
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.8-linux-x64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1308-4.4.8/processing-4.4.8-linux-x64-portable.zip",
+          "size": 451623733
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.8-linux-x64.snap",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1308-4.4.8/processing-4.4.8-linux-x64.snap",
+          "size": 448143360
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.8-macos-aarch64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1308-4.4.8/processing-4.4.8-macos-aarch64-portable.zip",
+          "size": 439299850
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.8-macos-aarch64.dmg",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1308-4.4.8/processing-4.4.8-macos-aarch64.dmg",
+          "size": 441009571
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.8-macos-x64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1308-4.4.8/processing-4.4.8-macos-x64-portable.zip",
+          "size": 450723966
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.8-macos-x64.dmg",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1308-4.4.8/processing-4.4.8-macos-x64.dmg",
+          "size": 452242936
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.8-windows-x64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1308-4.4.8/processing-4.4.8-windows-x64-portable.zip",
+          "size": 432669513
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.4.8-windows-x64.msi",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1308-4.4.8/processing-4.4.8-windows-x64.msi",
+          "size": 389308416
+        }
+      }
+    ]
+  }
+}
