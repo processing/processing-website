@@ -1,7 +1,7 @@
 {
   "name": "Processing 4.4.8",
   "tagName": "processing-1308-4.4.8",
-  "isPrerelease": true,
+  "isPrerelease": false,
   "publishedAt": "2025-10-07T00:54:57Z",
   "releaseAssets": {
     "edges": [
