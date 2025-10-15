@@ -112,7 +112,7 @@ const fetchReleases = async (githubToken) => {
   );
   const selectedPreReleases = preReleases.length
     ? [preReleases[0].node.tagName]
-    : [];
+    : [""];
   fs.writeFileSync(
     path.join(__dirname, '..', 'content', 'download', 'selected.json'),
     JSON.stringify(
