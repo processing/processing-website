@@ -9,6 +9,7 @@
   "category": "math",
   "subcategory": "random",
   "parameters": [
+    { "name": "none", "description": "If no parameters are given, returns a float from 0 (inclusive) to 1 (exclusive)"}
     { "name": "low", "description": "lower limit", "type": ["float"] },
     { "name": "high", "description": "upper limit", "type": ["float"] }
   ]
