@@ -85,9 +85,13 @@ const fetchReleases = async (githubToken) => {
       acc[majorVersion] = [];
     }
     acc[majorVersion].push(release.node);
-    acc[majorVersion].sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
     return acc;
   }, {});
+
+  // sort releases by date within each major version
+  Object.keys(sortedReleases).forEach((key) => {
+    sortedReleases[key].sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+  });
 
   // genereate the content/download/selected.json e.g.
   // {
