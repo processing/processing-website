@@ -565,3 +565,27 @@ Add contributed Examples by first opening the "Examples..." submenu from the Fil
 ## Export
 
 The [Export information and Tips](https://github.com/processing/processing/wiki/Export-Info-and-Tips) page on the Processing Wiki covers the details of exporting Applications from Java mode.
+
+## Command Line Interface (CLI) 
+
+Processing includes a Command Line Interface (CLI) to run sketches from the terminal. This is helpful for automation, testing, and headless setups.
+
+Make sure Processing is installed, then run the help command to see all available options and examples.
+
+*Windows (PowerShell)*
+```
+processing.exe --help
+```
+
+*Linux*
+```
+processing --help
+```
+
+*macOS*
+```
+cd /Applications/Processing.app/Contents/MacOS
+./Processing --help
+```
+
+_**Note:** On macOS, the executable lives inside the `.app` bundle, so that's why there is a command to navigate to it's folder first. On Windows and Linux, Processing is typically added to your PATH by default, so no navigation is needed._
