@@ -22,6 +22,10 @@ const Donate = () => {
         <div className={classnames(grid.col, css.left)}>
           <h1>{intl.formatMessage({ id: 'donate' })}</h1>
           <h3>{intl.formatMessage({ id: 'donateIntro' })}</h3>
+          <h3
+            dangerouslySetInnerHTML={{
+              __html: intl.formatMessage({ id: 'donateCryptoInfo' })
+            }}></h3>
           <div>
             <script
               src="https://donorbox.org/widget.js"

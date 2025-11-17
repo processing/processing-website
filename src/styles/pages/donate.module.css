@@ -4,6 +4,10 @@
 .left {
   flex-basis: var(--col4);
 }
+
+.left a {
+  text-decoration: underline;
+}
 .right {
   flex-basis: var(--col2);
   position: relative;
