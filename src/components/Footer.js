@@ -23,6 +23,9 @@ const Footer = ({ withSidebar }) => {
             <a href={'http://github.com/processing/'} target="_blank" rel="noreferrer">GitHub</a>
           </li>
           <li>
+            <a href={'https://discord.gg/aWTgcaGdjr'} target="_blank" rel="noreferrer">Discord</a>
+          </li>
+          <li>
             <a href={'https://bsky.app/profile/processing.org'} target="_blank" rel="noreferrer">Bluesky</a>
           </li>
           <li>
