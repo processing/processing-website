@@ -170,17 +170,17 @@ const IndexPage = ({ data }) => {
       <div className={css.takePart}>
         <div className={classnames(grid.grid, grid.container)}>
           <div className={classnames(grid.col, css.participate)}>
-            <h2>{intl.formatMessage({ id: 'participate' })}</h2>
+            <h2>{intl.formatMessage({ id: 'announcement' })}</h2>
             <div>
-              <p>{intl.formatMessage({ id: 'participateP1' })}</p>
-              <p>{intl.formatMessage({ id: 'participateP2' })}</p>
+              <p>{intl.formatMessage({ id: 'announcementP1' })}</p>
+              <p>{intl.formatMessage({ id: 'announcementP2' })}</p>
             </div>
             <div className={css.participateButton}>
               <Button
-                href={'https://medium.com/@ProcessingOrg/3a1f8b8a7aed'}
+                href={'https://discord.gg/h99u95nU7q'}
                 variant="animate1"
                 size="large">
-                {intl.formatMessage({ id: 'buttonParticipate' })}
+                {intl.formatMessage({ id: 'announcementButton' })}
               </Button>
             </div>
           </div>
