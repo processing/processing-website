@@ -16,3 +16,8 @@
   from = "https://discord.processing.org/*"
   to = "https://discord.gg/h99u95nU7q"
   status = 302
+
+[[redirects]]
+  from = "https://survey.processing.org/*"
+  to = "https://docs.google.com/forms/d/e/1FAIpQLSduTT2cWlXzr7QG_g4LJ-Op6LwVTI7dtXHCGVH_FdI0BK00qg/viewform?usp=header"
+  status = 302
