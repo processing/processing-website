@@ -1,6 +1,7 @@
 # Netlify redirects
 # 1. To add a subdomain, add a redirect in this file first and merge the PR
 # 2. Add the subdomain to the Processing website in netlify by going to Domain Management -> Production Domains -> Add domain alias
+# Make sure the force option is added and the from starts with https
 
 [[redirects]]
   from = "https://wiki.processing.org/*"
