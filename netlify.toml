@@ -6,13 +6,16 @@
   from = "https://wiki.processing.org/*"
   to = "https://github.com/processing/processing4/wiki"
   status = 302
+  force = true
 
 [[redirects]]
   from = "https://vscode.processing.org/*"
   to = "https://marketplace.visualstudio.com/items?itemName=processing-foundation.processing-vscode-extension"
   status = 302
+  force = true
 
 [[redirects]]
   from = "https://discord.processing.org/*"
   to = "https://discord.gg/h99u95nU7q"
   status = 302
+  force = true
