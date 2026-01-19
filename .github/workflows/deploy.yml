@@ -1,0 +1,48 @@
+name: Deploy Website
+
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: 'The name of the GitHub release'
+        type: string
+        required: true
+      description:
+        description: 'The description used in the GitHub release (typically a changelog)'
+        type: string
+        required: true
+      make_release:
+        description: 'Make a GitHub release with a reference.zip after uploading the website'
+        type: boolean
+        required: true
+        default: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install dependencies
+        run: npm ci
+      - name: Deploy with static
+        run: npm run deployGithub
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Make reference.zip
+        run: npm run zip
+      - name: Set Tag Name
+        run: |
+          echo "RELEASE_DATE=$(date '+%Y-%m-%d-%H%M%S')" >> ${GITHUB_ENV}
+      - name: Create release
+        uses: softprops/action-gh-release@v1
+        if: ${{ inputs.make_release }}
+        with:
+          files: reference.zip
+          body: ${{ inputs.description }}
+          name: ${{ inputs.title }}
+          tag_name: ${{ env.RELEASE_DATE }}
