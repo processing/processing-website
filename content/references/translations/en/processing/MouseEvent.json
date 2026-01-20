@@ -1,0 +1,67 @@
+{
+  "brief": "A class to handle mouse events",
+  "related": [
+    "mouseX",
+    "mouseY",
+    "pmouseX",
+    "pmouseY",
+    "mousePressed",
+    "mousePressed_",
+    "mouseReleased_",
+    "mouseClicked_",
+    "mouseMoved_",
+    "mouseDragged_",
+    "mouseButton",
+    "mouseWheel_",
+    "KeyEvent"
+  ],
+  "name": "MouseEvent",
+  "description": "A <b>MouseEvent</b> object contains information about a mouse event that has occurred. This object is automatically passed to the mouse event functions (<b>mousePressed()</b>, <b>mouseReleased()</b>, <b>mouseClicked()</b>, <b>mouseMoved()</b>, <b>mouseDragged()</b>, and <b>mouseWheel()</b>) when they are called with an event parameter.<br/><br/>The MouseEvent object provides additional information beyond what's available in the global mouse variables (<b>mouseX</b>, <b>mouseY</b>, <b>mouseButton</b>, etc.). For most basic mouse interactions, using the global variables is sufficient and more convenient. However, the MouseEvent object is useful when you need more detailed information about the mouse event, such as the exact button that was pressed, modifier keys that were held down, or the scroll wheel count.<br/><br/>Note that event coordinates from <b>getX()</b> and <b>getY()</b> are not affected by the <b>windowRatio()</b> setting, unlike the global <b>mouseX</b> and <b>mouseY</b> variables.",
+  "syntax": ["MouseEvent event"],
+  "returns": "MouseEvent",
+  "type": "class",
+  "category": "input",
+  "subcategory": "mouse",
+  "methods": [
+    {
+      "anchor": "getX",
+      "name": "getX()",
+      "desc": "Returns the horizontal coordinate of the mouse event"
+    },
+    {
+      "anchor": "getY",
+      "name": "getY()",
+      "desc": "Returns the vertical coordinate of the mouse event"
+    },
+    {
+      "anchor": "getButton",
+      "name": "getButton()",
+      "desc": "Returns which mouse button was pressed (LEFT, RIGHT, CENTER)"
+    },
+    {
+      "anchor": "getCount",
+      "name": "getCount()",
+      "desc": "Returns the number of mouse wheel clicks (for mouseWheel events)"
+    },
+    {
+      "anchor": "isShiftDown",
+      "name": "isShiftDown()",
+      "desc": "Returns true if the Shift key was held down during the event"
+    },
+    {
+      "anchor": "isControlDown",
+      "name": "isControlDown()",
+      "desc": "Returns true if the Control key was held down during the event"
+    },
+    {
+      "anchor": "isAltDown",
+      "name": "isAltDown()",
+      "desc": "Returns true if the Alt key was held down during the event"
+    },
+    {
+      "anchor": "isMetaDown",
+      "name": "isMetaDown()",
+      "desc": "Returns true if the Meta/Cmd key was held down during the event"
+    }
+  ]
+}
