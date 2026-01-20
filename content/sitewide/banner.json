@@ -1,5 +1,5 @@
 {
-  "visible": false,
-  "text": "Donate Today! Support Processing and the Processing Foundation.",
-  "url": "https://processingfoundation.org/donate"
+  "visible": true,
+  "text": "Have a few minutes? Take the community survey and share your thoughts about Processing.",
+  "url": "https://survey.processing.org"
 }
