@@ -282,14 +282,15 @@ const IndexPage = ({ data }) => {
                       className={css.logo}
                       href={url}
                       target="_blank"
-                      rel="noreferrer">
+                      rel="noreferrer"
+                      aria-label={name}>
                       {typeof Logo === 'string' ? (
                         <GatsbyImage
                           image={data[Logo].childImageSharp.gatsbyImageData}
                           alt={name}
                         />
                       ) : (
-                        <Logo />
+                        <Logo aria-hidden="true" />
                       )}
                     </a>
                   </li>
