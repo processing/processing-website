@@ -177,7 +177,7 @@ const IndexPage = ({ data }) => {
             </div>
             <div className={css.participateButton}>
               <Button
-                href={'https://discord.gg/h99u95nU7q'}
+                href={'https://survey.processing.org'}
                 variant="animate1"
                 size="large">
                 {intl.formatMessage({ id: 'announcementButton' })}
