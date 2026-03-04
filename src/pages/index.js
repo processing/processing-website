@@ -22,6 +22,7 @@ import DMALogo from '../images/partners/ucla-dma.svg';
 import FathomLogo from '../images/partners/fathom.svg';
 import NetlifyLogo from '../images/partners/netlify.svg';
 import UptimeRobotLogo from '../images/partners/uptimerobot.svg';
+import DownloadCTA from 'components/download/DownloadCTA';
 
 const partners = [
   {
@@ -83,35 +84,7 @@ const IndexPage = ({ data }) => {
         title={intl.formatMessage({ id: 'introTitle' })}
         description={intl.formatMessage({ id: 'introText' })}
       />
-      <Sketch>
-        <div className={css.hero}>
-          <h1>{intl.formatMessage({ id: 'introTitle' })}</h1>
-          <p>{intl.formatMessage({ id: 'introText' })}</p>
-          <div className={css.buttons}>
-            <Button
-              to="/download"
-              variant="animate1"
-              size="large"
-              className={css.button}>
-              {intl.formatMessage({ id: 'download' })}
-            </Button>
-            <Button
-              to="/reference"
-              variant="animate1"
-              size="large"
-              className={css.button}>
-              {intl.formatMessage({ id: 'reference' })}
-            </Button>
-            <Button
-              to="/donate"
-              variant="animate1"
-              size="large"
-              className={css.button}>
-              {intl.formatMessage({ id: 'donate' })}
-            </Button>
-          </div>
-        </div>
-      </Sketch>
+      <DownloadCTA />
       <Examples
         examples={randomExamples}
         heading={intl.formatMessage({ id: 'examples' })}
@@ -190,7 +163,7 @@ const IndexPage = ({ data }) => {
               <p>{intl.formatMessage({ id: 'contributeP1' })}</p>
               <p>
                 {intl.formatMessage({ id: 'contributeP2' })}
-                <a href="https://github.com/processing/processing4/blob/main/build/README.md" target='_blank' rel='noreferrer'> 
+                <a href="https://github.com/processing/processing4/blob/main/build/README.md" target='_blank' rel='noreferrer'>
                   {intl.formatMessage({ id: 'building' })}
                 </a>
                 ,{' '}
@@ -207,7 +180,7 @@ const IndexPage = ({ data }) => {
             <div className={css.contributeButton}>
               <Button
                 href={'https://github.com/processing'}
-                target='_blank' 
+                target='_blank'
                 rel='noreferrer'
                 variant="animate1"
                 size="large">
