@@ -1,0 +1,33 @@
+---
+title: Processing 4.5.1
+date: 2026-01-19T14:37:01Z
+prerelease: false
+tagName: processing-1312-4.5.1
+release: true
+---
+The _Welcome_ and _Preferences_ screens have a new refreshed design built with Jetpack Compose and Material Design 3.
+
+This release also fixes a bug where the splash screen would freeze while fading in (https://github.com/processing/processing4/pull/1357)
+
+<!-- Release notes generated using configuration in .github/release.yml at main -->
+
+### What's Changed 🎊
+
+### Enhancements
+* Refactor splash screen launch logic by @Stefterv in https://github.com/processing/processing4/pull/1357
+* Migration of the `svg` library to Gradle by @madhav2348 in https://github.com/processing/processing4/pull/1289
+
+### Bugfixes
+* Fix tabbing issue with textfields by @Stefterv in https://github.com/processing/processing4/pull/1367
+* Refactor locale resource loading logic by @Stefterv in https://github.com/processing/processing4/pull/1364
+* Fixed an issue where the Preferences file stream was left open by @Stefterv in https://github.com/processing/processing4/pull/1380
+* Refactor Other preferences registration logic by @Stefterv in https://github.com/processing/processing4/pull/1379
+* Instant Locale Update by @Stefterv in https://github.com/processing/processing4/pull/1384
+* Create `PreferencesEvents` to glue into base and other deps by @Stefterv in https://github.com/processing/processing4/pull/1386
+* Make `CapturePreferences` only keep track of changes by @Stefterv in https://github.com/processing/processing4/pull/1383
+* Use `starting` to fully remove the window by @Stefterv in https://github.com/processing/processing4/pull/1382
+* Added `rebuildToolList()` to fix nullpointer in contributions check by @Stefterv in https://github.com/processing/processing4/pull/1381
+
+
+**Full Changelog**: https://github.com/processing/processing4/compare/processing-1311-4.5.0...processing-1312-4.5.1
+      
