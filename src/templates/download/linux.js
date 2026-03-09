@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import Donate from "components/Donate";
-import LinuxSnap from "components/download/instructions/LinuxSnap";
+import LinuxUniversal from "components/download/instructions/LinuxUniversal";
 import LinuxZip from "components/download/instructions/LinuxZip";
 import PortableIndicator, { PortableContext } from "components/download/Portable";
 import PreviousReleases from "components/download/PreviousReleases";
@@ -8,6 +8,7 @@ import { useAssets } from "components/download/Releases";
 import WhatsNew from "components/download/WhatsNew";
 import React from "react";
 import * as grid from 'styles/grid.module.css';
+import * as styles from 'styles/templates/platform.module.css';
 
 
 export default function LinuxDownloadPage() {
@@ -18,7 +19,7 @@ export default function LinuxDownloadPage() {
 
     let InstructionComponent = LinuxZip;
     if (assets.find(asset => asset.name.endsWith('.snap'))) {
-        InstructionComponent = LinuxSnap;
+        InstructionComponent = LinuxUniversal;
     }
     if (preferPortable) {
         InstructionComponent = LinuxZip;
@@ -26,11 +27,13 @@ export default function LinuxDownloadPage() {
 
     return (
         <>
-            <div style={{ flexBasis: 'var(--col8)' }} className={classNames(grid.col)}>
-                <InstructionComponent />
-                <PortableIndicator />
+            <div className={classNames(grid.grid, grid.container)}>
+                <div className={classNames(grid.col, styles.instructions)}>
+                    <InstructionComponent />
+                    <PortableIndicator />
+                </div>
+                <Donate />
             </div>
-            <Donate />
             <WhatsNew />
             <PreviousReleases />
         </>

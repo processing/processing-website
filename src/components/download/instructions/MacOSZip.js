@@ -25,7 +25,7 @@ export default function MacOSZip() {
                 }
                 {assets.length == 1 &&
                     <div className={classNames(styles.downloads)}>
-                        <DownloadButton id="VQUBVEQR">Intel Only</DownloadButton>
+                        <DownloadButton id="VQUBVEQR">Intel</DownloadButton>
                     </div>
                 }
             </li>

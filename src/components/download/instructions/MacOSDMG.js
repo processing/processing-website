@@ -1,6 +1,5 @@
 import React from "react";
 import DownloadButton from "../Download";
-import Share from "../Share";
 import classNames from "classnames";
 import * as styles from "./instructions.module.css";
 import { StaticImage } from "gatsby-plugin-image";
