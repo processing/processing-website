@@ -1,3 +1,14 @@
+.container{
+    flex-basis: var(--col3);
+    min-height: 400px;
+    background: #EAEAEA;
+    border-radius: var(--gutter);
+    max-width: 24em;
+    margin-top: var(--gutter);
+    margin-bottom: var(--vertical-margin-large);
+    padding: var(--gutter);
+}
+
 .action{
     background: var(--doante-banner-white);
     gap: var(--gutter);

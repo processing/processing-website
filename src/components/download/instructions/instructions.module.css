@@ -1,8 +1,11 @@
 .downloads{
-    margin: var(--gutter-double) 0;
+    padding: var(--gutter) 0;
     display: flex;
     gap: var(--gutter);
-    width: 100%;
+    a{
+        width: 100%;
+        display: flex;
+    }
 }
 .instructions{
     padding-left: 0;
@@ -11,12 +14,14 @@
     gap: var(--gutter);
     list-style: none;
     counter-reset: instructions;
+    
     &>li{
         counter-increment: instructions;
 
         background: var(--instruction-background);
 
         padding: var(--margin);
+        padding-left: var(--margin-double);
         border-radius: var(--gutter);
 
         position: relative;
@@ -24,14 +29,16 @@
 
         font-size: var(--text-medium);
         font-weight: 500;
+        color: var(--processing-blue-dark);
         strong{
             font-weight: 700;
         }
-        color: var(--processing-blue-dark);
     }
     &>li::before{
         content: counter(instructions);
         display: inline-flex;
+        position: absolute;
+        left: calc(var(--margin) - var(--gutter));
         padding: var(--gutter-half);
         background: var(--download-button);
         margin-inline-end: .75em;

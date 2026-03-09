@@ -3,8 +3,8 @@ import DownloadButton from "../Download";
 import { useAssets } from "../Releases";
 import classNames from "classnames";
 import * as styles from "./instructions.module.css";
-import Share from "../Share";
 import Architecture from "../Architecture";
+import { StaticImage } from "gatsby-plugin-image";
 
 
 export default function MacOSZip() {
@@ -18,8 +18,9 @@ export default function MacOSZip() {
                         <div className={classNames(styles.downloads)}>
                             <DownloadButton id="IWSPGL5F" arch="aarch64">Apple Silicon</DownloadButton>
                             <DownloadButton id="VQUBVEQR" arch="x64">Intel</DownloadButton>
-                            <Architecture />
+
                         </div>
+                        <Architecture />
                     </>
                 }
                 {assets.length == 1 &&
@@ -28,9 +29,10 @@ export default function MacOSZip() {
                     </div>
                 }
             </li>
-            <li>Open the .zip file</li>
-            <li>Drag to applications folder</li>
-            <Share />
+            <li>
+                Open the <strong>.zip</strong> file and drag the .app to the applications folder
+                <StaticImage width={400} src="../../../images/mac-installation.png" />
+            </li>
         </ol>
     )
 }

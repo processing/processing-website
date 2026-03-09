@@ -10,6 +10,7 @@
   border: none;
   cursor: pointer;
   display: inline-flex;
+  justify-content: center;
   gap: var(--gutter-half);
   align-items: center;
   svg{

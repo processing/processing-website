@@ -8,6 +8,7 @@ import { useAssets } from "components/download/Releases";
 import WhatsNew from "components/download/WhatsNew";
 import React, { useContext } from "react";
 import * as grid from 'styles/grid.module.css';
+import * as styles from 'styles/templates/platform.module.css';
 
 
 export default function WindowsDownloadPage() {
@@ -25,11 +26,13 @@ export default function WindowsDownloadPage() {
 
     return (
         <>
-            <div style={{ flexBasis: 'var(--col4)' }} className={classNames(grid.col)}>
-                <InstructionComponent />
-                <PortableIndicator />
+            <div className={classNames(grid.grid, grid.container)}>
+                <div className={classNames(grid.col, styles.instructions)}>
+                    <InstructionComponent />
+                    <PortableIndicator />
+                </div>
+                <Donate />
             </div>
-            <Donate />
             <WhatsNew />
             <PreviousReleases />
         </>

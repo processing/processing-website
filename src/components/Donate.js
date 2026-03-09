@@ -47,11 +47,9 @@ export default function Donate() {
 
 
     return (
-        <div style={{ flexBasis: 'var(--col3)', minHeight: 400 }} className={classNames(grid.col)}>
-            <h2>Donate</h2>
-            <p>
-                Processing reached over 1 million people last year. If just 1% gave $5 a month, we’d raise $600,000 to support development. Your donation helps make Processing happen 💙
-            </p>
+        <div className={classNames(grid.col, styles.container)}>
+            <h2>Support Processing</h2>
+
             <div className={styles.action}>
                 <div className={styles.intervalSelect}>
                     <div className={`${interval == "o" && styles.active} ${styles.interval}`} onClick={() => setInterval("o")}>
@@ -78,6 +76,9 @@ export default function Donate() {
                 <a className={styles.donate} href={donorboxURL} target="_blank">
                     Donate Now
                 </a>
+                <p>
+                    Processing is <strong>free</strong> and <strong>open source.</strong> If you rely on it, please consider donating to help keep it maintained and accessible for everyone.
+                </p>
             </div>
         </div>
     )
