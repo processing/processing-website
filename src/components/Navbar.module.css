@@ -70,7 +70,8 @@
 
 .item {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: baseline;
   border-left: solid 4px transparent;
   color: var(--processing-blue-dark);
   font-size: var(--text-medium);
@@ -87,6 +88,12 @@
   }
   & a:hover {
     color: var(--processing-blue-mid);
+  }
+  & svg{
+    width: 0.75em;
+    height: 0.75em;
+    margin-left: 4px;
+    vertical-align: middle;
   }
 }
 
@@ -323,4 +330,9 @@
   .menu {
     padding-left: 24px;
   }
+}
+
+.donate{
+  background-color: var(--processing-blue-dark);
+  color: var(--white);
 }
