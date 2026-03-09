@@ -37,7 +37,6 @@ export default function MacOSDownloadPage() {
         <>
             <div className={classNames(grid.grid, grid.container)}>
                 <div className={classNames(grid.col, styles.instructions)}>
-                    <h3>Instructions</h3>
                     <InstructionComponent />
                     <PortableIndicator />
                 </div>

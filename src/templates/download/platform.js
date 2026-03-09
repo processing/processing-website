@@ -22,6 +22,7 @@ export default function PlatformDownloadPage({ pageContext }) {
     const platform = platforms.find(p => p.name === platformName) || platforms[0];
 
     const versionText = version ? ` (${version})` : '';
+    // TODO: Start preloading selected platform download
 
     const PlatformComponent = {
         windows: WindowsDownloadPage,
@@ -41,11 +42,6 @@ export default function PlatformDownloadPage({ pageContext }) {
                         />
                         <Switcher />
                         <VersionWarning />
-                        <div className={classnames(grid.grid, grid.container)}>
-                            <div className={classnames(grid.col, styles.title)}>
-                                <h1>Download <span className={classnames(styles.software)}>Processing</span> {versionText} for {platform.title}</h1>
-                            </div>
-                        </div>
                         <PlatformComponent />
                     </Layout>
                 </PortableContext.Provider>

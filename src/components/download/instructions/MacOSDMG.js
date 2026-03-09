@@ -11,7 +11,7 @@ export default function MacOSDMG() {
     return (
         <ol className={classNames(styles.instructions)}>
             <li>
-                Download Processing
+                Download Processing for macOS
                 <div className={classNames(styles.downloads)}>
                     <DownloadButton format="dmg" id="IWSPGL5F" arch="aarch64">Apple Silicon</DownloadButton>
                     <DownloadButton format="dmg" id="VQUBVEQR" arch="x64">Intel</DownloadButton>
@@ -19,13 +19,9 @@ export default function MacOSDMG() {
                 </div>
             </li>
             <li>
-                Open the .dmg file
-            </li>
-            <li>
-                Drag to applications folder<br />
+                Open the <strong>.dmg</strong> file and move <strong>Processing.app</strong> to the <strong>Applications</strong> folder<br />
                 <StaticImage width={400} src="../../../images/mac-installation.png" />
             </li>
-            <Share />
         </ol>
     )
 }

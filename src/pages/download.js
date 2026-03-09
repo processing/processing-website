@@ -6,8 +6,6 @@ import DownloadCTA from 'components/download/DownloadCTA';
 
 export default function DownloadPage() {
 
-    // TODO: Start preloading selected platform download
-
     return (
         <Layout>
             <HeadMatter
