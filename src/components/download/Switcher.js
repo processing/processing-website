@@ -11,13 +11,13 @@ export default function Switcher() {
     const current = usePlatform();
 
     const latest = useLatestVersion();
-    const version = useVersion() ?? latest;
+    const version = useVersion();
 
     return (
         <div className={classNames(grid.grid, grid.container, styles.container)}>
             <div className={classNames(styles.info)}>
                 <h1>
-                    Get Processing {version} for {current.title}
+                    Get Processing {version ?? latest} for {current.title}
                 </h1>
                 <p>
                     Processing is open source and is available for macOS, Windows, and Linux. Projects created with Processing are also cross-platform, and can be used on macOS, Windows, Android, Raspberry Pi, and many other Linux platforms.
@@ -30,7 +30,7 @@ export default function Switcher() {
                 {platforms
                     .map(node => (
                         // TODO: Convert to button and add extra variants to the button + hover states
-                        <Link to={`/download/${node.name}/${version}`} key={node.name}>
+                        <Link to={`/download/${node.name}/${version ?? ""}`} key={node.name}>
                             <li className={node.name === current.name ? classNames(styles.active) : undefined}>
                                 <PlatformIcon platform={node} />
                                 {node.title}
