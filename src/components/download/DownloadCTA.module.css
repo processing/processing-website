@@ -5,8 +5,8 @@
     color: var(--white);
     margin-top: calc(var(--vertical-margin-large) * -1);
     padding-top: var(--vertical-margin-large);
-    
-    
+    position: relative;
+    z-index: 0;
 }
 .cta_text{
     flex-basis: var(--col4);
@@ -19,6 +19,19 @@
         margin-inline-end: calc(var(--margin) * -1);
     }
 }
+
+@media (--reduced) {
+    .cta_container{
+        margin-top: 0;
+    }
+    .cta_text{
+        flex-basis: var(--col8);
+    }
+    .screenshot{
+        flex-basis: var(--col8);
+    }
+}
+
 .title{
     font-weight: 100;
     line-height: 1.2;

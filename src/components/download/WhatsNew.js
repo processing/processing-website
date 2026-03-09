@@ -3,6 +3,7 @@ import React from "react";
 import { useVersionOrLatest } from "./Version";
 import classNames from "classnames";
 import * as grid from 'styles/grid.module.css';
+import * as styles from './WhatsNew.module.css';
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
 const query = graphql`
@@ -28,9 +29,8 @@ export default function WhatsNew() {
 
 
   return (
-    <div style={{ flexBasis: 'var(--col5)', alignSelf: "stretch", position: "relative", padding: "var(--gutter)", background: "white" }} className={classNames(grid.col)}>
-      <h3 style={{ display: "inline-block", }}>What's New?</h3>
-      <div style={{ position: "absolute", inset: 0, marginTop: "2em", overflow: "auto", padding: "var(--gutter)" }}>
+    <div className={classNames(styles.container, grid.col)}>
+      <div className={styles.content}>
         <h2>{notes.frontmatter.title}</h2>
         <MDXRenderer>{notes.body}</MDXRenderer>
       </div>

@@ -48,9 +48,9 @@ export default function Donate() {
 
     return (
         <div className={classNames(grid.col, styles.container)}>
-            <h2>Support Processing</h2>
 
             <div className={styles.action}>
+                <h3>Support Processing</h3>
                 <div className={styles.intervalSelect}>
                     <div className={`${interval == "o" && styles.active} ${styles.interval}`} onClick={() => setInterval("o")}>
                         One Time
@@ -76,7 +76,10 @@ export default function Donate() {
                 <a className={styles.donate} href={donorboxURL} target="_blank">
                     Donate Now
                 </a>
-                <p>
+                <a className={styles.info}>
+                    Where does my donation go?
+                </a>
+                <p className={styles.about}>
                     Processing is <strong>free</strong> and <strong>open source.</strong> If you rely on it, please consider donating to help keep it maintained and accessible for everyone.
                 </p>
             </div>

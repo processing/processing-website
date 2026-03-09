@@ -15,10 +15,10 @@ export default function WindowsZip() {
         <ol className={classNames(styles.instructions)}>
             <li>Download Processing
                 <div className={classNames(downloads)}>
-                    {!has32bit && <DownloadButton id="CIMDWXJV">Windows Zip</DownloadButton>}
+                    {!has32bit && <DownloadButton variant="download1" id="CIMDWXJV">Windows Zip</DownloadButton>}
                     {has32bit && <>
-                        <DownloadButton id="CIMDWXJV" arch="x64">Windows 64-bit Zip</DownloadButton>
-                        <DownloadButton id="CIMDWXJV" arch="x86">Windows 32-bit Zip</DownloadButton>
+                        <DownloadButton variant="download1" id="CIMDWXJV" arch="x64">Windows 64-bit Zip</DownloadButton>
+                        <DownloadButton variant="download2" id="CIMDWXJV" arch="x86">Windows 32-bit Zip</DownloadButton>
                     </>}
                 </div>
             </li>

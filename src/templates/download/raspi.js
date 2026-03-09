@@ -36,8 +36,10 @@ export default function RaspberryPIDownloadPage() {
                 </div>
                 <Donate />
             </div>
-            <WhatsNew />
-            <PreviousReleases />
+            <div className={classNames(grid.grid, grid.container)}>
+                <WhatsNew />
+                <PreviousReleases />
+            </div>
         </>
     );
 }

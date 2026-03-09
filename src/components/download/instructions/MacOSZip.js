@@ -12,13 +12,13 @@ export default function MacOSZip() {
 
     return (
         <ol className={classNames(styles.instructions)}>
-            <li>Download Processing
+            <li>
+                Download Processing
                 {assets.length > 1 &&
                     <>
                         <div className={classNames(styles.downloads)}>
-                            <DownloadButton id="IWSPGL5F" arch="aarch64">Apple Silicon</DownloadButton>
-                            <DownloadButton id="VQUBVEQR" arch="x64">Intel</DownloadButton>
-
+                            <DownloadButton id="IWSPGL5F" variant="download1" arch="aarch64">Apple Silicon</DownloadButton>
+                            <DownloadButton id="VQUBVEQR" variant="download2" arch="x64">Intel</DownloadButton>
                         </div>
                         <Architecture />
                     </>

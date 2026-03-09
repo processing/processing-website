@@ -1,5 +1,7 @@
 import React from "react";
 import { useAssets } from "./Releases";
+import classNames from "classnames";
+import * as styles from "./Portable.module.css";
 
 
 export const PortableContext = React.createContext({ preferPortable: false, setPreferPortable: () => { } });
@@ -17,11 +19,11 @@ export default function PortableIndicator() {
     }
     if (preferPortable) {
         return (
-            <a style={{ color: 'var(--darkergray)' }} onClick={() => setPreferPortable(!preferPortable)}>Looking for the standard version?</a>
+            <a className={classNames(styles.link)} onClick={() => setPreferPortable(!preferPortable)}>Looking for the standard version?</a>
         )
     }
 
     return (
-        <a style={{}} onClick={() => setPreferPortable(!preferPortable)}>Looking for the portable version?</a>
+        <a className={classNames(styles.link)} onClick={() => setPreferPortable(!preferPortable)}>Looking for the portable version?</a>
     )
 }

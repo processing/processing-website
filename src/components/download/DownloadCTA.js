@@ -58,9 +58,9 @@ export default function DownloadCTA() {
                 </div>
             </div>
             {selected && <div className={classnames(grid.col, styles.screenshot)}>
-                {selected?.name == "macos" && <StaticImage src={`../images/download-macos.png`} alt="The Processing Desktop Editor on macOS" />}
-                {selected?.name == "linux" && <StaticImage src={`../images/download-linux.png`} alt="The Processing Desktop Editor on linux" />}
-                {selected?.name == "windows" && <StaticImage src={`../images/download-windows.png`} alt="The Processing Desktop Editor on windows" />}
+                {selected?.name == "macos" && <StaticImage src={`../../images/download-macos.png`} alt="The Processing Desktop Editor on macOS" />}
+                {selected?.name == "linux" && <StaticImage src={`../../images/download-linux.png`} alt="The Processing Desktop Editor on linux" />}
+                {selected?.name == "windows" && <StaticImage src={`../../images/download-windows.png`} alt="The Processing Desktop Editor on windows" />}
             </div>}
         </div>
     )

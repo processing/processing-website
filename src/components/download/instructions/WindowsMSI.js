@@ -10,7 +10,7 @@ export default function WindowsMSI() {
         <ol className={classNames(styles.instructions)}>
             <li>Download Processing for Windows
                 <div className={classNames(downloads)}>
-                    <DownloadButton id="CIMDWXJV" format="msi" arch="x64">Download</DownloadButton>
+                    <DownloadButton id="CIMDWXJV" variant="download1" format="msi" arch="x64">Download</DownloadButton>
                 </div>
             </li>
             <li>

@@ -34,8 +34,10 @@ export default function LinuxDownloadPage() {
                 </div>
                 <Donate />
             </div>
-            <WhatsNew />
-            <PreviousReleases />
+            <div className={classNames(grid.grid, grid.container)}>
+                <WhatsNew />
+                <PreviousReleases />
+            </div>
         </>
     );
 }

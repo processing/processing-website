@@ -1,0 +1,44 @@
+.container {
+    flex-basis: var(--col5);
+    align-self: stretch;
+    position: relative;
+    padding: 0 var(--gutter);
+
+}
+
+.content {
+    padding: var(--margin);
+    background: var(--instruction-background);
+    border-radius: var(--gutter);
+
+    h1,
+    h2,
+    h3 {
+        font-size: var(--text-large);
+        margin: 0;
+    }
+
+    h2+h3 {
+        display: none;
+    }
+
+    ul {
+        padding-left: var(--gutter);
+        list-style: disc;
+    }
+
+    a {
+        color: var(--processing-blue);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.title {
+    display: inline-block;
+}

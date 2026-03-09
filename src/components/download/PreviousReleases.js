@@ -4,6 +4,7 @@ import React, { version } from "react"
 import { usePlatform } from "./Platform";
 import classNames from "classnames";
 import * as grid from 'styles/grid.module.css';
+import * as styles from './PreviousReleases.module.css';
 import Button from "components/Button";
 
 import * as semver from "semver";
@@ -19,11 +20,11 @@ export default function PreviousReleases() {
 
 
     return (
-        <div style={{ flexBasis: 'var(--col3)' }} className={classNames(grid.col)}>
-            <div style={{ background: "white", padding: "var(--gutter)" }}>
-                <h3 style={{ display: "inline-block" }}>Looking for other versions of Processing?</h3>
-                <h4 style={{ display: "inline-block" }}>Stable Releases</h4>
-                <div style={{ display: "flex", flexDirection: 'row', flexWrap: "wrap", gap: "var(--gutter)", }}>
+        <div className={classNames(styles.container, grid.col)}>
+            <div className={styles.box}>
+                <h3 className={styles.title}>Looking for other versions of Processing?</h3>
+                <h4 className={styles.title}>Stable Releases</h4>
+                <div className={styles.releasesContainer}>
                     {ltsVersions.map((versions, i) => (
                         <Button key={i} href={`/download/${platform.name}/${versions.options.raw}`}>Processing {versions.major} ({versions.options.raw})</Button>
                     ))}

@@ -33,8 +33,10 @@ export default function WindowsDownloadPage() {
                 </div>
                 <Donate />
             </div>
-            <WhatsNew />
-            <PreviousReleases />
+            <div className={classNames(grid.grid, grid.container)}>
+                <WhatsNew />
+                <PreviousReleases />
+            </div>
         </>
     );
 }
