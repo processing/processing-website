@@ -13,10 +13,11 @@ export default function MacOSDMG() {
             <li>
                 Download Processing for macOS
                 <div className={classNames(styles.downloads)}>
-                    <DownloadButton format="dmg" id="IWSPGL5F" arch="aarch64">Apple Silicon</DownloadButton>
-                    <DownloadButton format="dmg" id="VQUBVEQR" arch="x64">Intel</DownloadButton>
-                    <Architecture />
+                    <DownloadButton format="dmg" variant="download1" id="IWSPGL5F" arch="aarch64">Apple Silicon</DownloadButton>
+                    <DownloadButton format="dmg" variant="download2" id="VQUBVEQR" arch="x64">Intel</DownloadButton>
+
                 </div>
+                <Architecture />
             </li>
             <li>
                 Open the <strong>.dmg</strong> file and move <strong>Processing.app</strong> to the <strong>Applications</strong> folder<br />

@@ -13,12 +13,27 @@
     counter-reset: instructions;
     &>li{
         counter-increment: instructions;
+
+        background: var(--instruction-background);
+
+        padding: var(--margin);
+        border-radius: var(--gutter);
+
+        position: relative;
+        z-index: 0;
+
+        font-size: var(--text-medium);
+        font-weight: 500;
+        strong{
+            font-weight: 700;
+        }
+        color: var(--processing-blue-dark);
     }
     &>li::before{
         content: counter(instructions);
         display: inline-flex;
         padding: var(--gutter-half);
-        background: var(--processing-blue);
+        background: var(--download-button);
         margin-inline-end: .75em;
         border-radius: 100%;
         color: white;

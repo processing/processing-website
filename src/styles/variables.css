@@ -39,6 +39,9 @@
   --download-inactive: #8890B3;
   --download-background-active: rgba(80, 139, 255, 0.08);
   --download-button: #717DAD;
+  --download-button-shadow: #B7CDFF;
+
+  --instruction-background: #E1EAF8;
 
   --text-xsmall: 0.8rem;
   --text-small: 0.875rem;
