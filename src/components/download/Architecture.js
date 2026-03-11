@@ -8,7 +8,7 @@ export default function Architecture() {
 
 
     return (
-        <a href="#faq-architecture" className={classNames(styles.architecture)}>Which version do I need?</a>
+        <a href="#faq-architecture" className={classNames(styles.architecture)}>Which version should I download?</a>
     )
 
 }
@@ -22,7 +22,7 @@ export function ArchitectureInfo() {
 
     return (
         <div id="faq-architecture" className={classNames(grid.col, styles.explainer)}>
-            <h3>Which version do I need?</h3>
+            <h3>Which version should I download?</h3>
             Put an FAQ entry about the different architectures here.
         </div>
     )

@@ -13,7 +13,7 @@ export default function MacOSZip() {
     return (
         <ol className={classNames(styles.instructions)}>
             <li>
-                Download Processing
+                Download Processing (Portable) for macOS.
                 {assets.length > 1 &&
                     <>
                         <div className={classNames(styles.downloads)}>

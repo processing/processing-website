@@ -5,6 +5,22 @@ import classNames from "classnames";
 import * as grid from 'styles/grid.module.css';
 import * as styles from './WhatsNew.module.css';
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import { MDXProvider } from "@mdx-js/react";
+
+const GITHUB_PULL_REQUEST_PATH = /^https:\/\/github\.com\/[^/]+\/[^/]+\/pull\/(\d+)(?:[/?#].*)?$/i;
+
+const releaseNoteShortcodes = {
+  a: ({ href = "", children, ...props }) => {
+    const pullRequest = href.match(GITHUB_PULL_REQUEST_PATH);
+    const label = pullRequest ? `#${pullRequest[1]}` : children;
+
+    return (
+      <a href={href} {...props}>
+        {label}
+      </a>
+    );
+  }
+};
 
 const query = graphql`
 query FindDescriptions {
@@ -32,7 +48,9 @@ export default function WhatsNew() {
     <div className={classNames(styles.container, grid.col)}>
       <div className={styles.content}>
         <h2>{notes.frontmatter.title}</h2>
-        <MDXRenderer>{notes.body}</MDXRenderer>
+        <MDXProvider components={releaseNoteShortcodes}>
+          <MDXRenderer>{notes.body}</MDXRenderer>
+        </MDXProvider>
       </div>
     </div>
   );

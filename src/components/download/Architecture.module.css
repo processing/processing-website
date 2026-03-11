@@ -1,7 +1,11 @@
-.architecture{
+.architecture {
     color: var(--darkgray);
-    font-size: var(--text-small);
+    font-size: var(--text-regular);
+    width: 100%;
+    text-align: center;
+    display: block;
 }
-.explainer{
+
+.explainer {
     flex-basis: var(--col8);
 }
