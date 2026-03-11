@@ -16,6 +16,7 @@
     h3 {
         font-size: var(--text-large);
         margin: 0;
+        margin-top: 0.5em;
     }
 
     h2+h3 {
