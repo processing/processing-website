@@ -85,6 +85,12 @@ const IndexPage = ({ data }) => {
         description={intl.formatMessage({ id: 'introText' })}
       />
       <DownloadCTA />
+      <div className={classnames(grid.grid, grid.container)}>
+        <div className={classnames(grid.col, css.gettingStartedMessage)}>
+          <h2>Try it!</h2>
+        </div>
+      </div>
+      <Sketch fullscreen={true} />
       <Examples
         examples={randomExamples}
         heading={intl.formatMessage({ id: 'examples' })}

@@ -11,12 +11,14 @@
   padding-bottom: calc(var(--gutter) / 2);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 }
+
 .container {
   height: 100%;
   align-items: center;
   flex-wrap: nowrap;
   justify-content: space-between;
 }
+
 .logo {
   flex-basis: var(--col1);
   white-space: nowrap;
@@ -24,6 +26,7 @@
   font-size: 1.55rem;
   transform: translateY(10px);
   transition: 0.15s ease-in-out;
+
   & svg {
     margin-bottom: -20px;
     width: 68px;
@@ -38,6 +41,7 @@
 .root.scrolled .logo {
   font-size: var(--text-large);
   transform: translateY(5px);
+
   & svg {
     margin-bottom: -10px;
   }
@@ -48,16 +52,20 @@
   padding: 0;
   cursor: pointer;
 }
+
 .spacer {
-  flex-grow: 4;
+  flex-grow: 3;
 }
+
 .searchBar {
   min-width: 225px;
   flex-grow: 1;
 }
+
 .menuWrapper {
   flex-grow: 2;
 }
+
 .menu {
   display: flex;
   list-style: none;
@@ -78,6 +86,7 @@
   font-size: var(--text-medium);
   font-weight: 600;
   white-space: nowrap;
+
   & button,
   & a {
     padding: 0 0.75rem;
@@ -87,10 +96,12 @@
     line-height: 1.5;
     color: var(--processing-blue-dark);
   }
+
   & a:hover {
     color: var(--processing-blue-mid);
   }
-  & svg{
+
+  & svg {
     width: 0.75em;
     height: 0.75em;
     margin-left: 4px;
@@ -106,9 +117,11 @@
 .active {
   border-left: solid 4px var(--processing-blue-dark);
 }
+
 .item.hasSubmenu:hover {
   border-left: solid 4px var(--processing-blue-dark);
 }
+
 .submenu {
   display: flex;
   position: absolute;
@@ -118,7 +131,6 @@
   opacity: 0;
   overflow: hidden;
   max-height: 0;
-  padding-top: 16px;
   list-style: none;
   background-color: white;
   border-bottom: 1px solid var(--lightgray);
@@ -134,6 +146,9 @@
   font-size: var(--text-regular);
   font-weight: 700;
   word-break: keep-all;
+
+  margin-top: 16px;
+
   & a {
     display: block;
     padding: 3px 0.75rem;
@@ -156,6 +171,50 @@
   max-height: 400px;
 }
 
+
+.donate {
+  background-color: var(--donate-bg-start);
+  background-image: linear-gradient(0deg, var(--donate-bg-start), var(--donate-bg-end));
+  box-shadow: -3px 3px 0 var(--donate-shadow);
+
+  transition: all 0.15s ease-in-out;
+
+  padding: var(--gutter-half) var(--gutter);
+
+  color: var(--white);
+
+  position: relative;
+  z-index: 0;
+  border: 0;
+  display: inline-flex;
+  justify-content: center;
+  /* align-items: center; */
+
+  gap: var(--gutter-half);
+
+  svg {
+    width: 1.1em;
+    height: 1.1em;
+    transform: translateY(0.125em);
+    margin-left: 0;
+  }
+
+  a {
+    padding: 0;
+  }
+
+  &:hover {
+    border: 0;
+    box-shadow: 3px -3px 0 var(--donate-shadow);
+    color: var(--white);
+
+    a {
+
+      color: var(--white);
+    }
+  }
+}
+
 @media (--medium) {
   .logo {
     font-size: 1.15rem;
@@ -172,20 +231,25 @@
       align-self: center;
     }
   }
+
   .root.scrolled .logo {
     transform: translateY(4px);
     font-size: 1.15rem;
   }
+
   .menuWrapper {
     padding-left: 0;
     padding-right: 0;
   }
+
   .submenu {
     top: 24px;
   }
+
   .item,
   .subitem {
     font-size: var(--text-normal);
+
     & a,
     & button {
       padding: 0 0.55rem;
@@ -243,6 +307,7 @@
     margin-left: 0;
     padding-left: 0.5rem;
   }
+
   .menu.expanded {
     display: block;
     height: calc(100vh - 90px);
@@ -257,11 +322,11 @@
     overflow: scroll;
     padding-bottom: 20px;
 
-    & > .item {
+    &>.item {
       display: block;
     }
 
-    & > .subitem {
+    &>.subitem {
       display: block;
     }
   }
@@ -269,13 +334,16 @@
   .root.scrolled .menu.expanded {
     height: calc(100vh - 36px);
   }
+
   .menuToggle {
     display: block;
     transition: margin-top 0.15s ease-in-out;
   }
+
   .expanded .menuToggle {
     margin-top: -40px;
   }
+
   .expanded.scrolled .menuToggle {
     margin-top: 0px;
   }
@@ -285,10 +353,11 @@
     font-size: var(--text-xlarge);
     margin-top: 8px;
 
-    & > a {
+    &>a {
       transition: padding-left 0.15s ease;
     }
-    &:hover > a {
+
+    &:hover>a {
       padding-left: 8px;
     }
   }
@@ -296,6 +365,7 @@
   .hasSubmenu {
     padding-bottom: 0px;
   }
+
   .hasSubmenu:hover {
     border-left: solid 4px var(--gray);
   }
@@ -320,6 +390,7 @@
     border-left: solid 4px transparent;
     font-size: var(--text-large);
     padding-bottom: 6px;
+
     &:hover {
       padding-left: 32px;
       border-left: solid 4px var(--processing-blue-mid);
@@ -331,12 +402,4 @@
   .menu {
     padding-left: 24px;
   }
-}
-
-.donate{
-  background-color: var(--donate-bg-start);
-  background-image: linear-gradient(0deg, var(--donate-bg-start), var(--donate-bg-end));
-  box-shadow: -3px 3px 0 var(--donate-shadow);
-  color: var(--white);
-  padding: var(--gutter-half) 0;
 }

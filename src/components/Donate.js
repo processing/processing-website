@@ -2,11 +2,13 @@ import classNames from "classnames"
 import React, { useEffect, useState } from "react";
 import * as grid from 'styles/grid.module.css';
 import * as styles from './Donate.module.css';
+import { usePlatform } from "./download/Platform";
 
 export default function Donate() {
     const [interval, setInterval] = useState("m");
     const amounts = interval == "m" ? [5, 10, 25, 55] : [5, 10, 25, 55];
     const [amount, setAmount] = useState(10);
+    const platform = usePlatform();
 
     const params = new URLSearchParams();
     params.append("amount", amount);
@@ -16,7 +18,7 @@ export default function Donate() {
     const [source, setSource] = useState("processing-website");
     useEffect(() => {
         setOrigin(window.location.origin);
-        setSource(window.location.hostname);
+        setSource(window.location.href);
         window.DonorBox = { widgetLinkClassName: styles.donate };
         const body = document.body;
         const script = document.createElement('script');
@@ -26,10 +28,10 @@ export default function Donate() {
         script.defer = true;
         body.appendChild(script);
     }, []);
-    params.append("utm_content", JSON.stringify({ origin }));
+    params.append("utm_content", JSON.stringify({ origin, platform }));
     params.append("utm_source", source);
-    params.append("utm_medium", "banner");
-    params.append("utm_campaign", "donation_banner");
+    params.append("utm_medium", "donation-box");
+    params.append("utm_campaign", "website");
 
     const donorboxURL = `https://donorbox.org/support-processing?${params.toString()}`;
 
@@ -76,7 +78,7 @@ export default function Donate() {
                 <a className={styles.donate} href={donorboxURL} target="_blank">
                     Donate Now
                 </a>
-                <a className={styles.info}>
+                <a className={styles.info} href="https://processingfoundation.org/donate" target="_blank">
                     Where does my donation go?
                 </a>
                 <p className={styles.about}>
