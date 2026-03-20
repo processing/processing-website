@@ -49,6 +49,15 @@ export function useGuessedPlatform() {
     const platforms = usePlatforms();
     const [selected, setSelected] = useState();
     useEffect(() => {
+        const override = window.location.search.match(/platform=([^&]+)/)?.[1];
+        if (override) {
+            const node = platforms.find(node => node.name === override);
+            if (node) {
+                setSelected(node);
+                return;
+            }
+        }
+
         const { userAgent } = navigator;
         for (let node of platforms) {
             if (userAgent.search(node.userAgent) === -1) continue
