@@ -11,18 +11,27 @@
 .releasesTable {
     width: 100%;
 
+
     th {
         text-align: left;
         font-weight: 500;
+        padding-left: 12px;
+
     }
 }
 
+
+
 .releaseRow {
-    padding: 12px;
-
-
+    td {
+        padding-left: 12px;
+    }
 
     &:nth-child(odd) {
-        background: var(--gray)
+        background: var(--lightgray)
+    }
+
+    [is-link] {
+        text-decoration: underline;
     }
 }

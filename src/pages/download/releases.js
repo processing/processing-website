@@ -40,7 +40,7 @@ export default function ReleasesPage() {
                                         <tr key={v.options.raw} className={css.releaseRow}>
                                             <td>{v.options.raw}</td>
                                             <td>{new Date(v.options.options.publishedAt).toLocaleDateString()}</td>
-                                            <td><a href={`https://github.com/processing/processing4/releases/tag/${v.options.options.tagName}`}>{v.options.options.tagName}</a></td>
+                                            <td><a is-link="true" href={`https://github.com/processing/processing4/releases/tag/${v.options.options.tagName}`}>{v.options.options.tagName}</a></td>
                                             <td>
                                                 <Button href={`/download/${selected?.name}/${v.options.raw}`} variant="animate1">Download {v.options.raw}</Button>
                                             </td>
