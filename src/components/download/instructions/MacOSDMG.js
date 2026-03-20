@@ -20,7 +20,7 @@ export default function MacOSDMG() {
             </li>
             <li>
                 Open the <strong>.dmg</strong> file and move <strong>Processing.app</strong> to the <strong>Applications</strong> folder<br />
-                <StaticImage width={400} src="../../../images/mac-installation.png" />
+                <StaticImage style={{ boxShadow: "0px 5px 12px rgba(0,0,0,0.25)", margin: 24 }} width={400} src="../../../images/mac-installation.png" />
             </li>
         </ol>
     )

@@ -29,20 +29,37 @@
         position: relative;
         z-index: 0;
 
-        font-size: var(--text-medium);
+        font-size: var(--text-large);
         font-weight: 500;
         color: var(--processing-blue-dark);
 
         strong {
             font-weight: 700;
         }
+
+        div {
+            font-size: var(--text-medium);
+            font-weight: 400;
+        }
+
+        pre {
+            margin: var(--gutter) 0;
+            padding: var(--gutter);
+
+            &:before {
+                content: "$ "
+            }
+        }
+
+        pre+pre {
+            margin-top: calc(var(--gutter) * -.5);
+        }
     }
 
     &>li::before {
         content: counter(instructions);
         display: inline-flex;
-        position: absolute;
-        left: calc(var(--margin) - var(--gutter));
+        margin-left: calc(-2.5em - var(--gutter));
         padding: var(--gutter-half);
         background: var(--download-button);
         margin-inline-end: .75em;

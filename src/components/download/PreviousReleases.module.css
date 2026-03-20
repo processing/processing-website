@@ -4,10 +4,7 @@
 }
 
 .box {
-    background: var(--instruction-background);
-
     padding: var(--margin);
-    border-radius: var(--gutter);
 }
 
 .title {

@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import Donate from "components/Donate";
+import LinuxZip from "components/download/instructions/LinuxZip";
 import RaspiSnap from "components/download/instructions/RaspiSnap";
 import RaspiTGZ from "components/download/instructions/RaspiTGZ";
 import RaspiZip from "components/download/instructions/RaspiZip";
@@ -22,10 +23,10 @@ export default function RaspberryPIDownloadPage() {
         InstructionComponent = RaspiSnap;
     }
     if (assets.find(asset => asset.name.endsWith('.tgz'))) {
-        InstructionComponent = RaspiTGZ;
+        InstructionComponent = LinuxZip;
     }
     if (preferPortable) {
-        InstructionComponent = RaspiZip;
+        InstructionComponent = LinuxZip;
     }
     return (
         <>

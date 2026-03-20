@@ -50,15 +50,6 @@ export default function MacOSDownloadPage() {
                     <PreviousReleases />
                 </div>
             </div>
-            <div style={{ paddingBlock: "var(--gutter-double)" }}>
-                <div style={{ padding: "var(--gutter)" }}>
-                    <div className={classNames(grid.grid, grid.container)}>
-                        <div style={{ background: "white" }}>
-                            <ArchitectureInfo />
-                        </div>
-                    </div>
-                </div>
-            </div>
             <ul className={classNames(grid.col, css.bottomLinks)} style={{ flexBasis: 'var(--col8)' }}>
                 <Link
                     title={intl.formatMessage({ id: 'getStartedTitle' })}

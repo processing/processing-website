@@ -47,7 +47,7 @@ export default function WhatsNew() {
   return (
     <div className={classNames(styles.container, grid.col)}>
       <div className={styles.content}>
-        <h2>{notes.frontmatter.title}</h2>
+        <h2>Release Notes</h2>
         <MDXProvider components={releaseNoteShortcodes}>
           <MDXRenderer>{notes.body}</MDXRenderer>
         </MDXProvider>

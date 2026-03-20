@@ -8,7 +8,7 @@ export default function Architecture() {
 
 
     return (
-        <a href="#faq-architecture" className={classNames(styles.architecture)}>Which version should I download?</a>
+        <a href="https://github.com/processing/processing4/wiki/How-do-I-know-if-my-Mac-has-Intel-Processor-or-Apple-Silicon%3F" className={classNames(styles.architecture)}>Which version should I download?</a>
     )
 
 }

@@ -6,7 +6,7 @@ import { usePlatform } from "./download/Platform";
 
 export default function Donate() {
     const [interval, setInterval] = useState("m");
-    const amounts = interval == "m" ? [5, 10, 25, 55] : [5, 10, 25, 55];
+    const amounts = interval !== "m" ? [5, 10, 20, 25, 50, 100, 500] : [5, 10, 20, 25, 50, 100, 500];
     const [amount, setAmount] = useState(10);
     const platform = usePlatform();
 

@@ -8,11 +8,9 @@
 
 .content {
     padding: var(--margin);
-    background: var(--instruction-background);
-    border-radius: var(--gutter);
 
     h1,
-    h2,
+    h2:not(:first-child),
     h3 {
         font-size: var(--text-large);
         margin: 0;

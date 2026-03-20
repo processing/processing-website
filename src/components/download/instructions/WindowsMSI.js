@@ -14,8 +14,8 @@ export default function WindowsMSI() {
                 </div>
             </li>
             <li>
-                Open the <strong>.msi</strong> file to launch the installation dialog
-                <StaticImage width={400} src="../../../images/mac-installation.png" />
+                Open the <strong>.msi</strong> file to launch the installation dialog<div >The installer will add Processing to your Start menu</div>
+                <StaticImage style={{ boxShadow: "3px 3px 8px rgba(0,0,0,0.125)", border: "1px solid rgba(0,0,0,0.125)", margin: 24 }} width={400} src="../../../images/windows-installation.png" />
             </li>
         </ol>
     )

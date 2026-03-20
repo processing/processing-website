@@ -1,1 +1,5 @@
-.link {}
+.link {
+    text-align: center;
+    display: block;
+    color: var(--processing-dark-blue);
+}

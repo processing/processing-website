@@ -22,15 +22,15 @@ export default function LinuxZip() {
         <ol className={classNames(styles.instructions)}>
             <li>Download Processing
                 <div className={classNames(downloads)}>
-                    {hasArm && <DownloadButton id="TXVODVYO" format={format} arch={archIndicator}>ARM</DownloadButton>}
-                    {hasArm32 && <DownloadButton id="ZKSBBVWD" format={format} arch={arch32Indicator}>ARM (32 Bit)</DownloadButton>}
-                    {hasIntel && <DownloadButton id="HHYWFK7G" format={format} arch="x64">Intel</DownloadButton>}
-                    {hasIntel32 && <DownloadButton id="HHYWFK7G" format={format} arch="x64">Intel (32 Bit)</DownloadButton>}
+                    {hasIntel && <DownloadButton id="HHYWFK7G" variant="download1" format={format} arch="x64">Intel</DownloadButton>}
+                    {hasIntel32 && <DownloadButton id="HHYWFK7G" variant="download1" format={format} arch="x64">Intel (32 Bit)</DownloadButton>}
+                    {hasArm && <DownloadButton id="TXVODVYO" variant="download2" format={format} arch={archIndicator}>ARM</DownloadButton>}
+                    {hasArm32 && <DownloadButton id="ZKSBBVWD" variant="download2" format={format} arch={arch32Indicator}>ARM (32 Bit)</DownloadButton>}
                 </div>
             </li>
-            <li>Open the .{format} file</li>
-            <li>Drag to applications folder</li>
-            <Share />
+            <li>Open the .{format} file
+                <div>The executable file is in bin/Processing</div>
+            </li>
         </ol>
     )
 }

@@ -19,11 +19,11 @@ export default function PortableIndicator() {
     }
     if (preferPortable) {
         return (
-            <a className={classNames(styles.link)} onClick={() => setPreferPortable(!preferPortable)}>Looking for the standard version?</a>
+            <a className={classNames(styles.link)} onClick={() => setPreferPortable(!preferPortable)}><strong>OR</strong> get the installable version</a>
         )
     }
 
     return (
-        <a className={classNames(styles.link)} onClick={() => setPreferPortable(!preferPortable)}>Looking for the portable version?</a>
+        <a className={classNames(styles.link)} onClick={() => setPreferPortable(!preferPortable)}><strong>OR</strong> get the portable version</a>
     )
 }

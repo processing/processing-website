@@ -30,8 +30,8 @@ export default function MacOSZip() {
                 }
             </li>
             <li>
-                Open the <strong>.zip</strong> file and drag the .app to the applications folder
-                <StaticImage width={400} src="../../../images/mac-installation.png" />
+                Uncompress the <strong>.zip</strong> file and drag the .app to the applications folder
+                <StaticImage style={{ boxShadow: "0px 5px 12px rgba(0,0,0,0.25)", borderRadius: 18, margin: 24 }} width={600} src="../../../images/mac-portable-installation.png" />
             </li>
         </ol>
     )

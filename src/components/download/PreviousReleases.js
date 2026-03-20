@@ -26,9 +26,9 @@ export default function PreviousReleases() {
                 <h4 className={styles.title}>Stable Releases</h4>
                 <div className={styles.releasesContainer}>
                     {ltsVersions.map((versions, i) => (
-                        <Button key={i} href={`/download/${platform.name}/${versions.options.raw}`}>Processing {versions.major} ({versions.options.raw})</Button>
+                        <Button key={i} href={`/download/${platform.name}/${versions.options.raw}`} variant="animate1">{versions.options.raw}</Button>
                     ))}
-                    <Link to="/download/releases">See all previous releases</Link>
+                    <Link style={{ flexBasis: "100%" }} to="/download/releases">See all previous releases</Link>
                 </div>
             </div>
         </div>
@@ -45,6 +45,7 @@ export function useReleasesByMajor() {
                     childJson {
                         tagName
                         isPrerelease
+                        publishedAt
                     }
                 }
             }
@@ -55,8 +56,8 @@ export function useReleasesByMajor() {
 
     const versionByMajor = releases.allFile.edges
         .filter(e => e.node.childJson.isPrerelease !== true)
-        .map(e => e.node.childJson.tagName.replace(/^processing-(\d+-)?/, ''))
-        .map(e => semver.coerce(e, { includePrerelease: true, raw: e }))
+        .map(e => [e.node.childJson.tagName.replace(/^processing-(\d+-)?/, ''), e.node.childJson])
+        .map(e => semver.coerce(e[0], { includePrerelease: true, raw: e[0], options: e[1] }))
         .reverse()
         .sort((a, b) => semver.compare(b, a))
         // conver to object by major version

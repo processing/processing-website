@@ -1,9 +1,18 @@
-.title{
+.title {
     flex-basis: var(--col8);
 }
-.software{
+
+.software {
     color: var(--processing-blue);
 }
-.instructions{
+
+.instructions {
     flex-basis: var(--col5);
+    /* margin-right: var(--col1); */
+}
+
+@media (--medium) {
+    .instructions {
+        flex-basis: var(--col8);
+    }
 }
