@@ -20,15 +20,21 @@ export default function LinuxZip({ noIntel = false }) {
     const format = assets.some(a => a.name.includes(".tgz")) ? "tgz" : "zip";
     const archIndicator = assets.some(a => a.name.includes("arm64")) ? "arm64" : "aarch64";
     const arch32Indicator = assets.some(a => a.name.includes("arm32")) ? "arm32" : "armv6hf";
+    let download = 1;
+    function downloadClass() {
+        download++;
+        download = download % 2;
+        return `download${download + 1}`;
+    }
 
     return (
         <ol className={classNames(styles.instructions)}>
             <li>Download Processing {version} for Linux
                 <div className={classNames(styles.downloads)}>
-                    {hasIntel && <DownloadButton id="HHYWFK7G" variant="download1" format={format} arch="x64">Intel</DownloadButton>}
-                    {hasIntel32 && <DownloadButton id="HHYWFK7G" variant="download1" format={format} arch="x64">Intel (32 Bit)</DownloadButton>}
-                    {hasArm && <DownloadButton id="TXVODVYO" variant="download2" format={format} arch={archIndicator}>ARM</DownloadButton>}
-                    {hasArm32 && <DownloadButton id="ZKSBBVWD" variant="download2" format={format} arch={arch32Indicator}>ARM (32 Bit)</DownloadButton>}
+                    {hasIntel && <DownloadButton id="HHYWFK7G" variant={downloadClass()} format={format} arch="x64">Intel</DownloadButton>}
+                    {hasIntel32 && <DownloadButton id="HHYWFK7G" variant={downloadClass()} format={format} arch="x64">Intel (32 Bit)</DownloadButton>}
+                    {hasArm && <DownloadButton id="TXVODVYO" variant={downloadClass()} format={format} arch={archIndicator}>ARM</DownloadButton>}
+                    {hasArm32 && <DownloadButton id="ZKSBBVWD" variant={downloadClass()} format={format} arch={arch32Indicator}>ARM (32 Bit)</DownloadButton>}
                 </div>
                 {assets.length == 1 &&
                     <div className={classNames(styles.downloads)}>
