@@ -1,4 +1,4 @@
-.cta_container{
+.cta_container {
     background: url('/img/wallpapers/processing-wallpaper-desktop.png');
     background-size: cover;
     background-position: center;
@@ -7,64 +7,81 @@
     padding-top: var(--vertical-margin-large);
     position: relative;
     z-index: 0;
+
+
 }
-.cta_text{
+
+.cta_text {
     flex-basis: var(--col4);
     align-self: center;
 }
-.screenshot{
+
+.screenshot {
     flex-basis: var(--col4);
     padding: 0;
-    &>*{
+
+    &>* {
         margin-inline-end: calc(var(--margin) * -1);
+    }
+
+    [data-placeholder-image] {
+        display: none;
     }
 }
 
 @media (--reduced) {
-    .cta_container{
+    .cta_container {
         margin-top: 0;
     }
-    .cta_text{
+
+    .cta_text {
         flex-basis: var(--col8);
     }
-    .screenshot{
+
+    .screenshot {
         flex-basis: var(--col8);
     }
 }
 
-.title{
+.title {
     font-weight: 100;
     line-height: 1.2;
     font-size: var(--text-xxxlarge);
     padding-bottom: var(--gutter);
     color: var(--white);
 }
-.intro{
+
+.intro {
     font-size: var(--text-large);
     color: var(--white);
 }
-.actions{
+
+.actions {
     display: flex;
     gap: var(--gutter);
     padding: var(--vertical-margin-medium) 0;
     position: relative;
     z-index: 0;
 }
-.software{
+
+.software {
     color: var(--processing-blue);
 }
-.otherPlatforms{
+
+.otherPlatforms {
     margin-top: var(--margin);
     font-size: var(--text-small);
     display: flex;
     gap: var(--gutter);
     flex-direction: column;
 }
-.otherPlatforms h4{
+
+.otherPlatforms h4 {
     color: var(--white);
     font-weight: 100;
 }
-.otherPlatforms ul{
+
+.otherPlatforms ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -72,22 +89,27 @@
     gap: var(--gutter);
     flex-wrap: wrap;
 }
-.runs_on ul{
+
+.runs_on ul {
     display: inline-flex;
     gap: 0.25em;
     margin-left: 0.25em;
-    &>*::after{
+
+    &>*::after {
         content: ",";
     }
-    &>*:last-child::after{
+
+    &>*:last-child::after {
         content: "";
     }
-    &>*:last-child::before{
+
+    &>*:last-child::before {
         content: "and ";
         margin-right: 0.25em;
     }
 }
-.icon{
+
+.icon {
     width: 1.5em;
     height: 1.5em;
     font-size: var(--text-medium);
