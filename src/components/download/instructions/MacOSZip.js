@@ -5,15 +5,17 @@ import classNames from "classnames";
 import * as styles from "./instructions.module.css";
 import Architecture from "../Architecture";
 import { StaticImage } from "gatsby-plugin-image";
+import { useVersionOrLatest } from "../Version";
 
 
 export default function MacOSZip() {
     const assets = useAssets();
+    const version = useVersionOrLatest()
 
     return (
         <ol className={classNames(styles.instructions)}>
             <li>
-                Download Processing (Portable) for macOS.
+                Download Processing {version} (Portable) for macOS.
                 {assets.length > 1 &&
                     <>
                         <div className={classNames(styles.downloads)}>

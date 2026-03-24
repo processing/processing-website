@@ -23,7 +23,7 @@ export default function LinuxZip({ noIntel = false }) {
 
     return (
         <ol className={classNames(styles.instructions)}>
-            <li>Download Processing
+            <li>Download Processing {version} for Linux
                 <div className={classNames(styles.downloads)}>
                     {hasIntel && <DownloadButton id="HHYWFK7G" variant="download1" format={format} arch="x64">Intel</DownloadButton>}
                     {hasIntel32 && <DownloadButton id="HHYWFK7G" variant="download1" format={format} arch="x64">Intel (32 Bit)</DownloadButton>}

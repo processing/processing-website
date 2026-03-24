@@ -4,11 +4,13 @@ import classNames from "classnames";
 import { downloads } from "./instructions.module.css";
 import * as styles from "./instructions.module.css";
 import { StaticImage } from "gatsby-plugin-image";
+import { useVersionOrLatest } from "../Version";
 
 export default function WindowsMSI() {
+    const version = useVersionOrLatest()
     return (
         <ol className={classNames(styles.instructions)}>
-            <li>Download Processing for Windows
+            <li>Download Processing {version} for Windows
                 <div className={classNames(downloads)}>
                     <DownloadButton id="CIMDWXJV" variant="download1" format="msi" arch="x64">Download</DownloadButton>
                 </div>

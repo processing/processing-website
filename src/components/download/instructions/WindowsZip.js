@@ -5,15 +5,17 @@ import { downloads } from "./instructions.module.css";
 import * as styles from "./instructions.module.css";
 import Share from "../Share";
 import { useAssets } from "../Releases";
+import { useVersionOrLatest } from "../Version";
 
 export default function WindowsZip() {
     // TODO: Add support for 32bit distribution if available
     const assets = useAssets();
     const has32bit = assets.some(a => a.name.includes("windows32.zip"));
+    const version = useVersionOrLatest()
 
     return (
         <ol className={classNames(styles.instructions)}>
-            <li>Download Processing
+            <li>Download Processing {version} for Windows
                 <div className={classNames(downloads)}>
                     {!has32bit && <DownloadButton variant="download1" id="CIMDWXJV">Windows Zip</DownloadButton>}
                     {has32bit && <>
