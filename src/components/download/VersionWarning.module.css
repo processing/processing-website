@@ -8,6 +8,10 @@
     margin-top: calc(var(--vertical-margin-large) * -1);
     margin-bottom: var(--vertical-margin-large);
     z-index: 1;
+
+    @media (--medium) {
+        top: 52px;
+    }
 }
 
 .content {

@@ -1,6 +1,7 @@
 .pre {
     display: flex;
     gap: var(--gutter);
+    white-space: pre-wrap;
 }
 
 .spacer {

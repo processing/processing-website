@@ -7,6 +7,10 @@
         width: 100%;
         display: flex;
     }
+
+    @media (--reduced) {
+        flex-direction: column;
+    }
 }
 
 .instructions {
@@ -70,5 +74,10 @@
         justify-content: center;
         height: 2.5em;
         aspect-ratio: 1 / 1;
+
+        @media (--reduced) {
+            margin-left: 0;
+
+        }
     }
 }

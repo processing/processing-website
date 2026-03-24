@@ -3,6 +3,7 @@
     align-self: stretch;
     position: relative;
     padding: 0 var(--gutter);
+    max-width: 100vw;
 
 }
 

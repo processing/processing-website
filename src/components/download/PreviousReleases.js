@@ -22,7 +22,7 @@ export default function PreviousReleases() {
     return (
         <div className={classNames(styles.container, grid.col)}>
             <div className={styles.box}>
-                <h3 className={styles.title}>Looking for other versions of Processing?</h3>
+                <h3 className={styles.title}>Looking for other versions of Processing?</h3><br />
                 <h4 className={styles.title}>Stable Releases</h4>
                 <div className={styles.releasesContainer}>
                     {ltsVersions.map((versions, i) => (

@@ -20,7 +20,7 @@ export default function VersionWarning() {
 
     return (
         <div className={classnames(grid.grid, grid.container, styles.alert)}>
-            <div className={classnames(styles.content)}>This is not the latest release of Processing. <Button href={`/download/${platform.name}`}>Go to {latestVersion}</Button></div>
+            <div className={classnames(styles.content)}>You’re viewing an older version of Processing. For the latest release: <Button href={`/download/${platform.name}`}>Go to {latestVersion}</Button></div>
         </div>
     )
 }

@@ -3,6 +3,12 @@
     padding: 0;
 }
 
+@media (--reduced) {
+    .container {
+        flex-basis: var(--col6);
+    }
+}
+
 .box {
     padding: var(--margin);
 }

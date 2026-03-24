@@ -87,7 +87,11 @@ const IndexPage = ({ data }) => {
       <DownloadCTA />
       <div className={classnames(grid.grid, grid.container)}>
         <div className={classnames(grid.col, css.gettingStartedMessage)}>
-          <h2>Try it!</h2>
+          <h2>Sketch with code</h2>
+          <p>
+            In Processing, everything is code, even the logo!<br />
+            Try changing a few values and see what happens.
+          </p>
         </div>
       </div>
       <Sketch fullscreen={true} />
