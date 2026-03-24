@@ -291,7 +291,11 @@ const Examples = memo(({ heading, examples }) => {
 
   return (
     <div className={classnames(grid.grid, css.examples)}>
-      <h3 className={classnames(grid.col, css.examplesHeading)}>{heading}</h3>
+      <h3 className={classnames(grid.col, css.examplesHeading)}>Learn Through Examples</h3>
+      <p className={classnames(grid.col, css.examplesHeading)}>
+        Processing includes many examples you can run and modify. Open one, change<br />
+        the code, and make something new. This is a great way to learn!
+      </p>
       {examples.map((example) => (
         <div className={classnames(grid.col, css.example)} key={example.path}>
           <Link to={example.path}>
