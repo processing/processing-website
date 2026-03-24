@@ -172,7 +172,7 @@
 }
 
 
-.donate {
+li.donate {
   background-color: var(--donate-bg-start);
   background-image: linear-gradient(0deg, var(--donate-bg-start), var(--donate-bg-end));
   box-shadow: -3px 3px 0 var(--donate-shadow);
@@ -199,20 +199,22 @@
     margin-left: 0;
   }
 
-  a {
+  a,
+  a:active,
+  a:focus,
+  a:hover {
+    color: var(--white);
     padding: 0;
+    color: var(--white);
   }
 
   &:hover {
     border: 0;
     box-shadow: 3px -3px 0 var(--donate-shadow);
     color: var(--white);
-
-    a {
-
-      color: var(--white);
-    }
   }
+
+
 }
 
 @media (--medium) {
