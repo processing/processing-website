@@ -2,6 +2,7 @@ import classNames from "classnames";
 import Donate from "components/Donate";
 import WindowsMSI from "components/download/instructions/WindowsMSI";
 import WindowsZip from "components/download/instructions/WindowsZip";
+import MoreInfoLinks from "components/download/MoreInfoLinks";
 import PortableIndicator, { PortableContext } from "components/download/Portable";
 import PreviousReleases from "components/download/PreviousReleases";
 import { useAssets } from "components/download/Releases";
@@ -37,6 +38,7 @@ export default function WindowsDownloadPage() {
                 <WhatsNew />
                 <PreviousReleases />
             </div>
+            <MoreInfoLinks />
         </>
     );
 }

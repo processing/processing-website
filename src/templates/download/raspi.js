@@ -1,9 +1,7 @@
 import classNames from "classnames";
 import Donate from "components/Donate";
-import LinuxZip from "components/download/instructions/LinuxZip";
 import RaspiSnap from "components/download/instructions/RaspiSnap";
 import RaspiTGZ from "components/download/instructions/RaspiTGZ";
-import RaspiZip from "components/download/instructions/RaspiZip";
 import PortableIndicator, { PortableContext } from "components/download/Portable";
 import PreviousReleases from "components/download/PreviousReleases";
 import { useAssets } from "components/download/Releases";
@@ -18,15 +16,15 @@ export default function RaspberryPIDownloadPage() {
 
     const assets = useAssets();
 
-    let InstructionComponent = RaspiZip;
+    let InstructionComponent = RaspiTGZ;
     if (assets.find(asset => asset.name.endsWith('.snap'))) {
         InstructionComponent = RaspiSnap;
     }
     if (assets.find(asset => asset.name.endsWith('.tgz'))) {
-        InstructionComponent = LinuxZip;
+        InstructionComponent = RaspiTGZ;
     }
     if (preferPortable) {
-        InstructionComponent = LinuxZip;
+        InstructionComponent = RaspiTGZ;
     }
     return (
         <>

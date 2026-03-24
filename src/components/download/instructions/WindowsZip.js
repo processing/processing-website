@@ -24,7 +24,6 @@ export default function WindowsZip() {
             </li>
             <li>Extract the contents of the zip file</li>
             <li>Run processing.exe</li>
-            <Share />
         </ol>
     )
 }

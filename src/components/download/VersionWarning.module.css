@@ -1,12 +1,16 @@
-.alert{
+.alert {
+    position: sticky;
+    top: 62px;
     font-weight: bold;
     background: var(--processing-blue);
     color: white;
     padding-block: var(--gutter);
     margin-top: calc(var(--vertical-margin-large) * -1);
     margin-bottom: var(--vertical-margin-large);
+    z-index: 1;
 }
-.content{
+
+.content {
     display: flex;
     gap: var(--gutter);
     padding-inline: var(--gutter);

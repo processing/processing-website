@@ -20,9 +20,10 @@ import GitHubIcon from 'images/github-icon.svg';
 import LearnIcon from 'images/learn-icon.svg';
 import * as css from 'styles/templates/download.module.css';
 import { useIntl } from 'react-intl';
+import MoreInfoLinks from "components/download/MoreInfoLinks";
 
 export default function MacOSDownloadPage() {
-    const intl = useIntl();
+
     const { preferPortable } = React.useContext(PortableContext);
 
     const assets = useAssets();
@@ -50,35 +51,7 @@ export default function MacOSDownloadPage() {
                     <PreviousReleases />
                 </div>
             </div>
-            <ul className={classNames(grid.col, css.bottomLinks)} style={{ flexBasis: 'var(--col8)' }}>
-                <Link
-                    title={intl.formatMessage({ id: 'getStartedTitle' })}
-                    description={intl.formatMessage({ id: 'getStartedDescription' })}
-                    href="https://hello.processing.org/"
-                    icon={<CreateIcon />}
-                />
-
-                <Link
-                    title={intl.formatMessage({ id: 'tutorialsTitle' })}
-                    description={intl.formatMessage({ id: 'tutorialsDescription' })}
-                    href="https://processing.org/tutorials"
-                    icon={<LearnIcon />}
-                />
-
-                <Link
-                    title={intl.formatMessage({ id: 'communityTitle' })}
-                    description={intl.formatMessage({ id: 'communityDescription' })}
-                    href="https://discourse.processing.org/"
-                    icon={<CommunityIcon />}
-                />
-
-                <Link
-                    title={intl.formatMessage({ id: 'contributeTitle' })}
-                    description={intl.formatMessage({ id: 'contributeDescription' })}
-                    href="https://github.com/processing/processing4"
-                    icon={<GitHubIcon />}
-                />
-            </ul>
+            <MoreInfoLinks />
         </>
     );
 }

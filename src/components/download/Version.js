@@ -9,8 +9,6 @@ export const VersionProvider = VersionContext.Provider;
 export const useVersion = () => React.useContext(VersionContext);
 
 export function useVersionOrLatest() {
-
-
     const version = useVersion();
     const latest = useLatestVersion();
     if (version) {

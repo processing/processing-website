@@ -2,6 +2,7 @@ import classNames from "classnames";
 import Donate from "components/Donate";
 import LinuxUniversal from "components/download/instructions/LinuxUniversal";
 import LinuxZip from "components/download/instructions/LinuxZip";
+import MoreInfoLinks from "components/download/MoreInfoLinks";
 import PortableIndicator, { PortableContext } from "components/download/Portable";
 import PreviousReleases from "components/download/PreviousReleases";
 import { useAssets } from "components/download/Releases";
@@ -38,6 +39,7 @@ export default function LinuxDownloadPage() {
                 <WhatsNew />
                 <PreviousReleases />
             </div>
+            <MoreInfoLinks />
         </>
     );
 }
