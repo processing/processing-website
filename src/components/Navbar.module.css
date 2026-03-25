@@ -172,7 +172,7 @@
 }
 
 
-a.donate {
+li.donate {
   background-color: var(--donate-bg-start);
   background-image: linear-gradient(0deg, var(--donate-bg-start), var(--donate-bg-end));
   box-shadow: -3px 3px 0 var(--donate-shadow);

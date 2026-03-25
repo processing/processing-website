@@ -137,14 +137,12 @@ const Navbar = ({ siteTitle, scrolled }) => {
               [css.expanded]: expanded
             })}>
             {items.map((item, key) => (
-              <a
+              <li
                 key={key}
                 className={classnames(css.item, {
                   [css.hasSubmenu]: item.children,
                   [css.active]: item.name === current
-                }, item.class)}
-                href={item.href}
-              >
+                }, item.class)}>
                 {item.icon && item.icon()}
                 {item.href ? (
                   item.href.startsWith('https') ? (
@@ -188,7 +186,7 @@ const Navbar = ({ siteTitle, scrolled }) => {
                     ))}
                   </ul>
                 )}
-              </a>
+              </li>
             ))}
           </ul>
         </div>
