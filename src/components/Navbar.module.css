@@ -340,6 +340,10 @@ li.donate {
     &>.subitem {
       display: block;
     }
+
+    &>.donate {
+      display: inline-flex;
+    }
   }
 
   .root.scrolled .menu.expanded {
