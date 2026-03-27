@@ -145,12 +145,9 @@
         display: block;
         font-size: var(--text-xlarge);
         margin-top: 8px;
+        transition: padding-left 0.15s ease;
 
-        &>a {
-            transition: padding-left 0.15s ease;
-        }
-
-        &:hover>a {
+        &:hover {
             padding-left: 8px;
         }
     }
@@ -188,5 +185,9 @@
             padding-left: 32px;
             border-left: solid 4px var(--processing-blue-mid);
         }
+    }
+
+    .donate {
+        display: inline-flex;
     }
 }

@@ -69,25 +69,14 @@ const NavbarItemContext = createContext();
 export function NavbarItems() {
     return items.map((item, key) => (
         <NavbarItemContext.Provider value={item} key={key}>
-            <NavbarItem />
+            <NavbarElement />
         </NavbarItemContext.Provider>
     ))
 }
 
-function NavbarItem() {
-    const { icon } = useContext(NavbarItemContext);
-
-    return (
-        <NavbarElement>
-            {icon && icon()}
-            <NavbarItemChildren />
-        </NavbarElement>
-    )
-}
-
-function NavbarElement({ children: content, className }) {
+function NavbarElement({ className }) {
     const intl = useIntl();
-    const { href, name, children, hideChildren, class: clazz } = useContext(NavbarItemContext);
+    const { href, name, children, hideChildren, class: clazz, icon } = useContext(NavbarItemContext);
     const location = useLocation();
     const isCurrent = location.pathname === href;
     const isCurrentCategory = children?.some(child => location.pathname === child.href);
@@ -101,8 +90,9 @@ function NavbarElement({ children: content, className }) {
 
     return (
         <Link to={href} className={classes}>
-            {content}
+            {icon && icon()}
             {intl.formatMessage({ id: name })}
+            <NavbarItemChildren />
         </Link>
     )
 }
