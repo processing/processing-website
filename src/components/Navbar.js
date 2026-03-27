@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect } from 'react';
+import React, { useMemo, useState, useEffect, createContext, useContext } from 'react';
 import classnames from 'classnames';
 import { useLocation } from '@reach/router';
 import { LocalizedLink as Link, useLocalization } from 'gatsby-theme-i18n';
@@ -16,10 +16,6 @@ import MenuIcon from '../images/menu-icon.svg';
 //the name values are used to get the value from the intl files
 //it is not the name that is displayed
 export const items = [
-  {
-    name: 'home',
-    href: '/'
-  },
   {
     name: 'download',
     href: '/download'
@@ -68,54 +64,87 @@ export const items = [
   }
 ];
 
-const Navbar = ({ siteTitle, scrolled }) => {
-  const location = useLocation();
+const NavbarItemContext = createContext();
+
+function NavbarItems() {
+
+  return items.map((item, key) => (
+    <NavbarItemContext.Provider value={item} key={key}>
+      <NavbarItem item={item} />
+    </NavbarItemContext.Provider>
+  ))
+}
+
+function NavbarItem() {
+  const { children, icon, name, ...item } = useContext(NavbarItemContext);
+
+  const className = classnames({
+    [css.item]: true,
+    [css.hasSubmenu]: children,
+    [item.class]: true
+  })
+
+
+  return (
+    <li className={className}>
+      <NavbarElement>
+        {icon && icon()}
+      </NavbarElement>
+      <NavbarItemChildren />
+    </li>
+  )
+}
+
+function NavbarElement({ children: content }) {
   const intl = useIntl();
-  const [showSubmenu, setShowSubmenu] = useState(null);
-  const { locale } = useLocalization();
+  const { href, name, children } = useContext(NavbarItemContext);
+  const location = useLocation();
+  const isCurrent = location.pathname.startsWith(href);
+  const isCurrentCategory = children?.some(child => location.pathname.startsWith(child.href));
+
+  const classes = classnames({
+    [css.link]: true,
+    [css.active]: isCurrent || isCurrentCategory
+  })
+
+  return (
+    <Link to={href} className={classes}>
+      {content}
+      {intl.formatMessage({ id: name })}
+    </Link>
+  )
+}
+
+function NavbarItemChildren() {
+  const { children } = useContext(NavbarItemContext);
+
+  if (!children) {
+    return null;
+  }
+
+  return (
+    <ul className={css.submenu}>
+      {children.map((subitem, j) => (
+        <li className={css.subitem} key={j}>
+          <NavbarItemContext.Provider value={subitem}>
+            <NavbarElement />
+          </NavbarItemContext.Provider>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+const Navbar = ({ siteTitle, scrolled }) => {
   const [expanded, setExpanded] = useState(false);
-
-  const current = useMemo(() => {
-    const removeIndex = location.pathname.indexOf('/', 1);
-    const currentLocation =
-      locale === 'en'
-        ? location.pathname
-        : location.pathname.slice(removeIndex);
-    for (var i = 0; i < items.length; i++) {
-      const item = items[i];
-      if (item.href === currentLocation) {
-        return item.name;
-      } else if (
-        item.children &&
-        item.children.some((child) => child.href === currentLocation)
-      ) {
-        return item.name;
-      }
-    }
-  }, [location, locale]);
-
-  const onClick = (name) => {
-    setShowSubmenu(name);
-  };
-
-  useEffect(() => {
-    const onMouseDown = (e) => {
-      if (e.target.nodeName.toLowerCase() !== 'button') {
-        setShowSubmenu(null);
-      }
-    };
-    document.addEventListener('mousedown', onMouseDown);
-    return () => {
-      document.removeEventListener('mousedown', onMouseDown);
-    };
-  }, []);
-
   return (
     <div
       className={classnames(
-        css.root,
-        { [css.scrolled]: scrolled },
-        { [css.expanded]: expanded }
+        {
+          [css.root]: true,
+          [css.scrolled]: scrolled,
+          [css.expanded]: expanded
+        }
       )}>
       <div className={classnames(css.container, grid.container, grid.grid)}>
         <h1 className={classnames(grid.col, css.logo)}>
@@ -133,61 +162,11 @@ const Navbar = ({ siteTitle, scrolled }) => {
             {expanded ? <CloseIcon /> : <MenuIcon />}
           </button>
           <ul
-            className={classnames(css.menu, {
+            className={classnames({
+              [css.menu]: true,
               [css.expanded]: expanded
             })}>
-            {items.map((item, key) => (
-              <li
-                key={key}
-                className={classnames(css.item, {
-                  [css.hasSubmenu]: item.children,
-                  [css.active]: item.name === current
-                }, item.class)}>
-                {item.icon && item.icon()}
-                {item.href ? (
-                  item.href.startsWith('https') ? (
-                    <a target="_blank" rel="noreferrer" href={item.href}>
-                      {intl.formatMessage({ id: item.name })}
-                    </a>
-                  ) : (
-                    <Link to={item.href}>
-                      {intl.formatMessage({ id: item.name })}
-                    </Link>
-                  )
-                ) : (
-                  <button onClick={() => onClick(item.name)}>
-                    {intl.formatMessage({ id: item.name })}
-                  </button>
-                )}
-                {item.children && (
-                  <ul className={css.submenu}>
-                    {item.children.map((subitem, j) => (
-                      <li className={css.subitem} key={key + j}>
-                        {subitem.href ? (
-                          subitem.href.startsWith('https') ? (
-                            <a
-                              href={subitem.href}
-                              target="_blank"
-                              rel="noreferrer"
-                              tabIndex={item.name === showSubmenu ? 0 : -1}>
-                              {intl.formatMessage({ id: subitem.name })}
-                            </a>
-                          ) : (
-                            <Link
-                              to={subitem.href}
-                              tabIndex={item.name === showSubmenu ? 0 : -1}>
-                              {intl.formatMessage({ id: subitem.name })}
-                            </Link>
-                          )
-                        ) : (
-                          intl.formatMessage({ id: subitem.name })
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
+            <NavbarItems />
           </ul>
         </div>
         <div className={css.spacer} />

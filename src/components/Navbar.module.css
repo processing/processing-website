@@ -68,14 +68,10 @@
 
 .menu {
   display: flex;
-  list-style: none;
   justify-content: space-between;
   align-items: baseline;
 }
 
-.item:first-child {
-  display: none;
-}
 
 .item {
   position: relative;
@@ -86,6 +82,8 @@
   font-size: var(--text-medium);
   font-weight: 600;
   white-space: nowrap;
+
+
 
   & button,
   & a {
@@ -107,6 +105,10 @@
     margin-left: 4px;
     vertical-align: middle;
   }
+}
+
+.active {
+  border-left: solid 4px var(--processing-blue-dark);
 }
 
 .item:hover {
