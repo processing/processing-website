@@ -26,3 +26,12 @@
   to = "https://docs.google.com/forms/d/e/1FAIpQLSduTT2cWlXzr7QG_g4LJ-Op6LwVTI7dtXHCGVH_FdI0BK00qg/viewform?usp=header"
   status = 302
   force = true
+
+# Rate-limit web-requests to {{window_limit}} requests per {{window_size}} seconds
+[[redirects]]
+  from = "/*"
+  to = "/:splat"
+    [redirects.rate_limit]
+    window_limit = 50
+    window_size = 60
+    aggregate_by = ["ip", "domain"]
