@@ -437,5 +437,8 @@
   "Request Image": "Request Image",
   "Background Image": "Background Image",
   "Datatype Conversion": "Datatype Conversion",
+  "tooManyRequestsTitle": "Too many requests",
+  "tooManyRequests": "TOO MANY REQUESTS",
+  "tooManyRequestsText": "You've made too many requests in a short period. Please wait a moment and try again.",
   " ": ""
 }
