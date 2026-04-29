@@ -437,5 +437,8 @@
   "Request Image": "Solicitar Imagen",
   "Background Image": "Imagen de Fondo",
   "Datatype Conversion": "Conversión de Tipos de Datos",
+  "tooManyRequestsTitle": "Demasiadas solicitudes",
+  "tooManyRequests": "TOO MANY REQUESTS",
+  "tooManyRequestsText": "Has realizado demasiadas solicitudes en poco tiempo. Por favor, espera un momento e inténtalo de nuevo.",
   " ": ""
 }
