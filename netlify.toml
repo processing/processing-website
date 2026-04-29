@@ -33,7 +33,7 @@
   to = "/:splat"
     [redirects.rate_limit]
     action = "rewrite"
-    to = "/429/"
+    to = "https://processing.org/429/"
     window_limit = 50
     window_size = 60
     aggregate_by = ["ip", "domain"]
