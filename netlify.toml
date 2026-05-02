@@ -3,6 +3,13 @@
 # 2. Add the subdomain to the Processing website in netlify by going to Domain Management -> Production Domains -> Add domain alias
 # Make sure the force option is added and the from starts with https
 
+# Bypass page-data from rate limiter
+# gatsby is making a ton of requests which triggers the rate limiter quickly
+[[redirects]]
+  from = "/page-data/*"
+  to = "/page-data/:splat"
+  status = 200
+
 [[redirects]]
   from = "https://wiki.processing.org/*"
   to = "https://github.com/processing/processing4/wiki"
