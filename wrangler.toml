@@ -1,5 +1,4 @@
 name = "processing-website"
-main = "worker/index.js"
 compatibility_date = "2026-05-12"
 
 [assets]
