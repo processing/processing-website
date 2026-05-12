@@ -1,0 +1,10 @@
+name = "processing-website"
+main = "worker/index.js"
+compatibility_date = "2026-05-12"
+
+[assets]
+directory = "./public"
+not_found_handling = "404-page"
+binding = "ASSETS"
+# TODO Step 3: flip run_worker_first to true when adding 429 handling
+run_worker_first = false
