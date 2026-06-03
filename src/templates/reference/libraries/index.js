@@ -56,6 +56,12 @@ const Libraries = ({ data, pageContext }) => {
         <div className={classnames(grid.col, css.text, css.pushDown)}>
           <h1>{intl.formatMessage({ id: 'contributions' })}</h1>
           <h3>{intl.formatMessage({ id: 'contributionsIntro' })}</h3>
+          <p></p>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: intl.formatMessage({ id: 'librariesTemplate' })
+            }}
+          />
         </div>
         <div className={classnames(grid.col, css.filter)}>
           <FilterBar
