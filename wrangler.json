@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "processing-website",
+  "compatibility_date": "2026-06-05",
+  "assets": {
+    "directory": "./public/",
+  },
+}
