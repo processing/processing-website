@@ -1,0 +1,87 @@
+{
+  "name": "Processing 4.5.3",
+  "tagName": "processing-1314-4.5.3",
+  "isPrerelease": true,
+  "publishedAt": "2026-03-02T15:08:38Z",
+  "releaseAssets": {
+    "edges": [
+      {
+        "node": {
+          "name": "processing-4.5.3-linux-aarch64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1314-4.5.3/processing-4.5.3-linux-aarch64-portable.zip",
+          "size": 530433984
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.3-linux-aarch64.deb",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1314-4.5.3/processing-4.5.3-linux-aarch64.deb",
+          "size": 468664188
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.3-linux-x64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1314-4.5.3/processing-4.5.3-linux-x64-portable.zip",
+          "size": 585216384
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.3-linux-x64.deb",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1314-4.5.3/processing-4.5.3-linux-x64.deb",
+          "size": 521626070
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.3-reference.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1314-4.5.3/processing-4.5.3-reference.zip",
+          "size": 107822525
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.3-windows-x64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1314-4.5.3/processing-4.5.3-windows-x64-portable.zip",
+          "size": 516657668
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.3-windows-x64.msi",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1314-4.5.3/processing-4.5.3-windows-x64.msi",
+          "size": 473894912
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.3-linux-aarch64.snap",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1314-4.5.3/processing-4.5.3-linux-aarch64.snap",
+          "size": 478982144
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.3-linux-x64.snap",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1314-4.5.3/processing-4.5.3-linux-x64.snap",
+          "size": 492130304
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.3-linux-x64.flatpak",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1314-4.5.3/processing-4.5.3-linux-x64.flatpak",
+          "size": 343811496
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.3-linux-aarch64.flatpak",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1314-4.5.3/processing-4.5.3-linux-aarch64.flatpak",
+          "size": 337246264
+        }
+      }
+    ]
+  }
+}
