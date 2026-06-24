@@ -84,7 +84,8 @@
     "gatsby-plugin-perf-budgets": "0.0.18",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.25",
     "inquirer": "^8.1.5",
-    "prettier": "2.0.5"
+    "prettier": "2.0.5",
+    "wrangler": "^4.98.0"
   },
   "static": {
     "region": "us-east-1",

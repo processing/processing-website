@@ -12,7 +12,7 @@ const Header = ({ siteTitle, scrolled }) => {
   const data = useStaticQuery(graphql`
     query {
       banner: file(
-        name: { eq: "banner" }
+        name: { eq: "downtime_banner" }
         sourceInstanceName: { eq: "sitewide" }
       ) {
         name
