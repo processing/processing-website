@@ -20,6 +20,7 @@
     gap: var(--gutter);
     list-style: none;
     counter-reset: instructions;
+    position: relative;
 
     &>li {
         counter-increment: instructions;
@@ -80,4 +81,53 @@
 
         }
     }
+}
+
+.platformPicker {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    margin: var(--gutter);
+    padding: var(--gutter);
+    background: var(--white);
+    border-radius: var(--gutter);
+    border: 1px solid var(--download-button);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gutter-half);
+    & + li{
+        padding-top: calc(var(--margin) + var(--gutter) * 2);
+    }
+}
+
+.platformIcon {
+    width: 1.1em;
+    height: 1.1em;
+    flex: 0 0 auto;
+    color: var(--processing-blue-dark);
+}
+
+.platforms {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    padding-right: 1.9em;
+    color: var(--processing-blue-dark);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+}
+
+.platformChevron {
+    width: 1em;
+    height: 1em;
+    flex: 0 0 auto;
+    color: var(--processing-blue-dark);
+    pointer-events: none;
+
 }
