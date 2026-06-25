@@ -1,6 +1,7 @@
 {
   "name": "Processing 3.0a9",
   "tagName": "processing-0236-3.0a9",
+  "isPrerelease": true,
   "publishedAt": "2015-05-20T10:39:47Z",
   "releaseAssets": {
     "edges": [
@@ -40,5 +41,6 @@
         }
       }
     ]
-  }
+  },
+  "description": "```\nPROCESSING 3.0a9 (REV 0236) - 19 May 2015\n\nMore work as we head toward beta. Mostly improvements to the GUI \nand fixes for many bugs. So close to beta I can practically smell it.\n\n\n[ changes ] \n\n+ Implement more of the bottom half of the editor window GUI\n\n+ Show screen dimensions in the Preferences window for display selector\n\n+ Change how the variables/debug window works. Automatically \n  show the window when debugging, hide when not.\n  https://github.com/processing/processing/issues/3298\n  https://github.com/processing/processing/issues/3091\n\n+ Enabling and disabling the debugger toggles the Step/Continue \n  buttons in the toolbar\n\n+ Remove techie options from the Debug menu\n  https://github.com/processing/processing/issues/3267\n\n+ Add more visual states to the toolbar buttons\n\n+ Lots of internal cleaning\n\n\n[ bug fixes ] \n\n+ Implement Cmd-Q handler on Mac OS X to shut down sketches properly\n  https://github.com/processing/processing/issues/3301\n\n+ Changing \"background color when Presenting\" causes Exception\n  https://github.com/processing/processing/issues/3299\n\n+ displayWidth and displayHeight not set properly on startup\n  https://github.com/processing/processing/issues/3295\n\n\n[ andres vs. opengl, episode 7 ]\n\n+ Offscreen rendering broken in OpenGL renderers\n  https://github.com/processing/processing/issues/3292\n  https://github.com/processing/processing/issues/3259\n\n+ Initial location of OpenGL window hides the title bar\n  https://github.com/processing/processing/issues/2981\n\n+ OpenGL sketches do not terminate, have to be killed\n  https://github.com/processing/processing/issues/2982\n\n+ Quitting P3D sketch throws an error\n  https://github.com/processing/processing/issues/3293\n\n\n[ fixed in 3.0a8, confirmed later ] \n\n+ \"Step\" not working properly\n  https://github.com/processing/processing/issues/3266\n\n+ Cmd-click behavior on function/variable is firing when cmd-click not pressed\n  https://github.com/processing/processing/issues/3242\n\n+ Full screen window on second monitor without using present mode\n  https://github.com/processing/processing/issues/3271\n```\n"
 }

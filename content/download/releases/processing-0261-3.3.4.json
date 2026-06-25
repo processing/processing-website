@@ -1,6 +1,7 @@
 {
   "name": "Processing 3.3.4",
   "tagName": "processing-0261-3.3.4",
+  "isPrerelease": false,
   "publishedAt": "2017-06-03T15:05:20Z",
   "releaseAssets": {
     "edges": [
@@ -47,5 +48,6 @@
         }
       }
     ]
-  }
+  },
+  "description": "```\r\nPROCESSING 3.3.4 (REV 0261) - 3 June 2017\r\n\r\nSeveral useful bug fixes and improvements. Some big, many small.\r\n\r\n\r\n[ fixes you'll notice ]\r\n\r\n+ Exported applications no longer report as \"Damaged\" on macOS Sierra\r\n  https://github.com/processing/processing/issues/4705\r\n\r\n+ Prevent the console from freezing up when print() and println()\r\n  are used to print thousands of lines of output.\r\n  https://github.com/processing/processing/pull/4935\r\n  https://github.com/processing/processing/issues/4825\r\n\r\n+ Apple broke key repeat in macOS Sierra, here's how to fix it:\r\n  https://github.com/processing/processing/wiki/Troubleshooting#key-repeat-on-macos-sierra\r\n\r\n+ Fix the keyPressed variable when multiple keys are pressed\r\n  https://github.com/processing/processing/pull/5050\r\n  https://github.com/processing/processing/issues/5049\r\n\r\n\r\n[ some you probably won't ]\r\n\r\n+ Clarify wording of error message regarding sketchbook location\r\n  https://github.com/processing/processing/issues/4942\r\n\r\n+ Remove 'run sketches on display' error text that showed up even \r\n  when using Processing for the first time\r\n\r\n+ Implement alternate 'ant app' target for macOS application debugging\r\n\r\n+ Added a null check to sketch loading to prevent some issues such as\r\n  https://github.com/processing/processing/issues/4980\r\n\r\n+ Handle edge case for set() being called with a 2D vector, on a 3D vector\r\n  https://github.com/processing/processing/issues/5092\r\n  \r\n\r\n[ incomplete additions ]\r\n\r\n+ Add exec() with StringList options (documentation coming soon)\r\n\r\n+ Begin work on a shell() function to do exec() via a shell\r\n\r\n\r\n[ other contributions - thank you! ] \r\n  \r\n+ Add install/uninstall scripts for Linux and correct mime types for the PDE \r\n  https://github.com/processing/processing/pull/5106\r\n\r\n+ IO library updates for ARM\r\n  https://github.com/processing/processing/pull/5044\r\n  \r\n+ Check $SUDO_USER on Linux for locating the sketchbook folder\r\n  https://github.com/processing/processing/pull/5055\r\n  https://github.com/processing/processing/pull/5054\r\n\r\n+ Debugging the \"files changed\" detector in the Editor\r\n  https://github.com/processing/processing/issues/4713\r\n  https://github.com/processing/processing/pull/5021\r\n  https://github.com/processing/processing/pull/4849\r\n\r\n+ Still more updates to the change detector\r\n  https://github.com/processing/processing/pull/5075\r\n  \r\n+ Warn user to use L when creating a number constant that won't fit into an int\r\n  https://github.com/processing/processing/issues/4878\r\n  https://github.com/processing/processing/pull/5077\r\n```"
 }

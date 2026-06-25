@@ -1,0 +1,133 @@
+.downloads {
+    padding: var(--gutter) 0;
+    display: flex;
+    gap: var(--gutter);
+
+    a {
+        width: 100%;
+        display: flex;
+    }
+
+    @media (--reduced) {
+        flex-direction: column;
+    }
+}
+
+.instructions {
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter);
+    list-style: none;
+    counter-reset: instructions;
+    position: relative;
+
+    &>li {
+        counter-increment: instructions;
+
+        background: var(--instruction-background);
+
+        padding: var(--margin);
+        padding-left: var(--margin-double);
+        border-radius: var(--gutter);
+
+        position: relative;
+        z-index: 0;
+
+        font-size: var(--text-large);
+        font-weight: 500;
+        color: var(--processing-blue-dark);
+
+        strong {
+            font-weight: 700;
+        }
+
+        div {
+            font-size: var(--text-medium);
+            font-weight: 400;
+        }
+
+        pre {
+            margin: var(--gutter) 0;
+            padding: var(--gutter);
+
+            &:before {
+                content: "$ "
+            }
+        }
+
+        pre+pre {
+            margin-top: calc(var(--gutter) * -.5);
+        }
+    }
+
+    &>li::before {
+        content: counter(instructions);
+        display: inline-flex;
+        margin-left: calc(-2.5em - var(--gutter));
+        padding: var(--gutter-half);
+        background: var(--download-button);
+        margin-inline-end: .75em;
+        border-radius: 100%;
+        color: white;
+        width: 2.5em;
+        align-items: center;
+        justify-content: center;
+        height: 2.5em;
+        aspect-ratio: 1 / 1;
+
+        @media (--reduced) {
+            margin-left: 0;
+
+        }
+    }
+}
+
+.platformPicker {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    margin: var(--gutter);
+    padding: var(--gutter);
+    background: var(--white);
+    border-radius: var(--gutter);
+    border: 1px solid var(--download-button);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--gutter-half);
+    & + li{
+        padding-top: calc(var(--margin) + var(--gutter) * 2);
+    }
+}
+
+.platformIcon {
+    width: 1.1em;
+    height: 1.1em;
+    flex: 0 0 auto;
+    color: var(--processing-blue-dark);
+}
+
+.platforms {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    padding-right: 1.9em;
+    color: var(--processing-blue-dark);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+}
+
+.platformChevron {
+    width: 1em;
+    height: 1em;
+    flex: 0 0 auto;
+    color: var(--processing-blue-dark);
+    pointer-events: none;
+
+}

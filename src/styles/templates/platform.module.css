@@ -1,0 +1,18 @@
+.title {
+    flex-basis: var(--col8);
+}
+
+.software {
+    color: var(--processing-blue);
+}
+
+.instructions {
+    flex-basis: var(--col5);
+    /* margin-right: var(--col1); */
+}
+
+@media (--medium) {
+    .instructions {
+        flex-basis: var(--col8);
+    }
+}

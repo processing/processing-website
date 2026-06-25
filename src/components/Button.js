@@ -51,7 +51,7 @@ export const Button = ({
 export default Button;
 
 Button.defaultProps = {
-  onClick: () => {}
+  onClick: () => { }
 };
 
 Button.propTypes = {

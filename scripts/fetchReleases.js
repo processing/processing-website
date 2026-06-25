@@ -17,6 +17,7 @@ const fetchReleases = async (githubToken) => {
               node {
                 name
                 tagName
+                isPrerelease
                 publishedAt
                 releaseAssets(first: 20) {
                   edges {
@@ -27,6 +28,7 @@ const fetchReleases = async (githubToken) => {
                     }
                   }
                 }
+                description
               }
             }
           }
@@ -48,6 +50,7 @@ const fetchReleases = async (githubToken) => {
                     }
                   }
                 }
+                description
               }
             }
           }
@@ -130,6 +133,28 @@ const fetchReleases = async (githubToken) => {
   );
 
 
+  // Write release notes to md
+  releases.forEach((release) => {
+    fs.writeFileSync(
+      path.join(
+        __dirname,
+        '..',
+        'content',
+        'download',
+        'release-notes',
+        `${release.node.tagName}.mdx`
+      ),
+      `---
+title: ${release.node.name}
+date: ${release.node.publishedAt}
+prerelease: ${release.node.isPrerelease}
+tagName: ${release.node.tagName}
+release: true
+---
+${release.node.description || ''}
+      `
+    );
+  });
 };
 
 if (process.env.GITHUB_TOKEN) {

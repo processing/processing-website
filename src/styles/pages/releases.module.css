@@ -1,0 +1,37 @@
+.releasesList {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.releaseGroup {
+    margin-bottom: 1em;
+}
+
+.releasesTable {
+    width: 100%;
+
+
+    th {
+        text-align: left;
+        font-weight: 500;
+        padding-left: 12px;
+
+    }
+}
+
+
+
+.releaseRow {
+    td {
+        padding-left: 12px;
+    }
+
+    &:nth-child(odd) {
+        background: var(--lightgray)
+    }
+
+    [is-link] {
+        text-decoration: underline;
+    }
+}

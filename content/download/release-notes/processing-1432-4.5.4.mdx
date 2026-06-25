@@ -1,0 +1,37 @@
+---
+title: Processing 4.5.4
+date: 2026-06-23T23:02:20Z
+prerelease: false
+tagName: processing-1432-4.5.4
+release: true
+---
+Hi everyone, wow. At long last. We are back on track with releases! I do not know what else to say, except that at the next Processing Weekly I will go into great detail. We have a lot of great work in here, and in the failed 4.5.3 release to go over.
+
+Moreover, I've updated our release workflow so that it can handle mistakes a bit better. Specifically, if, say, a macOS build fails notarization for _reasons_ then we're still able to fix and release without having to bump the version. Maven and Gradle will only be published to once all the platform builds are successful. 
+
+But anyways. Onwards and upwards from here I suppose.
+
+<!-- Release notes generated using configuration in .github/release.yml at processing-1432-4.5.4 -->
+
+## What's Changed
+### What's Changed 🎊
+* add github action to implement #1490 contributor image by @kjhollen in https://github.com/processing/processing4/pull/1497
+* add codesign verify step for mac builds by @kjhollen in https://github.com/processing/processing4/pull/1509
+* fix for #1507 - mac signing issues for release builds by @kjhollen in https://github.com/processing/processing4/pull/1510
+* Add ShapeTests for Processing4 core module by @aakritithecoder in https://github.com/processing/processing4/pull/1462
+* Fix incomplete sentence in README.md for Gradle plugin by @SableRaf in https://github.com/processing/processing4/pull/1516
+* Added in SQL fields VARCHAR, CHAR, and BLOB by @elisefergusonn in https://github.com/processing/processing4/pull/1478
+* Use lazy evaluation for dependencies of the zipDistributable task by @neobrain in https://github.com/processing/processing4/pull/1474
+* Revise IntelliJ setup instructions for clarity by @SableRaf in https://github.com/processing/processing4/pull/1519
+* chore: update contributors.png from .all-contributorsrc by @processing-bot in https://github.com/processing/processing4/pull/1505
+* New Release Flow by @catilac in https://github.com/processing/processing4/pull/1531
+
+## New Contributors
+* @kjhollen made their first contribution in https://github.com/processing/processing4/pull/1497
+* @aakritithecoder made their first contribution in https://github.com/processing/processing4/pull/1462
+* @elisefergusonn made their first contribution in https://github.com/processing/processing4/pull/1478
+* @neobrain made their first contribution in https://github.com/processing/processing4/pull/1474
+* @processing-bot made their first contribution in https://github.com/processing/processing4/pull/1505
+
+**Full Changelog**: https://github.com/processing/processing4/compare/processing-1314-4.5.3...processing-1432-4.5.4
+      

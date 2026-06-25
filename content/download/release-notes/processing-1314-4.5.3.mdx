@@ -1,0 +1,70 @@
+---
+title: Processing 4.5.3
+date: 2026-03-02T15:08:38Z
+prerelease: true
+tagName: processing-1314-4.5.3
+release: true
+---
+Welcome to Processing 4.5.3. Also welcome to me saying a little something about our releases moving forward <3
+There have been so many new contributors, and there has been so much new activity in the community with helping find
+bugs, fix bugs, reporting issues, and general "alive-ness" which makes me feel *positive & good things* 
+
+In addition to many maintainance fixes, some of the more notable changes are:
+
+@Sumamasonia added a print() method to PMatrix which will be helpful for debugging (and also cleaned up the implementation!)
+@Stefterv notably created a Gradle Plugin for Processing Libraries
+@jSdCool made it so you can run a Processing sketch from anywhere on Windows systems
+@avinxshKD helped move several of our core libraries to Maven Central
+@hxrshxz fixed some SVG errors which is very wow.
+@SalmaneKhalili helped us fix a bug when switching to Android Mode, and also found some leaks to fix
+
+Anyways. Do take a look at this big long list, and check out the full changelog as well.
+
+Moon☙* ٭ . ' ☾*. ٭ ❤
+
+## What's Changed
+### What's Changed 🎊
+* Update README to welcome new contributors by @SableRaf in https://github.com/processing/processing4/pull/1394
+* Added print() method to PMatrix (Fixes #811) by @Sumamasonia in https://github.com/processing/processing4/pull/1355
+* fix syntax error in all-contributors by @catilac in https://github.com/processing/processing4/pull/1395
+* docs: add Sumamasonia as a contributor for code by @allcontributors[bot] in https://github.com/processing/processing4/pull/1396
+* Only set Newt window icons on Windows by @Stefterv in https://github.com/processing/processing4/pull/1398
+* Gradle Plugin for creating Processing Libraries by @Stefterv in https://github.com/processing/processing4/pull/1347
+* Revisiting the GitHub Actions Release system (.flatpak + .deb) by @Stefterv in https://github.com/processing/processing4/pull/1204
+* Update install script to create 'processing' instead of 'processing-java' on macOS by @Stefterv in https://github.com/processing/processing4/pull/1377
+* Allow exported apps on windows to be run from anywhere on the system by @jSdCool in https://github.com/processing/processing4/pull/1314
+* Reset defaults by setting value rather than remove by @Stefterv in https://github.com/processing/processing4/pull/1385
+* Add PR artifact uploads and comments by @Stefterv in https://github.com/processing/processing4/pull/1401
+* Remove PR workflow and disable PR comments by @Stefterv in https://github.com/processing/processing4/pull/1413
+* Remove Welcome Survey link, and unused function by @catilac in https://github.com/processing/processing4/pull/1408
+* Fix ArrayIndexOutOfBoundsException with compact SVG arc notation by @hxrshxz in https://github.com/processing/processing4/pull/1282
+* Publish `org.processing.core.svg` & `org.processing.core.net`  to maven Central by @avinxshKD in https://github.com/processing/processing4/pull/1411
+* Publish `org.processing.core.pdf` to maven Central by @avinxshKD in https://github.com/processing/processing4/pull/1407
+* Publish `org.processing.core.dxf` to Maven Central (Publish libraries to maven central) by @Stefterv in https://github.com/processing/processing4/pull/1403
+* Permissions Fix by @Stefterv in https://github.com/processing/processing4/pull/1400
+* Processing Gradle Plugin by @Stefterv in https://github.com/processing/processing4/pull/1233
+* Add diagnostics gathering feature to debugger and UI by @hxrshxz in https://github.com/processing/processing4/pull/1297
+* Use `start` instead of 0 for the starting index in `text` by @iTutFadU in https://github.com/processing/processing4/pull/1257
+* Processing Gradle Plugin - Version sync by @Stefterv in https://github.com/processing/processing4/pull/1423
+* Resource Leaks in processing/app/Util.java by @SalmaneKhalili in https://github.com/processing/processing4/pull/1436
+* Publish Processing Gradle plugins by @Stefterv in https://github.com/processing/processing4/pull/1405
+* docs: add SalmaneKhalili as a contributor for bug by @allcontributors[bot] in https://github.com/processing/processing4/pull/1438
+* fix portable settings.path not respected for prefs and language by @avinxshKD in https://github.com/processing/processing4/pull/1439
+* Publish Serial and IO libraries to Maven Central by @avinxshKD in https://github.com/processing/processing4/pull/1421
+* docs: add nickmcintyre as a contributor for test by @allcontributors[bot] in https://github.com/processing/processing4/pull/1442
+* Add unit tests for IntList by @txandmj in https://github.com/processing/processing4/pull/1102
+* Added unit tests for `PMatrix3D` in `processing:core` by @Rishab87 in https://github.com/processing/processing4/pull/1029
+* Added unit tests for `PImage` in `processing:core` by @Rishab87 in https://github.com/processing/processing4/pull/1049
+* Bug/androidcrash by @SalmaneKhalili in https://github.com/processing/processing4/pull/1447
+* docs: add Ebaron96 as a contributor for bug by @allcontributors[bot] in https://github.com/processing/processing4/pull/1454
+* docs: add Rishab87 as a contributor for code, and test by @allcontributors[bot] in https://github.com/processing/processing4/pull/1443
+
+## New Contributors
+* @Sumamasonia made their first contribution in https://github.com/processing/processing4/pull/1355
+* @hxrshxz made their first contribution in https://github.com/processing/processing4/pull/1282
+* @iTutFadU made their first contribution in https://github.com/processing/processing4/pull/1257
+* @SalmaneKhalili made their first contribution in https://github.com/processing/processing4/pull/1436
+* @txandmj made their first contribution in https://github.com/processing/processing4/pull/1102
+
+**Full Changelog**: https://github.com/processing/processing4/compare/processing-1313-4.5.2...processing-1314-4.5.3
+      

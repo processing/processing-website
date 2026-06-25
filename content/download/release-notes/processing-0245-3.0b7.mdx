@@ -1,0 +1,175 @@
+---
+title: Processing 3.0 beta 7
+date: 2015-09-23T01:06:38Z
+prerelease: false
+tagName: processing-0245-3.0b7
+release: true
+---
+```
+PROCESSING 3.0b7 (REV 0245) - 22 September 2015
+
+It's 8:57pm and Jakub and Ben are still holed up at Fathom's studio in Boston.
+Ben is wishing he was Jakub's age, as his wrists, neck, and back all feel 
+like a bag of broken pretzels after several hours/days/weeks/months of coding. 
+A bleary-eyed Jakub emerges from deep inside the error checker and completion 
+code, removes his headphones and grunts, "I think it's working."
+
+
+[ changes and additions ] 
+
++ Changed the Tool API to pass Base instead of Editor
+  https://github.com/processing/processing/wiki/Tool-Basics
+
+
+[ error checking and auto-completion fixes ] 
+
++ Huge rewrite of auto-complete and error checking code
+  https://github.com/processing/processing/issues/3812
+  https://github.com/processing/processing/pull/3845
+  https://github.com/processing/processing/pull/3856
+
++ Make preprocessor scope-aware
+  https://github.com/processing/processing/issues/3799
+  https://github.com/processing/processing/pull/3810
+
++ Red error underline is sometimes at wrong location
+  https://github.com/processing/processing/issues/3759
+  https://github.com/processing/processing/pull/3848
+
++ Using "new color()" instead of "color()" results in "color type detected" 
+  https://github.com/processing/processing/issues/3739
+  https://github.com/processing/processing/pull/3850
+
++ Code editor wrongly detects errors for libraries in code folder
+  https://github.com/processing/processing/issues/3732
+
+
+[ watcher bug fixes ] 
+
++ "Your sketch has been modified externally" with encrypted OS X volumes
+  https://github.com/processing/processing/issues/3650
+
++ sketch modified externally with FAT32 volumes on OS X
+  https://github.com/processing/processing/issues/3387
+
++ Prevent re-prompting users when they say "no" to "sketch modified" message
+
++ Add more preferences for editor.watcher to help with debugging
+
++ Cleaning up the logic in the watcher
+
+
+[ contribution manager fixes ] 
+
++ Contributions Manager UI design
+  https://github.com/processing/processing/issues/3482
+
++ CM selected tabs are too tall 
+  https://github.com/processing/processing/issues/3598
+
++ CM: Clicking item in Libraries list throws exception
+  https://github.com/processing/processing/issues/3667
+
++ CM: Libraries missing descriptions and Foundation credit
+  https://github.com/processing/processing/issues/3688
+
++ Clean up the header for the scrolling lists
+
++ Use real version of bold font, rather than the fake version, 
+  in several locations.
+
++ Remove the "v" from the version numbers in the updates tab
+
++ Set the frame title
+
++ Remove tooltip that repeats the contents of the tab labels
+
++ Fix spacing of buttons relative to the scroll bar
+  https://github.com/processing/processing/issues/3643
+
++ Updates tab has ugly horizontal line at top
+
++ Get rid of fake italic subheads on the Updates page
+
++ Remove extra component borders and focus quirks
+
++ Don't focus the window on the search box on opening
+
++ Prevent "updating" to a still-incompatible version of a contrib
+  https://github.com/processing/processing/issues/3801
+  https://github.com/processing/processing/pull/3805
+
++ Tools are getting redundantly added when installing new Tool
+  https://github.com/processing/processing/issues/3818
+  https://github.com/processing/processing/pull/3820
+
++ After clicking 'install' it's still possible to click it again
+  https://github.com/processing/processing/issues/3806
+  https://github.com/processing/processing/pull/3817
+
++ CM list should be sortable by status and author name
+  https://github.com/processing/processing/issues/3608
+
++ "Update All" button appears to do nothing in library manager
+  https://github.com/processing/processing/issues/3837
+  https://github.com/processing/processing/pull/3842
+
+
+[ miscellaneous bug fixes ]
+
++ JNA errors on startup when run from an account w/ non-ASCII characters
+  https://github.com/processing/processing/issues/3624
+
++ UnsatisfiedLinkError on startup "Access is denied" on Windows 10
+  https://github.com/processing/processing/issues/3800
+
++ SVG not highlighting as a keyword
+  https://github.com/processing/processing/issues/3752
+
++ Implement retina (2x) versions of all Contribution Manager icons
+  https://github.com/processing/processing/issues/3478
+
++ Show hover text when the mouse is over the 'debug' button
+
++ Update rollover label for buttons when pressing shift or alt
+
++ Replace the coffee cup icon for the Welcome window
+
++ ctrl-space first inserts space, then deletes it, with completion
+  https://github.com/processing/processing/issues/3847
+
++ Fix the bold text in the welcome window to not use fake bold
+
+
+[ we still care about graphics, too ]
+
++ FX2D display is inverted in 3.0b6
+  https://github.com/processing/processing/issues/3795
+
++ surface.setLocation(x,y) not working with the default renderer
+  https://github.com/processing/processing/issues/3821
+
++ Make the PApplet regex cache LRU
+  https://github.com/processing/processing/pull/3815
+
++ Minor OpenGL improvements
+  https://github.com/processing/processing/pull/3849
+
++ Cannot re-enable stroke or fill of a PShape with P2D
+  https://github.com/processing/processing/issues/3808
+
++ setResizable() with OpenGL broke in 3.0b6
+  https://github.com/processing/processing/issues/3825
+  https://github.com/processing/processing/commit/42c0150da0f400637de916db1f94a687a7bc4288
+
++ surface.setLocation() with OpenGL causing a freeze on Windows 
+  https://github.com/processing/processing/commit/4c0f9234c0a48f62363233cafc9c9951ee351d3e
+
++ selectInput/Output() is behind the drawing window (Windows)
+  https://github.com/processing/processing/issues/3775
+
++ MouseWheel count wrong (backwards) in P2D and P3D
+  https://github.com/processing/processing/issues/3840
+```
+
+      

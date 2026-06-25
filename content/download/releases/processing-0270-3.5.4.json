@@ -1,6 +1,7 @@
 {
   "name": "Processing 3.5.4",
   "tagName": "processing-0270-3.5.4",
+  "isPrerelease": false,
   "publishedAt": "2020-01-17T17:32:04Z",
   "releaseAssets": {
     "edges": [
@@ -33,5 +34,6 @@
         }
       }
     ]
-  }
+  },
+  "description": "```\r\nPROCESSING 3.5.4 (REV 0270) - 17 January 2020\r\n\r\nThis release has several bug fixes to improve the Contribution Manager,\r\nget Tweak Mode working again, and so on.\r\n\r\n\r\n[ changes ]\r\n\r\n+ Don't remove entries from Recent menu on Save As\r\n  https://github.com/processing/processing/issues/5902\r\n\r\n+ Use ctrl-page up/down for changing tabs on Windows\r\n  https://github.com/processing/processing/issues/5794\r\n\r\n+ Show error when .properties file is missing from a Library/Mode/Tool.\r\n\r\n\r\n[ fixes ]\r\n\r\n+ Tweak Mode working again (fix from Gal Sasson)\r\n  https://github.com/processing/processing/issues/5805\r\n  https://github.com/processing/processing/pull/5909\r\n\r\n+ Fix potential highlighting issue that wasn't selecting portions of text\r\n\r\n+ Names in the contribution listing are no longer case sensitive\r\n  (It was placing lowercase names at the bottom of the list.)\r\n\r\n+ Clean up a lot of bad temp file handling in the contrib manager\r\n  https://github.com/processing/processing/issues/5845\r\n  https://github.com/processing/processing/issues/5960\r\n\r\n+ Fix NullPointerException in installPreviouslyFailed() on startup\r\n  https://github.com/processing/processing/issues/5482\r\n  https://github.com/processing/processing/issues/5916\r\n\r\n\r\n[ internal ]\r\n\r\n+ Ignore subfolders in the \"libraries\" directory. This was causing some\r\n  nasty startup issues for folks, and other hard-to-track bugs. Hopefully\r\n  there aren't any installs that relied on this behavior.\r\n\r\n+ Update AppBundler to use newer SDK, recompile\r\n\r\n+ Edit build.xml files and appbundler to preserve more attributes\r\n```"
 }

@@ -1,0 +1,22 @@
+---
+title: Processing 3.3.7.1
+date: 2018-07-01T18:30:23Z
+prerelease: false
+tagName: processing-0264-3.3.7.1
+release: true
+---
+This is a special release for ARM only:
+
+* IO: pinMode() can now set pull-up and pull-down resistors on Raspbian (thanks to @xranby for 64-bit help)
+* IO: New example sketch showing how to use a MPR121 capacitive touch sensor (fun tutorial by @msurguy forthcoming)
+* IO: New example sketch showing how to use a BME280 environmental sensor (contributed by @OlivierLD)
+* IO: New example sketch showing how to use a TSL2561 light sensor (contributed by @OlivierLD)
+* IO: New example sketch showing how to use a PCA9685 Servo & PWM controller (contributed by @OlivierLD)
+* IO: pinMode() got faster
+* IO: I2C now supports talking to slower devices, such as Arduino boards
+* Support for ARM Mali graphics was added to P2D/P3D (thanks to seongwook from the forums for his help during bringup)
+* P3D now supports up to 4 lights on Pi using their OpenGL driver
+* Serial library now supports Raspbian's port naming (such as "/dev/serial0")
+* Processing on ARM can now export applications for Microsoft Windows
+* Java got updated to 8u172
+      

@@ -1,0 +1,25 @@
+.pre {
+    display: flex;
+    gap: var(--gutter);
+    white-space: pre-wrap;
+}
+
+.spacer {
+    flex: 1;
+    text-align: right;
+    color: var(--darkgray);
+}
+
+.icon {
+    width: 1.5em;
+    color: var(--processing-blue-dark);
+
+    &:hover {
+        color: var(--processing-blue);
+        cursor: pointer;
+    }
+
+    &:active {
+        opacity: 0.5;
+    }
+}
