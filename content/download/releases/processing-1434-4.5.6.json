@@ -1,0 +1,115 @@
+{
+  "name": "Processing 4.5.6",
+  "tagName": "processing-1434-4.5.6",
+  "isPrerelease": false,
+  "publishedAt": "2026-07-20T02:02:54Z",
+  "releaseAssets": {
+    "edges": [
+      {
+        "node": {
+          "name": "processing-4.5.6-linux-x64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1434-4.5.6/processing-4.5.6-linux-x64-portable.zip",
+          "size": 585778354
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.6-linux-x64.deb",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1434-4.5.6/processing-4.5.6-linux-x64.deb",
+          "size": 522017260
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.6-linux-aarch64.deb",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1434-4.5.6/processing-4.5.6-linux-aarch64.deb",
+          "size": 469095190
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.6-linux-aarch64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1434-4.5.6/processing-4.5.6-linux-aarch64-portable.zip",
+          "size": 531011428
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.6-windows-x64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1434-4.5.6/processing-4.5.6-windows-x64-portable.zip",
+          "size": 516963007
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.6-windows-x64.msi",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1434-4.5.6/processing-4.5.6-windows-x64.msi",
+          "size": 474144768
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.6-reference.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1434-4.5.6/processing-4.5.6-reference.zip",
+          "size": 107846948
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.6-linux-aarch64.snap",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1434-4.5.6/processing-4.5.6-linux-aarch64.snap",
+          "size": 479375360
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.6-linux-x64.flatpak",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1434-4.5.6/processing-4.5.6-linux-x64.flatpak",
+          "size": 344133384
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.6-macos-aarch64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1434-4.5.6/processing-4.5.6-macos-aarch64-portable.zip",
+          "size": 531497301
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.6-macos-aarch64.dmg",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1434-4.5.6/processing-4.5.6-macos-aarch64.dmg",
+          "size": 535046416
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.6-linux-x64.snap",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1434-4.5.6/processing-4.5.6-linux-x64.snap",
+          "size": 492474368
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.6-linux-aarch64.flatpak",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1434-4.5.6/processing-4.5.6-linux-aarch64.flatpak",
+          "size": 337688672
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.6-macos-x64.dmg",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1434-4.5.6/processing-4.5.6-macos-x64.dmg",
+          "size": 531080505
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.6-macos-x64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1434-4.5.6/processing-4.5.6-macos-x64-portable.zip",
+          "size": 527504260
+        }
+      }
+    ]
+  }
+}
