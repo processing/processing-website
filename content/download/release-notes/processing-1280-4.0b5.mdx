@@ -1,0 +1,72 @@
+---
+title: Processing 4.0 beta 5
+date: 2024-08-19T06:44:02Z
+prerelease: false
+tagName: processing-1280-4.0b5
+release: true
+---
+*Revision 1280 – 3 February 2022*
+
+Tomorrow morning is the first day of using Processing in class, so I thought I'd add some chaos to that by posting a release the night before. Having started the first day of class being locked out of the classroom, I'm just looking for ways to keep the students from getting too comfortable.
+
+**The aarch64 (Apple Silicon) release is not yet complete. If you want to use P2D and P3D (OpenGL) on macOS, use the Intel (x86) build, which is the only one that will be linked from processing.org/download until this situation is resolved.** See [\#370](https://github.com/processing/processing4/issues/370) for status updates.
+
+
+## Things you might notice in this release
+
+* We've hopefully finally, *finally*, _finally_ fixed the problems with the text caret position. [\#194](https://github.com/processing/processing4/issues/194), [\#226](https://github.com/processing/processing4/issues/226), and [\#342](https://github.com/processing/processing4/issues/342)
+
+* Syntax coloring updates based on the themes, mostly for the darker varieties.
+
+* Added “Refresh” and “Show Folder” buttons to the bottom of the sketchbook window. Also cleaned up some of the guts to make it faster and less… quirky.
+
+* Several fixes for resizing windows: P2D and P3D sketches should flicker red less, and the `NullPointerException`s when resizing sketches with the default renderer should be resolved. [\#386](https://github.com/processing/processing4/issues/386), [\#162](https://github.com/processing/processing4/issues/162), [\#4129](https://github.com/processing/processing/issues/4129), and [\#186](https://github.com/processing/processing4/issues/186)
+
+* When running a sketch, it shows the “Play” icon instead of the Processing icon for its windows (just like it does when running an exported application).
+
+
+## Out with the old…
+
+* The twenty year old (and sometimes buggy) TIFF reader/writer has been removed, so Java's internal ImageIO is now used for TIFF files. The code is slightly slower, but the saved files are more compatible, and `loadImage("blah.tif")` will also work on more files than in the past.
+
+* Also, image file names passed to `save()` and `saveFrame()` must have an extension. We are no longer adding `.tif` to files with no extension, because that can lead to confusing results, and the behavior is inconsistent with the rest of the API.
+
+* Rewrote the ten year old (since we're keeping track of these things) code that handles `fullScreen()` to get it working on Apple Silicon. [\#221](https://github.com/processing/processing4/issues/221) and [\#372](https://github.com/processing/processing4/issues/372)
+
+
+## Sam fixing up the preprocessor
+
+* Several bug fixes to the preprocessor. [\#384](https://github.com/processing/processing4/pull/384)
+
+* Better error message when mixing "active" (with setup and draw) and "static" (no function definitions) code styles. [\#290](https://github.com/processing/processing4/issues/290)
+
+* Fix problem with function `size(int, int)` in classes. [\#317](https://github.com/processing/processing4/issues/317)
+
+* Add (provisional) support for multi-line string text blocks. [\#371](https://github.com/processing/processing4/issues/371)
+
+* `fullScreen()` when specifying the display number was broken. [\#352](https://github.com/processing/processing4/issues/352) and [\#392](https://github.com/processing/processing4/pull/392)
+
+
+## Feature improvements in progress
+
+* Adding core functions to replace the `surface` methods:
+    * `surface.setSize(w, h)` now available as `windowResize(w, h)`
+    * `surface.setResizable()` is now `windowResizable()`
+    * `surface.setLocation(x, y)` is now `windowMove(x, y)`
+    * `surface.setTitle()` is now `windowTitle()`
+
+    There are also new event handlers `windowResized()` and `windowMoved()` that are called when the sketch window is resized or moved. We may still tweak the naming and behavior of these a little (consider these an "alpha" feature), but it's progress. [\#53](https://github.com/processing/processing4/issues/53)
+
+* Added necessary infrastructure to support language translations in Modes. [\#236](https://github.com/processing/processing4/issues/236), [\#237](https://github.com/processing/processing4/pull/237), [\#2833](https://github.com/processing/processing/pull/2833), [\#3154](https://github.com/processing/processing/issues/3154), and [\#3337](https://github.com/processing/processing/pull/3337)
+
+* Plumbing is in place to set the DPI of PNG images and the compression level of JPEG images. Though we still need some API for it.
+
+
+## Plumbing you probably won't notice
+
+* Several changes to how image saving is handled. There were lots of ways this could go wrong, this gets rid of several of them. Hopefully no new regressions!
+
+* Tweaked how URLs are opened for better compatibility on different operating systems.
+
+* Debugging failed installation of `.pdez` files.
+      

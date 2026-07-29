@@ -83,5 +83,6 @@
         }
       }
     ]
-  }
+  },
+  "description": "-_- okay. :) \r\n\r\n## What's Changed\r\n### What's Changed 🎊\r\n* Rename output JARs in createLibrary tasks by @Stefterv in https://github.com/processing/processing4/pull/1278\r\n\r\n\r\n**Full Changelog**: https://github.com/processing/processing4/compare/processing-1309-4.4.9...processing-1310-4.4.10"
 }

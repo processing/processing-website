@@ -1,6 +1,7 @@
 {
   "name": "Processing 3.5.3",
   "tagName": "processing-0269-3.5.3",
+  "isPrerelease": false,
   "publishedAt": "2019-02-03T21:44:43Z",
   "releaseAssets": {
     "edges": [
@@ -47,5 +48,6 @@
         }
       }
     ]
-  }
+  },
+  "description": "```\r\nPROCESSING 3.5.3 (REV 0269) - 3 February 2019\r\n\r\nThis fixes a typo that left the \"Redo\" command with the wrong\r\nkey shortcut on Windows in the last release, adds updated reference,\r\nand includes a handful of other smaller fixes.\r\n\r\n\r\n[ fixes ]\r\n\r\n+ \"Redo\" key shortcut for Windows screwed up\r\n  https://github.com/processing/processing/issues/5773\r\n\r\n+ Fix an editor problem with plain text (css, etc) files\r\n  https://github.com/processing/processing/issues/5628\r\n\r\n+ Default to using java.awt.Desktop methods for URLs/files when available\r\n  on Linux. Also cover a few weird cases that were failing silently.\r\n\r\n+ Ignore .class files found in the META-INF folder for imported JARs\r\n  https://github.com/processing/processing/issues/5778\r\n\r\n+ Get rid of errant 'Could not parse -1 for display' message.\r\n\r\n+ Fix up and clean a few file i/o issues that were causing resource\r\n  leaks with loadXxxx() commands, and intermediate folders not being\r\n  created for temporary files used by the saveXxxx() commands.\r\n\r\n\r\n[ additions ]\r\n\r\n+ Added reference for circle(), square(), push(), pop()\r\n\r\n\r\n[ contributions ]\r\n\r\n+ Updated translation of the word \"sketch\" for Russian speakers\r\n  https://github.com/processing/processing/pull/5673\r\n\r\n+ Update missing @Deprecated tags in PApplet.java\r\n  https://github.com/processing/processing/pull/5686\r\n```"
 }

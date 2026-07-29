@@ -1,6 +1,7 @@
 {
   "name": "Processing 3.2.3",
   "tagName": "processing-0255-3.2.3",
+  "isPrerelease": false,
   "publishedAt": "2016-11-07T11:47:10Z",
   "releaseAssets": {
     "edges": [
@@ -54,5 +55,6 @@
         }
       }
     ]
-  }
+  },
+  "description": "```\nPROCESSING 3.2.3 (REV 0255) - 7 November 2016\n\nLots of fixes to the Contribution Manager and a couple OpenGL tweaks.\n\n\n[ contributions manager ]\n\n+ If prettyVersion isn't present, just use version number\n\n+ Ensure that update.id is set before checking for contrib updates\n\n+ Clicking \"Update\" button in contrib manager shows non-retina version of icon\n  https://github.com/processing/processing/issues/4715\n  Other instances of the double-size icon found, should be fixed now\n\n+ Fix the library reporting scripts on the server\n\n+ Missing version number putting 'null' in the UI\n  https://github.com/processing/processing-docs/issues/478\n  https://github.com/processing/processing/issues/4696\n  https://github.com/processing/processing/pull/4712\n\n+ Major clean-ups to the Contribution Manager code\n\n\n[ contributions to the manager ]\n\n+ Up-to-date status disappears after filter is removed (contributed)\n  https://github.com/processing/processing/issues/4084\n\n+ Updates tab blank after adding, removing, updating a contribution\n  https://github.com/processing/processing/issues/4082\n  https://github.com/processing/processing/issues/4704\n\n+ Fixes the removal of redundant contribution and update related issues\n  https://github.com/processing/processing/pull/4086\n\n\n[ another fix ]\n\n+ Warn user to restart browser when it hangs on macOS\n  https://github.com/fathominfo/processing-p5js-mode/issues/4\n\n\n[ opengl improvements ]\n\n+ Automatic detection of POINT and LINE shaders fails\n  https://github.com/processing/processing/issues/4725\n\n+ Show warning when frameRate() less than 1 is called with P2D and P3D\n  https://github.com/processing/processing/issues/4716\n```\n"
 }

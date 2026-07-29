@@ -1,6 +1,7 @@
 {
   "name": "Processing 3.2.1",
   "tagName": "processing-0253-3.2.1",
+  "isPrerelease": false,
   "publishedAt": "2016-08-19T22:23:33Z",
   "releaseAssets": {
     "edges": [
@@ -47,5 +48,6 @@
         }
       }
     ]
-  }
+  },
+  "description": "```\nPROCESSING 3.2.1 (REV 0253) - 19 August 2016\n\nFixes for a couple major bugs that showed up in the last release.\n\n\n[ fixes ]\n\n+ \"Could not replace preferences.old\" error message on startup \n  when using Processing for the first time.\n  https://github.com/processing/processing/issues/4626\n\n+ Version 3.2 won't run from paths with spaces on Windows\n  https://github.com/processing/processing/issues/4623\n\n+ Python Mode was crashing on startup\n\n\n[ additions ]\n\n+ When quitting an OS X sketch, sometimes it was necessary to quit\n  twice. Added some code to work around this; we'll see how it goes.\n```\n"
 }

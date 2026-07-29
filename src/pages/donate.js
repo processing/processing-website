@@ -8,8 +8,9 @@ import Character from '../components/character/Character';
 
 import * as css from '../styles/pages/donate.module.css';
 import * as grid from '../styles/grid.module.css';
+import Donate from 'components/Donate';
 
-const Donate = () => {
+const DonatePage = () => {
   const intl = useIntl();
 
   return (
@@ -26,16 +27,7 @@ const Donate = () => {
             dangerouslySetInnerHTML={{
               __html: intl.formatMessage({ id: 'donateCryptoInfo' })
             }}></h3>
-          <div>
-            <script
-              src="https://donorbox.org/widget.js"
-              paypalexpress="true"></script>
-            <iframe
-              title={intl.formatMessage({ id: 'donatePaymentTitle' })}
-              className={css.donate}
-              allowpaymentrequest=""
-              src="https://donorbox.org/embed/support-processing?hide_donation_meter=true"></iframe>
-          </div>
+          <Donate />
           <div
             className={classnames(css.content)}
             dangerouslySetInnerHTML={{
@@ -50,4 +42,4 @@ const Donate = () => {
   );
 };
 
-export default Donate;
+export default DonatePage;

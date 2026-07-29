@@ -1,0 +1,30 @@
+import React from "react";
+import DownloadButton from "../Download";
+import classNames from "classnames";
+import * as styles from "./instructions.module.css";
+import { StaticImage } from "gatsby-plugin-image";
+import Architecture from "../Architecture";
+import { useVersionOrLatest } from "../Version";
+
+
+export default function MacOSDMG() {
+    const version = useVersionOrLatest()
+
+    return (
+        <ol className={classNames(styles.instructions)}>
+            <li>
+                Download Processing {version} for macOS
+                <div className={classNames(styles.downloads)}>
+                    <DownloadButton format="dmg" variant="download1" id="IWSPGL5F" arch="aarch64">Apple Silicon</DownloadButton>
+                    <DownloadButton format="dmg" variant="download2" id="VQUBVEQR" arch="x64">Intel</DownloadButton>
+
+                </div>
+                <Architecture />
+            </li>
+            <li>
+                Open the <strong>.dmg</strong> file and move <strong>Processing.app</strong> to the <strong>Applications</strong> folder<br />
+                <StaticImage style={{ boxShadow: "0px 5px 12px rgba(0,0,0,0.25)", margin: 24 }} width={400} src="../../../images/mac-installation.png" />
+            </li>
+        </ol>
+    )
+}

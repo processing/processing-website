@@ -1,6 +1,7 @@
 {
   "name": "Processing 3.3.5",
   "tagName": "processing-0262-3.3.5",
+  "isPrerelease": false,
   "publishedAt": "2017-06-23T21:18:57Z",
   "releaseAssets": {
     "edges": [
@@ -61,5 +62,6 @@
         }
       }
     ]
-  }
+  },
+  "description": "```\r\nPROCESSING 3.3.5 (REV 0262) - 23 June 2017\r\n\r\nFixes for a couple problems introduced in the last release.\r\n\r\n\r\n[ everything that went bad ] \r\n\r\n+ Console window was only remembering two lines of text \r\n  because of a name collision in the preferences handling.\r\n  https://github.com/processing/processing/issues/5110\r\n  \r\n+ Something went wrong with the 64-bit Linux release:\r\n  \"libjli.so: cannot open shared object file: No such file or directory\" \r\n  https://github.com/processing/processing/issues/5111\r\n\r\n+ \"Could not parse -1 for --display\" message on some Windows machines\r\n  https://github.com/processing/processing/issues/5118\r\n  https://github.com/processing/processing/pull/5141\r\n\r\n\r\n[ some new things hopefully going good ]\r\n\r\n+ Fix a NullPointerException that showed up with textWidth() and OpenGL\r\n  https://github.com/processing/processing/issues/5137\r\n  https://github.com/processing/processing/pull/5138\r\n\r\n+ Per request, use native file choosers by default on Linux. I'm told\r\n  that the default Linux file choosers have grown up in the last decade. \r\n  I'm trusting the person who is making that claim and making them default.\r\n  https://github.com/processing/processing/issues/5122\r\n  To get the old behavior in the Editor, change preferences.txt to say:\r\n  chooser.files.native = false\r\n  Or in your code, add this line:\r\n  useNativeSelect = false;\r\n```"
 }

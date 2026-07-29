@@ -1,6 +1,7 @@
 {
   "name": "Processing 3.0a4",
   "tagName": "processing-0231-3.0a4",
+  "isPrerelease": true,
   "publishedAt": "2014-09-12T22:28:33Z",
   "releaseAssets": {
     "edges": [
@@ -40,5 +41,6 @@
         }
       }
     ]
-  }
+  },
+  "description": "```\nPROCESSING 3.0a4 (REV 0231) - 12 September 2014\n\nAnother release to deal with a handful of bugs found in the last alpha.\nThe next alpha release will contain major changes and break a few libraries\nand tools, so this is an attempt at a final \"stable\" alpha that can be used\nuntil all those issues are sorted out.\n\n[ changes ] \n\n+ Contributions (Libraries, Modes, Tools) are now read from their own\n  listing that's specific to Processing 3.\n  https://github.com/processing/processing/issues/2850\n  https://github.com/processing/processing/issues/2849\n\n+ Made the new editor the default. \n\n+ The OS X default File menu (shown when no windows are open) now has the\n  order/naming changes found in the sketch window File menu. \n\n+ Turning off file watching because of errant \"this sketch has changed\"\n  messages. Hopefully this will return soon.\n  https://github.com/processing/processing/issues/2852\n\n+ Turned off code completion by default and reset its preference name.\n\n\n[ bug fixes ] \n\n+ TGAs from saveFrame() create transparent/black movies with Movie Maker\n  https://github.com/processing/processing/issues/2851\n\n+ Fix export problem on Windows when using the new editor\n  https://github.com/processing/processing/issues/2806\n\n+ Fix black outline around scaled fonts with the OpenGL renderer\n  https://github.com/processing/processing/issues/2845\n  https://github.com/processing/processing/pull/2856\n\n+ Several fixes to the contributions manager:\n  https://github.com/processing/processing/issues/2798\n  https://github.com/processing/processing/issues/2831\n\n\n[ internal tweaks ] \n\n+ Optimize creation of boxed primitives\n  https://github.com/processing/processing/pull/2826\n\n+ Add static modifier to inner classes that don't access parent\n  https://github.com/processing/processing/pull/2839\n\n+ Fix localization in OS X (requires writing property files)\n  https://github.com/processing/processing/pull/2844\n```\n"
 }

@@ -2,6 +2,7 @@ const path = require(`path`);
 const fs = require('fs');
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const { examplePath, referencePath } = require('./src/utils/paths');
+const semver = require('semver');
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === 'build-html' || stage === 'develop-html') {
@@ -59,6 +60,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     createReference(actions, graphql),
     createExamples(actions, graphql),
     createTutorials(actions, graphql),
+    createPlatformDownloadPages(actions, graphql),
     createDownloadAndReleases(actions, graphql)
   ]);
 };
@@ -353,6 +355,85 @@ async function createExamples(actions, graphql) {
   });
 }
 
+async function createPlatformDownloadPages(actions, graphql) {
+  const platformTemplate = path.resolve(`./src/templates/download/platform.js`);
+
+  const { createPage } = actions;
+
+  const platformQuery = await graphql(
+    `query FindPlatforms {
+        allFile(
+          filter: {sourceInstanceName: {eq: "download"}, relativeDirectory: {eq: "platforms"}}
+        ) {
+          edges {
+            node {
+              name
+              childJson {
+                title
+                userAgent
+                sort
+              }
+            }
+          }
+        }
+      }`
+  );
+
+  if (platformQuery.errors) {
+    throw platformQuery.errors;
+  }
+  const platforms = platformQuery.data.allFile.edges.map(e => {
+    const { childJson, ...rest } = e.node;
+    return { ...childJson, ...rest };
+  });
+
+  const versionsQuery = await graphql(
+    `query FindReleases {
+        allFile(
+          filter: {sourceInstanceName: {eq: "download"}, relativeDirectory: {eq: "releases"}}
+        ) {
+          edges {
+            node {
+              childJson {
+                tagName
+              }
+            }
+          }
+        }
+      }
+`);
+
+  if (versionsQuery.errors) {
+    throw versionsQuery.errors;
+  }
+
+  const versions = versionsQuery.data.allFile.edges
+    .map(e => e.node.childJson.tagName.replace(/^processing-(\d+-)?/, ''))
+    .map(e => semver.coerce(e, { includePrerelease: true, raw: e }))
+    .reverse()
+    .sort((a, b) => semver.compare(b, a))
+    ;
+
+  platforms.forEach((platform) => {
+    createPage({
+      path: `/download/${platform.name}`,
+      component: platformTemplate,
+      context: {
+        platform: platform.name
+      }
+    });
+    versions.forEach(version => {
+      createPage({
+        path: `/download/${platform.name}/${version.options.raw}`,
+        component: platformTemplate,
+        context: {
+          platform: platform.name,
+          version: version.options.raw
+        }
+      });
+    });
+  });
+}
 /**
   Create the download page programmatically since we need access to the selected
   releases in the pageQuery, thus we need to pass through pageContext.
@@ -385,7 +466,7 @@ async function createDownloadAndReleases(actions, graphql) {
   const { selectedReleases, selectedPreReleases } = result.data.json.childJson;
 
   createPage({
-    path: '/download',
+    path: '/download/legacy',
     component: downloadTemplate,
     context: {
       selectedReleases,

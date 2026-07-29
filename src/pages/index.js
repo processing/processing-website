@@ -22,6 +22,7 @@ import DMALogo from '../images/partners/ucla-dma.svg';
 import FathomLogo from '../images/partners/fathom.svg';
 import NetlifyLogo from '../images/partners/netlify.svg';
 import UptimeRobotLogo from '../images/partners/uptimerobot.svg';
+import DownloadCTA from 'components/download/DownloadCTA';
 
 const partners = [
   {
@@ -83,35 +84,17 @@ const IndexPage = ({ data }) => {
         title={intl.formatMessage({ id: 'introTitle' })}
         description={intl.formatMessage({ id: 'introText' })}
       />
-      <Sketch>
-        <div className={css.hero}>
-          <h1>{intl.formatMessage({ id: 'introTitle' })}</h1>
-          <p>{intl.formatMessage({ id: 'introText' })}</p>
-          <div className={css.buttons}>
-            <Button
-              to="/download"
-              variant="animate1"
-              size="large"
-              className={css.button}>
-              {intl.formatMessage({ id: 'download' })}
-            </Button>
-            <Button
-              to="/reference"
-              variant="animate1"
-              size="large"
-              className={css.button}>
-              {intl.formatMessage({ id: 'reference' })}
-            </Button>
-            <Button
-              to="/donate"
-              variant="animate1"
-              size="large"
-              className={css.button}>
-              {intl.formatMessage({ id: 'donate' })}
-            </Button>
-          </div>
+      <DownloadCTA />
+      <div className={classnames(grid.grid, grid.container)}>
+        <div className={classnames(grid.col, css.gettingStartedMessage)}>
+          <h2>Sketch with code</h2>
+          <p>
+            In Processing, everything is code, even the logo!<br />
+            Try changing a few values and see what happens.
+          </p>
         </div>
-      </Sketch>
+      </div>
+      <Sketch fullscreen={true} />
       <Examples
         examples={randomExamples}
         heading={intl.formatMessage({ id: 'examples' })}
@@ -190,7 +173,7 @@ const IndexPage = ({ data }) => {
               <p>{intl.formatMessage({ id: 'contributeP1' })}</p>
               <p>
                 {intl.formatMessage({ id: 'contributeP2' })}
-                <a href="https://github.com/processing/processing4/blob/main/build/README.md" target='_blank' rel='noreferrer'> 
+                <a href="https://github.com/processing/processing4/blob/main/build/README.md" target='_blank' rel='noreferrer'>
                   {intl.formatMessage({ id: 'building' })}
                 </a>
                 ,{' '}
@@ -207,7 +190,7 @@ const IndexPage = ({ data }) => {
             <div className={css.contributeButton}>
               <Button
                 href={'https://github.com/processing'}
-                target='_blank' 
+                target='_blank'
                 rel='noreferrer'
                 variant="animate1"
                 size="large">
@@ -308,7 +291,11 @@ const Examples = memo(({ heading, examples }) => {
 
   return (
     <div className={classnames(grid.grid, css.examples)}>
-      <h3 className={classnames(grid.col, css.examplesHeading)}>{heading}</h3>
+      <h3 className={classnames(grid.col, css.examplesHeading)}>Learn Through Examples</h3>
+      <p className={classnames(grid.col, css.examplesHeading)}>
+        Processing includes many examples you can run and modify. Open one, change<br />
+        the code, and make something new. This is a great way to learn!
+      </p>
       {examples.map((example) => (
         <div className={classnames(grid.col, css.example)} key={example.path}>
           <Link to={example.path}>

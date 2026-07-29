@@ -16,6 +16,7 @@ module.exports = {
   plugins: [
     // `gatsby-plugin-perf-budgets`,
     // `gatsby-plugin-webpack-bundle-analyser-v2`,
+    `gatsby-alias-imports`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-theme-i18n`,

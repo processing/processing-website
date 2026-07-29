@@ -1,0 +1,48 @@
+---
+title: Processing 4.4.3
+date: 2025-04-25T13:08:56Z
+prerelease: true
+tagName: processing-1303-4.4.3
+release: true
+---
+<!-- Release notes generated using configuration in .github/release.yml at main -->
+
+Fixes some issues people have spotted in 4.4.1 and 4.4.2, plus some quality of life and infrastructure improvements.
+
+Sketches will now looks super crisp by default on higher DPI displays (https://github.com/processing/processing4/pull/1038). Use `pixelDensity(1)` in `setup()` if you need to revert to the old default behavior.
+
+This release also resolves a long-standing issue where Processing could freeze at startup when indexing very large sketchbooks (https://github.com/processing/processing4/pull/1037)
+
+A note for Linux users: with this release, `processing-java` is being replaced by `processing cli`. If this breaks anything, consider setting an alias.
+
+### What's Changed 🎊
+
+#### Enhancements
+* Added unit tests for `PMatrix2D` in `processing:core` by @Rishab87 in https://github.com/processing/processing4/pull/1014
+* Added Unit Tests for `PVector` in `processing:core` by @Rishab87 in https://github.com/processing/processing4/pull/987
+* Store where Processing is installed by @Stefterv in https://github.com/processing/processing4/pull/1022
+* Change the default display density by @Stefterv in https://github.com/processing/processing4/pull/1038
+* Setup a Command Line Interface by @Stefterv in https://github.com/processing/processing4/pull/1050
+* Add `removable-media` as a Snap Plug by @Stefterv in https://github.com/processing/processing4/pull/1053
+* Added LSP Develop gradle task by @Stefterv in https://github.com/processing/processing4/pull/1059
+
+#### Bug Fixes
+* Move populateSketchbookMenu to a separate thread by @Stefterv in https://github.com/processing/processing4/pull/1037
+* Change for `includeJDK` to grab the running JDK by @Stefterv in https://github.com/processing/processing4/pull/1054
+    * Also fixes FX2D on macOS ARM
+* Added missing module by @Stefterv in https://github.com/processing/processing4/pull/1056
+
+#### Documentation
+* Update README.md for 4.4 release by @SableRaf in https://github.com/processing/processing4/pull/978
+* Adding steps about IntelliJ project safety and Gradle imports by @SableRaf in https://github.com/processing/processing4/pull/1030
+* Update PGraphics.java: fix typos in documentation by @Konsl in https://github.com/processing/processing4/pull/1034
+* Update CONTRIBUTING.md by @SableRaf in https://github.com/processing/processing4/pull/1039
+
+## New Contributors
+* @Konsl made their first contribution in https://github.com/processing/processing4/pull/1034
+
+## Known issues
+* Some shader examples are broken (see https://github.com/processing/processing4/issues/1063)
+
+**Full Changelog**: https://github.com/processing/processing4/compare/processing-1302-4.4.2...processing-1303-4.4.3
+      

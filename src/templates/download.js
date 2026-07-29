@@ -390,7 +390,7 @@ const OSSection = memo(
   }
 );
 
-const Link = memo(({ href, icon, title, description }) => (
+export const Link = memo(({ href, icon, title, description }) => (
   <li>
     <a href={href}>
       {icon}

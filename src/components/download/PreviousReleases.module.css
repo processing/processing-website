@@ -1,0 +1,26 @@
+.container {
+    flex-basis: var(--col3);
+    padding: 0;
+}
+
+@media (--reduced) {
+    .container {
+        flex-basis: var(--col6);
+    }
+}
+
+.box {
+    padding: var(--margin);
+}
+
+.title {
+    display: inline-block;
+}
+
+.releasesContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--gutter);
+    align-items: baseline;
+}

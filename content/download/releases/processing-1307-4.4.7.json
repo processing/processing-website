@@ -83,5 +83,6 @@
         }
       }
     ]
-  }
+  },
+  "description": "You can now access the forum, and report issues from the Help menu, thanks to first time contributor @lassevonpfeil! 💙 🎉 ✨ \r\nMinor bug fixes, and refactors.\r\n\r\nWe addressed a long standing issue where the location of an exception was not highlighted correctly, and no stack trace was shown. See issue: #1153. This should finally be resolved in this release thanks to @joshgiesbrecht \r\n\r\n### What's Changed 🎊\r\n#### Enhancements\r\n* New links in \"Help\" menu for issues and forum  by @lassevonpfeil in https://github.com/processing/processing4/pull/1210\r\n\r\n#### Bugs\r\n* Adding `jdk.httpserver` as it was not included for the local reference by @Stefterv in https://github.com/processing/processing4/pull/1217\r\n* Fix formatting in bug report template by @Stefterv in https://github.com/processing/processing4/pull/1220\r\n* Updated URL Mistake for PR #1210 and Issue #1208 by @lassevonpfeil in https://github.com/processing/processing4/pull/1221\r\n* Refactoring `SketchException` to be available outside of `app` by @joshgiesbrecht in https://github.com/processing/processing4/pull/1196\r\n\r\n## New Contributors\r\n* @lassevonpfeil made their first contribution in https://github.com/processing/processing4/pull/1210\r\n\r\n**Full Changelog**: https://github.com/processing/processing4/compare/processing-1306-4.4.6...processing-1307-4.4.7"
 }

@@ -83,5 +83,6 @@
         }
       }
     ]
-  }
+  },
+  "description": "Biggest driver for this 4.4.9 release is the broken libraries introduced in 4.4.8.\r\n\r\n## What's Changed\r\n### What's Changed 🎊\r\n* Fix syntax highlighting for short and Short types by @aj-m in https://github.com/processing/processing4/pull/1260\r\n* Update legacy and active libraries in build script by @Stefterv in https://github.com/processing/processing4/pull/1265\r\n* Fix signing property check in build script by @Stefterv in https://github.com/processing/processing4/pull/1266\r\n\r\n\r\n**Full Changelog**: https://github.com/processing/processing4/compare/processing-1308-4.4.8...processing-1309-4.4.9"
 }

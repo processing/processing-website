@@ -1,0 +1,16 @@
+.architecture {
+    color: var(--processing-dark-blue);
+    font-size: var(--text-regular);
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin-top: var(--gutter-half);
+
+    &:hover {
+        color: var(--download-button);
+    }
+}
+
+.explainer {
+    flex-basis: var(--col8);
+}

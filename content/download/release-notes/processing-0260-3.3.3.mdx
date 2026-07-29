@@ -1,0 +1,25 @@
+---
+title: Processing 3.3.3
+date: 2017-05-02T21:47:01Z
+prerelease: false
+tagName: processing-0260-3.3.3
+release: true
+---
+```
+PROCESSING 3.3.3 (REV 0260) - 2 May 2017
+
+Happy birthday to my Dad and baby brother!
+
+Let's celebrate with a couple bug fixes:
+
++ keyPressed not returning false once a key is released
+  https://github.com/processing/processing/issues/5033
+
++ Image tint() was broken in 3.3.x
+  https://github.com/processing/processing/issues/5040
+  https://github.com/processing/processing/pull/5042
+  
++ Deal with loadBytes() regressions introduced by their rewrite
+  (was breaking p5jsMode because of its use of loadBytes(File)
+```
+      

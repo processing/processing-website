@@ -83,5 +83,6 @@
         }
       }
     ]
-  }
+  },
+  "description": "<!-- Release notes generated using configuration in .github/release.yml at main -->\r\n\r\nVersion 4.4.4 is a stable release that includes the latest bug fixes for the Gradle-based build system. It builds on the improvements introduced in 4.4.2 and 4.4.3, which were released as Beta only.\r\n\r\n### What's Changed 🎊\r\n\r\n* More snap permissions by @Stefterv in https://github.com/processing/processing4/pull/1088\r\n* Fix executable permissions within Snap by @Stefterv in https://github.com/processing/processing4/pull/1075\r\n* Update Batik by @Stefterv in https://github.com/processing/processing4/pull/1080\r\n\r\n**Full Changelog**: https://github.com/processing/processing4/compare/processing-1303-4.4.3...processing-1304-4.4.4"
 }

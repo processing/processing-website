@@ -28,6 +28,7 @@
   --foundation-mid: #9c4bff;
   --foundation-dark: #5501a4;
 
+  --white: #ffffff;
   --lightgray: #f5f5f5;
   --gray: #dbdbdb;
   --darkgray: #898989;
@@ -37,6 +38,14 @@
   --download-background: #F2F6FF;
   --download-inactive: #8890B3;
   --download-background-active: rgba(80, 139, 255, 0.08);
+  --download-button: #717DAD;
+  --download-button-shadow: #B7CDFF;
+
+  --donate-bg-start: #111956;
+  --donate-bg-end: #3441A2;
+  --donate-shadow: #8BADF9;
+
+  --instruction-background: #E1EAF8;
 
   --text-xsmall: 0.8rem;
   --text-small: 0.875rem;
@@ -57,6 +66,7 @@
   --gutter: 16px;
   --gutter-half: calc(var(--gutter) / 2);
   --gutter-double: calc(var(--gutter) * 2);
+  --gutter-threeq: calc(var(--gutter) * 0.75);
 
   --vertical-margin-xxsmall: 5px;
   --vertical-margin-xsmall: 10px;
