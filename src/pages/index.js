@@ -206,7 +206,7 @@ const IndexPage = ({ data }) => {
             </div>
             <div className={css.contributeButton}>
               <Button
-                href={'https://github.com/processing'}
+                href={'https://github.com/processing/processing4/tree/main?tab=contributing-ov-file'}
                 target='_blank' 
                 rel='noreferrer'
                 variant="animate1"
