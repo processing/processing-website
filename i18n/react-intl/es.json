@@ -88,7 +88,7 @@
   "otherVersions": "¿Necesitas otra versión?",
   "olderVersions": "¿Buscas versiones anteriores?",
   "githubEarlierReleases": "En GitHub encontrarás <a href='https://github.com/processing/processing4/releases'>versiones anteriores de Processing 4</a>.",
-  "downloadChanges": "La <a href='https://github.com/processing/processing4/blob/main/build/shared/revisions.md'>lista de revisiones</a> cubre las diferencias entre versiones a detalle.",
+  "downloadChanges": "La <a href='https://github.com/processing/processing4/releases'>lista de revisiones</a> cubre las diferencias entre versiones a detalle.",
   "earlierReleases": "Para versiones anteriores (3.5.4 o menor) revisa nuestra <a href='/releases'>lista de lanzamientos estables</a>.",
   "getStartedTitle": "Comienza",
   "getStartedDescription": "Comienza ya aprendiendo Processing y crea tu primer programa hoy!",
