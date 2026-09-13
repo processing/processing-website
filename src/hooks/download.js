@@ -78,12 +78,6 @@ export const usePreparedReleases = (releases) => {
       for (let j = 0; j < release.releaseAssets.edges.length; j++) {
         const asset = release.releaseAssets.edges[j].node;
         if (asset.name.includes('portable')) continue;
-        if (asset.name.includes(".snap")) {
-          asset.downloadUrl = process.env.SNAPSTORE_URL ?? "https://snapcraft.io/processing";
-          if (asset.name.includes("aarch64")) {
-            asset.downloadUrl = "https://snapcraft.io/install/processing/raspbian"
-          }
-        }
         item.assets.push({
           name: asset.name,
           os: getOS(asset.name),
@@ -103,6 +97,10 @@ export const usePreparedReleases = (releases) => {
       }
       for (let os in item.assetsByOs) {
         item.assetsByOs[os].sort((a, b) => {
+          const snapRank = (asset) => (asset.name?.includes('.snap') ? 1 : 0);
+          const snapDiff = snapRank(a) - snapRank(b);
+          if (snapDiff !== 0) return snapDiff;
+
           if (a.bit === b.bit) return 0;
           if (a.bit != null && a.bit.includes('Intel')) return 1;
           if (b.bit != null && b.bit.includes('Intel')) return -1;
