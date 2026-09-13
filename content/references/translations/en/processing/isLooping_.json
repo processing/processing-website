@@ -1,0 +1,12 @@
+{
+  "brief": "Reports whether the sketch is continuously executing the code within <b>draw()</b>",
+  "related": ["loop_", "noLoop_", "draw_"],
+  "name": "isLooping()",
+  "description": "Returns <b>true</b> if Processing is continuously executing the code within <b>draw()</b>, and <b>false</b> after <b>noLoop()</b> has been called. Calling <b>loop()</b> resumes continuous execution and <b>isLooping()</b> will return <b>true</b> again.",
+  "syntax": ["isLooping()"],
+  "returns": "boolean",
+  "type": "function",
+  "category": "structure",
+  "subcategory": "",
+  "parameters": []
+}
