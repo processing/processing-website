@@ -35,9 +35,15 @@ const referencePath = (name, libraryName, lang) => {
 **/
 const pathToName = (name) => name.replace(/_$/g, '()').replace(/_/g, '::');
 
+const referenceSourceUrl = (name, libraryName, lang = 'en') => {
+  const filePath = `content/references/translations/${lang}/${libraryName}/${name}.json`;
+  return `https://github.com/processing/processing-website/blob/main/${filePath}`;
+};
+
 module.exports = {
   exampleSlug,
   examplePath,
   referencePath,
+  referenceSourceUrl,
   pathToName
 };
