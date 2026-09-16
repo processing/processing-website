@@ -1,0 +1,115 @@
+{
+  "name": "Processing 4.5.7 RC",
+  "tagName": "processing-1435-4.5.7-rc",
+  "isPrerelease": true,
+  "publishedAt": "2026-09-15T20:04:41Z",
+  "releaseAssets": {
+    "edges": [
+      {
+        "node": {
+          "name": "processing-4.5.7-rc-linux-aarch64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1435-4.5.7-rc/processing-4.5.7-rc-linux-aarch64-portable.zip",
+          "size": 530852601
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.7-rc-linux-aarch64.deb",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1435-4.5.7-rc/processing-4.5.7-rc-linux-aarch64.deb",
+          "size": 469012162
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.7-rc-linux-x64.deb",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1435-4.5.7-rc/processing-4.5.7-rc-linux-x64.deb",
+          "size": 521977120
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.7-rc-linux-x64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1435-4.5.7-rc/processing-4.5.7-rc-linux-x64-portable.zip",
+          "size": 585649227
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.7-rc-windows-x64.msi",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1435-4.5.7-rc/processing-4.5.7-rc-windows-x64.msi",
+          "size": 474107904
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.7-rc-windows-x64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1435-4.5.7-rc/processing-4.5.7-rc-windows-x64-portable.zip",
+          "size": 516947413
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.7-rc-reference.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1435-4.5.7-rc/processing-4.5.7-rc-reference.zip",
+          "size": 107847558
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.7-rc-linux-aarch64.snap",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1435-4.5.7-rc/processing-4.5.7-rc-linux-aarch64.snap",
+          "size": 479354880
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.7-rc-linux-x64.snap",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1435-4.5.7-rc/processing-4.5.7-rc-linux-x64.snap",
+          "size": 492462080
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.7-rc-linux-aarch64.flatpak",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1435-4.5.7-rc/processing-4.5.7-rc-linux-aarch64.flatpak",
+          "size": 337306288
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.7-rc-linux-x64.flatpak",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1435-4.5.7-rc/processing-4.5.7-rc-linux-x64.flatpak",
+          "size": 344101184
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.7-rc-macos-aarch64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1435-4.5.7-rc/processing-4.5.7-rc-macos-aarch64-portable.zip",
+          "size": 531511220
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.7-rc-macos-aarch64.dmg",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1435-4.5.7-rc/processing-4.5.7-rc-macos-aarch64.dmg",
+          "size": 535089826
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.7-rc-macos-x64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1435-4.5.7-rc/processing-4.5.7-rc-macos-x64-portable.zip",
+          "size": 527498738
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.7-rc-macos-x64.dmg",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1435-4.5.7-rc/processing-4.5.7-rc-macos-x64.dmg",
+          "size": 531084721
+        }
+      }
+    ]
+  }
+}
