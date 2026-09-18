@@ -4,8 +4,9 @@
     "processing-0225-2.1.2",
     "processing-0270-3.5.4",
     "processing-1434-4.5.6"
+    
   ],
   "selectedPreReleases": [
-    "processing-1435-4.5.7-rc"
+    "processing-1435-4.5.7-rc1"
   ]
 }
