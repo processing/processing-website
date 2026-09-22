@@ -11,13 +11,18 @@ const getOS = (name) => {
 };
 
 const getBit = (name) => {
-  if (name.includes('x64')) return 'Intel';
+  if (name.includes('.deb')) return 'Debian Package (.deb)';
+  else if (name.includes('.flatpak')) return 'Flatpak';
+  else if (name.includes('.snap')) return 'Snap';
+  else if (name.includes('.msi')) return '64-bit';
+  else if (name.includes('macos-aarch64')) return 'Apple Silicon';
+  else if (name.includes('macos-x64')) return 'Intel';
   else if (name.includes('windows64')) return '64-bit';
   else if (name.includes('windows32')) return '32-bit';
-  else if (name.includes('macos-aarch64')) return 'Apple Silicon';
-  else if (name.includes('linux-arm32')) return '32-bit';
   else if (name.includes('linux-arm64')) return '64-bit';
+  else if (name.includes('linux-arm32')) return '32-bit';
   else if (name.includes('linux-aarch64')) return 'Arm';
+  else if (name.includes('x64')) return '64-bit';
   else return null;
 };
 
@@ -118,7 +123,7 @@ export const usePreparedReleases = (releases) => {
 };
 
 /**
-  Hook to detect the OS where the site is mounted. 
+  Hook to detect the OS where the site is mounted.
   Will default to Windows if fails to detect other.
 **/
 export const useMachineOS = (releases) => {
