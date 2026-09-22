@@ -16,4 +16,3 @@ void draw() {
   String item = inventory.get(2);
   text(item, width/2, height/2);
 }
-

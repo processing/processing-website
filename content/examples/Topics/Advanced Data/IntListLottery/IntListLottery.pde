@@ -96,4 +96,3 @@ void showList(IntList list, float x, float y) {
     text(val, x+i*32, y+6);
   }
 }
-

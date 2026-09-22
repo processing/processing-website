@@ -29,4 +29,3 @@ void draw() {
 void serialEvent(Serial p) { 
   inString = p.readString(); 
 } 
-

@@ -33,4 +33,3 @@ void drawGradient(float x, float y) {
     h = (h + 1) % 360;
   }
 }
-

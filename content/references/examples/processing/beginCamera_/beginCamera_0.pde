@@ -9,4 +9,3 @@ endCamera();
 translate(200, 200, 0);
 rotateY(PI/3);
 box(180);
-

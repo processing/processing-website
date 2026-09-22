@@ -15,4 +15,3 @@ void draw() {
   // Map mouseX from -1.0 to 1.0 for left to right
   in.pan(map(mouseX, 0, width, -1.0, 1.0));
 }
-

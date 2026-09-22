@@ -24,4 +24,3 @@ void draw() {
   // Display the Mover
   mover.display(); 
 }
-

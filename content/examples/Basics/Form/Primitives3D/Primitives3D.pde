@@ -26,5 +26,3 @@ pushMatrix();
 translate(500, height*0.35, -200);
 sphere(280);
 popMatrix();
-
-

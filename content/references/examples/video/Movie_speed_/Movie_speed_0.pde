@@ -15,4 +15,3 @@ void draw() {
   }
   image(myMovie, 0, 0);
 }
-

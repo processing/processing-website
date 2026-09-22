@@ -10,4 +10,3 @@ void setup() {
   String[] colors = inventory.valueArray();
   println(colors);
 }
-

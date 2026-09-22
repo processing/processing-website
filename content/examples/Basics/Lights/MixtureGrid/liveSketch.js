@@ -38,4 +38,3 @@ function runLiveSketch(s) {
               s.PI / 2, 2);     // Angle, concentration
   }
 }
-

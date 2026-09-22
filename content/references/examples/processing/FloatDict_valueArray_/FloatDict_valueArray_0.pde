@@ -10,4 +10,3 @@ void setup() {
   float[] amounts = inventory.valueArray();
   println(amounts);
 }
-

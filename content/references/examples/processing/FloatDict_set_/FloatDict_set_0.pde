@@ -11,4 +11,3 @@ void setup() {
   inventory.set("sugar", 5.8);   // Add sugar
   println(inventory);
 }
-

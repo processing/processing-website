@@ -20,4 +20,3 @@ void mousePressed() {
   float pos=1;
   sine.set(freq, amp, add, pos);
 }
-

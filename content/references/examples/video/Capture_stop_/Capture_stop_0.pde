@@ -18,4 +18,3 @@ void draw() {
 void mousePressed() {
   cam.stop();
 }
-

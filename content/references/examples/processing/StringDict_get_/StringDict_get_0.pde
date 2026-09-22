@@ -16,4 +16,3 @@ void draw() {
   String teaColor = inventory.get("tea");
   text(teaColor, width/2, height/2);
 }
-

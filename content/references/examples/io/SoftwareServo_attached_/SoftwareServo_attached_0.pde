@@ -24,4 +24,3 @@ void keyPressed() {
     servo.attach(4);
   }
 }
-

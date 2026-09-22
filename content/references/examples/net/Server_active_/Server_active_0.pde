@@ -22,4 +22,3 @@ void draw() {
 void mousePressed() {
   myServer.stop();
 }
-

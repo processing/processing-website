@@ -40,6 +40,3 @@ for (int i = 5; i <= height; i += 5) {
     point(width/4, i);
   }
 }
-
-
-

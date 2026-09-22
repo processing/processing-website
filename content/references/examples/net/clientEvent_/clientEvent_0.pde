@@ -21,4 +21,3 @@ void clientEvent(Client someClient) {
   println(dataIn);
   redraw();
 }
-

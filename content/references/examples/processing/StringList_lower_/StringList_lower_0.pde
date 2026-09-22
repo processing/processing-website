@@ -10,4 +10,3 @@ void setup() {
   inventory.lower();
   println(inventory);
 }
-

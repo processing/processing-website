@@ -23,4 +23,3 @@ void pinEvent(int pin) {
   }
   GPIO.interrupts();
 }
-

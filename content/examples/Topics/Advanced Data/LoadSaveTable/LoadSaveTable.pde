@@ -80,4 +80,3 @@ void mousePressed() {
   // And reloading it
   loadData();
 }
-

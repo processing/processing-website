@@ -12,4 +12,3 @@ void draw() {
   translate(mouseX, mouseY);
   shape(circle);
 }
-

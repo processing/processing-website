@@ -47,4 +47,3 @@ void renderWave() {
     ellipse(x*xspacing, height/2+yvalues[x], 16, 16);
   }
 }
-

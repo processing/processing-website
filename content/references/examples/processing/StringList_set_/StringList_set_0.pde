@@ -10,4 +10,3 @@ void setup() {
   inventory.set(1, "barley");
   println(inventory);
 }
-

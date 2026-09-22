@@ -11,4 +11,3 @@ void setup() {
   float[] sortedInventory = inventory.array();
   println(sortedInventory);
 }
-

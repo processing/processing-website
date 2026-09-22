@@ -14,4 +14,3 @@ void draw() {
   background(val);
   myServer.write(val);
 }
-

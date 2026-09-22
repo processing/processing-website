@@ -4,4 +4,3 @@ for (int i=0; i < 100; i++) {
   stroke(r);
   line(i, 0, i, 100);
 }
-

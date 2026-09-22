@@ -10,4 +10,3 @@ void setup() {
   inventory.mult(0, 2);
   println(inventory);
 }
-

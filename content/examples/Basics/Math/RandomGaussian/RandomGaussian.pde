@@ -22,6 +22,3 @@ void draw() {
   fill(255, 10);
   ellipse(x, height/2, 32, 32);   // Draw an ellipse at our "normal" random location
 }
-
-
-
