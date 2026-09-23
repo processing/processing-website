@@ -26,16 +26,6 @@
       "type": ["float"]
     },
     {
-      "name": "x",
-      "description": "the x component of the vector",
-      "type": ["float"]
-    },
-    {
-      "name": "y",
-      "description": "the y component of the vector",
-      "type": ["float"]
-    },
-    {
       "name": "v",
       "description": "any variable of type PVector",
       "type": ["PVector"]
