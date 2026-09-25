@@ -16,4 +16,3 @@ void draw() {
   float coffeeWeight = inventory.get("coffee");
   text(coffeeWeight, width/2, height/2);
 }
-

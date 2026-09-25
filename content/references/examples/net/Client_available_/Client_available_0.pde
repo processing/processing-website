@@ -16,4 +16,3 @@ void draw() {
   }
   background(dataIn);
 }
-

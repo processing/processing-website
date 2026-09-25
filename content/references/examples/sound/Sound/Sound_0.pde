@@ -22,4 +22,3 @@ void draw() {
   // control the overall output volume of the whole Sound library.
   s.volume(amplitude);
 }
-

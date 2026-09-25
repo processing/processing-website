@@ -125,4 +125,3 @@ class PenroseLSystem extends LSystem {
   }
 
 }
-

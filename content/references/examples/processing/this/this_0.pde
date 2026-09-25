@@ -12,4 +12,3 @@ void draw() {
   this.ypos = 100;
   line(0, 0, 100, ypos);
 }
-

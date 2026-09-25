@@ -18,4 +18,3 @@ void draw() {
   background(0);
   ps.render();
 }
-

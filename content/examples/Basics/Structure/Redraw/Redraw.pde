@@ -31,5 +31,3 @@ void draw() {
 void mousePressed() {
   redraw();
 }
-
-

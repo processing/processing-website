@@ -17,9 +17,3 @@ void draw() {
   background(0);
   ds.render();
 }
-
-
-
-
-
-

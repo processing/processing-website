@@ -121,4 +121,3 @@ void createGround() {
     coords[i].y = base1.y + ((base2.y-base1.y)/baseLength)*i;
   }
 }
-

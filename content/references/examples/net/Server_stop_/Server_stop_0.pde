@@ -38,4 +38,3 @@ void mousePressed()
   background(0);
   println("Server Status:" + "\t" + myServerRunning);
 }
-

@@ -11,5 +11,3 @@ void setup() {
   String[] sortedInventory = inventory.array();
   println(sortedInventory);
 }
-
-

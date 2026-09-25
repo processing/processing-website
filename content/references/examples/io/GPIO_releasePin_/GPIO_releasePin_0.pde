@@ -24,4 +24,3 @@ void keyPressed() {
   GPIO.releasePin(4);
   exit();
 }
-

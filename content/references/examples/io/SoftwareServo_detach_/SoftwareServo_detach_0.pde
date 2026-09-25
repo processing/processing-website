@@ -20,4 +20,3 @@ void keyPressed() {
   // press a key to release the motor
   servo.detach();
 }
-

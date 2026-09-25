@@ -19,4 +19,3 @@ void draw() {
   	greenLed.brightness(0.0);
   }
 }
-

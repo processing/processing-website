@@ -17,4 +17,3 @@ void setup() {
   // and close interface again
   adc.close();
 }
-

@@ -51,4 +51,3 @@ void draw()
   if(xpos4 < -thick) { xpos4 =  width; }
   if(xpos4 >  width) { xpos4 = -thick; }
 }
-

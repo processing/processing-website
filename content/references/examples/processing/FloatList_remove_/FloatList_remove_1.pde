@@ -10,4 +10,3 @@ void setup() {
   float val = inventory.remove(1);
   println("The value " + val + " was removed.");
 }
-

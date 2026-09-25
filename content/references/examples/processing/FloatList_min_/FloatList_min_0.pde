@@ -10,4 +10,3 @@ void setup() {
   float smallest = inventory.min();
   println(smallest);
 }
-

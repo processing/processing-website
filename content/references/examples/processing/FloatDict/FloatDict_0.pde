@@ -16,4 +16,3 @@ void draw() {
   float weight = inventory.get("coffee");
   text(weight, width/2, height/2);
 }
-

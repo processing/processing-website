@@ -22,4 +22,3 @@ class HLine {
     line(0, y, width, y); 
   } 
 } 
-

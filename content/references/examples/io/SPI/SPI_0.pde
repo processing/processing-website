@@ -18,4 +18,3 @@ void draw() {
   // val is between 0 and 1023
   println(val);
 }
-

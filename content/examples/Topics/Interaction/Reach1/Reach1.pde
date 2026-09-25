@@ -47,4 +47,3 @@ void segment(float x, float y, float a) {
   line(0, 0, segLength, 0);
   popMatrix();
 }
-

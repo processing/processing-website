@@ -28,4 +28,3 @@ void mousePressed() {
   in.stop();
   delay.stop();
 }
-

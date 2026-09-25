@@ -19,4 +19,3 @@ void mousePressed() {
   float pos=1;
   noise.set(amp, add, pos);
 }
-

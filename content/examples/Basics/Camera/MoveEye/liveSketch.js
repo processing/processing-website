@@ -22,4 +22,3 @@ function runLiveSketch(s) {
     s.line(0, 0, -100, 0, 0, 100);
   };
 }
-

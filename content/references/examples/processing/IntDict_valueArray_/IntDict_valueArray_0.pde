@@ -10,4 +10,3 @@ void setup() {
   int[] amounts = inventory.valueArray();
   println(amounts);
 }
-

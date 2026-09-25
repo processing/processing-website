@@ -10,4 +10,3 @@ void setup() {
   inventory.increment("tapes");
   println(inventory);  // There are now 16 tapes
 }
-

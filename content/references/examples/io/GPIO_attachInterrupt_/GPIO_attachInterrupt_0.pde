@@ -19,4 +19,3 @@ void pinEvent(int pin) {
     bgcolor = color(0);
   }
 }
-
