@@ -46,7 +46,8 @@
 }
 
 .item {
-  flex-basis: calc(100% / 5);
+  flex: 0 0 calc(25% - 2 * var(--gutter)); 
+  max-width: calc(25% - 2 * var(--gutter));
 
   & h4 {
     font-size: var(--text-regular);
