@@ -407,11 +407,21 @@ async function createDownloadAndReleases(actions, graphql) {
   This only happens on build, not on dev.
 **/
 exports.onPostBuild = () => {
-  const releases = require('./content/download/selected.json');
-  const latest = releases.selectedReleases[0];
-  const [name, number, version] = latest.split('-');
+  const { selectedReleases } = require('./content/download/selected.json');
+  // The PDE expects the highest build number (e.g. 1435), so pick it
+  // regardless of array order and skip tags without one (e.g. processing-1.5.1)
+  const build = selectedReleases
+    .map((tag) => tag.match(/^processing-(\d+)-/))
+    .filter(Boolean)
+    .map((match) => Number(match[1]))
+    .sort((a, b) => b - a)[0];
+
+  if (!build) {
+    throw new Error('latest.txt: no release with a build number in selected.json');
+  }
+
   fs.writeFileSync(
     path.join(__dirname, 'public', 'download', 'latest.txt'),
-    number
+    String(build)
   );
 };
