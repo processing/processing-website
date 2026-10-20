@@ -4,6 +4,8 @@ import LogoWindows from '../../images/logo-windows.svg';
 import LogoMac from '../../images/logo-macos.svg';
 import LogoLinux from '../../images/logo-linux.svg';
 import LogoRaspberry from '../../images/logo-raspberry.svg';
+import LogoLinuxWhite from '../../images/logo-linux-white.svg';
+import LogoRaspberryWhite from '../../images/logo-raspberry-white.svg';
 
 export function usePlatforms() {
     const queryResults = useStaticQuery(
@@ -64,15 +66,15 @@ export function useGuessedPlatform() {
 }
 
 
-export function PlatformIcon({ platform, ...rest }) {
+export function PlatformIcon({ platform, white, ...rest }) {
     if (platform?.name === "macos") {
         return <LogoMac  {...rest} />;
     } else if (platform?.name === "windows") {
         return <LogoWindows {...rest} />;
     } else if (platform?.name === "linux") {
-        return <LogoLinux  {...rest} />;
+        return white ? <LogoLinuxWhite {...rest} /> : <LogoLinux {...rest} />;
     } else if (platform?.name === "raspberry-pi") {
-        return <LogoRaspberry {...rest} />;
+        return white ? <LogoRaspberryWhite {...rest} /> : <LogoRaspberry {...rest} />;
     }
     else {
         return null;

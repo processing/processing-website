@@ -39,8 +39,8 @@ export default function DownloadCTA() {
                         <ul>
                             {platforms.map(node => (
                                 <li key={node.name}>
-                                    <Link to={`/download/${node.name}`} aria-label={node.title}>
-                                        <PlatformIcon platform={node} className={classnames(styles.icon)} />
+                                    <Link to={`/download/${node.name}`} aria-label={node.title} tabIndex={0}>
+                                        <PlatformIcon platform={node} white className={classnames(styles.icon)} />
                                     </Link>
                                 </li>
                             ))}
