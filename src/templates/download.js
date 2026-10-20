@@ -31,7 +31,7 @@ import * as grid from '../styles/grid.module.css';
 // Set to false to hide the Donate character
 const showDonate = false;
 
-const Download = ({ data }) => {
+const Download = ({ data, pageContext }) => {
   const intl = useIntl();
   const releases = usePreparedReleases(data.releases.nodes);
   const prereleases = usePreparedReleases(data.prereleases.nodes);
@@ -101,6 +101,7 @@ const Download = ({ data }) => {
 
       <MainDownloadSection
         release={selectedRelease}
+        preferredOS={pageContext.os}
         onAfterDownload={onAfterDownload}
       />
 
@@ -191,9 +192,9 @@ const PreReleaseSwitch = memo(({ releases, prereleases, selectedRelease, setSele
   )
 });
 
-const MainDownloadSection = memo(({ release, onAfterDownload }) => {
+const MainDownloadSection = memo(({ release, preferredOS, onAfterDownload }) => {
   const intl = useIntl();
-  const detectedAsset = useMachineOS(release.assetsByOs, release.publishedAt);
+  const detectedAsset = useMachineOS(release.assetsByOs, preferredOS);
 
   const appleSiliconAsset = useMemo(() => release.assets.find(asset => detectedAsset.os === "macOS" && asset.os === "macOS" && asset.bit === "Intel"), [release, detectedAsset]);
 

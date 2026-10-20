@@ -121,7 +121,7 @@ export const usePreparedReleases = (releases) => {
   Hook to detect the OS where the site is mounted. 
   Will default to Windows if fails to detect other.
 **/
-export const useMachineOS = (releases) => {
+export const useMachineOS = (releases, preferredOS) => {
   const [detected, setDetected] = useState({
     os: '',
     asset: null
@@ -142,7 +142,9 @@ export const useMachineOS = (releases) => {
     };
 
     const { userAgent } = navigator;
-    if (userAgent.search('Windows') !== -1) {
+    if (releases[preferredOS]?.length) {
+      selectOS(preferredOS);
+    } else if (userAgent.search('Windows') !== -1) {
       selectOS('Windows');
     } else if (userAgent.search('Mac') !== -1) {
       selectOS('macOS');
@@ -151,7 +153,7 @@ export const useMachineOS = (releases) => {
     } else {
       selectOS('Windows');
     }
-  }, [releases, selectAsset]);
+  }, [releases, preferredOS, selectAsset]);
 
   return detected;
 };
