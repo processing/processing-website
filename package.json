@@ -12,10 +12,10 @@
   "browserslist": "last 2 versions, >0.5%",
   "repository": {
     "type": "git",
-    "url": "https://github.com/designsystemsinternational/processing-website"
+    "url": "https://github.com/processing/processing-website"
   },
   "bugs": {
-    "url": "https://github.com/designsystemsinternational/processing-website/issues"
+    "url": "https://github.com/processing/processing-website/issues"
   },
   "scripts": {
     "dev": "gatsby develop -H 0.0.0.0",
