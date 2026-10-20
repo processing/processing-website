@@ -79,7 +79,6 @@ const Shape = (props) => {
   return (
     /* eslint-disable-next-line jsx-a11y/no-static-element-interactions */
     <span
-      tabIndex={tabIndex}
       className={css.root}
       onMouseEnter={handleMouseEnterLine}
       onMouseLeave={handleMouseLeaveLine}>

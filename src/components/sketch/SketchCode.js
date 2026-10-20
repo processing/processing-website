@@ -8,6 +8,11 @@ import Button from '../Button';
 
 import * as css from './SketchCode.module.css';
 
+const CONTROLS = 'button, summary, input, [role="button"]';
+
+// Controls inside a folded <details> have no layout and can't take focus
+const isShown = (el) => el.getClientRects().length > 0;
+
 const SketchCode = ({
   width,
   height,
@@ -23,6 +28,43 @@ const SketchCode = ({
 }) => {
   const [hasInteracted, setHasInteracted] = useState(false);
   const showGridButton = useRef(null);
+  const rootRef = useRef(null);
+  const activeRef = useRef(null);
+
+  // Roving tabindex: the editor is a single tab stop and arrow keys move
+  // between its controls (Left/Right stay free for changing values)
+  useEffect(() => {
+    const controls = [...rootRef.current.querySelectorAll(CONTROLS)];
+    if (!controls.includes(activeRef.current)) {
+      activeRef.current = controls.find(isShown) ?? null;
+    }
+    controls.forEach((el) => {
+      el.tabIndex = isVisible && el === activeRef.current ? 0 : -1;
+    });
+  });
+
+  const handleFocus = (e) => {
+    if (!e.target.matches(CONTROLS)) return;
+    if (activeRef.current) activeRef.current.tabIndex = -1;
+    activeRef.current = e.target;
+    e.target.tabIndex = 0;
+  };
+
+  const handleKeyDown = (e) => {
+    const controls = [...rootRef.current.querySelectorAll(CONTROLS)].filter(
+      isShown
+    );
+    const current = controls.indexOf(e.target);
+    const next = {
+      ArrowDown: Math.min(current + 1, controls.length - 1),
+      ArrowUp: Math.max(current - 1, 0),
+      Home: 0,
+      End: controls.length - 1
+    }[e.key];
+    if (current === -1 || next === undefined) return;
+    e.preventDefault();
+    controls[next].focus();
+  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -34,8 +76,14 @@ const SketchCode = ({
   return (
     /* eslint-disable-next-line jsx-a11y/no-static-element-interactions */
     <div
+      ref={rootRef}
+      role="toolbar"
+      aria-label="Sketch code"
+      aria-orientation="vertical"
       className={classnames(css.root, { [css.blink]: !hasInteracted })}
-      onMouseEnter={() => setHasInteracted(true)}>
+      onMouseEnter={() => setHasInteracted(true)}
+      onFocus={handleFocus}
+      onKeyDown={handleKeyDown}>
       <div className={css.numBar}></div>
       <Line num={1}>
         <span className="hljs-datatype">int</span> u = 60;
@@ -45,7 +93,7 @@ const SketchCode = ({
         <button
           className={classnames(css.interactive, 'hljs-keyword')}
           onClick={(e) => onChange('showGrid', !showGrid)}
-          tabIndex={isVisible ? 0 : -1}
+          tabIndex={-1}
           ref={showGridButton}>
           {showGrid ? 'true' : 'false'}
         </button>
@@ -53,7 +101,7 @@ const SketchCode = ({
       </Line>
       <Line num={3} />
       <details open>
-        <summary tabIndex={isVisible ? 0 : -1}>
+        <summary tabIndex={-1}>
           <Line num={4}>
             <span className="hljs-keyword">void</span>{' '}
             <span className="hljs-title">setup</span>
@@ -70,7 +118,7 @@ const SketchCode = ({
       </details>
       <Line num={7} />
       <details open>
-        <summary tabIndex={isVisible ? 0 : -1}>
+        <summary tabIndex={-1}>
           <Line num={8}>
             <span className="hljs-keyword">void</span>{' '}
             <span className="hljs-title">draw</span>
@@ -90,7 +138,7 @@ const SketchCode = ({
           <button
             className={classnames(css.interactive, 'hljs-constant')}
             onClick={(e) => onChange('strokeCap', !strokeCap)}
-            tabIndex={isVisible ? 0 : -1}>
+            tabIndex={-1}>
             {strokeCap ? 'SQUARE' : 'ROUND'}
           </button>
           );
@@ -105,7 +153,7 @@ const SketchCode = ({
             max={2}
             isInteger={false}
             onChange={(val) => onChange('strokeWeight', val)}
-            tabIndex={isVisible ? 0 : -1}
+            tabIndex={-1}
           />
           {' * u);'}
         </Line>
@@ -122,7 +170,7 @@ const SketchCode = ({
                   onChangeShape={onChangeShape}
                   color={shapes[i].color}
                   shapeIndex={i}
-                  tabIndex={isVisible ? 0 : -1}
+                  tabIndex={-1}
                 />
                 );
               </Line>
@@ -134,7 +182,7 @@ const SketchCode = ({
                   draggableClassName={css.interactive}
                   min={0}
                   max={8}
-                  tabIndex={isVisible ? 0 : -1}
+                  tabIndex={-1}
                 />
                 ;
               </Line>
@@ -146,7 +194,7 @@ const SketchCode = ({
       </details>
       <Line num={23} />
       <details>
-        <summary tabIndex={isVisible ? 0 : -1}>
+        <summary tabIndex={-1}>
           <Line num={24}>
             <span className="hljs-keyword">void</span>
             {` drawGrid() {`}
@@ -195,7 +243,7 @@ const SketchCode = ({
         className={css.reset}
         variant="gray"
         onClick={onResetState}
-        tabIndex={isVisible ? 0 : -1}>
+        tabIndex={-1}>
         Reset
       </Button>
     </div>
