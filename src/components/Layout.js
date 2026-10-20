@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { MDXProvider } from '@mdx-js/react';
 import classnames from 'classnames';
+import { useIntl } from 'react-intl';
 
 import Header from './Header';
 import Footer from './Footer';
@@ -22,6 +23,7 @@ import * as css from './Layout.module.css';
 export const LayoutContext = React.createContext();
 
 const Layout = ({ children, withSidebar, withBreadcrumbs, mainClassName }) => {
+  const intl = useIntl();
   const [headerScrolled, setHeaderScrolled] = useState(false);
   const [currentHeading, setCurrentHeading] = useState('');
 
@@ -69,6 +71,9 @@ const Layout = ({ children, withSidebar, withBreadcrumbs, mainClassName }) => {
 
   return (
     <div className={css.root}>
+      <a href="#main-content" className={css.skipLink}>
+        {intl.formatMessage({ id: 'skipToContent' })}
+      </a>
       <div id="processing-banner" />
       <link rel="stylesheet" href="https://foundation-donate-banner.netlify.app/static/css/main.css" />
       <script src="https://foundation-donate-banner.netlify.app/static/js/main.js" ></script>
@@ -76,6 +81,8 @@ const Layout = ({ children, withSidebar, withBreadcrumbs, mainClassName }) => {
         <Helmet titleTemplate="%s / Processing.org" />
         <Header siteTitle="Processing" scrolled={headerScrolled} />
         <main
+          id="main-content"
+          tabIndex={-1}
           className={classnames(css.main, mainClassName, {
             [css.withBreadcrumbs]: withBreadcrumbs
           })}>

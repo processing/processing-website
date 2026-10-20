@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
 import { LocalizedLink as Link } from 'gatsby-theme-i18n';
 
@@ -14,6 +14,19 @@ import MenuIcon from '../images/menu-icon.svg';
 
 const Navbar = ({ siteTitle, scrolled }) => {
   const [expanded, setExpanded] = useState(false);
+  const toggleRef = useRef(null);
+
+  useEffect(() => {
+    if (!expanded) return;
+    const onKeyDown = (e) => {
+      if (e.key !== 'Escape') return;
+      setExpanded(false);
+      toggleRef.current?.focus();
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [expanded]);
+
   return (
     <div
       className={classnames(
@@ -32,6 +45,7 @@ const Navbar = ({ siteTitle, scrolled }) => {
         </h1>
         <div className={classnames(grid.col, css.menuWrapper)}>
           <button
+            ref={toggleRef}
             className={css.menuToggle}
             aria-label="Main menu"
             aria-expanded={expanded}

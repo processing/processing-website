@@ -29,6 +29,16 @@
   color: white;
 }
 
+.root:focus-visible {
+  outline: 2px solid var(--processing-blue-mid);
+  outline-offset: 8px;
+}
+
+.dark:focus-visible,
+.outline:focus-visible {
+  outline-color: var(--white);
+}
+
 /*  Variant: Animate1 & Animate2 */
 .dark {
   background-color: var(--white);

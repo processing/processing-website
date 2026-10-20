@@ -28,7 +28,8 @@
 
 .active,
 .subitem.active,
-.item.hasSubmenu:hover {
+.item.hasSubmenu:hover,
+.item.hasSubmenu:focus-within {
     border-left-color: var(--processing-blue-dark);
 }
 
@@ -50,7 +51,8 @@
     transition: max-width 0.15s ease-in-out, opacity 0.15s ease-in-out;
 }
 
-.item:hover .submenu {
+.item:hover .submenu,
+.item:focus-within .submenu {
     max-width: none;
     opacity: 1;
 }
@@ -74,14 +76,6 @@
         border-left-color: var(--processing-blue-mid);
         color: var(--processing-blue-mid);
     }
-}
-
-
-.item:hover .submenu,
-.item:focus-visible .submenu,
-.submenu:focus-within {
-    opacity: 1;
-    max-height: 400px;
 }
 
 

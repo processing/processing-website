@@ -13,11 +13,34 @@
   }
 }
 
+.skipLink {
+  position: absolute;
+  top: var(--gutter-half);
+  left: var(--gutter-half);
+  z-index: 1000;
+  padding: var(--gutter-half) var(--gutter);
+  background-color: var(--processing-blue-dark);
+  color: var(--white);
+  font-weight: 600;
+  transform: translateY(calc(-100% - var(--gutter)));
+
+  &:focus {
+    transform: none;
+    color: var(--white);
+    outline: 2px solid var(--processing-blue-mid);
+    outline-offset: 2px;
+  }
+}
+
 .main {
   position: relative;
   flex: 1;
   padding-top: var(--vertical-margin-large);
   padding-bottom: var(--vertical-margin-large);
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .withBreadcrumbs {
