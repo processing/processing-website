@@ -1,9 +1,7 @@
 .root {
-  background-image: linear-gradient(
-    to right,
-    white 20%,
-    var(--processing-blue-gradient)
-  );
+  background-image: linear-gradient(to right,
+      white 20%,
+      var(--processing-blue-gradient));
 }
 
 .editorBtn {
@@ -73,8 +71,7 @@
     display: block;
   }
 
-  .code,
-  .editorBtn {
-    display: none;
+  .code.codeVisible {
+    transform: translate(0, 0);
   }
 }

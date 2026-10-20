@@ -374,6 +374,19 @@ async function createDownloadAndReleases(actions, graphql) {
             selectedPreReleases
           }
         }
+        platforms: allFile(
+          filter: {
+            sourceInstanceName: { eq: "download" }
+            relativeDirectory: { eq: "platforms" }
+          }
+        ) {
+          nodes {
+            name
+            childJson {
+              title
+            }
+          }
+        }
       }
     `
   );
@@ -392,6 +405,17 @@ async function createDownloadAndReleases(actions, graphql) {
       selectedPreReleases
     }
   });
+  for (const platform of result.data.platforms.nodes) {
+    createPage({
+      path: `/download/${platform.name}`,
+      component: downloadTemplate,
+      context: {
+        selectedReleases,
+        selectedPreReleases,
+        os: platform.childJson.title
+      }
+    });
+  }
   createPage({
     path: '/releases',
     component: releasesTemplate,

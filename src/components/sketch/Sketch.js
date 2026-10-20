@@ -43,9 +43,9 @@ const initialState = {
   ]
 };
 
-const Sketch = ({ children }) => {
+const Sketch = ({ children, fullscreen = false }) => {
   const [state, setState] = useState(null);
-  const [showCode, setShowCode] = useState(false);
+  const [showCode, setShowCode] = useState(fullscreen);
   const intl = useIntl();
 
   // Load saved graphic from localstorage when component mounts in client
@@ -114,8 +114,9 @@ const Sketch = ({ children }) => {
           </div>
         </div>
         <div className={classnames(grid.col, css.right)}>
+
           <SketchGraphic {...state} />
-          <Button
+          {!fullscreen && <Button
             onClick={onCodeToggle}
             size="large"
             variant="animate2"
@@ -123,7 +124,7 @@ const Sketch = ({ children }) => {
             {showCode
               ? intl.formatMessage({ id: 'closeEditor' })
               : intl.formatMessage({ id: 'openEditor' })}
-          </Button>
+          </Button>}
         </div>
       </div>
     </div>
