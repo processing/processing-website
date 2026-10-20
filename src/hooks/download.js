@@ -35,10 +35,10 @@ const getTooltip = (name, intProvider) => {
 };
 
 // Adapted from https://stackoverflow.com/q/15900485
-function formatBytes(bytes, decimals = 0) {
+function formatBytes(bytes, decimals = 0, unitBase = 1024) {
   if (!+bytes) return '0 Bytes';
 
-  const k = 1024;
+  const k = unitBase;
   const dm = decimals < 0 ? 0 : decimals;
   const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
 
@@ -84,12 +84,13 @@ export const usePreparedReleases = (releases) => {
             asset.downloadUrl = "https://snapcraft.io/install/processing/raspbian"
           }
         }
+        const os = getOS(asset.name);
         item.assets.push({
           name: asset.name,
-          os: getOS(asset.name),
+          os,
           bit: getBit(asset.name),
           url: asset.downloadUrl,
-          size: formatBytes(asset.size),
+          size: formatBytes(asset.size, 0, os === 'macOS' ? 1000 : 1024),
           tooltipMessage: getTooltip(asset.name, (id) =>
             intl.formatMessage({ id })
           )
