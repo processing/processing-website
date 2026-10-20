@@ -1,0 +1,5 @@
+.root {
+  padding-top: var(--gutter-double);
+  color: var(--processing-blue-dark);
+  margin: 0;
+}

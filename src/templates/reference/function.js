@@ -12,6 +12,7 @@ import Content from '../../components/ContentWithSidebar';
 import { SidebarTree } from '../../components/Sidebar';
 import Section from '../../components/reference/Section';
 import License from '../../components/reference/License';
+import GoToSource from '../../components/reference/GoToSource';
 import { CodeList, ExampleList } from '../../components/reference/ContentList';
 import { ExampleItem } from '../../components/examples/ExamplesList';
 import Breadcrumbs from '../../components/Breadcrumbs';
@@ -147,6 +148,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
                 </ul>
               </Section>
             )}
+            <GoToSource name={name} libraryName={libraryName} />
             <License />
           </Content>
         ) : (
@@ -156,6 +158,7 @@ const RefTemplate = ({ data, pageContext, ...props }) => {
               {' '}
               {intl.formatMessage({ id: 'englishPage' })}
             </Link>
+            <GoToSource name={name} libraryName={libraryName} />
           </Content>
         )}
       </div>
