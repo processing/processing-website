@@ -10,4 +10,3 @@ void setup() {
   inventory.remove("flour");
   println(inventory);  // Flour is removed from list
 }
-

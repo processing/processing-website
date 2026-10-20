@@ -54,4 +54,3 @@ class Eye {
     popMatrix();
   }
 }
-

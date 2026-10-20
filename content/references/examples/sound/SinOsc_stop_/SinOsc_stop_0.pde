@@ -16,4 +16,3 @@ void draw() {
 void mousePressed() {
   sine.stop();
 }
-

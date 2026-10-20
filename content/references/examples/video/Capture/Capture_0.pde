@@ -32,4 +32,3 @@ void draw() {
   // without any additional resizing, transformations, or tint.
   //set(0, 0, cam);
 }
-

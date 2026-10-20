@@ -14,4 +14,3 @@ void keyTyped() {
 void keyReleased() {
   println("released " + int(key) + " " + keyCode);
 }
-

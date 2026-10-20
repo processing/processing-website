@@ -10,4 +10,3 @@ void setup() {
   inventory.sub(1, 15);
   println(inventory);
 }
-

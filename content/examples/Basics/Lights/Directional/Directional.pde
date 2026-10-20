@@ -25,4 +25,3 @@ void draw() {
   translate(200, 0, 0); 
   sphere(80); 
 }
-

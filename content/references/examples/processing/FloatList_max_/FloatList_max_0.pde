@@ -10,4 +10,3 @@ void setup() {
   float largest = inventory.max();
   println(largest);
 }
-

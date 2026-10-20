@@ -4,4 +4,3 @@ void setup() {
   println("Available LEDs:");
   printArray(LED.list());
 }
-

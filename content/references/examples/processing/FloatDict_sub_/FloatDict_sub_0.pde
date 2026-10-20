@@ -10,4 +10,3 @@ void setup() {
   inventory.sub("flour", 3.4);
   println(inventory);  // There is 2.4 of flour
 }
-

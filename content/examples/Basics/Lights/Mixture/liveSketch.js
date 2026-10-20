@@ -27,4 +27,3 @@ function runLiveSketch(s) {
     s.box(150);
   };
 }
-

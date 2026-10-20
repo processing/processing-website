@@ -16,4 +16,3 @@ dataIn = myClient.read();
   }
   background(dataIn);
 }
-

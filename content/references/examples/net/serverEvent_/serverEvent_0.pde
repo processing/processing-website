@@ -21,4 +21,3 @@ void draw() {
 void serverEvent(Server someServer, Client someClient) {
   println("We have a new client: " + someClient.ip());
 }
-

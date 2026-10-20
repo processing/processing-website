@@ -22,4 +22,3 @@ void draw() {
   stroke(255);
   ellipse(width/2, height/2, width*0.75, height*0.75);
 }
-

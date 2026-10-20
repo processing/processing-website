@@ -21,4 +21,3 @@ void mousePressed() {
   float pos=1;
   pulse.set(freq, plswidth, amp, add, pos);
 }
-

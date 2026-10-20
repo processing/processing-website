@@ -19,4 +19,3 @@ void draw() {
     line(i, 0, i, height);
   }
 }
-

@@ -17,4 +17,3 @@ void draw() {
     println(lastIn);
   }
 }
-

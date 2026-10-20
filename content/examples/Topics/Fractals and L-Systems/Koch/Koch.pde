@@ -26,5 +26,3 @@ void draw() {
     k.restart();
   }
 }
-
-

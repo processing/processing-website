@@ -13,4 +13,3 @@ myPort = new Serial(this, Serial.list()[0], 9600);
   
 // Send a capital A out the serial port:
 myPort.write(65);
-

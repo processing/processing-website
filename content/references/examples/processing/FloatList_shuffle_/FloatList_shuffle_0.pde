@@ -10,4 +10,3 @@ void setup() {
   inventory.shuffle();
   println(inventory);
 }
-

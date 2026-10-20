@@ -18,4 +18,3 @@ void mousePressed() {
   float amp = 0.5;
   file.set(rate, pos, amp);
 }
-

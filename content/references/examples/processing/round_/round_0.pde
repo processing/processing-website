@@ -6,4 +6,3 @@ int ry = round(y);  // Sets 'ry' to 10
 
 float z = 9.9;
 int rz = round(z);  // Sets 'rz' to 10
-

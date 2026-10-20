@@ -24,4 +24,3 @@ void mousePressed() {
 void mouseReleased() {
   myMovie.play();
 }
-

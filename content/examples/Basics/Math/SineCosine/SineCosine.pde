@@ -44,4 +44,3 @@ void draw() {
   angle2 += 3;
   
 }
-

@@ -9,4 +9,3 @@ void draw() {
   image(img1, 0, 0);
   image(img2, width/2, 0);
 }
-

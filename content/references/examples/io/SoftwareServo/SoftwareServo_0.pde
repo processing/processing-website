@@ -15,4 +15,3 @@ void draw() {
   float angle = 90 + sin(frameCount / 100.0)*85;
   servo.write(angle);
 }
-

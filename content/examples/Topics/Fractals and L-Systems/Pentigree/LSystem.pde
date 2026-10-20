@@ -73,4 +73,3 @@ class LSystem {
     return newProduction;
   }
 }
-

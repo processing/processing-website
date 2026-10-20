@@ -17,4 +17,3 @@ for (Map.Entry me : hm.entrySet()) {
 // We can also access values by their key
 int val = hm.get("Casey");
 println("Casey is " + val);
-

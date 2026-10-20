@@ -16,4 +16,3 @@ void draw() {
   int numRecords = inventory.get("records");
   text(numRecords, width/2, height/2);
 }
-

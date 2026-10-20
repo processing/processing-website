@@ -16,4 +16,3 @@ void pinEvent(int pin) {
   // disable further interrupts from occuring on this pin
   GPIO.releaseInterrupt(pin);
 }
-

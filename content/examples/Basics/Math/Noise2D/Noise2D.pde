@@ -39,6 +39,3 @@ void draw() {
   
   updatePixels();
 }
-
-
-

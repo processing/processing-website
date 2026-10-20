@@ -10,4 +10,3 @@ void setup() {
   inventory.sortReverse();
   println(inventory);
 }
-

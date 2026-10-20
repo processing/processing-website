@@ -10,4 +10,3 @@ void setup() {
   inventory.sub("cd", 20);
   println(inventory);  // There are 64 cds
 }
-

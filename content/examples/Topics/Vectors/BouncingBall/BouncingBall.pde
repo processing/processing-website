@@ -45,5 +45,3 @@ void draw() {
   fill(127);
   ellipse(location.x,location.y,48,48);
 }
-
-

@@ -10,4 +10,3 @@ void setup() {
   inventory.add(1, 15);
   println(inventory);
 }
-

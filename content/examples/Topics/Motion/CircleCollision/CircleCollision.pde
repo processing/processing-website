@@ -26,7 +26,3 @@ void draw() {
   
   balls[0].checkCollision(balls[1]);
 }
-
-
-
-

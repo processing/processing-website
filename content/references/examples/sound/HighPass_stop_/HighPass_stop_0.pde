@@ -23,4 +23,3 @@ void mousePressed() {
   noise.stop();
   highPass.stop();
 }
-

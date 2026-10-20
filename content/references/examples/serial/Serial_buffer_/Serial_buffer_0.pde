@@ -30,4 +30,3 @@ void draw() {
 void serialEvent(Serial myPort) {
   inString = myPort.readString();
 }
-

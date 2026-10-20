@@ -16,4 +16,3 @@ void draw() {
   String s = inventory.get("tea");
   text(s, width/2, height/2);
 }
-

@@ -10,4 +10,3 @@ void setup() {
   inventory.mult("tea", 4);
   println(inventory);  // There is 32.8 of tea
 }
-

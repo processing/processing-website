@@ -17,4 +17,3 @@ void draw() {
   i2c.write(val & 255);
   i2c.endTransmission();
 }
-

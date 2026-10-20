@@ -10,4 +10,3 @@ void setup() {
   inventory.add("tea", 1.1);
   println(inventory);  // There is 9.3 of tea
 }
-

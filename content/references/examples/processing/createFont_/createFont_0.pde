@@ -10,4 +10,3 @@ void setup() {
   textAlign(CENTER, CENTER);
   text("!@#$%", width/2, height/2);
 }
-

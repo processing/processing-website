@@ -76,4 +76,3 @@ class Orb {
     position.y = groundSegment.y + deltaY;
   }
 }
-

@@ -10,4 +10,3 @@ void setup() {
   int val = inventory.remove(1);
   println("The value " + val + " was removed.");
 }
-

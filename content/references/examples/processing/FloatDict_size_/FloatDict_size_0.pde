@@ -10,4 +10,3 @@ void setup() {
   int s = inventory.size();
   println(s);
 }
-

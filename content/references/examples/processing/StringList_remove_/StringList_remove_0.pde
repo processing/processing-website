@@ -10,4 +10,3 @@ void setup() {
   inventory.remove(1);
   println(inventory);
 }
-

@@ -48,4 +48,3 @@ void mousePressed() {
   // A new ball object is added to the ArrayList (by default to the end)
   balls.add(new Ball(mouseX, mouseY, ballWidth));
 }
-

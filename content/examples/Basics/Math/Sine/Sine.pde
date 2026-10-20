@@ -28,4 +28,3 @@ void draw() {
   
   angle += 0.02;
 }
-

@@ -24,4 +24,3 @@ void mousePressed() {
   float bw=80;
   bandPass.set(freq, bw);
 }
-

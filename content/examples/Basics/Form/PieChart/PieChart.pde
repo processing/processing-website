@@ -27,4 +27,3 @@ void pieChart(float diameter, int[] data) {
     lastAngle += radians(data[i]);
   }
 }
-

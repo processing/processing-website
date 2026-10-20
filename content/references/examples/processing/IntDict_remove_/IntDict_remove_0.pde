@@ -10,4 +10,3 @@ void setup() {
   inventory.remove("tapes");
   println(inventory);  // Tapes are removed from list
 }
-

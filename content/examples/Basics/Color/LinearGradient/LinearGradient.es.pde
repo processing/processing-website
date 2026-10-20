@@ -51,4 +51,3 @@ void setGradient(int x, int y, float w, float h, color c1, color c2, int axis ) 
     }
   }
 }
-

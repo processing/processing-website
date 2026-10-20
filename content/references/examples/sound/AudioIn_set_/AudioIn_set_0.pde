@@ -19,4 +19,3 @@ void mousePressed() {
   float pos=1;
   in.set(amp, add, pos);
 }
-

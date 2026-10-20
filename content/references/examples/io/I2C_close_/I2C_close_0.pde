@@ -14,4 +14,3 @@ void setup() {
   // and close interface again
   i2c.close();
 }
-

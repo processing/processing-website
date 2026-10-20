@@ -10,4 +10,3 @@ void setup() {
   inventory.div("tea", 2);
   println(inventory);  // There is 4.1 of tea
 }
-

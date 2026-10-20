@@ -10,4 +10,3 @@ void setup() {
   inventory.sortReverse();  // Orders to 102, 84, 15
   println(inventory);  
 }
-

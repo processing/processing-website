@@ -14,4 +14,3 @@ void setup() {
 void draw() {
   image(pg, 10, 10); 
 }
-

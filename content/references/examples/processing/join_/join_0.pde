@@ -13,4 +13,3 @@ numbers[1] = 67;
 numbers[2] = 5; 
 String joinedNumbers = join(nf(numbers, 0), ", "); 
 println(joinedNumbers);  // Prints "8, 67, 5" 
-

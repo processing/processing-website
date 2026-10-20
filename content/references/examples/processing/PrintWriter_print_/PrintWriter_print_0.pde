@@ -16,4 +16,3 @@ void keyPressed() {
   output.close();  // Finishes the file
   exit();  // Stops the program
 }
-

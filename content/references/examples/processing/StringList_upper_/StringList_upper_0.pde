@@ -10,4 +10,3 @@ void setup() {
   inventory.upper();
   println(inventory);
 }
-

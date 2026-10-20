@@ -22,4 +22,3 @@ void draw() {
     println(inString); 
   }
 } 
-

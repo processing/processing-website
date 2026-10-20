@@ -10,4 +10,3 @@ void setup() {
   inventory.mult("cd", 2);
   println(inventory);  // There are 168 cds
 }
-

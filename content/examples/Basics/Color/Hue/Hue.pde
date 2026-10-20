@@ -26,4 +26,3 @@ void draw() {
     lastBar = whichBar;
   }
 }
-

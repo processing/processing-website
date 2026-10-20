@@ -18,4 +18,3 @@ void movieEvent(Movie m) {
 void mousePressed() {
   myMovie.noLoop();
 }
-

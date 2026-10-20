@@ -23,4 +23,3 @@ void draw() {
     rand += random(-5, 5);
   }
 }
-

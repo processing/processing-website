@@ -20,4 +20,3 @@ void mousePressed() {
   float pos=1;
   saw.set(freq, amp, add, pos);
 }
-

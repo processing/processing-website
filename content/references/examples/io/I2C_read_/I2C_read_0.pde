@@ -20,4 +20,3 @@ void draw() {
   int deg = (in[0] & 0xff) << 8 | (in[1] & 0xff);
   println((deg / 10.0));
 }
-
