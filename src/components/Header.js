@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 
-import Topbar from './Topbar';
 import Navbar from './Navbar';
 import Banner from './Banner';
 
@@ -28,7 +27,6 @@ const Header = ({ siteTitle, scrolled }) => {
 
   return (
     <header className={css.root}>
-      <Topbar show={!scrolled} />
       {bannerData && bannerData.visible && <Banner {...bannerData} />}
       <Navbar siteTitle={siteTitle} scrolled={scrolled} />
     </header>
