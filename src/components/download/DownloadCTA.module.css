@@ -128,8 +128,9 @@
 }
 
 .icon {
-    width: 1.5em;
-    height: 1.5em;
+    width: 1.85em;
+    height: 1.85em;
+    margin: 0 0.12em;
     font-size: var(--text-medium);
 }
 
@@ -142,6 +143,14 @@
 @media (--reduced) {
     .intro {
         font-size: var(--text-large);
+    }
+
+    .cta_container {
+        padding-bottom: calc(var(--vertical-margin-large) * 4);
+    }
+
+    .otherPlatforms {
+        margin-top: var(--vertical-margin-large);
     }
 }
 
@@ -157,5 +166,13 @@
 
     .intro {
         font-size: var(--text-medium);
+    }
+
+    .otherPlatforms {
+        margin-top: var(--vertical-margin-large);
+    }
+
+    .otherPlatforms ul {
+        gap: var(--gutter-double);
     }
 }
