@@ -1,0 +1,115 @@
+{
+  "name": "Processing 4.5.8 RC1",
+  "tagName": "processing-1436-4.5.8-rc1",
+  "isPrerelease": true,
+  "publishedAt": "2026-11-23T16:36:22Z",
+  "releaseAssets": {
+    "edges": [
+      {
+        "node": {
+          "name": "processing-4.5.8-rc1-linux-aarch64.deb",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1436-4.5.8-rc1/processing-4.5.8-rc1-linux-aarch64.deb",
+          "size": 469485680
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.8-rc1-linux-aarch64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1436-4.5.8-rc1/processing-4.5.8-rc1-linux-aarch64-portable.zip",
+          "size": 531377638
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.8-rc1-linux-x64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1436-4.5.8-rc1/processing-4.5.8-rc1-linux-x64-portable.zip",
+          "size": 537686335
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.8-rc1-linux-x64.deb",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1436-4.5.8-rc1/processing-4.5.8-rc1-linux-x64.deb",
+          "size": 475197886
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.8-rc1-reference.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1436-4.5.8-rc1/processing-4.5.8-rc1-reference.zip",
+          "size": 108404739
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.8-rc1-linux-x64.snap",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1436-4.5.8-rc1/processing-4.5.8-rc1-linux-x64.snap",
+          "size": 492834816
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.8-rc1-linux-aarch64.snap",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1436-4.5.8-rc1/processing-4.5.8-rc1-linux-aarch64.snap",
+          "size": 479879168
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.8-rc1-linux-aarch64.flatpak",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1436-4.5.8-rc1/processing-4.5.8-rc1-linux-aarch64.flatpak",
+          "size": 335755912
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.8-rc1-linux-x64.flatpak",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1436-4.5.8-rc1/processing-4.5.8-rc1-linux-x64.flatpak",
+          "size": 342381208
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.8-rc1-macos-aarch64.dmg",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1436-4.5.8-rc1/processing-4.5.8-rc1-macos-aarch64.dmg",
+          "size": 535644887
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.8-rc1-macos-aarch64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1436-4.5.8-rc1/processing-4.5.8-rc1-macos-aarch64-portable.zip",
+          "size": 531972208
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.8-rc1-macos-x64.dmg",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1436-4.5.8-rc1/processing-4.5.8-rc1-macos-x64.dmg",
+          "size": 531420103
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.8-rc1-macos-x64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1436-4.5.8-rc1/processing-4.5.8-rc1-macos-x64-portable.zip",
+          "size": 527902317
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.8-rc1-windows-x64.msi",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1436-4.5.8-rc1/processing-4.5.8-rc1-windows-x64.msi",
+          "size": 474480640
+        }
+      },
+      {
+        "node": {
+          "name": "processing-4.5.8-rc1-windows-x64-portable.zip",
+          "downloadUrl": "https://github.com/processing/processing4/releases/download/processing-1436-4.5.8-rc1/processing-4.5.8-rc1-windows-x64-portable.zip",
+          "size": 517353343
+        }
+      }
+    ]
+  }
+}
