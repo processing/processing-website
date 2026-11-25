@@ -160,7 +160,7 @@ const IndexPage = ({ data }) => {
             </div>
             <div className={css.participateButton}>
               <Button
-                href={'https://day.processing.org'}
+                href="https://processingfoundation.org/blog/work-in-progress-processing-5/"
                 variant="animate1"
                 size="large">
                 {intl.formatMessage({ id: 'announcementButton' })}
