@@ -1,7 +1,7 @@
 .root {
   position: fixed;
   top: 130px;
-  right: var(--margin);
+  right: calc(var(--margin) - 1cm);
   width: var(--col1);
   float: right;
   text-align: center;
